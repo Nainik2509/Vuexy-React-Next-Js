@@ -45,7 +45,8 @@ module.exports = {
           title: 'Components',
           collapsable: false,
           children: [
-            '/guide/components/cards'
+            '/guide/components/cards',
+            '/guide/components/avatar'
             // '/guide/components/cards'
           ]
         },
