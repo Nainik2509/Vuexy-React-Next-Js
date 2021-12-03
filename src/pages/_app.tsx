@@ -1,3 +1,6 @@
+// ** Global css styles
+import '../../styles/globals.css'
+
 // ** Prismjs Styles
 import 'prismjs'
 import 'prismjs/themes/prism-tomorrow.css'
