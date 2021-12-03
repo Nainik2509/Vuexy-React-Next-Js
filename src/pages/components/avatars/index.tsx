@@ -1,0 +1,90 @@
+// ** React Imports
+import { FC } from 'react'
+
+// ** MUI Imports
+import Grid from '@mui/material/Grid'
+import Typography from '@mui/material/Typography'
+
+// ** Custom Components Imports
+import CardSnippet from '@core/components/card-snippet'
+
+// ** Demo Components Imports
+import AvatarsIcon from './AvatarsIcon'
+import AvatarsImage from './AvatarsImage'
+import AvatarsSizes from './AvatarsSizes'
+import AvatarsLetter from './AvatarsLetter'
+import AvatarsGrouped from './AvatarsGrouped'
+import AvatarsVariants from './AvatarsVariants'
+import AvatarsWithBadge from './AvatarsWithBadge'
+
+// ** Source code imports
+import * as source from './AvatarsSourceCode'
+
+const Avatars: FC = () => {
+  return (
+    <Grid container spacing={6} className='match-height'>
+      <Grid item xs={12} sm={6}>
+        <CardSnippet title='Image Avatars' code={source.AvatarsImageCode}>
+          <Typography>
+            Use <code>src</code> and <code>alt</code> props with <code>Avatar</code> component for basic image avatar.
+          </Typography>
+          <AvatarsImage />
+        </CardSnippet>
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <CardSnippet title='Letter Avatars' code={source.AvatarsLetterCode}>
+          <Typography>
+            Write some letters inside <code>Avatar</code> component to have letter avatar. Use our custom component for
+            colored avatar and use <code>skin='light'</code> prop for light variant with opacity and{' '}
+            <code>skin='light-static'</code> prop for light variant without opacity.
+          </Typography>
+          <AvatarsLetter />
+        </CardSnippet>
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <CardSnippet title='Sizes' code={source.AvatarsSizesCode}>
+          <Typography>
+            You can set any size of an avatar using <code>styled</code> hook.
+          </Typography>
+          <AvatarsSizes />
+        </CardSnippet>
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <CardSnippet title='Icon Avatars' code={source.AvatarsIconCode}>
+          <Typography>
+            Pass an icon as a child of <code>Avatar</code> component to make an icon avatar.
+          </Typography>
+          <AvatarsIcon />
+        </CardSnippet>
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <CardSnippet title='Variants' code={source.AvatarsVariantsCode}>
+          <Typography>
+            Use <code>variant={`{'square' | 'rounded'}`}</code> prop with <code>Avatar</code> component for different
+            variants.
+          </Typography>
+          <AvatarsVariants />
+        </CardSnippet>
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <CardSnippet title='Avatars With Badge' code={source.AvatarsWithBadgeCode}>
+          <Typography>
+            Use <code>Avatar</code> component as a child of <code>Badge</code> component.
+          </Typography>
+          <AvatarsWithBadge />
+        </CardSnippet>
+      </Grid>
+      <Grid item xs={12}>
+        <CardSnippet title='Grouped Avatars' code={source.AvatarsGroupedCode}>
+          <Typography sx={{ marginBottom: 4 }}>
+            Wrap all your avatars with <code>AvatarGroup</code> component to have grouped avatars. Use <code>max</code>{' '}
+            prop with <code>AvatarGroup</code> component to restrict maximum number of avatars shown.
+          </Typography>
+          <AvatarsGrouped />
+        </CardSnippet>
+      </Grid>
+    </Grid>
+  )
+}
+
+export default Avatars

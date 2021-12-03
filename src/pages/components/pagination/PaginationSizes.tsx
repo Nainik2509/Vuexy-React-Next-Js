@@ -1,0 +1,17 @@
+// ** React Imports
+import { FC } from 'react'
+
+// ** MUI Imports
+import Pagination from '@mui/material/Pagination'
+
+const PaginationSizes: FC = () => {
+  return (
+    <div className='demo-space-y'>
+      <Pagination count={10} size='small' />
+      <Pagination count={10} />
+      <Pagination count={10} size='large' />
+    </div>
+  )
+}
+
+export default PaginationSizes
