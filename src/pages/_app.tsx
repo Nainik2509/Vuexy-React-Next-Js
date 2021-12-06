@@ -24,6 +24,7 @@ import type { EmotionCache } from '@emotion/cache'
 
 // ** Utils Imports
 import { createEmotionCache } from '../@core/utils/create-emotion-cache'
+import { SettingsProvider } from '@core/context/settingsContext'
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode
@@ -46,15 +47,12 @@ const App: FC<AppPropsWithLayout> = (props) => {
   return (
     <CacheProvider value={emotionCache}>
       <Head>
-        <title>
-          Master React Admin Template With MUI & NextJS
-        </title>
-        <meta
-          name="viewport"
-          content="initial-scale=1, width=device-width"
-        />
+        <title>Master React Admin Template With MUI & NextJS</title>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <Component {...pageProps} />
+      <SettingsProvider>
+        <Component {...pageProps} />
+      </SettingsProvider>
     </CacheProvider>
 
   )
