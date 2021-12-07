@@ -24,7 +24,9 @@ import type { EmotionCache } from '@emotion/cache'
 
 // ** Utils Imports
 import { createEmotionCache } from '../@core/utils/create-emotion-cache'
-import { SettingsProvider } from '@core/context/settingsContext'
+
+import ThemeComponent from '@core/theme/ThemeComponent'
+import { SettingsConsumer, SettingsProvider } from '@core/context/settingsContext'
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode
@@ -51,7 +53,13 @@ const App: FC<AppPropsWithLayout> = (props) => {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <SettingsProvider>
-        <Component {...pageProps} />
+        <SettingsConsumer>
+          {({ settings }) => (
+            <ThemeComponent settings={settings}>
+              <Component {...pageProps} />
+            </ThemeComponent>
+          )}
+        </SettingsConsumer>
       </SettingsProvider>
     </CacheProvider>
 

@@ -1,0 +1,97 @@
+// ** MUI Imports
+import { Theme } from '@mui/material'
+
+// ** Theme Type Import
+import { Skin } from '@core/layouts/types'
+
+const Card = (theme: Theme, skin: Skin) => {
+
+  return {
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          boxShadow: skin !== 'bordered' ? theme.shadows[6] : theme.shadows[0],
+          ...(skin === 'bordered' && { border: `1px solid ${theme.palette.divider}` }),
+          '& .card-more-options': {
+            marginTop: theme.spacing(-1),
+            marginRight: theme.spacing(-3)
+          }
+        }
+      }
+    },
+    MuiCardHeader: {
+      styleOverrides: {
+        root: {
+          padding: theme.spacing(5),
+          '& + .MuiCardContent-root, & + .MuiCollapse-root .MuiCardContent-root': {
+            paddingTop: 0
+          },
+          '& .MuiCardHeader-subheader': {
+            fontSize: '0.875rem'
+          }
+        },
+        title: {
+          lineHeight: 1,
+          fontWeight: 500,
+          fontSize: '1.25rem',
+          letterSpacing: '0.0125em'
+        },
+        action: {
+          marginTop: 0,
+          marginRight: 0
+        }
+      }
+    },
+    MuiCardContent: {
+      styleOverrides: {
+        root: {
+          padding: theme.spacing(5),
+          '& + .MuiCardContent-root': {
+            paddingTop: 0
+          },
+          '&:last-of-type': {
+            paddingBottom: theme.spacing(5)
+          },
+          '& + .MuiCardActions-root': {
+            paddingTop: 0
+          }
+        }
+      }
+    },
+    MuiCardActions: {
+      styleOverrides: {
+        root: {
+          padding: theme.spacing(5),
+          '&.card-action-dense': {
+            padding: theme.spacing(2.5),
+            paddingTop: 0, // this must be below 'padding' property otherwise paddingTop will not be 0
+            '.MuiCard-root .MuiCardMedia-root + &': {
+              paddingTop: theme.spacing(2.5)
+            },
+            '.MuiCard-root &:first-of-type': {
+              paddingTop: theme.spacing(5),
+              paddingBottom: theme.spacing(5),
+              '& + .MuiCardContent-root': {
+                paddingTop: 0
+              },
+              '& + .MuiCardHeader-root': {
+                paddingTop: 0
+              }
+            }
+          },
+          '& .MuiButton-text': {
+            padding: `${theme.spacing(1.5)} ${theme.spacing(2.5)}`
+          },
+          '& .MuiButton-text.MuiButton-textSizeSmall': {
+            padding: `${theme.spacing(1)} ${theme.spacing(2.5)}`
+          },
+          '& .MuiButton-text.MuiButton-textSizeLarge': {
+            padding: `${theme.spacing(2)} ${theme.spacing(2.5)}`
+          }
+        }
+      }
+    }
+  }
+}
+
+export default Card
