@@ -67,7 +67,6 @@ const ThemeComponent: FC<Props> = props => {
 
   const styles = GlobalStyling(theme, settings)
 
-  console.log(`styles`, styles)
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />

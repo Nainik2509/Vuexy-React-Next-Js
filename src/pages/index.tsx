@@ -8,14 +8,14 @@ import Typography from '@mui/material/Typography'
 import RadioGroup from '@mui/material/RadioGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
-// ** Third Party Imports
+// ** i18n Imports
 import { useTranslation } from 'react-i18next'
-
-// ** Hook Imports
-import { useSettings } from '@core/hooks/useSettings'
 
 // ** Type Imports
 import { Settings } from '@core/context/settingsContext'
+
+// ** Hook Imports
+import { useSettings } from '@core/hooks/useSettings'
 
 const Home: NextPage = () => {
   // ** Hook
