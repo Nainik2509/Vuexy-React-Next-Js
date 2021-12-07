@@ -6,6 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
@@ -36,6 +37,8 @@
     "@types/react": "17.0.37",
     "eslint": "7",
     "eslint-config-next": "12.0.4",
+    "next-transpile-modules": "^9.0.0",
+    "prettier": "2.5.1",
     "typescript": "4.5.2"
   }
 }
