@@ -4,6 +4,9 @@ import { FC, createContext, useState, ReactNode, useEffect } from 'react'
 // ** MUI Imports
 import { PaletteMode, Direction } from '@mui/material'
 
+// ** Third Party Imports
+import { useTranslation } from 'react-i18next'
+
 // ** ThemeConfig Import
 import themeConfig from 'configs/themeConfig'
 
@@ -15,6 +18,7 @@ export type Settings = {
   appBar?: AppBar
   footer?: Footer
   layout?: Layout
+  language?: string
   mode: PaletteMode
   lastLayout?: Layout
   direction: Direction
@@ -29,17 +33,24 @@ export type SettingsContextValue = {
 }
 
 const initialSettings: Settings = {
-  mode: 'light',
-  skin: 'default',
-  appBar: 'fixed',
-  footer: 'static',
-  direction: 'ltr',
-  layout: 'vertical',
-  navCollapsed: false,
   themeColor: 'primary',
-  contentWidth: 'boxed',
+  mode: themeConfig.mode,
+  skin: themeConfig.skin,
+  appBar: themeConfig.appBar,
+  footer: themeConfig.footer,
+  layout: themeConfig.layout,
   lastLayout: themeConfig.layout,
-  verticalNavToggleType: 'accordion'
+  direction: themeConfig.direction,
+  navCollapsed: themeConfig.navCollapsed,
+  contentWidth: themeConfig.contentWidth,
+  verticalNavToggleType: themeConfig.verticalNavToggleType
+}
+
+const staticSettings = {
+  appBar: initialSettings.appBar,
+  footer: initialSettings.footer,
+  layout: initialSettings.layout,
+  lastLayout: initialSettings.lastLayout
 }
 
 export const restoreSettings = (): Settings | null => {
@@ -49,21 +60,9 @@ export const restoreSettings = (): Settings | null => {
     const storedData: string | null = window.localStorage.getItem('settings')
 
     if (storedData) {
-      settings = JSON.parse(storedData)
+      settings = {...JSON.parse(storedData), ...staticSettings}
     } else {
-      settings = {
-        mode: 'light',
-        skin: 'default',
-        appBar: 'fixed',
-        footer: 'static',
-        direction: 'ltr',
-        layout: 'vertical',
-        navCollapsed: false,
-        themeColor: 'primary',
-        contentWidth: 'boxed',
-        lastLayout: themeConfig.layout,
-        verticalNavToggleType: 'accordion'
-      }
+      settings = initialSettings
     }
   } catch (err) {
     console.error(err)
@@ -94,6 +93,9 @@ interface Props {
 }
 
 export const SettingsProvider: FC<Props> = ({ children }: Props) => {
+  // ** Hook
+  const { i18n } = useTranslation()
+
   // ** State
   const [settings, setSettings] = useState<Settings>(initialSettings)
 
@@ -101,9 +103,15 @@ export const SettingsProvider: FC<Props> = ({ children }: Props) => {
     const restoredSettings = restoreSettings()
 
     if (restoredSettings) {
-      setSettings(restoredSettings)
+      const initSettings: Settings = JSON.parse(window.localStorage.getItem('settings')!)
+      const i18nCondition = (initSettings !== null) && (initSettings.language !== i18n.language)
+      if (i18nCondition) {
+        i18n.changeLanguage(initSettings.language)
+      }
+
+      setSettings({...restoredSettings, language: i18nCondition ? initSettings.language : i18n.language})
     }
-  }, [])
+  }, [i18n])
 
   const saveSettings = (updatedSettings: Settings) => {
     storeSettings(updatedSettings)

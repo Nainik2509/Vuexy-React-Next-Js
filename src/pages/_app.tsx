@@ -22,6 +22,9 @@ import Head from 'next/head'
 import { CacheProvider } from '@emotion/react'
 import type { EmotionCache } from '@emotion/cache'
 
+// ** i18n Import
+import 'configs/i18n'
+
 // ** Utils Imports
 import { createEmotionCache } from '../@core/utils/create-emotion-cache'
 

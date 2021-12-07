@@ -1,6 +1,3 @@
-// ** React Imports
-import { useEffect, useState } from 'react'
-
 // ** NextJs Imports
 import type { NextPage } from 'next'
 
@@ -11,42 +8,22 @@ import Typography from '@mui/material/Typography'
 import RadioGroup from '@mui/material/RadioGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
+// ** Third Party Imports
+import { useTranslation } from 'react-i18next'
+
 // ** Hook Imports
 import { useSettings } from '@core/hooks/useSettings'
 
 // ** Type Imports
 import { Settings } from '@core/context/settingsContext'
 
-const getValues = (settings: Settings) => ({
-  mode: settings.mode,
-  skin: settings.skin,
-  appBar: settings.appBar,
-  footer: settings.footer,
-  layout: settings.layout,
-  direction: settings.direction,
-  lastLayout: settings.lastLayout,
-  themeColor: settings.themeColor,
-  contentWidth: settings.contentWidth,
-  navCollapsed: settings.navCollapsed,
-  verticalNavToggleType: settings.verticalNavToggleType
-})
-
 const Home: NextPage = () => {
   // ** Hook
+  const { i18n } = useTranslation()
   const { settings, saveSettings } = useSettings()
 
-  // **State
-  const [values, setValues] = useState(getValues(settings))
-
   const handleChange = (field: keyof Settings, value: any): void => {
-    const updatedSettings = {
-      ...values,
-      [field]: value
-    }
-    // Update State
-    setValues(updatedSettings)
-    // Update Context
-    saveSettings(updatedSettings)
+    saveSettings({ ...settings, [field]: value })
   }
 
   return (
@@ -125,6 +102,18 @@ const Home: NextPage = () => {
         <Typography>{`navCollapsed: ${settings.navCollapsed}`}</Typography>
         <FormControlLabel control={<Switch checked={settings.navCollapsed} onChange={event => {handleChange('navCollapsed', event.target.checked)}} />} label="Menu Collapsed" />
       </div>
+      {settings.language ? (
+        <div>
+          <Typography>{`language: ${settings.language}`}</Typography>
+          <RadioGroup row aria-label="language" name="language" value={settings.language} onChange={event => {
+            i18n.changeLanguage(event.target.value)
+            handleChange('language', event.target.value)
+          }}>
+            <FormControlLabel value="en" control={<Radio />} label="EN" />
+            <FormControlLabel value="fr" control={<Radio />} label="FR" />
+          </RadioGroup>
+        </div>
+      ) : null}
     </div>
   )
 }
