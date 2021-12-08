@@ -1,10 +1,11 @@
 // ** React Imports
-import { FC, ReactElement, ReactNode  } from 'react'
+import { FC, ReactElement, ReactNode } from 'react'
 
 // ** Next Imports
 import Head from 'next/head'
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
+import { SessionProvider } from 'next-auth/react'
 
 // ** Emotion Imports
 import { CacheProvider } from '@emotion/react'
@@ -12,6 +13,9 @@ import type { EmotionCache } from '@emotion/cache'
 
 // ** i18n Config Import
 import 'configs/i18n'
+
+// ** Fake-DB Import
+import '@fake-db/index'
 
 // ** Theme
 import ThemeComponent from '@core/theme/ThemeComponent'
@@ -47,28 +51,29 @@ type AppPropsWithLayout = AppProps & {
 const clientSideEmotionCache = createEmotionCache()
 
 // ** Configure JSS & ClassName
-const App: FC<AppPropsWithLayout> = (props) => {
+const App: FC<AppPropsWithLayout> = props => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
 
   // const getLayout = Component.getLayout ?? ((page) => page)
 
   return (
-    <CacheProvider value={emotionCache}>
-      <Head>
-        <title>Master React Admin Template With MUI & NextJS</title>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
-      </Head>
-      <SettingsProvider>
-        <SettingsConsumer>
-          {({ settings }) => (
-            <ThemeComponent settings={settings}>
-              <Component {...pageProps} />
-            </ThemeComponent>
-          )}
-        </SettingsConsumer>
-      </SettingsProvider>
-    </CacheProvider>
-
+    <SessionProvider session={pageProps.session}>
+      <CacheProvider value={emotionCache}>
+        <Head>
+          <title>Master React Admin Template With MUI & NextJS</title>
+          <meta name='viewport' content='initial-scale=1, width=device-width' />
+        </Head>
+        <SettingsProvider>
+          <SettingsConsumer>
+            {({ settings }) => (
+              <ThemeComponent settings={settings}>
+                <Component {...pageProps} />
+              </ThemeComponent>
+            )}
+          </SettingsConsumer>
+        </SettingsProvider>
+      </CacheProvider>
+    </SessionProvider>
   )
 }
 
