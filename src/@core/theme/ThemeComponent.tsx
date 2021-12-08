@@ -8,19 +8,19 @@ import CssBaseline from '@mui/material/CssBaseline'
 import GlobalStyles from '@mui/material/GlobalStyles'
 import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material/styles'
 
-// ** Type Import
-import { Skin } from '@core/layouts/types'
+// ** Type Imports
+import { Settings } from '@core/context/settingsContext'
+
+// ** Theme Config
+import themeConfig from 'configs/themeConfig'
 
 // ** Theme Override Imports
 import overrides from './overrides'
 import typography from './typography'
 
 // ** Theme
-import UserThemeOptions from 'assets/UserThemeOptions'
 import themeOptions from './ThemeOptions'
-
-// ** Type Imports
-import { Settings } from '@core/context/settingsContext'
+import UserThemeOptions from 'assets/UserThemeOptions'
 
 // ** Global Styles
 import GlobalStyling from './globalStyles'
@@ -35,10 +35,10 @@ const ThemeComponent: FC<Props> = props => {
   const { settings, children } = props
 
   // ** Merged ThemeOptions of Core and User
-  const themeConfig = themeOptions(settings)
+  const coreThemeConfig = themeOptions(settings)
 
   // ** Pass ThemeOptions to CreateTheme Function to create partial theme without component overrides
-  let theme = createTheme(themeConfig)
+  let theme = createTheme(coreThemeConfig)
 
   // ** Deep Merge Component overrides of core and user
   const mergeComponentOverrides = (theme: Theme, settings: Settings) => (
@@ -63,9 +63,9 @@ const ThemeComponent: FC<Props> = props => {
   })
 
   // ** Set responsive font sizes to true
-  theme = responsiveFontSizes(theme)
-
-  const styles = GlobalStyling(theme, settings)
+  if (themeConfig.responsiveFontSizes) {
+    theme = responsiveFontSizes(theme)
+  }
 
   return (
     <ThemeProvider theme={theme}>

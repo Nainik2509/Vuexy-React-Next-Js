@@ -33,6 +33,7 @@ type ThemeConfig = {
   navSubItemIcon: ReactNode
   contentWidth: ContentWidth
   disableCustomizer: boolean
+  responsiveFontSizes: boolean
   verticalNavToggleType: VerticalNavToggle
   horizontalMenuToggle: HorizontalMenuToggle
 }
@@ -52,6 +53,7 @@ const themeConfig: ThemeConfig = {
   appBar: 'fixed' /* fixed | static | hidden /*! Note: hidden value will only work for Vertical Layout */,
   footer: 'static' /* fixed | static | hidden */,
   disableCustomizer: false /* true | false */,
+  responsiveFontSizes: true /* true | false */,
   horizontalMenuToggle: 'hover' /* click | hover */,
   navSubItemIcon: CircleOutline /* Icon Element */
 }

@@ -28,6 +28,7 @@ const Home: NextPage = () => {
 
   return (
     <div>
+      <Typography variant='h5' sx={{ mb: 2 }}>Home Page</Typography>
       <div>
         <Typography>{`mode: ${settings.mode}`}</Typography>
         <RadioGroup row aria-label="mode" name="mode" value={settings.mode} onChange={event => {handleChange('mode', event.target.value)}}>
