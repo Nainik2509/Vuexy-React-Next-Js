@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Card from '@mui/material/Card'
 import Typography from '@mui/material/Typography'
@@ -8,7 +5,7 @@ import CardContent from '@mui/material/CardContent'
 import LinearProgress from '@mui/material/LinearProgress'
 import CircularProgress from '@mui/material/CircularProgress'
 
-const CardProgress: FC = () => {
+const CardProgress = () => {
   return (
     <Card>
       <CardContent>

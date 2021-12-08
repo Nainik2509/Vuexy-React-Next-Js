@@ -1,12 +1,12 @@
 // ** React Imports
-import { FC, Fragment, MouseEvent, SyntheticEvent, useState } from 'react'
+import { Fragment, MouseEvent, SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Alert from '@mui/material/Alert'
 import Button from '@mui/material/Button'
 import Snackbar from '@mui/material/Snackbar'
 
-const SnackbarAlert: FC = () => {
+const SnackbarAlert = () => {
   // ** State
   const [open, setOpen] = useState<boolean>(false)
 

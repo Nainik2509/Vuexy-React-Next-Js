@@ -1,12 +1,9 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Typography from '@mui/material/Typography'
 import LinearProgress from '@mui/material/LinearProgress'
 import CircularProgress from '@mui/material/CircularProgress'
 
-const OutsideProgress: FC = () => {
+const OutsideProgress = () => {
   return (
     <div>
       <Typography>Circular Progress</Typography>

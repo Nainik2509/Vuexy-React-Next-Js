@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
@@ -19,7 +16,7 @@ import SnackbarControlSlideDirection from './SnackbarControlSlideDirection'
 // ** Source code imports
 import * as source from './SnackbarSourceCode'
 
-const Snackbar: FC = () => {
+const Snackbar = () => {
   return (
     <Grid container spacing={6} className='match-height'>
       <Grid item xs={12} md={6}>

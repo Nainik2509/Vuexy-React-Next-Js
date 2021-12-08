@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, MouseEvent, useState } from 'react'
+import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -31,7 +31,7 @@ const ToggleButton = styled(MuiToggleButton)<ToggleButtonProps>(({ theme }) => (
   }
 }))
 
-const ButtonToggleCustomized: FC = () => {
+const ButtonToggleCustomized = () => {
   // ** States
   const [alignment, setAlignment] = useState<string | null>('left')
   const [formats, setFormats] = useState<string[]>(() => ['italic'])

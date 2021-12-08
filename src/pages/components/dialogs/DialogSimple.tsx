@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import List from '@mui/material/List'
@@ -22,7 +22,7 @@ import CustomAvatar from '@core/components/mui/avatar'
 
 const emails = ['username@gmail.com', 'user02@gmail.com']
 
-const DialogSimple: FC = () => {
+const DialogSimple = () => {
   // ** States
   const [open, setOpen] = useState<boolean>(false)
   const [selectedValue, setSelectedValue] = useState<string>(emails[1])

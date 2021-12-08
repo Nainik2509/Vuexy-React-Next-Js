@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Fab from '@mui/material/Fab'
 
@@ -10,7 +7,7 @@ import Heart from 'mdi-material-ui/Heart'
 import Pencil from 'mdi-material-ui/Pencil'
 import NavigationOutline from 'mdi-material-ui/NavigationOutline'
 
-const ButtonsFab: FC = () => {
+const ButtonsFab = () => {
   return (
     <div className='demo-space-x'>
       <Fab aria-label='add'>

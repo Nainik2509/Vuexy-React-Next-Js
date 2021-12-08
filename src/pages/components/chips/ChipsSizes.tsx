@@ -1,10 +1,7 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Chip from '@mui/material/Chip'
 
-const ChipsSizes: FC = () => {
+const ChipsSizes = () => {
   return (
     <div className='demo-space-x'>
       <Chip label='Default' />

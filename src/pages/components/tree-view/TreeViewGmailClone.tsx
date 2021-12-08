@@ -1,5 +1,5 @@
 // ** React Imports
-import { ElementType, FC } from 'react'
+import { ElementType } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -79,7 +79,7 @@ const StyledTreeItem = (props: StyledTreeItemProps) => {
   )
 }
 
-const TreeViewGmailClone: FC<Props> = ({ direction }) => {
+const TreeViewGmailClone = ({ direction }: Props) => {
   const ExpandIcon = direction === 'rtl' ? <ChevronLeft /> : <ChevronRight />
 
   return (

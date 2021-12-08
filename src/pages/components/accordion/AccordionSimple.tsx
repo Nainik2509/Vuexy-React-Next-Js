@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Accordion from '@mui/material/Accordion'
 import Typography from '@mui/material/Typography'
@@ -10,7 +7,7 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 // ** Icons Imports
 import ChevronDown from 'mdi-material-ui/ChevronDown'
 
-const AccordionSimple: FC = () => {
+const AccordionSimple = () => {
   return (
     <div>
       <Accordion>

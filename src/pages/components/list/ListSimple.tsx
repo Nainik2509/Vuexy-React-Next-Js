@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, Fragment } from 'react'
+import { Fragment } from 'react'
 
 // ** MUI Imports
 import List from '@mui/material/List'
@@ -15,7 +15,7 @@ import EmailOutline from 'mdi-material-ui/EmailOutline'
 import ClockOutline from 'mdi-material-ui/ClockOutline'
 import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
 
-const ListSimple: FC = () => {
+const ListSimple = () => {
   return (
     <Fragment>
       <List component='nav' aria-label='main mailbox'>

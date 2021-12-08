@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, MouseEvent, useState } from 'react'
+import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -31,7 +31,7 @@ const MenuItem = styled(MuiMenuItem)<MenuItemProps>(({ theme }) => ({
   }
 }))
 
-const MenuCustomized: FC = () => {
+const MenuCustomized = () => {
   // ** State
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 

@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, MouseEvent } from 'react'
+import { MouseEvent } from 'react'
 
 // ** MUI Imports
 import Card from '@mui/material/Card'
@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 import Breadcrumbs from '@mui/material/Breadcrumbs'
 
-const CardBreadcrumb: FC = () => {
+const CardBreadcrumb = () => {
   const handleClick = (event: MouseEvent<any>) => {
     event.preventDefault()
     console.info('You clicked a breadcrumb.')

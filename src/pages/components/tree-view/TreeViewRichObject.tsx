@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import TreeView from '@mui/lab/TreeView'
 import TreeItem from '@mui/lab/TreeItem'
@@ -41,7 +38,7 @@ const data: RenderTree = {
   ]
 }
 
-const TreeViewRichObject: FC<Props> = ({ direction }) => {
+const TreeViewRichObject = ({ direction }: Props) => {
   const renderTree = (nodes: RenderTree) => (
     <TreeItem key={nodes.id} nodeId={nodes.id} label={nodes.name}>
       {Array.isArray(nodes.children) ? nodes.children.map(node => renderTree(node)) : null}

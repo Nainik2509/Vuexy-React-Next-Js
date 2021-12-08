@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, MouseEvent, useState } from 'react'
+import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import List from '@mui/material/List'
@@ -16,9 +16,11 @@ const options = [
   'Hide all notification content'
 ]
 
-const MenuSelected: FC = () => {
+const MenuSelected = () => {
   // ** State
   const [selectedIndex, setSelectedIndex] = useState<number>(1)
+
+  // ** Ref
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
   const handleClickListItem = (event: MouseEvent<HTMLElement>) => {

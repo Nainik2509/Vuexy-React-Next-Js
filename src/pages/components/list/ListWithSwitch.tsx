@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import List from '@mui/material/List'
@@ -18,7 +18,7 @@ import Bluetooth from 'mdi-material-ui/Bluetooth'
 import MapMarkerOutline from 'mdi-material-ui/MapMarkerOutline'
 import MinusCircleOutline from 'mdi-material-ui/MinusCircleOutline'
 
-const ListWithSwitch: FC = () => {
+const ListWithSwitch = () => {
   // ** State
   const [checked, setChecked] = useState<string[]>(['wifi', 'location'])
 

@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, ReactElement } from 'react'
+import { ReactElement } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -43,7 +43,7 @@ const IconContainer = (props: IconContainerProps) => {
   return <span {...props}>{customIcons[value].icon}</span>
 }
 
-const RatingsCustomized: FC = () => {
+const RatingsCustomized = () => {
   return (
     <div>
       <Box sx={{ mb: 3 }}>

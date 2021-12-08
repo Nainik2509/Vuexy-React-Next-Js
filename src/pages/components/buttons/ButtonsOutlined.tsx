@@ -1,10 +1,7 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Button from '@mui/material/Button'
 
-const ButtonsOutlined: FC = () => {
+const ButtonsOutlined = () => {
   return (
     <div className='demo-space-x'>
       <Button variant='outlined'>Primary</Button>

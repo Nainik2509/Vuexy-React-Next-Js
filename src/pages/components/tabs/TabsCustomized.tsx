@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, SyntheticEvent, useState } from 'react'
+import { SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Tab from '@mui/material/Tab'
@@ -25,7 +25,7 @@ const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
   }
 }))
 
-const TabsCustomized: FC = () => {
+const TabsCustomized = () => {
   // ** State
   const [value, setValue] = useState<string>('1')
 

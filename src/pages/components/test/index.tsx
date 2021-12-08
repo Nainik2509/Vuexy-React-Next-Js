@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
@@ -22,7 +19,7 @@ import OutsideTooltip from './OutsideTooltip'
 import OutsideProgress from './OutsideProgress'
 import OutsideBreadcrumb from './OutsideBreadcrumb'
 
-const Test: FC = () => {
+const Test = () => {
   return (
     <Grid container spacing={6} className='match-height'>
       <Grid item xs={12} sm={6}>

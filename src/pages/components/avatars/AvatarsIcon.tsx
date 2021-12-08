@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Avatar from '@mui/material/Avatar'
@@ -13,7 +10,7 @@ import CheckboxMarkedCircleOutline from 'mdi-material-ui/CheckboxMarkedCircleOut
 // ** Custom Components Imports
 import CustomAvatar from '@core/components/mui/avatar'
 
-const AvatarsIcon: FC = () => {
+const AvatarsIcon = () => {
   return (
     <Box className='demo-space-x' sx={{ display: 'flex' }}>
       <Avatar>

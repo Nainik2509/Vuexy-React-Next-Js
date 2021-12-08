@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, SyntheticEvent, useState } from 'react'
+import { SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Tab from '@mui/material/Tab'
@@ -13,7 +13,7 @@ import Phone from 'mdi-material-ui/Phone'
 import HeartOutline from 'mdi-material-ui/HeartOutline'
 import AccountOutline from 'mdi-material-ui/AccountOutline'
 
-const TabsIcon: FC = () => {
+const TabsIcon = () => {
   // ** State
   const [value, setValue] = useState<string>('1')
 

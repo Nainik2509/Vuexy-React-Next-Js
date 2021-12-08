@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import TreeView from '@mui/lab/TreeView'
 import TreeItem from '@mui/lab/TreeItem'
@@ -14,7 +11,7 @@ interface Props {
   direction: 'ltr' | 'rtl'
 }
 
-const TreeViewBasic: FC<Props> = ({ direction }) => {
+const TreeViewBasic = ({ direction }: Props) => {
   const ExpandIcon = direction === 'rtl' ? <ChevronLeft /> : <ChevronRight />
 
   return (

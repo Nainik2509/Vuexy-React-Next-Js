@@ -2,14 +2,14 @@
 import { useState } from 'react'
 
 // ** Next Imports
-import type { NextPage, GetServerSideProps } from 'next'
+import type { GetServerSideProps } from 'next'
 import { getProviders, signIn, getSession } from 'next-auth/react'
 
 // ** MUI Components
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 
-const Login: NextPage = ({ providers }) => {
+const Login = ({ providers }) => {
   const [password, setPassword] = useState('admin')
   const [email, setEmail] = useState('admin@materio.com')
   return (

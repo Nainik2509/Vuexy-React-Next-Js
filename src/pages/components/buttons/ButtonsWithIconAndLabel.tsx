@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Button from '@mui/material/Button'
 
@@ -8,7 +5,7 @@ import Button from '@mui/material/Button'
 import Send from 'mdi-material-ui/Send'
 import DeleteOutline from 'mdi-material-ui/DeleteOutline'
 
-const ButtonsWithIconAndLabel: FC = () => {
+const ButtonsWithIconAndLabel = () => {
   return (
     <div className='demo-space-x'>
       <Button variant='contained' endIcon={<Send />}>

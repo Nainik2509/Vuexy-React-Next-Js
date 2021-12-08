@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, Fragment } from 'react'
+import { Fragment } from 'react'
 
 // ** MUI Imports
 import Chip from '@mui/material/Chip'
@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography'
 // ** Icons Imports
 import DeleteOutline from 'mdi-material-ui/DeleteOutline'
 
-const ChipsOnDelete: FC = () => {
+const ChipsOnDelete = () => {
   const handleDelete = () => {
     console.info('You clicked the delete icon.')
   }

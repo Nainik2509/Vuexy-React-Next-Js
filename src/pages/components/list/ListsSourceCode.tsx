@@ -29,7 +29,7 @@ const ListItemSelected: FC = () => {
       <ListItem disablePadding>
         <ListItemButton selected={selectedIndex === 0} onClick={() => handleListItemClick(0)}>
           <ListItemAvatar>
-            <Avatar src='/assets/images/avatars/2.png' alt='Caroline Black' />
+            <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
           </ListItemAvatar>
           <ListItemText primary='Caroline Black' />
           <ListItemSecondaryAction>
@@ -42,7 +42,7 @@ const ListItemSelected: FC = () => {
       <ListItem disablePadding>
         <ListItemButton selected={selectedIndex === 1} onClick={() => handleListItemClick(1)}>
           <ListItemAvatar>
-            <Avatar src='/assets/images/avatars/1.png' alt='Alfred Copeland' />
+            <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' />
           </ListItemAvatar>
           <ListItemText primary='Alfred Copeland' />
           <ListItemSecondaryAction>
@@ -55,7 +55,7 @@ const ListItemSelected: FC = () => {
       <ListItem disablePadding>
         <ListItemButton selected={selectedIndex === 2} onClick={() => handleListItemClick(2)}>
           <ListItemAvatar>
-            <Avatar src='/assets/images/avatars/8.png' alt='Celia Schneider' />
+            <Avatar src='/images/avatars/8.png' alt='Celia Schneider' />
           </ListItemAvatar>
           <ListItemText primary='Celia Schneider' />
           <ListItemSecondaryAction>
@@ -186,7 +186,7 @@ const ListSecondary: FC = () => {
     <List>
       <ListItem>
         <ListItemAvatar>
-          <Avatar src='/assets/images/avatars/2.png' alt='Caroline Black' />
+          <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
         </ListItemAvatar>
         <ListItemText primary='Caroline Black' secondary='Sweet dessert brownie.' />
         <ListItemSecondaryAction>
@@ -197,7 +197,7 @@ const ListSecondary: FC = () => {
       </ListItem>
       <ListItem>
         <ListItemAvatar>
-          <Avatar src='/assets/images/avatars/1.png' alt='Alfred Copeland' />
+          <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' />
         </ListItemAvatar>
         <ListItemText primary='Alfred Copeland' secondary='Pudding pie tiramisu.' />
         <ListItemSecondaryAction>
@@ -208,7 +208,7 @@ const ListSecondary: FC = () => {
       </ListItem>
       <ListItem>
         <ListItemAvatar>
-          <Avatar src='/assets/images/avatars/8.png' alt='Celia Schneider' />
+          <Avatar src='/images/avatars/8.png' alt='Celia Schneider' />
         </ListItemAvatar>
         <ListItemText primary='Celia Schneider' secondary='Muffin pie chupa chups.' />
         <ListItemSecondaryAction>
@@ -329,7 +329,7 @@ const ListWithCheckbox: FC = () => {
       <ListItem disablePadding>
         <ListItemButton onClick={handleToggle(0)}>
           <ListItemAvatar>
-            <Avatar src='/assets/images/avatars/2.png' alt='Caroline Black' />
+            <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
           </ListItemAvatar>
           <ListItemText id='checkbox-list-label-0' primary='Caroline Black' />
           <ListItemSecondaryAction>
@@ -347,7 +347,7 @@ const ListWithCheckbox: FC = () => {
       <ListItem disablePadding>
         <ListItemButton onClick={handleToggle(1)}>
           <ListItemAvatar>
-            <Avatar src='/assets/images/avatars/1.png' alt='Alfred Copeland' />
+            <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' />
           </ListItemAvatar>
           <ListItemText id='checkbox-list-label-1' primary='Alfred Copeland' />
           <ListItemSecondaryAction>
@@ -365,7 +365,7 @@ const ListWithCheckbox: FC = () => {
       <ListItem disablePadding>
         <ListItemButton onClick={handleToggle(2)}>
           <ListItemAvatar>
-            <Avatar src='/assets/images/avatars/8.png' alt='Celia Schneider' />
+            <Avatar src='/images/avatars/8.png' alt='Celia Schneider' />
           </ListItemAvatar>
           <ListItemText id='checkbox-list-label-2' primary='Celia Schneider' />
           <ListItemSecondaryAction>

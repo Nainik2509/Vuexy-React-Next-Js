@@ -1,12 +1,9 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Divider from '@mui/material/Divider'
 import Typography from '@mui/material/Typography'
 
-const OutsideDivider: FC = () => {
+const OutsideDivider = () => {
   return (
     <div>
       <Typography>Simple Divider</Typography>

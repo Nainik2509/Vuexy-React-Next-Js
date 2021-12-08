@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, MouseEvent, useState } from 'react'
+import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import Menu from '@mui/material/Menu'
@@ -28,7 +28,7 @@ const options = [
 
 const ITEM_HEIGHT = 48
 
-const MenuMaxHeight: FC = () => {
+const MenuMaxHeight = () => {
   // ** State
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 

@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, MouseEvent, useState } from 'react'
+import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -17,7 +17,7 @@ const initialState = {
   mouseY: null
 }
 
-const MenuContext: FC = () => {
+const MenuContext = () => {
   // ** State
   const [state, setState] = useState<State>(initialState)
 

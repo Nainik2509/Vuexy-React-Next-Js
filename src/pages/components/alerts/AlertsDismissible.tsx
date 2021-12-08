@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Fade from '@mui/material/Fade'
@@ -13,7 +13,7 @@ import IconButton from '@mui/material/IconButton'
 // ** Icons Imports
 import Close from 'mdi-material-ui/Close'
 
-const AlertsDismissible: FC = () => {
+const AlertsDismissible = () => {
   // ** States
   const [open1, setOpen1] = useState<boolean>(true)
   const [open2, setOpen2] = useState<boolean>(true)

@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Avatar from '@mui/material/Avatar'
 import { styled } from '@mui/material/styles'
@@ -15,26 +12,26 @@ const Wrapper = styled('div')(({ theme }) => ({
   }
 }))
 
-const BadgesLight: FC = () => {
+const BadgesLight = () => {
   return (
     <Wrapper className='demo-space-x'>
       <CustomBadge skin='light' color='primary' badgeContent={4}>
-        <Avatar src='/assets/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
       </CustomBadge>
       <CustomBadge skin='light' color='secondary' badgeContent={4}>
-        <Avatar src='/assets/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
       </CustomBadge>
       <CustomBadge skin='light' color='success' badgeContent={4}>
-        <Avatar src='/assets/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
       </CustomBadge>
       <CustomBadge skin='light' color='error' badgeContent={4}>
-        <Avatar src='/assets/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
       </CustomBadge>
       <CustomBadge skin='light' color='warning' badgeContent={4}>
-        <Avatar src='/assets/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
       </CustomBadge>
       <CustomBadge skin='light' color='info' badgeContent={4}>
-        <Avatar src='/assets/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
       </CustomBadge>
     </Wrapper>
   )

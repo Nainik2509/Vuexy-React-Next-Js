@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
@@ -32,7 +29,7 @@ const GridContainer = styled(Grid)<GridProps>(({ theme }) => ({
   }
 }))
 
-const Pagination: FC = () => {
+const Pagination = () => {
   return (
     <GridContainer container spacing={6} className='match-height'>
       <Grid item xs={12} md={6}>

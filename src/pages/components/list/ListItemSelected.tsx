@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import List from '@mui/material/List'
@@ -14,7 +14,7 @@ import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
 // ** Icons Imports
 import MessageTextOutline from 'mdi-material-ui/MessageTextOutline'
 
-const ListItemSelected: FC = () => {
+const ListItemSelected = () => {
   // ** State
   const [selectedIndex, setSelectedIndex] = useState<number>(1)
 
@@ -27,7 +27,7 @@ const ListItemSelected: FC = () => {
       <ListItem disablePadding>
         <ListItemButton selected={selectedIndex === 0} onClick={() => handleListItemClick(0)}>
           <ListItemAvatar>
-            <Avatar src='/assets/images/avatars/2.png' alt='Caroline Black' />
+            <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
           </ListItemAvatar>
           <ListItemText primary='Caroline Black' />
           <ListItemSecondaryAction>
@@ -40,7 +40,7 @@ const ListItemSelected: FC = () => {
       <ListItem disablePadding>
         <ListItemButton selected={selectedIndex === 1} onClick={() => handleListItemClick(1)}>
           <ListItemAvatar>
-            <Avatar src='/assets/images/avatars/1.png' alt='Alfred Copeland' />
+            <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' />
           </ListItemAvatar>
           <ListItemText primary='Alfred Copeland' />
           <ListItemSecondaryAction>
@@ -53,7 +53,7 @@ const ListItemSelected: FC = () => {
       <ListItem disablePadding>
         <ListItemButton selected={selectedIndex === 2} onClick={() => handleListItemClick(2)}>
           <ListItemAvatar>
-            <Avatar src='/assets/images/avatars/8.png' alt='Celia Schneider' />
+            <Avatar src='/images/avatars/8.png' alt='Celia Schneider' />
           </ListItemAvatar>
           <ListItemText primary='Celia Schneider' />
           <ListItemSecondaryAction>

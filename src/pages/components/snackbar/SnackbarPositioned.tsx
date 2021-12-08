@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, Fragment, useState } from 'react'
+import { Fragment, useState } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -9,7 +9,7 @@ interface State extends SnackbarOrigin {
   open: boolean
 }
 
-const SnackbarPositioned: FC = () => {
+const SnackbarPositioned = () => {
   // ** States
   const [state, setState] = useState<State>({
     open: false,

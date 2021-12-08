@@ -1,11 +1,11 @@
 // ** React Imports
-import { ChangeEvent, FC, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 // ** MUI Imports
 import Typography from '@mui/material/Typography'
 import Pagination from '@mui/material/Pagination'
 
-const PaginationControlled: FC = () => {
+const PaginationControlled = () => {
   // ** State
   const [page, setPage] = useState<number>(1)
 

@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Zoom from '@mui/material/Zoom'
 import Button from '@mui/material/Button'
@@ -18,7 +15,7 @@ const LightTooltip = styled((props: TooltipProps) => (
   }
 }))
 
-const OutsideTooltip: FC = () => {
+const OutsideTooltip = () => {
   return (
     <div>
       <Tooltip title='Tooltip' sx={{ marginRight: 4 }}>

@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, Fragment } from 'react'
+import { Fragment } from 'react'
 
 // ** MUI Imports
 import Fab from '@mui/material/Fab'
@@ -8,7 +8,7 @@ import Fab from '@mui/material/Fab'
 import Plus from 'mdi-material-ui/Plus'
 import NavigationOutline from 'mdi-material-ui/NavigationOutline'
 
-const ButtonsFabSizes: FC = () => {
+const ButtonsFabSizes = () => {
   return (
     <Fragment>
       <div className='demo-space-x'>

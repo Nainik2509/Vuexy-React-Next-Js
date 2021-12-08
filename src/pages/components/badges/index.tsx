@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
@@ -20,7 +17,7 @@ import BadgesVisibility from './BadgesVisibility'
 // ** Source code imports
 import * as source from './BadgeSourceCode'
 
-const Pagination: FC = () => {
+const Pagination = () => {
   return (
     <Grid container spacing={6} className='match-height'>
       <Grid item xs={12} md={6}>

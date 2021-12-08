@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, Fragment } from 'react'
+import { Fragment } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -8,7 +8,7 @@ import IconButton from '@mui/material/IconButton'
 // ** Icons Imports
 import CameraIris from 'mdi-material-ui/CameraIris'
 
-const ButtonsSizes: FC = () => {
+const ButtonsSizes = () => {
   return (
     <Fragment>
       <div className='demo-space-x'>

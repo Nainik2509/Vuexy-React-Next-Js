@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import { brown } from '@mui/material/colors'
 import { styled } from '@mui/material/styles'
@@ -52,7 +49,7 @@ const BootstrapButton = styled(Button)({
   }
 })
 
-const ButtonsCustomized: FC = () => {
+const ButtonsCustomized = () => {
   return (
     <div className='demo-space-x'>
       <CustomButton variant='contained'>Custom Color</CustomButton>

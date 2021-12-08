@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Card from '@mui/material/Card'
 import Zoom from '@mui/material/Zoom'
@@ -20,7 +17,7 @@ const LightTooltip = styled((props: TooltipProps) => (
   }
 }))
 
-const CardTooltip: FC = () => {
+const CardTooltip = () => {
   return (
     <Card>
       <CardContent>

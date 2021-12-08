@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, MouseEvent, useState } from 'react'
+import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import Menu from '@mui/material/Menu'
@@ -7,7 +7,7 @@ import Fade from '@mui/material/Fade'
 import Button from '@mui/material/Button'
 import MenuItem from '@mui/material/MenuItem'
 
-const MenuTransition: FC = () => {
+const MenuTransition = () => {
   // ** State
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 

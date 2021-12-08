@@ -1,10 +1,10 @@
 // ** React Imports
-import { FC, Fragment } from 'react'
+import { Fragment } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
 
-const ButtonsColors: FC = () => {
+const ButtonsColors = () => {
   return (
     <Fragment>
       <div className='demo-space-x'>

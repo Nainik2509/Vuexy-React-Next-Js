@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -13,7 +13,7 @@ import DialogActions from '@mui/material/DialogActions'
 // ** Icons Imports
 import Close from 'mdi-material-ui/Close'
 
-const DialogFullScreen: FC = () => {
+const DialogFullScreen = () => {
   // ** State
   const [open, setOpen] = useState<boolean>(false)
 

@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import AppBar from '@mui/material/AppBar'
 import Button from '@mui/material/Button'
@@ -11,7 +8,7 @@ import Typography from '@mui/material/Typography'
 // ** Icons Imports
 import Menu from 'mdi-material-ui/Menu'
 
-const OutsideAppBar: FC = () => {
+const OutsideAppBar = () => {
   return (
     <AppBar position='static'>
       <Toolbar>

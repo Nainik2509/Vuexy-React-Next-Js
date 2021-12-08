@@ -1,10 +1,7 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Button from '@mui/material/Button'
 
-const ButtonsContained: FC = () => {
+const ButtonsContained = () => {
   return (
     <div className='demo-space-x'>
       <Button variant='contained'>Primary</Button>

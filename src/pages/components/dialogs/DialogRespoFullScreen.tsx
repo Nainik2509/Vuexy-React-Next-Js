@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, Fragment, useState } from 'react'
+import { Fragment, useState } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -11,7 +11,7 @@ import DialogActions from '@mui/material/DialogActions'
 import DialogContent from '@mui/material/DialogContent'
 import DialogContentText from '@mui/material/DialogContentText'
 
-const DialogRespoFullScreen: FC = () => {
+const DialogRespoFullScreen = () => {
   // ** State
   const [open, setOpen] = useState<boolean>(false)
 

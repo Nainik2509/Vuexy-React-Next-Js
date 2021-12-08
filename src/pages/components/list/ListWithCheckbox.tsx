@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import List from '@mui/material/List'
@@ -11,7 +11,7 @@ import ListItemButton from '@mui/material/ListItemButton'
 import ListItemAvatar from '@mui/material/ListItemAvatar'
 import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
 
-const ListWithCheckbox: FC = () => {
+const ListWithCheckbox = () => {
   // ** State
   const [checked, setChecked] = useState<number[]>([0])
 
@@ -33,7 +33,7 @@ const ListWithCheckbox: FC = () => {
       <ListItem disablePadding>
         <ListItemButton onClick={handleToggle(0)}>
           <ListItemAvatar>
-            <Avatar src='/assets/images/avatars/2.png' alt='Caroline Black' />
+            <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
           </ListItemAvatar>
           <ListItemText id='checkbox-list-label-0' primary='Caroline Black' />
           <ListItemSecondaryAction>
@@ -51,7 +51,7 @@ const ListWithCheckbox: FC = () => {
       <ListItem disablePadding>
         <ListItemButton onClick={handleToggle(1)}>
           <ListItemAvatar>
-            <Avatar src='/assets/images/avatars/1.png' alt='Alfred Copeland' />
+            <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' />
           </ListItemAvatar>
           <ListItemText id='checkbox-list-label-1' primary='Alfred Copeland' />
           <ListItemSecondaryAction>
@@ -69,7 +69,7 @@ const ListWithCheckbox: FC = () => {
       <ListItem disablePadding>
         <ListItemButton onClick={handleToggle(2)}>
           <ListItemAvatar>
-            <Avatar src='/assets/images/avatars/8.png' alt='Celia Schneider' />
+            <Avatar src='/images/avatars/8.png' alt='Celia Schneider' />
           </ListItemAvatar>
           <ListItemText id='checkbox-list-label-2' primary='Celia Schneider' />
           <ListItemSecondaryAction>

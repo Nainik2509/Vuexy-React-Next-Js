@@ -1,12 +1,12 @@
 // ** React Imports
-import { FC, MouseEvent } from 'react'
+import { MouseEvent } from 'react'
 
 // ** MUI Imports
 import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 import Breadcrumbs from '@mui/material/Breadcrumbs'
 
-const OutsideBreadcrumb: FC = () => {
+const OutsideBreadcrumb = () => {
   const handleClick = (event: MouseEvent<any>) => {
     event.preventDefault()
     console.info('You clicked a breadcrumb.')

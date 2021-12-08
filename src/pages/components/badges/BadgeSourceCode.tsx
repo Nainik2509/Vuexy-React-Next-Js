@@ -11,16 +11,16 @@ const BadgesAlignment: FC = () => {
   return (
     <div className='demo-space-x'>
       <Badge color='primary' variant='dot'>
-        <Avatar src='/assets/images/avatars/4.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/4.png' alt='User Avatar' />
       </Badge>
       <Badge color='primary' variant='dot' anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
-        <Avatar src='/assets/images/avatars/4.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/4.png' alt='User Avatar' />
       </Badge>
       <Badge color='primary' variant='dot' anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}>
-        <Avatar src='/assets/images/avatars/4.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/4.png' alt='User Avatar' />
       </Badge>
       <Badge color='primary' variant='dot' anchorOrigin={{ vertical: 'top', horizontal: 'left' }}>
-        <Avatar src='/assets/images/avatars/4.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/4.png' alt='User Avatar' />
       </Badge>
     </div>
   )
@@ -44,10 +44,10 @@ const BadgesDot: FC = () => {
   return (
     <div className='demo-space-x'>
       <Badge variant='dot' color='primary'>
-        <Avatar src='/assets/images/avatars/2.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/2.png' alt='User Avatar' />
       </Badge>
       <Badge variant='dot' color='secondary'>
-        <Avatar src='/assets/images/avatars/2.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/2.png' alt='User Avatar' />
       </Badge>
       <Badge variant='dot' color='error'>
         <Typography>Typography</Typography>
@@ -83,22 +83,22 @@ const BadgesLight: FC = () => {
   return (
     <Wrapper className='demo-space-x'>
       <CustomBadge skin='light' color='primary' badgeContent={4}>
-        <Avatar src='/assets/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
       </CustomBadge>
       <CustomBadge skin='light' color='secondary' badgeContent={4}>
-        <Avatar src='/assets/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
       </CustomBadge>
       <CustomBadge skin='light' color='success' badgeContent={4}>
-        <Avatar src='/assets/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
       </CustomBadge>
       <CustomBadge skin='light' color='error' badgeContent={4}>
-        <Avatar src='/assets/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
       </CustomBadge>
       <CustomBadge skin='light' color='warning' badgeContent={4}>
-        <Avatar src='/assets/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
       </CustomBadge>
       <CustomBadge skin='light' color='info' badgeContent={4}>
-        <Avatar src='/assets/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
       </CustomBadge>
     </Wrapper>
   )
@@ -129,16 +129,16 @@ const BadgesOverlap: FC = () => {
   return (
     <Wrapper className='demo-space-x'>
       <Badge color='primary' badgeContent=' '>
-        <Avatar src='/assets/images/avatars/7.png' alt='User Avatar' variant='square' />
+        <Avatar src='/images/avatars/7.png' alt='User Avatar' variant='square' />
       </Badge>
       <Badge color='primary' variant='dot'>
-        <Avatar src='/assets/images/avatars/7.png' alt='User Avatar' variant='square' />
+        <Avatar src='/images/avatars/7.png' alt='User Avatar' variant='square' />
       </Badge>
       <Badge color='primary' overlap='circular' badgeContent=' '>
-        <Avatar src='/assets/images/avatars/7.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/7.png' alt='User Avatar' />
       </Badge>
       <Badge color='primary' overlap='circular' variant='dot'>
-        <Avatar src='/assets/images/avatars/7.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/7.png' alt='User Avatar' />
       </Badge>
     </Wrapper>
   )
@@ -188,7 +188,7 @@ const BadgesVisibility: FC = () => {
     <Fragment>
       <Wrapper className='demo-space-x'>
         <Badge badgeContent={count} color='primary'>
-          <Avatar src='/assets/images/avatars/8.png' alt='User Avatar' />
+          <Avatar src='/images/avatars/8.png' alt='User Avatar' />
         </Badge>
         <ButtonGroup size='small'>
           <Button aria-label='reduce' onClick={() => setCount(Math.max(count - 1, 0))}>
@@ -202,7 +202,7 @@ const BadgesVisibility: FC = () => {
 
       <Wrapper className='demo-space-x'>
         <Badge variant='dot' color='primary' invisible={invisible}>
-          <Avatar src='/assets/images/avatars/8.png' alt='User Avatar' />
+          <Avatar src='/images/avatars/8.png' alt='User Avatar' />
         </Badge>
         <FormControlLabel
           label='Show Badge'
@@ -238,13 +238,13 @@ const BadgesMaxValue: FC = () => {
   return (
     <Wrapper className='demo-space-x'>
       <Badge badgeContent={99} color='primary'>
-        <Avatar src='/assets/images/avatars/5.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/5.png' alt='User Avatar' />
       </Badge>
       <Badge badgeContent={100} color='primary'>
-        <Avatar src='/assets/images/avatars/5.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/5.png' alt='User Avatar' />
       </Badge>
       <Badge badgeContent={1000} max={999} color='primary'>
-        <Avatar src='/assets/images/avatars/5.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/5.png' alt='User Avatar' />
       </Badge>
     </Wrapper>
   )
@@ -267,22 +267,22 @@ const BadgesBasic: FC = () => {
   return (
     <div className='demo-space-x'>
       <Badge badgeContent={4} color='primary'>
-        <Avatar src='/assets/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
       </Badge>
       <Badge badgeContent={4} color='secondary'>
-        <Avatar src='/assets/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
       </Badge>
       <Badge badgeContent={4} color='success'>
-        <Avatar src='/assets/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
       </Badge>
       <Badge badgeContent={4} color='error'>
-        <Avatar src='/assets/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
       </Badge>
       <Badge badgeContent={4} color='warning'>
-        <Avatar src='/assets/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
       </Badge>
       <Badge badgeContent={4} color='info'>
-        <Avatar src='/assets/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
       </Badge>
     </div>
   )

@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
@@ -18,7 +15,7 @@ const Paper = styled(MuiPaper)<PaperProps>(({ theme }) => ({
   marginRight: theme.spacing(4)
 }))
 
-const PaperSimple: FC = () => {
+const PaperSimple = () => {
   return (
     <div>
       <Typography variant='h6'>Simple Paper</Typography>

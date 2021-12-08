@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -14,6 +14,9 @@ const DialogsScroll: FC = () => {
   const [open, setOpen] = useState<boolean>(false)
   const [scroll, setScroll] = useState<DialogProps['scroll']>('paper')
 
+  // ** Ref
+  const descriptionElementRef = useRef<HTMLElement>(null)
+
   const handleClickOpen = (scrollType: DialogProps['scroll']) => () => {
     setOpen(true)
     setScroll(scrollType)
@@ -21,7 +24,6 @@ const DialogsScroll: FC = () => {
 
   const handleClose = () => setOpen(false)
 
-  const descriptionElementRef = useRef<HTMLElement>(null)
   useEffect(() => {
     if (open) {
       const { current: descriptionElement } = descriptionElementRef

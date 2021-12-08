@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, Fragment, MouseEvent, SyntheticEvent, useState } from 'react'
+import { Fragment, MouseEvent, SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -9,7 +9,7 @@ import IconButton from '@mui/material/IconButton'
 // ** Icons Imports
 import Close from 'mdi-material-ui/Close'
 
-const SnackbarSimple: FC = () => {
+const SnackbarSimple = () => {
   // ** State
   const [open, setOpen] = useState<boolean>(false)
 

@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
@@ -9,7 +6,7 @@ import Typography from '@mui/material/Typography'
 import CardSnippet from '@core/components/card-snippet'
 
 // ** Hooks Imports
-import useDirection from 'hooks/layout/useDirection'
+import { useSettings } from '@core/hooks/useSettings'
 
 // ** Demo Components Imports
 import TreeViewBasic from './TreeViewBasic'
@@ -23,9 +20,9 @@ import TreeViewMultiSelection from './TreeViewMultiSelection'
 // ** Source code imports
 import * as source from './TreeViewSourceCode'
 
-const TreeView: FC = () => {
+const TreeView = () => {
   // ** Hooks
-  const { direction } = useDirection()
+  const { settings } = useSettings()
 
   return (
     <Grid container spacing={6} className='match-height'>
@@ -35,7 +32,7 @@ const TreeView: FC = () => {
             Use <code>TreeView</code> & <code>TreeItem</code> components and <code>defaultCollapseIcon</code> &{' '}
             <code>defaultExpandIcon</code> props with <code>TreeView</code> component for a simple tree view.
           </Typography>
-          <TreeViewBasic direction={direction} />
+          <TreeViewBasic direction={settings.direction} />
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
@@ -43,7 +40,7 @@ const TreeView: FC = () => {
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>multiSelect</code> prop for multiple selection in a tree view.
           </Typography>
-          <TreeViewMultiSelection direction={direction} />
+          <TreeViewMultiSelection direction={settings.direction} />
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
@@ -52,7 +49,7 @@ const TreeView: FC = () => {
             Manage <code>expanded</code>, <code>selected</code>, <code>onNodeToggle</code> and <code>onNodeSelect</code>{' '}
             props with the help of states.
           </Typography>
-          <TreeViewControlled direction={direction} />
+          <TreeViewControlled direction={settings.direction} />
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
@@ -61,7 +58,7 @@ const TreeView: FC = () => {
             <code>TreeView</code> and <code>TreeItem</code> components can also use APIs. Use an object and recursion
             can be used to handle it.
           </Typography>
-          <TreeViewRichObject direction={direction} />
+          <TreeViewRichObject direction={settings.direction} />
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
@@ -74,7 +71,7 @@ const TreeView: FC = () => {
       </Grid>
       {/* <Grid item xs={12} md={6}>
         <CardSnippet title='Gmail Clone' code={source.TreeViewGmailCloneCode}>
-          <TreeViewGmailClone direction={direction} />
+          <TreeViewGmailClone direction={settings.direction} />
         </CardSnippet>
       </Grid> */}
     </Grid>

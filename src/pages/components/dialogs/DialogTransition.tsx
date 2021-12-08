@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, forwardRef, Fragment, ReactElement, Ref, useState } from 'react'
+import { forwardRef, Fragment, ReactElement, Ref, useState } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -17,7 +17,7 @@ const Transition = forwardRef(function Transition(
   return <Slide direction='up' ref={ref} {...props} />
 })
 
-const DialogTransition: FC = () => {
+const DialogTransition = () => {
   // ** State
   const [open, setOpen] = useState<boolean>(false)
 

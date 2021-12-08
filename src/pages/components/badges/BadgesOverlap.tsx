@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Badge from '@mui/material/Badge'
 import Avatar from '@mui/material/Avatar'
@@ -13,20 +10,20 @@ const Wrapper = styled('div')(({ theme }) => ({
   }
 }))
 
-const BadgesOverlap: FC = () => {
+const BadgesOverlap = () => {
   return (
     <Wrapper className='demo-space-x'>
       <Badge color='primary' badgeContent=' '>
-        <Avatar src='/assets/images/avatars/7.png' alt='User Avatar' variant='square' />
+        <Avatar src='/images/avatars/7.png' alt='User Avatar' variant='square' />
       </Badge>
       <Badge color='primary' variant='dot'>
-        <Avatar src='/assets/images/avatars/7.png' alt='User Avatar' variant='square' />
+        <Avatar src='/images/avatars/7.png' alt='User Avatar' variant='square' />
       </Badge>
       <Badge color='primary' overlap='circular' badgeContent=' '>
-        <Avatar src='/assets/images/avatars/7.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/7.png' alt='User Avatar' />
       </Badge>
       <Badge color='primary' overlap='circular' variant='dot'>
-        <Avatar src='/assets/images/avatars/7.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/7.png' alt='User Avatar' />
       </Badge>
     </Wrapper>
   )

@@ -47,9 +47,9 @@ import Avatar from '@mui/material/Avatar'
 const AvatarsImage: FC = () => {
   return (
     <Box className='demo-space-x' sx={{ display: 'flex' }}>
-      <Avatar src='/assets/images/avatars/1.png' alt='Victor Anderson' />
-      <Avatar src='/assets/images/avatars/8.png' alt='Alice Cobb' />
-      <Avatar src='/assets/images/avatars/7.png' alt='Jeffery Warner' />
+      <Avatar src='/images/avatars/1.png' alt='Victor Anderson' />
+      <Avatar src='/images/avatars/8.png' alt='Alice Cobb' />
+      <Avatar src='/images/avatars/7.png' alt='Jeffery Warner' />
     </Box>
   )
 }
@@ -70,9 +70,9 @@ import Avatar from '@mui/material/Avatar'
 const AvatarsSizes: FC = () => {
   return (
     <Box className='demo-space-x' sx={{ display: 'flex', alignItems: 'center' }}>
-      <Avatar alt='Victor Anderson' sx={{ width: 25, height: 25 }} src='/assets/images/avatars/3.png' />
-      <Avatar alt='Victor Anderson' src='/assets/images/avatars/3.png' />
-      <Avatar alt='Victor Anderson' sx={{ width: 56, height: 56 }} src='/assets/images/avatars/3.png' />
+      <Avatar alt='Victor Anderson' sx={{ width: 25, height: 25 }} src='/images/avatars/3.png' />
+      <Avatar alt='Victor Anderson' src='/images/avatars/3.png' />
+      <Avatar alt='Victor Anderson' sx={{ width: 56, height: 56 }} src='/images/avatars/3.png' />
     </Box>
   )
 }
@@ -94,25 +94,25 @@ const AvatarsGrouped: FC = () => {
   return (
     <div className='demo-space-y'>
       <AvatarGroup max={4}>
-        <Avatar src='/assets/images/avatars/4.png' alt='Olivia Sparks' />
-        <Avatar src='/assets/images/avatars/5.png' alt='Howard Lloyd' />
-        <Avatar src='/assets/images/avatars/6.png' alt='Hallie Richards' />
-        <Avatar src='/assets/images/avatars/8.png' alt='Alice Cobb' />
-        <Avatar src='/assets/images/avatars/7.png' alt='Jeffery Warner' />
+        <Avatar src='/images/avatars/4.png' alt='Olivia Sparks' />
+        <Avatar src='/images/avatars/5.png' alt='Howard Lloyd' />
+        <Avatar src='/images/avatars/6.png' alt='Hallie Richards' />
+        <Avatar src='/images/avatars/8.png' alt='Alice Cobb' />
+        <Avatar src='/images/avatars/7.png' alt='Jeffery Warner' />
       </AvatarGroup>
       <AvatarGroup max={4} sx={{ justifyContent: 'center' }}>
-        <Avatar src='/assets/images/avatars/4.png' alt='Olivia Sparks' />
-        <Avatar src='/assets/images/avatars/5.png' alt='Howard Lloyd' />
-        <Avatar src='/assets/images/avatars/6.png' alt='Hallie Richards' />
-        <Avatar src='/assets/images/avatars/8.png' alt='Alice Cobb' />
-        <Avatar src='/assets/images/avatars/7.png' alt='Jeffery Warner' />
+        <Avatar src='/images/avatars/4.png' alt='Olivia Sparks' />
+        <Avatar src='/images/avatars/5.png' alt='Howard Lloyd' />
+        <Avatar src='/images/avatars/6.png' alt='Hallie Richards' />
+        <Avatar src='/images/avatars/8.png' alt='Alice Cobb' />
+        <Avatar src='/images/avatars/7.png' alt='Jeffery Warner' />
       </AvatarGroup>
       <AvatarGroup max={4} sx={{ justifyContent: 'flex-start' }}>
-        <Avatar src='/assets/images/avatars/4.png' alt='Olivia Sparks' />
-        <Avatar src='/assets/images/avatars/5.png' alt='Howard Lloyd' />
-        <Avatar src='/assets/images/avatars/6.png' alt='Hallie Richards' />
-        <Avatar src='/assets/images/avatars/8.png' alt='Alice Cobb' />
-        <Avatar src='/assets/images/avatars/7.png' alt='Jeffery Warner' />
+        <Avatar src='/images/avatars/4.png' alt='Olivia Sparks' />
+        <Avatar src='/images/avatars/5.png' alt='Howard Lloyd' />
+        <Avatar src='/images/avatars/6.png' alt='Hallie Richards' />
+        <Avatar src='/images/avatars/8.png' alt='Alice Cobb' />
+        <Avatar src='/images/avatars/7.png' alt='Jeffery Warner' />
       </AvatarGroup>
     </div>
   )
@@ -223,7 +223,7 @@ const AvatarsWithBadge: FC = () => {
           horizontal: 'right'
         }}
       >
-        <Avatar alt='Marie Garza' src='/assets/images/avatars/2.png' />
+        <Avatar alt='Marie Garza' src='/images/avatars/2.png' />
       </Badge>
       <Badge
         overlap='circular'
@@ -234,12 +234,12 @@ const AvatarsWithBadge: FC = () => {
         badgeContent={
           <Avatar
             alt='Marie Garza'
-            src='/assets/images/avatars/2.png'
+            src='/images/avatars/2.png'
             sx={{ width: 22, height: 22, border: theme => 2px solid {theme.palette.background.paper} }}
           />
         }
       >
-        <Avatar alt='Olivia Sparks' src='/assets/images/avatars/4.png' />
+        <Avatar alt='Olivia Sparks' src='/images/avatars/4.png' />
       </Badge>
     </Box>
   )

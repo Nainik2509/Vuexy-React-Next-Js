@@ -1,10 +1,7 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Alert from '@mui/material/Alert'
 
-const AlertsOutlined: FC = () => {
+const AlertsOutlined = () => {
   return (
     <div className='demo-space-y'>
       <Alert variant='outlined' severity='error'>

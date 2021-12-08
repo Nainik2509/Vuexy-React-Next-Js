@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Card from '@mui/material/Card'
 import AppBar from '@mui/material/AppBar'
@@ -13,7 +10,7 @@ import CardContent from '@mui/material/CardContent'
 // ** Icons Imports
 import Menu from 'mdi-material-ui/Menu'
 
-const CardAppBar: FC = () => {
+const CardAppBar = () => {
   return (
     <Card>
       <CardContent>

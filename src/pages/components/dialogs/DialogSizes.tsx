@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, Fragment, useState, ChangeEvent } from 'react'
+import { Fragment, useState, ChangeEvent } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -24,7 +24,7 @@ const Form = styled('form')({
   flexDirection: 'column'
 })
 
-const DialogSizes: FC = () => {
+const DialogSizes = () => {
   // ** States
   const [open, setOpen] = useState<boolean>(false)
   const [fullWidth, setFullWidth] = useState<boolean>(true)

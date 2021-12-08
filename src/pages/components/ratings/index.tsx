@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
@@ -18,7 +15,7 @@ import RatingsHoverFeedback from './RatingsHoverFeedback'
 // ** Source code imports
 import * as source from './RatingsSourceCode'
 
-const Ratings: FC = () => {
+const Ratings = () => {
   return (
     <Grid container spacing={6} className='match-height'>
       <Grid item xs={12} md={6}>

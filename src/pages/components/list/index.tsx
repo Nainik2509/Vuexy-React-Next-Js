@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
@@ -21,7 +18,7 @@ import ListStickySubheader from './ListStickySubheader'
 // ** Source code imports
 import * as source from './ListsSourceCode'
 
-const Lists: FC = () => {
+const Lists = () => {
   return (
     <Grid className='match-height' container spacing={6}>
       <Grid item xs={12} md={6}>

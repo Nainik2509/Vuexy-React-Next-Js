@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, KeyboardEvent, useEffect, useRef, useState, MouseEvent, TouchEvent } from 'react'
+import { KeyboardEvent, useEffect, useRef, useState, MouseEvent, TouchEvent } from 'react'
 
 // ** MUI Imports
 import Grow from '@mui/material/Grow'
@@ -10,9 +10,11 @@ import MenuList from '@mui/material/MenuList'
 import MenuItem from '@mui/material/MenuItem'
 import ClickAwayListener from '@mui/material/ClickAwayListener'
 
-const MenuComposition: FC = () => {
+const MenuComposition = () => {
   // ** States
   const [open, setOpen] = useState<boolean>(false)
+
+  // ** Ref
   const anchorRef = useRef<HTMLButtonElement | null>(null)
 
   const handleToggle = () => {

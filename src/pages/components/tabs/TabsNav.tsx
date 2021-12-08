@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, MouseEvent, SyntheticEvent, useState } from 'react'
+import { MouseEvent, SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Tab from '@mui/material/Tab'
@@ -8,7 +8,7 @@ import TabPanel from '@mui/lab/TabPanel'
 import TabContext from '@mui/lab/TabContext'
 import Typography from '@mui/material/Typography'
 
-const TabsNav: FC = () => {
+const TabsNav = () => {
   // ** State
   const [value, setValue] = useState<string>('1')
 

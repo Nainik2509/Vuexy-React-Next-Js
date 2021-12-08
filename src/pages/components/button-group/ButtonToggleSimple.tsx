@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, MouseEvent, useState } from 'react'
+import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import ToggleButton from '@mui/material/ToggleButton'
@@ -11,7 +11,7 @@ import FormatAlignRight from 'mdi-material-ui/FormatAlignRight'
 import FormatAlignCenter from 'mdi-material-ui/FormatAlignCenter'
 import FormatAlignJustify from 'mdi-material-ui/FormatAlignJustify'
 
-const ButtonToggleSimple: FC = () => {
+const ButtonToggleSimple = () => {
   // ** State
   const [alignment, setAlignment] = useState<string | null>('left')
 

@@ -1,13 +1,10 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import IconButton from '@mui/material/IconButton'
 
 // ** Icons Imports
 import CameraIris from 'mdi-material-ui/CameraIris'
 
-const ButtonsIcons: FC = () => {
+const ButtonsIcons = () => {
   return (
     <div className='demo-space-x'>
       <IconButton aria-label='capture screenshot'>

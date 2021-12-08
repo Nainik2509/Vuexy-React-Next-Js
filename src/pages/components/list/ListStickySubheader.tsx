@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import List from '@mui/material/List'
@@ -8,7 +5,7 @@ import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
 import ListSubheader from '@mui/material/ListSubheader'
 
-const ListWithSwitch: FC = () => {
+const ListWithSwitch = () => {
   return (
     <List subheader={<li />} sx={{ maxHeight: 300, overflow: 'auto', position: 'relative' }}>
       {[0, 1, 2, 3, 4].map(sectionId => (

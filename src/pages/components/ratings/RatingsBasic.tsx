@@ -1,12 +1,12 @@
 // ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Rating from '@mui/material/Rating'
 import Typography from '@mui/material/Typography'
 
-const RatingsBasic: FC = () => {
+const RatingsBasic = () => {
   // ** State
   const [value, setValue] = useState<number | null>(2)
 

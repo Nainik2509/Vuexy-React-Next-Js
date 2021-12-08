@@ -1,5 +1,5 @@
 // ** React Imports
-import { ChangeEvent, FC, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 // ** MUI Imports
 import TreeView from '@mui/lab/TreeView'
@@ -14,7 +14,7 @@ interface Props {
   direction: 'ltr' | 'rtl'
 }
 
-const TreeViewControlled: FC<Props> = ({ direction }) => {
+const TreeViewControlled = ({ direction }: Props) => {
   // ** States
   const [expanded, setExpanded] = useState<string[]>([])
   const [selected, setSelected] = useState<string[]>([])

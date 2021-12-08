@@ -1,11 +1,11 @@
 // ** React Imports
-import { FC, MouseEvent, useState } from 'react'
+import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 
-const ButtonToggleColors: FC = () => {
+const ButtonToggleColors = () => {
   // ** State
   const [alignment, setAlignment] = useState<string | null>('web')
 

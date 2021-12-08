@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, MouseEvent, useState } from 'react'
+import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import ToggleButton from '@mui/material/ToggleButton'
@@ -11,7 +11,7 @@ import FormatItalic from 'mdi-material-ui/FormatItalic'
 import FormatUnderline from 'mdi-material-ui/FormatUnderline'
 import FormatColorFill from 'mdi-material-ui/FormatColorFill'
 
-const ButtonToggleMultiple: FC = () => {
+const ButtonToggleMultiple = () => {
   // ** State
   const [formats, setFormats] = useState<string[]>(() => ['bold', 'italic'])
 

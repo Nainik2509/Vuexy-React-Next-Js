@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Badge from '@mui/material/Badge'
@@ -16,7 +13,7 @@ const BadgeContentSpan = styled('span')(({ theme }) => ({
   boxShadow: `0 0 0 2px ${theme.palette.background.paper}`
 }))
 
-const AvatarsWithBadge: FC = () => {
+const AvatarsWithBadge = () => {
   return (
     <Box className='demo-space-x' sx={{ display: 'flex' }}>
       <Badge
@@ -27,7 +24,7 @@ const AvatarsWithBadge: FC = () => {
           horizontal: 'right'
         }}
       >
-        <Avatar alt='Marie Garza' src='/assets/images/avatars/2.png' />
+        <Avatar alt='Marie Garza' src='/images/avatars/2.png' />
       </Badge>
       <Badge
         overlap='circular'
@@ -38,12 +35,12 @@ const AvatarsWithBadge: FC = () => {
         badgeContent={
           <Avatar
             alt='Marie Garza'
-            src='/assets/images/avatars/2.png'
+            src='/images/avatars/2.png'
             sx={{ width: 22, height: 22, border: theme => `2px solid ${theme.palette.background.paper}` }}
           />
         }
       >
-        <Avatar alt='Olivia Sparks' src='/assets/images/avatars/4.png' />
+        <Avatar alt='Olivia Sparks' src='/images/avatars/4.png' />
       </Badge>
     </Box>
   )

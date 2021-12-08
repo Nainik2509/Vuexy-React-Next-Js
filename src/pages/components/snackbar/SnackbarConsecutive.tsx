@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, Fragment, MouseEvent, SyntheticEvent, useEffect, useState } from 'react'
+import { Fragment, MouseEvent, SyntheticEvent, useEffect, useState } from 'react'
 
 // ** MUI Imports
 import Alert from '@mui/material/Alert'
@@ -17,7 +17,7 @@ export interface State {
   messageInfo?: SnackbarMessage
 }
 
-const SnackbarConsecutive: FC = () => {
+const SnackbarConsecutive = () => {
   // ** States
   const [open, setOpen] = useState<boolean>(false)
   const [snackPack, setSnackPack] = useState<SnackbarMessage[]>([])

@@ -1,12 +1,12 @@
 // ** React Imports
-import { FC, MouseEvent, useState } from 'react'
+import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
 import Popover from '@mui/material/Popover'
 import Typography from '@mui/material/Typography'
 
-const OutsidePopover: FC = () => {
+const OutsidePopover = () => {
   // ** State
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null)
 

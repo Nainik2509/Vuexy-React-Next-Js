@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 
@@ -11,7 +8,7 @@ import ContentSaveOutline from 'mdi-material-ui/ContentSaveOutline'
 // ** Custom Components Imports
 import CustomAvatar from '@core/components/mui/avatar'
 
-const AvatarsVariants: FC = () => {
+const AvatarsVariants = () => {
   return (
     <Box className='demo-space-x' sx={{ display: 'flex' }}>
       <CustomAvatar variant='square'>

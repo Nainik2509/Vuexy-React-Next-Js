@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, SyntheticEvent, useState } from 'react'
+import { SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Tab from '@mui/material/Tab'
@@ -15,7 +15,7 @@ import ThumbUpOutline from 'mdi-material-ui/ThumbUpOutline'
 import ThumbDownOutline from 'mdi-material-ui/ThumbDownOutline'
 import AccountCircleOutline from 'mdi-material-ui/AccountCircleOutline'
 
-const TabsForcedScroll: FC = () => {
+const TabsForcedScroll = () => {
   // ** State
   const [value, setValue] = useState<string>('1')
 

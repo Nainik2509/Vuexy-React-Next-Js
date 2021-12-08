@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, Fragment, useState } from 'react'
+import { Fragment, useState } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -9,7 +9,7 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogActions from '@mui/material/DialogActions'
 import DialogContentText from '@mui/material/DialogContentText'
 
-const DialogConfirmation: FC = () => {
+const DialogConfirmation = () => {
   // ** State
   const [open, setOpen] = useState<boolean>(false)
 

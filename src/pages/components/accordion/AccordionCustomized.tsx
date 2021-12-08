@@ -1,5 +1,5 @@
 // ** React Imports
-import { ChangeEvent, FC, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 // ** MUI Imports
 import { styled } from '@mui/material/styles'
@@ -61,7 +61,7 @@ const AccordionDetails = styled(MuiAccordionDetails)<AccordionDetailsProps>(({ t
   padding: `${theme.spacing(4)} !important`
 }))
 
-const AccordionCustomized: FC = () => {
+const AccordionCustomized = () => {
   // ** State
   const [expanded, setExpanded] = useState<string | false>('panel1')
 

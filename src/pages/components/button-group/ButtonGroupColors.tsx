@@ -1,11 +1,8 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Button from '@mui/material/Button'
 import ButtonGroup from '@mui/material/ButtonGroup'
 
-const ButtonGroupColor: FC = () => {
+const ButtonGroupColor = () => {
   return (
     <div className='demo-space-x'>
       <ButtonGroup variant='outlined' color='secondary'>

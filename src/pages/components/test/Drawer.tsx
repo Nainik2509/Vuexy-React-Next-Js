@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, KeyboardEvent, MouseEvent, useState } from 'react'
+import { KeyboardEvent, MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -18,7 +18,7 @@ import DeleteOutline from 'mdi-material-ui/DeleteOutline'
 import InboxArrowDown from 'mdi-material-ui/InboxArrowDown'
 import InformationOutline from 'mdi-material-ui/InformationOutline'
 
-const DrawerComponent: FC = () => {
+const DrawerComponent = () => {
   // ** State
   const [open, setOpen] = useState<boolean>(false)
 

@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, Fragment, useState } from 'react'
+import { Fragment, useState } from 'react'
 
 // ** MUI Imports
 import List from '@mui/material/List'
@@ -19,7 +19,7 @@ import EmailOutline from 'mdi-material-ui/EmailOutline'
 import ClockOutline from 'mdi-material-ui/ClockOutline'
 import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
 
-const ListNested: FC = () => {
+const ListNested = () => {
   // ** State
   const [open, setOpen] = useState<boolean>(true)
 

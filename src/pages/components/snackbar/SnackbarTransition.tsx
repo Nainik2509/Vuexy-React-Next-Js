@@ -1,5 +1,5 @@
 // ** React Imports
-import { ComponentType, FC, Fragment, ReactElement, useState } from 'react'
+import { ComponentType, Fragment, ReactElement, useState } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -16,7 +16,7 @@ const SlideTransition = (props: SlideProps) => {
   return <Slide {...props} direction='up' />
 }
 
-const SnackbarTransition: FC = () => {
+const SnackbarTransition = () => {
   // ** State
   const [state, setState] = useState<{
     open: boolean

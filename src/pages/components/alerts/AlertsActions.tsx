@@ -1,11 +1,8 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Alert from '@mui/material/Alert'
 import Button from '@mui/material/Button'
 
-const AlertsBasic: FC = () => {
+const AlertsBasic = () => {
   return (
     <div className='demo-space-y'>
       <Alert

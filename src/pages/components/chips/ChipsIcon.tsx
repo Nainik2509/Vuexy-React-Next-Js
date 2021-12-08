@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Chip from '@mui/material/Chip'
 
@@ -8,7 +5,7 @@ import Chip from '@mui/material/Chip'
 import Battery10 from 'mdi-material-ui/Battery10'
 import BatteryCharging30 from 'mdi-material-ui/BatteryCharging30'
 
-const ChipsIcon: FC = () => {
+const ChipsIcon = () => {
   return (
     <div className='demo-space-x'>
       <Chip label='Battery Low' icon={<Battery10 fontSize='small' />} />

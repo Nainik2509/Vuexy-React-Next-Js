@@ -1,11 +1,8 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Button from '@mui/material/Button'
 import ButtonGroup from '@mui/material/ButtonGroup'
 
-const ButtonGroupBasic: FC = () => {
+const ButtonGroupBasic = () => {
   return (
     <div className='demo-space-y'>
       <div>

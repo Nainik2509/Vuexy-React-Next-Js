@@ -17,11 +17,11 @@ interface ChipData {
 const ChipsArray: FC = () => {
   // ** State
   const [chipData, setChipData] = useState<ChipData[]>([
-    { key: 0, avatar: '/assets/images/avatars/1.png', avatarAlt: 'User Avatar', label: 'Norman Santiago' },
-    { key: 1, avatar: '/assets/images/avatars/2.png', avatarAlt: 'User Avatar', label: 'Cecelia Tucker' },
+    { key: 0, avatar: '/images/avatars/1.png', avatarAlt: 'User Avatar', label: 'Norman Santiago' },
+    { key: 1, avatar: '/images/avatars/2.png', avatarAlt: 'User Avatar', label: 'Cecelia Tucker' },
     { key: 2, label: 'Max Burns' },
-    { key: 3, avatar: '/assets/images/avatars/4.png', avatarAlt: 'User Avatar', label: 'Ellen Nguyen' },
-    { key: 4, avatar: '/assets/images/avatars/5.png', avatarAlt: 'User Avatar', label: 'Edward Francis' }
+    { key: 3, avatar: '/images/avatars/4.png', avatarAlt: 'User Avatar', label: 'Ellen Nguyen' },
+    { key: 4, avatar: '/images/avatars/5.png', avatarAlt: 'User Avatar', label: 'Edward Francis' }
   ])
 
   const handleDelete = (chipToDelete: ChipData) => () => {
@@ -125,7 +125,7 @@ const ChipsAvatar: FC = () => {
   return (
     <div className='demo-space-x'>
       <Chip label='Default' avatar={<Avatar />} />
-      <Chip label='Howard Paul' avatar={<Avatar src='/assets/images/avatars/7.png' alt='User Avatar' />} />
+      <Chip label='Howard Paul' avatar={<Avatar src='/images/avatars/7.png' alt='User Avatar' />} />
       <Chip label='Maurice Bell' avatar={<Avatar>M</Avatar>} />
       <Chip
         label='Archived'

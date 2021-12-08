@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import TreeItem from '@mui/lab/TreeItem'
 import { alpha, styled } from '@mui/material/styles'
@@ -24,7 +21,7 @@ const TreeView = styled(MuiTreeView)<TreeViewProps>(({ theme }) => ({
   }
 }))
 
-const TreeViewCustomized: FC = () => {
+const TreeViewCustomized = () => {
   return (
     <TreeView
       defaultExpanded={['1']}

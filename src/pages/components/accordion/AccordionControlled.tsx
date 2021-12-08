@@ -1,5 +1,5 @@
 // ** React Imports
-import { ChangeEvent, FC, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 // ** MUI Imports
 import Accordion from '@mui/material/Accordion'
@@ -10,7 +10,7 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 // ** Icons Imports
 import ChevronDown from 'mdi-material-ui/ChevronDown'
 
-const AccordionControlled: FC = () => {
+const AccordionControlled = () => {
   // ** State
   const [expanded, setExpanded] = useState<string | false>(false)
 

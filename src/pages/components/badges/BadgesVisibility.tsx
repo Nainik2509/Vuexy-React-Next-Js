@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useState, Fragment } from 'react'
+import { useState, Fragment } from 'react'
 
 // ** MUI Imports
 import Badge from '@mui/material/Badge'
@@ -23,7 +23,7 @@ const Wrapper = styled('div')(({ theme }) => ({
   }
 }))
 
-const BadgesVisibility: FC = () => {
+const BadgesVisibility = () => {
   // ** States
   const [count, setCount] = useState<number>(1)
   const [invisible, setInvisible] = useState<boolean>(false)
@@ -36,7 +36,7 @@ const BadgesVisibility: FC = () => {
     <Fragment>
       <Wrapper className='demo-space-x'>
         <Badge badgeContent={count} color='primary'>
-          <Avatar src='/assets/images/avatars/8.png' alt='User Avatar' />
+          <Avatar src='/images/avatars/8.png' alt='User Avatar' />
         </Badge>
         <ButtonGroup size='small'>
           <Button aria-label='reduce' onClick={() => setCount(Math.max(count - 1, 0))}>
@@ -50,7 +50,7 @@ const BadgesVisibility: FC = () => {
 
       <Wrapper className='demo-space-x'>
         <Badge variant='dot' color='primary' invisible={invisible}>
-          <Avatar src='/assets/images/avatars/8.png' alt='User Avatar' />
+          <Avatar src='/images/avatars/8.png' alt='User Avatar' />
         </Badge>
         <FormControlLabel
           label='Show Badge'

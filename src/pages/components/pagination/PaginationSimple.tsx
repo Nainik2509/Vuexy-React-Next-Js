@@ -1,10 +1,7 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Pagination from '@mui/material/Pagination'
 
-const PaginationSimple: FC = () => {
+const PaginationSimple = () => {
   return (
     <div className='demo-space-y'>
       <Pagination count={10} />

@@ -1,10 +1,7 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** Custom Components Imports
 import CustomChip from '@core/components/mui/chip'
 
-const ChipsCustomized: FC = () => {
+const ChipsCustomized = () => {
   return (
     <div className='demo-space-x'>
       <CustomChip label='Primary' skin='light' color='primary' />

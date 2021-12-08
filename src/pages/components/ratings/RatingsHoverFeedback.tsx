@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -19,7 +19,7 @@ const labels: { [index: string]: string } = {
   5: 'Excellent+'
 }
 
-const RatingsHoverFeedback: FC = () => {
+const RatingsHoverFeedback = () => {
   // ** States
   const [hover, setHover] = useState<number>(-1)
   const [value, setValue] = useState<number | null>(2)

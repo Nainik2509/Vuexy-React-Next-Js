@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, MouseEvent, useState } from 'react'
+import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import ToggleButton from '@mui/material/ToggleButton'
@@ -10,7 +10,7 @@ import ViewList from 'mdi-material-ui/ViewList'
 import ViewQuilt from 'mdi-material-ui/ViewQuilt'
 import ViewModule from 'mdi-material-ui/ViewModule'
 
-const ButtonToggleVertical: FC = () => {
+const ButtonToggleVertical = () => {
   // ** State
   const [view, setView] = useState<string | null>('left')
 

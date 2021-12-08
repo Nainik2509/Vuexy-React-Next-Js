@@ -1,11 +1,8 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Rating from '@mui/material/Rating'
 
-const RatingsSizes: FC = () => {
+const RatingsSizes = () => {
   return (
     <Box className='demo-space-y' sx={{ display: 'flex', flexDirection: 'column' }}>
       <Rating defaultValue={2} name='size-small' size='small' />

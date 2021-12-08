@@ -1,5 +1,5 @@
-// ** React Import
-import { FC } from 'react'
+// ** Next Import
+import Image from 'next/image'
 
 // ** MUI Import
 import Box from '@mui/material/Box'
@@ -33,11 +33,11 @@ const Timeline = styled(MuiTimeline)<TimelineProps>({
 })
 
 // Styled component for the image of a shoe
-const ImgShoe = styled('img')(({ theme }) => ({
+const ImgShoe = styled(Image)(({ theme }) => ({
   borderRadius: theme.shape.borderRadius
 }))
 
-const TimelineLeft: FC = () => {
+const TimelineLeft = () => {
   return (
     <Timeline>
       <TimelineItem>
@@ -59,7 +59,7 @@ const TimelineLeft: FC = () => {
           </Typography>
           <Typography variant='caption'>6:30 AM</Typography>
           <Box sx={{ mt: 2, display: 'flex', alignItems: 'center' }}>
-            <img src='/assets/images/icons/file-icons/pdf.png' alt='invoice.pdf' width='28' />
+            <Image src='/images/icons/file-icons/pdf.png' alt='invoice.pdf' width='28' />
             <Typography variant='subtitle2' sx={{ ml: 2, fontWeight: 600 }}>
               bookingCard.pdf
             </Typography>
@@ -85,7 +85,7 @@ const TimelineLeft: FC = () => {
           <Divider sx={{ my: 3 }} />
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Box sx={{ display: 'flex' }}>
-              <Avatar src='/assets/images/avatars/2.png' sx={{ width: '2rem', height: '2rem', marginRight: 2 }} />
+              <Avatar src='/images/avatars/2.png' sx={{ width: '2rem', height: '2rem', marginRight: 2 }} />
               <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                 <Typography variant='body2' sx={{ fontWeight: 600 }}>
                   Rebecca Godman
@@ -112,7 +112,7 @@ const TimelineLeft: FC = () => {
         </TimelineSeparator>
         <TimelineContent>
           <Box sx={{ mb: 3, display: 'flex', flexDirection: { sm: 'row', xs: 'column' } }}>
-            <ImgShoe width='85' height='85' alt='Shoe img' src='/assets/images/misc/shoe.jpeg' />
+            <ImgShoe width='85' height='85' alt='Shoe img' src='/images/misc/shoe.jpeg' />
             <Box sx={{ ml: { sm: 3, xs: 0 } }}>
               <Box
                 sx={{ mb: 2, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}
@@ -180,7 +180,7 @@ const TimelineLeft: FC = () => {
             Weekly review of freshly prepared design for our new application.
           </Typography>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Avatar src='/assets/images/avatars/1.png' sx={{ width: '2rem', height: '2rem', marginRight: 2 }} />
+            <Avatar src='/images/avatars/1.png' sx={{ width: '2rem', height: '2rem', marginRight: 2 }} />
             <Typography variant='subtitle2' sx={{ fontWeight: 600 }}>
               John Doe (Client)
             </Typography>

@@ -1,11 +1,11 @@
 // ** React Imports
-import { FC, Fragment } from 'react'
+import { Fragment } from 'react'
 
 // ** MUI Imports
 import Chip from '@mui/material/Chip'
 import Typography from '@mui/material/Typography'
 
-const ChipsColors: FC = () => {
+const ChipsColors = () => {
   return (
     <Fragment>
       <Typography sx={{ fontWeight: 500 }}>Filled Chips</Typography>

@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useRef, useState, Fragment, MouseEvent } from 'react'
+import { useRef, useState, Fragment, MouseEvent } from 'react'
 
 // ** MUI Imports
 import Grow from '@mui/material/Grow'
@@ -16,11 +16,13 @@ import MenuDown from 'mdi-material-ui/MenuDown'
 
 const options = ['Create a merge commit', 'Squash and merge', 'Rebase and merge']
 
-const ButtonGroupSplit: FC = () => {
+const ButtonGroupSplit = () => {
   // ** States
   const [open, setOpen] = useState<boolean>(false)
-  const anchorRef = useRef<HTMLDivElement | null>(null)
   const [selectedIndex, setSelectedIndex] = useState<number>(1)
+
+  // ** Ref
+  const anchorRef = useRef<HTMLDivElement | null>(null)
 
   const handleClick = () => {
     console.info(`You clicked '${options[selectedIndex]}'`)

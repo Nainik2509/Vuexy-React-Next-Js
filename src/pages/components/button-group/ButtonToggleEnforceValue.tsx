@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, MouseEvent, useState } from 'react'
+import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
@@ -16,7 +16,7 @@ import FormatAlignRight from 'mdi-material-ui/FormatAlignRight'
 import FormatAlignCenter from 'mdi-material-ui/FormatAlignCenter'
 import FormatAlignJustify from 'mdi-material-ui/FormatAlignJustify'
 
-const ButtonToggleEnforceValue: FC = () => {
+const ButtonToggleEnforceValue = () => {
   // ** States
   const [formats, setFormats] = useState<string[]>(() => ['phone'])
   const [alignment, setAlignment] = useState<string | null>('left')

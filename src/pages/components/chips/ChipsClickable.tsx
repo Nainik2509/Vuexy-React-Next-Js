@@ -1,10 +1,7 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Chip from '@mui/material/Chip'
 
-const ChipsClickable: FC = () => {
+const ChipsClickable = () => {
   const handleClick = () => {
     console.info('You clicked the Chip.')
   }

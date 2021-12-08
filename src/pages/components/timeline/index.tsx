@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
 
@@ -15,7 +12,7 @@ import TimelineOutlined from './TimelineOutlined'
 // ** Source code imports
 import * as source from './TimelineSourceCode'
 
-const TreeView: FC = () => {
+const TreeView = () => {
   return (
     <Grid container spacing={6} className='match-height'>
       <Grid item xs={12} md={6}>
