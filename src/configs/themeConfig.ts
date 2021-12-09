@@ -24,6 +24,7 @@ type ThemeConfig = {
   footer: Footer
   layout: Layout
   mode: PaletteMode
+  navHidden: boolean
   direction: Direction
   appBarHeight: number
   templateName: string
@@ -49,6 +50,7 @@ const themeConfig: ThemeConfig = {
   direction: 'ltr' /* ltr | rtl */,
   disableRipple: false /* true | false */,
   navCollapsed: false /* true | false */,
+  navHidden: false /* true | false */,
   layout: 'vertical' /* vertical | horizontal */,
   verticalNavToggleType: 'accordion' /* accordion | collapse, */,
   menuTextTruncate: true /* true | false */,

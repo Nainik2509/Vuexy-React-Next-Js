@@ -5,7 +5,7 @@ import { ThemeOptions } from '@mui/material'
 import corePalette from '@core/theme/palette'
 
 // ** Type Imports
-import { Settings } from '@core/context/settingsContext';
+import { Settings } from '@core/context/settingsContext'
 
 const UserThemeOptions = (settings: Settings): ThemeOptions => {
   // ** To use mode (light/dark), skin(default/bordered/semi-dark), direction(ltr/rtl) for conditional styles, uncomment below line
@@ -15,7 +15,7 @@ const UserThemeOptions = (settings: Settings): ThemeOptions => {
   const palette = corePalette(mode)
 
   return {
-    breakpoints: {
+    /* breakpoints: {
       values: {
         xs: 0,
         sm: 600,
@@ -266,7 +266,8 @@ const UserThemeOptions = (settings: Settings): ThemeOptions => {
       button: {
         fontWeight: 600
       },
-      fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+      fontFamily:
+        '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
       body1: {
         fontSize: '1rem',
         fontWeight: 400,
@@ -333,8 +334,8 @@ const UserThemeOptions = (settings: Settings): ThemeOptions => {
     zIndex: {
       appBar: 1200,
       drawer: 1100
-    }
+    } */
   }
-};
+}
 
 export default UserThemeOptions

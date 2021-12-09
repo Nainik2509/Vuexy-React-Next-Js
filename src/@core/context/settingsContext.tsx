@@ -20,6 +20,7 @@ export type Settings = {
   layout?: Layout
   language?: string
   mode: PaletteMode
+  navHidden?: boolean // navigation menu
   lastLayout?: Layout
   direction: Direction
   navCollapsed: boolean
@@ -41,6 +42,7 @@ const initialSettings: Settings = {
   layout: themeConfig.layout,
   lastLayout: themeConfig.layout,
   direction: themeConfig.direction,
+  navHidden: themeConfig.navHidden,
   navCollapsed: themeConfig.navCollapsed,
   contentWidth: themeConfig.contentWidth,
   verticalNavToggleType: themeConfig.verticalNavToggleType
@@ -50,6 +52,7 @@ const staticSettings = {
   appBar: initialSettings.appBar,
   footer: initialSettings.footer,
   layout: initialSettings.layout,
+  navHidden: themeConfig.navHidden,
   lastLayout: initialSettings.lastLayout
 }
 
@@ -60,7 +63,7 @@ export const restoreSettings = (): Settings | null => {
     const storedData: string | null = window.localStorage.getItem('settings')
 
     if (storedData) {
-      settings = {...JSON.parse(storedData), ...staticSettings}
+      settings = { ...JSON.parse(storedData), ...staticSettings }
     } else {
       settings = initialSettings
     }
@@ -78,6 +81,7 @@ export const storeSettings = (settings: Settings) => {
   delete initSettings.appBar
   delete initSettings.footer
   delete initSettings.layout
+  delete initSettings.navHidden
   delete initSettings.lastLayout
   window.localStorage.setItem('settings', JSON.stringify(initSettings))
 }
@@ -104,12 +108,12 @@ export const SettingsProvider: FC<Props> = ({ children }: Props) => {
 
     if (restoredSettings) {
       const initSettings: Settings = JSON.parse(window.localStorage.getItem('settings')!)
-      const i18nCondition = (initSettings !== null) && (initSettings.language !== i18n.language)
+      const i18nCondition = initSettings !== null && initSettings.language !== i18n.language
       if (i18nCondition) {
         i18n.changeLanguage(initSettings.language)
       }
 
-      setSettings({...restoredSettings, language: i18nCondition ? initSettings.language : i18n.language})
+      setSettings({ ...restoredSettings, language: i18nCondition ? initSettings.language : i18n.language })
     }
   }, [i18n])
 
@@ -118,11 +122,7 @@ export const SettingsProvider: FC<Props> = ({ children }: Props) => {
     setSettings(updatedSettings)
   }
 
-  return (
-    <SettingsContext.Provider value={{ settings, saveSettings }}>
-      {children}
-    </SettingsContext.Provider>
-  )
+  return <SettingsContext.Provider value={{ settings, saveSettings }}>{children}</SettingsContext.Provider>
 }
 
 export const SettingsConsumer = SettingsContext.Consumer

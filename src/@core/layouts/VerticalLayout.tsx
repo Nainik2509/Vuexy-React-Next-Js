@@ -10,9 +10,10 @@ import { styled, Theme, useTheme } from '@mui/material/styles'
 // ** Theme Config Import
 import themeConfig from 'configs/themeConfig'
 
-// ** Layout Components
+// ** Components
 import FooterContent from './components/footer'
 import AppBar from './components/appBar/vertical'
+import Customizer from '@core/components/customizer'
 import Navigation from './components/navigation/vertical'
 
 // ** Hook Import
@@ -121,6 +122,7 @@ const VerticalLayout: FC<Props> = (props: Props) => {
         )}
       </MainContentWrapper>
 
+      {themeConfig.disableCustomizer || hidden ? null : <Customizer />}
       <Backdrop open={showBackdrop} onClick={() => setShowBackdrop(false)} sx={{ zIndex: 12 }} />
     </VerticalLayoutWrapper>
   )
