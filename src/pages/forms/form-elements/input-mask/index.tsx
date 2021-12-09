@@ -1,0 +1,38 @@
+// ** MUI Imports
+import Grid from '@mui/material/Grid'
+import Link from '@mui/material/Link'
+import Typography from '@mui/material/Typography'
+
+// ** Custom Components Imports
+import PageHeader from '@core/components/page-header'
+import CardSnippet from '@core/components/card-snippet'
+
+// ** Example Import
+import InputMaskExamples from './InputMaskExamples'
+
+// ** Source code imports
+import * as source from './InputMaskSourceCode'
+
+const InputMask = () => {
+  return (
+    <Grid container spacing={6}>
+      <PageHeader
+        title={
+          <Typography variant='h5'>
+            <Link href='https://github.com/nosir/cleave.js' target='_blank'>
+              Cleave.js
+            </Link>
+          </Typography>
+        }
+        subtitle={<Typography variant='body2'>Format input text content when you are typing</Typography>}
+      />
+      <Grid item xs={12}>
+        <CardSnippet title='Input Masks' code={source.InputMaskExamplesCode}>
+          <InputMaskExamples />
+        </CardSnippet>
+      </Grid>
+    </Grid>
+  )
+}
+
+export default InputMask

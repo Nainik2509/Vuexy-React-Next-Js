@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
@@ -23,7 +20,7 @@ import TabsCustomizedVertical from './TabsCustomizedVertical'
 // ** Source code imports
 import * as source from './TabsSourceCode'
 
-const Tabs: FC = () => {
+const Tabs = () => {
   return (
     <Grid container spacing={6} className='match-height'>
       <Grid item xs={12} md={6}>

@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
@@ -19,7 +16,7 @@ import AlertsDismissible from './AlertsDismissible'
 // ** Source code imports
 import * as source from './AlertSourceCode'
 
-const Alerts: FC = () => {
+const Alerts = () => {
   return (
     <Grid container spacing={6} className='match-height'>
       <Grid item xs={12} md={6}>
