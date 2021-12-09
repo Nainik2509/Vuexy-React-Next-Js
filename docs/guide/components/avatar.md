@@ -12,22 +12,21 @@ We have only mentioned the extended props here you can still use the default mui
 
 There are three skins avatar skins `filled` | `light` | `light-static`.
 
+**Please Note:** The difference between `light` & `light-static` can only be seen in `dark-layout`.
+
 Here is the example of how to use the skins mentioned above:
 
 ```jsx
-import BellOutline from 'mdi-material-ui/BellOutline'
+// ** Custom Components Imports
 import CustomAvatar from '@core/components/mui/avatar'
 
-<CustomAvatar skin='filled'>
-  <BellOutline />
-</CustomAvatar>
-<CustomAvatar skin='light'>
-  <BellOutline />
-</CustomAvatar>
-<CustomAvatar skin='light-static'>
-  <BellOutline />
-</CustomAvatar>
+<CustomAvatar skin='filled'>N</CustomAvatar>
+<CustomAvatar skin='light'>OP</CustomAvatar>
+<CustomAvatar skin='light-static'>AB</CustomAvatar>
 ```
+
+<p>Result:</p>
+<img :src="$withBase('/images/components/avatar-skins.png')" alt="avatar-skins" class="rounded">
 
 ## Avatar Colors
 
@@ -38,8 +37,11 @@ Use the mui colors `primary` | `secondary` | `success` | `error` | `warning` | `
 Here is the example of how to use the colors mentioned above:
 
 ```jsx
-import BellOutline from 'mdi-material-ui/BellOutline'
+// ** Custom Components Imports
 import CustomAvatar from '@core/components/mui/avatar'
+
+// ** Icon Import
+import BellOutline from 'mdi-material-ui/BellOutline'
 
 <CustomAvatar color='primary'>
   <BellOutline />
@@ -61,9 +63,12 @@ import CustomAvatar from '@core/components/mui/avatar'
 </CustomAvatar>
 ```
 
+<p>Result:</p>
+<img :src="$withBase('/images/components/avatar-colors.png')" alt="avatar-colors" class="rounded">
+
 ## Props
 
-| Prop  |                             Type                              |        description |
-| ----- | :-----------------------------------------------------------: | -----------------: |
-| skin  |               `filled`, `light`, `light-static`               | Skin of the avatar |
-| color | `primary`, `secondary`, `success`, `error`, `warning`, `info` |       Avatar Color |
+| Prop  |                             Type                              | Required |        description |
+| ----- | :-----------------------------------------------------------: | -------: | -----------------: |
+| skin  |               `filled`, `light`, `light-static`               |       No | Skin of the avatar |
+| color | `primary`, `secondary`, `success`, `error`, `warning`, `info` |       No |       Avatar Color |
