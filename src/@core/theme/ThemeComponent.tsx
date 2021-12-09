@@ -14,6 +14,9 @@ import { Settings } from '@core/context/settingsContext'
 // ** Theme Config
 import themeConfig from 'configs/themeConfig'
 
+// ** RTL Component
+import RTL from '@core/components/rtl'
+
 // ** Theme Override Imports
 import overrides from './overrides'
 import typography from './typography'
@@ -60,9 +63,11 @@ const ThemeComponent: FC<Props> = props => {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <GlobalStyles styles={() => GlobalStyling(theme, settings)} />
-      {children}
+      <RTL direction={settings.direction}>
+        <CssBaseline />
+        <GlobalStyles styles={() => GlobalStyling(theme, settings)} />
+        {children}
+      </RTL>
     </ThemeProvider>
   )
 }

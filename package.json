@@ -51,6 +51,8 @@
     "react-hook-form": "7.3.0",
     "react-i18next": "^11.14.3",
     "react-perfect-scrollbar": "^1.5.8",
+    "stylis": "^4.0.10",
+    "stylis-plugin-rtl": "^2.1.1",
     "vuepress": "^1.8.2",
     "vuepress-theme-book": "0.0.5",
     "yup": "0.32.9"
