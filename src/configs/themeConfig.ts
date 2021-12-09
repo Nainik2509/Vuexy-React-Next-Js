@@ -25,15 +25,18 @@ type ThemeConfig = {
   layout: Layout
   mode: PaletteMode
   direction: Direction
+  appBarHeight: number
   templateName: string
   templateLogo: string
   navCollapsed: boolean
   disableRipple: boolean
+  navigationSize: number
   menuTextTruncate: boolean
   navSubItemIcon: ReactNode
   contentWidth: ContentWidth
   disableCustomizer: boolean
   responsiveFontSizes: boolean
+  collapsedNavigationSize: number
   verticalNavToggleType: VerticalNavToggle
   horizontalMenuToggle: HorizontalMenuToggle
 }
@@ -49,13 +52,16 @@ const themeConfig: ThemeConfig = {
   layout: 'vertical' /* vertical | horizontal */,
   verticalNavToggleType: 'accordion' /* accordion | collapse, */,
   menuTextTruncate: true /* true | false */,
+  navigationSize: 260 /* Number in PX(Pixels) */,
   contentWidth: 'boxed' /* full | boxed */,
   appBar: 'fixed' /* fixed | static | hidden /*! Note: hidden value will only work for Vertical Layout */,
   footer: 'static' /* fixed | static | hidden */,
   disableCustomizer: false /* true | false */,
   responsiveFontSizes: true /* true | false */,
   horizontalMenuToggle: 'hover' /* click | hover */,
-  navSubItemIcon: CircleOutline /* Icon Element */
+  navSubItemIcon: CircleOutline /* Icon Element */,
+  appBarHeight: 64 /* Number in PX(Pixels) [recommended height is 50px or greater] */,
+  collapsedNavigationSize: 69 /* Number in PX(Pixels) */
 }
 
 export default themeConfig

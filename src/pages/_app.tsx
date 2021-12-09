@@ -17,7 +17,8 @@ import 'configs/i18n'
 // ** Fake-DB Import
 import '@fake-db/index'
 
-// ** Theme
+// ** Component Imports
+import Layout from '@core/layouts/Layout'
 import ThemeComponent from '@core/theme/ThemeComponent'
 
 // ** Settings Context
@@ -54,7 +55,7 @@ const clientSideEmotionCache = createEmotionCache()
 const App: FC<AppPropsWithLayout> = props => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
 
-  // const getLayout = Component.getLayout ?? ((page) => page)
+  const getLayout = Component.getLayout ?? (page => <Layout>{page}</Layout>)
 
   return (
     <SessionProvider session={pageProps.session}>
@@ -66,9 +67,7 @@ const App: FC<AppPropsWithLayout> = props => {
         <SettingsProvider>
           <SettingsConsumer>
             {({ settings }) => (
-              <ThemeComponent settings={settings}>
-                <Component {...pageProps} />
-              </ThemeComponent>
+              <ThemeComponent settings={settings}>{getLayout(<Component {...pageProps} />)}</ThemeComponent>
             )}
           </SettingsConsumer>
         </SettingsProvider>

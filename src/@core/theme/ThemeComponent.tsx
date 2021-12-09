@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, ReactChild } from 'react'
+import { FC, ReactNode } from 'react'
 
 // ** MUI Imports
 import { deepmerge } from '@mui/utils'
@@ -27,7 +27,7 @@ import GlobalStyling from './globalStyles'
 
 interface Props {
   settings: Settings
-  children: ReactChild
+  children: ReactNode
 }
 
 const ThemeComponent: FC<Props> = props => {
@@ -41,25 +41,16 @@ const ThemeComponent: FC<Props> = props => {
   let theme = createTheme(coreThemeConfig)
 
   // ** Deep Merge Component overrides of core and user
-  const mergeComponentOverrides = (theme: Theme, settings: Settings) => (
-    deepmerge({
-      ...overrides(theme, settings)
-    }, UserThemeOptions(settings)?.components)
-  )
-  
+  const mergeComponentOverrides = (theme: Theme, settings: Settings) =>
+    deepmerge({ ...overrides(theme, settings) }, UserThemeOptions(settings)?.components)
+
   // ** Deep Merge Typography of core and user
-  const mergeTypography = (theme: Theme) => (
-    deepmerge(typography(theme), UserThemeOptions(settings)?.typography)
-  )
+  const mergeTypography = (theme: Theme) => deepmerge(typography(theme), UserThemeOptions(settings)?.typography)
 
   // ** Continue theme creation and pass merged component overrides to CreateTheme function
   theme = createTheme(theme, {
-    components: {
-      ...mergeComponentOverrides(theme, settings)
-    },
-    typography: {
-      ...mergeTypography(theme)
-    }
+    components: { ...mergeComponentOverrides(theme, settings) },
+    typography: { ...mergeTypography(theme) }
   })
 
   // ** Set responsive font sizes to true

@@ -1,9 +1,9 @@
 // ** NextJs Imports
-import type { NextPage } from 'next'
 import { useRouter } from 'next/router'
 
 // ** MUI Imports
 import Radio from '@mui/material/Radio'
+import Button from '@mui/material/Button'
 import Switch from '@mui/material/Switch'
 import Typography from '@mui/material/Typography'
 import RadioGroup from '@mui/material/RadioGroup'
@@ -21,7 +21,7 @@ import { Settings } from '@core/context/settingsContext'
 // ** Hook Imports
 import { useSettings } from '@core/hooks/useSettings'
 
-const Home: NextPage = () => {
+const Home = () => {
   // ** Hook
   const router = useRouter()
   const { i18n } = useTranslation()
@@ -39,33 +39,17 @@ const Home: NextPage = () => {
       </Typography>
 
       {session ? (
-        <>
-          <button
-            onClick={() => {
-              signOut()
-              // router.push('/auth/login')
-            }}
-          >
-            SignOut
-          </button>
-        </>
+        <Button variant='contained' onClick={() => signOut()}>
+          Sign Out
+        </Button>
       ) : (
         <>
-          <button
-            // onClick={signIn}
-            onClick={() => {
-              router.push('/auth/login')
-            }}
-          >
-            Signin
-          </button>
-          <button
-            onClick={() => {
-              router.push('/auth/register')
-            }}
-          >
-            SignUp
-          </button>
+          <Button sx={{ mr: 2 }} variant='contained' onClick={() => router.replace('/auth/login')}>
+            Sign In
+          </Button>
+          <Button variant='contained' onClick={() => router.replace('/auth/register')}>
+            Sign Up
+          </Button>
         </>
       )}
       <div>
@@ -242,6 +226,25 @@ const Home: NextPage = () => {
           </RadioGroup>
         </div>
       ) : null}
+      <Typography>Typography</Typography>
+      <Typography>Typography</Typography>
+      <Typography>Typography</Typography>
+      <Typography>Typography</Typography>
+      <Typography>Typography</Typography>
+      <Typography>Typography</Typography>
+      <Typography>Typography</Typography>
+      <Typography>Typography</Typography>
+      <Typography>Typography</Typography>
+      <Typography>Typography</Typography>
+      <Typography>Typography</Typography>
+      <Typography>Typography</Typography>
+      <Typography>Typography</Typography>
+      <Typography>Typography</Typography>
+      <Typography>Typography</Typography>
+      <Typography>Typography</Typography>
+      <Typography>Typography</Typography>
+      <Typography>Typography</Typography>
+      <Typography>Typography</Typography>
     </div>
   )
 }
