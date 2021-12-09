@@ -23,8 +23,7 @@ interface Props {
 const AppBar = styled(MuiAppBar)<AppBarProps>({
   alignItems: 'center',
   justifyContent: 'center',
-  minHeight: themeConfig.appBarHeight,
-  transition: 'background-color .25s ease, box-shadow .25s ease'
+  minHeight: themeConfig.appBarHeight
 })
 
 const Toolbar = styled(MuiToolbar)<ToolbarProps>(({ theme }) => ({
@@ -49,6 +48,7 @@ const LayoutAppBar: FC<Props> = (props: Props) => {
     <AppBar
       elevation={3}
       color='default'
+      className='layout-navbar'
       position={position === 'fixed' ? 'sticky' : 'static'}
       sx={{
         ...(position === 'static' && { boxShadow: 'none', backgroundColor: 'transparent' }),

@@ -45,11 +45,7 @@ const ContentWrapper = styled('main')(({ theme }) => ({
 }))
 
 const FooterWrapper = styled('footer')(({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  padding: theme.spacing(4, 6),
-  transition: 'width .25s ease, margin .25s ease'
+  padding: theme.spacing(4, 0)
 }))
 
 const VerticalLayout: FC<Props> = (props: Props) => {
@@ -79,6 +75,7 @@ const VerticalLayout: FC<Props> = (props: Props) => {
         )}
 
         <ContentWrapper
+          className='layout-page-content'
           sx={{
             ...(contentWidth === 'boxed' && {
               mx: 'auto',
@@ -93,6 +90,7 @@ const VerticalLayout: FC<Props> = (props: Props) => {
         {/* Footer Component */}
         {footer === 'hidden' ? null : (
           <FooterWrapper
+            className='layout-footer'
             sx={{
               zIndex: showBackdrop && footer === 'fixed' ? 13 : 10,
               ...(footer === 'fixed' && {
@@ -112,8 +110,9 @@ const VerticalLayout: FC<Props> = (props: Props) => {
           >
             <Box
               sx={{
+                px: 6,
                 width: '100%',
-                ...(contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } })
+                ...(contentWidth === 'boxed' && { mx: 'auto', '@media (min-width:1440px)': { maxWidth: 1440 } })
               }}
             >
               <FooterContent />
