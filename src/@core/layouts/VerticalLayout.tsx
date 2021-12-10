@@ -11,10 +11,10 @@ import { styled, Theme, useTheme } from '@mui/material/styles'
 import themeConfig from 'configs/themeConfig'
 
 // ** Components
-import FooterContent from './components/footer'
-import AppBar from './components/appBar/vertical'
+import AppBar from './components/vertical/appBar'
 import Customizer from '@core/components/customizer'
-import Navigation from './components/navigation/vertical'
+import Navigation from './components/vertical/navigation'
+import FooterContent from './components/shared-components/footer'
 
 // ** Hook Import
 import { useSettings } from '@core/hooks/useSettings'
