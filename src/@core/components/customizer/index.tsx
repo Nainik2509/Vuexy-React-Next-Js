@@ -295,7 +295,7 @@ const Customizer: FC = () => {
             </Typography>
 
             {/* Menu Layout */}
-            <Box sx={{ mb: 5 }}>
+            <Box sx={{ mb: settings.layout === 'horizontal' && settings.appBar === 'hidden' ? {} : 5 }}>
               <Typography>Menu Layout</Typography>
               <RadioGroup
                 row
@@ -325,7 +325,7 @@ const Customizer: FC = () => {
             )}
 
             {/* Menu Collapsed */}
-            {settings.layout === 'horizontal' ? null : (
+            {settings.navHidden || settings.layout === 'horizontal' ? null : (
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 5 }}>
                 <Typography>Menu Collapsed</Typography>
                 <Switch
@@ -337,14 +337,16 @@ const Customizer: FC = () => {
             )}
 
             {/* Menu Hidden */}
-            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <Typography>Menu Hidden</Typography>
-              <Switch
-                name='navHidden'
-                checked={settings.navHidden}
-                onChange={e => handleChange('navHidden', e.target.checked)}
-              />
-            </Box>
+            {settings.layout === 'horizontal' && settings.appBar === 'hidden' ? null : (
+              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <Typography>Menu Hidden</Typography>
+                <Switch
+                  name='navHidden'
+                  checked={settings.navHidden}
+                  onChange={e => handleChange('navHidden', e.target.checked)}
+                />
+              </Box>
+            )}
           </CustomizerSpacing>
 
           <Divider sx={{ m: 0 }} />
