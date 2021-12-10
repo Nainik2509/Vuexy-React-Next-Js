@@ -2,16 +2,40 @@
 import { FC } from 'react'
 
 // ** MUI Imports
-import SwipeableDrawer from '@mui/material/SwipeableDrawer'
+import { styled } from '@mui/material/styles'
+import MuiSwipeableDrawer, { SwipeableDrawerProps } from '@mui/material/SwipeableDrawer'
+
+// ** Type Import
+import { Settings } from '@core/context/settingsContext'
 
 interface Props {
   hidden: boolean
   navWidth: number
+  settings: Settings
   collapsedNavWidth: number
+  saveSettings: (values: Settings) => void
 }
 
+const SwipeableDrawer = styled(MuiSwipeableDrawer)<SwipeableDrawerProps>({
+  overflowX: 'hidden',
+  transition: 'width .25s ease',
+  '& ul': {
+    listStyle: 'none'
+  },
+  '& .MuiListItem-gutters': {
+    paddingLeft: 4,
+    paddingRight: 4
+  },
+  '& .MuiDrawer-paper': {
+    left: 'unset',
+    right: 'unset',
+    overflowX: 'hidden',
+    transition: 'width .25s ease, box-shadow .25s ease'
+  }
+})
+
 const Drawer: FC<Props> = (props: Props) => {
-  const { hidden, navWidth, collapsedNavWidth } = props
+  const { hidden, navWidth, settings, saveSettings, collapsedNavWidth } = props
 
   // Drawer Props for Mobile & Tablet screens
   const MobileDrawerProps: any = {
@@ -45,22 +69,9 @@ const Drawer: FC<Props> = (props: Props) => {
       className='layout-vertical-nav'
       {...(hidden ? { ...MobileDrawerProps } : { ...DesktopDrawerProps })}
       sx={{
-        width: navWidth,
-        overflowX: 'hidden',
-        transition: 'width .25s ease',
-        '& ul': {
-          listStyle: 'none'
-        },
-        '& .MuiListItem-gutters': {
-          paddingLeft: 4,
-          paddingRight: 4
-        },
+        width: settings.navCollapsed ? collapsedNavWidth : navWidth,
         '& .MuiDrawer-paper': {
-          left: 'unset',
-          right: 'unset',
-          width: navWidth,
-          overflowX: 'hidden',
-          transition: 'width .25s ease, box-shadow .25s ease'
+          width: settings.navCollapsed ? collapsedNavWidth : navWidth
         }
       }}
     >

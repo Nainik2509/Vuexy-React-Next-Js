@@ -1,36 +1,62 @@
-// ** React Imports
+// ** React Import
 import { FC } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
-import Link from '@mui/material/Link'
-import Typography from '@mui/material/Typography'
+import { styled } from '@mui/material/styles'
 
-const FooterContent: FC = () => {
+// ** Type Import
+import { Settings } from '@core/context/settingsContext'
+
+// ** Footer Content Component
+import FooterContent from './FooterContent'
+
+interface Props {
+  settings: Settings
+  showBackdrop: boolean
+  saveSettings: (values: Settings) => void
+}
+
+const FooterWrapper = styled('footer')(({ theme }) => ({
+  padding: theme.spacing(4, 0)
+}))
+
+const Footer: FC<Props> = (props: Props) => {
+  // ** Props
+  const { settings, saveSettings, showBackdrop } = props
+
+  if (settings.footer === 'hidden') {
+    return null
+  }
+
   return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
-      <Typography sx={{ mr: 2 }}>
-        {`© ${new Date().getFullYear()}, made with ❤️ by `}
-        <Link target='_blank' href='https://themeselection.com/'>
-          ThemeSelection
-        </Link>
-      </Typography>
-      <Box sx={{ display: 'flex', alignItems: 'center', '& :not(:last-child)': { mr: 4 } }}>
-        <Link target='_blank' href='https://themeselection.com/'>
-          License
-        </Link>
-        <Link target='_blank' href='https://themeselection.com/'>
-          More Themes
-        </Link>
-        <Link target='_blank' href='https://themeselection.com/'>
-          Documentation
-        </Link>
-        <Link target='_blank' href='https://themeselection.com/support/'>
-          Support
-        </Link>
+    <FooterWrapper
+      className='layout-footer'
+      sx={{
+        zIndex: showBackdrop && settings.footer === 'fixed' ? 13 : 10,
+        ...(settings.footer === 'fixed' && {
+          bottom: 0,
+          position: 'sticky',
+          boxShadow: theme => theme.shadows[4],
+          backgroundColor: theme => theme.palette.background.paper
+        }),
+        ...(settings.footer === 'static' && {
+          boxShadow: 'none',
+          backgroundColor: 'transparent'
+        })
+      }}
+    >
+      <Box
+        sx={{
+          px: 6,
+          width: '100%',
+          ...(settings.contentWidth === 'boxed' && { mx: 'auto', '@media (min-width:1440px)': { maxWidth: 1440 } })
+        }}
+      >
+        <FooterContent />
       </Box>
-    </Box>
+    </FooterWrapper>
   )
 }
 
-export default FooterContent
+export default Footer

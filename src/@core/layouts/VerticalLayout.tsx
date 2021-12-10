@@ -4,8 +4,8 @@ import { FC, ReactNode, useState } from 'react'
 // ** MUI Imports
 import Backdrop from '@mui/material/Backdrop'
 import Box, { BoxProps } from '@mui/material/Box'
+import { styled, Theme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
-import { styled, Theme, useTheme } from '@mui/material/styles'
 
 // ** Theme Config Import
 import themeConfig from 'configs/themeConfig'
@@ -14,7 +14,7 @@ import themeConfig from 'configs/themeConfig'
 import AppBar from './components/vertical/appBar'
 import Customizer from '@core/components/customizer'
 import Navigation from './components/vertical/navigation'
-import FooterContent from './components/shared-components/footer'
+import Footer from './components/shared-components/footer'
 
 // ** Hook Import
 import { useSettings } from '@core/hooks/useSettings'
@@ -31,6 +31,7 @@ const VerticalLayoutWrapper = styled('div')({
 const MainContentWrapper = styled(Box)<BoxProps>({
   flexGrow: 1,
   display: 'flex',
+  minHeight: '100vh',
   flexDirection: 'column'
 })
 
@@ -45,10 +46,6 @@ const ContentWrapper = styled('main')(({ theme }) => ({
   }
 }))
 
-const FooterWrapper = styled('footer')(({ theme }) => ({
-  padding: theme.spacing(4, 0)
-}))
-
 const VerticalLayout: FC<Props> = (props: Props) => {
   // ** Props
   const { children } = props
@@ -57,24 +54,29 @@ const VerticalLayout: FC<Props> = (props: Props) => {
   const [showBackdrop, setShowBackdrop] = useState<boolean>(false)
 
   // ** Hooks
-  const theme = useTheme()
-  const { settings } = useSettings()
+  const { settings, saveSettings } = useSettings()
   const hidden = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
 
   // ** Vars
+  const { contentWidth } = settings
   const navWidth = themeConfig.navigationSize
-  const { appBar, footer, contentWidth, navCollapsed } = settings
   const collapsedNavWidth = themeConfig.collapsedNavigationSize
 
   return (
     <VerticalLayoutWrapper className='layout-wrapper'>
-      <Navigation hidden={hidden} navWidth={navWidth} collapsedNavWidth={collapsedNavWidth} />
+      {/* Navigation Menu */}
+      <Navigation
+        hidden={hidden}
+        navWidth={navWidth}
+        settings={settings}
+        saveSettings={saveSettings}
+        collapsedNavWidth={collapsedNavWidth}
+      />
       <MainContentWrapper className='layout-content-wrapper'>
         {/* AppBar Component */}
-        {appBar === 'hidden' ? null : (
-          <AppBar hidden={hidden} position={appBar} contentWidth={contentWidth} setShowBackdrop={setShowBackdrop} />
-        )}
+        <AppBar hidden={hidden} settings={settings} saveSettings={saveSettings} setShowBackdrop={setShowBackdrop} />
 
+        {/* Content */}
         <ContentWrapper
           className='layout-page-content'
           sx={{
@@ -89,40 +91,13 @@ const VerticalLayout: FC<Props> = (props: Props) => {
         </ContentWrapper>
 
         {/* Footer Component */}
-        {footer === 'hidden' ? null : (
-          <FooterWrapper
-            className='layout-footer'
-            sx={{
-              zIndex: showBackdrop && footer === 'fixed' ? 13 : 10,
-              ...(footer === 'fixed' && {
-                bottom: 0,
-                position: 'sticky',
-                boxShadow: theme.shadows[4],
-                backgroundColor: theme.palette.background.paper,
-                [theme.breakpoints.down('lg')]: {
-                  marginLeft: 0
-                }
-              }),
-              ...(footer === 'static' && {
-                boxShadow: 'none',
-                backgroundColor: 'transparent'
-              })
-            }}
-          >
-            <Box
-              sx={{
-                px: 6,
-                width: '100%',
-                ...(contentWidth === 'boxed' && { mx: 'auto', '@media (min-width:1440px)': { maxWidth: 1440 } })
-              }}
-            >
-              <FooterContent />
-            </Box>
-          </FooterWrapper>
-        )}
+        <Footer settings={settings} saveSettings={saveSettings} showBackdrop={showBackdrop} />
       </MainContentWrapper>
 
+      {/* Customizer */}
       {themeConfig.disableCustomizer || hidden ? null : <Customizer />}
+
+      {/* Backdrop */}
       <Backdrop open={showBackdrop} onClick={() => setShowBackdrop(false)} sx={{ zIndex: 12 }} />
     </VerticalLayoutWrapper>
   )
