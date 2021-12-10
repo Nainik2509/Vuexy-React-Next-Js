@@ -15,6 +15,7 @@ const Drawer: FC<Props> = (props: Props) => {
 
   // Drawer Props for Mobile & Tablet screens
   const MobileDrawerProps: any = {
+    open: false,
     variant: 'temporary',
 
     // onOpen: () => setNavVisible(true),
@@ -26,6 +27,7 @@ const Drawer: FC<Props> = (props: Props) => {
 
   // Drawer Props for Desktop screens
   const DesktopDrawerProps = {
+    open: true,
     variant: 'permanent'
 
     // onMouseEnter: () => {
@@ -38,7 +40,6 @@ const Drawer: FC<Props> = (props: Props) => {
 
   return (
     <SwipeableDrawer
-      open={true}
       onOpen={() => null}
       onClose={() => null}
       className='layout-vertical-nav'
