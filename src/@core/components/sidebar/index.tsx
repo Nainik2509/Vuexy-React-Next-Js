@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, Fragment, useEffect } from 'react'
+import { Fragment, useEffect } from 'react'
 
 // ** MUI Imports
 import Backdrop from '@mui/material/Backdrop'
@@ -8,7 +8,7 @@ import Box, { BoxProps } from '@mui/material/Box'
 // ** Types
 import { SidebarType } from './type'
 
-const Sidebar: FC<BoxProps & SidebarType> = (props: BoxProps & SidebarType) => {
+const Sidebar = (props: BoxProps & SidebarType) => {
   // ** Props
   const { sx, show, direction, children, hideBackdrop, onOpen, onClose, backDropClick } = props
 

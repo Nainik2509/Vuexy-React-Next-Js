@@ -1,0 +1,110 @@
+// ** React Imports
+import { useEffect, useState } from 'react'
+
+// ** MUI Imports
+import Box from '@mui/material/Box'
+import { useTheme } from '@mui/material/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
+
+// ** Store & Actions Imports
+import { useDispatch, useSelector } from 'react-redux'
+import { sendMsg, selectChat, fetchUserProfile, fetchChatsContacts } from './store'
+
+// ** Types
+import { RootState } from 'redux/store'
+import { StatusObjType, StatusType } from './types'
+
+// ** Configs Imports
+import themeConfig from 'configs/themeConfig'
+
+// ** Utils Imports
+import { getInitials } from '@core/utils/get-initials'
+import { formatDateToMonthShort } from '@core/utils/format'
+
+// ** Chat App Components Imports
+import SidebarLeft from './SidebarLeft'
+import ChatContent from './ChatContent'
+
+const AppChat = () => {
+  // ** States
+  const [userStatus, setUserStatus] = useState<StatusType>('online')
+  const [leftSidebarOpen, setLeftSidebarOpen] = useState<boolean>(false)
+  const [userProfileLeftOpen, setUserProfileLeftOpen] = useState<boolean>(false)
+  const [userProfileRightOpen, setUserProfileRightOpen] = useState<boolean>(false)
+
+  // ** Hooks
+  const theme = useTheme()
+  const dispatch = useDispatch()
+  const store = useSelector((state: RootState) => state.chat)
+
+  // ** Vars
+  const smAbove = useMediaQuery(theme.breakpoints.up('sm'))
+  const sidebarWidth = smAbove ? 370 : 300
+  const mdAbove = useMediaQuery(theme.breakpoints.up('md'))
+  const statusObj: StatusObjType = {
+    busy: 'error',
+    away: 'warning',
+    online: 'success',
+    offline: 'secondary'
+  }
+
+  useEffect(() => {
+    dispatch(fetchUserProfile())
+    dispatch(fetchChatsContacts())
+  }, [dispatch])
+
+  const handleLeftSidebarToggle = () => setLeftSidebarOpen(!leftSidebarOpen)
+  const handleUserProfileLeftSidebarToggle = () => setUserProfileLeftOpen(!userProfileLeftOpen)
+  const handleUserProfileRightSidebarToggle = () => setUserProfileRightOpen(!userProfileRightOpen)
+
+  const calculateAppHeight = () => {
+    return `(${themeConfig.appBarHeight + 56}px + ${theme.spacing(6)} * 2)`
+  }
+
+  return (
+    <Box
+      className='app-chat'
+      sx={{
+        boxShadow: 6,
+        width: '100%',
+        display: 'flex',
+        borderRadius: 1,
+        overflow: 'hidden',
+        position: 'relative',
+        backgroundColor: 'background.paper',
+        height: `calc(100vh - ${calculateAppHeight()})`
+      }}
+    >
+      <SidebarLeft
+        store={store}
+        mdAbove={mdAbove}
+        dispatch={dispatch}
+        statusObj={statusObj}
+        userStatus={userStatus}
+        selectChat={selectChat}
+        getInitials={getInitials}
+        sidebarWidth={sidebarWidth}
+        setUserStatus={setUserStatus}
+        leftSidebarOpen={leftSidebarOpen}
+        userProfileLeftOpen={userProfileLeftOpen}
+        formatDateToMonthShort={formatDateToMonthShort}
+        handleLeftSidebarToggle={handleLeftSidebarToggle}
+        handleUserProfileLeftSidebarToggle={handleUserProfileLeftSidebarToggle}
+      />
+      <ChatContent
+        store={store}
+        sendMsg={sendMsg}
+        mdAbove={mdAbove}
+        dispatch={dispatch}
+        statusObj={statusObj}
+        getInitials={getInitials}
+        sidebarWidth={sidebarWidth}
+        userProfileRightOpen={userProfileRightOpen}
+        handleLeftSidebarToggle={handleLeftSidebarToggle}
+        handleUserProfileRightSidebarToggle={handleUserProfileRightSidebarToggle}
+      />
+    </Box>
+  )
+}
+
+export default AppChat
