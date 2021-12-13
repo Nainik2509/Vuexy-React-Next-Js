@@ -18,6 +18,7 @@ import AppBarContent from './AppBarContent'
 interface Props {
   hidden: boolean
   settings: Settings
+  toggleNavVisibility: () => void
   setShowBackdrop: (val: boolean) => void
   saveSettings: (values: Settings) => void
 }
@@ -44,7 +45,7 @@ const Toolbar = styled(MuiToolbar)<ToolbarProps>(({ theme }) => ({
 
 const LayoutAppBar: FC<Props> = (props: Props) => {
   // ** Props
-  const { hidden, settings, saveSettings, setShowBackdrop } = props
+  const { hidden, settings, saveSettings, setShowBackdrop, toggleNavVisibility } = props
 
   if (settings.appBar === 'hidden') {
     return null
@@ -62,7 +63,7 @@ const LayoutAppBar: FC<Props> = (props: Props) => {
       }}
     >
       <Toolbar sx={{ ...(settings.contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } }) }}>
-        <AppBarContent hidden={hidden} setShowBackdrop={setShowBackdrop} />
+        <AppBarContent hidden={hidden} setShowBackdrop={setShowBackdrop} toggleNavVisibility={toggleNavVisibility} />
       </Toolbar>
     </AppBar>
   )

@@ -51,6 +51,7 @@ const VerticalLayout: FC<Props> = (props: Props) => {
   const { hidden, children } = props
 
   // ** States
+  const [navVisible, setNavVisible] = useState<boolean>(false)
   const [showBackdrop, setShowBackdrop] = useState<boolean>(false)
 
   // ** Hooks
@@ -61,6 +62,9 @@ const VerticalLayout: FC<Props> = (props: Props) => {
   const navWidth = themeConfig.navigationSize
   const collapsedNavWidth = themeConfig.collapsedNavigationSize
 
+  // ** Toggle Vertical Menu in Tablet and Mobile screens
+  const toggleNavVisibility = () => setNavVisible(!navVisible)
+
   return (
     <VerticalLayoutWrapper className='layout-wrapper'>
       {/* Navigation Menu */}
@@ -69,13 +73,21 @@ const VerticalLayout: FC<Props> = (props: Props) => {
           hidden={hidden}
           navWidth={navWidth}
           settings={settings}
+          navVisible={navVisible}
           saveSettings={saveSettings}
+          setNavVisible={setNavVisible}
           collapsedNavWidth={collapsedNavWidth}
         />
       )}
       <MainContentWrapper className='layout-content-wrapper'>
         {/* AppBar Component */}
-        <AppBar hidden={hidden} settings={settings} saveSettings={saveSettings} setShowBackdrop={setShowBackdrop} />
+        <AppBar
+          hidden={hidden}
+          settings={settings}
+          saveSettings={saveSettings}
+          setShowBackdrop={setShowBackdrop}
+          toggleNavVisibility={toggleNavVisibility}
+        />
 
         {/* Content */}
         <ContentWrapper

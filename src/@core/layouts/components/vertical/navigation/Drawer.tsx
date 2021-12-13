@@ -12,7 +12,9 @@ interface Props {
   hidden: boolean
   navWidth: number
   settings: Settings
+  navVisible: boolean
   collapsedNavWidth: number
+  setNavVisible: (value: boolean) => void
   saveSettings: (values: Settings) => void
 }
 
@@ -35,15 +37,13 @@ const SwipeableDrawer = styled(MuiSwipeableDrawer)<SwipeableDrawerProps>({
 })
 
 const Drawer: FC<Props> = (props: Props) => {
-  const { hidden, navWidth, settings, saveSettings, collapsedNavWidth } = props
+  const { hidden, navWidth, settings, navVisible, saveSettings, setNavVisible, collapsedNavWidth } = props
 
   // Drawer Props for Mobile & Tablet screens
-  const MobileDrawerProps: any = {
-    open: false,
-    variant: 'temporary',
-
-    // onOpen: () => setNavVisible(true),
-    // onClose: () => setNavVisible(false),
+  const MobileDrawerProps = {
+    open: navVisible,
+    onOpen: () => setNavVisible(true),
+    onClose: () => setNavVisible(false),
     ModalProps: {
       keepMounted: true // Better open performance on mobile.
     }
@@ -51,8 +51,7 @@ const Drawer: FC<Props> = (props: Props) => {
 
   // Drawer Props for Desktop screens
   const DesktopDrawerProps = {
-    open: true,
-    variant: 'permanent'
+    open: true
 
     // onMouseEnter: () => {
     //   setNavHover(true)
@@ -67,13 +66,10 @@ const Drawer: FC<Props> = (props: Props) => {
       onOpen={() => null}
       onClose={() => null}
       className='layout-vertical-nav'
+      variant={hidden ? 'temporary' : 'permanent'}
       {...(hidden ? { ...MobileDrawerProps } : { ...DesktopDrawerProps })}
-      sx={{
-        width: settings.navCollapsed ? collapsedNavWidth : navWidth,
-        '& .MuiDrawer-paper': {
-          width: settings.navCollapsed ? collapsedNavWidth : navWidth
-        }
-      }}
+      sx={{ width: settings.navCollapsed ? collapsedNavWidth : navWidth }}
+      PaperProps={{ sx: { width: settings.navCollapsed ? collapsedNavWidth : navWidth } }}
     >
       ABC
     </SwipeableDrawer>

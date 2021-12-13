@@ -11,19 +11,23 @@ interface Props {
   hidden: boolean
   navWidth: number
   settings: Settings
+  navVisible: boolean
   collapsedNavWidth: number
+  setNavVisible: (value: boolean) => void
   saveSettings: (values: Settings) => void
 }
 
 const Navigation: FC<Props> = (props: Props) => {
-  const { hidden, navWidth, settings, saveSettings, collapsedNavWidth } = props
+  const { hidden, navWidth, settings, navVisible, saveSettings, setNavVisible, collapsedNavWidth } = props
 
   return (
     <Drawer
       hidden={hidden}
       navWidth={navWidth}
       settings={settings}
+      navVisible={navVisible}
       saveSettings={saveSettings}
+      setNavVisible={setNavVisible}
       collapsedNavWidth={collapsedNavWidth}
     />
   )
