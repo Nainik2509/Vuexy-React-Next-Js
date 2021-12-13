@@ -1,13 +1,18 @@
 // ** React Imports
-import { useState } from 'react'
+import { useState, Fragment } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
+import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import CardHeader from '@mui/material/CardHeader'
 import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid'
+
+// ** Third Party Components
+import toast from 'react-hot-toast'
+import { Toaster } from 'react-hot-toast'
 
 // ** Custom Components
 import CustomChip from '@core/components/mui/chip'
@@ -23,6 +28,7 @@ import { getInitials } from '@core/utils/get-initials'
 import { rows } from './data'
 
 // ** Styled Wrapper
+import ReactHotToast from '@core/styles/libs/react-hot-toast'
 import DataGridWrapper from '@core/styles/mui/components/datagrid'
 
 interface StatusObj {
@@ -63,7 +69,17 @@ const statusObj: StatusObj = {
 }
 
 // ** Full Name Getter
-const getFullName = (params: GridRenderCellParams) => alert(params.row.full_name)
+const getFullName = (params: GridRenderCellParams) =>
+  toast(
+    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+      {renderClient(params)}
+      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+        <Typography noWrap variant='body2' sx={{ color: 'text.primary', fontWeight: 600 }}>
+          {params.row.full_name}
+        </Typography>
+      </Box>
+    </Box>
+  )
 
 const TableColumns = () => {
   const [hideNameColumn, setHideNameColumn] = useState(false)
@@ -166,21 +182,26 @@ const TableColumns = () => {
   ]
 
   return (
-    <Card>
-      <CardHeader
-        title='Column'
-        action={
-          <Box>
-            <Button size='small' variant='contained' onClick={() => setHideNameColumn(!hideNameColumn)}>
-              Toggle Name Column
-            </Button>
-          </Box>
-        }
-      />
-      <DataGridWrapper sx={{ height: 500 }}>
-        <DataGrid rows={rows} columns={Columns} autoPageSize />
-      </DataGridWrapper>
-    </Card>
+    <Fragment>
+      <Card>
+        <CardHeader
+          title='Column'
+          action={
+            <Box>
+              <Button size='small' variant='contained' onClick={() => setHideNameColumn(!hideNameColumn)}>
+                Toggle Name Column
+              </Button>
+            </Box>
+          }
+        />
+        <DataGridWrapper sx={{ height: 500 }}>
+          <DataGrid rows={rows} columns={Columns} autoPageSize />
+        </DataGridWrapper>
+      </Card>
+      <ReactHotToast>
+        <Toaster toastOptions={{ className: 'react-hot-toast' }} />
+      </ReactHotToast>
+    </Fragment>
   )
 }
 
