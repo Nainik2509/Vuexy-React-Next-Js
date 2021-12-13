@@ -7,13 +7,16 @@ import CardHeader from '@mui/material/CardHeader'
 // ** Data Import
 import { rows, editableCols } from './data'
 
+// ** Styled Wrapper
+import DataGridWrapper from '@core/styles/mui/components/datagrid'
+
 const TableEditable = () => {
   return (
     <Card>
       <CardHeader title='Editable' />
-      <Box sx={{ height: 500, width: '100%' }}>
+      <DataGridWrapper sx={{ height: 500 }}>
         <DataGrid rows={rows} columns={editableCols} autoPageSize />
-      </Box>
+      </DataGridWrapper>
     </Card>
   )
 }

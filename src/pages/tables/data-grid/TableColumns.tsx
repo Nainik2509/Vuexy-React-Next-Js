@@ -22,6 +22,9 @@ import { getInitials } from '@core/utils/get-initials'
 // ** Data Import
 import { rows } from './data'
 
+// ** Styled Wrapper
+import DataGridWrapper from '@core/styles/mui/components/datagrid'
+
 interface StatusObj {
   [key: number]: {
     title: string
@@ -174,9 +177,9 @@ const TableColumns = () => {
           </Box>
         }
       />
-      <Box sx={{ height: 500, width: '100%' }}>
+      <DataGridWrapper sx={{ height: 500 }}>
         <DataGrid rows={rows} columns={Columns} autoPageSize />
-      </Box>
+      </DataGridWrapper>
     </Card>
   )
 }

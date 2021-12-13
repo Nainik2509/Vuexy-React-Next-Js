@@ -22,6 +22,9 @@ import { ThemeColor } from '@core/layouts/types'
 // ** Utils Import
 import { getInitials } from '@core/utils/get-initials'
 
+// ** Styled Wrapper
+import DataGridWrapper from '@core/styles/mui/components/datagrid'
+
 interface StatusObj {
   [key: number]: {
     title: string
@@ -163,7 +166,6 @@ const TableServerSide = () => {
         perPage
       })
       .then(res => {
-        console.log(res.data.data)
         setRows(res.data.data)
         setTotal(res.data.total)
       })
@@ -202,7 +204,7 @@ const TableServerSide = () => {
   return (
     <Card>
       <CardHeader title='Server Side' />
-      <Box sx={{ height: 500, width: '100%' }}>
+      <DataGridWrapper sx={{ height: 500, width: '100%' }}>
         <DataGrid
           rows={rows}
           rowCount={total}
@@ -210,10 +212,10 @@ const TableServerSide = () => {
           checkboxSelection
           page={currentPage}
           sortingMode='server'
-          // pageSize={rowsPerPage}
+          pageSize={rowsPerPage}
           paginationMode='server'
           onPageChange={handlePageChange}
-          // rowsPerPageOptions={[10, 25, 50]}
+          rowsPerPageOptions={[10, 25, 50]}
           onSortModelChange={handleSortModel}
           onPageSizeChange={handlePerPageChange}
           components={{ Toolbar: ServerSideToolbar }}
@@ -227,7 +229,7 @@ const TableServerSide = () => {
             }
           }}
         />
-      </Box>
+      </DataGridWrapper>
     </Card>
   )
 }
