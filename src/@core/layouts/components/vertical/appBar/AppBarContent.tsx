@@ -13,6 +13,8 @@ import { Settings } from '@core/context/settingsContext'
 
 // ** Components
 import ModeToggler from '../../shared-components/ModeToggler'
+import UserDropdown from '../../shared-components/UserDropdown'
+import NotificationDropdown from '../../shared-components/NotificationDropdown'
 import Autocomplete from '@core/layouts/components/shared-components/Autocomplete'
 
 interface Props {
@@ -39,6 +41,8 @@ const AppBarContent: FC<Props> = (props: Props) => {
       </Box>
       <Box className='actions-right' sx={{ display: 'flex', alignItems: 'center', color: 'text.primary' }}>
         <ModeToggler settings={settings} saveSettings={saveSettings} />
+        <NotificationDropdown settings={settings} saveSettings={saveSettings} />
+        <UserDropdown settings={settings} saveSettings={saveSettings} />
       </Box>
     </Box>
   )
