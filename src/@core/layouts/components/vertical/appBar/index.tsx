@@ -24,6 +24,7 @@ interface Props {
 }
 
 const AppBar = styled(MuiAppBar)<AppBarProps>({
+  transition: 'none',
   alignItems: 'center',
   justifyContent: 'center',
   minHeight: themeConfig.appBarHeight
@@ -63,7 +64,13 @@ const LayoutAppBar: FC<Props> = (props: Props) => {
       }}
     >
       <Toolbar sx={{ ...(settings.contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } }) }}>
-        <AppBarContent hidden={hidden} setShowBackdrop={setShowBackdrop} toggleNavVisibility={toggleNavVisibility} />
+        <AppBarContent
+          hidden={hidden}
+          settings={settings}
+          saveSettings={saveSettings}
+          setShowBackdrop={setShowBackdrop}
+          toggleNavVisibility={toggleNavVisibility}
+        />
       </Toolbar>
     </AppBar>
   )
