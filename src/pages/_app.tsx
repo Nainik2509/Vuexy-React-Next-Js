@@ -52,7 +52,7 @@ type AppPropsWithLayout = AppProps & {
 const clientSideEmotionCache = createEmotionCache()
 
 // ** Configure JSS & ClassName
-const App: FC<AppPropsWithLayout> = props => {
+const App: FC<AppPropsWithLayout> = (props: AppPropsWithLayout) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
 
   const getLayout = Component.getLayout ?? (page => <Layout>{page}</Layout>)

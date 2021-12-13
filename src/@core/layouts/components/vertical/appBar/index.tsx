@@ -2,8 +2,7 @@
 import { FC } from 'react'
 
 // ** MUI Imports
-import Box from '@mui/material/Box'
-import { styled, useTheme } from '@mui/material/styles'
+import { styled } from '@mui/material/styles'
 import MuiAppBar, { AppBarProps } from '@mui/material/AppBar'
 import MuiToolbar, { ToolbarProps } from '@mui/material/Toolbar'
 
@@ -12,6 +11,9 @@ import { Settings } from '@core/context/settingsContext'
 
 // ** Theme Config Import
 import themeConfig from 'configs/themeConfig'
+
+// ** Component Import
+import AppBarContent from './AppBarContent'
 
 interface Props {
   hidden: boolean
@@ -60,7 +62,7 @@ const LayoutAppBar: FC<Props> = (props: Props) => {
       }}
     >
       <Toolbar sx={{ ...(settings.contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } }) }}>
-        abc
+        <AppBarContent hidden={hidden} setShowBackdrop={setShowBackdrop} />
       </Toolbar>
     </AppBar>
   )
