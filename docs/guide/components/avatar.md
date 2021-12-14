@@ -68,7 +68,7 @@ import BellOutline from 'mdi-material-ui/BellOutline'
 
 ## Props
 
-| Prop  |                             Type                              | Required |        description |
+| Prop  |                             Type                              | Required |        Description |
 | ----- | :-----------------------------------------------------------: | -------: | -----------------: |
 | skin  |               `filled`, `light`, `light-static`               |       No | Skin of the avatar |
 | color | `primary`, `secondary`, `success`, `error`, `warning`, `info` |       No |       Avatar Color |

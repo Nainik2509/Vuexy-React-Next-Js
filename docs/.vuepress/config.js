@@ -42,14 +42,9 @@ module.exports = {
           ]
         },
         {
-          title: 'Components',
+          title: 'Settings',
           collapsable: false,
-          children: [
-            '/guide/components/cards',
-            '/guide/components/avatar',
-            '/guide/components/badge',
-            '/guide/components/chips'
-          ]
+          children: ['/guide/settings/theme-config', '/guide/settings/context']
         },
         {
           title: 'Layout',
@@ -60,6 +55,16 @@ module.exports = {
             // '/guide/layout/core-layouts',
             // '/guide/layout/content-renderer',
             // '/guide/layout/page-layout-examples',
+          ]
+        },
+        {
+          title: 'Components',
+          collapsable: false,
+          children: [
+            '/guide/components/cards',
+            '/guide/components/avatar',
+            '/guide/components/badge',
+            '/guide/components/chips'
           ]
         },
         {
