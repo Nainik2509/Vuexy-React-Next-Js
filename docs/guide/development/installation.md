@@ -27,7 +27,7 @@ npm install
 ```
 
 - Now you will find some output after running above command in console as below:
-  <img :src="$withBase('/images/@core/server-console.png')" alt="console-output-of-development-server" class="rounded">
+  <img :src="$withBase('/images/development/server-console.png')" alt="console-output-of-development-server" class="rounded">
 - Visit [http://localhost:3000/](http://localhost:3000/) to check frontend.
 
 ::: tip NOTE

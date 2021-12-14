@@ -49,7 +49,6 @@ module.exports = {
             '/guide/components/avatar',
             '/guide/components/badge',
             '/guide/components/chips'
-            // '/guide/components/cards'
           ]
         },
         {
