@@ -2,13 +2,15 @@
 import { configureStore } from '@reduxjs/toolkit'
 
 // ** Reducers
-import email from 'pages/apps/email/store'
 import chat from 'pages/apps/chat/store'
+import email from 'pages/apps/email/store'
+import calendar from 'pages/apps/calendar/store'
 
 export const store = configureStore({
   reducer: {
     chat,
-    email
+    email,
+    calendar
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

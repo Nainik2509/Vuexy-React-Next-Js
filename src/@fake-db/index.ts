@@ -5,6 +5,7 @@ import './apps/chat'
 import './apps/email'
 import './auth/users'
 import './autocomplete'
+import './apps/calendar'
 import './app-bar-search'
 
 mock.onAny().passThrough()
