@@ -8,21 +8,20 @@ import { PaletteMode, Direction } from '@mui/material'
 import themeConfig from 'configs/themeConfig'
 
 // ** Types Import
-import { Skin, AppBar, Footer, Layout, ThemeColor, ContentWidth, VerticalNavToggle } from '@core/layouts/types'
+import { Skin, AppBar, Footer, ThemeColor, ContentWidth, VerticalNavToggle } from '@core/layouts/types'
 
 export type Settings = {
   skin: Skin
   appBar?: AppBar
   footer?: Footer
-  layout?: Layout
-  language?: string
   mode: PaletteMode
   navHidden?: boolean // navigation menu
-  lastLayout?: Layout
   direction: Direction
   navCollapsed: boolean
   themeColor: ThemeColor
   contentWidth: ContentWidth
+  layout?: 'vertical' | 'horizontal'
+  lastLayout?: 'vertical' | 'horizontal'
   verticalNavToggleType: VerticalNavToggle
 }
 export type SettingsContextValue = {
@@ -53,7 +52,7 @@ const staticSettings = {
   lastLayout: initialSettings.lastLayout
 }
 
-export const restoreSettings = (): Settings | null => {
+const restoreSettings = (): Settings | null => {
   let settings = null
 
   try {
@@ -72,7 +71,7 @@ export const restoreSettings = (): Settings | null => {
 }
 
 // set settings in localStorage
-export const storeSettings = (settings: Settings) => {
+const storeSettings = (settings: Settings) => {
   const initSettings = Object.assign({}, settings)
 
   delete initSettings.appBar
