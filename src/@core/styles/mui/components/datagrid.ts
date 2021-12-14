@@ -2,9 +2,6 @@
 import { styled } from '@mui/material/styles'
 import Box, { BoxProps } from '@mui/material/Box'
 
-// ** Util Imports
-// import { hexToRGBA } from '@core/utils/hex-to-rgba'
-
 const DataGridWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   width: '100%',
 
@@ -13,6 +10,7 @@ const DataGridWrapper = styled(Box)<BoxProps>(({ theme }) => ({
     '& .MuiDataGrid-columnHeaders': {
       '& .MuiDataGrid-columnHeader': {
         fontWeight: 600,
+        height: '56px',
         padding: `0 ${theme.spacing(4.1)}`,
         color: theme.palette.text.primary,
         borderColor: theme.palette.divider,
