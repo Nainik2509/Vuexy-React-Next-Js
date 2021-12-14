@@ -47,6 +47,7 @@ const themeConfig: ThemeConfig = {
   verticalNavToggleType: 'accordion' /* accordion | collapse, */,
   menuTextTruncate: true /* true | false */,
   navigationSize: 260 /* Number in PX(Pixels) */,
+  collapsedNavigationSize: 69 /* Number in PX(Pixels) */,
   contentWidth: 'boxed' /* full | boxed */,
   appBar: 'fixed' /* fixed | static | hidden /*! Note: hidden value will only work for Vertical Layout */,
   footer: 'static' /* fixed | static | hidden */,
@@ -54,8 +55,7 @@ const themeConfig: ThemeConfig = {
   responsiveFontSizes: true /* true | false */,
   horizontalMenuToggle: 'hover' /* click | hover */,
   navSubItemIcon: CircleOutline /* Icon Element */,
-  appBarHeight: 64 /* Number in PX(Pixels) [recommended height is 50px or greater] */,
-  collapsedNavigationSize: 69 /* Number in PX(Pixels) */
+  appBarHeight: 64 /* Number in PX(Pixels) [recommended height is 50px or greater] */
 }
 
 export default themeConfig

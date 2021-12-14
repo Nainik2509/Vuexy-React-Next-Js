@@ -4,9 +4,6 @@ import { FC, createContext, useState, ReactNode, useEffect } from 'react'
 // ** MUI Imports
 import { PaletteMode, Direction } from '@mui/material'
 
-// ** Third Party Imports
-import { useTranslation } from 'react-i18next'
-
 // ** ThemeConfig Import
 import themeConfig from 'configs/themeConfig'
 
@@ -97,9 +94,6 @@ interface Props {
 }
 
 export const SettingsProvider: FC<Props> = ({ children }: Props) => {
-  // ** Hook
-  const { i18n } = useTranslation()
-
   // ** State
   const [settings, setSettings] = useState<Settings>(initialSettings)
 
@@ -107,15 +101,9 @@ export const SettingsProvider: FC<Props> = ({ children }: Props) => {
     const restoredSettings = restoreSettings()
 
     if (restoredSettings) {
-      const initSettings: Settings = JSON.parse(window.localStorage.getItem('settings')!)
-      const i18nCondition = initSettings !== null && initSettings.language !== i18n.language
-      if (i18nCondition) {
-        i18n.changeLanguage(initSettings.language)
-      }
-
-      setSettings({ ...restoredSettings, language: i18nCondition ? initSettings.language : i18n.language })
+      setSettings(restoredSettings)
     }
-  }, [i18n])
+  }, [])
 
   const saveSettings = (updatedSettings: Settings) => {
     storeSettings(updatedSettings)
