@@ -8,21 +8,12 @@ import { PaletteMode, Direction } from '@mui/material'
 import CircleOutline from 'mdi-material-ui/CircleOutline'
 
 // ** Types
-import {
-  Skin,
-  AppBar,
-  Footer,
-  Layout,
-  ContentWidth,
-  VerticalNavToggle,
-  HorizontalMenuToggle
-} from '@core/layouts/types'
+import { Skin, AppBar, Footer, ContentWidth, VerticalNavToggle, HorizontalMenuToggle } from '@core/layouts/types'
 
 type ThemeConfig = {
   skin: Skin
   appBar: AppBar
   footer: Footer
-  layout: Layout
   mode: PaletteMode
   navHidden: boolean
   direction: Direction
@@ -38,6 +29,7 @@ type ThemeConfig = {
   disableCustomizer: boolean
   responsiveFontSizes: boolean
   collapsedNavigationSize: number
+  layout: 'vertical' | 'horizontal'
   verticalNavToggleType: VerticalNavToggle
   horizontalMenuToggle: HorizontalMenuToggle
 }
