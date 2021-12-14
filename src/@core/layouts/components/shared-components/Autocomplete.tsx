@@ -51,7 +51,6 @@ const SearchBox = styled(Box)<BoxProps>(({ theme }) => ({
   position: 'absolute',
   transition: 'top .25s ease',
   zIndex: theme.zIndex.appBar + 1,
-  height: themeConfig.appBarHeight,
   backgroundColor: theme.palette.background.paper
 }))
 
@@ -265,7 +264,12 @@ const AutocompleteComponent: FC<Props> = ({ hidden, setShowBackdrop }: Props) =>
           <Magnify />
         </IconButton>
 
-        <SearchBox sx={openSearchBox ? { top: 0 } : {}}>
+        <SearchBox
+          sx={{
+            ...(openSearchBox ? { top: 0 } : {}),
+            height: settings.layout === 'vertical' ? themeConfig.appBarHeight : themeConfig.appBarHeight - 1
+          }}
+        >
           <Autocomplete
             autoHighlight
             disablePortal

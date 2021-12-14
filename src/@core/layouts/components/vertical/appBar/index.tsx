@@ -23,12 +23,13 @@ interface Props {
   saveSettings: (values: Settings) => void
 }
 
-const AppBar = styled(MuiAppBar)<AppBarProps>({
+const AppBar = styled(MuiAppBar)<AppBarProps>(({ theme }) => ({
   transition: 'none',
   alignItems: 'center',
   justifyContent: 'center',
+  color: theme.palette.text.primary,
   minHeight: themeConfig.appBarHeight
-})
+}))
 
 const Toolbar = styled(MuiToolbar)<ToolbarProps>(({ theme }) => ({
   width: '100%',

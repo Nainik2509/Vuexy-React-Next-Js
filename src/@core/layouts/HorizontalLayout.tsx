@@ -14,6 +14,7 @@ import themeConfig from 'configs/themeConfig'
 // ** Components
 import Customizer from '@core/components/customizer'
 import Footer from './components/shared-components/footer'
+import AppBarContent from './components/horizontal/app-bar-content'
 
 // ** Hook Import
 import { useSettings } from '@core/hooks/useSettings'
@@ -32,7 +33,6 @@ const HorizontalLayoutWrapper = styled('div')({
 const Toolbar = styled(MuiToolbar)<ToolbarProps>(({ theme }) => ({
   width: '100%',
   padding: `${theme.spacing(0, 6)} !important`,
-  minHeight: `${themeConfig.appBarHeight}px !important`,
   [theme.breakpoints.down('sm')]: {
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(4)
@@ -79,6 +79,7 @@ const HorizontalLayout: FC<Props> = (props: Props) => {
           sx={{
             transition: 'none',
             alignItems: 'center',
+            color: 'text.primary',
             justifyContent: 'center',
             ...(settings.appBar === 'static' && { boxShadow: 'none', backgroundColor: 'transparent' }),
             ...(settings.appBar === 'fixed' && { backgroundColor: theme => theme.palette.background.paper })
@@ -93,15 +94,24 @@ const HorizontalLayout: FC<Props> = (props: Props) => {
             <Toolbar
               sx={{
                 mx: 'auto',
+                minHeight: `${themeConfig.appBarHeight - 1}px !important`,
                 ...(settings.contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } })
               }}
             >
-              Navbar Content
+              <AppBarContent
+                hidden={hidden}
+                settings={settings}
+                saveSettings={saveSettings}
+                setShowBackdrop={setShowBackdrop}
+              />
             </Toolbar>
           </Box>
           {settings.navHidden ? null : (
             <Toolbar
-              sx={{ ...(settings.contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } }) }}
+              sx={{
+                minHeight: `${themeConfig.appBarHeight}px !important`,
+                ...(settings.contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } })
+              }}
             >
               Navigation
             </Toolbar>

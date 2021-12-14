@@ -3,13 +3,14 @@ import { FC } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
-import IconButton from '@mui/material/IconButton'
-
-// ** Icons Imports
-import MenuIcon from 'mdi-material-ui/Menu'
+import { Theme } from '@mui/material/styles'
+import Typography from '@mui/material/Typography'
 
 // ** Type Import
 import { Settings } from '@core/context/settingsContext'
+
+// ** Theme Config Import
+import themeConfig from 'configs/themeConfig'
 
 // ** Components
 import ModeToggler from '@core/layouts/components/shared-components/ModeToggler'
@@ -20,26 +21,28 @@ import NotificationDropdown from '@core/layouts/components/shared-components/Not
 interface Props {
   hidden: boolean
   settings: Settings
-  toggleNavVisibility: () => void
   setShowBackdrop: (val: boolean) => void
   saveSettings: (values: Settings) => void
 }
 
 const AppBarContent: FC<Props> = (props: Props) => {
   // ** Props
-  const { hidden, settings, saveSettings, setShowBackdrop, toggleNavVisibility } = props
+  const { hidden, settings, saveSettings, setShowBackdrop } = props
 
   return (
     <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-      <Box className='actions-left' sx={{ mr: 2, display: 'flex', alignItems: 'center' }}>
-        {hidden ? (
-          <IconButton color='inherit' sx={{ ml: -2.75 }} onClick={toggleNavVisibility}>
-            <MenuIcon />
-          </IconButton>
-        ) : null}
+      <Typography
+        variant='h6'
+        sx={{
+          lineHeight: 'normal',
+          textTransform: 'uppercase',
+          fontWeight: (theme: Theme) => theme.typography.fontWeightBold
+        }}
+      >
+        {themeConfig.templateName}
+      </Typography>
+      <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <Autocomplete hidden={hidden} setShowBackdrop={setShowBackdrop} />
-      </Box>
-      <Box className='actions-right' sx={{ display: 'flex', alignItems: 'center' }}>
         <ModeToggler settings={settings} saveSettings={saveSettings} />
         <NotificationDropdown settings={settings} saveSettings={saveSettings} />
         <UserDropdown settings={settings} saveSettings={saveSettings} />

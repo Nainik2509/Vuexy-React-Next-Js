@@ -43,7 +43,7 @@ type ThemeConfig = {
 }
 
 const themeConfig: ThemeConfig = {
-  templateName: 'Materio' /* App Name */,
+  templateName: 'Master' /* App Name */,
   templateLogo: '/logo.svg' /* App Logo */,
   skin: 'default' /* default | bordered | semi-dark */,
   mode: 'light' /* light | dark */,
