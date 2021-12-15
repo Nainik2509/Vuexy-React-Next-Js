@@ -6,6 +6,7 @@ import './apps/email'
 import './auth/users'
 import './apps/invoice'
 import './autocomplete'
+import './apps/userList'
 import './apps/calendar'
 import './app-bar-search'
 
