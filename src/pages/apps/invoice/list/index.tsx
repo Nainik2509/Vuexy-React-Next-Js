@@ -272,7 +272,7 @@ const InvoiceList = (props: InvoiceListProps) => {
   const [value, setValue] = useState<string>('')
   const [statusValue, setStatusValue] = useState<string>('')
   const [rowsPerPage, setRowsPerPage] = useState<string>('10')
-  const [selectedRows, setSelectedRows] = useState<any[]>([])
+  const [selectedRows, setSelectedRows] = useState<number[]>([])
 
   // ** Hooks
   const dispatch = useDispatch()
