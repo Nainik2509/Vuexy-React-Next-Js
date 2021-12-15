@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, ElementType } from 'react'
+import { ElementType } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
@@ -52,7 +52,7 @@ const ListBadge = styled(CustomBadge)<CustomBadgeProps>(() => ({
   }
 }))
 
-const SidebarLeft: FC<MailSidebarType> = props => {
+const SidebarLeft = (props: MailSidebarType) => {
   // ** Props
   const {
     store,

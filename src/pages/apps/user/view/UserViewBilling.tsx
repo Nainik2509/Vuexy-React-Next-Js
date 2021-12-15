@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, Fragment, useState, ChangeEvent } from 'react'
+import { Fragment, useState, ChangeEvent } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -111,7 +111,7 @@ const data: DataType[] = [
   }
 ]
 
-const UserViewBilling: FC = () => {
+const UserViewBilling = () => {
   // ** States
   const [cvc, setCvc] = useState<string>('')
   const [name, setName] = useState<string>('')

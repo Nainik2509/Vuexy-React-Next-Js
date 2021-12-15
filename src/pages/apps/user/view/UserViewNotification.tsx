@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Card from '@mui/material/Card'
 import Table from '@mui/material/Table'
@@ -17,7 +14,7 @@ import CardContent from '@mui/material/CardContent'
 import CardActions from '@mui/material/CardActions'
 import TableContainer from '@mui/material/TableContainer'
 
-const UserViewNotification: FC = () => {
+const UserViewNotification = () => {
   return (
     <Card>
       <CardHeader title='Notifications' titleTypographyProps={{ variant: 'h6' }} />

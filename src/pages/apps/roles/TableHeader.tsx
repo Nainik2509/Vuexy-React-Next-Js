@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, memo } from 'react'
+import { memo } from 'react'
 
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
@@ -40,7 +40,7 @@ const ActionsRight = styled(Box)<BoxProps>(({ theme }) => ({
   }
 }))
 
-const TableHeader: FC<TableHeaderProps> = props => {
+const TableHeader = (props: TableHeaderProps) => {
   // ** Props
   const { plan, handlePlanChange, handleFilter, value, handlePerPage, rowsPerPage } = props
 

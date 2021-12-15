@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, Fragment } from 'react'
+import { Fragment } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -129,7 +129,7 @@ const Img = styled('img')(({ theme }) => ({
   marginRight: theme.spacing(3)
 }))
 
-const UserViewOverview: FC = () => {
+const UserViewOverview = () => {
   return (
     <Fragment>
       <Card sx={{ marginBottom: 6 }}>

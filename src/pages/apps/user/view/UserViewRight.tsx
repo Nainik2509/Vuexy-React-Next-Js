@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, SyntheticEvent, useState } from 'react'
+import { SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -33,7 +33,7 @@ const Tab = styled(MuiTab)<TabProps>(({ theme }) => ({
   }
 }))
 
-const TabsForcedScroll: FC = () => {
+const TabsForcedScroll = () => {
   // ** State
   const [value, setValue] = useState<string>('overview')
 

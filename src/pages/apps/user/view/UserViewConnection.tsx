@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, Fragment } from 'react'
+import { Fragment } from 'react'
 
 // ** Next Imports
 import Image from 'next/image'
@@ -9,7 +9,8 @@ import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import Switch from '@mui/material/Switch'
 import Button from '@mui/material/Button'
-import { styled } from '@mui/material/styles'
+
+// import { styled } from '@mui/material/styles'
 import CardHeader from '@mui/material/CardHeader'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
@@ -19,13 +20,13 @@ import Close from 'mdi-material-ui/Close'
 import LinkVariant from 'mdi-material-ui/LinkVariant'
 
 // ** Styled component for the Facebook image
-const Img = styled('img')(({ theme }) => ({
-  height: 35,
-  marginLeft: theme.spacing(1.75),
-  marginRight: theme.spacing(1.75)
-}))
+// const Img = styled(Image)(({ theme }) => ({
+//   height: 35,
+//   marginLeft: theme.spacing(1.75),
+//   marginRight: theme.spacing(1.75)
+// }))
 
-const UserViewConnection: FC = () => {
+const UserViewConnection = () => {
   return (
     <Fragment>
       <Card sx={{ marginBottom: 6 }}>

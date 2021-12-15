@@ -1,5 +1,5 @@
 // ** React Imports
-import { ChangeEvent, FC, Fragment, MouseEvent, useState, SyntheticEvent } from 'react'
+import { ChangeEvent, Fragment, MouseEvent, useState, SyntheticEvent } from 'react'
 
 // ** Next Imports
 import Image from 'next/image'
@@ -79,7 +79,7 @@ const data: DataType[] = [
   }
 ]
 
-const UserViewSecurity: FC = () => {
+const UserViewSecurity = () => {
   // ** States
   const [mobileNumber, setMobileNumber] = useState<string>('+1(968) 819-2547')
   const [openEditMobileNumber, setOpenEditMobileNumber] = useState<boolean>(false)

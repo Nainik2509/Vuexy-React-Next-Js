@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, memo, useState } from 'react'
+import { memo, useState } from 'react'
 
 // ** MUI Imports
 import Dialog from '@mui/material/Dialog'
@@ -40,7 +40,7 @@ const ActionsRight = styled(Box)<BoxProps>(({ theme }) => ({
   }
 }))
 
-const TableHeader: FC<TableHeaderProps> = (props: TableHeaderProps) => {
+const TableHeader = (props: TableHeaderProps) => {
   // ** Props
   const { value, userView, rowsPerPage, handleFilter, handlePerPage } = props
 

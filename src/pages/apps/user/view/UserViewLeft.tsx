@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -61,7 +61,7 @@ const Sub = styled('sub')({
   alignSelf: 'flex-end'
 })
 
-const UserViewLeft: FC<Props> = ({ data }: Props) => {
+const UserViewLeft = ({ data }: Props) => {
   // ** States
   const [openEdit, setOpenEdit] = useState<boolean>(false)
   const [openPlans, setOpenPlans] = useState<boolean>(false)
