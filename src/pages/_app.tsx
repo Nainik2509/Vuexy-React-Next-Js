@@ -5,7 +5,6 @@ import { FC, ReactElement, ReactNode } from 'react'
 import Head from 'next/head'
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
-import { SessionProvider } from 'next-auth/react'
 
 // ** Store imports
 import { store } from 'redux/store'
@@ -63,21 +62,19 @@ const App: FC<AppPropsWithLayout> = (props: AppPropsWithLayout) => {
 
   return (
     <Provider store={store}>
-      <SessionProvider session={pageProps.session}>
-        <CacheProvider value={emotionCache}>
-          <Head>
-            <title>Master React Admin Template With MUI & NextJS</title>
-            <meta name='viewport' content='initial-scale=1, width=device-width' />
-          </Head>
-          <SettingsProvider>
-            <SettingsConsumer>
-              {({ settings }) => (
-                <ThemeComponent settings={settings}>{getLayout(<Component {...pageProps} />)}</ThemeComponent>
-              )}
-            </SettingsConsumer>
-          </SettingsProvider>
-        </CacheProvider>
-      </SessionProvider>
+      <CacheProvider value={emotionCache}>
+        <Head>
+          <title>Master React Admin Template With MUI & NextJS</title>
+          <meta name='viewport' content='initial-scale=1, width=device-width' />
+        </Head>
+        <SettingsProvider>
+          <SettingsConsumer>
+            {({ settings }) => (
+              <ThemeComponent settings={settings}>{getLayout(<Component {...pageProps} />)}</ThemeComponent>
+            )}
+          </SettingsConsumer>
+        </SettingsProvider>
+      </CacheProvider>
     </Provider>
   )
 }
