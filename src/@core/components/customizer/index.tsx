@@ -78,7 +78,7 @@ const Customizer: FC = () => {
   // ** Hook
   const { settings, saveSettings } = useSettings()
 
-  const handleChange = (field: keyof Settings, value: any): void => {
+  const handleChange = (field: keyof Settings, value: Settings[keyof Settings]): void => {
     saveSettings({ ...settings, [field]: value })
   }
 
@@ -129,7 +129,7 @@ const Customizer: FC = () => {
               <RadioGroup
                 row
                 value={settings.skin}
-                onChange={e => handleChange('skin', e.target.value)}
+                onChange={e => handleChange('skin', e.target.value as Settings['skin'])}
                 sx={{ '& .MuiFormControlLabel-label': { fontSize: '.875rem', color: 'text.secondary' } }}
               >
                 <FormControlLabel value='default' label='Default' control={<Radio />} />
@@ -244,7 +244,7 @@ const Customizer: FC = () => {
               <RadioGroup
                 row
                 value={settings.contentWidth}
-                onChange={e => handleChange('contentWidth', e.target.value)}
+                onChange={e => handleChange('contentWidth', e.target.value as Settings['contentWidth'])}
                 sx={{ '& .MuiFormControlLabel-label': { fontSize: '.875rem', color: 'text.secondary' } }}
               >
                 <FormControlLabel value='full' label='Full' control={<Radio />} />
@@ -258,7 +258,7 @@ const Customizer: FC = () => {
               <RadioGroup
                 row
                 value={settings.appBar}
-                onChange={e => handleChange('appBar', e.target.value)}
+                onChange={e => handleChange('appBar', e.target.value as Settings['appBar'])}
                 sx={{ '& .MuiFormControlLabel-label': { fontSize: '.875rem', color: 'text.secondary' } }}
               >
                 <FormControlLabel value='fixed' label='Fixed' control={<Radio />} />
@@ -273,7 +273,7 @@ const Customizer: FC = () => {
               <RadioGroup
                 row
                 value={settings.footer}
-                onChange={e => handleChange('footer', e.target.value)}
+                onChange={e => handleChange('footer', e.target.value as Settings['footer'])}
                 sx={{ '& .MuiFormControlLabel-label': { fontSize: '.875rem', color: 'text.secondary' } }}
               >
                 <FormControlLabel value='fixed' label='Fixed' control={<Radio />} />
@@ -300,7 +300,7 @@ const Customizer: FC = () => {
               <RadioGroup
                 row
                 value={settings.layout}
-                onChange={e => handleChange('layout', e.target.value)}
+                onChange={e => handleChange('layout', e.target.value as Settings['layout'])}
                 sx={{ '& .MuiFormControlLabel-label': { fontSize: '.875rem', color: 'text.secondary' } }}
               >
                 <FormControlLabel value='vertical' label='Vertical' control={<Radio />} />
@@ -311,11 +311,13 @@ const Customizer: FC = () => {
             {/* Menu Toggle */}
             {settings.layout === 'horizontal' ? null : (
               <Box sx={{ mb: 5 }}>
-                <Typography>Menu Layout</Typography>
+                <Typography>Menu Toggle</Typography>
                 <RadioGroup
                   row
                   value={settings.verticalNavToggleType}
-                  onChange={e => handleChange('verticalNavToggleType', e.target.value)}
+                  onChange={e =>
+                    handleChange('verticalNavToggleType', e.target.value as Settings['verticalNavToggleType'])
+                  }
                   sx={{ '& .MuiFormControlLabel-label': { fontSize: '.875rem', color: 'text.secondary' } }}
                 >
                   <FormControlLabel value='accordion' label='Accordion' control={<Radio />} />

@@ -23,7 +23,6 @@ import Magnify from 'mdi-material-ui/Magnify'
 import CircleOutline from 'mdi-material-ui/CircleOutline'
 
 // ** Third Party Imports
-// import useAxios from 'axios-hooks'
 import axios from 'axios'
 
 // ** Types Imports
@@ -101,7 +100,6 @@ const AutocompleteComponent: FC<Props> = ({ hidden, setShowBackdrop }: Props) =>
   const { settings } = useSettings()
   const wrapper = useRef<HTMLDivElement>(null)
 
-  // const [response] = useAxios({ url: '/app-bar/search', params: { q: searchValue }, method: 'get' })
   const codes: { [key: string]: boolean } = { Slash: false, ControlLeft: false, ControlRight: false } //eslint-disable-line
 
   // Get all data using API

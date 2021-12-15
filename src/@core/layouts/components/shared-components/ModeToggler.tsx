@@ -21,7 +21,7 @@ const ModeToggler: FC<Props> = (props: Props) => {
   // ** Props
   const { settings, saveSettings } = props
 
-  const handleModeChange = (mode: PaletteMode): void => {
+  const handleModeChange = (mode: PaletteMode) => {
     saveSettings({ ...settings, mode })
   }
 
