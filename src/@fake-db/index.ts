@@ -9,5 +9,6 @@ import './autocomplete'
 import './apps/userList'
 import './apps/calendar'
 import './app-bar-search'
+import './apps/permissions'
 
 mock.onAny().passThrough()

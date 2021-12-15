@@ -8,12 +8,8 @@ import axios from 'axios'
 interface DataParams {
   q: string
   role: string
-  page: number
   status: string
-  column: string
-  perPage: number
   currentPlan: string
-  sort: 'asc' | 'desc'
 }
 
 interface Redux {

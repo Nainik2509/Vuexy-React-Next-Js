@@ -303,6 +303,7 @@ const InvoiceList = (props: InvoiceListProps) => {
     ...defaultColumns,
     {
       minWidth: 100,
+      sortable: false,
       field: 'balance',
       headerName: 'Actions',
       renderCell: ({ row }: CellType) => (
