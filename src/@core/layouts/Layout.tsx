@@ -7,19 +7,20 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 
 // ** Type Import
 import { LayoutProps } from '@core/layouts/types'
+import { Settings } from '@core/context/settingsContext'
 
 // ** Layout Components
 import VerticalLayout from './VerticalLayout'
 import HorizontalLayout from './HorizontalLayout'
 
-// ** Hook Import
-import { useSettings } from '@core/hooks/useSettings'
+type Props = LayoutProps & {
+  settings: Settings
+  saveSettings: (values: Settings) => void
+}
 
-const Layout: FC<LayoutProps> = (props: LayoutProps) => {
-  const { children } = props
+const Layout: FC<Props> = (props: Props) => {
+  const { children, settings } = props
 
-  // ** Hooks
-  const { settings } = useSettings()
   const hidden = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
 
   if (settings.layout === 'horizontal') {

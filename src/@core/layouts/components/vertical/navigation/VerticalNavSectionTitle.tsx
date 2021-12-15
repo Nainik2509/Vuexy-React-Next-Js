@@ -9,19 +9,17 @@ import MuiListSubheader, { ListSubheaderProps } from '@mui/material/ListSubheade
 // ** Icons Imports
 import DotsHorizontal from 'mdi-material-ui/DotsHorizontal'
 
-// ** Third Party Imports
-import { useTranslation } from 'react-i18next'
-
 // ** Configs Import
 import themeConfig from 'configs/themeConfig'
 
 // ** Types
 import { NavSectionTitle } from './types'
+import { Settings } from '@core/context/settingsContext'
 
 interface Props {
   navHover: boolean
   item: NavSectionTitle
-  navCollapsed: boolean
+  settings: Settings
   navigationBorderWidth: number
 }
 
@@ -48,9 +46,9 @@ const TypographyHeaderText = styled(Typography)<TypographyProps>(({ theme }) => 
   fontWeight: theme.typography.fontWeightMedium
 }))
 
-const VerticalNavSectionTitle: FC<Props> = ({ item, navHover, navCollapsed, navigationBorderWidth }: Props) => {
-  // ** Hooks
-  const { t } = useTranslation()
+const VerticalNavSectionTitle: FC<Props> = ({ item, navHover, settings, navigationBorderWidth }: Props) => {
+  // ** Vars
+  const navCollapsed = settings.navCollapsed
 
   return (
     <ListSubheader
@@ -63,7 +61,7 @@ const VerticalNavSectionTitle: FC<Props> = ({ item, navHover, navCollapsed, navi
       {navCollapsed && !navHover ? (
         <DotsHorizontal />
       ) : (
-        <TypographyHeaderText noWrap>{t(item.sectionTitle)}</TypographyHeaderText>
+        <TypographyHeaderText noWrap>{item.sectionTitle}</TypographyHeaderText>
       )}
     </ListSubheader>
   )

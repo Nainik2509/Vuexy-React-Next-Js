@@ -15,12 +15,16 @@ import Customizer from '@core/components/customizer'
 import Navigation from './components/vertical/navigation'
 import Footer from './components/shared-components/footer'
 
-// ** Hook Import
-import { useSettings } from '@core/hooks/useSettings'
+// ** Type Import
+import { Settings } from '@core/context/settingsContext'
+import { NavLink, NavGroup, NavSectionTitle } from './components/vertical/navigation/types'
 
 interface Props {
   hidden: boolean
+  settings: Settings
   children: ReactNode
+  saveSettings: (values: Settings) => void
+  navItems: (NavGroup | NavLink | NavSectionTitle)[]
 }
 
 const VerticalLayoutWrapper = styled('div')({
@@ -48,21 +52,20 @@ const ContentWrapper = styled('main')(({ theme }) => ({
 
 const VerticalLayout: FC<Props> = (props: Props) => {
   // ** Props
-  const { hidden, children } = props
-
-  // ** States
-  const [navVisible, setNavVisible] = useState<boolean>(false)
-  const [showBackdrop, setShowBackdrop] = useState<boolean>(false)
-
-  // ** Hooks
-  const { settings, saveSettings } = useSettings()
+  const { hidden, settings, children } = props
 
   // ** Vars
+  const navigationBorderWidth = 1
   const { contentWidth } = settings
   const navWidth = themeConfig.navigationSize
   const collapsedNavWidth = themeConfig.collapsedNavigationSize
 
-  // ** Toggle Vertical Menu in Tablet and Mobile screens
+  // ** States
+  const [navHover, setNavHover] = useState<boolean>(false)
+  const [navVisible, setNavVisible] = useState<boolean>(false)
+  const [showBackdrop, setShowBackdrop] = useState<boolean>(false)
+
+  // ** Toggle Functions
   const toggleNavVisibility = () => setNavVisible(!navVisible)
 
   return (
@@ -70,24 +73,20 @@ const VerticalLayout: FC<Props> = (props: Props) => {
       {/* Navigation Menu */}
       {settings.navHidden ? null : (
         <Navigation
-          hidden={hidden}
           navWidth={navWidth}
-          settings={settings}
+          navHover={navHover}
           navVisible={navVisible}
-          saveSettings={saveSettings}
+          setNavHover={setNavHover}
           setNavVisible={setNavVisible}
           collapsedNavWidth={collapsedNavWidth}
+          toggleNavVisibility={toggleNavVisibility}
+          navigationBorderWidth={navigationBorderWidth}
+          {...props}
         />
       )}
       <MainContentWrapper className='layout-content-wrapper'>
         {/* AppBar Component */}
-        <AppBar
-          hidden={hidden}
-          settings={settings}
-          saveSettings={saveSettings}
-          setShowBackdrop={setShowBackdrop}
-          toggleNavVisibility={toggleNavVisibility}
-        />
+        <AppBar setShowBackdrop={setShowBackdrop} toggleNavVisibility={toggleNavVisibility} {...props} />
 
         {/* Content */}
         <ContentWrapper
@@ -104,7 +103,7 @@ const VerticalLayout: FC<Props> = (props: Props) => {
         </ContentWrapper>
 
         {/* Footer Component */}
-        <Footer settings={settings} saveSettings={saveSettings} showBackdrop={showBackdrop} />
+        <Footer showBackdrop={showBackdrop} {...props} />
       </MainContentWrapper>
 
       {/* Customizer */}

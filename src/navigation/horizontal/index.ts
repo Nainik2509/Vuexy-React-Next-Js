@@ -37,9 +37,9 @@ import ChartBellCurveCumulative from 'mdi-material-ui/ChartBellCurveCumulative'
 import CheckboxMarkedCircleOutline from 'mdi-material-ui/CheckboxMarkedCircleOutline'
 
 // ** Type import
-import { Navigation } from 'navigation/types'
+import { NavGroup, NavLink } from '@core/layouts/components/vertical/navigation/types'
 
-const navigation = (): Navigation[] => [
+const navigation = (): (NavGroup | NavLink)[] => [
   {
     icon: HomeOutlined,
     title: 'Dashboards',
@@ -47,12 +47,12 @@ const navigation = (): Navigation[] => [
       {
         icon: TrendingUp,
         title: 'Analytics',
-        navLink: '/dashboard/analytics'
+        path: '/dashboard/analytics'
       },
       {
         icon: CartOutline,
         title: 'eCommerce',
-        navLink: '/dashboard/ecommerce',
+        path: '/dashboard/ecommerce',
         action: 'read',
         resource: 'ecommerce'
       }
@@ -65,17 +65,17 @@ const navigation = (): Navigation[] => [
       {
         title: 'Email',
         icon: EmailOutline,
-        navLink: '/apps/email'
+        path: '/apps/email'
       },
       {
         title: 'Chat',
         icon: MessageOutline,
-        navLink: '/apps/chat'
+        path: '/apps/chat'
       },
       {
         title: 'Calendar',
         icon: CalendarBlankOutline,
-        navLink: '/apps/calendar'
+        path: '/apps/calendar'
       },
       {
         title: 'Invoice',
@@ -83,19 +83,19 @@ const navigation = (): Navigation[] => [
         children: [
           {
             title: 'List',
-            navLink: '/apps/invoice/list'
+            path: '/apps/invoice/list'
           },
           {
             title: 'Preview',
-            navLink: '/apps/invoice/preview'
+            path: '/apps/invoice/preview'
           },
           {
             title: 'Edit',
-            navLink: '/apps/invoice/edit'
+            path: '/apps/invoice/edit'
           },
           {
             title: 'Add',
-            navLink: '/apps/invoice/add'
+            path: '/apps/invoice/add'
           }
         ]
       },
@@ -105,11 +105,11 @@ const navigation = (): Navigation[] => [
         children: [
           {
             title: 'List',
-            navLink: '/apps/user/list'
+            path: '/apps/user/list'
           },
           {
             title: 'View',
-            navLink: '/apps/user/view'
+            path: '/apps/user/view'
           }
         ]
       },
@@ -119,11 +119,11 @@ const navigation = (): Navigation[] => [
         children: [
           {
             title: 'Roles',
-            navLink: '/apps/roles'
+            path: '/apps/roles'
           },
           {
             title: 'Permissions',
-            navLink: '/apps/permissions'
+            path: '/apps/permissions'
           }
         ]
       }
@@ -136,11 +136,11 @@ const navigation = (): Navigation[] => [
       {
         title: 'Typography',
         icon: FormatLetterCase,
-        navLink: '/ui/typography'
+        path: '/ui/typography'
       },
       {
         title: 'Icons',
-        navLink: '/ui/icons',
+        path: '/ui/icons',
         icon: GoogleCirclesExtended
       },
       {
@@ -149,23 +149,23 @@ const navigation = (): Navigation[] => [
         children: [
           {
             title: 'Basic',
-            navLink: '/ui/card-basic'
+            path: '/ui/card-basic'
           },
           {
             title: 'Statistics',
-            navLink: '/ui/card-statistics'
+            path: '/ui/card-statistics'
           },
           {
             title: 'Advanced',
-            navLink: '/ui/card-advanced'
+            path: '/ui/card-advanced'
           },
           {
             title: 'Gamification',
-            navLink: '/ui/card-gamification'
+            path: '/ui/card-gamification'
           },
           {
             title: 'Actions',
-            navLink: '/ui/card-actions'
+            path: '/ui/card-actions'
           }
         ]
       },
@@ -175,75 +175,75 @@ const navigation = (): Navigation[] => [
         children: [
           {
             title: 'Accordion',
-            navLink: '/components/accordion'
+            path: '/components/accordion'
           },
           {
             title: 'Alerts',
-            navLink: '/components/alerts'
+            path: '/components/alerts'
           },
           {
             title: 'Avatars',
-            navLink: '/components/avatars'
+            path: '/components/avatars'
           },
           {
             title: 'Badges',
-            navLink: '/components/badges'
+            path: '/components/badges'
           },
           {
             title: 'Buttons',
-            navLink: '/components/buttons'
+            path: '/components/buttons'
           },
           {
             title: 'Button Group',
-            navLink: '/components/button-group'
+            path: '/components/button-group'
           },
           {
             title: 'Chips',
-            navLink: '/components/chips'
+            path: '/components/chips'
           },
           {
             title: 'Dialogs',
-            navLink: '/components/dialogs'
+            path: '/components/dialogs'
           },
           {
             title: 'List',
-            navLink: '/components/list'
+            path: '/components/list'
           },
           {
             title: 'Menu',
-            navLink: '/components/menu'
+            path: '/components/menu'
           },
           {
             title: 'Pagination',
-            navLink: '/components/pagination'
+            path: '/components/pagination'
           },
           {
             title: 'Ratings',
-            navLink: '/components/ratings'
+            path: '/components/ratings'
           },
           {
             title: 'Snackbar',
-            navLink: '/components/snackbar'
+            path: '/components/snackbar'
           },
           {
             title: 'Tabs',
-            navLink: '/components/tabs'
+            path: '/components/tabs'
           },
           {
             title: 'Timeline',
-            navLink: '/components/timeline'
+            path: '/components/timeline'
           },
           {
             title: 'Tree View',
-            navLink: '/components/tree-view'
+            path: '/components/tree-view'
           },
           {
             title: 'More',
-            navLink: '/components/more'
+            path: '/components/more'
           },
           {
             title: 'Test',
-            navLink: '/components/test'
+            path: '/components/test'
           }
         ]
       }
@@ -263,17 +263,17 @@ const navigation = (): Navigation[] => [
               {
                 openInNewTab: true,
                 title: 'Login v1',
-                navLink: '/pages/auth/login-v1'
+                path: '/pages/auth/login-v1'
               },
               {
                 openInNewTab: true,
                 title: 'Login v2',
-                navLink: '/pages/auth/login-v2'
+                path: '/pages/auth/login-v2'
               },
               {
                 openInNewTab: true,
                 title: 'Login With AppBar',
-                navLink: '/pages/auth/login-with-appbar'
+                path: '/pages/auth/login-with-appbar'
               }
             ]
           },
@@ -283,12 +283,12 @@ const navigation = (): Navigation[] => [
               {
                 openInNewTab: true,
                 title: 'Register v1',
-                navLink: '/pages/auth/register-v1'
+                path: '/pages/auth/register-v1'
               },
               {
                 openInNewTab: true,
                 title: 'Register v2',
-                navLink: '/pages/auth/register-v2'
+                path: '/pages/auth/register-v2'
               }
             ]
           },
@@ -298,12 +298,12 @@ const navigation = (): Navigation[] => [
               {
                 openInNewTab: true,
                 title: 'Forgot Password v1',
-                navLink: '/pages/auth/forgot-password-v1'
+                path: '/pages/auth/forgot-password-v1'
               },
               {
                 openInNewTab: true,
                 title: 'Forgot Password v2',
-                navLink: '/pages/auth/forgot-password-v2'
+                path: '/pages/auth/forgot-password-v2'
               }
             ]
           },
@@ -313,12 +313,12 @@ const navigation = (): Navigation[] => [
               {
                 openInNewTab: true,
                 title: 'Reset Password v1',
-                navLink: '/pages/auth/reset-password-v1'
+                path: '/pages/auth/reset-password-v1'
               },
               {
                 openInNewTab: true,
                 title: 'Reset Password v2',
-                navLink: '/pages/auth/reset-password-v2'
+                path: '/pages/auth/reset-password-v2'
               }
             ]
           }
@@ -327,22 +327,22 @@ const navigation = (): Navigation[] => [
       {
         icon: CogOutline,
         title: 'Account Settings',
-        navLink: '/pages/account-settings'
+        path: '/pages/account-settings'
       },
       {
         title: 'Pricing',
         icon: CurrencyUsd,
-        navLink: '/pages/pricing'
+        path: '/pages/pricing'
       },
       {
         title: 'FAQ',
-        navLink: '/pages/faq',
+        path: '/pages/faq',
         icon: HelpCircleOutline
       },
       {
         icon: BookOpenOutline,
         title: 'Knowledge Base',
-        navLink: '/pages/knowledge-base'
+        path: '/pages/knowledge-base'
       },
       {
         title: 'Miscellaneous',
@@ -351,29 +351,29 @@ const navigation = (): Navigation[] => [
           {
             openInNewTab: true,
             title: 'Coming Soon',
-            navLink: '/pages/misc/coming-soon'
+            path: '/pages/misc/coming-soon'
           },
           {
             openInNewTab: true,
             title: 'Not Authorized',
-            navLink: '/pages/misc/not-authorized'
+            path: '/pages/misc/not-authorized'
           },
           {
             openInNewTab: true,
             title: 'Under Maintenance',
-            navLink: '/pages/misc/under-maintenance'
+            path: '/pages/misc/under-maintenance'
           },
           {
             openInNewTab: true,
             title: 'Error',
-            navLink: '/pages/misc/error'
+            path: '/pages/misc/error'
           }
         ]
       },
       {
         icon: VectorArrangeBelow,
         title: 'Dialog Examples',
-        navLink: '/pages/dialog-examples'
+        path: '/pages/dialog-examples'
       }
     ]
   },
@@ -387,82 +387,82 @@ const navigation = (): Navigation[] => [
         children: [
           {
             title: 'Text Field',
-            navLink: '/form-elements/text-field'
+            path: '/form-elements/text-field'
           },
           {
             title: 'Select',
-            navLink: '/form-elements/select'
+            path: '/form-elements/select'
           },
           {
             title: 'Checkbox',
-            navLink: '/form-elements/checkbox'
+            path: '/form-elements/checkbox'
           },
           {
             title: 'Radio',
-            navLink: '/form-elements/radio'
+            path: '/form-elements/radio'
           },
           {
             title: 'Textarea',
-            navLink: '/form-elements/textarea'
+            path: '/form-elements/textarea'
           },
           {
             title: 'Autocomplete',
-            navLink: '/form-elements/autocomplete'
+            path: '/form-elements/autocomplete'
           },
           {
             title: 'Date Pickers',
-            navLink: '/form-elements/pickers'
+            path: '/form-elements/pickers'
           },
           {
             title: 'Switch',
-            navLink: '/form-elements/switch'
+            path: '/form-elements/switch'
           },
           {
             title: 'File Uploader',
-            navLink: '/form-elements/file-uploader'
+            path: '/form-elements/file-uploader'
           },
           {
             title: 'Editor',
-            navLink: '/form-elements/editor'
+            path: '/form-elements/editor'
           },
           {
             title: 'Slider',
-            navLink: '/form-elements/slider'
+            path: '/form-elements/slider'
           },
           {
             title: 'Input Mask',
-            navLink: '/form-elements/input-mask'
+            path: '/form-elements/input-mask'
           },
           {
             title: 'Test',
-            navLink: '/form-elements/test'
+            path: '/form-elements/test'
           }
         ]
       },
       {
         icon: CubeOutline,
         title: 'Form Layouts',
-        navLink: '/form-layouts'
+        path: '/form-layouts'
       },
       {
         title: 'Form Validation',
-        navLink: '/form-validation',
+        path: '/form-validation',
         icon: CheckboxMarkedCircleOutline
       },
       {
         title: 'Form Wizard',
-        navLink: '/form-wizard',
+        path: '/form-wizard',
         icon: PackageVariantClosed
       },
       {
         title: 'Table',
         icon: Table,
-        navLink: '/table'
+        path: '/table'
       },
       {
         title: 'React DataTable',
         icon: Table,
-        navLink: '/data-table'
+        path: '/data-table'
       }
     ]
   },
@@ -473,16 +473,16 @@ const navigation = (): Navigation[] => [
       {
         title: 'Apex',
         icon: ChartLine,
-        navLink: '/charts/apex-charts'
+        path: '/charts/apex-charts'
       },
       {
         title: 'Recharts',
         icon: ChartBellCurve,
-        navLink: '/charts/recharts'
+        path: '/charts/recharts'
       },
       {
         title: 'ChartJS',
-        navLink: '/charts/chartjs',
+        path: '/charts/chartjs',
         icon: ChartBellCurveCumulative
       }
     ]
@@ -496,7 +496,7 @@ const navigation = (): Navigation[] => [
         resource: 'ACL',
         icon: ShieldOutline,
         title: 'Access Control',
-        navLink: '/pages/access-control'
+        path: '/pages/access-control'
       },
       {
         title: 'Menu Levels',
@@ -528,14 +528,14 @@ const navigation = (): Navigation[] => [
         icon: Lifebuoy,
         externalLink: true,
         openInNewTab: true,
-        navLink: 'https://themeselection.com/support'
+        path: 'https://themeselection.com/support'
       },
       {
         title: 'Documentation',
         icon: FileDocumentOutline,
         externalLink: true,
         openInNewTab: true,
-        navLink: '/documentation'
+        path: '/documentation'
       }
     ]
   }

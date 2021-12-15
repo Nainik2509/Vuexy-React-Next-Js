@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 
 // ** MUI Imports
 import { styled } from '@mui/material/styles'
@@ -13,6 +13,7 @@ interface Props {
   navWidth: number
   settings: Settings
   navVisible: boolean
+  children: ReactNode
   collapsedNavWidth: number
   setNavVisible: (value: boolean) => void
   saveSettings: (values: Settings) => void
@@ -37,7 +38,7 @@ const SwipeableDrawer = styled(MuiSwipeableDrawer)<SwipeableDrawerProps>({
 })
 
 const Drawer: FC<Props> = (props: Props) => {
-  const { hidden, navWidth, settings, navVisible, saveSettings, setNavVisible, collapsedNavWidth } = props
+  const { hidden, children, navWidth, navVisible, setNavVisible, settings, collapsedNavWidth } = props
 
   // Drawer Props for Mobile & Tablet screens
   const MobileDrawerProps = {
@@ -71,7 +72,7 @@ const Drawer: FC<Props> = (props: Props) => {
       sx={{ width: settings.navCollapsed ? collapsedNavWidth : navWidth }}
       PaperProps={{ sx: { width: settings.navCollapsed ? collapsedNavWidth : navWidth } }}
     >
-      ABC
+      {children}
     </SwipeableDrawer>
   )
 }

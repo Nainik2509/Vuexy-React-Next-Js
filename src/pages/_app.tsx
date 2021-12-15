@@ -21,7 +21,7 @@ import 'configs/i18n'
 import '@fake-db/index'
 
 // ** Component Imports
-import Layout from '@core/layouts/Layout'
+import UserLayout from 'layouts/UserLayout'
 import ThemeComponent from '@core/theme/ThemeComponent'
 
 // ** Settings Context
@@ -58,7 +58,7 @@ const clientSideEmotionCache = createEmotionCache()
 const App: FC<AppPropsWithLayout> = (props: AppPropsWithLayout) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
 
-  const getLayout = Component.getLayout ?? (page => <Layout>{page}</Layout>)
+  const getLayout = Component.getLayout ?? (page => <UserLayout>{page}</UserLayout>)
 
   return (
     <Provider store={store}>

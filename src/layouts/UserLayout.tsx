@@ -1,19 +1,22 @@
 // ** React Imports
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 
 // ** Layout Imports
 // !Do not remove this Layout import
 import Layout from '@core/layouts/Layout'
 
-// ** Type Import
-import { LayoutProps } from '@core/layouts/types'
-
 // ** Navigation Imports
 import VerticalNavItems from 'navigation/vertical'
 import HorizontalNavItems from 'navigation/horizontal'
+
+// ** Hook Import
 import { useSettings } from '@core/hooks/useSettings'
 
-const UserLayout: FC<LayoutProps> = (props: LayoutProps) => {
+interface Props {
+  children: ReactNode
+}
+
+const UserLayout: FC<Props> = (props: Props) => {
   // ** Props
   const { children } = props
 
@@ -22,7 +25,6 @@ const UserLayout: FC<LayoutProps> = (props: LayoutProps) => {
 
   return (
     <Layout
-      {...props}
       settings={settings}
       saveSettings={saveSettings}
       navItems={settings.layout === 'horizontal' ? HorizontalNavItems() : VerticalNavItems()}

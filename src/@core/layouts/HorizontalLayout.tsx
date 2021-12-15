@@ -16,12 +16,14 @@ import Customizer from '@core/components/customizer'
 import Footer from './components/shared-components/footer'
 import AppBarContent from './components/horizontal/app-bar-content'
 
-// ** Hook Import
-import { useSettings } from '@core/hooks/useSettings'
+// ** Type Import
+import { Settings } from '@core/context/settingsContext'
 
 interface Props {
   hidden: boolean
+  settings: Settings
   children: ReactNode
+  saveSettings: (values: Settings) => void
 }
 
 const HorizontalLayoutWrapper = styled('div')({
@@ -56,13 +58,10 @@ const ContentWrapper = styled('main')(({ theme }) => ({
 
 const HorizontalLayout: FC<Props> = (props: Props) => {
   // ** Props
-  const { hidden, children } = props
+  const { hidden, children, settings, saveSettings } = props
 
   // ** States
   const [showBackdrop, setShowBackdrop] = useState<boolean>(false)
-
-  // ** Hooks
-  const { settings, saveSettings } = useSettings()
 
   // ** Vars
   const { contentWidth } = settings

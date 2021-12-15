@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
-import { Navigation } from 'navigation/types'
-import { Settings } from '@core/context/settingsContext'
+
+import { NavGroup, NavLink, NavSectionTitle } from './components/vertical/navigation/types'
 
 export type Layout = 'vertical' | 'horizontal' | 'blank' | 'blankWithAppBar'
 
@@ -24,7 +24,5 @@ export type LayoutProps = {
   appBarContent?: any
   navMenuHeader?: any
   navMenuContent?: any
-  navItems?: Navigation[]
-  settings: Settings
-  saveSettings: (values: Settings) => void
+  navItems: (NavGroup | NavLink | NavSectionTitle)[]
 }

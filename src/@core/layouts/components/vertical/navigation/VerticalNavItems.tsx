@@ -1,32 +1,44 @@
 // ** React Imports
 import { FC } from 'react'
 
-// ** Types
-import { NavGroup, NavLink, NavSectionTitle } from './types'
+// ** Types Import
+import { Settings } from '@core/context/settingsContext'
+import { NavLink, NavGroup, NavSectionTitle } from './types'
 
 // ** Custom Menu Components
 import VerticalNavLink from './VerticalNavLink'
 import VerticalNavGroup from './VerticalNavGroup'
 import VerticalNavSectionTitle from './VerticalNavSectionTitle'
 
-// const Components = {
-//   VerticalNavLink,
-//   VerticalNavGroup,
-//   VerticalNavSectionTitle
-// }
+interface Props {
+  navItems: any
+  parent?: NavGroup
+  navHover?: boolean
+  settings: Settings
+  navVisible?: boolean
+  groupActive: string[]
+  isSubToSub?: NavGroup
+  currentActiveGroup: string[]
+  navigationBorderWidth: number
+  saveSettings: (values: Settings) => void
+  setGroupActive: (value: string[]) => void
+  setCurrentActiveGroup: (item: string[]) => void
+}
 
-const resolveNavItemComponent = (item: NavLink | NavGroup | NavSectionTitle) => {
-  if ('sectionTitle' in item) return VerticalNavSectionTitle
-  if ('children' in item) return VerticalNavGroup
+const resolveNavItemComponent = (item: NavGroup | NavLink | NavSectionTitle) => {
+  if ((item as NavSectionTitle).sectionTitle) return VerticalNavSectionTitle
+  if ((item as NavGroup).children) return VerticalNavGroup
 
   return VerticalNavLink
 }
 
 const VerticalNavItems: FC<Props> = (props: Props) => {
-  const RenderMenuItems = props.items.map(item, index => {
-    const TagName = resolveNavItemComponent(item)
+  // ** Props
+  const { navItems } = props
+  const RenderMenuItems = navItems.map((item: NavGroup | NavLink | NavSectionTitle, index: number) => {
+    const TagName: any = resolveNavItemComponent(item)
 
-    return <TagName key={index} item={item} {...props} />
+    return <TagName {...props} key={index} item={item} />
   })
 
   return RenderMenuItems

@@ -1,6 +1,8 @@
 // ** React Imports
-import { FC, memo, useEffect, Fragment } from 'react'
-import { useLocation } from 'react-router-dom'
+import { FC, useEffect, Fragment } from 'react'
+
+// ** Next Import
+import { useRouter } from 'next/router'
 
 // ** MUI Imports
 import Chip from '@mui/material/Chip'
@@ -14,7 +16,6 @@ import ListItemButton from '@mui/material/ListItemButton'
 
 // ** Third Party Imports
 import clsx from 'clsx'
-import { useTranslation } from 'react-i18next'
 
 // ** Icons Imports
 import ChevronLeft from 'mdi-material-ui/ChevronLeft'
@@ -23,32 +24,30 @@ import ChevronRight from 'mdi-material-ui/ChevronRight'
 // ** Configs Import
 import themeConfig from 'configs/themeConfig'
 
-// ** Hooks
-import useDirection from 'utility/hooks/layout/useDirection'
-import useMenuToggle from 'utility/hooks/navigation/useMenuToggle'
-
 // ** Utils
 import { hasActiveChild, removeChildren } from '@core/layouts/utils'
 
 // ** Types
-import { NavGroupType } from '@core/layouts/components/navigation/types'
+import { NavGroup } from './types'
+import { Settings } from '@core/context/settingsContext'
 
 // ** Custom Components Imports
 import VerticalNavItems from './VerticalNavItems'
 
 interface Props {
   navHover: boolean
-  item: NavGroupType
+  item: NavGroup
   navVisible?: boolean
-  parent?: NavGroupType
+  parent?: NavGroup
+  settings: Settings
   groupActive: string[]
   currentActiveGroup: string[]
   navCollapsed: boolean
   navigationBorderWidth: number
-  toggleNavVisibility: () => void
-  isSubToSub?: NavGroupType | undefined
-  setGroupActive: (value: string[]) => void
-  setCurrentActiveGroup: (item: string[]) => void
+  isSubToSub?: NavGroup | undefined
+  saveSettings: (values: Settings) => void
+  setGroupActive: (values: string[]) => void
+  setCurrentActiveGroup: (items: string[]) => void
 }
 
 const MenuItemTextWrapper = styled(Box)<BoxProps>(() => ({
@@ -74,32 +73,29 @@ const VerticalNavGroup: FC<Props> = (props: Props) => {
   const {
     item,
     parent,
+    settings,
     navHover,
     navVisible,
     isSubToSub,
     groupActive,
     currentActiveGroup,
-    navCollapsed,
     setGroupActive,
     setCurrentActiveGroup,
-    toggleNavVisibility,
     navigationBorderWidth
   } = props
 
   // ** Hooks & Vars
-  const { t } = useTranslation()
-  const location = useLocation()
-  const { direction } = useDirection()
-  const currentURL = location.pathname
-  const { menuToggle } = useMenuToggle()
+  const { direction, navCollapsed, verticalNavToggleType } = settings
+  const router = useRouter()
+  const currentURL = router.pathname
 
   // ** Accordion menu group open toggle
-  const toggleActiveGroup = (item: NavGroupType, parent: NavGroupType | undefined) => {
+  const toggleActiveGroup = (item: NavGroup, parent: NavGroup | undefined) => {
     let openGroup = groupActive
 
     // ** If Group is already open and clicked, close the group
-    if (openGroup.includes(item.id)) {
-      openGroup.splice(openGroup.indexOf(item.id), 1)
+    if (openGroup.includes(item.title)) {
+      openGroup.splice(openGroup.indexOf(item.title), 1)
 
       // If clicked Group has open group children, Also remove those children to close those groups
       if (item.children) {
@@ -112,8 +108,8 @@ const VerticalNavGroup: FC<Props> = (props: Props) => {
       }
 
       // ** After removing all the open groups under that parent, add the clicked group to open group array
-      if (!openGroup.includes(item.id)) {
-        openGroup.push(item.id)
+      if (!openGroup.includes(item.title)) {
+        openGroup.push(item.title)
       }
     } else {
       // ** If clicked on another group that is not active or open, create openGroup array from scratch
@@ -127,8 +123,8 @@ const VerticalNavGroup: FC<Props> = (props: Props) => {
       }
 
       // ** Push current clicked group item to Open Group array
-      if (!openGroup.includes(item.id)) {
-        openGroup.push(item.id)
+      if (!openGroup.includes(item.title)) {
+        openGroup.push(item.title)
       }
     }
     setGroupActive([...openGroup])
@@ -137,11 +133,11 @@ const VerticalNavGroup: FC<Props> = (props: Props) => {
   // ** Menu Group Click
   const handleGroupClick = () => {
     const openGroup = groupActive
-    if (menuToggle === 'collapse') {
-      if (openGroup.includes(item.id)) {
-        openGroup.splice(openGroup.indexOf(item.id), 1)
+    if (verticalNavToggleType === 'collapse') {
+      if (openGroup.includes(item.title)) {
+        openGroup.splice(openGroup.indexOf(item.title), 1)
       } else {
-        openGroup.push(item.id)
+        openGroup.push(item.title)
       }
       setGroupActive([...openGroup])
     } else {
@@ -151,14 +147,14 @@ const VerticalNavGroup: FC<Props> = (props: Props) => {
 
   useEffect(() => {
     if (hasActiveChild(item, currentURL)) {
-      if (!groupActive.includes(item.id)) groupActive.push(item.id)
+      if (!groupActive.includes(item.title)) groupActive.push(item.title)
     } else {
-      const index = groupActive.indexOf(item.id)
+      const index = groupActive.indexOf(item.title)
       if (index > -1) groupActive.splice(index, 1)
     }
     setGroupActive([...groupActive])
     setCurrentActiveGroup([...groupActive])
-  }, [location]) // eslint-disable-line
+  }, [router.asPath]) // eslint-disable-line
 
   useEffect(() => {
     if (navCollapsed && !navHover) {
@@ -184,7 +180,7 @@ const VerticalNavGroup: FC<Props> = (props: Props) => {
       >
         <ListItemButton
           className={clsx({
-            'Mui-selected': groupActive.includes(item.id) || currentActiveGroup.includes(item.id)
+            'Mui-selected': groupActive.includes(item.title) || currentActiveGroup.includes(item.title)
           })}
           sx={{
             width: '100%',
@@ -209,6 +205,7 @@ const VerticalNavGroup: FC<Props> = (props: Props) => {
                 ...(parent && item.children ? { marginLeft: 1.25, marginRight: 4.75 } : {})
               }}
             >
+              {/* @ts-ignore */}
               <IconTag sx={{ ...(parent ? { fontSize: '0.75rem' } : {}) }} />
             </ListItemIcon>
           )}
@@ -218,7 +215,7 @@ const VerticalNavGroup: FC<Props> = (props: Props) => {
                 noWrap: true
               })}
             >
-              {t(item.title)}
+              {item.title}
             </Typography>
             <Box className='menu-item-meta' sx={{ ml: 0.8, display: 'flex', alignItems: 'center' }}>
               {item.badgeContent ? (
@@ -235,11 +232,11 @@ const VerticalNavGroup: FC<Props> = (props: Props) => {
               ) : null}
               {direction === 'ltr' ? (
                 <MenuGroupToggleRightIcon
-                  sx={{ ...(groupActive.includes(item.id) ? { transform: 'rotate(90deg)' } : {}) }}
+                  sx={{ ...(groupActive.includes(item.title) ? { transform: 'rotate(90deg)' } : {}) }}
                 />
               ) : (
                 <MenuGroupToggleLeftIcon
-                  sx={{ ...(groupActive.includes(item.id) ? { transform: 'rotate(-90deg)' } : {}) }}
+                  sx={{ ...(groupActive.includes(item.title) ? { transform: 'rotate(-90deg)' } : {}) }}
                 />
               )}
             </Box>
@@ -248,7 +245,7 @@ const VerticalNavGroup: FC<Props> = (props: Props) => {
       </ListItem>
       <Collapse
         component='ul'
-        in={groupActive.includes(item.id)}
+        in={groupActive.includes(item.title)}
         sx={{
           pl: 0,
           transition: 'all .25s ease',
@@ -256,15 +253,10 @@ const VerticalNavGroup: FC<Props> = (props: Props) => {
         }}
       >
         <VerticalNavItems
+          {...props}
           parent={item}
-          items={item.children}
+          navItems={item.children}
           navVisible={navVisible}
-          groupActive={groupActive}
-          setGroupActive={setGroupActive}
-          currentActiveGroup={currentActiveGroup}
-          setCurrentActiveGroup={setCurrentActiveGroup}
-          toggleNavVisibility={toggleNavVisibility}
-          navigationBorderWidth={navigationBorderWidth}
           isSubToSub={parent && item.children ? item : undefined}
         />
       </Collapse>
@@ -272,4 +264,4 @@ const VerticalNavGroup: FC<Props> = (props: Props) => {
   )
 }
 
-export default memo(VerticalNavGroup)
+export default VerticalNavGroup

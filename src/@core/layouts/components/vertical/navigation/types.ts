@@ -2,24 +2,23 @@ import { ReactNode } from 'react'
 
 export type NavLink = {
   title: string
-  icon?: ReactNode
   action?: string
-  navLink: string
-  newTab: boolean
+  path: string
+  icon?: ReactNode
   resource?: string
   disabled?: boolean
   badgeContent?: string
   externalLink?: boolean
+  openInNewTab?: boolean
   badgeColor?: 'default' | 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info'
 }
 
 export type NavGroup = {
   title: string
-  icon: ReactNode
+  icon?: ReactNode
   badgeContent?: string
-  externalLink?: boolean
-  children: NavLink[]
   badgeColor?: 'default' | 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info'
+  children?: (NavGroup | NavLink)[]
 }
 
 export type NavSectionTitle = {
