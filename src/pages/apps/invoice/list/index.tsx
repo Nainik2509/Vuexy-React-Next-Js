@@ -1,5 +1,5 @@
 // ** React Imports
-import { useState, Fragment, useEffect, MouseEvent, useCallback, ReactElement } from 'react'
+import { useState, Fragment, useEffect, MouseEvent, ReactElement } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
@@ -47,9 +47,6 @@ import { getInitials } from '@core/utils/get-initials'
 import TableHeader from './TableHeader'
 import CustomChip from '@core/components/mui/chip'
 import CustomAvatar from '@core/components/mui/avatar'
-
-// ** Configs Imports
-import themeConfig from 'configs/themeConfig'
 
 // ** Styled Components
 import DataGridWrapper from '@core/styles/mui/components/datagrid'
@@ -290,25 +287,6 @@ const InvoiceList = (props: InvoiceListProps) => {
     )
   }, [dispatch, statusValue, value])
 
-  const dataToRender = useCallback(() => {
-    const filters: { [key: string]: string } = {
-      q: value,
-      status: statusValue
-    }
-
-    const isFiltered = Object.keys(filters).some((k: string) => {
-      return filters[k].length > 0
-    })
-
-    if (store.data && store.data.length > 0) {
-      return store.data
-    } else if (store.data && store.data.length === 0 && isFiltered) {
-      return []
-    } else {
-      return store.allData.slice(0, Number(rowsPerPage))
-    }
-  }, [rowsPerPage, statusValue, store.allData, store.data, value])
-
   const handleFilter = (val: string) => {
     setValue(val)
   }
@@ -349,10 +327,6 @@ const InvoiceList = (props: InvoiceListProps) => {
     }
   ]
 
-  const calculateTableHeight = () => {
-    return `(${themeConfig.appBarHeight + 56}px} * 5.5)`
-  }
-
   return (
     <Card>
       <TableHeader
@@ -365,11 +339,11 @@ const InvoiceList = (props: InvoiceListProps) => {
         handlePerPage={handlePerPage}
         handleStatusValue={handleStatusValue}
       />
-      <DataGridWrapper sx={{ height: `calc(100vh - ${calculateTableHeight()})` }}>
+      <DataGridWrapper sx={{ height: `calc(100vh - 8rem)` }}>
         <DataGrid
           checkboxSelection
           columns={columns}
-          rows={dataToRender()}
+          rows={store.data}
           disableSelectionOnClick
           rowsPerPageOptions={[]}
           pageSize={Number(rowsPerPage)}
