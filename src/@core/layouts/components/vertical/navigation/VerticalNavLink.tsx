@@ -69,7 +69,7 @@ const VerticalNavLink: FC<Props> = ({
 
   return (
     <ListItem disablePadding sx={{ marginTop: 1, px: '0 !important' }} disabled={item.disabled || false}>
-      <Link href={`${item.path}`} passHref>
+      <Link passHref href={item.path === undefined ? '/' : `${item.path}`}>
         <MenuNavLink
           component={'a'}
           {...(item.openInNewTab ? { target: '_blank' } : null)}

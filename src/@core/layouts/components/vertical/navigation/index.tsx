@@ -1,13 +1,17 @@
 // ** React Import
 import { FC, ReactNode, useState } from 'react'
 
+// ** Third Party Components
+import PerfectScrollbar from 'react-perfect-scrollbar'
+
 // ** Type Import
 import { Settings } from '@core/context/settingsContext'
 import { NavLink, NavGroup, NavSectionTitle } from './types'
 
-// ** Navigation Drawer Import
+// ** Component Imports
 import Drawer from './Drawer'
 import VerticalNavItems from './VerticalNavItems'
+import VerticalNavHeader from './VerticalNavHeader'
 
 interface Props {
   hidden: boolean
@@ -18,10 +22,10 @@ interface Props {
   navVisible: boolean
   collapsedNavWidth: number
   navigationBorderWidth: number
+  toggleNavVisibility: () => void
   setNavHover: (values: boolean) => void
   setNavVisible: (value: boolean) => void
   saveSettings: (values: Settings) => void
-  toggleNavVisibility: (values: boolean) => void
   navItems: (NavGroup | NavLink | NavSectionTitle)[]
 }
 
@@ -32,13 +36,16 @@ const Navigation: FC<Props> = (props: Props) => {
 
   return (
     <Drawer {...props}>
-      <VerticalNavItems
-        groupActive={groupActive}
-        setGroupActive={setGroupActive}
-        currentActiveGroup={currentActiveGroup}
-        setCurrentActiveGroup={setCurrentActiveGroup}
-        {...props}
-      />
+      <VerticalNavHeader {...props} />
+      <PerfectScrollbar options={{ wheelPropagation: false }}>
+        <VerticalNavItems
+          groupActive={groupActive}
+          setGroupActive={setGroupActive}
+          currentActiveGroup={currentActiveGroup}
+          setCurrentActiveGroup={setCurrentActiveGroup}
+          {...props}
+        />
+      </PerfectScrollbar>
     </Drawer>
   )
 }

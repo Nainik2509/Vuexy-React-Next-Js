@@ -247,6 +247,7 @@ const VerticalNavGroup: FC<Props> = (props: Props) => {
         component='ul'
         in={groupActive.includes(item.title)}
         sx={{
+          m: 0,
           pl: 0,
           transition: 'all .25s ease',
           ...menuGroupCollapsedStyles
