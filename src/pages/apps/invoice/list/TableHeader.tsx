@@ -12,18 +12,13 @@ import TextField from '@mui/material/TextField'
 import Box, { BoxProps } from '@mui/material/Box'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 
-// ** Types
-import { InvoiceStatus } from 'pages/apps/invoice/types'
-
 interface TableHeaderProps {
   value: string
   userView?: boolean
   selectedRows: any[]
-  statusValue: InvoiceStatus
   rowsPerPage: string | undefined
   handleFilter: (val: string) => void
   handlePerPage: (e: SelectChangeEvent) => void
-  handleStatusValue: (e: SelectChangeEvent) => void
 }
 
 const ActionsRight = styled(Box)<BoxProps>(({ theme }) => ({
@@ -40,8 +35,7 @@ const ActionsRight = styled(Box)<BoxProps>(({ theme }) => ({
 
 const TableHeader = (props: TableHeaderProps) => {
   // ** Props
-  const { value, userView, selectedRows, rowsPerPage, statusValue, handleFilter, handlePerPage, handleStatusValue } =
-    props
+  const { value, userView, selectedRows, rowsPerPage, handleFilter, handlePerPage } = props
 
   return (
     <Box
@@ -85,21 +79,7 @@ const TableHeader = (props: TableHeaderProps) => {
           placeholder='Search Invoice'
           onChange={e => handleFilter(e.target.value)}
         />
-        <Select
-          displayEmpty
-          size='small'
-          value={statusValue}
-          sx={{ mr: 4, mb: 2 }}
-          onChange={handleStatusValue}
-          renderValue={selected => (selected.length === 0 ? 'Select Status' : selected)}
-        >
-          <MenuItem value=''>Select Status</MenuItem>
-          <MenuItem value='downloaded'>Downloaded</MenuItem>
-          <MenuItem value='draft'>Draft</MenuItem>
-          <MenuItem value='paid'>Paid</MenuItem>
-          <MenuItem value='past due'>Past Due</MenuItem>
-          <MenuItem value='partial payment'>Partial Payment</MenuItem>
-        </Select>
+
         <Link href='/apps/invoice/add' passHref>
           <Button component='a' sx={{ mb: 2 }} variant='contained'>
             Create Invoice

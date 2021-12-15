@@ -1,20 +1,24 @@
 // ** React Imports
-import { useState, Fragment, useEffect, MouseEvent, ReactElement } from 'react'
+import { Fragment, useState, useEffect, MouseEvent, ReactElement, forwardRef } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
+import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
 import Menu from '@mui/material/Menu'
 import Tooltip from '@mui/material/Tooltip'
-import { DataGrid } from '@mui/x-data-grid'
 import { styled } from '@mui/material/styles'
 import MenuItem from '@mui/material/MenuItem'
+import TextField from '@mui/material/TextField'
+import CardHeader from '@mui/material/CardHeader'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
-import { SelectChangeEvent } from '@mui/material/Select'
+import CardContent from '@mui/material/CardContent'
+import { DataGrid, GridRowId } from '@mui/x-data-grid'
+import Select, { SelectChangeEvent } from '@mui/material/Select'
 
 // ** Icons Imports
 import Send from 'mdi-material-ui/Send'
@@ -31,6 +35,10 @@ import DeleteOutline from 'mdi-material-ui/DeleteOutline'
 import InformationOutline from 'mdi-material-ui/InformationOutline'
 import ContentSaveOutline from 'mdi-material-ui/ContentSaveOutline'
 
+// ** Third Party Imports
+import format from 'date-fns/format'
+import DatePicker from 'react-datepicker'
+
 // ** Store & Actions Imports
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchData, deleteInvoice } from 'pages/apps/invoice/store'
@@ -39,6 +47,7 @@ import { fetchData, deleteInvoice } from 'pages/apps/invoice/store'
 import { RootState } from 'redux/store'
 import { ThemeColor } from '@core/layouts/types'
 import { InvoiceType } from 'pages/apps/invoice/types'
+import { DateType } from 'pages/forms/form-elements/pickers/react-datepicker/types'
 
 // ** Utils Import
 import { getInitials } from '@core/utils/get-initials'
@@ -49,6 +58,7 @@ import CustomChip from '@core/components/mui/chip'
 import CustomAvatar from '@core/components/mui/avatar'
 
 // ** Styled Components
+import DatePickerWrapper from '@core/styles/libs/react-datepicker'
 import DataGridWrapper from '@core/styles/mui/components/datagrid'
 
 interface InvoiceListProps {
@@ -264,15 +274,28 @@ const defaultColumns = [
   }
 ]
 
+const CustomInput = forwardRef((props: any, ref) => {
+  const startDate = props.start !== null ? format(props.start, 'MM/dd/yyyy') : ''
+  const endDate = props.end !== null ? ` - ${format(props.end, 'MM/dd/yyyy')}` : null
+
+  const value = `${startDate}${endDate !== null ? endDate : ''}`
+  props.start === null && props.dates.length ? props.setDates([]) : null
+
+  return <TextField fullWidth inputRef={ref} label={props.label || ''} {...props} value={value} />
+})
+
 const InvoiceList = (props: InvoiceListProps) => {
   // ** Props
   const { userView } = props
 
   // ** State
+  const [dates, setDates] = useState<Date[]>([])
   const [value, setValue] = useState<string>('')
   const [statusValue, setStatusValue] = useState<string>('')
   const [rowsPerPage, setRowsPerPage] = useState<string>('10')
-  const [selectedRows, setSelectedRows] = useState<number[]>([])
+  const [endDateRange, setEndDateRange] = useState<DateType>(null)
+  const [selectedRows, setSelectedRows] = useState<GridRowId[]>([])
+  const [startDateRange, setStartDateRange] = useState<DateType>(new Date())
 
   // ** Hooks
   const dispatch = useDispatch()
@@ -281,11 +304,12 @@ const InvoiceList = (props: InvoiceListProps) => {
   useEffect(() => {
     dispatch(
       fetchData({
+        dates,
         q: value,
         status: statusValue
       })
     )
-  }, [dispatch, statusValue, value])
+  }, [dispatch, statusValue, value, dates])
 
   const handleFilter = (val: string) => {
     setValue(val)
@@ -297,6 +321,15 @@ const InvoiceList = (props: InvoiceListProps) => {
 
   const handleStatusValue = (e: SelectChangeEvent) => {
     setStatusValue(e.target.value)
+  }
+
+  const handleOnChangeRange = (dates: any) => {
+    const [start, end] = dates
+    if (start !== null && end !== null) {
+      setDates(dates)
+    }
+    setStartDateRange(start)
+    setEndDateRange(end)
   }
 
   const columns = [
@@ -329,29 +362,76 @@ const InvoiceList = (props: InvoiceListProps) => {
   ]
 
   return (
-    <Card>
-      <TableHeader
-        value={value}
-        userView={userView}
-        statusValue={statusValue}
-        rowsPerPage={rowsPerPage}
-        selectedRows={selectedRows}
-        handleFilter={handleFilter}
-        handlePerPage={handlePerPage}
-        handleStatusValue={handleStatusValue}
-      />
-      <DataGridWrapper sx={{ height: `calc(100vh - 8rem)` }}>
-        <DataGrid
-          checkboxSelection
-          columns={columns}
-          rows={store.data}
-          disableSelectionOnClick
-          rowsPerPageOptions={[]}
-          pageSize={Number(rowsPerPage)}
-          onSelectionModelChange={rows => setSelectedRows(rows)}
-        />
-      </DataGridWrapper>
-    </Card>
+    <Grid container spacing={6}>
+      <Grid item xs={12}>
+        <Card>
+          <CardHeader title='Filters'></CardHeader>
+          <CardContent>
+            <Grid container spacing={6}>
+              <Grid item xs={12} sm={6}>
+                <Select fullWidth displayEmpty value={statusValue} sx={{ mr: 4, mb: 2 }} onChange={handleStatusValue}>
+                  <MenuItem value=''>Select Status</MenuItem>
+                  <MenuItem value='downloaded'>Downloaded</MenuItem>
+                  <MenuItem value='draft'>Draft</MenuItem>
+                  <MenuItem value='paid'>Paid</MenuItem>
+                  <MenuItem value='past due'>Past Due</MenuItem>
+                  <MenuItem value='partial payment'>Partial Payment</MenuItem>
+                </Select>
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <DatePickerWrapper>
+                  <DatePicker
+                    isClearable
+                    selectsRange
+                    monthsShown={2}
+                    endDate={endDateRange}
+                    selected={startDateRange}
+                    startDate={startDateRange}
+                    shouldCloseOnSelect={false}
+                    id='date-range-picker-months'
+                    onChange={handleOnChangeRange}
+                    customInput={
+                      <CustomInput
+                        dates={dates}
+                        end={endDateRange}
+                        setDates={setDates}
+                        label='Multiple Months'
+                        start={startDateRange}
+                      />
+                    }
+                  />
+                </DatePickerWrapper>
+              </Grid>
+            </Grid>
+          </CardContent>
+        </Card>
+      </Grid>
+      <Grid item xs={12}>
+        <Card>
+          <TableHeader
+            value={value}
+            userView={userView}
+            statusValue={statusValue}
+            rowsPerPage={rowsPerPage}
+            selectedRows={selectedRows}
+            handleFilter={handleFilter}
+            handlePerPage={handlePerPage}
+            handleStatusValue={handleStatusValue}
+          />
+          <DataGridWrapper sx={{ height: `calc(100vh - 8rem)` }}>
+            <DataGrid
+              checkboxSelection
+              columns={columns}
+              rows={store.data}
+              disableSelectionOnClick
+              rowsPerPageOptions={[]}
+              pageSize={Number(rowsPerPage)}
+              onSelectionModelChange={rows => setSelectedRows(rows)}
+            />
+          </DataGridWrapper>
+        </Card>
+      </Grid>
+    </Grid>
   )
 }
 

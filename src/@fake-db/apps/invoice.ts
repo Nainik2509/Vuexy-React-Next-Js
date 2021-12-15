@@ -1,14 +1,20 @@
 // ** Mock Adapter
 import mock from '@fake-db/mock'
 
+// ** Utils Import
+import { getDateRange } from '@core/utils/get-daterange'
+
 // ** Types
 import { InvoiceType } from 'pages/apps/invoice/types'
+
+const now = new Date()
+const currentMonth = now.toLocaleString('default', { month: 'short' })
 
 const data: { invoices: InvoiceType[] } = {
   invoices: [
     {
       id: 4987,
-      issuedDate: '13 Dec 2019',
+      issuedDate: `13 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '7777 Mendez Plains',
         company: 'Hall-Robbins PLC',
@@ -22,11 +28,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '',
       invoiceStatus: 'Paid',
       balance: '$724',
-      dueDate: '23 Apr 2019'
+      dueDate: `23 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 4988,
-      issuedDate: '17 Jul 2019',
+      issuedDate: `17 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '04033 Wesley Wall Apt. 961',
         company: 'Mccann LLC and Sons',
@@ -40,11 +46,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/1.png',
       invoiceStatus: 'Downloaded',
       balance: 0,
-      dueDate: '15 Dec 2019'
+      dueDate: `15 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 4989,
-      issuedDate: '19 Oct 2019',
+      issuedDate: `19 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '5345 Robert Squares',
         company: 'Leonard-Garcia and Sons',
@@ -58,11 +64,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/2.png',
       invoiceStatus: 'Paid',
       balance: 0,
-      dueDate: '03 Nov 2019'
+      dueDate: `03 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 4990,
-      issuedDate: '06 Mar 2020',
+      issuedDate: `06 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '19022 Clark Parks Suite 149',
         company: 'Smith, Miller and Henry LLC',
@@ -76,11 +82,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/3.png',
       invoiceStatus: 'Sent',
       balance: 0,
-      dueDate: '11 Feb 2020'
+      dueDate: `11 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 4991,
-      issuedDate: '08 Feb 2020',
+      issuedDate: `08 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '8534 Saunders Hill Apt. 583',
         company: 'Garcia-Cameron and Sons',
@@ -94,11 +100,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/4.png',
       invoiceStatus: 'Draft',
       balance: '$815',
-      dueDate: '30 Jun 2019'
+      dueDate: `30 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 4992,
-      issuedDate: '26 Aug 2019',
+      issuedDate: `26 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '661 Perez Run Apt. 778',
         company: 'Burnett-Young PLC',
@@ -112,11 +118,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '',
       invoiceStatus: 'Paid',
       balance: 0,
-      dueDate: '24 Jun 2019'
+      dueDate: `24 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 4993,
-      issuedDate: '17 Sep 2019',
+      issuedDate: `17 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '074 Long Union',
         company: 'Wilson-Lee LLC',
@@ -130,11 +136,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '',
       invoiceStatus: 'Draft',
       balance: '$407',
-      dueDate: '22 Nov 2019'
+      dueDate: `22 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 4994,
-      issuedDate: '11 Feb 2020',
+      issuedDate: `11 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '5225 Ford Cape Apt. 840',
         company: 'Schwartz, Henry and Rhodes Group',
@@ -148,11 +154,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/5.png',
       invoiceStatus: 'Paid',
       balance: '-$205',
-      dueDate: '10 Feb 2020'
+      dueDate: `10 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 4995,
-      issuedDate: '26 Jan 2020',
+      issuedDate: `26 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '23717 James Club Suite 277',
         company: 'Henderson-Holder PLC',
@@ -166,11 +172,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/6.png',
       invoiceStatus: 'Downloaded',
       balance: 0,
-      dueDate: '24 Dec 2019'
+      dueDate: `24 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 4996,
-      issuedDate: '15 Jan 2020',
+      issuedDate: `15 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '4528 Myers Gateway',
         company: 'Page-Wise PLC',
@@ -184,11 +190,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/7.png',
       invoiceStatus: 'Downloaded',
       balance: '$305',
-      dueDate: '02 Jun 2019'
+      dueDate: `02 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 4997,
-      issuedDate: '27 Sep 2019',
+      issuedDate: `27 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '4234 Mills Club Suite 107',
         company: 'Turner PLC Inc',
@@ -202,11 +208,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/8.png',
       invoiceStatus: 'Partial Payment',
       balance: '$666',
-      dueDate: '18 Mar 2020'
+      dueDate: `18 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 4998,
-      issuedDate: '31 Jul 2019',
+      issuedDate: `31 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '476 Keith Meadow',
         company: 'Levine-Dorsey PLC',
@@ -220,11 +226,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/1.png',
       invoiceStatus: 'Partial Payment',
       balance: 0,
-      dueDate: '17 Jan 2020'
+      dueDate: `17 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 4999,
-      issuedDate: '14 Feb 2020',
+      issuedDate: `14 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '56381 Ashley Village Apt. 332',
         company: 'Hall, Thompson and Ramirez LLC',
@@ -238,11 +244,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/2.png',
       invoiceStatus: 'Paid',
       balance: 0,
-      dueDate: '01 Oct 2019'
+      dueDate: `01 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5000,
-      issuedDate: '21 May 2019',
+      issuedDate: `21 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '6946 Gregory Plaza Apt. 310',
         company: 'Lambert-Thomas Group',
@@ -256,11 +262,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/3.png',
       invoiceStatus: 'Paid',
       balance: 0,
-      dueDate: '22 May 2019'
+      dueDate: `22 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5001,
-      issuedDate: '30 Jun 2019',
+      issuedDate: `30 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '64351 Andrew Lights',
         company: 'Gregory-Haynes PLC',
@@ -274,11 +280,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/4.png',
       invoiceStatus: 'Partial Payment',
       balance: '-$202',
-      dueDate: '02 Aug 2019'
+      dueDate: `02 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5002,
-      issuedDate: '21 Jun 2019',
+      issuedDate: `21 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '5702 Sarah Heights',
         company: 'Wright-Schmidt LLC',
@@ -292,11 +298,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/5.png',
       invoiceStatus: 'Downloaded',
       balance: '$731',
-      dueDate: '15 Dec 2019'
+      dueDate: `15 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5003,
-      issuedDate: '30 Dec 2019',
+      issuedDate: `30 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '668 Robert Flats',
         company: 'Russell-Abbott Ltd',
@@ -310,11 +316,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '',
       invoiceStatus: 'Sent',
       balance: '-$344',
-      dueDate: '17 Sep 2019'
+      dueDate: `17 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5004,
-      issuedDate: '27 May 2019',
+      issuedDate: `27 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '55642 Chang Extensions Suite 373',
         company: 'Williams LLC Inc',
@@ -328,11 +334,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/6.png',
       invoiceStatus: 'Partial Payment',
       balance: '-$253',
-      dueDate: '16 Aug 2019'
+      dueDate: `16 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5005,
-      issuedDate: '30 Jul 2019',
+      issuedDate: `30 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '56694 Eric Orchard',
         company: 'Hudson, Bell and Phillips PLC',
@@ -346,11 +352,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '',
       invoiceStatus: 'Past Due',
       balance: 0,
-      dueDate: '01 Aug 2019'
+      dueDate: `01 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5006,
-      issuedDate: '10 Jun 2019',
+      issuedDate: `10 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '3727 Emma Island Suite 879',
         company: 'Berry, Gonzalez and Heath Inc',
@@ -364,11 +370,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/7.png',
       invoiceStatus: 'Downloaded',
       balance: '$883',
-      dueDate: '12 Apr 2019'
+      dueDate: `12 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5007,
-      issuedDate: '01 Feb 2020',
+      issuedDate: `01 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '953 Miller Common Suite 580',
         company: 'Martinez, Fuller and Chavez and Sons',
@@ -382,11 +388,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/8.png',
       invoiceStatus: 'Sent',
       balance: 0,
-      dueDate: '19 Nov 2019'
+      dueDate: `19 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5008,
-      issuedDate: '22 Mar 2020',
+      issuedDate: `22 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '808 Sullivan Street Apt. 135',
         company: 'Wilson and Sons LLC',
@@ -400,11 +406,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/1.png',
       invoiceStatus: 'Partial Payment',
       balance: 0,
-      dueDate: '30 Nov 2019'
+      dueDate: `30 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5009,
-      issuedDate: '30 Nov 2019',
+      issuedDate: `30 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '25135 Christopher Creek',
         company: 'Hawkins, Johnston and Mcguire PLC',
@@ -418,11 +424,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/2.png',
       invoiceStatus: 'Paid',
       balance: 0,
-      dueDate: '10 Sep 2019'
+      dueDate: `10 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5010,
-      issuedDate: '06 Jan 2020',
+      issuedDate: `06 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '81285 Rebecca Estates Suite 046',
         company: 'Huynh-Mills and Sons',
@@ -436,11 +442,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/3.png',
       invoiceStatus: 'Downloaded',
       balance: 0,
-      dueDate: '08 Dec 2019'
+      dueDate: `08 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5011,
-      issuedDate: '01 Jun 2019',
+      issuedDate: `01 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '3102 Briggs Dale Suite 118',
         company: 'Jones-Cooley and Sons',
@@ -454,11 +460,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '',
       invoiceStatus: 'Draft',
       balance: 0,
-      dueDate: '01 Feb 2020'
+      dueDate: `01 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5012,
-      issuedDate: '30 Oct 2019',
+      issuedDate: `30 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '811 Jill Skyway',
         company: 'Jones PLC Ltd',
@@ -472,11 +478,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/4.png',
       invoiceStatus: 'Partial Payment',
       balance: 0,
-      dueDate: '18 Oct 2019'
+      dueDate: `18 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5013,
-      issuedDate: '05 Feb 2020',
+      issuedDate: `05 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '2223 Brandon Inlet Suite 597',
         company: 'Jordan, Gomez and Ross Group',
@@ -490,11 +496,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/5.png',
       invoiceStatus: 'Draft',
       balance: 0,
-      dueDate: '01 Nov 2019'
+      dueDate: `01 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5014,
-      issuedDate: '01 Dec 2019',
+      issuedDate: `01 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '08724 Barry Causeway',
         company: 'Gonzalez, Moody and Glover LLC',
@@ -508,11 +514,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '',
       invoiceStatus: 'Downloaded',
       balance: 0,
-      dueDate: '23 Sep 2019'
+      dueDate: `23 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5015,
-      issuedDate: '16 Apr 2019',
+      issuedDate: `16 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '073 Holt Ramp Apt. 755',
         company: 'Ashley-Pacheco Ltd',
@@ -526,11 +532,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/6.png',
       invoiceStatus: 'Draft',
       balance: 0,
-      dueDate: '01 Apr 2019'
+      dueDate: `01 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5016,
-      issuedDate: '24 Jan 2020',
+      issuedDate: `24 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '984 Sherry Trail Apt. 953',
         company: 'Berry PLC Group',
@@ -544,11 +550,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '',
       invoiceStatus: 'Paid',
       balance: '$951',
-      dueDate: '30 Sep 2019'
+      dueDate: `30 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5017,
-      issuedDate: '24 Feb 2020',
+      issuedDate: `24 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '093 Jonathan Camp Suite 953',
         company: 'Allen Group Ltd',
@@ -562,11 +568,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/7.png',
       invoiceStatus: 'Partial Payment',
       balance: '-$153',
-      dueDate: '25 Aug 2019'
+      dueDate: `25 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5018,
-      issuedDate: '29 Feb 2020',
+      issuedDate: `29 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '4735 Kristie Islands Apt. 259',
         company: 'Chapman-Schneider LLC',
@@ -580,11 +586,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/8.png',
       invoiceStatus: 'Draft',
       balance: 0,
-      dueDate: '10 Jul 2019'
+      dueDate: `10 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5019,
-      issuedDate: '07 Aug 2019',
+      issuedDate: `07 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '92218 Andrew Radial',
         company: 'Mcclure, Hernandez and Simon Ltd',
@@ -598,11 +604,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/1.png',
       invoiceStatus: 'Partial Payment',
       balance: '-$459',
-      dueDate: '14 Oct 2019'
+      dueDate: `14 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5020,
-      issuedDate: '10 May 2019',
+      issuedDate: `10 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '2342 Michelle Valley',
         company: 'Hamilton PLC and Sons',
@@ -616,11 +622,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/2.png',
       invoiceStatus: 'Past Due',
       balance: 0,
-      dueDate: '28 Mar 2019'
+      dueDate: `28 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5021,
-      issuedDate: '02 Apr 2019',
+      issuedDate: `02 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '16039 Brittany Terrace Apt. 128',
         company: 'Silva-Reeves LLC',
@@ -634,11 +640,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '',
       invoiceStatus: 'Sent',
       balance: 0,
-      dueDate: '06 Sep 2019'
+      dueDate: `06 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5022,
-      issuedDate: '02 May 2019',
+      issuedDate: `02 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '37856 Olsen Lakes Apt. 852',
         company: 'Solis LLC Ltd',
@@ -652,11 +658,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '',
       invoiceStatus: 'Sent',
       balance: 0,
-      dueDate: '09 May 2019'
+      dueDate: `09 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5023,
-      issuedDate: '23 Mar 2020',
+      issuedDate: `23 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '11489 Griffin Plaza Apt. 927',
         company: 'Munoz-Peters and Sons',
@@ -670,11 +676,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/3.png',
       invoiceStatus: 'Draft',
       balance: 0,
-      dueDate: '23 Jul 2019'
+      dueDate: `23 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5024,
-      issuedDate: '28 Sep 2019',
+      issuedDate: `28 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '276 Michael Gardens Apt. 004',
         company: 'Shea, Velez and Garcia LLC',
@@ -688,11 +694,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/4.png',
       invoiceStatus: 'Partial Payment',
       balance: 0,
-      dueDate: '25 Sep 2019'
+      dueDate: `25 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5025,
-      issuedDate: '21 Feb 2020',
+      issuedDate: `21 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '633 Bell Well Apt. 057',
         company: 'Adams, Simmons and Brown Group',
@@ -706,11 +712,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '',
       invoiceStatus: 'Downloaded',
       balance: 0,
-      dueDate: '07 Jun 2019'
+      dueDate: `07 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5026,
-      issuedDate: '24 May 2019',
+      issuedDate: `24 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '1068 Lopez Fall',
         company: 'Williams-Lawrence and Sons',
@@ -724,11 +730,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/5.png',
       invoiceStatus: 'Draft',
       balance: 0,
-      dueDate: '22 Oct 2019'
+      dueDate: `22 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5027,
-      issuedDate: '13 Jan 2020',
+      issuedDate: `13 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '86691 Mackenzie Light Suite 568',
         company: 'Deleon Inc LLC',
@@ -742,11 +748,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '',
       invoiceStatus: 'Sent',
       balance: 0,
-      dueDate: '04 Feb 2020'
+      dueDate: `04 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5028,
-      issuedDate: '18 May 2019',
+      issuedDate: `18 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '86580 Sarah Bridge',
         company: 'Farmer, Johnson and Anderson Group',
@@ -760,11 +766,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '',
       invoiceStatus: 'Paid',
       balance: '$361',
-      dueDate: '02 Mar 2020'
+      dueDate: `02 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5029,
-      issuedDate: '29 Oct 2019',
+      issuedDate: `29 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '49709 Edwin Ports Apt. 353',
         company: 'Sherman-Johnson PLC',
@@ -778,11 +784,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '',
       invoiceStatus: 'Paid',
       balance: 0,
-      dueDate: '25 Aug 2019'
+      dueDate: `25 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5030,
-      issuedDate: '07 Apr 2019',
+      issuedDate: `07 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '3856 Mathis Squares Apt. 584',
         company: 'Byrd LLC PLC',
@@ -796,11 +802,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '',
       invoiceStatus: 'Draft',
       balance: 0,
-      dueDate: '06 Mar 2020'
+      dueDate: `06 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5031,
-      issuedDate: '21 Aug 2019',
+      issuedDate: `21 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '141 Adrian Ridge Suite 550',
         company: 'Stone-Zimmerman Group',
@@ -814,11 +820,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/6.png',
       invoiceStatus: 'Partial Payment',
       balance: 0,
-      dueDate: '09 Jun 2019'
+      dueDate: `09 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5032,
-      issuedDate: '31 May 2019',
+      issuedDate: `31 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '01871 Kristy Square',
         company: 'Yang, Hansen and Hart PLC',
@@ -832,11 +838,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '',
       invoiceStatus: 'Past Due',
       balance: 0,
-      dueDate: '22 Oct 2019'
+      dueDate: `22 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5033,
-      issuedDate: '12 Jul 2019',
+      issuedDate: `12 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '075 Smith Views',
         company: 'Jenkins-Rosales Inc',
@@ -850,11 +856,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/7.png',
       invoiceStatus: 'Partial Payment',
       balance: 0,
-      dueDate: '22 Mar 2020'
+      dueDate: `22 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5034,
-      issuedDate: '10 Jul 2019',
+      issuedDate: `10 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '2577 Pearson Overpass Apt. 314',
         company: 'Mason-Reed PLC',
@@ -868,11 +874,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '',
       invoiceStatus: 'Paid',
       balance: 0,
-      dueDate: '22 Oct 2019'
+      dueDate: `22 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5035,
-      issuedDate: '20 Jul 2019',
+      issuedDate: `20 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '1770 Sandra Mountains Suite 636',
         company: 'Foster-Pham PLC',
@@ -886,11 +892,11 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '',
       invoiceStatus: 'Draft',
       balance: '$762',
-      dueDate: '12 Jun 2019'
+      dueDate: `12 ${currentMonth} ${now.getFullYear()}`
     },
     {
       id: 5036,
-      issuedDate: '19 Apr 2019',
+      issuedDate: `19 ${currentMonth} ${now.getFullYear()}`,
       client: {
         address: '78083 Laura Pines',
         company: 'Richardson and Sons LLC',
@@ -904,7 +910,7 @@ const data: { invoices: InvoiceType[] } = {
       avatar: '/images/avatars/8.png',
       invoiceStatus: 'Paid',
       balance: '-$205',
-      dueDate: '25 Sep 2019'
+      dueDate: `25 ${currentMonth} ${now.getFullYear()}`
     }
   ]
 }
@@ -913,18 +919,49 @@ const data: { invoices: InvoiceType[] } = {
 // GET: Return Invoice List
 // ------------------------------------------------
 mock.onGet('/apps/invoice/invoices').reply(config => {
-  const { q = '', status = null } = config.params
+  const { q = '', status = null, dates = [] } = config.params
   const queryLowered = q.toLowerCase()
-  const filteredData = data.invoices.filter(
-    invoice =>
-      (invoice.client.companyEmail.toLowerCase().includes(queryLowered) ||
-        invoice.client.name.toLowerCase().includes(queryLowered) ||
-        String(invoice.id).toLowerCase().includes(queryLowered) ||
-        String(invoice.total).toLowerCase().includes(queryLowered) ||
-        String(invoice.balance).toLowerCase().includes(queryLowered) ||
-        invoice.dueDate.toLowerCase().includes(queryLowered)) &&
-      invoice.invoiceStatus.toLowerCase() === (status.toLowerCase() || invoice.invoiceStatus.toLowerCase())
-  )
+  const filteredData = data.invoices.filter(invoice => {
+    if (dates.length) {
+      const [start, end] = dates
+      const filtered: number[] = []
+      const range = getDateRange(start, end)
+      const invoiceDate = new Date(invoice.issuedDate)
+
+      range.filter(date => {
+        const rangeDate = new Date(date)
+        if (
+          invoiceDate.getFullYear() === rangeDate.getFullYear() &&
+          invoiceDate.getDate() === rangeDate.getDate() &&
+          invoiceDate.getMonth() === rangeDate.getMonth()
+        ) {
+          filtered.push(invoice.id)
+        }
+      })
+
+      if (filtered.length && filtered.includes(invoice.id)) {
+        return (
+          (invoice.client.companyEmail.toLowerCase().includes(queryLowered) ||
+            invoice.client.name.toLowerCase().includes(queryLowered) ||
+            String(invoice.id).toLowerCase().includes(queryLowered) ||
+            String(invoice.total).toLowerCase().includes(queryLowered) ||
+            String(invoice.balance).toLowerCase().includes(queryLowered) ||
+            invoice.dueDate.toLowerCase().includes(queryLowered)) &&
+          invoice.invoiceStatus.toLowerCase() === (status.toLowerCase() || invoice.invoiceStatus.toLowerCase())
+        )
+      }
+    } else {
+      return (
+        (invoice.client.companyEmail.toLowerCase().includes(queryLowered) ||
+          invoice.client.name.toLowerCase().includes(queryLowered) ||
+          String(invoice.id).toLowerCase().includes(queryLowered) ||
+          String(invoice.total).toLowerCase().includes(queryLowered) ||
+          String(invoice.balance).toLowerCase().includes(queryLowered) ||
+          invoice.dueDate.toLowerCase().includes(queryLowered)) &&
+        invoice.invoiceStatus.toLowerCase() === (status.toLowerCase() || invoice.invoiceStatus.toLowerCase())
+      )
+    }
+  })
 
   return [
     200,
