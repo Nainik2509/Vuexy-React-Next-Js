@@ -2,6 +2,11 @@
 import { Dispatch } from 'redux'
 import { ReactElement, SyntheticEvent } from 'react'
 
+export type MailLayoutType = {
+  label?: string
+  folder?: string
+}
+
 export type MailAttachmentType = {
   url: string
   size: string

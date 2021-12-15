@@ -2,10 +2,10 @@
 import { NextPageContext } from 'next'
 
 // ** Types
-import { MailLayoutType } from './types'
+import { MailLayoutType } from '../types'
 
 // ** Demo Components Imports
-import EmailLayout from './EmailLayout'
+import EmailLayout from '../EmailLayout'
 
 const EmailApp = ({ folder, label }: MailLayoutType) => {
   return <EmailLayout folder={folder} label={label} />

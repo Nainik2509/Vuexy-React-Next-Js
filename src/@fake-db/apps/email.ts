@@ -11,7 +11,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'tommys@mail.com',
         name: 'Tommy Sicilia',
-        avatar: '/assets/images/avatars/1.png'
+        avatar: '/images/avatars/1.png'
       },
       to: [
         {
@@ -27,13 +27,13 @@ const data: { emails: MailType[] } = {
       attachments: [
         {
           fileName: 'log.txt',
-          thumbnail: '/assets/images/icons/file-icons/txt.png',
+          thumbnail: '/images/icons/file-icons/txt.png',
           url: '',
           size: '5mb'
         },
         {
           fileName: 'performance.xls',
-          thumbnail: '/assets/images/icons/file-icons/xls.png',
+          thumbnail: '/images/icons/file-icons/xls.png',
           url: '',
           size: '10mb'
         }
@@ -50,7 +50,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'tressag@mail.com',
         name: 'Tressa Gass',
-        avatar: '/assets/images/avatars/6.png'
+        avatar: '/images/avatars/6.png'
       },
       to: [
         {
@@ -76,7 +76,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'hettiem@mail.com',
         name: 'Hettie Mcerlean',
-        avatar: '/assets/images/avatars/3.png'
+        avatar: '/images/avatars/3.png'
       },
       to: [
         {
@@ -102,7 +102,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'louettae@mail.com',
         name: 'Louetta Esses',
-        avatar: '/assets/images/avatars/4.png'
+        avatar: '/images/avatars/4.png'
       },
       to: [
         {
@@ -118,7 +118,7 @@ const data: { emails: MailType[] } = {
       attachments: [
         {
           fileName: 'report.doc',
-          thumbnail: '/assets/images/icons/file-icons/doc.png',
+          thumbnail: '/images/icons/file-icons/doc.png',
           url: '',
           size: '32mb'
         }
@@ -135,7 +135,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'bposvner0@zdnet.com',
         name: 'Bobbie Posvner',
-        avatar: '/assets/images/avatars/11.png'
+        avatar: '/images/avatars/8.png'
       },
       to: [
         {
@@ -161,7 +161,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'rgilder1@illinois.edu',
         name: 'Rebecca Gilder',
-        avatar: '/assets/images/avatars/6.png'
+        avatar: '/images/avatars/6.png'
       },
       to: [
         {
@@ -187,7 +187,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'swilby2@yandex.ru',
         name: 'Shawn Wilby',
-        avatar: '/assets/images/avatars/1.png'
+        avatar: '/images/avatars/1.png'
       },
       to: [
         {
@@ -213,7 +213,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'wmannering3@mozilla.org',
         name: 'Waldemar Mannering',
-        avatar: '/assets/images/avatars/5.png'
+        avatar: '/images/avatars/5.png'
       },
       to: [
         {
@@ -239,7 +239,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'hfrostdyke4@scientificamerican.com',
         name: 'Heath Frostdyke',
-        avatar: '/assets/images/avatars/1.png'
+        avatar: '/images/avatars/1.png'
       },
       to: [
         {
@@ -265,7 +265,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'pjentzsch5@tamu.edu',
         name: 'Paulita Jentzsch',
-        avatar: '/assets/images/avatars/7.png'
+        avatar: '/images/avatars/7.png'
       },
       to: [
         {
@@ -281,7 +281,7 @@ const data: { emails: MailType[] } = {
       attachments: [
         {
           fileName: 'UtNulla.xls',
-          thumbnail: '/assets/images/icons/file-icons/xls.png',
+          thumbnail: '/images/icons/file-icons/xls.png',
           url: '',
           size: '1mb'
         }
@@ -298,7 +298,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'lminghetti6@yale.edu',
         name: 'Lowell Minghetti',
-        avatar: '/assets/images/avatars/4.png'
+        avatar: '/images/avatars/4.png'
       },
       to: [
         {
@@ -314,7 +314,7 @@ const data: { emails: MailType[] } = {
       attachments: [
         {
           fileName: 'ElementumLigula.js',
-          thumbnail: '/assets/images/icons/file-icons/js.png',
+          thumbnail: '/images/icons/file-icons/js.png',
           url: '',
           size: '29mb'
         }
@@ -331,7 +331,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'efinessy7@sbwire.com',
         name: 'Eugenie Finessy',
-        avatar: '/assets/images/avatars/2.png'
+        avatar: '/images/avatars/2.png'
       },
       to: [
         {
@@ -357,7 +357,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'tmckeurton8@163.com',
         name: 'Tadio McKeurton',
-        avatar: '/assets/images/avatars/3.png'
+        avatar: '/images/avatars/3.png'
       },
       to: [
         {
@@ -383,7 +383,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'ebegg9@wikia.com',
         name: 'Eb Begg',
-        avatar: '/assets/images/avatars/8.png'
+        avatar: '/images/avatars/8.png'
       },
       to: [
         {
@@ -409,7 +409,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'mspata@sina.com.cn',
         name: 'Modestine Spat',
-        avatar: '/assets/images/avatars/3.png'
+        avatar: '/images/avatars/3.png'
       },
       to: [
         {
@@ -435,7 +435,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'cprandob@rambler.ru',
         name: 'Chase Prando',
-        avatar: '/assets/images/avatars/4.png'
+        avatar: '/images/avatars/4.png'
       },
       to: [
         {
@@ -461,7 +461,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'nbartlesc@merriam-webster.com',
         name: 'Normand Bartles',
-        avatar: '/assets/images/avatars/8.png'
+        avatar: '/images/avatars/8.png'
       },
       to: [
         {
@@ -487,7 +487,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'rgennd@dedecms.com',
         name: 'Robin Genn',
-        avatar: '/assets/images/avatars/6.png'
+        avatar: '/images/avatars/6.png'
       },
       to: [
         {
@@ -513,7 +513,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'eramelote@webeden.co.uk',
         name: 'Emmalynn Ramelot',
-        avatar: '/assets/images/avatars/8.png'
+        avatar: '/images/avatars/8.png'
       },
       to: [
         {
@@ -539,7 +539,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'pcuzenf@mediafire.com',
         name: 'Penni Cuzen',
-        avatar: '/assets/images/avatars/8.png'
+        avatar: '/images/avatars/8.png'
       },
       to: [
         {
@@ -555,7 +555,7 @@ const data: { emails: MailType[] } = {
       attachments: [
         {
           fileName: 'Augue.js',
-          thumbnail: '/assets/images/icons/file-icons/js.png',
+          thumbnail: '/images/icons/file-icons/js.png',
           url: '',
           size: '4mb'
         }
@@ -569,7 +569,7 @@ const data: { emails: MailType[] } = {
           from: {
             email: 'johndoe@mail.com',
             name: 'John Doe',
-            avatar: '/assets/images/avatars/6.png'
+            avatar: '/images/avatars/6.png'
           },
           to: [
             {
@@ -595,7 +595,7 @@ const data: { emails: MailType[] } = {
           from: {
             email: 'hettiem@mail.com',
             name: 'Hettie Mcerlean',
-            avatar: '/assets/images/avatars/1.png'
+            avatar: '/images/avatars/1.png'
           },
           to: [
             {
@@ -625,7 +625,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'abaldersong@utexas.edu',
         name: 'Ardis Balderson',
-        avatar: '/assets/images/avatars/2.png'
+        avatar: '/images/avatars/2.png'
       },
       to: [
         {
@@ -651,7 +651,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'dmallallh@ask.com',
         name: 'Dagmar Mallall',
-        avatar: '/assets/images/avatars/8.png'
+        avatar: '/images/avatars/8.png'
       },
       to: [
         {
@@ -677,7 +677,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'nmacgaughyi@aol.com',
         name: 'Nada MacGaughy',
-        avatar: '/assets/images/avatars/3.png'
+        avatar: '/images/avatars/3.png'
       },
       to: [
         {
@@ -693,7 +693,7 @@ const data: { emails: MailType[] } = {
       attachments: [
         {
           fileName: 'Leo.xls',
-          thumbnail: '/assets/images/icons/file-icons/xls.png',
+          thumbnail: '/images/icons/file-icons/xls.png',
           url: '',
           size: '33mb'
         }
@@ -710,7 +710,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'douldcottj@yellowpages.com',
         name: 'Dalila Ouldcott',
-        avatar: '/assets/images/avatars/1.png'
+        avatar: '/images/avatars/1.png'
       },
       to: [
         {
@@ -726,7 +726,7 @@ const data: { emails: MailType[] } = {
       attachments: [
         {
           fileName: 'example.doc',
-          thumbnail: '/assets/images/icons/file-icons/doc.png',
+          thumbnail: '/images/icons/file-icons/doc.png',
           url: '',
           size: '21mb'
         }
@@ -740,7 +740,7 @@ const data: { emails: MailType[] } = {
           from: {
             email: 'johndoe@mail.com',
             name: 'John Doe',
-            avatar: '/assets/images/avatars/1.png'
+            avatar: '/images/avatars/1.png'
           },
           to: [
             {
@@ -766,7 +766,7 @@ const data: { emails: MailType[] } = {
           from: {
             email: 'hettiem@mail.com',
             name: 'Hettie Mcerlean',
-            avatar: '/assets/images/avatars/3.png'
+            avatar: '/images/avatars/3.png'
           },
           to: [
             {
@@ -796,7 +796,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'lkubicek0@cdbaby.com',
         name: 'Lockwood Kubicek',
-        avatar: '/assets/images/avatars/2.png'
+        avatar: '/images/avatars/2.png'
       },
       to: [
         {
@@ -822,7 +822,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'mosgarby1@accuweather.com',
         name: 'Milena Osgarby',
-        avatar: '/assets/images/avatars/3.png'
+        avatar: '/images/avatars/3.png'
       },
       to: [
         {
@@ -845,7 +845,7 @@ const data: { emails: MailType[] } = {
           from: {
             email: 'johndoe@mail.com',
             name: 'John Doe',
-            avatar: '/assets/images/avatars/6.png'
+            avatar: '/images/avatars/6.png'
           },
           to: [
             {
@@ -871,7 +871,7 @@ const data: { emails: MailType[] } = {
           from: {
             email: 'hettiem@mail.com',
             name: 'Hettie Mcerlean',
-            avatar: '/assets/images/avatars/1.png'
+            avatar: '/images/avatars/1.png'
           },
           to: [
             {
@@ -901,7 +901,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'pBuffay@email.com',
         name: 'Pheoebe Buffay',
-        avatar: '/assets/images/avatars/6.png'
+        avatar: '/images/avatars/6.png'
       },
       to: [
         {
@@ -927,7 +927,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'gabramow2@elegantthemes.com',
         name: 'Gabriel Abramow',
-        avatar: '/assets/images/avatars/4.png'
+        avatar: '/images/avatars/4.png'
       },
       to: [
         {
@@ -953,7 +953,7 @@ const data: { emails: MailType[] } = {
       from: {
         email: 'tolrenshaw3@twitpic.com',
         name: 'Temple Olrenshaw',
-        avatar: '/assets/images/avatars/5.png'
+        avatar: '/images/avatars/5.png'
       },
       to: [
         {
@@ -976,7 +976,7 @@ const data: { emails: MailType[] } = {
           from: {
             email: 'johndoe@mail.com',
             name: 'John Doe',
-            avatar: '/assets/images/avatars/1.png'
+            avatar: '/images/avatars/1.png'
           },
           to: [
             {
@@ -1002,7 +1002,7 @@ const data: { emails: MailType[] } = {
           from: {
             email: 'hettiem@mail.com',
             name: 'Hettie Mcerlean',
-            avatar: '/assets/images/avatars/1.png'
+            avatar: '/images/avatars/1.png'
           },
           to: [
             {

@@ -121,15 +121,14 @@ const SidebarLeft = (props: MailSidebarType) => {
       <PerfectScrollbar options={{ wheelPropagation: false }}>
         <Box sx={{ pt: 0, overflowY: 'hidden' }}>
           <List component='div'>
-            <ListItemStyled
-              // component={Link}
-              // href='/apps/email/inbox'
-              onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
-              sx={{
-                borderLeftColor: theme => (activeInboxCondition ? theme.palette.primary.main : 'transparent')
-              }}
-            >
-              <a>
+            <Link href='/apps/email/inbox' passHref>
+              <ListItemStyled
+                component='a'
+                onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
+                sx={{
+                  borderLeftColor: theme => (activeInboxCondition ? theme.palette.primary.main : 'transparent')
+                }}
+              >
                 <ListItemIcon sx={{ color: activeInboxCondition ? 'primary.main' : 'text.secondary' }}>
                   <EmailOutline sx={{ mr: 2 }} />
                 </ListItemIcon>
@@ -144,18 +143,17 @@ const SidebarLeft = (props: MailSidebarType) => {
                   }}
                 />
                 {RenderBadge('inbox', 'primary')}
-              </a>
-            </ListItemStyled>
-            <ListItemStyled
-              // component={Link}
-              // href='/apps/email/sent'
-              onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
-              sx={{
-                borderLeftColor: theme =>
-                  handleActiveItem('folder', 'sent') ? theme.palette.primary.main : 'transparent'
-              }}
-            >
-              <a>
+              </ListItemStyled>
+            </Link>
+            <Link href='/apps/email/sent' passHref>
+              <ListItemStyled
+                component='a'
+                onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
+                sx={{
+                  borderLeftColor: theme =>
+                    handleActiveItem('folder', 'sent') ? theme.palette.primary.main : 'transparent'
+                }}
+              >
                 <ListItemIcon sx={{ color: handleActiveItem('folder', 'sent') ? 'primary.main' : 'text.secondary' }}>
                   <SendOutline sx={{ mr: 2 }} />
                 </ListItemIcon>
@@ -169,18 +167,17 @@ const SidebarLeft = (props: MailSidebarType) => {
                     }
                   }}
                 />
-              </a>
-            </ListItemStyled>
-            <ListItemStyled
-              // component={Link}
-              // href='/apps/email/draft'
-              onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
-              sx={{
-                borderLeftColor: theme =>
-                  handleActiveItem('folder', 'draft') ? theme.palette.primary.main : 'transparent'
-              }}
-            >
-              <a>
+              </ListItemStyled>
+            </Link>
+            <Link href='/apps/email/draft' passHref>
+              <ListItemStyled
+                component='a'
+                onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
+                sx={{
+                  borderLeftColor: theme =>
+                    handleActiveItem('folder', 'draft') ? theme.palette.primary.main : 'transparent'
+                }}
+              >
                 <ListItemIcon sx={{ color: handleActiveItem('folder', 'draft') ? 'primary.main' : 'text.secondary' }}>
                   <PencilOutline sx={{ mr: 2 }} />
                 </ListItemIcon>
@@ -195,18 +192,17 @@ const SidebarLeft = (props: MailSidebarType) => {
                   }}
                 />
                 {RenderBadge('draft', 'warning')}
-              </a>
-            </ListItemStyled>
-            <ListItemStyled
-              // component={Link}
-              // href='/apps/email/starred'
-              onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
-              sx={{
-                borderLeftColor: theme =>
-                  handleActiveItem('folder', 'starred') ? theme.palette.primary.main : 'transparent'
-              }}
-            >
-              <a>
+              </ListItemStyled>
+            </Link>
+            <Link href='/apps/email/starred' passHref>
+              <ListItemStyled
+                component='a'
+                onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
+                sx={{
+                  borderLeftColor: theme =>
+                    handleActiveItem('folder', 'starred') ? theme.palette.primary.main : 'transparent'
+                }}
+              >
                 <ListItemIcon sx={{ color: handleActiveItem('folder', 'starred') ? 'primary.main' : 'text.secondary' }}>
                   <StarOutline sx={{ mr: 2 }} />
                 </ListItemIcon>
@@ -220,18 +216,17 @@ const SidebarLeft = (props: MailSidebarType) => {
                     }
                   }}
                 />
-              </a>
-            </ListItemStyled>
-            <ListItemStyled
-              // component={Link}
-              // href='/apps/email/spam'
-              onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
-              sx={{
-                borderLeftColor: theme =>
-                  handleActiveItem('folder', 'spam') ? theme.palette.primary.main : 'transparent'
-              }}
-            >
-              <a>
+              </ListItemStyled>
+            </Link>
+            <Link href='/apps/email/spam' passHref>
+              <ListItemStyled
+                component='a'
+                onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
+                sx={{
+                  borderLeftColor: theme =>
+                    handleActiveItem('folder', 'spam') ? theme.palette.primary.main : 'transparent'
+                }}
+              >
                 <ListItemIcon sx={{ color: handleActiveItem('folder', 'spam') ? 'primary.main' : 'text.secondary' }}>
                   <AlertOctagonOutline sx={{ mr: 2 }} />
                 </ListItemIcon>
@@ -246,18 +241,17 @@ const SidebarLeft = (props: MailSidebarType) => {
                   }}
                 />
                 {RenderBadge('spam', 'error')}
-              </a>
-            </ListItemStyled>
-            <ListItemStyled
-              // component={Link}
-              // href='/apps/email/trash'
-              onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
-              sx={{
-                borderLeftColor: theme =>
-                  handleActiveItem('folder', 'trash') ? theme.palette.primary.main : 'transparent'
-              }}
-            >
-              <a>
+              </ListItemStyled>
+            </Link>
+            <Link href='/apps/email/trash' passHref>
+              <ListItemStyled
+                component='a'
+                onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
+                sx={{
+                  borderLeftColor: theme =>
+                    handleActiveItem('folder', 'trash') ? theme.palette.primary.main : 'transparent'
+                }}
+              >
                 <ListItemIcon sx={{ color: handleActiveItem('folder', 'trash') ? 'primary.main' : 'text.secondary' }}>
                   <DeleteOutline sx={{ mr: 2 }} />
                 </ListItemIcon>
@@ -271,8 +265,8 @@ const SidebarLeft = (props: MailSidebarType) => {
                     }
                   }}
                 />
-              </a>
-            </ListItemStyled>
+              </ListItemStyled>
+            </Link>
           </List>
           <Typography
             component='h6'
@@ -282,16 +276,15 @@ const SidebarLeft = (props: MailSidebarType) => {
             Labels
           </Typography>
           <List component='div'>
-            <ListItemStyled
-              // component={Link}
-              // href='/apps/email/label/personal'
-              onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
-              sx={{
-                borderLeftColor: theme =>
-                  handleActiveItem('label', 'personal') ? theme.palette.primary.main : 'transparent'
-              }}
-            >
-              <a>
+            <Link href='/apps/email/label/personal' passHref>
+              <ListItemStyled
+                component='a'
+                onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
+                sx={{
+                  borderLeftColor: theme =>
+                    handleActiveItem('label', 'personal') ? theme.palette.primary.main : 'transparent'
+                }}
+              >
                 <ListItemIcon sx={{ mr: 3.5 }}>
                   <Circle sx={{ fontSize: '0.75rem', color: 'success.main' }} />
                 </ListItemIcon>
@@ -305,18 +298,17 @@ const SidebarLeft = (props: MailSidebarType) => {
                     }
                   }}
                 />
-              </a>
-            </ListItemStyled>
-            <ListItemStyled
-              // component={Link}
-              // href='/apps/email/label/company'
-              onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
-              sx={{
-                borderLeftColor: theme =>
-                  handleActiveItem('label', 'company') ? theme.palette.primary.main : 'transparent'
-              }}
-            >
-              <a>
+              </ListItemStyled>
+            </Link>
+            <Link href='/apps/email/label/company' passHref>
+              <ListItemStyled
+                component='a'
+                onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
+                sx={{
+                  borderLeftColor: theme =>
+                    handleActiveItem('label', 'company') ? theme.palette.primary.main : 'transparent'
+                }}
+              >
                 <ListItemIcon sx={{ mr: 3.5 }}>
                   <Circle sx={{ fontSize: '0.75rem', color: 'primary.main' }} />
                 </ListItemIcon>
@@ -330,18 +322,17 @@ const SidebarLeft = (props: MailSidebarType) => {
                     }
                   }}
                 />
-              </a>
-            </ListItemStyled>
-            <ListItemStyled
-              // component={Link}
-              // href='/apps/email/label/important'
-              onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
-              sx={{
-                borderLeftColor: theme =>
-                  handleActiveItem('label', 'important') ? theme.palette.primary.main : 'transparent'
-              }}
-            >
-              <a>
+              </ListItemStyled>
+            </Link>
+            <Link href='/apps/email/label/important' passHref>
+              <ListItemStyled
+                component='a'
+                onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
+                sx={{
+                  borderLeftColor: theme =>
+                    handleActiveItem('label', 'important') ? theme.palette.primary.main : 'transparent'
+                }}
+              >
                 <ListItemIcon sx={{ mr: 3.5 }}>
                   <Circle sx={{ fontSize: '0.75rem', color: 'warning.main' }} />
                 </ListItemIcon>
@@ -355,18 +346,17 @@ const SidebarLeft = (props: MailSidebarType) => {
                     }
                   }}
                 />
-              </a>
-            </ListItemStyled>
-            <ListItemStyled
-              // component={Link}
-              // href='/apps/email/label/private'
-              onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
-              sx={{
-                borderLeftColor: theme =>
-                  handleActiveItem('label', 'private') ? theme.palette.primary.main : 'transparent'
-              }}
-            >
-              <a>
+              </ListItemStyled>
+            </Link>
+            <Link href='/apps/email/label/private' passHref>
+              <ListItemStyled
+                component='a'
+                onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
+                sx={{
+                  borderLeftColor: theme =>
+                    handleActiveItem('label', 'private') ? theme.palette.primary.main : 'transparent'
+                }}
+              >
                 <ListItemIcon sx={{ mr: 3.5 }}>
                   <Circle sx={{ fontSize: '0.75rem', color: 'error.main' }} />
                 </ListItemIcon>
@@ -380,8 +370,8 @@ const SidebarLeft = (props: MailSidebarType) => {
                     }
                   }}
                 />
-              </a>
-            </ListItemStyled>
+              </ListItemStyled>
+            </Link>
           </List>
         </Box>
       </PerfectScrollbar>
