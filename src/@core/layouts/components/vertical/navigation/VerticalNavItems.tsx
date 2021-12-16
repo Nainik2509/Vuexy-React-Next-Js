@@ -3,7 +3,7 @@ import { FC } from 'react'
 
 // ** Types Import
 import { Settings } from '@core/context/settingsContext'
-import { NavLink, NavGroup, NavSectionTitle } from '@core/layouts/types'
+import { NavLink, NavGroup, NavSectionTitle, VerticalNavItemsType } from '@core/layouts/types'
 
 // ** Custom Menu Components
 import VerticalNavLink from './VerticalNavLink'
@@ -17,9 +17,9 @@ interface Props {
   navVisible?: boolean
   groupActive: string[]
   isSubToSub?: NavGroup
-  verticalNavItems?: any
   currentActiveGroup: string[]
   navigationBorderWidth: number
+  verticalNavItems?: VerticalNavItemsType
   saveSettings: (values: Settings) => void
   setGroupActive: (value: string[]) => void
   setCurrentActiveGroup: (item: string[]) => void
@@ -35,13 +35,13 @@ const resolveNavItemComponent = (item: NavGroup | NavLink | NavSectionTitle) => 
 const VerticalNavItems: FC<Props> = (props: Props) => {
   // ** Props
   const { verticalNavItems } = props
-  const RenderMenuItems = verticalNavItems.map((item: NavGroup | NavLink | NavSectionTitle, index: number) => {
+  const RenderMenuItems = verticalNavItems?.map((item: NavGroup | NavLink | NavSectionTitle, index: number) => {
     const TagName: any = resolveNavItemComponent(item)
 
     return <TagName {...props} key={index} item={item} />
   })
 
-  return RenderMenuItems
+  return <>{RenderMenuItems}</>
 }
 
 export default VerticalNavItems

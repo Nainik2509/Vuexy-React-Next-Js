@@ -61,7 +61,7 @@ const Timeline = styled(MuiTimeline)<TimelineProps>(({ theme }) => ({
 }))
 
 // Styled component for the image of a shoe
-const ImgShoe = styled(Image)(({ theme }) => ({
+const ImgShoe = styled('img')(({ theme }) => ({
   borderRadius: theme.shape.borderRadius
 }))
 

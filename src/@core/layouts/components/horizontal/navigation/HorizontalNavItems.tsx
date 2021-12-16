@@ -2,7 +2,7 @@
 import { FC } from 'react'
 
 // ** Types
-import { NavGroup, NavLink } from '@core/layouts/types'
+import { HorizontalNavItemsType, NavGroup, NavLink } from '@core/layouts/types'
 
 // ** Custom Navigation Components
 import HorizontalNavLink from './HorizontalNavLink'
@@ -12,8 +12,8 @@ interface Props {
   parentId?: string
   openNav?: string[]
   hasParent?: boolean
-  horizontalNavItems?: any
   setOpenNav?: (value: string[]) => void
+  horizontalNavItems?: HorizontalNavItemsType
   handleGroupMouseLeave?: (value: string) => void
   handleGroupMouseEnter?: (value: string) => void
 }
@@ -30,7 +30,7 @@ const HorizontalNavItems: FC<Props> = props => {
     return <TagName {...props} key={index} item={item} />
   })
 
-  return RenderMenuItems
+  return <>{RenderMenuItems}</>
 }
 
 export default HorizontalNavItems

@@ -23,7 +23,7 @@ interface FileProp {
 }
 
 // Styled component for the upload image inside the dropzone area
-const Img = styled(Image)(({ theme }) => ({
+const Img = styled('img')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     marginRight: theme.spacing(15.75)
   },
@@ -76,7 +76,7 @@ const FileUploaderSingle = () => {
       <DropzoneWrapper {...getRootProps({ className: 'dropzone' })} sx={acceptedFiles.length ? { height: 450 } : {}}>
         <input {...getInputProps()} />
         <Box sx={{ display: 'flex', flexDirection: ['column', 'column', 'row'], alignItems: 'center' }}>
-          <Img alt='Upload img' src='/images/misc/upload.png' width='100%' height='100%' />
+          <Img alt='Upload img' src='/images/misc/upload.png' />
           <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: ['center', 'center', 'inherit'] }}>
             <HeadingTypography variant='h5'>Drop files here or click to upload.</HeadingTypography>
             <Typography color='textSecondary'>

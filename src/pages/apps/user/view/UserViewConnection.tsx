@@ -9,8 +9,7 @@ import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import Switch from '@mui/material/Switch'
 import Button from '@mui/material/Button'
-
-// import { styled } from '@mui/material/styles'
+import { styled } from '@mui/material/styles'
 import CardHeader from '@mui/material/CardHeader'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
@@ -20,11 +19,11 @@ import Close from 'mdi-material-ui/Close'
 import LinkVariant from 'mdi-material-ui/LinkVariant'
 
 // ** Styled component for the Facebook image
-// const Img = styled(Image)(({ theme }) => ({
-//   height: 35,
-//   marginLeft: theme.spacing(1.75),
-//   marginRight: theme.spacing(1.75)
-// }))
+const Img = styled('img')(({ theme }) => ({
+  height: 35,
+  marginLeft: theme.spacing(1.75),
+  marginRight: theme.spacing(1.75)
+}))
 
 const UserViewConnection = () => {
   return (
@@ -85,7 +84,7 @@ const UserViewConnection = () => {
 
           <Box sx={{ display: 'flex', marginBottom: 7, alignItems: 'center', justifyContent: 'space-between' }}>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <Image width='35' width='35' height='35' alt='Mailchimp' src='/images/logos/mail-chimp.png' />
+              <Image width='35' height='35' alt='Mailchimp' src='/images/logos/mail-chimp.png' />
               <Box sx={{ marginLeft: 3 }}>
                 <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Mailchimp</Typography>
                 <Typography variant='body2' sx={{ fontWeight: 500, fontSize: '0.8125rem' }}>
@@ -128,7 +127,7 @@ const UserViewConnection = () => {
             }}
           >
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <img width='35' alt='Facebook' src='/images/logos/facebook.png' />
+              <Img alt='Facebook' src='/images/logos/facebook.png' />
               <Box sx={{ marginLeft: 3 }}>
                 <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Facebook</Typography>
                 <Typography variant='body2' sx={{ fontWeight: 500, fontSize: '0.8125rem' }}>

@@ -11,6 +11,20 @@ export type AppBarSearchType = {
   time?: string
 }
 
+// Types for Faq Page
+export type FaqQAndAType = {
+  id: string
+  answer: string
+  question: string
+}
+export type FaqType = {
+  id: string
+  icon: string
+  title: string
+  subtitle: string
+  qAndA: FaqQAndAType[]
+}
+
 export type DataTableRowType = {
   id: number
   age: string
