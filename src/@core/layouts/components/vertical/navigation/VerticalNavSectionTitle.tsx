@@ -18,8 +18,8 @@ import { Settings } from '@core/context/settingsContext'
 
 interface Props {
   navHover: boolean
-  item: NavSectionTitle
   settings: Settings
+  item: NavSectionTitle
   navigationBorderWidth: number
 }
 
@@ -46,7 +46,10 @@ const TypographyHeaderText = styled(Typography)<TypographyProps>(({ theme }) => 
   fontWeight: theme.typography.fontWeightMedium
 }))
 
-const VerticalNavSectionTitle: FC<Props> = ({ item, navHover, settings, navigationBorderWidth }: Props) => {
+const VerticalNavSectionTitle: FC<Props> = (props: Props) => {
+  // ** Props
+  const { item, navHover, settings, navigationBorderWidth } = props
+
   // ** Vars
   const navCollapsed = settings.navCollapsed
 
@@ -54,7 +57,7 @@ const VerticalNavSectionTitle: FC<Props> = ({ item, navHover, settings, navigati
     <ListSubheader
       sx={
         navCollapsed && !navHover
-          ? { pt: 3.375, pb: 2.875, pl: (themeConfig.collapsedNavigationSize - navigationBorderWidth - 24) / 8 }
+          ? { pt: 3.12, pb: 2.875, pl: (themeConfig.collapsedNavigationSize - navigationBorderWidth - 24) / 8 }
           : { pl: 6 }
       }
     >

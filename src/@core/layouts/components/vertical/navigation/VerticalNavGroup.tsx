@@ -35,14 +35,13 @@ import { Settings } from '@core/context/settingsContext'
 import VerticalNavItems from './VerticalNavItems'
 
 interface Props {
-  navHover: boolean
   item: NavGroup
-  navVisible?: boolean
+  navHover: boolean
   parent?: NavGroup
   settings: Settings
+  navVisible?: boolean
   groupActive: string[]
   currentActiveGroup: string[]
-  navCollapsed: boolean
   navigationBorderWidth: number
   isSubToSub?: NavGroup | undefined
   saveSettings: (values: Settings) => void
@@ -78,16 +77,16 @@ const VerticalNavGroup: FC<Props> = (props: Props) => {
     navVisible,
     isSubToSub,
     groupActive,
-    currentActiveGroup,
     setGroupActive,
+    currentActiveGroup,
     setCurrentActiveGroup,
     navigationBorderWidth
   } = props
 
   // ** Hooks & Vars
-  const { direction, navCollapsed, verticalNavToggleType } = settings
   const router = useRouter()
   const currentURL = router.pathname
+  const { direction, navCollapsed, verticalNavToggleType } = settings
 
   // ** Accordion menu group open toggle
   const toggleActiveGroup = (item: NavGroup, parent: NavGroup | undefined) => {

@@ -11,12 +11,13 @@ import { Settings } from '@core/context/settingsContext'
 interface Props {
   hidden: boolean
   navWidth: number
+  navHover: boolean
   settings: Settings
   navVisible: boolean
   children: ReactNode
   collapsedNavWidth: number
+  setNavHover: (values: boolean) => void
   setNavVisible: (value: boolean) => void
-  saveSettings: (values: Settings) => void
 }
 
 const SwipeableDrawer = styled(MuiSwipeableDrawer)<SwipeableDrawerProps>({
@@ -38,7 +39,12 @@ const SwipeableDrawer = styled(MuiSwipeableDrawer)<SwipeableDrawerProps>({
 })
 
 const Drawer: FC<Props> = (props: Props) => {
-  const { hidden, children, navWidth, navVisible, setNavVisible, settings, collapsedNavWidth } = props
+  // ** Props
+  const { hidden, children, navHover, navWidth, settings, navVisible, setNavHover, setNavVisible, collapsedNavWidth } =
+    props
+
+  // ** Var
+  const { navCollapsed } = settings
 
   // Drawer Props for Mobile & Tablet screens
   const MobileDrawerProps = {
@@ -52,25 +58,24 @@ const Drawer: FC<Props> = (props: Props) => {
 
   // Drawer Props for Desktop screens
   const DesktopDrawerProps = {
-    open: true
-
-    // onMouseEnter: () => {
-    //   setNavHover(true)
-    // },
-    // onMouseLeave: () => {
-    //   setNavHover(false)
-    // }
+    open: true,
+    onOpen: () => null,
+    onClose: () => null,
+    onMouseEnter: () => {
+      setNavHover(true)
+    },
+    onMouseLeave: () => {
+      setNavHover(false)
+    }
   }
 
   return (
     <SwipeableDrawer
-      onOpen={() => null}
-      onClose={() => null}
       className='layout-vertical-nav'
       variant={hidden ? 'temporary' : 'permanent'}
+      sx={{ width: navCollapsed ? collapsedNavWidth : navWidth }}
       {...(hidden ? { ...MobileDrawerProps } : { ...DesktopDrawerProps })}
-      sx={{ width: settings.navCollapsed ? collapsedNavWidth : navWidth }}
-      PaperProps={{ sx: { width: settings.navCollapsed ? collapsedNavWidth : navWidth } }}
+      PaperProps={{ sx: { width: navCollapsed && !navHover ? collapsedNavWidth : navWidth } }}
     >
       {children}
     </SwipeableDrawer>

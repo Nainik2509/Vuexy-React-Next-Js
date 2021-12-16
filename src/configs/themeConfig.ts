@@ -43,7 +43,7 @@ const themeConfig: ThemeConfig = {
   disableRipple: false /* true | false */,
   navCollapsed: false /* true | false */,
   navHidden: false /* true | false */,
-  layout: 'horizontal' /* vertical | horizontal */,
+  layout: 'vertical' /* vertical | horizontal */,
   verticalNavToggleType: 'accordion' /* accordion | collapse, */,
   menuTextTruncate: true /* true | false */,
   navigationSize: 260 /* Number in PX(Pixels) */,

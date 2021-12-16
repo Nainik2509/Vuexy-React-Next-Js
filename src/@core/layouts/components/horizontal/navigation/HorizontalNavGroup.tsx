@@ -95,7 +95,6 @@ const NavigationMenu = styled((props: TooltipProps) => <Tooltip {...props} class
 const HorizontalNavGroup: FC<Props> = (props: Props) => {
   // ** Props
   const { item, hasParent, settings, handleGroupMouseLeave, handleGroupMouseEnter } = props
-  console.log(`settings`, settings)
 
   // ** Hooks & Vars
   const router = useRouter()

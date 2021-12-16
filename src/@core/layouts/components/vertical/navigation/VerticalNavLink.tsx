@@ -18,13 +18,14 @@ import themeConfig from 'configs/themeConfig'
 
 // ** Types
 import { NavLink, NavGroup } from '@core/layouts/types'
+import { Settings } from '@core/context/settingsContext'
 
 interface Props {
   parent?: boolean
   item: NavLink
   navHover?: boolean
+  settings: Settings
   navVisible?: boolean
-  navCollapsed?: boolean
   navigationBorderWidth: number
   toggleNavVisibility: () => void
   isSubToSub?: NavGroup | undefined
@@ -59,12 +60,15 @@ const VerticalNavLink: FC<Props> = ({
   item,
   parent,
   navHover,
+  settings,
   navVisible,
   isSubToSub,
-  navCollapsed,
   toggleNavVisibility,
   navigationBorderWidth
 }: Props) => {
+  // ** Var
+  const { navCollapsed } = settings
+
   const IconTag: ReactNode = parent && !item.icon ? themeConfig.navSubItemIcon : item.icon
 
   return (
