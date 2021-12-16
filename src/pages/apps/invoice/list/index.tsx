@@ -280,8 +280,10 @@ const CustomInput = forwardRef((props: any, ref) => {
 
   const value = `${startDate}${endDate !== null ? endDate : ''}`
   props.start === null && props.dates.length ? props.setDates([]) : null
+  const updatedProps = { ...props }
+  delete updatedProps.setDates
 
-  return <TextField fullWidth inputRef={ref} label={props.label || ''} {...props} value={value} />
+  return <TextField fullWidth inputRef={ref} label={props.label || ''} {...updatedProps} value={value} />
 })
 
 const InvoiceList = (props: InvoiceListProps) => {
@@ -411,12 +413,10 @@ const InvoiceList = (props: InvoiceListProps) => {
           <TableHeader
             value={value}
             userView={userView}
-            statusValue={statusValue}
             rowsPerPage={rowsPerPage}
             selectedRows={selectedRows}
             handleFilter={handleFilter}
             handlePerPage={handlePerPage}
-            handleStatusValue={handleStatusValue}
           />
           <DataGridWrapper sx={{ height: `calc(100vh - 8rem)` }}>
             <DataGrid
