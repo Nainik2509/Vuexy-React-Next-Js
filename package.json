@@ -11,6 +11,8 @@
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
+    "@casl/ability": "^5.2.2",
+    "@casl/react": "^2.2.2",
     "@emotion/cache": "^11.6.0",
     "@emotion/react": "^11.7.0",
     "@emotion/server": "^11.4.0",
@@ -67,6 +69,7 @@
     "yup": "0.32.9"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^8.5.6",
     "@types/node": "16.11.11",
     "@types/prismjs": "^1.16.6",
     "@types/react": "17.0.37",

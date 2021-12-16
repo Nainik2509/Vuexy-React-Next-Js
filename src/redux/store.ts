@@ -7,6 +7,7 @@ import user from 'pages/apps/user/store'
 import email from 'pages/apps/email/store'
 import invoice from 'pages/apps/invoice/store'
 import calendar from 'pages/apps/calendar/store'
+import authentication from 'redux/authentication'
 import permissions from 'pages/apps/permissions/store'
 
 export const store = configureStore({
@@ -16,7 +17,8 @@ export const store = configureStore({
     email,
     invoice,
     calendar,
-    permissions
+    permissions,
+    authentication
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

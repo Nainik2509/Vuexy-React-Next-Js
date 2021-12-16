@@ -1,9 +1,10 @@
 // ** React Imports
-import { FC, ReactElement, ReactNode } from 'react'
+import { FC, useEffect, useState, ReactElement, ReactNode } from 'react'
 
 // ** Next Imports
 import Head from 'next/head'
 import type { NextPage } from 'next'
+import { useRouter } from 'next/router'
 import type { AppProps } from 'next/app'
 
 // ** Store imports
@@ -24,7 +25,8 @@ import '@fake-db/index'
 import UserLayout from 'layouts/UserLayout'
 import ThemeComponent from '@core/theme/ThemeComponent'
 
-// ** Settings Context
+// ** Contexts
+import { AuthContext } from '@core/context/AuthContext'
 import { SettingsConsumer, SettingsProvider } from '@core/context/settingsContext'
 
 // ** Utils Imports
@@ -56,9 +58,45 @@ const clientSideEmotionCache = createEmotionCache()
 
 // ** Configure JSS & ClassName
 const App: FC<AppPropsWithLayout> = (props: AppPropsWithLayout) => {
+  const [isMounted, setIsMounted] = useState<boolean>()
+
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
 
   const getLayout = Component.getLayout ?? (page => <UserLayout>{page}</UserLayout>)
+
+  const router = useRouter()
+
+  // useEffect(() => {
+  //   if (!window.localStorage.getItem('accessToken') && router.route !== '/login' && !pageProps.publicPage) {
+  //     if (typeof window !== undefined) {
+  //       router.push({
+  //         pathname: '/login',
+  //         query: { returnUrl: router.route }
+  //       })
+  //     }
+  //   }
+  // }, [router])
+  useEffect(() => {
+    setIsMounted(true)
+
+    return () => setIsMounted(false)
+  }, [])
+
+  const handleRedirection = () => {
+    if (
+      typeof window !== undefined &&
+      !window.localStorage.getItem('accessToken') &&
+      router.route !== '/login' &&
+      !pageProps.publicPage
+    ) {
+      router.push({
+        pathname: '/login',
+        query: { returnUrl: router.route }
+      })
+    } else {
+      return getLayout(<Component {...pageProps} />)
+    }
+  }
 
   return (
     <Provider store={store}>
@@ -67,13 +105,15 @@ const App: FC<AppPropsWithLayout> = (props: AppPropsWithLayout) => {
           <title>Master React Admin Template With MUI & NextJS</title>
           <meta name='viewport' content='initial-scale=1, width=device-width' />
         </Head>
-        <SettingsProvider>
-          <SettingsConsumer>
-            {({ settings }) => (
-              <ThemeComponent settings={settings}>{getLayout(<Component {...pageProps} />)}</ThemeComponent>
-            )}
-          </SettingsConsumer>
-        </SettingsProvider>
+        <AuthContext>
+          <SettingsProvider>
+            <SettingsConsumer>
+              {({ settings }) => (
+                <ThemeComponent settings={settings}>{isMounted ? handleRedirection() : null}</ThemeComponent>
+              )}
+            </SettingsConsumer>
+          </SettingsProvider>
+        </AuthContext>
       </CacheProvider>
     </Provider>
   )

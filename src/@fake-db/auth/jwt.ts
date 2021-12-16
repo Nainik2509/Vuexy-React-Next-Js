@@ -1,10 +1,13 @@
-// ** Mock Adapter
-import mock from '@fake-db/mock'
-
 // ** JWT import
 import jwt from 'jsonwebtoken'
 
-const users = [
+// ** Mock Adapter
+import mock from '@fake-db/mock'
+
+// ** Types
+import { JwtDataType } from '@fake-db/types'
+
+const users: JwtDataType[] = [
   {
     id: 1,
     fullName: 'John Doe',
@@ -35,8 +38,15 @@ const users = [
   }
 ]
 
-mock.onPost('/api/auth/login').reply(request => {
+// ! These two secrets shall be in .env file and not in any other file
+const jwtConfig = {
+  secret: 'dd5f3089-40c3-403d-af14-d0c228b05cb4',
+  refreshTokenSecret: '7c4c1c50-3230-45bf-9eae-c9b2e401c767'
+}
+
+mock.onPost('/jwt/login').reply(request => {
   const { email, password } = JSON.parse(request.data)
+
   let error = {
     email: ['Something went wrong']
   }
@@ -44,9 +54,9 @@ mock.onPost('/api/auth/login').reply(request => {
   const user = users.find(u => u.email === email && u.password === password)
 
   if (user) {
-    const accessToken = jwt.sign({ id: user.id }, process.env.JWT_SECRET)
+    const accessToken = jwt.sign({ id: user.id }, jwtConfig.secret)
+
     const response = {
-      ...user,
       accessToken
     }
 
@@ -60,8 +70,8 @@ mock.onPost('/api/auth/login').reply(request => {
   }
 })
 
-mock.onPost('/api/auth/register').reply(request => {
-  if (request.data) {
+mock.onPost('/jwt/register').reply(request => {
+  if (request.data.length > 0) {
     const { email, password, username } = JSON.parse(request.data)
     const isEmailAlreadyInUse = users.find(user => user.email === email)
     const isUsernameAlreadyInUse = users.find(user => user.username === username)
@@ -93,27 +103,31 @@ mock.onPost('/api/auth/register').reply(request => {
       }
 
       users.push(userData)
-      const accessToken = jwt.sign({ id: userData.id }, process.env.JWT_SECRET)
+
+      const accessToken = jwt.sign({ id: userData.id }, jwtConfig.secret)
+
       const user = { ...userData }
       delete user.password
 
-      return [200, { ...user, accessToken }]
-    } else {
-      return [200, { error }]
+      const response = { accessToken }
+
+      return [200, response]
     }
+
+    return [200, { error }]
   } else {
     return [401, { error: 'Invalid Data' }]
   }
 })
 
-mock.onGet('/api/auth/me').reply(config => {
-  const token = config.token
+mock.onGet('/auth/me').reply(config => {
+  const token = config.headers.Authorization
 
   // get the decoded payload and header
   const decoded = jwt.decode(token, { complete: true })
   const { id: userId } = decoded.payload
 
-  const userData = JSON.parse(JSON.stringify(users.find(u => u.id === userId)))
+  const userData = JSON.parse(JSON.stringify(users.find((u: JwtDataType) => u.id === userId)))
 
   delete userData.password
 

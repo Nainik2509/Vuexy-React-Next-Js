@@ -24,3 +24,19 @@ export type DataTableRowType = {
   start_date: string
   experience: string
 }
+
+export type UserAbilityType = {
+  action: string
+  subject: string
+}
+
+export type JwtDataType = {
+  id: number
+  role: string
+  email: string
+  fullName: string
+  username: string
+  password: string
+  avatar?: string | null
+  ability: UserAbilityType[]
+}
