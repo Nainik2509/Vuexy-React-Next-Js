@@ -3,6 +3,7 @@ import { FC, memo, ElementType, Fragment } from 'react'
 
 // ** Next Import
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -59,11 +60,15 @@ const HorizontalNavLink: FC<Props> = (props: Props) => {
 
   const Wrapper = !hasParent ? List : Fragment
 
+  // ** Hook
+  const router = useRouter()
+
   return (
     <Wrapper {...(!hasParent ? { sx: { py: 3 } } : {})}>
       <Link href={`${item.path}`} passHref>
         <ListItem
           component={'a'}
+          className={router.pathname === item.path ? 'active' : ''}
           disabled={item.disabled}
           target={item.openInNewTab ? '_blank' : undefined}
           onClick={e => {

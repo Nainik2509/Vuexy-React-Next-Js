@@ -3,6 +3,7 @@ import { FC, ElementType, ReactNode } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 // ** MUI Imports
 import Chip from '@mui/material/Chip'
@@ -71,11 +72,15 @@ const VerticalNavLink: FC<Props> = ({
 
   const IconTag: ReactNode = parent && !item.icon ? themeConfig.navSubItemIcon : item.icon
 
+  // ** Hook
+  const router = useRouter()
+
   return (
     <ListItem disablePadding sx={{ marginTop: 1, px: '0 !important' }} disabled={item.disabled || false}>
       <Link passHref href={item.path === undefined ? '/' : `${item.path}`}>
         <MenuNavLink
           component={'a'}
+          className={router.pathname === item.path ? 'active' : ''}
           {...(item.openInNewTab ? { target: '_blank' } : null)}
           onClick={e => {
             if (item.path === undefined) {
