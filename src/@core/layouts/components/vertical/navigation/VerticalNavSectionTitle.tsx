@@ -13,7 +13,7 @@ import DotsHorizontal from 'mdi-material-ui/DotsHorizontal'
 import themeConfig from 'configs/themeConfig'
 
 // ** Types
-import { NavSectionTitle } from './types'
+import { NavSectionTitle } from '@core/layouts/types'
 import { Settings } from '@core/context/settingsContext'
 
 interface Props {

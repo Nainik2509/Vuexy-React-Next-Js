@@ -17,7 +17,7 @@ import ListItemButton, { ListItemButtonProps } from '@mui/material/ListItemButto
 import themeConfig from 'configs/themeConfig'
 
 // ** Types
-import { NavLink, NavGroup } from './types'
+import { NavLink, NavGroup } from '@core/layouts/types'
 
 interface Props {
   parent?: boolean

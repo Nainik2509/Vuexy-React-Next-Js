@@ -16,15 +16,15 @@ import Navigation from './components/vertical/navigation'
 import Footer from './components/shared-components/footer'
 
 // ** Type Import
+import { VerticalNavItemsType } from './types'
 import { Settings } from '@core/context/settingsContext'
-import { NavLink, NavGroup, NavSectionTitle } from './components/vertical/navigation/types'
 
 interface Props {
   hidden: boolean
   settings: Settings
   children: ReactNode
+  verticalNavItems?: VerticalNavItemsType
   saveSettings: (values: Settings) => void
-  navItems: (NavGroup | NavLink | NavSectionTitle)[]
 }
 
 const VerticalLayoutWrapper = styled('div')({

@@ -15,8 +15,10 @@ import themeConfig from 'configs/themeConfig'
 import Customizer from '@core/components/customizer'
 import Footer from './components/shared-components/footer'
 import AppBarContent from './components/horizontal/app-bar-content'
+import Navigation from './components/horizontal/navigation'
 
 // ** Type Import
+import { HorizontalNavItemsType } from './types'
 import { Settings } from '@core/context/settingsContext'
 
 interface Props {
@@ -24,6 +26,7 @@ interface Props {
   settings: Settings
   children: ReactNode
   saveSettings: (values: Settings) => void
+  horizontalNavItems?: HorizontalNavItemsType
 }
 
 const HorizontalLayoutWrapper = styled('div')({
@@ -112,7 +115,7 @@ const HorizontalLayout: FC<Props> = (props: Props) => {
                 ...(settings.contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } })
               }}
             >
-              Navigation
+              <Navigation {...props} />
             </Toolbar>
           )}
         </AppBar>

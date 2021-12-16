@@ -6,7 +6,7 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 
 // ** Type Import
 import { Settings } from '@core/context/settingsContext'
-import { NavLink, NavGroup, NavSectionTitle } from './types'
+import { VerticalNavItemsType } from '@core/layouts/types'
 
 // ** Component Imports
 import Drawer from './Drawer'
@@ -25,8 +25,8 @@ interface Props {
   toggleNavVisibility: () => void
   setNavHover: (values: boolean) => void
   setNavVisible: (value: boolean) => void
+  verticalNavItems?: VerticalNavItemsType
   saveSettings: (values: Settings) => void
-  navItems: (NavGroup | NavLink | NavSectionTitle)[]
 }
 
 const Navigation: FC<Props> = (props: Props) => {

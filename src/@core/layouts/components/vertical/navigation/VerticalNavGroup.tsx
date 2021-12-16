@@ -28,7 +28,7 @@ import themeConfig from 'configs/themeConfig'
 import { hasActiveChild, removeChildren } from '@core/layouts/utils'
 
 // ** Types
-import { NavGroup } from './types'
+import { NavGroup } from '@core/layouts/types'
 import { Settings } from '@core/context/settingsContext'
 
 // ** Custom Components Imports
@@ -256,8 +256,8 @@ const VerticalNavGroup: FC<Props> = (props: Props) => {
         <VerticalNavItems
           {...props}
           parent={item}
-          navItems={item.children}
           navVisible={navVisible}
+          verticalNavItems={item.children}
           isSubToSub={parent && item.children ? item : undefined}
         />
       </Collapse>

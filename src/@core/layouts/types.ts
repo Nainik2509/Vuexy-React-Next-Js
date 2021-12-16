@@ -1,7 +1,5 @@
 import { ReactNode } from 'react'
 
-import { NavGroup, NavLink, NavSectionTitle } from './components/vertical/navigation/types'
-
 export type Layout = 'vertical' | 'horizontal' | 'blank' | 'blankWithAppBar'
 
 export type Skin = 'default' | 'bordered' | 'semi-dark'
@@ -16,7 +14,35 @@ export type ThemeColor = 'primary' | 'secondary' | 'error' | 'warning' | 'info' 
 
 export type VerticalNavToggle = 'accordion' | 'collapse'
 
-export type HorizontalMenuToggle = 'hover'
+export type HorizontalMenuToggle = 'hover' | 'click'
+
+export type NavLink = {
+  title: string
+  action?: string
+  path?: string
+  icon?: ReactNode
+  resource?: string
+  disabled?: boolean
+  badgeContent?: string
+  externalLink?: boolean
+  openInNewTab?: boolean
+  badgeColor?: 'default' | 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info'
+}
+
+export type NavGroup = {
+  title: string
+  icon?: ReactNode
+  badgeContent?: string
+  badgeColor?: 'default' | 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info'
+  children?: (NavGroup | NavLink)[]
+}
+
+export type NavSectionTitle = {
+  sectionTitle: string
+}
+
+export type VerticalNavItemsType = (NavLink | NavGroup | NavSectionTitle)[]
+export type HorizontalNavItemsType = (NavLink | NavGroup)[]
 
 export type LayoutProps = {
   children: ReactNode
@@ -24,5 +50,6 @@ export type LayoutProps = {
   appBarContent?: any
   navMenuHeader?: any
   navMenuContent?: any
-  navItems: (NavGroup | NavLink | NavSectionTitle)[]
+  verticalNavItems?: VerticalNavItemsType
+  horizontalNavItems?: HorizontalNavItemsType
 }

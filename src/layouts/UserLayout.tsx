@@ -27,7 +27,9 @@ const UserLayout: FC<Props> = (props: Props) => {
     <Layout
       settings={settings}
       saveSettings={saveSettings}
-      navItems={settings.layout === 'horizontal' ? HorizontalNavItems() : VerticalNavItems()}
+      {...(settings.layout === 'horizontal'
+        ? { horizontalNavItems: HorizontalNavItems() }
+        : { verticalNavItems: VerticalNavItems() })}
     >
       {children}
     </Layout>
