@@ -20,22 +20,29 @@ import BellOutline from 'mdi-material-ui/BellOutline'
 import ChevronDown from 'mdi-material-ui/ChevronDown'
 
 // ** Types
-import { DateType } from 'views/forms/form-elements/pickers/react-datepicker/types'
+import { DateType } from 'views/forms/forms/form-elements/pickers/react-datepicker/types'
 
 // ** Styled Components
 import ApexChartWrapper from '@core/styles/libs/react-apexcharts'
 import DatePickerWrapper from '@core/styles/libs/react-datepicker'
 
+const columnColors = {
+  bg: '#f8d3ff',
+  series1: '#826af9',
+  series2: '#d2b0ff'
+}
+
 // ! To avoid Window is not defined Error
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
-const ApexBarChart = () => {
+const ApexColumnChart = () => {
   // ** States
   const [endDate, setEndDate] = useState<DateType>(null)
   const [startDate, setStartDate] = useState<DateType>(new Date())
 
   const options = {
     chart: {
+      stacked: true,
       parentHeightOffset: 0,
       toolbar: {
         show: false
@@ -43,35 +50,48 @@ const ApexBarChart = () => {
     },
     plotOptions: {
       bar: {
-        borderRadius: 8,
-        barHeight: '30%',
-        horizontal: true,
-        endingShape: 'rounded',
-        startingShape: 'rounded'
+        columnWidth: '15%',
+        colors: {
+          backgroundBarRadius: 10,
+          backgroundBarColors: [columnColors.bg, columnColors.bg, columnColors.bg, columnColors.bg, columnColors.bg]
+        }
       }
+    },
+    dataLabels: {
+      enabled: false
+    },
+    legend: {
+      position: 'top',
+      horizontalAlign: 'start'
+    },
+    colors: [columnColors.series1, columnColors.series2],
+    stroke: {
+      show: true,
+      colors: ['transparent']
     },
     grid: {
       xaxis: {
         lines: {
-          show: false
+          show: true
         }
-      },
-      padding: {
-        top: -10
       }
     },
-    colors: ['#00cfe8'],
-    dataLabels: {
-      enabled: false
-    },
     xaxis: {
-      categories: ['MON, 11', 'THU, 14', 'FRI, 15', 'MON, 18', 'WED, 20', 'FRI, 21', 'MON, 23']
+      categories: ['7/12', '8/12', '9/12', '10/12', '11/12', '12/12', '13/12', '14/12', '15/12', '16/12']
+    },
+    fill: {
+      opacity: 1
     }
   }
 
   const series = [
     {
-      data: [700, 350, 480, 600, 210, 550, 150]
+      name: 'Apple',
+      data: [90, 120, 55, 100, 80, 125, 175, 70, 88, 180]
+    },
+    {
+      name: 'Samsung',
+      data: [85, 100, 30, 40, 95, 90, 30, 110, 62, 20]
     }
   ]
 
@@ -114,9 +134,7 @@ const ApexBarChart = () => {
     <Card>
       <CardHeader
         title='Data Science'
-        subheader='$74,382.72'
         titleTypographyProps={{ variant: 'h6' }}
-        subheaderTypographyProps={{ variant: 'caption' }}
         sx={{
           flexDirection: ['column', 'row'],
           alignItems: ['flex-start', 'center'],
@@ -128,8 +146,8 @@ const ApexBarChart = () => {
             <DatePicker
               selectsRange
               endDate={endDate}
-              id='apexchart-bar'
               selected={startDate}
+              id='apexchart-column'
               startDate={startDate}
               onChange={handleOnChange}
               placeholderText='Click to select a date'
@@ -147,4 +165,4 @@ const ApexBarChart = () => {
   )
 }
 
-export default ApexBarChart
+export default ApexColumnChart

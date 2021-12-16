@@ -136,11 +136,11 @@ const navigation = (): (NavGroup | NavLink)[] => [
       {
         title: 'Typography',
         icon: FormatLetterCase,
-        path: '/ui/typography'
+        path: '/user-interface/typography'
       },
       {
         title: 'Icons',
-        path: '/ui/icons',
+        path: '/user-interface/icons',
         icon: GoogleCirclesExtended
       },
       {
@@ -232,6 +232,10 @@ const navigation = (): (NavGroup | NavLink)[] => [
           {
             title: 'Timeline',
             path: '/components/timeline'
+          },
+          {
+            title: 'Toasts',
+            path: '/components/toast'
           },
           {
             title: 'Tree View',
@@ -387,82 +391,82 @@ const navigation = (): (NavGroup | NavLink)[] => [
         children: [
           {
             title: 'Text Field',
-            path: '/form-elements/text-field'
+            path: '/forms/form-elements/text-field'
           },
           {
             title: 'Select',
-            path: '/form-elements/select'
+            path: '/forms/form-elements/select'
           },
           {
             title: 'Checkbox',
-            path: '/form-elements/checkbox'
+            path: '/forms/form-elements/checkbox'
           },
           {
             title: 'Radio',
-            path: '/form-elements/radio'
+            path: '/forms/form-elements/radio'
           },
           {
             title: 'Textarea',
-            path: '/form-elements/textarea'
+            path: '/forms/form-elements/textarea'
           },
           {
             title: 'Autocomplete',
-            path: '/form-elements/autocomplete'
+            path: '/forms/form-elements/autocomplete'
           },
           {
             title: 'Date Pickers',
-            path: '/form-elements/pickers'
+            path: '/forms/form-elements/pickers'
           },
           {
             title: 'Switch',
-            path: '/form-elements/switch'
+            path: '/forms/form-elements/switch'
           },
           {
             title: 'File Uploader',
-            path: '/form-elements/file-uploader'
+            path: '/forms/form-elements/file-uploader'
           },
           {
             title: 'Editor',
-            path: '/form-elements/editor'
+            path: '/forms/form-elements/editor'
           },
           {
             title: 'Slider',
-            path: '/form-elements/slider'
+            path: '/forms/form-elements/slider'
           },
           {
             title: 'Input Mask',
-            path: '/form-elements/input-mask'
+            path: '/forms/form-elements/input-mask'
           },
           {
             title: 'Test',
-            path: '/form-elements/test'
+            path: '/forms/form-elements/test'
           }
         ]
       },
       {
         icon: CubeOutline,
         title: 'Form Layouts',
-        path: '/form-layouts'
+        path: '/forms/form-layouts'
       },
       {
         title: 'Form Validation',
-        path: '/form-validation',
+        path: '/forms/form-validation',
         icon: CheckboxMarkedCircleOutline
       },
       {
         title: 'Form Wizard',
-        path: '/form-wizard',
+        path: '/forms/form-wizard',
         icon: PackageVariantClosed
       },
       {
         title: 'Table',
         icon: Table,
-        path: '/table'
+        path: '/tables/mui'
       },
       {
-        title: 'React DataTable',
+        title: 'Mui DataGrid',
         icon: Table,
-        path: '/data-table'
+        path: '/tables/data-grid'
       }
     ]
   },

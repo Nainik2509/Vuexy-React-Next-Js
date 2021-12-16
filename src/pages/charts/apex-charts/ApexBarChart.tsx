@@ -20,21 +20,16 @@ import BellOutline from 'mdi-material-ui/BellOutline'
 import ChevronDown from 'mdi-material-ui/ChevronDown'
 
 // ** Types
-import { DateType } from 'views/forms/form-elements/pickers/react-datepicker/types'
+import { DateType } from 'views/forms/forms/form-elements/pickers/react-datepicker/types'
 
 // ** Styled Components
 import ApexChartWrapper from '@core/styles/libs/react-apexcharts'
 import DatePickerWrapper from '@core/styles/libs/react-datepicker'
 
-const candlestickColors = {
-  series1: '#28c76f',
-  series2: '#ea5455'
-}
-
 // ! To avoid Window is not defined Error
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
-const ApexCandlestickChart = () => {
+const ApexBarChart = () => {
   // ** States
   const [endDate, setEndDate] = useState<DateType>(null)
   const [startDate, setStartDate] = useState<DateType>(new Date())
@@ -46,97 +41,37 @@ const ApexCandlestickChart = () => {
         show: false
       }
     },
-    xaxis: {
-      type: 'datetime'
-    },
-    yaxis: {
-      tooltip: {
-        enabled: true
+    plotOptions: {
+      bar: {
+        borderRadius: 8,
+        barHeight: '30%',
+        horizontal: true,
+        endingShape: 'rounded',
+        startingShape: 'rounded'
       }
     },
     grid: {
       xaxis: {
         lines: {
-          show: true
+          show: false
         }
       },
       padding: {
         top: -10
       }
     },
-    plotOptions: {
-      candlestick: {
-        colors: {
-          upward: candlestickColors.series1,
-          downward: candlestickColors.series2
-        }
-      },
-      bar: {
-        columnWidth: '40%'
-      }
+    colors: ['#00cfe8'],
+    dataLabels: {
+      enabled: false
+    },
+    xaxis: {
+      categories: ['MON, 11', 'THU, 14', 'FRI, 15', 'MON, 18', 'WED, 20', 'FRI, 21', 'MON, 23']
     }
   }
 
   const series = [
     {
-      data: [
-        {
-          x: '7/12',
-          y: [150, 170, 50, 100]
-        },
-        {
-          x: '8/12',
-          y: [200, 400, 170, 330]
-        },
-        {
-          x: '9/12',
-          y: [330, 340, 250, 280]
-        },
-        {
-          x: '10/12',
-          y: [300, 330, 200, 320]
-        },
-        {
-          x: '11/12',
-          y: [320, 450, 280, 350]
-        },
-        {
-          x: '12/12',
-          y: [300, 350, 80, 250]
-        },
-        {
-          x: '13/12',
-          y: [200, 330, 170, 300]
-        },
-        {
-          x: '14/12',
-          y: [200, 220, 70, 130]
-        },
-        {
-          x: '15/12',
-          y: [220, 270, 180, 250]
-        },
-        {
-          x: '16/12',
-          y: [200, 250, 80, 100]
-        },
-        {
-          x: '17/12',
-          y: [150, 170, 50, 120]
-        },
-        {
-          x: '18/12',
-          y: [110, 450, 10, 420]
-        },
-        {
-          x: '19/12',
-          y: [400, 480, 300, 320]
-        },
-        {
-          x: '20/12',
-          y: [380, 480, 350, 450]
-        }
-      ]
+      data: [700, 350, 480, 600, 210, 550, 150]
     }
   ]
 
@@ -178,8 +113,8 @@ const ApexCandlestickChart = () => {
   return (
     <Card>
       <CardHeader
-        title='Stocks Prices'
-        subheader='$50,863.98'
+        title='Data Science'
+        subheader='$74,382.72'
         titleTypographyProps={{ variant: 'h6' }}
         subheaderTypographyProps={{ variant: 'caption' }}
         sx={{
@@ -193,10 +128,10 @@ const ApexCandlestickChart = () => {
             <DatePicker
               selectsRange
               endDate={endDate}
+              id='apexchart-bar'
               selected={startDate}
               startDate={startDate}
               onChange={handleOnChange}
-              id='apexchart-candlestick'
               placeholderText='Click to select a date'
               customInput={<CustomInput start={startDate} end={endDate} />}
             />
@@ -205,11 +140,11 @@ const ApexCandlestickChart = () => {
       />
       <CardContent>
         <ApexChartWrapper>
-          <Chart options={options} series={series} type='candlestick' height={400} />
+          <Chart options={options} series={series} type='bar' height={400} />
         </ApexChartWrapper>
       </CardContent>
     </Card>
   )
 }
 
-export default ApexCandlestickChart
+export default ApexBarChart

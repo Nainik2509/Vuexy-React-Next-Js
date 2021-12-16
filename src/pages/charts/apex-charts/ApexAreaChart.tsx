@@ -20,78 +20,91 @@ import BellOutline from 'mdi-material-ui/BellOutline'
 import ChevronDown from 'mdi-material-ui/ChevronDown'
 
 // ** Types
-import { DateType } from 'views/forms/form-elements/pickers/react-datepicker/types'
+import { DateType } from 'views/forms/forms/form-elements/pickers/react-datepicker/types'
 
 // ** Styled Components
 import ApexChartWrapper from '@core/styles/libs/react-apexcharts'
 import DatePickerWrapper from '@core/styles/libs/react-datepicker'
 
-const columnColors = {
-  bg: '#f8d3ff',
-  series1: '#826af9',
-  series2: '#d2b0ff'
+const areaColors = {
+  series1: '#ab7efd',
+  series2: '#b992fe',
+  series3: '#e0cffe'
 }
 
 // ! To avoid Window is not defined Error
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
-const ApexColumnChart = () => {
+const ApexAreaChart = () => {
   // ** States
   const [endDate, setEndDate] = useState<DateType>(null)
   const [startDate, setStartDate] = useState<DateType>(new Date())
 
   const options = {
     chart: {
-      stacked: true,
       parentHeightOffset: 0,
       toolbar: {
         show: false
       }
     },
-    plotOptions: {
-      bar: {
-        columnWidth: '15%',
-        colors: {
-          backgroundBarRadius: 10,
-          backgroundBarColors: [columnColors.bg, columnColors.bg, columnColors.bg, columnColors.bg, columnColors.bg]
-        }
-      }
-    },
     dataLabels: {
       enabled: false
     },
+    stroke: {
+      show: false,
+      curve: 'straight'
+    },
     legend: {
       position: 'top',
-      horizontalAlign: 'start'
-    },
-    colors: [columnColors.series1, columnColors.series2],
-    stroke: {
-      show: true,
-      colors: ['transparent']
+      horizontalAlign: 'left'
     },
     grid: {
+      show: true,
       xaxis: {
         lines: {
           show: true
         }
       }
     },
+    colors: [areaColors.series3, areaColors.series2, areaColors.series1],
     xaxis: {
-      categories: ['7/12', '8/12', '9/12', '10/12', '11/12', '12/12', '13/12', '14/12', '15/12', '16/12']
+      categories: [
+        '7/12',
+        '8/12',
+        '9/12',
+        '10/12',
+        '11/12',
+        '12/12',
+        '13/12',
+        '14/12',
+        '15/12',
+        '16/12',
+        '17/12',
+        '18/12',
+        '19/12'
+      ]
     },
     fill: {
-      opacity: 1
+      opacity: 1,
+      type: 'solid'
+    },
+    tooltip: {
+      shared: false
     }
   }
 
   const series = [
     {
-      name: 'Apple',
-      data: [90, 120, 55, 100, 80, 125, 175, 70, 88, 180]
+      name: 'Visits',
+      data: [100, 120, 90, 170, 130, 160, 140, 240, 220, 180, 270, 280, 375]
     },
     {
-      name: 'Samsung',
-      data: [85, 100, 30, 40, 95, 90, 30, 110, 62, 20]
+      name: 'Clicks',
+      data: [60, 80, 70, 110, 80, 100, 90, 180, 160, 140, 200, 220, 275]
+    },
+    {
+      name: 'Sales',
+      data: [20, 40, 30, 70, 40, 60, 50, 140, 120, 100, 140, 180, 220]
     }
   ]
 
@@ -133,8 +146,10 @@ const ApexColumnChart = () => {
   return (
     <Card>
       <CardHeader
-        title='Data Science'
+        title='Line Chart'
+        subheader='Commercial networks'
         titleTypographyProps={{ variant: 'h6' }}
+        subheaderTypographyProps={{ variant: 'caption', sx: { color: 'text.disabled' } }}
         sx={{
           flexDirection: ['column', 'row'],
           alignItems: ['flex-start', 'center'],
@@ -146,8 +161,8 @@ const ApexColumnChart = () => {
             <DatePicker
               selectsRange
               endDate={endDate}
+              id='apexchart-area'
               selected={startDate}
-              id='apexchart-column'
               startDate={startDate}
               onChange={handleOnChange}
               placeholderText='Click to select a date'
@@ -158,11 +173,11 @@ const ApexColumnChart = () => {
       />
       <CardContent>
         <ApexChartWrapper>
-          <Chart options={options} series={series} type='bar' height={400} />
+          <Chart options={options} series={series} type='area' height={400} />
         </ApexChartWrapper>
       </CardContent>
     </Card>
   )
 }
 
-export default ApexColumnChart
+export default ApexAreaChart

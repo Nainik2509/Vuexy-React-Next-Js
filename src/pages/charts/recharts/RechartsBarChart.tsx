@@ -22,7 +22,7 @@ import BellOutline from 'mdi-material-ui/BellOutline'
 import ChevronDown from 'mdi-material-ui/ChevronDown'
 
 // ** Types
-import { DateType } from 'views/forms/form-elements/pickers/react-datepicker/types'
+import { DateType } from 'views/forms/forms/form-elements/pickers/react-datepicker/types'
 
 // ** Styled Components
 import RechartsWrapper from '@core/styles/libs/recharts'

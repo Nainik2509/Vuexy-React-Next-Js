@@ -224,14 +224,14 @@ const searchData: AppBarSearchType[] = [
   },
   {
     id: 32,
-    url: '/ui/typography',
+    url: '/user-interface/typography',
     icon: 'FormatTextVariantOutline',
     title: 'Typography',
     type: 'pages'
   },
   {
     id: 33,
-    url: '/ui/icons',
+    url: '/user-interface/icons',
     icon: 'StarOutline',
     title: 'Icons',
     type: 'pages'
@@ -371,174 +371,181 @@ const searchData: AppBarSearchType[] = [
   },
   {
     id: 53,
+    url: '/components/toast',
+    icon: 'RectangleOutline',
+    title: 'Toast',
+    type: 'pages'
+  },
+  {
+    id: 54,
     url: '/components/timeline',
     icon: 'TimelineOutline',
     title: 'Timeline',
     type: 'pages'
   },
   {
-    id: 54,
+    id: 55,
     url: '/components/tree-view',
     icon: 'FileTreeOutline',
     title: 'Tree View',
     type: 'pages'
   },
   {
-    id: 55,
+    id: 56,
     url: '/components/more',
     icon: 'ViewGridPlusOutline',
     title: 'More Components',
     type: 'pages'
   },
   {
-    id: 56,
-    url: '/form-elements/text-field',
+    id: 57,
+    url: '/forms/form-elements/text-field',
     icon: 'Lastpass',
     title: 'TextField',
     type: 'pages'
   },
   {
-    id: 57,
-    url: '/form-elements/select',
+    id: 58,
+    url: '/forms/form-elements/select',
     icon: 'FormatListCheckbox',
     title: 'Select',
     type: 'pages'
   },
   {
-    id: 58,
-    url: '/form-elements/checkbox',
+    id: 59,
+    url: '/forms/form-elements/checkbox',
     icon: 'CheckboxOutline',
     title: 'Checkbox',
     type: 'pages'
   },
   {
-    id: 59,
-    url: '/form-elements/radio',
+    id: 60,
+    url: '/forms/form-elements/radio',
     icon: 'RadioboxMarked',
     title: 'Radio',
     type: 'pages'
   },
   {
-    id: 60,
-    url: '/form-elements/textarea',
+    id: 61,
+    url: '/forms/form-elements/textarea',
     icon: 'CardTextOutline',
     title: 'Textarea',
     type: 'pages'
   },
   {
-    id: 61,
-    url: '/form-elements/autocomplete',
+    id: 62,
+    url: '/forms/form-elements/autocomplete',
     icon: 'Lastpass',
     title: 'Autocomplete',
     type: 'pages'
   },
   {
-    id: 62,
-    url: '/form-elements/pickers',
+    id: 63,
+    url: '/forms/form-elements/pickers',
     icon: 'CalendarRange',
     title: 'Date Pickers',
     type: 'pages'
   },
   {
-    id: 63,
-    url: '/form-elements/switch',
+    id: 64,
+    url: '/forms/form-elements/switch',
     icon: 'ToggleSwitchOutline',
     title: 'Switch',
     type: 'pages'
   },
   {
-    id: 64,
-    url: '/form-elements/file-uploader',
+    id: 65,
+    url: '/forms/form-elements/file-uploader',
     icon: 'TrayArrowUp',
     title: 'File Uploader',
     type: 'pages'
   },
   {
-    id: 65,
-    url: '/form-elements/editor',
+    id: 66,
+    url: '/forms/form-elements/editor',
     icon: 'SquareEditOutline',
     title: 'Editor',
     type: 'pages'
   },
   {
-    id: 66,
-    url: '/form-elements/slider',
+    id: 67,
+    url: '/forms/form-elements/slider',
     icon: 'TransitConnectionHorizontal',
     title: 'Slider',
     type: 'pages'
   },
   {
-    id: 67,
-    url: '/form-elements/input-mask',
+    id: 68,
+    url: '/forms/form-elements/input-mask',
     icon: 'Lastpass',
     title: 'Input Mask',
     type: 'pages'
   },
   {
-    id: 68,
-    url: '/form-layouts',
+    id: 69,
+    url: '/forms/form-layouts',
     icon: 'ViewGridOutline',
     title: 'Form Layouts',
     type: 'pages'
   },
   {
-    id: 69,
-    url: '/form-validation',
+    id: 70,
+    url: '/forms/form-validation',
     icon: 'AlertOutline',
     title: 'Form Validation',
     type: 'pages'
   },
   {
-    id: 70,
-    url: '/form-wizard',
+    id: 71,
+    url: '/forms/form-wizard',
     icon: 'TransitConnectionHorizontal',
     title: 'Form Wizard',
     type: 'pages'
   },
   {
-    id: 71,
-    url: '/table',
+    id: 72,
+    url: '/tables/mui',
     icon: 'Table',
     title: 'Table',
     type: 'pages'
   },
   {
-    id: 72,
-    url: '/data-table',
+    id: 73,
+    url: '/tables/data-grid',
     icon: 'Table',
-    title: 'React DataTable',
+    title: 'Mui DataGrid',
     type: 'pages'
   },
   {
-    id: 73,
+    id: 74,
     url: '/charts/apex-charts',
     icon: 'ChartLine',
     title: 'Apex Charts',
     type: 'pages'
   },
   {
-    id: 74,
+    id: 75,
     url: '/charts/recharts',
     icon: 'ChartBellCurveCumulative',
     title: 'Recharts',
     type: 'pages'
   },
   {
-    id: 75,
+    id: 76,
     url: '/charts/chartjs',
     icon: 'ChartBellCurve',
     title: 'ChartJS',
     type: 'pages'
   },
   {
-    id: 76,
+    id: 77,
     url: '/pages/access-control',
     icon: 'ShieldOutline',
     title: 'Access Control',
     type: 'pages'
   },
   {
-    id: 77,
+    id: 78,
     img: '/images/icons/file-icons/doc.png',
     title: 'Passport Image',
     by: 'Herman Chapman',
@@ -546,7 +553,7 @@ const searchData: AppBarSearchType[] = [
     type: 'files'
   },
   {
-    id: 78,
+    id: 79,
     img: '/images/icons/file-icons/xls.png',
     title: 'Questions',
     by: 'Lola Waters',
@@ -554,7 +561,7 @@ const searchData: AppBarSearchType[] = [
     type: 'files'
   },
   {
-    id: 79,
+    id: 80,
     img: '/images/icons/file-icons/pdf.png',
     title: 'Parenting Guide',
     by: 'Ethan Spencer',
@@ -562,7 +569,7 @@ const searchData: AppBarSearchType[] = [
     type: 'files'
   },
   {
-    id: 80,
+    id: 81,
     img: '/images/icons/file-icons/txt.png',
     title: 'Class Notes',
     by: 'Jerry Hughes',
@@ -570,7 +577,7 @@ const searchData: AppBarSearchType[] = [
     type: 'files'
   },
   {
-    id: 81,
+    id: 82,
     img: '/images/icons/file-icons/xls.png',
     title: 'Class Attendance',
     by: 'Jessie Rivera',
@@ -578,7 +585,7 @@ const searchData: AppBarSearchType[] = [
     type: 'files'
   },
   {
-    id: 82,
+    id: 83,
     img: '/images/icons/file-icons/pdf.png',
     title: 'Company Salary',
     by: 'Lizzie Lawson',
@@ -586,7 +593,7 @@ const searchData: AppBarSearchType[] = [
     type: 'files'
   },
   {
-    id: 83,
+    id: 84,
     img: '/images/icons/file-icons/doc.png',
     title: 'Company Logo',
     by: 'Steve Sheldon',
@@ -594,7 +601,7 @@ const searchData: AppBarSearchType[] = [
     type: 'files'
   },
   {
-    id: 84,
+    id: 85,
     img: '/images/icons/file-icons/js.png',
     title: 'Crime Rates',
     by: 'Myra Hammond',
@@ -602,7 +609,7 @@ const searchData: AppBarSearchType[] = [
     type: 'files'
   },
   {
-    id: 85,
+    id: 86,
     img: '/images/icons/file-icons/pdf.png',
     title: 'Ulysses',
     by: 'Lena Briggs',
@@ -610,7 +617,7 @@ const searchData: AppBarSearchType[] = [
     type: 'files'
   },
   {
-    id: 86,
+    id: 87,
     img: '/images/avatars/6.png',
     title: 'Nora Alvarado',
     email: 'nephrod@preany.co.uk',
@@ -618,7 +625,7 @@ const searchData: AppBarSearchType[] = [
     type: 'contacts'
   },
   {
-    id: 87,
+    id: 88,
     img: '/images/avatars/4.png',
     title: 'Betty Davidson',
     email: 'seek@sparaxis.org',
@@ -626,7 +633,7 @@ const searchData: AppBarSearchType[] = [
     type: 'contacts'
   },
   {
-    id: 88,
+    id: 89,
     img: '/images/avatars/3.png',
     title: 'Lilly Mitchell',
     email: 'vagary@unblist.org',
@@ -634,7 +641,7 @@ const searchData: AppBarSearchType[] = [
     type: 'contacts'
   },
   {
-    id: 89,
+    id: 90,
     img: '/images/avatars/7.png',
     title: 'Fanny Bowers',
     email: 'designed@insanely.net',
@@ -642,7 +649,7 @@ const searchData: AppBarSearchType[] = [
     type: 'contacts'
   },
   {
-    id: 90,
+    id: 91,
     img: '/images/avatars/8.png',
     title: 'Christina Leonard',
     email: 'unwieldable@unblist.org',
@@ -650,7 +657,7 @@ const searchData: AppBarSearchType[] = [
     type: 'contacts'
   },
   {
-    id: 91,
+    id: 92,
     img: '/images/avatars/5.png',
     title: 'Lawrence Hopkins',
     email: 'museist@anaphyte.co.uk',
@@ -658,7 +665,7 @@ const searchData: AppBarSearchType[] = [
     type: 'contacts'
   },
   {
-    id: 92,
+    id: 93,
     img: '/images/avatars/6.png',
     title: 'Abbey Darden',
     email: 'astema@defectively.co.uk',
@@ -666,7 +673,7 @@ const searchData: AppBarSearchType[] = [
     type: 'contacts'
   },
   {
-    id: 93,
+    id: 94,
     img: '/images/avatars/1.png',
     title: 'Sophia Manning',
     email: 'fernando@storkish.co.uk',
@@ -674,7 +681,7 @@ const searchData: AppBarSearchType[] = [
     type: 'contacts'
   },
   {
-    id: 94,
+    id: 95,
     img: '/images/avatars/3.png',
     title: 'Lydia Howard',
     email: 'furphy@cannibal.net',
@@ -682,7 +689,7 @@ const searchData: AppBarSearchType[] = [
     type: 'contacts'
   },
   {
-    id: 95,
+    id: 96,
     img: '/images/avatars/5.png',
     title: 'Isaac Keller',
     email: 'insignia@markab.org',

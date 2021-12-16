@@ -21,7 +21,7 @@ import CalendarOutline from 'mdi-material-ui/CalendarOutline'
 import DatePickerWrapper from '@core/styles/libs/react-datepicker'
 
 // ** Types
-import { DateType } from 'views/forms/form-elements/pickers/react-datepicker/types'
+import { DateType } from 'views/forms/forms/form-elements/pickers/react-datepicker/types'
 
 interface AreaProps {
   blue: string

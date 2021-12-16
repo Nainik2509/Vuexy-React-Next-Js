@@ -8,7 +8,7 @@ import { UserLayoutType } from 'pages/apps/user/types'
 import UserLayout from './UserLayout'
 
 const UserView = ({ id }: UserLayoutType) => {
-  return <UserLayout id={id || '4987'} />
+  return <UserLayout id={id || '1'} />
 }
 
 export default UserView
