@@ -20,7 +20,7 @@ import DialogRespoFullScreen from './DialogRespoFullScreen'
 // ** Source code imports
 import * as source from './DialogSourceCode'
 
-const Pagination = () => {
+const Dialog = () => {
   return (
     <Grid container spacing={6} className='match-height'>
       <Grid item xs={12} md={6}>
@@ -112,4 +112,4 @@ const Pagination = () => {
   )
 }
 
-export default Pagination
+export default Dialog

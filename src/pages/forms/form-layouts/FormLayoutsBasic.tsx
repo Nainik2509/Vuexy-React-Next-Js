@@ -43,14 +43,14 @@ const FormLayoutsBasic = () => {
   }
 
   const handleConfirmPassChange = (prop: keyof State) => (event: ChangeEvent<HTMLInputElement>) => {
-    setConfirmPassValues({ ...values, [prop]: event.target.value })
+    setConfirmPassValues({ ...confirmPassValues, [prop]: event.target.value })
   }
   const handleClickShowPassword = () => {
     setValues({ ...values, showPassword: !values.showPassword })
   }
 
   const handleClickConfirmPassShow = () => {
-    setConfirmPassValues({ ...values, showPassword: !values.showPassword })
+    setConfirmPassValues({ ...confirmPassValues, showPassword: !confirmPassValues.showPassword })
   }
 
   const handleMouseDownPassword = (event: MouseEvent<HTMLButtonElement>) => {
@@ -121,7 +121,7 @@ const FormLayoutsBasic = () => {
                         onMouseDown={handleMouseDownPassword}
                         aria-label='toggle password visibility'
                       >
-                        {values.showPassword ? <EyeOutline /> : <EyeOffOutline />}
+                        {confirmPassValues.showPassword ? <EyeOutline /> : <EyeOffOutline />}
                       </IconButton>
                     </InputAdornment>
                   }
