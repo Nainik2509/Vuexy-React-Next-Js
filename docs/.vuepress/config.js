@@ -44,7 +44,12 @@ module.exports = {
         {
           title: 'Settings',
           collapsable: false,
-          children: ['/guide/settings/theme-config', '/guide/settings/context', '/guide/settings/hooks']
+          children: [
+            '/guide/settings/theme-config',
+            '/guide/settings/context',
+            '/guide/settings/hooks',
+            '/guide/settings/page-specific-settings'
+          ]
         },
         {
           title: 'Layout',

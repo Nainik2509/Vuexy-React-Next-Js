@@ -46,6 +46,7 @@ import '../../styles/globals.css'
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode
+  setConfig?: () => void
 }
 
 // ** Extend App Props with Emotion
@@ -63,6 +64,8 @@ const App: FC<AppPropsWithLayout> = (props: AppPropsWithLayout) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
 
   const getLayout = Component.getLayout ?? (page => <UserLayout>{page}</UserLayout>)
+
+  const setConfig = Component.setConfig ?? null
 
   const router = useRouter()
 
@@ -106,11 +109,11 @@ const App: FC<AppPropsWithLayout> = (props: AppPropsWithLayout) => {
           <meta name='viewport' content='initial-scale=1, width=device-width' />
         </Head>
         <AuthContext>
-          <SettingsProvider>
+          <SettingsProvider {...(setConfig ? { pageSettings: setConfig() } : {})}>
             <SettingsConsumer>
-              {({ settings }) => (
-                <ThemeComponent settings={settings}>{isMounted ? handleRedirection() : null}</ThemeComponent>
-              )}
+              {({ settings }) => {
+                return <ThemeComponent settings={settings}>{isMounted ? handleRedirection() : null}</ThemeComponent>
+              }}
             </SettingsConsumer>
           </SettingsProvider>
         </AuthContext>

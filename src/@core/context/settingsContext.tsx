@@ -24,6 +24,21 @@ export type Settings = {
   lastLayout?: 'vertical' | 'horizontal'
   verticalNavToggleType: VerticalNavToggle
 }
+
+export type PageSpecificSettings = {
+  skin?: Skin
+  appBar?: AppBar
+  footer?: Footer
+  mode?: PaletteMode
+  navHidden?: boolean // navigation menu
+  direction?: Direction
+  navCollapsed?: boolean
+  themeColor?: ThemeColor
+  contentWidth?: ContentWidth
+  layout?: 'vertical' | 'horizontal'
+  lastLayout?: 'vertical' | 'horizontal'
+  verticalNavToggleType?: VerticalNavToggle
+}
 export type SettingsContextValue = {
   settings: Settings
   saveSettings: (updatedSettings: Settings) => void
@@ -90,19 +105,20 @@ export const SettingsContext = createContext<SettingsContextValue>({
 
 interface Props {
   children: ReactNode
+  pageSettings?: PageSpecificSettings
 }
 
-export const SettingsProvider: FC<Props> = ({ children }: Props) => {
+export const SettingsProvider: FC<Props> = ({ children, pageSettings }: Props) => {
   // ** State
-  const [settings, setSettings] = useState<Settings>(initialSettings)
+  const [settings, setSettings] = useState<Settings>({ ...initialSettings })
 
   useEffect(() => {
     const restoredSettings = restoreSettings()
 
     if (restoredSettings) {
-      setSettings(restoredSettings)
+      setSettings({ ...restoredSettings, ...pageSettings })
     }
-  }, [])
+  }, [pageSettings])
 
   const saveSettings = (updatedSettings: Settings) => {
     storeSettings(updatedSettings)
