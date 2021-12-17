@@ -55,7 +55,8 @@ module.exports = {
           title: 'Layout',
           collapsable: false,
           children: [
-            '/guide/layout/layout-types'
+            '/guide/layout/layout-types',
+            '/guide/layout/blog-layout'
             // '/guide/layout/modifying-and-extending-layouts',
             // '/guide/layout/core-layouts',
             // '/guide/layout/content-renderer',
