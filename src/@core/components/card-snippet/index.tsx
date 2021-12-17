@@ -5,6 +5,7 @@ import { FC, useState, useEffect, SyntheticEvent, MouseEvent } from 'react'
 import Prism from 'prismjs'
 
 // ** MUI Imports
+import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import Tooltip from '@mui/material/Tooltip'
 import Divider from '@mui/material/Divider'
@@ -81,7 +82,7 @@ const CardSnippet: FC<CardSnippetProps> = (props: CardSnippetProps) => {
               <ContentCopy fontSize='small' />
             </IconButton>
           </Tooltip>
-          {code}
+          <Box sx={{ 'pre span.attr-value': { whiteSpace: 'normal' } }}>{code}</Box>
         </CardContent>
       </Collapse>
       <Snackbar

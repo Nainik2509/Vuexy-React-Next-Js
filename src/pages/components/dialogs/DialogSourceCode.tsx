@@ -484,12 +484,13 @@ const DialogsScroll: FC = () => {
         <DialogTitle id='scroll-dialog-title'>Subscribe</DialogTitle>
         <DialogContent dividers={scroll === 'paper'}>
           <DialogContentText id='scroll-dialog-description' ref={descriptionElementRef} tabIndex={-1}>
-            {[...new Array(50)]
-              .map(
-                () =>
-                  Cotton candy sesame snaps toffee chupa chups caramels. Candy icing gummi bears pastry cake icing brownie oat cake. Tootsie roll biscuit chupa chups apple pie muffin jelly-o caramels. Muffin chocolate bar sweet cookie chupa chups.
-              )
-              .join('\n')}
+            {[...new Array(50)].map(index => (
+              <p key={index}>
+                Cotton candy sesame snaps toffee chupa chups caramels. Candy icing gummi bears pastry cake icing brownie
+                oat cake. Tootsie roll biscuit chupa chups apple pie muffin jelly-o caramels. Muffin chocolate bar sweet
+                cookie chupa chups.
+              </p>
+            ))}
           </DialogContentText>
         </DialogContent>
         <DialogActions sx={{ padding: theme => {theme.spacing(2.5)} !important }}>

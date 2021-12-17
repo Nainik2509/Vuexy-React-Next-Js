@@ -1,6 +1,7 @@
 export const TextareaVariantCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
+    <code className='language-jsx'>{`
+// ** React Imports
 import { ChangeEvent, FC, useState } from 'react'
 
 // ** MUI Imports
