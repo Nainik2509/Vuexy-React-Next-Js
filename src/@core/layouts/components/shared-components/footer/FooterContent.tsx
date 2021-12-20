@@ -16,7 +16,7 @@ const FooterContent: FC = () => {
         </Link>
       </Typography>
       <Box sx={{ display: 'flex', alignItems: 'center', '& :not(:last-child)': { mr: 4 } }}>
-        <Link target='_blank' href='https://themeselection.com/'>
+        <Link target='_blank' href='https://themeselection.com/license/'>
           License
         </Link>
         <Link target='_blank' href='https://themeselection.com/'>
