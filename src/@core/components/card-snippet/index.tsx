@@ -82,7 +82,7 @@ const CardSnippet: FC<CardSnippetProps> = (props: CardSnippetProps) => {
               <ContentCopy fontSize='small' />
             </IconButton>
           </Tooltip>
-          <Box sx={{ 'pre span.attr-value': { whiteSpace: 'normal' } }}>{code}</Box>
+          <Box sx={{ 'pre *, code *': { whiteSpace: 'pre-wrap' } }}>{code}</Box>
         </CardContent>
       </Collapse>
       <Snackbar
