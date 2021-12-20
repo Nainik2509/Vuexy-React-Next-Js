@@ -1,8 +1,10 @@
 // ** React Imports
-import { useState } from 'react'
+import { MouseEvent, ReactElement, ReactNode, useState } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
+import Image from 'next/image'
+import type { NextPage } from 'next'
 
 // ** MUI Components
 import Button from '@mui/material/Button'
@@ -34,13 +36,16 @@ import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm, Controller, DefaultValues } from 'react-hook-form'
 
+// ** Configs
+import themeConfig from 'configs/themeConfig'
+
+// ** Layout Import
+import BlankLayout from '@core/layouts/BlankLayout'
+
 // ** Hooks
 import useLogin from '@core/hooks/auth/useLogin'
 import useBgColor from '@core/hooks/theme/useBgColor'
 import { useSettings } from '@core/hooks/useSettings'
-
-// ** Configs
-import themeConfig from 'configs/themeConfig'
 
 // ** Demo Imports
 import FooterIllustrationsV2 from 'pages/pages/authentication/FooterIllustrationsV2'
@@ -83,7 +88,7 @@ const TypographyStyled = styled(Typography)<TypographyProps>(({ theme }) => ({
   [theme.breakpoints.down('md')]: { marginTop: theme.spacing(8) }
 }))
 
-const LinkStyled = styled(Link)(({ theme }) => ({
+const LinkStyled = styled('a')(({ theme }) => ({
   fontSize: '0.875rem',
   textDecoration: 'none',
   color: theme.palette.primary.main
@@ -93,13 +98,6 @@ const FormControlLabel = styled(MuiFormControlLabel)<FormControlLabelProps>(({ t
   '& .MuiFormControlLabel-label': {
     fontSize: '0.875rem',
     color: theme.palette.text.secondary
-  }
-}))
-
-const SocialLinkStyled = styled(Link)(({ theme }) => ({
-  display: 'flex',
-  '&:not(:last-of-type)': {
-    marginRight: theme.spacing(4)
   }
 }))
 
@@ -118,7 +116,7 @@ interface FormData {
   password: string
 }
 
-const LoginPage = () => {
+const LoginPage: NextPage = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false)
 
   // ** Hooks
@@ -191,7 +189,7 @@ const LoginPage = () => {
                 justifyContent: 'center'
               }}
             >
-              <img src={themeConfig.templateLogo} alt='logo' height='29' />
+              <Image alt='logo' width={35} height={29} src={themeConfig.templateLogo} />
               <Typography variant='h5' sx={{ marginLeft: 3, fontWeight: 600, fontSize: '1.5rem !important' }}>
                 {themeConfig.templateName}
               </Typography>
@@ -270,7 +268,9 @@ const LoginPage = () => {
                 sx={{ mb: 4, display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'space-between' }}
               >
                 <FormControlLabel control={<Checkbox />} label='Remember Me' />
-                <LinkStyled href='/auth/forgot-password'>Forgot Password?</LinkStyled>
+                <Link passHref href='/auth/forgot-password'>
+                  <LinkStyled>Forgot Password?</LinkStyled>
+                </Link>
               </Box>
               <Button fullWidth size='large' type='submit' variant='contained' sx={{ marginBottom: 7 }}>
                 Login
@@ -280,25 +280,35 @@ const LoginPage = () => {
                   New on our platform?
                 </Typography>
                 <Typography variant='body2'>
-                  <LinkStyled href='/register'>Create an account</LinkStyled>
+                  <Link passHref href='/register'>
+                    <LinkStyled>Create an account</LinkStyled>
+                  </Link>
                 </Typography>
               </Box>
               <Divider sx={{ my: 5 }}>or</Divider>
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <SocialLinkStyled href='/' onClick={e => e.preventDefault()}>
-                  <Facebook sx={{ color: '#497ce2' }} />
-                </SocialLinkStyled>
-                <SocialLinkStyled href='/' onClick={e => e.preventDefault()}>
-                  <Twitter sx={{ color: '#1da1f2' }} />
-                </SocialLinkStyled>
-                <SocialLinkStyled href='/' onClick={e => e.preventDefault()}>
-                  <Github
-                    sx={{ color: theme => (theme.palette.mode === 'light' ? '#272727' : theme.palette.grey[300]) }}
-                  />
-                </SocialLinkStyled>
-                <SocialLinkStyled href='/' onClick={e => e.preventDefault()}>
-                  <Google sx={{ color: '#db4437' }} />
-                </SocialLinkStyled>
+                <Link href='/' passHref>
+                  <IconButton component='a' onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}>
+                    <Facebook sx={{ color: '#497ce2' }} />
+                  </IconButton>
+                </Link>
+                <Link href='/' passHref>
+                  <IconButton component='a' onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}>
+                    <Twitter sx={{ color: '#1da1f2' }} />
+                  </IconButton>
+                </Link>
+                <Link href='/' passHref>
+                  <IconButton component='a' onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}>
+                    <Github
+                      sx={{ color: theme => (theme.palette.mode === 'light' ? '#272727' : theme.palette.grey[300]) }}
+                    />
+                  </IconButton>
+                </Link>
+                <Link href='/' passHref>
+                  <IconButton component='a' onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}>
+                    <Google sx={{ color: '#db4437' }} />
+                  </IconButton>
+                </Link>
               </Box>
             </form>
           </BoxWrapper>
@@ -307,5 +317,7 @@ const LoginPage = () => {
     </Box>
   )
 }
+
+LoginPage.getLayout = (page: ReactNode) => <BlankLayout>{page}</BlankLayout>
 
 export default LoginPage

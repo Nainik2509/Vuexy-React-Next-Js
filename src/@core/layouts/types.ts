@@ -53,3 +53,7 @@ export type LayoutProps = {
   verticalNavItems?: VerticalNavItemsType
   horizontalNavItems?: HorizontalNavItemsType
 }
+
+export type BlankLayoutProps = {
+  children?: ReactNode
+}

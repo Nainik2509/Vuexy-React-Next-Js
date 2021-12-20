@@ -7,13 +7,13 @@ import type { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import type { AppProps } from 'next/app'
 
-// ** Store imports
-import { store } from 'redux/store'
-import { Provider } from 'react-redux'
-
 // ** Emotion Imports
 import { CacheProvider } from '@emotion/react'
 import type { EmotionCache } from '@emotion/cache'
+
+// ** Store imports
+import { store } from 'redux/store'
+import { Provider } from 'react-redux'
 
 // ** i18n Config Import
 import 'configs/i18n'
@@ -44,21 +44,21 @@ import 'react-perfect-scrollbar/dist/css/styles.css'
 // ** Global css styles
 import '../../styles/globals.css'
 
-type NextPageWithLayout = NextPage & {
-  getLayout?: (page: ReactElement) => ReactNode
-  setConfig?: () => void
-}
+// type NextPageWithLayout = NextPage & {
+//   getLayout?: (page: ReactElement) => ReactNode
+//   setConfig?: () => void
+// }
 
 // ** Extend App Props with Emotion
-type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout
+type ExtendedAppProps = AppProps & {
+  Component: NextPage
   emotionCache: EmotionCache
 }
 
 const clientSideEmotionCache = createEmotionCache()
 
 // ** Configure JSS & ClassName
-const App: FC<AppPropsWithLayout> = (props: AppPropsWithLayout) => {
+const App: FC<ExtendedAppProps> = props => {
   const [isMounted, setIsMounted] = useState<boolean>()
 
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
