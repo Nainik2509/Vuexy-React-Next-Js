@@ -69,49 +69,51 @@ const VerticalLayout: FC<Props> = (props: Props) => {
   const toggleNavVisibility = () => setNavVisible(!navVisible)
 
   return (
-    <VerticalLayoutWrapper className='layout-wrapper'>
-      {/* Navigation Menu */}
-      {settings.navHidden ? null : (
-        <Navigation
-          navWidth={navWidth}
-          navHover={navHover}
-          navVisible={navVisible}
-          setNavHover={setNavHover}
-          setNavVisible={setNavVisible}
-          collapsedNavWidth={collapsedNavWidth}
-          toggleNavVisibility={toggleNavVisibility}
-          navigationBorderWidth={navigationBorderWidth}
-          {...props}
-        />
-      )}
-      <MainContentWrapper className='layout-content-wrapper'>
-        {/* AppBar Component */}
-        <AppBar setShowBackdrop={setShowBackdrop} toggleNavVisibility={toggleNavVisibility} {...props} />
+    <>
+      <VerticalLayoutWrapper className='layout-wrapper'>
+        {/* Navigation Menu */}
+        {settings.navHidden ? null : (
+          <Navigation
+            navWidth={navWidth}
+            navHover={navHover}
+            navVisible={navVisible}
+            setNavHover={setNavHover}
+            setNavVisible={setNavVisible}
+            collapsedNavWidth={collapsedNavWidth}
+            toggleNavVisibility={toggleNavVisibility}
+            navigationBorderWidth={navigationBorderWidth}
+            {...props}
+          />
+        )}
+        <MainContentWrapper className='layout-content-wrapper'>
+          {/* AppBar Component */}
+          <AppBar setShowBackdrop={setShowBackdrop} toggleNavVisibility={toggleNavVisibility} {...props} />
 
-        {/* Content */}
-        <ContentWrapper
-          className='layout-page-content'
-          sx={{
-            ...(contentWidth === 'boxed' && {
-              mx: 'auto',
-              '@media (min-width:1440px)': { maxWidth: 1440 },
-              '@media (min-width:1200px)': { maxWidth: '100%' }
-            })
-          }}
-        >
-          {children}
-        </ContentWrapper>
+          {/* Content */}
+          <ContentWrapper
+            className='layout-page-content'
+            sx={{
+              ...(contentWidth === 'boxed' && {
+                mx: 'auto',
+                '@media (min-width:1440px)': { maxWidth: 1440 },
+                '@media (min-width:1200px)': { maxWidth: '100%' }
+              })
+            }}
+          >
+            {children}
+          </ContentWrapper>
 
-        {/* Footer Component */}
-        <Footer showBackdrop={showBackdrop} {...props} />
-      </MainContentWrapper>
+          {/* Footer Component */}
+          <Footer showBackdrop={showBackdrop} {...props} />
+        </MainContentWrapper>
+
+        {/* Backdrop */}
+        <Backdrop open={showBackdrop} onClick={() => setShowBackdrop(false)} sx={{ zIndex: 12 }} />
+      </VerticalLayoutWrapper>
 
       {/* Customizer */}
       {themeConfig.disableCustomizer || hidden ? null : <Customizer />}
-
-      {/* Backdrop */}
-      <Backdrop open={showBackdrop} onClick={() => setShowBackdrop(false)} sx={{ zIndex: 12 }} />
-    </VerticalLayoutWrapper>
+    </>
   )
 }
 

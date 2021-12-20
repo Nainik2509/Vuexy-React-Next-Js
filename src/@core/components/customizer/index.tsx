@@ -87,7 +87,7 @@ const Customizer: FC = () => {
       <Toggler className='customizer-toggler' onClick={() => setOpen(true)}>
         <CogOutline sx={{ height: 20, width: 20, color: 'common.white' }} />
       </Toggler>
-      <Drawer open={open} hideBackdrop anchor='right' variant='temporary'>
+      <Drawer open={open} hideBackdrop anchor='right' variant='persistent'>
         <Box
           className='customizer-header'
           sx={{
