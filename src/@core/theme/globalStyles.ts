@@ -28,6 +28,15 @@ const GlobalStyles = (theme: Theme, settings: Settings) => {
   }
 
   return {
+    'body[style^="padding-right"] header::after, body[style^="padding-right"] footer::after': {
+      content: '""',
+      position: 'absolute',
+      left: '100%',
+      top: 0,
+      height: '100%',
+      backgroundColor: theme.palette.background.paper,
+      width: '30px'
+    },
     '.demo-space-x > *': {
       marginTop: '1rem !important',
       marginRight: '1rem !important',
