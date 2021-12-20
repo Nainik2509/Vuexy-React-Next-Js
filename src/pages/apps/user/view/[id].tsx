@@ -2,7 +2,7 @@
 import { NextPageContext } from 'next'
 
 // ** Types
-import { UserLayoutType } from 'pages/apps/user/types'
+import { UserLayoutType } from 'src/pages/apps/user/types'
 
 // ** Demo Components Imports
 import UserLayout from './UserLayout'

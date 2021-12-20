@@ -37,7 +37,7 @@ import ChartBellCurveCumulative from 'mdi-material-ui/ChartBellCurveCumulative'
 import CheckboxMarkedCircleOutline from 'mdi-material-ui/CheckboxMarkedCircleOutline'
 
 // ** Type import
-import { NavGroup, NavLink } from '@core/layouts/components/vertical/navigation/types'
+import { NavGroup, NavLink } from 'src/@core/layouts/components/vertical/navigation/types'
 
 const navigation = (): (NavGroup | NavLink)[] => [
   {

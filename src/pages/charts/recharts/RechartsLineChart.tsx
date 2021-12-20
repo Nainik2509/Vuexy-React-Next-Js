@@ -12,10 +12,10 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import ArrowUp from 'mdi-material-ui/ArrowUp'
 
 // ** Custom Components Imports
-import CustomChip from '@core/components/mui/chip'
+import CustomChip from 'src/@core/components/mui/chip'
 
 // ** Styled Components
-import RechartsWrapper from '@core/styles/libs/recharts'
+import RechartsWrapper from 'src/@core/styles/libs/recharts'
 
 interface Props {
   direction: 'ltr' | 'rtl'

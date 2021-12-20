@@ -15,21 +15,21 @@ import toast from 'react-hot-toast'
 import { Toaster } from 'react-hot-toast'
 
 // ** Custom Components
-import CustomChip from '@core/components/mui/chip'
-import CustomAvatar from '@core/components/mui/avatar'
+import CustomChip from 'src/@core/components/mui/chip'
+import CustomAvatar from 'src/@core/components/mui/avatar'
 
 // ** Types Imports
-import { ThemeColor } from '@core/layouts/types'
+import { ThemeColor } from 'src/@core/layouts/types'
 
 // ** Utils Import
-import { getInitials } from '@core/utils/get-initials'
+import { getInitials } from 'src/@core/utils/get-initials'
 
 // ** Data Import
 import { rows } from './data'
 
 // ** Styled Wrapper
-import ReactHotToast from '@core/styles/libs/react-hot-toast'
-import DataGridWrapper from '@core/styles/mui/components/datagrid'
+import ReactHotToast from 'src/@core/styles/libs/react-hot-toast'
+import DataGridWrapper from 'src/@core/styles/mui/components/datagrid'
 
 interface StatusObj {
   [key: number]: {

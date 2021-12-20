@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 
 // ** Custom Components Imports
-import CardSnippet from '@core/components/card-snippet'
+import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
 import ButtonGroupBasic from './ButtonGroupBasic'

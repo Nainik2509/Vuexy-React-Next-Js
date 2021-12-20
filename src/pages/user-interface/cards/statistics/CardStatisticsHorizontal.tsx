@@ -15,10 +15,10 @@ import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
 import AccountOutline from 'mdi-material-ui/AccountOutline'
 
 // ** Types Imports
-import { CardStatsHorizontalProps } from '@core/components/card-statistics/types'
+import { CardStatsHorizontalProps } from 'src/@core/components/card-statistics/types'
 
 // ** Custom Components Imports
-import CardStatisticsHorizontal from '@core/components/card-statistics/card-stats-horizontal'
+import CardStatisticsHorizontal from 'src/@core/components/card-statistics/card-stats-horizontal'
 
 const icons = {
   Poll,

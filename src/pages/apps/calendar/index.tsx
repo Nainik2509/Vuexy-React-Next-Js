@@ -10,10 +10,10 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import { useDispatch, useSelector } from 'react-redux'
 
 // ** Hooks
-import { useSettings } from '@core/hooks/useSettings'
+import { useSettings } from 'src/@core/hooks/useSettings'
 
 // ** Types
-import { RootState } from 'redux/store'
+import { RootState } from 'src/redux/store'
 import { CalendarColors } from './types'
 
 // ** FullCalendar & App Components Imports

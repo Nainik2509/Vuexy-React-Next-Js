@@ -41,25 +41,25 @@ import DatePicker from 'react-datepicker'
 
 // ** Store & Actions Imports
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchData, deleteInvoice } from 'pages/apps/invoice/store'
+import { fetchData, deleteInvoice } from 'src/pages/apps/invoice/store'
 
 // ** Types Imports
-import { RootState } from 'redux/store'
-import { ThemeColor } from '@core/layouts/types'
-import { InvoiceType } from 'pages/apps/invoice/types'
-import { DateType } from 'pages/forms/form-elements/pickers/react-datepicker/types'
+import { RootState } from 'src/redux/store'
+import { ThemeColor } from 'src/@core/layouts/types'
+import { InvoiceType } from 'src/pages/apps/invoice/types'
+import { DateType } from 'src/pages/forms/form-elements/pickers/react-datepicker/types'
 
 // ** Utils Import
-import { getInitials } from '@core/utils/get-initials'
+import { getInitials } from 'src/@core/utils/get-initials'
 
 // ** Custom Components Imports
 import TableHeader from './TableHeader'
-import CustomChip from '@core/components/mui/chip'
-import CustomAvatar from '@core/components/mui/avatar'
+import CustomChip from 'src/@core/components/mui/chip'
+import CustomAvatar from 'src/@core/components/mui/avatar'
 
 // ** Styled Components
-import DatePickerWrapper from '@core/styles/libs/react-datepicker'
-import DataGridWrapper from '@core/styles/mui/components/datagrid'
+import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
+import DataGridWrapper from 'src/@core/styles/mui/components/datagrid'
 
 interface InvoiceListProps {
   userView?: boolean

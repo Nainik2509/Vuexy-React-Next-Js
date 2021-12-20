@@ -29,7 +29,7 @@ import Magnify from 'mdi-material-ui/Magnify'
 import { ContactType, ChatSidebarLeftType, ChatsArrType } from './types'
 
 // ** Custom Components Import
-import CustomAvatar from '@core/components/mui/avatar'
+import CustomAvatar from 'src/@core/components/mui/avatar'
 
 // ** Chat App Components Imports
 import UserProfileLeft from './UserProfileLeft'

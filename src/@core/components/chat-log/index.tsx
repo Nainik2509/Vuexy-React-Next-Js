@@ -14,10 +14,10 @@ import CheckAll from 'mdi-material-ui/CheckAll'
 import PerfectScrollbarComponent, { ScrollBarProps } from 'react-perfect-scrollbar'
 
 // ** Custom Components Imports
-import CustomAvatar from '@core/components/mui/avatar'
+import CustomAvatar from 'src/@core/components/mui/avatar'
 
 // ** Utils Imports
-import { getInitials } from '@core/utils/get-initials'
+import { getInitials } from 'src/@core/utils/get-initials'
 
 // ** Types Imports
 import { ChatType, ChatLogType, MessageType, FeedbackType, MessageGroupType, FormattedChatsType } from './types'

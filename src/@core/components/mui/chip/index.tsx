@@ -8,7 +8,7 @@ import MuiChip from '@mui/material/Chip'
 import { CustomChipProps } from './types'
 
 // ** Hooks Imports
-import useBgColor, { UseBgColorType } from '@core/hooks/theme/useBgColor'
+import useBgColor, { UseBgColorType } from 'src/@core/hooks/theme/useBgColor'
 
 const Chip: FC<CustomChipProps> = (props: CustomChipProps) => {
   // ** Props

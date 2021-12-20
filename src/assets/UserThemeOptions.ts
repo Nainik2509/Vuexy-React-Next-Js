@@ -2,10 +2,10 @@
 import { ThemeOptions } from '@mui/material'
 
 // ** To use core palette, uncomment the below import
-import corePalette from '@core/theme/palette'
+import corePalette from 'src/@core/theme/palette'
 
 // ** Type Imports
-import { Settings } from '@core/context/settingsContext'
+import { Settings } from 'src/@core/context/settingsContext'
 
 const UserThemeOptions = (settings: Settings): ThemeOptions => {
   // ** To use mode (light/dark), skin(default/bordered/semi-dark), direction(ltr/rtl) for conditional styles, uncomment below line

@@ -7,17 +7,17 @@ import { styled } from '@mui/material/styles'
 import Box, { BoxProps } from '@mui/material/Box'
 
 // ** Theme Config Import
-import themeConfig from 'configs/themeConfig'
+import themeConfig from 'src/configs/themeConfig'
 
 // ** Components
 import AppBar from './components/vertical/appBar'
-import Customizer from '@core/components/customizer'
+import Customizer from 'src/@core/components/customizer'
 import Navigation from './components/vertical/navigation'
 import Footer from './components/shared-components/footer'
 
 // ** Type Import
 import { VerticalNavItemsType } from './types'
-import { Settings } from '@core/context/settingsContext'
+import { Settings } from 'src/@core/context/settingsContext'
 
 interface Props {
   hidden: boolean

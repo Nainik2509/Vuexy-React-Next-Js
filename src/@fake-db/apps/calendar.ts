@@ -1,8 +1,8 @@
 // ** Mock Adapter
-import mock from '@fake-db/mock'
+import mock from 'src/@fake-db/mock'
 
 // ** Types
-import { EventType } from 'pages/apps/calendar/types'
+import { EventType } from 'src/pages/apps/calendar/types'
 
 const date = new Date()
 const nextDay = new Date(new Date().getTime() + 24 * 60 * 60 * 1000)

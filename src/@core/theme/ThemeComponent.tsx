@@ -9,13 +9,13 @@ import GlobalStyles from '@mui/material/GlobalStyles'
 import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material/styles'
 
 // ** Type Imports
-import { Settings } from '@core/context/settingsContext'
+import { Settings } from 'src/@core/context/settingsContext'
 
 // ** Theme Config
-import themeConfig from 'configs/themeConfig'
+import themeConfig from 'src/configs/themeConfig'
 
 // ** RTL Component
-import RTL from '@core/components/rtl'
+import RTL from 'src/@core/components/rtl'
 
 // ** Theme Override Imports
 import overrides from './overrides'
@@ -23,7 +23,7 @@ import typography from './typography'
 
 // ** Theme
 import themeOptions from './ThemeOptions'
-import UserThemeOptions from 'assets/UserThemeOptions'
+import UserThemeOptions from 'src/assets/UserThemeOptions'
 
 // ** Global Styles
 import GlobalStyling from './globalStyles'

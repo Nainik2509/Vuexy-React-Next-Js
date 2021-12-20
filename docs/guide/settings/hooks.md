@@ -11,7 +11,7 @@ In the example below, we have shown you how to get template skin. You can get an
 ```jsx
 import { FC } from 'react'
 import Box from '@mui/material/Box'
-import { useSettings } from '@core/hooks/useSettings'
+import { useSettings } from 'src/@core/hooks/useSettings'
 
 const SomeComponent: FC = () => {
   // ** Hook
@@ -33,7 +33,7 @@ import { PaletteMode } from '@mui/material'
 import IconButton from '@mui/material/IconButton'
 import WeatherNight from 'mdi-material-ui/WeatherNight'
 import WeatherSunny from 'mdi-material-ui/WeatherSunny'
-import { useSettings } from '@core/hooks/useSettings'
+import { useSettings } from 'src/@core/hooks/useSettings'
 
 const ModeToggler: FC = () => {
   // ** Hook
@@ -72,8 +72,8 @@ import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
 import Typography from '@mui/material/Typography'
 import FormControlLabel from '@mui/material/FormControlLabel'
-import { useSettings } from '@core/hooks/useSettings'
-import { Settings } from '@core/context/settingsContext'
+import { useSettings } from 'src/@core/hooks/useSettings'
+import { Settings } from 'src/@core/context/settingsContext'
 
 const SomeComponent: FC = () => {
   // ** Hook

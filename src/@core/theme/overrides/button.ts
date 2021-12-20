@@ -2,10 +2,9 @@
 import { Theme } from '@mui/material'
 
 // ** Theme Config Imports
-import themeConfig from 'configs/themeConfig'
+import themeConfig from 'src/configs/themeConfig'
 
 const Button = (theme: Theme) => {
-
   return {
     MuiButton: {
       styleOverrides: {

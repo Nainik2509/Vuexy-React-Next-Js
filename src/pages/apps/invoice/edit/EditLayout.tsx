@@ -9,7 +9,7 @@ import Grid from '@mui/material/Grid'
 import Alert from '@mui/material/Alert'
 
 // ** Types
-import { SingleInvoiceType, InvoiceLayoutProps } from 'pages/apps/invoice/types'
+import { SingleInvoiceType, InvoiceLayoutProps } from 'src/pages/apps/invoice/types'
 
 // ** Third Party Components
 import axios from 'axios'
@@ -17,8 +17,8 @@ import axios from 'axios'
 // ** Demo Components Imports
 import EditCard from './EditCard'
 import EditActions from './EditActions'
-import AddPaymentDrawer from 'pages/apps/invoice/shared-drawer/AddPaymentDrawer'
-import SendInvoiceDrawer from 'pages/apps/invoice/shared-drawer/SendInvoiceDrawer'
+import AddPaymentDrawer from 'src/pages/apps/invoice/shared-drawer/AddPaymentDrawer'
+import SendInvoiceDrawer from 'src/pages/apps/invoice/shared-drawer/SendInvoiceDrawer'
 
 const InvoiceEditLayout = ({ id }: InvoiceLayoutProps) => {
   // ** State

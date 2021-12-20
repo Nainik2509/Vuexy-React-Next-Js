@@ -20,7 +20,7 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import DatePicker from 'react-datepicker'
 
 // ** Styled Components
-import DatePickerWrapper from '@core/styles/libs/react-datepicker'
+import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 // ** Types
 import { DateType } from 'views/forms/form-elements/pickers/react-datepicker/types'

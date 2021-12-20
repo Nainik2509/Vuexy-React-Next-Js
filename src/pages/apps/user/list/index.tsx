@@ -34,26 +34,26 @@ import DatabaseOutline from 'mdi-material-ui/DatabaseOutline'
 import { useDispatch, useSelector } from 'react-redux'
 
 // ** Custom Components Imports
-import CustomChip from '@core/components/mui/chip'
-import CustomAvatar from '@core/components/mui/avatar'
+import CustomChip from 'src/@core/components/mui/chip'
+import CustomAvatar from 'src/@core/components/mui/avatar'
 
 // ** Utils Import
-import { getInitials } from '@core/utils/get-initials'
+import { getInitials } from 'src/@core/utils/get-initials'
 
 // ** Actions Imports
-import { fetchData, deleteUser } from 'pages/apps/user/store'
+import { fetchData, deleteUser } from 'src/pages/apps/user/store'
 
 // ** Types Imports
-import { RootState } from 'redux/store'
-import { ThemeColor } from '@core/layouts/types'
-import { UsersType } from 'pages/apps/user/types'
+import { RootState } from 'src/redux/store'
+import { ThemeColor } from 'src/@core/layouts/types'
+import { UsersType } from 'src/pages/apps/user/types'
 
 // ** Custom Components Imports
 import TableHeader from './TableHeader'
 import AddUserDrawer from './AddUserDrawer'
 
 // ** Styled Components
-import DataGridWrapper from '@core/styles/mui/components/datagrid'
+import DataGridWrapper from 'src/@core/styles/mui/components/datagrid'
 
 interface UserRoleType {
   [key: string]: ReactElement

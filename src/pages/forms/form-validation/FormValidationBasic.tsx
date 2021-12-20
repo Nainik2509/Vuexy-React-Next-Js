@@ -36,7 +36,7 @@ import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 import { DateType } from 'views/forms/forms/form-elements/pickers/react-datepicker/types'
 
 // ** Styled Components
-import DatePickerWrapper from '@core/styles/libs/react-datepicker'
+import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 interface State {
   password: string

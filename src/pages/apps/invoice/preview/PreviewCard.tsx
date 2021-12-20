@@ -24,10 +24,10 @@ import TableCell, { TableCellBaseProps } from '@mui/material/TableCell'
 import ReactToPdf from 'react-to-pdf'
 
 // ** Configs
-import themeConfig from 'configs/themeConfig'
+import themeConfig from 'src/configs/themeConfig'
 
 // ** Types
-import { SingleInvoiceType } from 'pages/apps/invoice/types'
+import { SingleInvoiceType } from 'src/pages/apps/invoice/types'
 
 interface Props {
   data: SingleInvoiceType

@@ -28,8 +28,8 @@ import ChevronRight from 'mdi-material-ui/ChevronRight'
 import MessageOutline from 'mdi-material-ui/MessageOutline'
 
 // ** Hooks
-import useBgColor from '@core/hooks/theme/useBgColor'
-import { useSettings } from '@core/hooks/useSettings'
+import useBgColor from 'src/@core/hooks/theme/useBgColor'
+import { useSettings } from 'src/@core/hooks/useSettings'
 
 const Transition = forwardRef(function Transition(
   props: FadeProps & { children?: ReactElement<any, any> },

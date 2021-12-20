@@ -11,7 +11,7 @@ import CardContent from '@mui/material/CardContent'
 import DotsVertical from 'mdi-material-ui/DotsVertical'
 
 // ** Styled Components
-import ApexChartWrapper from '@core/styles/libs/react-apexcharts'
+import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
 
 interface YRange {
   min: number

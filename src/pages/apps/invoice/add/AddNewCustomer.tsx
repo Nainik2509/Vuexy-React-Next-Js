@@ -20,7 +20,7 @@ import { useForm, Controller, DefaultValues } from 'react-hook-form'
 import Close from 'mdi-material-ui/Close'
 
 // ** Types
-import { InvoiceClientType } from 'pages/apps/invoice/types'
+import { InvoiceClientType } from 'src/pages/apps/invoice/types'
 
 interface Props {
   open: boolean

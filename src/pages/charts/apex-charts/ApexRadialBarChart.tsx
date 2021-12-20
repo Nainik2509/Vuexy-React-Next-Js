@@ -7,7 +7,7 @@ import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
 // ** Styled Components
-import ApexChartWrapper from '@core/styles/libs/react-apexcharts'
+import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
 
 const radialBarColors = {
   series1: '#fdd835',

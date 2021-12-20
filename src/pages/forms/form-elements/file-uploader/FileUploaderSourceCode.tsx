@@ -21,7 +21,7 @@ import FileDocumentOutline from 'mdi-material-ui/FileDocumentOutline'
 import { useDropzone } from 'react-dropzone'
 
 // ** Styled Components
-import DropzoneWrapper from '@core/styles/libs/react-dropzone'
+import DropzoneWrapper from 'src/@core/styles/libs/react-dropzone'
 
 interface FileProp {
   name: string
@@ -164,7 +164,7 @@ import FileDocumentOutline from 'mdi-material-ui/FileDocumentOutline'
 import { useDropzone } from 'react-dropzone'
 
 // ** Styles
-import DropzoneWrapper from '@core/styles/libs/react-dropzone'
+import DropzoneWrapper from 'src/@core/styles/libs/react-dropzone'
 
 interface FileProp {
   name: string
@@ -308,7 +308,7 @@ import Typography, { TypographyProps } from '@mui/material/Typography'
 import { useDropzone } from 'react-dropzone'
 
 // ** Styles
-import DropzoneWrapper from '@core/styles/libs/react-dropzone'
+import DropzoneWrapper from 'src/@core/styles/libs/react-dropzone'
 
 interface FileProp {
   name: string

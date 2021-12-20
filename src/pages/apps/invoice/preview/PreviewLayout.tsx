@@ -12,13 +12,13 @@ import Alert from '@mui/material/Alert'
 import axios from 'axios'
 
 // ** Types
-import { SingleInvoiceType, InvoiceLayoutProps } from 'pages/apps/invoice/types'
+import { SingleInvoiceType, InvoiceLayoutProps } from 'src/pages/apps/invoice/types'
 
 // ** Demo Components Imports
 import PreviewCard from './PreviewCard'
 import PreviewActions from './PreviewActions'
-import AddPaymentDrawer from 'pages/apps/invoice/shared-drawer/AddPaymentDrawer'
-import SendInvoiceDrawer from 'pages/apps/invoice/shared-drawer/SendInvoiceDrawer'
+import AddPaymentDrawer from 'src/pages/apps/invoice/shared-drawer/AddPaymentDrawer'
+import SendInvoiceDrawer from 'src/pages/apps/invoice/shared-drawer/SendInvoiceDrawer'
 
 const InvoicePreview = ({ id }: InvoiceLayoutProps) => {
   // ** State

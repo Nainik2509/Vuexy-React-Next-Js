@@ -13,7 +13,7 @@ import Firebase from 'mdi-material-ui/Firebase'
 import Database from 'mdi-material-ui/DatabaseOutline'
 
 // ** Custom Avatar Component
-import CustomAvatar from '@core/components/mui/avatar'
+import CustomAvatar from 'src/@core/components/mui/avatar'
 
 const TabDatabase: FC = () => {
   const [value, setValue] = useState<string>('firebase')

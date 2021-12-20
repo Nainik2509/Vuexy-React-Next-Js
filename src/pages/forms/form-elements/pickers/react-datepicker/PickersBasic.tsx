@@ -14,7 +14,7 @@ import CustomInput from './PickersCustomInput'
 import { DateType } from './types'
 
 // ** Styled Component
-import DatePickerWrapper from '@core/styles/libs/react-datepicker'
+import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 const PickersBasic = () => {
   // ** States

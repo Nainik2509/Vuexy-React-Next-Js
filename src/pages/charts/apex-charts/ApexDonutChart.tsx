@@ -7,7 +7,7 @@ import CardContent from '@mui/material/CardContent'
 import dynamic from 'next/dynamic'
 
 // ** Styled Components
-import ApexChartWrapper from '@core/styles/libs/react-apexcharts'
+import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
 
 const donutColors = {
   series1: '#fdd835',

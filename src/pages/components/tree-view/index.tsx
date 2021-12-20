@@ -3,10 +3,10 @@ import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 
 // ** Custom Components Imports
-import CardSnippet from '@core/components/card-snippet'
+import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Hooks Imports
-import { useSettings } from '@core/hooks/useSettings'
+import { useSettings } from 'src/@core/hooks/useSettings'
 
 // ** Demo Components Imports
 import TreeViewBasic from './TreeViewBasic'

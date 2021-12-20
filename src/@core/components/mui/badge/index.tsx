@@ -5,7 +5,7 @@ import MuiBadge from '@mui/material/Badge'
 import { CustomBadgeProps } from './types'
 
 // ** Hooks Imports
-import useBgColor, { UseBgColorType } from '@core/hooks/theme/useBgColor'
+import useBgColor, { UseBgColorType } from 'src/@core/hooks/theme/useBgColor'
 
 const Badge = (props: CustomBadgeProps) => {
   // ** Props

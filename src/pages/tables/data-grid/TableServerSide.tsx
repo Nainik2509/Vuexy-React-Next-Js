@@ -12,18 +12,18 @@ import { DataGrid, GridColDef, GridRenderCellParams, GridSortModel } from '@mui/
 import axios from 'axios'
 
 // ** Custom Components
-import CustomChip from '@core/components/mui/chip'
+import CustomChip from 'src/@core/components/mui/chip'
 import ServerSideToolbar from './ServerSideToolbar'
-import CustomAvatar from '@core/components/mui/avatar'
+import CustomAvatar from 'src/@core/components/mui/avatar'
 
 // ** Types Imports
-import { ThemeColor } from '@core/layouts/types'
+import { ThemeColor } from 'src/@core/layouts/types'
 
 // ** Utils Import
-import { getInitials } from '@core/utils/get-initials'
+import { getInitials } from 'src/@core/utils/get-initials'
 
 // ** Styled Wrapper
-import DataGridWrapper from '@core/styles/mui/components/datagrid'
+import DataGridWrapper from 'src/@core/styles/mui/components/datagrid'
 
 interface StatusObj {
   [key: number]: {

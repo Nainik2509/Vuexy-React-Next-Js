@@ -9,13 +9,13 @@ import IconButton from '@mui/material/IconButton'
 import MenuIcon from 'mdi-material-ui/Menu'
 
 // ** Type Import
-import { Settings } from '@core/context/settingsContext'
+import { Settings } from 'src/@core/context/settingsContext'
 
 // ** Components
-import ModeToggler from '@core/layouts/components/shared-components/ModeToggler'
-import Autocomplete from '@core/layouts/components/shared-components/Autocomplete'
-import UserDropdown from '@core/layouts/components/shared-components/UserDropdown'
-import NotificationDropdown from '@core/layouts/components/shared-components/NotificationDropdown'
+import ModeToggler from 'src/@core/layouts/components/shared-components/ModeToggler'
+import Autocomplete from 'src/@core/layouts/components/shared-components/Autocomplete'
+import UserDropdown from 'src/@core/layouts/components/shared-components/UserDropdown'
+import NotificationDropdown from 'src/@core/layouts/components/shared-components/NotificationDropdown'
 
 interface Props {
   hidden: boolean

@@ -1,10 +1,10 @@
 import mock from './mock'
 
 import './table'
+import './auth/jwt'
 import './apps/chat'
 import './pages/faq'
 import './apps/email'
-import './auth/jwt'
 import './apps/invoice'
 import './autocomplete'
 import './apps/userList'

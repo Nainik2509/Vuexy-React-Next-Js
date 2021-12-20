@@ -9,13 +9,13 @@ import axios from 'axios'
 
 // ** Redux Imports
 import { useDispatch } from 'react-redux'
-import { handleLogin } from 'redux/authentication'
+import { handleLogin } from 'src/redux/authentication'
 
 // ** Default Config
-import authConfig from 'configs/auth'
+import authConfig from 'src/configs/auth'
 
 // ** Types
-import { LoginParams, ErrCallbackType } from '@core/context/types'
+import { LoginParams, ErrCallbackType } from 'src/@core/context/types'
 
 // ** Provider & Context
 // import { AbilityContext } from 'utility/context/Can'

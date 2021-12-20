@@ -24,8 +24,8 @@ import DotsVertical from 'mdi-material-ui/DotsVertical'
 import MessageOutline from 'mdi-material-ui/MessageOutline'
 
 // ** Custom Components Import
-import ChatLog from '@core/components/chat-log'
-import CustomAvatar from '@core/components/mui/avatar'
+import ChatLog from 'src/@core/components/chat-log'
+import CustomAvatar from 'src/@core/components/mui/avatar'
 import UserProfileRight from './UserProfileRight'
 
 // ** Types

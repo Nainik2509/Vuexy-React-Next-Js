@@ -2,10 +2,9 @@
 import { Theme } from '@mui/material'
 
 // ** Util Import
-import { hexToRGBA } from '@core/utils/hex-to-rgba'
+import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 
 const Timeline = (theme: Theme) => {
-
   return {
     MuiTimelineItem: {
       styleOverrides: {

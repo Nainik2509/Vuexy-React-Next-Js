@@ -37,18 +37,18 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm, Controller, DefaultValues } from 'react-hook-form'
 
 // ** Configs
-import themeConfig from 'configs/themeConfig'
+import themeConfig from 'src/configs/themeConfig'
 
 // ** Layout Import
-import BlankLayout from '@core/layouts/BlankLayout'
+import BlankLayout from 'src/@core/layouts/BlankLayout'
 
 // ** Hooks
-import useLogin from '@core/hooks/auth/useLogin'
-import useBgColor from '@core/hooks/theme/useBgColor'
-import { useSettings } from '@core/hooks/useSettings'
+import useLogin from 'src/@core/hooks/auth/useLogin'
+import useBgColor from 'src/@core/hooks/theme/useBgColor'
+import { useSettings } from 'src/@core/hooks/useSettings'
 
 // ** Demo Imports
-import FooterIllustrationsV2 from 'pages/pages/authentication/FooterIllustrationsV2'
+import FooterIllustrationsV2 from 'src/pages/pages/authentication/FooterIllustrationsV2'
 
 // ** Styled Components
 const LoginIllustrationWrapper = styled(Box)<BoxProps>(({ theme }) => ({

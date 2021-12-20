@@ -4,8 +4,8 @@ import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 
 // ** Custom Components Imports
-import PageHeader from '@core/components/page-header'
-import CardSnippet from '@core/components/card-snippet'
+import PageHeader from 'src/@core/components/page-header'
+import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
 import EditorControlled from './EditorControlled'

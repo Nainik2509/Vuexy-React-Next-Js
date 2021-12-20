@@ -23,8 +23,8 @@ import ChevronDown from 'mdi-material-ui/ChevronDown'
 import { DateType } from 'views/forms/forms/form-elements/pickers/react-datepicker/types'
 
 // ** Styled Components
-import ApexChartWrapper from '@core/styles/libs/react-apexcharts'
-import DatePickerWrapper from '@core/styles/libs/react-datepicker'
+import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
+import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 const areaColors = {
   series1: '#ab7efd',

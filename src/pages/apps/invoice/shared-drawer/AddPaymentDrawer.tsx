@@ -20,10 +20,10 @@ import DatePicker from 'react-datepicker'
 import Close from 'mdi-material-ui/Close'
 
 // ** Styles
-import DatePickerWrapper from '@core/styles/libs/react-datepicker'
+import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 // ** Types
-import { DateType } from 'pages/forms/form-elements/pickers/react-datepicker/types'
+import { DateType } from 'src/pages/forms/form-elements/pickers/react-datepicker/types'
 
 interface Props {
   open: boolean

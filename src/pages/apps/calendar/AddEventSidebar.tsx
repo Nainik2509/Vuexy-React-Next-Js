@@ -24,7 +24,7 @@ import Close from 'mdi-material-ui/Close'
 import DeleteOutline from 'mdi-material-ui/DeleteOutline'
 
 // ** Styled Components
-import DatePickerWrapper from '@core/styles/libs/react-datepicker'
+import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 // ** Types
 import { AddEventSidebarType } from './types'

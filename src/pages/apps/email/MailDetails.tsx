@@ -34,11 +34,11 @@ import ArrowCollapseVertical from 'mdi-material-ui/ArrowCollapseVertical'
 import PerfectScrollbarComponent from 'react-perfect-scrollbar'
 
 // ** Custom Components Imports
-import Sidebar from '@core/components/sidebar'
-import CustomChip from '@core/components/mui/chip'
+import Sidebar from 'src/@core/components/sidebar'
+import CustomChip from 'src/@core/components/mui/chip'
 
 // ** Types
-import { ThemeColor } from '@core/layouts/types'
+import { ThemeColor } from 'src/@core/layouts/types'
 import { MailType, MailLabelType, MailDetailsType, MailFoldersArrType, MailAttachmentType } from './types'
 
 const HiddenReplyBack = styled(Box)<BoxProps>(({ theme }) => ({

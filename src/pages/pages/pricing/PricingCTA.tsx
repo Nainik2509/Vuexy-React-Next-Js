@@ -9,7 +9,7 @@ import Box, { BoxProps } from '@mui/material/Box'
 import Grid, { GridProps } from '@mui/material/Grid'
 
 // ** Util Import
-import { hexToRGBA } from '@core/utils/hex-to-rgba'
+import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 
 // ** Styled Components
 const BoxWrapper = styled(Box)<BoxProps>(({ theme }) => ({

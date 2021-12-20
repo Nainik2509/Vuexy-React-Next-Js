@@ -33,10 +33,10 @@ import FileDocumentOutline from 'mdi-material-ui/FileDocumentOutline'
 import AccountMultipleOutline from 'mdi-material-ui/AccountMultipleOutline'
 
 // ** Configs Imports
-import themeConfig from 'configs/themeConfig'
+import themeConfig from 'src/configs/themeConfig'
 
 // ** Hooks Imports
-import { useSettings } from '@core/hooks/useSettings'
+import { useSettings } from 'src/@core/hooks/useSettings'
 
 interface DataType {
   name: string

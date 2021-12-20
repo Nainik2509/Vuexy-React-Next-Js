@@ -40,16 +40,16 @@ import Payment from 'payment'
 import Cards from 'react-credit-cards'
 
 // ** Custom Components
-import CustomChip from '@core/components/mui/chip'
+import CustomChip from 'src/@core/components/mui/chip'
 
 // ** Util Import
-import { formatCVC, formatExpirationDate, formatCreditCardNumber } from '@core/utils/format'
+import { formatCVC, formatExpirationDate, formatCreditCardNumber } from 'src/@core/utils/format'
 
 // ** Types
-import { ThemeColor } from '@core/layouts/types'
+import { ThemeColor } from 'src/@core/layouts/types'
 
 // Styled Component Imports
-import CardWrapper from '@core/styles/libs/react-credit-cards'
+import CardWrapper from 'src/@core/styles/libs/react-credit-cards'
 
 // ** Styles Import
 import 'react-credit-cards/es/styles-compiled.css'

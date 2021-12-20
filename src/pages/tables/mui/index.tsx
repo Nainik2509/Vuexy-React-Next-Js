@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography'
 import CardHeader from '@mui/material/CardHeader'
 
 // ** Custom Components Imports
-import PageHeader from '@core/components/page-header'
+import PageHeader from 'src/@core/components/page-header'
 
 // ** Demo Components Imports
 import TableBasic from './TableBasic'

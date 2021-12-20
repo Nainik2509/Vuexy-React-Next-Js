@@ -14,7 +14,7 @@ import MuiCardContent, { CardContentProps } from '@mui/material/CardContent'
 import ChevronDown from 'mdi-material-ui/ChevronDown'
 
 // ** Types
-import { PricingDataType, PricingFaqType } from '@core/components/plan-details/types'
+import { PricingDataType, PricingFaqType } from 'src/@core/components/plan-details/types'
 
 interface State {
   data: PricingDataType | null

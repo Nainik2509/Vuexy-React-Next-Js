@@ -18,7 +18,7 @@ import ChevronDown from 'mdi-material-ui/ChevronDown'
 import CalendarOutline from 'mdi-material-ui/CalendarOutline'
 
 // ** Styled Components
-import DatePickerWrapper from '@core/styles/libs/react-datepicker'
+import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 // ** Types
 import { DateType } from 'views/forms/forms/form-elements/pickers/react-datepicker/types'

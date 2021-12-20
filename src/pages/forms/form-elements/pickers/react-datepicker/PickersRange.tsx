@@ -13,7 +13,7 @@ import DatePicker from 'react-datepicker'
 import { DateType } from './types'
 
 // ** Styled Components
-import DatePickerWrapper from '@core/styles/libs/react-datepicker'
+import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 const PickersRange = () => {
   // ** States

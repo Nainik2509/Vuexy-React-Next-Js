@@ -13,7 +13,7 @@ import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
 import axios from 'axios'
 
 // ** Types
-import { FaqType } from '@fake-db/types'
+import { FaqType } from 'src/@fake-db/types'
 
 // ** Demo Imports
 import FaqHeader from './FaqHeader'

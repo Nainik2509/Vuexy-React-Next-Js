@@ -19,16 +19,16 @@ import { styled, useTheme } from '@mui/material/styles'
 import TableCell, { TableCellBaseProps } from '@mui/material/TableCell'
 
 // ** Types
-import { SingleInvoiceType, InvoiceLayoutProps } from 'pages/apps/invoice/types'
+import { SingleInvoiceType, InvoiceLayoutProps } from 'src/pages/apps/invoice/types'
 
 // ** Third Party Components
 import axios from 'axios'
 
 // ** Configs
-import themeConfig from 'configs/themeConfig'
+import themeConfig from 'src/configs/themeConfig'
 
 // ** Hooks
-import { useSettings } from '@core/hooks/useSettings'
+import { useSettings } from 'src/@core/hooks/useSettings'
 
 const CalcWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   display: 'flex',

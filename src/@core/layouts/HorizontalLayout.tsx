@@ -9,17 +9,17 @@ import { styled } from '@mui/material/styles'
 import MuiToolbar, { ToolbarProps } from '@mui/material/Toolbar'
 
 // ** Theme Config Import
-import themeConfig from 'configs/themeConfig'
+import themeConfig from 'src/configs/themeConfig'
 
 // ** Components
-import Customizer from '@core/components/customizer'
+import Customizer from 'src/@core/components/customizer'
 import Footer from './components/shared-components/footer'
 import AppBarContent from './components/horizontal/app-bar-content'
 import Navigation from './components/horizontal/navigation'
 
 // ** Type Import
 import { HorizontalNavItemsType } from './types'
-import { Settings } from '@core/context/settingsContext'
+import { Settings } from 'src/@core/context/settingsContext'
 
 interface Props {
   hidden: boolean

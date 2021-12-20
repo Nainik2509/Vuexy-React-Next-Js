@@ -25,7 +25,7 @@ import Close from 'mdi-material-ui/Close'
 import StepperCustomDot from './StepperCustomDot'
 
 // ** Styled COmponent
-import StepperWrapper from '@core/styles/mui/components/stepper'
+import StepperWrapper from 'src/@core/styles/mui/components/stepper'
 
 const steps = [
   {

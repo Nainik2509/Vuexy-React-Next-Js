@@ -5,10 +5,10 @@ import { FC } from 'react'
 import Grid from '@mui/material/Grid'
 
 // ** Custom Components Imports
-import PlanDetails from '@core/components/plan-details'
+import PlanDetails from 'src/@core/components/plan-details'
 
 // ** Types
-import { PricingDataType, PricingPlanType } from '@core/components/plan-details/types'
+import { PricingDataType, PricingPlanType } from 'src/@core/components/plan-details/types'
 
 interface State {
   plan: string

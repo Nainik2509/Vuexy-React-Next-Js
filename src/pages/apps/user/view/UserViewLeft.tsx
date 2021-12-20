@@ -32,15 +32,15 @@ import Circle from 'mdi-material-ui/Circle'
 import BriefcaseVariantOutline from 'mdi-material-ui/BriefcaseVariantOutline'
 
 // ** Custom Components
-import CustomChip from '@core/components/mui/chip'
-import CustomAvatar from '@core/components/mui/avatar'
+import CustomChip from 'src/@core/components/mui/chip'
+import CustomAvatar from 'src/@core/components/mui/avatar'
 
 // ** Types
-import { ThemeColor } from '@core/layouts/types'
-import { UsersType } from 'pages/apps/user/types'
+import { ThemeColor } from 'src/@core/layouts/types'
+import { UsersType } from 'src/pages/apps/user/types'
 
 // ** Utils Import
-import { getInitials } from '@core/utils/get-initials'
+import { getInitials } from 'src/@core/utils/get-initials'
 
 interface Props {
   data: UsersType

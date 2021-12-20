@@ -15,7 +15,7 @@ import ArrowUp from 'mdi-material-ui/ArrowUp'
 import { Bubble } from 'react-chartjs-2'
 
 // ** Custom Components Imports
-import CustomChip from '@core/components/mui/chip'
+import CustomChip from 'src/@core/components/mui/chip'
 
 interface BubbleProps {
   yellow: string

@@ -2,13 +2,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 
 // ** Reducers
-import chat from 'pages/apps/chat/store'
-import user from 'pages/apps/user/store'
-import email from 'pages/apps/email/store'
-import invoice from 'pages/apps/invoice/store'
-import calendar from 'pages/apps/calendar/store'
-import authentication from 'redux/authentication'
-import permissions from 'pages/apps/permissions/store'
+import chat from 'src/pages/apps/chat/store'
+import user from 'src/pages/apps/user/store'
+import email from 'src/pages/apps/email/store'
+import invoice from 'src/pages/apps/invoice/store'
+import calendar from 'src/pages/apps/calendar/store'
+import authentication from 'src/redux/authentication'
+import permissions from 'src/pages/apps/permissions/store'
 
 export const store = configureStore({
   reducer: {

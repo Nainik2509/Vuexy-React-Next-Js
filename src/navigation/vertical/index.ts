@@ -21,7 +21,7 @@ import GoogleCirclesExtended from 'mdi-material-ui/GoogleCirclesExtended'
 import CheckboxMarkedCircleOutline from 'mdi-material-ui/CheckboxMarkedCircleOutline'
 
 // ** Type import
-import { NavGroup, NavLink, NavSectionTitle } from '@core/layouts/components/vertical/navigation/types'
+import { NavGroup, NavLink, NavSectionTitle } from 'src/@core/layouts/components/vertical/navigation/types'
 
 const navigation = (): (NavGroup | NavLink | NavSectionTitle)[] => {
   return [

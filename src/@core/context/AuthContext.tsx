@@ -5,14 +5,14 @@ import { createContext, FC, useEffect, ReactNode } from 'react'
 import { useRouter } from 'next/router'
 
 // ** Config
-import authConfig from 'configs/auth'
+import authConfig from 'src/configs/auth'
 
 // ** Axios
 import axios from 'axios'
 
 // ** Redux Imports
 import { useDispatch } from 'react-redux'
-import { handleLogin } from 'redux/authentication'
+import { handleLogin } from 'src/redux/authentication'
 
 // ** Types
 import { AuthProvider } from './types'

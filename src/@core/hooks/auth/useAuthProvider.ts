@@ -2,8 +2,8 @@
 import { useContext } from 'react'
 
 // ** Types & Provider
-import { Auth } from '@core/context/AuthContext'
-import { AuthProvider } from '@core/context/types'
+import { Auth } from 'src/@core/context/AuthContext'
+import { AuthProvider } from 'src/@core/context/types'
 
 /**
  * Get the authProvider stored in the context

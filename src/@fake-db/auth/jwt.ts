@@ -2,10 +2,10 @@
 import jwt from 'jsonwebtoken'
 
 // ** Mock Adapter
-import mock from '@fake-db/mock'
+import mock from 'src/@fake-db/mock'
 
 // ** Types
-import { JwtDataType } from '@fake-db/types'
+import { JwtDataType } from 'src/@fake-db/types'
 
 const users: JwtDataType[] = [
   {

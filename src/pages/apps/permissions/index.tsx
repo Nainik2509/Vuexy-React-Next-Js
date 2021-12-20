@@ -32,22 +32,22 @@ import { useForm, Controller } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
 
 // ** Custom Components Imports
-import CustomChip from '@core/components/mui/chip'
-import PageHeader from '@core/components/page-header'
-import TableHeader from 'pages/apps/permissions/TableHeader'
+import CustomChip from 'src/@core/components/mui/chip'
+import PageHeader from 'src/@core/components/page-header'
+import TableHeader from 'src/pages/apps/permissions/TableHeader'
 
 // ** Types Imports
-import { RootState } from 'redux/store'
-import { PermissionRowType } from 'pages/apps/permissions/types'
+import { RootState } from 'src/redux/store'
+import { PermissionRowType } from 'src/pages/apps/permissions/types'
 
 // ** Actions Imports
-import { fetchData } from 'pages/apps/permissions/store'
+import { fetchData } from 'src/pages/apps/permissions/store'
 
 // ** Types
-import { ThemeColor } from '@core/layouts/types'
+import { ThemeColor } from 'src/@core/layouts/types'
 
 // ** Styled Components
-import DataGridWrapper from '@core/styles/mui/components/datagrid'
+import DataGridWrapper from 'src/@core/styles/mui/components/datagrid'
 
 interface Colors {
   [key: string]: ThemeColor

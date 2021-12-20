@@ -2,7 +2,7 @@
 import { NextPageContext } from 'next'
 
 // ** Types
-import { InvoiceLayoutProps } from 'pages/apps/invoice/types'
+import { InvoiceLayoutProps } from 'src/pages/apps/invoice/types'
 
 // ** Demo Components Imports
 import PrintLayout from './PrintLayout'

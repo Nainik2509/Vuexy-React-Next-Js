@@ -15,11 +15,11 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemButton, { ListItemButtonProps } from '@mui/material/ListItemButton'
 
 // ** Configs Import
-import themeConfig from 'configs/themeConfig'
+import themeConfig from 'src/configs/themeConfig'
 
 // ** Types
-import { NavLink, NavGroup } from '@core/layouts/types'
-import { Settings } from '@core/context/settingsContext'
+import { NavLink, NavGroup } from 'src/@core/layouts/types'
+import { Settings } from 'src/@core/context/settingsContext'
 
 interface Props {
   parent?: boolean

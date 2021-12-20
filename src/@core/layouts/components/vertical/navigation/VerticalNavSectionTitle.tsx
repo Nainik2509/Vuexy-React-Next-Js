@@ -10,11 +10,11 @@ import MuiListSubheader, { ListSubheaderProps } from '@mui/material/ListSubheade
 import DotsHorizontal from 'mdi-material-ui/DotsHorizontal'
 
 // ** Configs Import
-import themeConfig from 'configs/themeConfig'
+import themeConfig from 'src/configs/themeConfig'
 
 // ** Types
-import { NavSectionTitle } from '@core/layouts/types'
-import { Settings } from '@core/context/settingsContext'
+import { NavSectionTitle } from 'src/@core/layouts/types'
+import { Settings } from 'src/@core/context/settingsContext'
 
 interface Props {
   navHover: boolean

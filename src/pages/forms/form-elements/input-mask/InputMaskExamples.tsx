@@ -7,7 +7,7 @@ import Cleave from 'cleave.js/react'
 import 'cleave.js/dist/addons/cleave-phone.us'
 
 // ** Styled component
-import CleaveWrapper from '@core/styles/libs/react-cleave'
+import CleaveWrapper from 'src/@core/styles/libs/react-cleave'
 
 const InputMaskExamples = () => {
   return (

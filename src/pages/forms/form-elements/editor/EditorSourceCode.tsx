@@ -8,7 +8,7 @@ import { EditorState } from 'draft-js'
 import { Editor } from 'react-draft-wysiwyg'
 
 // ** Styled Components
-import { EditorWrapper } from '@core/styles/libs/react-draft-wysiwyg'
+import { EditorWrapper } from 'src/@core/styles/libs/react-draft-wysiwyg'
 
 const EditorControlled: FC = () => {
   // ** State
@@ -34,7 +34,7 @@ import { FC } from 'react'
 import { Editor } from 'react-draft-wysiwyg'
 
 // ** Styled Components
-import { EditorWrapper } from '@core/styles/libs/react-draft-wysiwyg'
+import { EditorWrapper } from 'src/@core/styles/libs/react-draft-wysiwyg'
 
 const EditorUncontrolled: FC = () => {
   return (

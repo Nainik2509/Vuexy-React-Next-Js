@@ -1,8 +1,8 @@
 // ** Mock Adapter
-import mock from '@fake-db/mock'
+import mock from 'src/@fake-db/mock'
 
 // ** Types
-import { PermissionRowType } from 'pages/apps/permissions/types'
+import { PermissionRowType } from 'src/pages/apps/permissions/types'
 
 const data: { permissions: PermissionRowType[] } = {
   permissions: [

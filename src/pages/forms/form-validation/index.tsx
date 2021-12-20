@@ -4,7 +4,7 @@ import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 
 // ** Custom Components Imports
-import PageHeader from '@core/components/page-header'
+import PageHeader from 'src/@core/components/page-header'
 
 // ** Demo Components Imports
 import FormValidationBasic from './FormValidationBasic'

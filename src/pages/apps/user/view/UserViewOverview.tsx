@@ -25,10 +25,10 @@ import TimelineConnector from '@mui/lab/TimelineConnector'
 import MuiTimeline, { TimelineProps } from '@mui/lab/Timeline'
 
 // ** Types
-import { ThemeColor } from '@core/layouts/types'
+import { ThemeColor } from 'src/@core/layouts/types'
 
 // ** Demo Component Imports
-import InvoiceList from 'pages/apps/invoice/list'
+import InvoiceList from 'src/pages/apps/invoice/list'
 
 interface DataType {
   img: string

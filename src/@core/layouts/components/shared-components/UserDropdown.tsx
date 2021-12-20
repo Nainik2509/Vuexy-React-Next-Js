@@ -24,10 +24,10 @@ import MessageOutline from 'mdi-material-ui/MessageOutline'
 import HelpCircleOutline from 'mdi-material-ui/HelpCircleOutline'
 
 // ** Hooks Imports
-import useLogout from '@core/hooks/auth/useLogout'
+import useLogout from 'src/@core/hooks/auth/useLogout'
 
 // ** Type Imports
-import { Settings } from '@core/context/settingsContext'
+import { Settings } from 'src/@core/context/settingsContext'
 
 interface Props {
   settings: Settings

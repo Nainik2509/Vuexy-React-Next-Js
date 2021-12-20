@@ -10,14 +10,14 @@ import Typography from '@mui/material/Typography'
 import { Toaster } from 'react-hot-toast'
 
 // ** Custom Components Imports
-import PageHeader from '@core/components/page-header'
+import PageHeader from 'src/@core/components/page-header'
 
 // ** Demo Components
 import ToastTypes from './ToastTypes'
 import ToastPositions from './ToastPositions'
 
 // ** Styled Components
-import ReactHotToast from '@core/styles/libs/react-hot-toast'
+import ReactHotToast from 'src/@core/styles/libs/react-hot-toast'
 
 const ReactHotToasts = () => {
   const [activePosition, setActivePosition] = useState<string>('top-center')

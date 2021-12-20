@@ -20,7 +20,7 @@ import HelpCircleOutline from 'mdi-material-ui/HelpCircleOutline'
 import BriefcaseVariantOutline from 'mdi-material-ui/BriefcaseVariantOutline'
 
 // ** Types
-import { FaqType, FaqQAndAType } from '@fake-db/types'
+import { FaqType, FaqQAndAType } from 'src/@fake-db/types'
 
 interface Props {
   data: FaqType[]

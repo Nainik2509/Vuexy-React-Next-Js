@@ -5,7 +5,7 @@ import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 
 // ** Custom Components Imports
-import PageHeader from '@core/components/page-header'
+import PageHeader from 'src/@core/components/page-header'
 
 // ** Demo Components Imports
 import ChartjsBarChart from './ChartjsBarChart'

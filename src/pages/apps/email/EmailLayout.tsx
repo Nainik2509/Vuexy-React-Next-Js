@@ -10,13 +10,13 @@ import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 
 // ** Configs Import
-import themeConfig from 'configs/themeConfig'
+import themeConfig from 'src/configs/themeConfig'
 
 // ** Hooks
-import { useSettings } from '@core/hooks/useSettings'
+import { useSettings } from 'src/@core/hooks/useSettings'
 
 // ** Types
-import { RootState } from 'redux/store'
+import { RootState } from 'src/redux/store'
 import { MailLayoutType, MailLabelColors } from './types'
 
 // ** Email App Component Imports

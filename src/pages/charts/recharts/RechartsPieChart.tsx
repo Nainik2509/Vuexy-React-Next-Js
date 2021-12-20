@@ -12,7 +12,7 @@ import { Tooltip, PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
 import Circle from 'mdi-material-ui/Circle'
 
 // ** Styled Components
-import RechartsWrapper from '@core/styles/libs/recharts'
+import RechartsWrapper from 'src/@core/styles/libs/recharts'
 
 interface LabelProp {
   cx: number

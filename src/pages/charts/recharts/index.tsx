@@ -4,10 +4,10 @@ import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 
 // ** Custom Components Imports
-import PageHeader from '@core/components/page-header'
+import PageHeader from 'src/@core/components/page-header'
 
 // ** Hooks
-import { useSettings } from '@core/hooks/useSettings'
+import { useSettings } from 'src/@core/hooks/useSettings'
 
 // ** Demo Components Imports
 import RechartsBarChart from './RechartsBarChart'

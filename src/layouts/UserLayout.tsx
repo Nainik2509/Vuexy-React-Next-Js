@@ -3,14 +3,14 @@ import { FC, ReactNode } from 'react'
 
 // ** Layout Imports
 // !Do not remove this Layout import
-import Layout from '@core/layouts/Layout'
+import Layout from 'src/@core/layouts/Layout'
 
 // ** Navigation Imports
-import VerticalNavItems from 'navigation/vertical'
-import HorizontalNavItems from 'navigation/horizontal'
+import VerticalNavItems from 'src/navigation/vertical'
+import HorizontalNavItems from 'src/navigation/horizontal'
 
 // ** Hook Import
-import { useSettings } from '@core/hooks/useSettings'
+import { useSettings } from 'src/@core/hooks/useSettings'
 
 interface Props {
   children: ReactNode

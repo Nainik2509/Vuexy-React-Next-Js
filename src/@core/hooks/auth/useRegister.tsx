@@ -5,10 +5,10 @@ import { useCallback } from 'react'
 import axios from 'axios'
 
 // ** Default Config
-import authConfig from 'configs/auth'
+import authConfig from 'src/configs/auth'
 
 // ** Types
-import { RegisterParams, ErrCallbackType } from '@core/context/types'
+import { RegisterParams, ErrCallbackType } from 'src/@core/context/types'
 
 // ** Auth Hooks
 import useLogin from './useLogin'

@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography'
 import Grid, { GridProps } from '@mui/material/Grid'
 
 // ** Custom Components Imports
-import CardSnippet from '@core/components/card-snippet'
+import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
 import PaginationSizes from './PaginationSizes'

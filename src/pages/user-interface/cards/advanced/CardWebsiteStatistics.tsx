@@ -25,7 +25,7 @@ import DotsVertical from 'mdi-material-ui/DotsVertical'
 import { BarChart, Bar, ResponsiveContainer } from 'recharts'
 
 // ** Types
-import { ThemeColor } from '@core/layouts/types'
+import { ThemeColor } from 'src/@core/layouts/types'
 
 interface DataType {
   title: string

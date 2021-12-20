@@ -2,10 +2,9 @@
 import { Theme } from '@mui/material'
 
 // ** Theme Type Import
-import { Skin } from '@core/layouts/types'
+import { Skin } from 'src/@core/layouts/types'
 
 const Snackbar = (theme: Theme, skin: Skin) => {
-
   return {
     MuiSnackbarContent: {
       styleOverrides: {

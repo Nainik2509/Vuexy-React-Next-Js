@@ -10,7 +10,7 @@ import MuiCardContent, { CardContentProps } from '@mui/material/CardContent'
 import axios from 'axios'
 
 // ** Types
-import { PricingDataType } from '@core/components/plan-details/types'
+import { PricingDataType } from 'src/@core/components/plan-details/types'
 
 // ** Demo Imports
 import PricingCTA from './PricingCTA'

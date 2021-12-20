@@ -6,11 +6,11 @@ import MuiAvatar from '@mui/material/Avatar'
 import { lighten, useTheme } from '@mui/material/styles'
 
 // ** Types
-import { ThemeColor } from '@core/layouts/types'
+import { ThemeColor } from 'src/@core/layouts/types'
 import { CustomAvatarProps } from './types'
 
 // ** Hooks Imports
-import useBgColor, { UseBgColorType } from '@core/hooks/theme/useBgColor'
+import useBgColor, { UseBgColorType } from 'src/@core/hooks/theme/useBgColor'
 
 const Avatar = forwardRef((props: CustomAvatarProps, ref: Ref<any>) => {
   // ** Props

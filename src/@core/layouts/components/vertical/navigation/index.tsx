@@ -5,8 +5,8 @@ import { FC, ReactNode, useState } from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
 // ** Type Import
-import { Settings } from '@core/context/settingsContext'
-import { VerticalNavItemsType } from '@core/layouts/types'
+import { Settings } from 'src/@core/context/settingsContext'
+import { VerticalNavItemsType } from 'src/@core/layouts/types'
 
 // ** Component Imports
 import Drawer from './Drawer'

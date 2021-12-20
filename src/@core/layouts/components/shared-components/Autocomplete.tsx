@@ -26,13 +26,13 @@ import CircleOutline from 'mdi-material-ui/CircleOutline'
 import axios from 'axios'
 
 // ** Types Imports
-import { AppBarSearchType } from '@fake-db/types'
+import { AppBarSearchType } from 'src/@fake-db/types'
 
 // ** Configs Imports
-import themeConfig from 'configs/themeConfig'
+import themeConfig from 'src/configs/themeConfig'
 
 // ** Hook Import
-import { useSettings } from '@core/hooks/useSettings'
+import { useSettings } from 'src/@core/hooks/useSettings'
 
 // ** API Icon Import with object
 import { autocompleteIconObj } from './autocompleteIconObj'

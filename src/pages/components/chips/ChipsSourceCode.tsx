@@ -234,7 +234,7 @@ export const ChipsLightCode = (
 import { FC } from 'react'
 
 // ** Custom Components Imports
-import CustomChip from '@core/components/mui/chip'
+import CustomChip from 'src/@core/components/mui/chip'
 
 const ChipsCustomized: FC = () => {
   return (

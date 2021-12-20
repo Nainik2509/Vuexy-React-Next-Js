@@ -13,7 +13,7 @@ import CartOutline from 'mdi-material-ui/CartOutline'
 import BriefcaseOutline from 'mdi-material-ui/BriefcaseOutline'
 
 // ** Custom Avatar Component
-import CustomAvatar from '@core/components/mui/avatar'
+import CustomAvatar from 'src/@core/components/mui/avatar'
 
 const TabDetails: FC = () => {
   const [value, setValue] = useState<string>('ecommerce')

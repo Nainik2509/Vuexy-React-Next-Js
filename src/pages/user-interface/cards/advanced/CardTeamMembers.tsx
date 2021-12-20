@@ -20,10 +20,10 @@ import CircularProgress from '@mui/material/CircularProgress'
 import DotsVertical from 'mdi-material-ui/DotsVertical'
 
 // ** Types
-import { ThemeColor } from '@core/layouts/types'
+import { ThemeColor } from 'src/@core/layouts/types'
 
 // ** Custom Components
-import CustomChip from '@core/components/mui/chip'
+import CustomChip from 'src/@core/components/mui/chip'
 
 interface DataType {
   src: string

@@ -12,10 +12,10 @@ import CardContent from '@mui/material/CardContent'
 import ArrowUp from 'mdi-material-ui/ArrowUp'
 
 // ** Custom Components Imports
-import CustomChip from '@core/components/mui/chip'
+import CustomChip from 'src/@core/components/mui/chip'
 
 // ** Styled Components
-import ApexChartWrapper from '@core/styles/libs/react-apexcharts'
+import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
 
 // ! To avoid Window is not defined Error
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })

@@ -2,7 +2,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 // ** Config Imports
-import authConfig from 'configs/auth'
+import authConfig from 'src/configs/auth'
 
 export const authSlice = createSlice({
   name: 'authentication',

@@ -12,7 +12,7 @@ import Close from 'mdi-material-ui/Close'
 import Attachment from 'mdi-material-ui/Attachment'
 
 // ** Custom Components Imports
-import CustomChip from '@core/components/mui/chip'
+import CustomChip from 'src/@core/components/mui/chip'
 
 interface Props {
   open: boolean

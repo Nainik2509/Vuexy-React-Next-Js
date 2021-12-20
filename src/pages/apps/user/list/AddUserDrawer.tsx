@@ -26,7 +26,7 @@ import Close from 'mdi-material-ui/Close'
 import { useDispatch } from 'react-redux'
 
 // ** Actions Imports
-import { addUser } from 'pages/apps/user/store'
+import { addUser } from 'src/pages/apps/user/store'
 
 interface SidebarAddUserType {
   open: boolean

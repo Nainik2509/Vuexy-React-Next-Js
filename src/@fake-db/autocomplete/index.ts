@@ -1,8 +1,8 @@
 // ** Mock Adapter
-import mock from '@fake-db/mock'
+import mock from 'src/@fake-db/mock'
 
 // ** Types
-import { AutocompleteType } from '@fake-db/types'
+import { AutocompleteType } from 'src/@fake-db/types'
 
 const top100Films: AutocompleteType[] = [
   { title: 'The Shawshank Redemption', year: 1994 },

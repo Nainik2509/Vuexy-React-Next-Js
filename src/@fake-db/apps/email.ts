@@ -1,8 +1,8 @@
 // ** Mock Adapter
-import mock from '@fake-db/mock'
+import mock from 'src/@fake-db/mock'
 
 // ** Types
-import { MailType } from 'pages/apps/email/types'
+import { MailType } from 'src/pages/apps/email/types'
 
 const data: { emails: MailType[] } = {
   emails: [

@@ -19,7 +19,7 @@ Here is the example of how to use the skin:
 import Avatar from '@mui/material/Avatar'
 
 // ** Custom Components Imports
-import CustomBadge from '@core/components/mui/badge'
+import CustomBadge from 'src/@core/components/mui/badge'
 
 <CustomBadge skin='light' color='primary' badgeContent={4}>
   <Avatar src='/images/avatars/3.png' alt='User Avatar' />

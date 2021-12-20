@@ -1,8 +1,8 @@
 // ** Mock Adapter
-import mock from '@fake-db/mock'
+import mock from 'src/@fake-db/mock'
 
 // ** Types
-import { AppBarSearchType } from '@fake-db/types'
+import { AppBarSearchType } from 'src/@fake-db/types'
 
 const searchData: AppBarSearchType[] = [
   {

@@ -1,11 +1,11 @@
 // ** Mock Adapter
-import mock from '@fake-db/mock'
+import mock from 'src/@fake-db/mock'
 
 // ** Utils Import
-import { getDateRange } from '@core/utils/get-daterange'
+import { getDateRange } from 'src/@core/utils/get-daterange'
 
 // ** Types
-import { InvoiceType } from 'pages/apps/invoice/types'
+import { InvoiceType } from 'src/pages/apps/invoice/types'
 
 const now = new Date()
 const currentMonth = now.toLocaleString('default', { month: 'short' })

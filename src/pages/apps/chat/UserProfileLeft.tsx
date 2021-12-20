@@ -32,7 +32,7 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 import { UserProfileLeftType } from './types'
 
 // ** Custom Component Imports
-import Sidebar from '@core/components/sidebar'
+import Sidebar from 'src/@core/components/sidebar'
 
 const UserProfileLeft = (props: UserProfileLeftType) => {
   const {

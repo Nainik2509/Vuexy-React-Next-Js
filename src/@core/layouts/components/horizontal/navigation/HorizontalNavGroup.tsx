@@ -25,15 +25,15 @@ import ChevronRight from 'mdi-material-ui/ChevronRight'
 import CircleOutline from 'mdi-material-ui/CircleOutline'
 
 // ** Theme Config Import
-import themeConfig from 'configs/themeConfig'
+import themeConfig from 'src/configs/themeConfig'
 
 // ** Utils
-import { hexToRGBA } from '@core/utils/hex-to-rgba'
-import { hasActiveChild } from '@core/layouts/utils'
+import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
+import { hasActiveChild } from 'src/@core/layouts/utils'
 
 // ** Types
-import { NavGroup } from '@core/layouts/types'
-import { Settings } from '@core/context/settingsContext'
+import { NavGroup } from 'src/@core/layouts/types'
+import { Settings } from 'src/@core/context/settingsContext'
 
 // ** Custom Navigation Components Imports
 import HorizontalNavItems from './HorizontalNavItems'

@@ -11,15 +11,15 @@ import { useDispatch, useSelector } from 'react-redux'
 import { sendMsg, selectChat, fetchUserProfile, fetchChatsContacts } from './store'
 
 // ** Types
-import { RootState } from 'redux/store'
+import { RootState } from 'src/redux/store'
 import { StatusObjType, StatusType } from './types'
 
 // ** Configs Imports
-import themeConfig from 'configs/themeConfig'
+import themeConfig from 'src/configs/themeConfig'
 
 // ** Utils Imports
-import { getInitials } from '@core/utils/get-initials'
-import { formatDateToMonthShort } from '@core/utils/format'
+import { getInitials } from 'src/@core/utils/get-initials'
+import { formatDateToMonthShort } from 'src/@core/utils/format'
 
 // ** Chat App Components Imports
 import SidebarLeft from './SidebarLeft'

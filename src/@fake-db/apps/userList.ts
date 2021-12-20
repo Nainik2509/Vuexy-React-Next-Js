@@ -1,8 +1,8 @@
 // ** Mock
-import mock from '@fake-db/mock'
+import mock from 'src/@fake-db/mock'
 
 // ** Types
-import { UsersType } from 'pages/apps/user/types'
+import { UsersType } from 'src/pages/apps/user/types'
 
 const data: { users: UsersType[] } = {
   users: [

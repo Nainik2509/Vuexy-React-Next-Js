@@ -1,8 +1,8 @@
 // ** Mock Adapter
-import mock from '@fake-db/mock'
+import mock from 'src/@fake-db/mock'
 
 // ** Types
-import { ProfileUserType, ChatsObj, ContactType } from 'pages/apps/chat/types'
+import { ProfileUserType, ChatsObj, ContactType } from 'src/pages/apps/chat/types'
 
 const previousDay = new Date(new Date().getTime() - 24 * 60 * 60 * 1000)
 const dayBeforePreviousDay = new Date(new Date().getTime() - 24 * 60 * 60 * 1000 * 2)

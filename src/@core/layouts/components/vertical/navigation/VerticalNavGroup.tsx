@@ -22,14 +22,14 @@ import ChevronLeft from 'mdi-material-ui/ChevronLeft'
 import ChevronRight from 'mdi-material-ui/ChevronRight'
 
 // ** Configs Import
-import themeConfig from 'configs/themeConfig'
+import themeConfig from 'src/configs/themeConfig'
 
 // ** Utils
-import { hasActiveChild, removeChildren } from '@core/layouts/utils'
+import { hasActiveChild, removeChildren } from 'src/@core/layouts/utils'
 
 // ** Types
-import { NavGroup } from '@core/layouts/types'
-import { Settings } from '@core/context/settingsContext'
+import { NavGroup } from 'src/@core/layouts/types'
+import { Settings } from 'src/@core/context/settingsContext'
 
 // ** Custom Components Imports
 import VerticalNavItems from './VerticalNavItems'

@@ -17,7 +17,7 @@ import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 
 // ** User Layout Import
-import UserLayout from 'layouts/UserLayout'
+import UserLayout from 'src/layouts/UserLayout'
 
 const SidebarComponent = () => (
   <Box sx={{ px: 4, py: 2, height: 'calc(100vh - 12rem)', backgroundColor: 'white' }}>

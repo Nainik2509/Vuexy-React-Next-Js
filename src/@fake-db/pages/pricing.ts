@@ -1,8 +1,8 @@
 // ** Mock Adapter
-import mock from '@fake-db/mock'
+import mock from 'src/@fake-db/mock'
 
 // ** Types
-import { PricingDataType } from '@core/components/plan-details/types'
+import { PricingDataType } from 'src/@core/components/plan-details/types'
 
 const data: PricingDataType = {
   pricingPlans: [

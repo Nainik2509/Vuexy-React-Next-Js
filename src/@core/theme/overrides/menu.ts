@@ -2,10 +2,9 @@
 import { Theme } from '@mui/material'
 
 // ** Theme Type Import
-import { Skin,} from '@core/layouts/types'
+import { Skin } from 'src/@core/layouts/types'
 
 const Menu = (theme: Theme, skin: Skin) => {
-
   const boxShadow = () => {
     if (skin === 'bordered') {
       return theme.shadows[0]

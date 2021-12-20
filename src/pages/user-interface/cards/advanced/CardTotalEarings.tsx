@@ -16,7 +16,7 @@ import MenuUp from 'mdi-material-ui/MenuUp'
 import DotsVertical from 'mdi-material-ui/DotsVertical'
 
 // ** Types
-import { ThemeColor } from '@core/layouts/types'
+import { ThemeColor } from 'src/@core/layouts/types'
 
 interface DataType {
   title: string

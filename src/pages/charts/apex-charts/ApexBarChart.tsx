@@ -23,8 +23,8 @@ import ChevronDown from 'mdi-material-ui/ChevronDown'
 import { DateType } from 'views/forms/forms/form-elements/pickers/react-datepicker/types'
 
 // ** Styled Components
-import ApexChartWrapper from '@core/styles/libs/react-apexcharts'
-import DatePickerWrapper from '@core/styles/libs/react-datepicker'
+import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
+import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 // ! To avoid Window is not defined Error
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })

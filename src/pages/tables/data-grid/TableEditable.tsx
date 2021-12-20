@@ -8,7 +8,7 @@ import CardHeader from '@mui/material/CardHeader'
 import { rows, editableCols } from './data'
 
 // ** Styled Wrapper
-import DataGridWrapper from '@core/styles/mui/components/datagrid'
+import DataGridWrapper from 'src/@core/styles/mui/components/datagrid'
 
 const TableEditable = () => {
   return (

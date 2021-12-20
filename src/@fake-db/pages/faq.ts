@@ -1,8 +1,8 @@
 // ** Mock Adapter
-import mock from '@fake-db/mock'
+import mock from 'src/@fake-db/mock'
 
 // ** Types
-import { FaqType } from '@fake-db/types'
+import { FaqType } from 'src/@fake-db/types'
 
 const data: FaqType[] = [
   {

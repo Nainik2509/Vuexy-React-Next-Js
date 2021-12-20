@@ -33,13 +33,13 @@ import DeleteOutline from 'mdi-material-ui/DeleteOutline'
 import { EditorState } from 'draft-js'
 
 // ** Custom Components Imports
-import CustomAvatar from '@core/components/mui/avatar'
+import CustomAvatar from 'src/@core/components/mui/avatar'
 
 // ** Styled Component Imports
-import { EditorWrapper } from '@core/styles/libs/react-draft-wysiwyg'
+import { EditorWrapper } from 'src/@core/styles/libs/react-draft-wysiwyg'
 
 // ** Types
-import { getInitials } from '@core/utils/get-initials'
+import { getInitials } from 'src/@core/utils/get-initials'
 import { MailComposeType, FieldMenuItems } from './types'
 
 // ** Utils Import

@@ -1,8 +1,8 @@
 // ** Mock Adapter
-import mock from '@fake-db/mock'
+import mock from 'src/@fake-db/mock'
 
 // ** Types Imports
-import { DataTableRowType } from '@fake-db/types'
+import { DataTableRowType } from 'src/@fake-db/types'
 
 const paginateArray = (array: DataTableRowType[], perPage: number, page: number) => {
   return array.slice((page - 1) * perPage, page * perPage)

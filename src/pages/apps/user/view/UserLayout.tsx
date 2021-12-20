@@ -12,7 +12,7 @@ import Alert from '@mui/material/Alert'
 import axios from 'axios'
 
 // ** Types
-import { UserLayoutType, UsersType } from 'pages/apps/user/types'
+import { UserLayoutType, UsersType } from 'src/pages/apps/user/types'
 
 // ** Demo Components Imports
 import UserViewLeft from './UserViewLeft'

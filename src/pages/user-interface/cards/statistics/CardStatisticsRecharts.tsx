@@ -5,11 +5,11 @@ import { FC } from 'react'
 import Grid from '@mui/material/Grid'
 
 // ** Custom Component Imports
-import CardStatisticsBar from '@core/components/card-statistics/card-stats-with-charts/bar'
-import CardStatisticsArea from '@core/components/card-statistics/card-stats-with-charts/area'
-import CardStatisticsLineLinear from '@core/components/card-statistics/card-stats-with-charts/line-linear'
-import CardStatisticsLineShadow from '@core/components/card-statistics/card-stats-with-charts/line-shadow'
-import CardStatisticsStackedBar from '@core/components/card-statistics/card-stats-with-charts/stacked-bar'
+import CardStatisticsBar from 'src/@core/components/card-statistics/card-stats-with-charts/bar'
+import CardStatisticsArea from 'src/@core/components/card-statistics/card-stats-with-charts/area'
+import CardStatisticsLineLinear from 'src/@core/components/card-statistics/card-stats-with-charts/line-linear'
+import CardStatisticsLineShadow from 'src/@core/components/card-statistics/card-stats-with-charts/line-shadow'
+import CardStatisticsStackedBar from 'src/@core/components/card-statistics/card-stats-with-charts/stacked-bar'
 import CardStatisticsPie from './CardStatisticsRechartsPie'
 
 interface Props {

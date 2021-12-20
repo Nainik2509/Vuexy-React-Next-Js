@@ -7,10 +7,10 @@ import MuiAppBar, { AppBarProps } from '@mui/material/AppBar'
 import MuiToolbar, { ToolbarProps } from '@mui/material/Toolbar'
 
 // ** Type Import
-import { Settings } from '@core/context/settingsContext'
+import { Settings } from 'src/@core/context/settingsContext'
 
 // ** Theme Config Import
-import themeConfig from 'configs/themeConfig'
+import themeConfig from 'src/configs/themeConfig'
 
 // ** Component Import
 import AppBarContent from './AppBarContent'

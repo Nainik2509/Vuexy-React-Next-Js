@@ -3,10 +3,10 @@ import { deepmerge } from '@mui/utils'
 import { ThemeOptions } from '@mui/material'
 
 // ** User Theme Options
-import UserThemeOptions from 'assets/UserThemeOptions'
+import UserThemeOptions from 'src/assets/UserThemeOptions'
 
 // ** Type Import
-import { Settings } from '@core/context/settingsContext'
+import { Settings } from 'src/@core/context/settingsContext'
 
 // ** Theme Override Imports
 import palette from './palette'
@@ -25,16 +25,19 @@ const themeOptions = (settings: Settings): ThemeOptions => {
   delete userThemeConfig.components
   delete userThemeConfig.typography
 
-  const mergedThemeConfig = deepmerge({
-    direction,
-    palette: palette(mode),
-    shadows: shadows(mode),
-    ...spacing,
-    breakpoints: breakpoints(),
-    shape: {
-      borderRadius: 6
-    }
-  }, userThemeConfig)
+  const mergedThemeConfig = deepmerge(
+    {
+      direction,
+      palette: palette(mode),
+      shadows: shadows(mode),
+      ...spacing,
+      breakpoints: breakpoints(),
+      shape: {
+        borderRadius: 6
+      }
+    },
+    userThemeConfig
+  )
 
   return deepmerge(mergedThemeConfig, {
     palette: {

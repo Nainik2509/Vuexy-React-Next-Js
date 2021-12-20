@@ -12,25 +12,25 @@ import { CacheProvider } from '@emotion/react'
 import type { EmotionCache } from '@emotion/cache'
 
 // ** Store imports
-import { store } from 'redux/store'
 import { Provider } from 'react-redux'
+import { store } from 'src/redux/store'
 
 // ** i18n Config Import
-import 'configs/i18n'
+import 'src/configs/i18n'
 
 // ** Fake-DB Import
-import '@fake-db/index'
+import 'src/@fake-db'
 
 // ** Component Imports
-import UserLayout from 'layouts/UserLayout'
-import ThemeComponent from '@core/theme/ThemeComponent'
+import UserLayout from 'src/layouts/UserLayout'
+import ThemeComponent from 'src/@core/theme/ThemeComponent'
 
 // ** Contexts
-import { AuthContext } from '@core/context/AuthContext'
-import { SettingsConsumer, SettingsProvider } from '@core/context/settingsContext'
+import { AuthContext } from 'src/@core/context/AuthContext'
+import { SettingsConsumer, SettingsProvider } from 'src/@core/context/settingsContext'
 
 // ** Utils Imports
-import { createEmotionCache } from '@core/utils/create-emotion-cache'
+import { createEmotionCache } from 'src/@core/utils/create-emotion-cache'
 
 // ** Prismjs Styles
 import 'prismjs'

@@ -16,7 +16,7 @@ Here is the example of how to use the skin:
 
 ```jsx
 // ** Custom Components Imports
-import CustomChip from '@core/components/mui/chip'
+import CustomChip from 'src/@core/components/mui/chip'
 
 <CustomChip label='Primary' skin='light' color='primary' />
 <CustomChip label='Secondary' skin='light' color='secondary' />

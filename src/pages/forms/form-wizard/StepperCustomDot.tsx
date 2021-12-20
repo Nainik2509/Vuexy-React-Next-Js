@@ -8,7 +8,7 @@ import Alert from 'mdi-material-ui/Alert'
 import CheckCircle from 'mdi-material-ui/CheckCircle'
 
 // ** Util Imports
-import { hexToRGBA } from '@core/utils/hex-to-rgba'
+import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 
 // Styled Box component
 const Box = styled(MuiBox)<BoxProps>(({ theme }) => ({

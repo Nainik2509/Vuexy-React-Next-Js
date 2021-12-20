@@ -33,17 +33,17 @@ import axios from 'axios'
 import DatePicker from 'react-datepicker'
 
 // ** Configs
-import themeConfig from 'configs/themeConfig'
+import themeConfig from 'src/configs/themeConfig'
 
 // ** Types
-import { InvoiceType, InvoiceClientType } from 'pages/apps/invoice/types'
-import { DateType } from 'pages/forms/form-elements/pickers/react-datepicker/types'
+import { InvoiceType, InvoiceClientType } from 'src/pages/apps/invoice/types'
+import { DateType } from 'src/pages/forms/form-elements/pickers/react-datepicker/types'
 
 // ** Custom Component Imports
-import Repeater from '@core/components/repeater'
+import Repeater from 'src/@core/components/repeater'
 
 // ** Styles
-import DatePickerWrapper from '@core/styles/libs/react-datepicker'
+import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 interface PickerProps {
   label?: string

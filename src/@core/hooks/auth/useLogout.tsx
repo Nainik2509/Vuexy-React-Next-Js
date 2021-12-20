@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 
 // ** Redux Imports
 import { useDispatch } from 'react-redux'
-import { handleLogout } from 'redux/authentication'
+import { handleLogout } from 'src/redux/authentication'
 
 // ** Provider
 import useAuthProvider from './useAuthProvider'

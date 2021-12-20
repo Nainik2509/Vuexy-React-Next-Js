@@ -17,10 +17,10 @@ import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
 import LabelVariantOutline from 'mdi-material-ui/LabelVariantOutline'
 
 // ** Types Imports
-import { CardStatsVerticalProps } from '@core/components/card-statistics/types'
+import { CardStatsVerticalProps } from 'src/@core/components/card-statistics/types'
 
 // ** Demo Components Imports
-import CardStatisticsVertical from '@core/components/card-statistics/card-stats-vertical'
+import CardStatisticsVertical from 'src/@core/components/card-statistics/card-stats-vertical'
 
 const icons = {
   Poll,

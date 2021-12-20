@@ -25,8 +25,8 @@ import ChevronDown from 'mdi-material-ui/ChevronDown'
 import { DateType } from 'views/forms/forms/form-elements/pickers/react-datepicker/types'
 
 // ** Styled Components
-import RechartsWrapper from '@core/styles/libs/recharts'
-import DatePickerWrapper from '@core/styles/libs/react-datepicker'
+import RechartsWrapper from 'src/@core/styles/libs/recharts'
+import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 interface Props {
   direction: 'ltr' | 'rtl'

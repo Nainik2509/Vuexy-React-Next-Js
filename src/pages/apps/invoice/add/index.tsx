@@ -5,7 +5,7 @@ import { useState } from 'react'
 import Grid from '@mui/material/Grid'
 
 // ** Types
-import { InvoiceClientType } from 'pages/apps/invoice/types'
+import { InvoiceClientType } from 'src/pages/apps/invoice/types'
 
 // ** Demo Components Imports
 import AddCard from './AddCard'

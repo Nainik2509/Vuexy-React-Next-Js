@@ -18,7 +18,7 @@ Here is the example of how to use the skins mentioned above:
 
 ```jsx
 // ** Custom Components Imports
-import CustomAvatar from '@core/components/mui/avatar'
+import CustomAvatar from 'src/@core/components/mui/avatar'
 
 <CustomAvatar skin='filled'>N</CustomAvatar>
 <CustomAvatar skin='light'>OP</CustomAvatar>
@@ -38,7 +38,7 @@ Here is the example of how to use the colors mentioned above:
 
 ```jsx
 // ** Custom Components Imports
-import CustomAvatar from '@core/components/mui/avatar'
+import CustomAvatar from 'src/@core/components/mui/avatar'
 
 // ** Icon Import
 import BellOutline from 'mdi-material-ui/BellOutline'
