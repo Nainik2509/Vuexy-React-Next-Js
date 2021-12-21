@@ -1,5 +1,5 @@
 // ** React Imports
-import { MouseEvent, ReactNode, useState } from 'react'
+import { useState, SyntheticEvent, ChangeEvent, MouseEvent, ReactNode } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
@@ -17,7 +17,6 @@ import Box, { BoxProps } from '@mui/material/Box'
 import FormControl from '@mui/material/FormControl'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import OutlinedInput from '@mui/material/OutlinedInput'
-import FormHelperText from '@mui/material/FormHelperText'
 import InputAdornment from '@mui/material/InputAdornment'
 import { Theme, styled, useTheme } from '@mui/material/styles'
 import Typography, { TypographyProps } from '@mui/material/Typography'
@@ -31,11 +30,6 @@ import Facebook from 'mdi-material-ui/Facebook'
 import EyeOutline from 'mdi-material-ui/EyeOutline'
 import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 
-// ** Third Party Imports
-import * as yup from 'yup'
-import { yupResolver } from '@hookform/resolvers/yup'
-import { useForm, Controller, DefaultValues } from 'react-hook-form'
-
 // ** Configs
 import themeConfig from 'src/configs/themeConfig'
 
@@ -43,12 +37,15 @@ import themeConfig from 'src/configs/themeConfig'
 import BlankLayout from 'src/@core/layouts/BlankLayout'
 
 // ** Hooks
-import useLogin from 'src/@core/hooks/auth/useLogin'
-import useBgColor from 'src/@core/hooks/theme/useBgColor'
 import { useSettings } from 'src/@core/hooks/useSettings'
 
 // ** Demo Imports
 import FooterIllustrationsV2 from 'src/pages/pages/auth/FooterIllustrationsV2'
+
+interface State {
+  password: string
+  showPassword: boolean
+}
 
 // ** Styled Components
 const LoginIllustrationWrapper = styled(Box)<BoxProps>(({ theme }) => ({
@@ -101,53 +98,32 @@ const FormControlLabel = styled(MuiFormControlLabel)<FormControlLabelProps>(({ t
   }
 }))
 
-const schema = yup.object().shape({
-  email: yup.string().email().required(),
-  password: yup.string().min(5).required()
-})
-
-const defaultValues = {
-  password: 'admin',
-  email: 'admin@materio.com'
-}
-
-interface FormData {
-  email: string
-  password: string
-}
-
-const LoginPage: NextPage = () => {
-  const [showPassword, setShowPassword] = useState<boolean>(false)
-
-  // ** Hooks
-  const login = useLogin()
-  const theme = useTheme()
-  const {
-    settings: { skin }
-  } = useSettings()
-  const bgClasses = useBgColor()
-  const {
-    control,
-    setError,
-    handleSubmit,
-    formState: { errors }
-  } = useForm<DefaultValues<any>>({
-    defaultValues,
-    mode: 'onBlur',
-    resolver: yupResolver(schema)
+const LoginV2: NextPage = () => {
+  // ** States
+  const [values, setValues] = useState<State>({
+    password: '',
+    showPassword: false
   })
+
+  // ** Hook
+  const theme = useTheme()
+  const { settings } = useSettings()
 
   // ** Vars
   const hidden = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
 
-  const onSubmit = (data: FormData) => {
-    const { email, password } = data
-    login({ email, password }, () => {
-      setError('email', {
-        type: 'manual',
-        message: 'Email or Password is invalid'
-      })
-    })
+  const handleSubmit = (e: SyntheticEvent) => {
+    e.preventDefault()
+  }
+
+  const handleChange = (prop: keyof State) => (event: ChangeEvent<HTMLInputElement>) => {
+    setValues({ ...values, [prop]: event.target.value })
+  }
+  const handleClickShowPassword = () => {
+    setValues({ ...values, showPassword: !values.showPassword })
+  }
+  const handleMouseDownPassword = (event: MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault()
   }
 
   return (
@@ -167,7 +143,9 @@ const LoginPage: NextPage = () => {
           <FooterIllustrationsV2 />
         </Box>
       ) : null}
-      <RightWrapper sx={skin === 'bordered' && !hidden ? { borderLeft: `1px solid ${theme.palette.divider}` } : {}}>
+      <RightWrapper
+        sx={settings.skin === 'bordered' && !hidden ? { borderLeft: `1px solid ${theme.palette.divider}` } : {}}
+      >
         <Box
           sx={{
             p: 12,
@@ -198,77 +176,35 @@ const LoginPage: NextPage = () => {
               <TypographyStyled variant='h5'>Welcome to {themeConfig.templateName}! 👋🏻</TypographyStyled>
               <Typography variant='body2'>Please sign-in to your account and start the adventure</Typography>
             </Box>
-            <Box sx={{ mb: 6 }}>
-              <Box sx={{ py: 3, px: 4, borderRadius: 1, ...bgClasses.primaryLight }}>
-                <Typography variant='caption' sx={{ display: 'block', color: 'primary.main' }}>
-                  Admin: <strong>admin@materio.com</strong> / Pass: <strong>admin</strong>
-                </Typography>
-                <Typography variant='caption' sx={{ color: 'primary.main' }}>
-                  Client: <strong>client@materio.com</strong> / Pass: <strong>client</strong>
-                </Typography>
-              </Box>
-            </Box>
-            <form noValidate autoComplete='off' onSubmit={handleSubmit(onSubmit)}>
-              <FormControl fullWidth sx={{ mb: 4 }}>
-                <Controller
-                  name='email'
-                  control={control}
-                  rules={{ required: true }}
-                  render={({ field: { value, onChange, onBlur } }) => (
-                    <TextField
-                      label='Email'
-                      value={value}
-                      onBlur={onBlur}
-                      onChange={onChange}
-                      error={Boolean(errors.email)}
-                      placeholder='admin@materio.com'
-                    />
-                  )}
-                />
-                {errors.email && <FormHelperText sx={{ color: 'error.main' }}>{errors.email.message}</FormHelperText>}
-              </FormControl>
+            <form noValidate autoComplete='off' onSubmit={handleSubmit}>
+              <TextField id='email' label='Email' sx={{ display: 'flex', marginBottom: 4 }} />
               <FormControl fullWidth>
-                <InputLabel htmlFor='auth-login-v2-password' error={Boolean(errors.password)}>
-                  Password
-                </InputLabel>
-                <Controller
-                  name='password'
-                  control={control}
-                  rules={{ required: true }}
-                  render={({ field: { value, onChange, onBlur } }) => (
-                    <OutlinedInput
-                      value={value}
-                      onBlur={onBlur}
-                      label='Password'
-                      onChange={onChange}
-                      id='auth-login-v2-password'
-                      error={Boolean(errors.password)}
-                      type={showPassword ? 'text' : 'password'}
-                      endAdornment={
-                        <InputAdornment position='end'>
-                          <IconButton
-                            edge='end'
-                            onMouseDown={e => e.preventDefault()}
-                            onClick={() => setShowPassword(!showPassword)}
-                          >
-                            {showPassword ? <EyeOutline /> : <EyeOffOutline />}
-                          </IconButton>
-                        </InputAdornment>
-                      }
-                    />
-                  )}
+                <InputLabel htmlFor='auth-login-v2-password'>Password</InputLabel>
+                <OutlinedInput
+                  label='Password'
+                  value={values.password}
+                  id='auth-login-v2-password'
+                  onChange={handleChange('password')}
+                  type={values.showPassword ? 'text' : 'password'}
+                  endAdornment={
+                    <InputAdornment position='end'>
+                      <IconButton
+                        edge='end'
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                        aria-label='toggle password visibility'
+                      >
+                        {values.showPassword ? <EyeOutline fontSize='small' /> : <EyeOffOutline fontSize='small' />}
+                      </IconButton>
+                    </InputAdornment>
+                  }
                 />
-                {errors.password && (
-                  <FormHelperText sx={{ color: 'error.main' }} id=''>
-                    {errors.password.message}
-                  </FormHelperText>
-                )}
               </FormControl>
               <Box
                 sx={{ mb: 4, display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'space-between' }}
               >
                 <FormControlLabel control={<Checkbox />} label='Remember Me' />
-                <Link passHref href='/forgot-password'>
+                <Link passHref href='/pages/auth/forgot-password-v2'>
                   <LinkStyled>Forgot Password?</LinkStyled>
                 </Link>
               </Box>
@@ -280,7 +216,7 @@ const LoginPage: NextPage = () => {
                   New on our platform?
                 </Typography>
                 <Typography variant='body2'>
-                  <Link passHref href='/register'>
+                  <Link passHref href='/pages/auth/register-v2'>
                     <LinkStyled>Create an account</LinkStyled>
                   </Link>
                 </Typography>
@@ -318,6 +254,6 @@ const LoginPage: NextPage = () => {
   )
 }
 
-LoginPage.getLayout = (page: ReactNode) => <BlankLayout>{page}</BlankLayout>
+LoginV2.getLayout = (page: ReactNode) => <BlankLayout>{page}</BlankLayout>
 
-export default LoginPage
+export default LoginV2

@@ -47,7 +47,7 @@ import { useSettings } from 'src/@core/hooks/useSettings'
 import useRegister from 'src/@core/hooks/auth/useRegister'
 
 // ** Demo Imports
-import FooterIllustrationsV2 from 'src/pages/pages/authentication/FooterIllustrationsV2'
+import FooterIllustrationsV2 from 'src/pages/pages/auth/FooterIllustrationsV2'
 
 const defaultValues = {
   email: '',
