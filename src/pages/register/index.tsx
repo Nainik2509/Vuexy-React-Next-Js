@@ -24,7 +24,7 @@ import { Theme, styled, useTheme } from '@mui/material/styles'
 import Typography, { TypographyProps } from '@mui/material/Typography'
 
 // ** Context
-import { Auth } from '@core/context/AuthContext'
+import { Auth } from 'src/@core/context/AuthContext'
 
 // ** Icons Imports
 import Google from 'mdi-material-ui/Google'
@@ -39,12 +39,6 @@ import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm, Controller, DefaultValues } from 'react-hook-form'
 
-<<<<<<< HEAD
-=======
-// ** Hooks
-import { useSettings } from '@core/hooks/useSettings'
-
->>>>>>> 058abfc ([feat](Auth/ACL):Auth & ACL Structure)
 // ** Configs
 import themeConfig from 'src/configs/themeConfig'
 
@@ -53,7 +47,6 @@ import BlankLayout from 'src/@core/layouts/BlankLayout'
 
 // ** Hooks
 import { useSettings } from 'src/@core/hooks/useSettings'
-import useRegister from 'src/@core/hooks/auth/useRegister'
 
 // ** Demo Imports
 import FooterIllustrationsV2 from 'src/pages/pages/auth/FooterIllustrationsV2'

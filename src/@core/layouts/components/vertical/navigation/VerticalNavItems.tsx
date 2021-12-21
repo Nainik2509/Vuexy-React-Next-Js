@@ -6,7 +6,7 @@ import { Settings } from 'src/@core/context/settingsContext'
 import { NavLink, NavGroup, NavSectionTitle, VerticalNavItemsType } from 'src/@core/layouts/types'
 
 // ** Hooks
-import useCanViewNav from '@core/hooks/useCanViewNav'
+import useCanViewNav from 'src/@core/hooks/useCanViewNav'
 
 // ** Custom Menu Components
 import VerticalNavLink from './VerticalNavLink'

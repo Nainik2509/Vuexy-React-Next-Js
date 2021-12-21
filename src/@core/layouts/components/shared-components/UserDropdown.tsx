@@ -24,7 +24,7 @@ import MessageOutline from 'mdi-material-ui/MessageOutline'
 import HelpCircleOutline from 'mdi-material-ui/HelpCircleOutline'
 
 // ** Context
-import { Auth } from '@core/context/AuthContext'
+import { Auth } from 'src/@core/context/AuthContext'
 
 // ** Type Imports
 import { Settings } from 'src/@core/context/settingsContext'

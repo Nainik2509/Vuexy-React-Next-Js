@@ -2,7 +2,7 @@
 import { FC } from 'react'
 
 // ** Hooks
-import useCanViewNav from '@core/hooks/useCanViewNav'
+import useCanViewNav from 'src/@core/hooks/useCanViewNav'
 
 // ** Types
 import { HorizontalNavItemsType, NavGroup, NavLink } from 'src/@core/layouts/types'

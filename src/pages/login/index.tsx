@@ -37,22 +37,17 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm, Controller, DefaultValues } from 'react-hook-form'
 
 // ** Context
-import { Auth } from '@core/context/AuthContext'
+import { Auth } from 'src/@core/context/AuthContext'
 
 // ** Hooks
-import useBgColor from '@core/hooks/theme/useBgColor'
-import { useSettings } from '@core/hooks/useSettings'
+import useBgColor from 'src/@core/hooks/theme/useBgColor'
+import { useSettings } from 'src/@core/hooks/useSettings'
 
 // ** Configs
 import themeConfig from 'src/configs/themeConfig'
 
 // ** Layout Import
 import BlankLayout from 'src/@core/layouts/BlankLayout'
-
-// ** Hooks
-import useLogin from 'src/@core/hooks/auth/useLogin'
-import useBgColor from 'src/@core/hooks/theme/useBgColor'
-import { useSettings } from 'src/@core/hooks/useSettings'
 
 // ** Demo Imports
 import FooterIllustrationsV2 from 'src/pages/pages/auth/FooterIllustrationsV2'

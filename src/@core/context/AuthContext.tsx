@@ -8,10 +8,10 @@ import { useRouter } from 'next/router'
 import axios from 'axios'
 
 // ** Config
-import authConfig from 'configs/auth'
+import authConfig from 'src/configs/auth'
 
 // ** Context
-import { AbilityContext } from '@core/context/Can'
+import { AbilityContext } from 'src/@core/context/Can'
 
 // ** Types
 import { AuthValuesType, RegisterParams, LoginParams, ErrCallbackType } from './types'

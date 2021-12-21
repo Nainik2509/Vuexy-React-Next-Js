@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useEffect, useState, ReactElement, ReactNode, useContext } from 'react'
+import { FC, useEffect, useState } from 'react'
 
 // ** Next Imports
 import Head from 'next/head'
@@ -7,13 +7,17 @@ import type { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import type { AppProps } from 'next/app'
 
+// ** Store Imports
+import { store } from 'src/redux/store'
+import { Provider } from 'react-redux'
+
 // ** Emotion Imports
 import { CacheProvider } from '@emotion/react'
 import type { EmotionCache } from '@emotion/cache'
 
 // ** Config Imports
-import 'configs/i18n'
-import ability from 'configs/acl/ability'
+import 'src/configs/i18n'
+import ability from 'src/configs/acl/ability'
 
 // ** Fake-DB Import
 import 'src/@fake-db'
@@ -23,12 +27,12 @@ import UserLayout from 'src/layouts/UserLayout'
 import ThemeComponent from 'src/@core/theme/ThemeComponent'
 
 // ** Contexts
-import { AbilityContext } from '@core/context/Can'
-import { Auth, AuthContext } from '@core/context/AuthContext'
-import { SettingsConsumer, SettingsProvider } from '@core/context/settingsContext'
+import { AbilityContext } from 'src/@core/context/Can'
+import { Auth, AuthContext } from 'src/@core/context/AuthContext'
+import { SettingsConsumer, SettingsProvider } from 'src/@core/context/settingsContext'
 
 // ** Types
-import { AuthValuesType } from '@core/context/types'
+import { AuthValuesType } from 'src/@core/context/types'
 
 // ** Utils Imports
 import { createEmotionCache } from 'src/@core/utils/create-emotion-cache'

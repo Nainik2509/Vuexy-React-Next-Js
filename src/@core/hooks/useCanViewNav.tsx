@@ -2,10 +2,10 @@
 import { useContext } from 'react'
 
 // ** Types Import
-import { NavLink, NavGroup } from '@core/layouts/types'
+import { NavLink, NavGroup } from 'src/@core/layouts/types'
 
 // ** Context
-import { AbilityContext } from '@core/context/Can'
+import { AbilityContext } from 'src/@core/context/Can'
 
 const useCanViewNav = () => {
   const ability = useContext(AbilityContext)
