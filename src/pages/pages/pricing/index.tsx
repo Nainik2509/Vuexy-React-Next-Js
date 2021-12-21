@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useEffect, useState, ChangeEvent } from 'react'
+import { useEffect, useState, ChangeEvent } from 'react'
 
 // ** MUI Imports
 import Card from '@mui/material/Card'
@@ -29,7 +29,7 @@ const CardContent = styled(MuiCardContent)<CardContentProps>(({ theme }) => ({
   }
 }))
 
-const Pricing: FC = () => {
+const Pricing = () => {
   // ** States
   const [data, setData] = useState<PricingDataType | null>(null)
   const [plan, setPlan] = useState<'monthly' | 'annually'>('monthly')

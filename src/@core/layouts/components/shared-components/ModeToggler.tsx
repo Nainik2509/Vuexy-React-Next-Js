@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import { PaletteMode } from '@mui/material'
 import IconButton from '@mui/material/IconButton'
@@ -17,7 +14,7 @@ interface Props {
   saveSettings: (values: Settings) => void
 }
 
-const ModeToggler: FC<Props> = (props: Props) => {
+const ModeToggler = (props: Props) => {
   // ** Props
   const { settings, saveSettings } = props
 

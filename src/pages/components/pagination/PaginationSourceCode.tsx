@@ -1,13 +1,13 @@
 export const PaginationControlledCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { ChangeEvent, FC, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 // ** MUI Imports
 import Typography from '@mui/material/Typography'
 import Pagination from '@mui/material/Pagination'
 
-const PaginationControlled: FC = () => {
+const PaginationControlled = () => {
   // ** State
   const [page, setPage] = useState<number>(1)
 
@@ -29,13 +29,10 @@ export default PaginationControlled
 )
 export const PaginationSizesCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Pagination from '@mui/material/Pagination'
 
-const PaginationSizes: FC = () => {
+const PaginationSizes = () => {
   return (
     <div className='demo-space-y'>
       <Pagination count={10} size='small' />
@@ -51,13 +48,10 @@ export default PaginationSizes
 )
 export const PaginationSimpleCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Pagination from '@mui/material/Pagination'
 
-const PaginationSimple: FC = () => {
+const PaginationSimple = () => {
   return (
     <div className='demo-space-y'>
       <Pagination count={10} />
@@ -73,13 +67,10 @@ export default PaginationSimple
 )
 export const PaginationRangesCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Pagination from '@mui/material/Pagination'
 
-const PaginationRanges: FC = () => {
+const PaginationRanges = () => {
   return (
     <div className='demo-space-y'>
       <Pagination count={11} defaultPage={6} siblingCount={0} />
@@ -96,13 +87,10 @@ export default PaginationRanges
 )
 export const PaginationButtonsCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Pagination from '@mui/material/Pagination'
 
-const PaginationButtons: FC = () => {
+const PaginationButtons = () => {
   return (
     <div className='demo-space-y'>
       <Pagination count={10} showFirstButton showLastButton />
@@ -117,13 +105,10 @@ export default PaginationButtons
 )
 export const PaginationDisabledCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Pagination from '@mui/material/Pagination'
 
-const PaginationDisabled: FC = () => {
+const PaginationDisabled = () => {
   return (
     <div className='demo-space-y'>
       <Pagination count={10} disabled />
@@ -138,13 +123,10 @@ export default PaginationDisabled
 )
 export const PaginationOutlinedCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Pagination from '@mui/material/Pagination'
 
-const PaginationOutlined: FC = () => {
+const PaginationOutlined = () => {
   return (
     <div className='demo-space-y'>
       <Pagination count={10} variant='outlined' />
@@ -160,13 +142,10 @@ export default PaginationOutlined
 )
 export const PaginationRoundedCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Pagination from '@mui/material/Pagination'
 
-const PaginationRounded: FC = () => {
+const PaginationRounded = () => {
   return (
     <div className='demo-space-y'>
       <Pagination count={10} shape='rounded' />

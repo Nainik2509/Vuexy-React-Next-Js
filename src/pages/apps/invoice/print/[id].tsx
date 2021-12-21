@@ -1,4 +1,4 @@
-// ** Next Imports
+// ** Next Import
 import { NextPageContext } from 'next'
 
 // ** Types

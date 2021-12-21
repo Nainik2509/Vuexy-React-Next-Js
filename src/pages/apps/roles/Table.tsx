@@ -1,5 +1,5 @@
 // ** React Imports
-import { memo, useMemo, useEffect, useCallback, useState, ReactElement } from 'react'
+import { useMemo, useEffect, useCallback, useState, ReactElement } from 'react'
 
 // ** Next Images
 import Link from 'next/link'
@@ -270,4 +270,4 @@ const UserList = () => {
   )
 }
 
-export default memo(UserList)
+export default UserList

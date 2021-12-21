@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Button from '@mui/material/Button'
 import { styled } from '@mui/material/styles'
@@ -48,7 +45,7 @@ const Img = styled('img')(({ theme }) => ({
   }
 }))
 
-const PricingCTA: FC = () => {
+const PricingCTA = () => {
   return (
     <BoxWrapper>
       <Grid container spacing={5}>

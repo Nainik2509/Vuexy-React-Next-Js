@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useState, ChangeEvent } from 'react'
+import { useState, ChangeEvent } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -15,7 +15,7 @@ import Database from 'mdi-material-ui/DatabaseOutline'
 // ** Custom Avatar Component
 import CustomAvatar from 'src/@core/components/mui/avatar'
 
-const TabDatabase: FC = () => {
+const TabDatabase = () => {
   const [value, setValue] = useState<string>('firebase')
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {

@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Card from '@mui/material/Card'
@@ -13,7 +13,7 @@ import CircularProgress from '@mui/material/CircularProgress'
 // ** Icon Imports
 import Refresh from 'mdi-material-ui/Refresh'
 
-const CardActionRefresh: FC = () => {
+const CardActionRefresh = () => {
   // ** State
   const [reload, setReload] = useState<boolean>(false)
 

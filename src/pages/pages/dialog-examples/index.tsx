@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
 
@@ -14,7 +11,7 @@ import DialogShareProject from './DialogShareProject'
 import DialogEditUserInfo from './DialogEditUserInfo'
 import DialogAuthentication from './DialogAuthentication'
 
-const DialogExamples: FC = () => (
+const DialogExamples = () => (
   <Grid container spacing={6} className='match-height'>
     <Grid item md={4} sm={6} xs={12}>
       <DialogShareProject />

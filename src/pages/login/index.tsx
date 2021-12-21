@@ -4,7 +4,6 @@ import { useState, useContext } from 'react'
 // ** Next Imports
 import Link from 'next/link'
 import Image from 'next/image'
-import type { NextPage } from 'next'
 
 // ** MUI Components
 import Button from '@mui/material/Button'
@@ -118,7 +117,7 @@ interface FormData {
   password: string
 }
 
-const LoginPage: NextPage = () => {
+const LoginPage = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false)
 
   // ** Hooks

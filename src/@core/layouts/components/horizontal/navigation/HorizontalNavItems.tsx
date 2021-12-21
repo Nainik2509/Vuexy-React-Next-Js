@@ -1,11 +1,8 @@
-// ** React Imports
-import { FC } from 'react'
+// ** Types
+import { HorizontalNavItemsType, NavGroup, NavLink } from 'src/@core/layouts/types'
 
 // ** Hooks
 import useCanViewNav from 'src/@core/hooks/useCanViewNav'
-
-// ** Types
-import { HorizontalNavItemsType, NavGroup, NavLink } from 'src/@core/layouts/types'
 
 // ** Custom Navigation Components
 import HorizontalNavLink from './HorizontalNavLink'
@@ -26,7 +23,7 @@ const resolveComponent = (item: NavGroup | NavLink) => {
   return HorizontalNavLink
 }
 
-const HorizontalNavItems: FC<Props> = props => {
+const HorizontalNavItems = (props: Props) => {
   // ** Hooks
   const { canViewNavGroup, canViewNavItem } = useCanViewNav()
 

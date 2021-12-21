@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -19,7 +19,7 @@ import Refresh from 'mdi-material-ui/Refresh'
 import ChevronUp from 'mdi-material-ui/ChevronUp'
 import ChevronDown from 'mdi-material-ui/ChevronDown'
 
-const CardActionAll: FC = () => {
+const CardActionAll = () => {
   // ** States
   const [reload, setReload] = useState<boolean>(false)
   const [collapsed, setCollapsed] = useState<boolean>(true)

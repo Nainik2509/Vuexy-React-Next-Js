@@ -1,14 +1,14 @@
-// ** React Imports
+// ** React Import
 import { useCallback } from 'react'
 
-// ** Next Imports
+// ** Next Import
 import { useRouter } from 'next/router'
 
 // ** Redux Imports
 import { useDispatch } from 'react-redux'
 import { handleLogout } from 'src/redux/authentication'
 
-// ** Provider
+// ** Auth Provider Import
 import useAuthProvider from './useAuthProvider'
 
 const useLogout = () => {

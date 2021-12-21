@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Card from '@mui/material/Card'
@@ -13,7 +13,7 @@ import CardContent from '@mui/material/CardContent'
 import ChevronUp from 'mdi-material-ui/ChevronUp'
 import ChevronDown from 'mdi-material-ui/ChevronDown'
 
-const CardActionCollapse: FC = () => {
+const CardActionCollapse = () => {
   // ** State
   const [collapsed, setCollapsed] = useState<boolean>(true)
 

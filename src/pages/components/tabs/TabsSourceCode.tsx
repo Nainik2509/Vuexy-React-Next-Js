@@ -1,7 +1,7 @@
 export const TabsCustomizedCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, SyntheticEvent, useState } from 'react'
+import { SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Tab from '@mui/material/Tab'
@@ -27,7 +27,7 @@ const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
   }
 }))
 
-const TabsCustomized: FC = () => {
+const TabsCustomized = () => {
   // ** State
   const [value, setValue] = useState<string>('1')
 
@@ -71,7 +71,7 @@ export default TabsCustomized
 export const TabsColorCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, SyntheticEvent, useState } from 'react'
+import { SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Tab from '@mui/material/Tab'
@@ -80,7 +80,7 @@ import TabPanel from '@mui/lab/TabPanel'
 import TabContext from '@mui/lab/TabContext'
 import Typography from '@mui/material/Typography'
 
-const TabsColor: FC = () => {
+const TabsColor = () => {
   // ** State
   const [value, setValue] = useState<string>('1')
 
@@ -129,7 +129,7 @@ export default TabsColor
 export const TabsCenteredCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, SyntheticEvent, useState } from 'react'
+import { SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Tab from '@mui/material/Tab'
@@ -138,7 +138,7 @@ import TabPanel from '@mui/lab/TabPanel'
 import TabContext from '@mui/lab/TabContext'
 import Typography from '@mui/material/Typography'
 
-const TabsCentered: FC = () => {
+const TabsCentered = () => {
   // ** State
   const [value, setValue] = useState<string>('1')
 
@@ -182,7 +182,7 @@ export default TabsCentered
 export const TabsForcedScrollCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, SyntheticEvent, useState } from 'react'
+import { SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Tab from '@mui/material/Tab'
@@ -198,7 +198,7 @@ import ThumbUpOutline from 'mdi-material-ui/ThumbUpOutline'
 import ThumbDownOutline from 'mdi-material-ui/ThumbDownOutline'
 import AccountCircleOutline from 'mdi-material-ui/AccountCircleOutline'
 
-const TabsForcedScroll: FC = () => {
+const TabsForcedScroll = () => {
   // ** State
   const [value, setValue] = useState<string>('1')
 
@@ -256,7 +256,7 @@ export default TabsForcedScroll
 export const TabsCustomizedVerticalCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, SyntheticEvent, useState } from 'react'
+import { SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -284,7 +284,7 @@ const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
   }
 }))
 
-const TabsCustomizedVertical: FC = () => {
+const TabsCustomizedVertical = () => {
   // ** State
   const [value, setValue] = useState<string>('1')
 
@@ -330,7 +330,7 @@ export default TabsCustomizedVertical
 export const TabsIconCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, SyntheticEvent, useState } from 'react'
+import { SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Tab from '@mui/material/Tab'
@@ -344,7 +344,7 @@ import Phone from 'mdi-material-ui/Phone'
 import HeartOutline from 'mdi-material-ui/HeartOutline'
 import AccountOutline from 'mdi-material-ui/AccountOutline'
 
-const TabsIcon: FC = () => {
+const TabsIcon = () => {
   // ** State
   const [value, setValue] = useState<string>('1')
 
@@ -388,7 +388,7 @@ export default TabsIcon
 export const TabsVerticalCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, SyntheticEvent, useState } from 'react'
+import { SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -398,7 +398,7 @@ import TabPanel from '@mui/lab/TabPanel'
 import TabContext from '@mui/lab/TabContext'
 import Typography from '@mui/material/Typography'
 
-const TabsVertical: FC = () => {
+const TabsVertical = () => {
   // ** State
   const [value, setValue] = useState<string>('1')
 
@@ -444,7 +444,7 @@ export default TabsVertical
 export const TabsNavCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, MouseEvent, SyntheticEvent, useState } from 'react'
+import { MouseEvent, SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Tab from '@mui/material/Tab'
@@ -453,7 +453,7 @@ import TabPanel from '@mui/lab/TabPanel'
 import TabContext from '@mui/lab/TabContext'
 import Typography from '@mui/material/Typography'
 
-const TabsNav: FC = () => {
+const TabsNav = () => {
   // ** State
   const [value, setValue] = useState<string>('1')
 
@@ -503,7 +503,7 @@ export default TabsNav
 export const TabsFullWidthCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, SyntheticEvent, useState } from 'react'
+import { SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Tab from '@mui/material/Tab'
@@ -512,7 +512,7 @@ import TabPanel from '@mui/lab/TabPanel'
 import TabContext from '@mui/lab/TabContext'
 import Typography from '@mui/material/Typography'
 
-const TabsFullWidth: FC = () => {
+const TabsFullWidth = () => {
   // ** State
   const [value, setValue] = useState<string>('1')
 
@@ -556,7 +556,7 @@ export default TabsFullWidth
 export const TabsSimpleCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, SyntheticEvent, useState } from 'react'
+import { SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Tab from '@mui/material/Tab'
@@ -565,7 +565,7 @@ import TabPanel from '@mui/lab/TabPanel'
 import TabContext from '@mui/lab/TabContext'
 import Typography from '@mui/material/Typography'
 
-const TabsSimple: FC = () => {
+const TabsSimple = () => {
   // ** State
   const [value, setValue] = useState<string>('1')
 

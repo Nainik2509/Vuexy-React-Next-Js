@@ -1,9 +1,6 @@
 export const TreeViewBasicCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import TreeView from '@mui/lab/TreeView'
 import TreeItem from '@mui/lab/TreeItem'
 
@@ -16,7 +13,7 @@ interface Props {
   direction: 'ltr' | 'rtl'
 }
 
-const TreeViewBasic: FC<Props> = ({ direction }) => {
+const TreeViewBasic= ({ direction }) => {
   const ExpandIcon = direction === 'rtl' ? <ChevronLeft /> : <ChevronRight />
 
   return (
@@ -46,7 +43,7 @@ export default TreeViewBasic
 export const TreeViewControlledCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { ChangeEvent, FC, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 // ** MUI Imports
 import TreeView from '@mui/lab/TreeView'
@@ -61,7 +58,7 @@ interface Props {
   direction: 'ltr' | 'rtl'
 }
 
-const TreeViewControlled: FC<Props> = ({ direction }) => {
+const TreeViewControlled= ({ direction }) => {
   // ** States
   const [expanded, setExpanded] = useState<string[]>([])
   const [selected, setSelected] = useState<string[]>([])
@@ -111,7 +108,7 @@ export default TreeViewControlled
 export const TreeViewGmailCloneCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { ElementType, FC } from 'react'
+import { ElementType } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -191,7 +188,7 @@ const StyledTreeItem = (props: StyledTreeItemProps) => {
   )
 }
 
-const TreeViewGmailClone: FC<Props> = ({ direction }) => {
+const TreeViewGmailClone= ({ direction }) => {
   const ExpandIcon = direction === 'rtl' ? <ChevronLeft /> : <ChevronRight />
 
   return (
@@ -220,10 +217,7 @@ export default TreeViewGmailClone
 )
 export const TreeViewMultiSelectionCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import TreeView from '@mui/lab/TreeView'
 import TreeItem from '@mui/lab/TreeItem'
 
@@ -236,7 +230,7 @@ interface Props {
   direction: 'ltr' | 'rtl'
 }
 
-const TreeViewMultiSelection: FC<Props> = ({ direction }) => {
+const TreeViewMultiSelection= ({ direction }) => {
   const ExpandIcon = direction === 'rtl' ? <ChevronLeft /> : <ChevronRight />
 
   return (
@@ -265,10 +259,7 @@ export default TreeViewMultiSelection
 )
 export const TreeViewRichObjectCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import TreeView from '@mui/lab/TreeView'
 import TreeItem from '@mui/lab/TreeItem'
 
@@ -308,7 +299,7 @@ const data: RenderTree = {
   ]
 }
 
-const TreeViewRichObject: FC<Props> = ({ direction }) => {
+const TreeViewRichObject= ({ direction }) => {
   const renderTree = (nodes: RenderTree) => (
     <TreeItem key={nodes.id} nodeId={nodes.id} label={nodes.name}>
       {Array.isArray(nodes.children) ? nodes.children.map(node => renderTree(node)) : null}
@@ -335,10 +326,7 @@ export default TreeViewRichObject
 )
 export const TreeViewCustomizedCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import TreeItem from '@mui/lab/TreeItem'
 import { alpha, styled } from '@mui/material/styles'
 import MuiTreeView, { TreeViewProps } from '@mui/lab/TreeView'
@@ -361,7 +349,7 @@ const TreeView = styled(MuiTreeView)<TreeViewProps>(({ theme }) => ({
   }
 }))
 
-const TreeViewCustomized: FC = () => {
+const TreeViewCustomized = () => {
   return (
     <TreeView
       defaultExpanded={['1']}

@@ -4,7 +4,6 @@ import { ReactNode, SyntheticEvent } from 'react'
 // ** Next Imports
 import Link from 'next/link'
 import Image from 'next/image'
-import type { NextPage } from 'next'
 
 // ** MUI Components
 import Button from '@mui/material/Button'
@@ -76,7 +75,7 @@ const LinkStyled = styled('a')(({ theme }) => ({
   color: theme.palette.primary.main
 }))
 
-const ForgotPasswordV2: NextPage = () => {
+const ForgotPasswordV2 = () => {
   // ** Hooks
   const theme = useTheme()
   const { settings } = useSettings()

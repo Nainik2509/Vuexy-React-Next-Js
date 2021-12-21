@@ -34,7 +34,7 @@ const GlobalStyles = (theme: Theme, settings: Settings) => {
     },
     'body[style^="padding-right"] header::after, body[style^="padding-right"] footer::after': {
       content: '""',
-      position: 'absolute',
+      position: 'absolute' as const,
       left: '100%',
       top: 0,
       height: '100%',

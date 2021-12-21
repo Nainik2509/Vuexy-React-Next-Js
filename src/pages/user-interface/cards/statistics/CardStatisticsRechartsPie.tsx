@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Import
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -19,7 +16,7 @@ interface CardStatsPieProps {
   data: { value: string | number }[]
 }
 
-const CardStatisticsPie: FC<CardStatsPieProps> = (props: CardStatsPieProps) => {
+const CardStatisticsPie = (props: CardStatsPieProps) => {
   // ** Props
   const { data, title, color, subtitle, bgColor } = props
 

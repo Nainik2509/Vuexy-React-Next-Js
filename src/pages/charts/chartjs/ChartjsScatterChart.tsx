@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, MouseEvent, useState } from 'react'
+import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import Card from '@mui/material/Card'
@@ -20,7 +20,7 @@ interface ScatterProps {
   gridLineColor: string
 }
 
-const ChartjsScatterChart: FC<ScatterProps> = (props: ScatterProps) => {
+const ChartjsScatterChart = (props: ScatterProps) => {
   // ** Props
   const { green, warning, primary, labelColor, borderColor, gridLineColor } = props
 

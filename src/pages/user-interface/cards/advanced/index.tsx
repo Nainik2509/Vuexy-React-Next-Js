@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
 
@@ -19,7 +16,7 @@ import CardSalesByCountries from './CardSalesByCountries'
 import CardActivityTimeline from './CardActivityTimeline'
 import CardWebsiteStatistics from './CardWebsiteStatistics'
 
-const CardsAdvanced: FC = () => {
+const CardsAdvanced = () => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12} md={6} lg={4}>

@@ -1,9 +1,8 @@
 // ** React Imports
 import { ReactNode } from 'react'
 
-// ** Next Imports
+// ** Next Import
 import Link from 'next/link'
-import type { NextPage } from 'next'
 
 // ** MUI Components
 import Button from '@mui/material/Button'
@@ -47,7 +46,7 @@ const TreeIllustration = styled('img')(({ theme }) => ({
   }
 }))
 
-const Error: NextPage = () => {
+const Error = () => {
   return (
     <Box className='content-center'>
       <Box sx={{ p: 5, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>

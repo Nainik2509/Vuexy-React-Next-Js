@@ -1,7 +1,4 @@
-// ** React Import
-import { FC, memo } from 'react'
-
-// ** MUI
+// ** MUI Imports
 import { styled } from '@mui/material/styles'
 import Box, { BoxProps } from '@mui/material/Box'
 
@@ -36,7 +33,7 @@ const BlankLayoutWithAppBarWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   }
 }))
 
-const BlankLayoutWithAppBar: FC<BlankLayoutWithAppBarProps> = (props: BlankLayoutWithAppBarProps) => {
+const BlankLayoutWithAppBar = (props: BlankLayoutWithAppBarProps) => {
   // ** Props
   const { children } = props
 
@@ -57,4 +54,4 @@ const BlankLayoutWithAppBar: FC<BlankLayoutWithAppBarProps> = (props: BlankLayou
   )
 }
 
-export default memo(BlankLayoutWithAppBar)
+export default BlankLayoutWithAppBar

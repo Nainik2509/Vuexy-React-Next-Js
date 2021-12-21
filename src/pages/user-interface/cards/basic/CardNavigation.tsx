@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, SyntheticEvent, useState } from 'react'
+import { SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Tab from '@mui/material/Tab'
@@ -11,7 +11,7 @@ import TabContext from '@mui/lab/TabContext'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 
-const CardNavigation: FC = () => {
+const CardNavigation = () => {
   // ** State
   const [value, setValue] = useState<string>('1')
 

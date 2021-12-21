@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -13,7 +10,7 @@ import Heart from 'mdi-material-ui/Heart'
 import Twitter from 'mdi-material-ui/Twitter'
 import ShareVariant from 'mdi-material-ui/ShareVariant'
 
-const CardTwitter: FC = () => {
+const CardTwitter = () => {
   return (
     <Card sx={{ border: 0, boxShadow: 0, color: 'common.white', backgroundColor: 'info.main' }}>
       <CardContent sx={{ padding: theme => `${theme.spacing(3.25, 5, 4.5)} !important` }}>

@@ -1,5 +1,5 @@
 // ** React Imports
-import { ChangeEvent, FC, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -16,7 +16,7 @@ import ChevronDown from 'mdi-material-ui/ChevronDown'
 // ** Types
 import { PricingDataType, PricingFaqType } from 'src/@core/components/plan-details/types'
 
-interface State {
+interface Props {
   data: PricingDataType | null
 }
 
@@ -41,11 +41,11 @@ const Accordion = styled(MuiAccordion)<AccordionProps>(({ theme }) => ({
   }
 }))
 
-const PricingFooter: FC<State> = (props: State) => {
+const PricingFooter = (props: Props) => {
   // ** Props
   const { data } = props
 
-  // ** State
+  // ** Props
   const [expanded, setExpanded] = useState<string | false>(false)
 
   const handleChange = (panel: string) => (event: ChangeEvent<any>, isExpanded: boolean) => {
@@ -74,7 +74,7 @@ const PricingFooter: FC<State> = (props: State) => {
   return (
     <CardContent>
       <Box sx={{ mb: 9, textAlign: 'center' }}>
-        <Typography variant='h6'>FAQ's</Typography>
+        <Typography variant='h6'>FAQs</Typography>
         <Typography variant='body2'>Let us help answer the most common questions.</Typography>
       </Box>
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>

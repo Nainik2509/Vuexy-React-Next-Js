@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Import
 import Grid from '@mui/material/Grid'
 
@@ -22,6 +19,10 @@ import { CardStatsVerticalProps } from 'src/@core/components/card-statistics/typ
 // ** Demo Components Imports
 import CardStatisticsVertical from 'src/@core/components/card-statistics/card-stats-vertical'
 
+interface Props {
+  data: CardStatsVerticalProps[]
+}
+
 const icons = {
   Poll,
   Check,
@@ -31,7 +32,7 @@ const icons = {
   LabelVariantOutline
 }
 
-const CardStatsVertical: FC<{ data: CardStatsVerticalProps[] }> = ({ data }) => {
+const CardStatsVertical = ({ data }: Props) => {
   return (
     <Grid container spacing={6}>
       {data.map((item: CardStatsVerticalProps, index: number) => {

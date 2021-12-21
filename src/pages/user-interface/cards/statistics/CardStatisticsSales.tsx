@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, ReactElement } from 'react'
+import { ReactElement } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -77,7 +77,7 @@ const renderStats = () => {
   ))
 }
 
-const CardStatisticsSales: FC = () => {
+const CardStatisticsSales = () => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12} lg={8}>

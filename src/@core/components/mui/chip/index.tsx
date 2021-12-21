@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import MuiChip from '@mui/material/Chip'
 
@@ -10,7 +7,7 @@ import { CustomChipProps } from './types'
 // ** Hooks Imports
 import useBgColor, { UseBgColorType } from 'src/@core/hooks/theme/useBgColor'
 
-const Chip: FC<CustomChipProps> = (props: CustomChipProps) => {
+const Chip = (props: CustomChipProps) => {
   // ** Props
   const { sx, skin, color } = props
 

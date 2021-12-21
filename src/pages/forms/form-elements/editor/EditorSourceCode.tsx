@@ -1,7 +1,7 @@
 export const EditorControlledCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** Third Party Imports
 import { EditorState } from 'draft-js'
@@ -10,7 +10,7 @@ import { Editor } from 'react-draft-wysiwyg'
 // ** Styled Components
 import { EditorWrapper } from 'src/@core/styles/libs/react-draft-wysiwyg'
 
-const EditorControlled: FC = () => {
+const EditorControlled = () => {
   // ** State
   const [value, setValue] = useState(EditorState.createEmpty())
 
@@ -27,16 +27,13 @@ export default EditorControlled
 )
 export const EditorUncontrolledCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** Third Party Imports
+    <code className='language-jsx'>{`// ** Third Party Imports
 import { Editor } from 'react-draft-wysiwyg'
 
 // ** Styled Components
 import { EditorWrapper } from 'src/@core/styles/libs/react-draft-wysiwyg'
 
-const EditorUncontrolled: FC = () => {
+const EditorUncontrolled = () => {
   return (
     <EditorWrapper>
       <Editor />

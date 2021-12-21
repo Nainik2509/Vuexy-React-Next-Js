@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useState, ChangeEvent } from 'react'
+import { useState, ChangeEvent } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -15,7 +15,7 @@ import Laravel from 'mdi-material-ui/Laravel'
 // ** Custom Avatar Component
 import CustomAvatar from 'src/@core/components/mui/avatar'
 
-const TabFramework: FC = () => {
+const TabFramework = () => {
   const [value, setValue] = useState<string>('react')
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {

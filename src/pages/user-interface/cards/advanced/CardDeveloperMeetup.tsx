@@ -1,6 +1,3 @@
-// ** React Import
-import { FC } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -20,7 +17,7 @@ import ClockTimeThreeOutline from 'mdi-material-ui/ClockTimeThreeOutline'
 // ** Custom Components Imports
 import CustomAvatar from 'src/@core/components/mui/avatar'
 
-const CardDeveloperMeetup: FC = () => {
+const CardDeveloperMeetup = () => {
   return (
     <Card>
       <CardMedia title='Developers Meetup' sx={{ height: '11.25rem' }} image='/assets/images/cards/workstation.png' />

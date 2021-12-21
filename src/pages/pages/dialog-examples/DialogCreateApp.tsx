@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, Ref, useState, forwardRef, ReactElement } from 'react'
+import { Ref, useState, forwardRef, ReactElement } from 'react'
 
 // ** Next Import
 import Image from 'next/image'
@@ -78,7 +78,7 @@ const TabLabel = (props: TabLabelProps) => {
 
 const tabsArr = ['detailsTab', 'frameworkTab', 'DatabaseTab', 'paymentTab', 'submitTab']
 
-const DialogCreateApp: FC = () => {
+const DialogCreateApp = () => {
   // ** States
   const [show, setShow] = useState<boolean>(false)
   const [activeTab, setActiveTab] = useState<string>('detailsTab')

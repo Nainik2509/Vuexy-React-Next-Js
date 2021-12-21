@@ -1,7 +1,7 @@
 export const DialogAlertCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, Fragment, useState } from 'react'
+import { Fragment, useState } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -11,7 +11,7 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogActions from '@mui/material/DialogActions'
 import DialogContentText from '@mui/material/DialogContentText'
 
-const DialogAlert: FC = () => {
+const DialogAlert = () => {
   // ** State
   const [open, setOpen] = useState<boolean>(false)
 
@@ -53,7 +53,7 @@ export default DialogAlert
 export const DialogCustomizedCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -67,7 +67,7 @@ import DialogActions from '@mui/material/DialogActions'
 // ** Icons Imports
 import Close from 'mdi-material-ui/Close'
 
-const DialogCustomized: FC = () => {
+const DialogCustomized = () => {
   // ** State
   const [open, setOpen] = useState<boolean>(false)
 
@@ -123,7 +123,7 @@ export default DialogCustomized
 export const DialogFullScreenCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -137,7 +137,7 @@ import DialogActions from '@mui/material/DialogActions'
 // ** Icons Imports
 import Close from 'mdi-material-ui/Close'
 
-const DialogFullScreen: FC = () => {
+const DialogFullScreen = () => {
   // ** State
   const [open, setOpen] = useState<boolean>(false)
 
@@ -193,7 +193,7 @@ export default DialogFullScreen
 export const DialogSimpleCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import List from '@mui/material/List'
@@ -216,7 +216,7 @@ import CustomAvatar from 'src/@core/components/mui/avatar'
 
 const emails = ['username@gmail.com', 'user02@gmail.com']
 
-const DialogSimple: FC = () => {
+const DialogSimple = () => {
   // ** States
   const [open, setOpen] = useState<boolean>(false)
   const [selectedValue, setSelectedValue] = useState<string>(emails[1])
@@ -276,7 +276,7 @@ export default DialogSimple
 export const DialogRespoFullScreenCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, Fragment, useState } from 'react'
+import { Fragment, useState } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -288,7 +288,7 @@ import DialogActions from '@mui/material/DialogActions'
 import DialogContent from '@mui/material/DialogContent'
 import DialogContentText from '@mui/material/DialogContentText'
 
-const DialogRespoFullScreen: FC = () => {
+const DialogRespoFullScreen = () => {
   // ** State
   const [open, setOpen] = useState<boolean>(false)
 
@@ -329,7 +329,7 @@ export default DialogRespoFullScreen
 export const DialogFormCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, Fragment, useState } from 'react'
+import { Fragment, useState } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -340,7 +340,7 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogActions from '@mui/material/DialogActions'
 import DialogContentText from '@mui/material/DialogContentText'
 
-const DialogForm: FC = () => {
+const DialogForm = () => {
   // ** State
   const [open, setOpen] = useState<boolean>(false)
 
@@ -377,7 +377,7 @@ export default DialogForm
 export const DialogConfirmationCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, Fragment, useState } from 'react'
+import { Fragment, useState } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -387,7 +387,7 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogActions from '@mui/material/DialogActions'
 import DialogContentText from '@mui/material/DialogContentText'
 
-const DialogConfirmation: FC = () => {
+const DialogConfirmation = () => {
   // ** State
   const [open, setOpen] = useState<boolean>(false)
 
@@ -434,7 +434,7 @@ export default DialogConfirmation
 export const DialogsScrollCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -444,7 +444,7 @@ import DialogActions from '@mui/material/DialogActions'
 import Dialog, { DialogProps } from '@mui/material/Dialog'
 import DialogContentText from '@mui/material/DialogContentText'
 
-const DialogsScroll: FC = () => {
+const DialogsScroll = () => {
   // ** States
   const [open, setOpen] = useState<boolean>(false)
   const [scroll, setScroll] = useState<DialogProps['scroll']>('paper')
@@ -509,7 +509,7 @@ export default DialogsScroll
 export const DialogTransitionCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, forwardRef, Fragment, ReactElement, Ref, useState } from 'react'
+import { forwardRef, Fragment, ReactElement, Ref, useState } from 'react'
 
 // ** MUI Imports
 import Slide from '@mui/material/Slide'
@@ -524,7 +524,7 @@ const Transition = forwardRef(function Transition(props: { children?: ReactEleme
   return <Slide direction='up' ref={ref} {...props} />
 })
 
-const DialogTransition: FC = () => {
+const DialogTransition = () => {
   // ** State
   const [open, setOpen] = useState<boolean>(false)
 
@@ -568,7 +568,7 @@ export default DialogTransition
 export const DialogSizesCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, Fragment, useState, ChangeEvent } from 'react'
+import { Fragment, useState, ChangeEvent } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -593,7 +593,7 @@ const Form = styled('form')({
   flexDirection: 'column'
 })
 
-const DialogSizes: FC = () => {
+const DialogSizes = () => {
   // ** States
   const [open, setOpen] = useState<boolean>(false)
   const [fullWidth, setFullWidth] = useState<boolean>(true)

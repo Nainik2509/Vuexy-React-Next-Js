@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Import
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -28,7 +25,7 @@ const Timeline = styled(MuiTimeline)<TimelineProps>({
   }
 })
 
-const CardActivityTimeline: FC = () => {
+const CardActivityTimeline = () => {
   return (
     <Card>
       <CardMedia

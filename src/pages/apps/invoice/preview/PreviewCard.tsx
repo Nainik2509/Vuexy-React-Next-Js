@@ -1,7 +1,7 @@
 // ** React Imports
 import { useRef } from 'react'
 
-// ** Next Imports
+// ** Next Import
 import Link from 'next/link'
 
 // ** MUI Imports

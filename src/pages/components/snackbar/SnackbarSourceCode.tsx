@@ -1,7 +1,7 @@
 export const SnackbarControlSlideDirectionCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { ComponentType, FC, Fragment, useState } from 'react'
+import { ComponentType, Fragment, useState } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -26,7 +26,7 @@ const TransitionDown = (props: TransitionProps) => {
   return <Slide {...props} direction='down' />
 }
 
-const SnackbarControlSlideDirection: FC = () => {
+const SnackbarControlSlideDirection = () => {
   // ** States
   const [open, setOpen] = useState<boolean>(false)
   const [transition, setTransition] = useState<ComponentType<TransitionProps> | undefined>(undefined)
@@ -75,7 +75,7 @@ export default SnackbarControlSlideDirection
 export const SnackbarPositionedCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, Fragment, useState } from 'react'
+import { Fragment, useState } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -85,7 +85,7 @@ interface State extends SnackbarOrigin {
   open: boolean
 }
 
-const SnackbarPositioned: FC = () => {
+const SnackbarPositioned = () => {
   // ** States
   const [state, setState] = useState<State>({
     open: false,
@@ -143,7 +143,7 @@ export default SnackbarPositioned
 export const SnackbarSimpleCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, Fragment, MouseEvent, SyntheticEvent, useState } from 'react'
+import { Fragment, MouseEvent, SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -153,7 +153,7 @@ import IconButton from '@mui/material/IconButton'
 // ** Icons Imports
 import Close from 'mdi-material-ui/Close'
 
-const SnackbarSimple: FC = () => {
+const SnackbarSimple = () => {
   // ** State
   const [open, setOpen] = useState<boolean>(false)
 
@@ -200,14 +200,14 @@ export default SnackbarSimple
 export const SnackbarAlertCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, Fragment, MouseEvent, SyntheticEvent, useState } from 'react'
+import { Fragment, MouseEvent, SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Alert from '@mui/material/Alert'
 import Button from '@mui/material/Button'
 import Snackbar from '@mui/material/Snackbar'
 
-const SnackbarAlert: FC = () => {
+const SnackbarAlert = () => {
   // ** State
   const [open, setOpen] = useState<boolean>(false)
 
@@ -243,7 +243,7 @@ export default SnackbarAlert
 export const SnackbarTransitionCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { ComponentType, FC, Fragment, ReactElement, useState } from 'react'
+import { ComponentType, Fragment, ReactElement, useState } from 'react'
 
 // ** MUI Imports
 import Grow from '@mui/material/Grow'
@@ -261,7 +261,7 @@ const SlideTransition = (props: TransitionProps) => {
   return <Slide {...props} direction='up' />
 }
 
-const SnackbarTransition: FC = () => {
+const SnackbarTransition = () => {
   // ** State
   const [state, setState] = useState<{
     open: boolean
@@ -329,7 +329,7 @@ export default SnackbarTransition
 export const SnackbarConsecutiveCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, Fragment, MouseEvent, SyntheticEvent, useEffect, useState } from 'react'
+import { Fragment, MouseEvent, SyntheticEvent, useEffect, useState } from 'react'
 
 // ** MUI Imports
 import Alert from '@mui/material/Alert'
@@ -341,13 +341,7 @@ export interface SnackbarMessage {
   message: string
 }
 
-export interface State {
-  open: boolean
-  snackPack: SnackbarMessage[]
-  messageInfo?: SnackbarMessage
-}
-
-const SnackbarConsecutive: FC = () => {
+const SnackbarConsecutive = () => {
   // ** States
   const [open, setOpen] = useState<boolean>(false)
   const [snackPack, setSnackPack] = useState<SnackbarMessage[]>([])

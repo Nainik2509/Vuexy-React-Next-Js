@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, ReactNode } from 'react'
+import { ReactNode } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -87,7 +87,7 @@ const data: DataType[] = [
   }
 ]
 
-const CardTransactions: FC = () => {
+const CardTransactions = () => {
   return (
     <Card>
       <CardHeader

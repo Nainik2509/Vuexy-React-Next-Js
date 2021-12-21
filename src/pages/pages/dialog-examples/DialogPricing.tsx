@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, Ref, useState, forwardRef, ReactElement, useEffect, ChangeEvent } from 'react'
+import { Ref, useState, forwardRef, ReactElement, useEffect, ChangeEvent } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -35,7 +35,7 @@ const Transition = forwardRef(function Transition(
   return <Fade ref={ref} {...props} />
 })
 
-const DialogPricing: FC = () => {
+const DialogPricing = () => {
   // ** States
   const [show, setShow] = useState<boolean>(false)
   const [data, setData] = useState<PricingDataType | null>(null)

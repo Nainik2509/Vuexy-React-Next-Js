@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Card from '@mui/material/Card'
 import Grid from '@mui/material/Grid'
@@ -24,7 +21,7 @@ const StyledBox = styled(Box)<BoxProps>(({ theme }) => ({
   }
 }))
 
-const CardMembership: FC = () => {
+const CardMembership = () => {
   return (
     <Card>
       <Grid container spacing={6}>

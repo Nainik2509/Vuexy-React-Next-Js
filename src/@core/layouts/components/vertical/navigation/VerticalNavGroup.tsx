@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useEffect, Fragment } from 'react'
+import { useEffect, Fragment } from 'react'
 
 // ** Next Import
 import { useRouter } from 'next/router'
@@ -67,7 +67,7 @@ const MenuGroupToggleLeftIcon = styled(ChevronLeft)(({ theme }) => ({
   transition: 'transform .25s ease'
 }))
 
-const VerticalNavGroup: FC<Props> = (props: Props) => {
+const VerticalNavGroup = (props: Props) => {
   // ** Props
   const {
     item,

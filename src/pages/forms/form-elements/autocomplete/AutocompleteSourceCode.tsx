@@ -1,7 +1,7 @@
 export const AutocompleteAsynchronousRequestCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, Fragment, useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 
 // ** MUI Imports
 import TextField from '@mui/material/TextField'
@@ -22,7 +22,7 @@ const sleep = (delay = 0) => {
   })
 }
 
-const AutocompleteAsynchronousRequest: FC = () => {
+const AutocompleteAsynchronousRequest = () => {
   // ** States
   const [open, setOpen] = useState<boolean>(false)
   const [options, setOptions] = useState<FilmType[]>([])
@@ -93,10 +93,7 @@ export default AutocompleteAsynchronousRequest
 )
 export const AutocompleteCheckboxesCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Checkbox from '@mui/material/Checkbox'
 import TextField from '@mui/material/TextField'
 import Autocomplete from '@mui/material/Autocomplete'
@@ -104,7 +101,7 @@ import Autocomplete from '@mui/material/Autocomplete'
 // ** Data
 import { top100Films } from './data'
 
-const AutocompleteCheckboxes: FC = () => {
+const AutocompleteCheckboxes = () => {
   return (
     <Autocomplete
       multiple
@@ -130,7 +127,7 @@ export default AutocompleteCheckboxes
 export const AutocompleteCreatableCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import TextField from '@mui/material/TextField'
@@ -147,7 +144,7 @@ interface FilmOptionType {
 
 const filter = createFilterOptions<FilmOptionType>()
 
-const AutocompleteCreatable: FC = () => {
+const AutocompleteCreatable = () => {
   // ** State
   const [value, setValue] = useState<FilmOptionType | null>(null)
 
@@ -210,7 +207,7 @@ export default AutocompleteCreatable
 export const AutocompleteControlledUncontrolledCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState, SyntheticEvent } from 'react'
+import { useState, SyntheticEvent } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -225,7 +222,7 @@ interface FilmOptionType {
   title: string
 }
 
-const AutocompleteControlledUncontrolled: FC = () => {
+const AutocompleteControlledUncontrolled = () => {
   // ** State
   const [value, setValue] = useState<FilmOptionType | null>(null)
 
@@ -261,10 +258,7 @@ export default AutocompleteControlledUncontrolled
 )
 export const AutocompleteCountryCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Autocomplete from '@mui/material/Autocomplete'
@@ -284,7 +278,7 @@ const countryToFlag = (isoCode: string) => {
     : isoCode
 }
 
-const AutocompleteCountry: FC = () => {
+const AutocompleteCountry = () => {
   return (
     <Autocomplete
       autoHighlight
@@ -318,15 +312,12 @@ export default AutocompleteCountry
 )
 export const AutocompleteCustomInputCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Autocomplete from '@mui/material/Autocomplete'
 
 const options = ['Option 1', 'Option 2']
 
-const AutocompleteCustomInput: FC = () => {
+const AutocompleteCustomInput = () => {
   return (
     <Autocomplete
       options={options}
@@ -354,10 +345,7 @@ export default AutocompleteCustomInput
 )
 export const AutocompleteMultipleValuesCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Chip from '@mui/material/Chip'
 import TextField from '@mui/material/TextField'
@@ -366,7 +354,7 @@ import Autocomplete from '@mui/material/Autocomplete'
 // ** Data
 import { top100Films } from './data'
 
-const AutocompleteMultipleValues: FC = () => {
+const AutocompleteMultipleValues = () => {
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
       <Autocomplete
@@ -414,10 +402,7 @@ export default AutocompleteMultipleValues
 )
 export const AutocompleteDisabledOptionsCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import TextField from '@mui/material/TextField'
 import Autocomplete from '@mui/material/Autocomplete'
 
@@ -425,7 +410,7 @@ const timeSlots = Array.from(new Array(24 * 2)).map(
   (_, index) => {index < 20 ? '0' : ''}{Math.floor(index / 2)}:{index % 2 === 0 ? '00' : '30'}
 )
 
-const AutocompleteDisabledOptions: FC = () => {
+const AutocompleteDisabledOptions = () => {
   return (
     <Autocomplete
       sx={{ width: 250 }}
@@ -443,10 +428,7 @@ export default AutocompleteDisabledOptions
 )
 export const AutocompleteCustomFilterCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import TextField from '@mui/material/TextField'
 import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete'
 
@@ -463,7 +445,7 @@ const filterOptions = createFilterOptions({
   stringify: (option: FilmOptionType) => option.title
 })
 
-const AutocompleteCustomFilter: FC = () => {
+const AutocompleteCustomFilter = () => {
   return (
     <Autocomplete
       options={top100Films}
@@ -481,17 +463,14 @@ export default AutocompleteCustomFilter
 )
 export const AutocompleteGroupedCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import TextField from '@mui/material/TextField'
 import Autocomplete from '@mui/material/Autocomplete'
 
 // ** Data
 import { top100Films } from './data'
 
-const AutocompleteGrouped: FC = () => {
+const AutocompleteGrouped = () => {
   const options = top100Films.map(option => {
     const firstLetter = option.title[0].toUpperCase()
 
@@ -519,17 +498,14 @@ export default AutocompleteGrouped
 )
 export const AutocompleteFreeSoloCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import TextField from '@mui/material/TextField'
 import Autocomplete from '@mui/material/Autocomplete'
 
 // ** Data
 import { top100Films } from './data'
 
-const AutocompleteFreeSolo: FC = () => {
+const AutocompleteFreeSolo = () => {
   return (
     <Autocomplete
       freeSolo
@@ -547,17 +523,14 @@ export default AutocompleteFreeSolo
 )
 export const AutocompleteSmallSizeCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import TextField from '@mui/material/TextField'
 import Autocomplete from '@mui/material/Autocomplete'
 
 // ** Data
 import { top100Films } from './data'
 
-const AutocompleteSmallSize: FC = () => {
+const AutocompleteSmallSize = () => {
   return (
     <div>
       <Autocomplete
@@ -588,10 +561,7 @@ export default AutocompleteSmallSize
 )
 export const AutocompletePropsCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Autocomplete from '@mui/material/Autocomplete'
@@ -599,7 +569,7 @@ import Autocomplete from '@mui/material/Autocomplete'
 // ** Data
 import { top100Films } from './data'
 
-const AutocompleteProps: FC = () => {
+const AutocompleteProps = () => {
   return (
     <Box className='demo-space-x' sx={{ display: 'flex', flexWrap: 'wrap' }}>
       <Autocomplete
@@ -684,10 +654,7 @@ export default AutocompleteProps
 )
 export const AutocompleteVariantsCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Autocomplete from '@mui/material/Autocomplete'
@@ -695,7 +662,7 @@ import Autocomplete from '@mui/material/Autocomplete'
 // ** Data
 import { top100Films } from './data'
 
-const AutocompleteVariants: FC = () => {
+const AutocompleteVariants = () => {
   return (
     <Box className='demo-space-x' sx={{ display: 'flex', flexWrap: 'wrap' }}>
       <Autocomplete
@@ -738,7 +705,7 @@ export default AutocompleteVariants
 export const AutocompleteFixedOptionsCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Chip from '@mui/material/Chip'
@@ -756,7 +723,7 @@ interface DataType {
 
 const fixedOptions = [top100Films[6]]
 
-const AutocompleteFixedOptions: FC = () => {
+const AutocompleteFixedOptions = () => {
   // ** State
   const [value, setValue] = useState<DataType[]>([...fixedOptions, top100Films[13]])
 
@@ -786,17 +753,14 @@ export default AutocompleteFixedOptions
 )
 export const AutocompleteLimitTagsCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import TextField from '@mui/material/TextField'
 import Autocomplete from '@mui/material/Autocomplete'
 
 // ** Data
 import { top100Films } from './data'
 
-const AutocompleteLimitTags: FC = () => {
+const AutocompleteLimitTags = () => {
   return (
     <Autocomplete
       multiple

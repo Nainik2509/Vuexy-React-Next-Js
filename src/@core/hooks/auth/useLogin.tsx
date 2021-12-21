@@ -1,10 +1,10 @@
-// ** React Imports
+// ** React Import
 import { useCallback } from 'react'
 
-// ** Next Imports
+// ** Next Import
 import { useRouter } from 'next/router'
 
-// ** Axios
+// ** Axios Import
 import axios from 'axios'
 
 // ** Redux Imports

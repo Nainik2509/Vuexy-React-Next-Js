@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -17,7 +17,7 @@ import CardActions from '@mui/material/CardActions'
 import ChevronUp from 'mdi-material-ui/ChevronUp'
 import ChevronDown from 'mdi-material-ui/ChevronDown'
 
-const CardWithCollapse: FC = () => {
+const CardWithCollapse = () => {
   // ** State
   const [collapse, setCollapse] = useState<boolean>(false)
 
@@ -59,10 +59,10 @@ const CardWithCollapse: FC = () => {
         <Divider sx={{ margin: 0 }} />
         <CardContent>
           <Typography variant='body2'>
-            I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for
-            sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you
-            add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to
-            escape.
+            I&prime;m a thing. But, like most politicians, he promised more than he could deliver. You won&prime;t have
+            time for sleeping, soldier, not with all the bed making you&prime;ll be doing. Then we&prime;ll go with that
+            data file! Hey, you add a one and two zeros to that or we walk! You&prime;re going to do his laundry?
+            I&prime;ve got to find a way to escape.
           </Typography>
         </CardContent>
       </Collapse>

@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** Next Import
 import Image from 'next/image'
 
@@ -13,7 +10,7 @@ import Typography from '@mui/material/Typography'
 // ** Configs
 import themeConfig from 'src/configs/themeConfig'
 
-const BlankLayoutAppBar: FC = () => {
+const BlankLayoutAppBar = () => {
   return (
     <AppBar elevation={3} color='default' position='sticky'>
       <Toolbar

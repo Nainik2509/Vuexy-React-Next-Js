@@ -9,11 +9,10 @@ useSettings hook is created to get the values from the Settings context and set 
 In the example below, we have shown you how to get template skin. You can get any other values by replacing `skin` with any other property that is available in the [Settings Context](/guide/settings/context.html#properties).
 
 ```jsx
-import { FC } from 'react'
 import Box from '@mui/material/Box'
 import { useSettings } from 'src/@core/hooks/useSettings'
 
-const SomeComponent: FC = () => {
+const SomeComponent = () => {
   // ** Hook
   const { settings } = useSettings()
 
@@ -28,14 +27,13 @@ export default SomeComponent
 In the example below, we have shown you how to change template mode, i.e. Light or Dark mode. You can change any other values by replacing `mode` with any other property that is available in the [Settings Context](/guide/settings/context.html#properties).
 
 ```jsx
-import { FC } from 'react'
 import { PaletteMode } from '@mui/material'
 import IconButton from '@mui/material/IconButton'
 import WeatherNight from 'mdi-material-ui/WeatherNight'
 import WeatherSunny from 'mdi-material-ui/WeatherSunny'
 import { useSettings } from 'src/@core/hooks/useSettings'
 
-const ModeToggler: FC = () => {
+const ModeToggler = () => {
   // ** Hook
   const { settings, saveSettings } = useSettings()
 
@@ -66,7 +64,6 @@ export default ModeToggler
 In the example below, we have shown you how to change content width (i.e. Full or Container width) and template layout (i.e. Vertical or Horizontal layout). You can change any other values that are available in the [Settings Context](/guide/settings/context.html#properties).
 
 ```jsx
-import { FC } from 'react'
 import Box from '@mui/material/Box'
 import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
@@ -75,7 +72,7 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import { useSettings } from 'src/@core/hooks/useSettings'
 import { Settings } from 'src/@core/context/settingsContext'
 
-const SomeComponent: FC = () => {
+const SomeComponent = () => {
   // ** Hook
   const { settings, saveSettings } = useSettings()
 

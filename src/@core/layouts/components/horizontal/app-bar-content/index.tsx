@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import { Theme } from '@mui/material/styles'
@@ -25,7 +22,7 @@ interface Props {
   saveSettings: (values: Settings) => void
 }
 
-const AppBarContent: FC<Props> = (props: Props) => {
+const AppBarContent = (props: Props) => {
   // ** Props
   const { hidden, settings, saveSettings, setShowBackdrop } = props
 

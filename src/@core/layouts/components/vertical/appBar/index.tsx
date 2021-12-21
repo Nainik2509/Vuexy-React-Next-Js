@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import { styled } from '@mui/material/styles'
 import MuiAppBar, { AppBarProps } from '@mui/material/AppBar'
@@ -45,7 +42,7 @@ const Toolbar = styled(MuiToolbar)<ToolbarProps>(({ theme }) => ({
   }
 }))
 
-const LayoutAppBar: FC<Props> = (props: Props) => {
+const LayoutAppBar = (props: Props) => {
   // ** Props
   const { hidden, settings, saveSettings, setShowBackdrop, toggleNavVisibility } = props
 

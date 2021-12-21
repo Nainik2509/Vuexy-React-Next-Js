@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, MouseEvent, useState } from 'react'
+import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -35,7 +35,7 @@ const StyledGrid = styled(Grid)<GridProps>(({ theme }) => ({
   }
 }))
 
-const CardMobile: FC = () => {
+const CardMobile = () => {
   // ** State
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 

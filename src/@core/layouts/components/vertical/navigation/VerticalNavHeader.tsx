@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** Next Import
 import Link from 'next/link'
 
@@ -54,7 +51,7 @@ const StyledLink = styled('a')({
   textDecoration: 'none'
 })
 
-const VerticalNavHeader: FC<Props> = (props: Props) => {
+const VerticalNavHeader = (props: Props) => {
   // ** Props
   const { hidden, navHover, settings, saveSettings, toggleNavVisibility, navigationBorderWidth } = props
 

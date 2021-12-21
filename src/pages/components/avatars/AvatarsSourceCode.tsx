@@ -1,9 +1,6 @@
 export const AvatarsIconCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Avatar from '@mui/material/Avatar'
 
@@ -15,7 +12,7 @@ import CheckboxMarkedCircleOutline from 'mdi-material-ui/CheckboxMarkedCircleOut
 // ** Custom Components Imports
 import CustomAvatar from 'src/@core/components/mui/avatar'
 
-const AvatarsIcon: FC = () => {
+const AvatarsIcon = () => {
   return (
     <Box className='demo-space-x' sx={{ display: 'flex' }}>
       <Avatar>
@@ -37,14 +34,11 @@ export default AvatarsIcon
 )
 export const AvatarsImageCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Avatar from '@mui/material/Avatar'
 
-const AvatarsImage: FC = () => {
+const AvatarsImage = () => {
   return (
     <Box className='demo-space-x' sx={{ display: 'flex' }}>
       <Avatar src='/images/avatars/1.png' alt='Victor Anderson' />
@@ -60,14 +54,11 @@ export default AvatarsImage
 )
 export const AvatarsSizesCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Avatar from '@mui/material/Avatar'
 
-const AvatarsSizes: FC = () => {
+const AvatarsSizes = () => {
   return (
     <Box className='demo-space-x' sx={{ display: 'flex', alignItems: 'center' }}>
       <Avatar alt='Victor Anderson' sx={{ width: 25, height: 25 }} src='/images/avatars/3.png' />
@@ -83,14 +74,11 @@ export default AvatarsSizes
 )
 export const AvatarsGroupedCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Avatar from '@mui/material/Avatar'
 import AvatarGroup from '@mui/material/AvatarGroup'
 
-const AvatarsGrouped: FC = () => {
+const AvatarsGrouped = () => {
   return (
     <div className='demo-space-y'>
       <AvatarGroup max={4}>
@@ -124,17 +112,14 @@ export default AvatarsGrouped
 )
 export const AvatarsLetterCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import MuiAvatar from '@mui/material/Avatar'
 
 // ** Custom Components Imports
 import CustomAvatar from 'src/@core/components/mui/avatar'
 
-const AvatarsLetter: FC = () => {
+const AvatarsLetter = () => {
   return (
     <Box className='demo-space-x' sx={{ display: 'flex' }}>
       <MuiAvatar>H</MuiAvatar>
@@ -155,10 +140,7 @@ export default AvatarsLetter
 )
 export const AvatarsVariantsCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 
 // ** Icons Imports
@@ -168,7 +150,7 @@ import ContentSaveOutline from 'mdi-material-ui/ContentSaveOutline'
 // ** Custom Components Imports
 import CustomAvatar from 'src/@core/components/mui/avatar'
 
-const AvatarsVariants: FC = () => {
+const AvatarsVariants = () => {
   return (
     <Box className='demo-space-x' sx={{ display: 'flex' }}>
       <CustomAvatar variant='square'>
@@ -193,10 +175,7 @@ export default AvatarsVariants
 )
 export const AvatarsWithBadgeCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Badge from '@mui/material/Badge'
 import Avatar from '@mui/material/Avatar'
@@ -212,7 +191,7 @@ const BadgeContentSpan = styled('span')(({ theme }) => ({
   boxShadow: 0 0 0 2px {theme.palette.background.paper}
 }))
 
-const AvatarsWithBadge: FC = () => {
+const AvatarsWithBadge = () => {
   return (
     <Box className='demo-space-x' sx={{ display: 'flex' }}>
       <Badge

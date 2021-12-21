@@ -1,7 +1,7 @@
 // ** React Imports
 import { MouseEvent, useState } from 'react'
 
-// ** Next Imports
+// ** Next Import
 import dynamic from 'next/dynamic'
 
 // ** MUI Imports
@@ -22,6 +22,7 @@ const scatterColors = {
 
 // ! To avoid Window is not defined Error
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
+
 const ApexScatterChart = () => {
   // ** State
   const [active, setActive] = useState<string | null>('daily')

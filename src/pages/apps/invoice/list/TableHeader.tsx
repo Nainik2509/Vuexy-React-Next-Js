@@ -1,7 +1,4 @@
-// ** React Imports
-import { memo } from 'react'
-
-// ** Next Imports
+// ** Next Import
 import Link from 'next/link'
 
 // ** MUI Imports
@@ -90,4 +87,4 @@ const TableHeader = (props: TableHeaderProps) => {
   )
 }
 
-export default memo(TableHeader)
+export default TableHeader

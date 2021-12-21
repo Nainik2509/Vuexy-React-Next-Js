@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, ReactNode } from 'react'
+import { ReactNode } from 'react'
 
 // ** Layout Imports
 // !Do not remove this Layout import
@@ -16,7 +16,7 @@ interface Props {
   children: ReactNode
 }
 
-const UserLayout: FC<Props> = (props: Props) => {
+const UserLayout = (props: Props) => {
   // ** Props
   const { children } = props
 

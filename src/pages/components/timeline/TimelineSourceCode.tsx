@@ -1,9 +1,6 @@
 export const TimelineFilledCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Import
-import { FC } from 'react'
-
-// ** MUI Import
+    <code className='language-jsx'>{`// ** MUI Import
 import Box from '@mui/material/Box'
 import Avatar from '@mui/material/Avatar'
 import Divider from '@mui/material/Divider'
@@ -39,7 +36,7 @@ const ImgShoe = styled('img')(({ theme }) => ({
   borderRadius: theme.shape.borderRadius
 }))
 
-const TimelineLeft: FC = () => {
+const TimelineLeft = () => {
   return (
     <Timeline>
       <TimelineItem>
@@ -199,10 +196,7 @@ export default TimelineLeft
 )
 export const TimelineOutlinedCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Import
-import { FC } from 'react'
-
-// ** MUI Import
+    <code className='language-jsx'>{`// ** MUI Import
 import Box from '@mui/material/Box'
 import Avatar from '@mui/material/Avatar'
 import Divider from '@mui/material/Divider'
@@ -238,7 +232,7 @@ const ImgShoe = styled('img')(({ theme }) => ({
   borderRadius: theme.shape.borderRadius
 }))
 
-const TimelineRight: FC = () => {
+const TimelineRight = () => {
   return (
     <Timeline>
       <TimelineItem>
@@ -390,10 +384,7 @@ export default TimelineRight
 )
 export const TimelineCenterCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Import
-import { FC } from 'react'
-
-// ** MUI Import
+    <code className='language-jsx'>{`// ** MUI Import
 import Box from '@mui/material/Box'
 import List from '@mui/material/List'
 import Switch from '@mui/material/Switch'
@@ -457,7 +448,7 @@ const ImgShoe = styled('img')(({ theme }) => ({
   borderRadius: theme.shape.borderRadius
 }))
 
-const TimelineCenter: FC = () => {
+const TimelineCenter = () => {
   // ** Vars
   const hiddenMD = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
 

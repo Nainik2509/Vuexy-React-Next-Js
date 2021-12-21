@@ -1,8 +1,8 @@
+// ** React Imports
+import { useState, SyntheticEvent, Fragment, useContext } from 'react'
+
 // ** Next Import
 import { useRouter } from 'next/router'
-
-// ** React Imports
-import { FC, useState, SyntheticEvent, Fragment, useContext } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -43,7 +43,7 @@ const BadgeContentSpan = styled('span')(({ theme }) => ({
   boxShadow: `0 0 0 2px ${theme.palette.background.paper}`
 }))
 
-const UserDropdown: FC<Props> = (props: Props) => {
+const UserDropdown = (props: Props) => {
   // ** Props
   const { settings } = props
 

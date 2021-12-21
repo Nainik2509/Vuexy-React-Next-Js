@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useState, useEffect, SyntheticEvent, MouseEvent } from 'react'
+import { useState, useEffect, SyntheticEvent, MouseEvent } from 'react'
 
 // ** Primsjs
 import Prism from 'prismjs'
@@ -26,7 +26,7 @@ import ContentCopy from 'mdi-material-ui/ContentCopy'
 // ** Types
 import { CardSnippetProps } from './types'
 
-const CardSnippet: FC<CardSnippetProps> = (props: CardSnippetProps) => {
+const CardSnippet = (props: CardSnippetProps) => {
   // ** Props
   const { id, title, children, className, code, sx } = props
 

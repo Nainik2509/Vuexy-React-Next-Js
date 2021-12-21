@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, SyntheticEvent, useState } from 'react'
+import { SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -42,7 +42,7 @@ const TabName = styled('span')(({ theme }) => ({
   }
 }))
 
-const AccountSettings: FC = () => {
+const AccountSettings = () => {
   // ** State
   const [value, setValue] = useState<string>('account')
 

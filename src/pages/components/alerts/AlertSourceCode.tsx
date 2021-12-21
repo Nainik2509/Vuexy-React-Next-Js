@@ -1,13 +1,10 @@
 export const AlertsDescriptionCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Alert from '@mui/material/Alert'
 import AlertTitle from '@mui/material/AlertTitle'
 
-const AlertsDescription: FC = () => {
+const AlertsDescription = () => {
   return (
     <div className='demo-space-y'>
       <Alert severity='error'>
@@ -37,7 +34,7 @@ export default AlertsDescription
 export const AlertsDismissibleCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Fade from '@mui/material/Fade'
@@ -51,7 +48,7 @@ import IconButton from '@mui/material/IconButton'
 // ** Icons Imports
 import Close from 'mdi-material-ui/Close'
 
-const AlertsDismissible: FC = () => {
+const AlertsDismissible = () => {
   // ** States
   const [open1, setOpen1] = useState<boolean>(true)
   const [open2, setOpen2] = useState<boolean>(true)
@@ -137,13 +134,10 @@ export default AlertsDismissible
 )
 export const AlertsFilledCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Alert from '@mui/material/Alert'
 
-const AlertsFilled: FC = () => {
+const AlertsFilled = () => {
   return (
     <div className='demo-space-y'>
       <Alert variant='filled' severity='error'>
@@ -168,13 +162,10 @@ export default AlertsFilled
 )
 export const AlertsOutlinedCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Alert from '@mui/material/Alert'
 
-const AlertsOutlined: FC = () => {
+const AlertsOutlined = () => {
   return (
     <div className='demo-space-y'>
       <Alert variant='outlined' severity='error'>
@@ -199,14 +190,11 @@ export default AlertsOutlined
 )
 export const AlertsActionsCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Alert from '@mui/material/Alert'
 import Button from '@mui/material/Button'
 
-const AlertsBasic: FC = () => {
+const AlertsBasic = () => {
   return (
     <div className='demo-space-y'>
       <Alert
@@ -246,13 +234,10 @@ export default AlertsBasic
 )
 export const AlertsBasicCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Alert from '@mui/material/Alert'
 
-const AlertsBasic: FC = () => {
+const AlertsBasic = () => {
   return (
     <div className='demo-space-y'>
       <Alert severity='error'>This is an error alert — check it out!</Alert>

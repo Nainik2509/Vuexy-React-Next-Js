@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useState, ChangeEvent } from 'react'
+import { useState, ChangeEvent } from 'react'
 
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
@@ -20,7 +20,7 @@ import CardWrapper from 'src/@core/styles/libs/react-credit-cards'
 // ** Styles Import
 import 'react-credit-cards/es/styles-compiled.css'
 
-const TabBilling: FC = () => {
+const TabBilling = () => {
   // ** States
   const [name, setName] = useState<string>('')
   const [cvc, setCvc] = useState<string | number>('')

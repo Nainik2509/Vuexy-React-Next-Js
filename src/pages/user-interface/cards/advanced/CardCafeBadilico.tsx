@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Import
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -17,7 +14,7 @@ import CardActions from '@mui/material/CardActions'
 // ** Icons Imports
 import DotsVertical from 'mdi-material-ui/DotsVertical'
 
-const CardCafe: FC = () => {
+const CardCafe = () => {
   return (
     <Card>
       <CardMedia title='Cafe Badilico' sx={{ height: '12.25rem' }} image='/assets/images/cards/cafe-badilico.png' />

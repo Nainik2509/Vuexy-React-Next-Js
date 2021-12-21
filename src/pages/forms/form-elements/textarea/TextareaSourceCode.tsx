@@ -2,13 +2,13 @@ export const TextareaVariantCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`
 // ** React Imports
-import { ChangeEvent, FC, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 
-const TextareaVariant: FC = () => {
+const TextareaVariant = () => {
   // ** State
   const [value, setValue] = useState<string>('Controlled')
 
@@ -92,15 +92,12 @@ export default TextareaVariant
 )
 export const TextareaBasicCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import TextareaAutosize from '@mui/material/TextareaAutosize'
 
-const TextareaBasic: FC = () => {
+const TextareaBasic = () => {
   return (
     <form noValidate autoComplete='off'>
       <Grid container spacing={4}>

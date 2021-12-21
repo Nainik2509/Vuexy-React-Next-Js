@@ -1,9 +1,8 @@
 // ** React Imports
 import { useState, SyntheticEvent, ChangeEvent, MouseEvent, ReactNode } from 'react'
 
-// ** Next Imports
+// ** Next Import
 import Link from 'next/link'
-import type { NextPage } from 'next'
 
 // ** MUI Components
 import Button from '@mui/material/Button'
@@ -97,7 +96,7 @@ const FormControlLabel = styled(MuiFormControlLabel)<FormControlLabelProps>(({ t
   }
 }))
 
-const LoginWithAppBar: NextPage = () => {
+const LoginWithAppBar = () => {
   // ** States
   const [values, setValues] = useState<State>({
     password: '',

@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, ReactNode } from 'react'
+import { ReactNode } from 'react'
 
 // ** MUI Imports
 import { styled } from '@mui/material/styles'
@@ -38,7 +38,7 @@ const SwipeableDrawer = styled(MuiSwipeableDrawer)<SwipeableDrawerProps>({
   }
 })
 
-const Drawer: FC<Props> = (props: Props) => {
+const Drawer = (props: Props) => {
   // ** Props
   const { hidden, children, navHover, navWidth, settings, navVisible, setNavHover, setNavVisible, collapsedNavWidth } =
     props

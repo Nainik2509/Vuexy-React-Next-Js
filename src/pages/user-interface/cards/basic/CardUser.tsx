@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -11,7 +8,7 @@ import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 import AvatarGroup from '@mui/material/AvatarGroup'
 
-const CardUser: FC = () => {
+const CardUser = () => {
   return (
     <Card sx={{ position: 'relative' }}>
       <CardMedia title='Robert Meyer' sx={{ height: '12.625rem' }} image='/assets/images/cards/background-user.png' />

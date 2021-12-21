@@ -4,7 +4,6 @@ import { FC, useState, Fragment, useContext } from 'react'
 // ** Next Imports
 import Link from 'next/link'
 import Image from 'next/image'
-import type { NextPage } from 'next'
 
 // ** MUI Components
 import Button from '@mui/material/Button'
@@ -116,7 +115,7 @@ const LinkStyled = styled('a')(({ theme }) => ({
   color: theme.palette.primary.main
 }))
 
-const Register: NextPage = () => {
+const Register = () => {
   // ** States
   const [showPassword, setShowPassword] = useState<boolean>(false)
 

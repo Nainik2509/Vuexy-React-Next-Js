@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
@@ -24,7 +21,7 @@ import CardActionClose from './CardActionClose'
 import CardActionRefresh from './CardActionRefresh'
 import CardActionCollapse from './CardActionCollapse'
 
-const CardActions: FC = () => {
+const CardActions = () => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12}>

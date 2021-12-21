@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Import
 import Grid from '@mui/material/Grid'
 
@@ -20,6 +17,10 @@ import { CardStatsHorizontalProps } from 'src/@core/components/card-statistics/t
 // ** Custom Components Imports
 import CardStatisticsHorizontal from 'src/@core/components/card-statistics/card-stats-horizontal'
 
+interface Props {
+  data: CardStatsHorizontalProps[]
+}
+
 const icons = {
   Poll,
   TrendingUp,
@@ -27,7 +28,7 @@ const icons = {
   AccountOutline
 }
 
-const CardStatsHorizontal: FC<{ data: CardStatsHorizontalProps[] }> = ({ data }) => {
+const CardStatsHorizontal = ({ data }: Props) => {
   return (
     <Grid container spacing={6}>
       {data.map((item: CardStatsHorizontalProps, index: number) => {

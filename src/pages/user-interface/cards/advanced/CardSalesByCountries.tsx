@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, ReactNode } from 'react'
+import { ReactNode } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -94,7 +94,7 @@ const data: DataType[] = [
   }
 ]
 
-const CardSalesByCountries: FC = () => {
+const CardSalesByCountries = () => {
   return (
     <Card>
       <CardHeader

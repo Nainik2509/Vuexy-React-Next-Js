@@ -1,6 +1,3 @@
-// ** React Imports
-import { memo } from 'react'
-
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
@@ -70,4 +67,4 @@ const TableHeader = (props: TableHeaderProps) => {
   )
 }
 
-export default memo(TableHeader)
+export default TableHeader

@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** Next Import
 import Image from 'next/image'
 
@@ -52,7 +49,7 @@ const Chip = styled(CustomChip)<CustomChipProps>(({ theme }) => ({
   }
 }))
 
-const PlanDetails: FC<PricingPlanProps> = (props: PricingPlanProps) => {
+const PlanDetails = (props: PricingPlanProps) => {
   // ** Props
   const { plan, data } = props
 

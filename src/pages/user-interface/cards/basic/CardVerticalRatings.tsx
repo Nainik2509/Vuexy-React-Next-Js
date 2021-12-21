@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -11,7 +8,7 @@ import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 import CardActions from '@mui/material/CardActions'
 
-const CardVerticalRatings: FC = () => {
+const CardVerticalRatings = () => {
   return (
     <Card>
       <CardHeader title='The Best Answers' />

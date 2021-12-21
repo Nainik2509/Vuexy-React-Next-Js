@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, SyntheticEvent } from 'react'
+import { SyntheticEvent } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -21,7 +21,7 @@ import DotsVertical from 'mdi-material-ui/DotsVertical'
 // ** Hooks Imports
 import useBgColor from 'src/@core/hooks/theme/useBgColor'
 
-const CardPlanUpgrade: FC = () => {
+const CardPlanUpgrade = () => {
   // ** Hook
   const colorClasses = useBgColor()
 

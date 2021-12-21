@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -21,7 +21,7 @@ interface Props {
   horizontalNavItems?: HorizontalNavItemsType
 }
 
-const Navigation: FC<Props> = (props: Props) => {
+const Navigation = (props: Props) => {
   // ** States
   const [openNav, setOpenNav] = useState<string[]>([])
 

@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, ChangeEvent } from 'react'
+import { ChangeEvent } from 'react'
 
 // ** MUI Imports
 import { styled } from '@mui/material/styles'
@@ -12,7 +12,7 @@ import MuiTextField, { TextFieldProps } from '@mui/material/TextField'
 // ** Icons Imports
 import Magnify from 'mdi-material-ui/Magnify'
 
-interface State {
+interface Props {
   searchTerm: string
   setSearchTerm: (value: string) => void
 }
@@ -39,7 +39,7 @@ const TextField = styled(MuiTextField)<TextFieldProps>(({ theme }) => ({
   }
 }))
 
-const FaqHeader: FC<State> = (props: State) => {
+const FaqHeader = (props: Props) => {
   // ** Props
   const { searchTerm, setSearchTerm } = props
 

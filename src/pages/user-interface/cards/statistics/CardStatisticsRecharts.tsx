@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Import
 import Grid from '@mui/material/Grid'
 
@@ -54,7 +51,7 @@ interface Props {
   }
 }
 
-const CardStatisticsRecharts: FC<Props> = ({ data }) => {
+const CardStatisticsRecharts = ({ data }: Props) => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12} sm={6} md={4} lg={2}>

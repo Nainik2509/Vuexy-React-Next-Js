@@ -1,5 +1,5 @@
 // ** React Imports
-import { ChangeEvent, FC, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -32,7 +32,7 @@ const icons = {
   BriefcaseVariantOutline
 }
 
-const FaqAccordions: FC<Props> = ({ data }: Props) => {
+const FaqAccordions = ({ data }: Props) => {
   // ** States
   const [expandedCommon, setExpandedCommon] = useState<string | false>(false)
   const [expandedPayment, setExpandedPayment] = useState<string | false>(false)

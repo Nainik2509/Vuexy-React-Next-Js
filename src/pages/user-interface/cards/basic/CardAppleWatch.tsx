@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Card from '@mui/material/Card'
 import Button from '@mui/material/Button'
@@ -8,7 +5,7 @@ import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 
-const CardAppleWatch: FC = () => {
+const CardAppleWatch = () => {
   return (
     <Card>
       <CardMedia title='Apple Watch' sx={{ height: '9.375rem' }} image='/assets/images/cards/watch-on-hand.jpg' />

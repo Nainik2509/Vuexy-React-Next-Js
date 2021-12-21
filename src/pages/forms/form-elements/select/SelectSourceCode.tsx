@@ -1,7 +1,7 @@
 export const SelectControlledUncontrolledCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import MenuItem from '@mui/material/MenuItem'
@@ -9,7 +9,7 @@ import InputLabel from '@mui/material/InputLabel'
 import FormControl from '@mui/material/FormControl'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 
-const SelectControlledUncontrolled: FC = () => {
+const SelectControlledUncontrolled = () => {
   // ** State
   const [value, setValue] = useState<string>('')
 
@@ -58,7 +58,7 @@ export default SelectControlledUncontrolled
 export const SelectCustomizedCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import MenuItem from '@mui/material/MenuItem'
@@ -111,7 +111,7 @@ const FormControl = styled(MuiFormControl)<FormControlProps>(({ theme }) => ({
   }
 }))
 
-const SelectCustomized: FC = () => {
+const SelectCustomized = () => {
   // ** State
   const [value, setValue] = useState<string>('')
 
@@ -158,7 +158,7 @@ export default SelectCustomized
 export const SelectMultipleCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -195,7 +195,7 @@ const names = [
   'Kelly Snyder'
 ]
 
-const SelectMultiple: FC = () => {
+const SelectMultiple = () => {
   // ** State
   const [personName, setPersonName] = useState<string[]>([])
   const [personNameNative, setPersonNameNative] = useState<string[]>([])
@@ -352,16 +352,13 @@ export default SelectMultiple
 )
 export const SelectVariantsCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
 import InputLabel from '@mui/material/InputLabel'
 import FormControl from '@mui/material/FormControl'
 
-const SelectVariants: FC = () => {
+const SelectVariants = () => {
   return (
     <div className='demo-space-x'>
       <FormControl>
@@ -409,15 +406,12 @@ export default SelectVariants
 )
 export const SelectNativeCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Select from '@mui/material/Select'
 import InputLabel from '@mui/material/InputLabel'
 import FormControl from '@mui/material/FormControl'
 
-const SelectNative: FC = () => {
+const SelectNative = () => {
   return (
     <div className='demo-space-x'>
       <FormControl>
@@ -481,10 +475,7 @@ export default SelectNative
 )
 export const SelectPropsCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
@@ -492,7 +483,7 @@ import InputLabel from '@mui/material/InputLabel'
 import FormControl from '@mui/material/FormControl'
 import FormHelperText from '@mui/material/FormHelperText'
 
-const SelectProps: FC = () => {
+const SelectProps = () => {
   return (
     <Box sx={{ '& > *': { marginTop: 6, marginRight: 6 } }}>
       <FormControl>
@@ -617,7 +608,7 @@ export default SelectProps
 export const SelectWithDialogCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -630,7 +621,7 @@ import FormControl from '@mui/material/FormControl'
 import DialogContent from '@mui/material/DialogContent'
 import DialogActions from '@mui/material/DialogActions'
 
-const SelectWithDialog: FC = () => {
+const SelectWithDialog = () => {
   // ** State
   const [open, setOpen] = useState<boolean>(false)
 
@@ -700,17 +691,14 @@ export default SelectWithDialog
 )
 export const SelectGroupingCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
 import InputLabel from '@mui/material/InputLabel'
 import FormControl from '@mui/material/FormControl'
 import ListSubheader from '@mui/material/ListSubheader'
 
-const SelectGrouping: FC = () => {
+const SelectGrouping = () => {
   return (
     <div className='demo-space-x'>
       <FormControl>

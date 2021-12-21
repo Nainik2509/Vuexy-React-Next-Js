@@ -1,13 +1,10 @@
-// ** Next Imports
-import { NextPage } from 'next'
-
 // ** MUI Imports
 import Typography from '@mui/material/Typography'
 
 // ** Third Party Imports
 import axios from 'axios'
 
-const Home: NextPage = ({ navData }: any) => {
+const Home = ({ navData }: any) => {
   console.log(`navData`, navData)
 
   return (

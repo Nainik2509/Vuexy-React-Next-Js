@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Card from '@mui/material/Card'
 import Button from '@mui/material/Button'
@@ -13,7 +10,7 @@ import HelpCircleOutline from 'mdi-material-ui/HelpCircleOutline'
 // ** Custom Components Imports
 import CustomAvatar from 'src/@core/components/mui/avatar'
 
-const CardSupport: FC = () => {
+const CardSupport = () => {
   return (
     <Card>
       <CardContent

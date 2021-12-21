@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -47,7 +44,7 @@ const Img = styled('img')(({ theme }) => ({
   borderRadius: theme.shape.borderRadius
 }))
 
-const CardHorizontalRatings: FC = () => {
+const CardHorizontalRatings = () => {
   return (
     <Card>
       <Grid container spacing={6}>

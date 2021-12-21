@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Import
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
@@ -8,7 +5,7 @@ import Grid from '@mui/material/Grid'
 // ** Custom Components Imports
 import CardStatisticsCharacter from 'src/@core/components/card-statistics/card-stats-with-image'
 
-const CardStatsCharacter: FC = () => {
+const CardStatsCharacter = () => {
   return (
     <Box sx={{ marginTop: 7 }}>
       <Grid container spacing={6}>

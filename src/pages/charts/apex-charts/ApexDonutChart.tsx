@@ -1,10 +1,10 @@
+// ** Next Import
+import dynamic from 'next/dynamic'
+
 // ** MUI Imports
 import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
-
-// ** Next Imports
-import dynamic from 'next/dynamic'
 
 // ** Styled Components
 import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'

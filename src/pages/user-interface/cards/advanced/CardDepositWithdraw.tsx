@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -116,7 +113,7 @@ const Divider = styled(MuiDivider)<DividerProps>(({ theme }) => ({
   }
 }))
 
-const CardDepositWithdraw: FC = () => {
+const CardDepositWithdraw = () => {
   return (
     <Card sx={{ display: 'flex', justifyContent: 'space-between', flexDirection: ['column', 'column', 'row'] }}>
       <Box sx={{ width: '100%' }}>

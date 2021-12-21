@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
@@ -23,7 +20,7 @@ interface PolarAreaProps {
   labelColor: string
 }
 
-const ChartjsPolarAreaChart: FC<PolarAreaProps> = (props: PolarAreaProps) => {
+const ChartjsPolarAreaChart = (props: PolarAreaProps) => {
   // ** Props
   const { info, grey, green, yellow, primary, warning, labelColor } = props
 

@@ -1,9 +1,6 @@
 // ** React Imports
 import { ReactNode, SyntheticEvent } from 'react'
 
-// ** Next Import
-import type { NextPage } from 'next'
-
 // ** MUI Components
 import Button from '@mui/material/Button'
 import { styled } from '@mui/material/styles'
@@ -37,7 +34,7 @@ const Img = styled('img')(({ theme }) => ({
   }
 }))
 
-const ComingSoon: NextPage = () => {
+const ComingSoon = () => {
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault()
   }

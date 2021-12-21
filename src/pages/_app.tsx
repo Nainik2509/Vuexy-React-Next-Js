@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 // ** Next Imports
 import Head from 'next/head'
@@ -63,7 +63,7 @@ type ExtendedAppProps = AppProps & {
 const clientSideEmotionCache = createEmotionCache()
 
 // ** Configure JSS & ClassName
-const App: FC<ExtendedAppProps> = props => {
+const App = (props: ExtendedAppProps) => {
   const [isMounted, setIsMounted] = useState<boolean>()
 
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props

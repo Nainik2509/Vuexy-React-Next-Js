@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
@@ -15,7 +15,7 @@ import CardStatisticsVertical from './CardStatisticsVertical'
 import CardStatisticsHorizontal from './CardStatisticsHorizontal'
 import CardStatisticsCharacters from './CardStatisticsCharacters'
 
-const CardStatistics: FC = () => {
+const CardStatistics = () => {
   // ** State
   const [data, setData] = useState<any>(null)
 

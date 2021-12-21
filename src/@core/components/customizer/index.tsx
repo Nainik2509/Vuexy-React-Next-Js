@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** Third Party Components
 import PerfectScrollbar from 'react-perfect-scrollbar'
@@ -71,7 +71,7 @@ const ColorBox = styled(Box)<BoxProps>(({ theme }) => ({
   }
 }))
 
-const Customizer: FC = () => {
+const Customizer = () => {
   // ** State
   const [open, setOpen] = useState<boolean>(false)
 

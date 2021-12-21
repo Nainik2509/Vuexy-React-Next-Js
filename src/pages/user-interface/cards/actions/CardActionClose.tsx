@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Fade from '@mui/material/Fade'
@@ -12,7 +12,7 @@ import CardContent from '@mui/material/CardContent'
 // ** Icon Imports
 import Close from 'mdi-material-ui/Close'
 
-const CardActionClose: FC = () => {
+const CardActionClose = () => {
   // ** State
   const [visibility, setVisibility] = useState<boolean>(true)
 

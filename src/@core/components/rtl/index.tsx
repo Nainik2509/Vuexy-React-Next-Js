@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useEffect, ReactNode } from 'react'
+import { useEffect, ReactNode } from 'react'
 
 // ** MUI Imports
 import { Direction } from '@mui/material'
@@ -23,7 +23,7 @@ const styleCache = () =>
     stylisPlugins: [stylisRTLPlugin]
   })
 
-const RTL: FC<RTLProps> = (props: RTLProps) => {
+const RTL = (props: RTLProps) => {
   const { children, direction } = props
 
   useEffect(() => {

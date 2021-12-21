@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, Fragment, ReactNode } from 'react'
+import { Fragment, ReactNode } from 'react'
 
 // ** MUI Components
 import useMediaQuery from '@mui/material/useMediaQuery'
@@ -27,7 +27,7 @@ const TreeImg = styled('img')(({ theme }) => ({
   }
 }))
 
-const FooterIllustrations: FC<FooterIllustrationsProp> = (props: FooterIllustrationsProp) => {
+const FooterIllustrations = (props: FooterIllustrationsProp) => {
   // ** Props
   const { image } = props
 

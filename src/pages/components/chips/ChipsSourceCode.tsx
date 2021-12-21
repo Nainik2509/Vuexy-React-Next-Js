@@ -1,7 +1,7 @@
 export const ChipsArrayCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Chip from '@mui/material/Chip'
@@ -14,7 +14,7 @@ interface ChipData {
   avatarAlt?: string
 }
 
-const ChipsArray: FC = () => {
+const ChipsArray = () => {
   // ** State
   const [chipData, setChipData] = useState<ChipData[]>([
     { key: 0, avatar: '/images/avatars/1.png', avatarAlt: 'User Avatar', label: 'Norman Santiago' },
@@ -49,13 +49,13 @@ export default ChipsArray
 export const ChipsColorsCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, Fragment } from 'react'
+import { Fragment } from 'react'
 
 // ** MUI Imports
 import Chip from '@mui/material/Chip'
 import Typography from '@mui/material/Typography'
 
-const ChipsColors: FC = () => {
+const ChipsColors = () => {
   return (
     <Fragment>
       <Typography sx={{ fontWeight: 500 }}>Filled Chips</Typography>
@@ -86,13 +86,10 @@ export default ChipsColors
 )
 export const ChipsClickableCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Chip from '@mui/material/Chip'
 
-const ChipsClickable: FC = () => {
+const ChipsClickable = () => {
   const handleClick = () => {
     console.info('You clicked the Chip.')
   }
@@ -111,17 +108,14 @@ export default ChipsClickable
 )
 export const ChipsAvatarCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Chip from '@mui/material/Chip'
 import Avatar from '@mui/material/Avatar'
 
 // ** Icons Imports
 import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
 
-const ChipsAvatar: FC = () => {
+const ChipsAvatar = () => {
   return (
     <div className='demo-space-x'>
       <Chip label='Default' avatar={<Avatar />} />
@@ -145,17 +139,14 @@ export default ChipsAvatar
 )
 export const ChipsIconCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Chip from '@mui/material/Chip'
 
 // ** Icons Imports
 import Battery10 from 'mdi-material-ui/Battery10'
 import BatteryCharging30 from 'mdi-material-ui/BatteryCharging30'
 
-const ChipsIcon: FC = () => {
+const ChipsIcon = () => {
   return (
     <div className='demo-space-x'>
       <Chip label='Battery Low' icon={<Battery10 fontSize='small' />} />
@@ -171,7 +162,7 @@ export default ChipsIcon
 export const ChipsOnDeleteCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, Fragment } from 'react'
+import { Fragment } from 'react'
 
 // ** MUI Imports
 import Chip from '@mui/material/Chip'
@@ -180,7 +171,7 @@ import Typography from '@mui/material/Typography'
 // ** Icons Imports
 import DeleteOutline from 'mdi-material-ui/DeleteOutline'
 
-const ChipsOnDelete: FC = () => {
+const ChipsOnDelete = () => {
   const handleDelete = () => {
     console.info('You clicked the delete icon.')
   }
@@ -209,13 +200,10 @@ export default ChipsOnDelete
 )
 export const ChipsDisabledCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Chip from '@mui/material/Chip'
 
-const ChipsDisabled: FC = () => {
+const ChipsDisabled = () => {
   return (
     <div className='demo-space-x'>
       <Chip label='Basic' disabled />
@@ -230,13 +218,10 @@ export default ChipsDisabled
 )
 export const ChipsLightCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** Custom Components Imports
+    <code className='language-jsx'>{`// ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
 
-const ChipsCustomized: FC = () => {
+const ChipsCustomized = () => {
   return (
     <div className='demo-space-x'>
       <CustomChip label='Primary' skin='light' color='primary' />
@@ -255,13 +240,10 @@ export default ChipsCustomized
 )
 export const ChipsVariantsCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Chip from '@mui/material/Chip'
 
-const ChipsVariants: FC = () => {
+const ChipsVariants = () => {
   return (
     <div className='demo-space-x'>
       <Chip label='Basic' />
@@ -276,13 +258,10 @@ export default ChipsVariants
 )
 export const ChipsSizesCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Chip from '@mui/material/Chip'
 
-const ChipsSizes: FC = () => {
+const ChipsSizes = () => {
   return (
     <div className='demo-space-x'>
       <Chip label='Default' />

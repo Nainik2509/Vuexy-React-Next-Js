@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, memo, SyntheticEvent, useState, useEffect, Fragment } from 'react'
+import { SyntheticEvent, useState, useEffect, Fragment } from 'react'
 
 // ** Next Import
 import { useRouter } from 'next/router'
@@ -92,7 +92,7 @@ const NavigationMenu = styled((props: TooltipProps) => <Tooltip {...props} class
   })
 )
 
-const HorizontalNavGroup: FC<Props> = (props: Props) => {
+const HorizontalNavGroup = (props: Props) => {
   // ** Props
   const { item, hasParent, settings, handleGroupMouseLeave, handleGroupMouseEnter } = props
 
@@ -247,4 +247,4 @@ const HorizontalNavGroup: FC<Props> = (props: Props) => {
   )
 }
 
-export default memo(HorizontalNavGroup)
+export default HorizontalNavGroup

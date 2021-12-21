@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
 import Avatar from '@mui/material/Avatar'
@@ -42,7 +39,7 @@ const StyledBox2 = styled(Box)<BoxProps>(({ theme }) => ({
   }
 }))
 
-const FaqFooter: FC = () => {
+const FaqFooter = () => {
   return (
     <Box sx={{ mt: 13 }}>
       <Box sx={{ textAlign: 'center' }}>

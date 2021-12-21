@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -19,7 +16,7 @@ import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
 import CustomChip from 'src/@core/components/mui/chip'
 import CustomAvatar from 'src/@core/components/mui/avatar'
 
-const CardFinanceSummary: FC = () => {
+const CardFinanceSummary = () => {
   return (
     <Card>
       <CardHeader
