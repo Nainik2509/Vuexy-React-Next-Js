@@ -33,8 +33,8 @@ export type NavGroup = {
   title: string
   icon?: ReactNode
   badgeContent?: string
-  badgeColor?: 'default' | 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info'
   children?: (NavGroup | NavLink)[]
+  badgeColor?: 'default' | 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info'
 }
 
 export type NavSectionTitle = {
@@ -46,14 +46,18 @@ export type HorizontalNavItemsType = (NavLink | NavGroup)[]
 
 export type LayoutProps = {
   children: ReactNode
-  footerContent?: ReactNode
   appBarContent?: any
   navMenuHeader?: any
   navMenuContent?: any
+  footerContent?: ReactNode
   verticalNavItems?: VerticalNavItemsType
   horizontalNavItems?: HorizontalNavItemsType
 }
 
 export type BlankLayoutProps = {
   children?: ReactNode
+}
+
+export type BlankLayoutWithAppBarProps = {
+  children: ReactNode
 }
