@@ -1,5 +1,5 @@
 // ** React Imports
-import { MouseEvent, ReactNode, useState } from 'react'
+import { useState, useContext } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
@@ -35,6 +35,13 @@ import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm, Controller, DefaultValues } from 'react-hook-form'
+
+// ** Context
+import { Auth } from '@core/context/AuthContext'
+
+// ** Hooks
+import useBgColor from '@core/hooks/theme/useBgColor'
+import { useSettings } from '@core/hooks/useSettings'
 
 // ** Configs
 import themeConfig from 'src/configs/themeConfig'
@@ -120,8 +127,8 @@ const LoginPage: NextPage = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false)
 
   // ** Hooks
-  const login = useLogin()
   const theme = useTheme()
+  const { login } = useContext(Auth)
   const {
     settings: { skin }
   } = useSettings()
@@ -321,3 +328,9 @@ const LoginPage: NextPage = () => {
 LoginPage.getLayout = (page: ReactNode) => <BlankLayout>{page}</BlankLayout>
 
 export default LoginPage
+
+LoginPage.getInitialProps = () => {
+  return {
+    publicPage: true
+  }
+}

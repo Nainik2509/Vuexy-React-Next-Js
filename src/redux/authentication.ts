@@ -16,9 +16,6 @@ export const authSlice = createSlice({
     },
     handleLogout: state => {
       state.userData = null
-
-      window.localStorage.removeItem('userData')
-      window.localStorage.removeItem(authConfig.storageTokenKeyName)
     }
   }
 })

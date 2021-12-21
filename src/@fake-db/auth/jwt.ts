@@ -29,10 +29,19 @@ const users: JwtDataType[] = [
     password: 'client',
     email: 'client@materio.com',
     role: 'client',
+    routeMeta: {
+      action: 'read',
+      resource: 'analytics',
+      canVisit: ['/dashboard/analytics']
+    },
     ability: [
       {
         action: 'read',
         subject: 'ACL'
+      },
+      {
+        action: 'read',
+        subject: 'analytics'
       }
     ]
   }

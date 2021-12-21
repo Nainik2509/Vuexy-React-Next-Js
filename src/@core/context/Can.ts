@@ -9,4 +9,5 @@ import { createContextualCan } from '@casl/react'
 export const AbilityContext = createContext()
 
 // ** Init Can Context
+// @ts-ignore
 export const Can = createContextualCan(AbilityContext.Consumer)

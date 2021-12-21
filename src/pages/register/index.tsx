@@ -1,5 +1,5 @@
 // ** React Imports
-import { useState, Fragment, ReactNode, MouseEvent } from 'react'
+import { FC, useState, Fragment, useContext } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
@@ -23,6 +23,9 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import { Theme, styled, useTheme } from '@mui/material/styles'
 import Typography, { TypographyProps } from '@mui/material/Typography'
 
+// ** Context
+import { Auth } from '@core/context/AuthContext'
+
 // ** Icons Imports
 import Google from 'mdi-material-ui/Google'
 import Github from 'mdi-material-ui/Github'
@@ -36,6 +39,12 @@ import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm, Controller, DefaultValues } from 'react-hook-form'
 
+<<<<<<< HEAD
+=======
+// ** Hooks
+import { useSettings } from '@core/hooks/useSettings'
+
+>>>>>>> 058abfc ([feat](Auth/ACL):Auth & ACL Structure)
 // ** Configs
 import themeConfig from 'src/configs/themeConfig'
 
@@ -132,7 +141,7 @@ const Register: NextPage = () => {
   const {
     settings: { skin }
   } = useSettings()
-  const register = useRegister()
+  const { register } = useContext(Auth)
   const {
     control,
     setError,

@@ -47,6 +47,8 @@ const navigation = (): (NavGroup | NavLink)[] => [
       {
         icon: TrendingUp,
         title: 'Analytics',
+        action: 'read',
+        resource: 'analytics',
         path: '/dashboard/analytics'
       },
       {

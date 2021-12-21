@@ -32,6 +32,8 @@ const navigation = (): (NavGroup | NavLink | NavSectionTitle)[] => {
       badgeColor: 'error',
       children: [
         {
+          action: 'read',
+          resource: 'analytics',
           title: 'Analytics',
           path: '/dashboard/analytics'
         },

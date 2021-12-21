@@ -2,7 +2,7 @@
 import { useRouter } from 'next/router'
 
 // ** React Imports
-import { FC, useState, SyntheticEvent, Fragment } from 'react'
+import { FC, useState, SyntheticEvent, Fragment, useContext } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -23,8 +23,8 @@ import AccountOutline from 'mdi-material-ui/AccountOutline'
 import MessageOutline from 'mdi-material-ui/MessageOutline'
 import HelpCircleOutline from 'mdi-material-ui/HelpCircleOutline'
 
-// ** Hooks Imports
-import useLogout from 'src/@core/hooks/auth/useLogout'
+// ** Context
+import { Auth } from '@core/context/AuthContext'
 
 // ** Type Imports
 import { Settings } from 'src/@core/context/settingsContext'
@@ -52,7 +52,7 @@ const UserDropdown: FC<Props> = (props: Props) => {
 
   // ** Hooks
   const router = useRouter()
-  const logout = useLogout()
+  const { logout } = useContext(Auth)
 
   const handleDropdownOpen = (event: SyntheticEvent) => {
     setAnchorEl(event.currentTarget)

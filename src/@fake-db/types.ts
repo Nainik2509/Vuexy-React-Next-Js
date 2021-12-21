@@ -51,6 +51,11 @@ export type JwtDataType = {
   fullName: string
   username: string
   password: string
+  routeMeta?: {
+    action: string
+    resource: string
+    canVisit: string[]
+  }
   avatar?: string | null
   ability: UserAbilityType[]
 }

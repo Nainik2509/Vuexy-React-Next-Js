@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useEffect, useState, ReactElement, ReactNode } from 'react'
+import { FC, useEffect, useState, ReactElement, ReactNode, useContext } from 'react'
 
 // ** Next Imports
 import Head from 'next/head'
@@ -11,12 +11,9 @@ import type { AppProps } from 'next/app'
 import { CacheProvider } from '@emotion/react'
 import type { EmotionCache } from '@emotion/cache'
 
-// ** Store imports
-import { Provider } from 'react-redux'
-import { store } from 'src/redux/store'
-
-// ** i18n Config Import
-import 'src/configs/i18n'
+// ** Config Imports
+import 'configs/i18n'
+import ability from 'configs/acl/ability'
 
 // ** Fake-DB Import
 import 'src/@fake-db'
@@ -26,8 +23,12 @@ import UserLayout from 'src/layouts/UserLayout'
 import ThemeComponent from 'src/@core/theme/ThemeComponent'
 
 // ** Contexts
-import { AuthContext } from 'src/@core/context/AuthContext'
-import { SettingsConsumer, SettingsProvider } from 'src/@core/context/settingsContext'
+import { AbilityContext } from '@core/context/Can'
+import { Auth, AuthContext } from '@core/context/AuthContext'
+import { SettingsConsumer, SettingsProvider } from '@core/context/settingsContext'
+
+// ** Types
+import { AuthValuesType } from '@core/context/types'
 
 // ** Utils Imports
 import { createEmotionCache } from 'src/@core/utils/create-emotion-cache'
@@ -68,36 +69,39 @@ const App: FC<ExtendedAppProps> = props => {
   const setConfig = Component.setConfig ?? null
 
   const router = useRouter()
+  const AuthConsumer = Auth.Consumer
 
-  // useEffect(() => {
-  //   if (!window.localStorage.getItem('accessToken') && router.route !== '/login' && !pageProps.publicPage) {
-  //     if (typeof window !== undefined) {
-  //       router.push({
-  //         pathname: '/login',
-  //         query: { returnUrl: router.route }
-  //       })
-  //     }
-  //   }
-  // }, [router])
   useEffect(() => {
     setIsMounted(true)
 
     return () => setIsMounted(false)
   }, [])
 
-  const handleRedirection = () => {
-    if (
-      typeof window !== undefined &&
-      !window.localStorage.getItem('accessToken') &&
-      router.route !== '/login' &&
-      !pageProps.publicPage
-    ) {
+  const handleRedirection = (auth: AuthValuesType, ability: any) => {
+    if (!auth.isInitialized && !pageProps.publicPage) {
       router.push({
         pathname: '/login',
         query: { returnUrl: router.route }
       })
     } else {
-      return getLayout(<Component {...pageProps} />)
+      if (
+        auth.user &&
+        auth.user.routeMeta &&
+        router.route !== '/not-authorized' &&
+        !auth.user.routeMeta.canVisit.includes(router.route) &&
+        !ability.can(auth.user.routeMeta.action || 'read', auth.user.routeMeta.resource)
+      ) {
+        router.push('/not-authorized')
+      } else {
+        console.log(
+          auth.user &&
+            auth.user.routeMeta &&
+            router.route !== '/not-authorized' &&
+            !auth.user.routeMeta.canVisit.includes(router.route)
+        )
+
+        return getLayout(<Component {...pageProps} />)
+      }
     }
   }
 
@@ -108,15 +112,21 @@ const App: FC<ExtendedAppProps> = props => {
           <title>Master React Admin Template With MUI & NextJS</title>
           <meta name='viewport' content='initial-scale=1, width=device-width' />
         </Head>
-        <AuthContext>
-          <SettingsProvider {...(setConfig ? { pageSettings: setConfig() } : {})}>
-            <SettingsConsumer>
-              {({ settings }) => {
-                return <ThemeComponent settings={settings}>{isMounted ? handleRedirection() : null}</ThemeComponent>
-              }}
-            </SettingsConsumer>
-          </SettingsProvider>
-        </AuthContext>
+        <AbilityContext.Provider value={ability}>
+          <AuthContext>
+            <SettingsProvider {...(setConfig ? { pageSettings: setConfig() } : {})}>
+              <SettingsConsumer>
+                {({ settings }) => {
+                  return (
+                    <ThemeComponent settings={settings}>
+                      {isMounted ? <AuthConsumer>{auth => handleRedirection(auth, ability)}</AuthConsumer> : null}
+                    </ThemeComponent>
+                  )
+                }}
+              </SettingsConsumer>
+            </SettingsProvider>
+          </AuthContext>
+        </AbilityContext.Provider>
       </CacheProvider>
     </Provider>
   )
