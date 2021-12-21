@@ -28,6 +28,10 @@ const GlobalStyles = (theme: Theme, settings: Settings) => {
   }
 
   return {
+    body: {
+      fontFamily:
+        'Inter, sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Neue Arial, sans-serif, Apple Color, Emoji, Segoe UI Emoji, Segoe UI Symbol'
+    },
     'body[style^="padding-right"] header::after, body[style^="padding-right"] footer::after': {
       content: '""',
       position: 'absolute',
