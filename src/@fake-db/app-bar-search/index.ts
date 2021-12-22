@@ -224,49 +224,49 @@ const searchData: AppBarSearchType[] = [
   },
   {
     id: 32,
-    url: '/user-interface/typography',
+    url: '/ui/typography',
     icon: 'FormatTextVariantOutline',
     title: 'Typography',
     type: 'pages'
   },
   {
     id: 33,
-    url: '/user-interface/icons',
+    url: '/ui/icons',
     icon: 'StarOutline',
     title: 'Icons',
     type: 'pages'
   },
   {
     id: 34,
-    url: '/ui/card-basic',
+    url: '/ui/cards/basic',
     icon: 'CardOutline',
     title: 'Card Basic',
     type: 'pages'
   },
   {
     id: 35,
-    url: '/ui/card-statistics',
+    url: '/ui/cards/statistics',
     icon: 'CardTextOutline',
     title: 'Card Statistics',
     type: 'pages'
   },
   {
     id: 36,
-    url: '/ui/card-advanced',
+    url: '/ui/cards/advanced',
     icon: 'CardBulletedSettingsOutline',
     title: 'Card Advanced',
     type: 'pages'
   },
   {
     id: 37,
-    url: '/ui/card-gamification',
+    url: '/ui/cards/gamification',
     icon: 'CardAccountDetailsOutline',
     title: 'Card Gamification',
     type: 'pages'
   },
   {
     id: 38,
-    url: '/ui/card-actions',
+    url: '/ui/cards/actions',
     icon: 'CardPlusOutline',
     title: 'Card Actions',
     type: 'pages'

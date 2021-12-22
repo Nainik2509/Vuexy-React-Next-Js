@@ -111,7 +111,7 @@ const CardPlanUpgrade = () => {
           <Box
             sx={{
               ml: 3,
-              width: '100%',
+              flexGrow: 1,
               display: 'flex',
               flexWrap: 'wrap',
               alignItems: 'center',
@@ -131,7 +131,7 @@ const CardPlanUpgrade = () => {
           <Box
             sx={{
               ml: 3,
-              width: '100%',
+              flexGrow: 1,
               display: 'flex',
               flexWrap: 'wrap',
               alignItems: 'center',
