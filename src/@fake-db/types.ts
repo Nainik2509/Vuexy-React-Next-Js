@@ -1,3 +1,5 @@
+import { ThemeColor } from 'src/@core/layouts/types'
+
 export type AppBarSearchType = {
   id: number
   url?: string
@@ -23,6 +25,39 @@ export type FaqType = {
   title: string
   subtitle: string
   qAndA: FaqQAndAType[]
+}
+
+// Types for Card Statistics Page
+export type CardStatsHorizontalType = {
+  icon: string
+  stats: string
+  title: string
+  color?: ThemeColor
+  trendNumber: string
+  trend?: 'positive' | 'negative'
+}
+export type CardStatsVerticalType = {
+  icon: string
+  stats: string
+  title: string
+  subtitle: string
+  color?: ThemeColor
+  trendNumber: string
+  trend?: 'positive' | 'negative'
+}
+export type CardStatsCharacterType = {
+  src: string
+  stats: string
+  title: string
+  chipText: string
+  trendNumber: string
+  chipColor?: ThemeColor
+  trend?: 'positive' | 'negative'
+}
+export type CardStatsType = {
+  statsVertical: CardStatsVerticalType[]
+  statsCharacter: CardStatsCharacterType[]
+  statsHorizontal: CardStatsHorizontalType[]
 }
 
 export type DataTableRowType = {

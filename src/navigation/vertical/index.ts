@@ -21,7 +21,7 @@ import GoogleCirclesExtended from 'mdi-material-ui/GoogleCirclesExtended'
 import CheckboxMarkedCircleOutline from 'mdi-material-ui/CheckboxMarkedCircleOutline'
 
 // ** Type import
-import { NavGroup, NavLink, NavSectionTitle } from 'src/@core/layouts/components/vertical/navigation/types'
+import { NavGroup, NavLink, NavSectionTitle } from 'src/@core/layouts/types'
 
 const navigation = (): (NavGroup | NavLink | NavSectionTitle)[] => {
   return [
@@ -240,11 +240,11 @@ const navigation = (): (NavGroup | NavLink | NavSectionTitle)[] => {
     {
       title: 'Typography',
       icon: FormatLetterCase,
-      path: '/user-interface/typography'
+      path: '/ui/typography'
     },
     {
       title: 'Icons',
-      path: '/user-interface/icons',
+      path: '/ui/icons',
       icon: GoogleCirclesExtended
     },
     {
@@ -253,23 +253,23 @@ const navigation = (): (NavGroup | NavLink | NavSectionTitle)[] => {
       children: [
         {
           title: 'Basic',
-          path: '/ui/card-basic'
+          path: '/ui/cards/basic'
         },
         {
           title: 'Statistics',
-          path: '/ui/card-statistics'
+          path: '/ui/cards/statistics'
         },
         {
           title: 'Advanced',
-          path: '/ui/card-advanced'
+          path: '/ui/cards/advanced'
         },
         {
           title: 'Gamification',
-          path: '/ui/card-gamification'
+          path: '/ui/cards/gamification'
         },
         {
           title: 'Actions',
-          path: '/ui/card-actions'
+          path: '/ui/cards/actions'
         }
       ]
     },
