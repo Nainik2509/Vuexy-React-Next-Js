@@ -1,7 +1,5 @@
 # Access Control (ACL)
 
-In this page you will understand usage of ACL in our template and how you can use it.
-
 ## Overview
 
 react-material-admin uses [CASL](https://casl.js.org/v4/en/guide/intro) package for providing access control. Which is future oriented and is more detailed on Access Control.
@@ -14,18 +12,18 @@ CASL may look complex at first so please make sure you first read their docs car
 
 You can find CASL configuration in `src/configs/acl` folder.
 
-We've also created a `Can` context to verify user abilities. You can find the context in `src/utility/Can.js`
+We've also created a `Can` context to verify user abilities. You can find the context in `src/@core/context/Can.tsx`
 
-Let's explore ACL related files:
+Let's explore ACL related fileFwars:
 
-- **ability.ts**: This file exports ACL ability.
+- **ability.ts**: This file check exports ACL ability.
 - **initialAbility.ts**: This file exports users initial ability.
 
 ## ability.ts
 
-It imports `initialAbility` & exports current user's ability. If user is not logged in or user's ability isn't retrieved from localStorage then it uses `initialAbility` defined in `initialAbility`.js file.
+This file imports `initialAbility` & exports current user's ability. If user is not logged in or user's ability isn't available from localStorage then it uses `initialAbility` defined in `initialAbility.ts` file.
 
-Once user logs in ability is updated using ability.update(newAbility) from Can Context. Sample newAbility array:
+Once user logs in ability is updated using ability.update(newAbility) using Can Context. Sample newAbility array:
 
 ```js
 newAbility: [
@@ -58,50 +56,26 @@ Also, this same ability is stored in user's object userData in localStorage unde
 ```
 
 ::: tip
-We are getting user ability on refresh from `userData` which is stored in localStorage. We have stored ability in `userData.ability`. If you have different approach for storing and retrieving ability then please update `src/configs/acl/ability.js` file.
+We are getting user ability on refresh from `userData` which is stored in localStorage. We have stored ability in `userData.ability`. If you have different approach for storing and retrieving ability then please update `src/configs/acl/ability.ts` file.
 :::
 
 ## Route Protection
 
-You can protect your route from being visited by other users through as well. We already configured function in `PrivateRoute` component to redirect user to not authorized page if user don't have ability for that route. All you have to do is use route meta to define user ability.
+You can protect your route from being visited by other users as well.
+We already configured `handleRedirection` function in the `_app.tsx` file to redirect the user to not authorized page
+if the user doesn't have the ability to `read` that route. All you have to do is use `getInitialProps` in your component to define the `action` & `subject`.
 
-```js
-{
-  path: '/access-control',
-  component: lazy(() => import('views/pages/access-control')),
-  meta: {
+```jsx
+const AnalyticsDashboard = () => <h1>Analytics Dashboard</h1>
+
+AnalyticsDashboard.getInitialProps = () => {
+  return {
     action: 'read',
-    resource: 'ACL'
+    subject: 'analytics'
   }
 }
+export default AnalyticsDashboard
 ```
-
-Here, resource refers to subject in CASL [docs](https://casl.js.org/v4/en/guide/intro#basics)
-
-Once you define ability for route using meta, if user don't have defined ability for visiting route then it will be redirected to not authorized page.
-
-If user is not logged in and try to visit the route with ability which user don't have then user will get redirected to login page instead of not authorized page.
-
-## Omitting Defining `resource` and `action` for route
-
-If you do not define resource and action then only user with below ability will be able to visit the route:
-
-```js
-{
-  action: 'manage',
-  subject: 'all'
-}
-```
-
-::: tip
-`manage` and `all` are special keywords in CASL. `manage` represents any action and `all` represents any subject.
-:::
-
-So, in your project if you don't have any user with above mentioned ability and you don't define `action` and `resource` for route then no one will be able to visit that route ever.
-
-::: tip
-We have user (Admin user) with above mentioned ability in our demo. That's why we don't have to write `action` and `resource` on each route.
-:::
 
 ## Show/Hide Navigation Items
 
@@ -109,14 +83,14 @@ Besides route protection you can also show/hide navigation items based on user a
 
 Besides existing options provided by navigation items there's two more option you can specify if you use ACL.
 
-- **resource**: This refers to subject in CASL docs
+- **subject**: This refers to subject in CASL docs
 - **action**: This is action for ability.
 
 Add these two options in your navigation item to show/hide navigation items based on user ability.
 
 Omitting defining resource and action for groups
 
-You can optionally define `resource` & `action` on navigation item type which have children:
+You can optionally define `subject` & `action` on navigation item type which have children:
 
 - Vertical Navigation Menu Group
 - Horizontal Navigation Menu Group
@@ -125,17 +99,17 @@ You can optionally define `resource` & `action` on navigation item type which ha
 e.g. If you have vertical navigation menu group and your provided both options for every group child and you want to hide group if all it's child don't have ability then don't worry about adding both option in menu group options. We already handled hiding group if none of it's child is visible. Means, We will hide group if there's no child to render due to lack of ability.
 
 ```js
-/** Both group child have `resource` and `action` defined
-   * So, If I omit defining `resource` and `action` for group
+/** Both group child have `subject` and `action` defined
+   * So, If I omit defining `subject` and `action` for group
    * => then group will be hidden if both child are hidden
-   * Conclusion: You can omit defining `resource` and `action` for group if you want this kind of behavior
+   * Conclusion: You can omit defining `subject` and `action` for group if you want this kind of behavior
 */
 {
     id: 'access-control',
     title: 'Access Control',
     icon: <Shield size={12} />,
     action: 'read',
-    resource: 'ACL',
+    subject: 'ACL',
     navLink: '/access-control'
 }
 ```
@@ -151,3 +125,9 @@ Please note this scenarios apply to all three group types of navigation item:
 - Vertical Navigation Menu Group
 - Horizontal Navigation Menu Group
 - Horizontal Navigation Menu Header Group
+
+## canViewMenuGroup & canViewMenuItem
+
+If you're using starter-kit you'll have to wrap your `VerticalNavItems.tsx` or `HorizontalNavItems.tsx` with `canViewMenuGroup` & `canViewMenuItem` functions to show/hide the menu items according to user role.
+
+You can refer to the `VerticalNavItems.tsx` or `HorizontalNavItems.tsx` file from the full-version as an example.
