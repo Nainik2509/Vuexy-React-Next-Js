@@ -17,6 +17,7 @@ import type { EmotionCache } from '@emotion/cache'
 
 // ** Config Imports
 import 'src/configs/i18n'
+import authConfig from 'src/configs/auth'
 import ability from 'src/configs/acl/ability'
 
 // ** Fake-DB Import
@@ -82,31 +83,27 @@ const App: FC<ExtendedAppProps> = props => {
   }, [])
 
   const handleRedirection = (auth: AuthValuesType, ability: any) => {
-    if (!auth.isInitialized && !pageProps.publicPage) {
+    if (auth.user === null && router.route !== '/login') {
       router.push({
         pathname: '/login',
         query: { returnUrl: router.route }
       })
-    } else {
-      if (
-        auth.user &&
-        auth.user.routeMeta &&
-        router.route !== '/not-authorized' &&
-        !auth.user.routeMeta.canVisit.includes(router.route) &&
-        !ability.can(auth.user.routeMeta.action || 'read', auth.user.routeMeta.resource)
-      ) {
-        router.push('/not-authorized')
-      } else {
-        console.log(
-          auth.user &&
-            auth.user.routeMeta &&
-            router.route !== '/not-authorized' &&
-            !auth.user.routeMeta.canVisit.includes(router.route)
-        )
-
-        return getLayout(<Component {...pageProps} />)
-      }
     }
+
+    if (auth.user !== null && pageProps && pageProps.restrictedPage) {
+      router.push(authConfig.redirectURL(auth.user.role))
+    }
+
+    if (
+      auth.user &&
+      !pageProps.restrictedPage &&
+      router.route !== '/not-authorized' &&
+      !ability.can(pageProps.action, pageProps.subject)
+    ) {
+      router.push('/not-authorized')
+    }
+
+    return getLayout(<Component {...pageProps} />)
   }
 
   return (

@@ -21,7 +21,7 @@ export type NavLink = {
   action?: string
   path?: string
   icon?: ReactNode
-  resource?: string
+  subject?: string
   disabled?: boolean
   badgeContent?: string
   externalLink?: boolean

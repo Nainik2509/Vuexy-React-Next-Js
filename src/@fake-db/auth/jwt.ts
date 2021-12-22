@@ -29,11 +29,6 @@ const users: JwtDataType[] = [
     password: 'client',
     email: 'client@materio.com',
     role: 'client',
-    routeMeta: {
-      action: 'read',
-      resource: 'analytics',
-      canVisit: ['/dashboard/analytics']
-    },
     ability: [
       {
         action: 'read',
@@ -47,7 +42,7 @@ const users: JwtDataType[] = [
   }
 ]
 
-// ! These two secrets shall be in .env file and not in any other file
+// ! These two secrets should be in .env file and not in any other file
 const jwtConfig = {
   secret: 'dd5f3089-40c3-403d-af14-d0c228b05cb4',
   refreshTokenSecret: '7c4c1c50-3230-45bf-9eae-c9b2e401c767'

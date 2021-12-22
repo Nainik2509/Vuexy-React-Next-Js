@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useState, Fragment, useContext } from 'react'
+import { ReactNode, useState, Fragment, useContext } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
@@ -378,7 +378,7 @@ const Register: NextPage = () => {
 
 Register.getInitialProps = () => {
   return {
-    publicPage: true
+    restrictedPage: true
   }
 }
 

@@ -1,5 +1,5 @@
 // ** React Imports
-import { useState, useContext } from 'react'
+import { useState, useContext, ReactNode } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
@@ -322,10 +322,10 @@ const LoginPage: NextPage = () => {
 
 LoginPage.getLayout = (page: ReactNode) => <BlankLayout>{page}</BlankLayout>
 
-export default LoginPage
-
 LoginPage.getInitialProps = () => {
   return {
-    publicPage: true
+    restrictedPage: true
   }
 }
+
+export default LoginPage

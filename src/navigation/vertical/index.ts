@@ -21,7 +21,7 @@ import GoogleCirclesExtended from 'mdi-material-ui/GoogleCirclesExtended'
 import CheckboxMarkedCircleOutline from 'mdi-material-ui/CheckboxMarkedCircleOutline'
 
 // ** Type import
-import { NavGroup, NavLink, NavSectionTitle } from 'src/@core/layouts/components/vertical/navigation/types'
+import { NavGroup, NavLink, NavSectionTitle } from 'src/@core/layouts/types'
 
 const navigation = (): (NavGroup | NavLink | NavSectionTitle)[] => {
   return [
@@ -33,7 +33,7 @@ const navigation = (): (NavGroup | NavLink | NavSectionTitle)[] => {
       children: [
         {
           action: 'read',
-          resource: 'analytics',
+          subject: 'analytics',
           title: 'Analytics',
           path: '/dashboard/analytics'
         },
@@ -466,7 +466,7 @@ const navigation = (): (NavGroup | NavLink | NavSectionTitle)[] => {
     },
     {
       action: 'read',
-      resource: 'ACL',
+      subject: 'ACL',
       icon: ShieldOutline,
       title: 'Access Control',
       path: '/pages/access-control'

@@ -37,7 +37,7 @@ import ChartBellCurveCumulative from 'mdi-material-ui/ChartBellCurveCumulative'
 import CheckboxMarkedCircleOutline from 'mdi-material-ui/CheckboxMarkedCircleOutline'
 
 // ** Type import
-import { NavGroup, NavLink } from 'src/@core/layouts/components/vertical/navigation/types'
+import { NavGroup, NavLink } from 'src/@core/layouts/types'
 
 const navigation = (): (NavGroup | NavLink)[] => [
   {
@@ -48,15 +48,13 @@ const navigation = (): (NavGroup | NavLink)[] => [
         icon: TrendingUp,
         title: 'Analytics',
         action: 'read',
-        resource: 'analytics',
+        subject: 'analytics',
         path: '/dashboard/analytics'
       },
       {
         icon: CartOutline,
         title: 'eCommerce',
-        path: '/dashboard/ecommerce',
-        action: 'read',
-        resource: 'ecommerce'
+        path: '/dashboard/ecommerce'
       }
     ]
   },
@@ -499,7 +497,7 @@ const navigation = (): (NavGroup | NavLink)[] => [
     children: [
       {
         action: 'read',
-        resource: 'ACL',
+        subject: 'ACL',
         icon: ShieldOutline,
         title: 'Access Control',
         path: '/pages/access-control'

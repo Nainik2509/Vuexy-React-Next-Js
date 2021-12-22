@@ -21,12 +21,10 @@ const defaultProvider: AuthValuesType = {
   user: null,
   setUser: () => {},
   isInitialized: false,
-  isAuthenticated: false,
   login: () => Promise.resolve(),
   logout: () => Promise.resolve(),
   setIsInitialized: () => Boolean,
-  register: () => Promise.resolve(),
-  setIsAuthenticated: () => Boolean
+  register: () => Promise.resolve()
 }
 
 const Auth = createContext(defaultProvider)
@@ -39,20 +37,10 @@ const AuthContext: FC<Props> = ({ children }: Props) => {
   // ** States
   const [user, setUser] = useState<any>(defaultProvider.user)
   const [isInitialized, setIsInitialized] = useState<boolean>(defaultProvider.isInitialized)
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(defaultProvider.isAuthenticated)
 
   // ** Hooks
   const router = useRouter()
   const ability = useContext(AbilityContext)
-
-  // const handleACL = (url: string) => {
-  //   if (user !== null && user.routeMeta) {
-  //     const routeMeta = user.routeMeta
-  //     if (!routeMeta.canVisit.includes(url) && !ability.can(routeMeta.action || 'read', routeMeta.resource)) {
-  //       router.push('/login')
-  //     }
-  //   }
-  // }
 
   useEffect(() => {
     const initAuth = async () => {
@@ -60,38 +48,29 @@ const AuthContext: FC<Props> = ({ children }: Props) => {
         const storedToken = window.localStorage.getItem(authConfig.storageTokenKeyName)!
         if (storedToken) {
           setIsInitialized(true)
-          setIsAuthenticated(true)
+
           if (user === null) {
             axios
-              .get('/auth/me', {
+              .get(authConfig.meEndpoint, {
                 headers: {
                   Authorization: window.localStorage.getItem(authConfig.storageTokenKeyName)!
                 }
               })
               .then(response => {
-                // const { role } = response.data.userData
-                // dispatch(handleLogin({ userData: response.data.userData }))
+                setIsInitialized(true)
                 setUser({ ...response.data.userData })
-
-                // await ability.update(response.data.userData.ability)
+                ability.update(response.data.userData.ability)
                 router.push(router.route)
               })
           }
         } else {
           setIsInitialized(false)
-          setIsAuthenticated(false)
           setUser(null)
         }
       }
     }
     initAuth()
   }, [router, user])
-
-  // useEffect(() => {
-  //   router.events.on('routeChangeStart', handleACL)
-
-  //   return () => router.events.off('routeChangeStart', () => console.log('OFF'))
-  // }, [user, router.events])
 
   const handleLogin = (params: LoginParams, errorCallback?: ErrCallbackType) => {
     axios
@@ -101,7 +80,7 @@ const AuthContext: FC<Props> = ({ children }: Props) => {
       })
       .then(() => {
         axios
-          .get('/auth/me', {
+          .get(authConfig.meEndpoint, {
             headers: {
               Authorization: window.localStorage.getItem(authConfig.storageTokenKeyName)!
             }
@@ -111,7 +90,6 @@ const AuthContext: FC<Props> = ({ children }: Props) => {
             const returnURL = router.query.returnUrl
 
             setUser({ ...response.data.userData })
-            setIsAuthenticated(true)
             await window.localStorage.setItem('userData', JSON.stringify(response.data.userData))
             await ability.update(response.data.userData.ability)
             router.push(returnURL || authConfig.redirectURL(role))
@@ -123,8 +101,6 @@ const AuthContext: FC<Props> = ({ children }: Props) => {
   }
 
   const handleLogout = () => {
-    // dispatch(handleLogout())
-    setIsAuthenticated(false)
     setUser(null)
     setIsInitialized(false)
     window.localStorage.removeItem('userData')
@@ -148,9 +124,7 @@ const AuthContext: FC<Props> = ({ children }: Props) => {
     user,
     setUser,
     isInitialized,
-    isAuthenticated,
     setIsInitialized,
-    setIsAuthenticated,
     login: handleLogin,
     logout: handleLogout,
     register: handleRegister
