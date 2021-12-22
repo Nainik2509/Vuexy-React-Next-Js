@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, Ref, useState, forwardRef, ReactElement } from 'react'
+import { Ref, useState, forwardRef, ReactElement } from 'react'
 
 // ** Next Import
 import Image from 'next/image'
@@ -38,7 +38,7 @@ const Transition = forwardRef(function Transition(
   return <Fade ref={ref} {...props} />
 })
 
-const DialogAuthentication: FC = () => {
+const DialogAuthentication = () => {
   // ** States
   const [show, setShow] = useState<boolean>(false)
   const [authType, setAuthType] = useState<'app' | 'sms'>('app')

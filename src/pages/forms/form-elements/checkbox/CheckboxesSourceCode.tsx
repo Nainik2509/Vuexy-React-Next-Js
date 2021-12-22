@@ -1,14 +1,11 @@
 export const CheckboxesBasicCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Checkbox from '@mui/material/Checkbox'
 import FormGroup from '@mui/material/FormGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
-const CheckboxesBasic: FC = () => {
+const CheckboxesBasic = () => {
   return (
     <FormGroup row>
       <FormControlLabel label='Checked' control={<Checkbox defaultChecked name='basic-checked' />} />
@@ -29,15 +26,12 @@ export default CheckboxesBasic
 )
 export const CheckboxesColorsCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Checkbox from '@mui/material/Checkbox'
 import FormGroup from '@mui/material/FormGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
-const CheckboxesColors: FC = () => {
+const CheckboxesColors = () => {
   return (
     <FormGroup row>
       <FormControlLabel label='Primary' control={<Checkbox defaultChecked name='color-primary' />} />
@@ -60,14 +54,14 @@ export default CheckboxesColors
 export const CheckboxesControlledUncontrolledCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { ChangeEvent, FC, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 // ** MUI Imports
 import Checkbox from '@mui/material/Checkbox'
 import FormGroup from '@mui/material/FormGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
-const CheckboxesControlledUncontrolled: FC = () => {
+const CheckboxesControlledUncontrolled = () => {
   // ** State
   const [checked, setChecked] = useState<boolean>(true)
 
@@ -92,10 +86,7 @@ export default CheckboxesControlledUncontrolled
 )
 export const CheckboxesCustomIconsCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Checkbox from '@mui/material/Checkbox'
 import FormGroup from '@mui/material/FormGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
@@ -106,7 +97,7 @@ import Heart from 'mdi-material-ui/Heart'
 import StarOutline from 'mdi-material-ui/StarOutline'
 import HeartOutline from 'mdi-material-ui/HeartOutline'
 
-const CheckboxesCustomIcons: FC = () => {
+const CheckboxesCustomIcons = () => {
   return (
     <FormGroup row>
       <FormControlLabel
@@ -128,7 +119,7 @@ export default CheckboxesCustomIcons
 export const CheckboxesShowErrorCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { ChangeEvent, FC, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -143,7 +134,7 @@ interface StateType {
   [key: string]: boolean
 }
 
-const CheckboxesShowError: FC = () => {
+const CheckboxesShowError = () => {
   // ** State
   const [state, setState] = useState<StateType>({
     gilad: true,
@@ -206,15 +197,12 @@ export default CheckboxesShowError
 )
 export const CheckboxesLabelPlacementCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Checkbox from '@mui/material/Checkbox'
 import FormGroup from '@mui/material/FormGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
-const CheckboxesLabelPlacement: FC = () => {
+const CheckboxesLabelPlacement = () => {
   return (
     <div>
       <FormGroup row>
@@ -247,10 +235,7 @@ export default CheckboxesLabelPlacement
 )
 export const CheckboxesSizesCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Checkbox from '@mui/material/Checkbox'
 import FormGroup from '@mui/material/FormGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
@@ -259,7 +244,7 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import CheckboxMarked from 'mdi-material-ui/CheckboxMarked'
 import CheckboxBlankOutline from 'mdi-material-ui/CheckboxBlankOutline'
 
-const CheckboxesSizes: FC = () => {
+const CheckboxesSizes = () => {
   return (
     <FormGroup row>
       <FormControlLabel
@@ -284,10 +269,7 @@ export default CheckboxesSizes
 )
 export const CheckboxesCustomizedCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import { styled } from '@mui/material/styles'
 import Checkbox, { CheckboxProps } from '@mui/material/Checkbox'
 
@@ -350,7 +332,7 @@ const BpCheckbox = (props: CheckboxProps) => {
   )
 }
 
-const CheckboxesCustomized: FC = () => {
+const CheckboxesCustomized = () => {
   return (
     <div>
       <BpCheckbox />

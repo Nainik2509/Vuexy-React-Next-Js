@@ -1,7 +1,7 @@
 export const RatingsHoverFeedbackCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -21,7 +21,7 @@ const labels: { [index: string]: string } = {
   5: 'Excellent+'
 }
 
-const RatingsHoverFeedback: FC = () => {
+const RatingsHoverFeedback = () => {
   // ** States
   const [hover, setHover] = useState<number>(-1)
   const [value, setValue] = useState<number | null>(2)
@@ -48,7 +48,7 @@ export default RatingsHoverFeedback
 export const RatingsCustomizedCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, ReactElement } from 'react'
+import { ReactElement } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -92,7 +92,7 @@ const IconContainer = (props: IconContainerProps) => {
   return <span {...props}>{customIcons[value].icon}</span>
 }
 
-const RatingsCustomized: FC = () => {
+const RatingsCustomized = () => {
   return (
     <div>
       <Box sx={{ mb: 3 }}>
@@ -128,14 +128,11 @@ export default RatingsCustomized
 )
 export const RatingsSizesCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Rating from '@mui/material/Rating'
 
-const RatingsSizes: FC = () => {
+const RatingsSizes = () => {
   return (
     <Box className='demo-space-y' sx={{ display: 'flex', flexDirection: 'column' }}>
       <Rating defaultValue={2} name='size-small' size='small' />
@@ -151,15 +148,12 @@ export default RatingsSizes
 )
 export const RatingsHalfCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Rating from '@mui/material/Rating'
 import Typography from '@mui/material/Typography'
 
-const RatingsHalf: FC = () => {
+const RatingsHalf = () => {
   return (
     <div>
       <Box sx={{ mb: 3 }}>
@@ -181,14 +175,14 @@ export default RatingsHalf
 export const RatingsBasicCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Rating from '@mui/material/Rating'
 import Typography from '@mui/material/Typography'
 
-const RatingsBasic: FC = () => {
+const RatingsBasic = () => {
   // ** State
   const [value, setValue] = useState<number | null>(2)
 

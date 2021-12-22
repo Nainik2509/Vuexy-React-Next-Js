@@ -1,12 +1,12 @@
 export const TextFieldControlledUncontrolledCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { ChangeEvent, FC, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 // ** MUI Imports
 import TextField from '@mui/material/TextField'
 
-const TextFieldControlledUncontrolled: FC = () => {
+const TextFieldControlledUncontrolled = () => {
   // ** State
   const [name, setName] = useState<string>('Cat in the Hat')
 
@@ -29,7 +29,7 @@ export default TextFieldControlledUncontrolled
 export const TextFieldComponentsCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { ChangeEvent, FC, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 // ** MUI Imports
 import Input from '@mui/material/Input'
@@ -39,7 +39,7 @@ import FilledInput from '@mui/material/FilledInput'
 import OutlinedInput from '@mui/material/OutlinedInput'
 import FormHelperText from '@mui/material/FormHelperText'
 
-const TextFieldComponents: FC = () => {
+const TextFieldComponents = () => {
   // ** State
   const [name, setName] = useState<string>('Composed TextField')
 
@@ -86,13 +86,10 @@ export default TextFieldComponents
 )
 export const TextFieldColorCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import TextField from '@mui/material/TextField'
 
-const TextFieldColor: FC = () => {
+const TextFieldColor = () => {
   return (
     <form className='demo-space-x' noValidate autoComplete='off'>
       <TextField id='color-outlined' label='Outlined success' color='success' />
@@ -108,13 +105,10 @@ export default TextFieldColor
 )
 export const TextFieldFormPropsCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import TextField from '@mui/material/TextField'
 
-const TextFieldFormProps: FC = () => {
+const TextFieldFormProps = () => {
   return (
     <form className='demo-space-x' noValidate autoComplete='off'>
       <TextField required id='form-props-required' label='Required' defaultValue='Hello World' />
@@ -161,10 +155,7 @@ export default TextFieldFormProps
 )
 export const TextFieldCustomizedCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import InputLabel from '@mui/material/InputLabel'
 import FormControl from '@mui/material/FormControl'
 import { alpha, styled } from '@mui/material/styles'
@@ -201,7 +192,7 @@ const InputBase = styled(MuiInputBase)<InputBaseProps>(({ theme }) => ({
   }
 }))
 
-const TextFieldCustomized: FC = () => {
+const TextFieldCustomized = () => {
   return (
     <form noValidate autoComplete='off'>
       <FormControl variant='standard'>
@@ -220,14 +211,11 @@ export default TextFieldCustomized
 )
 export const TextFieldLayoutCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 
-const TextFieldLayout: FC = () => {
+const TextFieldLayout = () => {
   return (
     <Box noValidate component='form' autoComplete='off' sx={{ display: 'flex', flexWrap: 'wrap' }}>
       <TextField fullWidth label='Full width' id='outlined-full-width' sx={{ marginBottom: 4 }} />
@@ -263,13 +251,10 @@ export default TextFieldLayout
 )
 export const TextFieldInputsCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Input from '@mui/material/Input'
 
-const TextFieldInputs: FC = () => {
+const TextFieldInputs = () => {
   return (
     <form className='demo-space-x' noValidate autoComplete='off'>
       <Input defaultValue='Hello world' inputProps={{ 'aria-label': 'description' }} />
@@ -286,10 +271,7 @@ export default TextFieldInputs
 )
 export const TextFieldIconsCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Grid from '@mui/material/Grid'
 import Input from '@mui/material/Input'
 import TextField from '@mui/material/TextField'
@@ -300,7 +282,7 @@ import InputAdornment from '@mui/material/InputAdornment'
 // ** Icons Imports
 import AccountCircleOutline from 'mdi-material-ui/AccountCircleOutline'
 
-const TextFieldIcons: FC = () => {
+const TextFieldIcons = () => {
   return (
     <form className='demo-space-x' noValidate autoComplete='off'>
       <FormControl variant='standard'>
@@ -346,13 +328,10 @@ export default TextFieldIcons
 )
 export const TextFieldSizesCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import TextField from '@mui/material/TextField'
 
-const TextFieldSizes: FC = () => {
+const TextFieldSizes = () => {
   return (
     <form className='demo-space-x' noValidate autoComplete='off'>
       <TextField label='Size' id='size-small' defaultValue='Small' size='small' />
@@ -368,7 +347,7 @@ export default TextFieldSizes
 export const TextFieldInputAdornmentCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { ChangeEvent, FC, MouseEvent, useState } from 'react'
+import { ChangeEvent, MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import TextField from '@mui/material/TextField'
@@ -389,7 +368,7 @@ interface State {
   showPassword: boolean
 }
 
-const TextFieldInputAdornment: FC = () => {
+const TextFieldInputAdornment = () => {
   // ** State
   const [values, setValues] = useState<State>({
     weight: '',
@@ -463,13 +442,10 @@ export default TextFieldInputAdornment
 )
 export const TextFieldValidationCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import TextField from '@mui/material/TextField'
 
-const TextFieldValidation: FC = () => {
+const TextFieldValidation = () => {
   return (
     <form className='demo-space-x' noValidate autoComplete='off'>
       <TextField error id='validation-error' label='Error' defaultValue='Hello World' />
@@ -490,13 +466,10 @@ export default TextFieldValidation
 )
 export const TextFieldVariantCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import TextField from '@mui/material/TextField'
 
-const TextFieldVariant: FC = () => {
+const TextFieldVariant = () => {
   return (
     <form className='demo-space-x' noValidate autoComplete='off'>
       <TextField id='outlined-basic' label='Outlined' />

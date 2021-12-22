@@ -1,7 +1,7 @@
 export const AccordionActionsCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { ChangeEvent, FC, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 // ** MUI Imports
 import Checkbox from '@mui/material/Checkbox'
@@ -14,7 +14,7 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 // ** Icons Imports
 import ChevronDown from 'mdi-material-ui/ChevronDown'
 
-const AccordionActions: FC = () => {
+const AccordionActions = () => {
   // ** State
   const [expanded, setExpanded] = useState<string | false>(false)
 
@@ -100,7 +100,7 @@ export default AccordionActions
 export const AccordionCustomizedCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { ChangeEvent, FC, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 // ** MUI Imports
 import { styled } from '@mui/material/styles'
@@ -162,7 +162,7 @@ const AccordionDetails = styled(MuiAccordionDetails)<AccordionDetailsProps>(({ t
   padding: {theme.spacing(4)} !important
 }))
 
-const AccordionCustomized: FC = () => {
+const AccordionCustomized = () => {
   // ** State
   const [expanded, setExpanded] = useState<string | false>('panel1')
 
@@ -231,10 +231,7 @@ export default AccordionCustomized
 )
 export const AccordionSimpleCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Accordion from '@mui/material/Accordion'
 import Typography from '@mui/material/Typography'
 import AccordionSummary from '@mui/material/AccordionSummary'
@@ -243,7 +240,7 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 // ** Icons Imports
 import ChevronDown from 'mdi-material-ui/ChevronDown'
 
-const AccordionSimple: FC = () => {
+const AccordionSimple = () => {
   return (
     <div>
       <Accordion>
@@ -292,7 +289,7 @@ export default AccordionSimple
 export const AccordionControlledCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { ChangeEvent, FC, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 // ** MUI Imports
 import Accordion from '@mui/material/Accordion'
@@ -303,7 +300,7 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 // ** Icons Imports
 import ChevronDown from 'mdi-material-ui/ChevronDown'
 
-const AccordionControlled: FC = () => {
+const AccordionControlled = () => {
   // ** State
   const [expanded, setExpanded] = useState<string | false>(false)
 

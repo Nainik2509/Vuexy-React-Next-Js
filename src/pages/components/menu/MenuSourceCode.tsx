@@ -1,14 +1,14 @@
 export const MenuBasicCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, MouseEvent, useState } from 'react'
+import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import Menu from '@mui/material/Menu'
 import Button from '@mui/material/Button'
 import MenuItem from '@mui/material/MenuItem'
 
-const MenuBasic: FC = () => {
+const MenuBasic = () => {
   // ** State
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
@@ -41,7 +41,7 @@ export default MenuBasic
 export const MenuCompositionCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, KeyboardEvent, useEffect, useRef, useState, MouseEvent, TouchEvent } from 'react'
+import { KeyboardEvent, useEffect, useRef, useState, MouseEvent, TouchEvent } from 'react'
 
 // ** MUI Imports
 import Grow from '@mui/material/Grow'
@@ -52,7 +52,7 @@ import MenuList from '@mui/material/MenuList'
 import MenuItem from '@mui/material/MenuItem'
 import ClickAwayListener from '@mui/material/ClickAwayListener'
 
-const MenuComposition: FC = () => {
+const MenuComposition = () => {
   // ** States
   const [open, setOpen] = useState<boolean>(false)
   const anchorRef = useRef<HTMLButtonElement | null>(null)
@@ -149,7 +149,7 @@ export default MenuComposition
 export const MenuMaxHeightCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, MouseEvent, useState } from 'react'
+import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import Menu from '@mui/material/Menu'
@@ -178,7 +178,7 @@ const options = [
 
 const ITEM_HEIGHT = 48
 
-const MenuMaxHeight: FC = () => {
+const MenuMaxHeight = () => {
   // ** State
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
@@ -224,7 +224,7 @@ export default MenuMaxHeight
 export const MenuContextCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, MouseEvent, useState } from 'react'
+import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -242,7 +242,7 @@ const initialState = {
   mouseY: null
 }
 
-const MenuContext: FC = () => {
+const MenuContext = () => {
   // ** State
   const [state, setState] = useState<State>(initialState)
 
@@ -292,7 +292,7 @@ export default MenuContext
 export const MenuCustomizedCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, MouseEvent, useState } from 'react'
+import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -324,7 +324,7 @@ const MenuItem = styled(MuiMenuItem)<MenuItemProps>(({ theme }) => ({
   }
 }))
 
-const MenuCustomized: FC = () => {
+const MenuCustomized = () => {
   // ** State
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
@@ -387,7 +387,7 @@ export default MenuCustomized
 export const MenuTransitionCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, MouseEvent, useState } from 'react'
+import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import Menu from '@mui/material/Menu'
@@ -395,7 +395,7 @@ import Fade from '@mui/material/Fade'
 import Button from '@mui/material/Button'
 import MenuItem from '@mui/material/MenuItem'
 
-const MenuTransition: FC = () => {
+const MenuTransition = () => {
   // ** State
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
@@ -435,7 +435,7 @@ export default MenuTransition
 export const MenuSelectedCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, MouseEvent, useState } from 'react'
+import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import List from '@mui/material/List'
@@ -452,7 +452,7 @@ const options = [
   'Hide all notification content'
 ]
 
-const MenuSelected: FC = () => {
+const MenuSelected = () => {
   // ** State
   const [selectedIndex, setSelectedIndex] = useState<number>(1)
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)

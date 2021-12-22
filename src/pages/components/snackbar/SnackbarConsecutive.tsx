@@ -11,12 +11,6 @@ export interface SnackbarMessage {
   message: string
 }
 
-export interface State {
-  open: boolean
-  snackPack: SnackbarMessage[]
-  messageInfo?: SnackbarMessage
-}
-
 const SnackbarConsecutive = () => {
   // ** States
   const [open, setOpen] = useState<boolean>(false)

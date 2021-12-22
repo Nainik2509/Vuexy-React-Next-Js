@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, Ref, useState, forwardRef, ReactElement, ChangeEvent } from 'react'
+import { Ref, useState, forwardRef, ReactElement, ChangeEvent } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -41,7 +41,7 @@ const Transition = forwardRef(function Transition(
   return <Fade ref={ref} {...props} />
 })
 
-const DialogAddCard: FC = () => {
+const DialogAddCard = () => {
   // ** States
   const [name, setName] = useState<string>('')
   const [show, setShow] = useState<boolean>(false)

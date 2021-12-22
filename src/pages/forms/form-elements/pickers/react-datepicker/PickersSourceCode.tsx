@@ -1,7 +1,7 @@
 export const PickersBasicCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -18,7 +18,7 @@ import CustomInput from './PickersCustomInput'
 // ** Types
 import { DateType } from './types'
 
-const PickersBasic: FC = () => {
+const PickersBasic = () => {
   // ** States
   const [date, setDate] = useState<DateType>(new Date())
 
@@ -64,7 +64,7 @@ export default PickersBasic
 export const PickersCallbacksCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState, Fragment } from 'react'
+import { useState, Fragment } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -83,7 +83,7 @@ import CustomInput from './PickersCustomInput'
 // ** Types
 import { DateType } from './types'
 
-const PickersCallbacks: FC = () => {
+const PickersCallbacks = () => {
   // ** States
   const [msg, setMsg] = useState<string>('')
   const [open, setOpen] = useState<boolean>(false)
@@ -149,7 +149,7 @@ export default PickersCallbacks
 export const PickersCustomizationCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -168,7 +168,7 @@ import CustomInput from './PickersCustomInput'
 // ** Types
 import { DateType } from './types'
 
-const PickersCustomization: FC = () => {
+const PickersCustomization = () => {
   // ** States
   const [dateFormat, setDateFormat] = useState<DateType>(new Date())
   const [dateHighlight, setDateHighlight] = useState<DateType>(new Date())
@@ -204,7 +204,7 @@ export default PickersCustomization
 export const PickersIncludeExcludeCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -225,7 +225,7 @@ import CustomInput from './PickersCustomInput'
 // ** Types
 import { DateType } from './types'
 
-const PickersIncludeExclude: FC = () => {
+const PickersIncludeExclude = () => {
   // ** States
   const [date, setDate] = useState<DateType>(new Date())
   const [dateExclude, setDateExclude] = useState<DateType>(new Date())
@@ -295,7 +295,7 @@ export default PickersIncludeExclude
 export const PickersLocaleCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -318,7 +318,7 @@ import { DateType } from './types'
 
 const langObj: any = { fr, ar, en }
 
-const PickersLocale: FC = () => {
+const PickersLocale = () => {
   // ** States
   const [date, setDate] = useState<DateType>(new Date())
   const [time, setTime] = useState<DateType>(new Date())
@@ -361,7 +361,7 @@ export default PickersLocale
 export const PickersMonthYearDropdownsCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -378,7 +378,7 @@ import CustomInput from './PickersCustomInput'
 // ** Types
 import { DateType } from './types'
 
-const PickersMonthYearDropdowns: FC = () => {
+const PickersMonthYearDropdowns = () => {
   // ** States
   const [year, setYear] = useState<DateType>(new Date())
   const [month, setMonth] = useState<DateType>(new Date())
@@ -428,7 +428,7 @@ export default PickersMonthYearDropdowns
 export const PickersCustomInputCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, forwardRef } from 'react'
+import { forwardRef } from 'react'
 
 // ** MUI Imports
 import TextField from '@mui/material/TextField'
@@ -437,7 +437,7 @@ interface PickerProps {
   label?: string
 }
 
-const PickersComponent: FC<PickerProps> = forwardRef(({ ...props }: PickerProps, ref) => {
+const PickersComponent = forwardRef(({ ...props }: PickerProps, ref) => {
   return <TextField inputRef={ref} {...props} label={props.label || ''} />
 })
 
@@ -448,7 +448,7 @@ export default PickersComponent
 export const PickersMinMaxCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -467,7 +467,7 @@ import CustomInput from './PickersCustomInput'
 // ** Types
 import { DateType } from './types'
 
-const PickersMinMax: FC = () => {
+const PickersMinMax = () => {
   // ** States
   const [minDate, setMinDate] = useState<DateType>(new Date())
   const [maxDate, setMaxDate] = useState<DateType>(new Date())
@@ -503,7 +503,7 @@ export default PickersMinMax
 export const PickersRangeCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState, forwardRef } from 'react'
+import { useState, forwardRef } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -519,7 +519,7 @@ import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 // ** Types
 import { DateType } from './types'
 
-const PickersRange: FC = () => {
+const PickersRange = () => {
   // ** States
   const [endDate, setEndDate] = useState<DateType>(null)
   const [startDate, setStartDate] = useState<DateType>(new Date())
@@ -585,7 +585,7 @@ export default PickersRange
 export const PickersTimeCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -603,7 +603,7 @@ import CustomInput from './PickersCustomInput'
 // ** Types
 import { DateType } from './types'
 
-const PickersTime: FC = () => {
+const PickersTime = () => {
   // ** States
   const [time, setTime] = useState<DateType>(new Date())
   const [dateTime, setDateTime] = useState<DateType>(new Date())
@@ -670,7 +670,7 @@ export default PickersTime
 export const PickersMonthYearQuarterCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -687,7 +687,7 @@ import CustomInput from './PickersCustomInput'
 // ** Types
 import { DateType } from './types'
 
-const PickersMonthYear: FC = () => {
+const PickersMonthYear = () => {
   // ** States
   const [year, setYear] = useState<DateType>(new Date())
   const [month, setMonth] = useState<DateType>(new Date())
@@ -736,7 +736,7 @@ export default PickersMonthYear
 export const PickersSpecificRangeCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -756,7 +756,7 @@ import CustomInput from './PickersCustomInput'
 // ** Types
 import { DateType } from './types'
 
-const PickersSpecificRange: FC = () => {
+const PickersSpecificRange = () => {
   // ** States
   const [date, setDate] = useState<DateType>(new Date())
   const [time, setTime] = useState<DateType>(new Date())
@@ -796,7 +796,7 @@ export default PickersSpecificRange
 export const PickersOptionsCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -813,7 +813,7 @@ import CustomInput from './PickersCustomInput'
 // ** Types
 import { DateType } from './types'
 
-const PickersOptions: FC = () => {
+const PickersOptions = () => {
   // ** States
   const [dateOpen, setDateOpen] = useState<DateType>(null)
   const [dateClear, setDateClear] = useState<DateType>(new Date())

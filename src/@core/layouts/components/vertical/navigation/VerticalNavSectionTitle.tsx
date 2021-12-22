@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import { styled } from '@mui/material/styles'
 import Typography, { TypographyProps } from '@mui/material/Typography'
@@ -46,7 +43,7 @@ const TypographyHeaderText = styled(Typography)<TypographyProps>(({ theme }) => 
   fontWeight: theme.typography.fontWeightMedium
 }))
 
-const VerticalNavSectionTitle: FC<Props> = (props: Props) => {
+const VerticalNavSectionTitle = (props: Props) => {
   // ** Props
   const { item, navHover, settings, navigationBorderWidth } = props
 

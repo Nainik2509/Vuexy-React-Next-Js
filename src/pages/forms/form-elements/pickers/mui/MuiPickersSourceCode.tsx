@@ -1,7 +1,7 @@
 export const TimePickersCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -18,7 +18,7 @@ import { useTranslation } from 'react-i18next'
 
 const langObj: any = { fr, ar, en }
 
-const TimePickers: FC = () => {
+const TimePickers = () => {
   // ** State
   const [basicPicker, setBasicPicker] = useState<Date | null>(new Date())
   const [minMaxPicker, setMinMaxPicker] = useState<Date | null>(new Date())
@@ -99,7 +99,7 @@ export default TimePickers
 export const DateTimePickersCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -117,7 +117,7 @@ import { useTranslation } from 'react-i18next'
 
 const langObj: any = { fr, ar, en }
 
-const DateTimePickers: FC = () => {
+const DateTimePickers = () => {
   // ** State
   const [basicPicker, setBasicPicker] = useState<Date | null>(new Date())
 
@@ -188,7 +188,7 @@ export default DateTimePickers
 export const DatePickersCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -206,7 +206,7 @@ import { useTranslation } from 'react-i18next'
 
 const langObj: any = { fr, ar, en }
 
-const DatePickers: FC = () => {
+const DatePickers = () => {
   // ** State
   const [basicPicker, setBasicPicker] = useState<Date | null>(new Date())
 

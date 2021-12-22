@@ -4,7 +4,6 @@ import { ChangeEvent, MouseEvent, ReactNode, SyntheticEvent, useState } from 're
 // ** Next Imports
 import Link from 'next/link'
 import Image from 'next/image'
-import type { NextPage } from 'next'
 
 // ** MUI Components
 import Button from '@mui/material/Button'
@@ -99,7 +98,7 @@ const LinkStyled = styled('a')(({ theme }) => ({
   color: theme.palette.primary.main
 }))
 
-const ResetPasswordV2: NextPage = () => {
+const ResetPasswordV2 = () => {
   // ** States
   const [values, setValues] = useState<State>({
     newPassword: '',

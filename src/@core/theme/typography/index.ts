@@ -2,22 +2,7 @@
 import { Theme } from '@mui/material'
 
 const Typography = (theme: Theme) => {
-
   return {
-    fontFamily: [
-      'Inter',
-      'sans-serif',
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Segoe UI"',
-      'Roboto',
-      '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"'
-    ].join(','),
     h1: {
       letterSpacing: '-1.5px',
       color: theme.palette.text.primary

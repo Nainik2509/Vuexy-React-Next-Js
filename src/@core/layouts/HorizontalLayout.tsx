@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, ReactNode, useState } from 'react'
+import { ReactNode, useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -59,7 +59,7 @@ const ContentWrapper = styled('main')(({ theme }) => ({
   }
 }))
 
-const HorizontalLayout: FC<Props> = (props: Props) => {
+const HorizontalLayout = (props: Props) => {
   // ** Props
   const { hidden, children, settings, saveSettings } = props
 

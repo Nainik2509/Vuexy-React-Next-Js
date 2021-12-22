@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Switch from '@mui/material/Switch'
@@ -22,7 +19,7 @@ const FormControlLabel = styled(MuiFormControlLabel)<FormControlLabelProps>(({ t
   }
 }))
 
-const TabNotifications: FC = () => {
+const TabNotifications = () => {
   return (
     <CardContent>
       <Box sx={{ mb: 3.5, display: 'flex', alignItems: 'center' }}>

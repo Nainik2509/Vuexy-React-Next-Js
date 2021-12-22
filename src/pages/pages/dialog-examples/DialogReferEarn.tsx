@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, Ref, useState, forwardRef, ReactElement } from 'react'
+import { Ref, useState, forwardRef, ReactElement } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -64,7 +64,7 @@ const LinkedInBtn = styled(IconButton)<IconButtonProps>(({ theme }) => {
   }
 })
 
-const DialogReferEarn: FC = () => {
+const DialogReferEarn = () => {
   // ** States
   const [show, setShow] = useState<boolean>(false)
 

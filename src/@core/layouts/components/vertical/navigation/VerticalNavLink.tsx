@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, ElementType, ReactNode } from 'react'
+import { ElementType, ReactNode } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
@@ -57,7 +57,7 @@ const MenuItemTextMetaWrapper = styled(Box)<BoxProps>({
   ...(themeConfig.menuTextTruncate && { overflow: 'hidden' })
 })
 
-const VerticalNavLink: FC<Props> = ({
+const VerticalNavLink = ({
   item,
   parent,
   navHover,

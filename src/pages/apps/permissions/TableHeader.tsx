@@ -1,5 +1,5 @@
 // ** React Imports
-import { memo, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Dialog from '@mui/material/Dialog'
@@ -141,4 +141,4 @@ const TableHeader = (props: TableHeaderProps) => {
   )
 }
 
-export default memo(TableHeader)
+export default TableHeader

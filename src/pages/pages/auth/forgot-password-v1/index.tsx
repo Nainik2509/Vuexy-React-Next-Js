@@ -4,7 +4,6 @@ import { ReactNode, SyntheticEvent } from 'react'
 // ** Next Imports
 import Link from 'next/link'
 import Image from 'next/image'
-import type { NextPage } from 'next'
 
 // ** MUI Components
 import Box from '@mui/material/Box'
@@ -41,7 +40,7 @@ const LinkStyled = styled('a')(({ theme }) => ({
   color: theme.palette.primary.main
 }))
 
-const ForgotPasswordV1: NextPage = () => {
+const ForgotPasswordV1 = () => {
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault()
   }

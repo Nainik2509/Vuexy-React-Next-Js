@@ -1,5 +1,5 @@
 // ** React Import
-import { FC, ReactNode, useState } from 'react'
+import { ReactNode, useState } from 'react'
 
 // ** Third Party Components
 import PerfectScrollbar from 'react-perfect-scrollbar'
@@ -29,7 +29,7 @@ interface Props {
   saveSettings: (values: Settings) => void
 }
 
-const Navigation: FC<Props> = (props: Props) => {
+const Navigation = (props: Props) => {
   // ** States
   const [groupActive, setGroupActive] = useState<string[]>([])
   const [currentActiveGroup, setCurrentActiveGroup] = useState<string[]>([])

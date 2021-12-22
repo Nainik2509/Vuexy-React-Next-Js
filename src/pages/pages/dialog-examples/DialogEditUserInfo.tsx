@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, Ref, useState, forwardRef, ReactElement } from 'react'
+import { Ref, useState, forwardRef, ReactElement } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -33,7 +33,7 @@ const Transition = forwardRef(function Transition(
   return <Fade ref={ref} {...props} />
 })
 
-const DialogEditUserInfo: FC = () => {
+const DialogEditUserInfo = () => {
   // ** States
   const [show, setShow] = useState<boolean>(false)
   const [languages, setLanguages] = useState<string[]>([])
@@ -52,7 +52,7 @@ const DialogEditUserInfo: FC = () => {
         <Typography variant='h6' sx={{ mb: 4 }}>
           Edit User Info
         </Typography>
-        <Typography sx={{ mb: 3 }}>Use this modal to modify the existing user's current information.</Typography>
+        <Typography sx={{ mb: 3 }}>Use this modal to modify the existing user&prime;s current information.</Typography>
         <Button variant='contained' onClick={() => setShow(true)}>
           Show
         </Button>

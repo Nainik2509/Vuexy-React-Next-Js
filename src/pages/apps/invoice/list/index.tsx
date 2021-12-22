@@ -1,7 +1,7 @@
 // ** React Imports
 import { Fragment, useState, useEffect, MouseEvent, ReactElement, forwardRef } from 'react'
 
-// ** Next Imports
+// ** Next Import
 import Link from 'next/link'
 
 // ** MUI Imports

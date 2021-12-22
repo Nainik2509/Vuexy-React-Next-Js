@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
 
@@ -10,12 +7,12 @@ import PlanDetails from 'src/@core/components/plan-details'
 // ** Types
 import { PricingDataType, PricingPlanType } from 'src/@core/components/plan-details/types'
 
-interface State {
+interface Props {
   plan: string
   data: PricingDataType | null
 }
 
-const PricingPlans: FC<State> = (props: State) => {
+const PricingPlans = (props: Props) => {
   // ** Props
   const { plan, data } = props
 

@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
@@ -19,7 +16,7 @@ interface LineProps {
   gridLineColor: string
 }
 
-const ChartjsLineChart: FC<LineProps> = (props: LineProps) => {
+const ChartjsLineChart = (props: LineProps) => {
   // ** Props
   const { white, primary, success, warning, labelColor, borderColor, gridLineColor } = props
 

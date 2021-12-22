@@ -1,7 +1,4 @@
-// ** React Import
-import { FC } from 'react'
-
-// ** MUI
+// ** MUI Imports
 import { styled } from '@mui/material/styles'
 import Box, { BoxProps } from '@mui/material/Box'
 
@@ -30,7 +27,7 @@ const BlankLayoutWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   }
 }))
 
-const BlankLayout: FC<BlankLayoutProps> = ({ children }: BlankLayoutProps) => {
+const BlankLayout = ({ children }: BlankLayoutProps) => {
   return (
     <BlankLayoutWrapper className='layout-wrapper'>
       <Box className='app-content' sx={{ minHeight: '100vh', overflowX: 'hidden', position: 'relative' }}>

@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, ReactNode } from 'react'
+import { ReactNode } from 'react'
 
 // ** MUI Imports
 import { deepmerge } from '@mui/utils'
@@ -33,7 +33,7 @@ interface Props {
   children: ReactNode
 }
 
-const ThemeComponent: FC<Props> = props => {
+const ThemeComponent = (props: Props) => {
   // ** Props
   const { settings, children } = props
 

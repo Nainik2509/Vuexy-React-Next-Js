@@ -1,5 +1,5 @@
 // ** React Imports
-import { ChangeEvent, FC, Fragment, MouseEvent, useState } from 'react'
+import { ChangeEvent, Fragment, MouseEvent, useState } from 'react'
 
 // ** Next Import
 import Image from 'next/image'
@@ -35,7 +35,7 @@ interface State {
   showConfirmNewPassword: boolean
 }
 
-const TabSecurity: FC = () => {
+const TabSecurity = () => {
   // ** States
   const [values, setValues] = useState<State>({
     newPassword: '',

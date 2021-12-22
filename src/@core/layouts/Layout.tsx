@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import { Theme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
@@ -18,7 +15,7 @@ type Props = LayoutProps & {
   saveSettings: (values: Settings) => void
 }
 
-const Layout: FC<Props> = (props: Props) => {
+const Layout = (props: Props) => {
   const { children, settings } = props
 
   const hidden = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))

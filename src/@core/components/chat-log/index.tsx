@@ -1,5 +1,5 @@
 // ** React Imports
-import { memo, useRef, useEffect, Ref } from 'react'
+import { useRef, useEffect, Ref } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -202,4 +202,4 @@ const ChatLog = (props: ChatLogType) => {
   )
 }
 
-export default memo(ChatLog)
+export default ChatLog

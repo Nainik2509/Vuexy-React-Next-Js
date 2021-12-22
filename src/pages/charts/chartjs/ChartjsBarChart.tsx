@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, forwardRef, useState } from 'react'
+import { forwardRef, useState } from 'react'
 
 // ** MUI Imports
 import Card from '@mui/material/Card'
@@ -30,7 +30,7 @@ interface BarProp {
   gridLineColor: string
 }
 
-const ChartjsBarChart: FC<BarProp> = (props: BarProp) => {
+const ChartjsBarChart = (props: BarProp) => {
   // ** Props
   const { yellow, labelColor, borderColor, gridLineColor } = props
 

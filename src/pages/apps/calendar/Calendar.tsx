@@ -1,5 +1,5 @@
 // ** React Import
-import { useEffect, useRef, memo } from 'react'
+import { useEffect, useRef } from 'react'
 
 // ** Full Calendar & it's Plugins
 import FullCalendar from '@fullcalendar/react'
@@ -161,4 +161,4 @@ const Calendar = (props: CalendarType) => {
   return <FullCalendar {...calendarOptions} />
 }
 
-export default memo(Calendar)
+export default Calendar

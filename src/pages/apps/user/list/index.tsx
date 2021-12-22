@@ -1,7 +1,7 @@
 // ** React Imports
-import { memo, Fragment, useState, useEffect, MouseEvent, useCallback, ReactElement } from 'react'
+import { Fragment, useState, useEffect, MouseEvent, useCallback, ReactElement } from 'react'
 
-// ** Next Imports
+// ** Next Import
 import Link from 'next/link'
 
 // ** MUI Imports
@@ -417,4 +417,4 @@ const UserList = () => {
   )
 }
 
-export default memo(UserList)
+export default UserList

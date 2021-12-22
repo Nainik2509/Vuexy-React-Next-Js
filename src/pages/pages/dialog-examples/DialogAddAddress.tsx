@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, Ref, useState, forwardRef, ReactElement } from 'react'
+import { Ref, useState, forwardRef, ReactElement } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -36,7 +36,7 @@ const Transition = forwardRef(function Transition(
   return <Fade ref={ref} {...props} />
 })
 
-const DialogAddAddress: FC = () => {
+const DialogAddAddress = () => {
   // ** States
   const [show, setShow] = useState<boolean>(false)
   const [addressType, setAddressType] = useState<'home' | 'office'>('home')

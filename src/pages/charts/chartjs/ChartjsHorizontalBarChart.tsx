@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
@@ -17,7 +14,7 @@ interface HorizontalBarProps {
   gridLineColor: string
 }
 
-const ChartjsHorizontalBarChart: FC<HorizontalBarProps> = (props: HorizontalBarProps) => {
+const ChartjsHorizontalBarChart = (props: HorizontalBarProps) => {
   // ** Props
   const { info, warning, labelColor, borderColor, gridLineColor } = props
 

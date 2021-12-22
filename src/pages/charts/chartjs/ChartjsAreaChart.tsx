@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, forwardRef, useState } from 'react'
+import { forwardRef, useState } from 'react'
 
 // ** MUI Imports
 import Card from '@mui/material/Card'
@@ -32,7 +32,7 @@ interface AreaProps {
   borderColor: string
 }
 
-const ChartjsAreaChart: FC<AreaProps> = (props: AreaProps) => {
+const ChartjsAreaChart = (props: AreaProps) => {
   // ** Props
   const { blue, white, blueLight, greyLight, labelColor, borderColor } = props
 

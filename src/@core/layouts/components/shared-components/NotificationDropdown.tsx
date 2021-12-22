@@ -1,8 +1,8 @@
+// ** React Imports
+import { useState, SyntheticEvent, Fragment } from 'react'
+
 // ** Next Import
 import Image from 'next/image'
-
-// ** React Imports
-import { FC, memo, useState, SyntheticEvent, Fragment } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -88,7 +88,7 @@ const MenuItemSubtitle = styled(Typography)<TypographyProps>({
   textOverflow: 'ellipsis'
 })
 
-const NotificationDropdown: FC<Props> = (props: Props) => {
+const NotificationDropdown = (props: Props) => {
   // ** Props
   const { settings } = props
 
@@ -205,4 +205,4 @@ const NotificationDropdown: FC<Props> = (props: Props) => {
   )
 }
 
-export default memo(NotificationDropdown)
+export default NotificationDropdown

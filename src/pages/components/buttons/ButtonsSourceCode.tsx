@@ -1,9 +1,6 @@
 export const ButtonsFabCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Fab from '@mui/material/Fab'
 
 // ** Icons Import
@@ -12,7 +9,7 @@ import Heart from 'mdi-material-ui/Heart'
 import Pencil from 'mdi-material-ui/Pencil'
 import NavigationOutline from 'mdi-material-ui/NavigationOutline'
 
-const ButtonsFab: FC = () => {
+const ButtonsFab = () => {
   return (
     <div className='demo-space-x'>
       <Fab aria-label='add'>
@@ -39,12 +36,12 @@ export default ButtonsFab
 export const ButtonsColorsCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, Fragment } from 'react'
+import { Fragment } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
 
-const ButtonsColors: FC = () => {
+const ButtonsColors = () => {
   return (
     <Fragment>
       <div className='demo-space-x'>
@@ -91,13 +88,10 @@ export default ButtonsColors
 )
 export const ButtonsContainedCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Button from '@mui/material/Button'
 
-const ButtonsContained: FC = () => {
+const ButtonsContained = () => {
   return (
     <div className='demo-space-x'>
       <Button variant='contained'>Primary</Button>
@@ -120,10 +114,7 @@ export default ButtonsContained
 )
 export const ButtonsCustomizedCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import { brown } from '@mui/material/colors'
 import { styled } from '@mui/material/styles'
 import Button, { ButtonProps } from '@mui/material/Button'
@@ -174,7 +165,7 @@ const BootstrapButton = styled(Button)({
   }
 })
 
-const ButtonsCustomized: FC = () => {
+const ButtonsCustomized = () => {
   return (
     <div className='demo-space-x'>
       <CustomButton variant='contained'>Custom Color</CustomButton>
@@ -191,16 +182,13 @@ export default ButtonsCustomized
 )
 export const ButtonsIconsCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import IconButton from '@mui/material/IconButton'
 
 // ** Icons Imports
 import CameraIris from 'mdi-material-ui/CameraIris'
 
-const ButtonsIcons: FC = () => {
+const ButtonsIcons = () => {
   return (
     <div className='demo-space-x'>
       <IconButton aria-label='capture screenshot'>
@@ -226,7 +214,7 @@ export default ButtonsIcons
 export const ButtonsSizesCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, Fragment } from 'react'
+import { Fragment } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -235,7 +223,7 @@ import IconButton from '@mui/material/IconButton'
 // ** Icons Imports
 import CameraIris from 'mdi-material-ui/CameraIris'
 
-const ButtonsSizes: FC = () => {
+const ButtonsSizes = () => {
   return (
     <Fragment>
       <div className='demo-space-x'>
@@ -295,13 +283,10 @@ export default ButtonsSizes
 )
 export const ButtonsTextCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Button from '@mui/material/Button'
 
-const ButtonsText: FC = () => {
+const ButtonsText = () => {
   return (
     <div className='demo-space-x'>
       <Button variant='text'>Primary</Button>
@@ -324,17 +309,14 @@ export default ButtonsText
 )
 export const ButtonsWithIconAndLabelCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Button from '@mui/material/Button'
 
 // ** Icons Imports
 import Send from 'mdi-material-ui/Send'
 import DeleteOutline from 'mdi-material-ui/DeleteOutline'
 
-const ButtonsWithIconAndLabel: FC = () => {
+const ButtonsWithIconAndLabel = () => {
   return (
     <div className='demo-space-x'>
       <Button variant='contained' endIcon={<Send />}>
@@ -354,7 +336,7 @@ export default ButtonsWithIconAndLabel
 export const ButtonsFabSizesCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, Fragment } from 'react'
+import { Fragment } from 'react'
 
 // ** MUI Imports
 import Fab from '@mui/material/Fab'
@@ -363,7 +345,7 @@ import Fab from '@mui/material/Fab'
 import Plus from 'mdi-material-ui/Plus'
 import NavigationOutline from 'mdi-material-ui/NavigationOutline'
 
-const ButtonsFabSizes: FC = () => {
+const ButtonsFabSizes = () => {
   return (
     <Fragment>
       <div className='demo-space-x'>
@@ -401,13 +383,10 @@ export default ButtonsFabSizes
 )
 export const ButtonsOutlinedCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Button from '@mui/material/Button'
 
-const ButtonsOutlined: FC = () => {
+const ButtonsOutlined = () => {
   return (
     <div className='demo-space-x'>
       <Button variant='outlined'>Primary</Button>

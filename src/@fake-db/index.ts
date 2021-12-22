@@ -1,5 +1,6 @@
 import mock from './mock'
 
+import './cards'
 import './table'
 import './auth/jwt'
 import './apps/chat'

@@ -24,10 +24,9 @@ react-i18next provides the `useTranslation` hook to translate & change languages
 **Usage**
 
 ```jsx
-import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
-const Component: FC = () => {
+const Component = () => {
   const { t, i18n } = useTranslation()
 
   return (

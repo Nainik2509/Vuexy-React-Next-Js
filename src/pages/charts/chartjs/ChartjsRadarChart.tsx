@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
@@ -14,7 +11,7 @@ interface RadarProps {
   gridLineColor: string
 }
 
-const ChartjsRadarChart: FC<RadarProps> = (props: RadarProps) => {
+const ChartjsRadarChart = (props: RadarProps) => {
   // ** Props
   const { labelColor, gridLineColor } = props
 

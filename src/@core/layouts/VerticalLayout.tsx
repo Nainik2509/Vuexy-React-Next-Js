@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, ReactNode, useState } from 'react'
+import { ReactNode, useState } from 'react'
 
 // ** MUI Imports
 import Backdrop from '@mui/material/Backdrop'
@@ -50,7 +50,7 @@ const ContentWrapper = styled('main')(({ theme }) => ({
   }
 }))
 
-const VerticalLayout: FC<Props> = (props: Props) => {
+const VerticalLayout = (props: Props) => {
   // ** Props
   const { hidden, settings, children } = props
 

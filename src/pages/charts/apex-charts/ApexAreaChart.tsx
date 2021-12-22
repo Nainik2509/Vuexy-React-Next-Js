@@ -1,7 +1,7 @@
 // ** React Imports
 import { forwardRef, useState } from 'react'
 
-// ** Next Imports
+// ** Next Import
 import dynamic from 'next/dynamic'
 
 // ** MUI Imports

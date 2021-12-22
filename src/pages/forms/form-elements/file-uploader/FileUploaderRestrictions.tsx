@@ -1,7 +1,7 @@
 // ** React Imports
 import { Fragment, MouseEvent, SyntheticEvent, useState } from 'react'
 
-// ** Next Imports
+// ** Next Import
 import Image from 'next/image'
 
 // ** MUI Imports

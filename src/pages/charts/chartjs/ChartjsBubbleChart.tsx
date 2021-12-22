@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -25,7 +22,7 @@ interface BubbleProps {
   gridLineColor: string
 }
 
-const ChartjsBubbleChart: FC<BubbleProps> = (props: BubbleProps) => {
+const ChartjsBubbleChart = (props: BubbleProps) => {
   // ** Props
   const { yellow, primary, labelColor, borderColor, gridLineColor } = props
 

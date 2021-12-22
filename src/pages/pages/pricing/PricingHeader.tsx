@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, ChangeEvent } from 'react'
+import { ChangeEvent } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -7,12 +7,12 @@ import Switch from '@mui/material/Switch'
 import Typography from '@mui/material/Typography'
 import InputLabel from '@mui/material/InputLabel'
 
-interface State {
+interface Props {
   plan: string
   handleChange: (e: ChangeEvent<{ checked: boolean }>) => void
 }
 
-const PricingHeader: FC<State> = (props: State) => {
+const PricingHeader = (props: Props) => {
   // ** Props
   const { plan, handleChange } = props
 

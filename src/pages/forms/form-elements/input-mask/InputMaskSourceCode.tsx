@@ -1,9 +1,6 @@
 export const InputMaskExamplesCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Grid from '@mui/material/Grid'
 import InputLabel from '@mui/material/InputLabel'
 
@@ -14,7 +11,7 @@ import 'cleave.js/dist/addons/cleave-phone.us'
 // ** Styled component
 import CleaveWrapper from 'src/@core/styles/libs/react-cleave'
 
-const InputMaskExamples: FC = () => {
+const InputMaskExamples = () => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12} sm={6} lg={4}>

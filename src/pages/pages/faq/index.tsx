@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, Fragment, useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 
 // ** MUI Imports
 import { styled } from '@mui/material/styles'
@@ -31,7 +31,7 @@ const StyledBox = styled(Box)<BoxProps>(({ theme }) => ({
   }
 }))
 
-const FAQ: FC = () => {
+const FAQ = () => {
   // ** States
   const [data, setData] = useState<FaqType[] | null>(null)
   const [searchTerm, setSearchTerm] = useState<string>('')

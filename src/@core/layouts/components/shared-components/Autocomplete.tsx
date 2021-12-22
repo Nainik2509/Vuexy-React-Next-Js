@@ -1,8 +1,8 @@
+// ** React Imports
+import { ChangeEvent, Fragment, useCallback, useEffect, useRef, useState } from 'react'
+
 // ** Next Import
 import { useRouter } from 'next/router'
-
-// ** React Imports
-import { ChangeEvent, FC, Fragment, useCallback, useEffect, useRef, useState } from 'react'
 
 // ** MUI Imports
 import Avatar from '@mui/material/Avatar'
@@ -87,7 +87,7 @@ const ImgFiles = styled('img')(({ theme }) => ({
   marginRight: theme.spacing(2.5)
 }))
 
-const AutocompleteComponent: FC<Props> = ({ hidden, setShowBackdrop }: Props) => {
+const AutocompleteComponent = ({ hidden, setShowBackdrop }: Props) => {
   // ** States
   const [searchValue, setSearchValue] = useState<string>('')
   const [options, setOptions] = useState<AppBarSearchType[]>([])

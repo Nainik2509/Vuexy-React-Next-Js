@@ -4,7 +4,6 @@ import { useState, Fragment, ChangeEvent, MouseEvent, ReactNode } from 'react'
 // ** Next Imports
 import Link from 'next/link'
 import Image from 'next/image'
-import type { NextPage } from 'next'
 
 // ** MUI Components
 import Box from '@mui/material/Box'
@@ -65,7 +64,7 @@ const FormControlLabel = styled(MuiFormControlLabel)<FormControlLabelProps>(({ t
   }
 }))
 
-const RegisterV1: NextPage = () => {
+const RegisterV1 = () => {
   // ** States
   const [values, setValues] = useState<State>({
     password: '',

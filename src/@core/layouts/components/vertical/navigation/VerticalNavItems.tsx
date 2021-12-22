@@ -1,6 +1,3 @@
-// ** React Imports
-import { FC } from 'react'
-
 // ** Types Import
 import { Settings } from 'src/@core/context/settingsContext'
 import { NavLink, NavGroup, NavSectionTitle, VerticalNavItemsType } from 'src/@core/layouts/types'
@@ -35,7 +32,7 @@ const resolveNavItemComponent = (item: NavGroup | NavLink | NavSectionTitle) => 
   return VerticalNavLink
 }
 
-const VerticalNavItems: FC<Props> = (props: Props) => {
+const VerticalNavItems = (props: Props) => {
   // ** Props
   const { verticalNavItems } = props
 

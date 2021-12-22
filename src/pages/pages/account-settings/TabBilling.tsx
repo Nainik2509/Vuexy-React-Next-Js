@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, useState, ChangeEvent } from 'react'
+import { useState, ChangeEvent } from 'react'
 
 // ** MUI Imports
 import Radio from '@mui/material/Radio'
@@ -75,7 +75,7 @@ const CreditCardWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   }
 }))
 
-const TabBilling: FC = () => {
+const TabBilling = () => {
   // ** States
   const [name, setName] = useState<string>('')
   const [cvc, setCvc] = useState<string | number>('')

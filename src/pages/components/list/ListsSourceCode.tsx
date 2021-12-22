@@ -1,7 +1,7 @@
 export const ListItemSelectedCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import List from '@mui/material/List'
@@ -16,7 +16,7 @@ import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
 // ** Icons Imports
 import MessageTextOutline from 'mdi-material-ui/MessageTextOutline'
 
-const ListItemSelected: FC = () => {
+const ListItemSelected = () => {
   // ** State
   const [selectedIndex, setSelectedIndex] = useState<number>(1)
 
@@ -76,7 +76,7 @@ export default ListItemSelected
 export const ListNestedCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, Fragment, useState } from 'react'
+import { Fragment, useState } from 'react'
 
 // ** MUI Imports
 import List from '@mui/material/List'
@@ -96,7 +96,7 @@ import EmailOutline from 'mdi-material-ui/EmailOutline'
 import ClockOutline from 'mdi-material-ui/ClockOutline'
 import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
 
-const ListNested: FC = () => {
+const ListNested = () => {
   // ** State
   const [open, setOpen] = useState<boolean>(true)
 
@@ -166,10 +166,7 @@ export default ListNested
 )
 export const ListSecondaryCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import List from '@mui/material/List'
 import Avatar from '@mui/material/Avatar'
 import ListItem from '@mui/material/ListItem'
@@ -181,7 +178,7 @@ import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
 // ** Icons Imports
 import Plus from 'mdi-material-ui/Plus'
 
-const ListSecondary: FC = () => {
+const ListSecondary = () => {
   return (
     <List>
       <ListItem>
@@ -228,7 +225,7 @@ export default ListSecondary
 export const ListSimpleCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, Fragment } from 'react'
+import { Fragment } from 'react'
 
 // ** MUI Imports
 import List from '@mui/material/List'
@@ -244,7 +241,7 @@ import EmailOutline from 'mdi-material-ui/EmailOutline'
 import ClockOutline from 'mdi-material-ui/ClockOutline'
 import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
 
-const ListSimple: FC = () => {
+const ListSimple = () => {
   return (
     <Fragment>
       <List component='nav' aria-label='main mailbox'>
@@ -295,7 +292,7 @@ export default ListSimple
 export const ListWithCheckboxCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import List from '@mui/material/List'
@@ -307,7 +304,7 @@ import ListItemButton from '@mui/material/ListItemButton'
 import ListItemAvatar from '@mui/material/ListItemAvatar'
 import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
 
-const ListWithCheckbox: FC = () => {
+const ListWithCheckbox = () => {
   // ** State
   const [checked, setChecked] = useState<number[]>([0])
 
@@ -391,7 +388,7 @@ export default ListWithCheckbox
 export const ListWithSwitchCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import List from '@mui/material/List'
@@ -410,7 +407,7 @@ import Bluetooth from 'mdi-material-ui/Bluetooth'
 import MapMarkerOutline from 'mdi-material-ui/MapMarkerOutline'
 import MinusCircleOutline from 'mdi-material-ui/MinusCircleOutline'
 
-const ListWithSwitch: FC = () => {
+const ListWithSwitch = () => {
   // ** State
   const [checked, setChecked] = useState<string[]>(['wifi', 'location'])
 
@@ -497,17 +494,14 @@ export default ListWithSwitch
 )
 export const ListStickySubheaderCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
 import ListSubheader from '@mui/material/ListSubheader'
 
-const ListWithSwitch: FC = () => {
+const ListWithSwitch = () => {
   return (
     <List subheader={<li />} sx={{ maxHeight: 300, overflow: 'auto', position: 'relative' }}>
       {[0, 1, 2, 3, 4].map(sectionId => (
@@ -533,7 +527,7 @@ export default ListWithSwitch
 export const ListDenseCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, Fragment } from 'react'
+import { Fragment } from 'react'
 
 // ** MUI Imports
 import List from '@mui/material/List'
@@ -549,7 +543,7 @@ import EmailOutline from 'mdi-material-ui/EmailOutline'
 import ClockOutline from 'mdi-material-ui/ClockOutline'
 import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
 
-const ListDense: FC = () => {
+const ListDense = () => {
   return (
     <Fragment>
       <List dense>

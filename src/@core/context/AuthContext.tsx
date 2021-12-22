@@ -1,7 +1,7 @@
 // ** React Imports
-import { createContext, FC, useEffect, useState, ReactNode, useContext } from 'react'
+import { createContext, useEffect, useState, ReactNode, useContext } from 'react'
 
-// ** Next Imports
+// ** Next Import
 import { useRouter } from 'next/router'
 
 // ** Axios
@@ -19,7 +19,7 @@ import { AuthValuesType, RegisterParams, LoginParams, ErrCallbackType } from './
 // ** Defaults
 const defaultProvider: AuthValuesType = {
   user: null,
-  setUser: () => {},
+  setUser: () => null,
   isInitialized: false,
   login: () => Promise.resolve(),
   logout: () => Promise.resolve(),
@@ -33,7 +33,7 @@ type Props = {
   children: ReactNode
 }
 
-const AuthContext: FC<Props> = ({ children }: Props) => {
+const AuthContext = ({ children }: Props) => {
   // ** States
   const [user, setUser] = useState<any>(defaultProvider.user)
   const [isInitialized, setIsInitialized] = useState<boolean>(defaultProvider.isInitialized)

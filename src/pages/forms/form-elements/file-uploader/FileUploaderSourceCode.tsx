@@ -1,7 +1,7 @@
 export const FileUploaderMultipleCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, Fragment, useState, SyntheticEvent } from 'react'
+import { Fragment, useState, SyntheticEvent } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -51,7 +51,7 @@ const HeadingTypography = styled(Typography)<TypographyProps>(({ theme }) => ({
   }
 }))
 
-const FileUploaderMultiple: FC = () => {
+const FileUploaderMultiple = () => {
   // ** State
   const [files, setFiles] = useState<File[]>([])
 
@@ -143,7 +143,7 @@ export default FileUploaderMultiple
 export const FileUploaderRestrictionsCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, Fragment, MouseEvent, SyntheticEvent, useState } from 'react'
+import { Fragment, MouseEvent, SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -194,7 +194,7 @@ const HeadingTypography = styled(Typography)<TypographyProps>(({ theme }) => ({
   }
 }))
 
-const FileUploaderRestrictions: FC = () => {
+const FileUploaderRestrictions = () => {
   // ** State
   const [files, setFiles] = useState<File[]>([])
   const [showError, setShowError] = useState<boolean>(false)
@@ -296,7 +296,7 @@ export default FileUploaderRestrictions
 export const FileUploaderSingleCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState, SyntheticEvent, Fragment } from 'react'
+import { useState, SyntheticEvent, Fragment } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -338,7 +338,7 @@ const HeadingTypography = styled(Typography)<TypographyProps>(({ theme }) => ({
   }
 }))
 
-const FileUploaderSingle: FC = () => {
+const FileUploaderSingle = () => {
   // ** State
   const [files, setFiles] = useState<File[]>([])
 

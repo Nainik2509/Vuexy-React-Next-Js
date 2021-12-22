@@ -1,6 +1,3 @@
-// ** React Import
-import { FC } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
@@ -21,7 +18,7 @@ const FooterWrapper = styled('footer')(({ theme }) => ({
   padding: theme.spacing(4, 0)
 }))
 
-const Footer: FC<Props> = (props: Props) => {
+const Footer = (props: Props) => {
   // ** Props
   const { settings, saveSettings, showBackdrop } = props
 

@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, createContext, useState, ReactNode, useEffect } from 'react'
+import { createContext, useState, ReactNode, useEffect } from 'react'
 
 // ** MUI Imports
 import { PaletteMode, Direction } from '@mui/material'
@@ -108,7 +108,7 @@ interface Props {
   pageSettings?: PageSpecificSettings
 }
 
-export const SettingsProvider: FC<Props> = ({ children, pageSettings }: Props) => {
+export const SettingsProvider = ({ children, pageSettings }: Props) => {
   // ** State
   const [settings, setSettings] = useState<Settings>({ ...initialSettings })
 

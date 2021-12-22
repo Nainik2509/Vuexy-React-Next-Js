@@ -1,4 +1,4 @@
-// ** Next Imports
+// ** Next Import
 import dynamic from 'next/dynamic'
 
 // ** MUI Imports

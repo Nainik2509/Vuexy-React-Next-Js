@@ -1,14 +1,11 @@
 export const RadioColorCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
-const RadioColor: FC = () => {
+const RadioColor = () => {
   return (
     <RadioGroup row aria-label='colored' name='colored' defaultValue='primary'>
       <FormControlLabel value='primary' control={<Radio />} label='Primary' />
@@ -27,10 +24,7 @@ export default RadioColor
 )
 export const RadioCustomizedCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import { styled } from '@mui/material/styles'
 import FormLabel from '@mui/material/FormLabel'
 import RadioGroup from '@mui/material/RadioGroup'
@@ -93,7 +87,7 @@ const BpRadio = (props: RadioProps) => {
   )
 }
 
-const RadioCustomized: FC = () => {
+const RadioCustomized = () => {
   return (
     <FormControl>
       <FormLabel component='legend'>Gender</FormLabel>
@@ -114,7 +108,7 @@ export default RadioCustomized
 export const RadioControlledUncontrolledCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { ChangeEvent, FC, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
@@ -123,7 +117,7 @@ import Typography from '@mui/material/Typography'
 import RadioGroup from '@mui/material/RadioGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
-const RadioControlledUncontrolled: FC = () => {
+const RadioControlledUncontrolled = () => {
   // ** State
   const [value, setValue] = useState<string>('controlled-checked')
 
@@ -158,7 +152,7 @@ export default RadioControlledUncontrolled
 export const RadioGroupCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { ChangeEvent, FC, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 // ** MUI Imports
 import Radio from '@mui/material/Radio'
@@ -166,7 +160,7 @@ import RadioGroup from '@mui/material/RadioGroup'
 import FormControl from '@mui/material/FormControl'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
-const RadioGroupComponent: FC = () => {
+const RadioGroupComponent = () => {
   // ** State
   const [value, setValue] = useState<string>('checked')
 
@@ -195,16 +189,13 @@ export default RadioGroupComponent
 )
 export const RadioLabelPlacementCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
 import FormControl from '@mui/material/FormControl'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
-const RadioLabelPlacement: FC = () => {
+const RadioLabelPlacement = () => {
   return (
     <FormControl>
       <RadioGroup row aria-label='position' name='vertical' defaultValue='top'>
@@ -232,7 +223,7 @@ export default RadioLabelPlacement
 export const RadioShowErrorCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { ChangeEvent, FC, FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 
 // ** MUI Imports
 import Radio from '@mui/material/Radio'
@@ -243,7 +234,7 @@ import FormControl from '@mui/material/FormControl'
 import FormHelperText from '@mui/material/FormHelperText'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
-const RadioShowError: FC = () => {
+const RadioShowError = () => {
   // ** States
   const [value, setValue] = useState<string>('')
   const [error, setError] = useState<boolean>(false)
@@ -294,12 +285,12 @@ export default RadioShowError
 export const RadioStandaloneCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { ChangeEvent, FC, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 // ** MUI Imports
 import Radio from '@mui/material/Radio'
 
-const RadioStandalone: FC = () => {
+const RadioStandalone = () => {
   // ** State
   const [selectedValue, setSelectedValue] = useState<string>('a')
 
@@ -333,15 +324,12 @@ export default RadioStandalone
 )
 export const RadioSizesCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
-const RadioSizes: FC = () => {
+const RadioSizes = () => {
   return (
     <RadioGroup row aria-label='sizes' name='sizes' defaultValue='small'>
       <FormControlLabel value='small' control={<Radio size='small' />} label='Small' />

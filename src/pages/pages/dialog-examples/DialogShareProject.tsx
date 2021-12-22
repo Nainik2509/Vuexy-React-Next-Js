@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, Ref, useState, forwardRef, ReactElement, MouseEvent, Fragment } from 'react'
+import { Ref, useState, forwardRef, ReactElement, MouseEvent, Fragment } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -135,7 +135,7 @@ const options: OptionsType[] = [
   }
 ]
 
-const DialogShareProject: FC = () => {
+const DialogShareProject = () => {
   // ** States
   const [show, setShow] = useState<boolean>(false)
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)

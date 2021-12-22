@@ -1,7 +1,7 @@
 // ** React Imports
-import { FC, memo, ElementType, Fragment } from 'react'
+import { ElementType, Fragment } from 'react'
 
-// ** Next Import
+// ** Next Imports
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -52,7 +52,7 @@ const ListItem = styled(MuiListItem)<ListItemProps & { component?: ElementType; 
   })
 )
 
-const HorizontalNavLink: FC<Props> = (props: Props) => {
+const HorizontalNavLink = (props: Props) => {
   // ** Props
   const { item, hasParent, parentId, handleGroupMouseLeave } = props
 
@@ -128,4 +128,4 @@ const HorizontalNavLink: FC<Props> = (props: Props) => {
   )
 }
 
-export default memo(HorizontalNavLink)
+export default HorizontalNavLink

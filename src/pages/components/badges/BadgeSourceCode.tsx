@@ -1,13 +1,10 @@
 export const BadgesAlignmentCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Badge from '@mui/material/Badge'
 import Avatar from '@mui/material/Avatar'
 
-const BadgesAlignment: FC = () => {
+const BadgesAlignment = () => {
   return (
     <div className='demo-space-x'>
       <Badge color='primary' variant='dot'>
@@ -32,15 +29,12 @@ export default BadgesAlignment
 )
 export const BadgesDotCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Badge from '@mui/material/Badge'
 import Avatar from '@mui/material/Avatar'
 import Typography from '@mui/material/Typography'
 
-const BadgesDot: FC = () => {
+const BadgesDot = () => {
   return (
     <div className='demo-space-x'>
       <Badge variant='dot' color='primary'>
@@ -62,10 +56,7 @@ export default BadgesDot
 )
 export const BadgesLightCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Avatar from '@mui/material/Avatar'
 import { styled } from '@mui/material/styles'
 
@@ -79,7 +70,7 @@ const Wrapper = styled('div')(({ theme }) => ({
   }
 }))
 
-const BadgesLight: FC = () => {
+const BadgesLight = () => {
   return (
     <Wrapper className='demo-space-x'>
       <CustomBadge skin='light' color='primary' badgeContent={4}>
@@ -110,10 +101,7 @@ export default BadgesLight
 )
 export const BadgesOverlapCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Badge from '@mui/material/Badge'
 import Avatar from '@mui/material/Avatar'
 import { styled } from '@mui/material/styles'
@@ -125,7 +113,7 @@ const Wrapper = styled('div')(({ theme }) => ({
   }
 }))
 
-const BadgesOverlap: FC = () => {
+const BadgesOverlap = () => {
   return (
     <Wrapper className='demo-space-x'>
       <Badge color='primary' badgeContent=' '>
@@ -151,7 +139,7 @@ export default BadgesOverlap
 export const BadgesVisibilityCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { FC, useState, Fragment } from 'react'
+import { useState, Fragment } from 'react'
 
 // ** MUI Imports
 import Badge from '@mui/material/Badge'
@@ -175,7 +163,7 @@ const Wrapper = styled('div')(({ theme }) => ({
   }
 }))
 
-const BadgesVisibility: FC = () => {
+const BadgesVisibility = () => {
   // ** States
   const [count, setCount] = useState<number>(1)
   const [invisible, setInvisible] = useState<boolean>(false)
@@ -219,10 +207,7 @@ export default BadgesVisibility
 )
 export const BadgesMaxValueCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Badge from '@mui/material/Badge'
 import Avatar from '@mui/material/Avatar'
 import { styled } from '@mui/material/styles'
@@ -234,7 +219,7 @@ const Wrapper = styled('div')(({ theme }) => ({
   }
 }))
 
-const BadgesMaxValue: FC = () => {
+const BadgesMaxValue = () => {
   return (
     <Wrapper className='demo-space-x'>
       <Badge badgeContent={99} color='primary'>
@@ -256,14 +241,11 @@ export default BadgesMaxValue
 )
 export const BadgesBasicCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { FC } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Badge from '@mui/material/Badge'
 import Avatar from '@mui/material/Avatar'
 
-const BadgesBasic: FC = () => {
+const BadgesBasic = () => {
   return (
     <div className='demo-space-x'>
       <Badge badgeContent={4} color='primary'>
