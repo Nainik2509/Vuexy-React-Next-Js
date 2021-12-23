@@ -1,5 +1,5 @@
 // ** Next Import
-import { NextPageContext } from 'next'
+import { NextPageContext } from 'next/types'
 
 // ** Types
 import { MailLayoutType } from './types'
