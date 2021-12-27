@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
-import { NextPageContext } from 'next'
+import { NextPageContext } from 'next/types'
 
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
