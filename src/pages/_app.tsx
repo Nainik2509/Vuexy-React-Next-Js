@@ -90,9 +90,9 @@ const App = (props: ExtendedAppProps) => {
       })
     }
 
-    if (auth.user !== null && pageProps && pageProps.restrictedPage) {
-      router.push(authConfig.redirectURL(auth.user.role))
-    }
+    // if (auth.user !== null && pageProps && pageProps.restrictedPage) {
+    //   router.push(authConfig.redirectURL(auth.user.role))
+    // }
 
     if (
       auth.user &&

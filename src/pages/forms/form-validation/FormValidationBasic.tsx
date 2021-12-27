@@ -33,7 +33,7 @@ import EyeOutline from 'mdi-material-ui/EyeOutline'
 import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 
 // ** Types
-import { DateType } from 'views/forms/forms/form-elements/pickers/react-datepicker/types'
+import { DateType } from 'src/pages/forms/forms/form-elements/pickers/react-datepicker/types'
 
 // ** Styled Components
 import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'

@@ -11,6 +11,7 @@ import AccountOutline from 'mdi-material-ui/AccountOutline'
 import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
 import DotsHorizontal from 'mdi-material-ui/DotsHorizontal'
 import MessageOutline from 'mdi-material-ui/MessageOutline'
+import CheckboxOutline from 'mdi-material-ui/CheckboxOutline'
 import FormatLetterCase from 'mdi-material-ui/FormatLetterCase'
 import CreditCardOutline from 'mdi-material-ui/CreditCardOutline'
 import VectorArrangeBelow from 'mdi-material-ui/VectorArrangeBelow'
@@ -60,6 +61,11 @@ const navigation = (): (NavGroup | NavLink | NavSectionTitle)[] => {
       title: 'Calendar',
       icon: CalendarBlankOutline,
       path: '/apps/calendar'
+    },
+    {
+      title: 'Kanban',
+      icon: CheckboxOutline,
+      path: '/apps/kanban'
     },
     {
       title: 'Invoice',

@@ -22,6 +22,7 @@ import AccountOutline from 'mdi-material-ui/AccountOutline'
 import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
 import ChartBellCurve from 'mdi-material-ui/ChartBellCurve'
 import MessageOutline from 'mdi-material-ui/MessageOutline'
+import CheckboxOutline from 'mdi-material-ui/CheckboxOutline'
 import BookOpenOutline from 'mdi-material-ui/BookOpenOutline'
 import FormatLetterCase from 'mdi-material-ui/FormatLetterCase'
 import HelpCircleOutline from 'mdi-material-ui/HelpCircleOutline'
@@ -76,6 +77,11 @@ const navigation = (): (NavGroup | NavLink)[] => [
         title: 'Calendar',
         icon: CalendarBlankOutline,
         path: '/apps/calendar'
+      },
+      {
+        title: 'Kanban',
+        icon: CheckboxOutline,
+        path: '/apps/kanban'
       },
       {
         title: 'Invoice',
