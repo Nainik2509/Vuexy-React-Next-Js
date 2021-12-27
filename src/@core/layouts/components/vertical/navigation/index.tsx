@@ -27,9 +27,19 @@ interface Props {
   setNavVisible: (value: boolean) => void
   verticalNavItems?: VerticalNavItemsType
   saveSettings: (values: Settings) => void
+  verticalNavMenuContent?: (props?: any) => ReactNode
+  afterVerticalNavMenuContent?: (props?: any) => ReactNode
+  beforeVerticalNavMenuContent?: (props?: any) => ReactNode
 }
 
 const Navigation = (props: Props) => {
+  // ** Props
+  const {
+    afterVerticalNavMenuContent,
+    beforeVerticalNavMenuContent,
+    verticalNavMenuContent: userVerticalNavMenuContent
+  } = props
+
   // ** States
   const [groupActive, setGroupActive] = useState<string[]>([])
   const [currentActiveGroup, setCurrentActiveGroup] = useState<string[]>([])
@@ -38,13 +48,19 @@ const Navigation = (props: Props) => {
     <Drawer {...props}>
       <VerticalNavHeader {...props} />
       <PerfectScrollbar options={{ wheelPropagation: false }}>
-        <VerticalNavItems
-          groupActive={groupActive}
-          setGroupActive={setGroupActive}
-          currentActiveGroup={currentActiveGroup}
-          setCurrentActiveGroup={setCurrentActiveGroup}
-          {...props}
-        />
+        {beforeVerticalNavMenuContent ? beforeVerticalNavMenuContent() : null}
+        {userVerticalNavMenuContent ? (
+          userVerticalNavMenuContent(props)
+        ) : (
+          <VerticalNavItems
+            groupActive={groupActive}
+            setGroupActive={setGroupActive}
+            currentActiveGroup={currentActiveGroup}
+            setCurrentActiveGroup={setCurrentActiveGroup}
+            {...props}
+          />
+        )}
+        {afterVerticalNavMenuContent ? afterVerticalNavMenuContent() : null}
       </PerfectScrollbar>
     </Drawer>
   )

@@ -169,7 +169,7 @@ const KnowledgeBaseCategory = ({ apiData }: InferGetStaticPropsType<typeof getSt
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const res = await axios.get('/pages/knowledge-base')
-  const data: KnowledgeBaseData[] = res.data
+  const data: KnowledgeBaseData[] = await res.data
 
   const paths = data.map((item: KnowledgeBaseData) => ({
     params: { category: `${item.category}` }
@@ -183,7 +183,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const res = await axios.get('/pages/knowledge-base/categories')
-  const apiData: KnowledgeBaseCategoryData = res.data
+  const apiData: KnowledgeBaseCategoryData = await res.data
 
   return {
     props: {

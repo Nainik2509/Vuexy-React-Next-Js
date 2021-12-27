@@ -1,5 +1,5 @@
 // ** React Imports
-import { ReactNode, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Backdrop from '@mui/material/Backdrop'
@@ -9,20 +9,20 @@ import Box, { BoxProps } from '@mui/material/Box'
 // ** Theme Config Import
 import themeConfig from 'src/configs/themeConfig'
 
+// ** Type Import
+import { VerticalNavItemsType } from './types'
+import { LayoutProps } from 'src/@core/layouts/types'
+import { Settings } from 'src/@core/context/settingsContext'
+
 // ** Components
 import AppBar from './components/vertical/appBar'
 import Customizer from 'src/@core/components/customizer'
 import Navigation from './components/vertical/navigation'
 import Footer from './components/shared-components/footer'
 
-// ** Type Import
-import { VerticalNavItemsType } from './types'
-import { Settings } from 'src/@core/context/settingsContext'
-
-interface Props {
+type Props = LayoutProps & {
   hidden: boolean
   settings: Settings
-  children: ReactNode
   verticalNavItems?: VerticalNavItemsType
   saveSettings: (values: Settings) => void
 }

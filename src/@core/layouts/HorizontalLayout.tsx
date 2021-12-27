@@ -1,5 +1,5 @@
 // ** React Imports
-import { ReactNode, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -11,20 +11,20 @@ import MuiToolbar, { ToolbarProps } from '@mui/material/Toolbar'
 // ** Theme Config Import
 import themeConfig from 'src/configs/themeConfig'
 
+// ** Type Import
+import { HorizontalNavItemsType } from './types'
+import { LayoutProps } from 'src/@core/layouts/types'
+import { Settings } from 'src/@core/context/settingsContext'
+
 // ** Components
 import Customizer from 'src/@core/components/customizer'
 import Footer from './components/shared-components/footer'
-import AppBarContent from './components/horizontal/app-bar-content'
 import Navigation from './components/horizontal/navigation'
+import AppBarContent from './components/horizontal/app-bar-content'
 
-// ** Type Import
-import { HorizontalNavItemsType } from './types'
-import { Settings } from 'src/@core/context/settingsContext'
-
-interface Props {
+type Props = LayoutProps & {
   hidden: boolean
   settings: Settings
-  children: ReactNode
   saveSettings: (values: Settings) => void
   horizontalNavItems?: HorizontalNavItemsType
 }
@@ -61,7 +61,7 @@ const ContentWrapper = styled('main')(({ theme }) => ({
 
 const HorizontalLayout = (props: Props) => {
   // ** Props
-  const { hidden, children, settings, saveSettings } = props
+  const { hidden, children, settings, saveSettings, horizontalNavMenuContent: userHorizontalNavMenuContent } = props
 
   // ** States
   const [showBackdrop, setShowBackdrop] = useState<boolean>(false)
@@ -101,6 +101,7 @@ const HorizontalLayout = (props: Props) => {
               }}
             >
               <AppBarContent
+                {...props}
                 hidden={hidden}
                 settings={settings}
                 saveSettings={saveSettings}
@@ -115,7 +116,7 @@ const HorizontalLayout = (props: Props) => {
                 ...(settings.contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } })
               }}
             >
-              <Navigation {...props} />
+              {(userHorizontalNavMenuContent && userHorizontalNavMenuContent(props)) || <Navigation {...props} />}
             </Toolbar>
           )}
         </AppBar>
@@ -136,7 +137,7 @@ const HorizontalLayout = (props: Props) => {
       </ContentWrapper>
 
       {/* Footer Component */}
-      <Footer settings={settings} saveSettings={saveSettings} showBackdrop={showBackdrop} />
+      <Footer showBackdrop={showBackdrop} {...props} />
 
       {/* Customizer */}
       {themeConfig.disableCustomizer || hidden ? null : <Customizer />}

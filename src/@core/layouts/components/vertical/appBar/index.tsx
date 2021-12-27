@@ -1,3 +1,6 @@
+// ** React Imports
+import { ReactNode } from 'react'
+
 // ** MUI Imports
 import { styled } from '@mui/material/styles'
 import MuiAppBar, { AppBarProps } from '@mui/material/AppBar'
@@ -18,6 +21,7 @@ interface Props {
   toggleNavVisibility: () => void
   setShowBackdrop: (val: boolean) => void
   saveSettings: (values: Settings) => void
+  verticalAppBarContent?: (props?: any) => ReactNode
 }
 
 const AppBar = styled(MuiAppBar)<AppBarProps>(({ theme }) => ({
@@ -44,7 +48,14 @@ const Toolbar = styled(MuiToolbar)<ToolbarProps>(({ theme }) => ({
 
 const LayoutAppBar = (props: Props) => {
   // ** Props
-  const { hidden, settings, saveSettings, setShowBackdrop, toggleNavVisibility } = props
+  const {
+    hidden,
+    settings,
+    saveSettings,
+    setShowBackdrop,
+    toggleNavVisibility,
+    verticalAppBarContent: userVerticalAppBarContent
+  } = props
 
   if (settings.appBar === 'hidden') {
     return null
@@ -62,13 +73,15 @@ const LayoutAppBar = (props: Props) => {
       }}
     >
       <Toolbar sx={{ ...(settings.contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } }) }}>
-        <AppBarContent
-          hidden={hidden}
-          settings={settings}
-          saveSettings={saveSettings}
-          setShowBackdrop={setShowBackdrop}
-          toggleNavVisibility={toggleNavVisibility}
-        />
+        {(userVerticalAppBarContent && userVerticalAppBarContent(props)) || (
+          <AppBarContent
+            hidden={hidden}
+            settings={settings}
+            saveSettings={saveSettings}
+            setShowBackdrop={setShowBackdrop}
+            toggleNavVisibility={toggleNavVisibility}
+          />
+        )}
       </Toolbar>
     </AppBar>
   )

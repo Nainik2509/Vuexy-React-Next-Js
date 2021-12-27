@@ -42,8 +42,6 @@ const Navigation = (props: Props) => {
       className='menu-content'
       sx={{
         display: 'flex',
-
-        // overflowX: 'auto',
         flexWrap: 'wrap',
         alignItems: 'center',
         '& > *:not(.MuiTooltip-popper)': {
