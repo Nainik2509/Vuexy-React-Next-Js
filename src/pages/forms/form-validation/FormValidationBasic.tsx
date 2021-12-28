@@ -1,5 +1,5 @@
 // ** React Imports
-import { forwardRef, MouseEvent, SyntheticEvent, useState, ChangeEvent } from 'react'
+import { forwardRef, MouseEvent, useState, ChangeEvent } from 'react'
 
 // ** MUI Imports
 import Card from '@mui/material/Card'
@@ -9,7 +9,6 @@ import Select from '@mui/material/Select'
 import Button from '@mui/material/Button'
 import MenuItem from '@mui/material/MenuItem'
 import Checkbox from '@mui/material/Checkbox'
-import Snackbar from '@mui/material/Snackbar'
 import TextField from '@mui/material/TextField'
 import FormLabel from '@mui/material/FormLabel'
 import CardHeader from '@mui/material/CardHeader'
@@ -25,17 +24,18 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 
 // ** Third Party Imports
 import DatePicker from 'react-datepicker'
+import toast, { Toaster } from 'react-hot-toast'
 import { useForm, Controller } from 'react-hook-form'
 
 // ** Icons Imports
-import Close from 'mdi-material-ui/Close'
 import EyeOutline from 'mdi-material-ui/EyeOutline'
 import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 
 // ** Types
-import { DateType } from 'src/pages/forms/forms/form-elements/pickers/react-datepicker/types'
+import { DateType } from 'src/pages/forms/form-elements/pickers/react-datepicker/types'
 
 // ** Styled Components
+import ReactHotToast from 'src/@core/styles/libs/react-hot-toast'
 import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 interface State {
@@ -80,7 +80,6 @@ const CustomInput = forwardRef(({ ...props }: CustomInputProps, ref) => {
 
 const FormValidationBasic = () => {
   // ** States
-  const [open, setOpen] = useState<boolean>(false)
   const [state, setState] = useState<State>({
     password: '',
     showPassword: false
@@ -101,14 +100,7 @@ const FormValidationBasic = () => {
     event.preventDefault()
   }
 
-  const onSubmit = () => setOpen(true)
-
-  const handleClose = (event: SyntheticEvent | MouseEvent, reason?: string) => {
-    if (reason === 'clickaway') {
-      return
-    }
-    setOpen(false)
-  }
+  const onSubmit = () => toast.success('Form Submitted')
 
   return (
     <Card>
@@ -400,19 +392,10 @@ const FormValidationBasic = () => {
             </Grid>
           </Grid>
         </form>
-
-        <Snackbar
-          open={open}
-          onClose={handleClose}
-          autoHideDuration={2000}
-          message='Form Submitted'
-          action={
-            <IconButton size='small' aria-label='close' color='inherit' onClick={handleClose}>
-              <Close fontSize='small' />
-            </IconButton>
-          }
-        />
       </CardContent>
+      <ReactHotToast>
+        <Toaster toastOptions={{ className: 'react-hot-toast' }} />
+      </ReactHotToast>
     </Card>
   )
 }

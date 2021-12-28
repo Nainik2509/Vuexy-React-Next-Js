@@ -1,11 +1,10 @@
 // ** React Imports
-import { MouseEvent, SyntheticEvent, useState } from 'react'
+import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import Card from '@mui/material/Card'
 import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
-import Snackbar from '@mui/material/Snackbar'
 import TextField from '@mui/material/TextField'
 import CardHeader from '@mui/material/CardHeader'
 import InputLabel from '@mui/material/InputLabel'
@@ -18,13 +17,16 @@ import InputAdornment from '@mui/material/InputAdornment'
 
 // ** Third Party Imports
 import * as yup from 'yup'
+import toast, { Toaster } from 'react-hot-toast'
 import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
 
 // ** Icons Imports
-import Close from 'mdi-material-ui/Close'
 import EyeOutline from 'mdi-material-ui/EyeOutline'
 import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
+
+// ** Styled Components
+import ReactHotToast from 'src/@core/styles/libs/react-hot-toast'
 
 interface State {
   password: string
@@ -66,7 +68,6 @@ const schema = yup.object().shape({
 
 const FormValidationSchema = () => {
   // ** States
-  const [open, setOpen] = useState<boolean>(false)
   const [state, setState] = useState<State>({
     password: '',
     showPassword: false
@@ -91,14 +92,7 @@ const FormValidationSchema = () => {
     event.preventDefault()
   }
 
-  const onSubmit = () => setOpen(true)
-
-  const handleClose = (event: Event | SyntheticEvent, reason?: string) => {
-    if (reason === 'clickaway') {
-      return
-    }
-    setOpen(false)
-  }
+  const onSubmit = () => toast.success('Form Submitted')
 
   return (
     <Card>
@@ -230,17 +224,9 @@ const FormValidationSchema = () => {
           </Grid>
         </form>
 
-        <Snackbar
-          open={open}
-          onClose={handleClose}
-          autoHideDuration={2000}
-          message='Form Submitted'
-          action={
-            <IconButton size='small' aria-label='close' color='inherit' onClick={handleClose}>
-              <Close fontSize='small' />
-            </IconButton>
-          }
-        />
+        <ReactHotToast>
+          <Toaster toastOptions={{ className: 'react-hot-toast' }} />
+        </ReactHotToast>
       </CardContent>
     </Card>
   )

@@ -1,5 +1,5 @@
 // ** React Imports
-import { Fragment, MouseEvent, SyntheticEvent, useState } from 'react'
+import { Fragment, useState } from 'react'
 
 // ** Next Import
 import Image from 'next/image'
@@ -7,10 +7,8 @@ import Image from 'next/image'
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import List from '@mui/material/List'
-import Alert from '@mui/material/Alert'
 import Button from '@mui/material/Button'
 import ListItem from '@mui/material/ListItem'
-import Snackbar from '@mui/material/Snackbar'
 import { styled } from '@mui/material/styles'
 import IconButton from '@mui/material/IconButton'
 import Typography, { TypographyProps } from '@mui/material/Typography'
@@ -19,10 +17,12 @@ import Typography, { TypographyProps } from '@mui/material/Typography'
 import Close from 'mdi-material-ui/Close'
 import FileDocumentOutline from 'mdi-material-ui/FileDocumentOutline'
 
-// ** Third Party Imports
+// ** Third Party Components
 import { useDropzone } from 'react-dropzone'
+import toast, { Toaster } from 'react-hot-toast'
 
-// ** Styles
+// ** Styled Components
+import ReactHotToast from 'src/@core/styles/libs/react-hot-toast'
 import DropzoneWrapper from 'src/@core/styles/libs/react-dropzone'
 
 interface FileProp {
@@ -56,14 +56,6 @@ const HeadingTypography = styled(Typography)<TypographyProps>(({ theme }) => ({
 const FileUploaderRestrictions = () => {
   // ** State
   const [files, setFiles] = useState<File[]>([])
-  const [showError, setShowError] = useState<boolean>(false)
-
-  const handleClose = (event: SyntheticEvent | MouseEvent, reason?: string) => {
-    if (reason === 'clickaway') {
-      return
-    }
-    setShowError(false)
-  }
 
   // ** Hooks
   const { getRootProps, getInputProps } = useDropzone({
@@ -74,13 +66,15 @@ const FileUploaderRestrictions = () => {
       setFiles(acceptedFiles.map((file: File) => Object.assign(file)))
     },
     onDropRejected: () => {
-      setShowError(true)
+      toast.error('You can only upload 2 files & maximum size of 2 MB.', {
+        duration: 2000
+      })
     }
   })
 
   const renderFilePreview = (file: FileProp) => {
     if (file.type.startsWith('image')) {
-      return <Image alt={file.name} src={URL.createObjectURL(file)} width='38' height='38' />
+      return <Image alt={file.name} src={URL.createObjectURL(file as any)} width='38' height='38' />
     } else {
       return <FileDocumentOutline />
     }
@@ -139,11 +133,9 @@ const FileUploaderRestrictions = () => {
           </div>
         </Fragment>
       ) : null}
-      <Snackbar open={showError} onClose={handleClose} autoHideDuration={6000}>
-        <Alert variant='filled' elevation={3} onClose={handleClose} severity='error'>
-          You can only upload 2 files & maximum size of 2 MB
-        </Alert>
-      </Snackbar>
+      <ReactHotToast>
+        <Toaster toastOptions={{ className: 'react-hot-toast' }} />
+      </ReactHotToast>
     </Fragment>
   )
 }

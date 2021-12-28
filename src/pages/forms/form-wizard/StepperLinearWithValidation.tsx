@@ -1,5 +1,5 @@
 // ** React Imports
-import { Fragment, MouseEvent, SyntheticEvent, useState } from 'react'
+import { Fragment, MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -11,7 +11,6 @@ import Select from '@mui/material/Select'
 import Divider from '@mui/material/Divider'
 import Stepper from '@mui/material/Stepper'
 import MenuItem from '@mui/material/MenuItem'
-import Snackbar from '@mui/material/Snackbar'
 import StepLabel from '@mui/material/StepLabel'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
@@ -25,11 +24,11 @@ import InputAdornment from '@mui/material/InputAdornment'
 
 // ** Third Party Imports
 import * as yup from 'yup'
+import toast, { Toaster } from 'react-hot-toast'
 import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
 
 // ** Icons Imports
-import Close from 'mdi-material-ui/Close'
 import EyeOutline from 'mdi-material-ui/EyeOutline'
 import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 
@@ -37,6 +36,7 @@ import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 import StepperCustomDot from './StepperCustomDot'
 
 // ** Styled Components
+import ReactHotToast from 'src/@core/styles/libs/react-hot-toast'
 import StepperWrapper from 'src/@core/styles/mui/components/stepper'
 
 interface State {
@@ -105,7 +105,6 @@ const socialSchema = yup.object().shape({
 const StepperLinearWithValidation = () => {
   // ** States
   const [activeStep, setActiveStep] = useState<number>(0)
-  const [openSnackbar, setOpenSnackbar] = useState<boolean>(false)
   const [state, setState] = useState<State>({
     password: '',
     password2: '',
@@ -142,14 +141,6 @@ const StepperLinearWithValidation = () => {
     resolver: yupResolver(socialSchema)
   })
 
-  // Handle Snackbar
-  const handleSnackbarClose = (event: SyntheticEvent | Event, reason?: string) => {
-    if (reason === 'clickaway') {
-      return
-    }
-    setOpenSnackbar(false)
-  }
-
   // Handle Stepper
   const handleBack = () => {
     setActiveStep(prevActiveStep => prevActiveStep - 1)
@@ -163,7 +154,7 @@ const StepperLinearWithValidation = () => {
   const onSubmit = () => {
     setActiveStep(activeStep + 1)
     if (activeStep === steps.length - 1) {
-      setOpenSnackbar(true)
+      toast.success('Form Submitted')
     }
   }
 
@@ -685,17 +676,9 @@ const StepperLinearWithValidation = () => {
 
       <CardContent>{renderContent()}</CardContent>
 
-      <Snackbar
-        open={openSnackbar}
-        autoHideDuration={3000}
-        message='Form Submitted'
-        onClose={handleSnackbarClose}
-        action={
-          <IconButton size='small' aria-label='close' color='inherit' onClick={handleSnackbarClose}>
-            <Close fontSize='small' />
-          </IconButton>
-        }
-      />
+      <ReactHotToast>
+        <Toaster toastOptions={{ className: 'react-hot-toast' }} />
+      </ReactHotToast>
     </Card>
   )
 }

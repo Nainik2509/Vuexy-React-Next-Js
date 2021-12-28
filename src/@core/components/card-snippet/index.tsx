@@ -1,5 +1,5 @@
 // ** React Imports
-import { useState, useEffect, SyntheticEvent, MouseEvent } from 'react'
+import { useState, useEffect } from 'react'
 
 // ** Primsjs
 import Prism from 'prismjs'
@@ -9,16 +9,17 @@ import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import Tooltip from '@mui/material/Tooltip'
 import Divider from '@mui/material/Divider'
-import Snackbar from '@mui/material/Snackbar'
 import Collapse from '@mui/material/Collapse'
 import IconButton from '@mui/material/IconButton'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
 // ** Icons Imports
-import Close from 'mdi-material-ui/Close'
 import CodeTags from 'mdi-material-ui/CodeTags'
 import ContentCopy from 'mdi-material-ui/ContentCopy'
+
+// ** Third Party Components
+import toast, { Toaster } from 'react-hot-toast'
 
 // ** Hooks
 // import useClipboard from 'hooks/misc/useClipboard'
@@ -26,13 +27,15 @@ import ContentCopy from 'mdi-material-ui/ContentCopy'
 // ** Types
 import { CardSnippetProps } from './types'
 
+// ** Styled Components
+import ReactHotToast from 'src/@core/styles/libs/react-hot-toast'
+
 const CardSnippet = (props: CardSnippetProps) => {
   // ** Props
   const { id, title, children, className, code, sx } = props
 
   // ** States
   const [showCode, setShowCode] = useState<boolean>(false)
-  const [showSnackbar, setShowSnackbar] = useState<boolean>(false)
 
   // ** Hooks
   // const clipboard = useClipboard()
@@ -44,15 +47,9 @@ const CardSnippet = (props: CardSnippetProps) => {
 
   const handleClick = () => {
     // clipboard.copy(code.props.children.props.children)
-    setShowSnackbar(true)
-  }
-
-  const handleClose = (event: SyntheticEvent | MouseEvent, reason?: string) => {
-    if (reason === 'clickaway') {
-      return
-    }
-
-    setShowSnackbar(false)
+    toast.success('The source code has been copied to your clipboard.', {
+      duration: 2000
+    })
   }
 
   return (
@@ -85,17 +82,9 @@ const CardSnippet = (props: CardSnippetProps) => {
           <Box sx={{ 'pre *, code *': { whiteSpace: 'pre-wrap' } }}>{code}</Box>
         </CardContent>
       </Collapse>
-      <Snackbar
-        open={showSnackbar}
-        onClose={handleClose}
-        autoHideDuration={2000}
-        message='The source code has been copied to your clipboard.'
-        action={
-          <IconButton size='small' aria-label='close' color='inherit' onClick={handleClose}>
-            <Close fontSize='small' />
-          </IconButton>
-        }
-      />
+      <ReactHotToast>
+        <Toaster toastOptions={{ className: 'react-hot-toast' }} />
+      </ReactHotToast>
     </Card>
   )
 }

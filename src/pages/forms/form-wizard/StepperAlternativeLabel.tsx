@@ -1,5 +1,5 @@
 // ** React Imports
-import { ChangeEvent, Fragment, MouseEvent, SyntheticEvent, useState } from 'react'
+import { ChangeEvent, Fragment, MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -9,7 +9,6 @@ import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
 import Stepper from '@mui/material/Stepper'
 import MenuItem from '@mui/material/MenuItem'
-import Snackbar from '@mui/material/Snackbar'
 import StepLabel from '@mui/material/StepLabel'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
@@ -22,14 +21,17 @@ import InputAdornment from '@mui/material/InputAdornment'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 
 // ** Icons Imports
-import Close from 'mdi-material-ui/Close'
 import EyeOutline from 'mdi-material-ui/EyeOutline'
 import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 
 // ** Custom Components Imports
 import StepperCustomDot from './StepperCustomDot'
 
+// ** Third Party Imports
+import toast, { Toaster } from 'react-hot-toast'
+
 // ** Styled Component
+import ReactHotToast from 'src/@core/styles/libs/react-hot-toast'
 import StepperWrapper from 'src/@core/styles/mui/components/stepper'
 
 interface State {
@@ -67,7 +69,6 @@ const StepperAlternativeLabel = () => {
   const [firstName, setFirstName] = useState<string>('')
   const [activeStep, setActiveStep] = useState<number>(0)
   const [language, setLanguage] = useState<string[]>([])
-  const [openSnackbar, setOpenSnackbar] = useState<boolean>(false)
   const [state, setState] = useState<State>({
     password: '',
     password2: '',
@@ -76,12 +77,6 @@ const StepperAlternativeLabel = () => {
   })
 
   // Handle Snackbar
-  const handleSnackbarClose = (event: Event | SyntheticEvent, reason?: string) => {
-    if (reason === 'clickaway') {
-      return
-    }
-    setOpenSnackbar(false)
-  }
 
   // Handle Stepper
   const handleBack = () => {
@@ -90,7 +85,7 @@ const StepperAlternativeLabel = () => {
   const handleNext = () => {
     setActiveStep(prevActiveStep => prevActiveStep + 1)
     if (activeStep === steps.length - 1) {
-      setOpenSnackbar(true)
+      toast.success('Form Submitted')
     }
   }
   const handleReset = () => {
@@ -383,19 +378,10 @@ const StepperAlternativeLabel = () => {
       </StepperWrapper>
       <Card sx={{ marginTop: 4 }}>
         <CardContent>{renderContent()}</CardContent>
-
-        <Snackbar
-          open={openSnackbar}
-          autoHideDuration={3000}
-          message='Form Submitted'
-          onClose={handleSnackbarClose}
-          action={
-            <IconButton size='small' aria-label='close' color='inherit' onClick={handleSnackbarClose}>
-              <Close fontSize='small' />
-            </IconButton>
-          }
-        />
       </Card>
+      <ReactHotToast>
+        <Toaster toastOptions={{ className: 'react-hot-toast' }} />
+      </ReactHotToast>
     </Fragment>
   )
 }

@@ -1,5 +1,5 @@
 // ** React Imports
-import { MouseEvent, SyntheticEvent, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -7,24 +7,21 @@ import Card from '@mui/material/Card'
 import Step from '@mui/material/Step'
 import Button from '@mui/material/Button'
 import Stepper from '@mui/material/Stepper'
-import Snackbar from '@mui/material/Snackbar'
 import StepLabel from '@mui/material/StepLabel'
 import CardHeader from '@mui/material/CardHeader'
 import Typography from '@mui/material/Typography'
-import IconButton from '@mui/material/IconButton'
 import CardContent from '@mui/material/CardContent'
 import StepContent from '@mui/material/StepContent'
 
 // ** Third Party Imports
 import clsx from 'clsx'
-
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
+import toast, { Toaster } from 'react-hot-toast'
 
 // ** Custom Components Imports
 import StepperCustomDot from './StepperCustomDot'
 
-// ** Styled COmponent
+// ** Styled Component
+import ReactHotToast from 'src/@core/styles/libs/react-hot-toast'
 import StepperWrapper from 'src/@core/styles/mui/components/stepper'
 
 const steps = [
@@ -51,15 +48,6 @@ const steps = [
 const StepperVerticalWithNumbers = () => {
   // ** States
   const [activeStep, setActiveStep] = useState<number>(0)
-  const [openSnackbar, setOpenSnackbar] = useState<boolean>(false)
-
-  // Handle Snackbar
-  const handleSnackbarClose = (event: SyntheticEvent | MouseEvent, reason?: string) => {
-    if (reason === 'clickaway') {
-      return
-    }
-    setOpenSnackbar(false)
-  }
 
   // Handle Stepper
   const handleBack = () => {
@@ -68,7 +56,7 @@ const StepperVerticalWithNumbers = () => {
   const handleNext = () => {
     setActiveStep(prevActiveStep => prevActiveStep + 1)
     if (activeStep === steps.length - 1) {
-      setOpenSnackbar(true)
+      toast.success('Completed All Steps!!')
     }
   }
   const handleReset = () => {
@@ -125,17 +113,9 @@ const StepperVerticalWithNumbers = () => {
         )}
       </CardContent>
 
-      <Snackbar
-        open={openSnackbar}
-        autoHideDuration={3000}
-        onClose={handleSnackbarClose}
-        message='Completed All Steps!!'
-        action={
-          <IconButton size='small' aria-label='close' color='inherit' onClick={handleSnackbarClose}>
-            <Close fontSize='small' />
-          </IconButton>
-        }
-      />
+      <ReactHotToast>
+        <Toaster toastOptions={{ className: 'react-hot-toast' }} />
+      </ReactHotToast>
     </Card>
   )
 }

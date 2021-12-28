@@ -3,11 +3,10 @@ import { useState, Fragment } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
-import Alert from '@mui/material/Alert'
-import Snackbar from '@mui/material/Snackbar'
 
 // ** Third Party Imports
 import DatePicker from 'react-datepicker'
+import toast, { Toaster } from 'react-hot-toast'
 
 // ** Types
 import { DateType } from './types'
@@ -16,21 +15,15 @@ import { DateType } from './types'
 import CustomInput from './PickersCustomInput'
 
 // ** Styled Components
+import ReactHotToast from 'src/@core/styles/libs/react-hot-toast'
 import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 const PickersCallbacks = () => {
   // ** States
-  const [msg, setMsg] = useState<string>('')
-  const [open, setOpen] = useState<boolean>(false)
   const [date, setDate] = useState<DateType>(new Date())
 
   const handlePickerCallback = (msg: string) => {
-    setOpen(true)
-    setMsg(msg)
-    setTimeout(() => {
-      setOpen(false)
-      setMsg('')
-    }, 2000)
+    toast(msg, { duration: 2000 })
   }
 
   return (
@@ -68,11 +61,9 @@ const PickersCallbacks = () => {
           />
         </DatePickerWrapper>
       </Box>
-      <Snackbar open={open} autoHideDuration={250}>
-        <Alert variant='filled' severity='success'>
-          {msg}
-        </Alert>
-      </Snackbar>
+      <ReactHotToast>
+        <Toaster toastOptions={{ className: 'react-hot-toast' }} />
+      </ReactHotToast>
     </Fragment>
   )
 }
