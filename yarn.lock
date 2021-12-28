@@ -1541,6 +1541,13 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
+"@types/cleave.js@^1.4.6":
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/@types/cleave.js/-/cleave.js-1.4.6.tgz#985ae25b3545986789c1adb262b21bb3cd49b2ac"
+  integrity sha512-OVW8lDUfaMa13OkWpH0ydQOB9IMLN9UZP4lBz63xCDZr/b7SqImRlBuzM1+eQb4whGPGGkZBOUe0Q7naOVO2dQ==
+  dependencies:
+    "@types/react" "*"
+
 "@types/d3-color@^2":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@types/d3-color/-/d3-color-2.0.3.tgz#8bc4589073c80e33d126345542f588056511fe82"
@@ -1576,6 +1583,14 @@
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@types/d3-time/-/d3-time-2.1.1.tgz#743fdc821c81f86537cbfece07093ac39b4bc342"
   integrity sha512-9MVYlmIgmRR31C5b4FVSWtuMmBHh2mOWQYfl7XAYOa8dsnb7iEmUmRSWSFgXFtkjxO65d7hTUHQC+RhR/9IWFg==
+
+"@types/draft-js@*", "@types/draft-js@^0.11.8":
+  version "0.11.8"
+  resolved "https://registry.yarnpkg.com/@types/draft-js/-/draft-js-0.11.8.tgz#ef1e1dfbb5e3f1d13a8769eb5dfd282cae8b127b"
+  integrity sha512-WddWQKbjbVEeJEuwS7oczvaVGsfML141ywwgpFeKE2E+NI9/Qk+AU/xTd6A7/dNsS8lf3ziubm8WugrttwQk2g==
+  dependencies:
+    "@types/react" "*"
+    immutable "~3.7.4"
 
 "@types/glob@^7.1.1":
   version "7.2.0"
@@ -1676,6 +1691,14 @@
     "@types/react" "*"
     date-fns "^2.0.1"
     react-popper "^2.2.5"
+
+"@types/react-draft-wysiwyg@^1.13.3":
+  version "1.13.3"
+  resolved "https://registry.yarnpkg.com/@types/react-draft-wysiwyg/-/react-draft-wysiwyg-1.13.3.tgz#044806edfcd3302c1039dd767bcc06e1467f7d26"
+  integrity sha512-njzkDqwIrEDUWz7Xzn2grlghu2PLlNf9PfOyGjQpUMOw5hwMEI3aQ6D4GUXBfGXaMv2nuheO4lu7Gu0cak5vmw==
+  dependencies:
+    "@types/draft-js" "*"
+    "@types/react" "*"
 
 "@types/react-is@^16.7.1 || ^17.0.0":
   version "17.0.3"

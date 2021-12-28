@@ -6,6 +6,9 @@ import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
+// ** Third Party Imports
+import { ApexOptions } from 'apexcharts'
+
 // ** Styled Components
 import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
 
@@ -21,7 +24,7 @@ const donutColors = {
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const ApexDonutChart = () => {
-  const options = {
+  const options: ApexOptions = {
     legend: {
       show: true,
       position: 'bottom'

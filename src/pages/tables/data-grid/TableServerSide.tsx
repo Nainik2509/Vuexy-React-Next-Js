@@ -150,20 +150,19 @@ const TableServerSide = () => {
   // ** State
   const [rows, setRows] = useState([])
   const [total, setTotal] = useState(1)
-  const [sort, setSort] = useState<'asc' | 'desc'>('asc')
-  const [currentPage, setCurrentPage] = useState<number>(1)
   const [rowsPerPage, setRowsPerPage] = useState<number>(10)
   const [searchValue, setSearchValue] = useState<string>('')
   const [sortColumn, setSortColumn] = useState<string>('full_name')
+  const [sort, setSort] = useState<'asc' | 'desc' | undefined | null>('asc')
 
-  const fetchTableData = useCallback((sort, q, page, column, perPage) => {
+  const fetchTableData = useCallback((sort, q, column) => {
     axios
       .get('/api/table/data', {
-        q,
-        sort,
-        page,
-        column,
-        perPage
+        params: {
+          q,
+          sort,
+          column
+        }
       })
       .then(res => {
         setRows(res.data.data)
@@ -172,24 +171,18 @@ const TableServerSide = () => {
   }, [])
 
   useEffect(() => {
-    fetchTableData(sort, searchValue, currentPage, sortColumn, rowsPerPage)
-  }, [])
+    fetchTableData(sort, searchValue, sortColumn)
+  }, [fetchTableData, searchValue, sort, sortColumn])
 
   const handlePerPageChange = (newPageSize: number) => {
     setRowsPerPage(newPageSize + 1)
-    fetchTableData(sort, searchValue, currentPage, sortColumn, newPageSize + 1)
-  }
-
-  const handlePageChange = (newPage: number) => {
-    setCurrentPage(newPage)
-    fetchTableData(sort, searchValue, newPage, sortColumn, rowsPerPage)
   }
 
   const handleSortModel = (newModel: GridSortModel) => {
     if (newModel.length) {
       setSort(newModel[0].sort)
       setSortColumn(newModel[0].field)
-      fetchTableData(newModel[0].sort, searchValue, currentPage, newModel[0].field, rowsPerPage)
+      fetchTableData(newModel[0].sort, searchValue, newModel[0].field)
     } else {
       setSort('asc')
       setSortColumn('full_name')
@@ -198,7 +191,7 @@ const TableServerSide = () => {
 
   const handleSearch = (value: string) => {
     setSearchValue(value)
-    fetchTableData(sort, value, currentPage, sortColumn, rowsPerPage)
+    fetchTableData(sort, value, sortColumn)
   }
 
   return (
@@ -210,11 +203,9 @@ const TableServerSide = () => {
           rowCount={total}
           columns={Columns}
           checkboxSelection
-          page={currentPage}
           sortingMode='server'
           pageSize={rowsPerPage}
           paginationMode='server'
-          onPageChange={handlePageChange}
           rowsPerPageOptions={[10, 25, 50]}
           onSortModelChange={handleSortModel}
           onPageSizeChange={handlePerPageChange}

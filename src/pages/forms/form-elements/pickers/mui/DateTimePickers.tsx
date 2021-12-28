@@ -10,12 +10,13 @@ import MobileDateTimePicker from '@mui/lab/MobileDateTimePicker'
 import LocalizationProvider from '@mui/lab/LocalizationProvider'
 
 // ** Third Party imports
+import { Locale } from 'date-fns'
 import fr from 'date-fns/locale/fr'
 import ar from 'date-fns/locale/ar-SA'
 import en from 'date-fns/locale/en-US'
 import { useTranslation } from 'react-i18next'
 
-const langObj: any = { fr, ar, en }
+const langObj: { [key: string]: Locale } = { fr, ar, en }
 
 const DateTimePickers = () => {
   // ** State

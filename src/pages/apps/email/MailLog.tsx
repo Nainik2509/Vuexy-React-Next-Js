@@ -461,7 +461,9 @@ const MailLog = (props: MailLogType) => {
                           </Typography>
                         </Box>
                       </MailItem>
-                      {store.mails.length - 1 > index ? <Divider sx={{ my: 0, mx: -5 }} /> : null}
+                      {store.mails !== null && store.mails.length - 1 > index ? (
+                        <Divider sx={{ my: 0, mx: -5 }} />
+                      ) : null}
                     </Box>
                   )
                 })}

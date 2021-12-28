@@ -31,6 +31,7 @@ import DeleteOutline from 'mdi-material-ui/DeleteOutline'
 
 // ** Third Party Components
 import { EditorState } from 'draft-js'
+import { EditorProps } from 'react-draft-wysiwyg'
 
 // ** Custom Components Imports
 import CustomAvatar from 'src/@core/components/mui/avatar'
@@ -88,7 +89,8 @@ const menuItemsArr = [
 const filter = createFilterOptions()
 
 // ! To avoid Window is not defined Error
-const Editor = dynamic(() => import('react-draft-wysiwyg').then(mod => mod.Editor), { ssr: false })
+// @ts-ignore
+const Editor = dynamic<EditorProps>(() => import('react-draft-wysiwyg').then(mod => mod.Editor), { ssr: false })
 
 const ComposePopup = (props: MailComposeType) => {
   // ** Props
@@ -101,7 +103,7 @@ const ComposePopup = (props: MailComposeType) => {
   const [bccValue, setbccValue] = useState<FieldMenuItems[]>([])
   const [sendBtnOpen, setSendBtnOpen] = useState<boolean>(false)
   const [moreBtnOpen, setMoreBtnOpen] = useState<null | HTMLElement>(null)
-  const [messageValue, setMessageValue] = useState<EditorState>(EditorState.createEmpty())
+  const [messageValue, setMessageValue] = useState(EditorState.createEmpty())
   const [visibility, setVisibility] = useState<MailFields>({
     cc: false,
     bcc: false
@@ -200,6 +202,7 @@ const ComposePopup = (props: MailComposeType) => {
   }
 
   const addNewOption = (options: FieldMenuItems[], params: any): FieldMenuItems[] => {
+    console.log(params)
     const filtered = filter(options, params)
     const { inputValue } = params
     const isExisting = options.some(option => inputValue === option.name)

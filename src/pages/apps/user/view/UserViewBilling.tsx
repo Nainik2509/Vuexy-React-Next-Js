@@ -1,6 +1,9 @@
 // ** React Imports
 import { Fragment, useState, ChangeEvent } from 'react'
 
+// ** Next Image
+import Image from 'next/image'
+
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -350,7 +353,16 @@ const UserViewBilling = () => {
               }}
             >
               <div>
-                <img height='25' alt={item.imgAlt} src={item.imgSrc} />
+                <Box sx={{ maxWidth: '80px' }}>
+                  <Image
+                    height='25'
+                    width='100%'
+                    alt={item.imgAlt}
+                    src={item.imgSrc}
+                    layout='responsive'
+                    objectFit='contain'
+                  />
+                </Box>
                 <Box sx={{ marginTop: 0.5, display: 'flex', alignItems: 'center' }}>
                   <Typography sx={{ fontWeight: 500 }}>{item.name}</Typography>
                   {item.cardStatus ? (
@@ -405,6 +417,7 @@ const UserViewBilling = () => {
               <Grid container spacing={6}>
                 <Grid item xs={12}>
                   <CardWrapper sx={{ '& .rccs': { margin: '0 auto' } }}>
+                    {/* @ts-ignore */}
                     <Cards cvc={cvc} focused={focus} expiry={expiry} name={name} number={cardNumber} />
                   </CardWrapper>
                 </Grid>

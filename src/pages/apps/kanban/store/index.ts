@@ -4,6 +4,9 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 // ** Axios Imports
 import axios from 'axios'
 
+// ** Types
+import { KanbanTaskType } from 'src/pages/apps/kanban/types'
+
 // ** Fetch Boards
 export const fetchBoards = createAsyncThunk('appKanban/fetchBoards', async () => {
   const response = await axios.get('/apps/kanban/boards')
@@ -17,16 +20,13 @@ export const fetchTasks = createAsyncThunk('appKanban/fetchTasks', async () => {
   return response.data
 })
 
-export const updateTask = createAsyncThunk(
-  'appKanban/updateTask',
-  async (data: { [key: string]: any }, { dispatch }) => {
-    const response = await axios.post('/apps/kanban/update-task', { data })
-    await dispatch(fetchBoards())
-    await dispatch(fetchTasks())
+export const updateTask = createAsyncThunk('appKanban/updateTask', async (data: KanbanTaskType, { dispatch }) => {
+  const response = await axios.post('/apps/kanban/update-task', { data })
+  await dispatch(fetchBoards())
+  await dispatch(fetchTasks())
 
-    return response.data
-  }
-)
+  return response.data
+})
 
 export const addBoard = createAsyncThunk(
   'appKanban/addBoard',

@@ -38,7 +38,7 @@ const InvoicePreview = ({ id }: InvoiceLayoutProps) => {
         setData(null)
         setError(true)
       })
-  }, [])
+  }, [id])
 
   const toggleSendInvoiceDrawer = () => setSendInvoiceOpen(!sendInvoiceOpen)
   const toggleAddPaymentDrawer = () => setAddPaymentOpen(!addPaymentOpen)

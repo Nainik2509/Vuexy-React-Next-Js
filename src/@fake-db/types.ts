@@ -1,5 +1,37 @@
 import { ThemeColor } from 'src/@core/layouts/types'
 
+export type AppBarSearchPagesSection = {
+  id: number
+  url: string
+  icon: string
+  type: string
+  title: string
+}
+
+export type AppBarSearchFilesSection = {
+  id: number
+  by: string
+  img: string
+  size: string
+  type: string
+  title: string
+}
+
+export type AppBarSearchContactsSection = {
+  id: number
+  img: string
+  type: string
+  time: string
+  email: string
+  title: string
+}
+
+export type AppBarSearchSortedData = {
+  files: AppBarSearchFilesSection[]
+  pages: AppBarSearchPagesSection[]
+  contacts: AppBarSearchContactsSection[]
+}
+
 export type AppBarSearchType = {
   id: number
   url?: string
@@ -11,6 +43,11 @@ export type AppBarSearchType = {
   size?: string
   email?: string
   time?: string
+}
+
+export type AutocompleteType = {
+  year: number
+  title: string
 }
 
 // Types for Faq Page
@@ -96,20 +133,4 @@ export type DataTableRowType = {
   full_name: string
   start_date: string
   experience: string
-}
-
-export type UserAbilityType = {
-  action: string
-  subject: string
-}
-
-export type JwtDataType = {
-  id: number
-  role: string
-  email: string
-  fullName: string
-  username: string
-  password: string
-  avatar?: string | null
-  ability: UserAbilityType[]
 }

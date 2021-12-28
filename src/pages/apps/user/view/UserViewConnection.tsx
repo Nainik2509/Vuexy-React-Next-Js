@@ -19,8 +19,7 @@ import Close from 'mdi-material-ui/Close'
 import LinkVariant from 'mdi-material-ui/LinkVariant'
 
 // ** Styled component for the Facebook image
-const Img = styled('img')(({ theme }) => ({
-  height: 35,
+const Img = styled(Image)(({ theme }) => ({
   marginLeft: theme.spacing(1.75),
   marginRight: theme.spacing(1.75)
 }))
@@ -127,7 +126,16 @@ const UserViewConnection = () => {
             }}
           >
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <Img alt='Facebook' src='/images/logos/facebook.png' />
+              <Box sx={{ width: 35, height: 35 }}>
+                <Img
+                  width='100%'
+                  height='100%'
+                  alt='Facebook'
+                  layout='responsive'
+                  objectFit='contain'
+                  src='/images/logos/facebook.png'
+                />
+              </Box>
               <Box sx={{ marginLeft: 3 }}>
                 <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Facebook</Typography>
                 <Typography variant='body2' sx={{ fontWeight: 500, fontSize: '0.8125rem' }}>
@@ -142,7 +150,16 @@ const UserViewConnection = () => {
 
           <Box sx={{ display: 'flex', marginBottom: 6, alignItems: 'center', justifyContent: 'space-between' }}>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <img width='35' alt='Twitter' src='/images/logos/twitter.png' />
+              <Box sx={{ width: 35, height: 35 }}>
+                <Image
+                  width='100%'
+                  height='100%'
+                  alt='Twitter'
+                  layout='responsive'
+                  objectFit='contain'
+                  src='/images/logos/twitter.png'
+                />
+              </Box>
               <Box sx={{ marginLeft: 3 }}>
                 <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Twitter</Typography>
                 <Typography variant='body2' sx={{ fontWeight: 500, color: 'primary.main', fontSize: '0.8125rem' }}>
@@ -157,7 +174,16 @@ const UserViewConnection = () => {
 
           <Box sx={{ display: 'flex', marginBottom: 6, alignItems: 'center', justifyContent: 'space-between' }}>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <img width='35' alt='LinkedIn' src='/images/logos/linkedin.png' />
+              <Box sx={{ width: 35, height: 35 }}>
+                <Image
+                  width='100%'
+                  height='100%'
+                  alt='LinkedIn'
+                  layout='responsive'
+                  objectFit='contain'
+                  src='/images/logos/linkedin.png'
+                />
+              </Box>
               <Box sx={{ marginLeft: 3 }}>
                 <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>LinkedIn</Typography>
                 <Typography variant='body2' sx={{ fontWeight: 500, color: 'primary.main', fontSize: '0.8125rem' }}>
@@ -172,7 +198,16 @@ const UserViewConnection = () => {
 
           <Box sx={{ display: 'flex', marginBottom: 6, alignItems: 'center', justifyContent: 'space-between' }}>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <img width='35' alt='Dribbble' src='/images/logos/dribbble.png' />
+              <Box sx={{ width: 35, height: 35 }}>
+                <Image
+                  width='100%'
+                  height='100%'
+                  alt='Dribbble'
+                  layout='responsive'
+                  objectFit='contain'
+                  src='/images/logos/dribbble.png'
+                />
+              </Box>
               <Box sx={{ marginLeft: 3 }}>
                 <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Dribbble</Typography>
                 <Typography variant='body2' sx={{ fontWeight: 500, fontSize: '0.8125rem' }}>
@@ -187,7 +222,16 @@ const UserViewConnection = () => {
 
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <img width='35' alt='Behance' src='/images/logos/behance.png' />
+              <Box sx={{ width: 35, height: 35 }}>
+                <Image
+                  width='100%'
+                  height='100%'
+                  alt='Behance'
+                  layout='responsive'
+                  objectFit='contain'
+                  src='/images/logos/behance.png'
+                />
+              </Box>
               <Box sx={{ marginLeft: 3 }}>
                 <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Behance</Typography>
                 <Typography variant='body2' sx={{ fontWeight: 500, fontSize: '0.8125rem' }}>

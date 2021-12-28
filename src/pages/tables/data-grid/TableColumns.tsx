@@ -4,7 +4,6 @@ import { useState, Fragment } from 'react'
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
-import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import CardHeader from '@mui/material/CardHeader'

@@ -25,16 +25,16 @@ export type AssignedToType = {
 }
 
 export type KanbanTaskType = {
-  id: number
   dueDate: Date
   title: string
   labels: string[]
-  boardId: string
   coverImage?: string
   description: string
-  comments: CommentType[]
+  id?: number | undefined
+  boardId?: string | undefined
   assignedTo: AssignedToType[]
-  attachments: AttachmentType[]
+  comments?: CommentType[] | undefined
+  attachments?: AttachmentType[] | undefined
 }
 
 export type KanbanBoardLayoutProps = {

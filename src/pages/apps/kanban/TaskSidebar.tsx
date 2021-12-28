@@ -250,7 +250,7 @@ const TaskSidebar = (props: TaskSidebarProps) => {
         setAssignee([...arr])
       }
     }
-  }, [selectedTask])
+  }, [selectedTask, setValue])
 
   const handleSidebarClosed = () => {
     handleTaskSidebarToggle()

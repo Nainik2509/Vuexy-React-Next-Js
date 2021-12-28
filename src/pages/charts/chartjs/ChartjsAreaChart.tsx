@@ -21,7 +21,7 @@ import CalendarOutline from 'mdi-material-ui/CalendarOutline'
 import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 // ** Types
-import { DateType } from 'views/forms/forms/form-elements/pickers/react-datepicker/types'
+import { DateType } from 'src/pages/forms/form-elements/pickers/react-datepicker/types'
 
 interface AreaProps {
   blue: string
@@ -30,6 +30,11 @@ interface AreaProps {
   greyLight: string
   labelColor: string
   borderColor: string
+}
+
+interface PickerProps {
+  start: Date | number
+  end: Date | number
 }
 
 const ChartjsAreaChart = (props: AreaProps) => {
@@ -148,7 +153,7 @@ const ChartjsAreaChart = (props: AreaProps) => {
     ]
   }
 
-  const CustomInput = forwardRef(({ ...props }: any, ref) => {
+  const CustomInput = forwardRef((props: PickerProps, ref) => {
     const startDate = format(props.start, 'MM/dd/yyyy')
     const endDate = props.end !== null ? ` - ${format(props.end, 'MM/dd/yyyy')}` : null
 
@@ -204,13 +209,13 @@ const ChartjsAreaChart = (props: AreaProps) => {
               startDate={startDate}
               onChange={handleOnChange}
               placeholderText='Click to select a date'
-              customInput={<CustomInput start={startDate} end={endDate} />}
+              customInput={<CustomInput start={startDate as Date | number} end={endDate as Date | number} />}
             />
           </DatePickerWrapper>
         }
       />
       <CardContent>
-        <Line data={data} options={options} height={450} />
+        <Line data={data} options={options as any} height={450} />
       </CardContent>
     </Card>
   )

@@ -18,8 +18,11 @@ interface Props {
 }
 
 const ServerSideToolbar = (props: Props) => {
+  // prettier-ignore
   return (
     <GridToolbarContainer
+
+      // @ts-ignore
       sx={{
         p: 2,
         pb: 0,

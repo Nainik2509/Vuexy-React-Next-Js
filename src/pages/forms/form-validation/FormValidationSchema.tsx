@@ -18,8 +18,8 @@ import InputAdornment from '@mui/material/InputAdornment'
 
 // ** Third Party Imports
 import * as yup from 'yup'
+import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
-import { useForm, Controller, DefaultValues } from 'react-hook-form'
 
 // ** Icons Imports
 import Close from 'mdi-material-ui/Close'
@@ -77,7 +77,7 @@ const FormValidationSchema = () => {
     control,
     handleSubmit,
     formState: { errors }
-  } = useForm<DefaultValues<any>>({
+  } = useForm({
     defaultValues,
     mode: 'onChange',
     resolver: yupResolver(schema)
@@ -93,7 +93,7 @@ const FormValidationSchema = () => {
 
   const onSubmit = () => setOpen(true)
 
-  const handleClose = (event: SyntheticEvent | MouseEvent, reason?: string) => {
+  const handleClose = (event: Event | SyntheticEvent, reason?: string) => {
     if (reason === 'clickaway') {
       return
     }

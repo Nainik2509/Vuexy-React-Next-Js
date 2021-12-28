@@ -24,10 +24,22 @@ const TabsNav = () => {
           component='a'
           label='Tab 1'
           href='/drafts'
-          onClick={(e: MouseEvent<any>) => e.preventDefault()}
+          onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}
         />
-        <Tab value='2' component='a' label='Tab 2' href='/trash' onClick={(e: MouseEvent<any>) => e.preventDefault()} />
-        <Tab value='3' component='a' label='Tab 3' href='/spam' onClick={(e: MouseEvent<any>) => e.preventDefault()} />
+        <Tab
+          value='2'
+          component='a'
+          label='Tab 2'
+          href='/trash'
+          onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}
+        />
+        <Tab
+          value='3'
+          component='a'
+          label='Tab 3'
+          href='/spam'
+          onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}
+        />
       </TabList>
       <TabPanel value='1'>
         <Typography>

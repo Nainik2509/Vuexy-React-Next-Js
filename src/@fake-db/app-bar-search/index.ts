@@ -703,13 +703,13 @@ mock.onGet('/app-bar/search').reply(config => {
   const { q = '' } = config.params
   const queryLowered = q.toLowerCase()
 
-  const exactData: { [k: string]: any[] } = {
+  const exactData: { [k: string]: AppBarSearchType[] } = {
     pages: [],
     files: [],
     contacts: []
   }
 
-  const includeData: { [k: string]: any[] } = {
+  const includeData: { [k: string]: AppBarSearchType[] } = {
     pages: [],
     files: [],
     contacts: []

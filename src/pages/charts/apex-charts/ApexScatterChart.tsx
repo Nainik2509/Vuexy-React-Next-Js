@@ -4,6 +4,9 @@ import { MouseEvent, useState } from 'react'
 // ** Next Import
 import dynamic from 'next/dynamic'
 
+// ** Third Party Imports
+import { ApexOptions } from 'apexcharts'
+
 // ** MUI Imports
 import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
@@ -31,7 +34,7 @@ const ApexScatterChart = () => {
     setActive(newActive)
   }
 
-  const options = {
+  const options: ApexOptions = {
     chart: {
       zoom: {
         enabled: true,
@@ -51,7 +54,7 @@ const ApexScatterChart = () => {
     },
     legend: {
       position: 'top',
-      horizontalAlign: 'start'
+      horizontalAlign: 'left'
     },
     colors: [scatterColors.series1, scatterColors.series2, scatterColors.series3],
     xaxis: {

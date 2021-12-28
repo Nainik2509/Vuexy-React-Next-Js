@@ -1,6 +1,9 @@
 // ** React Imports
 import { Fragment } from 'react'
 
+// ** Next Imports
+import Image from 'next/image'
+
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -291,7 +294,16 @@ const UserViewOverview = () => {
                 </Box>
                 <Typography variant='body2'>Create new invoices and send to Leona Watkins</Typography>
                 <Box sx={{ mt: 2, display: 'flex', alignItems: 'center' }}>
-                  <img src='/images/icons/file-icons/pdf.png' alt='invoice.pdf' width='28' />
+                  <Box sx={{ width: 28, height: 'auto' }}>
+                    <Image
+                      width='100%'
+                      height='100%'
+                      alt='invoice.pdf'
+                      layout='responsive'
+                      objectFit='contain'
+                      src='/images/icons/file-icons/pdf.png'
+                    />
+                  </Box>
                   <Typography variant='subtitle2' sx={{ ml: 2, fontWeight: 600 }}>
                     invoice.pdf
                   </Typography>

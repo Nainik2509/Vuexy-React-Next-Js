@@ -21,7 +21,7 @@ import CalendarOutline from 'mdi-material-ui/CalendarOutline'
 import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 // ** Types
-import { DateType } from 'views/forms/forms/form-elements/pickers/react-datepicker/types'
+import { DateType } from 'src/pages/forms/form-elements/pickers/react-datepicker/types'
 
 interface BarProp {
   yellow: string

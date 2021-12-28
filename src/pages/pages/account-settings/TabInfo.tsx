@@ -23,9 +23,9 @@ import DatePicker from 'react-datepicker'
 import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 // ** Types
-import { DateType } from 'views/forms/form-elements/pickers/react-datepicker/types'
+import { DateType } from 'src/pages/forms/form-elements/pickers/react-datepicker/types'
 
-const CustomInput = forwardRef(({ ...props }: any, ref) => {
+const CustomInput = forwardRef((props, ref) => {
   return <TextField inputRef={ref} label='Birth Date' fullWidth {...props} />
 })
 

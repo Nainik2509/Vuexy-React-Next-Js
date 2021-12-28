@@ -5,9 +5,9 @@ import jwt from 'jsonwebtoken'
 import mock from 'src/@fake-db/mock'
 
 // ** Types
-import { JwtDataType } from 'src/@fake-db/types'
+import { UserDataType } from 'src/@core/context/types'
 
-const users: JwtDataType[] = [
+const users: UserDataType[] = [
   {
     id: 1,
     fullName: 'John Doe',
@@ -97,7 +97,7 @@ mock.onPost('/jwt/register').reply(request => {
         username,
         fullName: '',
         avatar: null,
-        role: 'admin',
+        role: 'admin' as 'admin' | 'client',
         ability: [
           {
             subject: 'all',
@@ -125,13 +125,16 @@ mock.onPost('/jwt/register').reply(request => {
 })
 
 mock.onGet('/auth/me').reply(config => {
+  // @ts-ignore
   const token = config.headers.Authorization
 
   // get the decoded payload and header
   const decoded = jwt.decode(token, { complete: true })
+
+  // @ts-ignore
   const { id: userId } = decoded.payload
 
-  const userData = JSON.parse(JSON.stringify(users.find((u: JwtDataType) => u.id === userId)))
+  const userData = JSON.parse(JSON.stringify(users.find((u: UserDataType) => u.id === userId)))
 
   delete userData.password
 

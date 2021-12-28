@@ -90,7 +90,7 @@ const ChartjsHorizontalBarChart = (props: HorizontalBarProps) => {
         subheaderTypographyProps={{ variant: 'caption' }}
       />
       <CardContent>
-        <Bar data={data} options={options} height={400} />
+        <Bar data={data} options={options as any} height={400} />
       </CardContent>
     </Card>
   )

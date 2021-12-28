@@ -25,8 +25,8 @@ import InputAdornment from '@mui/material/InputAdornment'
 
 // ** Third Party Imports
 import * as yup from 'yup'
+import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
-import { useForm, Controller, DefaultValues } from 'react-hook-form'
 
 // ** Icons Imports
 import Close from 'mdi-material-ui/Close'
@@ -119,7 +119,7 @@ const StepperLinearWithValidation = () => {
     control: accountControl,
     handleSubmit: handleAccountSubmit,
     formState: { errors: accountErrors }
-  } = useForm<DefaultValues<any>>({
+  } = useForm({
     defaultValues: defaultAccountValues,
     resolver: yupResolver(accountSchema)
   })
@@ -128,7 +128,7 @@ const StepperLinearWithValidation = () => {
     control: personalControl,
     handleSubmit: handlePersonalSubmit,
     formState: { errors: personalErrors }
-  } = useForm<DefaultValues<any>>({
+  } = useForm({
     defaultValues: defaultPersonalValues,
     resolver: yupResolver(personalSchema)
   })
@@ -137,13 +137,13 @@ const StepperLinearWithValidation = () => {
     control: socialControl,
     handleSubmit: handleSocialSubmit,
     formState: { errors: socialErrors }
-  } = useForm<DefaultValues<any>>({
+  } = useForm({
     defaultValues: defaultSocialValues,
     resolver: yupResolver(socialSchema)
   })
 
   // Handle Snackbar
-  const handleSnackbarClose = (event: SyntheticEvent<any> | Event, reason?: string) => {
+  const handleSnackbarClose = (event: SyntheticEvent | Event, reason?: string) => {
     if (reason === 'clickaway') {
       return
     }

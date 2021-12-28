@@ -20,7 +20,7 @@ import BellOutline from 'mdi-material-ui/BellOutline'
 import ChevronDown from 'mdi-material-ui/ChevronDown'
 
 // ** Types
-import { DateType } from 'views/forms/forms/form-elements/pickers/react-datepicker/types'
+import { DateType } from 'src/pages/forms/form-elements/pickers/react-datepicker/types'
 
 // ** Styled Components
 import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
@@ -28,6 +28,11 @@ import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 // ! To avoid Window is not defined Error
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
+
+interface PickerProps {
+  start: Date | number
+  end: Date | number
+}
 
 const ApexBarChart = () => {
   // ** States
@@ -75,7 +80,7 @@ const ApexBarChart = () => {
     }
   ]
 
-  const CustomInput = forwardRef(({ ...props }: any, ref) => {
+  const CustomInput = forwardRef((props: PickerProps, ref) => {
     const startDate = format(props.start, 'MM/dd/yyyy')
     const endDate = props.end !== null ? ` - ${format(props.end, 'MM/dd/yyyy')}` : null
 
@@ -133,7 +138,7 @@ const ApexBarChart = () => {
               startDate={startDate}
               onChange={handleOnChange}
               placeholderText='Click to select a date'
-              customInput={<CustomInput start={startDate} end={endDate} />}
+              customInput={<CustomInput start={startDate as Date | number} end={endDate as Date | number} />}
             />
           </DatePickerWrapper>
         }

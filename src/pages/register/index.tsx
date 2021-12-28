@@ -1,5 +1,5 @@
 // ** React Imports
-import { ReactNode, useState, Fragment, useContext } from 'react'
+import { ReactNode, useState, Fragment, useContext, MouseEvent } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
@@ -36,7 +36,7 @@ import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 // ** Third Party Imports
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { useForm, Controller, DefaultValues } from 'react-hook-form'
+import { useForm, Controller } from 'react-hook-form'
 
 // ** Configs
 import themeConfig from 'src/configs/themeConfig'
@@ -139,7 +139,7 @@ const Register = () => {
     setError,
     handleSubmit,
     formState: { errors }
-  } = useForm<DefaultValues<any>>({
+  } = useForm({
     defaultValues,
     mode: 'onBlur',
     resolver: yupResolver(schema)

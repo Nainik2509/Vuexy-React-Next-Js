@@ -12,7 +12,10 @@ const useCanViewNav = () => {
 
   const canViewNavGroup = (item: NavGroup | NavLink) => {
     // ! This same logic is used in canViewHorizontalNavMenuGroup and canViewHorizontalNavMenuHeaderGroup. So make sure to update logic in them as well
+    // prettier-ignore
     const hasAnyVisibleChild =
+
+      // @ts-ignore
       (item as NavGroup).children && (item as NavGroup).children.some((i: NavLink) => ability.can(i.action, i.subject))
 
     // ** If subject and action is defined in item => Return based on children visibility (Hide group if no child is visible)

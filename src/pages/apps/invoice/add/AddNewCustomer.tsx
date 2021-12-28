@@ -14,7 +14,7 @@ import FormHelperText from '@mui/material/FormHelperText'
 // ** Third Party Imports
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { useForm, Controller, DefaultValues } from 'react-hook-form'
+import { useForm, Controller } from 'react-hook-form'
 
 // ** Icons Imports
 import Close from 'mdi-material-ui/Close'
@@ -61,7 +61,7 @@ const AddNewCustomer = ({ open, toggle, setSelectedClient, clients, setClients }
     control,
     handleSubmit,
     formState: { errors }
-  } = useForm<DefaultValues<any>>({
+  } = useForm({
     resolver: yupResolver(schema),
     defaultValues: { name: '', email: '', company: '', address: '', country: 'USA', contact: '' }
   })

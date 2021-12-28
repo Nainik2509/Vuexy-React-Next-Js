@@ -13,6 +13,7 @@ import InputAdornment from '@mui/material/InputAdornment'
 
 // ** Third Party Imports
 import format from 'date-fns/format'
+import { ApexOptions } from 'apexcharts'
 import DatePicker from 'react-datepicker'
 
 // ** Icons Imports
@@ -20,7 +21,7 @@ import BellOutline from 'mdi-material-ui/BellOutline'
 import ChevronDown from 'mdi-material-ui/ChevronDown'
 
 // ** Types
-import { DateType } from 'views/forms/forms/form-elements/pickers/react-datepicker/types'
+import { DateType } from 'src/pages/forms/form-elements/pickers/react-datepicker/types'
 
 // ** Styled Components
 import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
@@ -32,6 +33,11 @@ const areaColors = {
   series3: '#e0cffe'
 }
 
+interface PickerProps {
+  start: Date | number
+  end: Date | number
+}
+
 // ! To avoid Window is not defined Error
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
@@ -39,8 +45,7 @@ const ApexAreaChart = () => {
   // ** States
   const [endDate, setEndDate] = useState<DateType>(null)
   const [startDate, setStartDate] = useState<DateType>(new Date())
-
-  const options = {
+  const options: ApexOptions = {
     chart: {
       parentHeightOffset: 0,
       toolbar: {
@@ -108,7 +113,7 @@ const ApexAreaChart = () => {
     }
   ]
 
-  const CustomInput = forwardRef(({ ...props }: any, ref) => {
+  const CustomInput = forwardRef((props: PickerProps, ref) => {
     const startDate = format(props.start, 'MM/dd/yyyy')
     const endDate = props.end !== null ? ` - ${format(props.end, 'MM/dd/yyyy')}` : null
 
@@ -166,7 +171,7 @@ const ApexAreaChart = () => {
               startDate={startDate}
               onChange={handleOnChange}
               placeholderText='Click to select a date'
-              customInput={<CustomInput start={startDate} end={endDate} />}
+              customInput={<CustomInput start={startDate as Date | number} end={endDate as Date | number} />}
             />
           </DatePickerWrapper>
         }

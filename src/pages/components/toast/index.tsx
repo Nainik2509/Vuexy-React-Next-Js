@@ -7,7 +7,7 @@ import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 
 // ** Third Party Components
-import { Toaster } from 'react-hot-toast'
+import { Toaster, ToastPosition } from 'react-hot-toast'
 
 // ** Custom Components Imports
 import PageHeader from 'src/@core/components/page-header'
@@ -41,7 +41,10 @@ const ReactHotToasts = () => {
         <ToastPositions activePosition={activePosition} setActivePosition={setActivePosition} />
       </Grid>
       <ReactHotToast>
-        <Toaster position={activePosition} toastOptions={{ className: 'react-hot-toast' }} />
+        <Toaster
+          toastOptions={{ className: 'react-hot-toast' }}
+          position={activePosition as ToastPosition | undefined}
+        />
       </ReactHotToast>
     </Grid>
   )

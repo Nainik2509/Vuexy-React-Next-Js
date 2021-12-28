@@ -1,5 +1,5 @@
 // ** React Imports
-import { ChangeEvent, useState } from 'react'
+import { SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -48,7 +48,7 @@ const FaqAccordions = ({ data }: Props) => {
     }
   }
 
-  const handleChange = (section: string, panel: string) => (event: ChangeEvent<any>, isExpanded: boolean) => {
+  const handleChange = (section: string, panel: string) => (event: SyntheticEvent, isExpanded: boolean) => {
     if (section === 'common') {
       setExpandedCommon(isExpanded ? panel : false)
     } else if (section === 'payment') {

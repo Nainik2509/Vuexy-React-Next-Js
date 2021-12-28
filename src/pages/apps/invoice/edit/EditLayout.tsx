@@ -41,7 +41,7 @@ const InvoiceEditLayout = ({ id }: InvoiceLayoutProps) => {
         setData(null)
         setError(true)
       })
-  }, [])
+  }, [id])
 
   if (data) {
     return (

@@ -15,6 +15,12 @@ import { DateType } from './types'
 // ** Styled Components
 import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
+interface PickerProps {
+  label?: string
+  end: Date | number
+  start: Date | number
+}
+
 const PickersRange = () => {
   // ** States
   const [endDate, setEndDate] = useState<DateType>(null)
@@ -34,7 +40,7 @@ const PickersRange = () => {
     setEndDateRange(end)
   }
 
-  const CustomInput = forwardRef(({ ...props }: any, ref) => {
+  const CustomInput = forwardRef((props: PickerProps, ref) => {
     const startDate = format(props.start, 'MM/dd/yyyy')
     const endDate = props.end !== null ? ` - ${format(props.end, 'MM/dd/yyyy')}` : null
 
@@ -54,7 +60,9 @@ const PickersRange = () => {
           id='date-range-picker'
           onChange={handleOnChange}
           shouldCloseOnSelect={false}
-          customInput={<CustomInput label='Date Range' start={startDate} end={endDate} />}
+          customInput={
+            <CustomInput label='Date Range' start={startDate as Date | number} end={endDate as Date | number} />
+          }
         />
       </DatePickerWrapper>
       <DatePickerWrapper>
@@ -67,7 +75,13 @@ const PickersRange = () => {
           shouldCloseOnSelect={false}
           id='date-range-picker-months'
           onChange={handleOnChangeRange}
-          customInput={<CustomInput label='Multiple Months' start={startDateRange} end={endDateRange} />}
+          customInput={
+            <CustomInput
+              label='Multiple Months'
+              end={endDateRange as Date | number}
+              start={startDateRange as Date | number}
+            />
+          }
         />
       </DatePickerWrapper>
     </Box>

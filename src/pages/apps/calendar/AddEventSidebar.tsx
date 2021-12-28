@@ -27,7 +27,7 @@ import DeleteOutline from 'mdi-material-ui/DeleteOutline'
 import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 // ** Types
-import { AddEventSidebarType } from './types'
+import { EventDateType, AddEventSidebarType } from './types'
 
 interface PickerProps {
   label?: string
@@ -35,9 +35,20 @@ interface PickerProps {
   registername?: string
 }
 
+interface DefaultStateType {
+  url: string
+  title: string
+  allDay: boolean
+  calendar: string
+  description: string
+  endDate: Date | string
+  startDate: Date | string
+  guests: string[] | string | undefined
+}
+
 const capitalize = (string: string) => string && string[0].toUpperCase() + string.slice(1)
 
-const defaultState = {
+const defaultState: DefaultStateType = {
   url: '',
   title: '',
   guests: [],
@@ -64,7 +75,7 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
   } = props
 
   // ** States
-  const [values, setValues] = useState<any>(defaultState)
+  const [values, setValues] = useState<DefaultStateType>(defaultState)
 
   const {
     control,
@@ -91,7 +102,7 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
       start: values.startDate,
       extendedProps: {
         calendar: capitalize(values.calendar),
-        guests: values.guests.length ? values.guests : undefined,
+        guests: values.guests && values.guests.length ? values.guests : undefined,
         description: values.description.length ? values.description : undefined
       }
     }
@@ -258,9 +269,9 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
             <DatePicker
               selectsStart
               id='event-start-date'
-              endDate={values.endDate}
-              selected={values.startDate}
-              startDate={values.startDate}
+              endDate={values.endDate as EventDateType}
+              selected={values.startDate as EventDateType}
+              startDate={values.startDate as EventDateType}
               showTimeSelect={!values.allDay}
               dateFormat={!values.allDay ? 'yyyy-MM-dd hh:mm' : 'yyyy-MM-dd'}
               customInput={<PickersComponent label='Start Date' registername='startDate' />}
@@ -272,10 +283,10 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
             <DatePicker
               selectsEnd
               id='event-end-date'
-              endDate={values.endDate}
-              selected={values.endDate}
-              minDate={values.startDate}
-              startDate={values.startDate}
+              endDate={values.endDate as EventDateType}
+              selected={values.endDate as EventDateType}
+              minDate={values.startDate as EventDateType}
+              startDate={values.startDate as EventDateType}
               showTimeSelect={!values.allDay}
               dateFormat={!values.allDay ? 'yyyy-MM-dd hh:mm' : 'yyyy-MM-dd'}
               customInput={<PickersComponent label='End Date' registername='endDate' />}

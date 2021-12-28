@@ -28,7 +28,7 @@ const Kanban = () => {
   useEffect(() => {
     dispatch(fetchBoards())
     dispatch(fetchTasks())
-  }, [])
+  }, [dispatch])
 
   return (
     <DndProvider backend={HTML5Backend}>

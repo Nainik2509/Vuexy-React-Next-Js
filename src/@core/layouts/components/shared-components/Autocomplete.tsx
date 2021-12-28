@@ -1,5 +1,5 @@
 // ** React Imports
-import { ChangeEvent, Fragment, useCallback, useEffect, useRef, useState } from 'react'
+import { SyntheticEvent, ChangeEvent, Fragment, useCallback, useEffect, useRef, useState } from 'react'
 
 // ** Next Import
 import { useRouter } from 'next/router'
@@ -197,7 +197,7 @@ const AutocompleteComponent = ({ hidden, setShowBackdrop }: Props) => {
   }
 
   // Handle option change on Autocomplete component
-  const handleAutocompleteChange = (event: ChangeEvent<any>, obj: AppBarSearchType | unknown) => {
+  const handleAutocompleteChange = (event: SyntheticEvent, obj: AppBarSearchType | unknown) => {
     setAutocompleteKey(autocompleteKey + 1)
     if ((obj as AppBarSearchType).url) {
       handleOptionClick((obj as AppBarSearchType).url)
@@ -305,7 +305,7 @@ const AutocompleteComponent = ({ hidden, setShowBackdrop }: Props) => {
             renderInput={(params: AutocompleteRenderInputParams) => (
               <TextField
                 {...params}
-                onChange={(event: ChangeEvent<any>) => setSearchValue(event.target.value)}
+                onChange={(event: ChangeEvent<HTMLInputElement>) => setSearchValue(event.target.value)}
                 inputRef={input => {
                   if (input) {
                     if (openSearchBox) {

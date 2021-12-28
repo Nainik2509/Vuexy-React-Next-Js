@@ -6,6 +6,8 @@ import { ThemeColor } from 'src/@core/layouts/types'
 
 export type CalendarFiltersType = 'Personal' | 'Business' | 'Family' | 'Holiday' | 'ETC'
 
+export type EventDateType = Date | null | undefined
+
 export type CalendarColors = {
   ETC: ThemeColor
   Family: ThemeColor
@@ -22,10 +24,10 @@ export type EventType = {
   end: Date | string
   start: Date | string
   extendedProps: {
-    guests?: string[]
-    description?: string
     location?: string
     calendar?: string
+    description?: string
+    guests?: string[] | string | undefined
   }
 }
 
@@ -38,8 +40,8 @@ export type AddEventType = {
   start: Date | string
   extendedProps: {
     calendar: string
-    guests: string[] | undefined
     description: string | undefined
+    guests: string[] | string | undefined
   }
 }
 

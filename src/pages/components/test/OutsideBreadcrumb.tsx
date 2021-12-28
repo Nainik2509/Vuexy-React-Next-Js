@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography'
 import Breadcrumbs from '@mui/material/Breadcrumbs'
 
 const OutsideBreadcrumb = () => {
-  const handleClick = (event: MouseEvent<any>) => {
+  const handleClick = (event: MouseEvent<HTMLElement>) => {
     event.preventDefault()
     console.info('You clicked a breadcrumb.')
   }

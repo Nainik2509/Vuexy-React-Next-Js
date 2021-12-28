@@ -6,8 +6,8 @@ import MuiAvatar from '@mui/material/Avatar'
 import { lighten, useTheme } from '@mui/material/styles'
 
 // ** Types
-import { ThemeColor } from 'src/@core/layouts/types'
 import { CustomAvatarProps } from './types'
+import { ThemeColor } from 'src/@core/layouts/types'
 
 // ** Hooks Imports
 import useBgColor, { UseBgColorType } from 'src/@core/hooks/theme/useBgColor'

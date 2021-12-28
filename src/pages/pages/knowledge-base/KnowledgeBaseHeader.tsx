@@ -44,7 +44,7 @@ const KnowledgeBaseHeader: FC<State> = (props: State) => {
   // ** Props
   const { searchTerm, setSearchTerm } = props
 
-  const handleFaqFilter = (e: ChangeEvent<any>) => {
+  const handleFaqFilter = (e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
     setSearchTerm(e.target.value)
   }
 

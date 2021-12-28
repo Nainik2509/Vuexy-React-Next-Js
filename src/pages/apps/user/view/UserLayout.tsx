@@ -34,7 +34,7 @@ const UserView = ({ id }: UserLayoutType) => {
         setData(null)
         setError(true)
       })
-  }, [])
+  }, [id])
 
   if (data) {
     return (

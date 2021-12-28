@@ -1,5 +1,5 @@
 // ** React Imports
-import { ChangeEvent, useState } from 'react'
+import { SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Checkbox from '@mui/material/Checkbox'
@@ -16,7 +16,7 @@ const AccordionActions = () => {
   // ** State
   const [expanded, setExpanded] = useState<string | false>(false)
 
-  const handleChange = (panel: string) => (event: ChangeEvent<any>, isExpanded: boolean) => {
+  const handleChange = (panel: string) => (event: SyntheticEvent, isExpanded: boolean) => {
     setExpanded(isExpanded ? panel : false)
   }
 

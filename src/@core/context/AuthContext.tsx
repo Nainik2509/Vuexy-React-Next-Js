@@ -14,7 +14,7 @@ import authConfig from 'src/configs/auth'
 import { AbilityContext } from 'src/@core/context/Can'
 
 // ** Types
-import { AuthValuesType, RegisterParams, LoginParams, ErrCallbackType } from './types'
+import { AuthValuesType, RegisterParams, LoginParams, ErrCallbackType, UserDataType } from './types'
 
 // ** Defaults
 const defaultProvider: AuthValuesType = {
@@ -35,7 +35,7 @@ type Props = {
 
 const AuthContext = ({ children }: Props) => {
   // ** States
-  const [user, setUser] = useState<any>(defaultProvider.user)
+  const [user, setUser] = useState<UserDataType | null>(defaultProvider.user)
   const [isInitialized, setIsInitialized] = useState<boolean>(defaultProvider.isInitialized)
 
   // ** Hooks
@@ -70,7 +70,7 @@ const AuthContext = ({ children }: Props) => {
       }
     }
     initAuth()
-  }, [router, user])
+  }, [ability, router, user])
 
   const handleLogin = (params: LoginParams, errorCallback?: ErrCallbackType) => {
     axios
@@ -92,7 +92,7 @@ const AuthContext = ({ children }: Props) => {
             setUser({ ...response.data.userData })
             await window.localStorage.setItem('userData', JSON.stringify(response.data.userData))
             await ability.update(response.data.userData.ability)
-            router.push(returnURL || authConfig.redirectURL(role))
+            router.push((returnURL as string) || authConfig.redirectURL(role))
           })
       })
       .catch(err => {
@@ -107,7 +107,7 @@ const AuthContext = ({ children }: Props) => {
     window.localStorage.removeItem(authConfig.storageTokenKeyName)
   }
 
-  const handleRegister = (params: RegisterParams, errorCallback: ErrCallbackType) => {
+  const handleRegister = (params: RegisterParams, errorCallback?: ErrCallbackType) => {
     axios
       .post(authConfig.registerEndpoint, params)
       .then(res => {

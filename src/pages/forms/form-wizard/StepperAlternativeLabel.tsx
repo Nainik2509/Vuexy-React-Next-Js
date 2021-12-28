@@ -76,7 +76,7 @@ const StepperAlternativeLabel = () => {
   })
 
   // Handle Snackbar
-  const handleSnackbarClose = (event: SyntheticEvent | MouseEvent, reason?: string) => {
+  const handleSnackbarClose = (event: Event | SyntheticEvent, reason?: string) => {
     if (reason === 'clickaway') {
       return
     }

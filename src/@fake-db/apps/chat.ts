@@ -319,7 +319,7 @@ mock.onGet('/apps/chat/users/profile-user').reply(() => [200, data.profileUser])
 // ------------------------------------------------
 // GET: Return Single Chat
 // ------------------------------------------------
-mock.onGet('/apps/chat/get-chat').reply((config: { params: { id: string | number } }) => {
+mock.onGet('/apps/chat/get-chat').reply(config => {
   // Get event id from URL
   let userId = config.params.id
 
@@ -340,7 +340,7 @@ mock.onGet('/apps/chat/get-chat').reply((config: { params: { id: string | number
 // ------------------------------------------------
 // POST: Add new chat message
 // ------------------------------------------------
-mock.onPost('/apps/chat/send-msg').reply((config: { data: string }) => {
+mock.onPost('/apps/chat/send-msg').reply(config => {
   // Get event from post data
   const { obj } = JSON.parse(config.data).data
 

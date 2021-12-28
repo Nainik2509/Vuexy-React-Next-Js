@@ -4,10 +4,6 @@ import mock from 'src/@fake-db/mock'
 // ** Types Imports
 import { DataTableRowType } from 'src/@fake-db/types'
 
-const paginateArray = (array: DataTableRowType[], perPage: number, page: number) => {
-  return array.slice((page - 1) * perPage, page * perPage)
-}
-
 const data = [
   {
     id: 95,
@@ -663,8 +659,7 @@ const data = [
 ]
 
 mock.onGet('/api/table/data').reply(config => {
-  const { q = '', perPage = 10, page = 1, column = '', sort = '' } = config
-
+  const { q = '', column = '', sort = '' } = config.params
   const queryLowered = q.toLowerCase()
 
   // @ts-ignore
@@ -689,7 +684,7 @@ mock.onGet('/api/table/data').reply(config => {
     {
       allData: data,
       total: filteredData.length,
-      data: paginateArray(filteredData, perPage, page)
+      data: filteredData
     }
   ]
 })

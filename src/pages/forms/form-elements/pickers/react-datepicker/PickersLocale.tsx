@@ -5,6 +5,7 @@ import { useState } from 'react'
 import Box from '@mui/material/Box'
 
 // ** Third Party Imports
+import { Locale } from 'date-fns'
 import fr from 'date-fns/locale/fr'
 import ar from 'date-fns/locale/ar-SA'
 import en from 'date-fns/locale/en-US'
@@ -20,7 +21,7 @@ import CustomInput from './PickersCustomInput'
 // ** Styled Components
 import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
-const langObj: any = { fr, ar, en }
+const langObj: { [key: string]: Locale } = { fr, ar, en }
 
 const PickersLocale = () => {
   // ** States

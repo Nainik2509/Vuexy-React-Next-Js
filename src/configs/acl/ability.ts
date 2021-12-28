@@ -1,4 +1,7 @@
+// ** Casl Ability
 import { Ability } from '@casl/ability'
+
+// ** Initial Ability
 import { initialAbility } from './initialAbility'
 
 //  Read ability from localStorage

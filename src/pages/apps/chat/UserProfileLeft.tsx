@@ -29,7 +29,7 @@ import CheckCircleOutline from 'mdi-material-ui/CheckCircleOutline'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
 // ** Types
-import { UserProfileLeftType } from './types'
+import { StatusType, UserProfileLeftType } from './types'
 
 // ** Custom Component Imports
 import Sidebar from 'src/@core/components/sidebar'
@@ -45,8 +45,8 @@ const UserProfileLeft = (props: UserProfileLeftType) => {
     handleUserProfileLeftSidebarToggle
   } = props
 
-  const handleUserStatus = (e: ChangeEvent<any>) => {
-    setUserStatus(e.target.value)
+  const handleUserStatus = (e: ChangeEvent<HTMLInputElement>) => {
+    setUserStatus(e.target.value as StatusType)
   }
 
   return (

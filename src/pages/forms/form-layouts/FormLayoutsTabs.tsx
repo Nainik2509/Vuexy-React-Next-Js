@@ -41,7 +41,7 @@ interface State {
   showPassword2: boolean
 }
 
-const CustomInput = forwardRef(({ ...props }: any, ref) => {
+const CustomInput = forwardRef((props, ref) => {
   return <TextField fullWidth {...props} inputRef={ref} label='Birth Date' autoComplete='off' />
 })
 

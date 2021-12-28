@@ -1,5 +1,5 @@
 // ** React Imports
-import { ChangeEvent, useState } from 'react'
+import { SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import TreeView from '@mui/lab/TreeView'
@@ -19,11 +19,11 @@ const TreeViewControlled = ({ direction }: Props) => {
   const [expanded, setExpanded] = useState<string[]>([])
   const [selected, setSelected] = useState<string[]>([])
 
-  const handleToggle = (event: ChangeEvent<any>, nodeIds: string[]) => {
+  const handleToggle = (event: SyntheticEvent, nodeIds: string[]) => {
     setExpanded(nodeIds)
   }
 
-  const handleSelect = (event: ChangeEvent<any>, nodeIds: string[]) => {
+  const handleSelect = (event: SyntheticEvent, nodeIds: string[]) => {
     setSelected(nodeIds)
   }
 

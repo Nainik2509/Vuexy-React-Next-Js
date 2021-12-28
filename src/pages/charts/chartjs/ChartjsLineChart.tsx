@@ -120,7 +120,7 @@ const ChartjsLineChart = (props: LineProps) => {
         subheaderTypographyProps={{ variant: 'caption' }}
       />
       <CardContent>
-        <Line data={data} options={options} height={400} />
+        <Line data={data} options={options as any} height={400} />
       </CardContent>
     </Card>
   )

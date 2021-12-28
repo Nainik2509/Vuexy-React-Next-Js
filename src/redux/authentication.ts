@@ -1,9 +1,6 @@
 // ** Redux Imports
 import { createSlice } from '@reduxjs/toolkit'
 
-// ** Config Imports
-import authConfig from 'src/configs/auth'
-
 export const authSlice = createSlice({
   name: 'authentication',
   initialState: {

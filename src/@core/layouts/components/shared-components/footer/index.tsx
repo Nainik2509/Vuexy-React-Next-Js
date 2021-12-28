@@ -20,7 +20,7 @@ const FooterWrapper = styled('footer')(({ theme }) => ({
 
 const Footer = (props: Props) => {
   // ** Props
-  const { settings, saveSettings, showBackdrop } = props
+  const { settings, showBackdrop } = props
 
   if (settings.footer === 'hidden') {
     return null

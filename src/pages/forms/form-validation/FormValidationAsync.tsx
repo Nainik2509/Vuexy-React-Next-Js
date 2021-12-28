@@ -76,7 +76,7 @@ const FormValidationAsync = () => {
     setOpen(true)
   }
 
-  const handleClose = (event: SyntheticEvent | MouseEvent, reason?: string) => {
+  const handleClose = (event: Event | SyntheticEvent, reason?: string) => {
     if (reason === 'clickaway') {
       return
     }

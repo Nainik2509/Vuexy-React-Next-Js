@@ -57,7 +57,7 @@ const NotAuthorized = () => {
           <Typography variant='body2'>You don’t have permission to access this page. Go Home!</Typography>
         </BoxWrapper>
         <Img height='487' alt='not-authorized-illustration' src='/images/pages/misc-not-authorized.png' />
-        <Link href={authConfig.redirectURL(user.role)} passHref>
+        <Link href={user ? authConfig.redirectURL(user.role) : '/'} passHref>
           <Button type='submit' component='a' variant='contained' sx={{ paddingLeft: 5.5, paddingRight: 5.5 }}>
             Back to Home
           </Button>

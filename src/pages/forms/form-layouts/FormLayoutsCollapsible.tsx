@@ -1,5 +1,5 @@
 // ** React Imports
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
@@ -23,7 +23,7 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 
 // ** Third Party Imports
 import Payment from 'payment'
-import Cards from 'react-credit-cards'
+import Cards, { Focused } from 'react-credit-cards'
 
 // ** Icons Imports
 import ChevronDown from 'mdi-material-ui/ChevronDown'
@@ -67,7 +67,7 @@ const FormLayoutsCollapsible = () => {
   const [paymentMethod, setPaymentMethod] = useState<string>('card')
   const [expanded, setExpanded] = useState<string | false>('panel1')
 
-  const handleChange = (panel: string) => (event: ChangeEvent<any>, isExpanded: boolean) => {
+  const handleChange = (panel: string) => (event: SyntheticEvent, isExpanded: boolean) => {
     setExpanded(isExpanded ? panel : false)
   }
 
@@ -257,7 +257,7 @@ const FormLayoutsCollapsible = () => {
                     <Grid container spacing={6}>
                       <Grid item xs={12}>
                         <CardWrapper>
-                          <Cards cvc={cvc} focused={focus} expiry={expiry} name={name} number={cardNumber} />
+                          <Cards cvc={cvc} focused={focus as Focused} expiry={expiry} name={name} number={cardNumber} />
                         </CardWrapper>
                       </Grid>
                       <Grid item xs={12} md={8} xl={6} sx={{ mt: 2 }}>

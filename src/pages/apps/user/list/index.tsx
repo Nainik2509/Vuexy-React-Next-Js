@@ -132,7 +132,7 @@ const RowOptions = ({ id }: { id: number | string }) => {
 
   const rowOptionsOpen = Boolean(anchorEl)
 
-  const handleRowOptionsClick = (event: MouseEvent<any>) => {
+  const handleRowOptionsClick = (event: MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget)
   }
   const handleRowOptionsClose = () => {

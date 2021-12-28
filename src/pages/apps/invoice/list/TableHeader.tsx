@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
+import { GridRowId } from '@mui/x-data-grid'
 import MenuItem from '@mui/material/MenuItem'
 import { styled } from '@mui/material/styles'
 import TextField from '@mui/material/TextField'
@@ -12,7 +13,7 @@ import Select, { SelectChangeEvent } from '@mui/material/Select'
 interface TableHeaderProps {
   value: string
   userView?: boolean
-  selectedRows: any[]
+  selectedRows: GridRowId[]
   rowsPerPage: string | undefined
   handleFilter: (val: string) => void
   handlePerPage: (e: SelectChangeEvent) => void

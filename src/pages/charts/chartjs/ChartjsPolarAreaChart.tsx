@@ -77,7 +77,7 @@ const ChartjsPolarAreaChart = (props: PolarAreaProps) => {
         }
       />
       <CardContent>
-        <PolarArea data={data} options={options} height={350} />
+        <PolarArea data={data} options={options as any} height={350} />
       </CardContent>
     </Card>
   )

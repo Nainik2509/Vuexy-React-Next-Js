@@ -307,7 +307,7 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
     }
   }
 
-  const handleFilter = (e: ChangeEvent<any>) => {
+  const handleFilter = (e: ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value)
     if (store.chats !== null && store.contacts !== null) {
       const searchFilterFunction = (contact: ChatsArrType | ContactType) =>

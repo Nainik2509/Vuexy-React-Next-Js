@@ -1,5 +1,5 @@
 // ** React Imports
-import { Fragment, MouseEvent, SyntheticEvent, useState } from 'react'
+import { Fragment, SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
@@ -17,7 +17,7 @@ const SnackbarSimple = () => {
     setOpen(true)
   }
 
-  const handleClose = (event: SyntheticEvent | MouseEvent, reason?: string) => {
+  const handleClose = (event: Event | SyntheticEvent, reason?: string) => {
     if (reason === 'clickaway') {
       return
     }

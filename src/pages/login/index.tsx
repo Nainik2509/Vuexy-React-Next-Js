@@ -1,5 +1,5 @@
 // ** React Imports
-import { useState, useContext, ReactNode } from 'react'
+import { useState, useContext, ReactNode, MouseEvent } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
@@ -32,8 +32,8 @@ import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 
 // ** Third Party Imports
 import * as yup from 'yup'
+import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { useForm, Controller, DefaultValues } from 'react-hook-form'
 
 // ** Context
 import { Auth } from 'src/@core/context/AuthContext'
@@ -132,7 +132,7 @@ const LoginPage = () => {
     setError,
     handleSubmit,
     formState: { errors }
-  } = useForm<DefaultValues<any>>({
+  } = useForm({
     defaultValues,
     mode: 'onBlur',
     resolver: yupResolver(schema)

@@ -1,5 +1,5 @@
 // ** React Imports
-import { useRef, useState, Fragment, MouseEvent } from 'react'
+import { useRef, useState, Fragment, SyntheticEvent } from 'react'
 
 // ** MUI Imports
 import Grow from '@mui/material/Grow'
@@ -28,7 +28,7 @@ const ButtonGroupSplit = () => {
     console.info(`You clicked '${options[selectedIndex]}'`)
   }
 
-  const handleMenuItemClick = (event: MouseEvent<any>, index: number) => {
+  const handleMenuItemClick = (event: SyntheticEvent, index: number) => {
     setSelectedIndex(index)
     setOpen(false)
   }

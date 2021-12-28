@@ -1,5 +1,5 @@
 // ** React Imports
-import { Fragment, MouseEvent, SyntheticEvent, useEffect, useState } from 'react'
+import { Fragment, SyntheticEvent, useEffect, useState } from 'react'
 
 // ** MUI Imports
 import Alert from '@mui/material/Alert'
@@ -31,7 +31,7 @@ const SnackbarConsecutive = () => {
     setSnackPack(prev => [...prev, { message, key: new Date().getTime() }])
   }
 
-  const handleClose = (event: SyntheticEvent | MouseEvent, reason?: string) => {
+  const handleClose = (event: Event | SyntheticEvent, reason?: string) => {
     if (reason === 'clickaway') {
       return
     }

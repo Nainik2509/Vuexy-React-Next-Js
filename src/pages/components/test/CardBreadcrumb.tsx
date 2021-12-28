@@ -9,7 +9,7 @@ import CardContent from '@mui/material/CardContent'
 import Breadcrumbs from '@mui/material/Breadcrumbs'
 
 const CardBreadcrumb = () => {
-  const handleClick = (event: MouseEvent<any>) => {
+  const handleClick = (event: MouseEvent<HTMLElement>) => {
     event.preventDefault()
     console.info('You clicked a breadcrumb.')
   }

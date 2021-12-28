@@ -2,10 +2,16 @@
 import { Dispatch } from 'redux'
 import { ReactElement, SyntheticEvent } from 'react'
 
-export type MailLayoutType = {
+export type MailLabelType = 'personal' | 'company' | 'important' | 'private'
+
+export type MailFolderType = 'inbox' | 'sent' | 'draft' | 'starred' | 'spam' | 'trash'
+
+export type RouteParams = {
   label?: string
   folder?: string
 }
+
+export type MailLayoutType = RouteParams & {}
 
 export type MailAttachmentType = {
   url: string
@@ -19,10 +25,6 @@ export type FieldMenuItems = {
   name: string
   value: string
 }
-
-export type MailLabelType = 'personal' | 'company' | 'important' | 'private'
-
-export type MailFolderType = 'inbox' | 'sent' | 'draft' | 'starred' | 'spam' | 'trash'
 
 export type FetchMailParamsType = { q: string; folder: MailFolderType; label: MailLabelType }
 
@@ -80,14 +82,14 @@ export type MailFoldersArrType = {
 }
 
 export type MailStore = {
-  mails: MailType[]
+  mails: MailType[] | null
   selectedMails: number[]
   currentMail: null | MailType
   mailMeta: null | MailMetaType
   filter: {
     q: string
-    label: MailLabelType | ''
-    folder: MailFolderType | ''
+    label: string
+    folder: string
   }
 }
 
@@ -115,6 +117,7 @@ export type MailLogType = {
   lgAbove: boolean
   dispatch: Dispatch<any>
   direction: 'ltr' | 'rtl'
+  routeParams: RouteParams
   labelColors: MailLabelColors
   setQuery: (val: string) => void
   handleLeftSidebarToggle: () => void
@@ -124,7 +127,6 @@ export type MailLogType = {
   updateMail: (data: UpdateMailParamsType) => void
   updateMailLabel: (data: UpdateMailLabelType) => void
   paginateMail: (data: PaginateMailParamsType) => void
-  routeParams: { folder?: MailFolderType; label?: MailLabelType }
 }
 
 export type MailDetailsType = {

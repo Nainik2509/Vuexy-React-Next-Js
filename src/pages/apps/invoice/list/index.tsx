@@ -71,6 +71,14 @@ interface InvoiceStatusObj {
   }
 }
 
+interface CustomInputProps {
+  dates: Date[]
+  label: string
+  end: number | Date
+  start: number | Date
+  setDates?: (value: Date[]) => void
+}
+
 interface CellType {
   // eslint-disable-next-line react/no-unused-prop-types
   row: InvoiceType
@@ -98,7 +106,7 @@ const RowOptions = ({ id }: { id: number | string }) => {
 
   const rowOptionsOpen = Boolean(anchorEl)
 
-  const handleRowOptionsClick = (event: MouseEvent<any>) => {
+  const handleRowOptionsClick = (event: MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget)
   }
   const handleRowOptionsClose = () => {
@@ -274,16 +282,16 @@ const defaultColumns = [
   }
 ]
 
-const CustomInput = forwardRef((props: any, ref) => {
+const CustomInput = forwardRef((props: CustomInputProps, ref) => {
   const startDate = props.start !== null ? format(props.start, 'MM/dd/yyyy') : ''
   const endDate = props.end !== null ? ` - ${format(props.end, 'MM/dd/yyyy')}` : null
 
   const value = `${startDate}${endDate !== null ? endDate : ''}`
-  props.start === null && props.dates.length ? props.setDates([]) : null
+  props.start === null && props.dates.length && props.setDates ? props.setDates([]) : null
   const updatedProps = { ...props }
   delete updatedProps.setDates
 
-  return <TextField fullWidth inputRef={ref} label={props.label || ''} {...updatedProps} value={value} />
+  return <TextField fullWidth inputRef={ref} {...updatedProps} label={props.label || ''} value={value} />
 })
 
 const InvoiceList = (props: InvoiceListProps) => {
@@ -395,10 +403,10 @@ const InvoiceList = (props: InvoiceListProps) => {
                     customInput={
                       <CustomInput
                         dates={dates}
-                        end={endDateRange}
                         setDates={setDates}
                         label='Multiple Months'
-                        start={startDateRange}
+                        end={endDateRange as number | Date}
+                        start={startDateRange as number | Date}
                       />
                     }
                   />
