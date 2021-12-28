@@ -3,8 +3,8 @@ import { Theme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 
 // ** Type Import
-import { Settings } from 'src/@core/context/settingsContext'
 import { LayoutProps } from 'src/@core/layouts/types'
+import { Settings } from 'src/@core/context/settingsContext'
 
 // ** Layout Components
 import VerticalLayout from './VerticalLayout'

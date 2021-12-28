@@ -5,11 +5,11 @@ import Box, { BoxProps } from '@mui/material/Box'
 // ** Configs Imports
 import themeConfig from 'src/configs/themeConfig'
 
-// ** AppBar Imports
-import AppBar from 'src/@core/layouts/components/blank-layout-with-appBar'
-
 // ** Types
 import { BlankLayoutWithAppBarProps } from './types'
+
+// ** AppBar Imports
+import AppBar from 'src/@core/layouts/components/blank-layout-with-appBar'
 
 // Styled component for Blank Layout with AppBar component
 const BlankLayoutWithAppBarWrapper = styled(Box)<BoxProps>(({ theme }) => ({
@@ -39,7 +39,7 @@ const BlankLayoutWithAppBar = (props: BlankLayoutWithAppBarProps) => {
 
   return (
     <BlankLayoutWithAppBarWrapper>
-      <AppBar />
+      <AppBar {...props} />
       <Box
         className='app-content'
         sx={{

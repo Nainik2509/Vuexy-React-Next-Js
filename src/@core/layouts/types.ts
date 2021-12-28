@@ -46,12 +46,19 @@ export type HorizontalNavItemsType = (NavLink | NavGroup)[]
 
 export type LayoutProps = {
   children: ReactNode
-  appBarContent?: any
-  navMenuHeader?: any
-  navMenuContent?: any
-  footerContent?: ReactNode
+  menuLockedIcon?: ReactNode
+  menuUnlockedIcon?: ReactNode
   verticalNavItems?: VerticalNavItemsType
+  footerContent?: (props?: any) => ReactNode
   horizontalNavItems?: HorizontalNavItemsType
+  verticalAppBarContent?: (props?: any) => ReactNode
+  verticalNavMenuContent?: (props?: any) => ReactNode
+  verticalNavMenuBranding?: (props?: any) => ReactNode
+  horizontalAppBarContent?: (props?: any) => ReactNode
+  horizontalAppBarBranding?: (props?: any) => ReactNode
+  horizontalNavMenuContent?: (props?: any) => ReactNode
+  afterVerticalNavMenuContent?: (props?: any) => ReactNode
+  beforeVerticalNavMenuContent?: (props?: any) => ReactNode
 }
 
 export type BlankLayoutProps = {
@@ -60,4 +67,5 @@ export type BlankLayoutProps = {
 
 export type BlankLayoutWithAppBarProps = {
   children: ReactNode
+  appBarContent?: any
 }

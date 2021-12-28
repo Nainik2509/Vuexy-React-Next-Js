@@ -1,3 +1,6 @@
+// ** React Imports
+import { ReactNode } from 'react'
+
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
@@ -12,6 +15,7 @@ interface Props {
   settings: Settings
   showBackdrop: boolean
   saveSettings: (values: Settings) => void
+  footerContent?: (props?: any) => ReactNode
 }
 
 const FooterWrapper = styled('footer')(({ theme }) => ({
@@ -20,7 +24,7 @@ const FooterWrapper = styled('footer')(({ theme }) => ({
 
 const Footer = (props: Props) => {
   // ** Props
-  const { settings, showBackdrop } = props
+  const { settings, showBackdrop, footerContent: userFooterContent } = props
 
   if (settings.footer === 'hidden') {
     return null
@@ -50,7 +54,7 @@ const Footer = (props: Props) => {
           ...(settings.contentWidth === 'boxed' && { mx: 'auto', '@media (min-width:1440px)': { maxWidth: 1440 } })
         }}
       >
-        <FooterContent />
+        {userFooterContent ? userFooterContent() : <FooterContent />}
       </Box>
     </FooterWrapper>
   )
