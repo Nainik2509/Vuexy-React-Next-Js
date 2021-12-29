@@ -1,14 +1,29 @@
-// ** Casl Ability
-import { Ability } from '@casl/ability'
+import { AbilityBuilder, Ability, AbilityClass } from '@casl/ability'
 
-// ** Initial Ability
-import { initialAbility } from './initialAbility'
+type Actions = 'manage' | 'create' | 'read' | 'update' | 'delete'
+type Subjects = 'ACL' | 'all'
 
-//  Read ability from localStorage
-// * Handles auto fetching previous abilities if already logged in user
-// ? You can update this if you store user abilities to more secure place
-// ! Anyone can update localStorage so be careful and please update this
-const userData = typeof window !== 'undefined' ? JSON.parse(window.localStorage.getItem('userData')!) : null
-const existingAbility = userData ? userData.ability : null
+export type AppAbility = Ability<[Actions, Subjects]>
+export const AppAbility = Ability as AbilityClass<AppAbility>
 
-export default new Ability(existingAbility || initialAbility)
+export default function defineRulesFor(role: string) {
+  const { can, rules } = new AbilityBuilder(AppAbility)
+
+  // Write your Ability Rules according to your App Roles
+  if (role === 'admin') {
+    // Admin can manage everything in the app
+    can('manage', 'all')
+  } else {
+    // All others (Client - in our case we only have other role as client) can only read Access Control Page (ACL)
+    can(['read'], 'ACL')
+  }
+
+  return rules
+}
+
+export function buildAbilityFor(role: string): AppAbility {
+  return new AppAbility(defineRulesFor(role), {
+    // https://casl.js.org/v5/en/guide/subject-type-detection
+    detectSubjectType: object => object!.type
+  })
+}

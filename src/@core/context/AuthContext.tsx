@@ -19,7 +19,9 @@ import { AuthValuesType, RegisterParams, LoginParams, ErrCallbackType, UserDataT
 // ** Defaults
 const defaultProvider: AuthValuesType = {
   user: null,
+  loading: true,
   setUser: () => null,
+  setLoading: () => Boolean,
   isInitialized: false,
   login: () => Promise.resolve(),
   logout: () => Promise.resolve(),
@@ -27,50 +29,52 @@ const defaultProvider: AuthValuesType = {
   register: () => Promise.resolve()
 }
 
-const Auth = createContext(defaultProvider)
+const AuthContext = createContext(defaultProvider)
 
 type Props = {
   children: ReactNode
 }
 
-const AuthContext = ({ children }: Props) => {
+const AuthProvider = ({ children }: Props) => {
   // ** States
   const [user, setUser] = useState<UserDataType | null>(defaultProvider.user)
+  const [loading, setLoading] = useState<boolean>(defaultProvider.loading)
   const [isInitialized, setIsInitialized] = useState<boolean>(defaultProvider.isInitialized)
 
   // ** Hooks
   const router = useRouter()
+
   const ability = useContext(AbilityContext)
 
   useEffect(() => {
-    const initAuth = async () => {
-      if (window) {
-        const storedToken = window.localStorage.getItem(authConfig.storageTokenKeyName)!
-        if (storedToken) {
-          setIsInitialized(true)
+    const initAuth = async (): Promise<void> => {
+      setIsInitialized(true)
+      const storedToken = window.localStorage.getItem(authConfig.storageTokenKeyName)!
 
-          if (user === null) {
-            axios
-              .get(authConfig.meEndpoint, {
-                headers: {
-                  Authorization: window.localStorage.getItem(authConfig.storageTokenKeyName)!
-                }
-              })
-              .then(response => {
-                setIsInitialized(true)
-                setUser({ ...response.data.userData })
-                ability.update(response.data.userData.ability)
-                router.push(router.route)
-              })
-          }
-        } else {
-          setIsInitialized(false)
-          setUser(null)
-        }
+      if (storedToken) {
+        setLoading(true)
+        await axios
+          .get(authConfig.meEndpoint, {
+            headers: {
+              Authorization: storedToken
+            }
+          })
+          .then(response => {
+            // setIsInitialized(true)
+            setUser({ ...response.data.userData })
+            setLoading(false)
+
+            // ability.update(response.data.userData.ability)
+            // router.push(router.route)
+          })
+      } else {
+        setLoading(false)
       }
     }
     initAuth()
-  }, [ability, router, user])
+  }, [])
+
+  // }, [router, ability, user])
 
   const handleLogin = (params: LoginParams, errorCallback?: ErrCallbackType) => {
     axios
@@ -87,12 +91,15 @@ const AuthContext = ({ children }: Props) => {
           })
           .then(async response => {
             const { role } = response.data.userData
-            const returnURL = router.query.returnUrl
+            const returnUrl = router.query.returnUrl
+
+            const redirectURL = returnUrl && returnUrl !== '/' ? returnUrl : authConfig.redirectURL(role)
 
             setUser({ ...response.data.userData })
             await window.localStorage.setItem('userData', JSON.stringify(response.data.userData))
-            await ability.update(response.data.userData.ability)
-            router.push((returnURL as string) || authConfig.redirectURL(role))
+
+            // await ability.update(response.data.userData.ability)
+            router.replace(redirectURL)
           })
       })
       .catch(err => {
@@ -105,6 +112,7 @@ const AuthContext = ({ children }: Props) => {
     setIsInitialized(false)
     window.localStorage.removeItem('userData')
     window.localStorage.removeItem(authConfig.storageTokenKeyName)
+    router.push(authConfig.redirectURL(null))
   }
 
   const handleRegister = (params: RegisterParams, errorCallback?: ErrCallbackType) => {
@@ -122,7 +130,9 @@ const AuthContext = ({ children }: Props) => {
 
   const values = {
     user,
+    loading,
     setUser,
+    setLoading,
     isInitialized,
     setIsInitialized,
     login: handleLogin,
@@ -130,7 +140,7 @@ const AuthContext = ({ children }: Props) => {
     register: handleRegister
   }
 
-  return <Auth.Provider value={values}>{children}</Auth.Provider>
+  return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>
 }
 
-export { Auth, AuthContext }
+export { AuthContext, AuthProvider }

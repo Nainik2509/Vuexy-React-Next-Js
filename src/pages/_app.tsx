@@ -1,6 +1,3 @@
-// ** React Imports
-import { useEffect, useState } from 'react'
-
 // ** Next Imports
 import Head from 'next/head'
 import type { NextPage } from 'next'
@@ -17,7 +14,6 @@ import type { EmotionCache } from '@emotion/cache'
 
 // ** Config Imports
 import 'src/configs/i18n'
-import ability from 'src/configs/acl/ability'
 
 // ** Fake-DB Import
 import 'src/@fake-db'
@@ -27,16 +23,16 @@ import clsx from 'clsx'
 
 // ** Component Imports
 import UserLayout from 'src/layouts/UserLayout'
+import { AuthGuard } from 'src/@core/components/auth'
+import { buildAbilityFor } from 'src/configs/acl/ability'
 import ThemeComponent from 'src/@core/theme/ThemeComponent'
 
 // ** Contexts
 import { AbilityContext } from 'src/@core/context/Can'
-import { Auth, AuthContext } from 'src/@core/context/AuthContext'
-import { SettingsConsumer, SettingsProvider } from 'src/@core/context/settingsContext'
+import { AuthProvider } from 'src/@core/context/AuthContext'
 
-// ** Types
-import { AuthValuesType } from 'src/@core/context/types'
-import { RouterTransitions } from 'src/@core/layouts/types'
+import { AuthContext } from 'src/@core/context/AuthContext'
+import { SettingsConsumer, SettingsProvider } from 'src/@core/context/settingsContext'
 
 // ** Utils Imports
 import { createEmotionCache } from 'src/@core/utils/create-emotion-cache'
@@ -71,8 +67,6 @@ const clientSideEmotionCache = createEmotionCache()
 
 // ** Configure JSS & ClassName
 const App = (props: ExtendedAppProps) => {
-  const [isMounted, setIsMounted] = useState<boolean>()
-
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
 
   const getLayout = Component.getLayout ?? (page => <UserLayout>{page}</UserLayout>)
@@ -80,47 +74,8 @@ const App = (props: ExtendedAppProps) => {
   const setConfig = Component.setConfig ?? undefined
 
   const router = useRouter()
-  const AuthConsumer = Auth.Consumer
 
-  useEffect(() => {
-    setIsMounted(true)
-
-    return () => setIsMounted(false)
-  }, [])
-
-  const handleRedirection = (auth: AuthValuesType, ability: any, routerTransition: RouterTransitions | undefined) => {
-    if (auth.user === null && router.route !== '/login') {
-      router.push({
-        pathname: '/login',
-        query: { returnUrl: router.route }
-      })
-    }
-
-    // if (auth.user !== null && pageProps && pageProps.restrictedPage) {
-    //   router.push(authConfig.redirectURL(auth.user.role))
-    // }
-
-    if (
-      auth.user &&
-      !pageProps.restrictedPage &&
-      router.route !== '/not-authorized' &&
-      !ability.can(pageProps.action, pageProps.subject)
-    ) {
-      router.push('/not-authorized')
-    }
-
-    return getLayout(
-      <div
-        className={clsx('animation-wrapper', {
-          [`animate__animated animate__${routerTransition}`]:
-            routerTransition !== 'none' || routerTransition !== undefined
-        })}
-        key={router.route}
-      >
-        <Component {...pageProps} />
-      </div>
-    )
-  }
+  const AuthConsumer = AuthContext.Consumer
 
   return (
     <Provider store={store}>
@@ -129,25 +84,51 @@ const App = (props: ExtendedAppProps) => {
           <title>Master React Admin Template With MUI & NextJS</title>
           <meta name='viewport' content='initial-scale=1, width=device-width' />
         </Head>
-        <AbilityContext.Provider value={ability}>
-          <AuthContext>
-            <SettingsProvider {...(setConfig ? { pageSettings: setConfig() } : {})}>
-              <SettingsConsumer>
-                {({ settings }) => {
-                  return (
-                    <ThemeComponent settings={settings}>
-                      {isMounted ? (
-                        <AuthConsumer>
-                          {auth => handleRedirection(auth, ability, settings.routerTransition)}
-                        </AuthConsumer>
-                      ) : null}
-                    </ThemeComponent>
-                  )
-                }}
-              </SettingsConsumer>
-            </SettingsProvider>
-          </AuthContext>
-        </AbilityContext.Provider>
+
+        <AuthProvider>
+          <AuthConsumer>
+            {auth => {
+              const role = auth.user !== null ? auth.user.role : 'visitor'
+              const ability = buildAbilityFor(role)
+
+              return (
+                <AbilityContext.Provider value={ability}>
+                  <SettingsProvider {...(setConfig ? { pageSettings: setConfig() } : {})}>
+                    <SettingsConsumer>
+                      {({ settings }) => {
+                        return (
+                          <ThemeComponent settings={settings}>
+                            {/* {auth.loading ? (
+                              'Loading...' // Splash screen
+                            ) : (
+                              <AuthGuard pageProps={pageProps} ability={ability}>
+                                {getLayout(<Component {...pageProps} />)}
+                              </AuthGuard>
+                            )} */}
+                            <AuthGuard pageProps={pageProps} ability={ability}>
+                              {getLayout(
+                                <div
+                                  className={clsx('animation-wrapper', {
+                                    [`animate__animated animate__${settings.routerTransition}`]:
+                                      settings.routerTransition !== 'none' || settings.routerTransition !== undefined
+                                  })}
+                                  key={router.route}
+                                >
+                                  <Component {...pageProps} />
+                                </div>
+                              )}
+                            </AuthGuard>
+                            {/* <AuthGuard pageProps={pageProps}>{getLayout(<Component {...pageProps} />)}</AuthGuard> */}
+                          </ThemeComponent>
+                        )
+                      }}
+                    </SettingsConsumer>
+                  </SettingsProvider>
+                </AbilityContext.Provider>
+              )
+            }}
+          </AuthConsumer>
+        </AuthProvider>
       </CacheProvider>
     </Provider>
   )

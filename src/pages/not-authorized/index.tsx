@@ -14,7 +14,10 @@ import Box, { BoxProps } from '@mui/material/Box'
 import BlankLayout from 'src/@core/layouts/BlankLayout'
 
 // ** Context
-import { Auth } from 'src/@core/context/AuthContext'
+// import { Auth } from 'src/@core/context/AuthContext'
+
+// ** Hooks Import
+import { useAuth } from 'src/@core/hooks/useAuth'
 
 // ** Config
 import authConfig from 'src/configs/auth'
@@ -45,7 +48,7 @@ const Img = styled('img')(({ theme }) => ({
 
 const NotAuthorized = () => {
   // ** Hooks
-  const { user } = useContext(Auth)
+  const { user } = useAuth()
 
   return (
     <Box className='content-center'>
