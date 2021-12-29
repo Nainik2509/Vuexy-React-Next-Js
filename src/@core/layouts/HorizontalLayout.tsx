@@ -52,7 +52,7 @@ const ContentWrapper = styled('main')(({ theme }) => ({
   flexGrow: 1,
   width: '100%',
   padding: theme.spacing(6),
-  transition: 'padding .25s ease',
+  transition: 'padding .25s ease-in-out',
   [theme.breakpoints.down('sm')]: {
     paddingLeft: theme.spacing(4),
     paddingRight: theme.spacing(4)
@@ -76,7 +76,7 @@ const HorizontalLayout = (props: Props) => {
         <AppBar
           elevation={3}
           color='default'
-          className='layout-navbar'
+          className='layout-navbar-and-nav-container'
           position={settings.appBar === 'fixed' ? 'sticky' : 'static'}
           sx={{
             transition: 'none',
@@ -88,12 +88,14 @@ const HorizontalLayout = (props: Props) => {
           }}
         >
           <Box
+            className='layout-navbar'
             sx={{
               width: '100%',
               ...(settings.navHidden ? {} : { borderBottom: theme => `1px solid ${theme.palette.divider}` })
             }}
           >
             <Toolbar
+              className='navbar-content-container'
               sx={{
                 mx: 'auto',
                 minHeight: `${themeConfig.appBarHeight - 1}px !important`,
@@ -111,6 +113,7 @@ const HorizontalLayout = (props: Props) => {
           </Box>
           {settings.navHidden ? null : (
             <Toolbar
+              className='layout-horizontal-nav'
               sx={{
                 minHeight: `${themeConfig.appBarHeight}px !important`,
                 ...(settings.contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } })

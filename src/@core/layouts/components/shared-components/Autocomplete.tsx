@@ -48,8 +48,8 @@ const SearchBox = styled(Box)<BoxProps>(({ theme }) => ({
   top: '-100%',
   width: '100%',
   position: 'absolute',
-  transition: 'top .25s ease',
   zIndex: theme.zIndex.appBar + 1,
+  transition: 'top .25s ease-in-out',
   backgroundColor: theme.palette.background.paper
 }))
 

@@ -48,10 +48,10 @@ import { MailType, MailLogType, MailLabelType, MailFolderType, MailFoldersArrTyp
 const MailItem = styled(ListItem)<ListItemProps>(({ theme }) => ({
   zIndex: 1,
   cursor: 'pointer',
-  transition: 'all .25s ease',
   paddingTop: theme.spacing(3),
   paddingBottom: theme.spacing(3),
   justifyContent: 'space-between',
+  transition: 'all .25s ease-in-out',
   [theme.breakpoints.up('xs')]: {
     paddingLeft: theme.spacing(2.5),
     paddingRight: theme.spacing(2.5)

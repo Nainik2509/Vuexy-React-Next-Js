@@ -67,7 +67,7 @@ const ColorBox = styled(Box)<BoxProps>(({ theme }) => ({
   cursor: 'pointer',
   margin: theme.spacing(2.5, 1.75, 1.75),
   borderRadius: theme.shape.borderRadius,
-  transition: 'margin .25s ease, width .25s ease, height .25s ease, box-shadow .25s ease',
+  transition: 'margin .25s ease-in-out, width .25s ease-in-out, height .25s ease-in-out, box-shadow .25s ease-in-out',
   '&:hover': {
     boxShadow: theme.shadows[4]
   }

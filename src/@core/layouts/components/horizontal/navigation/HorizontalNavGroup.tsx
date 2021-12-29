@@ -179,6 +179,8 @@ const HorizontalNavGroup = (props: Props) => {
             <ListItemComponent
               aria-haspopup='true'
               {...(WrapperCondition ? {} : { onMouseEnter: handleGroupOpen })}
+              className={clsx('menu-group', { 'Mui-selected': hasActiveChild(item, currentURL) })}
+              {...(themeConfig.horizontalMenuToggle === 'click' ? { onClick: handleMenuToggleOnClick } : {})}
               sx={{
                 ...(menuOpen ? { background: theme => theme.palette.action.selected } : {}),
                 ...(!hasParent
@@ -193,8 +195,6 @@ const HorizontalNavGroup = (props: Props) => {
                     }
                   : {})
               }}
-              className={clsx('menu-group', { 'Mui-selected': hasActiveChild(item, currentURL) })}
-              {...(themeConfig.horizontalMenuToggle === 'click' ? { onClick: handleMenuToggleOnClick } : {})}
             >
               <Box
                 sx={{

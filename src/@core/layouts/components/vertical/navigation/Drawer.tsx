@@ -23,7 +23,7 @@ interface Props {
 
 const SwipeableDrawer = styled(MuiSwipeableDrawer)<SwipeableDrawerProps>({
   overflowX: 'hidden',
-  transition: 'width .25s ease',
+  transition: 'width .25s ease-in-out',
   '& ul': {
     listStyle: 'none'
   },
@@ -35,7 +35,7 @@ const SwipeableDrawer = styled(MuiSwipeableDrawer)<SwipeableDrawerProps>({
     left: 'unset',
     right: 'unset',
     overflowX: 'hidden',
-    transition: 'width .25s ease, box-shadow .25s ease'
+    transition: 'width .25s ease-in-out, box-shadow .25s ease-in-out'
   }
 })
 

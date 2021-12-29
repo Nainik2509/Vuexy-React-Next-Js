@@ -52,19 +52,19 @@ interface Props {
 const MenuItemTextWrapper = styled(Box)<BoxProps>(() => ({
   width: '100%',
   display: 'flex',
-  transition: 'opacity .25s ease',
   justifyContent: 'space-between',
+  transition: 'opacity .25s ease-in-out',
   ...(themeConfig.menuTextTruncate && { overflow: 'hidden' })
 }))
 
 const MenuGroupToggleRightIcon = styled(ChevronRight)(({ theme }) => ({
   color: theme.palette.text.primary,
-  transition: 'transform .25s ease'
+  transition: 'transform .25s ease-in-out'
 }))
 
 const MenuGroupToggleLeftIcon = styled(ChevronLeft)(({ theme }) => ({
   color: theme.palette.text.primary,
-  transition: 'transform .25s ease'
+  transition: 'transform .25s ease-in-out'
 }))
 
 const VerticalNavGroup = (props: Props) => {
@@ -173,9 +173,9 @@ const VerticalNavGroup = (props: Props) => {
     <Fragment>
       <ListItem
         disablePadding
+        className='nav-group'
         onClick={handleGroupClick}
-        className='menu-group-item'
-        sx={{ mt: 1, px: '0 !important' }}
+        sx={{ mt: 1, px: '0 !important', flexDirection: 'column' }}
       >
         <ListItemButton
           className={clsx({
@@ -183,7 +183,7 @@ const VerticalNavGroup = (props: Props) => {
           })}
           sx={{
             width: '100%',
-            transition: 'padding .25s ease',
+            transition: 'padding .25s ease-in-out',
             ...(parent && !item.children ? { paddingLeft: 5 } : {}),
             padding: theme =>
               theme.spacing(
@@ -198,7 +198,7 @@ const VerticalNavGroup = (props: Props) => {
             <ListItemIcon
               sx={{
                 color: 'text.primary',
-                transition: 'margin .25s ease',
+                transition: 'margin .25s ease-in-out',
                 ...(parent && navCollapsed && !navHover ? {} : { marginRight: 3.25 }),
                 ...(navCollapsed && !navHover ? { marginRight: 0 } : {}), // this condition should come after (parent && navCollapsed && !navHover) condition for proper transition
                 ...(parent && item.children ? { marginLeft: 1.25, marginRight: 4.75 } : {})
@@ -241,25 +241,26 @@ const VerticalNavGroup = (props: Props) => {
             </Box>
           </MenuItemTextWrapper>
         </ListItemButton>
+        <Collapse
+          component='ul'
+          in={groupActive.includes(item.title)}
+          sx={{
+            m: 0,
+            pl: 0,
+            width: '100%',
+            ...menuGroupCollapsedStyles,
+            transition: 'all .25s ease-in-out'
+          }}
+        >
+          <VerticalNavItems
+            {...props}
+            parent={item}
+            navVisible={navVisible}
+            verticalNavItems={item.children}
+            isSubToSub={parent && item.children ? item : undefined}
+          />
+        </Collapse>
       </ListItem>
-      <Collapse
-        component='ul'
-        in={groupActive.includes(item.title)}
-        sx={{
-          m: 0,
-          pl: 0,
-          transition: 'all .25s ease',
-          ...menuGroupCollapsedStyles
-        }}
-      >
-        <VerticalNavItems
-          {...props}
-          parent={item}
-          navVisible={navVisible}
-          verticalNavItems={item.children}
-          isSubToSub={parent && item.children ? item : undefined}
-        />
-      </Collapse>
     </Fragment>
   )
 }

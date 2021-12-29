@@ -37,9 +37,9 @@ const MenuNavLink = styled(ListItemButton)<
   ListItemButtonProps & { component?: ElementType; target?: '_blank' | undefined }
 >(({ theme }) => ({
   width: '100%',
-  transition: 'opacity .25s ease',
   padding: theme.spacing(2.5, 4.5),
   color: theme.palette.text.primary,
+  transition: 'opacity .25s ease-in-out',
   '&.active, &.active:hover': {
     backgroundColor: theme.palette.primary.light
   },
@@ -52,8 +52,8 @@ const MenuItemTextMetaWrapper = styled(Box)<BoxProps>({
   width: '100%',
   display: 'flex',
   alignItems: 'center',
-  transition: 'opacity .25s ease',
   justifyContent: 'space-between',
+  transition: 'opacity .25s ease-in-out',
   ...(themeConfig.menuTextTruncate && { overflow: 'hidden' })
 })
 
@@ -76,7 +76,12 @@ const VerticalNavLink = ({
   const router = useRouter()
 
   return (
-    <ListItem disablePadding sx={{ marginTop: 1, px: '0 !important' }} disabled={item.disabled || false}>
+    <ListItem
+      disablePadding
+      className='nav-link'
+      disabled={item.disabled || false}
+      sx={{ marginTop: 1, px: '0 !important' }}
+    >
       <Link passHref href={item.path === undefined ? '/' : `${item.path}`}>
         <MenuNavLink
           component={'a'}
@@ -101,7 +106,7 @@ const VerticalNavLink = ({
             <ListItemIcon
               sx={{
                 color: 'text.primary',
-                transition: 'margin .25s ease',
+                transition: 'margin .25s ease-in-out',
                 ...(navCollapsed && !navHover ? { marginRight: 0 } : { marginRight: 3.25 }),
                 ...(parent ? { marginLeft: 1.25, marginRight: 4.75 } : {})
               }}

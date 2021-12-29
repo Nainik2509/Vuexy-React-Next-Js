@@ -30,7 +30,7 @@ const ListSubheader = styled((props: ListSubheaderProps) => <MuiListSubheader co
     marginTop: theme.spacing(3),
     paddingTop: theme.spacing(4.5),
     color: theme.palette.text.disabled,
-    transition: 'padding-left .25s ease'
+    transition: 'padding-left .25s ease-in-out'
   })
 )
 
@@ -52,6 +52,7 @@ const VerticalNavSectionTitle = (props: Props) => {
 
   return (
     <ListSubheader
+      className='nav-section-title'
       sx={
         navCollapsed && !navHover
           ? { pt: 3.12, pb: 2.875, pl: (themeConfig.collapsedNavigationSize - navigationBorderWidth - 24) / 8 }
