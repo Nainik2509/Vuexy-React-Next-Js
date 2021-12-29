@@ -54,7 +54,7 @@ const Footer = (props: Props) => {
           ...(settings.contentWidth === 'boxed' && { mx: 'auto', '@media (min-width:1440px)': { maxWidth: 1440 } })
         }}
       >
-        {userFooterContent ? userFooterContent() : <FooterContent />}
+        {userFooterContent ? userFooterContent(props) : <FooterContent />}
       </Box>
     </FooterWrapper>
   )

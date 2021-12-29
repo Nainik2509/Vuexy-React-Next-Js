@@ -19,10 +19,7 @@ interface Props {
   children: ReactNode
 }
 
-const UserLayout = (props: Props) => {
-  // ** Props
-  const { children } = props
-
+const UserLayout = ({ children }: Props) => {
   // ** Hooks
   const { settings, saveSettings } = useSettings()
 

@@ -22,9 +22,9 @@ import GoogleCirclesExtended from 'mdi-material-ui/GoogleCirclesExtended'
 import CheckboxMarkedCircleOutline from 'mdi-material-ui/CheckboxMarkedCircleOutline'
 
 // ** Type import
-import { NavGroup, NavLink, NavSectionTitle } from 'src/@core/layouts/types'
+import { VerticalNavItemsType } from 'src/@core/layouts/types'
 
-const navigation = (): (NavGroup | NavLink | NavSectionTitle)[] => {
+const navigation = (): VerticalNavItemsType => {
   return [
     {
       title: 'Dashboards',
@@ -503,20 +503,19 @@ const navigation = (): (NavGroup | NavLink | NavSectionTitle)[] => {
         {
           title: 'Disabled Menu',
           disabled: true
+        },
+        {
+          title: 'Raise Support',
+          externalLink: true,
+          openInNewTab: true,
+          path: 'https://themeselection.com/support'
+        },
+        {
+          title: 'Documentation',
+          externalLink: true,
+          openInNewTab: true,
+          path: 'https://themeselection.com/'
         }
-
-        // {
-        //   title: 'Raise Support',
-        //   externalLink: true,
-        //   openInNewTab: true,
-        //   path: 'https://themeselection.com/support'
-        // },
-        // {
-        //   title: 'Documentation',
-        //   externalLink: true,
-        //   openInNewTab: true,
-        //   path: '/documentation'
-        // }
       ]
     }
   ]

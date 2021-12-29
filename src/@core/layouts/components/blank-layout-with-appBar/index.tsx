@@ -36,7 +36,9 @@ const BlankLayoutAppBar = (props: BlankLayoutWithAppBarProps) => {
           minHeight: `${themeConfig.appBarHeight}px !important`
         }}
       >
-        {userAppBarContent || (
+        {userAppBarContent ? (
+          userAppBarContent(props)
+        ) : (
           <Link href='/' passHref>
             <StyledLink>
               <svg

@@ -31,7 +31,6 @@ import { Settings } from 'src/@core/context/settingsContext'
 
 interface Props {
   settings: Settings
-  saveSettings: (values: Settings) => void
 }
 
 // ** Styled Components
@@ -53,6 +52,9 @@ const UserDropdown = (props: Props) => {
   // ** Hooks
   const router = useRouter()
   const { logout } = useContext(Auth)
+
+  // ** Vars
+  const { direction } = settings
 
   const handleDropdownOpen = (event: SyntheticEvent) => {
     setAnchorEl(event.currentTarget)
@@ -108,8 +110,8 @@ const UserDropdown = (props: Props) => {
         open={Boolean(anchorEl)}
         onClose={() => handleDropdownClose()}
         sx={{ '& .MuiMenu-paper': { width: 230, marginTop: 4 } }}
-        anchorOrigin={{ vertical: 'bottom', horizontal: settings.direction === 'ltr' ? 'right' : 'left' }}
-        transformOrigin={{ vertical: 'top', horizontal: settings.direction === 'ltr' ? 'right' : 'left' }}
+        anchorOrigin={{ vertical: 'bottom', horizontal: direction === 'ltr' ? 'right' : 'left' }}
+        transformOrigin={{ vertical: 'top', horizontal: direction === 'ltr' ? 'right' : 'left' }}
       >
         <Box sx={{ pt: 2, pb: 3, px: 4 }}>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>

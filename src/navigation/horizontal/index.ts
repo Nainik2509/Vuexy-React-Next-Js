@@ -38,9 +38,9 @@ import ChartBellCurveCumulative from 'mdi-material-ui/ChartBellCurveCumulative'
 import CheckboxMarkedCircleOutline from 'mdi-material-ui/CheckboxMarkedCircleOutline'
 
 // ** Type import
-import { NavGroup, NavLink } from 'src/@core/layouts/types'
+import { HorizontalNavItemsType } from 'src/@core/layouts/types'
 
-const navigation = (): (NavGroup | NavLink)[] => [
+const navigation = (): HorizontalNavItemsType => [
   {
     icon: HomeOutlined,
     title: 'Dashboards',
@@ -545,7 +545,7 @@ const navigation = (): (NavGroup | NavLink)[] => [
         icon: FileDocumentOutline,
         externalLink: true,
         openInNewTab: true,
-        path: '/documentation'
+        path: 'https://themeselection.com/'
       }
     ]
   }

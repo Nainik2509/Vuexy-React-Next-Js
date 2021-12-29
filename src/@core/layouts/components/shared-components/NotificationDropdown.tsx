@@ -29,7 +29,6 @@ import { CustomAvatarProps } from 'src/@core/components/mui/avatar/types'
 
 interface Props {
   settings: Settings
-  saveSettings: (values: Settings) => void
 }
 
 // ** Styled Menu component

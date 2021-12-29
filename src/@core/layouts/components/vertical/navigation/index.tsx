@@ -48,7 +48,7 @@ const Navigation = (props: Props) => {
     <Drawer {...props}>
       <VerticalNavHeader {...props} />
       <PerfectScrollbar options={{ wheelPropagation: false }}>
-        {beforeVerticalNavMenuContent ? beforeVerticalNavMenuContent() : null}
+        {beforeVerticalNavMenuContent ? beforeVerticalNavMenuContent(props) : null}
         {userVerticalNavMenuContent ? (
           userVerticalNavMenuContent(props)
         ) : (
@@ -60,7 +60,7 @@ const Navigation = (props: Props) => {
             {...props}
           />
         )}
-        {afterVerticalNavMenuContent ? afterVerticalNavMenuContent() : null}
+        {afterVerticalNavMenuContent ? afterVerticalNavMenuContent(props) : null}
       </PerfectScrollbar>
     </Drawer>
   )

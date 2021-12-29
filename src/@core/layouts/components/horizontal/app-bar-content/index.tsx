@@ -54,7 +54,7 @@ const AppBarContent = (props: Props) => {
   return (
     <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
       {userHorizontalAppBarBranding ? (
-        userHorizontalAppBarBranding()
+        userHorizontalAppBarBranding(props)
       ) : (
         <Link href='/' passHref>
           <StyledLink>
@@ -133,13 +133,13 @@ const AppBarContent = (props: Props) => {
         </Link>
       )}
       {userHorizontalAppBarContent ? (
-        userHorizontalAppBarContent()
+        userHorizontalAppBarContent(props)
       ) : (
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Autocomplete hidden={hidden} setShowBackdrop={setShowBackdrop} />
           <ModeToggler settings={settings} saveSettings={saveSettings} />
-          <NotificationDropdown settings={settings} saveSettings={saveSettings} />
-          <UserDropdown settings={settings} saveSettings={saveSettings} />
+          <NotificationDropdown settings={settings} />
+          <UserDropdown settings={settings} />
         </Box>
       )}
     </Box>
