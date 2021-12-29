@@ -9,10 +9,11 @@ Settings Context has been created so that the template is independent of the red
 Following are the properties and their values that are stored in the Settings Context:
 
 | Properties            | Values                                                                    | Description                                                           |
-| --------------------- | ------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| --------------------- | ------------------------------------------------------------------------- | --------------------------------------------------------------------- | --- |
 | skin                  | `'default'`, `'bordered'`, `'semi-dark'`                                  | Change template skin                                                  |
 | mode                  | `'light'`, `'dark'`                                                       | Set Light or Dark mode for the template                               |
 | direction             | `'ltr'`, `'rtl'`                                                          | Content direction                                                     |
+| routerTransition      | `'fadeIn', 'zoomIn', 'fadeInLeft', 'none'`                                | Router transition                                                     |     |
 | navCollapsed          | `true`, `false`                                                           | If `true`, the vertical navigation menu is collapsed                  |
 | navHidden             | `true`, `false`                                                           | If `true`, the navigation menu is hidden                              |
 | layout                | `'vertical'`, `'horizontal'`                                              | Set Vertical or Horizontal layout for the template                    |

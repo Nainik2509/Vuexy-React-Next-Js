@@ -10,6 +10,8 @@ export type AppBar = 'fixed' | 'static' | 'hidden'
 
 export type Footer = 'fixed' | 'static' | 'hidden'
 
+export type RouterTransitions = 'fadeIn' | 'zoomIn' | 'fadeInLeft' | 'none'
+
 export type ThemeColor = 'primary' | 'secondary' | 'error' | 'warning' | 'info' | 'success'
 
 export type VerticalNavToggle = 'accordion' | 'collapse'

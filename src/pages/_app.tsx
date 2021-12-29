@@ -17,11 +17,13 @@ import type { EmotionCache } from '@emotion/cache'
 
 // ** Config Imports
 import 'src/configs/i18n'
-import authConfig from 'src/configs/auth'
 import ability from 'src/configs/acl/ability'
 
 // ** Fake-DB Import
 import 'src/@fake-db'
+
+// ** CLSX Import
+import clsx from 'clsx'
 
 // ** Component Imports
 import UserLayout from 'src/layouts/UserLayout'
@@ -34,6 +36,7 @@ import { SettingsConsumer, SettingsProvider } from 'src/@core/context/settingsCo
 
 // ** Types
 import { AuthValuesType } from 'src/@core/context/types'
+import { RouterTransitions } from 'src/@core/layouts/types'
 
 // ** Utils Imports
 import { createEmotionCache } from 'src/@core/utils/create-emotion-cache'
@@ -43,6 +46,9 @@ import 'prismjs'
 import 'prismjs/themes/prism-tomorrow.css'
 import 'prismjs/components/prism-jsx'
 import 'prismjs/components/prism-tsx'
+
+// ** Animate CSS
+import 'animate.css/animate.css'
 
 // ** React Perfect Scrollbar Style
 import 'react-perfect-scrollbar/dist/css/styles.css'
@@ -82,7 +88,7 @@ const App = (props: ExtendedAppProps) => {
     return () => setIsMounted(false)
   }, [])
 
-  const handleRedirection = (auth: AuthValuesType, ability: any) => {
+  const handleRedirection = (auth: AuthValuesType, ability: any, routerTransition: RouterTransitions | undefined) => {
     if (auth.user === null && router.route !== '/login') {
       router.push({
         pathname: '/login',
@@ -103,7 +109,17 @@ const App = (props: ExtendedAppProps) => {
       router.push('/not-authorized')
     }
 
-    return getLayout(<Component {...pageProps} />)
+    return getLayout(
+      <div
+        className={clsx('animation-wrapper', {
+          [`animate__animated animate__${routerTransition}`]:
+            routerTransition !== 'none' || routerTransition !== undefined
+        })}
+        key={router.route}
+      >
+        <Component {...pageProps} />
+      </div>
+    )
   }
 
   return (
@@ -120,7 +136,11 @@ const App = (props: ExtendedAppProps) => {
                 {({ settings }) => {
                   return (
                     <ThemeComponent settings={settings}>
-                      {isMounted ? <AuthConsumer>{auth => handleRedirection(auth, ability)}</AuthConsumer> : null}
+                      {isMounted ? (
+                        <AuthConsumer>
+                          {auth => handleRedirection(auth, ability, settings.routerTransition)}
+                        </AuthConsumer>
+                      ) : null}
                     </ThemeComponent>
                   )
                 }}

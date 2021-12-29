@@ -7,7 +7,9 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 // ** MUI Imports
 import Radio from '@mui/material/Radio'
 import Switch from '@mui/material/Switch'
+import Select from '@mui/material/Select'
 import Divider from '@mui/material/Divider'
+import MenuItem from '@mui/material/MenuItem'
 import { styled } from '@mui/material/styles'
 import IconButton from '@mui/material/IconButton'
 import InputLabel from '@mui/material/InputLabel'
@@ -363,13 +365,28 @@ const Customizer = () => {
             </Typography>
 
             {/* RTL */}
-            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <Box sx={{ mb: 5, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <Typography>RTL</Typography>
               <Switch
                 name='direction'
                 checked={settings.direction === 'rtl'}
                 onChange={e => handleChange('direction', e.target.checked ? 'rtl' : 'ltr')}
               />
+            </Box>
+
+            {/* Router Transition */}
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <Typography>Router Transition</Typography>
+              <Select
+                size='small'
+                value={settings.routerTransition}
+                onChange={e => handleChange('routerTransition', e.target.value as any)}
+              >
+                <MenuItem value='fadeIn'>fadeIn</MenuItem>
+                <MenuItem value='zoomIn'>zoomIn</MenuItem>
+                <MenuItem value='fadeInLeft'>fadeInLeft</MenuItem>
+                <MenuItem value='none'>none</MenuItem>
+              </Select>
             </Box>
           </CustomizerSpacing>
         </PerfectScrollbar>

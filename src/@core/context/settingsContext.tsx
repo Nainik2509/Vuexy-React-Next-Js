@@ -8,7 +8,15 @@ import { PaletteMode, Direction } from '@mui/material'
 import themeConfig from 'src/configs/themeConfig'
 
 // ** Types Import
-import { Skin, AppBar, Footer, ThemeColor, ContentWidth, VerticalNavToggle } from 'src/@core/layouts/types'
+import {
+  Skin,
+  AppBar,
+  Footer,
+  ThemeColor,
+  ContentWidth,
+  VerticalNavToggle,
+  RouterTransitions
+} from 'src/@core/layouts/types'
 
 export type Settings = {
   skin: Skin
@@ -21,6 +29,7 @@ export type Settings = {
   themeColor: ThemeColor
   contentWidth: ContentWidth
   layout?: 'vertical' | 'horizontal'
+  routerTransition?: RouterTransitions
   lastLayout?: 'vertical' | 'horizontal'
   verticalNavToggleType: VerticalNavToggle
 }
@@ -36,6 +45,7 @@ export type PageSpecificSettings = {
   themeColor?: ThemeColor
   contentWidth?: ContentWidth
   layout?: 'vertical' | 'horizontal'
+  routerTransition?: RouterTransitions
   lastLayout?: 'vertical' | 'horizontal'
   verticalNavToggleType?: VerticalNavToggle
 }
@@ -56,6 +66,7 @@ const initialSettings: Settings = {
   navHidden: themeConfig.navHidden,
   navCollapsed: themeConfig.navCollapsed,
   contentWidth: themeConfig.contentWidth,
+  routerTransition: themeConfig.routerTransition,
   verticalNavToggleType: themeConfig.verticalNavToggleType
 }
 
@@ -64,7 +75,8 @@ const staticSettings = {
   footer: initialSettings.footer,
   layout: initialSettings.layout,
   navHidden: themeConfig.navHidden,
-  lastLayout: initialSettings.lastLayout
+  lastLayout: initialSettings.lastLayout,
+  routerTransition: themeConfig.routerTransition
 }
 
 const restoreSettings = (): Settings | null => {
@@ -94,6 +106,7 @@ const storeSettings = (settings: Settings) => {
   delete initSettings.layout
   delete initSettings.navHidden
   delete initSettings.lastLayout
+  delete initSettings.routerTransition
   window.localStorage.setItem('settings', JSON.stringify(initSettings))
 }
 
