@@ -26,10 +26,9 @@ import CustomChip from 'src/@core/components/mui/chip'
 <CustomChip label='Info' skin='light' color='info' />
 ```
 
-<p>Result:</p>
-<img :src="$withBase('/images/components/chips-skin.png')" alt="chips-skins" class="rounded">
+Result:
 
-## Props
+![chips-skins](/images/components/chips-skin.png)
 
 ## Props
 
