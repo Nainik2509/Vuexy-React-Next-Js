@@ -118,7 +118,7 @@ export const SettingsContext = createContext<SettingsContextValue>({
 
 interface Props {
   children: ReactNode
-  pageSettings?: PageSpecificSettings
+  pageSettings?: PageSpecificSettings | void
 }
 
 export const SettingsProvider = ({ children, pageSettings }: Props) => {

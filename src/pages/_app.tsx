@@ -77,7 +77,7 @@ const App = (props: ExtendedAppProps) => {
 
   const getLayout = Component.getLayout ?? (page => <UserLayout>{page}</UserLayout>)
 
-  const setConfig = Component.setConfig ?? null
+  const setConfig = Component.setConfig ?? undefined
 
   const router = useRouter()
   const AuthConsumer = Auth.Consumer
