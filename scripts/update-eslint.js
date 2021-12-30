@@ -112,12 +112,12 @@ const data = `module.exports = {
   // }
 }`
 
-fs.writeFile('../jsx-version/.eslintrc.json', data, err => {
+fs.writeFile('../jsx-version/.eslintrc.js', data, err => {
   if (err) {
     console.error(err)
 
     return
   } else {
-    console.log('File Written: /jsx-version/.eslintrc.json')
+    console.log('File Written: /jsx-version/.eslintrc.js')
   }
 })

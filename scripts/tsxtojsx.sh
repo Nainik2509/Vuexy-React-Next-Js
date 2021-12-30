@@ -5,7 +5,7 @@
 tsc --project ../tsconfig.jsx.json
 
 # Copy package.json, eslintrc, gitignore, prettierrc, Readme, editorconfig files into newly created folder jsx-version
-cp ../package.json ../next.config.js ../next-env.d.ts ../.eslintrc.json ../.gitignore ../.prettierrc.js ../README.md ../.editorconfig ../jsx-version/
+cp ../package.json ../next.config.js ../next-env.d.ts ../.gitignore ../.prettierrc.js ../README.md ../.editorconfig ../jsx-version/
 # cp ../package.json  ../.gitignore ../.prettierrc.js ../README.md ../.editorconfig ../jsx-version/
 
 # # copy index.css to jsx-version/src

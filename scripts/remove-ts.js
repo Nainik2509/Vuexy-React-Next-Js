@@ -16,7 +16,9 @@ if (fs.existsSync(packageFilePath)) {
     if (err) {
       return console.log(err)
     }
-    const result = data.replace(new RegExp(/(.*:\s)(.*)(\,ts\,tsx)(}")/, 'g'), `$1$2$4`)
+
+    // const result = data.replace(new RegExp(/(.*:\s)(.*)(\,ts\,tsx)(}")/, 'g'), `$1$2$4`)
+    const result = data.replace(/,ts,tsx/g, '')
 
     const finalResult = result.replace(new RegExp(/(\n)\s*("(@types|typescript))(.*)/, 'g'), ``)
     fs.writeFile(packageFilePath, finalResult, 'utf8', function (err) {
@@ -44,10 +46,5 @@ function renameFiles(dirPath) {
     }
   })
 }
-
-fs.unlinkSync('../jsx-version/src/@core/components/scroll-top/types.js', err => {
-  if (err) console.log(err)
-  else console.log('scroll-top/types.js')
-})
 
 console.log('Removed TS Files')
