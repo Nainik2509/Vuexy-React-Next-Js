@@ -3,10 +3,14 @@ import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
+import Fab from '@mui/material/Fab'
 import AppBar from '@mui/material/AppBar'
 import Backdrop from '@mui/material/Backdrop'
 import { styled } from '@mui/material/styles'
 import MuiToolbar, { ToolbarProps } from '@mui/material/Toolbar'
+
+// ** Icons Imports
+import ArrowUp from 'mdi-material-ui/ArrowUp'
 
 // ** Theme Config Import
 import themeConfig from 'src/configs/themeConfig'
@@ -20,6 +24,7 @@ import { Settings } from 'src/@core/context/settingsContext'
 import Customizer from 'src/@core/components/customizer'
 import Footer from './components/shared-components/footer'
 import Navigation from './components/horizontal/navigation'
+import ScrollToTop from 'src/@core/components/scroll-to-top'
 import AppBarContent from './components/horizontal/app-bar-content'
 
 type Props = LayoutProps & {
@@ -61,7 +66,14 @@ const ContentWrapper = styled('main')(({ theme }) => ({
 
 const HorizontalLayout = (props: Props) => {
   // ** Props
-  const { hidden, children, settings, saveSettings, horizontalNavMenuContent: userHorizontalNavMenuContent } = props
+  const {
+    hidden,
+    children,
+    settings,
+    scrollToTop,
+    saveSettings,
+    horizontalNavMenuContent: userHorizontalNavMenuContent
+  } = props
 
   // ** States
   const [showBackdrop, setShowBackdrop] = useState<boolean>(false)
@@ -144,6 +156,17 @@ const HorizontalLayout = (props: Props) => {
 
       {/* Customizer */}
       {themeConfig.disableCustomizer || hidden ? null : <Customizer />}
+
+      {/* Scroll to top button */}
+      {scrollToTop ? (
+        scrollToTop(props)
+      ) : (
+        <ScrollToTop className='mui-fixed'>
+          <Fab color='primary' size='small' aria-label='scroll back to top'>
+            <ArrowUp />
+          </Fab>
+        </ScrollToTop>
+      )}
 
       {/* Backdrop */}
       <Backdrop open={showBackdrop} onClick={() => setShowBackdrop(false)} sx={{ zIndex: 12 }} />

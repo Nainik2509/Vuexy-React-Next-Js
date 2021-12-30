@@ -51,6 +51,7 @@ export type LayoutProps = {
   menuLockedIcon?: ReactNode
   menuUnlockedIcon?: ReactNode
   verticalNavItems?: VerticalNavItemsType
+  scrollToTop?: (props?: any) => ReactNode
   footerContent?: (props?: any) => ReactNode
   horizontalNavItems?: HorizontalNavItemsType
   verticalAppBarContent?: (props?: any) => ReactNode

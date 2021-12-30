@@ -2,9 +2,13 @@
 import { useState } from 'react'
 
 // ** MUI Imports
+import Fab from '@mui/material/Fab'
 import Backdrop from '@mui/material/Backdrop'
 import { styled } from '@mui/material/styles'
 import Box, { BoxProps } from '@mui/material/Box'
+
+// ** Icons Imports
+import ArrowUp from 'mdi-material-ui/ArrowUp'
 
 // ** Theme Config Import
 import themeConfig from 'src/configs/themeConfig'
@@ -19,6 +23,7 @@ import AppBar from './components/vertical/appBar'
 import Customizer from 'src/@core/components/customizer'
 import Navigation from './components/vertical/navigation'
 import Footer from './components/shared-components/footer'
+import ScrollToTop from 'src/@core/components/scroll-to-top'
 
 type Props = LayoutProps & {
   hidden: boolean
@@ -52,7 +57,7 @@ const ContentWrapper = styled('main')(({ theme }) => ({
 
 const VerticalLayout = (props: Props) => {
   // ** Props
-  const { hidden, settings, children } = props
+  const { hidden, settings, children, scrollToTop } = props
 
   // ** Vars
   const navigationBorderWidth = 1
@@ -113,6 +118,17 @@ const VerticalLayout = (props: Props) => {
 
       {/* Customizer */}
       {themeConfig.disableCustomizer || hidden ? null : <Customizer />}
+
+      {/* Scroll to top button */}
+      {scrollToTop ? (
+        scrollToTop(props)
+      ) : (
+        <ScrollToTop className='mui-fixed'>
+          <Fab color='primary' size='small' aria-label='scroll back to top'>
+            <ArrowUp />
+          </Fab>
+        </ScrollToTop>
+      )}
     </>
   )
 }

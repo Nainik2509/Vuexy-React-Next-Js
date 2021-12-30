@@ -1,3 +1,7 @@
+---
+sidebarDepth: 2
+---
+
 # Layout Components
 
 ## Overview
@@ -92,3 +96,9 @@ Footer is created with the following components:
 ## Blank Layout with AppBar Component
 
 Blank Layout with AppBar provides only appBar (at top of the page) which contains Company logo and Company name only.
+
+## Scroll to top Component
+
+Fab button is created at the bottom-right side of a page to scroll to the top of the page. It is available only in Vertical and Horizontal layouts. It is not visible at top of the page. It is only visible when the page is scrolled more than 400px.
+
+![scroll-to-top](/images/layouts/scroll-to-top.png)

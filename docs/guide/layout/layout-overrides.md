@@ -774,3 +774,66 @@ export default UserBlankLayoutWithAppBar
 Result:
 
 ![override-blank-layout-appBar](/images/layouts/user-override-blank-layout-appBar.png)
+
+## Scroll to Top
+
+If you want to change the scroll to top component, you need to use `scrollToTop` prop with the Layout component in `src/layouts/UserLayout.tsx` file.
+
+The value accepted by this prop is:
+
+```tsx
+scrollToTop?: (props?: any) => ReactNode
+```
+
+Here is the code to change the scroll to top component:
+
+```tsx
+import { ReactNode } from 'react'
+import Button from '@mui/material/Button'
+import ScrollToTop from 'src/@core/components/scroll-to-top'
+import VerticalNavItems from 'src/navigation/vertical'
+import HorizontalNavItems from 'src/navigation/horizontal'
+import { useSettings } from 'src/@core/hooks/useSettings'
+
+// ** Layout Imports
+// !Do not remove this Layout import
+import Layout from 'src/@core/layouts/Layout'
+
+interface Props {
+  children: ReactNode
+}
+
+const UserScrollToTop = () => {
+  return (
+    <ScrollToTop>
+      <Button color='success' variant='contained'>
+        Scroll To Top
+      </Button>
+    </ScrollToTop>
+  )
+}
+
+const UserLayout = ({ children }: Props) => {
+  // ** Hooks
+  const { settings, saveSettings } = useSettings()
+
+  return (
+    <Layout
+      settings={settings}
+      saveSettings={saveSettings}
+      scrollToTop={() => <UserScrollToTop />}
+      {...(settings.layout === 'horizontal'
+        ? { horizontalNavItems: HorizontalNavItems() }
+        : { verticalNavItems: VerticalNavItems() })}
+    >
+      {children}
+    </Layout>
+  )
+}
+
+export default UserLayout
+```
+
+Result:
+
+![override-scroll-to-top](/images/layouts/user-override-scroll-to-top.png)
