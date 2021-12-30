@@ -1,12 +1,15 @@
 // ** Next Imports
 import Head from 'next/head'
 import type { NextPage } from 'next'
-import { useRouter } from 'next/router'
+import Router, { useRouter } from 'next/router'
 import type { AppProps } from 'next/app'
 
 // ** Store Imports
 import { store } from 'src/redux/store'
 import { Provider } from 'react-redux'
+
+// ** Loader Improt
+import NProgress from 'nprogress'
 
 // ** Emotion Imports
 import { CacheProvider } from '@emotion/react'
@@ -14,6 +17,7 @@ import type { EmotionCache } from '@emotion/cache'
 
 // ** Config Imports
 import 'src/configs/i18n'
+import themeConfig from 'src/configs/themeConfig'
 
 // ** Fake-DB Import
 import 'src/@fake-db'
@@ -64,6 +68,21 @@ type ExtendedAppProps = AppProps & {
 }
 
 const clientSideEmotionCache = createEmotionCache()
+
+if (themeConfig.routingLoader) {
+  Router.events.on('routeChangeStart', () => {
+    console.log('routeChangeStart')
+    NProgress.start()
+  })
+  Router.events.on('routeChangeError', () => {
+    console.log('routeChangeError')
+    NProgress.done()
+  })
+  Router.events.on('routeChangeComplete', () => {
+    console.log('routeChangeComplete')
+    NProgress.done()
+  })
+}
 
 // ** Configure JSS & ClassName
 const App = (props: ExtendedAppProps) => {

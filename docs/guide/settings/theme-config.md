@@ -17,6 +17,7 @@ const themeConfig = {
   routerTransition: 'fadeIn',
   disableRipple: false,
   navCollapsed: false,
+  routingLoader: false,
   navHidden: false,
   layout: 'vertical',
   verticalNavToggleType: 'accordion',
@@ -45,6 +46,7 @@ Following is the table of all the properties and their possible values that are 
 | mode                    | `'light'`, `'dark'`                        | Set Light or Dark mode for the template                                     |
 | direction               | `'ltr'`, `'rtl'`                           | Content direction                                                           |
 | routerTransition        | `'fadeIn', 'zoomIn', 'fadeInLeft', 'none'` | Router transition                                                           |
+| routingLoader           | `true`, `false`                            | Loader on top of the app on route change                                    |
 | disableRipple           | `true`, `false`                            | If `true`, the Ripple effect is disabled                                    |
 | navCollapsed            | `true`, `false`                            | If `true`, the vertical navigation menu is collapsed                        |
 | navHidden               | `true`, `false`                            | If `true`, the navigation menu is hidden                                    |

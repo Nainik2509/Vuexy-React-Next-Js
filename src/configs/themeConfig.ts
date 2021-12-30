@@ -28,6 +28,7 @@ type ThemeConfig = {
   appBarHeight: number
   templateName: string
   navCollapsed: boolean
+  routingLoader: boolean
   disableRipple: boolean
   navigationSize: number
   menuTextTruncate: boolean
@@ -47,6 +48,7 @@ const themeConfig: ThemeConfig = {
   skin: 'default' /* default | bordered | semi-dark */,
   mode: 'light' /* light | dark */,
   direction: 'ltr' /* ltr | rtl */,
+  routingLoader: false /* true | false */,
   routerTransition: 'fadeIn' /* fadeIn | zoomIn | fadeInLeft | none */,
   disableRipple: false /* true | false */,
   navCollapsed: false /* true | false */,
