@@ -21,18 +21,18 @@ import ContentCopy from 'mdi-material-ui/ContentCopy'
 // ** Third Party Components
 import toast, { Toaster } from 'react-hot-toast'
 
-// ** Hooks
-// import useClipboard from 'hooks/misc/useClipboard'
-
 // ** Types
 import { CardSnippetProps } from './types'
+
+// ** Hooks
+// import useClipboard from 'hooks/misc/useClipboard'
 
 // ** Styled Components
 import ReactHotToast from 'src/@core/styles/libs/react-hot-toast'
 
 const CardSnippet = (props: CardSnippetProps) => {
   // ** Props
-  const { id, title, children, className, code, sx } = props
+  const { id, sx, code, title, children, className } = props
 
   // ** States
   const [showCode, setShowCode] = useState<boolean>(false)
@@ -79,7 +79,7 @@ const CardSnippet = (props: CardSnippetProps) => {
               <ContentCopy fontSize='small' />
             </IconButton>
           </Tooltip>
-          <Box sx={{ 'pre *, code *': { whiteSpace: 'pre-wrap' } }}>{code}</Box>
+          <Box>{code}</Box>
         </CardContent>
       </Collapse>
       <ReactHotToast>
