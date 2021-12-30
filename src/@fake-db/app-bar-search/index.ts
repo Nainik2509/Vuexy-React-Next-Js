@@ -49,14 +49,14 @@ const searchData: AppBarSearchType[] = [
   },
   {
     id: 7,
-    url: '/apps/invoice/preview/4987',
+    url: '/apps/invoice/preview',
     icon: 'FileDocumentOutline',
     title: 'Invoice Preview',
     type: 'pages'
   },
   {
     id: 8,
-    url: '/apps/invoice/edit/4987',
+    url: '/apps/invoice/edit',
     icon: 'PencilOutline',
     title: 'Invoice Edit',
     type: 'pages'
@@ -77,7 +77,7 @@ const searchData: AppBarSearchType[] = [
   },
   {
     id: 11,
-    url: '/apps/user/view/12',
+    url: '/apps/user/view',
     icon: 'FormatListNumbered',
     title: 'User View',
     type: 'pages'

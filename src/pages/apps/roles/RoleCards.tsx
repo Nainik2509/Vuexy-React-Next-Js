@@ -1,6 +1,9 @@
 // ** React Imports
 import { useState } from 'react'
 
+// ** Next Import
+import Image from 'next/image'
+
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
@@ -140,8 +143,7 @@ const RolesCards = () => {
           <Grid container sx={{ height: '100%' }}>
             <Grid item xs={5}>
               <Box sx={{ display: 'flex', height: '100%', justifyContent: 'center', alignItems: 'flex-end' }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src='/images/cards/pose_m1.png' alt='add-role' height='130' />
+                <Image width={65} height={130} alt='add-role' src='/images/cards/pose_m1.png' />
               </Box>
             </Grid>
             <Grid item xs={7}>
