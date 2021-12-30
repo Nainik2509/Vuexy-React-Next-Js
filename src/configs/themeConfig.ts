@@ -48,7 +48,7 @@ const themeConfig: ThemeConfig = {
   skin: 'default' /* default | bordered | semi-dark */,
   mode: 'light' /* light | dark */,
   direction: 'ltr' /* ltr | rtl */,
-  routingLoader: false /* true | false */,
+  routingLoader: true /* true | false */,
   routerTransition: 'fadeIn' /* fadeIn | zoomIn | fadeInLeft | none */,
   disableRipple: false /* true | false */,
   navCollapsed: false /* true | false */,

@@ -17,7 +17,7 @@ const themeConfig = {
   routerTransition: 'fadeIn',
   disableRipple: false,
   navCollapsed: false,
-  routingLoader: false,
+  routingLoader: true,
   navHidden: false,
   layout: 'vertical',
   verticalNavToggleType: 'accordion',

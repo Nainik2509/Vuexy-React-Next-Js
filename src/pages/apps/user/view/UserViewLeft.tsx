@@ -46,6 +46,10 @@ interface Props {
   data: UsersType
 }
 
+interface ColorsType {
+  [key: string]: ThemeColor
+}
+
 // ** Styled <sup> component
 const Sup = styled('sup')(({ theme }) => ({
   top: '0.2rem',
@@ -60,6 +64,20 @@ const Sub = styled('sub')({
   fontSize: '1rem',
   alignSelf: 'flex-end'
 })
+
+const roleColors: ColorsType = {
+  admin: 'error',
+  editor: 'info',
+  author: 'warning',
+  maintainer: 'success',
+  subscriber: 'primary'
+}
+
+const statusColors: ColorsType = {
+  active: 'success',
+  pending: 'warning',
+  inactive: 'secondary'
+}
 
 const UserViewLeft = ({ data }: Props) => {
   // ** States
@@ -114,8 +132,8 @@ const UserViewLeft = ({ data }: Props) => {
             <CustomChip
               skin='light'
               size='small'
-              color='error'
               label={data.role}
+              color={roleColors[data.role]}
               sx={{
                 height: 20,
                 fontSize: '0.875rem',
@@ -171,8 +189,8 @@ const UserViewLeft = ({ data }: Props) => {
                 <CustomChip
                   skin='light'
                   size='small'
-                  color='success'
                   label={data.status}
+                  color={statusColors[data.status]}
                   sx={{
                     height: 20,
                     fontSize: '0.75rem',

@@ -4,7 +4,7 @@ import ChartDonut from 'mdi-material-ui/ChartDonut'
 import FormSelect from 'mdi-material-ui/FormSelect'
 import CubeOutline from 'mdi-material-ui/CubeOutline'
 import LockOutline from 'mdi-material-ui/LockOutline'
-import HomeOutlined from 'mdi-material-ui/HomeOutline'
+import HomeOutline from 'mdi-material-ui/HomeOutline'
 import EmailOutline from 'mdi-material-ui/EmailOutline'
 import ShieldOutline from 'mdi-material-ui/ShieldOutline'
 import AccountOutline from 'mdi-material-ui/AccountOutline'
@@ -28,7 +28,7 @@ const navigation = (): VerticalNavItemsType => {
   return [
     {
       title: 'Dashboards',
-      icon: HomeOutlined,
+      icon: HomeOutline,
       badgeContent: 'new',
       badgeColor: 'error',
       children: [
