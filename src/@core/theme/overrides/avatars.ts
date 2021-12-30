@@ -1,8 +1,7 @@
 // ** MUI Imports
 import { Theme } from '@mui/material'
 
-const Avatar = (theme:Theme) => {
-
+const Avatar = (theme: Theme) => {
   return {
     MuiAvatar: {
       styleOverrides: {

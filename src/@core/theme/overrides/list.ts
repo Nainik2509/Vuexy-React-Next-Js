@@ -2,7 +2,6 @@
 import { Theme } from '@mui/material'
 
 const List = (theme: Theme) => {
-
   return {
     MuiListItemIcon: {
       styleOverrides: {

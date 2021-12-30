@@ -2,7 +2,6 @@
 import { Theme } from '@mui/material'
 
 const input = (theme: Theme) => {
-
   return {
     MuiInputLabel: {
       styleOverrides: {

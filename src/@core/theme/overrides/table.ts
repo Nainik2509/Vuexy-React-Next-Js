@@ -2,7 +2,6 @@
 import { Theme } from '@mui/material'
 
 const Table = (theme: Theme) => {
-
   return {
     MuiTableContainer: {
       styleOverrides: {
@@ -65,7 +64,9 @@ const Table = (theme: Theme) => {
       styleOverrides: {
         root: {
           backgroundColor:
-            theme.palette.mode === 'light' ? `${theme.palette.grey[50]} !important` : `${theme.palette.background.default} !important`,
+            theme.palette.mode === 'light'
+              ? `${theme.palette.grey[50]} !important`
+              : `${theme.palette.background.default} !important`,
           borderTop: `1px solid ${theme.palette.divider}`
         },
         toolButton: {
@@ -77,7 +78,9 @@ const Table = (theme: Theme) => {
       styleOverrides: {
         headerCell: {
           backgroundColor:
-            theme.palette.mode === 'light' ? `${theme.palette.grey[50]} !important` : `${theme.palette.background.default} !important`,
+            theme.palette.mode === 'light'
+              ? `${theme.palette.grey[50]} !important`
+              : `${theme.palette.background.default} !important`,
           borderTop: `1px solid ${theme.palette.divider}`
         }
       }

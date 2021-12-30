@@ -1,5 +1,5 @@
 // ** Type Import
-import { PaletteMode } from "@mui/material"
+import { PaletteMode } from '@mui/material'
 
 const DefaultPalette = (mode: PaletteMode) => {
   const darkColor = '231, 227, 252'

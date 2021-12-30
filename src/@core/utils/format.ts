@@ -19,7 +19,7 @@ const isToday = (date: Date | string) => {
   )
 }
 
- export const formatDate = (
+export const formatDate = (
   value: Date | string,
   formatting: DateFormatting = { month: 'short', day: 'numeric', year: 'numeric' }
 ) => {
