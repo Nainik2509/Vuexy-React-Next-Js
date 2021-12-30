@@ -54,6 +54,11 @@ export type SettingsContextValue = {
   saveSettings: (updatedSettings: Settings) => void
 }
 
+interface SettingsProviderProps {
+  children: ReactNode
+  pageSettings?: PageSpecificSettings | void
+}
+
 const initialSettings: Settings = {
   themeColor: 'primary',
   mode: themeConfig.mode,
@@ -116,12 +121,7 @@ export const SettingsContext = createContext<SettingsContextValue>({
   settings: initialSettings
 })
 
-interface Props {
-  children: ReactNode
-  pageSettings?: PageSpecificSettings | void
-}
-
-export const SettingsProvider = ({ children, pageSettings }: Props) => {
+export const SettingsProvider = ({ children, pageSettings }: SettingsProviderProps) => {
   // ** State
   const [settings, setSettings] = useState<Settings>({ ...initialSettings })
 

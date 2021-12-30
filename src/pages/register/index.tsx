@@ -23,7 +23,7 @@ import { Theme, styled, useTheme } from '@mui/material/styles'
 import Typography, { TypographyProps } from '@mui/material/Typography'
 
 // ** Context
-import { Auth } from 'src/@core/context/AuthContext'
+// import { Auth } from 'src/@core/context/AuthContext'
 
 // ** Icons Imports
 import Google from 'mdi-material-ui/Google'
@@ -45,6 +45,7 @@ import themeConfig from 'src/configs/themeConfig'
 import BlankLayout from 'src/@core/layouts/BlankLayout'
 
 // ** Hooks
+import { useAuth } from 'src/@core/hooks/useAuth'
 import { useSettings } from 'src/@core/hooks/useSettings'
 
 // ** Demo Imports
@@ -133,7 +134,7 @@ const Register = () => {
   const {
     settings: { skin }
   } = useSettings()
-  const { register } = useContext(Auth)
+  const { register } = useAuth()
   const {
     control,
     setError,

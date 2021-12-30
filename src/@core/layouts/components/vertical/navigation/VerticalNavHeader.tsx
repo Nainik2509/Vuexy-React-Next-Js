@@ -37,10 +37,10 @@ interface Props {
 const MenuHeaderWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
-  transition: 'padding .25s ease',
   justifyContent: 'space-between',
   paddingRight: theme.spacing(4.5),
-  minHeight: themeConfig.appBarHeight
+  minHeight: themeConfig.appBarHeight,
+  transition: 'padding .25s ease-in-out'
 }))
 
 const HeaderTitle = styled(Typography)<TypographyProps>(({ theme }) => ({
@@ -95,7 +95,7 @@ const VerticalNavHeader = (props: Props) => {
           fontSize: '1.25rem',
           pointerEvents: 'none',
           ...menuCollapsedStyles,
-          transition: 'opacity .25s ease'
+          transition: 'opacity .25s ease-in-out'
         }}
       />
     )
@@ -107,15 +107,15 @@ const VerticalNavHeader = (props: Props) => {
           fontSize: '1.25rem',
           pointerEvents: 'none',
           ...menuCollapsedStyles,
-          transition: 'opacity .25s ease'
+          transition: 'opacity .25s ease-in-out'
         }}
       />
     )
 
   return (
-    <MenuHeaderWrapper className='menu-header' sx={{ pl: menuHeaderPaddingLeft() }}>
+    <MenuHeaderWrapper className='nav-header' sx={{ pl: menuHeaderPaddingLeft() }}>
       {userVerticalNavMenuBranding ? (
-        userVerticalNavMenuBranding()
+        userVerticalNavMenuBranding(props)
       ) : (
         <Link href='/' passHref>
           <StyledLink>

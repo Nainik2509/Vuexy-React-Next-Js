@@ -20,10 +20,10 @@ export type HorizontalMenuToggle = 'hover' | 'click'
 
 export type NavLink = {
   title: string
-  action?: string
   path?: string
+  action?: string // for ACL
   icon?: ReactNode
-  subject?: string
+  subject?: string // for ACL
   disabled?: boolean
   badgeContent?: string
   externalLink?: boolean
@@ -51,6 +51,7 @@ export type LayoutProps = {
   menuLockedIcon?: ReactNode
   menuUnlockedIcon?: ReactNode
   verticalNavItems?: VerticalNavItemsType
+  scrollToTop?: (props?: any) => ReactNode
   footerContent?: (props?: any) => ReactNode
   horizontalNavItems?: HorizontalNavItemsType
   verticalAppBarContent?: (props?: any) => ReactNode
@@ -69,5 +70,5 @@ export type BlankLayoutProps = {
 
 export type BlankLayoutWithAppBarProps = {
   children: ReactNode
-  appBarContent?: any
+  appBarContent?: (props?: any) => ReactNode
 }

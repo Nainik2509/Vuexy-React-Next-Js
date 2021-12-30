@@ -57,32 +57,32 @@ const menuItemsArr = [
   {
     name: 'Ross Geller',
     value: 'ross',
-    src: '/assets/images/avatars/1.png'
+    src: '/images/avatars/1.png'
   },
   {
     name: 'Pheobe Buffay',
     value: 'pheobe',
-    src: '/assets/images/avatars/2.png'
+    src: '/images/avatars/2.png'
   },
   {
     name: 'Joey Tribbiani',
     value: 'joey',
-    src: '/assets/images/avatars/3.png'
+    src: '/images/avatars/3.png'
   },
   {
     name: 'Rachel Green',
     value: 'rachel',
-    src: '/assets/images/avatars/4.png'
+    src: '/images/avatars/4.png'
   },
   {
     name: 'Chandler Bing',
     value: 'chandler',
-    src: '/assets/images/avatars/5.png'
+    src: '/images/avatars/5.png'
   },
   {
     name: 'Monica Geller',
     value: 'monica',
-    src: '/assets/images/avatars/8.png'
+    src: '/images/avatars/8.png'
   }
 ]
 

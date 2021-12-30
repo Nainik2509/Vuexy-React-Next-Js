@@ -56,11 +56,10 @@ module.exports = {
           collapsable: false,
           children: [
             '/guide/layout/layout-types',
-            '/guide/layout/blog-layout'
-            // '/guide/layout/modifying-and-extending-layouts',
-            // '/guide/layout/core-layouts',
-            // '/guide/layout/content-renderer',
-            // '/guide/layout/page-layout-examples',
+            '/guide/layout/layout-components',
+            '/guide/layout/get-layout',
+            '/guide/layout/navigation-menu',
+            '/guide/layout/layout-overrides'
           ]
         },
         {

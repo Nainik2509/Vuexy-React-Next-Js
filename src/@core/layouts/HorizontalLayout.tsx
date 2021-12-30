@@ -3,10 +3,14 @@ import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
+import Fab from '@mui/material/Fab'
 import AppBar from '@mui/material/AppBar'
 import Backdrop from '@mui/material/Backdrop'
 import { styled } from '@mui/material/styles'
 import MuiToolbar, { ToolbarProps } from '@mui/material/Toolbar'
+
+// ** Icons Imports
+import ArrowUp from 'mdi-material-ui/ArrowUp'
 
 // ** Theme Config Import
 import themeConfig from 'src/configs/themeConfig'
@@ -20,6 +24,7 @@ import { Settings } from 'src/@core/context/settingsContext'
 import Customizer from 'src/@core/components/customizer'
 import Footer from './components/shared-components/footer'
 import Navigation from './components/horizontal/navigation'
+import ScrollToTop from 'src/@core/components/scroll-to-top'
 import AppBarContent from './components/horizontal/app-bar-content'
 
 type Props = LayoutProps & {
@@ -52,7 +57,7 @@ const ContentWrapper = styled('main')(({ theme }) => ({
   flexGrow: 1,
   width: '100%',
   padding: theme.spacing(6),
-  transition: 'padding .25s ease',
+  transition: 'padding .25s ease-in-out',
   [theme.breakpoints.down('sm')]: {
     paddingLeft: theme.spacing(4),
     paddingRight: theme.spacing(4)
@@ -61,7 +66,14 @@ const ContentWrapper = styled('main')(({ theme }) => ({
 
 const HorizontalLayout = (props: Props) => {
   // ** Props
-  const { hidden, children, settings, saveSettings, horizontalNavMenuContent: userHorizontalNavMenuContent } = props
+  const {
+    hidden,
+    children,
+    settings,
+    scrollToTop,
+    saveSettings,
+    horizontalNavMenuContent: userHorizontalNavMenuContent
+  } = props
 
   // ** States
   const [showBackdrop, setShowBackdrop] = useState<boolean>(false)
@@ -76,7 +88,7 @@ const HorizontalLayout = (props: Props) => {
         <AppBar
           elevation={3}
           color='default'
-          className='layout-navbar'
+          className='layout-navbar-and-nav-container'
           position={settings.appBar === 'fixed' ? 'sticky' : 'static'}
           sx={{
             transition: 'none',
@@ -88,12 +100,14 @@ const HorizontalLayout = (props: Props) => {
           }}
         >
           <Box
+            className='layout-navbar'
             sx={{
               width: '100%',
               ...(settings.navHidden ? {} : { borderBottom: theme => `1px solid ${theme.palette.divider}` })
             }}
           >
             <Toolbar
+              className='navbar-content-container'
               sx={{
                 mx: 'auto',
                 minHeight: `${themeConfig.appBarHeight - 1}px !important`,
@@ -111,6 +125,7 @@ const HorizontalLayout = (props: Props) => {
           </Box>
           {settings.navHidden ? null : (
             <Toolbar
+              className='layout-horizontal-nav'
               sx={{
                 minHeight: `${themeConfig.appBarHeight}px !important`,
                 ...(settings.contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } })
@@ -141,6 +156,17 @@ const HorizontalLayout = (props: Props) => {
 
       {/* Customizer */}
       {themeConfig.disableCustomizer || hidden ? null : <Customizer />}
+
+      {/* Scroll to top button */}
+      {scrollToTop ? (
+        scrollToTop(props)
+      ) : (
+        <ScrollToTop className='mui-fixed'>
+          <Fab color='primary' size='small' aria-label='scroll back to top'>
+            <ArrowUp />
+          </Fab>
+        </ScrollToTop>
+      )}
 
       {/* Backdrop */}
       <Backdrop open={showBackdrop} onClick={() => setShowBackdrop(false)} sx={{ zIndex: 12 }} />

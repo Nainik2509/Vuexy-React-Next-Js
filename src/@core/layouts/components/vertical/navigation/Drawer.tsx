@@ -1,5 +1,5 @@
 // ** React Imports
-import { ReactNode } from 'react'
+import { ReactNode, useEffect } from 'react'
 
 // ** MUI Imports
 import { styled } from '@mui/material/styles'
@@ -18,11 +18,12 @@ interface Props {
   collapsedNavWidth: number
   setNavHover: (values: boolean) => void
   setNavVisible: (value: boolean) => void
+  saveSettings: (values: Settings) => void
 }
 
 const SwipeableDrawer = styled(MuiSwipeableDrawer)<SwipeableDrawerProps>({
   overflowX: 'hidden',
-  transition: 'width .25s ease',
+  transition: 'width .25s ease-in-out',
   '& ul': {
     listStyle: 'none'
   },
@@ -34,17 +35,33 @@ const SwipeableDrawer = styled(MuiSwipeableDrawer)<SwipeableDrawerProps>({
     left: 'unset',
     right: 'unset',
     overflowX: 'hidden',
-    transition: 'width .25s ease, box-shadow .25s ease'
+    transition: 'width .25s ease-in-out, box-shadow .25s ease-in-out'
   }
 })
 
 const Drawer = (props: Props) => {
   // ** Props
-  const { hidden, children, navHover, navWidth, settings, navVisible, setNavHover, setNavVisible, collapsedNavWidth } =
-    props
+  const {
+    hidden,
+    children,
+    navHover,
+    navWidth,
+    settings,
+    navVisible,
+    setNavHover,
+    saveSettings,
+    setNavVisible,
+    collapsedNavWidth
+  } = props
 
   // ** Var
   const { navCollapsed } = settings
+
+  useEffect(() => {
+    if (navCollapsed && hidden) {
+      saveSettings({ ...settings, navCollapsed: false })
+    }
+  }, [hidden]) // eslint-disable-line
 
   // Drawer Props for Mobile & Tablet screens
   const MobileDrawerProps = {

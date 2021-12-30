@@ -1,6 +1,9 @@
 // ** React Import
 import { ReactNode, useState } from 'react'
 
+// ** MUI Import
+import List from '@mui/material/List'
+
 // ** Third Party Components
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
@@ -48,19 +51,21 @@ const Navigation = (props: Props) => {
     <Drawer {...props}>
       <VerticalNavHeader {...props} />
       <PerfectScrollbar options={{ wheelPropagation: false }}>
-        {beforeVerticalNavMenuContent ? beforeVerticalNavMenuContent() : null}
+        {beforeVerticalNavMenuContent ? beforeVerticalNavMenuContent(props) : null}
         {userVerticalNavMenuContent ? (
           userVerticalNavMenuContent(props)
         ) : (
-          <VerticalNavItems
-            groupActive={groupActive}
-            setGroupActive={setGroupActive}
-            currentActiveGroup={currentActiveGroup}
-            setCurrentActiveGroup={setCurrentActiveGroup}
-            {...props}
-          />
+          <List sx={{ pt: 0 }} className='nav-items'>
+            <VerticalNavItems
+              groupActive={groupActive}
+              setGroupActive={setGroupActive}
+              currentActiveGroup={currentActiveGroup}
+              setCurrentActiveGroup={setCurrentActiveGroup}
+              {...props}
+            />
+          </List>
         )}
-        {afterVerticalNavMenuContent ? afterVerticalNavMenuContent() : null}
+        {afterVerticalNavMenuContent ? afterVerticalNavMenuContent(props) : null}
       </PerfectScrollbar>
     </Drawer>
   )

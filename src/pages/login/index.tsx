@@ -36,9 +36,10 @@ import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 
 // ** Context
-import { Auth } from 'src/@core/context/AuthContext'
+// import { Auth } from 'src/@core/context/AuthContext'
 
 // ** Hooks
+import { useAuth } from 'src/@core/hooks/useAuth'
 import useBgColor from 'src/@core/hooks/theme/useBgColor'
 import { useSettings } from 'src/@core/hooks/useSettings'
 
@@ -122,7 +123,9 @@ const LoginPage = () => {
 
   // ** Hooks
   const theme = useTheme()
-  const { login } = useContext(Auth)
+
+  // const { login } = useContext(Auth)
+  const auth = useAuth()
   const {
     settings: { skin }
   } = useSettings()
@@ -143,7 +146,7 @@ const LoginPage = () => {
 
   const onSubmit = (data: FormData) => {
     const { email, password } = data
-    login({ email, password }, () => {
+    auth.login({ email, password }, () => {
       setError('email', {
         type: 'manual',
         message: 'Email or Password is invalid'

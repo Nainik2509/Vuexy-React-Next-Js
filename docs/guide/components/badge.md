@@ -41,10 +41,9 @@ import CustomBadge from 'src/@core/components/mui/badge'
 </CustomBadge>
 ```
 
-<p>Result:</p>
-<img :src="$withBase('/images/components/badge-skin.png')" alt="badge-skins" class="rounded">
+Result:
 
-## Props
+![badge-skins](/images/components/badge-skin.png)
 
 ## Props
 

@@ -47,11 +47,13 @@ const AccessControl: NextPage = () => {
   )
 }
 
-AccessControl.getInitialProps = () => {
+export default AccessControl
+
+export async function getStaticProps() {
   return {
-    action: 'read',
-    subject: 'ACL'
+    props: {
+      action: 'read',
+      subject: 'ACL'
+    }
   }
 }
-
-export default AccessControl

@@ -11,14 +11,14 @@ To change a setting for a specific page use `setConfig` method and return a obje
 ```jsx
 const AnalyticsDashboard = () => <h1>Analytics Dashboard</h1>
 
-export default AnalyticsDashboard
-
 AnalyticsDashboard.setConfig = () => {
   return {
     mode: 'dark'
     ...
   }
 }
+
+export default AnalyticsDashboard
 ```
 
 :::tip Note
@@ -26,5 +26,5 @@ Configurations are same as settings you can refer the [Settings Context](/guide/
 :::
 
 :::danger Note
-Setting `layout` or `rtl` for a specific will throw a memory leak error.
+Setting `layout` or `rtl` for a specific page will throw a memory leak error.
 :::

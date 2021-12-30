@@ -7,7 +7,10 @@ import { ThemeOptions } from '@mui/material'
 // ** Type Imports
 // import { Settings } from 'src/@core/context/settingsContext'
 
+// ** To use settings, uncomment below line
 // const UserThemeOptions = (settings: Settings): ThemeOptions => {
+
+// ** To use settings, remove below line
 const UserThemeOptions = (): ThemeOptions => {
   // ** To use mode (light/dark), skin(default/bordered/semi-dark), direction(ltr/rtl) for conditional styles, uncomment below line
   // const { mode } = settings
@@ -138,18 +141,6 @@ const UserThemeOptions = (): ThemeOptions => {
             flexDirection: 'column',
             height: '100%',
             width: '100%'
-          },
-          '#nprogress': {
-            pointerEvents: 'none'
-          },
-          '#nprogress .bar': {
-            backgroundColor: '#5048E5',
-            height: 3,
-            left: 0,
-            position: 'fixed',
-            top: 0,
-            width: '100%',
-            zIndex: 2000
           }
         }
       },
@@ -259,7 +250,6 @@ const UserThemeOptions = (): ThemeOptions => {
         }
       }
     },
-    direction: 'ltr',
     shape: {
       borderRadius: 8
     },

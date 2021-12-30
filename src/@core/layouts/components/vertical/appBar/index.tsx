@@ -72,7 +72,10 @@ const LayoutAppBar = (props: Props) => {
         ...(settings.appBar === 'fixed' && { backgroundColor: theme => theme.palette.background.paper })
       }}
     >
-      <Toolbar sx={{ ...(settings.contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } }) }}>
+      <Toolbar
+        className='navbar-content-container'
+        sx={{ ...(settings.contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } }) }}
+      >
         {(userVerticalAppBarContent && userVerticalAppBarContent(props)) || (
           <AppBarContent
             hidden={hidden}

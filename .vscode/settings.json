@@ -34,5 +34,6 @@
   // Extension: cSpell
   "cSpell.words": [
     "Customizer"
-  ]
+  ],
+  "markdown.extension.toc.updateOnSave": false
 }
