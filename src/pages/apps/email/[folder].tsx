@@ -11,10 +11,16 @@ const EmailApp = ({ folder, label }: MailLayoutType) => {
   return <EmailLayout folder={folder} label={label} />
 }
 
-export default EmailApp
-
 EmailApp.getInitialProps = async ({ query }: NextPageContext) => {
   const { folder, label } = query
 
   return { folder, label }
 }
+
+EmailApp.setConfig = () => {
+  return {
+    routerTransition: 'none'
+  }
+}
+
+export default EmailApp

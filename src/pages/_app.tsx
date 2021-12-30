@@ -127,11 +127,11 @@ const App = (props: ExtendedAppProps) => {
                             <AuthGuard pageProps={pageProps} ability={ability}>
                               {getLayout(
                                 <div
+                                  key={router.route}
                                   className={clsx('animation-wrapper', {
                                     [`animate__animated animate__${settings.routerTransition}`]:
                                       settings.routerTransition !== 'none' || settings.routerTransition !== undefined
                                   })}
-                                  key={router.route}
                                 >
                                   <Component {...pageProps} />
                                 </div>
