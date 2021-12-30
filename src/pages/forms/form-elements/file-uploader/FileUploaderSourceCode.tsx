@@ -3,6 +3,9 @@ export const FileUploaderMultipleCode = (
     <code className='language-jsx'>{`// ** React Imports
 import { Fragment, useState, SyntheticEvent } from 'react'
 
+// ** Next Import
+import Image from 'next/image'
+
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Link from '@mui/material/Link'
@@ -64,7 +67,7 @@ const FileUploaderMultiple = () => {
 
   const renderFilePreview = (file: FileProp) => {
     if (file.type.startsWith('image')) {
-      return <img alt={file.name} src={URL.createObjectURL(file)} />
+      return <Image width={38} height={38} alt={file.name} src={URL.createObjectURL(file as any)} />
     } else {
       return <FileDocumentOutline />
     }
@@ -145,6 +148,9 @@ export const FileUploaderRestrictionsCode = (
     <code className='language-jsx'>{`// ** React Imports
 import { Fragment, MouseEvent, SyntheticEvent, useState } from 'react'
 
+// ** Next Import
+import Image from 'next/image'
+
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import List from '@mui/material/List'
@@ -221,7 +227,7 @@ const FileUploaderRestrictions = () => {
 
   const renderFilePreview = (file: FileProp) => {
     if (file.type.startsWith('image')) {
-      return <img alt={file.name} src={URL.createObjectURL(file)} />
+      return <Image width={38} height={38} alt={file.name} src={URL.createObjectURL(file as any)} />
     } else {
       return <FileDocumentOutline />
     }
@@ -298,6 +304,9 @@ export const FileUploaderSingleCode = (
     <code className='language-jsx'>{`// ** React Imports
 import { useState, SyntheticEvent, Fragment } from 'react'
 
+// ** Next Import
+import Image from 'next/image'
+
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Link from '@mui/material/Link'
@@ -356,7 +365,13 @@ const FileUploaderSingle = () => {
   }
 
   const img = files.map((file: FileProp) => (
-    <img key={file.name} alt={file.name} className='single-file-image' src={URL.createObjectURL(file)} />
+    <Image
+      layout='fill'
+      key={file.name}
+      alt={file.name}
+      className='single-file-image'
+      src={URL.createObjectURL(file as any)}
+    />
   ))
 
   return (

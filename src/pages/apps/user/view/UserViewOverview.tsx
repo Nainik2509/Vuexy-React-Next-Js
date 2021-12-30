@@ -295,14 +295,7 @@ const UserViewOverview = () => {
                 <Typography variant='body2'>Create new invoices and send to Leona Watkins</Typography>
                 <Box sx={{ mt: 2, display: 'flex', alignItems: 'center' }}>
                   <Box sx={{ width: 28, height: 'auto' }}>
-                    <Image
-                      width='100%'
-                      height='100%'
-                      alt='invoice.pdf'
-                      layout='responsive'
-                      objectFit='contain'
-                      src='/images/icons/file-icons/pdf.png'
-                    />
+                    <Image width={28} height={28} alt='invoice.pdf' src='/images/icons/file-icons/pdf.png' />
                   </Box>
                   <Typography variant='subtitle2' sx={{ ml: 2, fontWeight: 600 }}>
                     invoice.pdf

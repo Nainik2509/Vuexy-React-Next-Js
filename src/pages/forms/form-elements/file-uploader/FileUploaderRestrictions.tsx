@@ -74,7 +74,7 @@ const FileUploaderRestrictions = () => {
 
   const renderFilePreview = (file: FileProp) => {
     if (file.type.startsWith('image')) {
-      return <Image alt={file.name} src={URL.createObjectURL(file as any)} width='38' height='38' />
+      return <Image width={38} height={38} alt={file.name} src={URL.createObjectURL(file as any)} />
     } else {
       return <FileDocumentOutline />
     }
