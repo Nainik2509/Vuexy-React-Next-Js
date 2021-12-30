@@ -3,7 +3,7 @@ import { Fragment, ReactNode } from 'react'
 
 // ** MUI Components
 import useMediaQuery from '@mui/material/useMediaQuery'
-import { Theme, styled, useTheme } from '@mui/material/styles'
+import { styled, useTheme } from '@mui/material/styles'
 
 interface FooterIllustrationsProp {
   image1?: ReactNode
@@ -38,7 +38,7 @@ const FooterIllustrationsV1 = (props: FooterIllustrationsProp) => {
   const theme = useTheme()
 
   // ** Vars
-  const hidden = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
+  const hidden = useMediaQuery(theme.breakpoints.down('md'))
 
   if (!hidden) {
     return (

@@ -11,7 +11,6 @@ Following are the properties with their values that we have used in the theme:
 ```jsx
 const themeConfig = {
   templateName: 'Master',
-  templateLogo: '/logo.svg',
   skin: 'default',
   mode: 'light',
   direction: 'ltr',
@@ -42,7 +41,6 @@ Following is the table of all the properties and their possible values that are 
 | Properties              | Values                                     | Description                                                                 |
 | ----------------------- | ------------------------------------------ | --------------------------------------------------------------------------- |
 | templateName            | `string`                                   | Name of the template, project or company                                    |
-| templateLogo            | `string`                                   | Logo for the template, project or company                                   |
 | skin                    | `'default'`, `'bordered'`, `'semi-dark'`   | Change template skin                                                        |
 | mode                    | `'light'`, `'dark'`                        | Set Light or Dark mode for the template                                     |
 | direction               | `'ltr'`, `'rtl'`                           | Content direction                                                           |
