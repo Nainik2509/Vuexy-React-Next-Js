@@ -27,7 +27,6 @@ type ThemeConfig = {
   direction: Direction
   appBarHeight: number
   templateName: string
-  templateLogo: string
   navCollapsed: boolean
   disableRipple: boolean
   navigationSize: number
@@ -45,7 +44,6 @@ type ThemeConfig = {
 
 const themeConfig: ThemeConfig = {
   templateName: 'Master' /* App Name */,
-  templateLogo: '/logo.svg' /* App Logo */,
   skin: 'default' /* default | bordered | semi-dark */,
   mode: 'light' /* light | dark */,
   direction: 'ltr' /* ltr | rtl */,
