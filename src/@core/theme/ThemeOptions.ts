@@ -21,6 +21,8 @@ const themeOptions = (settings: Settings): ThemeOptions => {
   // ** Create New object before removing user component overrides and typography objects from userThemeOptions
   const userThemeConfig = Object.assign({}, UserThemeOptions(settings))
 
+  const userFontFamily = userThemeConfig.typography?.fontFamily
+
   // ** Remove component overrides and typography objects from userThemeOptions
   delete userThemeConfig.components
   delete userThemeConfig.typography
@@ -30,20 +32,22 @@ const themeOptions = (settings: Settings): ThemeOptions => {
       direction,
       palette: palette(mode),
       typography: {
-        fontFamily: [
-          'Inter',
-          'sans-serif',
-          '-apple-system',
-          'BlinkMacSystemFont',
-          '"Segoe UI"',
-          'Roboto',
-          '"Helvetica Neue"',
-          'Arial',
-          'sans-serif',
-          '"Apple Color Emoji"',
-          '"Segoe UI Emoji"',
-          '"Segoe UI Symbol"'
-        ].join(',')
+        fontFamily:
+          userFontFamily ||
+          [
+            'Inter',
+            'sans-serif',
+            '-apple-system',
+            'BlinkMacSystemFont',
+            '"Segoe UI"',
+            'Roboto',
+            '"Helvetica Neue"',
+            'Arial',
+            'sans-serif',
+            '"Apple Color Emoji"',
+            '"Segoe UI Emoji"',
+            '"Segoe UI Symbol"'
+          ].join(',')
       },
       shadows: shadows(mode),
       ...spacing,
