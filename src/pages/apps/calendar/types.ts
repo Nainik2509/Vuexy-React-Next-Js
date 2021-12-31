@@ -59,7 +59,7 @@ export type EventStateType = {
 export type CalendarStoreType = {
   events: EventType[]
   selectedEvent: null | EventType
-  selectedCalendars: CalendarFiltersType[]
+  selectedCalendars: CalendarFiltersType[] | string[]
 }
 
 export type CalendarType = {

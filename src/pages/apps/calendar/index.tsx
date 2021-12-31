@@ -14,7 +14,7 @@ import { useSettings } from 'src/@core/hooks/useSettings'
 
 // ** Types
 import { RootState } from 'src/redux/store'
-import { CalendarColors } from './types'
+import { CalendarColors, CalendarFiltersType } from './types'
 
 // ** FullCalendar & App Components Imports
 import Calendar from './Calendar'
@@ -59,7 +59,7 @@ const AppCalendar = () => {
   const mdAbove = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'))
 
   useEffect(() => {
-    dispatch(fetchEvents(store.selectedCalendars))
+    dispatch(fetchEvents(store.selectedCalendars as CalendarFiltersType[]))
   }, [dispatch, store.selectedCalendars])
 
   const handleLeftSidebarToggle = () => setLeftSidebarOpen(!leftSidebarOpen)
