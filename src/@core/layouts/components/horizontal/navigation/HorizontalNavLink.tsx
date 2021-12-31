@@ -64,16 +64,10 @@ const HorizontalNavLink = (props: Props) => {
   const router = useRouter()
 
   const handleURLQueries = () => {
-    if (Object.keys(router.query).length) {
+    if (Object.keys(router.query).length && item.path) {
       const arr = Object.keys(router.query)
 
-      if (arr.length > 1) {
-        return arr.some((i, index) => {
-          return router.asPath === `${item.path}/${router.query[arr[index - 1]]}/${router.query[i]}`
-        })
-      } else {
-        return router.asPath === `${item.path}/${router.query[arr[0]]}`
-      }
+      return router.asPath.includes(item.path) && router.asPath.includes(router.query[arr[0]] as string)
     }
   }
 
