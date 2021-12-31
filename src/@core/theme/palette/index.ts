@@ -1,16 +1,30 @@
-// ** Type Import
+// ** Type Imports
 import { PaletteMode } from '@mui/material'
+import { Skin } from 'src/@core/layouts/types'
 
-const DefaultPalette = (mode: PaletteMode) => {
+const DefaultPalette = (mode: PaletteMode, skin: Skin) => {
+  // ** Vars
+  const lightColor = '94, 86, 105'
   const darkColor = '231, 227, 252'
-  const semiDarkDrawerBg = '#221b2d'
-  const mainColor = mode === 'light' ? '94, 86, 105' : darkColor
+  const mainColor = mode === 'light' ? lightColor : darkColor
+
+  const defaultBgColor = () => {
+    if (skin === 'bordered' && mode === 'light') {
+      return '#FFF'
+    } else if (skin === 'bordered' && mode === 'dark') {
+      return '#312d4b'
+    } else if (mode === 'light') {
+      return '#F4F5FA'
+    } else return '#28243d'
+  }
 
   return {
     customColors: {
+      dark: darkColor,
       main: mainColor,
-      semiDark: semiDarkDrawerBg,
-      darkColor: `rgba(${darkColor}, 0.87)`
+      light: lightColor,
+      darkBg: '#28243d',
+      lightBg: '#F4F5FA'
     },
     common: {
       black: '#000',
@@ -78,7 +92,7 @@ const DefaultPalette = (mode: PaletteMode) => {
     divider: `rgba(${mainColor}, 0.14)`,
     background: {
       paper: mode === 'light' ? '#FFF' : '#312d4b',
-      default: mode === 'light' ? '#F4F5FA' : '#28243d'
+      default: defaultBgColor()
     },
     action: {
       active: `rgba(${mainColor}, 0.54)`,

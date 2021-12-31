@@ -8,10 +8,10 @@ import { useRouter } from 'next/router'
 // ** MUI Imports
 import Chip from '@mui/material/Chip'
 import ListItem from '@mui/material/ListItem'
-import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import Box, { BoxProps } from '@mui/material/Box'
 import ListItemIcon from '@mui/material/ListItemIcon'
+import { styled, useTheme } from '@mui/material/styles'
 import ListItemButton, { ListItemButtonProps } from '@mui/material/ListItemButton'
 
 // ** Configs Import
@@ -67,13 +67,32 @@ const VerticalNavLink = ({
   toggleNavVisibility,
   navigationBorderWidth
 }: Props) => {
-  // ** Var
-  const { navCollapsed } = settings
+  // ** Hooks
+  const theme = useTheme()
+  const router = useRouter()
+
+  // ** Vars
+  const { skin, navCollapsed } = settings
 
   const IconTag: ReactNode = parent && !item.icon ? themeConfig.navSubItemIcon : item.icon
 
-  // ** Hook
-  const router = useRouter()
+  const conditionalBgColor = () => {
+    if (skin === 'semi-dark' && theme.palette.mode === 'light') {
+      return {
+        color: `rgba(${theme.palette.customColors.dark}, 0.87)`,
+        '&:hover': {
+          backgroundColor: `rgba(${theme.palette.customColors.dark}, 0.04)`
+        }
+      }
+    } else if (skin === 'semi-dark' && theme.palette.mode === 'dark') {
+      return {
+        color: `rgba(${theme.palette.customColors.light}, 0.87)`,
+        '&:hover': {
+          backgroundColor: `rgba(${theme.palette.customColors.light}, 0.04)`
+        }
+      }
+    } else return {}
+  }
 
   const handleURLQueries = () => {
     if (Object.keys(router.query).length) {
@@ -119,9 +138,10 @@ const VerticalNavLink = ({
             }
           }}
           sx={{
+            ...conditionalBgColor(),
+            ...(item.disabled ? { pointerEvents: 'none' } : { cursor: 'pointer' }),
             paddingLeft:
-              navCollapsed && !navHover ? (themeConfig.collapsedNavigationSize - navigationBorderWidth - 24) / 8 : 5.5,
-            ...(item.disabled ? { pointerEvents: 'none' } : { cursor: 'pointer' })
+              navCollapsed && !navHover ? (themeConfig.collapsedNavigationSize - navigationBorderWidth - 24) / 8 : 5.5
           }}
         >
           {isSubToSub ? null : (

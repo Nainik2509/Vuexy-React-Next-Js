@@ -1,5 +1,5 @@
 // ** MUI Imports
-import { styled } from '@mui/material/styles'
+import { styled, useTheme } from '@mui/material/styles'
 import Typography, { TypographyProps } from '@mui/material/Typography'
 import MuiListSubheader, { ListSubheaderProps } from '@mui/material/ListSubheader'
 
@@ -29,6 +29,7 @@ const ListSubheader = styled((props: ListSubheaderProps) => <MuiListSubheader co
     padding: theme.spacing(4),
     marginTop: theme.spacing(3),
     paddingTop: theme.spacing(4.5),
+    backgroundColor: 'transparent',
     color: theme.palette.text.disabled,
     transition: 'padding-left .25s ease-in-out'
   })
@@ -47,17 +48,37 @@ const VerticalNavSectionTitle = (props: Props) => {
   // ** Props
   const { item, navHover, settings, navigationBorderWidth } = props
 
+  // ** Hook
+  const theme = useTheme()
+
   // ** Vars
-  const navCollapsed = settings.navCollapsed
+  const { skin, navCollapsed } = settings
+
+  const conditionalStyling = () => {
+    if (skin === 'semi-dark' && theme.palette.mode === 'light') {
+      return {
+        color: `rgba(${theme.palette.customColors.dark}, 0.38)`
+      }
+    } else if (skin === 'semi-dark' && theme.palette.mode === 'dark') {
+      return {
+        color: `rgba(${theme.palette.customColors.light}, 0.38)`
+      }
+    } else {
+      return {
+        color: theme.palette.text.disabled
+      }
+    }
+  }
 
   return (
     <ListSubheader
       className='nav-section-title'
-      sx={
-        navCollapsed && !navHover
+      sx={{
+        ...conditionalStyling(),
+        ...(navCollapsed && !navHover
           ? { pt: 3.12, pb: 2.875, pl: (themeConfig.collapsedNavigationSize - navigationBorderWidth - 24) / 8 }
-          : { pl: 6 }
-      }
+          : { pl: 6 })
+      }}
     >
       {navCollapsed && !navHover ? (
         <DotsHorizontal />

@@ -13,10 +13,10 @@ import { ThemeOptions } from '@mui/material'
 // ** To use settings, remove below line
 const UserThemeOptions = (): ThemeOptions => {
   // ** To use mode (light/dark), skin(default/bordered/semi-dark), direction(ltr/rtl) for conditional styles, uncomment below line
-  // const { mode } = settings
+  // const { mode, skin } = settings
 
   // ** To use core palette, uncomment the below line
-  // const palette = corePalette(mode)
+  // const palette = corePalette(mode, skin)
 
   return {
     /* breakpoints: {

@@ -9,8 +9,10 @@ const GlobalStyles = (theme: Theme, settings: Settings) => {
   const { skin } = settings
 
   const perfectScrollbarTrackBgColor = () => {
-    if (skin === 'semi-dark') {
+    if (skin === 'semi-dark' && theme.palette.mode === 'light') {
       return '#353149 !important'
+    } else if (skin === 'semi-dark' && theme.palette.mode === 'dark') {
+      return '#DDDBDF !important'
     } else if (theme.palette.mode === 'light') {
       return '#DDDBDF !important'
     } else {
@@ -18,8 +20,10 @@ const GlobalStyles = (theme: Theme, settings: Settings) => {
     }
   }
   const perfectScrollbarThumbBgColor = () => {
-    if (skin === 'semi-dark') {
+    if (skin === 'semi-dark' && theme.palette.mode === 'light') {
       return '#575468 !important'
+    } else if (skin === 'semi-dark' && theme.palette.mode === 'dark') {
+      return '#B0ACB5 !important'
     } else if (theme.palette.mode === 'light') {
       return '#B0ACB5 !important'
     } else {
@@ -59,7 +63,7 @@ const GlobalStyles = (theme: Theme, settings: Settings) => {
       '& .ps__thumb-y': {
         backgroundColor: theme.palette.mode === 'light' ? '#B0ACB5 !important' : '#575468 !important'
       },
-      '.main-menu-content &': {
+      '.layout-vertical-nav &': {
         '&:hover, &:focus, &.ps--clicking': {
           backgroundColor: perfectScrollbarTrackBgColor()
         },
