@@ -1,5 +1,5 @@
 // ** React Imports
-import { ReactNode, useContext } from 'react'
+import { ReactNode } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
@@ -12,15 +12,6 @@ import Box, { BoxProps } from '@mui/material/Box'
 
 // ** Layout Import
 import BlankLayout from 'src/@core/layouts/BlankLayout'
-
-// ** Context
-// import { Auth } from 'src/@core/context/AuthContext'
-
-// ** Hooks Import
-import { useAuth } from 'src/@core/hooks/useAuth'
-
-// ** Config
-import authConfig from 'src/configs/auth'
 
 // ** Demo Imports
 import FooterIllustrations from 'src/pages/pages/misc/FooterIllustrations'
@@ -47,9 +38,6 @@ const Img = styled('img')(({ theme }) => ({
 }))
 
 const NotAuthorized = () => {
-  // ** Hooks
-  const { user } = useAuth()
-
   return (
     <Box className='content-center'>
       <Box sx={{ p: 5, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
@@ -60,7 +48,7 @@ const NotAuthorized = () => {
           <Typography variant='body2'>You don’t have permission to access this page. Go Home!</Typography>
         </BoxWrapper>
         <Img height='487' alt='not-authorized-illustration' src='/images/pages/misc-not-authorized.png' />
-        <Link href={user ? authConfig.redirectURL(user.role) : '/'} passHref>
+        <Link href='/' passHref>
           <Button type='submit' component='a' variant='contained' sx={{ paddingLeft: 5.5, paddingRight: 5.5 }}>
             Back to Home
           </Button>

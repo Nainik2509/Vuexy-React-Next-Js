@@ -13,32 +13,7 @@ const users: UserDataType[] = [
     fullName: 'John Doe',
     username: 'johndoe',
     password: 'admin',
-    email: 'admin@materio.com',
-    role: 'admin',
-    ability: [
-      {
-        action: 'manage',
-        subject: 'all'
-      }
-    ]
-  },
-  {
-    id: 2,
-    fullName: 'Jane Doe',
-    username: 'janedoe',
-    password: 'client',
-    email: 'client@materio.com',
-    role: 'client',
-    ability: [
-      {
-        action: 'read',
-        subject: 'ACL'
-      },
-      {
-        action: 'read',
-        subject: 'analytics'
-      }
-    ]
+    email: 'admin@materio.com'
   }
 ]
 
@@ -96,14 +71,7 @@ mock.onPost('/jwt/register').reply(request => {
         password,
         username,
         fullName: '',
-        avatar: null,
-        role: 'admin' as 'admin' | 'client',
-        ability: [
-          {
-            subject: 'all',
-            action: 'manage'
-          }
-        ]
+        avatar: null
       }
 
       users.push(userData)

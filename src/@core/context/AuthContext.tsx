@@ -1,5 +1,5 @@
 // ** React Imports
-import { createContext, useEffect, useState, ReactNode, useContext } from 'react'
+import { createContext, useEffect, useState, ReactNode } from 'react'
 
 // ** Next Import
 import { useRouter } from 'next/router'
@@ -9,9 +9,6 @@ import axios from 'axios'
 
 // ** Config
 import authConfig from 'src/configs/auth'
-
-// ** Context
-import { AbilityContext } from 'src/@core/context/Can'
 
 // ** Types
 import { AuthValuesType, RegisterParams, LoginParams, ErrCallbackType, UserDataType } from './types'
@@ -44,8 +41,6 @@ const AuthProvider = ({ children }: Props) => {
   // ** Hooks
   const router = useRouter()
 
-  const ability = useContext(AbilityContext)
-
   useEffect(() => {
     const initAuth = async (): Promise<void> => {
       setIsInitialized(true)
@@ -60,12 +55,8 @@ const AuthProvider = ({ children }: Props) => {
             }
           })
           .then(response => {
-            // setIsInitialized(true)
             setUser({ ...response.data.userData })
             setLoading(false)
-
-            // ability.update(response.data.userData.ability)
-            // router.push(router.route)
           })
       } else {
         setLoading(false)
@@ -73,8 +64,6 @@ const AuthProvider = ({ children }: Props) => {
     }
     initAuth()
   }, [])
-
-  // }, [router, ability, user])
 
   const handleLogin = (params: LoginParams, errorCallback?: ErrCallbackType) => {
     axios
@@ -90,16 +79,13 @@ const AuthProvider = ({ children }: Props) => {
             }
           })
           .then(async response => {
-            const { role } = response.data.userData
             const returnUrl = router.query.returnUrl
 
-            const redirectURL = returnUrl && returnUrl !== '/' ? returnUrl : authConfig.redirectURL(role)
+            const redirectURL = returnUrl && returnUrl !== '/' ? returnUrl : '/'
 
             setUser({ ...response.data.userData })
             await window.localStorage.setItem('userData', JSON.stringify(response.data.userData))
-
-            // await ability.update(response.data.userData.ability)
-            router.replace(redirectURL)
+            router.replace(redirectURL as string)
           })
       })
       .catch(err => {
@@ -112,7 +98,7 @@ const AuthProvider = ({ children }: Props) => {
     setIsInitialized(false)
     window.localStorage.removeItem('userData')
     window.localStorage.removeItem(authConfig.storageTokenKeyName)
-    router.push(authConfig.redirectURL(null))
+    router.push('/login')
   }
 
   const handleRegister = (params: RegisterParams, errorCallback?: ErrCallbackType) => {

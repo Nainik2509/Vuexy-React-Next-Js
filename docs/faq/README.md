@@ -72,3 +72,16 @@ Here's some of what we have found:
 ## How to update navbar, breadcrumb or footer
 
 You can use layout slots to add your custom navbar, breadcrumb or footer. Please refer to [layout](/guide/layout/layout-types.md) docs for example with code snippet.
+
+## Nextjs Image Component
+
+There might be time where you'll have to use an image without height or width. But, the Nextjs Image component
+requires both height & width.
+
+In that case you can do something like this:
+
+```jsx
+<Box sx={{ width: 35, height: 35 }}>
+  <Img width='100%' height='100%' layout='responsive' objectFit='contain' src='/images/logos/facebook.png' />
+</Box>
+```

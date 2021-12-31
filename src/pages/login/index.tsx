@@ -265,9 +265,6 @@ const LoginPage = () => {
                 <Typography variant='caption' sx={{ display: 'block', color: 'primary.main' }}>
                   Admin: <strong>admin@materio.com</strong> / Pass: <strong>admin</strong>
                 </Typography>
-                <Typography variant='caption' sx={{ color: 'primary.main' }}>
-                  Client: <strong>client@materio.com</strong> / Pass: <strong>client</strong>
-                </Typography>
               </Box>
             </Box>
             <form noValidate autoComplete='off' onSubmit={handleSubmit(onSubmit)}>

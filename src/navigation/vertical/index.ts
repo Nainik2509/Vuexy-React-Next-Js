@@ -6,7 +6,6 @@ import CubeOutline from 'mdi-material-ui/CubeOutline'
 import LockOutline from 'mdi-material-ui/LockOutline'
 import HomeOutline from 'mdi-material-ui/HomeOutline'
 import EmailOutline from 'mdi-material-ui/EmailOutline'
-import ShieldOutline from 'mdi-material-ui/ShieldOutline'
 import AccountOutline from 'mdi-material-ui/AccountOutline'
 import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
 import DotsHorizontal from 'mdi-material-ui/DotsHorizontal'
@@ -33,8 +32,6 @@ const navigation = (): VerticalNavItemsType => {
       badgeColor: 'error',
       children: [
         {
-          action: 'read',
-          subject: 'analytics',
           title: 'Analytics',
           path: '/dashboard/analytics'
         },
@@ -469,13 +466,6 @@ const navigation = (): VerticalNavItemsType => {
           path: '/charts/chartjs'
         }
       ]
-    },
-    {
-      action: 'read',
-      subject: 'ACL',
-      icon: ShieldOutline,
-      title: 'Access Control',
-      path: '/pages/access-control'
     },
     {
       title: 'Others',

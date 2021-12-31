@@ -31,7 +31,6 @@ module.exports = {
             '/guide/development/folder-structure',
             '/guide/development/routing',
             '/guide/development/authentication',
-            '/guide/development/access-control',
             '/guide/development/internationalization',
             '/guide/development/rtl'
             // '/guide/development/theme-configuration',

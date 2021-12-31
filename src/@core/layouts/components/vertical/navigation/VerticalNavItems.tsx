@@ -2,9 +2,6 @@
 import { Settings } from 'src/@core/context/settingsContext'
 import { NavLink, NavGroup, NavSectionTitle, VerticalNavItemsType } from 'src/@core/layouts/types'
 
-// ** Hooks
-import useCanViewNav from 'src/@core/hooks/useCanViewNav'
-
 // ** Custom Menu Components
 import VerticalNavLink from './VerticalNavLink'
 import VerticalNavGroup from './VerticalNavGroup'
@@ -36,16 +33,10 @@ const VerticalNavItems = (props: Props) => {
   // ** Props
   const { verticalNavItems } = props
 
-  // ** Hooks
-  const { canViewNavGroup, canViewNavItem } = useCanViewNav()
-
   const RenderMenuItems = verticalNavItems?.map((item: NavGroup | NavLink | NavSectionTitle, index: number) => {
     const TagName: any = resolveNavItemComponent(item)
-    if ((item as NavGroup).children) {
-      return canViewNavGroup(item as NavGroup) && <TagName {...props} key={index} item={item} />
-    }
 
-    return canViewNavItem(item as NavLink) && <TagName {...props} key={index} item={item} />
+    return <TagName {...props} key={index} item={item} />
   })
 
   return <>{RenderMenuItems}</>

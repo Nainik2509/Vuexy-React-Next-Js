@@ -538,13 +538,6 @@ const searchData: AppBarSearchType[] = [
     type: 'pages'
   },
   {
-    id: 77,
-    url: '/pages/access-control',
-    icon: 'ShieldOutline',
-    title: 'Access Control',
-    type: 'pages'
-  },
-  {
     id: 78,
     img: '/images/icons/file-icons/doc.png',
     title: 'Passport Image',

@@ -28,14 +28,10 @@ import clsx from 'clsx'
 // ** Component Imports
 import UserLayout from 'src/layouts/UserLayout'
 import { AuthGuard } from 'src/@core/components/auth'
-import { buildAbilityFor } from 'src/configs/acl/ability'
 import ThemeComponent from 'src/@core/theme/ThemeComponent'
 
 // ** Contexts
-import { AbilityContext } from 'src/@core/context/Can'
 import { AuthProvider } from 'src/@core/context/AuthContext'
-
-import { AuthContext } from 'src/@core/context/AuthContext'
 import { SettingsConsumer, SettingsProvider } from 'src/@core/context/settingsContext'
 
 // ** Utils Imports
@@ -71,15 +67,12 @@ const clientSideEmotionCache = createEmotionCache()
 
 if (themeConfig.routingLoader) {
   Router.events.on('routeChangeStart', () => {
-    console.log('routeChangeStart')
     NProgress.start()
   })
   Router.events.on('routeChangeError', () => {
-    console.log('routeChangeError')
     NProgress.done()
   })
   Router.events.on('routeChangeComplete', () => {
-    console.log('routeChangeComplete')
     NProgress.done()
   })
 }
@@ -94,8 +87,6 @@ const App = (props: ExtendedAppProps) => {
 
   const router = useRouter()
 
-  const AuthConsumer = AuthContext.Consumer
-
   return (
     <Provider store={store}>
       <CacheProvider value={emotionCache}>
@@ -105,48 +96,37 @@ const App = (props: ExtendedAppProps) => {
         </Head>
 
         <AuthProvider>
-          <AuthConsumer>
-            {auth => {
-              const role = auth.user !== null ? auth.user.role : 'visitor'
-              const ability = buildAbilityFor(role)
-
-              return (
-                <AbilityContext.Provider value={ability}>
-                  <SettingsProvider {...(setConfig ? { pageSettings: setConfig() } : {})}>
-                    <SettingsConsumer>
-                      {({ settings }) => {
-                        return (
-                          <ThemeComponent settings={settings}>
-                            {/* {auth.loading ? (
+          <SettingsProvider {...(setConfig ? { pageSettings: setConfig() } : {})}>
+            <SettingsConsumer>
+              {({ settings }) => {
+                return (
+                  <ThemeComponent settings={settings}>
+                    {/* {auth.loading ? (
                               'Loading...' // Splash screen
                             ) : (
                               <AuthGuard pageProps={pageProps} ability={ability}>
                                 {getLayout(<Component {...pageProps} />)}
                               </AuthGuard>
                             )} */}
-                            <AuthGuard pageProps={pageProps} ability={ability}>
-                              {getLayout(
-                                <div
-                                  key={router.route}
-                                  className={clsx('animation-wrapper', {
-                                    [`animate__animated animate__${settings.routerTransition}`]:
-                                      settings.routerTransition !== 'none' || settings.routerTransition !== undefined
-                                  })}
-                                >
-                                  <Component {...pageProps} />
-                                </div>
-                              )}
-                            </AuthGuard>
-                            {/* <AuthGuard pageProps={pageProps}>{getLayout(<Component {...pageProps} />)}</AuthGuard> */}
-                          </ThemeComponent>
-                        )
-                      }}
-                    </SettingsConsumer>
-                  </SettingsProvider>
-                </AbilityContext.Provider>
-              )
-            }}
-          </AuthConsumer>
+                    <AuthGuard pageProps={pageProps}>
+                      {getLayout(
+                        <div
+                          key={router.route}
+                          className={clsx('animation-wrapper', {
+                            [`animate__animated animate__${settings.routerTransition}`]:
+                              settings.routerTransition !== 'none' || settings.routerTransition !== undefined
+                          })}
+                        >
+                          <Component {...pageProps} />
+                        </div>
+                      )}
+                    </AuthGuard>
+                    {/* <AuthGuard pageProps={pageProps}>{getLayout(<Component {...pageProps} />)}</AuthGuard> */}
+                  </ThemeComponent>
+                )
+              }}
+            </SettingsConsumer>
+          </SettingsProvider>
         </AuthProvider>
       </CacheProvider>
     </Provider>

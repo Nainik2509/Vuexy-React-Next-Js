@@ -15,7 +15,6 @@ import LockOutline from 'mdi-material-ui/LockOutline'
 import FileOutline from 'mdi-material-ui/FileOutline'
 import HomeOutline from 'mdi-material-ui/HomeOutline'
 import EmailOutline from 'mdi-material-ui/EmailOutline'
-import ShieldOutline from 'mdi-material-ui/ShieldOutline'
 import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 import DotsHorizontal from 'mdi-material-ui/DotsHorizontal'
 import AccountOutline from 'mdi-material-ui/AccountOutline'
@@ -48,8 +47,6 @@ const navigation = (): HorizontalNavItemsType => [
       {
         icon: TrendingUp,
         title: 'Analytics',
-        action: 'read',
-        subject: 'analytics',
         path: '/dashboard/analytics'
       },
       {
@@ -501,13 +498,6 @@ const navigation = (): HorizontalNavItemsType => [
     title: 'Others',
     icon: DotsHorizontal,
     children: [
-      {
-        action: 'read',
-        subject: 'ACL',
-        icon: ShieldOutline,
-        title: 'Access Control',
-        path: '/pages/access-control'
-      },
       {
         title: 'Menu Levels',
         icon: Menu,

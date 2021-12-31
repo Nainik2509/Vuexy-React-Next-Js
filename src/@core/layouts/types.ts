@@ -21,9 +21,7 @@ export type HorizontalMenuToggle = 'hover' | 'click'
 export type NavLink = {
   title: string
   path?: string
-  action?: string // for ACL
   icon?: ReactNode
-  subject?: string // for ACL
   disabled?: boolean
   badgeContent?: string
   externalLink?: boolean

@@ -8,6 +8,12 @@ We only provide JWT authentication with the template for now. We might integrate
 
 We have created an Authentication context that returns all the necessary functions you might need to authenticate a user.
 
+## AuthGuard
+
+We have created a wrapper that checks for the authentication status and redirects user if not logged in.
+
+You can find the AuthGuard in `_app.tsx` file.
+
 ## Usage
 
 ```jsx
@@ -54,6 +60,15 @@ Follow these steps to override the auth context:
 3. Now update the authentication code according to your authentication logic in newly created file.
 4. Then replace the core AuthContext Wrapper with your in file `_app.tsx`
 5. That's it now you can use your modified context.
+
+## Removing Authentication
+
+Removing the authentication from the app is simple.
+Follow these steps to remove the authentication from the app:
+
+1. Remove the AuthContext from the file `_app.tsx`
+2. Remove the AuthGuard Wrapper from the file `_app.tsx`
+3. That's it now your app is auth free.
 
 ## Auth Context Values
 

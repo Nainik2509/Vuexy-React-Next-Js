@@ -466,13 +466,6 @@ const navigation = (): (NavGroup | NavLink | NavSectionTitle)[] => {
       ]
     },
     {
-      action: 'read',
-      resource: 'ACL',
-      icon: ShieldOutline,
-      title: 'Access Control',
-      path: '/pages/access-control'
-    },
-    {
       title: 'Others',
       icon: DotsHorizontal,
       children: [

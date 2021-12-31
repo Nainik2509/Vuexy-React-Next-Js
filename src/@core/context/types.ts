@@ -11,11 +11,6 @@ export type RegisterParams = {
   password: string
 }
 
-export type UserAbilityType = {
-  action: string
-  subject: string
-}
-
 export type UserDataType = {
   id: number
   email: string
@@ -23,8 +18,6 @@ export type UserDataType = {
   username: string
   password: string
   avatar?: string | null
-  role: 'admin' | 'client'
-  ability: UserAbilityType[]
 }
 
 export type AuthValuesType = {
