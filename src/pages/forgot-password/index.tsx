@@ -218,7 +218,7 @@ const ForgotPasswordV2 = () => {
   )
 }
 
-Register.getInitialProps = () => {
+ForgotPasswordV2.getInitialProps = () => {
   return {
     restrictedPage: true
   }
