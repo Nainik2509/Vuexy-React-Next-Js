@@ -14,9 +14,7 @@ import ArrowUp from 'mdi-material-ui/ArrowUp'
 import themeConfig from 'src/configs/themeConfig'
 
 // ** Type Import
-import { VerticalNavItemsType } from './types'
 import { LayoutProps } from 'src/@core/layouts/types'
-import { Settings } from 'src/@core/context/settingsContext'
 
 // ** Components
 import AppBar from './components/vertical/appBar'
@@ -24,13 +22,6 @@ import Customizer from 'src/@core/components/customizer'
 import Navigation from './components/vertical/navigation'
 import Footer from './components/shared-components/footer'
 import ScrollToTop from 'src/@core/components/scroll-to-top'
-
-type Props = LayoutProps & {
-  hidden: boolean
-  settings: Settings
-  verticalNavItems?: VerticalNavItemsType
-  saveSettings: (values: Settings) => void
-}
 
 const VerticalLayoutWrapper = styled('div')({
   height: '100%',
@@ -55,7 +46,7 @@ const ContentWrapper = styled('main')(({ theme }) => ({
   }
 }))
 
-const VerticalLayout = (props: Props) => {
+const VerticalLayout = (props: LayoutProps) => {
   // ** Props
   const { hidden, settings, children, scrollToTop } = props
 

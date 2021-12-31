@@ -302,7 +302,13 @@ const Customizer = () => {
               <RadioGroup
                 row
                 value={settings.layout}
-                onChange={e => handleChange('layout', e.target.value as Settings['layout'])}
+                onChange={e => {
+                  saveSettings({
+                    ...settings,
+                    layout: e.target.value as Settings['layout'],
+                    lastLayout: e.target.value as Settings['lastLayout']
+                  })
+                }}
                 sx={{ '& .MuiFormControlLabel-label': { fontSize: '.875rem', color: 'text.secondary' } }}
               >
                 <FormControlLabel value='vertical' label='Vertical' control={<Radio />} />

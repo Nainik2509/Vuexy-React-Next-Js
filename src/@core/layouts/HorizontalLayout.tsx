@@ -16,9 +16,7 @@ import ArrowUp from 'mdi-material-ui/ArrowUp'
 import themeConfig from 'src/configs/themeConfig'
 
 // ** Type Import
-import { HorizontalNavItemsType } from './types'
 import { LayoutProps } from 'src/@core/layouts/types'
-import { Settings } from 'src/@core/context/settingsContext'
 
 // ** Components
 import Customizer from 'src/@core/components/customizer'
@@ -26,13 +24,6 @@ import Footer from './components/shared-components/footer'
 import Navigation from './components/horizontal/navigation'
 import ScrollToTop from 'src/@core/components/scroll-to-top'
 import AppBarContent from './components/horizontal/app-bar-content'
-
-type Props = LayoutProps & {
-  hidden: boolean
-  settings: Settings
-  saveSettings: (values: Settings) => void
-  horizontalNavItems?: HorizontalNavItemsType
-}
 
 const HorizontalLayoutWrapper = styled('div')({
   display: 'flex',
@@ -64,7 +55,7 @@ const ContentWrapper = styled('main')(({ theme }) => ({
   }
 }))
 
-const HorizontalLayout = (props: Props) => {
+const HorizontalLayout = (props: LayoutProps) => {
   // ** Props
   const {
     hidden,
