@@ -17,7 +17,7 @@ import CustomChip from 'src/@core/components/mui/chip'
 // ** Styled Components
 import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
 
-// ! To avoid Window is not defined Error
+// ! To avoid 'Window is not defined' error
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const ApexLineChart = () => {

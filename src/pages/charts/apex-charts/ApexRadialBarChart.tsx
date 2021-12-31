@@ -17,7 +17,7 @@ const radialBarColors = {
   series5: '#FFA1A1'
 }
 
-// ! To avoid Window is not defined Error
+// ! To avoid 'Window is not defined' error
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const ApexRadialBarChart = () => {

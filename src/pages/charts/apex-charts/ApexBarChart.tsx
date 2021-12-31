@@ -26,7 +26,7 @@ import { DateType } from 'src/pages/forms/form-elements/pickers/react-datepicker
 import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
 import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
-// ! To avoid Window is not defined Error
+// ! To avoid 'Window is not defined' error
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 interface PickerProps {

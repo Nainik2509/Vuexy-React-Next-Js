@@ -14,7 +14,7 @@ const radarColors = {
   series2: '#ffa1a1'
 }
 
-// ! To avoid Window is not defined Error
+// ! To avoid 'Window is not defined' error
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const ApexRadarChart = () => {

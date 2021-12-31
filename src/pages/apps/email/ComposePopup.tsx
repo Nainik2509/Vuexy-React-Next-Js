@@ -88,7 +88,7 @@ const menuItemsArr = [
 
 const filter = createFilterOptions()
 
-// ! To avoid Window is not defined Error
+// ! To avoid 'Window is not defined' error
 // @ts-ignore
 const Editor = dynamic<EditorProps>(() => import('react-draft-wysiwyg').then(mod => mod.Editor), { ssr: false })
 

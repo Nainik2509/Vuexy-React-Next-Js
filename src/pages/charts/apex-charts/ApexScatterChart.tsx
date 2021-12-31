@@ -23,7 +23,7 @@ const scatterColors = {
   series3: '#28c76f'
 }
 
-// ! To avoid Window is not defined Error
+// ! To avoid 'Window is not defined' error
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const ApexScatterChart = () => {

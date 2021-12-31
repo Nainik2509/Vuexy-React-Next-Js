@@ -33,7 +33,7 @@ const columnColors = {
   series2: '#d2b0ff'
 }
 
-// ! To avoid Window is not defined Error
+// ! To avoid 'Window is not defined' error
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 interface PickerProps {

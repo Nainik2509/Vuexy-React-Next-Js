@@ -32,7 +32,7 @@ const candlestickColors = {
   series2: '#ea5455'
 }
 
-// ! To avoid Window is not defined Error
+// ! To avoid 'Window is not defined' error
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 interface PickerProps {

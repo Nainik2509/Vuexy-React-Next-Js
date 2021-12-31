@@ -38,7 +38,7 @@ interface PickerProps {
   end: Date | number
 }
 
-// ! To avoid Window is not defined Error
+// ! To avoid 'Window is not defined' error
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const ApexAreaChart = () => {
