@@ -63,12 +63,34 @@ const HorizontalNavLink = (props: Props) => {
   // ** Hook
   const router = useRouter()
 
+  const handleURLQueries = () => {
+    if (Object.keys(router.query).length) {
+      const arr = Object.keys(router.query)
+
+      if (arr.length > 1) {
+        return arr.some((i, index) => {
+          return router.asPath === `${item.path}/${router.query[arr[index - 1]]}/${router.query[i]}`
+        })
+      } else {
+        return router.asPath === `${item.path}/${router.query[arr[0]]}`
+      }
+    }
+  }
+
+  const isNavLinkActive = () => {
+    if (router.pathname === item.path || handleURLQueries()) {
+      return true
+    } else {
+      return false
+    }
+  }
+
   return (
     <Wrapper {...(!hasParent ? { sx: { py: 3 } } : {})}>
       <Link href={`${item.path}`} passHref>
         <ListItem
           component={'a'}
-          className={router.pathname === item.path ? 'active' : ''}
+          className={isNavLinkActive() ? 'active' : ''}
           disabled={item.disabled}
           target={item.openInNewTab ? '_blank' : undefined}
           onClick={e => {
