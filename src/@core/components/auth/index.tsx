@@ -21,7 +21,7 @@ export const AuthGuard: FC<AuthGuardProps> = props => {
   const router = useRouter()
 
   useEffect(() => {
-    if (!auth.user && !pageProps.restrictedPage) {
+    if (!auth.user && !auth.loading && !pageProps.restrictedPage) {
       router.push({
         pathname: '/login',
         query: { returnUrl: router.asPath }

@@ -45,7 +45,6 @@ const AuthProvider = ({ children }: Props) => {
     const initAuth = async (): Promise<void> => {
       setIsInitialized(true)
       const storedToken = window.localStorage.getItem(authConfig.storageTokenKeyName)!
-
       if (storedToken) {
         setLoading(true)
         await axios
