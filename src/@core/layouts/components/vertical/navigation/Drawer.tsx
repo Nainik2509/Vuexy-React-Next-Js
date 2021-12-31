@@ -2,7 +2,7 @@
 import { ReactNode, useEffect } from 'react'
 
 // ** MUI Imports
-import { styled } from '@mui/material/styles'
+import { styled, useTheme } from '@mui/material/styles'
 import MuiSwipeableDrawer, { SwipeableDrawerProps } from '@mui/material/SwipeableDrawer'
 
 // ** Type Import
@@ -54,14 +54,49 @@ const Drawer = (props: Props) => {
     collapsedNavWidth
   } = props
 
-  // ** Var
-  const { navCollapsed } = settings
+  // ** Hook
+  const theme = useTheme()
+
+  // ** Vars
+  const { skin, navCollapsed } = settings
 
   useEffect(() => {
     if (navCollapsed && hidden) {
       saveSettings({ ...settings, navCollapsed: false })
     }
   }, [hidden]) // eslint-disable-line
+
+  const drawerColor = () => {
+    if (skin === 'semi-dark' && theme.palette.mode === 'light') {
+      return {
+        '& .MuiTypography-root, & .MuiSvgIcon-root': {
+          color: `rgba(${theme.palette.customColors.dark}, 0.87)`
+        }
+      }
+    } else if (skin === 'semi-dark' && theme.palette.mode === 'dark') {
+      return {
+        '& .MuiTypography-root, & .MuiSvgIcon-root': {
+          color: `rgba(${theme.palette.customColors.light}, 0.87)`
+        }
+      }
+    } else return {}
+  }
+
+  const drawerBgColor = () => {
+    if (skin === 'semi-dark' && theme.palette.mode === 'light') {
+      return {
+        backgroundColor: theme.palette.customColors.darkBg
+      }
+    } else if (skin === 'semi-dark' && theme.palette.mode === 'dark') {
+      return {
+        backgroundColor: theme.palette.customColors.lightBg
+      }
+    } else {
+      return {
+        backgroundColor: theme.palette.background.default
+      }
+    }
+  }
 
   // Drawer Props for Mobile & Tablet screens
   const MobileDrawerProps = {
@@ -90,9 +125,12 @@ const Drawer = (props: Props) => {
     <SwipeableDrawer
       className='layout-vertical-nav'
       variant={hidden ? 'temporary' : 'permanent'}
-      sx={{ width: navCollapsed ? collapsedNavWidth : navWidth }}
       {...(hidden ? { ...MobileDrawerProps } : { ...DesktopDrawerProps })}
       PaperProps={{ sx: { width: navCollapsed && !navHover ? collapsedNavWidth : navWidth } }}
+      sx={{
+        width: navCollapsed ? collapsedNavWidth : navWidth,
+        '& .MuiDrawer-paper': { ...drawerColor(), ...drawerBgColor() }
+      }}
     >
       {children}
     </SwipeableDrawer>

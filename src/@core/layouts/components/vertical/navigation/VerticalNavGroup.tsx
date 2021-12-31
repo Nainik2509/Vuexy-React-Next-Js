@@ -6,12 +6,12 @@ import { useRouter } from 'next/router'
 
 // ** MUI Imports
 import Chip from '@mui/material/Chip'
-import { styled } from '@mui/material/styles'
 import Collapse from '@mui/material/Collapse'
 import ListItem from '@mui/material/ListItem'
 import Typography from '@mui/material/Typography'
 import Box, { BoxProps } from '@mui/material/Box'
 import ListItemIcon from '@mui/material/ListItemIcon'
+import { styled, useTheme } from '@mui/material/styles'
 import ListItemButton from '@mui/material/ListItemButton'
 
 // ** Third Party Imports
@@ -84,9 +84,10 @@ const VerticalNavGroup = (props: Props) => {
   } = props
 
   // ** Hooks & Vars
+  const theme = useTheme()
   const router = useRouter()
   const currentURL = router.pathname
-  const { direction, navCollapsed, verticalNavToggleType } = settings
+  const { skin, direction, navCollapsed, verticalNavToggleType } = settings
 
   // ** Accordion menu group open toggle
   const toggleActiveGroup = (item: NavGroup, parent: NavGroup | undefined) => {
@@ -169,6 +170,64 @@ const VerticalNavGroup = (props: Props) => {
 
   const menuGroupCollapsedStyles = navCollapsed && !navHover ? { opacity: 0 } : { opacity: 1 }
 
+  const conditionalColor = () => {
+    if (skin === 'semi-dark' && theme.palette.mode === 'light') {
+      return {
+        color: `rgba(${theme.palette.customColors.dark}, 0.68) !important`
+      }
+    } else if (skin === 'semi-dark' && theme.palette.mode === 'dark') {
+      return {
+        color: `rgba(${theme.palette.customColors.light}, 0.68) !important`
+      }
+    } else {
+      return {
+        color: `${theme.palette.text.secondary} !important`
+      }
+    }
+  }
+
+  const conditionalBgColor = () => {
+    if (skin === 'semi-dark' && theme.palette.mode === 'light') {
+      return {
+        color: `rgba(${theme.palette.customColors.dark}, 0.87)`,
+        '&:hover': {
+          backgroundColor: `rgba(${theme.palette.customColors.dark}, 0.04)`
+        },
+        '&.Mui-selected': {
+          backgroundColor: `rgba(${theme.palette.customColors.dark}, 0.08)`,
+          '&:hover': {
+            backgroundColor: `rgba(${theme.palette.customColors.dark}, 0.12)`
+          }
+        }
+      }
+    } else if (skin === 'semi-dark' && theme.palette.mode === 'dark') {
+      return {
+        color: `rgba(${theme.palette.customColors.light}, 0.87)`,
+        '&:hover': {
+          backgroundColor: `rgba(${theme.palette.customColors.light}, 0.04)`
+        },
+        '&.Mui-selected': {
+          backgroundColor: `rgba(${theme.palette.customColors.light}, 0.08)`,
+          '&:hover': {
+            backgroundColor: `rgba(${theme.palette.customColors.light}, 0.12)`
+          }
+        }
+      }
+    } else {
+      return {
+        '&:hover': {
+          backgroundColor: theme.palette.action.hover
+        },
+        '&.Mui-selected': {
+          backgroundColor: theme.palette.action.selected,
+          '&:hover': {
+            backgroundColor: `rgba(${theme.palette.customColors.main}, 0.12)`
+          }
+        }
+      }
+    }
+  }
+
   return (
     <Fragment>
       <ListItem
@@ -183,6 +242,7 @@ const VerticalNavGroup = (props: Props) => {
           })}
           sx={{
             width: '100%',
+            ...conditionalBgColor(),
             transition: 'padding .25s ease-in-out',
             ...(parent && !item.children ? { paddingLeft: 5 } : {}),
             padding: theme =>
@@ -231,11 +291,17 @@ const VerticalNavGroup = (props: Props) => {
               ) : null}
               {direction === 'ltr' ? (
                 <MenuGroupToggleRightIcon
-                  sx={{ ...(groupActive.includes(item.title) ? { transform: 'rotate(90deg)' } : {}) }}
+                  sx={{
+                    ...conditionalColor(),
+                    ...(groupActive.includes(item.title) ? { transform: 'rotate(90deg)' } : {})
+                  }}
                 />
               ) : (
                 <MenuGroupToggleLeftIcon
-                  sx={{ ...(groupActive.includes(item.title) ? { transform: 'rotate(-90deg)' } : {}) }}
+                  sx={{
+                    ...conditionalColor(),
+                    ...(groupActive.includes(item.title) ? { transform: 'rotate(-90deg)' } : {})
+                  }}
                 />
               )}
             </Box>
