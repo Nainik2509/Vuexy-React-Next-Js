@@ -13,7 +13,7 @@ import CartOutline from 'mdi-material-ui/CartOutline'
 import CubeOutline from 'mdi-material-ui/CubeOutline'
 import LockOutline from 'mdi-material-ui/LockOutline'
 import FileOutline from 'mdi-material-ui/FileOutline'
-import HomeOutlined from 'mdi-material-ui/HomeOutline'
+import HomeOutline from 'mdi-material-ui/HomeOutline'
 import EmailOutline from 'mdi-material-ui/EmailOutline'
 import ShieldOutline from 'mdi-material-ui/ShieldOutline'
 import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
@@ -42,7 +42,7 @@ import { HorizontalNavItemsType } from 'src/@core/layouts/types'
 
 const navigation = (): HorizontalNavItemsType => [
   {
-    icon: HomeOutlined,
+    icon: HomeOutline,
     title: 'Dashboards',
     children: [
       {
