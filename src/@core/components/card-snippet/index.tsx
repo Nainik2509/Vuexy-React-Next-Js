@@ -25,7 +25,7 @@ import toast, { Toaster } from 'react-hot-toast'
 import { CardSnippetProps } from './types'
 
 // ** Hooks
-// import useClipboard from 'hooks/misc/useClipboard'
+import useClipboard from 'src/@core/hooks/useClipboard'
 
 // ** Styled Components
 import ReactHotToast from 'src/@core/styles/libs/react-hot-toast'
@@ -38,7 +38,7 @@ const CardSnippet = (props: CardSnippetProps) => {
   const [showCode, setShowCode] = useState<boolean>(false)
 
   // ** Hooks
-  // const clipboard = useClipboard()
+  const clipboard = useClipboard()
 
   // ** Highlight code on mount
   useEffect(() => {
@@ -46,7 +46,7 @@ const CardSnippet = (props: CardSnippetProps) => {
   }, [showCode])
 
   const handleClick = () => {
-    // clipboard.copy(code.props.children.props.children)
+    clipboard.copy(code.props.children.props.children)
     toast.success('The source code has been copied to your clipboard.', {
       duration: 2000
     })

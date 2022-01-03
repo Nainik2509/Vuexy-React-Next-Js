@@ -14,14 +14,26 @@ All the layout components explained on this page are overridden in `src/layouts/
 
 You can override the following layout components:
 
-- [App Logo](#_1-app-logo)
-- [Menu collapse icons](#_2-menu-collapse-icons)
-- [Vertical menu items](#_3-vertical-menu-items)
-- [Add content before menu items](#_4-add-content-before-menu-items)
-- [Add content after menu items](#_5-add-content-after-menu-items)
-- [Hide menu based on screen size](#_6-hide-menu-based-on-screen-size)
-- [Navbar (or AppBar)](#_7-navbar-or-appbar)
-- [Footer](#_8-footer)
+- [Layout Overrides](#layout-overrides)
+  - [Overview](#overview)
+  - [Vertical Layout](#vertical-layout)
+    - [1. App Logo](#1-app-logo)
+    - [2. Menu collapse icons](#2-menu-collapse-icons)
+    - [3. Vertical menu items](#3-vertical-menu-items)
+    - [4. Add content before menu items](#4-add-content-before-menu-items)
+    - [5. Add content after menu items](#5-add-content-after-menu-items)
+    - [6. Hide menu based on screen size](#6-hide-menu-based-on-screen-size)
+    - [7. Navbar (or AppBar)](#7-navbar-or-appbar)
+    - [8. Footer](#8-footer)
+  - [Horizontal Layout](#horizontal-layout)
+    - [1. App Logo](#1-app-logo-1)
+    - [2. Horizontal menu items](#2-horizontal-menu-items)
+    - [3. Hide menu based on screen size](#3-hide-menu-based-on-screen-size)
+    - [4. AppBar Content](#4-appbar-content)
+    - [5. Footer](#5-footer)
+  - [Blank Layout with AppBar](#blank-layout-with-appbar)
+  - [Scroll to Top](#scroll-to-top)
+  - [Server Side Navigation](#server-side-navigation)
 
 ### 1. App Logo
 
@@ -863,3 +875,116 @@ export default UserLayout
 Result:
 
 ![override-scroll-to-top](/images/layouts/user-override-scroll-to-top.png)
+
+## Server Side Navigation
+
+You can also create a server sided navigation using the `horizontalNavItems` or `verticalNavItems` props.
+
+Refer the example below for server sided navigation
+
+:::tip Note
+Use Icon component as **string** in your data.
+:::
+
+```js
+// ** Menu Data
+const data = [
+  {
+    title: 'Dashboards',
+    icon: 'HomeOutline',
+    badgeContent: 'new',
+    badgeColor: 'error',
+    children: [
+      {
+        title: 'Analytics',
+        path: '/dashboard/analytics'
+      },
+      {
+        title: 'eCommerce',
+        path: '/dashboard/ecommerce'
+      }
+    ]
+  }
+  ...
+]
+```
+
+```jsx UserLayout.tsx
+// ** React Imports
+import { ReactNode, useState, useEffect } from 'react'
+
+// ** MUI Imports
+import { Theme } from '@mui/material/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
+
+// ** Third Party Import
+import axios from 'axios'
+
+// ** Icons Imports
+import * as Icons from 'mdi-material-ui'
+
+// ** Layout Imports
+// !Do not remove this Layout import
+import Layout from 'src/@core/layouts/Layout'
+
+// ** Navigation Imports
+import VerticalNavItems from 'src/navigation/vertical'
+import HorizontalNavItems from 'src/navigation/horizontal'
+
+// ** Hook Import
+import { useSettings } from 'src/@core/hooks/useSettings'
+
+interface Props {
+  children: ReactNode;
+}
+
+const UserLayout = ({ children }: Props) => {
+  // ** Hooks
+  const { settings, saveSettings } = useSettings()
+
+  const hidden = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
+
+  const [menuItems, setMenuItems] = useState([])
+
+  useEffect(() => {
+    axios.get(`/navigation/data`).then(response => {
+      const menuArr = response.data
+
+      /* - Replace the icon string with the component
+       *  - If you don't want to import the whole icon library
+       *  - you can create a static object and replace the icons using that object
+       */
+      menuArr.forEach(item => {
+        if (item.icon) {
+          item.icon = Icons[item.icon]
+
+          return item
+        }
+
+        return item
+      })
+
+      setMenuItems(menuArr)
+    })
+  }, [])
+
+  if (menuItems.length === 0) {
+    return null
+  }
+
+  return (
+    <Layout
+      hidden={hidden}
+      settings={settings}
+      saveSettings={saveSettings}
+      {...(settings.layout === 'horizontal'
+        ? { horizontalNavItems: HorizontalNavItems() }
+        : { verticalNavItems: menuItems })}
+    >
+      {children}
+    </Layout>
+  )
+}
+
+export default UserLayout
+```

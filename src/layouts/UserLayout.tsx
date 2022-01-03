@@ -5,9 +5,6 @@ import { ReactNode } from 'react'
 import { Theme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 
-// ** Third Party Import
-// import axios from 'axios'
-
 // ** Layout Imports
 // !Do not remove this Layout import
 import Layout from 'src/@core/layouts/Layout'
@@ -37,18 +34,34 @@ const UserLayout = ({ children }: Props) => {
    */
   const hidden = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
 
-  /* const [menuItems, setMenuItems] = useState([])
+  // ** For Server Sided Navigation
+  // const [menuItems, setMenuItems] = useState([])
 
-  useEffect(() => {
-    axios.get(`/navigation/data`).then(response => {
-      console.log(response.data)
-      setMenuItems(response.data)
-    })
-  }, [])
+  // useEffect(() => {
+  //   axios.get(`/navigation/data`).then(response => {
+  //     const menuArr = response.data
 
-  if (menuItems.length === 0) {
-    return null
-  } */
+  /* - Replace the icon string with the component
+     - If you don't want to import the whole icon library
+     - you can create a static object and replace the icons using that object
+   */
+  //     menuArr.forEach(item => {
+  //       if (item.icon) {
+  //         item.icon = Icons[item.icon]
+
+  //         return item
+  //       }
+
+  //       return item
+  //     })
+
+  //     setMenuItems(menuArr)
+  //   })
+  // }, [])
+
+  // if (menuItems.length === 0) {
+  //   return null
+  // }
 
   return (
     <Layout
@@ -63,20 +76,5 @@ const UserLayout = ({ children }: Props) => {
     </Layout>
   )
 }
-
-/* export const getServerSideProps = async () => {
-  // Call external API from here directly
-  const response = await axios.get(`/navigation/data`)
-  const data = await response.data
-  if (!data) {
-    return {
-      notFound: true
-    }
-  }
-
-  return {
-    props: { menuItems: data }
-  }
-} */
 
 export default UserLayout
