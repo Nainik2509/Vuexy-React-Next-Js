@@ -14,7 +14,6 @@ import './apps/calendar'
 import './pages/pricing'
 import './app-bar-search'
 import './apps/permissions'
-import './navigation/index'
 import './pages/knowledge-base'
 
 mock.onAny().passThrough()
