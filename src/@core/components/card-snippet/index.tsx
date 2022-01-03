@@ -79,7 +79,7 @@ const CardSnippet = (props: CardSnippetProps) => {
               <ContentCopy fontSize='small' />
             </IconButton>
           </Tooltip>
-          <Box>{code}</Box>
+          <Box sx={{ '& pre, & code': { whiteSpace: 'break-spaces' } }}>{code}</Box>
         </CardContent>
       </Collapse>
       <ReactHotToast>
