@@ -32,6 +32,7 @@ export type Settings = {
   routerTransition?: RouterTransitions
   lastLayout?: 'vertical' | 'horizontal'
   verticalNavToggleType: VerticalNavToggle
+  toastPosition?: 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'
 }
 
 export type PageSpecificSettings = {
@@ -48,6 +49,7 @@ export type PageSpecificSettings = {
   routerTransition?: RouterTransitions
   lastLayout?: 'vertical' | 'horizontal'
   verticalNavToggleType?: VerticalNavToggle
+  toastPosition?: 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'
 }
 export type SettingsContextValue = {
   settings: Settings
@@ -71,6 +73,7 @@ const initialSettings: Settings = {
   navHidden: themeConfig.navHidden,
   navCollapsed: themeConfig.navCollapsed,
   contentWidth: themeConfig.contentWidth,
+  toastPosition: themeConfig.toastPosition,
   routerTransition: themeConfig.routerTransition,
   verticalNavToggleType: themeConfig.verticalNavToggleType
 }
@@ -79,9 +82,10 @@ const staticSettings = {
   appBar: initialSettings.appBar,
   footer: initialSettings.footer,
   layout: initialSettings.layout,
-  navHidden: themeConfig.navHidden,
+  navHidden: initialSettings.navHidden,
   lastLayout: initialSettings.lastLayout,
-  routerTransition: themeConfig.routerTransition
+  toastPosition: initialSettings.toastPosition,
+  routerTransition: initialSettings.routerTransition
 }
 
 const restoreSettings = (): Settings | null => {
@@ -111,6 +115,7 @@ const storeSettings = (settings: Settings) => {
   delete initSettings.layout
   delete initSettings.navHidden
   delete initSettings.lastLayout
+  delete initSettings.toastPosition
   delete initSettings.routerTransition
   window.localStorage.setItem('settings', JSON.stringify(initSettings))
 }

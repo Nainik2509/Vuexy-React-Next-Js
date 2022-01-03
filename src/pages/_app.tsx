@@ -22,8 +22,9 @@ import themeConfig from 'src/configs/themeConfig'
 // ** Fake-DB Import
 import 'src/@fake-db'
 
-// ** CLSX Import
+// ** Third Party Imports
 import clsx from 'clsx'
+import { Toaster } from 'react-hot-toast'
 
 // ** Component Imports
 import UserLayout from 'src/layouts/UserLayout'
@@ -33,6 +34,9 @@ import ThemeComponent from 'src/@core/theme/ThemeComponent'
 // ** Contexts
 import { AuthProvider } from 'src/@core/context/AuthContext'
 import { SettingsConsumer, SettingsProvider } from 'src/@core/context/settingsContext'
+
+// ** Styled Components
+import ReactHotToast from 'src/@core/styles/libs/react-hot-toast'
 
 // ** Utils Imports
 import { createEmotionCache } from 'src/@core/utils/create-emotion-cache'
@@ -120,6 +124,9 @@ const App = (props: ExtendedAppProps) => {
                           <Component {...pageProps} />
                         </div>
                       )}
+                      <ReactHotToast>
+                        <Toaster position={settings.toastPosition} toastOptions={{ className: 'react-hot-toast' }} />
+                      </ReactHotToast>
                     </AuthGuard>
                     {/* <AuthGuard pageProps={pageProps}>{getLayout(<Component {...pageProps} />)}</AuthGuard> */}
                   </ThemeComponent>

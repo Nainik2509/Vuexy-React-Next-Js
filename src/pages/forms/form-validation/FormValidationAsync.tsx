@@ -17,15 +17,12 @@ import InputAdornment from '@mui/material/InputAdornment'
 import CircularProgress from '@mui/material/CircularProgress'
 
 // ** Third Party Imports
-import toast, { Toaster } from 'react-hot-toast'
+import toast from 'react-hot-toast'
 import { useForm, Controller } from 'react-hook-form'
 
 // ** Icons Imports
 import EyeOutline from 'mdi-material-ui/EyeOutline'
 import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
-
-// ** Styled Components
-import ReactHotToast from 'src/@core/styles/libs/react-hot-toast'
 
 interface State {
   password: string
@@ -217,9 +214,6 @@ const FormValidationAsync = () => {
           </Grid>
         </form>
       </CardContent>
-      <ReactHotToast>
-        <Toaster toastOptions={{ className: 'react-hot-toast' }} />
-      </ReactHotToast>
     </Card>
   )
 }

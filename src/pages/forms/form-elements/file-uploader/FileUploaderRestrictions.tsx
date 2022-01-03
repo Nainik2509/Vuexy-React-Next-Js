@@ -18,11 +18,10 @@ import Close from 'mdi-material-ui/Close'
 import FileDocumentOutline from 'mdi-material-ui/FileDocumentOutline'
 
 // ** Third Party Components
+import toast from 'react-hot-toast'
 import { useDropzone } from 'react-dropzone'
-import toast, { Toaster } from 'react-hot-toast'
 
 // ** Styled Components
-import ReactHotToast from 'src/@core/styles/libs/react-hot-toast'
 import DropzoneWrapper from 'src/@core/styles/libs/react-dropzone'
 
 interface FileProp {
@@ -133,9 +132,6 @@ const FileUploaderRestrictions = () => {
           </div>
         </Fragment>
       ) : null}
-      <ReactHotToast>
-        <Toaster toastOptions={{ className: 'react-hot-toast' }} />
-      </ReactHotToast>
     </Fragment>
   )
 }

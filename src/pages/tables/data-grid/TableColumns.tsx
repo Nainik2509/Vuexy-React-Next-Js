@@ -1,5 +1,5 @@
 // ** React Imports
-import { useState, Fragment } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -11,7 +11,6 @@ import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid'
 
 // ** Third Party Components
 import toast from 'react-hot-toast'
-import { Toaster } from 'react-hot-toast'
 
 // ** Custom Components
 import CustomChip from 'src/@core/components/mui/chip'
@@ -27,7 +26,6 @@ import { getInitials } from 'src/@core/utils/get-initials'
 import { rows } from './data'
 
 // ** Styled Wrapper
-import ReactHotToast from 'src/@core/styles/libs/react-hot-toast'
 import DataGridWrapper from 'src/@core/styles/mui/components/datagrid'
 
 interface StatusObj {
@@ -181,26 +179,21 @@ const TableColumns = () => {
   ]
 
   return (
-    <Fragment>
-      <Card>
-        <CardHeader
-          title='Column'
-          action={
-            <Box>
-              <Button size='small' variant='contained' onClick={() => setHideNameColumn(!hideNameColumn)}>
-                Toggle Name Column
-              </Button>
-            </Box>
-          }
-        />
-        <DataGridWrapper sx={{ height: 500 }}>
-          <DataGrid rows={rows} columns={Columns} autoPageSize />
-        </DataGridWrapper>
-      </Card>
-      <ReactHotToast>
-        <Toaster toastOptions={{ className: 'react-hot-toast' }} />
-      </ReactHotToast>
-    </Fragment>
+    <Card>
+      <CardHeader
+        title='Column'
+        action={
+          <Box>
+            <Button size='small' variant='contained' onClick={() => setHideNameColumn(!hideNameColumn)}>
+              Toggle Name Column
+            </Button>
+          </Box>
+        }
+      />
+      <DataGridWrapper sx={{ height: 500 }}>
+        <DataGrid rows={rows} columns={Columns} autoPageSize />
+      </DataGridWrapper>
+    </Card>
   )
 }
 

@@ -17,16 +17,13 @@ import InputAdornment from '@mui/material/InputAdornment'
 
 // ** Third Party Imports
 import * as yup from 'yup'
-import toast, { Toaster } from 'react-hot-toast'
+import toast from 'react-hot-toast'
 import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
 
 // ** Icons Imports
 import EyeOutline from 'mdi-material-ui/EyeOutline'
 import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
-
-// ** Styled Components
-import ReactHotToast from 'src/@core/styles/libs/react-hot-toast'
 
 interface State {
   password: string
@@ -223,10 +220,6 @@ const FormValidationSchema = () => {
             </Grid>
           </Grid>
         </form>
-
-        <ReactHotToast>
-          <Toaster toastOptions={{ className: 'react-hot-toast' }} />
-        </ReactHotToast>
       </CardContent>
     </Card>
   )

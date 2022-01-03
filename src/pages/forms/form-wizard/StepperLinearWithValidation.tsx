@@ -24,7 +24,7 @@ import InputAdornment from '@mui/material/InputAdornment'
 
 // ** Third Party Imports
 import * as yup from 'yup'
-import toast, { Toaster } from 'react-hot-toast'
+import toast from 'react-hot-toast'
 import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
 
@@ -36,7 +36,6 @@ import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 import StepperCustomDot from './StepperCustomDot'
 
 // ** Styled Components
-import ReactHotToast from 'src/@core/styles/libs/react-hot-toast'
 import StepperWrapper from 'src/@core/styles/mui/components/stepper'
 
 interface State {
@@ -675,10 +674,6 @@ const StepperLinearWithValidation = () => {
       <Divider sx={{ margin: 0 }} />
 
       <CardContent>{renderContent()}</CardContent>
-
-      <ReactHotToast>
-        <Toaster toastOptions={{ className: 'react-hot-toast' }} />
-      </ReactHotToast>
     </Card>
   )
 }

@@ -15,13 +15,12 @@ import StepContent from '@mui/material/StepContent'
 
 // ** Third Party Imports
 import clsx from 'clsx'
-import toast, { Toaster } from 'react-hot-toast'
+import toast from 'react-hot-toast'
 
 // ** Custom Components Imports
 import StepperCustomDot from './StepperCustomDot'
 
 // ** Styled Components
-import ReactHotToast from 'src/@core/styles/libs/react-hot-toast'
 import StepperWrapper from 'src/@core/styles/mui/components/stepper'
 
 const steps = [
@@ -111,10 +110,6 @@ const StepperVerticalWithoutNumbers = () => {
           </Box>
         )}
       </CardContent>
-
-      <ReactHotToast>
-        <Toaster toastOptions={{ className: 'react-hot-toast' }} />
-      </ReactHotToast>
     </Card>
   )
 }

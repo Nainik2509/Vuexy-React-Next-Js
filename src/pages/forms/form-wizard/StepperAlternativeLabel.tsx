@@ -28,10 +28,9 @@ import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 import StepperCustomDot from './StepperCustomDot'
 
 // ** Third Party Imports
-import toast, { Toaster } from 'react-hot-toast'
+import toast from 'react-hot-toast'
 
 // ** Styled Component
-import ReactHotToast from 'src/@core/styles/libs/react-hot-toast'
 import StepperWrapper from 'src/@core/styles/mui/components/stepper'
 
 interface State {
@@ -379,9 +378,6 @@ const StepperAlternativeLabel = () => {
       <Card sx={{ marginTop: 4 }}>
         <CardContent>{renderContent()}</CardContent>
       </Card>
-      <ReactHotToast>
-        <Toaster toastOptions={{ className: 'react-hot-toast' }} />
-      </ReactHotToast>
     </Fragment>
   )
 }

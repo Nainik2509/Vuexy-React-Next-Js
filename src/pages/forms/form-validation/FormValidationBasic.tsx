@@ -23,8 +23,8 @@ import InputAdornment from '@mui/material/InputAdornment'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
 // ** Third Party Imports
+import toast from 'react-hot-toast'
 import DatePicker from 'react-datepicker'
-import toast, { Toaster } from 'react-hot-toast'
 import { useForm, Controller } from 'react-hook-form'
 
 // ** Icons Imports
@@ -35,7 +35,6 @@ import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 import { DateType } from 'src/pages/forms/form-elements/pickers/react-datepicker/types'
 
 // ** Styled Components
-import ReactHotToast from 'src/@core/styles/libs/react-hot-toast'
 import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 interface State {
@@ -393,9 +392,6 @@ const FormValidationBasic = () => {
           </Grid>
         </form>
       </CardContent>
-      <ReactHotToast>
-        <Toaster toastOptions={{ className: 'react-hot-toast' }} />
-      </ReactHotToast>
     </Card>
   )
 }

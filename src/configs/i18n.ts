@@ -14,7 +14,6 @@ i18n
   // Enables the hook initialization module
   .use(initReactI18next)
   .init({
-    lng: 'en',
     backend: {
       /* translation file path */
       loadPath: '/locales/{{lng}}.json'
