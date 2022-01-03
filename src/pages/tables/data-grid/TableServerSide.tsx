@@ -22,9 +22,6 @@ import { ThemeColor } from 'src/@core/layouts/types'
 // ** Utils Import
 import { getInitials } from 'src/@core/utils/get-initials'
 
-// ** Styled Wrapper
-import DataGridWrapper from 'src/@core/styles/mui/components/datagrid'
-
 interface StatusObj {
   [key: number]: {
     title: string
@@ -197,7 +194,7 @@ const TableServerSide = () => {
   return (
     <Card>
       <CardHeader title='Server Side' />
-      <DataGridWrapper sx={{ height: 500, width: '100%' }}>
+      <Box sx={{ height: 500, width: '100%' }}>
         <DataGrid
           rows={rows}
           rowCount={total}
@@ -220,12 +217,10 @@ const TableServerSide = () => {
             }
           }}
         />
-      </DataGridWrapper>
+      </Box>
     </Card>
   )
 }
-
-export default TableServerSide
 
 // export async function getStaticProps() {
 //   const res = await axios.get('/api/table/data', {
@@ -240,3 +235,5 @@ export default TableServerSide
 //     props: { data: res.data, test: 'test' }
 //   }
 // }
+
+export default TableServerSide

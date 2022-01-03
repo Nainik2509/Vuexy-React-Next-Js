@@ -277,7 +277,7 @@ const navigation = (): VerticalNavItemsType => {
       ]
     },
     {
-      badgeContent: '16',
+      badgeContent: '17',
       title: 'Components',
       icon: ArchiveOutline,
       badgeColor: 'primary',

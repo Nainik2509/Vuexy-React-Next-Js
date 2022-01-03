@@ -35,9 +35,6 @@ import { getInitials } from 'src/@core/utils/get-initials'
 // ** Actions Imports
 import { fetchData } from 'src/pages/apps/user/store'
 
-// ** Styled Components
-import DataGridWrapper from 'src/@core/styles/mui/components/datagrid'
-
 // ** Types Imports
 import { RootState } from 'src/redux/store'
 import { ThemeColor } from 'src/@core/layouts/types'
@@ -256,14 +253,14 @@ const UserList = () => {
             handlePerPage={handlePerPage}
             handlePlanChange={handlePlanChange}
           />
-          <DataGridWrapper sx={{ height: 'calc(100vh - 8rem)' }}>
+          <Box sx={{ height: 'calc(100vh - 21rem)' }}>
             <DataGrid
               rows={store.data}
               rowsPerPageOptions={[]}
               columns={defaultColumns}
               pageSize={Number(rowsPerPage)}
             />
-          </DataGridWrapper>
+          </Box>
         </Card>
       </Grid>
     </Grid>

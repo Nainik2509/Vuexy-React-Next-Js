@@ -52,9 +52,6 @@ import { UsersType } from 'src/pages/apps/user/types'
 import TableHeader from './TableHeader'
 import AddUserDrawer from './AddUserDrawer'
 
-// ** Styled Components
-import DataGridWrapper from 'src/@core/styles/mui/components/datagrid'
-
 interface UserRoleType {
   [key: string]: ReactElement
 }
@@ -406,9 +403,9 @@ const UserList = () => {
             toggle={toggleAddUserDrawer}
             handlePerPage={handlePerPage}
           />
-          <DataGridWrapper sx={{ height: 'calc(100vh - 8rem)' }}>
+          <Box sx={{ height: 'calc(100vh - 8rem)' }}>
             <DataGrid rows={store.data} pageSize={rowsPerPage} columns={defaultColumns} rowsPerPageOptions={[]} />
-          </DataGridWrapper>
+          </Box>
         </Card>
       </Grid>
 

@@ -46,9 +46,6 @@ import { fetchData } from 'src/pages/apps/permissions/store'
 // ** Types
 import { ThemeColor } from 'src/@core/layouts/types'
 
-// ** Styled Components
-import DataGridWrapper from 'src/@core/styles/mui/components/datagrid'
-
 interface Colors {
   [key: string]: ThemeColor
 }
@@ -187,9 +184,9 @@ const PermissionsTable = () => {
             handleFilter={handleFilter}
             handlePerPage={handlePerPage}
           />
-          <DataGridWrapper sx={{ height: 'calc(100vh - 11rem)' }}>
+          <Box sx={{ height: 'calc(100vh - 22rem)' }}>
             <DataGrid columns={columns} rows={store.data} rowsPerPageOptions={[]} pageSize={Number(rowsPerPage)} />
-          </DataGridWrapper>
+          </Box>
           <Dialog maxWidth='sm' fullWidth onClose={handleDialogToggle} open={editDialogOpen}>
             <DialogTitle sx={{ mx: 'auto', textAlign: 'center' }}>
               <Typography variant='h4' component='span' sx={{ mb: 2 }}>
