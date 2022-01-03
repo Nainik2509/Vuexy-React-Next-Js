@@ -89,6 +89,7 @@ const ImgFiles = styled('img')(({ theme }) => ({
 
 const AutocompleteComponent = ({ hidden, setShowBackdrop }: Props) => {
   // ** States
+  const [isMounted, setIsMounted] = useState<boolean>(false)
   const [searchValue, setSearchValue] = useState<string>('')
   const [options, setOptions] = useState<AppBarSearchType[]>([])
   const [autocompleteKey, setAutocompleteKey] = useState<number>(0)
@@ -116,6 +117,12 @@ const AutocompleteComponent = ({ hidden, setShowBackdrop }: Props) => {
         }
       })
   }, [searchValue])
+
+  useEffect(() => {
+    setIsMounted(true)
+
+    return () => setIsMounted(false)
+  }, [])
 
   // Handle ESC & shortcut keys keydown events
   const handleKeydown = useCallback(
@@ -250,95 +257,98 @@ const AutocompleteComponent = ({ hidden, setShowBackdrop }: Props) => {
       return null
     }
   }
+  if (!isMounted) {
+    return null
+  } else {
+    return (
+      <ClickAway onClickAway={() => handleAllStates(false)}>
+        <Box ref={wrapper}>
+          <IconButton
+            color='inherit'
+            onClick={() => setOpenSearchBox(true)}
+            sx={!hidden && settings.layout === 'vertical' ? { ml: -2.75 } : {}}
+          >
+            <Magnify />
+          </IconButton>
 
-  return (
-    <ClickAway onClickAway={() => handleAllStates(false)}>
-      <Box ref={wrapper}>
-        <IconButton
-          color='inherit'
-          onClick={() => setOpenSearchBox(true)}
-          sx={!hidden && settings.layout === 'vertical' ? { ml: -2.75 } : {}}
-        >
-          <Magnify />
-        </IconButton>
-
-        <SearchBox
-          sx={{
-            ...(openSearchBox ? { top: 0 } : {}),
-            height: settings.layout === 'vertical' ? themeConfig.appBarHeight : themeConfig.appBarHeight - 1
-          }}
-        >
-          <Autocomplete
-            autoHighlight
-            disablePortal
-            options={options}
-            id='appBar-search'
-            key={autocompleteKey}
-            open={openAutocompletePopup}
-            noOptionsText='No results found!'
-            onChange={handleAutocompleteChange}
-            onClose={() => handleAllStates(false)}
-            groupBy={(option: AppBarSearchType | unknown) => (option as AppBarSearchType).type}
-            getOptionLabel={(option: AppBarSearchType | unknown) => (option as AppBarSearchType).title}
-            onInputChange={(event, value: string) => handleInputChange(value)}
-            sx={
-              settings.layout === 'horizontal'
-                ? { '& + .MuiAutocomplete-popper .MuiPaper-root': { boxShadow: theme => theme.shadows[5] } }
-                : {}
-            }
-            renderOption={(props, option: AppBarSearchType | unknown) => (
-              <ListItem
-                {...props}
-                sx={{ p: '0 !important' }}
-                key={(option as AppBarSearchType).title}
-                onClick={() =>
-                  (option as AppBarSearchType).url
-                    ? handleOptionClick((option as AppBarSearchType).url)
-                    : handleOptionClick()
-                }
-              >
-                <ListItemButton sx={{ padding: theme => theme.spacing(2.5, 5) }}>
-                  {RenderOptions(option as AppBarSearchType)}
-                </ListItemButton>
-              </ListItem>
-            )}
-            renderInput={(params: AutocompleteRenderInputParams) => (
-              <TextField
-                {...params}
-                onChange={(event: ChangeEvent<HTMLInputElement>) => setSearchValue(event.target.value)}
-                inputRef={input => {
-                  if (input) {
-                    if (openSearchBox) {
-                      input.focus()
-                    } else {
-                      input.blur()
-                    }
+          <SearchBox
+            sx={{
+              ...(openSearchBox ? { top: 0 } : {}),
+              height: settings.layout === 'vertical' ? themeConfig.appBarHeight : themeConfig.appBarHeight - 1
+            }}
+          >
+            <Autocomplete
+              autoHighlight
+              disablePortal
+              options={options}
+              id='appBar-search'
+              key={autocompleteKey}
+              open={openAutocompletePopup}
+              noOptionsText='No results found!'
+              onChange={handleAutocompleteChange}
+              onClose={() => handleAllStates(false)}
+              groupBy={(option: AppBarSearchType | unknown) => (option as AppBarSearchType).type}
+              getOptionLabel={(option: AppBarSearchType | unknown) => (option as AppBarSearchType).title}
+              onInputChange={(event, value: string) => handleInputChange(value)}
+              sx={
+                settings.layout === 'horizontal'
+                  ? { '& + .MuiAutocomplete-popper .MuiPaper-root': { boxShadow: theme => theme.shadows[5] } }
+                  : {}
+              }
+              renderOption={(props, option: AppBarSearchType | unknown) => (
+                <ListItem
+                  {...props}
+                  sx={{ p: '0 !important' }}
+                  key={(option as AppBarSearchType).title}
+                  onClick={() =>
+                    (option as AppBarSearchType).url
+                      ? handleOptionClick((option as AppBarSearchType).url)
+                      : handleOptionClick()
                   }
-                }}
-                InputProps={{
-                  ...params.InputProps,
-                  startAdornment: (
-                    <InputAdornment position='start' sx={{ color: 'text.primary' }}>
-                      <Magnify />
-                    </InputAdornment>
-                  ),
-                  endAdornment: (
-                    <InputAdornment
-                      position='end'
-                      onClick={() => handleAllStates(false)}
-                      sx={{ cursor: 'pointer', color: 'text.primary' }}
-                    >
-                      <Close fontSize='small' />
-                    </InputAdornment>
-                  )
-                }}
-              />
-            )}
-          />
-        </SearchBox>
-      </Box>
-    </ClickAway>
-  )
+                >
+                  <ListItemButton sx={{ padding: theme => theme.spacing(2.5, 5) }}>
+                    {RenderOptions(option as AppBarSearchType)}
+                  </ListItemButton>
+                </ListItem>
+              )}
+              renderInput={(params: AutocompleteRenderInputParams) => (
+                <TextField
+                  {...params}
+                  onChange={(event: ChangeEvent<HTMLInputElement>) => setSearchValue(event.target.value)}
+                  inputRef={input => {
+                    if (input) {
+                      if (openSearchBox) {
+                        input.focus()
+                      } else {
+                        input.blur()
+                      }
+                    }
+                  }}
+                  InputProps={{
+                    ...params.InputProps,
+                    startAdornment: (
+                      <InputAdornment position='start' sx={{ color: 'text.primary' }}>
+                        <Magnify />
+                      </InputAdornment>
+                    ),
+                    endAdornment: (
+                      <InputAdornment
+                        position='end'
+                        onClick={() => handleAllStates(false)}
+                        sx={{ cursor: 'pointer', color: 'text.primary' }}
+                      >
+                        <Close fontSize='small' />
+                      </InputAdornment>
+                    )
+                  }}
+                />
+              )}
+            />
+          </SearchBox>
+        </Box>
+      </ClickAway>
+    )
+  }
 }
 
 export default AutocompleteComponent
