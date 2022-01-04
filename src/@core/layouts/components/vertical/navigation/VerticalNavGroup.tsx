@@ -102,7 +102,7 @@ const VerticalNavGroup = (props: Props) => {
         removeChildren(item.children, openGroup, currentActiveGroup)
       }
     } else if (parent) {
-      // ** If Group clicked is the child of a open group, first remove all the open groups under that parent
+      // ** If Group clicked is the child of an open group, first remove all the open groups under that parent
       if (parent.children) {
         removeChildren(parent.children, openGroup, currentActiveGroup)
       }
@@ -309,6 +309,7 @@ const VerticalNavGroup = (props: Props) => {
         </ListItemButton>
         <Collapse
           component='ul'
+          onClick={e => e.stopPropagation()}
           in={groupActive.includes(item.title)}
           sx={{
             m: 0,
