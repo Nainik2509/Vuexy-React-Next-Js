@@ -1,5 +1,5 @@
 // ** MUI Imports
-import { Theme } from '@mui/material'
+import { Theme } from '@mui/material/styles'
 
 // ** Type Imports
 import { Settings } from 'src/@core/context/settingsContext'

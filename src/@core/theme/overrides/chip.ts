@@ -1,5 +1,5 @@
 // ** MUI Imports
-import { Theme } from '@mui/material'
+import { Theme } from '@mui/material/styles'
 
 const Chip = (theme: Theme) => {
   return {

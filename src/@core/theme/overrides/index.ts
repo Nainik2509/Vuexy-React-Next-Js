@@ -1,5 +1,5 @@
 // ** MUI Imports
-import { Theme } from '@mui/material'
+import { Theme } from '@mui/material/styles'
 
 // ** Type Import
 import { Settings } from 'src/@core/context/settingsContext'
@@ -33,6 +33,7 @@ import MuiPagination from './pagination'
 import MuiTypography from './typography'
 import MuiAutocomplete from './autocomplete'
 import MuiToggleButton from './toggleButton'
+import MuiDateTimePicker from './dateTimePicker'
 
 const Overrides = (theme: Theme, settings: Settings) => {
   const { skin } = settings
@@ -59,6 +60,7 @@ const Overrides = (theme: Theme, settings: Settings) => {
   const pagination = MuiPagination(theme)
   const popover = MuiPopover(theme, skin)
   const snackbar = MuiSnackbar(theme, skin)
+  const dateTimePicker = MuiDateTimePicker(theme)
   const autocomplete = MuiAutocomplete(theme, skin)
 
   return Object.assign(
@@ -89,6 +91,7 @@ const Overrides = (theme: Theme, settings: Settings) => {
     pagination,
     autocomplete,
     MuiTypography,
+    dateTimePicker,
     MuiToggleButton
   )
 }
