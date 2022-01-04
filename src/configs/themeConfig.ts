@@ -45,29 +45,38 @@ type ThemeConfig = {
 }
 
 const themeConfig: ThemeConfig = {
+  // ** Layout Configs
   templateName: 'Master' /* App Name */,
-  skin: 'default' /* default | bordered | semi-dark */,
+  layout: 'vertical' /* vertical | horizontal */,
   mode: 'light' /* light | dark */,
   direction: 'ltr' /* ltr | rtl */,
+  skin: 'default' /* default | bordered | semi-dark */,
+  contentWidth: 'boxed' /* full | boxed */,
+  footer: 'static' /* fixed | static | hidden */,
+
+  // ** Routing Configs
   routingLoader: true /* true | false */,
   routerTransition: 'fadeIn' /* fadeIn | zoomIn | fadeInLeft | none */,
-  disableRipple: false /* true | false */,
-  navCollapsed: false /* true | false */,
+
+  // ** Navigation (Menu) Configs
   navHidden: false /* true | false */,
-  layout: 'vertical' /* vertical | horizontal */,
-  verticalNavToggleType: 'accordion' /* accordion | collapse, */,
   menuTextTruncate: true /* true | false */,
+  navSubItemIcon: CircleOutline /* Icon Element */,
+  verticalNavToggleType: 'accordion' /* accordion | collapse, */,
+  navCollapsed: false /* true | false */,
   navigationSize: 260 /* Number in PX(Pixels) */,
   collapsedNavigationSize: 69 /* Number in PX(Pixels) */,
-  contentWidth: 'boxed' /* full | boxed */,
-  appBar: 'fixed' /* fixed | static | hidden /*! Note: hidden value will only work for Vertical Layout */,
-  footer: 'static' /* fixed | static | hidden */,
-  disableCustomizer: false /* true | false */,
-  responsiveFontSizes: true /* true | false */,
   horizontalMenuToggle: 'hover' /* click | hover */,
-  navSubItemIcon: CircleOutline /* Icon Element */,
-  toastPosition: 'top-center' /* top-left | top-center | top-right | bottom-left | bottom-center | bottom-right */,
-  appBarHeight: 64 /* Number in PX(Pixels) [recommended height is 50px or greater] */
+
+  // ** AppBar Configs
+  appBar: 'fixed' /* fixed | static | hidden /*! Note: hidden value will only work for Vertical Layout */,
+  appBarHeight: 64 /* Number in PX(Pixels) [recommended height is 50px or greater] */,
+
+  // ** Other Configs
+  responsiveFontSizes: true /* true | false */,
+  disableRipple: false /* true | false */,
+  disableCustomizer: false /* true | false */,
+  toastPosition: 'top-center' /* top-left | top-center | top-right | bottom-left | bottom-center | bottom-right */
 }
 
 export default themeConfig
