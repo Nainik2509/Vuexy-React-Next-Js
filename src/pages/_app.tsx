@@ -8,7 +8,7 @@ import type { AppProps } from 'next/app'
 import { store } from 'src/redux/store'
 import { Provider } from 'react-redux'
 
-// ** Loader Improt
+// ** Loader Import
 import NProgress from 'nprogress'
 
 // ** Emotion Imports
@@ -95,7 +95,12 @@ const App = (props: ExtendedAppProps) => {
     <Provider store={store}>
       <CacheProvider value={emotionCache}>
         <Head>
-          <title>Master React Admin Template With MUI & NextJS</title>
+          <title>{`${themeConfig.templateName} - Material Design React Admin Template`}</title>
+          <meta
+            name='description'
+            content={`${themeConfig.templateName} – Material Design React Admin Dashboard Template – is the most developer friendly & highly customizable Admin Dashboard Template based on MUI v5.`}
+          />
+          <meta name='keywords' content='Material Design, MUI, Admin Template, React Admin Template' />
           <meta name='viewport' content='initial-scale=1, width=device-width' />
         </Head>
 
