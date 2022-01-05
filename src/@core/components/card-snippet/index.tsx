@@ -57,7 +57,6 @@ const CardSnippet = (props: CardSnippetProps) => {
     >
       <CardHeader
         title={title}
-        sx={title === '' ? { pb: 0 } : {}}
         titleTypographyProps={{ variant: 'h6' }}
         action={
           <IconButton onClick={() => setShowCode(!showCode)}>

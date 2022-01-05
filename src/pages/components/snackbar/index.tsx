@@ -6,15 +6,15 @@ import Typography from '@mui/material/Typography'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
-import SnackbarAlert from './SnackbarAlert'
-import SnackbarSimple from './SnackbarSimple'
-import SnackbarPositioned from './SnackbarPositioned'
-import SnackbarTransition from './SnackbarTransition'
-import SnackbarConsecutive from './SnackbarConsecutive'
-import SnackbarControlSlideDirection from './SnackbarControlSlideDirection'
+import SnackbarAlert from 'src/views/components/snackbar/SnackbarAlert'
+import SnackbarSimple from 'src/views/components/snackbar/SnackbarSimple'
+import SnackbarPositioned from 'src/views/components/snackbar/SnackbarPositioned'
+import SnackbarTransition from 'src/views/components/snackbar/SnackbarTransition'
+import SnackbarConsecutive from 'src/views/components/snackbar/SnackbarConsecutive'
+import SnackbarControlSlideDirection from 'src/views/components/snackbar/SnackbarControlSlideDirection'
 
 // ** Source code imports
-import * as source from './SnackbarSourceCode'
+import * as source from 'src/views/components/snackbar/SnackbarSourceCode'
 
 const Snackbar = () => {
   return (

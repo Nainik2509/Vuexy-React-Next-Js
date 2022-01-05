@@ -7,9 +7,9 @@ import Typography from '@mui/material/Typography'
 import PageHeader from 'src/@core/components/page-header'
 
 // ** Demo Components Imports
-import FormValidationBasic from './FormValidationBasic'
-import FormValidationAsync from './FormValidationAsync'
-import FormValidationSchema from './FormValidationSchema'
+import FormValidationBasic from 'src/views/forms/form-validation/FormValidationBasic'
+import FormValidationAsync from 'src/views/forms/form-validation/FormValidationAsync'
+import FormValidationSchema from 'src/views/forms/form-validation/FormValidationSchema'
 
 const FormValidation = () => {
   return (

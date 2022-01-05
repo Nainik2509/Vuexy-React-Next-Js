@@ -2,7 +2,7 @@
 import mock from 'src/@fake-db/mock'
 
 // ** Types
-import { UsersType } from 'src/pages/apps/user/types'
+import { UsersType } from 'src/types/apps/userTypes'
 
 const data: { users: UsersType[] } = {
   users: [

@@ -38,7 +38,7 @@ import BlankLayout from 'src/@core/layouts/BlankLayout'
 import { useSettings } from 'src/@core/hooks/useSettings'
 
 // ** Demo Imports
-import FooterIllustrationsV2 from 'src/pages/pages/auth/FooterIllustrationsV2'
+import FooterIllustrationsV2 from 'src/views/pages/auth/FooterIllustrationsV2'
 
 interface State {
   password: string

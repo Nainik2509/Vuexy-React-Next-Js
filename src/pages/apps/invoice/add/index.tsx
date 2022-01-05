@@ -5,12 +5,12 @@ import { useState } from 'react'
 import Grid from '@mui/material/Grid'
 
 // ** Types
-import { InvoiceClientType } from 'src/pages/apps/invoice/types'
+import { InvoiceClientType } from 'src/types/apps/invoiceTypes'
 
 // ** Demo Components Imports
-import AddCard from './AddCard'
-import AddActions from './AddActions'
-import AddNewCustomers from './AddNewCustomer'
+import AddCard from 'src/views/apps/invoice/add/AddCard'
+import AddActions from 'src/views/apps/invoice/add/AddActions'
+import AddNewCustomers from 'src/views/apps/invoice/add/AddNewCustomer'
 
 const InvoiceAdd = () => {
   // ** State

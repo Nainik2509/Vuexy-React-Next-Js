@@ -6,17 +6,17 @@ import Typography from '@mui/material/Typography'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
-import CheckboxesBasic from './CheckboxesBasic'
-import CheckboxesSizes from './CheckboxesSizes'
-import CheckboxesColors from './CheckboxesColors'
-import CheckboxesShowError from './CheckboxesShowError'
-import CheckboxesCustomized from './CheckboxesCustomized'
-import CheckboxesCustomIcons from './CheckboxesCustomIcons'
-import CheckboxesLabelPlacement from './CheckboxesLabelPlacement'
-import CheckboxesControlledUncontrolled from './CheckboxesControlledUncontrolled'
+import CheckboxesBasic from 'src/views/forms/form-elements/checkbox/CheckboxesBasic'
+import CheckboxesSizes from 'src/views/forms/form-elements/checkbox/CheckboxesSizes'
+import CheckboxesColors from 'src/views/forms/form-elements/checkbox/CheckboxesColors'
+import CheckboxesShowError from 'src/views/forms/form-elements/checkbox/CheckboxesShowError'
+import CheckboxesCustomized from 'src/views/forms/form-elements/checkbox/CheckboxesCustomized'
+import CheckboxesCustomIcons from 'src/views/forms/form-elements/checkbox/CheckboxesCustomIcons'
+import CheckboxesLabelPlacement from 'src/views/forms/form-elements/checkbox/CheckboxesLabelPlacement'
+import CheckboxesControlledUncontrolled from 'src/views/forms/form-elements/checkbox/CheckboxesControlledUncontrolled'
 
 // ** Source code imports
-import * as source from './CheckboxesSourceCode'
+import * as source from 'src/views/forms/form-elements/checkbox/CheckboxesSourceCode'
 
 const Checkboxes = () => {
   return (

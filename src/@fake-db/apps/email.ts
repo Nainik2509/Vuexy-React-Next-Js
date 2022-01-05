@@ -2,7 +2,7 @@
 import mock from 'src/@fake-db/mock'
 
 // ** Types
-import { MailType } from 'src/pages/apps/email/types'
+import { MailType } from 'src/types/apps/emailTypes'
 
 const data: { emails: MailType[] } = {
   emails: [

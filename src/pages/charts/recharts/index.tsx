@@ -10,12 +10,12 @@ import PageHeader from 'src/@core/components/page-header'
 import { useSettings } from 'src/@core/hooks/useSettings'
 
 // ** Demo Components Imports
-import RechartsBarChart from './RechartsBarChart'
-import RechartsPieChart from './RechartsPieChart'
-import RechartsLineChart from './RechartsLineChart'
-import RechartsAreaChart from './RechartsAreaChart'
-import RechartsRadarChart from './RechartsRadarChart'
-import RechartsScatterChart from './RechartsScatterChart'
+import RechartsBarChart from 'src/views/charts/recharts/RechartsBarChart'
+import RechartsPieChart from 'src/views/charts/recharts/RechartsPieChart'
+import RechartsLineChart from 'src/views/charts/recharts/RechartsLineChart'
+import RechartsAreaChart from 'src/views/charts/recharts/RechartsAreaChart'
+import RechartsRadarChart from 'src/views/charts/recharts/RechartsRadarChart'
+import RechartsScatterChart from 'src/views/charts/recharts/RechartsScatterChart'
 
 const Recharts = () => {
   // ** Hooks

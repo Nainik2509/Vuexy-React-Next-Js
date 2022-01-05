@@ -16,10 +16,10 @@ import Refresh from 'mdi-material-ui/Refresh'
 import ChevronUp from 'mdi-material-ui/ChevronUp'
 
 // Component Imports
-import CardActionAll from './CardActionAll'
-import CardActionClose from './CardActionClose'
-import CardActionRefresh from './CardActionRefresh'
-import CardActionCollapse from './CardActionCollapse'
+import CardActionAll from 'src/views/ui/cards/actions/CardActionAll'
+import CardActionClose from 'src/views/ui/cards/actions/CardActionClose'
+import CardActionRefresh from 'src/views/ui/cards/actions/CardActionRefresh'
+import CardActionCollapse from 'src/views/ui/cards/actions/CardActionCollapse'
 
 const CardActions = () => {
   return (

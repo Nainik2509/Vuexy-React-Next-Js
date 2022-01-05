@@ -13,10 +13,10 @@ import axios from 'axios'
 import { PricingDataType } from 'src/@core/components/plan-details/types'
 
 // ** Demo Imports
-import PricingCTA from './PricingCTA'
-import PricingPlans from './PricingPlans'
-import PricingHeader from './PricingHeader'
-import PricingFooter from './PricingFooter'
+import PricingCTA from 'src/views/pages/pricing/PricingCTA'
+import PricingPlans from 'src/views/pages/pricing/PricingPlans'
+import PricingHeader from 'src/views/pages/pricing/PricingHeader'
+import PricingFooter from 'src/views/pages/pricing/PricingFooter'
 
 // ** Styled Components
 const CardContent = styled(MuiCardContent)<CardContentProps>(({ theme }) => ({

@@ -8,18 +8,18 @@ import PageHeader from 'src/@core/components/page-header'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components
-import ToastBlank from './ToastBlank'
-import ToastError from './ToastError'
-import ToastEmoji from './ToastEmoji'
-import ToastThemed from './ToastThemed'
-import ToastCustom from './ToastCustom'
-import ToastSuccess from './ToastSuccess'
-import ToastPromise from './ToastPromise'
-import ToastMultiLine from './ToastMultiLine'
-import ToastCustomPosition from './ToastCustomPosition'
+import ToastBlank from 'src/views/components/toast/ToastBlank'
+import ToastError from 'src/views/components/toast/ToastError'
+import ToastEmoji from 'src/views/components/toast/ToastEmoji'
+import ToastThemed from 'src/views/components/toast/ToastThemed'
+import ToastCustom from 'src/views/components/toast/ToastCustom'
+import ToastSuccess from 'src/views/components/toast/ToastSuccess'
+import ToastPromise from 'src/views/components/toast/ToastPromise'
+import ToastMultiLine from 'src/views/components/toast/ToastMultiLine'
+import ToastCustomPosition from 'src/views/components/toast/ToastCustomPosition'
 
 // ** Source code imports
-import * as source from './ToastSourceCode'
+import * as source from 'src/views/components/toast/ToastSourceCode'
 
 const ReactHotToasts = () => {
   return (
@@ -36,59 +36,53 @@ const ReactHotToasts = () => {
           }
         />
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastBlank}>
+          <CardSnippet title='' code={source.ToastBlankCode}>
             <ToastBlank />
           </CardSnippet>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastMultiLine}>
+          <CardSnippet title='' code={source.ToastMultiLineCode}>
             <ToastMultiLine />
           </CardSnippet>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastSuccess}>
+          <CardSnippet title='' code={source.ToastSuccessCode}>
             <ToastSuccess />
           </CardSnippet>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastError}>
+          <CardSnippet title='' code={source.ToastErrorCode}>
             <ToastError />
           </CardSnippet>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastPromise}>
+          <CardSnippet title='' code={source.ToastPromiseCode}>
             <ToastPromise />
           </CardSnippet>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastEmoji}>
+          <CardSnippet title='' code={source.ToastEmojiCode}>
             <ToastEmoji />
           </CardSnippet>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastThemed}>
+          <CardSnippet title='' code={source.ToastThemedCode}>
             <ToastThemed />
           </CardSnippet>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastCustom}>
+          <CardSnippet title='' code={source.ToastCustomCode}>
             <ToastCustom />
           </CardSnippet>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastCustomPosition}>
+          <CardSnippet title='' code={source.ToastCustomPositionCode}>
             <ToastCustomPosition />
           </CardSnippet>
         </Grid>
       </Grid>
     </>
   )
-}
-
-ReactHotToasts.setConfig = () => {
-  return {
-    toastPosition: 'top-right'
-  }
 }
 
 export default ReactHotToasts

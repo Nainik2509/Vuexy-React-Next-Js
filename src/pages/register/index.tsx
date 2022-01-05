@@ -21,9 +21,6 @@ import InputAdornment from '@mui/material/InputAdornment'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Typography, { TypographyProps } from '@mui/material/Typography'
 
-// ** Context
-// import { Auth } from 'src/@core/context/AuthContext'
-
 // ** Icons Imports
 import Google from 'mdi-material-ui/Google'
 import Github from 'mdi-material-ui/Github'
@@ -48,7 +45,7 @@ import { useAuth } from 'src/@core/hooks/useAuth'
 import { useSettings } from 'src/@core/hooks/useSettings'
 
 // ** Demo Imports
-import FooterIllustrationsV2 from 'src/pages/pages/auth/FooterIllustrationsV2'
+import FooterIllustrationsV2 from 'src/views/pages/auth/FooterIllustrationsV2'
 
 const defaultValues = {
   email: '',

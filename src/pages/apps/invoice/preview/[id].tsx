@@ -2,10 +2,10 @@
 import { NextPageContext } from 'next/types'
 
 // ** Types
-import { InvoiceLayoutProps } from 'src/pages/apps/invoice/types'
+import { InvoiceLayoutProps } from 'src/types/apps/invoiceTypes'
 
 // ** Demo Components Imports
-import PreviewLayout from './PreviewLayout'
+import PreviewLayout from 'src/views/apps/invoice/preview/PreviewLayout'
 
 const InvoicePreview = ({ id }: InvoiceLayoutProps) => {
   return <PreviewLayout id={id} />

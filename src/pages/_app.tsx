@@ -5,7 +5,7 @@ import Router, { useRouter } from 'next/router'
 import type { AppProps } from 'next/app'
 
 // ** Store Imports
-import { store } from 'src/redux/store'
+import { store } from 'src/store'
 import { Provider } from 'react-redux'
 
 // ** Loader Import
@@ -22,7 +22,7 @@ import themeConfig from 'src/configs/themeConfig'
 // ** Fake-DB Import
 import 'src/@fake-db'
 
-// ** Third Party Imports
+// ** Third Party Import
 import clsx from 'clsx'
 import { Toaster } from 'react-hot-toast'
 

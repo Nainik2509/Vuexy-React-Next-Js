@@ -8,11 +8,11 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 
 // ** Store & Actions Imports
 import { useDispatch, useSelector } from 'react-redux'
-import { sendMsg, selectChat, fetchUserProfile, fetchChatsContacts } from './store'
+import { sendMsg, selectChat, fetchUserProfile, fetchChatsContacts } from 'src/store/apps/chat'
 
 // ** Types
-import { RootState } from 'src/redux/store'
-import { StatusObjType, StatusType } from './types'
+import { RootState } from 'src/store'
+import { StatusObjType, StatusType } from 'src/types/apps/chatTypes'
 
 // ** Configs Imports
 import themeConfig from 'src/configs/themeConfig'
@@ -22,8 +22,8 @@ import { getInitials } from 'src/@core/utils/get-initials'
 import { formatDateToMonthShort } from 'src/@core/utils/format'
 
 // ** Chat App Components Imports
-import SidebarLeft from './SidebarLeft'
-import ChatContent from './ChatContent'
+import SidebarLeft from 'src/views/apps/chat/SidebarLeft'
+import ChatContent from 'src/views/apps/chat/ChatContent'
 
 const AppChat = () => {
   // ** States

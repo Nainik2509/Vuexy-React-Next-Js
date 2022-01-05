@@ -41,24 +41,25 @@ import DatePicker from 'react-datepicker'
 
 // ** Store & Actions Imports
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchData, deleteInvoice } from 'src/pages/apps/invoice/store'
+import { fetchData, deleteInvoice } from 'src/store/apps/invoice'
 
 // ** Types Imports
-import { RootState } from 'src/redux/store'
+import { RootState } from 'src/store'
 import { ThemeColor } from 'src/@core/layouts/types'
-import { InvoiceType } from 'src/pages/apps/invoice/types'
-import { DateType } from 'src/pages/forms/form-elements/pickers/react-datepicker/types'
+import { InvoiceType } from 'src/types/apps/invoiceTypes'
+import { DateType } from 'src/types/forms/reactDatepickerTypes'
 
 // ** Utils Import
 import { getInitials } from 'src/@core/utils/get-initials'
 
 // ** Custom Components Imports
-import TableHeader from './TableHeader'
 import CustomChip from 'src/@core/components/mui/chip'
 import CustomAvatar from 'src/@core/components/mui/avatar'
+import TableHeader from 'src/views/apps/invoice/list/TableHeader'
 
 // ** Styled Components
 import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
+import DataGridWrapper from 'src/@core/styles/mui/components/datagrid'
 
 interface InvoiceListProps {
   userView?: boolean
@@ -403,7 +404,7 @@ const InvoiceList = (props: InvoiceListProps) => {
                       <CustomInput
                         dates={dates}
                         setDates={setDates}
-                        label='Multiple Months'
+                        label='Invoice Date'
                         end={endDateRange as number | Date}
                         start={startDateRange as number | Date}
                       />
@@ -425,7 +426,7 @@ const InvoiceList = (props: InvoiceListProps) => {
             handleFilter={handleFilter}
             handlePerPage={handlePerPage}
           />
-          <Box sx={{ height: `calc(100vh - 8rem)` }}>
+          <DataGridWrapper sx={{ height: `calc(100vh - 8rem)` }}>
             <DataGrid
               checkboxSelection
               columns={columns}
@@ -435,7 +436,7 @@ const InvoiceList = (props: InvoiceListProps) => {
               pageSize={Number(rowsPerPage)}
               onSelectionModelChange={rows => setSelectedRows(rows)}
             />
-          </Box>
+          </DataGridWrapper>
         </Card>
       </Grid>
     </Grid>
