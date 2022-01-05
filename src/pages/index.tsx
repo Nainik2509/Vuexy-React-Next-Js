@@ -1,12 +1,7 @@
 // ** MUI Imports
 import Typography from '@mui/material/Typography'
 
-// ** Third Party Imports
-import axios from 'axios'
-
-const Home = ({ navData }: any) => {
-  console.log(`navData`, navData)
-
+const Home = () => {
   return (
     <div>
       <Typography variant='h5' sx={{ mb: 2 }}>
@@ -60,18 +55,6 @@ const Home = ({ navData }: any) => {
       <Typography>Typography</Typography>
     </div>
   )
-}
-
-// This function gets called at build time
-export async function getStaticProps() {
-  const res = await axios.get('/navigation/data')
-  const navData = res.data
-
-  return {
-    props: {
-      navData
-    }
-  }
 }
 
 export default Home
