@@ -265,7 +265,9 @@ const Customizer = () => {
               >
                 <FormControlLabel value='fixed' label='Fixed' control={<Radio />} />
                 <FormControlLabel value='static' label='Static' control={<Radio />} />
-                <FormControlLabel value='hidden' label='Hidden' control={<Radio />} />
+                {settings.layout === 'horizontal' ? null : (
+                  <FormControlLabel value='hidden' label='Hidden' control={<Radio />} />
+                )}
               </RadioGroup>
             </Box>
 

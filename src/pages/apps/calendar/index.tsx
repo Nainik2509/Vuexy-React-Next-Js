@@ -90,12 +90,7 @@ const AppCalendar = () => {
           boxShadow: 'none',
           overflow: 'hidden',
           backgroundColor: 'background.paper',
-          ...(mdAbove
-            ? {
-                borderTopLeftRadius: 0,
-                borderBottomLeftRadius: 0
-              }
-            : {})
+          ...(mdAbove ? { borderTopLeftRadius: 0, borderBottomLeftRadius: 0 } : {})
         }}
       >
         <Calendar
