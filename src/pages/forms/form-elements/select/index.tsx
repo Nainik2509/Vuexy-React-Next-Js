@@ -6,17 +6,17 @@ import Typography from '@mui/material/Typography'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
-import SelectProps from './SelectProps'
-import SelectNative from './SelectNative'
-import SelectVariants from './SelectVariants'
-import SelectMultiple from './SelectMultiple'
-import SelectGrouping from './SelectGrouping'
-import SelectCustomized from './SelectCustomized'
-import SelectWithDialog from './SelectWithDialog'
-import SelectControlledUncontrolled from './SelectControlledUncontrolled'
+import SelectProps from 'src/components/forms/form-elements/select/SelectProps'
+import SelectNative from 'src/components/forms/form-elements/select/SelectNative'
+import SelectVariants from 'src/components/forms/form-elements/select/SelectVariants'
+import SelectMultiple from 'src/components/forms/form-elements/select/SelectMultiple'
+import SelectGrouping from 'src/components/forms/form-elements/select/SelectGrouping'
+import SelectCustomized from 'src/components/forms/form-elements/select/SelectCustomized'
+import SelectWithDialog from 'src/components/forms/form-elements/select/SelectWithDialog'
+import SelectControlledUncontrolled from 'src/components/forms/form-elements/select/SelectControlledUncontrolled'
 
 // ** Source code imports
-import * as source from './SelectSourceCode'
+import * as source from 'src/sourceCodes/forms/SelectSourceCode'
 
 const Selects = () => {
   return (

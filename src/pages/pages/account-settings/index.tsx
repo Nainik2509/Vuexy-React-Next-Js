@@ -18,11 +18,11 @@ import BookmarkOutline from 'mdi-material-ui/BookmarkOutline'
 import InformationOutline from 'mdi-material-ui/InformationOutline'
 
 // ** Demo Tabs Imports
-import TabInfo from './TabInfo'
-import TabAccount from './TabAccount'
-import TabBilling from './TabBilling'
-import TabSecurity from './TabSecurity'
-import TabNotifications from './TabNotifications'
+import TabInfo from 'src/components/pages/account-settings/TabInfo'
+import TabAccount from 'src/components/pages/account-settings/TabAccount'
+import TabBilling from 'src/components/pages/account-settings/TabBilling'
+import TabSecurity from 'src/components/pages/account-settings/TabSecurity'
+import TabNotifications from 'src/components/pages/account-settings/TabNotifications'
 
 const Tab = styled(MuiTab)<TabProps>(({ theme }) => ({
   [theme.breakpoints.down('md')]: {

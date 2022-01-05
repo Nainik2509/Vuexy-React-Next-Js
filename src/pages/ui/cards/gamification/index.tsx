@@ -2,10 +2,10 @@
 import Grid from '@mui/material/Grid'
 
 // ** Demo Components Imports
-import CardAward from './CardAward'
-import CardWelcomeBack from './CardWelcomeBack'
-import CardUpgradeAccount from './CardUpgradeAccount'
-import CardCongratulations from './CardCongratulations'
+import CardAward from 'src/components/ui/cards/gamification/CardAward'
+import CardWelcomeBack from 'src/components/ui/cards/gamification/CardWelcomeBack'
+import CardUpgradeAccount from 'src/components/ui/cards/gamification/CardUpgradeAccount'
+import CardCongratulations from 'src/components/ui/cards/gamification/CardCongratulations'
 
 const CardGamification = () => {
   return (

@@ -8,12 +8,12 @@ import PageHeader from 'src/@core/components/page-header'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
-import FileUploaderSingle from './FileUploaderSingle'
-import FileUploaderMultiple from './FileUploaderMultiple'
-import FileUploaderRestrictions from './FileUploaderRestrictions'
+import FileUploaderSingle from 'src/components/forms/form-elements/file-uploader/FileUploaderSingle'
+import FileUploaderMultiple from 'src/components/forms/form-elements/file-uploader/FileUploaderMultiple'
+import FileUploaderRestrictions from 'src/components/forms/form-elements/file-uploader/FileUploaderRestrictions'
 
 // ** Source code imports
-import * as source from './FileUploaderSourceCode'
+import * as source from 'src/sourceCodes/forms/FileUploaderSourceCode'
 
 const FileUploader = () => {
   return (

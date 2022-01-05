@@ -6,17 +6,17 @@ import Typography from '@mui/material/Typography'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
-import RadioGroup from './RadioGroup'
-import RadioColor from './RadioColor'
-import RadioSizes from './RadioSizes'
-import RadioShowError from './RadioShowError'
-import RadioStandalone from './RadioStandalone'
-import RadioCustomized from './RadioCustomized'
-import RadioLabelPlacement from './RadioLabelPlacement'
-import RadioControlledUncontrolled from './RadioControlledUncontrolled'
+import RadioGroup from 'src/components/forms/form-elements/radio/RadioGroup'
+import RadioColor from 'src/components/forms/form-elements/radio/RadioColor'
+import RadioSizes from 'src/components/forms/form-elements/radio/RadioSizes'
+import RadioShowError from 'src/components/forms/form-elements/radio/RadioShowError'
+import RadioStandalone from 'src/components/forms/form-elements/radio/RadioStandalone'
+import RadioCustomized from 'src/components/forms/form-elements/radio/RadioCustomized'
+import RadioLabelPlacement from 'src/components/forms/form-elements/radio/RadioLabelPlacement'
+import RadioControlledUncontrolled from 'src/components/forms/form-elements/radio/RadioControlledUncontrolled'
 
 // ** Source code imports
-import * as source from './RadioSourceCode'
+import * as source from 'src/sourceCodes/forms/RadioSourceCode'
 
 const Radios = () => {
   return (

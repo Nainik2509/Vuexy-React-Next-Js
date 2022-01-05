@@ -34,17 +34,20 @@ import { useDispatch, useSelector } from 'react-redux'
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
 import PageHeader from 'src/@core/components/page-header'
-import TableHeader from 'src/pages/apps/permissions/TableHeader'
+import TableHeader from 'src/components/apps/permissions/TableHeader'
 
 // ** Types Imports
 import { RootState } from 'src/redux/store'
-import { PermissionRowType } from 'src/pages/apps/permissions/types'
+import { PermissionRowType } from 'src/types/apps/permissionTypes'
 
 // ** Actions Imports
-import { fetchData } from 'src/pages/apps/permissions/store'
+import { fetchData } from 'src/redux/apps/permissions'
 
 // ** Types
 import { ThemeColor } from 'src/@core/layouts/types'
+
+// ** Styled Components
+import DataGridWrapper from 'src/@core/styles/mui/components/datagrid'
 
 interface Colors {
   [key: string]: ThemeColor
@@ -184,9 +187,9 @@ const PermissionsTable = () => {
             handleFilter={handleFilter}
             handlePerPage={handlePerPage}
           />
-          <Box sx={{ height: 'calc(100vh - 22rem)' }}>
+          <DataGridWrapper sx={{ height: 'calc(100vh - 11rem)' }}>
             <DataGrid columns={columns} rows={store.data} rowsPerPageOptions={[]} pageSize={Number(rowsPerPage)} />
-          </Box>
+          </DataGridWrapper>
           <Dialog maxWidth='sm' fullWidth onClose={handleDialogToggle} open={editDialogOpen}>
             <DialogTitle sx={{ mx: 'auto', textAlign: 'center' }}>
               <Typography variant='h4' component='span' sx={{ mb: 2 }}>

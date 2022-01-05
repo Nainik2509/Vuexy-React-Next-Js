@@ -6,14 +6,14 @@ import Typography from '@mui/material/Typography'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
-import RatingsHalf from './RatingsHalf'
-import RatingsBasic from './RatingsBasic'
-import RatingsSizes from './RatingsSizes'
-import RatingsCustomized from './RatingsCustomized'
-import RatingsHoverFeedback from './RatingsHoverFeedback'
+import RatingsHalf from 'src/components/components/ratings/RatingsHalf'
+import RatingsBasic from 'src/components/components/ratings/RatingsBasic'
+import RatingsSizes from 'src/components/components/ratings/RatingsSizes'
+import RatingsCustomized from 'src/components/components/ratings/RatingsCustomized'
+import RatingsHoverFeedback from 'src/components/components/ratings/RatingsHoverFeedback'
 
 // ** Source code imports
-import * as source from './RatingsSourceCode'
+import * as source from 'src/sourceCodes/components/RatingsSourceCode'
 
 const Ratings = () => {
   return (

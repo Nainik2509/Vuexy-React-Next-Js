@@ -7,17 +7,17 @@ import Grid, { GridProps } from '@mui/material/Grid'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
-import PaginationSizes from './PaginationSizes'
-import PaginationSimple from './PaginationSimple'
-import PaginationRanges from './PaginationRanges'
-import PaginationRounded from './PaginationRounded'
-import PaginationButtons from './PaginationButtons'
-import PaginationOutlined from './PaginationOutlined'
-import PaginationDisabled from './PaginationDisabled'
-import PaginationControlled from './PaginationControlled'
+import PaginationSizes from 'src/components/components/pagination/PaginationSizes'
+import PaginationSimple from 'src/components/components/pagination/PaginationSimple'
+import PaginationRanges from 'src/components/components/pagination/PaginationRanges'
+import PaginationRounded from 'src/components/components/pagination/PaginationRounded'
+import PaginationButtons from 'src/components/components/pagination/PaginationButtons'
+import PaginationOutlined from 'src/components/components/pagination/PaginationOutlined'
+import PaginationDisabled from 'src/components/components/pagination/PaginationDisabled'
+import PaginationControlled from 'src/components/components/pagination/PaginationControlled'
 
 // ** Source code imports
-import * as source from './PaginationSourceCode'
+import * as source from 'src/sourceCodes/components/PaginationSourceCode'
 
 // Styled component for Grid container
 const GridContainer = styled(Grid)<GridProps>(({ theme }) => ({

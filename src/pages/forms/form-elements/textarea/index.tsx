@@ -6,11 +6,11 @@ import Typography from '@mui/material/Typography'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
-import TextareaBasic from './TextareaBasic'
-import TextareaVariant from './TextareaVariant'
+import TextareaBasic from 'src/components/forms/form-elements/textarea/TextareaBasic'
+import TextareaVariant from 'src/components/forms/form-elements/textarea/TextareaVariant'
 
 // ** Source code imports
-import * as source from './TextareaSourceCode'
+import * as source from 'src/sourceCodes/forms/TextareaSourceCode'
 
 const Textarea = () => {
   return (

@@ -19,13 +19,16 @@ import CodeTags from 'mdi-material-ui/CodeTags'
 import ContentCopy from 'mdi-material-ui/ContentCopy'
 
 // ** Third Party Components
-import toast from 'react-hot-toast'
+import toast, { Toaster } from 'react-hot-toast'
 
 // ** Types
 import { CardSnippetProps } from './types'
 
 // ** Hooks
 import useClipboard from 'src/@core/hooks/useClipboard'
+
+// ** Styled Components
+import ReactHotToast from 'src/@core/styles/libs/react-hot-toast'
 
 const CardSnippet = (props: CardSnippetProps) => {
   // ** Props
@@ -57,7 +60,6 @@ const CardSnippet = (props: CardSnippetProps) => {
     >
       <CardHeader
         title={title}
-        sx={title === '' ? { pb: 0 } : {}}
         titleTypographyProps={{ variant: 'h6' }}
         action={
           <IconButton onClick={() => setShowCode(!showCode)}>
@@ -80,6 +82,9 @@ const CardSnippet = (props: CardSnippetProps) => {
           <Box sx={{ '& pre, & code': { whiteSpace: 'break-spaces' } }}>{code}</Box>
         </CardContent>
       </Collapse>
+      <ReactHotToast>
+        <Toaster toastOptions={{ className: 'react-hot-toast' }} />
+      </ReactHotToast>
     </Card>
   )
 }

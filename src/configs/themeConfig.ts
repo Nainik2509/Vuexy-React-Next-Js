@@ -41,7 +41,6 @@ type ThemeConfig = {
   routerTransition: RouterTransitions
   verticalNavToggleType: VerticalNavToggle
   horizontalMenuToggle: HorizontalMenuToggle
-  toastPosition: 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'
 }
 
 const themeConfig: ThemeConfig = {
@@ -50,7 +49,7 @@ const themeConfig: ThemeConfig = {
   mode: 'light' /* light | dark */,
   direction: 'ltr' /* ltr | rtl */,
   routingLoader: true /* true | false */,
-  routerTransition: 'fadeIn' /* fadeIn | zoomIn | fadeInLeft | none */,
+  routerTransition: 'none' /* fadeIn | zoomIn | fadeInLeft | none */,
   disableRipple: false /* true | false */,
   navCollapsed: false /* true | false */,
   navHidden: false /* true | false */,
@@ -66,7 +65,6 @@ const themeConfig: ThemeConfig = {
   responsiveFontSizes: true /* true | false */,
   horizontalMenuToggle: 'hover' /* click | hover */,
   navSubItemIcon: CircleOutline /* Icon Element */,
-  toastPosition: 'top-center' /* top-left | top-center | top-right | bottom-left | bottom-center | bottom-right */,
   appBarHeight: 64 /* Number in PX(Pixels) [recommended height is 50px or greater] */
 }
 

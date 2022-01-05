@@ -7,13 +7,13 @@ import Typography from '@mui/material/Typography'
 import PageHeader from 'src/@core/components/page-header'
 
 // ** Demo Components Imports
-import TableBasic from './TableBasic'
-import TableFilter from './TableFilter'
-import TableColumns from './TableColumns'
-import TableEditable from './TableEditable'
-import TableBasicSort from './TableBasicSort'
-import TableSelection from './TableSelection'
-import TableServerSide from './TableServerSide'
+import TableBasic from 'src/components/table/data-grid/TableBasic'
+import TableFilter from 'src/components/table/data-grid/TableFilter'
+import TableColumns from 'src/components/table/data-grid/TableColumns'
+import TableEditable from 'src/components/table/data-grid/TableEditable'
+import TableBasicSort from 'src/components/table/data-grid/TableBasicSort'
+import TableSelection from 'src/components/table/data-grid/TableSelection'
+import TableServerSide from 'src/components/table/data-grid/TableServerSide'
 
 const DataGrid = () => {
   return (

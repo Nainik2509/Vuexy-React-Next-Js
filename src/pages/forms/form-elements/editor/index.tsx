@@ -8,11 +8,11 @@ import PageHeader from 'src/@core/components/page-header'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
-import EditorControlled from './EditorControlled'
-import EditorUncontrolled from './EditorUncontrolled'
+import EditorControlled from 'src/components/forms/form-elements/editor/EditorControlled'
+import EditorUncontrolled from 'src/components/forms/form-elements/editor/EditorUncontrolled'
 
 // ** Source code imports
-import * as source from './EditorSourceCode'
+import * as source from 'src/sourceCodes/forms/EditorSourceCode'
 
 // ** Styles
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'

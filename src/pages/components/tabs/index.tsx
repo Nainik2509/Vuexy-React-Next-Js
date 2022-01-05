@@ -6,19 +6,19 @@ import Typography from '@mui/material/Typography'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
-import TabsNav from './TabsNav'
-import TabsIcon from './TabsIcon'
-import TabsSimple from './TabsSimple'
-import TabsColor from './TabsColor'
-import TabsCentered from './TabsCentered'
-import TabsVertical from './TabsVertical'
-import TabsFullWidth from './TabsFullWidth'
-import TabsCustomized from './TabsCustomized'
-import TabsForcedScroll from './TabsForcedScroll'
-import TabsCustomizedVertical from './TabsCustomizedVertical'
+import TabsNav from 'src/components/components/tabs/TabsNav'
+import TabsIcon from 'src/components/components/tabs/TabsIcon'
+import TabsColor from 'src/components/components/tabs/TabsColor'
+import TabsSimple from 'src/components/components/tabs/TabsSimple'
+import TabsCentered from 'src/components/components/tabs/TabsCentered'
+import TabsVertical from 'src/components/components/tabs/TabsVertical'
+import TabsFullWidth from 'src/components/components/tabs/TabsFullWidth'
+import TabsCustomized from 'src/components/components/tabs/TabsCustomized'
+import TabsForcedScroll from 'src/components/components/tabs/TabsForcedScroll'
+import TabsCustomizedVertical from 'src/components/components/tabs/TabsCustomizedVertical'
 
 // ** Source code imports
-import * as source from './TabsSourceCode'
+import * as source from 'src/sourceCodes/components/TabsSourceCode'
 
 const Tabs = () => {
   return (

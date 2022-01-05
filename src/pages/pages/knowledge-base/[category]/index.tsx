@@ -35,7 +35,7 @@ import axios from 'axios'
 import { KnowledgeBaseData, KnowledgeBaseCategoryData, KnowledgeBaseCategoryQuestion } from 'src/@fake-db/types'
 
 // ** Demo Import
-import KnowledgeBaseHeader from 'src/pages/pages/knowledge-base/KnowledgeBaseHeader'
+import KnowledgeBaseHeader from 'src/components/pages/knowledge-base/KnowledgeBaseHeader'
 
 // Styled Link component
 const StyledLink = styled('a')(({ theme }) => ({

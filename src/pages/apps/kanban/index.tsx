@@ -9,7 +9,7 @@ import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 
 // ** Kanban App Component Imports
-import KanbanBoardLayout from './KanbanBoardLayout'
+import KanbanBoardLayout from 'src/components/apps/kanban/KanbanBoardLayout'
 
 // ** Redux Imports
 import { useDispatch, useSelector } from 'react-redux'
@@ -18,7 +18,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'src/redux/store'
 
 // ** Actions
-import { fetchBoards, fetchTasks } from './store'
+import { fetchBoards, fetchTasks } from 'src/redux/apps/kanban'
 
 const Kanban = () => {
   // ** Hooks

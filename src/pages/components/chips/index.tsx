@@ -6,19 +6,19 @@ import Typography from '@mui/material/Typography'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
-import ChipsIcon from './ChipsIcon'
-import ChipsSizes from './ChipsSizes'
-import ChipsArray from './ChipsArray'
-import ChipsLight from './ChipsLight'
-import ChipsColors from './ChipsColors'
-import ChipsAvatar from './ChipsAvatar'
-import ChipsVariants from './ChipsVariants'
-import ChipsDisabled from './ChipsDisabled'
-import ChipsOnDelete from './ChipsOnDelete'
-import ChipsClickable from './ChipsClickable'
+import ChipsIcon from 'src/components/components/chips/ChipsIcon'
+import ChipsSizes from 'src/components/components/chips/ChipsSizes'
+import ChipsArray from 'src/components/components/chips/ChipsArray'
+import ChipsLight from 'src/components/components/chips/ChipsLight'
+import ChipsColors from 'src/components/components/chips/ChipsColors'
+import ChipsAvatar from 'src/components/components/chips/ChipsAvatar'
+import ChipsVariants from 'src/components/components/chips/ChipsVariants'
+import ChipsDisabled from 'src/components/components/chips/ChipsDisabled'
+import ChipsOnDelete from 'src/components/components/chips/ChipsOnDelete'
+import ChipsClickable from 'src/components/components/chips/ChipsClickable'
 
 // ** Source code imports
-import * as source from './ChipsSourceCode'
+import * as source from 'src/sourceCodes/components/ChipsSourceCode'
 
 const Pagination = () => {
   return (

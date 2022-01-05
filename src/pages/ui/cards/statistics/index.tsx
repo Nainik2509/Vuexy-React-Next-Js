@@ -11,10 +11,10 @@ import axios from 'axios'
 import { CardStatsType } from 'src/@fake-db/types'
 
 // ** Demo Components Imports
-import CardStatisticsSales from './CardStatisticsSales'
-import CardStatisticsVertical from './CardStatisticsVertical'
-import CardStatisticsHorizontal from './CardStatisticsHorizontal'
-import CardStatisticsCharacters from './CardStatisticsCharacters'
+import CardStatisticsSales from 'src/components/ui/cards/statistics/CardStatisticsSales'
+import CardStatisticsVertical from 'src/components/ui/cards/statistics/CardStatisticsVertical'
+import CardStatisticsHorizontal from 'src/components/ui/cards/statistics/CardStatisticsHorizontal'
+import CardStatisticsCharacters from 'src/components/ui/cards/statistics/CardStatisticsCharacters'
 
 const CardStatistics = () => {
   // ** State

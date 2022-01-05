@@ -1,5 +1,5 @@
 // ** Types
-import { ProfileUserType, ChatsObj, ContactType, MsgFeedbackType } from 'views/apps/chat/types'
+import { ProfileUserType, ChatsObj, ContactType, MsgFeedbackType } from 'src/types/apps/chatTypes'
 
 export type ChatLogType = {
   data: {

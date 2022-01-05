@@ -2,8 +2,8 @@
 import Grid from '@mui/material/Grid'
 
 // ** Demo Components Imports
-import TypographyTexts from './TypographyTexts'
-import TypographyHeadings from './TypographyHeadings'
+import TypographyTexts from 'src/components/ui/typography/TypographyTexts'
+import TypographyHeadings from 'src/components/ui/typography/TypographyHeadings'
 
 const TypographyPage = () => {
   return (

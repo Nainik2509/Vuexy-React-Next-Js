@@ -34,9 +34,6 @@ import * as yup from 'yup'
 import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 
-// ** Context
-// import { Auth } from 'src/@core/context/AuthContext'
-
 // ** Hooks
 import { useAuth } from 'src/@core/hooks/useAuth'
 import useBgColor from 'src/@core/hooks/theme/useBgColor'
@@ -49,7 +46,7 @@ import themeConfig from 'src/configs/themeConfig'
 import BlankLayout from 'src/@core/layouts/BlankLayout'
 
 // ** Demo Imports
-import FooterIllustrationsV2 from 'src/pages/pages/auth/FooterIllustrationsV2'
+import FooterIllustrationsV2 from 'src/components/pages/auth/FooterIllustrationsV2'
 
 // ** Styled Components
 const LoginIllustrationWrapper = styled(Box)<BoxProps>(({ theme }) => ({

@@ -41,16 +41,19 @@ import CustomAvatar from 'src/@core/components/mui/avatar'
 import { getInitials } from 'src/@core/utils/get-initials'
 
 // ** Actions Imports
-import { fetchData, deleteUser } from 'src/pages/apps/user/store'
+import { fetchData, deleteUser } from 'src/redux/apps/user'
 
 // ** Types Imports
 import { RootState } from 'src/redux/store'
 import { ThemeColor } from 'src/@core/layouts/types'
-import { UsersType } from 'src/pages/apps/user/types'
+import { UsersType } from 'src/types/apps/userTypes'
 
 // ** Custom Components Imports
-import TableHeader from './TableHeader'
-import AddUserDrawer from './AddUserDrawer'
+import TableHeader from 'src/components/apps/user/list/TableHeader'
+import AddUserDrawer from 'src/components/apps/user/list/AddUserDrawer'
+
+// ** Styled Components
+import DataGridWrapper from 'src/@core/styles/mui/components/datagrid'
 
 interface UserRoleType {
   [key: string]: ReactElement
@@ -403,9 +406,9 @@ const UserList = () => {
             toggle={toggleAddUserDrawer}
             handlePerPage={handlePerPage}
           />
-          <Box sx={{ height: 'calc(100vh - 8rem)' }}>
+          <DataGridWrapper sx={{ height: 'calc(100vh - 8rem)' }}>
             <DataGrid rows={store.data} pageSize={rowsPerPage} columns={defaultColumns} rowsPerPageOptions={[]} />
-          </Box>
+          </DataGridWrapper>
         </Card>
       </Grid>
 

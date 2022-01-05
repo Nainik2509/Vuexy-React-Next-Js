@@ -6,16 +6,16 @@ import Typography from '@mui/material/Typography'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
-import SwitchesBasic from './SwitchesBasic'
-import SwitchesSizes from './SwitchesSizes'
-import SwitchesColors from './SwitchesColors'
-import SwitchesCustomized from './SwitchesCustomized'
-import SwitchesStandalone from './SwitchesStandalone'
-import SwitchesLabelPlacement from './SwitchesLabelPlacement'
-import SwitchesControlledUncontrolled from './SwitchesControlledUncontrolled'
+import SwitchesBasic from 'src/components/forms/form-elements/switch/SwitchesBasic'
+import SwitchesSizes from 'src/components/forms/form-elements/switch/SwitchesSizes'
+import SwitchesColors from 'src/components/forms/form-elements/switch/SwitchesColors'
+import SwitchesCustomized from 'src/components/forms/form-elements/switch/SwitchesCustomized'
+import SwitchesStandalone from 'src/components/forms/form-elements/switch/SwitchesStandalone'
+import SwitchesLabelPlacement from 'src/components/forms/form-elements/switch/SwitchesLabelPlacement'
+import SwitchesControlledUncontrolled from 'src/components/forms/form-elements/switch/SwitchesControlledUncontrolled'
 
 // ** Source code imports
-import * as source from './SwitchesSourceCode'
+import * as source from 'src/sourceCodes/forms/SwitchesSourceCode'
 
 const Switches = () => {
   return (

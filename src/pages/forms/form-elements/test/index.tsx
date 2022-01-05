@@ -3,15 +3,15 @@ import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 
 // ** Demo Components Imports
-import Textarea from './Textarea'
-import TextFieldIcons from './TextFieldIcons'
-import SelectVariants from './SelectVariants'
-import SelectMultiple from './SelectMultiple'
-import TextFieldVariant from './TextFieldVariant'
-import TextFieldComponents from './TextFieldComponents'
-import AutocompleteVariants from './AutocompleteVariants'
-import TextFieldInputAdornment from './TextFieldInputAdornment'
-import SelectCustomizedAndGrouping from './SelectCustomizedAndGrouping'
+import Textarea from 'src/components/forms/form-elements/test/Textarea'
+import TextFieldIcons from 'src/components/forms/form-elements/test/TextFieldIcons'
+import SelectVariants from 'src/components/forms/form-elements/test/SelectVariants'
+import SelectMultiple from 'src/components/forms/form-elements/test/SelectMultiple'
+import TextFieldVariant from 'src/components/forms/form-elements/test/TextFieldVariant'
+import TextFieldComponents from 'src/components/forms/form-elements/test/TextFieldComponents'
+import AutocompleteVariants from 'src/components/forms/form-elements/test/AutocompleteVariants'
+import TextFieldInputAdornment from 'src/components/forms/form-elements/test/TextFieldInputAdornment'
+import SelectCustomizedAndGrouping from 'src/components/forms/form-elements/test/SelectCustomizedAndGrouping'
 
 const Test = () => {
   return (

@@ -2,19 +2,19 @@
 import Grid from '@mui/material/Grid'
 
 // ** Demo Components Imports
-import CardTeamMembers from './CardTeamMembers'
-import CardPlanUpgrade from './CardPlanUpgrade'
-import CardCafeBadilico from './CardCafeBadilico'
-import CardTransactions from './CardTransactions'
-import CardTotalEarnings from './CardTotalEarings'
-import CardFinanceSummary from './CardFinanceSummary'
-import CardDepositWithdraw from './CardDepositWithdraw'
-import CardSocialAnalytics from './CardSocialAnalytics'
-import CardMeetingSchedule from './CardMeetingSchedule'
-import CardDeveloperMeetup from './CardDeveloperMeetup'
-import CardSalesByCountries from './CardSalesByCountries'
-import CardActivityTimeline from './CardActivityTimeline'
-import CardWebsiteStatistics from './CardWebsiteStatistics'
+import CardTeamMembers from 'src/components/ui/cards/advanced/CardTeamMembers'
+import CardPlanUpgrade from 'src/components/ui/cards/advanced/CardPlanUpgrade'
+import CardCafeBadilico from 'src/components/ui/cards/advanced/CardCafeBadilico'
+import CardTransactions from 'src/components/ui/cards/advanced/CardTransactions'
+import CardTotalEarnings from 'src/components/ui/cards/advanced/CardTotalEarings'
+import CardFinanceSummary from 'src/components/ui/cards/advanced/CardFinanceSummary'
+import CardDepositWithdraw from 'src/components/ui/cards/advanced/CardDepositWithdraw'
+import CardSocialAnalytics from 'src/components/ui/cards/advanced/CardSocialAnalytics'
+import CardMeetingSchedule from 'src/components/ui/cards/advanced/CardMeetingSchedule'
+import CardDeveloperMeetup from 'src/components/ui/cards/advanced/CardDeveloperMeetup'
+import CardSalesByCountries from 'src/components/ui/cards/advanced/CardSalesByCountries'
+import CardActivityTimeline from 'src/components/ui/cards/advanced/CardActivityTimeline'
+import CardWebsiteStatistics from 'src/components/ui/cards/advanced/CardWebsiteStatistics'
 
 const CardsAdvanced = () => {
   return (

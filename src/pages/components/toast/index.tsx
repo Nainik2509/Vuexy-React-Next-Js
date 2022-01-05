@@ -8,18 +8,18 @@ import PageHeader from 'src/@core/components/page-header'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components
-import ToastBlank from './ToastBlank'
-import ToastError from './ToastError'
-import ToastEmoji from './ToastEmoji'
-import ToastThemed from './ToastThemed'
-import ToastCustom from './ToastCustom'
-import ToastSuccess from './ToastSuccess'
-import ToastPromise from './ToastPromise'
-import ToastMultiLine from './ToastMultiLine'
-import ToastCustomPosition from './ToastCustomPosition'
+import ToastBlank from 'src/components/components/toast/ToastBlank'
+import ToastError from 'src/components/components/toast/ToastError'
+import ToastEmoji from 'src/components/components/toast/ToastEmoji'
+import ToastThemed from 'src/components/components/toast/ToastThemed'
+import ToastCustom from 'src/components/components/toast/ToastCustom'
+import ToastSuccess from 'src/components/components/toast/ToastSuccess'
+import ToastPromise from 'src/components/components/toast/ToastPromise'
+import ToastMultiLine from 'src/components/components/toast/ToastMultiLine'
+import ToastCustomPosition from 'src/components/components/toast/ToastCustomPosition'
 
 // ** Source code imports
-import * as source from './ToastSourceCode'
+import * as source from 'src/sourceCodes/components/ToastSourceCode'
 
 const ReactHotToasts = () => {
   return (

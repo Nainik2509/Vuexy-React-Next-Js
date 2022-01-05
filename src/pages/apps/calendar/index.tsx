@@ -14,13 +14,13 @@ import { useSettings } from 'src/@core/hooks/useSettings'
 
 // ** Types
 import { RootState } from 'src/redux/store'
-import { CalendarColors, CalendarFiltersType } from './types'
+import { CalendarColors, CalendarFiltersType } from 'src/types/apps/calendarTypes'
 
 // ** FullCalendar & App Components Imports
-import Calendar from './Calendar'
-import SidebarLeft from './SidebarLeft'
-import AddEventSidebar from './AddEventSidebar'
-import { CalendarWrapper } from './CalendarWrapper'
+import Calendar from 'src/components/apps/calendar/Calendar'
+import SidebarLeft from 'src/components/apps/calendar/SidebarLeft'
+import AddEventSidebar from 'src/components/apps/calendar/AddEventSidebar'
+import { CalendarWrapper } from 'src/components/apps/calendar/CalendarWrapper'
 
 // ** Actions
 import {
@@ -31,7 +31,7 @@ import {
   handleSelectEvent,
   handleAllCalendars,
   handleCalendarsUpdate
-} from './store'
+} from 'src/redux/apps/calendar'
 
 // ** CalendarColors
 const calendarsColor: CalendarColors = {

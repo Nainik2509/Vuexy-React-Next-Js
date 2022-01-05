@@ -6,19 +6,19 @@ import Typography from '@mui/material/Typography'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
-import ButtonsFab from './ButtonsFab'
-import ButtonsText from './ButtonsText'
-import ButtonsIcons from './ButtonsIcons'
-import ButtonsSizes from './ButtonsSizes'
-import ButtonsColors from './ButtonsColors'
-import ButtonsOutlined from './ButtonsOutlined'
-import ButtonsFabSizes from './ButtonsFabSizes'
-import ButtonsContained from './ButtonsContained'
-import ButtonsCustomized from './ButtonsCustomized'
-import ButtonsWithIconAndLabel from './ButtonsWithIconAndLabel'
+import ButtonsFab from 'src/components/components/buttons/ButtonsFab'
+import ButtonsText from 'src/components/components/buttons/ButtonsText'
+import ButtonsIcons from 'src/components/components/buttons/ButtonsIcons'
+import ButtonsSizes from 'src/components/components/buttons/ButtonsSizes'
+import ButtonsColors from 'src/components/components/buttons/ButtonsColors'
+import ButtonsOutlined from 'src/components/components/buttons/ButtonsOutlined'
+import ButtonsFabSizes from 'src/components/components/buttons/ButtonsFabSizes'
+import ButtonsContained from 'src/components/components/buttons/ButtonsContained'
+import ButtonsCustomized from 'src/components/components/buttons/ButtonsCustomized'
+import ButtonsWithIconAndLabel from 'src/components/components/buttons/ButtonsWithIconAndLabel'
 
 // ** Source code imports
-import * as source from './ButtonsSourceCode'
+import * as source from 'src/sourceCodes/components/ButtonsSourceCode'
 
 const Buttons = () => {
   return (

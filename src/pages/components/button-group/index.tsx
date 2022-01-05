@@ -6,21 +6,21 @@ import Typography from '@mui/material/Typography'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
-import ButtonGroupBasic from './ButtonGroupBasic'
-import ButtonGroupSizes from './ButtonGroupSizes'
-import ButtonGroupSplit from './ButtonGroupSplit'
-import ButtonGroupColors from './ButtonGroupColors'
-import ButtonToggleSizes from './ButtonToggleSizes'
-import ButtonToggleSimple from './ButtonToggleSimple'
-import ButtonToggleColors from './ButtonToggleColors'
-import ButtonGroupVertical from './ButtonGroupVertical'
-import ButtonToggleMultiple from './ButtonToggleMultiple'
-import ButtonToggleVertical from './ButtonToggleVertical'
-import ButtonToggleCustomized from './ButtonToggleCustomized'
-import ButtonToggleEnforceValue from './ButtonToggleEnforceValue'
+import ButtonGroupBasic from 'src/components/components/button-group/ButtonGroupBasic'
+import ButtonGroupSizes from 'src/components/components/button-group/ButtonGroupSizes'
+import ButtonGroupSplit from 'src/components/components/button-group/ButtonGroupSplit'
+import ButtonGroupColors from 'src/components/components/button-group/ButtonGroupColors'
+import ButtonToggleSizes from 'src/components/components/button-group/ButtonToggleSizes'
+import ButtonToggleSimple from 'src/components/components/button-group/ButtonToggleSimple'
+import ButtonToggleColors from 'src/components/components/button-group/ButtonToggleColors'
+import ButtonGroupVertical from 'src/components/components/button-group/ButtonGroupVertical'
+import ButtonToggleMultiple from 'src/components/components/button-group/ButtonToggleMultiple'
+import ButtonToggleVertical from 'src/components/components/button-group/ButtonToggleVertical'
+import ButtonToggleCustomized from 'src/components/components/button-group/ButtonToggleCustomized'
+import ButtonToggleEnforceValue from 'src/components/components/button-group/ButtonToggleEnforceValue'
 
 // ** Source code imports
-import * as source from './ButtonGroupSourceCode'
+import * as source from 'src/sourceCodes/components/ButtonGroupSourceCode'
 
 const ButtonGroup = () => {
   return (

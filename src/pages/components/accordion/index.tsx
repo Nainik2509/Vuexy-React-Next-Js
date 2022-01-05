@@ -6,13 +6,13 @@ import Typography from '@mui/material/Typography'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
-import AccordionSimple from './AccordionSimple'
-import AccordionActions from './AccordionActions'
-import AccordionControlled from './AccordionControlled'
-import AccordionCustomized from './AccordionCustomized'
+import AccordionSimple from 'src/components/components/accordion/AccordionSimple'
+import AccordionActions from 'src/components/components/accordion/AccordionActions'
+import AccordionControlled from 'src/components/components/accordion/AccordionControlled'
+import AccordionCustomized from 'src/components/components/accordion/AccordionCustomized'
 
 // ** Source code imports
-import * as source from './AccordionSourceCode'
+import * as source from 'src/sourceCodes/components/AccordionSourceCode'
 
 const Accordion = () => {
   return (

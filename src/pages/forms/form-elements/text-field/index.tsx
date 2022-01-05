@@ -6,21 +6,21 @@ import Typography from '@mui/material/Typography'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
-import TextFieldSizes from './TextFieldSizes'
-import TextFieldColor from './TextFieldColor'
-import TextFieldIcons from './TextFieldIcons'
-import TextFieldLayout from './TextFieldLayout'
-import TextFieldInputs from './TextFieldInputs'
-import TextFieldVariant from './TextFieldVariant'
-import TextFieldFormProps from './TextFieldFormProps'
-import TextFieldComponents from './TextFieldComponents'
-import TextFieldCustomized from './TextFieldCustomized'
-import TextFieldValidation from './TextFieldValidation'
-import TextFieldInputAdornment from './TextFieldInputAdornment'
-import TextFieldControlledUncontrolled from './TextFieldControlledUncontrolled'
+import TextFieldSizes from 'src/components/forms/form-elements/text-field/TextFieldSizes'
+import TextFieldColor from 'src/components/forms/form-elements/text-field/TextFieldColor'
+import TextFieldIcons from 'src/components/forms/form-elements/text-field/TextFieldIcons'
+import TextFieldLayout from 'src/components/forms/form-elements/text-field/TextFieldLayout'
+import TextFieldInputs from 'src/components/forms/form-elements/text-field/TextFieldInputs'
+import TextFieldVariant from 'src/components/forms/form-elements/text-field/TextFieldVariant'
+import TextFieldFormProps from 'src/components/forms/form-elements/text-field/TextFieldFormProps'
+import TextFieldComponents from 'src/components/forms/form-elements/text-field/TextFieldComponents'
+import TextFieldCustomized from 'src/components/forms/form-elements/text-field/TextFieldCustomized'
+import TextFieldValidation from 'src/components/forms/form-elements/text-field/TextFieldValidation'
+import TextFieldInputAdornment from 'src/components/forms/form-elements/text-field/TextFieldInputAdornment'
+import TextFieldControlledUncontrolled from 'src/components/forms/form-elements/text-field/TextFieldControlledUncontrolled'
 
 // ** Source code imports
-import * as source from './TextFieldSourceCode'
+import * as source from 'src/sourceCodes/forms/TextFieldSourceCode'
 
 const TextFields = () => {
   return (
