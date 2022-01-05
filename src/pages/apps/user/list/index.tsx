@@ -49,8 +49,8 @@ import { ThemeColor } from 'src/@core/layouts/types'
 import { UsersType } from 'src/types/apps/userTypes'
 
 // ** Custom Components Imports
-import TableHeader from 'src/components/apps/user/list/TableHeader'
-import AddUserDrawer from 'src/components/apps/user/list/AddUserDrawer'
+import TableHeader from 'src/views/apps/user/list/TableHeader'
+import AddUserDrawer from 'src/views/apps/user/list/AddUserDrawer'
 
 // ** Styled Components
 import DataGridWrapper from 'src/@core/styles/mui/components/datagrid'

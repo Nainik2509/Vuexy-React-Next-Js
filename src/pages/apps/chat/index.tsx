@@ -22,8 +22,8 @@ import { getInitials } from 'src/@core/utils/get-initials'
 import { formatDateToMonthShort } from 'src/@core/utils/format'
 
 // ** Chat App Components Imports
-import SidebarLeft from 'src/components/apps/chat/SidebarLeft'
-import ChatContent from 'src/components/apps/chat/ChatContent'
+import SidebarLeft from 'src/views/apps/chat/SidebarLeft'
+import ChatContent from 'src/views/apps/chat/ChatContent'
 
 const AppChat = () => {
   // ** States

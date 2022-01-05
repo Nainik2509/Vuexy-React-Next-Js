@@ -6,17 +6,17 @@ import Typography from '@mui/material/Typography'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
-import ListDense from 'src/components/components/list/ListDense'
-import ListSimple from 'src/components/components/list/ListSimple'
-import ListNested from 'src/components/components/list/ListNested'
-import ListSecondary from 'src/components/components/list/ListSecondary'
-import ListWithSwitch from 'src/components/components/list/ListWithSwitch'
-import ListItemSelected from 'src/components/components/list/ListItemSelected'
-import ListWithCheckbox from 'src/components/components/list/ListWithCheckbox'
-import ListStickySubheader from 'src/components/components/list/ListStickySubheader'
+import ListDense from 'src/views/components/list/ListDense'
+import ListSimple from 'src/views/components/list/ListSimple'
+import ListNested from 'src/views/components/list/ListNested'
+import ListSecondary from 'src/views/components/list/ListSecondary'
+import ListWithSwitch from 'src/views/components/list/ListWithSwitch'
+import ListItemSelected from 'src/views/components/list/ListItemSelected'
+import ListWithCheckbox from 'src/views/components/list/ListWithCheckbox'
+import ListStickySubheader from 'src/views/components/list/ListStickySubheader'
 
 // ** Source code imports
-import * as source from 'src/components/components/list/ListsSourceCode'
+import * as source from 'src/views/components/list/ListsSourceCode'
 
 const Lists = () => {
   return (

@@ -6,15 +6,15 @@ import Typography from '@mui/material/Typography'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
-import AlertsBasic from 'src/components/components/alerts/AlertsBasic'
-import AlertsFilled from 'src/components/components/alerts/AlertsFilled'
-import AlertsActions from 'src/components/components/alerts/AlertsActions'
-import AlertsOutlined from 'src/components/components/alerts/AlertsOutlined'
-import AlertsDescription from 'src/components/components/alerts/AlertsDescription'
-import AlertsDismissible from 'src/components/components/alerts/AlertsDismissible'
+import AlertsBasic from 'src/views/components/alerts/AlertsBasic'
+import AlertsFilled from 'src/views/components/alerts/AlertsFilled'
+import AlertsActions from 'src/views/components/alerts/AlertsActions'
+import AlertsOutlined from 'src/views/components/alerts/AlertsOutlined'
+import AlertsDescription from 'src/views/components/alerts/AlertsDescription'
+import AlertsDismissible from 'src/views/components/alerts/AlertsDismissible'
 
 // ** Source code imports
-import * as source from 'src/components/components/alerts/AlertSourceCode'
+import * as source from 'src/views/components/alerts/AlertSourceCode'
 
 const Alerts = () => {
   return (

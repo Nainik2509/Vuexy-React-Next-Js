@@ -5,7 +5,7 @@ import { NextPageContext } from 'next/types'
 import { InvoiceLayoutProps } from 'src/types/apps/invoiceTypes'
 
 // ** Demo Components Imports
-import PrintLayout from 'src/components/apps/invoice/print/PrintLayout'
+import PrintLayout from 'src/views/apps/invoice/print/PrintLayout'
 
 const InvoicePrint = ({ id }: InvoiceLayoutProps) => {
   return <PrintLayout id={id || '4987'} />

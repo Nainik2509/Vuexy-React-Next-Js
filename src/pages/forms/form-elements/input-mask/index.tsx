@@ -8,10 +8,10 @@ import PageHeader from 'src/@core/components/page-header'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Example Import
-import InputMaskExamples from 'src/components/forms/form-elements/input-mask/InputMaskExamples'
+import InputMaskExamples from 'src/views/forms/form-elements/input-mask/InputMaskExamples'
 
 // ** Source code imports
-import * as source from 'src/components/forms/form-elements/input-mask/InputMaskSourceCode'
+import * as source from 'src/views/forms/form-elements/input-mask/InputMaskSourceCode'
 
 const InputMask = () => {
   return (

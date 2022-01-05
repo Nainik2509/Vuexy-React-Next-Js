@@ -3,15 +3,15 @@ import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 
 // ** Demo Components Imports
-import Textarea from 'src/components/forms/form-elements/test/Textarea'
-import TextFieldIcons from 'src/components/forms/form-elements/test/TextFieldIcons'
-import SelectVariants from 'src/components/forms/form-elements/test/SelectVariants'
-import SelectMultiple from 'src/components/forms/form-elements/test/SelectMultiple'
-import TextFieldVariant from 'src/components/forms/form-elements/test/TextFieldVariant'
-import TextFieldComponents from 'src/components/forms/form-elements/test/TextFieldComponents'
-import AutocompleteVariants from 'src/components/forms/form-elements/test/AutocompleteVariants'
-import TextFieldInputAdornment from 'src/components/forms/form-elements/test/TextFieldInputAdornment'
-import SelectCustomizedAndGrouping from 'src/components/forms/form-elements/test/SelectCustomizedAndGrouping'
+import Textarea from 'src/views/forms/form-elements/test/Textarea'
+import TextFieldIcons from 'src/views/forms/form-elements/test/TextFieldIcons'
+import SelectVariants from 'src/views/forms/form-elements/test/SelectVariants'
+import SelectMultiple from 'src/views/forms/form-elements/test/SelectMultiple'
+import TextFieldVariant from 'src/views/forms/form-elements/test/TextFieldVariant'
+import TextFieldComponents from 'src/views/forms/form-elements/test/TextFieldComponents'
+import AutocompleteVariants from 'src/views/forms/form-elements/test/AutocompleteVariants'
+import TextFieldInputAdornment from 'src/views/forms/form-elements/test/TextFieldInputAdornment'
+import SelectCustomizedAndGrouping from 'src/views/forms/form-elements/test/SelectCustomizedAndGrouping'
 
 const Test = () => {
   return (

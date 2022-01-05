@@ -6,16 +6,16 @@ import Typography from '@mui/material/Typography'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
-import AvatarsIcon from 'src/components/components/avatars/AvatarsIcon'
-import AvatarsImage from 'src/components/components/avatars/AvatarsImage'
-import AvatarsSizes from 'src/components/components/avatars/AvatarsSizes'
-import AvatarsLetter from 'src/components/components/avatars/AvatarsLetter'
-import AvatarsGrouped from 'src/components/components/avatars/AvatarsGrouped'
-import AvatarsVariants from 'src/components/components/avatars/AvatarsVariants'
-import AvatarsWithBadge from 'src/components/components/avatars/AvatarsWithBadge'
+import AvatarsIcon from 'src/views/components/avatars/AvatarsIcon'
+import AvatarsImage from 'src/views/components/avatars/AvatarsImage'
+import AvatarsSizes from 'src/views/components/avatars/AvatarsSizes'
+import AvatarsLetter from 'src/views/components/avatars/AvatarsLetter'
+import AvatarsGrouped from 'src/views/components/avatars/AvatarsGrouped'
+import AvatarsVariants from 'src/views/components/avatars/AvatarsVariants'
+import AvatarsWithBadge from 'src/views/components/avatars/AvatarsWithBadge'
 
 // ** Source code imports
-import * as source from 'src/components/components/avatars/AvatarsSourceCode'
+import * as source from 'src/views/components/avatars/AvatarsSourceCode'
 
 const Avatars = () => {
   return (

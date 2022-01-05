@@ -6,16 +6,16 @@ import Typography from '@mui/material/Typography'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
-import BadgesDot from 'src/components/components/badges/BadgesDot'
-import BadgesBasic from 'src/components/components/badges/BadgesBasic'
-import BadgesLight from 'src/components/components/badges/BadgesLight'
-import BadgesOverlap from 'src/components/components/badges/BadgesOverlap'
-import BadgesMaxValue from 'src/components/components/badges/BadgesMaxValue'
-import BadgesAlignment from 'src/components/components/badges/BadgesAlignment'
-import BadgesVisibility from 'src/components/components/badges/BadgesVisibility'
+import BadgesDot from 'src/views/components/badges/BadgesDot'
+import BadgesBasic from 'src/views/components/badges/BadgesBasic'
+import BadgesLight from 'src/views/components/badges/BadgesLight'
+import BadgesOverlap from 'src/views/components/badges/BadgesOverlap'
+import BadgesMaxValue from 'src/views/components/badges/BadgesMaxValue'
+import BadgesAlignment from 'src/views/components/badges/BadgesAlignment'
+import BadgesVisibility from 'src/views/components/badges/BadgesVisibility'
 
 // ** Source code imports
-import * as source from 'src/components/components/badges/BadgeSourceCode'
+import * as source from 'src/views/components/badges/BadgeSourceCode'
 
 const Pagination = () => {
   return (

@@ -8,14 +8,14 @@ import Typography from '@mui/material/Typography'
 import PageHeader from 'src/@core/components/page-header'
 
 // ** Demo Components Imports
-import ChartjsBarChart from 'src/components/charts/chartjs/ChartjsBarChart'
-import ChartjsLineChart from 'src/components/charts/chartjs/ChartjsLineChart'
-import ChartjsAreaChart from 'src/components/charts/chartjs/ChartjsAreaChart'
-import ChartjsRadarChart from 'src/components/charts/chartjs/ChartjsRadarChart'
-import ChartjsBubbleChart from 'src/components/charts/chartjs/ChartjsBubbleChart'
-import ChartjsScatterChart from 'src/components/charts/chartjs/ChartjsScatterChart'
-import ChartjsPolarAreaChart from 'src/components/charts/chartjs/ChartjsPolarAreaChart'
-import ChartjsHorizontalBarChart from 'src/components/charts/chartjs/ChartjsHorizontalBarChart'
+import ChartjsBarChart from 'src/views/charts/chartjs/ChartjsBarChart'
+import ChartjsLineChart from 'src/views/charts/chartjs/ChartjsLineChart'
+import ChartjsAreaChart from 'src/views/charts/chartjs/ChartjsAreaChart'
+import ChartjsRadarChart from 'src/views/charts/chartjs/ChartjsRadarChart'
+import ChartjsBubbleChart from 'src/views/charts/chartjs/ChartjsBubbleChart'
+import ChartjsScatterChart from 'src/views/charts/chartjs/ChartjsScatterChart'
+import ChartjsPolarAreaChart from 'src/views/charts/chartjs/ChartjsPolarAreaChart'
+import ChartjsHorizontalBarChart from 'src/views/charts/chartjs/ChartjsHorizontalBarChart'
 
 const ChartJS = () => {
   // ** Hook

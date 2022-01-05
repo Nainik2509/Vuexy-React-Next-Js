@@ -6,19 +6,19 @@ import Typography from '@mui/material/Typography'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
-import DialogForm from 'src/components/components/dialogs/DialogForm'
-import DialogAlert from 'src/components/components/dialogs/DialogAlert'
-import DialogSizes from 'src/components/components/dialogs/DialogSizes'
-import DialogSimple from 'src/components/components/dialogs/DialogSimple'
-import DialogsScroll from 'src/components/components/dialogs/DialogsScroll'
-import DialogTransition from 'src/components/components/dialogs/DialogTransition'
-import DialogCustomized from 'src/components/components/dialogs/DialogCustomized'
-import DialogFullScreen from 'src/components/components/dialogs/DialogFullScreen'
-import DialogConfirmation from 'src/components/components/dialogs/DialogConfirmation'
-import DialogRespoFullScreen from 'src/components/components/dialogs/DialogRespoFullScreen'
+import DialogForm from 'src/views/components/dialogs/DialogForm'
+import DialogAlert from 'src/views/components/dialogs/DialogAlert'
+import DialogSizes from 'src/views/components/dialogs/DialogSizes'
+import DialogSimple from 'src/views/components/dialogs/DialogSimple'
+import DialogsScroll from 'src/views/components/dialogs/DialogsScroll'
+import DialogTransition from 'src/views/components/dialogs/DialogTransition'
+import DialogCustomized from 'src/views/components/dialogs/DialogCustomized'
+import DialogFullScreen from 'src/views/components/dialogs/DialogFullScreen'
+import DialogConfirmation from 'src/views/components/dialogs/DialogConfirmation'
+import DialogRespoFullScreen from 'src/views/components/dialogs/DialogRespoFullScreen'
 
 // ** Source code imports
-import * as source from 'src/components/components/dialogs/DialogSourceCode'
+import * as source from 'src/views/components/dialogs/DialogSourceCode'
 
 const Dialog = () => {
   return (

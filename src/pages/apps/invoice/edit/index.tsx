@@ -5,7 +5,7 @@ import { NextPageContext } from 'next/types'
 import { InvoiceLayoutProps } from 'src/types/apps/invoiceTypes'
 
 // ** Demo Components Imports
-import EditLayout from 'src/components/apps/invoice/edit/EditLayout'
+import EditLayout from 'src/views/apps/invoice/edit/EditLayout'
 
 const InvoiceEdit = ({ id }: InvoiceLayoutProps) => {
   return <EditLayout id={id || '4987'} />

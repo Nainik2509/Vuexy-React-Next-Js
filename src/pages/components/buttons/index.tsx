@@ -6,19 +6,19 @@ import Typography from '@mui/material/Typography'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
-import ButtonsFab from 'src/components/components/buttons/ButtonsFab'
-import ButtonsText from 'src/components/components/buttons/ButtonsText'
-import ButtonsIcons from 'src/components/components/buttons/ButtonsIcons'
-import ButtonsSizes from 'src/components/components/buttons/ButtonsSizes'
-import ButtonsColors from 'src/components/components/buttons/ButtonsColors'
-import ButtonsOutlined from 'src/components/components/buttons/ButtonsOutlined'
-import ButtonsFabSizes from 'src/components/components/buttons/ButtonsFabSizes'
-import ButtonsContained from 'src/components/components/buttons/ButtonsContained'
-import ButtonsCustomized from 'src/components/components/buttons/ButtonsCustomized'
-import ButtonsWithIconAndLabel from 'src/components/components/buttons/ButtonsWithIconAndLabel'
+import ButtonsFab from 'src/views/components/buttons/ButtonsFab'
+import ButtonsText from 'src/views/components/buttons/ButtonsText'
+import ButtonsIcons from 'src/views/components/buttons/ButtonsIcons'
+import ButtonsSizes from 'src/views/components/buttons/ButtonsSizes'
+import ButtonsColors from 'src/views/components/buttons/ButtonsColors'
+import ButtonsOutlined from 'src/views/components/buttons/ButtonsOutlined'
+import ButtonsFabSizes from 'src/views/components/buttons/ButtonsFabSizes'
+import ButtonsContained from 'src/views/components/buttons/ButtonsContained'
+import ButtonsCustomized from 'src/views/components/buttons/ButtonsCustomized'
+import ButtonsWithIconAndLabel from 'src/views/components/buttons/ButtonsWithIconAndLabel'
 
 // ** Source code imports
-import * as source from 'src/components/components/buttons/ButtonsSourceCode'
+import * as source from 'src/views/components/buttons/ButtonsSourceCode'
 
 const Buttons = () => {
   return (

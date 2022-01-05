@@ -8,9 +8,9 @@ import Grid from '@mui/material/Grid'
 import { InvoiceClientType } from 'src/types/apps/invoiceTypes'
 
 // ** Demo Components Imports
-import AddCard from 'src/components/apps/invoice/add/AddCard'
-import AddActions from 'src/components/apps/invoice/add/AddActions'
-import AddNewCustomers from 'src/components/apps/invoice/add/AddNewCustomer'
+import AddCard from 'src/views/apps/invoice/add/AddCard'
+import AddActions from 'src/views/apps/invoice/add/AddActions'
+import AddNewCustomers from 'src/views/apps/invoice/add/AddNewCustomer'
 
 const InvoiceAdd = () => {
   // ** State

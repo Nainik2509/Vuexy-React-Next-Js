@@ -9,7 +9,7 @@ import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 
 // ** Kanban App Component Imports
-import KanbanBoardLayout from 'src/components/apps/kanban/KanbanBoardLayout'
+import KanbanBoardLayout from 'src/views/apps/kanban/KanbanBoardLayout'
 
 // ** Redux Imports
 import { useDispatch, useSelector } from 'react-redux'

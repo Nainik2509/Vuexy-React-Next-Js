@@ -8,11 +8,11 @@ import PageHeader from 'src/@core/components/page-header'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
-import EditorControlled from 'src/components/forms/form-elements/editor/EditorControlled'
-import EditorUncontrolled from 'src/components/forms/form-elements/editor/EditorUncontrolled'
+import EditorControlled from 'src/views/forms/form-elements/editor/EditorControlled'
+import EditorUncontrolled from 'src/views/forms/form-elements/editor/EditorUncontrolled'
 
 // ** Source code imports
-import * as source from 'src/components/forms/form-elements/editor/EditorSourceCode'
+import * as source from 'src/views/forms/form-elements/editor/EditorSourceCode'
 
 // ** Styles
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'

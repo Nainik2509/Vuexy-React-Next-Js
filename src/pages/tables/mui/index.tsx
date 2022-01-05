@@ -9,13 +9,13 @@ import CardHeader from '@mui/material/CardHeader'
 import PageHeader from 'src/@core/components/page-header'
 
 // ** Demo Components Imports
-import TableBasic from 'src/components/table/mui/TableBasic'
-import TableDense from 'src/components/table/mui/TableDense'
-import TableSpanning from 'src/components/table/mui/TableSpanning'
-import TableCustomized from 'src/components/table/mui/TableCustomized'
-import TableSortSelect from 'src/components/table/mui/TableSortSelect'
-import TableCollapsible from 'src/components/table/mui/TableCollapsible'
-import TableStickyHeader from 'src/components/table/mui/TableStickyHeader'
+import TableBasic from 'src/views/table/mui/TableBasic'
+import TableDense from 'src/views/table/mui/TableDense'
+import TableSpanning from 'src/views/table/mui/TableSpanning'
+import TableCustomized from 'src/views/table/mui/TableCustomized'
+import TableSortSelect from 'src/views/table/mui/TableSortSelect'
+import TableCollapsible from 'src/views/table/mui/TableCollapsible'
+import TableStickyHeader from 'src/views/table/mui/TableStickyHeader'
 
 const MUITable = () => {
   return (

@@ -5,7 +5,7 @@ import { NextPageContext } from 'next/types'
 import { UserLayoutType } from 'src/types/apps/userTypes'
 
 // ** Demo Components Imports
-import UserLayout from 'src/components/apps/user/view/UserLayout'
+import UserLayout from 'src/views/apps/user/view/UserLayout'
 
 const UserView = ({ id }: UserLayoutType) => {
   return <UserLayout id={id} />

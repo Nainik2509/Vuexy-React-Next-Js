@@ -34,7 +34,7 @@ import { useDispatch, useSelector } from 'react-redux'
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
 import PageHeader from 'src/@core/components/page-header'
-import TableHeader from 'src/components/apps/permissions/TableHeader'
+import TableHeader from 'src/views/apps/permissions/TableHeader'
 
 // ** Types Imports
 import { RootState } from 'src/store/store'

@@ -16,9 +16,9 @@ import axios from 'axios'
 import { FaqType } from 'src/@fake-db/types'
 
 // ** Demo Imports
-import FaqHeader from 'src/components/pages/faq/FaqHeader'
-import FaqFooter from 'src/components/pages/faq/FaqFooter'
-import FaqAccordions from 'src/components/pages/faq/FaqAccordions'
+import FaqHeader from 'src/views/pages/faq/FaqHeader'
+import FaqFooter from 'src/views/pages/faq/FaqFooter'
+import FaqAccordions from 'src/views/pages/faq/FaqAccordions'
 
 // Styled Box component
 const StyledBox = styled(Box)<BoxProps>(({ theme }) => ({

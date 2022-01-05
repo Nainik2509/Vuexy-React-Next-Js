@@ -3,12 +3,12 @@ import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 
 // ** Demo Components Imports
-import FormLayoutsTabs from 'src/components/forms/form-layouts/FormLayoutsTabs'
-import FormLayoutsBasic from 'src/components/forms/form-layouts/FormLayoutsBasic'
-import FormLayoutsIcons from 'src/components/forms/form-layouts/FormLayoutsIcons'
-import FormLayoutsSeparator from 'src/components/forms/form-layouts/FormLayoutsSeparator'
-import FormLayoutsAlignment from 'src/components/forms/form-layouts/FormLayoutsAlignment'
-import FormLayoutsCollapsible from 'src/components/forms/form-layouts/FormLayoutsCollapsible'
+import FormLayoutsTabs from 'src/views/forms/form-layouts/FormLayoutsTabs'
+import FormLayoutsBasic from 'src/views/forms/form-layouts/FormLayoutsBasic'
+import FormLayoutsIcons from 'src/views/forms/form-layouts/FormLayoutsIcons'
+import FormLayoutsSeparator from 'src/views/forms/form-layouts/FormLayoutsSeparator'
+import FormLayoutsAlignment from 'src/views/forms/form-layouts/FormLayoutsAlignment'
+import FormLayoutsCollapsible from 'src/views/forms/form-layouts/FormLayoutsCollapsible'
 
 const FormLayouts = () => {
   return (

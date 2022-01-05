@@ -9,16 +9,16 @@ import CardSnippet from 'src/@core/components/card-snippet'
 import { useSettings } from 'src/@core/hooks/useSettings'
 
 // ** Demo Components Imports
-import TreeViewBasic from 'src/components/components/tree-view/TreeViewBasic'
-import TreeViewControlled from 'src/components/components/tree-view/TreeViewControlled'
-import TreeViewRichObject from 'src/components/components/tree-view/TreeViewRichObject'
-import TreeViewCustomized from 'src/components/components/tree-view/TreeViewCustomized'
-import TreeViewMultiSelection from 'src/components/components/tree-view/TreeViewMultiSelection'
+import TreeViewBasic from 'src/views/components/tree-view/TreeViewBasic'
+import TreeViewControlled from 'src/views/components/tree-view/TreeViewControlled'
+import TreeViewRichObject from 'src/views/components/tree-view/TreeViewRichObject'
+import TreeViewCustomized from 'src/views/components/tree-view/TreeViewCustomized'
+import TreeViewMultiSelection from 'src/views/components/tree-view/TreeViewMultiSelection'
 
-// import TreeViewGmailClone from 'src/components/components/tree-view/TreeViewGmailClone'
+// import TreeViewGmailClone from 'src/views/components/tree-view/TreeViewGmailClone'
 
 // ** Source code imports
-import * as source from 'src/components/components/tree-view/TreeViewSourceCode'
+import * as source from 'src/views/components/tree-view/TreeViewSourceCode'
 
 const TreeView = () => {
   // ** Hooks

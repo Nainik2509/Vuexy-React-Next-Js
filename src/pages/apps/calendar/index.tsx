@@ -17,10 +17,10 @@ import { RootState } from 'src/store/store'
 import { CalendarColors, CalendarFiltersType } from 'src/types/apps/calendarTypes'
 
 // ** FullCalendar & App Components Imports
-import Calendar from 'src/components/apps/calendar/Calendar'
-import SidebarLeft from 'src/components/apps/calendar/SidebarLeft'
-import AddEventSidebar from 'src/components/apps/calendar/AddEventSidebar'
-import { CalendarWrapper } from 'src/components/apps/calendar/CalendarWrapper'
+import Calendar from 'src/views/apps/calendar/Calendar'
+import SidebarLeft from 'src/views/apps/calendar/SidebarLeft'
+import AddEventSidebar from 'src/views/apps/calendar/AddEventSidebar'
+import { CalendarWrapper } from 'src/views/apps/calendar/CalendarWrapper'
 
 // ** Actions
 import {
