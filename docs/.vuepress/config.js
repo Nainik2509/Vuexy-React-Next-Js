@@ -21,7 +21,7 @@ module.exports = {
         {
           title: 'Getting Started',
           collapsable: false,
-          children: ['/guide/getting-started/support', '/guide/getting-started/gitlab-access']
+          children: ['/guide/getting-started/support', '/guide/getting-started/github-access']
         },
         {
           title: 'Development',
