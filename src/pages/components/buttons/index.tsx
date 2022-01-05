@@ -18,7 +18,7 @@ import ButtonsCustomized from 'src/components/components/buttons/ButtonsCustomiz
 import ButtonsWithIconAndLabel from 'src/components/components/buttons/ButtonsWithIconAndLabel'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/components/ButtonsSourceCode'
+import * as source from 'src/components/components/buttons/ButtonsSourceCode'
 
 const Buttons = () => {
   return (

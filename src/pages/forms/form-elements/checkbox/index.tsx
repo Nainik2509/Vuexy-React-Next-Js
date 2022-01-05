@@ -16,7 +16,7 @@ import CheckboxesLabelPlacement from 'src/components/forms/form-elements/checkbo
 import CheckboxesControlledUncontrolled from 'src/components/forms/form-elements/checkbox/CheckboxesControlledUncontrolled'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/forms/CheckboxesSourceCode'
+import * as source from 'src/components/forms/form-elements/checkbox/CheckboxesSourceCode'
 
 const Checkboxes = () => {
   return (

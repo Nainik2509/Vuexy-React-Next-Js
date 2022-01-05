@@ -18,7 +18,7 @@ import TabsForcedScroll from 'src/components/components/tabs/TabsForcedScroll'
 import TabsCustomizedVertical from 'src/components/components/tabs/TabsCustomizedVertical'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/components/TabsSourceCode'
+import * as source from 'src/components/components/tabs/TabsSourceCode'
 
 const Tabs = () => {
   return (

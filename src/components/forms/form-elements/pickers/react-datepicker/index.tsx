@@ -22,7 +22,7 @@ import PickersMonthYearQuarter from 'src/components/forms/form-elements/pickers/
 import PickersMonthYearDropdowns from 'src/components/forms/form-elements/pickers/react-datepicker/PickersMonthYearDropdowns'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/forms/PickersSourceCode'
+import * as source from 'src/components/forms/form-elements/pickers/react-datepicker/PickersSourceCode'
 
 const ReactDatePicker = () => {
   return (

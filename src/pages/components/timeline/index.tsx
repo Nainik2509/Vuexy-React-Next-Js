@@ -10,7 +10,7 @@ import TimelineCenter from 'src/components/components/timeline/TimelineCenter'
 import TimelineOutlined from 'src/components/components/timeline/TimelineOutlined'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/components/TimelineSourceCode'
+import * as source from 'src/components/components/timeline/TimelineSourceCode'
 
 const TreeView = () => {
   return (

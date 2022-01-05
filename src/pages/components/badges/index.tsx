@@ -15,7 +15,7 @@ import BadgesAlignment from 'src/components/components/badges/BadgesAlignment'
 import BadgesVisibility from 'src/components/components/badges/BadgesVisibility'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/components/BadgeSourceCode'
+import * as source from 'src/components/components/badges/BadgeSourceCode'
 
 const Pagination = () => {
   return (

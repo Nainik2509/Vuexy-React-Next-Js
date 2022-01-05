@@ -24,7 +24,7 @@ import AutocompleteAsynchronousRequest from 'src/components/forms/form-elements/
 import AutocompleteControlledUncontrolled from 'src/components/forms/form-elements/autocomplete/AutocompleteControlledUncontrolled'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/forms/AutocompleteSourceCode'
+import * as source from 'src/components/forms/form-elements/autocomplete/AutocompleteSourceCode'
 
 const Autocomplete = () => {
   return (

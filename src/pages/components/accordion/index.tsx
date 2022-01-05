@@ -12,7 +12,7 @@ import AccordionControlled from 'src/components/components/accordion/AccordionCo
 import AccordionCustomized from 'src/components/components/accordion/AccordionCustomized'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/components/AccordionSourceCode'
+import * as source from 'src/components/components/accordion/AccordionSourceCode'
 
 const Accordion = () => {
   return (

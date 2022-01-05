@@ -17,7 +17,7 @@ import PaginationDisabled from 'src/components/components/pagination/PaginationD
 import PaginationControlled from 'src/components/components/pagination/PaginationControlled'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/components/PaginationSourceCode'
+import * as source from 'src/components/components/pagination/PaginationSourceCode'
 
 // Styled component for Grid container
 const GridContainer = styled(Grid)<GridProps>(({ theme }) => ({

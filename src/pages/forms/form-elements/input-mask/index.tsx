@@ -11,7 +11,7 @@ import CardSnippet from 'src/@core/components/card-snippet'
 import InputMaskExamples from 'src/components/forms/form-elements/input-mask/InputMaskExamples'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/forms/InputMaskSourceCode'
+import * as source from 'src/components/forms/form-elements/input-mask/InputMaskSourceCode'
 
 const InputMask = () => {
   return (

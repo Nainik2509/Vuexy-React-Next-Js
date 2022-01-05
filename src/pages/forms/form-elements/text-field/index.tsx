@@ -20,7 +20,7 @@ import TextFieldInputAdornment from 'src/components/forms/form-elements/text-fie
 import TextFieldControlledUncontrolled from 'src/components/forms/form-elements/text-field/TextFieldControlledUncontrolled'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/forms/TextFieldSourceCode'
+import * as source from 'src/components/forms/form-elements/text-field/TextFieldSourceCode'
 
 const TextFields = () => {
   return (

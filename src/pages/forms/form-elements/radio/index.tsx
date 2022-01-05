@@ -16,7 +16,7 @@ import RadioLabelPlacement from 'src/components/forms/form-elements/radio/RadioL
 import RadioControlledUncontrolled from 'src/components/forms/form-elements/radio/RadioControlledUncontrolled'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/forms/RadioSourceCode'
+import * as source from 'src/components/forms/form-elements/radio/RadioSourceCode'
 
 const Radios = () => {
   return (

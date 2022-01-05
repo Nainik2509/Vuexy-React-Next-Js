@@ -10,7 +10,7 @@ import TextareaBasic from 'src/components/forms/form-elements/textarea/TextareaB
 import TextareaVariant from 'src/components/forms/form-elements/textarea/TextareaVariant'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/forms/TextareaSourceCode'
+import * as source from 'src/components/forms/form-elements/textarea/TextareaSourceCode'
 
 const Textarea = () => {
   return (

@@ -14,7 +14,7 @@ import SnackbarConsecutive from 'src/components/components/snackbar/SnackbarCons
 import SnackbarControlSlideDirection from 'src/components/components/snackbar/SnackbarControlSlideDirection'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/components/SnackbarSourceCode'
+import * as source from 'src/components/components/snackbar/SnackbarSourceCode'
 
 const Snackbar = () => {
   return (

@@ -19,7 +19,7 @@ import ToastMultiLine from 'src/components/components/toast/ToastMultiLine'
 import ToastCustomPosition from 'src/components/components/toast/ToastCustomPosition'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/components/ToastSourceCode'
+import * as source from 'src/components/components/toast/ToastSourceCode'
 
 const ReactHotToasts = () => {
   return (

@@ -12,7 +12,7 @@ import EditorControlled from 'src/components/forms/form-elements/editor/EditorCo
 import EditorUncontrolled from 'src/components/forms/form-elements/editor/EditorUncontrolled'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/forms/EditorSourceCode'
+import * as source from 'src/components/forms/form-elements/editor/EditorSourceCode'
 
 // ** Styles
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'

@@ -15,7 +15,7 @@ import MenuTransition from 'src/components/components/menu/MenuTransition'
 import MenuComposition from 'src/components/components/menu/MenuComposition'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/components/MenuSourceCode'
+import * as source from 'src/components/components/menu/MenuSourceCode'
 
 const Menus = () => {
   return (

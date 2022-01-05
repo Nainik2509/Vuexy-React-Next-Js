@@ -16,7 +16,7 @@ import SelectWithDialog from 'src/components/forms/form-elements/select/SelectWi
 import SelectControlledUncontrolled from 'src/components/forms/form-elements/select/SelectControlledUncontrolled'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/forms/SelectSourceCode'
+import * as source from 'src/components/forms/form-elements/select/SelectSourceCode'
 
 const Selects = () => {
   return (

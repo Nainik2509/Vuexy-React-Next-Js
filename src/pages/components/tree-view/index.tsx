@@ -18,7 +18,7 @@ import TreeViewMultiSelection from 'src/components/components/tree-view/TreeView
 // import TreeViewGmailClone from 'src/components/components/tree-view/TreeViewGmailClone'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/components/TreeViewSourceCode'
+import * as source from 'src/components/components/tree-view/TreeViewSourceCode'
 
 const TreeView = () => {
   // ** Hooks

@@ -13,7 +13,7 @@ import TimePickers from 'src/components/forms/form-elements/pickers/mui/TimePick
 import DateTimePickers from 'src/components/forms/form-elements/pickers/mui/DateTimePickers'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/forms/MuiPickersSourceCode'
+import * as source from 'src/components/forms/form-elements/pickers/mui/MuiPickersSourceCode'
 
 const MUIPickers = () => {
   return (

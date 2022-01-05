@@ -15,7 +15,7 @@ import AvatarsVariants from 'src/components/components/avatars/AvatarsVariants'
 import AvatarsWithBadge from 'src/components/components/avatars/AvatarsWithBadge'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/components/AvatarsSourceCode'
+import * as source from 'src/components/components/avatars/AvatarsSourceCode'
 
 const Avatars = () => {
   return (

@@ -15,7 +15,7 @@ import SwitchesLabelPlacement from 'src/components/forms/form-elements/switch/Sw
 import SwitchesControlledUncontrolled from 'src/components/forms/form-elements/switch/SwitchesControlledUncontrolled'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/forms/SwitchesSourceCode'
+import * as source from 'src/components/forms/form-elements/switch/SwitchesSourceCode'
 
 const Switches = () => {
   return (

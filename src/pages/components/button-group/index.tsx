@@ -20,7 +20,7 @@ import ButtonToggleCustomized from 'src/components/components/button-group/Butto
 import ButtonToggleEnforceValue from 'src/components/components/button-group/ButtonToggleEnforceValue'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/components/ButtonGroupSourceCode'
+import * as source from 'src/components/components/button-group/ButtonGroupSourceCode'
 
 const ButtonGroup = () => {
   return (

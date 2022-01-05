@@ -13,7 +13,7 @@ import RatingsCustomized from 'src/components/components/ratings/RatingsCustomiz
 import RatingsHoverFeedback from 'src/components/components/ratings/RatingsHoverFeedback'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/components/RatingsSourceCode'
+import * as source from 'src/components/components/ratings/RatingsSourceCode'
 
 const Ratings = () => {
   return (

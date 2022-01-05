@@ -18,7 +18,7 @@ import DialogConfirmation from 'src/components/components/dialogs/DialogConfirma
 import DialogRespoFullScreen from 'src/components/components/dialogs/DialogRespoFullScreen'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/components/DialogSourceCode'
+import * as source from 'src/components/components/dialogs/DialogSourceCode'
 
 const Dialog = () => {
   return (

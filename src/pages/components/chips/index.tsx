@@ -18,7 +18,7 @@ import ChipsOnDelete from 'src/components/components/chips/ChipsOnDelete'
 import ChipsClickable from 'src/components/components/chips/ChipsClickable'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/components/ChipsSourceCode'
+import * as source from 'src/components/components/chips/ChipsSourceCode'
 
 const Pagination = () => {
   return (

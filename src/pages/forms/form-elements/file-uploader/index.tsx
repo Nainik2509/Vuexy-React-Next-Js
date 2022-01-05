@@ -13,7 +13,7 @@ import FileUploaderMultiple from 'src/components/forms/form-elements/file-upload
 import FileUploaderRestrictions from 'src/components/forms/form-elements/file-uploader/FileUploaderRestrictions'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/forms/FileUploaderSourceCode'
+import * as source from 'src/components/forms/form-elements/file-uploader/FileUploaderSourceCode'
 
 const FileUploader = () => {
   return (

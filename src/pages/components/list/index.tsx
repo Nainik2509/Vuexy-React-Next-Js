@@ -16,7 +16,7 @@ import ListWithCheckbox from 'src/components/components/list/ListWithCheckbox'
 import ListStickySubheader from 'src/components/components/list/ListStickySubheader'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/components/ListsSourceCode'
+import * as source from 'src/components/components/list/ListsSourceCode'
 
 const Lists = () => {
   return (

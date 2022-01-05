@@ -24,7 +24,7 @@ import SliderLabelAlwaysVisible from 'src/components/forms/form-elements/slider/
 import SliderControlledUncontrolled from 'src/components/forms/form-elements/slider/SliderControlledUncontrolled'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/forms/SliderSourceCode'
+import * as source from 'src/components/forms/form-elements/slider/SliderSourceCode'
 
 const Sliders = () => {
   return (

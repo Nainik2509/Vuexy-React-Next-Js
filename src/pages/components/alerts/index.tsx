@@ -14,7 +14,7 @@ import AlertsDescription from 'src/components/components/alerts/AlertsDescriptio
 import AlertsDismissible from 'src/components/components/alerts/AlertsDismissible'
 
 // ** Source code imports
-import * as source from 'src/sourceCodes/components/AlertSourceCode'
+import * as source from 'src/components/components/alerts/AlertSourceCode'
 
 const Alerts = () => {
   return (
