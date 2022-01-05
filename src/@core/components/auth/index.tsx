@@ -1,5 +1,5 @@
 // ** React Imports
-import { FC, ReactNode, useEffect } from 'react'
+import { ReactNode, useEffect } from 'react'
 
 // ** Prop Type Imports
 import PropTypes from 'prop-types'
@@ -15,7 +15,7 @@ interface AuthGuardProps {
   children: ReactNode
 }
 
-export const AuthGuard: FC<AuthGuardProps> = props => {
+export const AuthGuard = (props: AuthGuardProps) => {
   const { pageProps, children } = props
   const auth = useAuth()
   const router = useRouter()
