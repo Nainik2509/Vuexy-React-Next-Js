@@ -16,7 +16,7 @@ import themeConfig from 'src/configs/themeConfig'
 import { useSettings } from 'src/@core/hooks/useSettings'
 
 // ** Types
-import { RootState } from 'src/store/store'
+import { RootState } from 'src/store'
 import { MailLayoutType, MailLabelColors } from 'src/types/apps/emailTypes'
 
 // ** Email App Component Imports

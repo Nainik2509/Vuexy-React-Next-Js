@@ -15,7 +15,7 @@ import KanbanBoardLayout from 'src/views/apps/kanban/KanbanBoardLayout'
 import { useDispatch, useSelector } from 'react-redux'
 
 // ** Types
-import { RootState } from 'src/store/store'
+import { RootState } from 'src/store'
 
 // ** Actions
 import { fetchBoards, fetchTasks } from 'src/store/apps/kanban'

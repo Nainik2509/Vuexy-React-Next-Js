@@ -44,7 +44,7 @@ import { getInitials } from 'src/@core/utils/get-initials'
 import { fetchData, deleteUser } from 'src/store/apps/user'
 
 // ** Types Imports
-import { RootState } from 'src/store/store'
+import { RootState } from 'src/store'
 import { ThemeColor } from 'src/@core/layouts/types'
 import { UsersType } from 'src/types/apps/userTypes'
 

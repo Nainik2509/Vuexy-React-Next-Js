@@ -37,7 +37,7 @@ import PageHeader from 'src/@core/components/page-header'
 import TableHeader from 'src/views/apps/permissions/TableHeader'
 
 // ** Types Imports
-import { RootState } from 'src/store/store'
+import { RootState } from 'src/store'
 import { PermissionRowType } from 'src/types/apps/permissionTypes'
 
 // ** Actions Imports

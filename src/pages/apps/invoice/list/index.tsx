@@ -44,7 +44,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchData, deleteInvoice } from 'src/store/apps/invoice'
 
 // ** Types Imports
-import { RootState } from 'src/store/store'
+import { RootState } from 'src/store'
 import { ThemeColor } from 'src/@core/layouts/types'
 import { InvoiceType } from 'src/types/apps/invoiceTypes'
 import { DateType } from 'src/types/forms/reactDatepickerTypes'

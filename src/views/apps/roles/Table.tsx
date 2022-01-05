@@ -39,7 +39,7 @@ import { fetchData } from 'src/store/apps/user'
 import DataGridWrapper from 'src/@core/styles/mui/components/datagrid'
 
 // ** Types Imports
-import { RootState } from 'src/store/store'
+import { RootState } from 'src/store'
 import { UsersType } from 'src/types/apps/userTypes'
 import { ThemeColor } from 'src/@core/layouts/types'
 

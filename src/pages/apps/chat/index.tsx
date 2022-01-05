@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { sendMsg, selectChat, fetchUserProfile, fetchChatsContacts } from 'src/store/apps/chat'
 
 // ** Types
-import { RootState } from 'src/store/store'
+import { RootState } from 'src/store'
 import { StatusObjType, StatusType } from 'src/types/apps/chatTypes'
 
 // ** Configs Imports
