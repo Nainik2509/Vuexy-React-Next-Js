@@ -18,7 +18,7 @@ import { useForm, Controller } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
 
 // ** Actions
-import { addBoard } from 'src/redux/apps/kanban'
+import { addBoard } from 'src/store/apps/kanban'
 
 // ** Types
 import { BoardType, LabelColorsType, KanbanBoardLayoutProps, AddNewBoardType } from 'src/types/apps/kanbanTypes'

@@ -16,7 +16,7 @@ import themeConfig from 'src/configs/themeConfig'
 import { useSettings } from 'src/@core/hooks/useSettings'
 
 // ** Types
-import { RootState } from 'src/redux/store'
+import { RootState } from 'src/store/store'
 import { MailLayoutType, MailLabelColors } from 'src/types/apps/emailTypes'
 
 // ** Email App Component Imports
@@ -33,7 +33,7 @@ import {
   updateMailLabel,
   handleSelectMail,
   handleSelectAllMail
-} from 'src/redux/apps/email'
+} from 'src/store/apps/email'
 
 // ** Variables
 const labelColors: MailLabelColors = {

@@ -41,10 +41,10 @@ import CustomAvatar from 'src/@core/components/mui/avatar'
 import { getInitials } from 'src/@core/utils/get-initials'
 
 // ** Actions Imports
-import { fetchData, deleteUser } from 'src/redux/apps/user'
+import { fetchData, deleteUser } from 'src/store/apps/user'
 
 // ** Types Imports
-import { RootState } from 'src/redux/store'
+import { RootState } from 'src/store/store'
 import { ThemeColor } from 'src/@core/layouts/types'
 import { UsersType } from 'src/types/apps/userTypes'
 

@@ -8,10 +8,10 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 
 // ** Store & Actions Imports
 import { useDispatch, useSelector } from 'react-redux'
-import { sendMsg, selectChat, fetchUserProfile, fetchChatsContacts } from 'src/redux/apps/chat'
+import { sendMsg, selectChat, fetchUserProfile, fetchChatsContacts } from 'src/store/apps/chat'
 
 // ** Types
-import { RootState } from 'src/redux/store'
+import { RootState } from 'src/store/store'
 import { StatusObjType, StatusType } from 'src/types/apps/chatTypes'
 
 // ** Configs Imports

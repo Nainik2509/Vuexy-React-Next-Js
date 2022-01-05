@@ -23,7 +23,7 @@ import { useDrag } from 'react-dnd'
 import { useDispatch } from 'react-redux'
 
 // ** Actions
-import { handleSelectTask } from 'src/redux/apps/kanban'
+import { handleSelectTask } from 'src/store/apps/kanban'
 
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'

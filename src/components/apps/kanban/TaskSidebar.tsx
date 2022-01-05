@@ -41,7 +41,7 @@ import { TaskSidebarProps, AssigneeMenuItems } from 'src/types/apps/kanbanTypes'
 import { useDispatch } from 'react-redux'
 
 // ** Actions
-import { updateTask, handleSelectTask } from 'src/redux/apps/kanban'
+import { updateTask, handleSelectTask } from 'src/store/apps/kanban'
 
 // ** Styled Components
 import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'

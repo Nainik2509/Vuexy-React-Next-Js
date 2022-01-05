@@ -33,13 +33,13 @@ import CustomAvatar from 'src/@core/components/mui/avatar'
 import { getInitials } from 'src/@core/utils/get-initials'
 
 // ** Actions Imports
-import { fetchData } from 'src/redux/apps/user'
+import { fetchData } from 'src/store/apps/user'
 
 // ** Styled Components
 import DataGridWrapper from 'src/@core/styles/mui/components/datagrid'
 
 // ** Types Imports
-import { RootState } from 'src/redux/store'
+import { RootState } from 'src/store/store'
 import { UsersType } from 'src/types/apps/userTypes'
 import { ThemeColor } from 'src/@core/layouts/types'
 

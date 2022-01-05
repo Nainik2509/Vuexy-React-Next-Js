@@ -2,13 +2,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 
 // ** Reducers
-import chat from 'src/redux/apps/chat'
-import user from 'src/redux/apps/user'
-import email from 'src/redux/apps/email'
-import kanban from 'src/redux/apps/kanban'
-import invoice from 'src/redux/apps/invoice'
-import calendar from 'src/redux/apps/calendar'
-import permissions from 'src/redux/apps/permissions'
+import chat from 'src/store/apps/chat'
+import user from 'src/store/apps/user'
+import email from 'src/store/apps/email'
+import kanban from 'src/store/apps/kanban'
+import invoice from 'src/store/apps/invoice'
+import calendar from 'src/store/apps/calendar'
+import permissions from 'src/store/apps/permissions'
 
 export const store = configureStore({
   reducer: {

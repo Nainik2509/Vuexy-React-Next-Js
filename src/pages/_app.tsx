@@ -5,7 +5,7 @@ import Router, { useRouter } from 'next/router'
 import type { AppProps } from 'next/app'
 
 // ** Store Imports
-import { store } from 'src/redux/store'
+import { store } from 'src/store/store'
 import { Provider } from 'react-redux'
 
 // ** Loader Improt

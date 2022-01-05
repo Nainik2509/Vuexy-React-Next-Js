@@ -41,10 +41,10 @@ import DatePicker from 'react-datepicker'
 
 // ** Store & Actions Imports
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchData, deleteInvoice } from 'src/redux/apps/invoice'
+import { fetchData, deleteInvoice } from 'src/store/apps/invoice'
 
 // ** Types Imports
-import { RootState } from 'src/redux/store'
+import { RootState } from 'src/store/store'
 import { ThemeColor } from 'src/@core/layouts/types'
 import { InvoiceType } from 'src/types/apps/invoiceTypes'
 import { DateType } from 'src/types/forms/reactDatepickerTypes'

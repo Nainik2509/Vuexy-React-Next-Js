@@ -24,7 +24,7 @@ import { useForm, Controller } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
 
 // ** Actions
-import { clearTasks, deleteBoard, addTask, updateTask } from 'src/redux/apps/kanban'
+import { clearTasks, deleteBoard, addTask, updateTask } from 'src/store/apps/kanban'
 
 // ** Types
 import { KanbanTaskType, KanbanBoardProps, AddNewTaskType } from 'src/types/apps/kanbanTypes'

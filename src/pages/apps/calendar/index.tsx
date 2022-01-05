@@ -13,7 +13,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useSettings } from 'src/@core/hooks/useSettings'
 
 // ** Types
-import { RootState } from 'src/redux/store'
+import { RootState } from 'src/store/store'
 import { CalendarColors, CalendarFiltersType } from 'src/types/apps/calendarTypes'
 
 // ** FullCalendar & App Components Imports
@@ -31,7 +31,7 @@ import {
   handleSelectEvent,
   handleAllCalendars,
   handleCalendarsUpdate
-} from 'src/redux/apps/calendar'
+} from 'src/store/apps/calendar'
 
 // ** CalendarColors
 const calendarsColor: CalendarColors = {

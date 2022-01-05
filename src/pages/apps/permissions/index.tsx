@@ -37,11 +37,11 @@ import PageHeader from 'src/@core/components/page-header'
 import TableHeader from 'src/components/apps/permissions/TableHeader'
 
 // ** Types Imports
-import { RootState } from 'src/redux/store'
+import { RootState } from 'src/store/store'
 import { PermissionRowType } from 'src/types/apps/permissionTypes'
 
 // ** Actions Imports
-import { fetchData } from 'src/redux/apps/permissions'
+import { fetchData } from 'src/store/apps/permissions'
 
 // ** Types
 import { ThemeColor } from 'src/@core/layouts/types'
