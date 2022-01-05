@@ -1,7 +1,4 @@
-export const TextareaVariantCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`
-// ** React Imports
+export const TextareaVariantCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { ChangeEvent, useState } from 'react'
 
 // ** MUI Imports
@@ -87,12 +84,8 @@ const TextareaVariant = () => {
 }
 
 export default TextareaVariant
-`}</code>
-  </pre>
-)
-export const TextareaBasicCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
+`}</code></pre>) 
+export const TextareaBasicCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import TextareaAutosize from '@mui/material/TextareaAutosize'
@@ -124,6 +117,4 @@ const TextareaBasic = () => {
 }
 
 export default TextareaBasic
-`}</code>
-  </pre>
-)
+`}</code></pre>) 

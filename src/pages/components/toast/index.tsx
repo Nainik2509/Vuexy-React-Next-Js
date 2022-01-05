@@ -36,47 +36,47 @@ const ReactHotToasts = () => {
           }
         />
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastBlank}>
+          <CardSnippet title='' code={source.ToastBlankCode}>
             <ToastBlank />
           </CardSnippet>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastMultiLine}>
+          <CardSnippet title='' code={source.ToastMultiLineCode}>
             <ToastMultiLine />
           </CardSnippet>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastSuccess}>
+          <CardSnippet title='' code={source.ToastSuccessCode}>
             <ToastSuccess />
           </CardSnippet>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastError}>
+          <CardSnippet title='' code={source.ToastErrorCode}>
             <ToastError />
           </CardSnippet>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastPromise}>
+          <CardSnippet title='' code={source.ToastPromiseCode}>
             <ToastPromise />
           </CardSnippet>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastEmoji}>
+          <CardSnippet title='' code={source.ToastEmojiCode}>
             <ToastEmoji />
           </CardSnippet>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastThemed}>
+          <CardSnippet title='' code={source.ToastThemedCode}>
             <ToastThemed />
           </CardSnippet>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastCustom}>
+          <CardSnippet title='' code={source.ToastCustomCode}>
             <ToastCustom />
           </CardSnippet>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastCustomPosition}>
+          <CardSnippet title='' code={source.ToastCustomPositionCode}>
             <ToastCustomPosition />
           </CardSnippet>
         </Grid>

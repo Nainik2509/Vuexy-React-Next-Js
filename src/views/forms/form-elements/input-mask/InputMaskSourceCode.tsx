@@ -1,6 +1,4 @@
-export const InputMaskExamplesCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
+export const InputMaskExamplesCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Grid from '@mui/material/Grid'
 import InputLabel from '@mui/material/InputLabel'
 
@@ -107,6 +105,4 @@ const InputMaskExamples = () => {
 }
 
 export default InputMaskExamples
-`}</code>
-  </pre>
-)
+`}</code></pre>) 

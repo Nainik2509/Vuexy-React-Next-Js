@@ -1,134 +1,4 @@
-export const TabsCustomizedCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { SyntheticEvent, useState } from 'react'
-
-// ** MUI Imports
-import Tab from '@mui/material/Tab'
-import TabPanel from '@mui/lab/TabPanel'
-import TabContext from '@mui/lab/TabContext'
-import { styled } from '@mui/material/styles'
-import Typography from '@mui/material/Typography'
-import MuiTabList, { TabListProps } from '@mui/lab/TabList'
-
-// Styled TabList component
-const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
-  '& .MuiTabs-indicator': {
-    backgroundColor: 'transparent'
-  },
-  '& .Mui-selected': {
-    backgroundColor: theme.palette.primary.main,
-    color: {theme.palette.common.white} !important
-  },
-  '& .MuiTab-root': {
-    minHeight: 38,
-    minWidth: 130,
-    borderRadius: theme.shape.borderRadius
-  }
-}))
-
-const TabsCustomized = () => {
-  // ** State
-  const [value, setValue] = useState<string>('1')
-
-  const handleChange = (event: SyntheticEvent, newValue: string) => {
-    setValue(newValue)
-  }
-
-  return (
-    <TabContext value={value}>
-      <TabList onChange={handleChange} aria-label='customized tabs example'>
-        <Tab value='1' label='Tab 1' />
-        <Tab value='2' label='Tab 2' />
-        <Tab value='3' label='Tab 3' />
-      </TabList>
-      <TabPanel value='1'>
-        <Typography>
-          Cake apple pie chupa chups biscuit liquorice tootsie roll liquorice sugar plum. Cotton candy wafer wafer jelly
-          cake caramels brownie gummies.
-        </Typography>
-      </TabPanel>
-      <TabPanel value='2'>
-        <Typography>
-          Chocolate bar carrot cake candy canes sesame snaps. Cupcake pie gummi bears jujubes candy canes. Chupa chups
-          sesame snaps halvah.
-        </Typography>
-      </TabPanel>
-      <TabPanel value='3'>
-        <Typography>
-          Danish tiramisu jujubes cupcake chocolate bar cake cheesecake chupa chups. Macaroon ice cream tootsie roll
-          carrot cake gummi bears.
-        </Typography>
-      </TabPanel>
-    </TabContext>
-  )
-}
-
-export default TabsCustomized
-`}</code>
-  </pre>
-)
-export const TabsColorCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { SyntheticEvent, useState } from 'react'
-
-// ** MUI Imports
-import Tab from '@mui/material/Tab'
-import TabList from '@mui/lab/TabList'
-import TabPanel from '@mui/lab/TabPanel'
-import TabContext from '@mui/lab/TabContext'
-import Typography from '@mui/material/Typography'
-
-const TabsColor = () => {
-  // ** State
-  const [value, setValue] = useState<string>('1')
-
-  const handleChange = (event: SyntheticEvent, newValue: string) => {
-    setValue(newValue)
-  }
-
-  return (
-    <TabContext value={value}>
-      <TabList
-        textColor='secondary'
-        onChange={handleChange}
-        indicatorColor='secondary'
-        aria-label='secondary tabs example'
-      >
-        <Tab value='1' label='Tab 1' />
-        <Tab value='2' label='Tab 2' />
-        <Tab disabled value='3' label='Disabled' />
-      </TabList>
-      <TabPanel value='1'>
-        <Typography>
-          Cake apple pie chupa chups biscuit liquorice tootsie roll liquorice sugar plum. Cotton candy wafer wafer jelly
-          cake caramels brownie gummies.
-        </Typography>
-      </TabPanel>
-      <TabPanel value='2'>
-        <Typography>
-          Chocolate bar carrot cake candy canes sesame snaps. Cupcake pie gummi bears jujubes candy canes. Chupa chups
-          sesame snaps halvah.
-        </Typography>
-      </TabPanel>
-      <TabPanel value='3'>
-        <Typography>
-          Danish tiramisu jujubes cupcake chocolate bar cake cheesecake chupa chups. Macaroon ice cream tootsie roll
-          carrot cake gummi bears.
-        </Typography>
-      </TabPanel>
-    </TabContext>
-  )
-}
-
-export default TabsColor
-`}</code>
-  </pre>
-)
-export const TabsCenteredCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
+export const TabsCenteredCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
@@ -176,12 +46,79 @@ const TabsCentered = () => {
 }
 
 export default TabsCentered
-`}</code>
-  </pre>
-)
-export const TabsForcedScrollCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
+`}</code></pre>) 
+export const TabsCustomizedVerticalCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { SyntheticEvent, useState } from 'react'
+
+// ** MUI Imports
+import Box from '@mui/material/Box'
+import Tab from '@mui/material/Tab'
+import TabPanel from '@mui/lab/TabPanel'
+import TabContext from '@mui/lab/TabContext'
+import { styled } from '@mui/material/styles'
+import Typography from '@mui/material/Typography'
+import MuiTabList, { TabListProps } from '@mui/lab/TabList'
+
+// Styled TabList component
+const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
+  border: 0,
+  '& .MuiTabs-indicator': {
+    backgroundColor: 'transparent'
+  },
+  '& .Mui-selected': {
+    backgroundColor: theme.palette.primary.main,
+    color: {theme.palette.common.white} !important
+  },
+  '& .MuiTab-root': {
+    minHeight: 38,
+    minWidth: 130,
+    margin: theme.spacing(1, 0),
+    borderRadius: theme.shape.borderRadius
+  }
+}))
+
+const TabsCustomizedVertical = () => {
+  // ** State
+  const [value, setValue] = useState<string>('1')
+
+  const handleChange = (event: SyntheticEvent, newValue: string) => {
+    setValue(newValue)
+  }
+
+  return (
+    <TabContext value={value}>
+      <Box sx={{ display: 'flex' }}>
+        <TabList orientation='vertical' onChange={handleChange} aria-label='customized vertical tabs example'>
+          <Tab value='1' label='Tab 1' />
+          <Tab value='2' label='Tab 2' />
+          <Tab value='3' label='Tab 3' />
+        </TabList>
+        <TabPanel value='1'>
+          <Typography>
+            Cake apple pie chupa chups biscuit liquorice tootsie roll liquorice sugar plum. Cotton candy wafer wafer
+            jelly cake caramels brownie gummies.
+          </Typography>
+        </TabPanel>
+        <TabPanel value='2'>
+          <Typography>
+            Chocolate bar carrot cake candy canes sesame snaps. Cupcake pie gummi bears jujubes candy canes. Chupa chups
+            sesame snaps halvah.
+          </Typography>
+        </TabPanel>
+        <TabPanel value='3'>
+          <Typography>
+            Danish tiramisu jujubes cupcake chocolate bar cake cheesecake chupa chups. Macaroon ice cream tootsie roll
+            carrot cake gummi bears.
+          </Typography>
+        </TabPanel>
+      </Box>
+    </TabContext>
+  )
+}
+
+export default TabsCustomizedVertical
+`}</code></pre>) 
+export const TabsForcedScrollCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
@@ -250,16 +187,11 @@ const TabsForcedScroll = () => {
 }
 
 export default TabsForcedScroll
-`}</code>
-  </pre>
-)
-export const TabsCustomizedVerticalCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
+`}</code></pre>) 
+export const TabsCustomizedCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
-import Box from '@mui/material/Box'
 import Tab from '@mui/material/Tab'
 import TabPanel from '@mui/lab/TabPanel'
 import TabContext from '@mui/lab/TabContext'
@@ -279,12 +211,11 @@ const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
   '& .MuiTab-root': {
     minHeight: 38,
     minWidth: 130,
-    margin: theme.spacing(1, 0),
     borderRadius: theme.shape.borderRadius
   }
 }))
 
-const TabsCustomizedVertical = () => {
+const TabsCustomized = () => {
   // ** State
   const [value, setValue] = useState<string>('1')
 
@@ -294,42 +225,206 @@ const TabsCustomizedVertical = () => {
 
   return (
     <TabContext value={value}>
-      <Box sx={{ display: 'flex' }}>
-        <TabList orientation='vertical' onChange={handleChange} aria-label='customized vertical tabs example'>
-          <Tab value='1' label='Tab 1' />
-          <Tab value='2' label='Tab 2' />
-          <Tab value='3' label='Tab 3' />
-        </TabList>
-        <TabPanel value='1'>
-          <Typography>
-            Cake apple pie chupa chups biscuit liquorice tootsie roll liquorice sugar plum. Cotton candy wafer wafer
-            jelly cake caramels brownie gummies.
-          </Typography>
-        </TabPanel>
-        <TabPanel value='2'>
-          <Typography>
-            Chocolate bar carrot cake candy canes sesame snaps. Cupcake pie gummi bears jujubes candy canes. Chupa chups
-            sesame snaps halvah.
-          </Typography>
-        </TabPanel>
-        <TabPanel value='3'>
-          <Typography>
-            Danish tiramisu jujubes cupcake chocolate bar cake cheesecake chupa chups. Macaroon ice cream tootsie roll
-            carrot cake gummi bears.
-          </Typography>
-        </TabPanel>
-      </Box>
+      <TabList onChange={handleChange} aria-label='customized tabs example'>
+        <Tab value='1' label='Tab 1' />
+        <Tab value='2' label='Tab 2' />
+        <Tab value='3' label='Tab 3' />
+      </TabList>
+      <TabPanel value='1'>
+        <Typography>
+          Cake apple pie chupa chups biscuit liquorice tootsie roll liquorice sugar plum. Cotton candy wafer wafer jelly
+          cake caramels brownie gummies.
+        </Typography>
+      </TabPanel>
+      <TabPanel value='2'>
+        <Typography>
+          Chocolate bar carrot cake candy canes sesame snaps. Cupcake pie gummi bears jujubes candy canes. Chupa chups
+          sesame snaps halvah.
+        </Typography>
+      </TabPanel>
+      <TabPanel value='3'>
+        <Typography>
+          Danish tiramisu jujubes cupcake chocolate bar cake cheesecake chupa chups. Macaroon ice cream tootsie roll
+          carrot cake gummi bears.
+        </Typography>
+      </TabPanel>
     </TabContext>
   )
 }
 
-export default TabsCustomizedVertical
-`}</code>
-  </pre>
-)
-export const TabsIconCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
+export default TabsCustomized
+`}</code></pre>) 
+export const TabsNavCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { MouseEvent, SyntheticEvent, useState } from 'react'
+
+// ** MUI Imports
+import Tab from '@mui/material/Tab'
+import TabList from '@mui/lab/TabList'
+import TabPanel from '@mui/lab/TabPanel'
+import TabContext from '@mui/lab/TabContext'
+import Typography from '@mui/material/Typography'
+
+const TabsNav = () => {
+  // ** State
+  const [value, setValue] = useState<string>('1')
+
+  const handleChange = (event: SyntheticEvent, newValue: string) => {
+    setValue(newValue)
+  }
+
+  return (
+    <TabContext value={value}>
+      <TabList onChange={handleChange} aria-label='nav tabs example'>
+        <Tab
+          value='1'
+          component='a'
+          label='Tab 1'
+          href='/drafts'
+          onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}
+        />
+        <Tab
+          value='2'
+          component='a'
+          label='Tab 2'
+          href='/trash'
+          onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}
+        />
+        <Tab
+          value='3'
+          component='a'
+          label='Tab 3'
+          href='/spam'
+          onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}
+        />
+      </TabList>
+      <TabPanel value='1'>
+        <Typography>
+          Cake apple pie chupa chups biscuit liquorice tootsie roll liquorice sugar plum. Cotton candy wafer wafer jelly
+          cake caramels brownie gummies.
+        </Typography>
+      </TabPanel>
+      <TabPanel value='2'>
+        <Typography>
+          Chocolate bar carrot cake candy canes sesame snaps. Cupcake pie gummi bears jujubes candy canes. Chupa chups
+          sesame snaps halvah.
+        </Typography>
+      </TabPanel>
+      <TabPanel value='3'>
+        <Typography>
+          Danish tiramisu jujubes cupcake chocolate bar cake cheesecake chupa chups. Macaroon ice cream tootsie roll
+          carrot cake gummi bears.
+        </Typography>
+      </TabPanel>
+    </TabContext>
+  )
+}
+
+export default TabsNav
+`}</code></pre>) 
+export const TabsFullWidthCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { SyntheticEvent, useState } from 'react'
+
+// ** MUI Imports
+import Tab from '@mui/material/Tab'
+import TabList from '@mui/lab/TabList'
+import TabPanel from '@mui/lab/TabPanel'
+import TabContext from '@mui/lab/TabContext'
+import Typography from '@mui/material/Typography'
+
+const TabsFullWidth = () => {
+  // ** State
+  const [value, setValue] = useState<string>('1')
+
+  const handleChange = (event: SyntheticEvent, newValue: string) => {
+    setValue(newValue)
+  }
+
+  return (
+    <TabContext value={value}>
+      <TabList variant='fullWidth' onChange={handleChange} aria-label='full width tabs example'>
+        <Tab value='1' label='Tab 1' />
+        <Tab value='2' label='Tab 2' />
+        <Tab value='3' label='Tab 3' />
+      </TabList>
+      <TabPanel value='1'>
+        <Typography>
+          Cake apple pie chupa chups biscuit liquorice tootsie roll liquorice sugar plum. Cotton candy wafer wafer jelly
+          cake caramels brownie gummies.
+        </Typography>
+      </TabPanel>
+      <TabPanel value='2'>
+        <Typography>
+          Chocolate bar carrot cake candy canes sesame snaps. Cupcake pie gummi bears jujubes candy canes. Chupa chups
+          sesame snaps halvah.
+        </Typography>
+      </TabPanel>
+      <TabPanel value='3'>
+        <Typography>
+          Danish tiramisu jujubes cupcake chocolate bar cake cheesecake chupa chups. Macaroon ice cream tootsie roll
+          carrot cake gummi bears.
+        </Typography>
+      </TabPanel>
+    </TabContext>
+  )
+}
+
+export default TabsFullWidth
+`}</code></pre>) 
+export const TabsColorCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { SyntheticEvent, useState } from 'react'
+
+// ** MUI Imports
+import Tab from '@mui/material/Tab'
+import TabList from '@mui/lab/TabList'
+import TabPanel from '@mui/lab/TabPanel'
+import TabContext from '@mui/lab/TabContext'
+import Typography from '@mui/material/Typography'
+
+const TabsColor = () => {
+  // ** State
+  const [value, setValue] = useState<string>('1')
+
+  const handleChange = (event: SyntheticEvent, newValue: string) => {
+    setValue(newValue)
+  }
+
+  return (
+    <TabContext value={value}>
+      <TabList
+        textColor='secondary'
+        onChange={handleChange}
+        indicatorColor='secondary'
+        aria-label='secondary tabs example'
+      >
+        <Tab value='1' label='Tab 1' />
+        <Tab value='2' label='Tab 2' />
+        <Tab disabled value='3' label='Disabled' />
+      </TabList>
+      <TabPanel value='1'>
+        <Typography>
+          Cake apple pie chupa chups biscuit liquorice tootsie roll liquorice sugar plum. Cotton candy wafer wafer jelly
+          cake caramels brownie gummies.
+        </Typography>
+      </TabPanel>
+      <TabPanel value='2'>
+        <Typography>
+          Chocolate bar carrot cake candy canes sesame snaps. Cupcake pie gummi bears jujubes candy canes. Chupa chups
+          sesame snaps halvah.
+        </Typography>
+      </TabPanel>
+      <TabPanel value='3'>
+        <Typography>
+          Danish tiramisu jujubes cupcake chocolate bar cake cheesecake chupa chups. Macaroon ice cream tootsie roll
+          carrot cake gummi bears.
+        </Typography>
+      </TabPanel>
+    </TabContext>
+  )
+}
+
+export default TabsColor
+`}</code></pre>) 
+export const TabsIconCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
@@ -382,12 +477,8 @@ const TabsIcon = () => {
 }
 
 export default TabsIcon
-`}</code>
-  </pre>
-)
-export const TabsVerticalCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
+`}</code></pre>) 
+export const TabsVerticalCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
@@ -438,124 +529,8 @@ const TabsVertical = () => {
 }
 
 export default TabsVertical
-`}</code>
-  </pre>
-)
-export const TabsNavCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { MouseEvent, SyntheticEvent, useState } from 'react'
-
-// ** MUI Imports
-import Tab from '@mui/material/Tab'
-import TabList from '@mui/lab/TabList'
-import TabPanel from '@mui/lab/TabPanel'
-import TabContext from '@mui/lab/TabContext'
-import Typography from '@mui/material/Typography'
-
-const TabsNav = () => {
-  // ** State
-  const [value, setValue] = useState<string>('1')
-
-  const handleChange = (event: SyntheticEvent, newValue: string) => {
-    setValue(newValue)
-  }
-
-  return (
-    <TabContext value={value}>
-      <TabList onChange={handleChange} aria-label='nav tabs example'>
-        <Tab
-          value='1'
-          component='a'
-          label='Tab 1'
-          href='/drafts'
-          onClick={(e: MouseEvent<any>) => e.preventDefault()}
-        />
-        <Tab value='2' component='a' label='Tab 2' href='/trash' onClick={(e: MouseEvent<any>) => e.preventDefault()} />
-        <Tab value='3' component='a' label='Tab 3' href='/spam' onClick={(e: MouseEvent<any>) => e.preventDefault()} />
-      </TabList>
-      <TabPanel value='1'>
-        <Typography>
-          Cake apple pie chupa chups biscuit liquorice tootsie roll liquorice sugar plum. Cotton candy wafer wafer jelly
-          cake caramels brownie gummies.
-        </Typography>
-      </TabPanel>
-      <TabPanel value='2'>
-        <Typography>
-          Chocolate bar carrot cake candy canes sesame snaps. Cupcake pie gummi bears jujubes candy canes. Chupa chups
-          sesame snaps halvah.
-        </Typography>
-      </TabPanel>
-      <TabPanel value='3'>
-        <Typography>
-          Danish tiramisu jujubes cupcake chocolate bar cake cheesecake chupa chups. Macaroon ice cream tootsie roll
-          carrot cake gummi bears.
-        </Typography>
-      </TabPanel>
-    </TabContext>
-  )
-}
-
-export default TabsNav
-`}</code>
-  </pre>
-)
-export const TabsFullWidthCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { SyntheticEvent, useState } from 'react'
-
-// ** MUI Imports
-import Tab from '@mui/material/Tab'
-import TabList from '@mui/lab/TabList'
-import TabPanel from '@mui/lab/TabPanel'
-import TabContext from '@mui/lab/TabContext'
-import Typography from '@mui/material/Typography'
-
-const TabsFullWidth = () => {
-  // ** State
-  const [value, setValue] = useState<string>('1')
-
-  const handleChange = (event: SyntheticEvent, newValue: string) => {
-    setValue(newValue)
-  }
-
-  return (
-    <TabContext value={value}>
-      <TabList variant='fullWidth' onChange={handleChange} aria-label='full width tabs example'>
-        <Tab value='1' label='Tab 1' />
-        <Tab value='2' label='Tab 2' />
-        <Tab value='3' label='Tab 3' />
-      </TabList>
-      <TabPanel value='1'>
-        <Typography>
-          Cake apple pie chupa chups biscuit liquorice tootsie roll liquorice sugar plum. Cotton candy wafer wafer jelly
-          cake caramels brownie gummies.
-        </Typography>
-      </TabPanel>
-      <TabPanel value='2'>
-        <Typography>
-          Chocolate bar carrot cake candy canes sesame snaps. Cupcake pie gummi bears jujubes candy canes. Chupa chups
-          sesame snaps halvah.
-        </Typography>
-      </TabPanel>
-      <TabPanel value='3'>
-        <Typography>
-          Danish tiramisu jujubes cupcake chocolate bar cake cheesecake chupa chups. Macaroon ice cream tootsie roll
-          carrot cake gummi bears.
-        </Typography>
-      </TabPanel>
-    </TabContext>
-  )
-}
-
-export default TabsFullWidth
-`}</code>
-  </pre>
-)
-export const TabsSimpleCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
+`}</code></pre>) 
+export const TabsSimpleCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
@@ -603,6 +578,4 @@ const TabsSimple = () => {
 }
 
 export default TabsSimple
-`}</code>
-  </pre>
-)
+`}</code></pre>) 

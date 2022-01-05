@@ -1,6 +1,4 @@
-export const BadgesAlignmentCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
+export const BadgesAlignmentCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Badge from '@mui/material/Badge'
 import Avatar from '@mui/material/Avatar'
 
@@ -24,39 +22,8 @@ const BadgesAlignment = () => {
 }
 
 export default BadgesAlignment
-`}</code>
-  </pre>
-)
-export const BadgesDotCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Badge from '@mui/material/Badge'
-import Avatar from '@mui/material/Avatar'
-import Typography from '@mui/material/Typography'
-
-const BadgesDot = () => {
-  return (
-    <div className='demo-space-x'>
-      <Badge variant='dot' color='primary'>
-        <Avatar src='/images/avatars/2.png' alt='User Avatar' />
-      </Badge>
-      <Badge variant='dot' color='secondary'>
-        <Avatar src='/images/avatars/2.png' alt='User Avatar' />
-      </Badge>
-      <Badge variant='dot' color='error'>
-        <Typography>Typography</Typography>
-      </Badge>
-    </div>
-  )
-}
-
-export default BadgesDot
-`}</code>
-  </pre>
-)
-export const BadgesLightCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
+`}</code></pre>) 
+export const BadgesLightCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Avatar from '@mui/material/Avatar'
 import { styled } from '@mui/material/styles'
 
@@ -96,49 +63,62 @@ const BadgesLight = () => {
 }
 
 export default BadgesLight
-`}</code>
-  </pre>
-)
-export const BadgesOverlapCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
+`}</code></pre>) 
+export const BadgesDotCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Badge from '@mui/material/Badge'
 import Avatar from '@mui/material/Avatar'
-import { styled } from '@mui/material/styles'
+import Typography from '@mui/material/Typography'
 
-// Styled component for the wrapper
-const Wrapper = styled('div')(({ theme }) => ({
-  '& > *': {
-    marginRight: {theme.spacing(6)} !important
-  }
-}))
-
-const BadgesOverlap = () => {
+const BadgesDot = () => {
   return (
-    <Wrapper className='demo-space-x'>
-      <Badge color='primary' badgeContent=' '>
-        <Avatar src='/images/avatars/7.png' alt='User Avatar' variant='square' />
+    <div className='demo-space-x'>
+      <Badge variant='dot' color='primary'>
+        <Avatar src='/images/avatars/2.png' alt='User Avatar' />
       </Badge>
-      <Badge color='primary' variant='dot'>
-        <Avatar src='/images/avatars/7.png' alt='User Avatar' variant='square' />
+      <Badge variant='dot' color='secondary'>
+        <Avatar src='/images/avatars/2.png' alt='User Avatar' />
       </Badge>
-      <Badge color='primary' overlap='circular' badgeContent=' '>
-        <Avatar src='/images/avatars/7.png' alt='User Avatar' />
+      <Badge variant='dot' color='error'>
+        <Typography>Typography</Typography>
       </Badge>
-      <Badge color='primary' overlap='circular' variant='dot'>
-        <Avatar src='/images/avatars/7.png' alt='User Avatar' />
-      </Badge>
-    </Wrapper>
+    </div>
   )
 }
 
-export default BadgesOverlap
-`}</code>
-  </pre>
-)
-export const BadgesVisibilityCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
+export default BadgesDot
+`}</code></pre>) 
+export const BadgesBasicCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Badge from '@mui/material/Badge'
+import Avatar from '@mui/material/Avatar'
+
+const BadgesBasic = () => {
+  return (
+    <div className='demo-space-x'>
+      <Badge badgeContent={4} color='primary'>
+        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+      </Badge>
+      <Badge badgeContent={4} color='secondary'>
+        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+      </Badge>
+      <Badge badgeContent={4} color='success'>
+        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+      </Badge>
+      <Badge badgeContent={4} color='error'>
+        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+      </Badge>
+      <Badge badgeContent={4} color='warning'>
+        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+      </Badge>
+      <Badge badgeContent={4} color='info'>
+        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+      </Badge>
+    </div>
+  )
+}
+
+export default BadgesBasic
+`}</code></pre>) 
+export const BadgesVisibilityCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { useState, Fragment } from 'react'
 
 // ** MUI Imports
@@ -202,12 +182,8 @@ const BadgesVisibility = () => {
 }
 
 export default BadgesVisibility
-`}</code>
-  </pre>
-)
-export const BadgesMaxValueCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
+`}</code></pre>) 
+export const BadgesMaxValueCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Badge from '@mui/material/Badge'
 import Avatar from '@mui/material/Avatar'
 import { styled } from '@mui/material/styles'
@@ -236,41 +212,37 @@ const BadgesMaxValue = () => {
 }
 
 export default BadgesMaxValue
-`}</code>
-  </pre>
-)
-export const BadgesBasicCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
+`}</code></pre>) 
+export const BadgesOverlapCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Badge from '@mui/material/Badge'
 import Avatar from '@mui/material/Avatar'
+import { styled } from '@mui/material/styles'
 
-const BadgesBasic = () => {
+// Styled component for the wrapper
+const Wrapper = styled('div')(({ theme }) => ({
+  '& > *': {
+    marginRight: {theme.spacing(6)} !important
+  }
+}))
+
+const BadgesOverlap = () => {
   return (
-    <div className='demo-space-x'>
-      <Badge badgeContent={4} color='primary'>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+    <Wrapper className='demo-space-x'>
+      <Badge color='primary' badgeContent=' '>
+        <Avatar src='/images/avatars/7.png' alt='User Avatar' variant='square' />
       </Badge>
-      <Badge badgeContent={4} color='secondary'>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+      <Badge color='primary' variant='dot'>
+        <Avatar src='/images/avatars/7.png' alt='User Avatar' variant='square' />
       </Badge>
-      <Badge badgeContent={4} color='success'>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+      <Badge color='primary' overlap='circular' badgeContent=' '>
+        <Avatar src='/images/avatars/7.png' alt='User Avatar' />
       </Badge>
-      <Badge badgeContent={4} color='error'>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+      <Badge color='primary' overlap='circular' variant='dot'>
+        <Avatar src='/images/avatars/7.png' alt='User Avatar' />
       </Badge>
-      <Badge badgeContent={4} color='warning'>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
-      </Badge>
-      <Badge badgeContent={4} color='info'>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
-      </Badge>
-    </div>
+    </Wrapper>
   )
 }
 
-export default BadgesBasic
-`}</code>
-  </pre>
-)
+export default BadgesOverlap
+`}</code></pre>) 

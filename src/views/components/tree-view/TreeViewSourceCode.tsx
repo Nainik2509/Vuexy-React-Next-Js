@@ -1,6 +1,4 @@
-export const TreeViewBasicCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
+export const TreeViewBasicCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import TreeView from '@mui/lab/TreeView'
 import TreeItem from '@mui/lab/TreeItem'
 
@@ -13,7 +11,7 @@ interface Props {
   direction: 'ltr' | 'rtl'
 }
 
-const TreeViewBasic= ({ direction }) => {
+const TreeViewBasic = ({ direction }: Props) => {
   const ExpandIcon = direction === 'rtl' ? <ChevronLeft /> : <ChevronRight />
 
   return (
@@ -37,77 +35,8 @@ const TreeViewBasic= ({ direction }) => {
 }
 
 export default TreeViewBasic
-`}</code>
-  </pre>
-)
-export const TreeViewControlledCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { ChangeEvent, useState } from 'react'
-
-// ** MUI Imports
-import TreeView from '@mui/lab/TreeView'
-import TreeItem from '@mui/lab/TreeItem'
-
-// ** Icons Imports
-import ChevronDown from 'mdi-material-ui/ChevronDown'
-import ChevronLeft from 'mdi-material-ui/ChevronLeft'
-import ChevronRight from 'mdi-material-ui/ChevronRight'
-
-interface Props {
-  direction: 'ltr' | 'rtl'
-}
-
-const TreeViewControlled= ({ direction }) => {
-  // ** States
-  const [expanded, setExpanded] = useState<string[]>([])
-  const [selected, setSelected] = useState<string[]>([])
-
-  const handleToggle = (event: ChangeEvent<any>, nodeIds: string[]) => {
-    setExpanded(nodeIds)
-  }
-
-  const handleSelect = (event: ChangeEvent<any>, nodeIds: string[]) => {
-    setSelected(nodeIds)
-  }
-
-  const ExpandIcon = direction === 'rtl' ? <ChevronLeft /> : <ChevronRight />
-
-  return (
-    <TreeView
-      expanded={expanded}
-      selected={selected}
-      sx={{ minHeight: 240 }}
-      onNodeToggle={handleToggle}
-      onNodeSelect={handleSelect}
-      defaultExpandIcon={ExpandIcon}
-      defaultCollapseIcon={<ChevronDown />}
-    >
-      <TreeItem nodeId='1' label='Applications'>
-        <TreeItem nodeId='2' label='Calendar' />
-        <TreeItem nodeId='3' label='Chrome' />
-        <TreeItem nodeId='4' label='Webstorm' />
-      </TreeItem>
-      <TreeItem nodeId='5' label='Documents'>
-        <TreeItem nodeId='10' label='OSS' />
-        <TreeItem nodeId='6' label='MUI'>
-          <TreeItem nodeId='7' label='src'>
-            <TreeItem nodeId='8' label='index.js' />
-            <TreeItem nodeId='9' label='tree-view.js' />
-          </TreeItem>
-        </TreeItem>
-      </TreeItem>
-    </TreeView>
-  )
-}
-
-export default TreeViewControlled
-`}</code>
-  </pre>
-)
-export const TreeViewGmailCloneCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
+`}</code></pre>) 
+export const TreeViewGmailCloneCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { ElementType } from 'react'
 
 // ** MUI Imports
@@ -188,7 +117,7 @@ const StyledTreeItem = (props: StyledTreeItemProps) => {
   )
 }
 
-const TreeViewGmailClone= ({ direction }) => {
+const TreeViewGmailClone = ({ direction }: Props) => {
   const ExpandIcon = direction === 'rtl' ? <ChevronLeft /> : <ChevronRight />
 
   return (
@@ -212,121 +141,8 @@ const TreeViewGmailClone= ({ direction }) => {
 }
 
 export default TreeViewGmailClone
-`}</code>
-  </pre>
-)
-export const TreeViewMultiSelectionCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import TreeView from '@mui/lab/TreeView'
-import TreeItem from '@mui/lab/TreeItem'
-
-// ** Icons Imports
-import ChevronDown from 'mdi-material-ui/ChevronDown'
-import ChevronLeft from 'mdi-material-ui/ChevronLeft'
-import ChevronRight from 'mdi-material-ui/ChevronRight'
-
-interface Props {
-  direction: 'ltr' | 'rtl'
-}
-
-const TreeViewMultiSelection= ({ direction }) => {
-  const ExpandIcon = direction === 'rtl' ? <ChevronLeft /> : <ChevronRight />
-
-  return (
-    <TreeView multiSelect sx={{ minHeight: 240 }} defaultCollapseIcon={<ChevronDown />} defaultExpandIcon={ExpandIcon}>
-      <TreeItem nodeId='1' label='Applications'>
-        <TreeItem nodeId='2' label='Calendar' />
-        <TreeItem nodeId='3' label='Chrome' />
-        <TreeItem nodeId='4' label='Webstorm' />
-      </TreeItem>
-      <TreeItem nodeId='5' label='Documents'>
-        <TreeItem nodeId='10' label='OSS' />
-        <TreeItem nodeId='6' label='MUI'>
-          <TreeItem nodeId='7' label='src'>
-            <TreeItem nodeId='8' label='index.js' />
-            <TreeItem nodeId='9' label='tree-view.js' />
-          </TreeItem>
-        </TreeItem>
-      </TreeItem>
-    </TreeView>
-  )
-}
-
-export default TreeViewMultiSelection
-`}</code>
-  </pre>
-)
-export const TreeViewRichObjectCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import TreeView from '@mui/lab/TreeView'
-import TreeItem from '@mui/lab/TreeItem'
-
-// ** Icons Imports
-import ChevronDown from 'mdi-material-ui/ChevronDown'
-import ChevronLeft from 'mdi-material-ui/ChevronLeft'
-import ChevronRight from 'mdi-material-ui/ChevronRight'
-
-interface Props {
-  direction: 'ltr' | 'rtl'
-}
-
-interface RenderTree {
-  id: string
-  name: string
-  children?: RenderTree[]
-}
-
-const data: RenderTree = {
-  id: 'root',
-  name: 'Parent',
-  children: [
-    {
-      id: '1',
-      name: 'Child - 1'
-    },
-    {
-      id: '3',
-      name: 'Child - 3',
-      children: [
-        {
-          id: '4',
-          name: 'Child - 4'
-        }
-      ]
-    }
-  ]
-}
-
-const TreeViewRichObject= ({ direction }) => {
-  const renderTree = (nodes: RenderTree) => (
-    <TreeItem key={nodes.id} nodeId={nodes.id} label={nodes.name}>
-      {Array.isArray(nodes.children) ? nodes.children.map(node => renderTree(node)) : null}
-    </TreeItem>
-  )
-
-  const ExpandIcon = direction === 'rtl' ? <ChevronLeft /> : <ChevronRight />
-
-  return (
-    <TreeView
-      sx={{ minHeight: 240 }}
-      defaultExpanded={['root']}
-      defaultExpandIcon={ExpandIcon}
-      defaultCollapseIcon={<ChevronDown />}
-    >
-      {renderTree(data)}
-    </TreeView>
-  )
-}
-
-export default TreeViewRichObject
-`}</code>
-  </pre>
-)
-export const TreeViewCustomizedCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
+`}</code></pre>) 
+export const TreeViewCustomizedCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import TreeItem from '@mui/lab/TreeItem'
 import { alpha, styled } from '@mui/material/styles'
 import MuiTreeView, { TreeViewProps } from '@mui/lab/TreeView'
@@ -376,6 +192,166 @@ const TreeViewCustomized = () => {
 }
 
 export default TreeViewCustomized
-`}</code>
-  </pre>
-)
+`}</code></pre>) 
+export const TreeViewControlledCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { SyntheticEvent, useState } from 'react'
+
+// ** MUI Imports
+import TreeView from '@mui/lab/TreeView'
+import TreeItem from '@mui/lab/TreeItem'
+
+// ** Icons Imports
+import ChevronDown from 'mdi-material-ui/ChevronDown'
+import ChevronLeft from 'mdi-material-ui/ChevronLeft'
+import ChevronRight from 'mdi-material-ui/ChevronRight'
+
+interface Props {
+  direction: 'ltr' | 'rtl'
+}
+
+const TreeViewControlled = ({ direction }: Props) => {
+  // ** States
+  const [expanded, setExpanded] = useState<string[]>([])
+  const [selected, setSelected] = useState<string[]>([])
+
+  const handleToggle = (event: SyntheticEvent, nodeIds: string[]) => {
+    setExpanded(nodeIds)
+  }
+
+  const handleSelect = (event: SyntheticEvent, nodeIds: string[]) => {
+    setSelected(nodeIds)
+  }
+
+  const ExpandIcon = direction === 'rtl' ? <ChevronLeft /> : <ChevronRight />
+
+  return (
+    <TreeView
+      expanded={expanded}
+      selected={selected}
+      sx={{ minHeight: 240 }}
+      onNodeToggle={handleToggle}
+      onNodeSelect={handleSelect}
+      defaultExpandIcon={ExpandIcon}
+      defaultCollapseIcon={<ChevronDown />}
+    >
+      <TreeItem nodeId='1' label='Applications'>
+        <TreeItem nodeId='2' label='Calendar' />
+        <TreeItem nodeId='3' label='Chrome' />
+        <TreeItem nodeId='4' label='Webstorm' />
+      </TreeItem>
+      <TreeItem nodeId='5' label='Documents'>
+        <TreeItem nodeId='10' label='OSS' />
+        <TreeItem nodeId='6' label='MUI'>
+          <TreeItem nodeId='7' label='src'>
+            <TreeItem nodeId='8' label='index.js' />
+            <TreeItem nodeId='9' label='tree-view.js' />
+          </TreeItem>
+        </TreeItem>
+      </TreeItem>
+    </TreeView>
+  )
+}
+
+export default TreeViewControlled
+`}</code></pre>) 
+export const TreeViewMultiSelectionCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import TreeView from '@mui/lab/TreeView'
+import TreeItem from '@mui/lab/TreeItem'
+
+// ** Icons Imports
+import ChevronDown from 'mdi-material-ui/ChevronDown'
+import ChevronLeft from 'mdi-material-ui/ChevronLeft'
+import ChevronRight from 'mdi-material-ui/ChevronRight'
+
+interface Props {
+  direction: 'ltr' | 'rtl'
+}
+
+const TreeViewMultiSelection = ({ direction }: Props) => {
+  const ExpandIcon = direction === 'rtl' ? <ChevronLeft /> : <ChevronRight />
+
+  return (
+    <TreeView multiSelect sx={{ minHeight: 240 }} defaultCollapseIcon={<ChevronDown />} defaultExpandIcon={ExpandIcon}>
+      <TreeItem nodeId='1' label='Applications'>
+        <TreeItem nodeId='2' label='Calendar' />
+        <TreeItem nodeId='3' label='Chrome' />
+        <TreeItem nodeId='4' label='Webstorm' />
+      </TreeItem>
+      <TreeItem nodeId='5' label='Documents'>
+        <TreeItem nodeId='10' label='OSS' />
+        <TreeItem nodeId='6' label='MUI'>
+          <TreeItem nodeId='7' label='src'>
+            <TreeItem nodeId='8' label='index.js' />
+            <TreeItem nodeId='9' label='tree-view.js' />
+          </TreeItem>
+        </TreeItem>
+      </TreeItem>
+    </TreeView>
+  )
+}
+
+export default TreeViewMultiSelection
+`}</code></pre>) 
+export const TreeViewRichObjectCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import TreeView from '@mui/lab/TreeView'
+import TreeItem from '@mui/lab/TreeItem'
+
+// ** Icons Imports
+import ChevronDown from 'mdi-material-ui/ChevronDown'
+import ChevronLeft from 'mdi-material-ui/ChevronLeft'
+import ChevronRight from 'mdi-material-ui/ChevronRight'
+
+interface Props {
+  direction: 'ltr' | 'rtl'
+}
+
+interface RenderTree {
+  id: string
+  name: string
+  children?: RenderTree[]
+}
+
+const data: RenderTree = {
+  id: 'root',
+  name: 'Parent',
+  children: [
+    {
+      id: '1',
+      name: 'Child - 1'
+    },
+    {
+      id: '3',
+      name: 'Child - 3',
+      children: [
+        {
+          id: '4',
+          name: 'Child - 4'
+        }
+      ]
+    }
+  ]
+}
+
+const TreeViewRichObject = ({ direction }: Props) => {
+  const renderTree = (nodes: RenderTree) => (
+    <TreeItem key={nodes.id} nodeId={nodes.id} label={nodes.name}>
+      {Array.isArray(nodes.children) ? nodes.children.map(node => renderTree(node)) : null}
+    </TreeItem>
+  )
+
+  const ExpandIcon = direction === 'rtl' ? <ChevronLeft /> : <ChevronRight />
+
+  return (
+    <TreeView
+      sx={{ minHeight: 240 }}
+      defaultExpanded={['root']}
+      defaultExpandIcon={ExpandIcon}
+      defaultCollapseIcon={<ChevronDown />}
+    >
+      {renderTree(data)}
+    </TreeView>
+  )
+}
+
+export default TreeViewRichObject
+`}</code></pre>) 

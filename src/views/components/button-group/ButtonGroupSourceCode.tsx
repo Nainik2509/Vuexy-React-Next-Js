@@ -1,53 +1,39 @@
-export const ButtonGroupColorsCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
+export const ButtonGroupBasicCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Button from '@mui/material/Button'
 import ButtonGroup from '@mui/material/ButtonGroup'
 
-const ButtonGroupColor = () => {
+const ButtonGroupBasic = () => {
   return (
-    <div className='demo-space-x'>
-      <ButtonGroup variant='outlined' color='secondary'>
-        <Button>One</Button>
-        <Button>Two</Button>
-        <Button>Three</Button>
-      </ButtonGroup>
-
-      <ButtonGroup variant='outlined' color='success'>
-        <Button>One</Button>
-        <Button>Two</Button>
-        <Button>Three</Button>
-      </ButtonGroup>
-
-      <ButtonGroup variant='outlined' color='error'>
-        <Button>One</Button>
-        <Button>Two</Button>
-        <Button>Three</Button>
-      </ButtonGroup>
-
-      <ButtonGroup variant='outlined' color='warning'>
-        <Button>One</Button>
-        <Button>Two</Button>
-        <Button>Three</Button>
-      </ButtonGroup>
-
-      <ButtonGroup variant='outlined' color='info'>
-        <Button>One</Button>
-        <Button>Two</Button>
-        <Button>Three</Button>
-      </ButtonGroup>
+    <div className='demo-space-y'>
+      <div>
+        <ButtonGroup variant='outlined'>
+          <Button>One</Button>
+          <Button>Two</Button>
+          <Button>Three</Button>
+        </ButtonGroup>
+      </div>
+      <div>
+        <ButtonGroup variant='contained'>
+          <Button>One</Button>
+          <Button>Two</Button>
+          <Button>Three</Button>
+        </ButtonGroup>
+      </div>
+      <div>
+        <ButtonGroup variant='text'>
+          <Button>One</Button>
+          <Button>Two</Button>
+          <Button>Three</Button>
+        </ButtonGroup>
+      </div>
     </div>
   )
 }
 
-export default ButtonGroupColor
-`}</code>
-  </pre>
-)
-export const ButtonGroupSplitCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { useRef, useState, Fragment, MouseEvent } from 'react'
+export default ButtonGroupBasic
+`}</code></pre>) 
+export const ButtonGroupSplitCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { useRef, useState, Fragment, SyntheticEvent } from 'react'
 
 // ** MUI Imports
 import Grow from '@mui/material/Grow'
@@ -67,14 +53,16 @@ const options = ['Create a merge commit', 'Squash and merge', 'Rebase and merge'
 const ButtonGroupSplit = () => {
   // ** States
   const [open, setOpen] = useState<boolean>(false)
-  const anchorRef = useRef<HTMLDivElement | null>(null)
   const [selectedIndex, setSelectedIndex] = useState<number>(1)
+
+  // ** Ref
+  const anchorRef = useRef<HTMLDivElement | null>(null)
 
   const handleClick = () => {
     console.info(You clicked '{options[selectedIndex]}')
   }
 
-  const handleMenuItemClick = (event: MouseEvent<any>, index: number) => {
+  const handleMenuItemClick = (event: SyntheticEvent, index: number) => {
     setSelectedIndex(index)
     setOpen(false)
   }
@@ -132,74 +120,8 @@ const ButtonGroupSplit = () => {
 }
 
 export default ButtonGroupSplit
-`}</code>
-  </pre>
-)
-export const ButtonToggleColorsCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { MouseEvent, useState } from 'react'
-
-// ** MUI Imports
-import ToggleButton from '@mui/material/ToggleButton'
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
-
-const ButtonToggleColors = () => {
-  // ** State
-  const [alignment, setAlignment] = useState<string | null>('web')
-
-  const handleAlignment = (event: MouseEvent<HTMLElement>, newAlignment: string | null) => {
-    setAlignment(newAlignment)
-  }
-
-  return (
-    <div className='demo-space-x'>
-      <ToggleButtonGroup exclusive color='primary' value={alignment} onChange={handleAlignment}>
-        <ToggleButton value='web'>Web</ToggleButton>
-        <ToggleButton value='android'>Android</ToggleButton>
-        <ToggleButton value='ios'>iOS</ToggleButton>
-      </ToggleButtonGroup>
-
-      <ToggleButtonGroup exclusive color='secondary' value={alignment} onChange={handleAlignment}>
-        <ToggleButton value='web'>Web</ToggleButton>
-        <ToggleButton value='android'>Android</ToggleButton>
-        <ToggleButton value='ios'>iOS</ToggleButton>
-      </ToggleButtonGroup>
-
-      <ToggleButtonGroup exclusive color='success' value={alignment} onChange={handleAlignment}>
-        <ToggleButton value='web'>Web</ToggleButton>
-        <ToggleButton value='android'>Android</ToggleButton>
-        <ToggleButton value='ios'>iOS</ToggleButton>
-      </ToggleButtonGroup>
-
-      <ToggleButtonGroup exclusive color='error' value={alignment} onChange={handleAlignment}>
-        <ToggleButton value='web'>Web</ToggleButton>
-        <ToggleButton value='android'>Android</ToggleButton>
-        <ToggleButton value='ios'>iOS</ToggleButton>
-      </ToggleButtonGroup>
-
-      <ToggleButtonGroup exclusive color='warning' value={alignment} onChange={handleAlignment}>
-        <ToggleButton value='web'>Web</ToggleButton>
-        <ToggleButton value='android'>Android</ToggleButton>
-        <ToggleButton value='ios'>iOS</ToggleButton>
-      </ToggleButtonGroup>
-
-      <ToggleButtonGroup exclusive color='info' value={alignment} onChange={handleAlignment}>
-        <ToggleButton value='web'>Web</ToggleButton>
-        <ToggleButton value='android'>Android</ToggleButton>
-        <ToggleButton value='ios'>iOS</ToggleButton>
-      </ToggleButtonGroup>
-    </div>
-  )
-}
-
-export default ButtonToggleColors
-`}</code>
-  </pre>
-)
-export const ButtonGroupSizesCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
+`}</code></pre>) 
+export const ButtonGroupSizesCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Button from '@mui/material/Button'
 import ButtonGroup from '@mui/material/ButtonGroup'
 
@@ -232,29 +154,39 @@ const ButtonGroupSizes = () => {
 }
 
 export default ButtonGroupSizes
-`}</code>
-  </pre>
-)
-export const ButtonGroupVerticalCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
+`}</code></pre>) 
+export const ButtonGroupColorsCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Button from '@mui/material/Button'
 import ButtonGroup from '@mui/material/ButtonGroup'
 
-const ButtonGroupVertical = () => {
+const ButtonGroupColor = () => {
   return (
     <div className='demo-space-x'>
-      <ButtonGroup variant='outlined' orientation='vertical'>
+      <ButtonGroup variant='outlined' color='secondary'>
         <Button>One</Button>
         <Button>Two</Button>
         <Button>Three</Button>
       </ButtonGroup>
-      <ButtonGroup variant='contained' orientation='vertical'>
+
+      <ButtonGroup variant='outlined' color='success'>
         <Button>One</Button>
         <Button>Two</Button>
         <Button>Three</Button>
       </ButtonGroup>
-      <ButtonGroup variant='text' orientation='vertical'>
+
+      <ButtonGroup variant='outlined' color='error'>
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
+
+      <ButtonGroup variant='outlined' color='warning'>
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
+
+      <ButtonGroup variant='outlined' color='info'>
         <Button>One</Button>
         <Button>Two</Button>
         <Button>Three</Button>
@@ -263,99 +195,83 @@ const ButtonGroupVertical = () => {
   )
 }
 
-export default ButtonGroupVertical
-`}</code>
-  </pre>
-)
-export const ButtonToggleVerticalCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
+export default ButtonGroupColor
+`}</code></pre>) 
+export const ButtonToggleEnforceValueCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
+import Grid from '@mui/material/Grid'
+import Typography from '@mui/material/Typography'
 import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 
 // ** Icons Imports
-import ViewList from 'mdi-material-ui/ViewList'
-import ViewQuilt from 'mdi-material-ui/ViewQuilt'
-import ViewModule from 'mdi-material-ui/ViewModule'
-
-const ButtonToggleVertical = () => {
-  // ** State
-  const [view, setView] = useState<string | null>('left')
-
-  const handleView = (event: MouseEvent<HTMLElement>, newView: string | null) => {
-    setView(newView)
-  }
-
-  return (
-    <ToggleButtonGroup exclusive value={view} orientation='vertical' onChange={handleView} aria-label='text alignment'>
-      <ToggleButton value='left' aria-label='left aligned'>
-        <ViewList />
-      </ToggleButton>
-      <ToggleButton value='center' aria-label='center aligned'>
-        <ViewModule />
-      </ToggleButton>
-      <ToggleButton value='right' aria-label='right aligned'>
-        <ViewQuilt />
-      </ToggleButton>
-    </ToggleButtonGroup>
-  )
-}
-
-export default ButtonToggleVertical
-`}</code>
-  </pre>
-)
-export const ButtonToggleSimpleCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { MouseEvent, useState } from 'react'
-
-// ** MUI Imports
-import ToggleButton from '@mui/material/ToggleButton'
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
-
-// ** Icons Imports
+import Laptop from 'mdi-material-ui/Laptop'
+import Monitor from 'mdi-material-ui/Monitor'
+import Cellphone from 'mdi-material-ui/Cellphone'
 import FormatAlignLeft from 'mdi-material-ui/FormatAlignLeft'
 import FormatAlignRight from 'mdi-material-ui/FormatAlignRight'
 import FormatAlignCenter from 'mdi-material-ui/FormatAlignCenter'
 import FormatAlignJustify from 'mdi-material-ui/FormatAlignJustify'
 
-const ButtonToggleSimple = () => {
-  // ** State
+const ButtonToggleEnforceValue = () => {
+  // ** States
+  const [formats, setFormats] = useState<string[]>(() => ['phone'])
   const [alignment, setAlignment] = useState<string | null>('left')
 
   const handleAlignment = (event: MouseEvent<HTMLElement>, newAlignment: string | null) => {
-    setAlignment(newAlignment)
+    if (newAlignment !== null) {
+      setAlignment(newAlignment)
+    }
+  }
+
+  const handleFormat = (event: MouseEvent<HTMLElement>, newFormats: string[]) => {
+    if (newFormats.length) {
+      setFormats(newFormats)
+    }
   }
 
   return (
-    <ToggleButtonGroup exclusive value={alignment} onChange={handleAlignment} aria-label='text alignment'>
-      <ToggleButton value='left' aria-label='left aligned'>
-        <FormatAlignLeft />
-      </ToggleButton>
-      <ToggleButton value='center' aria-label='center aligned'>
-        <FormatAlignCenter />
-      </ToggleButton>
-      <ToggleButton value='right' aria-label='right aligned'>
-        <FormatAlignRight />
-      </ToggleButton>
-      <ToggleButton value='justify' aria-label='justified' disabled>
-        <FormatAlignJustify />
-      </ToggleButton>
-    </ToggleButtonGroup>
+    <Grid container spacing={6}>
+      <Grid item xs={12} sm={6}>
+        <Typography sx={{ fontWeight: 500, marginBottom: 2 }}>Exclusive Selection</Typography>
+        <ToggleButtonGroup exclusive value={alignment} onChange={handleAlignment} aria-label='text alignment'>
+          <ToggleButton value='left' aria-label='left aligned'>
+            <FormatAlignLeft />
+          </ToggleButton>
+          <ToggleButton value='center' aria-label='center aligned'>
+            <FormatAlignCenter />
+          </ToggleButton>
+          <ToggleButton value='right' aria-label='right aligned'>
+            <FormatAlignRight />
+          </ToggleButton>
+          <ToggleButton value='justify' aria-label='justified' disabled>
+            <FormatAlignJustify />
+          </ToggleButton>
+        </ToggleButtonGroup>
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <Typography sx={{ fontWeight: 500, marginBottom: 2 }}>Multiple Selection</Typography>
+        <ToggleButtonGroup value={formats} onChange={handleFormat} aria-label='device'>
+          <ToggleButton value='laptop' aria-label='laptop'>
+            <Laptop />
+          </ToggleButton>
+          <ToggleButton value='desktop' aria-label='desktop'>
+            <Monitor />
+          </ToggleButton>
+          <ToggleButton value='phone' aria-label='phone'>
+            <Cellphone />
+          </ToggleButton>
+        </ToggleButtonGroup>
+      </Grid>
+    </Grid>
   )
 }
 
-export default ButtonToggleSimple
-`}</code>
-  </pre>
-)
-export const ButtonToggleCustomizedCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
+export default ButtonToggleEnforceValue
+`}</code></pre>) 
+export const ButtonToggleCustomizedCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
@@ -437,12 +353,8 @@ const ButtonToggleCustomized = () => {
 }
 
 export default ButtonToggleCustomized
-`}</code>
-  </pre>
-)
-export const ButtonToggleMultipleCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
+`}</code></pre>) 
+export const ButtonToggleMultipleCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
@@ -482,90 +394,172 @@ const ButtonToggleMultiple = () => {
 }
 
 export default ButtonToggleMultiple
-`}</code>
-  </pre>
-)
-export const ButtonToggleEnforceValueCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
+`}</code></pre>) 
+export const ButtonToggleColorsCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
-import Grid from '@mui/material/Grid'
-import Typography from '@mui/material/Typography'
+import ToggleButton from '@mui/material/ToggleButton'
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
+
+const ButtonToggleColors = () => {
+  // ** State
+  const [alignment, setAlignment] = useState<string | null>('web')
+
+  const handleAlignment = (event: MouseEvent<HTMLElement>, newAlignment: string | null) => {
+    setAlignment(newAlignment)
+  }
+
+  return (
+    <div className='demo-space-x'>
+      <ToggleButtonGroup exclusive color='primary' value={alignment} onChange={handleAlignment}>
+        <ToggleButton value='web'>Web</ToggleButton>
+        <ToggleButton value='android'>Android</ToggleButton>
+        <ToggleButton value='ios'>iOS</ToggleButton>
+      </ToggleButtonGroup>
+
+      <ToggleButtonGroup exclusive color='secondary' value={alignment} onChange={handleAlignment}>
+        <ToggleButton value='web'>Web</ToggleButton>
+        <ToggleButton value='android'>Android</ToggleButton>
+        <ToggleButton value='ios'>iOS</ToggleButton>
+      </ToggleButtonGroup>
+
+      <ToggleButtonGroup exclusive color='success' value={alignment} onChange={handleAlignment}>
+        <ToggleButton value='web'>Web</ToggleButton>
+        <ToggleButton value='android'>Android</ToggleButton>
+        <ToggleButton value='ios'>iOS</ToggleButton>
+      </ToggleButtonGroup>
+
+      <ToggleButtonGroup exclusive color='error' value={alignment} onChange={handleAlignment}>
+        <ToggleButton value='web'>Web</ToggleButton>
+        <ToggleButton value='android'>Android</ToggleButton>
+        <ToggleButton value='ios'>iOS</ToggleButton>
+      </ToggleButtonGroup>
+
+      <ToggleButtonGroup exclusive color='warning' value={alignment} onChange={handleAlignment}>
+        <ToggleButton value='web'>Web</ToggleButton>
+        <ToggleButton value='android'>Android</ToggleButton>
+        <ToggleButton value='ios'>iOS</ToggleButton>
+      </ToggleButtonGroup>
+
+      <ToggleButtonGroup exclusive color='info' value={alignment} onChange={handleAlignment}>
+        <ToggleButton value='web'>Web</ToggleButton>
+        <ToggleButton value='android'>Android</ToggleButton>
+        <ToggleButton value='ios'>iOS</ToggleButton>
+      </ToggleButtonGroup>
+    </div>
+  )
+}
+
+export default ButtonToggleColors
+`}</code></pre>) 
+export const ButtonToggleVerticalCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { MouseEvent, useState } from 'react'
+
+// ** MUI Imports
 import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 
 // ** Icons Imports
-import Laptop from 'mdi-material-ui/Laptop'
-import Monitor from 'mdi-material-ui/Monitor'
-import Cellphone from 'mdi-material-ui/Cellphone'
+import ViewList from 'mdi-material-ui/ViewList'
+import ViewQuilt from 'mdi-material-ui/ViewQuilt'
+import ViewModule from 'mdi-material-ui/ViewModule'
+
+const ButtonToggleVertical = () => {
+  // ** State
+  const [view, setView] = useState<string | null>('left')
+
+  const handleView = (event: MouseEvent<HTMLElement>, newView: string | null) => {
+    setView(newView)
+  }
+
+  return (
+    <ToggleButtonGroup exclusive value={view} orientation='vertical' onChange={handleView} aria-label='text alignment'>
+      <ToggleButton value='left' aria-label='left aligned'>
+        <ViewList />
+      </ToggleButton>
+      <ToggleButton value='center' aria-label='center aligned'>
+        <ViewModule />
+      </ToggleButton>
+      <ToggleButton value='right' aria-label='right aligned'>
+        <ViewQuilt />
+      </ToggleButton>
+    </ToggleButtonGroup>
+  )
+}
+
+export default ButtonToggleVertical
+`}</code></pre>) 
+export const ButtonToggleSimpleCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { MouseEvent, useState } from 'react'
+
+// ** MUI Imports
+import ToggleButton from '@mui/material/ToggleButton'
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
+
+// ** Icons Imports
 import FormatAlignLeft from 'mdi-material-ui/FormatAlignLeft'
 import FormatAlignRight from 'mdi-material-ui/FormatAlignRight'
 import FormatAlignCenter from 'mdi-material-ui/FormatAlignCenter'
 import FormatAlignJustify from 'mdi-material-ui/FormatAlignJustify'
 
-const ButtonToggleEnforceValue = () => {
-  // ** States
-  const [formats, setFormats] = useState<string[]>(() => ['phone'])
+const ButtonToggleSimple = () => {
+  // ** State
   const [alignment, setAlignment] = useState<string | null>('left')
 
   const handleAlignment = (event: MouseEvent<HTMLElement>, newAlignment: string | null) => {
-    if (newAlignment !== null) {
-      setAlignment(newAlignment)
-    }
-  }
-
-  const handleFormat = (event: MouseEvent<HTMLElement>, newFormats: string[]) => {
-    if (newFormats.length) {
-      setFormats(newFormats)
-    }
+    setAlignment(newAlignment)
   }
 
   return (
-    <Grid container spacing={6}>
-      <Grid item xs={12} sm={6}>
-        <Typography sx={{ fontWeight: 500, marginBottom: 2 }}>Exclusive Selection</Typography>
-        <ToggleButtonGroup exclusive value={alignment} onChange={handleAlignment} aria-label='text alignment'>
-          <ToggleButton value='left' aria-label='left aligned'>
-            <FormatAlignLeft />
-          </ToggleButton>
-          <ToggleButton value='center' aria-label='center aligned'>
-            <FormatAlignCenter />
-          </ToggleButton>
-          <ToggleButton value='right' aria-label='right aligned'>
-            <FormatAlignRight />
-          </ToggleButton>
-          <ToggleButton value='justify' aria-label='justified' disabled>
-            <FormatAlignJustify />
-          </ToggleButton>
-        </ToggleButtonGroup>
-      </Grid>
-      <Grid item xs={12} sm={6}>
-        <Typography sx={{ fontWeight: 500, marginBottom: 2 }}>Multiple Selection</Typography>
-        <ToggleButtonGroup value={formats} onChange={handleFormat} aria-label='device'>
-          <ToggleButton value='laptop' aria-label='laptop'>
-            <Laptop />
-          </ToggleButton>
-          <ToggleButton value='desktop' aria-label='desktop'>
-            <Monitor />
-          </ToggleButton>
-          <ToggleButton value='phone' aria-label='phone'>
-            <Cellphone />
-          </ToggleButton>
-        </ToggleButtonGroup>
-      </Grid>
-    </Grid>
+    <ToggleButtonGroup exclusive value={alignment} onChange={handleAlignment} aria-label='text alignment'>
+      <ToggleButton value='left' aria-label='left aligned'>
+        <FormatAlignLeft />
+      </ToggleButton>
+      <ToggleButton value='center' aria-label='center aligned'>
+        <FormatAlignCenter />
+      </ToggleButton>
+      <ToggleButton value='right' aria-label='right aligned'>
+        <FormatAlignRight />
+      </ToggleButton>
+      <ToggleButton value='justify' aria-label='justified' disabled>
+        <FormatAlignJustify />
+      </ToggleButton>
+    </ToggleButtonGroup>
   )
 }
 
-export default ButtonToggleEnforceValue
-`}</code>
-  </pre>
-)
-export const ButtonToggleSizesCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
+export default ButtonToggleSimple
+`}</code></pre>) 
+export const ButtonGroupVerticalCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Button from '@mui/material/Button'
+import ButtonGroup from '@mui/material/ButtonGroup'
+
+const ButtonGroupVertical = () => {
+  return (
+    <div className='demo-space-x'>
+      <ButtonGroup variant='outlined' orientation='vertical'>
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
+      <ButtonGroup variant='contained' orientation='vertical'>
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
+      <ButtonGroup variant='text' orientation='vertical'>
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
+    </div>
+  )
+}
+
+export default ButtonGroupVertical
+`}</code></pre>) 
+export const ButtonToggleSizesCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
@@ -597,16 +591,16 @@ const ButtonToggleSizes = () => {
           aria-label='text alignment'
         >
           <ToggleButton value='left' aria-label='left aligned'>
-            <FormatAlignLeft fontSize='small' />
+            <FormatAlignLeft />
           </ToggleButton>
           <ToggleButton value='center' aria-label='center aligned'>
-            <FormatAlignCenter fontSize='small' />
+            <FormatAlignCenter />
           </ToggleButton>
           <ToggleButton value='right' aria-label='right aligned'>
-            <FormatAlignRight fontSize='small' />
+            <FormatAlignRight />
           </ToggleButton>
           <ToggleButton value='justify' aria-label='justified' disabled>
-            <FormatAlignJustify fontSize='small' />
+            <FormatAlignJustify />
           </ToggleButton>
         </ToggleButtonGroup>
       </div>
@@ -653,44 +647,4 @@ const ButtonToggleSizes = () => {
 }
 
 export default ButtonToggleSizes
-`}</code>
-  </pre>
-)
-export const ButtonGroupBasicCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Button from '@mui/material/Button'
-import ButtonGroup from '@mui/material/ButtonGroup'
-
-const ButtonGroupBasic = () => {
-  return (
-    <div className='demo-space-y'>
-      <div>
-        <ButtonGroup variant='outlined'>
-          <Button>One</Button>
-          <Button>Two</Button>
-          <Button>Three</Button>
-        </ButtonGroup>
-      </div>
-      <div>
-        <ButtonGroup variant='contained'>
-          <Button>One</Button>
-          <Button>Two</Button>
-          <Button>Three</Button>
-        </ButtonGroup>
-      </div>
-      <div>
-        <ButtonGroup variant='text'>
-          <Button>One</Button>
-          <Button>Two</Button>
-          <Button>Three</Button>
-        </ButtonGroup>
-      </div>
-    </div>
-  )
-}
-
-export default ButtonGroupBasic
-`}</code>
-  </pre>
-)
+`}</code></pre>) 

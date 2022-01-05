@@ -1,39 +1,4 @@
-export const AlertsDescriptionCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Alert from '@mui/material/Alert'
-import AlertTitle from '@mui/material/AlertTitle'
-
-const AlertsDescription = () => {
-  return (
-    <div className='demo-space-y'>
-      <Alert severity='error'>
-        <AlertTitle>Error</AlertTitle>
-        This is an error alert — <strong>check it out!</strong>
-      </Alert>
-      <Alert severity='warning'>
-        <AlertTitle>Warning</AlertTitle>
-        This is an warning alert — <strong>check it out!</strong>
-      </Alert>
-      <Alert severity='info'>
-        <AlertTitle>Info</AlertTitle>
-        This is an info alert — <strong>check it out!</strong>
-      </Alert>
-      <Alert severity='success'>
-        <AlertTitle>Success</AlertTitle>
-        This is an success alert — <strong>check it out!</strong>
-      </Alert>
-    </div>
-  )
-}
-
-export default AlertsDescription
-`}</code>
-  </pre>
-)
-export const AlertsDismissibleCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
+export const AlertsDismissibleCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
 // ** MUI Imports
@@ -129,68 +94,8 @@ const AlertsDismissible = () => {
 }
 
 export default AlertsDismissible
-`}</code>
-  </pre>
-)
-export const AlertsFilledCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Alert from '@mui/material/Alert'
-
-const AlertsFilled = () => {
-  return (
-    <div className='demo-space-y'>
-      <Alert variant='filled' severity='error'>
-        This is an error alert — check it out!
-      </Alert>
-      <Alert variant='filled' severity='warning'>
-        This is an warning alert — check it out!
-      </Alert>
-      <Alert variant='filled' severity='info'>
-        This is an info alert — check it out!
-      </Alert>
-      <Alert variant='filled' severity='success'>
-        This is an success alert — check it out!
-      </Alert>
-    </div>
-  )
-}
-
-export default AlertsFilled
-`}</code>
-  </pre>
-)
-export const AlertsOutlinedCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Alert from '@mui/material/Alert'
-
-const AlertsOutlined = () => {
-  return (
-    <div className='demo-space-y'>
-      <Alert variant='outlined' severity='error'>
-        This is an error alert — check it out!
-      </Alert>
-      <Alert variant='outlined' severity='warning'>
-        This is an warning alert — check it out!
-      </Alert>
-      <Alert variant='outlined' severity='info'>
-        This is an info alert — check it out!
-      </Alert>
-      <Alert variant='outlined' severity='success'>
-        This is an success alert — check it out!
-      </Alert>
-    </div>
-  )
-}
-
-export default AlertsOutlined
-`}</code>
-  </pre>
-)
-export const AlertsActionsCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
+`}</code></pre>) 
+export const AlertsActionsCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Alert from '@mui/material/Alert'
 import Button from '@mui/material/Button'
 
@@ -229,12 +134,32 @@ const AlertsBasic = () => {
 }
 
 export default AlertsBasic
-`}</code>
-  </pre>
-)
-export const AlertsBasicCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
+`}</code></pre>) 
+export const AlertsOutlinedCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Alert from '@mui/material/Alert'
+
+const AlertsOutlined = () => {
+  return (
+    <div className='demo-space-y'>
+      <Alert variant='outlined' severity='error'>
+        This is an error alert — check it out!
+      </Alert>
+      <Alert variant='outlined' severity='warning'>
+        This is an warning alert — check it out!
+      </Alert>
+      <Alert variant='outlined' severity='info'>
+        This is an info alert — check it out!
+      </Alert>
+      <Alert variant='outlined' severity='success'>
+        This is an success alert — check it out!
+      </Alert>
+    </div>
+  )
+}
+
+export default AlertsOutlined
+`}</code></pre>) 
+export const AlertsBasicCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Alert from '@mui/material/Alert'
 
 const AlertsBasic = () => {
@@ -249,6 +174,57 @@ const AlertsBasic = () => {
 }
 
 export default AlertsBasic
-`}</code>
-  </pre>
-)
+`}</code></pre>) 
+export const AlertsDescriptionCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Alert from '@mui/material/Alert'
+import AlertTitle from '@mui/material/AlertTitle'
+
+const AlertsDescription = () => {
+  return (
+    <div className='demo-space-y'>
+      <Alert severity='error'>
+        <AlertTitle>Error</AlertTitle>
+        This is an error alert — <strong>check it out!</strong>
+      </Alert>
+      <Alert severity='warning'>
+        <AlertTitle>Warning</AlertTitle>
+        This is an warning alert — <strong>check it out!</strong>
+      </Alert>
+      <Alert severity='info'>
+        <AlertTitle>Info</AlertTitle>
+        This is an info alert — <strong>check it out!</strong>
+      </Alert>
+      <Alert severity='success'>
+        <AlertTitle>Success</AlertTitle>
+        This is an success alert — <strong>check it out!</strong>
+      </Alert>
+    </div>
+  )
+}
+
+export default AlertsDescription
+`}</code></pre>) 
+export const AlertsFilledCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Alert from '@mui/material/Alert'
+
+const AlertsFilled = () => {
+  return (
+    <div className='demo-space-y'>
+      <Alert variant='filled' severity='error'>
+        This is an error alert — check it out!
+      </Alert>
+      <Alert variant='filled' severity='warning'>
+        This is an warning alert — check it out!
+      </Alert>
+      <Alert variant='filled' severity='info'>
+        This is an info alert — check it out!
+      </Alert>
+      <Alert variant='filled' severity='success'>
+        This is an success alert — check it out!
+      </Alert>
+    </div>
+  )
+}
+
+export default AlertsFilled
+`}</code></pre>) 
