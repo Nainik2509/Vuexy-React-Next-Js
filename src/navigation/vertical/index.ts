@@ -33,7 +33,7 @@ const navigation = (): VerticalNavItemsType => {
       children: [
         {
           title: 'Analytics',
-          path: '/dashboard/analytics'
+          path: '/'
         },
         {
           title: 'eCommerce',

@@ -7,7 +7,7 @@ import { AppBarSearchType } from 'src/@fake-db/types'
 const searchData: AppBarSearchType[] = [
   {
     id: 1,
-    url: '/dashboard/analytics',
+    url: '/',
     icon: 'HomeVariantOutline',
     title: 'Analytics Dashboard',
     type: 'pages'

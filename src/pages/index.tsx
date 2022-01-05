@@ -1,60 +1,8 @@
 // ** MUI Imports
 import Typography from '@mui/material/Typography'
 
-const Home = () => {
-  return (
-    <div>
-      <Typography variant='h5' sx={{ mb: 2 }}>
-        Home Page
-      </Typography>
-
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-      <Typography>Typography</Typography>
-    </div>
-  )
+const AnalyticsDashboard = () => {
+  return <Typography variant='h4'>Analytics Dashboard</Typography>
 }
 
-export default Home
+export default AnalyticsDashboard

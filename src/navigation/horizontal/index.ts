@@ -47,7 +47,7 @@ const navigation = (): HorizontalNavItemsType => [
       {
         icon: TrendingUp,
         title: 'Analytics',
-        path: '/dashboard/analytics'
+        path: '/'
       },
       {
         icon: CartOutline,
