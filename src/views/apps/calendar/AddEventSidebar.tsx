@@ -153,7 +153,7 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
   }, [setValue])
 
   useEffect(() => {
-    if (store && store.selectedEvent !== null) {
+    if (store.selectedEvent !== null) {
       resetToStoredValues()
     } else {
       resetToEmptyValues()
