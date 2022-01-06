@@ -14,6 +14,9 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import { styled, useTheme } from '@mui/material/styles'
 import ListItemButton, { ListItemButtonProps } from '@mui/material/ListItemButton'
 
+// ** Utils
+import { handleURLQueries } from 'src/@core/layouts/utils'
+
 // ** Configs Import
 import themeConfig from 'src/configs/themeConfig'
 
@@ -94,16 +97,18 @@ const VerticalNavLink = ({
     } else return {}
   }
 
-  const handleURLQueries = () => {
-    if (Object.keys(router.query).length && item.path) {
-      const arr = Object.keys(router.query)
+  // const handleURLQueries = () => {
+  //   if (Object.keys(router.query).length && item.path) {
+  //     const arr = Object.keys(router.query)
 
-      return router.asPath.includes(item.path) && router.asPath.includes(router.query[arr[0]] as string)
-    }
-  }
+  //     return (
+  //       router.asPath.includes(item.path) && router.asPath.includes(router.query[arr[0]] as string) && item.path !== '/'
+  //     )
+  //   }
+  // }
 
   const isNavLinkActive = () => {
-    if (router.pathname === item.path || handleURLQueries()) {
+    if (router.pathname === item.path || handleURLQueries(router, item.path)) {
       return true
     } else {
       return false
