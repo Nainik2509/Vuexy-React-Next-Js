@@ -205,10 +205,7 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
         anchor='right'
         open={addEventSidebarOpen}
         onClose={handleSidebarClose}
-        ModalProps={{
-          keepMounted: true,
-          disablePortal: true
-        }}
+        ModalProps={{ keepMounted: true }}
         sx={{ '& .MuiDrawer-paper': { width: ['100%', drawerWidth] } }}
       >
         <Box

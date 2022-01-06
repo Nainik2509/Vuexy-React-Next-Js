@@ -56,11 +56,8 @@ const EditInvoiceDrawer = ({ open, toggle }: Props) => {
       anchor='right'
       onClose={toggle}
       variant='temporary'
+      ModalProps={{ keepMounted: true }}
       sx={{ '& .MuiDrawer-paper': { width: [300, 400] } }}
-      ModalProps={{
-        disablePortal: true,
-        keepMounted: true // Better open performance on mobile.
-      }}
     >
       <Header>
         <Typography variant='h6'>Add Payment</Typography>

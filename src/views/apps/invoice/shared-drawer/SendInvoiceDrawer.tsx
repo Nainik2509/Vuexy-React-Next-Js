@@ -35,10 +35,7 @@ const SendInvoiceDrawer = ({ open, toggle }: Props) => {
       variant='temporary'
       onClose={toggle}
       sx={{ '& .MuiDrawer-paper': { width: [300, 400] } }}
-      ModalProps={{
-        disablePortal: true,
-        keepMounted: true // Better open performance on mobile.
-      }}
+      ModalProps={{ keepMounted: true }}
     >
       <Header>
         <Typography variant='h6'>Send Invoice</Typography>

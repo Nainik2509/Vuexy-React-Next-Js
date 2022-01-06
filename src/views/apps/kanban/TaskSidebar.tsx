@@ -269,10 +269,7 @@ const TaskSidebar = (props: TaskSidebarProps) => {
       anchor='right'
       open={sidebarOpen}
       onClose={handleSidebarClosed}
-      ModalProps={{
-        keepMounted: true,
-        disablePortal: true
-      }}
+      ModalProps={{ keepMounted: true }}
       sx={{ '& .MuiDrawer-paper': { width: ['100%', 400] } }}
     >
       <Box

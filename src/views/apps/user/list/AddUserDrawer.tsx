@@ -130,11 +130,8 @@ const SidebarAddUser = (props: SidebarAddUserType) => {
       anchor='right'
       variant='temporary'
       onClose={handleClose}
+      ModalProps={{ keepMounted: true }}
       sx={{ '& .MuiDrawer-paper': { width: { xs: 300, sm: 400 } } }}
-      ModalProps={{
-        disablePortal: true,
-        keepMounted: true // Better open performance on mobile.
-      }}
     >
       <Header>
         <Typography variant='h6'>Add Payment</Typography>
