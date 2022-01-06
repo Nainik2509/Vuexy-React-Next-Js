@@ -59,7 +59,6 @@ import TableHeader from 'src/views/apps/invoice/list/TableHeader'
 
 // ** Styled Components
 import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-import DataGridWrapper from 'src/@core/styles/mui/components/datagrid'
 
 interface InvoiceListProps {
   userView?: boolean
@@ -428,7 +427,7 @@ const InvoiceList = (props: InvoiceListProps) => {
             handleFilter={handleFilter}
             handlePerPage={handlePerPage}
           />
-          <DataGridWrapper sx={{ height: `calc(100vh - 8rem)` }}>
+          <Box sx={{ height: `calc(100vh - 8rem)` }}>
             <DataGrid
               checkboxSelection
               columns={columns}
@@ -438,7 +437,7 @@ const InvoiceList = (props: InvoiceListProps) => {
               pageSize={Number(rowsPerPage)}
               onSelectionModelChange={rows => setSelectedRows(rows)}
             />
-          </DataGridWrapper>
+          </Box>
         </Card>
       </Grid>
     </Grid>
