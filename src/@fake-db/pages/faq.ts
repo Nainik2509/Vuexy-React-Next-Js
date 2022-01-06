@@ -106,7 +106,7 @@ const data: FaqType[] = [
 ]
 
 mock.onGet('/pages/faqs').reply(config => {
-  const { q = '' } = config.params
+  const { q = '' } = config.params ?? ''
   const queryLowered = q.toLowerCase()
 
   const filteredData: FaqType[] = []

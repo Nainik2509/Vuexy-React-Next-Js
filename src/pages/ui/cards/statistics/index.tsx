@@ -1,5 +1,5 @@
-// ** React Imports
-import { useEffect, useState } from 'react'
+// ** Next Imports
+import { GetStaticProps, InferGetStaticPropsType } from 'next/types'
 
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
@@ -16,36 +16,34 @@ import CardStatisticsVertical from 'src/views/ui/cards/statistics/CardStatistics
 import CardStatisticsHorizontal from 'src/views/ui/cards/statistics/CardStatisticsHorizontal'
 import CardStatisticsCharacters from 'src/views/ui/cards/statistics/CardStatisticsCharacters'
 
-const CardStatistics = () => {
-  // ** State
-  const [data, setData] = useState<CardStatsType | null>(null)
-
-  useEffect(() => {
-    axios.get('/cards/statistics').then(response => {
-      if (response.data && Object.keys(response.data).length) {
-        setData(response.data)
-      } else {
-        setData(null)
-      }
-    })
-  }, [])
-
-  return data !== null ? (
+const CardStatistics = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  return (
     <Grid container spacing={6}>
       <Grid item xs={12}>
-        <CardStatisticsHorizontal data={data.statsHorizontal} />
+        <CardStatisticsHorizontal data={apiData.statsHorizontal} />
       </Grid>
       <Grid item xs={12}>
         <CardStatisticsSales />
       </Grid>
       <Grid item xs={12}>
-        <CardStatisticsVertical data={data.statsVertical} />
+        <CardStatisticsVertical data={apiData.statsVertical} />
       </Grid>
       <Grid item xs={12}>
-        <CardStatisticsCharacters data={data.statsCharacter} />
+        <CardStatisticsCharacters data={apiData.statsCharacter} />
       </Grid>
     </Grid>
-  ) : null
+  )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const res = await axios.get('/cards/statistics')
+  const apiData: CardStatsType = res.data
+
+  return {
+    props: {
+      apiData
+    }
+  }
 }
 
 export default CardStatistics

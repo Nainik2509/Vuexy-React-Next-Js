@@ -1,6 +1,5 @@
-/* eslint-disable prefer-spread */
 // ** React Imports
-import { useEffect, useState, forwardRef, SyntheticEvent, ForwardedRef } from 'react'
+import { useState, forwardRef, SyntheticEvent, ForwardedRef } from 'react'
 
 // ** MUI Imports
 import Card from '@mui/material/Card'
@@ -29,7 +28,6 @@ import Plus from 'mdi-material-ui/Plus'
 import Close from 'mdi-material-ui/Close'
 
 // ** Third Party Imports
-import axios from 'axios'
 import DatePicker from 'react-datepicker'
 
 // ** Configs
@@ -37,7 +35,7 @@ import themeConfig from 'src/configs/themeConfig'
 
 // ** Types
 import { DateType } from 'src/types/forms/reactDatepickerTypes'
-import { InvoiceType, InvoiceClientType } from 'src/types/apps/invoiceTypes'
+import { InvoiceClientType } from 'src/types/apps/invoiceTypes'
 
 // ** Custom Component Imports
 import Repeater from 'src/@core/components/repeater'
@@ -51,9 +49,9 @@ interface PickerProps {
 
 interface Props {
   toggleAddCustomerDrawer: () => void
+  invoiceNumber: number
   clients: InvoiceClientType[] | undefined
   selectedClient: InvoiceClientType | null
-  setClients: (val: InvoiceClientType[]) => void
   setSelectedClient: (val: InvoiceClientType | null) => void
 }
 
@@ -119,42 +117,16 @@ const CustomSelectItem = styled(MenuItem)<MenuItemProps>(({ theme }) => ({
 
 const EditCard = (props: Props) => {
   // ** Props
-  const { clients, setClients, selectedClient, setSelectedClient, toggleAddCustomerDrawer } = props
+  const { clients, invoiceNumber, selectedClient, setSelectedClient, toggleAddCustomerDrawer } = props
 
   // ** States
   const [count, setCount] = useState<number>(1)
   const [selected, setSelected] = useState<string>('')
   const [dueDate, setDueDate] = useState<DateType>(new Date())
-  const [invoiceNumber, setInvoiceNumber] = useState<number>(0)
   const [issueDate, setIssueDate] = useState<DateType>(new Date())
 
   // ** Hook
   const theme = useTheme()
-
-  useEffect(() => {
-    axios.get('/apps/invoice/clients').then(response => {
-      if (response.data && clients === undefined) {
-        setClients(response.data)
-      }
-    })
-  }, [clients, setClients])
-
-  useEffect(() => {
-    axios
-      .get('/apps/invoice/invoices', {
-        params: { q: '', status: '' }
-      })
-      .then(response => {
-        if (response.data && invoiceNumber === 0) {
-          const lastInvoiceNumber = Math.max.apply(
-            Math,
-            response.data.allData.map((i: InvoiceType) => i.id)
-          )
-          /* eslint-enable */
-          setInvoiceNumber(lastInvoiceNumber + 1)
-        }
-      })
-  }, [invoiceNumber])
 
   // ** Deletes form
   const deleteForm = (e: SyntheticEvent) => {
