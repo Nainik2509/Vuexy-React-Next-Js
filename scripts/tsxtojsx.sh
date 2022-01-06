@@ -22,13 +22,10 @@ cd ..
 cd jsx-version
 
 # # # install node_modules
-yarn install
+yarn install --ignore-engines
 
 # # # Format 4 spaces to 2 spacer
 # # # perl -pi -e 's{^((?: {4})*)}{" " x (2*length($1)/4)}e' ./src/**/*.{js,jsx}
-
-# # # Run yarn format command to format all the files using prettier
-yarn format
 
 cd ../scripts
 
@@ -46,8 +43,12 @@ node findReplace.js
 
 cd ../jsx-version
 
+# # # Run yarn format command to format all the files using prettier
+yarn format
+
 # # # Run yarn lint command to fix all the linting error and give space after imports
 yarn lint
+
 
 # # # Automate source code snippets in jsx version
 cd ../scripts

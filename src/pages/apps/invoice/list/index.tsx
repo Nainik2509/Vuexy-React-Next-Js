@@ -287,6 +287,8 @@ const CustomInput = forwardRef((props: CustomInputProps, ref) => {
   const endDate = props.end !== null ? ` - ${format(props.end, 'MM/dd/yyyy')}` : null
 
   const value = `${startDate}${endDate !== null ? endDate : ''}`
+
+  // eslint-disable-next-line
   props.start === null && props.dates.length && props.setDates ? props.setDates([]) : null
   const updatedProps = { ...props }
   delete updatedProps.setDates
