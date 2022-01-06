@@ -87,7 +87,7 @@ const data = {
       labels: ['Images'],
       boardId: 'done',
       attachments: [],
-      coverImage: '/images/cards/workstation.png',
+      coverImage: '/images/cards/cafe-badilico.png',
       description: 'lorem',
       dueDate: dayAfterTomorrow,
       title: 'Find new images for the apps',
@@ -174,11 +174,11 @@ mock.onPost('/apps/kanban/update-task').reply(config => {
 mock.onDelete('/apps/kanban/delete-board').reply(config => {
   const Id = config.data
 
-  const boardIndex = data.boards.findIndex(t => t.id === Id)
-  const taskIndex = data.tasks.findIndex(t => t.boardId === Id)
+  const filteredBoards = data.boards.filter(b => b.id !== Id)
+  const filteredTasks = data.tasks.filter(t => t.boardId !== Id)
 
-  data.boards.splice(boardIndex, 1)
-  data.tasks.splice(taskIndex, 1)
+  data.tasks = filteredTasks
+  data.boards = filteredBoards
 
   return [200]
 })

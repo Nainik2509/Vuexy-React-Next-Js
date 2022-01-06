@@ -109,9 +109,7 @@ const KanbanTasks = (props: KanbanTasksProps) => {
           mt: 4,
           display: 'flex',
           alignItems: 'center',
-          ...((!task.attachments && !task.comments) ||
-          (task.attachments && !task.attachments.length) ||
-          (task.comments && !task.comments.length)
+          ...(task.comments && !task.comments.length && task.attachments && !task.attachments.length
             ? { justifyContent: 'flex-end' }
             : { justifyContent: 'space-between' })
         }}
@@ -123,6 +121,7 @@ const KanbanTasks = (props: KanbanTasksProps) => {
               <AvatarGroup
                 max={3}
                 sx={{
+                  cursor: 'pointer',
                   '& .MuiAvatar-root': { height: 28, width: 28, '&.MuiAvatar-colorDefault': { fontSize: '.85rem' } }
                 }}
               >
@@ -146,7 +145,14 @@ const KanbanTasks = (props: KanbanTasksProps) => {
 
         {task.coverImage ? (
           <Box sx={{ mb: 4, '& img': { borderRadius: 1 } }}>
-            <Image alt={task.title} src={task.coverImage} width='100%' height='100%' layout='responsive' />
+            <Image
+              width='100%'
+              height='100%'
+              alt={task.title}
+              objectFit='cover'
+              layout='responsive'
+              src={task.coverImage}
+            />
           </Box>
         ) : null}
 

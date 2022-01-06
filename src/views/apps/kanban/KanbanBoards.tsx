@@ -1,5 +1,5 @@
 // ** React Imports
-import { useState, useRef, SyntheticEvent } from 'react'
+import { useState, useEffect, useRef, SyntheticEvent } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -46,6 +46,7 @@ const KanbanBoard = (props: KanbanBoardProps) => {
   const { store, board, isLastBoard, handleTaskSidebarToggle, labelColors } = props
 
   // ** States
+  const [title, setTitle] = useState<string>('')
   const [showAddTask, setShowAddTask] = useState<string | null>(null)
   const [optionsAnchorEl, setOptionsAnchorEl] = useState<null | HTMLElement>(null)
 
@@ -70,6 +71,10 @@ const KanbanBoard = (props: KanbanBoardProps) => {
   })
 
   drop(boardRef)
+
+  useEffect(() => {
+    setTitle(board.title)
+  }, [board.title])
 
   const handleOptionsMenuClick = (event: SyntheticEvent) => {
     setOptionsAnchorEl(event.currentTarget as HTMLElement)
@@ -117,6 +122,7 @@ const KanbanBoard = (props: KanbanBoardProps) => {
                 label='Task Title'
                 onChange={onChange}
                 placeholder='Task Title'
+                inputProps={{ autoFocus: true }}
                 error={Boolean(errors.taskTitle)}
                 aria-describedby='validation-add-task'
               />
@@ -147,7 +153,8 @@ const KanbanBoard = (props: KanbanBoardProps) => {
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <TextField
               size='small'
-              defaultValue={board.title}
+              value={title}
+              onChange={e => setTitle(e.target.value)}
               sx={{
                 '&:hover': { backgroundColor: 'background.paper' },
                 '& fieldset': { border: 'none !important' }
@@ -162,6 +169,14 @@ const KanbanBoard = (props: KanbanBoardProps) => {
             anchorEl={optionsAnchorEl}
             onClose={handleOptionsMenuClose}
             PaperProps={{ style: { minWidth: '9rem' } }}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left'
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'left'
+            }}
           >
             <MenuItem onClick={handleClearTasks}>
               <Typography>Clear Tasks</Typography>
