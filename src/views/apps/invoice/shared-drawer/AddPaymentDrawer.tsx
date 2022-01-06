@@ -66,10 +66,10 @@ const EditInvoiceDrawer = ({ open, toggle }: Props) => {
       <Box sx={{ p: 5 }}>
         <FormControl fullWidth sx={{ mb: 6 }}>
           <TextField
-            label=''
             variant='outlined'
+            label='Invoice Balance'
             InputProps={{ disabled: true }}
-            defaultValue='Invoice Balance: 5000.00'
+            defaultValue='5000.00'
           />
         </FormControl>
         <FormControl fullWidth sx={{ mb: 6 }}>
