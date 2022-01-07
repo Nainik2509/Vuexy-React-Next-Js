@@ -1,5 +1,5 @@
 // ** React Imports
-import { Ref, useState, forwardRef, ReactElement, useEffect, ChangeEvent } from 'react'
+import { Ref, useState, forwardRef, ReactElement, ChangeEvent } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -15,9 +15,6 @@ import CardContent from '@mui/material/CardContent'
 import Fade, { FadeProps } from '@mui/material/Fade'
 import DialogContent from '@mui/material/DialogContent'
 
-// ** Third Party Imports
-import axios from 'axios'
-
 // ** Icons Imports
 import Close from 'mdi-material-ui/Close'
 import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
@@ -28,6 +25,10 @@ import PlanDetails from 'src/@core/components/plan-details'
 // ** Types
 import { PricingDataType, PricingPlanType } from 'src/@core/components/plan-details/types'
 
+interface Props {
+  data: PricingDataType
+}
+
 const Transition = forwardRef(function Transition(
   props: FadeProps & { children?: ReactElement<any, any> },
   ref: Ref<unknown>
@@ -35,21 +36,10 @@ const Transition = forwardRef(function Transition(
   return <Fade ref={ref} {...props} />
 })
 
-const DialogPricing = () => {
+const DialogPricing = ({ data }: Props) => {
   // ** States
   const [show, setShow] = useState<boolean>(false)
-  const [data, setData] = useState<PricingDataType | null>(null)
   const [plan, setPlan] = useState<'monthly' | 'annually'>('monthly')
-
-  useEffect(() => {
-    axios.get('/pages/pricing').then(response => {
-      if (response.data) {
-        setData(response.data)
-      } else {
-        setData(null)
-      }
-    })
-  }, [])
 
   const handleChange = (e: ChangeEvent<{ checked: boolean }>) => {
     if (e.target.checked) {

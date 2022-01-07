@@ -1,5 +1,8 @@
 // ** React Imports
-import { useEffect, useState, ChangeEvent } from 'react'
+import { useState, ChangeEvent } from 'react'
+
+// ** Next Imports
+import { GetStaticProps, InferGetStaticPropsType } from 'next/types'
 
 // ** MUI Imports
 import Card from '@mui/material/Card'
@@ -29,20 +32,9 @@ const CardContent = styled(MuiCardContent)<CardContentProps>(({ theme }) => ({
   }
 }))
 
-const Pricing = () => {
+const Pricing = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // ** States
-  const [data, setData] = useState<PricingDataType | null>(null)
   const [plan, setPlan] = useState<'monthly' | 'annually'>('monthly')
-
-  useEffect(() => {
-    axios.get('/pages/pricing').then(response => {
-      if (response.data) {
-        setData(response.data)
-      } else {
-        setData(null)
-      }
-    })
-  }, [])
 
   const handleChange = (e: ChangeEvent<{ checked: boolean }>) => {
     if (e.target.checked) {
@@ -56,12 +48,23 @@ const Pricing = () => {
     <Card>
       <CardContent>
         <PricingHeader plan={plan} handleChange={handleChange} />
-        <PricingPlans plan={plan} data={data} />
+        <PricingPlans plan={plan} data={apiData} />
       </CardContent>
       <PricingCTA />
-      <PricingFooter data={data} />
+      <PricingFooter data={apiData} />
     </Card>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const res = await axios.get('/pages/pricing')
+  const apiData: PricingDataType = res.data
+
+  return {
+    props: {
+      apiData
+    }
+  }
 }
 
 export default Pricing

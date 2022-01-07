@@ -18,9 +18,6 @@ import { getInitials } from 'src/@core/utils/get-initials'
 // ** Data Import
 import { rows } from 'src/@fake-db/table/static-data'
 
-// ** Styled Wrapper
-import DataGridWrapper from 'src/@core/styles/mui/components/datagrid'
-
 interface StatusObj {
   [key: number]: {
     title: string
@@ -146,9 +143,9 @@ const TableSelection = () => {
   return (
     <Card>
       <CardHeader title='Selection' />
-      <DataGridWrapper sx={{ height: 500 }}>
+      <Box sx={{ height: 500 }}>
         <DataGrid rows={rows} autoPageSize checkboxSelection columns={Columns} />
-      </DataGridWrapper>
+      </Box>
     </Card>
   )
 }

@@ -35,9 +35,6 @@ import { getInitials } from 'src/@core/utils/get-initials'
 // ** Actions Imports
 import { fetchData } from 'src/store/apps/user'
 
-// ** Styled Components
-import DataGridWrapper from 'src/@core/styles/mui/components/datagrid'
-
 // ** Types Imports
 import { RootState } from 'src/store'
 import { UsersType } from 'src/types/apps/userTypes'
@@ -256,9 +253,9 @@ const UserList = () => {
             handlePerPage={handlePerPage}
             handlePlanChange={handlePlanChange}
           />
-          <DataGridWrapper sx={{ height: 'calc(100vh - 8rem)' }}>
+          <Box sx={{ height: 'calc(100vh - 8rem)' }}>
             <DataGrid rows={store.data} columns={defaultColumns} pageSize={Number(rowsPerPage)} />
-          </DataGridWrapper>
+          </Box>
         </Card>
       </Grid>
     </Grid>
