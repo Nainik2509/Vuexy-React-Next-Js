@@ -27,7 +27,11 @@ export const AuthGuard = (props: AuthGuardProps) => {
         query: { returnUrl: router.asPath }
       })
     }
-  }, [])
+
+    if (auth.user !== null && pageProps.restrictedPage) {
+      router.replace(router.asPath)
+    }
+  }, [router.route])
 
   return <>{children}</>
 }
