@@ -142,11 +142,9 @@ const RegisterV2 = () => {
           <RegisterIllustrationWrapper>
             <RegisterIllustration
               alt='register-illustration'
-              src={
-                theme.palette.mode === 'light'
-                  ? '/images/pages/auth-v2-register-illustration-light.png'
-                  : '/images/pages/auth-v2-register-illustration-dark.png'
-              }
+              src={`/images/pages/auth-v2-register-illustration-${
+                theme.palette.mode === 'light' ? 'light' : 'dark'
+              }.png`}
             />
           </RegisterIllustrationWrapper>
           <FooterIllustrationsV2 image={<TreeIllustration alt='tree' src='/images/pages/tree-2.png' />} />

@@ -157,11 +157,7 @@ const LoginPage = () => {
           <LoginIllustrationWrapper>
             <LoginIllustration
               alt='login-illustration'
-              src={
-                theme.palette.mode === 'light'
-                  ? '/images/pages/auth-v2-login-illustration-light.png'
-                  : '/images/pages/auth-v2-login-illustration-dark.png'
-              }
+              src={`/images/pages/auth-v2-login-illustration-${theme.palette.mode === 'light' ? 'light' : 'dark'}.png`}
             />
           </LoginIllustrationWrapper>
           <FooterIllustrationsV2 />

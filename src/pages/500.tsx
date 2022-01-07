@@ -46,28 +46,31 @@ const TreeIllustration = styled('img')(({ theme }) => ({
   }
 }))
 
-const Error = () => {
+const Error500 = () => {
   return (
     <Box className='content-center'>
       <Box sx={{ p: 5, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
         <BoxWrapper>
-          <Typography variant='h5' sx={{ fontWeight: 600, marginBottom: 1, fontSize: '1.5rem !important' }}>
-            Page Not Found ⚠️
+          <Typography variant='h1' sx={{ fontWeight: 500 }}>
+            500
           </Typography>
-          <Typography variant='body2'>We couldn&prime;t find the page you are looking for</Typography>
+          <Typography variant='h5' sx={{ fontWeight: 600, marginBottom: 1, fontSize: '1.5rem !important' }}>
+            Internal server error 👨🏻‍💻
+          </Typography>
+          <Typography variant='body2'>Oops, something went wrong!</Typography>
         </BoxWrapper>
-        <Img height='487' alt='error-illustration' src='/images/pages/misc-error.png' />
+        <Img height='487' alt='error-illustration' src='/images/pages/500.png' />
         <Link passHref href='/'>
           <Button component='a' variant='contained' sx={{ px: 5.5 }}>
             Back to Home
           </Button>
         </Link>
       </Box>
-      <FooterIllustrations image={<TreeIllustration alt='tree' src='/images/pages/tree.png' />} />
+      <FooterIllustrations image={<TreeIllustration alt='tree' src='/images/pages/tree-3.png' />} />
     </Box>
   )
 }
 
-Error.getLayout = (page: ReactNode) => <BlankLayout>{page}</BlankLayout>
+Error500.getLayout = (page: ReactNode) => <BlankLayout>{page}</BlankLayout>
 
-export default Error
+export default Error500

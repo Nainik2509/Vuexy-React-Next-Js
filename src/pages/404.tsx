@@ -1,7 +1,7 @@
 // ** React Imports
 import { ReactNode } from 'react'
 
-// ** Next Imports
+// ** Next Import
 import Link from 'next/link'
 
 // ** MUI Components
@@ -24,7 +24,7 @@ const BoxWrapper = styled(Box)<BoxProps>(({ theme }) => ({
 }))
 
 const Img = styled('img')(({ theme }) => ({
-  marginBottom: theme.spacing(9.75),
+  marginBottom: theme.spacing(10),
   [theme.breakpoints.down('lg')]: {
     height: 450,
     marginTop: theme.spacing(10)
@@ -33,32 +33,44 @@ const Img = styled('img')(({ theme }) => ({
     height: 400
   },
   [theme.breakpoints.up('lg')]: {
-    marginTop: theme.spacing(12)
+    marginTop: theme.spacing(13)
   }
 }))
 
-const NotAuthorized = () => {
+const TreeIllustration = styled('img')(({ theme }) => ({
+  left: 0,
+  bottom: '5rem',
+  position: 'absolute',
+  [theme.breakpoints.down('lg')]: {
+    bottom: 0
+  }
+}))
+
+const Error404 = () => {
   return (
     <Box className='content-center'>
       <Box sx={{ p: 5, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
         <BoxWrapper>
-          <Typography variant='h5' sx={{ fontWeight: 600, marginBottom: 1, fontSize: '1.5rem !important' }}>
-            You are not authorized! 🔐
+          <Typography variant='h1' sx={{ fontWeight: 500 }}>
+            404
           </Typography>
-          <Typography variant='body2'>You don’t have permission to access this page. Go Home!</Typography>
+          <Typography variant='h5' sx={{ fontWeight: 600, marginBottom: 1, fontSize: '1.5rem !important' }}>
+            Page Not Found ⚠️
+          </Typography>
+          <Typography variant='body2'>We couldn&prime;t find the page you are looking for.</Typography>
         </BoxWrapper>
-        <Img height='487' alt='not-authorized-illustration' src='/images/pages/misc-not-authorized.png' />
-        <Link href='/' passHref>
-          <Button type='submit' component='a' variant='contained' sx={{ paddingLeft: 5.5, paddingRight: 5.5 }}>
+        <Img height='487' alt='error-illustration' src='/images/pages/404.png' />
+        <Link passHref href='/'>
+          <Button component='a' variant='contained' sx={{ px: 5.5 }}>
             Back to Home
           </Button>
         </Link>
       </Box>
-      <FooterIllustrations />
+      <FooterIllustrations image={<TreeIllustration alt='tree' src='/images/pages/tree.png' />} />
     </Box>
   )
 }
 
-NotAuthorized.getLayout = (page: ReactNode) => <BlankLayout>{page}</BlankLayout>
+Error404.getLayout = (page: ReactNode) => <BlankLayout>{page}</BlankLayout>
 
-export default NotAuthorized
+export default Error404

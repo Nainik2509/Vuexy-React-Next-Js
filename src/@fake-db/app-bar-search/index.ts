@@ -196,342 +196,349 @@ const searchData: AppBarSearchType[] = [
   },
   {
     id: 28,
-    url: '/pages/misc/not-authorized',
-    icon: 'AccountMultipleRemoveOutline',
-    title: 'Not Authorized',
-    type: 'pages'
-  },
-  {
-    id: 29,
     url: '/pages/misc/under-maintenance',
     icon: 'Screwdriver',
     title: 'Under Maintenance',
     type: 'pages'
   },
   {
-    id: 30,
-    url: '/pages/misc/error',
+    id: 29,
+    url: '/pages/misc/404-not-found',
     icon: 'AlertCircleOutline',
-    title: 'Error',
+    title: 'Page Not Found - 404',
+    type: 'pages'
+  },
+  {
+    id: 30,
+    url: '/pages/misc/401-not-authorized',
+    icon: 'AccountMultipleRemoveOutline',
+    title: 'Not Authorized - 401',
     type: 'pages'
   },
   {
     id: 31,
+    url: '/pages/misc/500-server-error',
+    icon: 'AccountMultipleRemoveOutline',
+    title: 'Server Error - 500',
+    type: 'pages'
+  },
+  {
+    id: 32,
     url: '/pages/dialog-examples',
     icon: 'VectorArrangeBelow',
     title: 'Dialog Examples',
     type: 'pages'
   },
   {
-    id: 32,
+    id: 33,
     url: '/ui/typography',
     icon: 'FormatTextVariantOutline',
     title: 'Typography',
     type: 'pages'
   },
   {
-    id: 33,
+    id: 34,
     url: '/ui/icons',
     icon: 'StarOutline',
     title: 'Icons',
     type: 'pages'
   },
   {
-    id: 34,
+    id: 35,
     url: '/ui/cards/basic',
     icon: 'CardOutline',
     title: 'Card Basic',
     type: 'pages'
   },
   {
-    id: 35,
+    id: 36,
     url: '/ui/cards/statistics',
     icon: 'CardTextOutline',
     title: 'Card Statistics',
     type: 'pages'
   },
   {
-    id: 36,
+    id: 37,
     url: '/ui/cards/advanced',
     icon: 'CardBulletedSettingsOutline',
     title: 'Card Advanced',
     type: 'pages'
   },
   {
-    id: 37,
+    id: 38,
     url: '/ui/cards/gamification',
     icon: 'CardAccountDetailsOutline',
     title: 'Card Gamification',
     type: 'pages'
   },
   {
-    id: 38,
+    id: 39,
     url: '/ui/cards/actions',
     icon: 'CardPlusOutline',
     title: 'Card Actions',
     type: 'pages'
   },
   {
-    id: 39,
+    id: 40,
     url: '/components/accordion',
     icon: 'FullscreenExit',
     title: 'Accordion',
     type: 'pages'
   },
   {
-    id: 40,
+    id: 41,
     url: '/components/alerts',
     icon: 'AlertOutline',
     title: 'Alerts',
     type: 'pages'
   },
   {
-    id: 41,
+    id: 42,
     url: '/components/avatars',
     icon: 'AccountCircleOutline',
     title: 'Avatars',
     type: 'pages'
   },
   {
-    id: 42,
+    id: 43,
     url: '/components/badges',
     icon: 'CircleOutline',
     title: 'Badges',
     type: 'pages'
   },
   {
-    id: 43,
+    id: 44,
     url: '/components/buttons',
     icon: 'GestureTapButton',
     title: 'Buttons',
     type: 'pages'
   },
   {
-    id: 44,
+    id: 45,
     url: '/components/button-group',
     icon: 'CheckboxMultipleBlankOutline',
     title: 'Button Group',
     type: 'pages'
   },
   {
-    id: 45,
+    id: 46,
     url: '/components/chips',
     icon: 'CardOutline',
     title: 'Chips',
     type: 'pages'
   },
   {
-    id: 46,
+    id: 47,
     url: '/components/dialogs',
     icon: 'TextBoxOutline',
     title: 'Dialogs',
     type: 'pages'
   },
   {
-    id: 47,
+    id: 48,
     url: '/components/list',
     icon: 'FormatListBulleted',
     title: 'List',
     type: 'pages'
   },
   {
-    id: 48,
+    id: 49,
     url: '/components/menu',
     icon: 'Menu',
     title: 'Menu',
     type: 'pages'
   },
   {
-    id: 49,
+    id: 50,
     url: '/components/pagination',
     icon: 'DotsHorizontal',
     title: 'Pagination',
     type: 'pages'
   },
   {
-    id: 50,
+    id: 51,
     url: '/components/ratings',
     icon: 'StarOutline',
     title: 'Ratings',
     type: 'pages'
   },
   {
-    id: 51,
+    id: 52,
     url: '/components/snackbar',
     icon: 'AlertCircleOutline',
     title: 'Snackbar',
     type: 'pages'
   },
   {
-    id: 52,
+    id: 53,
     url: '/components/tabs',
     icon: 'Tab',
     title: 'Tabs',
     type: 'pages'
   },
   {
-    id: 53,
+    id: 54,
     url: '/components/toast',
     icon: 'RectangleOutline',
     title: 'Toast',
     type: 'pages'
   },
   {
-    id: 54,
+    id: 55,
     url: '/components/timeline',
     icon: 'TimelineOutline',
     title: 'Timeline',
     type: 'pages'
   },
   {
-    id: 55,
+    id: 56,
     url: '/components/tree-view',
     icon: 'FileTreeOutline',
     title: 'Tree View',
     type: 'pages'
   },
   {
-    id: 56,
+    id: 57,
     url: '/components/more',
     icon: 'ViewGridPlusOutline',
     title: 'More Components',
     type: 'pages'
   },
   {
-    id: 57,
+    id: 58,
     url: '/forms/form-elements/text-field',
     icon: 'Lastpass',
     title: 'TextField',
     type: 'pages'
   },
   {
-    id: 58,
+    id: 59,
     url: '/forms/form-elements/select',
     icon: 'FormatListCheckbox',
     title: 'Select',
     type: 'pages'
   },
   {
-    id: 59,
+    id: 60,
     url: '/forms/form-elements/checkbox',
     icon: 'CheckboxOutline',
     title: 'Checkbox',
     type: 'pages'
   },
   {
-    id: 60,
+    id: 61,
     url: '/forms/form-elements/radio',
     icon: 'RadioboxMarked',
     title: 'Radio',
     type: 'pages'
   },
   {
-    id: 61,
+    id: 62,
     url: '/forms/form-elements/textarea',
     icon: 'CardTextOutline',
     title: 'Textarea',
     type: 'pages'
   },
   {
-    id: 62,
+    id: 63,
     url: '/forms/form-elements/autocomplete',
     icon: 'Lastpass',
     title: 'Autocomplete',
     type: 'pages'
   },
   {
-    id: 63,
+    id: 64,
     url: '/forms/form-elements/pickers',
     icon: 'CalendarRange',
     title: 'Date Pickers',
     type: 'pages'
   },
   {
-    id: 64,
+    id: 65,
     url: '/forms/form-elements/switch',
     icon: 'ToggleSwitchOutline',
     title: 'Switch',
     type: 'pages'
   },
   {
-    id: 65,
+    id: 66,
     url: '/forms/form-elements/file-uploader',
     icon: 'TrayArrowUp',
     title: 'File Uploader',
     type: 'pages'
   },
   {
-    id: 66,
+    id: 67,
     url: '/forms/form-elements/editor',
     icon: 'SquareEditOutline',
     title: 'Editor',
     type: 'pages'
   },
   {
-    id: 67,
+    id: 68,
     url: '/forms/form-elements/slider',
     icon: 'TransitConnectionHorizontal',
     title: 'Slider',
     type: 'pages'
   },
   {
-    id: 68,
+    id: 69,
     url: '/forms/form-elements/input-mask',
     icon: 'Lastpass',
     title: 'Input Mask',
     type: 'pages'
   },
   {
-    id: 69,
+    id: 70,
     url: '/forms/form-layouts',
     icon: 'ViewGridOutline',
     title: 'Form Layouts',
     type: 'pages'
   },
   {
-    id: 70,
+    id: 71,
     url: '/forms/form-validation',
     icon: 'AlertOutline',
     title: 'Form Validation',
     type: 'pages'
   },
   {
-    id: 71,
+    id: 72,
     url: '/forms/form-wizard',
     icon: 'TransitConnectionHorizontal',
     title: 'Form Wizard',
     type: 'pages'
   },
   {
-    id: 72,
+    id: 73,
     url: '/tables/mui',
     icon: 'Table',
     title: 'Table',
     type: 'pages'
   },
   {
-    id: 73,
+    id: 74,
     url: '/tables/data-grid',
     icon: 'Table',
     title: 'Mui DataGrid',
     type: 'pages'
   },
   {
-    id: 74,
+    id: 75,
     url: '/charts/apex-charts',
     icon: 'ChartLine',
     title: 'Apex Charts',
     type: 'pages'
   },
   {
-    id: 75,
+    id: 76,
     url: '/charts/recharts',
     icon: 'ChartBellCurveCumulative',
     title: 'Recharts',
     type: 'pages'
   },
   {
-    id: 76,
+    id: 77,
     url: '/charts/chartjs',
     icon: 'ChartBellCurve',
     title: 'ChartJS',

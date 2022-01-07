@@ -46,11 +46,7 @@ const FooterIllustrationsV1 = (props: FooterIllustrationsProp) => {
         {image1 || <Tree1Img alt='tree' src='/images/pages/auth-v1-tree.png' />}
         <MaskImg
           alt='mask'
-          src={
-            theme.palette.mode === 'light'
-              ? '/images/pages/auth-v1-mask-light.png'
-              : '/images/pages/auth-v1-mask-dark.png'
-          }
+          src={`/images/pages/auth-v1-mask-${theme.palette.mode === 'light' ? 'light' : 'dark'}.png`}
         />
         {image2 || <Tree2Img alt='tree-2' src='/images/pages/auth-v1-tree-2.png' />}
       </Fragment>

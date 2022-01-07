@@ -215,18 +215,23 @@ const navigation = (): VerticalNavItemsType => {
             },
             {
               openInNewTab: true,
-              title: 'Not Authorized',
-              path: '/pages/misc/not-authorized'
-            },
-            {
-              openInNewTab: true,
               title: 'Under Maintenance',
               path: '/pages/misc/under-maintenance'
             },
             {
               openInNewTab: true,
-              title: 'Error',
-              path: '/pages/misc/error'
+              title: 'Page Not Found - 404',
+              path: '/pages/misc/404-not-found'
+            },
+            {
+              openInNewTab: true,
+              title: 'Not Authorized - 401',
+              path: '/pages/misc/401-not-authorized'
+            },
+            {
+              openInNewTab: true,
+              title: 'Server Error - 500',
+              path: '/pages/misc/500-server-error'
             }
           ]
         }
