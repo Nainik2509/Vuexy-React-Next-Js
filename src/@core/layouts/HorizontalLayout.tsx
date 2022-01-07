@@ -25,6 +25,9 @@ import Navigation from './components/horizontal/navigation'
 import ScrollToTop from 'src/@core/components/scroll-to-top'
 import AppBarContent from './components/horizontal/app-bar-content'
 
+// ** Util Import
+import { hexToRGBA } from '../utils/hex-to-rgba'
+
 const HorizontalLayoutWrapper = styled('div')({
   display: 'flex',
   minHeight: '100vh',
@@ -70,63 +73,78 @@ const HorizontalLayout = (props: LayoutProps) => {
   const [showBackdrop, setShowBackdrop] = useState<boolean>(false)
 
   // ** Vars
-  const { contentWidth } = settings
+  const { appBar, navHidden, contentWidth } = settings
 
   return (
     <HorizontalLayoutWrapper className='layout-wrapper'>
-      {/* AppBar Component */}
-      {settings.appBar === 'hidden' ? null : (
-        <AppBar
-          elevation={3}
-          color='default'
-          className='layout-navbar-and-nav-container'
-          position={settings.appBar === 'fixed' ? 'sticky' : 'static'}
+      {/* Navbar (or AppBar) and Navigation Menu Wrapper */}
+      <AppBar
+        elevation={3}
+        color='default'
+        className='layout-navbar-and-nav-container'
+        position={appBar === 'fixed' ? 'sticky' : 'static'}
+        sx={{
+          transition: 'none',
+          alignItems: 'center',
+          color: 'text.primary',
+          justifyContent: 'center',
+          ...(appBar === 'static' && { zIndex: 13 }),
+          backgroundColor: theme => theme.palette.background.paper
+        }}
+      >
+        {/* Navbar / AppBar */}
+        <Box
+          className='layout-navbar'
           sx={{
-            transition: 'none',
-            alignItems: 'center',
-            color: 'text.primary',
-            justifyContent: 'center',
-            ...(settings.appBar === 'static' && { boxShadow: 'none', backgroundColor: 'transparent' }),
-            ...(settings.appBar === 'fixed' && { backgroundColor: theme => theme.palette.background.paper })
+            width: '100%',
+            ...(navHidden ? {} : { borderBottom: theme => `1px solid ${theme.palette.divider}` })
           }}
         >
-          <Box
-            className='layout-navbar'
+          <Toolbar
+            className='navbar-content-container'
             sx={{
-              width: '100%',
-              ...(settings.navHidden ? {} : { borderBottom: theme => `1px solid ${theme.palette.divider}` })
+              mx: 'auto',
+              minHeight: `${themeConfig.appBarHeight - 1}px !important`,
+              ...(contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } })
             }}
           >
+            <AppBarContent
+              {...props}
+              hidden={hidden}
+              settings={settings}
+              saveSettings={saveSettings}
+              setShowBackdrop={setShowBackdrop}
+            />
+          </Toolbar>
+        </Box>
+
+        {/* Navigation Menu */}
+        {navHidden ? null : (
+          <Box className='layout-horizontal-nav' sx={{ width: '100%', position: 'relative' }}>
             <Toolbar
-              className='navbar-content-container'
+              className='horizontal-nav-content-container'
               sx={{
                 mx: 'auto',
-                minHeight: `${themeConfig.appBarHeight - 1}px !important`,
-                ...(settings.contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } })
-              }}
-            >
-              <AppBarContent
-                {...props}
-                hidden={hidden}
-                settings={settings}
-                saveSettings={saveSettings}
-                setShowBackdrop={setShowBackdrop}
-              />
-            </Toolbar>
-          </Box>
-          {settings.navHidden ? null : (
-            <Toolbar
-              className='layout-horizontal-nav'
-              sx={{
                 minHeight: `${themeConfig.appBarHeight}px !important`,
-                ...(settings.contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } })
+                ...(contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } })
               }}
             >
               {(userHorizontalNavMenuContent && userHorizontalNavMenuContent(props)) || <Navigation {...props} />}
             </Toolbar>
-          )}
-        </AppBar>
-      )}
+            <Backdrop
+              open={showBackdrop}
+              onClick={() => setShowBackdrop(false)}
+              sx={{
+                position: 'absolute',
+                backgroundColor: theme =>
+                  theme.palette.mode === 'light'
+                    ? `rgba(${theme.palette.customColors.main}, 0.665)`
+                    : hexToRGBA(theme.palette.background.default, 0.7)
+              }}
+            />
+          </Box>
+        )}
+      </AppBar>
 
       {/* Content */}
       <ContentWrapper
@@ -142,7 +160,7 @@ const HorizontalLayout = (props: LayoutProps) => {
         {children}
       </ContentWrapper>
 
-      {/* Footer Component */}
+      {/* Footer */}
       <Footer showBackdrop={showBackdrop} {...props} />
 
       {/* Customizer */}
