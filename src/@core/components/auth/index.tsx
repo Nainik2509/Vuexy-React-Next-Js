@@ -22,7 +22,7 @@ export const AuthGuard = (props: AuthGuardProps) => {
 
   useEffect(() => {
     if (auth.user === null && !pageProps.restrictedPage && !window.localStorage.getItem('userData')) {
-      router.push({
+      router.replace({
         pathname: '/login',
         query: { returnUrl: router.asPath }
       })
