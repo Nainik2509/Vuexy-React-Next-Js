@@ -434,7 +434,6 @@ const InvoiceList = (props: InvoiceListProps) => {
               columns={columns}
               rows={store.data}
               disableSelectionOnClick
-              rowsPerPageOptions={[]}
               pageSize={Number(rowsPerPage)}
               onSelectionModelChange={rows => setSelectedRows(rows)}
             />

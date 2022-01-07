@@ -407,7 +407,7 @@ const UserList = () => {
             handlePerPage={handlePerPage}
           />
           <DataGridWrapper sx={{ height: 'calc(100vh - 8rem)' }}>
-            <DataGrid rows={store.data} pageSize={rowsPerPage} columns={defaultColumns} rowsPerPageOptions={[]} />
+            <DataGrid rows={store.data} pageSize={rowsPerPage} columns={defaultColumns} />
           </DataGridWrapper>
         </Card>
       </Grid>

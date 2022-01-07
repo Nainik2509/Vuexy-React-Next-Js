@@ -257,12 +257,7 @@ const UserList = () => {
             handlePlanChange={handlePlanChange}
           />
           <DataGridWrapper sx={{ height: 'calc(100vh - 8rem)' }}>
-            <DataGrid
-              rows={store.data}
-              rowsPerPageOptions={[]}
-              columns={defaultColumns}
-              pageSize={Number(rowsPerPage)}
-            />
+            <DataGrid rows={store.data} columns={defaultColumns} pageSize={Number(rowsPerPage)} />
           </DataGridWrapper>
         </Card>
       </Grid>

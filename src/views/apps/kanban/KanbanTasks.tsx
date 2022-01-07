@@ -146,6 +146,7 @@ const KanbanTasks = (props: KanbanTasksProps) => {
         {task.coverImage ? (
           <Box sx={{ mb: 4, '& img': { borderRadius: 1 } }}>
             <Image
+              priority
               width='100%'
               height='100%'
               alt={task.title}

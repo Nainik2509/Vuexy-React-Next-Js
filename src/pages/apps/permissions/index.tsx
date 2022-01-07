@@ -188,7 +188,7 @@ const PermissionsTable = () => {
             handlePerPage={handlePerPage}
           />
           <DataGridWrapper sx={{ height: 'calc(100vh - 11rem)' }}>
-            <DataGrid columns={columns} rows={store.data} rowsPerPageOptions={[]} pageSize={Number(rowsPerPage)} />
+            <DataGrid columns={columns} rows={store.data} pageSize={Number(rowsPerPage)} />
           </DataGridWrapper>
           <Dialog maxWidth='sm' fullWidth onClose={handleDialogToggle} open={editDialogOpen}>
             <DialogTitle sx={{ mx: 'auto', textAlign: 'center' }}>
