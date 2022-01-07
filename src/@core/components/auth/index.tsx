@@ -1,14 +1,14 @@
 // ** React Imports
 import { ReactNode, useEffect } from 'react'
 
-// ** Prop Type Imports
-import PropTypes from 'prop-types'
-
 // ** Next Imports
 import { useRouter } from 'next/router'
 
 // ** Hooks Import
-import { useAuth } from '../../hooks/useAuth'
+import { useAuth } from 'src/@core/hooks/useAuth'
+
+// ** Spinner Import
+// import Spinner from 'src/@core/components/spinner'
 
 interface AuthGuardProps {
   pageProps: any
@@ -27,15 +27,16 @@ export const AuthGuard = (props: AuthGuardProps) => {
         query: { returnUrl: router.asPath }
       })
     }
-
-    if (auth.user !== null && pageProps.restrictedPage) {
-      router.replace(router.asPath)
+    if (window.localStorage.getItem('userData') && pageProps.restrictedPage) {
+      if (router.query && router.query.returnUrl) {
+        router.replace(router.query.returnUrl as string)
+      }
     }
-  }, [router.route])
+  }, [router.route, pageProps.restrictedPage])
+
+  if (auth.loading || (auth.user === null && !pageProps.restrictedPage)) {
+    return null
+  }
 
   return <>{children}</>
-}
-
-AuthGuard.propTypes = {
-  children: PropTypes.node
 }

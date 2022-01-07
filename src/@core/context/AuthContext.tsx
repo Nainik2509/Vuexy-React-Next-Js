@@ -53,9 +53,9 @@ const AuthProvider = ({ children }: Props) => {
               Authorization: storedToken
             }
           })
-          .then(response => {
-            setUser({ ...response.data.userData })
+          .then(async response => {
             setLoading(false)
+            setUser({ ...response.data.userData })
           })
       } else {
         setLoading(false)
