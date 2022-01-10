@@ -24,8 +24,8 @@ import { addBoard } from 'src/store/apps/kanban'
 import { BoardType, LabelColorsType, KanbanBoardLayoutProps, AddNewBoardType } from 'src/types/apps/kanbanTypes'
 
 // ** Kanban Component
-import KanbanBoards from './KanbanBoards'
 import TaskSidebar from './TaskSidebar'
+import KanbanBoards from './KanbanBoards'
 
 const defaultValues = {
   boardTitle: ''

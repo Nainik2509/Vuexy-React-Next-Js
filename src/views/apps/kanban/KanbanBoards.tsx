@@ -1,5 +1,5 @@
 // ** React Imports
-import { useState, useEffect, useRef, SyntheticEvent } from 'react'
+import { useState, useEffect, SyntheticEvent } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -17,14 +17,14 @@ import Plus from 'mdi-material-ui/Plus'
 import DotsVertical from 'mdi-material-ui/DotsVertical'
 
 // ** Third Party Imports
-import { useDrop } from 'react-dnd'
+import { Droppable } from 'react-beautiful-dnd'
 import { useForm, Controller } from 'react-hook-form'
 
 // ** Redux Imports
 import { useDispatch } from 'react-redux'
 
 // ** Actions
-import { clearTasks, deleteBoard, addTask, updateTask } from 'src/store/apps/kanban'
+import { clearTasks, deleteBoard, addTask } from 'src/store/apps/kanban'
 
 // ** Types
 import { KanbanTaskType, KanbanBoardProps, AddNewTaskType } from 'src/types/apps/kanbanTypes'
@@ -34,11 +34,6 @@ import KanbanTasks from './KanbanTasks'
 
 const defaultValues = {
   taskTitle: ''
-}
-
-interface DropItemType {
-  type: string
-  task: KanbanTaskType
 }
 
 const KanbanBoard = (props: KanbanBoardProps) => {
@@ -54,7 +49,6 @@ const KanbanBoard = (props: KanbanBoardProps) => {
   const openOptionsMenu = Boolean(optionsAnchorEl)
 
   // ** Hooks
-  const boardRef = useRef(null)
   const dispatch = useDispatch()
   const {
     reset,
@@ -63,15 +57,6 @@ const KanbanBoard = (props: KanbanBoardProps) => {
     formState: { errors }
   } = useForm({ defaultValues })
 
-  const [, drop] = useDrop({
-    accept: 'task',
-    drop(item: DropItemType) {
-      dispatch(updateTask({ ...item.task, boardId: board.id }))
-    }
-  })
-
-  drop(boardRef)
-
   useEffect(() => {
     setTitle(board.title)
   }, [board.title])
@@ -79,6 +64,7 @@ const KanbanBoard = (props: KanbanBoardProps) => {
   const handleOptionsMenuClick = (event: SyntheticEvent) => {
     setOptionsAnchorEl(event.currentTarget as HTMLElement)
   }
+
   const handleOptionsMenuClose = () => {
     setOptionsAnchorEl(null)
   }
@@ -148,7 +134,7 @@ const KanbanBoard = (props: KanbanBoardProps) => {
 
   return (
     <>
-      <Box ref={boardRef} sx={{ width: 300, ...(!isLastBoard ? { mr: 8 } : {}) }}>
+      <Box sx={{ width: 300, ...(!isLastBoard ? { mr: 8 } : {}) }}>
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <TextField
@@ -187,18 +173,27 @@ const KanbanBoard = (props: KanbanBoardProps) => {
           </Menu>
         </Box>
         <Box>
-          {store.tasks.map((task: KanbanTaskType, index: number) => {
-            if (task.boardId === board.id) {
-              return (
-                <KanbanTasks
-                  task={task}
-                  labelColors={labelColors}
-                  key={`${task.boardId}-${index}`}
-                  handleTaskSidebarToggle={handleTaskSidebarToggle}
-                />
-              )
-            }
-          })}
+          <Droppable droppableId={board.id.toString()}>
+            {(provided: any, snapshot: any) => (
+              <Box ref={provided.innerRef} isDraggingOver={snapshot.isDraggingOver} {...provided.droppableProps}>
+                {store.tasks.map((task: KanbanTaskType, index: number) => {
+                  if (task.boardId === board.id) {
+                    return (
+                      <KanbanTasks
+                        task={task}
+                        index={index}
+                        labelColors={labelColors}
+                        key={`${task.boardId}-${index}`}
+                        handleTaskSidebarToggle={handleTaskSidebarToggle}
+                      />
+                    )
+                  }
+                })}
+                {provided.placeholder}
+              </Box>
+            )}
+          </Droppable>
+
           {showAddTask === null || (showAddTask !== null && showAddTask !== board.id) ? (
             <Button startIcon={<Plus fontSize='small' />} onClick={handleOpenAddTask}>
               Add New Task

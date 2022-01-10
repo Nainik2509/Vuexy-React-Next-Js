@@ -1,6 +1,3 @@
-// ** React Imports
-import { useRef } from 'react'
-
 // ** Next Imports
 import Image from 'next/image'
 
@@ -17,7 +14,7 @@ import Paperclip from 'mdi-material-ui/Paperclip'
 import MessageOutline from 'mdi-material-ui/MessageOutline'
 
 // ** Third Party Imports
-import { useDrag } from 'react-dnd'
+import { Draggable } from 'react-beautiful-dnd'
 
 // ** Redux Imports
 import { useDispatch } from 'react-redux'
@@ -34,18 +31,10 @@ import { KanbanTasksProps } from 'src/types/apps/kanbanTypes'
 
 const KanbanTasks = (props: KanbanTasksProps) => {
   // ** Props
-  const { task, labelColors, handleTaskSidebarToggle } = props
+  const { task, index, labelColors, handleTaskSidebarToggle } = props
 
   // ** Hooks
-  const taskRef = useRef(null)
   const dispatch = useDispatch()
-  const [, drag] = useDrag({
-    type: 'task',
-    item: { type: 'task', task },
-    collect: monitor => ({
-      isDragging: monitor.isDragging()
-    })
-  })
 
   const handleTaskClick = () => {
     dispatch(handleSelectTask(task))
@@ -136,32 +125,42 @@ const KanbanTasks = (props: KanbanTasksProps) => {
     ) : null
   }
 
-  drag(taskRef)
-
   return (
-    <Card ref={taskRef} onClick={handleTaskClick} sx={{ my: 4, cursor: 'grab' }}>
-      <CardContent>
-        {renderLabels()}
+    // eslint-disable-next-line lines-around-comment
+    // @ts-ignore
+    <Draggable key={task.id.toString()} draggableId={task.id.toString()} index={index}>
+      {(provided: any) => (
+        <Card
+          ref={provided.innerRef}
+          onClick={handleTaskClick}
+          sx={{ my: 4, cursor: 'grab' }}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+        >
+          <CardContent>
+            {renderLabels()}
 
-        {task.coverImage ? (
-          <Box sx={{ mb: 4, '& img': { borderRadius: 1 } }}>
-            <Image
-              priority
-              width='100%'
-              height='100%'
-              alt={task.title}
-              objectFit='cover'
-              layout='responsive'
-              src={task.coverImage}
-            />
-          </Box>
-        ) : null}
+            {task.coverImage ? (
+              <Box sx={{ mb: 4, '& img': { borderRadius: 1 } }}>
+                <Image
+                  priority
+                  width='100%'
+                  height='100%'
+                  alt={task.title}
+                  objectFit='cover'
+                  layout='responsive'
+                  src={task.coverImage}
+                />
+              </Box>
+            ) : null}
 
-        <Typography sx={{ fontWeight: 500 }}>{task.title}</Typography>
+            <Typography sx={{ fontWeight: 500 }}>{task.title}</Typography>
 
-        {renderTaskFooter()}
-      </CardContent>
-    </Card>
+            {renderTaskFooter()}
+          </CardContent>
+        </Card>
+      )}
+    </Draggable>
   )
 }
 

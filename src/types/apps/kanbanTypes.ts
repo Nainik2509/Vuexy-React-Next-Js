@@ -59,6 +59,7 @@ export type KanbanBoardProps = {
 }
 
 export type KanbanTasksProps = {
+  index: number
   task: KanbanTaskType
   labelColors: LabelColorsType
   handleTaskSidebarToggle: () => void

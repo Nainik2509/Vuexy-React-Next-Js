@@ -28,6 +28,14 @@ export const updateTask = createAsyncThunk('appKanban/updateTask', async (data: 
   return response.data
 })
 
+export const reorderTasks = createAsyncThunk('appKanban/reorderTasks', async (data: KanbanTaskType, { dispatch }) => {
+  const response = await axios.post('/apps/kanban/reorder-tasks', { data })
+  await dispatch(fetchBoards())
+  await dispatch(fetchTasks())
+
+  return response.data
+})
+
 export const addBoard = createAsyncThunk(
   'appKanban/addBoard',
   async (data: { [key: string]: string }, { dispatch }) => {

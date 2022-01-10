@@ -24,14 +24,33 @@ const data = {
       id: 1,
       labels: ['UX'],
       boardId: 'todo',
-      attachments: [],
       description: 'lorem',
       dueDate: dayAfterTomorrow,
       title: 'Research FAQ page UX',
+      attachments: [
+        {
+          name: 'documentation.doc',
+          img: '/images/icons/file-icons/doc.png'
+        },
+        {
+          name: 'app.js',
+          img: '/images/icons/file-icons/js.png'
+        }
+      ],
       comments: [
         {
           name: 'Joey Tribbiani',
           avatar: '/images/avatars/3.png',
+          comment: 'Complete this on priority'
+        },
+        {
+          name: 'Chandler Bing',
+          avatar: '/images/avatars/5.png',
+          comment: 'Complete this on priority'
+        },
+        {
+          name: 'Monica Geller',
+          avatar: '/images/avatars/6.png',
           comment: 'Complete this on priority'
         }
       ],
@@ -48,10 +67,40 @@ const data = {
     },
     {
       id: 2,
+      labels: ['Images'],
+      boardId: 'todo',
+      coverImage: '/images/cards/cafe-badilico.png',
+      description: 'lorem',
+      dueDate: dayAfterTomorrow,
+      title: 'Find new images for the apps',
+      comments: [],
+      attachments: [
+        {
+          name: 'book.pdf',
+          img: '/images/icons/file-icons/pdf.png'
+        },
+        {
+          name: 'app.js',
+          img: '/images/icons/file-icons/js.png'
+        }
+      ],
+      assignedTo: [
+        {
+          name: 'Rachel Green',
+          avatar: '/images/avatars/4.png'
+        }
+      ]
+    },
+    {
+      id: 3,
       labels: ['App'],
       attachments: [
         {
-          name: 'documentation.pdf',
+          name: 'list.txt',
+          img: '/images/icons/file-icons/txt.png'
+        },
+        {
+          name: 'pdf.png',
           img: '/images/icons/file-icons/pdf.png'
         }
       ],
@@ -59,6 +108,74 @@ const data = {
       description: 'description',
       dueDate: dayAfterTomorrow,
       title: 'Review completed Apps',
+      comments: [
+        {
+          name: 'Chandler Bing',
+          avatar: '/images/avatars/5.png',
+          comment: 'Complete this on priority'
+        },
+        {
+          name: 'Monica Geller',
+          avatar: '/images/avatars/6.png',
+          comment: 'Complete this on priority'
+        },
+        {
+          name: 'Joey Tribbiani',
+          avatar: '/images/avatars/3.png',
+          comment: 'Complete this on priority'
+        },
+        {
+          name: 'Rachel Green',
+          avatar: '/images/avatars/4.png',
+          comment: 'Complete this on priority'
+        },
+        {
+          name: 'Ross Geller',
+          avatar: '/images/avatars/1.png',
+          comment: 'Complete this on priority'
+        },
+        {
+          name: 'Pheobe Buffay',
+          avatar: '/images/avatars/2.png',
+          comment: 'Complete this on priority'
+        }
+      ],
+      assignedTo: [
+        {
+          name: 'Joey Tribbiani',
+          avatar: '/images/avatars/3.png'
+        },
+        {
+          name: 'Rachel Green',
+          avatar: '/images/avatars/4.png'
+        }
+      ]
+    },
+    {
+      id: 4,
+      labels: ['Code Review'],
+      attachments: [
+        {
+          name: 'list.txt',
+          img: '/images/icons/file-icons/txt.png'
+        },
+        {
+          name: 'pdf.png',
+          img: '/images/icons/file-icons/pdf.png'
+        },
+        {
+          name: 'documentation.doc',
+          img: '/images/icons/file-icons/doc.png'
+        },
+        {
+          name: 'app.js',
+          img: '/images/icons/file-icons/js.png'
+        }
+      ],
+      boardId: 'in-progress',
+      description: 'description',
+      dueDate: dayAfterTomorrow,
+      title: 'Review Javascript Code',
       comments: [
         {
           name: 'Chandler Bing',
@@ -83,19 +200,82 @@ const data = {
       ]
     },
     {
-      id: 3,
-      labels: ['Images'],
+      id: 5,
+      labels: ['Forms'],
+      attachments: [
+        {
+          name: 'list.txt',
+          img: '/images/icons/file-icons/txt.png'
+        }
+      ],
       boardId: 'done',
-      attachments: [],
-      coverImage: '/images/cards/cafe-badilico.png',
-      description: 'lorem',
+      description: 'description',
       dueDate: dayAfterTomorrow,
-      title: 'Find new images for the apps',
-      comments: [],
-      assignedTo: [
+      title: 'Forms & Tables Section',
+      comments: [
         {
           name: 'Chandler Bing',
-          avatar: '/images/avatars/5.png'
+          avatar: '/images/avatars/5.png',
+          comment: 'Complete this on priority'
+        },
+        {
+          name: 'Monica Geller',
+          avatar: '/images/avatars/6.png',
+          comment: 'Complete this on priority'
+        }
+      ],
+      assignedTo: [
+        {
+          name: 'Joey Tribbiani',
+          avatar: '/images/avatars/3.png'
+        },
+        {
+          name: 'Rachel Green',
+          avatar: '/images/avatars/4.png'
+        }
+      ]
+    },
+    {
+      id: 6,
+      labels: ['Charts & Maps'],
+      attachments: [
+        {
+          name: 'documentation.doc',
+          img: '/images/icons/file-icons/doc.png'
+        },
+        {
+          name: 'app.js',
+          img: '/images/icons/file-icons/js.png'
+        },
+        {
+          name: 'book.pdf',
+          img: '/images/icons/file-icons/pdf.png'
+        }
+      ],
+      boardId: 'done',
+      description: 'description',
+      dueDate: dayAfterTomorrow,
+      title: 'Completed Charts & Maps',
+      comments: [
+        {
+          name: 'Chandler Bing',
+          avatar: '/images/avatars/5.png',
+          comment: 'Complete this on priority'
+        },
+        {
+          name: 'Monica Geller',
+          avatar: '/images/avatars/6.png',
+          comment: 'Complete this on priority'
+        }
+      ],
+      assignedTo: [
+        {
+          name: 'Joey Tribbiani',
+          avatar: '/images/avatars/3.png'
+        },
+        {
+          name: 'Rachel Green',
+          avatar: '/images/avatars/4.png'
         }
       ]
     }
@@ -113,6 +293,17 @@ mock.onGet('/apps/kanban/boards').reply(() => {
 // GET: Returns Tasks
 // ------------------------------------------------
 mock.onGet('/apps/kanban/tasks').reply(() => {
+  return [200, data.tasks]
+})
+
+// ------------------------------------------------
+// GET: Reorder Tasks
+// ------------------------------------------------
+mock.onPost('/apps/kanban/reorder-tasks').reply(config => {
+  const reorderedTasks = JSON.parse(config.data).data
+
+  data.tasks = reorderedTasks
+
   return [200, data.tasks]
 })
 
