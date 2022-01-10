@@ -50,9 +50,12 @@ if (fs.existsSync(packageFilePath)) {
 
     const result = data.replace(/,ts,tsx/g, '')
 
-    let finalResult = result.replace(new RegExp(/(\n)\s*("(@types|typescript))(.*)/, 'g'), ``)
+    let finalResult = result.replace(new RegExp(/(\r\n|\n|\r)\s*("(@types|typescript))(.*)/, 'g'), ``)
 
-    if (finalResult.charAt(finalResult.lastIndexOf(',') + 6) === '}') {
+    if (
+      finalResult.charAt(finalResult.lastIndexOf(',') + 6) ||
+      finalResult.charAt(finalResult.lastIndexOf(',') + 8) === '}'
+    ) {
       finalResult = setCharAt(finalResult, finalResult.lastIndexOf(','), '')
     }
 
