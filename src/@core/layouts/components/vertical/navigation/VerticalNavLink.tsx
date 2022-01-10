@@ -14,15 +14,18 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import { styled, useTheme } from '@mui/material/styles'
 import ListItemButton, { ListItemButtonProps } from '@mui/material/ListItemButton'
 
-// ** Utils
-import { handleURLQueries } from 'src/@core/layouts/utils'
-
 // ** Configs Import
 import themeConfig from 'src/configs/themeConfig'
 
 // ** Types
 import { NavLink, NavGroup } from 'src/@core/layouts/types'
 import { Settings } from 'src/@core/context/settingsContext'
+
+// ** Custom Components Imports
+import Translations from 'src/assets/components/Translations'
+
+// ** Utils
+import { handleURLQueries } from 'src/@core/layouts/utils'
 
 interface Props {
   parent?: boolean
@@ -174,7 +177,7 @@ const VerticalNavLink = ({
                 noWrap: true
               })}
             >
-              {item.title}
+              <Translations text={item.title} />
             </Typography>
             {item.badgeContent ? (
               <Chip

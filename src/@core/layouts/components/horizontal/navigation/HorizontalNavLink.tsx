@@ -23,6 +23,9 @@ import themeConfig from 'src/configs/themeConfig'
 // ** Types
 import { NavLink } from 'src/@core/layouts/types'
 
+// ** Custom Components Imports
+import Translations from 'src/assets/components/Translations'
+
 // ** Util Import
 import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 
@@ -123,7 +126,9 @@ const HorizontalNavLink = (props: Props) => {
                 {/* @ts-ignore */}
                 <IconTag sx={IconTag === CircleOutline ? { fontSize: '1rem' } : { fontSize: '1.125rem' }} />
               </ListItemIcon>
-              <Typography {...(themeConfig.menuTextTruncate && { noWrap: true })}>{item.title}</Typography>
+              <Typography {...(themeConfig.menuTextTruncate && { noWrap: true })}>
+                <Translations text={item.title} />
+              </Typography>
             </Box>
             {item.badgeContent ? (
               <Chip

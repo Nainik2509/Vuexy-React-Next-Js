@@ -33,6 +33,7 @@ import { Settings } from 'src/@core/context/settingsContext'
 
 // ** Custom Components Imports
 import VerticalNavItems from './VerticalNavItems'
+import Translations from 'src/assets/components/Translations'
 
 interface Props {
   item: NavGroup
@@ -274,7 +275,7 @@ const VerticalNavGroup = (props: Props) => {
                 noWrap: true
               })}
             >
-              {item.title}
+              <Translations text={item.title} />
             </Typography>
             <Box className='menu-item-meta' sx={{ ml: 0.8, display: 'flex', alignItems: 'center' }}>
               {item.badgeContent ? (

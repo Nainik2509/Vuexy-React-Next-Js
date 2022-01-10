@@ -21,6 +21,7 @@ interface Props {
   toggleNavVisibility: () => void
   setShowBackdrop: (val: boolean) => void
   saveSettings: (values: Settings) => void
+  languageDropdown?: (props?: any) => ReactNode
   verticalAppBarContent?: (props?: any) => ReactNode
 }
 
@@ -53,6 +54,7 @@ const LayoutAppBar = (props: Props) => {
     settings,
     saveSettings,
     setShowBackdrop,
+    languageDropdown,
     toggleNavVisibility,
     verticalAppBarContent: userVerticalAppBarContent
   } = props
@@ -82,6 +84,7 @@ const LayoutAppBar = (props: Props) => {
             settings={settings}
             saveSettings={saveSettings}
             setShowBackdrop={setShowBackdrop}
+            languageDropdown={languageDropdown}
             toggleNavVisibility={toggleNavVisibility}
           />
         )}

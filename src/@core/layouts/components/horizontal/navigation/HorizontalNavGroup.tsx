@@ -27,16 +27,17 @@ import CircleOutline from 'mdi-material-ui/CircleOutline'
 // ** Theme Config Import
 import themeConfig from 'src/configs/themeConfig'
 
-// ** Utils
-import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
-import { hasActiveChild } from 'src/@core/layouts/utils'
-
 // ** Types
 import { NavGroup } from 'src/@core/layouts/types'
 import { Settings } from 'src/@core/context/settingsContext'
 
-// ** Custom Navigation Components Imports
+// ** Custom Components Imports
 import HorizontalNavItems from './HorizontalNavItems'
+import Translations from 'src/assets/components/Translations'
+
+// ** Utils
+import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
+import { hasActiveChild } from 'src/@core/layouts/utils'
 
 interface Props {
   item: NavGroup
@@ -217,7 +218,9 @@ const HorizontalNavGroup = (props: Props) => {
                     {/* @ts-ignore */}
                     <IconTag sx={IconTag === CircleOutline ? { fontSize: '1rem' } : { fontSize: '1.125rem' }} />
                   </ListItemIcon>
-                  <Typography {...(themeConfig.menuTextTruncate && { noWrap: true })}>{item.title}</Typography>
+                  <Typography {...(themeConfig.menuTextTruncate && { noWrap: true })}>
+                    <Translations text={item.title} />
+                  </Typography>
                 </Box>
                 <Box sx={{ ml: 1.6, display: 'flex', alignItems: 'center' }}>
                   {item.badgeContent ? (

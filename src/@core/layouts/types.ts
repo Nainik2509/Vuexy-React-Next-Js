@@ -56,6 +56,7 @@ export type LayoutProps = {
   saveSettings: (values: Settings) => void
   footerContent?: (props?: any) => ReactNode
   horizontalNavItems?: HorizontalNavItemsType
+  languageDropdown?: (props?: any) => ReactNode
   verticalAppBarContent?: (props?: any) => ReactNode
   verticalNavMenuContent?: (props?: any) => ReactNode
   verticalNavMenuBranding?: (props?: any) => ReactNode
