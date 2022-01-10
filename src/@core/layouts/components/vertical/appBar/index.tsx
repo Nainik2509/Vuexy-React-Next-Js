@@ -38,12 +38,7 @@ const Toolbar = styled(MuiToolbar)<ToolbarProps>(({ theme }) => ({
   padding: `${theme.spacing(0, 6)} !important`,
   minHeight: `${themeConfig.appBarHeight}px !important`,
   [theme.breakpoints.down('sm')]: {
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(4)
-  },
-  [theme.breakpoints.down('xs')]: {
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(2)
+    padding: `${theme.spacing(0, 4)} !important`
   }
 }))
 
