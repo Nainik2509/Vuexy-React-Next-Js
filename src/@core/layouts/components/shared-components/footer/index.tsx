@@ -26,7 +26,10 @@ const Footer = (props: Props) => {
   // ** Props
   const { settings, showBackdrop, footerContent: userFooterContent } = props
 
-  if (settings.footer === 'hidden') {
+  // ** Vars
+  const { footer, contentWidth } = settings
+
+  if (footer === 'hidden') {
     return null
   }
 
@@ -34,14 +37,14 @@ const Footer = (props: Props) => {
     <FooterWrapper
       className='layout-footer'
       sx={{
-        zIndex: showBackdrop && settings.footer === 'fixed' ? 13 : 10,
-        ...(settings.footer === 'fixed' && {
+        zIndex: showBackdrop && footer === 'fixed' ? 13 : 10,
+        ...(footer === 'fixed' && {
           bottom: 0,
           position: 'sticky',
           boxShadow: theme => theme.shadows[4],
           backgroundColor: theme => theme.palette.background.paper
         }),
-        ...(settings.footer === 'static' && {
+        ...(footer === 'static' && {
           boxShadow: 'none',
           backgroundColor: 'transparent'
         })
@@ -52,7 +55,7 @@ const Footer = (props: Props) => {
         sx={{
           px: 6,
           width: '100%',
-          ...(settings.contentWidth === 'boxed' && { mx: 'auto', '@media (min-width:1440px)': { maxWidth: 1440 } })
+          ...(contentWidth === 'boxed' && { mx: 'auto', '@media (min-width:1440px)': { maxWidth: 1440 } })
         }}
       >
         {userFooterContent ? userFooterContent(props) : <FooterContent />}
