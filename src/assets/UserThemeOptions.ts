@@ -4,12 +4,14 @@ import { ThemeOptions } from '@mui/material'
 // ** To use core palette, uncomment the below import
 // import corePalette from 'src/@core/theme/palette'
 
-// ** Type Imports
-import { Settings } from 'src/@core/context/settingsContext'
+// ** To use mode (light/dark), skin(default/bordered/semi-dark), direction(ltr/rtl), etc. for conditional styles, uncomment below line
+// import { useSettings } from 'src/@core/hooks/useSettings'
 
-// eslint-disable-next-line
-const UserThemeOptions = (settings: Settings): ThemeOptions => {
-  // ** To use mode (light/dark), skin(default/bordered/semi-dark), direction(ltr/rtl) for conditional styles, uncomment below line
+const UserThemeOptions = (): ThemeOptions => {
+  // ** To use mode (light/dark), skin(default/bordered/semi-dark), direction(ltr/rtl), etc. for conditional styles, uncomment below line
+  // const { settings } = useSettings()
+
+  // ** To use mode (light/dark), skin(default/bordered/semi-dark), direction(ltr/rtl), etc. for conditional styles, uncomment below line
   // const { mode, skin } = settings
 
   // ** To use core palette, uncomment the below line

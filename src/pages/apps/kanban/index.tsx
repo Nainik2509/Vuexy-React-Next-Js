@@ -7,9 +7,6 @@ import Box from '@mui/material/Box'
 // ** Third Party Imports
 import { DragDropContext } from 'react-beautiful-dnd'
 
-// ** Kanban App Component Imports
-import KanbanBoardLayout from 'src/views/apps/kanban/KanbanBoardLayout'
-
 // ** Redux Imports
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -19,6 +16,9 @@ import { KanbanTaskType } from 'src/types/apps/kanbanTypes'
 
 // ** Actions
 import { fetchBoards, fetchTasks, updateTask, reorderTasks } from 'src/store/apps/kanban'
+
+// ** Kanban App Component Imports
+import KanbanBoardLayout from 'src/views/apps/kanban/KanbanBoardLayout'
 
 const Kanban = () => {
   // ** Hooks

@@ -166,7 +166,6 @@ const VerticalNavGroup = (props: Props) => {
     }
   }, [navCollapsed, navHover]) // eslint-disable-line
 
-  // const IconTag = item.icon
   const IconTag = parent && !item.icon ? themeConfig.navSubItemIcon : item.icon
 
   const menuGroupCollapsedStyles = navCollapsed && !navHover ? { opacity: 0 } : { opacity: 1 }
@@ -261,7 +260,7 @@ const VerticalNavGroup = (props: Props) => {
                 color: 'text.primary',
                 transition: 'margin .25s ease-in-out',
                 ...(parent && navCollapsed && !navHover ? {} : { marginRight: 3.25 }),
-                ...(navCollapsed && !navHover ? { marginRight: 0 } : {}), // this condition should come after (parent && navCollapsed && !navHover) condition for proper transition
+                ...(navCollapsed && !navHover ? { marginRight: 0 } : {}), // this condition should come after (parent && navCollapsed && !navHover) condition for proper styling
                 ...(parent && item.children ? { marginLeft: 1.25, marginRight: 4.75 } : {})
               }}
             >
