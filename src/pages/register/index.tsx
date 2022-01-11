@@ -40,6 +40,9 @@ import themeConfig from 'src/configs/themeConfig'
 // ** Layout Import
 import BlankLayout from 'src/@core/layouts/BlankLayout'
 
+// ** Custom Component Imports
+import GuestGuard from 'src/@core/components/auth/GuestGuard'
+
 // ** Hooks
 import { useAuth } from 'src/@core/hooks/useAuth'
 import { useSettings } from 'src/@core/hooks/useSettings'
@@ -431,12 +434,10 @@ const Register = () => {
   )
 }
 
-Register.getInitialProps = () => {
-  return {
-    restrictedPage: true
-  }
-}
-
-Register.getLayout = (page: ReactNode) => <BlankLayout>{page}</BlankLayout>
+Register.getLayout = (page: ReactNode) => (
+  <BlankLayout>
+    <GuestGuard>{page}</GuestGuard>
+  </BlankLayout>
+)
 
 export default Register

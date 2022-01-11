@@ -28,7 +28,7 @@ import { Toaster } from 'react-hot-toast'
 
 // ** Component Imports
 import UserLayout from 'src/layouts/UserLayout'
-import { AuthGuard } from 'src/@core/components/auth'
+import AuthGuard from 'src/@core/components/auth/AuthGuard'
 import ThemeComponent from 'src/@core/theme/ThemeComponent'
 
 // ** Contexts
@@ -117,22 +117,22 @@ const App = (props: ExtendedAppProps) => {
                                 {getLayout(<Component {...pageProps} />)}
                               </AuthGuard>
                             )} */}
-                    <AuthGuard pageProps={pageProps}>
-                      {getLayout(
-                        <div
-                          key={router.route}
-                          className={clsx('animation-wrapper', {
-                            [`animate__animated animate__${settings.routerTransition}`]:
-                              settings.routerTransition !== 'none' || settings.routerTransition !== undefined
-                          })}
-                        >
+                    {getLayout(
+                      <div
+                        key={router.route}
+                        className={clsx('animation-wrapper', {
+                          [`animate__animated animate__${settings.routerTransition}`]:
+                            settings.routerTransition !== 'none' || settings.routerTransition !== undefined
+                        })}
+                      >
+                        <AuthGuard>
                           <Component {...pageProps} />
-                        </div>
-                      )}
-                      <ReactHotToast>
-                        <Toaster position={settings.toastPosition} toastOptions={{ className: 'react-hot-toast' }} />
-                      </ReactHotToast>
-                    </AuthGuard>
+                        </AuthGuard>
+                      </div>
+                    )}
+                    <ReactHotToast>
+                      <Toaster position={settings.toastPosition} toastOptions={{ className: 'react-hot-toast' }} />
+                    </ReactHotToast>
                     {/* <AuthGuard pageProps={pageProps}>{getLayout(<Component {...pageProps} />)}</AuthGuard> */}
                   </ThemeComponent>
                 )

@@ -45,6 +45,9 @@ import themeConfig from 'src/configs/themeConfig'
 // ** Layout Import
 import BlankLayout from 'src/@core/layouts/BlankLayout'
 
+// ** Custom Component Imports
+import GuestGuard from 'src/@core/components/auth/GuestGuard'
+
 // ** Demo Imports
 import FooterIllustrationsV2 from 'src/views/pages/auth/FooterIllustrationsV2'
 
@@ -370,12 +373,10 @@ const LoginPage = () => {
   )
 }
 
-LoginPage.getLayout = (page: ReactNode) => <BlankLayout>{page}</BlankLayout>
-
-LoginPage.getInitialProps = () => {
-  return {
-    restrictedPage: true
-  }
-}
+LoginPage.getLayout = (page: ReactNode) => (
+  <BlankLayout>
+    <GuestGuard>{page}</GuestGuard>
+  </BlankLayout>
+)
 
 export default LoginPage

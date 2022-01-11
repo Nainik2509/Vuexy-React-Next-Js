@@ -21,6 +21,9 @@ import themeConfig from 'src/configs/themeConfig'
 // ** Layout Import
 import BlankLayout from 'src/@core/layouts/BlankLayout'
 
+// ** Custom Component Imports
+import GuestGuard from 'src/@core/components/auth/GuestGuard'
+
 // ** Hooks
 import { useSettings } from 'src/@core/hooks/useSettings'
 
@@ -216,12 +219,10 @@ const ForgotPassword = () => {
   )
 }
 
-ForgotPassword.getInitialProps = () => {
-  return {
-    restrictedPage: true
-  }
-}
-
-ForgotPassword.getLayout = (page: ReactNode) => <BlankLayout>{page}</BlankLayout>
+ForgotPassword.getLayout = (page: ReactNode) => (
+  <BlankLayout>
+    <GuestGuard>{page}</GuestGuard>
+  </BlankLayout>
+)
 
 export default ForgotPassword
