@@ -16,7 +16,7 @@ const FooterContent = () => {
           ThemeSelection
         </Link>
       </Typography>
-      <Box sx={{ display: 'flex', alignItems: 'center', '& :not(:last-child)': { mr: 4 } }}>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', '& :not(:last-child)': { mr: 4 } }}>
         <Link target='_blank' href='https://themeselection.com/license/'>
           License
         </Link>

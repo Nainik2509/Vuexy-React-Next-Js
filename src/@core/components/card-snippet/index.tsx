@@ -1,24 +1,24 @@
 // ** React Imports
 import { useState, useEffect } from 'react'
 
-// ** Primsjs
-import Prism from 'prismjs'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import Tooltip from '@mui/material/Tooltip'
 import Divider from '@mui/material/Divider'
+import { Theme } from '@mui/material/styles'
 import Collapse from '@mui/material/Collapse'
 import IconButton from '@mui/material/IconButton'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
+import useMediaQuery from '@mui/material/useMediaQuery'
 
 // ** Icons Imports
 import CodeTags from 'mdi-material-ui/CodeTags'
 import ContentCopy from 'mdi-material-ui/ContentCopy'
 
 // ** Third Party Components
+import Prism from 'prismjs'
 import toast from 'react-hot-toast'
 
 // ** Types
@@ -36,6 +36,7 @@ const CardSnippet = (props: CardSnippetProps) => {
 
   // ** Hooks
   const clipboard = useClipboard()
+  const hidden = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
 
   // ** Highlight code on mount
   useEffect(() => {
@@ -58,27 +59,38 @@ const CardSnippet = (props: CardSnippetProps) => {
       <CardHeader
         title={title}
         titleTypographyProps={{ variant: 'h6' }}
-        action={
-          <IconButton onClick={() => setShowCode(!showCode)}>
-            <CodeTags fontSize='small' />
-          </IconButton>
-        }
+        {...(hidden
+          ? {}
+          : {
+              action: (
+                <IconButton onClick={() => setShowCode(!showCode)}>
+                  <CodeTags fontSize='small' />
+                </IconButton>
+              )
+            })}
       />
       <CardContent>{children}</CardContent>
-      <Collapse in={showCode}>
-        <Divider sx={{ my: 0 }} />
-        <CardContent sx={{ position: 'relative', '& pre': { m: '0 !important', maxHeight: 500 } }}>
-          <Tooltip title='Copy the source' placement='top'>
-            <IconButton
-              onClick={handleClick}
-              sx={{ top: '1.5rem', right: '2.5625rem', position: 'absolute', color: theme => theme.palette.grey[100] }}
-            >
-              <ContentCopy fontSize='small' />
-            </IconButton>
-          </Tooltip>
-          <Box sx={{ '& pre, & code': { whiteSpace: 'break-spaces' } }}>{code}</Box>
-        </CardContent>
-      </Collapse>
+      {hidden ? null : (
+        <Collapse in={showCode}>
+          <Divider sx={{ my: 0 }} />
+          <CardContent sx={{ position: 'relative', '& pre': { m: '0 !important', maxHeight: 500 } }}>
+            <Tooltip title='Copy the source' placement='top'>
+              <IconButton
+                onClick={handleClick}
+                sx={{
+                  top: '1.5rem',
+                  right: '2.5625rem',
+                  position: 'absolute',
+                  color: theme => theme.palette.grey[100]
+                }}
+              >
+                <ContentCopy fontSize='small' />
+              </IconButton>
+            </Tooltip>
+            <Box sx={{ '& pre, & code': { whiteSpace: 'break-spaces' } }}>{code}</Box>
+          </CardContent>
+        </Collapse>
+      )}
     </Card>
   )
 }

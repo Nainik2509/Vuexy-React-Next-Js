@@ -16,13 +16,10 @@ cp -r ../.vscode ../public ../styles ../jsx-version/
 
 
 # # # Go into the root directory
-cd ..
+# cd ../
 
 # # # CD into jsx-version directory
-cd jsx-version
-
-# # # install node_modules
-yarn install --ignore-engines
+# cd jsx-version
 
 # # # Format 4 spaces to 2 spacer
 # # # perl -pi -e 's{^((?: {4})*)}{" " x (2*length($1)/4)}e' ./src/**/*.{js,jsx}
@@ -42,6 +39,9 @@ node update-eslint.js
 node findReplace.js
 
 cd ../jsx-version
+
+# # # install node_modules
+yarn install --ignore-engines
 
 # # # Run yarn format command to format all the files using prettier
 yarn format

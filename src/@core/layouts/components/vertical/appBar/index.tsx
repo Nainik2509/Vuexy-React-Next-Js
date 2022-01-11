@@ -21,6 +21,7 @@ interface Props {
   toggleNavVisibility: () => void
   setShowBackdrop: (val: boolean) => void
   saveSettings: (values: Settings) => void
+  languageDropdown?: (props?: any) => ReactNode
   verticalAppBarContent?: (props?: any) => ReactNode
 }
 
@@ -37,12 +38,7 @@ const Toolbar = styled(MuiToolbar)<ToolbarProps>(({ theme }) => ({
   padding: `${theme.spacing(0, 6)} !important`,
   minHeight: `${themeConfig.appBarHeight}px !important`,
   [theme.breakpoints.down('sm')]: {
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(4)
-  },
-  [theme.breakpoints.down('xs')]: {
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(2)
+    padding: `${theme.spacing(0, 4)} !important`
   }
 }))
 
@@ -53,6 +49,7 @@ const LayoutAppBar = (props: Props) => {
     settings,
     saveSettings,
     setShowBackdrop,
+    languageDropdown,
     toggleNavVisibility,
     verticalAppBarContent: userVerticalAppBarContent
   } = props
@@ -82,6 +79,7 @@ const LayoutAppBar = (props: Props) => {
             settings={settings}
             saveSettings={saveSettings}
             setShowBackdrop={setShowBackdrop}
+            languageDropdown={languageDropdown}
             toggleNavVisibility={toggleNavVisibility}
           />
         )}

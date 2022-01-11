@@ -48,41 +48,22 @@ if (fs.existsSync(packageFilePath)) {
       return console.log(err)
     }
 
-    // console.log(data.charAt(data.lastIndexOf(',')))
-
-    // const result = data.replace(new RegExp(/(.*:\s)(.*)(\,ts\,tsx)(}")/, 'g'), `$1$2$4`)
     const result = data.replace(/,ts,tsx/g, '')
 
-    // const fixToken = result[result.length - 8]
+    let finalResult = result.replace(new RegExp(/(\r\n|\n|\r)\s*("(@types|typescript))(.*)/, 'g'), ``)
 
-    // fixToken === ',' ? result[result.length - 8].replace(',', '') : null
-
-    // result[result.length - 8] === ',' ?
-
-    const finalResult = result.replace(new RegExp(/(\n)\s*("(@types|typescript))(.*)\n/, 'g'), ``)
+    if (
+      finalResult.charAt(finalResult.lastIndexOf(',') + 6) ||
+      finalResult.charAt(finalResult.lastIndexOf(',') + 8) === '}'
+    ) {
+      finalResult = setCharAt(finalResult, finalResult.lastIndexOf(','), '')
+    }
 
     fs.writeFile(packageFilePath, finalResult, 'utf8', function (err) {
       if (err) return console.log(err)
     })
   })
 }
-
-fs.readFile(packageFilePath, 'utf8', function (err, data) {
-  if (err) {
-    return console.log(err)
-  }
-
-  console.log(data.charAt(data.lastIndexOf(',') + 6))
-  if (data.charAt(data.lastIndexOf(',')) === ',' && data.charAt(data.lastIndexOf(',') + 6) === '}') {
-    const result = setCharAt(data, data.lastIndexOf(','), '')
-
-    fs.writeFile(packageFilePath, result, 'utf8', function (err) {
-      if (err) return console.log(err)
-    })
-  } else {
-    return
-  }
-})
 
 // Change all files extension from jsx to js
 renameFiles(srcDirPath)

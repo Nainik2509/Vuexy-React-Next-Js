@@ -1,5 +1,5 @@
 // ** React Imports
-import { useState, SyntheticEvent, Fragment, useContext } from 'react'
+import { useState, SyntheticEvent, Fragment } from 'react'
 
 // ** Next Import
 import { useRouter } from 'next/router'
@@ -24,7 +24,6 @@ import MessageOutline from 'mdi-material-ui/MessageOutline'
 import HelpCircleOutline from 'mdi-material-ui/HelpCircleOutline'
 
 // ** Context
-// import { Auth } from 'src/@core/context/AuthContext'
 import { useAuth } from 'src/@core/hooks/useAuth'
 
 // ** Type Imports
@@ -53,8 +52,6 @@ const UserDropdown = (props: Props) => {
   // ** Hooks
   const router = useRouter()
   const { logout } = useAuth()
-
-  // const { logout } = useContext(Auth)
 
   // ** Vars
   const { direction } = settings

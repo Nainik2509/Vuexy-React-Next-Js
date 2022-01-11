@@ -13,6 +13,9 @@ import themeConfig from 'src/configs/themeConfig'
 import { NavSectionTitle } from 'src/@core/layouts/types'
 import { Settings } from 'src/@core/context/settingsContext'
 
+// ** Custom Components Imports
+import Translations from 'src/assets/components/Translations'
+
 interface Props {
   navHover: boolean
   settings: Settings
@@ -83,7 +86,9 @@ const VerticalNavSectionTitle = (props: Props) => {
       {navCollapsed && !navHover ? (
         <DotsHorizontal />
       ) : (
-        <TypographyHeaderText noWrap>{item.sectionTitle}</TypographyHeaderText>
+        <TypographyHeaderText noWrap>
+          <Translations text={item.sectionTitle} />
+        </TypographyHeaderText>
       )}
     </ListSubheader>
   )

@@ -1,3 +1,6 @@
+// ** React Imports
+import { ReactNode } from 'react'
+
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import IconButton from '@mui/material/IconButton'
@@ -20,11 +23,12 @@ interface Props {
   toggleNavVisibility: () => void
   setShowBackdrop: (val: boolean) => void
   saveSettings: (values: Settings) => void
+  languageDropdown?: (props?: any) => ReactNode
 }
 
 const AppBarContent = (props: Props) => {
   // ** Props
-  const { hidden, settings, saveSettings, setShowBackdrop, toggleNavVisibility } = props
+  const { hidden, settings, saveSettings, setShowBackdrop, languageDropdown, toggleNavVisibility } = props
 
   return (
     <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -37,6 +41,7 @@ const AppBarContent = (props: Props) => {
         <Autocomplete hidden={hidden} setShowBackdrop={setShowBackdrop} />
       </Box>
       <Box className='actions-right' sx={{ display: 'flex', alignItems: 'center' }}>
+        {(languageDropdown && languageDropdown(props)) || null}
         <ModeToggler settings={settings} saveSettings={saveSettings} />
         <NotificationDropdown settings={settings} />
         <UserDropdown settings={settings} />
