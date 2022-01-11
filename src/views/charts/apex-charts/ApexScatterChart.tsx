@@ -1,12 +1,6 @@
 // ** React Imports
 import { MouseEvent, useState } from 'react'
 
-// ** Next Import
-import dynamic from 'next/dynamic'
-
-// ** Third Party Imports
-import { ApexOptions } from 'apexcharts'
-
 // ** MUI Imports
 import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
@@ -14,17 +8,17 @@ import CardContent from '@mui/material/CardContent'
 import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 
-// ** Styled Components
-import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
+// ** Third Party Imports
+import { ApexOptions } from 'apexcharts'
+
+// ** Component Import
+import ReactApexcharts from 'src/@core/components/react-apexcharts'
 
 const scatterColors = {
   series1: '#ff9f43',
   series2: '#7367f0',
   series3: '#28c76f'
 }
-
-// ! To avoid 'Window is not defined' error
-const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const ApexScatterChart = () => {
   // ** State
@@ -141,9 +135,7 @@ const ApexScatterChart = () => {
         }
       />
       <CardContent>
-        <ApexChartWrapper>
-          <Chart options={options} series={series} type='scatter' height={400} />
-        </ApexChartWrapper>
+        <ReactApexcharts options={options} series={series} type='scatter' height={400} />
       </CardContent>
     </Card>
   )

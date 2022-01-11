@@ -1,6 +1,3 @@
-// ** Next Import
-import dynamic from 'next/dynamic'
-
 // ** MUI Imports
 import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
@@ -13,8 +10,8 @@ import DotsVertical from 'mdi-material-ui/DotsVertical'
 // ** Third Party Imports
 import { ApexOptions } from 'apexcharts'
 
-// ** Styled Components
-import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
+// ** Component Import
+import ReactApexcharts from 'src/@core/components/react-apexcharts'
 
 interface YRange {
   min: number
@@ -36,9 +33,6 @@ const generateDataHeat = (count: number, yrange: YRange) => {
 
   return series
 }
-
-// ! To avoid 'Window is not defined' error
-const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const ApexHeatmapChart = () => {
   const options: ApexOptions = {
@@ -181,9 +175,7 @@ const ApexHeatmapChart = () => {
         }
       />
       <CardContent>
-        <ApexChartWrapper>
-          <Chart options={options} series={series} type='heatmap' height={400} />
-        </ApexChartWrapper>
+        <ReactApexcharts options={options} series={series} type='heatmap' height={400} />
       </CardContent>
     </Card>
   )

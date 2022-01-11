@@ -1,6 +1,3 @@
-// ** Next Import
-import dynamic from 'next/dynamic'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -16,12 +13,7 @@ import { ApexOptions } from 'apexcharts'
 
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
-
-// ** Styled Components
-import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
-
-// ! To avoid 'Window is not defined' error
-const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
+import ReactApexcharts from 'src/@core/components/react-apexcharts'
 
 const ApexLineChart = () => {
   const options: ApexOptions = {
@@ -120,9 +112,7 @@ const ApexLineChart = () => {
         }
       />
       <CardContent>
-        <ApexChartWrapper>
-          <Chart options={options} series={series} type='line' height={400} />
-        </ApexChartWrapper>
+        <ReactApexcharts options={options} series={series} type='line' height={400} />
       </CardContent>
     </Card>
   )

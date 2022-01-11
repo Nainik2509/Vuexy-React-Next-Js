@@ -1,9 +1,6 @@
 // ** React Imports
 import { forwardRef, useState } from 'react'
 
-// ** Next Import
-import dynamic from 'next/dynamic'
-
 // ** MUI Imports
 import Card from '@mui/material/Card'
 import TextField from '@mui/material/TextField'
@@ -23,8 +20,10 @@ import ChevronDown from 'mdi-material-ui/ChevronDown'
 // ** Types
 import { DateType } from 'src/types/forms/reactDatepickerTypes'
 
+// ** Component Import
+import ReactApexcharts from 'src/@core/components/react-apexcharts'
+
 // ** Styled Components
-import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
 import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 const areaColors = {
@@ -37,9 +36,6 @@ interface PickerProps {
   start: Date | number
   end: Date | number
 }
-
-// ! To avoid 'Window is not defined' error
-const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const ApexAreaChart = () => {
   // ** States
@@ -121,7 +117,6 @@ const ApexAreaChart = () => {
 
     return (
       <TextField
-        label=''
         {...props}
         size='small'
         value={value}
@@ -177,9 +172,7 @@ const ApexAreaChart = () => {
         }
       />
       <CardContent>
-        <ApexChartWrapper>
-          <Chart options={options} series={series} type='area' height={400} />
-        </ApexChartWrapper>
+        <ReactApexcharts options={options} series={series} type='area' height={400} />
       </CardContent>
     </Card>
   )

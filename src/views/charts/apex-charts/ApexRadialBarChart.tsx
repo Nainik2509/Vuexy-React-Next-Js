@@ -1,6 +1,3 @@
-// ** Next Import
-import dynamic from 'next/dynamic'
-
 // ** MUI Imports
 import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
@@ -9,8 +6,8 @@ import CardContent from '@mui/material/CardContent'
 // ** Third Party Imports
 import { ApexOptions } from 'apexcharts'
 
-// ** Styled Components
-import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
+// ** Component Import
+import ReactApexcharts from 'src/@core/components/react-apexcharts'
 
 const radialBarColors = {
   series1: '#fdd835',
@@ -19,9 +16,6 @@ const radialBarColors = {
   series4: '#7367f0',
   series5: '#FFA1A1'
 }
-
-// ! To avoid 'Window is not defined' error
-const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const ApexRadialBarChart = () => {
   const options: ApexOptions = {
@@ -71,9 +65,7 @@ const ApexRadialBarChart = () => {
     <Card>
       <CardHeader title='Statistics' titleTypographyProps={{ variant: 'h6' }} />
       <CardContent>
-        <ApexChartWrapper>
-          <Chart options={options} series={[80, 50, 35]} type='radialBar' height={400} />
-        </ApexChartWrapper>
+        <ReactApexcharts options={options} series={[80, 50, 35]} type='radialBar' height={400} />
       </CardContent>
     </Card>
   )
