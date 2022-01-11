@@ -3,7 +3,7 @@ import Box from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
 
 const DropzoneWrapper = styled(Box)(({ theme }) => ({
-  '&.dropzone': {
+  '&.dropzone, & .dropzone': {
     minHeight: 300,
     display: 'flex',
     flexWrap: 'wrap',

@@ -21,9 +21,6 @@ import FileDocumentOutline from 'mdi-material-ui/FileDocumentOutline'
 // ** Third Party Imports
 import { useDropzone } from 'react-dropzone'
 
-// ** Styled Components
-import DropzoneWrapper from 'src/@core/styles/libs/react-dropzone'
-
 interface FileProp {
   name: string
   type: string
@@ -106,7 +103,7 @@ const FileUploaderMultiple = () => {
 
   return (
     <Fragment>
-      <DropzoneWrapper {...getRootProps({ className: 'dropzone' })}>
+      <div {...getRootProps({ className: 'dropzone' })}>
         <input {...getInputProps()} />
         <Box sx={{ display: 'flex', flexDirection: ['column', 'column', 'row'], alignItems: 'center' }}>
           <Img alt='Upload img' src='/images/misc/upload.png' />
@@ -121,7 +118,7 @@ const FileUploaderMultiple = () => {
             </Typography>
           </Box>
         </Box>
-      </DropzoneWrapper>
+      </div>
       {files.length ? (
         <Fragment>
           <List>{fileList}</List>

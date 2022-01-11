@@ -23,9 +23,6 @@ import FileDocumentOutline from 'mdi-material-ui/FileDocumentOutline'
 import toast from 'react-hot-toast'
 import { useDropzone } from 'react-dropzone'
 
-// ** Styled Components
-import DropzoneWrapper from 'src/@core/styles/libs/react-dropzone'
-
 interface FileProp {
   name: string
   type: string
@@ -112,7 +109,7 @@ const FileUploaderRestrictions = () => {
 
   return (
     <Fragment>
-      <DropzoneWrapper {...getRootProps({ className: 'dropzone' })}>
+      <div {...getRootProps({ className: 'dropzone' })}>
         <input {...getInputProps()} />
         <Box sx={{ display: 'flex', flexDirection: ['column', 'column', 'row'], alignItems: 'center' }}>
           <Img alt='Upload img' src='/images/misc/upload.png' />
@@ -122,7 +119,7 @@ const FileUploaderRestrictions = () => {
             <Typography color='textSecondary'>Max 2 files and max size of 2 MB</Typography>
           </Box>
         </Box>
-      </DropzoneWrapper>
+      </div>
       {files.length ? (
         <Fragment>
           <List>{fileList}</List>
@@ -145,7 +142,7 @@ export default FileUploaderRestrictions
 export const FileUploaderSingleCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { useState, SyntheticEvent, Fragment } from 'react'
+import { useState, SyntheticEvent } from 'react'
 
 // ** Next Import
 import Image from 'next/image'
@@ -158,9 +155,6 @@ import Typography, { TypographyProps } from '@mui/material/Typography'
 
 // ** Third Party Imports
 import { useDropzone } from 'react-dropzone'
-
-// ** Styles
-import DropzoneWrapper from 'src/@core/styles/libs/react-dropzone'
 
 interface FileProp {
   name: string
@@ -218,25 +212,23 @@ const FileUploaderSingle = () => {
   ))
 
   return (
-    <Fragment>
-      <DropzoneWrapper {...getRootProps({ className: 'dropzone' })} sx={acceptedFiles.length ? { height: 450 } : {}}>
-        <input {...getInputProps()} />
-        <Box sx={{ display: 'flex', flexDirection: ['column', 'column', 'row'], alignItems: 'center' }}>
-          <Img alt='Upload img' src='/images/misc/upload.png' />
-          <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: ['center', 'center', 'inherit'] }}>
-            <HeadingTypography variant='h5'>Drop files here or click to upload.</HeadingTypography>
-            <Typography color='textSecondary'>
-              Drop files here or click{' '}
-              <Link href='/' onClick={handleLinkClick}>
-                browse
-              </Link>{' '}
-              thorough your machine
-            </Typography>
-          </Box>
+    <Box {...getRootProps({ className: 'dropzone' })} sx={acceptedFiles.length ? { height: 450 } : {}}>
+      <input {...getInputProps()} />
+      <Box sx={{ display: 'flex', flexDirection: ['column', 'column', 'row'], alignItems: 'center' }}>
+        <Img alt='Upload img' src='/images/misc/upload.png' />
+        <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: ['center', 'center', 'inherit'] }}>
+          <HeadingTypography variant='h5'>Drop files here or click to upload.</HeadingTypography>
+          <Typography color='textSecondary'>
+            Drop files here or click{' '}
+            <Link href='/' onClick={handleLinkClick}>
+              browse
+            </Link>{' '}
+            thorough your machine
+          </Typography>
         </Box>
-        {files.length ? img : null}
-      </DropzoneWrapper>
-    </Fragment>
+      </Box>
+      {files.length ? img : null}
+    </Box>
   )
 }
 
@@ -268,9 +260,6 @@ import FileDocumentOutline from 'mdi-material-ui/FileDocumentOutline'
 
 // ** Third Party Imports
 import { useDropzone } from 'react-dropzone'
-
-// ** Styled Components
-import DropzoneWrapper from 'src/@core/styles/libs/react-dropzone'
 
 interface FileProp {
   name: string
@@ -354,7 +343,7 @@ const FileUploaderMultiple = () => {
 
   return (
     <Fragment>
-      <DropzoneWrapper {...getRootProps({ className: 'dropzone' })}>
+      <div {...getRootProps({ className: 'dropzone' })}>
         <input {...getInputProps()} />
         <Box sx={{ display: 'flex', flexDirection: ['column', 'column', 'row'], alignItems: 'center' }}>
           <Img alt='Upload img' src='/images/misc/upload.png' />
@@ -369,7 +358,7 @@ const FileUploaderMultiple = () => {
             </Typography>
           </Box>
         </Box>
-      </DropzoneWrapper>
+      </div>
       {files.length ? (
         <Fragment>
           <List>{fileList}</List>

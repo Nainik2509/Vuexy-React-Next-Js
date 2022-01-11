@@ -1,5 +1,5 @@
 // ** React Imports
-import { useState, SyntheticEvent, Fragment } from 'react'
+import { useState, SyntheticEvent } from 'react'
 
 // ** Next Import
 import Image from 'next/image'
@@ -12,9 +12,6 @@ import Typography, { TypographyProps } from '@mui/material/Typography'
 
 // ** Third Party Imports
 import { useDropzone } from 'react-dropzone'
-
-// ** Styles
-import DropzoneWrapper from 'src/@core/styles/libs/react-dropzone'
 
 interface FileProp {
   name: string
@@ -72,25 +69,23 @@ const FileUploaderSingle = () => {
   ))
 
   return (
-    <Fragment>
-      <DropzoneWrapper {...getRootProps({ className: 'dropzone' })} sx={acceptedFiles.length ? { height: 450 } : {}}>
-        <input {...getInputProps()} />
-        <Box sx={{ display: 'flex', flexDirection: ['column', 'column', 'row'], alignItems: 'center' }}>
-          <Img alt='Upload img' src='/images/misc/upload.png' />
-          <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: ['center', 'center', 'inherit'] }}>
-            <HeadingTypography variant='h5'>Drop files here or click to upload.</HeadingTypography>
-            <Typography color='textSecondary'>
-              Drop files here or click{' '}
-              <Link href='/' onClick={handleLinkClick}>
-                browse
-              </Link>{' '}
-              thorough your machine
-            </Typography>
-          </Box>
+    <Box {...getRootProps({ className: 'dropzone' })} sx={acceptedFiles.length ? { height: 450 } : {}}>
+      <input {...getInputProps()} />
+      <Box sx={{ display: 'flex', flexDirection: ['column', 'column', 'row'], alignItems: 'center' }}>
+        <Img alt='Upload img' src='/images/misc/upload.png' />
+        <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: ['center', 'center', 'inherit'] }}>
+          <HeadingTypography variant='h5'>Drop files here or click to upload.</HeadingTypography>
+          <Typography color='textSecondary'>
+            Drop files here or click{' '}
+            <Link href='/' onClick={handleLinkClick}>
+              browse
+            </Link>{' '}
+            thorough your machine
+          </Typography>
         </Box>
-        {files.length ? img : null}
-      </DropzoneWrapper>
-    </Fragment>
+      </Box>
+      {files.length ? img : null}
+    </Box>
   )
 }
 
