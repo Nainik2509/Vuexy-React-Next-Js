@@ -21,9 +21,6 @@ import {
 // ** Icons Imports
 import Circle from 'mdi-material-ui/Circle'
 
-// ** Styled Components
-import RechartsWrapper from 'src/@core/styles/libs/recharts'
-
 const data = [
   {
     subject: 'Battery',
@@ -99,7 +96,7 @@ const RechartsRadarChart = () => {
     <Card>
       <CardHeader title='Mobile Comparison' titleTypographyProps={{ variant: 'h6' }} />
       <CardContent>
-        <RechartsWrapper>
+        <Box sx={{ height: 350 }}>
           <ResponsiveContainer>
             <RadarChart cx='50%' cy='50%' height={350} data={data} style={{ direction: 'ltr' }}>
               <PolarGrid />
@@ -110,7 +107,7 @@ const RechartsRadarChart = () => {
               <Radar dataKey='Samsung s20' stroke='#9b88fa' fill='#9b88fa' fillOpacity={0.8} />
             </RadarChart>
           </ResponsiveContainer>
-        </RechartsWrapper>
+        </Box>
         <Box sx={{ display: 'flex', marginBottom: 4, justifyContent: 'center' }}>
           <Box sx={{ marginRight: 6, display: 'flex', alignItems: 'center' }}>
             <Circle sx={{ marginRight: 1.5, fontSize: '0.75rem', color: '#fde802' }} />

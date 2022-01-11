@@ -11,9 +11,6 @@ import { Tooltip, PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
 // ** Icons Imports
 import Circle from 'mdi-material-ui/Circle'
 
-// ** Styled Components
-import RechartsWrapper from 'src/@core/styles/libs/recharts'
-
 interface LabelProp {
   cx: number
   cy: number
@@ -56,7 +53,7 @@ const RechartsPieChart = () => {
         subheaderTypographyProps={{ variant: 'caption', sx: { color: 'text.disabled' } }}
       />
       <CardContent>
-        <RechartsWrapper>
+        <Box sx={{ height: 350 }}>
           <ResponsiveContainer>
             <PieChart height={350} style={{ direction: 'ltr' }}>
               <Pie data={data} innerRadius={80} dataKey='value' label={renderCustomizedLabel} labelLine={false}>
@@ -67,7 +64,7 @@ const RechartsPieChart = () => {
               <Tooltip />
             </PieChart>
           </ResponsiveContainer>
-        </RechartsWrapper>
+        </Box>
         <Box sx={{ display: 'flex', flexWrap: 'wrap', marginBottom: 4, justifyContent: 'center' }}>
           <Box sx={{ marginRight: 6, display: 'flex', alignItems: 'center' }}>
             <Circle sx={{ marginRight: 1.5, fontSize: '0.75rem', color: '#00d4bd' }} />

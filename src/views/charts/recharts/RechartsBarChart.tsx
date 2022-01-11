@@ -24,9 +24,6 @@ import ChevronDown from 'mdi-material-ui/ChevronDown'
 // ** Types
 import { DateType } from 'src/types/forms/reactDatepickerTypes'
 
-// ** Styled Component
-import RechartsWrapper from 'src/@core/styles/libs/recharts'
-
 interface Props {
   direction: 'ltr' | 'rtl'
 }
@@ -218,7 +215,7 @@ const RechartsBarChart = ({ direction }: Props) => {
             <Typography>Motorola</Typography>
           </Box>
         </Box>
-        <RechartsWrapper>
+        <Box sx={{ height: 350 }}>
           <ResponsiveContainer>
             <BarChart height={350} data={data} barSize={15} style={{ direction }}>
               <CartesianGrid strokeDasharray='3 3' />
@@ -231,7 +228,7 @@ const RechartsBarChart = ({ direction }: Props) => {
               <Bar dataKey='Motorola' stackId='a' fill='#f8d3ff' radius={[15, 15, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
-        </RechartsWrapper>
+        </Box>
       </CardContent>
     </Card>
   )

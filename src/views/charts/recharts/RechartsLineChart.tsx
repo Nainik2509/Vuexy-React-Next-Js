@@ -14,9 +14,6 @@ import ArrowUp from 'mdi-material-ui/ArrowUp'
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
 
-// ** Styled Components
-import RechartsWrapper from 'src/@core/styles/libs/recharts'
-
 interface Props {
   direction: 'ltr' | 'rtl'
 }
@@ -88,7 +85,7 @@ const RechartsLineChart = ({ direction }: Props) => {
         }
       />
       <CardContent>
-        <RechartsWrapper>
+        <Box sx={{ height: 350 }}>
           <ResponsiveContainer>
             <LineChart height={350} data={data} style={{ direction }}>
               <CartesianGrid />
@@ -98,7 +95,7 @@ const RechartsLineChart = ({ direction }: Props) => {
               <Line dataKey='pv' stroke='#ff9f43' strokeWidth={3} />
             </LineChart>
           </ResponsiveContainer>
-        </RechartsWrapper>
+        </Box>
       </CardContent>
     </Card>
   )
