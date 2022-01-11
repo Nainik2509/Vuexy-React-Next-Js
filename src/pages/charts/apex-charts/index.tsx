@@ -5,6 +5,8 @@ import Typography from '@mui/material/Typography'
 
 // ** Custom Components Imports
 import PageHeader from 'src/@core/components/page-header'
+
+// ** Styled Component Import
 import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
 
 // ** Demo Components Imports

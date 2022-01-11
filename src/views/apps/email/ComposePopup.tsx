@@ -1,9 +1,6 @@
 // ** React Imports
 import { useState, useRef, MouseEvent, HTMLAttributes } from 'react'
 
-// ** Next Import
-import dynamic from 'next/dynamic'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Chip from '@mui/material/Chip'
@@ -31,10 +28,10 @@ import DeleteOutline from 'mdi-material-ui/DeleteOutline'
 
 // ** Third Party Components
 import { EditorState } from 'draft-js'
-import { EditorProps } from 'react-draft-wysiwyg'
 
 // ** Custom Components Imports
 import CustomAvatar from 'src/@core/components/mui/avatar'
+import ReactDraftWysiwyg from 'src/@core/components/react-draft-wysiwyg'
 
 // ** Styled Component Imports
 import { EditorWrapper } from 'src/@core/styles/libs/react-draft-wysiwyg'
@@ -87,10 +84,6 @@ const menuItemsArr = [
 ]
 
 const filter = createFilterOptions()
-
-// ! To avoid 'Window is not defined' error
-// @ts-ignore
-const Editor = dynamic<EditorProps>(() => import('react-draft-wysiwyg').then(mod => mod.Editor), { ssr: false })
 
 const ComposePopup = (props: MailComposeType) => {
   // ** Props
@@ -437,7 +430,7 @@ const ComposePopup = (props: MailComposeType) => {
         />
       </Box>
       <EditorWrapper sx={{ '& .rdw-editor-wrapper': { border: 0 } }}>
-        <Editor
+        <ReactDraftWysiwyg
           editorState={messageValue}
           onEditorStateChange={editorState => setMessageValue(editorState)}
           placeholder='Message'
