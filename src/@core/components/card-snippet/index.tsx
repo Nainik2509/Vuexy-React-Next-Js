@@ -1,9 +1,6 @@
 // ** React Imports
 import { useState, useEffect } from 'react'
 
-// ** Primsjs
-import Prism from 'prismjs'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -21,6 +18,7 @@ import CodeTags from 'mdi-material-ui/CodeTags'
 import ContentCopy from 'mdi-material-ui/ContentCopy'
 
 // ** Third Party Components
+import Prism from 'prismjs'
 import toast from 'react-hot-toast'
 
 // ** Types
