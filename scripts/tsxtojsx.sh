@@ -8,51 +8,51 @@ tsc --project ../tsconfig.jsx.json
 cp ../package.json ../next.config.js ../next-env.d.ts ../.gitignore ../.prettierrc.js ../README.md ../.editorconfig ../jsx-version/
 # cp ../package.json  ../.gitignore ../.prettierrc.js ../README.md ../.editorconfig ../jsx-version/
 
-# # copy index.css to jsx-version/src
+# copy index.css to jsx-version/src
 # cp ../src/index.css ../jsx-version/src
 
-# # Copy .vscode & public directories into jsx-version for assets and .vscode configurations
+# Copy .vscode & public directories into jsx-version for assets and .vscode configurations
 cp -r ../.vscode ../public ../styles ../jsx-version/
 
 
-# # # Go into the root directory
+# Go into the root directory
 # cd ../
 
-# # # CD into jsx-version directory
+# CD into jsx-version directory
 # cd jsx-version
 
-# # # Format 4 spaces to 2 spacer
-# # # perl -pi -e 's{^((?: {4})*)}{" " x (2*length($1)/4)}e' ./src/**/*.{js,jsx}
+# Format 4 spaces to 2 spacer
+# perl -pi -e 's{^((?: {4})*)}{" " x (2*length($1)/4)}e' ./src/**/*.{js,jsx}
 
 cd ../scripts
 
-# # # # Remove Typescript from the jsx-version
+# Remove Typescript from the jsx-version
 node create-jsconfig.js
 
-# # # # Remove Typescript from the jsx-version
+# Remove Typescript from the jsx-version
 node remove-ts.js
 
-# # # Create .eslint in jsx-version
+# Create .eslint in jsx-version
 node update-eslint.js
 
-# # # Replace unwanted Code in jsx-folder
+# Replace unwanted Code in jsx-folder
 node findReplace.js
 
 cd ../jsx-version
 
-# # # install node_modules
+# install node_modules
 yarn install --ignore-engines
 
-# # # Run yarn format command to format all the files using prettier
+# Run yarn format command to format all the files using prettier
 yarn format
 
-# # # Run yarn lint command to fix all the linting error and give space after imports
+# Run yarn lint command to fix all the linting error and give space after imports
 yarn lint
 
 
-# # # Automate source code snippets in jsx version
+# Automate source code snippets in jsx version
 cd ../scripts
 
 node copySourceCodeJSX
 
-# # yarn start
+yarn dev
