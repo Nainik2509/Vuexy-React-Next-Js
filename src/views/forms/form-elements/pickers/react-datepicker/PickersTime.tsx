@@ -14,9 +14,6 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
 
-// ** Styled Components
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const PickersTime = () => {
   // ** States
   const [time, setTime] = useState<DateType>(new Date())
@@ -37,7 +34,7 @@ const PickersTime = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <DatePickerWrapper>
+      <Box>
         <DatePicker
           showTimeSelect
           selected={time}
@@ -49,8 +46,8 @@ const PickersTime = () => {
           onChange={(date: Date) => setTime(date)}
           customInput={<CustomInput label='Time Only' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           showTimeSelect
           timeFormat='HH:mm'
@@ -62,8 +59,8 @@ const PickersTime = () => {
           onChange={(date: Date) => setDateTime(date)}
           customInput={<CustomInput label='Date & Time' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           showTimeInput
           selected={customTime}
@@ -72,7 +69,7 @@ const PickersTime = () => {
           onChange={(date: Date) => setCustomTime(date)}
           customInput={<CustomInput label='Custom Time Input' />}
         />
-      </DatePickerWrapper>
+      </Box>
     </Box>
   )
 }

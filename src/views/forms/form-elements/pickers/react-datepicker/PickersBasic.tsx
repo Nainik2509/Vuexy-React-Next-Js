@@ -13,16 +13,13 @@ import CustomInput from './PickersCustomInput'
 // ** Types
 import { DateType } from 'src/types/forms/reactDatepickerTypes'
 
-// ** Styled Component
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const PickersBasic = () => {
   // ** States
   const [date, setDate] = useState<DateType>(new Date())
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <DatePickerWrapper>
+      <Box>
         <DatePicker
           selected={date}
           id='basic-input'
@@ -30,8 +27,8 @@ const PickersBasic = () => {
           placeholderText='Click to select a date'
           customInput={<CustomInput label='Basic' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           disabled
           selected={date}
@@ -40,8 +37,8 @@ const PickersBasic = () => {
           placeholderText='Click to select a date'
           customInput={<CustomInput label='Disabled' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           readOnly
           selected={date}
@@ -50,7 +47,7 @@ const PickersBasic = () => {
           placeholderText='Click to select a date'
           customInput={<CustomInput label='Readonly' />}
         />
-      </DatePickerWrapper>
+      </Box>
     </Box>
   )
 }

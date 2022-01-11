@@ -17,9 +17,6 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
 
-// ** Styled Components
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const PickersIncludeExclude = () => {
   // ** States
   const [date, setDate] = useState<DateType>(new Date())
@@ -29,7 +26,7 @@ const PickersIncludeExclude = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <DatePickerWrapper>
+      <Box>
         <DatePicker
           selected={date}
           id='include-dates'
@@ -37,8 +34,8 @@ const PickersIncludeExclude = () => {
           customInput={<CustomInput label='Include Dates' />}
           includeDates={[new Date(), addDays(new Date(), 1)]}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           id='exclude-dates'
           selected={dateExclude}
@@ -46,8 +43,8 @@ const PickersIncludeExclude = () => {
           customInput={<CustomInput label='Exclude Dates' />}
           excludeDates={[subDays(new Date(), 1), subDays(new Date(), 2)]}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           showTimeSelect
           selected={time}
@@ -62,8 +59,8 @@ const PickersIncludeExclude = () => {
             setHours(setMinutes(new Date(), 30), 17)
           ]}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           showTimeSelect
           id='exclude-time'
@@ -78,7 +75,7 @@ const PickersIncludeExclude = () => {
             setHours(setMinutes(new Date(), 30), 17)
           ]}
         />
-      </DatePickerWrapper>
+      </Box>
     </Box>
   )
 }

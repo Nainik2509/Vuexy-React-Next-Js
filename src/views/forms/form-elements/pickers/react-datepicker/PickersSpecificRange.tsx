@@ -16,9 +16,6 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
 
-// ** Styled Component
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const PickersSpecificRange = () => {
   // ** States
   const [date, setDate] = useState<DateType>(new Date())
@@ -26,7 +23,7 @@ const PickersSpecificRange = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <DatePickerWrapper>
+      <Box>
         <DatePicker
           selected={date}
           id='specific-date'
@@ -35,8 +32,8 @@ const PickersSpecificRange = () => {
           onChange={(date: Date) => setDate(date)}
           customInput={<CustomInput label='Specific Date Range' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           showTimeSelect
           selected={time}
@@ -47,7 +44,7 @@ const PickersSpecificRange = () => {
           maxTime={setHours(setMinutes(new Date(), 30), 20)}
           customInput={<CustomInput label='Specific Time' />}
         />
-      </DatePickerWrapper>
+      </Box>
     </Box>
   )
 }

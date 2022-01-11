@@ -31,9 +31,6 @@ import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 // ** Types
 import { DateType } from 'src/types/forms/reactDatepickerTypes'
 
-// ** Styled Components
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 interface State {
   password: string
   password2: string
@@ -144,17 +141,15 @@ const FormLayoutsTabs = () => {
                   </FormControl>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <DatePickerWrapper>
-                    <DatePicker
-                      selected={date}
-                      showYearDropdown
-                      showMonthDropdown
-                      id='form-layouts-tabs-date'
-                      placeholderText='MM-DD-YYYY'
-                      customInput={<CustomInput />}
-                      onChange={(date: Date) => setDate(date)}
-                    />
-                  </DatePickerWrapper>
+                  <DatePicker
+                    selected={date}
+                    showYearDropdown
+                    showMonthDropdown
+                    id='form-layouts-tabs-date'
+                    placeholderText='MM-DD-YYYY'
+                    customInput={<CustomInput />}
+                    onChange={(date: Date) => setDate(date)}
+                  />
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <TextField fullWidth label='Phone No.' placeholder='+1-123-456-8790' />

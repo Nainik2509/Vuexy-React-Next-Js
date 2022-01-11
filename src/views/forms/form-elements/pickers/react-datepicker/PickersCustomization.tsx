@@ -15,9 +15,6 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
 
-// ** Styled Components
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const PickersCustomization = () => {
   // ** States
   const [dateFormat, setDateFormat] = useState<DateType>(new Date())
@@ -25,7 +22,7 @@ const PickersCustomization = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <DatePickerWrapper>
+      <Box>
         <DatePicker
           id='custom-format'
           selected={dateFormat}
@@ -33,8 +30,8 @@ const PickersCustomization = () => {
           onChange={(date: Date) => setDateFormat(date)}
           customInput={<CustomInput label='Custom Date Format' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           id='highlight-dates'
           selected={dateHighlight}
@@ -42,7 +39,7 @@ const PickersCustomization = () => {
           customInput={<CustomInput label='Highlight Dates' />}
           highlightDates={[subDays(new Date(), 7), addDays(new Date(), 7)]}
         />
-      </DatePickerWrapper>
+      </Box>
     </Box>
   )
 }

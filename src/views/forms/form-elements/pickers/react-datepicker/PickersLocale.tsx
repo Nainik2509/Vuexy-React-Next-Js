@@ -18,9 +18,6 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
 
-// ** Styled Components
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const langObj: { [key: string]: Locale } = { fr, ar, en }
 
 const PickersLocale = () => {
@@ -35,7 +32,7 @@ const PickersLocale = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <DatePickerWrapper>
+      <Box>
         <DatePicker
           selected={date}
           id='locale-picker'
@@ -43,8 +40,8 @@ const PickersLocale = () => {
           onChange={(date: Date) => setDate(date)}
           customInput={<CustomInput label='Locale Dates' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           showTimeSelect
           selected={time}
@@ -54,7 +51,7 @@ const PickersLocale = () => {
           onChange={(date: Date) => setTime(date)}
           customInput={<CustomInput label='Locale Time' />}
         />
-      </DatePickerWrapper>
+      </Box>
     </Box>
   )
 }

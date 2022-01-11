@@ -14,9 +14,6 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
 
-// ** Styled Components
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const PickersCallbacks = () => {
   // ** States
   const [date, setDate] = useState<DateType>(new Date())
@@ -27,7 +24,7 @@ const PickersCallbacks = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <DatePickerWrapper>
+      <Box>
         <DatePicker
           selected={date}
           id='callback-open'
@@ -37,8 +34,8 @@ const PickersCallbacks = () => {
           onCalendarOpen={() => handlePickerCallback(`Selected Date: ${new Date(date || '').toLocaleDateString()}`)}
           onCalendarClose={() => handlePickerCallback(`Selected Date: ${new Date(date || '').toLocaleDateString()}`)}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           selected={date}
           id='callback-blur'
@@ -46,8 +43,8 @@ const PickersCallbacks = () => {
           customInput={<CustomInput label='Blur' />}
           onBlur={() => handlePickerCallback('Picker Closed')}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           selected={date}
           id='callback-change'
@@ -57,7 +54,7 @@ const PickersCallbacks = () => {
             handlePickerCallback(`Selected Date: ${new Date(date || '').toLocaleDateString()}`)
           }}
         />
-      </DatePickerWrapper>
+      </Box>
     </Box>
   )
 }

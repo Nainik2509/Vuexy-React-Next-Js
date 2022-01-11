@@ -13,9 +13,6 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
 
-// ** Styled Components
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const PickersOptions = () => {
   // ** States
   const [dateOpen, setDateOpen] = useState<DateType>(null)
@@ -32,7 +29,7 @@ const PickersOptions = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <DatePickerWrapper>
+      <Box>
         <DatePicker
           isClearable
           id='picker-clear'
@@ -40,8 +37,8 @@ const PickersOptions = () => {
           customInput={<CustomInput label='Clear' />}
           onChange={(date: Date) => setDateClear(date)}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           showWeekNumbers
           id='picker-week-num'
@@ -49,8 +46,8 @@ const PickersOptions = () => {
           onChange={(date: Date) => setDateWeekNum(date)}
           customInput={<CustomInput label='Week Numbers' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           id='picker-filter'
           selected={dateFilter}
@@ -58,8 +55,8 @@ const PickersOptions = () => {
           onChange={(date: Date) => setDateFilter(date)}
           customInput={<CustomInput label='Filter Dates' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           selected={dateOpen}
           id='picker-open-date'
@@ -67,8 +64,8 @@ const PickersOptions = () => {
           onChange={(date: Date) => setDateOpen(date)}
           customInput={<CustomInput label='Open To Date' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           todayButton='Today'
           selected={dateTodayBtn}
@@ -76,7 +73,7 @@ const PickersOptions = () => {
           onChange={(date: Date) => setDateTodayBtn(date)}
           customInput={<CustomInput label='Date Today Button' />}
         />
-      </DatePickerWrapper>
+      </Box>
     </Box>
   )
 }

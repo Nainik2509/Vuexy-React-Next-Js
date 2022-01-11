@@ -13,9 +13,6 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
 
-// ** Styled Components
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const PickersMonthYear = () => {
   // ** States
   const [year, setYear] = useState<DateType>(new Date())
@@ -24,7 +21,7 @@ const PickersMonthYear = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <DatePickerWrapper>
+      <Box>
         <DatePicker
           selected={month}
           id='month-picker'
@@ -33,8 +30,8 @@ const PickersMonthYear = () => {
           onChange={(date: Date) => setMonth(date)}
           customInput={<CustomInput label='Month Picker' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           showYearPicker
           selected={year}
@@ -43,8 +40,8 @@ const PickersMonthYear = () => {
           onChange={(date: Date) => setYear(date)}
           customInput={<CustomInput label='Year Picker' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           selected={quarter}
           id='quarter-picker'
@@ -53,7 +50,7 @@ const PickersMonthYear = () => {
           onChange={(date: Date) => setQuarter(date)}
           customInput={<CustomInput label='Quarter Picker' />}
         />
-      </DatePickerWrapper>
+      </Box>
     </Box>
   )
 }

@@ -23,9 +23,6 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Component Import
 import ReactApexcharts from 'src/@core/components/react-apexcharts'
 
-// ** Styled Components
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const candlestickColors = {
   series1: '#28c76f',
   series2: '#ea5455'
@@ -190,18 +187,16 @@ const ApexCandlestickChart = () => {
           '& .MuiCardHeader-content': { marginBottom: [2, 0] }
         }}
         action={
-          <DatePickerWrapper>
-            <DatePicker
-              selectsRange
-              endDate={endDate}
-              selected={startDate}
-              startDate={startDate}
-              onChange={handleOnChange}
-              id='apexchart-candlestick'
-              placeholderText='Click to select a date'
-              customInput={<CustomInput start={startDate as Date | number} end={endDate as Date | number} />}
-            />
-          </DatePickerWrapper>
+          <DatePicker
+            selectsRange
+            endDate={endDate}
+            selected={startDate}
+            startDate={startDate}
+            onChange={handleOnChange}
+            id='apexchart-candlestick'
+            placeholderText='Click to select a date'
+            customInput={<CustomInput start={startDate as Date | number} end={endDate as Date | number} />}
+          />
         }
       />
       <CardContent>

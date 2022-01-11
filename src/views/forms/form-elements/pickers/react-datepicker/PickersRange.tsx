@@ -12,9 +12,6 @@ import DatePicker from 'react-datepicker'
 // ** Types
 import { DateType } from 'src/types/forms/reactDatepickerTypes'
 
-// ** Styled Components
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 interface PickerProps {
   label?: string
   end: Date | number
@@ -51,7 +48,7 @@ const PickersRange = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <DatePickerWrapper>
+      <Box>
         <DatePicker
           selectsRange
           endDate={endDate}
@@ -64,8 +61,8 @@ const PickersRange = () => {
             <CustomInput label='Date Range' start={startDate as Date | number} end={endDate as Date | number} />
           }
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           selectsRange
           monthsShown={2}
@@ -83,7 +80,7 @@ const PickersRange = () => {
             />
           }
         />
-      </DatePickerWrapper>
+      </Box>
     </Box>
   )
 }

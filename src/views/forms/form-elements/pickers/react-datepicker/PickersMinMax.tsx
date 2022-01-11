@@ -15,9 +15,6 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
 
-// ** Styled Components
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const PickersMinMax = () => {
   // ** States
   const [minDate, setMinDate] = useState<DateType>(new Date())
@@ -25,7 +22,7 @@ const PickersMinMax = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <DatePickerWrapper>
+      <Box>
         <DatePicker
           id='min-date'
           selected={minDate}
@@ -33,8 +30,8 @@ const PickersMinMax = () => {
           onChange={(date: Date) => setMinDate(date)}
           customInput={<CustomInput label='Min Date' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           id='max-date'
           selected={maxDate}
@@ -42,7 +39,7 @@ const PickersMinMax = () => {
           onChange={(date: Date) => setMaxDate(date)}
           customInput={<CustomInput label='Max Date' />}
         />
-      </DatePickerWrapper>
+      </Box>
     </Box>
   )
 }

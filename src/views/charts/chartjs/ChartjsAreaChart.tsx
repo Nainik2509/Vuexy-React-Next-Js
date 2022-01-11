@@ -17,9 +17,6 @@ import DatePicker from 'react-datepicker'
 import ChevronDown from 'mdi-material-ui/ChevronDown'
 import CalendarOutline from 'mdi-material-ui/CalendarOutline'
 
-// ** Styled Components
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 // ** Types
 import { DateType } from 'src/types/forms/reactDatepickerTypes'
 
@@ -161,7 +158,6 @@ const ChartjsAreaChart = (props: AreaProps) => {
 
     return (
       <TextField
-        label=''
         {...props}
         size='small'
         value={value}
@@ -200,18 +196,16 @@ const ChartjsAreaChart = (props: AreaProps) => {
           '& .MuiCardHeader-content': { marginBottom: [2, 0] }
         }}
         action={
-          <DatePickerWrapper>
-            <DatePicker
-              selectsRange
-              id='chartjs-area'
-              endDate={endDate}
-              selected={startDate}
-              startDate={startDate}
-              onChange={handleOnChange}
-              placeholderText='Click to select a date'
-              customInput={<CustomInput start={startDate as Date | number} end={endDate as Date | number} />}
-            />
-          </DatePickerWrapper>
+          <DatePicker
+            selectsRange
+            id='chartjs-area'
+            endDate={endDate}
+            selected={startDate}
+            startDate={startDate}
+            onChange={handleOnChange}
+            placeholderText='Click to select a date'
+            customInput={<CustomInput start={startDate as Date | number} end={endDate as Date | number} />}
+          />
         }
       />
       <CardContent>

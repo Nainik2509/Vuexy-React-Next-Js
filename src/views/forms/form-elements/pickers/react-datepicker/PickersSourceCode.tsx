@@ -16,9 +16,6 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
 
-// ** Styled Components
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const PickersCallbacks = () => {
   // ** States
   const [date, setDate] = useState<DateType>(new Date())
@@ -29,7 +26,7 @@ const PickersCallbacks = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <DatePickerWrapper>
+      <Box>
         <DatePicker
           selected={date}
           id='callback-open'
@@ -39,8 +36,8 @@ const PickersCallbacks = () => {
           onCalendarOpen={() => handlePickerCallback(Selected Date: {new Date(date || '').toLocaleDateString()})}
           onCalendarClose={() => handlePickerCallback(Selected Date: {new Date(date || '').toLocaleDateString()})}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           selected={date}
           id='callback-blur'
@@ -48,8 +45,8 @@ const PickersCallbacks = () => {
           customInput={<CustomInput label='Blur' />}
           onBlur={() => handlePickerCallback('Picker Closed')}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           selected={date}
           id='callback-change'
@@ -59,7 +56,7 @@ const PickersCallbacks = () => {
             handlePickerCallback(Selected Date: {new Date(date || '').toLocaleDateString()})
           }}
         />
-      </DatePickerWrapper>
+      </Box>
     </Box>
   )
 }
@@ -87,9 +84,6 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
 
-// ** Styled Components
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const PickersCustomization = () => {
   // ** States
   const [dateFormat, setDateFormat] = useState<DateType>(new Date())
@@ -97,7 +91,7 @@ const PickersCustomization = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <DatePickerWrapper>
+      <Box>
         <DatePicker
           id='custom-format'
           selected={dateFormat}
@@ -105,8 +99,8 @@ const PickersCustomization = () => {
           onChange={(date: Date) => setDateFormat(date)}
           customInput={<CustomInput label='Custom Date Format' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           id='highlight-dates'
           selected={dateHighlight}
@@ -114,7 +108,7 @@ const PickersCustomization = () => {
           customInput={<CustomInput label='Highlight Dates' />}
           highlightDates={[subDays(new Date(), 7), addDays(new Date(), 7)]}
         />
-      </DatePickerWrapper>
+      </Box>
     </Box>
   )
 }
@@ -142,9 +136,6 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
 
-// ** Styled Components
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const PickersMinMax = () => {
   // ** States
   const [minDate, setMinDate] = useState<DateType>(new Date())
@@ -152,7 +143,7 @@ const PickersMinMax = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <DatePickerWrapper>
+      <Box>
         <DatePicker
           id='min-date'
           selected={minDate}
@@ -160,8 +151,8 @@ const PickersMinMax = () => {
           onChange={(date: Date) => setMinDate(date)}
           customInput={<CustomInput label='Min Date' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           id='max-date'
           selected={maxDate}
@@ -169,7 +160,7 @@ const PickersMinMax = () => {
           onChange={(date: Date) => setMaxDate(date)}
           customInput={<CustomInput label='Max Date' />}
         />
-      </DatePickerWrapper>
+      </Box>
     </Box>
   )
 }
@@ -195,16 +186,13 @@ import CustomInput from './PickersCustomInput'
 // ** Types
 import { DateType } from 'src/types/forms/reactDatepickerTypes'
 
-// ** Styled Component
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const PickersBasic = () => {
   // ** States
   const [date, setDate] = useState<DateType>(new Date())
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <DatePickerWrapper>
+      <Box>
         <DatePicker
           selected={date}
           id='basic-input'
@@ -212,8 +200,8 @@ const PickersBasic = () => {
           placeholderText='Click to select a date'
           customInput={<CustomInput label='Basic' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           disabled
           selected={date}
@@ -222,8 +210,8 @@ const PickersBasic = () => {
           placeholderText='Click to select a date'
           customInput={<CustomInput label='Disabled' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           readOnly
           selected={date}
@@ -232,7 +220,7 @@ const PickersBasic = () => {
           placeholderText='Click to select a date'
           customInput={<CustomInput label='Readonly' />}
         />
-      </DatePickerWrapper>
+      </Box>
     </Box>
   )
 }
@@ -278,9 +266,6 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
 
-// ** Styled Components
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const PickersMonthYearDropdowns = () => {
   // ** States
   const [year, setYear] = useState<DateType>(new Date())
@@ -289,7 +274,7 @@ const PickersMonthYearDropdowns = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <DatePickerWrapper>
+      <Box>
         <DatePicker
           selected={month}
           showMonthDropdown
@@ -298,8 +283,8 @@ const PickersMonthYearDropdowns = () => {
           onChange={(date: Date) => setMonth(date)}
           customInput={<CustomInput label='Month Dropdown' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           selected={year}
           showYearDropdown
@@ -308,8 +293,8 @@ const PickersMonthYearDropdowns = () => {
           onChange={(date: Date) => setYear(date)}
           customInput={<CustomInput label='Year Dropdown' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           showYearDropdown
           showMonthDropdown
@@ -319,7 +304,7 @@ const PickersMonthYearDropdowns = () => {
           onChange={(date: Date) => setMonthYear(date)}
           customInput={<CustomInput label='Month & Year Dropdown' />}
         />
-      </DatePickerWrapper>
+      </Box>
     </Box>
   )
 }
@@ -349,9 +334,6 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
 
-// ** Styled Components
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const PickersIncludeExclude = () => {
   // ** States
   const [date, setDate] = useState<DateType>(new Date())
@@ -361,7 +343,7 @@ const PickersIncludeExclude = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <DatePickerWrapper>
+      <Box>
         <DatePicker
           selected={date}
           id='include-dates'
@@ -369,8 +351,8 @@ const PickersIncludeExclude = () => {
           customInput={<CustomInput label='Include Dates' />}
           includeDates={[new Date(), addDays(new Date(), 1)]}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           id='exclude-dates'
           selected={dateExclude}
@@ -378,8 +360,8 @@ const PickersIncludeExclude = () => {
           customInput={<CustomInput label='Exclude Dates' />}
           excludeDates={[subDays(new Date(), 1), subDays(new Date(), 2)]}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           showTimeSelect
           selected={time}
@@ -394,8 +376,8 @@ const PickersIncludeExclude = () => {
             setHours(setMinutes(new Date(), 30), 17)
           ]}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           showTimeSelect
           id='exclude-time'
@@ -410,7 +392,7 @@ const PickersIncludeExclude = () => {
             setHours(setMinutes(new Date(), 30), 17)
           ]}
         />
-      </DatePickerWrapper>
+      </Box>
     </Box>
   )
 }
@@ -436,9 +418,6 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
 
-// ** Styled Components
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const PickersOptions = () => {
   // ** States
   const [dateOpen, setDateOpen] = useState<DateType>(null)
@@ -455,7 +434,7 @@ const PickersOptions = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <DatePickerWrapper>
+      <Box>
         <DatePicker
           isClearable
           id='picker-clear'
@@ -463,8 +442,8 @@ const PickersOptions = () => {
           customInput={<CustomInput label='Clear' />}
           onChange={(date: Date) => setDateClear(date)}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           showWeekNumbers
           id='picker-week-num'
@@ -472,8 +451,8 @@ const PickersOptions = () => {
           onChange={(date: Date) => setDateWeekNum(date)}
           customInput={<CustomInput label='Week Numbers' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           id='picker-filter'
           selected={dateFilter}
@@ -481,8 +460,8 @@ const PickersOptions = () => {
           onChange={(date: Date) => setDateFilter(date)}
           customInput={<CustomInput label='Filter Dates' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           selected={dateOpen}
           id='picker-open-date'
@@ -490,8 +469,8 @@ const PickersOptions = () => {
           onChange={(date: Date) => setDateOpen(date)}
           customInput={<CustomInput label='Open To Date' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           todayButton='Today'
           selected={dateTodayBtn}
@@ -499,7 +478,7 @@ const PickersOptions = () => {
           onChange={(date: Date) => setDateTodayBtn(date)}
           customInput={<CustomInput label='Date Today Button' />}
         />
-      </DatePickerWrapper>
+      </Box>
     </Box>
   )
 }
@@ -525,9 +504,6 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
 
-// ** Styled Components
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const PickersMonthYear = () => {
   // ** States
   const [year, setYear] = useState<DateType>(new Date())
@@ -536,7 +512,7 @@ const PickersMonthYear = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <DatePickerWrapper>
+      <Box>
         <DatePicker
           selected={month}
           id='month-picker'
@@ -545,8 +521,8 @@ const PickersMonthYear = () => {
           onChange={(date: Date) => setMonth(date)}
           customInput={<CustomInput label='Month Picker' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           showYearPicker
           selected={year}
@@ -555,8 +531,8 @@ const PickersMonthYear = () => {
           onChange={(date: Date) => setYear(date)}
           customInput={<CustomInput label='Year Picker' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           selected={quarter}
           id='quarter-picker'
@@ -565,7 +541,7 @@ const PickersMonthYear = () => {
           onChange={(date: Date) => setQuarter(date)}
           customInput={<CustomInput label='Quarter Picker' />}
         />
-      </DatePickerWrapper>
+      </Box>
     </Box>
   )
 }
@@ -596,9 +572,6 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
 
-// ** Styled Components
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const langObj: { [key: string]: Locale } = { fr, ar, en }
 
 const PickersLocale = () => {
@@ -613,7 +586,7 @@ const PickersLocale = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <DatePickerWrapper>
+      <Box>
         <DatePicker
           selected={date}
           id='locale-picker'
@@ -621,8 +594,8 @@ const PickersLocale = () => {
           onChange={(date: Date) => setDate(date)}
           customInput={<CustomInput label='Locale Dates' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           showTimeSelect
           selected={time}
@@ -632,7 +605,7 @@ const PickersLocale = () => {
           onChange={(date: Date) => setTime(date)}
           customInput={<CustomInput label='Locale Time' />}
         />
-      </DatePickerWrapper>
+      </Box>
     </Box>
   )
 }
@@ -656,9 +629,6 @@ import DatePicker from 'react-datepicker'
 
 // ** Types
 import { DateType } from 'src/types/forms/reactDatepickerTypes'
-
-// ** Styled Components
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 interface PickerProps {
   label?: string
@@ -696,7 +666,7 @@ const PickersRange = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <DatePickerWrapper>
+      <Box>
         <DatePicker
           selectsRange
           endDate={endDate}
@@ -709,8 +679,8 @@ const PickersRange = () => {
             <CustomInput label='Date Range' start={startDate as Date | number} end={endDate as Date | number} />
           }
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           selectsRange
           monthsShown={2}
@@ -728,7 +698,7 @@ const PickersRange = () => {
             />
           }
         />
-      </DatePickerWrapper>
+      </Box>
     </Box>
   )
 }
@@ -755,9 +725,6 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
 
-// ** Styled Components
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const PickersTime = () => {
   // ** States
   const [time, setTime] = useState<DateType>(new Date())
@@ -778,7 +745,7 @@ const PickersTime = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <DatePickerWrapper>
+      <Box>
         <DatePicker
           showTimeSelect
           selected={time}
@@ -790,8 +757,8 @@ const PickersTime = () => {
           onChange={(date: Date) => setTime(date)}
           customInput={<CustomInput label='Time Only' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           showTimeSelect
           timeFormat='HH:mm'
@@ -803,8 +770,8 @@ const PickersTime = () => {
           onChange={(date: Date) => setDateTime(date)}
           customInput={<CustomInput label='Date & Time' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           showTimeInput
           selected={customTime}
@@ -813,7 +780,7 @@ const PickersTime = () => {
           onChange={(date: Date) => setCustomTime(date)}
           customInput={<CustomInput label='Custom Time Input' />}
         />
-      </DatePickerWrapper>
+      </Box>
     </Box>
   )
 }
@@ -842,9 +809,6 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
 
-// ** Styled Component
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const PickersSpecificRange = () => {
   // ** States
   const [date, setDate] = useState<DateType>(new Date())
@@ -852,7 +816,7 @@ const PickersSpecificRange = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <DatePickerWrapper>
+      <Box>
         <DatePicker
           selected={date}
           id='specific-date'
@@ -861,8 +825,8 @@ const PickersSpecificRange = () => {
           onChange={(date: Date) => setDate(date)}
           customInput={<CustomInput label='Specific Date Range' />}
         />
-      </DatePickerWrapper>
-      <DatePickerWrapper>
+      </Box>
+      <Box>
         <DatePicker
           showTimeSelect
           selected={time}
@@ -873,7 +837,7 @@ const PickersSpecificRange = () => {
           maxTime={setHours(setMinutes(new Date(), 30), 20)}
           customInput={<CustomInput label='Specific Time' />}
         />
-      </DatePickerWrapper>
+      </Box>
     </Box>
   )
 }

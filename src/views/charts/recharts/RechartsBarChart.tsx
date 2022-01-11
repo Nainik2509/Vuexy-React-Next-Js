@@ -24,9 +24,8 @@ import ChevronDown from 'mdi-material-ui/ChevronDown'
 // ** Types
 import { DateType } from 'src/types/forms/reactDatepickerTypes'
 
-// ** Styled Components
+// ** Styled Component
 import RechartsWrapper from 'src/@core/styles/libs/recharts'
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 interface Props {
   direction: 'ltr' | 'rtl'
@@ -150,7 +149,6 @@ const RechartsBarChart = ({ direction }: Props) => {
 
     return (
       <TextField
-        label=''
         {...props}
         size='small'
         value={value}
@@ -189,18 +187,16 @@ const RechartsBarChart = ({ direction }: Props) => {
           '& .MuiCardHeader-content': { marginBottom: [2, 0] }
         }}
         action={
-          <DatePickerWrapper>
-            <DatePicker
-              selectsRange
-              id='recharts-bar'
-              endDate={endDate}
-              selected={startDate}
-              startDate={startDate}
-              onChange={handleOnChange}
-              placeholderText='Click to select a date'
-              customInput={<CustomInput start={startDate as Date | number} end={endDate as Date | number} />}
-            />
-          </DatePickerWrapper>
+          <DatePicker
+            selectsRange
+            id='recharts-bar'
+            endDate={endDate}
+            selected={startDate}
+            startDate={startDate}
+            onChange={handleOnChange}
+            placeholderText='Click to select a date'
+            customInput={<CustomInput start={startDate as Date | number} end={endDate as Date | number} />}
+          />
         }
       />
       <CardContent>

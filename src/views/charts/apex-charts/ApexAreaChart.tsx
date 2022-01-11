@@ -23,9 +23,6 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Component Import
 import ReactApexcharts from 'src/@core/components/react-apexcharts'
 
-// ** Styled Components
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const areaColors = {
   series1: '#ab7efd',
   series2: '#b992fe',
@@ -157,18 +154,16 @@ const ApexAreaChart = () => {
           '& .MuiCardHeader-content': { marginBottom: [2, 0] }
         }}
         action={
-          <DatePickerWrapper>
-            <DatePicker
-              selectsRange
-              endDate={endDate}
-              id='apexchart-area'
-              selected={startDate}
-              startDate={startDate}
-              onChange={handleOnChange}
-              placeholderText='Click to select a date'
-              customInput={<CustomInput start={startDate as Date | number} end={endDate as Date | number} />}
-            />
-          </DatePickerWrapper>
+          <DatePicker
+            selectsRange
+            endDate={endDate}
+            id='apexchart-area'
+            selected={startDate}
+            startDate={startDate}
+            onChange={handleOnChange}
+            placeholderText='Click to select a date'
+            customInput={<CustomInput start={startDate as Date | number} end={endDate as Date | number} />}
+          />
         }
       />
       <CardContent>

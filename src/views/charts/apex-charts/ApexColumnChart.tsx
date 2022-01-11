@@ -23,9 +23,6 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Component Import
 import ReactApexcharts from 'src/@core/components/react-apexcharts'
 
-// ** Styled Components
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const columnColors = {
   bg: '#f8d3ff',
   series1: '#826af9',
@@ -143,18 +140,16 @@ const ApexColumnChart = () => {
           '& .MuiCardHeader-content': { marginBottom: [2, 0] }
         }}
         action={
-          <DatePickerWrapper>
-            <DatePicker
-              selectsRange
-              endDate={endDate}
-              selected={startDate}
-              id='apexchart-column'
-              startDate={startDate}
-              onChange={handleOnChange}
-              placeholderText='Click to select a date'
-              customInput={<CustomInput start={startDate as Date | number} end={endDate as Date | number} />}
-            />
-          </DatePickerWrapper>
+          <DatePicker
+            selectsRange
+            endDate={endDate}
+            selected={startDate}
+            id='apexchart-column'
+            startDate={startDate}
+            onChange={handleOnChange}
+            placeholderText='Click to select a date'
+            customInput={<CustomInput start={startDate as Date | number} end={endDate as Date | number} />}
+          />
         }
       />
       <CardContent>

@@ -7,6 +7,9 @@ import Typography from '@mui/material/Typography'
 import PageHeader from 'src/@core/components/page-header'
 import CardSnippet from 'src/@core/components/card-snippet'
 
+// ** Styled Component
+import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
+
 // ** Demo Components Imports
 import PickersTime from 'src/views/forms/form-elements/pickers/react-datepicker/PickersTime'
 import PickersBasic from 'src/views/forms/form-elements/pickers/react-datepicker/PickersBasic'
@@ -26,78 +29,80 @@ import * as source from 'src/views/forms/form-elements/pickers/react-datepicker/
 
 const ReactDatePicker = () => {
   return (
-    <Grid container spacing={6}>
-      <PageHeader
-        subtitle={<Typography variant='body2'>A simple and reusable datepicker component for React</Typography>}
-        title={
-          <Typography variant='h5'>
-            <Link href='https://github.com/Hacker0x01/react-datepicker/' target='_blank'>
-              React DatePicker
-            </Link>
-          </Typography>
-        }
-      />
-      <Grid item xs={12}>
-        <CardSnippet title='Date Pickers' code={source.PickersBasicCode}>
-          <PickersBasic />
-        </CardSnippet>
+    <DatePickerWrapper>
+      <Grid container spacing={6}>
+        <PageHeader
+          subtitle={<Typography variant='body2'>A simple and reusable datepicker component for React</Typography>}
+          title={
+            <Typography variant='h5'>
+              <Link href='https://github.com/Hacker0x01/react-datepicker/' target='_blank'>
+                React DatePicker
+              </Link>
+            </Typography>
+          }
+        />
+        <Grid item xs={12}>
+          <CardSnippet title='Date Pickers' code={source.PickersBasicCode}>
+            <PickersBasic />
+          </CardSnippet>
+        </Grid>
+        <Grid item xs={12}>
+          <CardSnippet title='Time Pickers' code={source.PickersTimeCode}>
+            <PickersTime />
+          </CardSnippet>
+        </Grid>
+        <Grid item xs={12}>
+          <CardSnippet title='Min & Max Pickers' code={source.PickersMinMaxCode}>
+            <PickersMinMax />
+          </CardSnippet>
+        </Grid>
+        <Grid item xs={12}>
+          <CardSnippet title='Date Range Pickers' code={source.PickersRangeCode}>
+            <PickersRange />
+          </CardSnippet>
+        </Grid>
+        <Grid item xs={12}>
+          <CardSnippet title='Specific Range' code={source.PickersSpecificRangeCode}>
+            <PickersSpecificRange />
+          </CardSnippet>
+        </Grid>
+        <Grid item xs={12}>
+          <CardSnippet title='Callbacks' code={source.PickersCallbacksCode}>
+            <PickersCallbacks />
+          </CardSnippet>
+        </Grid>
+        <Grid item xs={12}>
+          <CardSnippet title='Customization' code={source.PickersCustomizationCode}>
+            <PickersCustomization />
+          </CardSnippet>
+        </Grid>
+        <Grid item xs={12}>
+          <CardSnippet title='Include Exclude' code={source.PickersIncludeExcludeCode}>
+            <PickersIncludeExclude />
+          </CardSnippet>
+        </Grid>
+        <Grid item xs={12}>
+          <CardSnippet title='Locale' code={source.PickersLocaleCode}>
+            <PickersLocale />
+          </CardSnippet>
+        </Grid>
+        <Grid item xs={12}>
+          <CardSnippet title='Month & Year Dropdowns' code={source.PickersMonthYearDropdownsCode}>
+            <PickersMonthYearDropdowns />
+          </CardSnippet>
+        </Grid>
+        <Grid item xs={12}>
+          <CardSnippet title='Month, Year & Quarter' code={source.PickersMonthYearQuarterCode}>
+            <PickersMonthYearQuarter />
+          </CardSnippet>
+        </Grid>
+        <Grid item xs={12}>
+          <CardSnippet title='Options' code={source.PickersOptionsCode}>
+            <PickersOptions />
+          </CardSnippet>
+        </Grid>
       </Grid>
-      <Grid item xs={12}>
-        <CardSnippet title='Time Pickers' code={source.PickersTimeCode}>
-          <PickersTime />
-        </CardSnippet>
-      </Grid>
-      <Grid item xs={12}>
-        <CardSnippet title='Min & Max Pickers' code={source.PickersMinMaxCode}>
-          <PickersMinMax />
-        </CardSnippet>
-      </Grid>
-      <Grid item xs={12}>
-        <CardSnippet title='Date Range Pickers' code={source.PickersRangeCode}>
-          <PickersRange />
-        </CardSnippet>
-      </Grid>
-      <Grid item xs={12}>
-        <CardSnippet title='Specific Range' code={source.PickersSpecificRangeCode}>
-          <PickersSpecificRange />
-        </CardSnippet>
-      </Grid>
-      <Grid item xs={12}>
-        <CardSnippet title='Callbacks' code={source.PickersCallbacksCode}>
-          <PickersCallbacks />
-        </CardSnippet>
-      </Grid>
-      <Grid item xs={12}>
-        <CardSnippet title='Customization' code={source.PickersCustomizationCode}>
-          <PickersCustomization />
-        </CardSnippet>
-      </Grid>
-      <Grid item xs={12}>
-        <CardSnippet title='Include Exclude' code={source.PickersIncludeExcludeCode}>
-          <PickersIncludeExclude />
-        </CardSnippet>
-      </Grid>
-      <Grid item xs={12}>
-        <CardSnippet title='Locale' code={source.PickersLocaleCode}>
-          <PickersLocale />
-        </CardSnippet>
-      </Grid>
-      <Grid item xs={12}>
-        <CardSnippet title='Month & Year Dropdowns' code={source.PickersMonthYearDropdownsCode}>
-          <PickersMonthYearDropdowns />
-        </CardSnippet>
-      </Grid>
-      <Grid item xs={12}>
-        <CardSnippet title='Month, Year & Quarter' code={source.PickersMonthYearQuarterCode}>
-          <PickersMonthYearQuarter />
-        </CardSnippet>
-      </Grid>
-      <Grid item xs={12}>
-        <CardSnippet title='Options' code={source.PickersOptionsCode}>
-          <PickersOptions />
-        </CardSnippet>
-      </Grid>
-    </Grid>
+    </DatePickerWrapper>
   )
 }
 
