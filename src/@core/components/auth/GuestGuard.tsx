@@ -20,6 +20,10 @@ const GuestGuard = (props: GuestGuardProps) => {
   const router = useRouter()
 
   useEffect(() => {
+    if (!router.isReady) {
+      return
+    }
+
     if (window.localStorage.getItem('userData')) {
       router.replace('/')
     }

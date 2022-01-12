@@ -1,3 +1,6 @@
+// ** React Imports
+import { ReactNode } from 'react'
+
 // ** Next Imports
 import Head from 'next/head'
 import type { NextPage } from 'next'
@@ -28,8 +31,9 @@ import { Toaster } from 'react-hot-toast'
 
 // ** Component Imports
 import UserLayout from 'src/layouts/UserLayout'
-import AuthGuard from 'src/@core/components/auth/AuthGuard'
 import ThemeComponent from 'src/@core/theme/ThemeComponent'
+import AuthGuard from 'src/@core/components/auth/AuthGuard'
+import GuestGuard from 'src/@core/components/auth/GuestGuard'
 
 // ** Contexts
 import { AuthProvider } from 'src/@core/context/AuthContext'
@@ -56,11 +60,6 @@ import 'react-perfect-scrollbar/dist/css/styles.css'
 // ** Global css styles
 import '../../styles/globals.css'
 
-// type NextPageWithLayout = NextPage & {
-//   getLayout?: (page: ReactElement) => ReactNode
-//   setConfig?: () => void
-// }
-
 // ** Extend App Props with Emotion
 type ExtendedAppProps = AppProps & {
   Component: NextPage
@@ -85,11 +84,25 @@ if (themeConfig.routingLoader) {
 const App = (props: ExtendedAppProps) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
 
+  const router = useRouter()
+
   const getLayout = Component.getLayout ?? (page => <UserLayout>{page}</UserLayout>)
 
   const setConfig = Component.setConfig ?? undefined
 
-  const router = useRouter()
+  const authGuard = Component.authGuard ?? true
+
+  const guestGuard = Component.guestGuard ?? false
+
+  const Guard = ({ children }: { children: ReactNode }) => {
+    if (guestGuard) {
+      return <GuestGuard>{children}</GuestGuard>
+    } else if (!guestGuard && !authGuard) {
+      return <>{children}</>
+    } else {
+      return <AuthGuard>{children}</AuthGuard>
+    }
+  }
 
   return (
     <Provider store={store}>
@@ -110,30 +123,23 @@ const App = (props: ExtendedAppProps) => {
               {({ settings }) => {
                 return (
                   <ThemeComponent settings={settings}>
-                    {/* {auth.loading ? (
-                              'Loading...' // Splash screen
-                            ) : (
-                              <AuthGuard pageProps={pageProps} ability={ability}>
-                                {getLayout(<Component {...pageProps} />)}
-                              </AuthGuard>
-                            )} */}
-                    {getLayout(
-                      <div
-                        key={router.route}
-                        className={clsx('animation-wrapper', {
-                          [`animate__animated animate__${settings.routerTransition}`]:
-                            settings.routerTransition !== 'none' || settings.routerTransition !== undefined
-                        })}
-                      >
-                        <AuthGuard>
+                    <Guard>
+                      {getLayout(
+                        <div
+                          key={router.route}
+                          className={clsx('animation-wrapper', {
+                            [`animate__animated animate__${settings.routerTransition}`]:
+                              settings.routerTransition !== 'none' || settings.routerTransition !== undefined
+                          })}
+                        >
                           <Component {...pageProps} />
-                        </AuthGuard>
-                      </div>
-                    )}
+                        </div>
+                      )}
+                    </Guard>
+
                     <ReactHotToast>
                       <Toaster position={settings.toastPosition} toastOptions={{ className: 'react-hot-toast' }} />
                     </ReactHotToast>
-                    {/* <AuthGuard pageProps={pageProps}>{getLayout(<Component {...pageProps} />)}</AuthGuard> */}
                   </ThemeComponent>
                 )
               }}

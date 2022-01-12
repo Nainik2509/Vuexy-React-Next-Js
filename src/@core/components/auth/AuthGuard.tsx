@@ -19,30 +19,24 @@ const AuthGuard = (props: AuthGuardProps) => {
   const auth = useAuth()
   const router = useRouter()
 
-  const handleReturnURL = () => {
-    if (!router.query) {
-      return '/'
-    } else {
-      if (router.asPath.startsWith('/login?returnUrl=')) {
-        return router.asPath.replace('/login?returnUrl=', '').replace(/%2F/g, '/')
-      } else {
-        return router.asPath
+  useEffect(
+    () => {
+      if (!router.isReady) {
+        return
       }
-    }
-  }
 
-  useEffect(() => {
-    if (auth.user === null && !window.localStorage.getItem('userData')) {
-      router.replace({
-        pathname: '/login',
-        query: {
-          returnUrl: router.replace(handleReturnURL() as string)
-        }
-      })
-    }
-  }, [router.route])
+      if (auth.user === null && !window.localStorage.getItem('userData')) {
+        router.replace({
+          pathname: '/login',
+          query: { returnUrl: router.asPath }
+        })
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [router.route]
+  )
 
-  if (auth.loading) {
+  if (auth.loading || auth.user === null) {
     return <Spinner />
   }
 
