@@ -29,11 +29,16 @@ import MuiTimeline, { TimelineProps } from '@mui/lab/Timeline'
 
 // ** Types
 import { ThemeColor } from 'src/@core/layouts/types'
+import { InvoiceType } from 'src/types/apps/invoiceTypes'
 
 // ** Demo Component Imports
-import InvoiceList from 'src/pages/apps/invoice/list'
+import InvoiceListTable from './InvoiceListTable'
 
-interface DataType {
+interface Props {
+  invoiceData: InvoiceType[]
+}
+
+interface ProjectListDataType {
   img: string
   hours: string
   totalTask: string
@@ -43,7 +48,7 @@ interface DataType {
   progressColor: ThemeColor
 }
 
-const data: DataType[] = [
+const projectListDate: ProjectListDataType[] = [
   {
     hours: '18:42',
     progressValue: 78,
@@ -132,7 +137,7 @@ const Img = styled('img')(({ theme }) => ({
   marginRight: theme.spacing(3)
 }))
 
-const UserViewOverview = () => {
+const UserViewOverview = ({ invoiceData }: Props) => {
   return (
     <Fragment>
       <Card sx={{ marginBottom: 6 }}>
@@ -154,7 +159,7 @@ const UserViewOverview = () => {
             </TableHead>
 
             <TableBody>
-              {data.map((item: DataType, index: number) => (
+              {projectListDate.map((item: ProjectListDataType, index: number) => (
                 <TableRow hover key={index} sx={{ '&:last-of-type td': { border: 0 } }}>
                   <TableCell>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -307,7 +312,7 @@ const UserViewOverview = () => {
         </CardContent>
       </Card>
 
-      <InvoiceList userView />
+      <InvoiceListTable invoiceData={invoiceData} />
     </Fragment>
   )
 }

@@ -60,9 +60,6 @@ import TableHeader from 'src/views/apps/invoice/list/TableHeader'
 // ** Styled Components
 import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
-interface InvoiceListProps {
-  userView?: boolean
-}
 interface InvoiceStatusObj {
   [key: string]: {
     color: ThemeColor
@@ -79,7 +76,6 @@ interface CustomInputProps {
 }
 
 interface CellType {
-  // eslint-disable-next-line react/no-unused-prop-types
   row: InvoiceType
 }
 
@@ -87,16 +83,6 @@ interface CellType {
 const StyledLink = styled('a')(({ theme }) => ({
   textDecoration: 'none',
   color: theme.palette.primary.main
-}))
-
-// ** Styled component for the link inside menu
-const MenuItemLink = styled(Link)(({ theme }) => ({
-  width: '100%',
-  display: 'flex',
-  alignItems: 'center',
-  textDecoration: 'none',
-  padding: theme.spacing(1.5, 4),
-  color: theme.palette.text.primary
 }))
 
 const RowOptions = ({ id }: { id: number | string }) => {
@@ -136,12 +122,12 @@ const RowOptions = ({ id }: { id: number | string }) => {
           <Download fontSize='small' sx={{ mr: 2 }} />
           Download
         </MenuItem>
-        <MenuItemLink href={`/apps/invoice/edit/${id}`} passHref>
-          <MenuItem component='a'>
+        <Link href={`/apps/invoice/edit/${id}`} passHref>
+          <MenuItem>
             <PencilOutline fontSize='small' sx={{ mr: 2 }} />
             Edit
           </MenuItem>
-        </MenuItemLink>
+        </Link>
         <MenuItem>
           <ContentCopy fontSize='small' sx={{ mr: 2 }} />
           Duplicate
@@ -234,7 +220,7 @@ const defaultColumns = [
     flex: 0.5,
     minWidth: 300,
     field: 'client.name',
-    headerName: 'client',
+    headerName: 'Client',
     renderCell: ({ row }: CellType) => {
       const { name, companyEmail } = row.client
 
@@ -295,10 +281,7 @@ const CustomInput = forwardRef((props: CustomInputProps, ref) => {
   return <TextField fullWidth inputRef={ref} {...updatedProps} label={props.label || ''} value={value} />
 })
 
-const InvoiceList = (props: InvoiceListProps) => {
-  // ** Props
-  const { userView } = props
-
+const InvoiceList = () => {
   // ** State
   const [dates, setDates] = useState<Date[]>([])
   const [value, setValue] = useState<string>('')
@@ -376,7 +359,7 @@ const InvoiceList = (props: InvoiceListProps) => {
     <Grid container spacing={6}>
       <Grid item xs={12}>
         <Card>
-          <CardHeader title='Filters'></CardHeader>
+          <CardHeader title='Filters' />
           <CardContent>
             <Grid container spacing={6}>
               <Grid item xs={12} sm={6}>
@@ -421,7 +404,6 @@ const InvoiceList = (props: InvoiceListProps) => {
         <Card>
           <TableHeader
             value={value}
-            userView={userView}
             rowsPerPage={rowsPerPage}
             selectedRows={selectedRows}
             handleFilter={handleFilter}

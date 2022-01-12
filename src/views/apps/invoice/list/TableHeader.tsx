@@ -12,7 +12,6 @@ import Select, { SelectChangeEvent } from '@mui/material/Select'
 
 interface TableHeaderProps {
   value: string
-  userView?: boolean
   selectedRows: GridRowId[]
   rowsPerPage: string | undefined
   handleFilter: (val: string) => void
@@ -33,7 +32,7 @@ const ActionsRight = styled(Box)<BoxProps>(({ theme }) => ({
 
 const TableHeader = (props: TableHeaderProps) => {
   // ** Props
-  const { value, userView, selectedRows, rowsPerPage, handleFilter, handlePerPage } = props
+  const { value, selectedRows, rowsPerPage, handleFilter, handlePerPage } = props
 
   return (
     <Box
@@ -69,7 +68,7 @@ const TableHeader = (props: TableHeaderProps) => {
           <MenuItem value='50'>50</MenuItem>
         </Select>
       </Box>
-      <ActionsRight sx={{ ...(userView ? { justifyContent: 'flex-start !important' } : {}) }}>
+      <ActionsRight>
         <TextField
           size='small'
           value={value}

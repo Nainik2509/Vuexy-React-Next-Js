@@ -22,7 +22,6 @@ import { useForm, Controller } from 'react-hook-form'
 
 interface TableHeaderProps {
   value: string
-  userView?: boolean
   rowsPerPage: string | undefined
   handleFilter: (val: string) => void
   handlePerPage: (e: SelectChangeEvent) => void
@@ -42,7 +41,7 @@ const ActionsRight = styled(Box)<BoxProps>(({ theme }) => ({
 
 const TableHeader = (props: TableHeaderProps) => {
   // ** Props
-  const { value, userView, rowsPerPage, handleFilter, handlePerPage } = props
+  const { value, rowsPerPage, handleFilter, handlePerPage } = props
 
   // ** State
   const [open, setOpen] = useState<boolean>(false)
@@ -84,7 +83,7 @@ const TableHeader = (props: TableHeaderProps) => {
           <MenuItem value='50'>50</MenuItem>
         </Select>
       </Box>
-      <ActionsRight sx={{ ...(userView ? { justifyContent: 'flex-start !important' } : {}) }}>
+      <ActionsRight>
         <TextField
           size='small'
           value={value}

@@ -919,7 +919,7 @@ const data: { invoices: InvoiceType[] } = {
 // GET: Return Invoice List
 // ------------------------------------------------
 mock.onGet('/apps/invoice/invoices').reply(config => {
-  const { q = '', status = null, dates = [] } = config.params
+  const { q = '', status = '', dates = [] } = config.params ?? ''
   const queryLowered = q.toLowerCase()
   const filteredData = data.invoices.filter(invoice => {
     if (dates.length) {

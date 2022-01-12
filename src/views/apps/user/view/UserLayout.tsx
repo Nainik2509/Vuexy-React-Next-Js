@@ -12,13 +12,18 @@ import Alert from '@mui/material/Alert'
 import axios from 'axios'
 
 // ** Types
+import { InvoiceType } from 'src/types/apps/invoiceTypes'
 import { UserLayoutType, UsersType } from 'src/types/apps/userTypes'
 
 // ** Demo Components Imports
 import UserViewLeft from 'src/views/apps/user/view/UserViewLeft'
 import UserViewRight from 'src/views/apps/user/view/UserViewRight'
 
-const UserView = ({ id }: UserLayoutType) => {
+type Props = UserLayoutType & {
+  invoiceData: InvoiceType[]
+}
+
+const UserView = ({ id, invoiceData }: Props) => {
   // ** State
   const [error, setError] = useState<boolean>(false)
   const [data, setData] = useState<null | UsersType>(null)
@@ -43,7 +48,7 @@ const UserView = ({ id }: UserLayoutType) => {
           <UserViewLeft data={data} />
         </Grid>
         <Grid item xs={12} md={7} lg={8}>
-          <UserViewRight />
+          <UserViewRight invoiceData={invoiceData} />
         </Grid>
       </Grid>
     )

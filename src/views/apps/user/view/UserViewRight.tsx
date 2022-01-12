@@ -23,6 +23,13 @@ import UserViewSecurity from 'src/views/apps/user/view/UserViewSecurity'
 import UserViewConnection from 'src/views/apps/user/view/UserViewConnection'
 import UserViewNotification from 'src/views/apps/user/view/UserViewNotification'
 
+// ** Types
+import { InvoiceType } from 'src/types/apps/invoiceTypes'
+
+interface Props {
+  invoiceData: InvoiceType[]
+}
+
 // ** Styled Tab component
 const Tab = styled(MuiTab)<TabProps>(({ theme }) => ({
   minHeight: 48,
@@ -33,7 +40,7 @@ const Tab = styled(MuiTab)<TabProps>(({ theme }) => ({
   }
 }))
 
-const TabsForcedScroll = () => {
+const UserViewRight = ({ invoiceData }: Props) => {
   // ** State
   const [value, setValue] = useState<string>('overview')
 
@@ -58,7 +65,7 @@ const TabsForcedScroll = () => {
       </TabList>
       <Box sx={{ marginTop: 6 }}>
         <TabPanel value='overview'>
-          <UserViewOverview />
+          <UserViewOverview invoiceData={invoiceData} />
         </TabPanel>
         <TabPanel value='security'>
           <UserViewSecurity />
@@ -77,4 +84,4 @@ const TabsForcedScroll = () => {
   )
 }
 
-export default TabsForcedScroll
+export default UserViewRight
