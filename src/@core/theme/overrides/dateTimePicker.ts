@@ -14,7 +14,7 @@ const DateTimePicker = (theme: Theme) => {
             '& .MuiIconButton-sizeSmall': {
               padding: theme.spacing(0.5)
             },
-            '& + div .MuiIconButton-root': {
+            '& + div .MuiIconButton-root:not(.Mui-disabled)': {
               color: theme.palette.text.secondary
             }
           },

@@ -64,10 +64,10 @@ const DateTimePickers = () => {
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <DateTimePicker
           value={basicPicker}
-          minDateTime={new Date()}
           label='Ignore date and time'
           onChange={newValue => setBasicPicker(newValue)}
           renderInput={params => <TextField {...params} />}
+          minDateTime={new Date(`${new Date().getFullYear()}-01-01 12:00`)}
         />
       </LocalizationProvider>
       <LocalizationProvider dateAdapter={AdapterDateFns}>

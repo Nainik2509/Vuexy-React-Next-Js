@@ -21,7 +21,9 @@ const TimePickers = () => {
   // ** State
   const [basicPicker, setBasicPicker] = useState<Date | null>(new Date())
   const [minMaxPicker, setMinMaxPicker] = useState<Date | null>(new Date())
-  const [oddTimePicker, setOddTimePicker] = useState<Date | null>(new Date())
+  const [oddTimePicker, setOddTimePicker] = useState<Date | string | null>(
+    new Date(`${new Date().getFullYear()}-01-01 12:00`)
+  )
 
   // ** Hooks
   const { i18n } = useTranslation()
