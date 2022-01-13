@@ -32,6 +32,7 @@ const MainContentWrapper = styled(Box)<BoxProps>({
   flexGrow: 1,
   display: 'flex',
   minHeight: '100vh',
+  overflowX: 'hidden',
   flexDirection: 'column'
 })
 
