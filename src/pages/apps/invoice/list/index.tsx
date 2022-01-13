@@ -100,7 +100,7 @@ const RowOptions = ({ id }: { id: number | string }) => {
 
   return (
     <Fragment>
-      <IconButton size='small' sx={{ color: 'text.secondary' }} onClick={handleRowOptionsClick}>
+      <IconButton size='small' onClick={handleRowOptionsClick}>
         <DotsVertical fontSize='small' />
       </IconButton>
       <Menu
@@ -240,6 +240,7 @@ const defaultColumns = [
     }
   },
   {
+    flex: 0.2,
     minWidth: 150,
     field: 'total',
     headerName: 'Total',
@@ -254,12 +255,14 @@ const defaultColumns = [
   },
   {
     flex: 0.3,
-    minWidth: 150,
+    minWidth: 100,
     field: 'balance',
     headerName: 'Balance',
     renderCell: ({ row }: CellType) => {
       return row.balance !== 0 ? (
-        <Typography variant='body2'>{row.balance}</Typography>
+        <Typography variant='body2' sx={{ color: 'text.primary' }}>
+          {row.balance}
+        </Typography>
       ) : (
         <CustomChip size='small' skin='light' color='success' label='Paid' />
       )
@@ -285,8 +288,8 @@ const InvoiceList = () => {
   // ** State
   const [dates, setDates] = useState<Date[]>([])
   const [value, setValue] = useState<string>('')
+  const [pageSize, setPageSize] = useState<number>(10)
   const [statusValue, setStatusValue] = useState<string>('')
-  const [rowsPerPage, setRowsPerPage] = useState<string>('10')
   const [endDateRange, setEndDateRange] = useState<DateType>(null)
   const [selectedRows, setSelectedRows] = useState<GridRowId[]>([])
   const [startDateRange, setStartDateRange] = useState<DateType>(new Date())
@@ -309,10 +312,6 @@ const InvoiceList = () => {
     setValue(val)
   }
 
-  const handlePerPage = (e: SelectChangeEvent) => {
-    setRowsPerPage(e.target.value)
-  }
-
   const handleStatusValue = (e: SelectChangeEvent) => {
     setStatusValue(e.target.value)
   }
@@ -329,21 +328,22 @@ const InvoiceList = () => {
   const columns = [
     ...defaultColumns,
     {
-      minWidth: 100,
+      flex: 0.2,
+      minWidth: 130,
       sortable: false,
-      field: 'balance',
+      field: 'actions',
       headerName: 'Actions',
       renderCell: ({ row }: CellType) => (
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Tooltip title='Delete Invoice'>
-            <IconButton size='small' sx={{ color: 'text.secondary' }} onClick={() => dispatch(deleteInvoice(row.id))}>
+            <IconButton size='small' onClick={() => dispatch(deleteInvoice(row.id))}>
               <DeleteOutline fontSize='small' />
             </IconButton>
           </Tooltip>
           <Tooltip title='View'>
             <Box>
               <Link href={`/apps/invoice/preview/${row.id}`} passHref>
-                <IconButton size='small' component='a' sx={{ color: 'text.secondary', textDecoration: 'none' }}>
+                <IconButton size='small' component='a' sx={{ textDecoration: 'none' }}>
                   <EyeOutline fontSize='small' />
                 </IconButton>
               </Link>
@@ -402,23 +402,19 @@ const InvoiceList = () => {
       </Grid>
       <Grid item xs={12}>
         <Card>
-          <TableHeader
-            value={value}
-            rowsPerPage={rowsPerPage}
-            selectedRows={selectedRows}
-            handleFilter={handleFilter}
-            handlePerPage={handlePerPage}
+          <TableHeader value={value} selectedRows={selectedRows} handleFilter={handleFilter} />
+          <DataGrid
+            autoHeight
+            pagination
+            rows={store.data}
+            columns={columns}
+            checkboxSelection
+            disableSelectionOnClick
+            pageSize={Number(pageSize)}
+            rowsPerPageOptions={[10, 25, 50]}
+            onSelectionModelChange={rows => setSelectedRows(rows)}
+            onPageSizeChange={newPageSize => setPageSize(newPageSize)}
           />
-          <Box sx={{ height: `calc(100vh - 8rem)` }}>
-            <DataGrid
-              checkboxSelection
-              columns={columns}
-              rows={store.data}
-              disableSelectionOnClick
-              pageSize={Number(rowsPerPage)}
-              onSelectionModelChange={rows => setSelectedRows(rows)}
-            />
-          </Box>
         </Card>
       </Grid>
     </Grid>

@@ -21,6 +21,7 @@ import { ThemeColor } from 'src/@core/layouts/types'
 
 // ** Utils Import
 import { getInitials } from 'src/@core/utils/get-initials'
+import { DataTableRowType } from 'src/@fake-db/types'
 
 interface StatusObj {
   [key: number]: {
@@ -59,11 +60,11 @@ const statusObj: StatusObj = {
   5: { title: 'applied', color: 'info' }
 }
 
-const Columns: GridColDef[] = [
+const columns: GridColDef[] = [
   {
-    minWidth: 250,
+    flex: 0.3,
+    minWidth: 290,
     field: 'full_name',
-    editable: true,
     headerName: 'Name',
     renderCell: (params: GridRenderCellParams) => {
       const { row } = params
@@ -84,17 +85,8 @@ const Columns: GridColDef[] = [
     }
   },
   {
-    flex: 1,
-    field: 'email',
-    headerName: 'Email',
-    renderCell: (params: GridRenderCellParams) => (
-      <Typography variant='body2' sx={{ color: 'text.primary' }}>
-        {params.row.full_name}
-      </Typography>
-    )
-  },
-  {
-    flex: 1,
+    flex: 0.2,
+    minWidth: 140,
     headerName: 'Date',
     field: 'start_date',
     renderCell: (params: GridRenderCellParams) => (
@@ -104,7 +96,8 @@ const Columns: GridColDef[] = [
     )
   },
   {
-    flex: 1,
+    flex: 0.2,
+    minWidth: 140,
     field: 'salary',
     headerName: 'Salary',
     renderCell: (params: GridRenderCellParams) => (
@@ -114,8 +107,9 @@ const Columns: GridColDef[] = [
     )
   },
   {
-    flex: 1,
+    flex: 0.1,
     field: 'age',
+    minWidth: 110,
     headerName: 'Age',
     renderCell: (params: GridRenderCellParams) => (
       <Typography variant='body2' sx={{ color: 'text.primary' }}>
@@ -124,7 +118,8 @@ const Columns: GridColDef[] = [
     )
   },
   {
-    flex: 1,
+    flex: 0.2,
+    minWidth: 150,
     field: 'status',
     headerName: 'Status',
     renderCell: (params: GridRenderCellParams) => {
@@ -145,35 +140,37 @@ const Columns: GridColDef[] = [
 
 const TableServerSide = () => {
   // ** State
-  const [rows, setRows] = useState([])
-  const [total, setTotal] = useState(1)
-  const [rowsPerPage, setRowsPerPage] = useState<number>(10)
+  const [page, setPage] = useState(0)
+  const [pageSize, setPageSize] = useState<number>(7)
+  const [rows, setRows] = useState<DataTableRowType[]>([])
   const [searchValue, setSearchValue] = useState<string>('')
   const [sortColumn, setSortColumn] = useState<string>('full_name')
   const [sort, setSort] = useState<'asc' | 'desc' | undefined | null>('asc')
 
-  const fetchTableData = useCallback((sort, q, column) => {
-    axios
-      .get('/api/table/data', {
-        params: {
-          q,
-          sort,
-          column
-        }
-      })
-      .then(res => {
-        setRows(res.data.data)
-        setTotal(res.data.total)
-      })
-  }, [])
+  function loadServerRows(currentPage: number, data: DataTableRowType[]) {
+    return data.slice(currentPage * pageSize, (currentPage + 1) * pageSize)
+  }
+
+  const fetchTableData = useCallback(
+    async (sort, q, column) => {
+      await axios
+        .get('/api/table/data', {
+          params: {
+            q,
+            sort,
+            column
+          }
+        })
+        .then(res => {
+          setRows(loadServerRows(page, res.data.data))
+        })
+    },
+    [page] // eslint-disable-line
+  )
 
   useEffect(() => {
     fetchTableData(sort, searchValue, sortColumn)
   }, [fetchTableData, searchValue, sort, sortColumn])
-
-  const handlePerPageChange = (newPageSize: number) => {
-    setRowsPerPage(newPageSize + 1)
-  }
 
   const handleSortModel = (newModel: GridSortModel) => {
     if (newModel.length) {
@@ -194,30 +191,30 @@ const TableServerSide = () => {
   return (
     <Card>
       <CardHeader title='Server Side' />
-      <Box sx={{ height: 500, width: '100%' }}>
-        <DataGrid
-          rows={rows}
-          rowCount={total}
-          columns={Columns}
-          checkboxSelection
-          sortingMode='server'
-          pageSize={rowsPerPage}
-          paginationMode='server'
-          rowsPerPageOptions={[10, 25, 50]}
-          onSortModelChange={handleSortModel}
-          onPageSizeChange={handlePerPageChange}
-          components={{ Toolbar: ServerSideToolbar }}
-          componentsProps={{
-            toolbar: {
-              value: searchValue,
+      <DataGrid
+        autoHeight
+        pagination
+        rows={rows}
+        columns={columns}
+        checkboxSelection
+        pageSize={pageSize}
+        sortingMode='server'
+        paginationMode='server'
+        onSortModelChange={handleSortModel}
+        rowsPerPageOptions={[7, 10, 25, 50]}
+        onPageChange={newPage => setPage(newPage)}
+        components={{ Toolbar: ServerSideToolbar }}
+        onPageSizeChange={newPageSize => setPageSize(newPageSize)}
+        componentsProps={{
+          toolbar: {
+            value: searchValue,
 
-              // @ts-ignore
-              onChange: (event: ChangeEvent) => handleSearch(event.target.value),
-              clearSearch: () => handleSearch('')
-            }
-          }}
-        />
-      </Box>
+            // @ts-ignore
+            onChange: (event: ChangeEvent) => handleSearch(event.target.value),
+            clearSearch: () => handleSearch('')
+          }
+        }}
+      />
     </Card>
   )
 }

@@ -20,7 +20,7 @@ const Timeline = (theme: Theme) => {
     MuiTimelineConnector: {
       styleOverrides: {
         root: {
-          backgroundColor: `rgba(${theme.palette.customColors.main}, 0.14)`
+          backgroundColor: theme.palette.divider
         }
       }
     },

@@ -527,7 +527,7 @@ const UserViewBilling = () => {
           <Grid container spacing={6}>
             <Grid item xs={12} lg={6}>
               <TableContainer>
-                <Table sx={{ width: '95%' }}>
+                <Table size='small' sx={{ width: '95%' }}>
                   <TableBody
                     sx={{
                       '& .MuiTableCell-root': {
@@ -544,7 +544,15 @@ const UserViewBilling = () => {
                   >
                     <TableRow>
                       <TableCell>
-                        <Typography sx={{ fontWeight: 500, fontSize: '0.875rem', whiteSpace: 'nowrap' }}>
+                        <Typography
+                          sx={{
+                            fontWeight: 500,
+                            fontSize: '0.875rem',
+                            whiteSpace: 'nowrap',
+                            lineHeight: '22px',
+                            letterSpacing: '0.1px'
+                          }}
+                        >
                           Company Name:
                         </Typography>
                       </TableCell>
@@ -552,7 +560,15 @@ const UserViewBilling = () => {
                     </TableRow>
                     <TableRow>
                       <TableCell>
-                        <Typography sx={{ fontWeight: 500, fontSize: '0.875rem', whiteSpace: 'nowrap' }}>
+                        <Typography
+                          sx={{
+                            fontWeight: 500,
+                            fontSize: '0.875rem',
+                            whiteSpace: 'nowrap',
+                            lineHeight: '22px',
+                            letterSpacing: '0.1px'
+                          }}
+                        >
                           Billing Email:
                         </Typography>
                       </TableCell>
@@ -560,7 +576,15 @@ const UserViewBilling = () => {
                     </TableRow>
                     <TableRow>
                       <TableCell>
-                        <Typography sx={{ fontWeight: 500, fontSize: '0.875rem', whiteSpace: 'nowrap' }}>
+                        <Typography
+                          sx={{
+                            fontWeight: 500,
+                            fontSize: '0.875rem',
+                            whiteSpace: 'nowrap',
+                            lineHeight: '22px',
+                            letterSpacing: '0.1px'
+                          }}
+                        >
                           Tax ID:
                         </Typography>
                       </TableCell>
@@ -568,7 +592,15 @@ const UserViewBilling = () => {
                     </TableRow>
                     <TableRow>
                       <TableCell>
-                        <Typography sx={{ fontWeight: 500, fontSize: '0.875rem', whiteSpace: 'nowrap' }}>
+                        <Typography
+                          sx={{
+                            fontWeight: 500,
+                            fontSize: '0.875rem',
+                            whiteSpace: 'nowrap',
+                            lineHeight: '22px',
+                            letterSpacing: '0.1px'
+                          }}
+                        >
                           VAT Number:
                         </Typography>
                       </TableCell>
@@ -576,7 +608,15 @@ const UserViewBilling = () => {
                     </TableRow>
                     <TableRow>
                       <TableCell>
-                        <Typography sx={{ fontWeight: 500, fontSize: '0.875rem', whiteSpace: 'nowrap' }}>
+                        <Typography
+                          sx={{
+                            fontWeight: 500,
+                            fontSize: '0.875rem',
+                            whiteSpace: 'nowrap',
+                            lineHeight: '22px',
+                            letterSpacing: '0.1px'
+                          }}
+                        >
                           Billing Address:
                         </Typography>
                       </TableCell>
@@ -589,7 +629,7 @@ const UserViewBilling = () => {
 
             <Grid item xs={12} lg={6}>
               <TableContainer>
-                <Table>
+                <Table size='small'>
                   <TableBody
                     sx={{
                       '& .MuiTableCell-root': {
@@ -606,7 +646,15 @@ const UserViewBilling = () => {
                   >
                     <TableRow>
                       <TableCell>
-                        <Typography sx={{ fontWeight: 500, fontSize: '0.875rem', whiteSpace: 'nowrap' }}>
+                        <Typography
+                          sx={{
+                            fontWeight: 500,
+                            fontSize: '0.875rem',
+                            whiteSpace: 'nowrap',
+                            lineHeight: '22px',
+                            letterSpacing: '0.1px'
+                          }}
+                        >
                           Contact:
                         </Typography>
                       </TableCell>
@@ -614,7 +662,15 @@ const UserViewBilling = () => {
                     </TableRow>
                     <TableRow>
                       <TableCell>
-                        <Typography sx={{ fontWeight: 500, fontSize: '0.875rem', whiteSpace: 'nowrap' }}>
+                        <Typography
+                          sx={{
+                            fontWeight: 500,
+                            fontSize: '0.875rem',
+                            whiteSpace: 'nowrap',
+                            lineHeight: '22px',
+                            letterSpacing: '0.1px'
+                          }}
+                        >
                           Country:
                         </Typography>
                       </TableCell>
@@ -622,7 +678,15 @@ const UserViewBilling = () => {
                     </TableRow>
                     <TableRow>
                       <TableCell>
-                        <Typography sx={{ fontWeight: 500, fontSize: '0.875rem', whiteSpace: 'nowrap' }}>
+                        <Typography
+                          sx={{
+                            fontWeight: 500,
+                            fontSize: '0.875rem',
+                            whiteSpace: 'nowrap',
+                            lineHeight: '22px',
+                            letterSpacing: '0.1px'
+                          }}
+                        >
                           State:
                         </Typography>
                       </TableCell>
@@ -630,7 +694,15 @@ const UserViewBilling = () => {
                     </TableRow>
                     <TableRow>
                       <TableCell>
-                        <Typography sx={{ fontWeight: 500, fontSize: '0.875rem', whiteSpace: 'nowrap' }}>
+                        <Typography
+                          sx={{
+                            fontWeight: 500,
+                            fontSize: '0.875rem',
+                            whiteSpace: 'nowrap',
+                            lineHeight: '22px',
+                            letterSpacing: '0.1px'
+                          }}
+                        >
                           Zip Code:
                         </Typography>
                       </TableCell>

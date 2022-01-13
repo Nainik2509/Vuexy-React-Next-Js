@@ -2,43 +2,28 @@
 import Link from 'next/link'
 
 // ** MUI Imports
+import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
+import Select from '@mui/material/Select'
 import { GridRowId } from '@mui/x-data-grid'
 import MenuItem from '@mui/material/MenuItem'
-import { styled } from '@mui/material/styles'
 import TextField from '@mui/material/TextField'
-import Box, { BoxProps } from '@mui/material/Box'
-import Select, { SelectChangeEvent } from '@mui/material/Select'
 
 interface TableHeaderProps {
   value: string
   selectedRows: GridRowId[]
-  rowsPerPage: string | undefined
   handleFilter: (val: string) => void
-  handlePerPage: (e: SelectChangeEvent) => void
 }
-
-const ActionsRight = styled(Box)<BoxProps>(({ theme }) => ({
-  display: 'flex',
-  flexWrap: 'wrap',
-  alignItems: 'center',
-  justifyContent: 'flex-start',
-
-  [theme.breakpoints.up('lg')]: {
-    flexWrap: 'nowrap',
-    justifyContent: 'flex-end'
-  }
-}))
 
 const TableHeader = (props: TableHeaderProps) => {
   // ** Props
-  const { value, selectedRows, rowsPerPage, handleFilter, handlePerPage } = props
+  const { value, selectedRows, handleFilter } = props
 
   return (
     <Box
       sx={{
-        py: 4,
-        px: 5,
+        p: 5,
+        pb: 3,
         width: '100%',
         display: 'flex',
         flexWrap: 'wrap',
@@ -46,29 +31,22 @@ const TableHeader = (props: TableHeaderProps) => {
         justifyContent: 'space-between'
       }}
     >
-      <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-        <Select
-          displayEmpty
-          size='small'
-          defaultValue=''
-          sx={{ mr: 4, mb: 2 }}
-          disabled={selectedRows && selectedRows.length === 0}
-          renderValue={selected => (selected.length === 0 ? 'Actions' : selected)}
-        >
-          <MenuItem value='' disabled>
-            Actions
-          </MenuItem>
-          <MenuItem value='delete'>Delete</MenuItem>
-          <MenuItem value='edit'>Edit</MenuItem>
-          <MenuItem value='send'>Send</MenuItem>
-        </Select>
-        <Select size='small' sx={{ mr: 4, mb: 2 }} value={rowsPerPage} onChange={handlePerPage}>
-          <MenuItem value='10'>10</MenuItem>
-          <MenuItem value='25'>25</MenuItem>
-          <MenuItem value='50'>50</MenuItem>
-        </Select>
-      </Box>
-      <ActionsRight>
+      <Select
+        size='small'
+        displayEmpty
+        defaultValue=''
+        sx={{ mr: 4, mb: 2 }}
+        disabled={selectedRows && selectedRows.length === 0}
+        renderValue={selected => (selected.length === 0 ? 'Actions' : selected)}
+      >
+        <MenuItem value='' disabled>
+          Actions
+        </MenuItem>
+        <MenuItem value='Delete'>Delete</MenuItem>
+        <MenuItem value='Edit'>Edit</MenuItem>
+        <MenuItem value='Send'>Send</MenuItem>
+      </Select>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
         <TextField
           size='small'
           value={value}
@@ -78,11 +56,11 @@ const TableHeader = (props: TableHeaderProps) => {
         />
 
         <Link href='/apps/invoice/add' passHref>
-          <Button component='a' sx={{ mb: 2 }} variant='contained'>
+          <Button sx={{ mb: 2 }} variant='contained'>
             Create Invoice
           </Button>
         </Link>
-      </ActionsRight>
+      </Box>
     </Box>
   )
 }

@@ -45,49 +45,49 @@ const UserViewNotification = () => {
           <TableBody>
             <TableRow hover>
               <TableCell>New for you</TableCell>
-              <TableCell align='center' sx={{ paddingTop: 0, paddingBottom: 0 }}>
+              <TableCell align='center' sx={{ paddingTop: '0 !important', paddingBottom: '0 !important' }}>
                 <Checkbox defaultChecked />
               </TableCell>
-              <TableCell align='center' sx={{ paddingTop: 0, paddingBottom: 0 }}>
+              <TableCell align='center' sx={{ paddingTop: '0 !important', paddingBottom: '0 !important' }}>
                 <Checkbox />
               </TableCell>
-              <TableCell align='center' sx={{ paddingTop: 0, paddingBottom: 0 }}>
+              <TableCell align='center' sx={{ paddingTop: '0 !important', paddingBottom: '0 !important' }}>
                 <Checkbox />
               </TableCell>
             </TableRow>
             <TableRow hover>
               <TableCell>Account activity</TableCell>
-              <TableCell align='center' sx={{ paddingTop: 0, paddingBottom: 0 }}>
+              <TableCell align='center' sx={{ paddingTop: '0 !important', paddingBottom: '0 !important' }}>
                 <Checkbox />
               </TableCell>
-              <TableCell align='center' sx={{ paddingTop: 0, paddingBottom: 0 }}>
+              <TableCell align='center' sx={{ paddingTop: '0 !important', paddingBottom: '0 !important' }}>
                 <Checkbox defaultChecked />
               </TableCell>
-              <TableCell align='center' sx={{ paddingTop: 0, paddingBottom: 0 }}>
+              <TableCell align='center' sx={{ paddingTop: '0 !important', paddingBottom: '0 !important' }}>
                 <Checkbox defaultChecked />
               </TableCell>
             </TableRow>
             <TableRow hover>
               <TableCell>A new browser used to sign in</TableCell>
-              <TableCell align='center' sx={{ paddingTop: 0, paddingBottom: 0 }}>
+              <TableCell align='center' sx={{ paddingTop: '0 !important', paddingBottom: '0 !important' }}>
                 <Checkbox defaultChecked />
               </TableCell>
-              <TableCell align='center' sx={{ paddingTop: 0, paddingBottom: 0 }}>
+              <TableCell align='center' sx={{ paddingTop: '0 !important', paddingBottom: '0 !important' }}>
                 <Checkbox defaultChecked />
               </TableCell>
-              <TableCell align='center' sx={{ paddingTop: 0, paddingBottom: 0 }}>
+              <TableCell align='center' sx={{ paddingTop: '0 !important', paddingBottom: '0 !important' }}>
                 <Checkbox defaultChecked />
               </TableCell>
             </TableRow>
             <TableRow hover>
               <TableCell>A new device is linked</TableCell>
-              <TableCell align='center' sx={{ paddingTop: 0, paddingBottom: 0 }}>
+              <TableCell align='center' sx={{ paddingTop: '0 !important', paddingBottom: '0 !important' }}>
                 <Checkbox />
               </TableCell>
-              <TableCell align='center' sx={{ paddingTop: 0, paddingBottom: 0 }}>
+              <TableCell align='center' sx={{ paddingTop: '0 !important', paddingBottom: '0 !important' }}>
                 <Checkbox defaultChecked />
               </TableCell>
-              <TableCell align='center' sx={{ paddingTop: 0, paddingBottom: 0 }}>
+              <TableCell align='center' sx={{ paddingTop: '0 !important', paddingBottom: '0 !important' }}>
                 <Checkbox />
               </TableCell>
             </TableRow>

@@ -2,46 +2,29 @@
 import { useState } from 'react'
 
 // ** MUI Imports
+import Box from '@mui/material/Box'
 import Dialog from '@mui/material/Dialog'
 import Button from '@mui/material/Button'
 import Checkbox from '@mui/material/Checkbox'
-import MenuItem from '@mui/material/MenuItem'
-import { styled } from '@mui/material/styles'
 import TextField from '@mui/material/TextField'
 import FormGroup from '@mui/material/FormGroup'
 import Typography from '@mui/material/Typography'
-import Box, { BoxProps } from '@mui/material/Box'
 import DialogTitle from '@mui/material/DialogTitle'
 import DialogContent from '@mui/material/DialogContent'
 import FormHelperText from '@mui/material/FormHelperText'
 import FormControlLabel from '@mui/material/FormControlLabel'
-import Select, { SelectChangeEvent } from '@mui/material/Select'
 
 // ** Third Party Imports
 import { useForm, Controller } from 'react-hook-form'
 
 interface TableHeaderProps {
   value: string
-  rowsPerPage: string | undefined
   handleFilter: (val: string) => void
-  handlePerPage: (e: SelectChangeEvent) => void
 }
-
-const ActionsRight = styled(Box)<BoxProps>(({ theme }) => ({
-  display: 'flex',
-  flexWrap: 'wrap',
-  alignItems: 'center',
-  justifyContent: 'flex-start',
-
-  [theme.breakpoints.up('lg')]: {
-    flexWrap: 'nowrap',
-    justifyContent: 'flex-end'
-  }
-}))
 
 const TableHeader = (props: TableHeaderProps) => {
   // ** Props
-  const { value, rowsPerPage, handleFilter, handlePerPage } = props
+  const { value, handleFilter } = props
 
   // ** State
   const [open, setOpen] = useState<boolean>(false)
@@ -65,25 +48,10 @@ const TableHeader = (props: TableHeaderProps) => {
   }
 
   return (
-    <Box
-      sx={{
-        py: 4,
-        px: 5,
-        width: '100%',
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        justifyContent: 'space-between'
-      }}
-    >
-      <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-        <Select size='small' sx={{ mr: 4, mb: 2 }} value={rowsPerPage} onChange={handlePerPage}>
-          <MenuItem value='10'>10</MenuItem>
-          <MenuItem value='25'>25</MenuItem>
-          <MenuItem value='50'>50</MenuItem>
-        </Select>
-      </Box>
-      <ActionsRight>
+    <>
+      <Box
+        sx={{ p: 5, pb: 3, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}
+      >
         <TextField
           size='small'
           value={value}
@@ -94,7 +62,7 @@ const TableHeader = (props: TableHeaderProps) => {
         <Button sx={{ mb: 2 }} variant='contained' onClick={handleDialogToggle}>
           Add Permission
         </Button>
-      </ActionsRight>
+      </Box>
       <Dialog fullWidth maxWidth='sm' onClose={handleDialogToggle} open={open}>
         <DialogTitle sx={{ pt: 8, mx: 'auto', textAlign: 'center' }}>
           <Typography variant='h4' component='span' sx={{ mb: 2 }}>
@@ -136,7 +104,7 @@ const TableHeader = (props: TableHeaderProps) => {
           </Box>
         </DialogContent>
       </Dialog>
-    </Box>
+    </>
   )
 }
 

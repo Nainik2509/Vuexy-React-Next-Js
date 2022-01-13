@@ -7,7 +7,10 @@ const DataGrid = (theme: Theme) => {
       styleOverrides: {
         root: {
           border: 0,
-          color: theme.palette.text.primary
+          color: theme.palette.text.primary,
+          '& .MuiDataGrid-columnHeader:focus, & .MuiDataGrid-columnHeader:focus-within': {
+            outline: 'none'
+          }
         },
         toolbarContainer: {
           paddingRight: `${theme.spacing(5)} !important`,
@@ -38,8 +41,14 @@ const DataGrid = (theme: Theme) => {
         columnHeaderTitleContainer: {
           padding: 0
         },
+        columnHeaderTitle: {
+          fontWeight: 600,
+          fontSize: '0.75rem',
+          letterSpacing: '0.17px',
+          textTransform: 'uppercase'
+        },
         columnSeparator: {
-          display: 'none'
+          color: theme.palette.divider
         },
         virtualScroller: {
           marginTop: '54px !important'
@@ -89,6 +98,10 @@ const DataGrid = (theme: Theme) => {
             color: theme.palette.text.primary
           }
         }
+      },
+      defaultProps: {
+        rowHeight: 50,
+        headerHeight: 54
       }
     }
   }

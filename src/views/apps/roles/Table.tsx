@@ -1,5 +1,5 @@
 // ** React Imports
-import { useMemo, useEffect, useCallback, useState, ReactElement } from 'react'
+import { useEffect, useCallback, useState, ReactElement } from 'react'
 
 // ** Next Images
 import Link from 'next/link'
@@ -15,12 +15,12 @@ import Typography from '@mui/material/Typography'
 import { SelectChangeEvent } from '@mui/material/Select'
 
 // ** Icons Imports
-import Slack from 'mdi-material-ui/Slack'
+import Laptop from 'mdi-material-ui/Laptop'
+import ChartDonut from 'mdi-material-ui/ChartDonut'
 import CogOutline from 'mdi-material-ui/CogOutline'
 import EyeOutline from 'mdi-material-ui/EyeOutline'
 import PencilOutline from 'mdi-material-ui/PencilOutline'
 import AccountOutline from 'mdi-material-ui/AccountOutline'
-import DatabaseOutline from 'mdi-material-ui/DatabaseOutline'
 
 // ** Store Imports
 import { useDispatch, useSelector } from 'react-redux'
@@ -57,11 +57,11 @@ interface CellType {
 
 // ** Vars
 const userRoleObj: UserRoleType = {
-  admin: <Slack fontSize='small' sx={{ mr: 3, color: 'error.main' }} />,
-  editor: <PencilOutline fontSize='small' sx={{ mr: 3, color: 'info.main' }} />,
+  admin: <Laptop fontSize='small' sx={{ mr: 3, color: 'error.main' }} />,
   author: <CogOutline fontSize='small' sx={{ mr: 3, color: 'warning.main' }} />,
-  subscriber: <AccountOutline fontSize='small' sx={{ mr: 3, color: 'primary.main' }} />,
-  maintainer: <DatabaseOutline fontSize='small' sx={{ mr: 3, color: 'success.main' }} />
+  editor: <PencilOutline fontSize='small' sx={{ mr: 3, color: 'info.main' }} />,
+  maintainer: <ChartDonut fontSize='small' sx={{ mr: 3, color: 'success.main' }} />,
+  subscriber: <AccountOutline fontSize='small' sx={{ mr: 3, color: 'primary.main' }} />
 }
 
 const userStatusObj: UserStatusType = {
@@ -100,11 +100,119 @@ const renderClient = (row: UsersType) => {
   }
 }
 
+const defaultColumns = [
+  {
+    flex: 0.25,
+    minWidth: 230,
+    field: 'fullName',
+    headerName: 'User',
+    renderCell: ({ row }: CellType) => {
+      const { id, fullName, username } = row
+
+      return (
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          {renderClient(row)}
+          <Box sx={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
+            <Link href={`/apps/user/view/${id}`} passHref>
+              <Typography
+                noWrap
+                component='a'
+                variant='body2'
+                sx={{ fontWeight: 600, color: 'text.primary', textDecoration: 'none' }}
+              >
+                {fullName}
+              </Typography>
+            </Link>
+            <Link href={`/apps/user/view/${id}`} passHref>
+              <Typography noWrap component='a' variant='caption' sx={{ textDecoration: 'none' }}>
+                @{username}
+              </Typography>
+            </Link>
+          </Box>
+        </Box>
+      )
+    }
+  },
+  {
+    flex: 0.25,
+    field: 'email',
+    minWidth: 250,
+    headerName: 'Email',
+    renderCell: ({ row }: CellType) => {
+      return (
+        <Typography variant='body2' noWrap>
+          {row.email}
+        </Typography>
+      )
+    }
+  },
+  {
+    flex: 0.2,
+    field: 'role',
+    minWidth: 175,
+    headerName: 'Role',
+    renderCell: ({ row }: CellType) => {
+      return (
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          {userRoleObj[row.role]}
+          <Typography noWrap sx={{ color: 'text.secondary', textTransform: 'capitalize' }}>
+            {row.role}
+          </Typography>
+        </Box>
+      )
+    }
+  },
+  {
+    flex: 0.2,
+    minWidth: 150,
+    headerName: 'Plan',
+    field: 'currentPlan',
+    renderCell: ({ row }: CellType) => {
+      return (
+        <Typography noWrap sx={{ textTransform: 'capitalize' }}>
+          {row.currentPlan}
+        </Typography>
+      )
+    }
+  },
+  {
+    flex: 0.2,
+    minWidth: 140,
+    field: 'status',
+    headerName: 'Status',
+    renderCell: ({ row }: CellType) => {
+      return (
+        <CustomChip
+          skin='light'
+          size='small'
+          label={row.status}
+          color={userStatusObj[row.status]}
+          sx={{ textTransform: 'capitalize' }}
+        />
+      )
+    }
+  },
+  {
+    flex: 0.15,
+    minWidth: 120,
+    sortable: false,
+    field: 'actions',
+    headerName: 'Actions',
+    renderCell: ({ row }: CellType) => (
+      <Link href={`/apps/user/view/${row.id}`} passHref>
+        <IconButton>
+          <EyeOutline />
+        </IconButton>
+      </Link>
+    )
+  }
+]
+
 const UserList = () => {
   // ** State
   const [plan, setPlan] = useState<string>('')
   const [value, setValue] = useState<string>('')
-  const [rowsPerPage, setRowsPerPage] = useState<string>('10')
+  const [pageSize, setPageSize] = useState<number>(10)
 
   // ** Hooks
   const dispatch = useDispatch()
@@ -125,137 +233,25 @@ const UserList = () => {
     setValue(val)
   }, [])
 
-  const handlePerPage = useCallback((e: SelectChangeEvent) => {
-    setRowsPerPage(e.target.value)
-  }, [])
-
   const handlePlanChange = useCallback((e: SelectChangeEvent) => {
     setPlan(e.target.value)
   }, [])
-
-  const defaultColumns = useMemo(
-    () => [
-      {
-        flex: 1,
-        headerName: 'User',
-        minWidth: 250,
-        field: 'fullName',
-        renderCell: ({ row }: CellType) => {
-          const { id, fullName, username } = row
-
-          return (
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              {renderClient(row)}
-              <Box sx={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
-                <Link href={`/apps/user/view/${id}`} passHref>
-                  <Typography
-                    noWrap
-                    component='a'
-                    variant='body2'
-                    sx={{ fontWeight: 600, color: 'text.primary', textDecoration: 'none' }}
-                  >
-                    {fullName}
-                  </Typography>
-                </Link>
-                <Link href={`/apps/user/view/${id}`} passHref>
-                  <Typography noWrap component='a' variant='caption' sx={{ textDecoration: 'none' }}>
-                    @{username}
-                  </Typography>
-                </Link>
-              </Box>
-            </Box>
-          )
-        }
-      },
-      {
-        flex: 1,
-        headerName: 'Email',
-        field: 'email',
-        minWidth: 250,
-        renderCell: ({ row }: CellType) => {
-          return (
-            <Typography variant='body2' noWrap>
-              {row.email}
-            </Typography>
-          )
-        }
-      },
-      {
-        flex: 1,
-        headerName: 'Role',
-        field: 'role',
-        minWidth: 200,
-        renderCell: ({ row }: CellType) => {
-          return (
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              {userRoleObj[row.role]}
-              <Typography variant='body2' noWrap sx={{ textTransform: 'capitalize' }}>
-                {row.role}
-              </Typography>
-            </Box>
-          )
-        }
-      },
-      {
-        flex: 1,
-        headerName: 'Plan',
-        minWidth: 200,
-        field: 'currentPlan',
-        renderCell: ({ row }: CellType) => {
-          return (
-            <Typography noWrap sx={{ fontWeight: 600, textTransform: 'capitalize' }}>
-              {row.currentPlan}
-            </Typography>
-          )
-        }
-      },
-      {
-        flex: 1,
-        headerName: 'Status',
-        minWidth: 130,
-        field: 'status',
-        renderCell: ({ row }: CellType) => {
-          return (
-            <CustomChip
-              skin='light'
-              size='small'
-              label={row.status}
-              color={userStatusObj[row.status]}
-              sx={{ textTransform: 'capitalize' }}
-            />
-          )
-        }
-      },
-      {
-        field: '',
-        headerName: 'Action',
-        renderCell: ({ row }: CellType) => (
-          <Link href={`/apps/user/view/${row.id}`} passHref>
-            <IconButton component='a'>
-              <EyeOutline />
-            </IconButton>
-          </Link>
-        )
-      }
-    ],
-    []
-  )
 
   return (
     <Grid container spacing={6}>
       <Grid item xs={12}>
         <Card>
-          <TableHeader
-            plan={plan}
-            value={value}
-            rowsPerPage={rowsPerPage}
-            handleFilter={handleFilter}
-            handlePerPage={handlePerPage}
-            handlePlanChange={handlePlanChange}
+          <TableHeader plan={plan} value={value} handleFilter={handleFilter} handlePlanChange={handlePlanChange} />
+          <DataGrid
+            autoHeight
+            rows={store.data}
+            checkboxSelection
+            pageSize={pageSize}
+            disableSelectionOnClick
+            columns={defaultColumns}
+            rowsPerPageOptions={[10, 25, 50]}
+            onPageSizeChange={newPageSize => setPageSize(newPageSize)}
           />
-          <Box sx={{ height: 'calc(100vh - 8rem)' }}>
-            <DataGrid rows={store.data} columns={defaultColumns} pageSize={Number(rowsPerPage)} />
-          </Box>
         </Card>
       </Grid>
     </Grid>

@@ -1,3 +1,6 @@
+// ** React Import
+import { useState } from 'react'
+
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -55,97 +58,100 @@ const statusObj: StatusObj = {
   5: { title: 'applied', color: 'info' }
 }
 
-const TableSelection = () => {
-  const Columns: GridColDef[] = [
-    {
-      minWidth: 250,
-      field: 'full_name',
-      editable: true,
-      headerName: 'Name',
-      renderCell: (params: GridRenderCellParams) => {
-        const { row } = params
+const columns: GridColDef[] = [
+  {
+    flex: 0.3,
+    minWidth: 290,
+    field: 'full_name',
+    headerName: 'Name',
+    renderCell: (params: GridRenderCellParams) => {
+      const { row } = params
 
-        return (
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            {renderClient(params)}
-            <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-              <Typography noWrap variant='body2' sx={{ color: 'text.primary', fontWeight: 600 }}>
-                {row.full_name}
-              </Typography>
-              <Typography noWrap variant='caption'>
-                {row.email}
-              </Typography>
-            </Box>
+      return (
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          {renderClient(params)}
+          <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+            <Typography noWrap variant='body2' sx={{ color: 'text.primary', fontWeight: 600 }}>
+              {row.full_name}
+            </Typography>
+            <Typography noWrap variant='caption'>
+              {row.email}
+            </Typography>
           </Box>
-        )
-      }
-    },
-    {
-      flex: 1,
-      field: 'email',
-      headerName: 'Email',
-      renderCell: (params: GridRenderCellParams) => (
-        <Typography variant='body2' sx={{ color: 'text.primary' }}>
-          {params.row.full_name}
-        </Typography>
+        </Box>
       )
-    },
-    {
-      flex: 1,
-      headerName: 'Date',
-      field: 'start_date',
-      renderCell: (params: GridRenderCellParams) => (
-        <Typography variant='body2' sx={{ color: 'text.primary' }}>
-          {params.row.start_date}
-        </Typography>
-      )
-    },
-    {
-      flex: 1,
-      field: 'salary',
-      headerName: 'Salary',
-      renderCell: (params: GridRenderCellParams) => (
-        <Typography variant='body2' sx={{ color: 'text.primary' }}>
-          {params.row.salary}
-        </Typography>
-      )
-    },
-    {
-      flex: 1,
-      field: 'age',
-      headerName: 'Age',
-      renderCell: (params: GridRenderCellParams) => (
-        <Typography variant='body2' sx={{ color: 'text.primary' }}>
-          {params.row.age}
-        </Typography>
-      )
-    },
-    {
-      flex: 1,
-      field: 'status',
-      headerName: 'Status',
-      renderCell: (params: GridRenderCellParams) => {
-        const status = statusObj[params.row.status]
-
-        return (
-          <CustomChip
-            size='small'
-            skin='light'
-            color={status.color}
-            label={status.title}
-            sx={{ '& .MuiChip-label': { textTransform: 'capitalize' } }}
-          />
-        )
-      }
     }
-  ]
+  },
+  {
+    flex: 0.2,
+    minWidth: 140,
+    headerName: 'Date',
+    field: 'start_date',
+    renderCell: (params: GridRenderCellParams) => (
+      <Typography variant='body2' sx={{ color: 'text.primary' }}>
+        {params.row.start_date}
+      </Typography>
+    )
+  },
+  {
+    flex: 0.2,
+    minWidth: 140,
+    field: 'salary',
+    headerName: 'Salary',
+    renderCell: (params: GridRenderCellParams) => (
+      <Typography variant='body2' sx={{ color: 'text.primary' }}>
+        {params.row.salary}
+      </Typography>
+    )
+  },
+  {
+    flex: 0.1,
+    field: 'age',
+    minWidth: 110,
+    headerName: 'Age',
+    renderCell: (params: GridRenderCellParams) => (
+      <Typography variant='body2' sx={{ color: 'text.primary' }}>
+        {params.row.age}
+      </Typography>
+    )
+  },
+  {
+    flex: 0.2,
+    minWidth: 150,
+    field: 'status',
+    headerName: 'Status',
+    renderCell: (params: GridRenderCellParams) => {
+      const status = statusObj[params.row.status]
+
+      return (
+        <CustomChip
+          size='small'
+          skin='light'
+          color={status.color}
+          label={status.title}
+          sx={{ '& .MuiChip-label': { textTransform: 'capitalize' } }}
+        />
+      )
+    }
+  }
+]
+
+const TableSelection = () => {
+  // ** State
+  const [pageSize, setPageSize] = useState<number>(7)
 
   return (
     <Card>
       <CardHeader title='Selection' />
-      <Box sx={{ height: 500 }}>
-        <DataGrid rows={rows} autoPageSize checkboxSelection columns={Columns} />
-      </Box>
+      <DataGrid
+        autoHeight
+        rows={rows}
+        columns={columns}
+        checkboxSelection
+        pageSize={pageSize}
+        rowsPerPageOptions={[7, 10, 25, 50]}
+        onPageSizeChange={newPageSize => setPageSize(newPageSize)}
+      />
     </Card>
   )
 }

@@ -1,5 +1,5 @@
 // ** React Imports
-import { Fragment, useState, useEffect, MouseEvent, useCallback, ReactElement } from 'react'
+import { useState, useEffect, MouseEvent, useCallback, ReactElement } from 'react'
 
 // ** Next Import
 import Link from 'next/link'
@@ -21,14 +21,14 @@ import CardContent from '@mui/material/CardContent'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 
 // ** Icons Imports
-import Slack from 'mdi-material-ui/Slack'
+import Laptop from 'mdi-material-ui/Laptop'
+import ChartDonut from 'mdi-material-ui/ChartDonut'
 import CogOutline from 'mdi-material-ui/CogOutline'
 import EyeOutline from 'mdi-material-ui/EyeOutline'
 import DotsVertical from 'mdi-material-ui/DotsVertical'
 import PencilOutline from 'mdi-material-ui/PencilOutline'
 import DeleteOutline from 'mdi-material-ui/DeleteOutline'
 import AccountOutline from 'mdi-material-ui/AccountOutline'
-import DatabaseOutline from 'mdi-material-ui/DatabaseOutline'
 
 // ** Store Imports
 import { useDispatch, useSelector } from 'react-redux'
@@ -62,11 +62,11 @@ interface UserStatusType {
 
 // ** Vars
 const userRoleObj: UserRoleType = {
-  admin: <Slack fontSize='small' sx={{ mr: 3, color: 'error.main' }} />,
-  editor: <PencilOutline fontSize='small' sx={{ mr: 3, color: 'info.main' }} />,
+  admin: <Laptop fontSize='small' sx={{ mr: 3, color: 'error.main' }} />,
   author: <CogOutline fontSize='small' sx={{ mr: 3, color: 'warning.main' }} />,
-  subscriber: <AccountOutline fontSize='small' sx={{ mr: 3, color: 'primary.main' }} />,
-  maintainer: <DatabaseOutline fontSize='small' sx={{ mr: 3, color: 'success.main' }} />
+  editor: <PencilOutline fontSize='small' sx={{ mr: 3, color: 'info.main' }} />,
+  maintainer: <ChartDonut fontSize='small' sx={{ mr: 3, color: 'success.main' }} />,
+  subscriber: <AccountOutline fontSize='small' sx={{ mr: 3, color: 'primary.main' }} />
 }
 
 interface CellType {
@@ -142,7 +142,7 @@ const RowOptions = ({ id }: { id: number | string }) => {
   }
 
   return (
-    <Fragment>
+    <>
       <IconButton size='small' onClick={handleRowOptionsClick}>
         <DotsVertical />
       </IconButton>
@@ -179,13 +179,14 @@ const RowOptions = ({ id }: { id: number | string }) => {
           Delete
         </MenuItem>
       </Menu>
-    </Fragment>
+    </>
   )
 }
 
 const defaultColumns = [
   {
-    minWidth: 250,
+    flex: 0.25,
+    minWidth: 230,
     field: 'fullName',
     headerName: 'User',
     renderCell: ({ row }: CellType) => {
@@ -216,26 +217,28 @@ const defaultColumns = [
     }
   },
   {
+    flex: 0.25,
     field: 'email',
     minWidth: 250,
     headerName: 'Email',
     renderCell: ({ row }: CellType) => {
       return (
-        <Typography variant='body2' noWrap>
+        <Typography noWrap variant='body2'>
           {row.email}
         </Typography>
       )
     }
   },
   {
+    flex: 0.2,
     field: 'role',
-    minWidth: 200,
+    minWidth: 175,
     headerName: 'Role',
     renderCell: ({ row }: CellType) => {
       return (
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           {userRoleObj[row.role]}
-          <Typography variant='body2' noWrap sx={{ textTransform: 'capitalize' }}>
+          <Typography noWrap sx={{ color: 'text.secondary', textTransform: 'capitalize' }}>
             {row.role}
           </Typography>
         </Box>
@@ -243,19 +246,21 @@ const defaultColumns = [
     }
   },
   {
-    minWidth: 200,
+    flex: 0.2,
+    minWidth: 150,
     headerName: 'Plan',
     field: 'currentPlan',
     renderCell: ({ row }: CellType) => {
       return (
-        <Typography noWrap sx={{ fontWeight: 600, textTransform: 'capitalize' }}>
+        <Typography noWrap sx={{ textTransform: 'capitalize' }}>
           {row.currentPlan}
         </Typography>
       )
     }
   },
   {
-    minWidth: 200,
+    flex: 0.2,
+    minWidth: 140,
     field: 'status',
     headerName: 'Status',
     renderCell: ({ row }: CellType) => {
@@ -271,8 +276,11 @@ const defaultColumns = [
     }
   },
   {
-    field: 'id',
-    headerName: 'Action',
+    flex: 0.15,
+    minWidth: 120,
+    sortable: false,
+    field: 'actions',
+    headerName: 'Actions',
     renderCell: ({ row }: CellType) => <RowOptions id={row.id} />
   }
 ]
@@ -283,7 +291,7 @@ const UserList = () => {
   const [plan, setPlan] = useState<string>('')
   const [value, setValue] = useState<string>('')
   const [status, setStatus] = useState<string>('')
-  const [rowsPerPage, setRowsPerPage] = useState<number>(10)
+  const [pageSize, setPageSize] = useState<number>(10)
   const [addUserOpen, setAddUserOpen] = useState<boolean>(false)
 
   // ** Hooks
@@ -315,10 +323,6 @@ const UserList = () => {
 
   const handleStatusChange = useCallback((e: SelectChangeEvent) => {
     setStatus(e.target.value)
-  }, [])
-
-  const handlePerPage = useCallback((e: SelectChangeEvent) => {
-    setRowsPerPage(Number(e.target.value))
   }, [])
 
   const toggleAddUserDrawer = () => setAddUserOpen(!addUserOpen)
@@ -396,16 +400,17 @@ const UserList = () => {
       </Grid>
       <Grid item xs={12}>
         <Card>
-          <TableHeader
-            value={value}
-            rowsPerPage={rowsPerPage}
-            handleFilter={handleFilter}
-            toggle={toggleAddUserDrawer}
-            handlePerPage={handlePerPage}
+          <TableHeader value={value} handleFilter={handleFilter} toggle={toggleAddUserDrawer} />
+          <DataGrid
+            autoHeight
+            rows={store.data}
+            checkboxSelection
+            pageSize={pageSize}
+            disableSelectionOnClick
+            columns={defaultColumns}
+            rowsPerPageOptions={[10, 25, 50]}
+            onPageSizeChange={newPageSize => setPageSize(newPageSize)}
           />
-          <Box sx={{ height: 'calc(100vh - 8rem)' }}>
-            <DataGrid rows={store.data} pageSize={rowsPerPage} columns={defaultColumns} />
-          </Box>
         </Card>
       </Grid>
 

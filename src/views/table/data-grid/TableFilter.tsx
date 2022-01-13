@@ -64,94 +64,90 @@ const escapeRegExp = (value: string) => {
   return value.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&')
 }
 
+const columns: GridColDef[] = [
+  {
+    flex: 0.3,
+    minWidth: 290,
+    field: 'full_name',
+    headerName: 'Name',
+    renderCell: (params: GridRenderCellParams) => {
+      const { row } = params
+
+      return (
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          {renderClient(params)}
+          <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+            <Typography noWrap variant='body2' sx={{ color: 'text.primary', fontWeight: 600 }}>
+              {row.full_name}
+            </Typography>
+            <Typography noWrap variant='caption'>
+              {row.email}
+            </Typography>
+          </Box>
+        </Box>
+      )
+    }
+  },
+  {
+    flex: 0.2,
+    minWidth: 140,
+    headerName: 'Date',
+    field: 'start_date',
+    renderCell: (params: GridRenderCellParams) => (
+      <Typography variant='body2' sx={{ color: 'text.primary' }}>
+        {params.row.start_date}
+      </Typography>
+    )
+  },
+  {
+    flex: 0.2,
+    minWidth: 140,
+    field: 'salary',
+    headerName: 'Salary',
+    renderCell: (params: GridRenderCellParams) => (
+      <Typography variant='body2' sx={{ color: 'text.primary' }}>
+        {params.row.salary}
+      </Typography>
+    )
+  },
+  {
+    flex: 0.1,
+    field: 'age',
+    minWidth: 110,
+    headerName: 'Age',
+    renderCell: (params: GridRenderCellParams) => (
+      <Typography variant='body2' sx={{ color: 'text.primary' }}>
+        {params.row.age}
+      </Typography>
+    )
+  },
+  {
+    flex: 0.2,
+    minWidth: 150,
+    field: 'status',
+    headerName: 'Status',
+    renderCell: (params: GridRenderCellParams) => {
+      const status = statusObj[params.row.status]
+
+      return (
+        <CustomChip
+          size='small'
+          skin='light'
+          color={status.color}
+          label={status.title}
+          sx={{ '& .MuiChip-label': { textTransform: 'capitalize' } }}
+        />
+      )
+    }
+  }
+]
+
 const TableColumns = () => {
+  // ** States
   const [data] = useState<DataTableRowType[]>(rows)
+  const [pageSize, setPageSize] = useState<number>(7)
   const [searchText, setSearchText] = useState<string>('')
   const [filteredData, setFilteredData] = useState<DataTableRowType[]>([])
-
-  const Columns: GridColDef[] = [
-    {
-      minWidth: 250,
-      field: 'full_name',
-      editable: true,
-      headerName: 'Name',
-      renderCell: (params: GridRenderCellParams) => {
-        const { row } = params
-
-        return (
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            {renderClient(params)}
-            <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-              <Typography noWrap variant='body2' sx={{ color: 'text.primary', fontWeight: 600 }}>
-                {row.full_name}
-              </Typography>
-              <Typography noWrap variant='caption'>
-                {row.email}
-              </Typography>
-            </Box>
-          </Box>
-        )
-      }
-    },
-    {
-      flex: 1,
-      field: 'email',
-      headerName: 'Email',
-      renderCell: (params: GridRenderCellParams) => (
-        <Typography variant='body2' sx={{ color: 'text.primary' }}>
-          {params.row.full_name}
-        </Typography>
-      )
-    },
-    {
-      flex: 1,
-      headerName: 'Date',
-      field: 'start_date',
-      renderCell: (params: GridRenderCellParams) => (
-        <Typography variant='body2' sx={{ color: 'text.primary' }}>
-          {params.row.start_date}
-        </Typography>
-      )
-    },
-    {
-      flex: 1,
-      field: 'salary',
-      headerName: 'Salary',
-      renderCell: (params: GridRenderCellParams) => (
-        <Typography variant='body2' sx={{ color: 'text.primary' }}>
-          {params.row.salary}
-        </Typography>
-      )
-    },
-    {
-      flex: 1,
-      field: 'age',
-      headerName: 'Age',
-      renderCell: (params: GridRenderCellParams) => (
-        <Typography variant='body2' sx={{ color: 'text.primary' }}>
-          {params.row.age}
-        </Typography>
-      )
-    },
-    {
-      flex: 1,
-      field: 'status',
-      headerName: 'Status',
-      renderCell: (params: GridRenderCellParams) => {
-        const status = statusObj[params.row.status]
-
-        return (
-          <CustomChip
-            size='small'
-            skin='light'
-            color={status.color}
-            label={status.title}
-            sx={{ '& .MuiChip-label': { textTransform: 'capitalize' } }}
-          />
-        )
-      }
-    }
-  ]
 
   const handleSearch = (searchValue: string) => {
     setSearchText(searchValue)
@@ -172,23 +168,24 @@ const TableColumns = () => {
   return (
     <Card>
       <CardHeader title='Quick Filter' />
-      <Box sx={{ height: 500 }}>
-        <DataGrid
-          autoPageSize
-          columns={Columns}
-          components={{ Toolbar: QuickSearchToolbar }}
-          rows={filteredData.length ? filteredData : data}
-          componentsProps={{
-            toolbar: {
-              value: searchText,
+      <DataGrid
+        autoHeight
+        columns={columns}
+        pageSize={pageSize}
+        rowsPerPageOptions={[7, 10, 25, 50]}
+        components={{ Toolbar: QuickSearchToolbar }}
+        rows={filteredData.length ? filteredData : data}
+        onPageSizeChange={newPageSize => setPageSize(newPageSize)}
+        componentsProps={{
+          toolbar: {
+            value: searchText,
 
-              // @ts-ignore
-              onChange: (event: ChangeEvent) => handleSearch(event.target.value),
-              clearSearch: () => handleSearch('')
-            }
-          }}
-        />
-      </Box>
+            // @ts-ignore
+            onChange: (event: ChangeEvent) => handleSearch(event.target.value),
+            clearSearch: () => handleSearch('')
+          }
+        }}
+      />
     </Card>
   )
 }

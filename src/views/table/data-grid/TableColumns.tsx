@@ -76,13 +76,15 @@ const getFullName = (params: GridRenderCellParams) =>
   )
 
 const TableColumns = () => {
+  // ** States
+  const [pageSize, setPageSize] = useState<number>(7)
   const [hideNameColumn, setHideNameColumn] = useState(false)
 
-  const Columns: GridColDef[] = [
+  const columns: GridColDef[] = [
     {
-      minWidth: 250,
+      flex: 0.3,
+      minWidth: 290,
       field: 'full_name',
-      editable: true,
       headerName: 'Name',
       hide: hideNameColumn,
       renderCell: (params: GridRenderCellParams) => {
@@ -104,17 +106,8 @@ const TableColumns = () => {
       }
     },
     {
-      flex: 1,
-      field: 'email',
-      headerName: 'Email',
-      renderCell: (params: GridRenderCellParams) => (
-        <Typography variant='body2' sx={{ color: 'text.primary' }}>
-          {params.row.full_name}
-        </Typography>
-      )
-    },
-    {
-      flex: 1,
+      flex: 0.2,
+      minWidth: 140,
       headerName: 'Date',
       field: 'start_date',
       renderCell: (params: GridRenderCellParams) => (
@@ -124,7 +117,8 @@ const TableColumns = () => {
       )
     },
     {
-      flex: 1,
+      flex: 0.2,
+      minWidth: 140,
       field: 'salary',
       headerName: 'Salary',
       renderCell: (params: GridRenderCellParams) => (
@@ -134,8 +128,9 @@ const TableColumns = () => {
       )
     },
     {
-      flex: 1,
+      flex: 0.1,
       field: 'age',
+      minWidth: 110,
       headerName: 'Age',
       renderCell: (params: GridRenderCellParams) => (
         <Typography variant='body2' sx={{ color: 'text.primary' }}>
@@ -144,7 +139,8 @@ const TableColumns = () => {
       )
     },
     {
-      flex: 1,
+      flex: 0.2,
+      minWidth: 150,
       field: 'status',
       headerName: 'Status',
       renderCell: (params: GridRenderCellParams) => {
@@ -162,12 +158,13 @@ const TableColumns = () => {
       }
     },
     {
-      flex: 1,
-      field: 'id',
+      flex: 0.2,
+      minWidth: 150,
+      field: 'actions',
       headerName: 'Actions',
       renderCell: (params: GridRenderCellParams) => {
         return (
-          <Button size='small' variant='contained' onClick={() => getFullName(params)}>
+          <Button size='small' variant='outlined' color='secondary' onClick={() => getFullName(params)}>
             Get Name
           </Button>
         )
@@ -187,9 +184,14 @@ const TableColumns = () => {
           </Box>
         }
       />
-      <Box sx={{ height: 500 }}>
-        <DataGrid rows={rows} columns={Columns} autoPageSize />
-      </Box>
+      <DataGrid
+        autoHeight
+        rows={rows}
+        columns={columns}
+        pageSize={pageSize}
+        rowsPerPageOptions={[7, 10, 25, 50]}
+        onPageSizeChange={newPageSize => setPageSize(newPageSize)}
+      />
     </Card>
   )
 }

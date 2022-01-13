@@ -32,7 +32,7 @@ import { ThemeColor } from 'src/@core/layouts/types'
 import { InvoiceType } from 'src/types/apps/invoiceTypes'
 
 // ** Demo Component Imports
-import InvoiceListTable from './InvoiceListTable'
+import UsersInvoiceListTable from './UsersInvoiceListTable'
 
 interface Props {
   invoiceData: InvoiceType[]
@@ -312,7 +312,7 @@ const UserViewOverview = ({ invoiceData }: Props) => {
         </CardContent>
       </Card>
 
-      <InvoiceListTable invoiceData={invoiceData} />
+      <UsersInvoiceListTable invoiceData={invoiceData} />
     </Fragment>
   )
 }

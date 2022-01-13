@@ -17,7 +17,6 @@ import Typography from '@mui/material/Typography'
 import AlertTitle from '@mui/material/AlertTitle'
 import DialogTitle from '@mui/material/DialogTitle'
 import DialogContent from '@mui/material/DialogContent'
-import { SelectChangeEvent } from '@mui/material/Select'
 import FormHelperText from '@mui/material/FormHelperText'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
@@ -64,15 +63,15 @@ const colors: Colors = {
 
 const defaultColumns = [
   {
-    flex: 1,
+    flex: 0.25,
     field: 'name',
-    minWidth: 200,
+    minWidth: 240,
     headerName: 'Name',
     renderCell: ({ row }: CellType) => <Typography>{row.name}</Typography>
   },
   {
-    flex: 1,
-    minWidth: 200,
+    flex: 0.35,
+    minWidth: 275,
     field: 'assignedTo',
     headerName: 'Assigned To',
     renderCell: ({ row }: CellType) => {
@@ -89,8 +88,8 @@ const defaultColumns = [
     }
   },
   {
-    flex: 1,
-    minWidth: 200,
+    flex: 0.25,
+    minWidth: 210,
     field: 'createdDate',
     headerName: 'Created Date',
     renderCell: ({ row }: CellType) => <Typography>{row.createdDate}</Typography>
@@ -100,7 +99,7 @@ const defaultColumns = [
 const PermissionsTable = () => {
   // ** State
   const [value, setValue] = useState<string>('')
-  const [rowsPerPage, setRowsPerPage] = useState<string>('10')
+  const [pageSize, setPageSize] = useState<number>(10)
   const [editDialogOpen, setEditDialogOpen] = useState<boolean>(false)
 
   // ** Hooks
@@ -125,10 +124,6 @@ const PermissionsTable = () => {
     setValue(val)
   }, [])
 
-  const handlePerPage = useCallback((e: SelectChangeEvent) => {
-    setRowsPerPage(e.target.value)
-  }, [])
-
   const handleEditPermission = (name: string) => {
     setFormValue('name', name)
     setEditDialogOpen(true)
@@ -145,7 +140,8 @@ const PermissionsTable = () => {
     () => [
       ...defaultColumns,
       {
-        flex: 1,
+        flex: 0.15,
+        minWidth: 130,
         sortable: false,
         field: 'actions',
         headerName: 'Actions',
@@ -165,76 +161,79 @@ const PermissionsTable = () => {
   )
 
   return (
-    <Grid container spacing={6}>
-      <Grid item xs={12}>
-        <PageHeader
-          title={<Typography variant='h5'>Permissions List</Typography>}
-          subtitle={
-            <Typography variant='body2'>
-              Each category (Basic, Professional, and Business) includes the four predefined roles shown below.
-            </Typography>
-          }
-        />
-      </Grid>
-      <Grid item xs={12}>
-        <Card>
-          <TableHeader
-            value={value}
-            rowsPerPage={rowsPerPage}
-            handleFilter={handleFilter}
-            handlePerPage={handlePerPage}
-          />
-          <Box sx={{ height: 'calc(100vh - 11rem)' }}>
-            <DataGrid columns={columns} rows={store.data} pageSize={Number(rowsPerPage)} />
-          </Box>
-          <Dialog maxWidth='sm' fullWidth onClose={handleDialogToggle} open={editDialogOpen}>
-            <DialogTitle sx={{ mx: 'auto', textAlign: 'center' }}>
-              <Typography variant='h4' component='span' sx={{ mb: 2 }}>
-                Edit Permission
+    <>
+      <Grid container spacing={6}>
+        <Grid item xs={12}>
+          <PageHeader
+            title={<Typography variant='h5'>Permissions List</Typography>}
+            subtitle={
+              <Typography variant='body2'>
+                Each category (Basic, Professional, and Business) includes the four predefined roles shown below.
               </Typography>
-              <Typography variant='body2'>Edit permission as per your requirements.</Typography>
-            </DialogTitle>
-            <DialogContent sx={{ mx: 'auto' }}>
-              <Alert severity='warning' sx={{ maxWidth: '500px' }}>
-                <AlertTitle>Warning!</AlertTitle>
-                By editing the permission name, you might break the system permissions functionality. Please ensure
-                you're absolutely certain before proceeding.
-              </Alert>
-
-              <Box component='form' sx={{ mt: 8 }} onSubmit={handleSubmit(onSubmit)}>
-                <FormGroup sx={{ mb: 2, alignItems: 'center', flexDirection: 'row', flexWrap: ['wrap', 'nowrap'] }}>
-                  <Controller
-                    name='name'
-                    control={control}
-                    rules={{ required: true }}
-                    render={({ field: { value, onChange } }) => (
-                      <TextField
-                        fullWidth
-                        size='small'
-                        value={value}
-                        label='Permission Name'
-                        onChange={onChange}
-                        error={Boolean(errors.name)}
-                        placeholder='Enter Permission Name'
-                        sx={{ mr: [0, 4], mb: [3, 0] }}
-                      />
-                    )}
-                  />
-
-                  <Button type='submit' variant='contained'>
-                    Update
-                  </Button>
-                </FormGroup>
-                {errors.name && (
-                  <FormHelperText sx={{ color: 'error.main' }}>Please enter a valid permission name</FormHelperText>
-                )}
-                <FormControlLabel control={<Checkbox />} label='Set as core permission' />
-              </Box>
-            </DialogContent>
-          </Dialog>
-        </Card>
+            }
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <Card>
+            <TableHeader value={value} handleFilter={handleFilter} />
+            <DataGrid
+              autoHeight
+              rows={store.data}
+              columns={columns}
+              pageSize={pageSize}
+              disableSelectionOnClick
+              rowsPerPageOptions={[10, 25, 50]}
+              onPageSizeChange={newPageSize => setPageSize(newPageSize)}
+            />
+          </Card>
+        </Grid>
       </Grid>
-    </Grid>
+      <Dialog maxWidth='sm' fullWidth onClose={handleDialogToggle} open={editDialogOpen}>
+        <DialogTitle sx={{ mx: 'auto', textAlign: 'center' }}>
+          <Typography variant='h4' component='span' sx={{ mb: 2 }}>
+            Edit Permission
+          </Typography>
+          <Typography variant='body2'>Edit permission as per your requirements.</Typography>
+        </DialogTitle>
+        <DialogContent sx={{ mx: 'auto' }}>
+          <Alert severity='warning' sx={{ maxWidth: '500px' }}>
+            <AlertTitle>Warning!</AlertTitle>
+            By editing the permission name, you might break the system permissions functionality. Please ensure you're
+            absolutely certain before proceeding.
+          </Alert>
+
+          <Box component='form' sx={{ mt: 8 }} onSubmit={handleSubmit(onSubmit)}>
+            <FormGroup sx={{ mb: 2, alignItems: 'center', flexDirection: 'row', flexWrap: ['wrap', 'nowrap'] }}>
+              <Controller
+                name='name'
+                control={control}
+                rules={{ required: true }}
+                render={({ field: { value, onChange } }) => (
+                  <TextField
+                    fullWidth
+                    size='small'
+                    value={value}
+                    label='Permission Name'
+                    onChange={onChange}
+                    error={Boolean(errors.name)}
+                    placeholder='Enter Permission Name'
+                    sx={{ mr: [0, 4], mb: [3, 0] }}
+                  />
+                )}
+              />
+
+              <Button type='submit' variant='contained'>
+                Update
+              </Button>
+            </FormGroup>
+            {errors.name && (
+              <FormHelperText sx={{ color: 'error.main' }}>Please enter a valid permission name</FormHelperText>
+            )}
+            <FormControlLabel control={<Checkbox />} label='Set as core permission' />
+          </Box>
+        </DialogContent>
+      </Dialog>
+    </>
   )
 }
 

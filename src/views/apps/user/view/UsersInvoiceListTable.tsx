@@ -170,22 +170,24 @@ const columns = [
     }
   },
   {
+    flex: 0.25,
     minWidth: 120,
     field: 'total',
     headerName: 'Total',
-    renderCell: ({ row }: CellType) => <Typography>${row.total || 0}</Typography>
+    renderCell: ({ row }: CellType) => <Typography variant='body2'>${row.total || 0}</Typography>
   },
   {
     flex: 0.3,
     minWidth: 175,
     field: 'issuedDate',
     headerName: 'Issued Date',
-    renderCell: ({ row }: CellType) => <Typography>{row.issuedDate}</Typography>
+    renderCell: ({ row }: CellType) => <Typography variant='body2'>{row.issuedDate}</Typography>
   },
   {
-    field: '',
+    flex: 0.2,
     minWidth: 130,
     sortable: false,
+    field: 'actions',
     headerName: 'Actions',
     renderCell: ({ row }: CellType) => (
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
