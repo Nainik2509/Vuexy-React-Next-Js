@@ -101,18 +101,18 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
           const activeCondition = active !== null && active.id === chat.id && active.type === 'chat'
 
           return (
-            <ListItem
-              key={index}
-              disablePadding
-              sx={{
-                '&:not(:last-child)': { mb: 1.5 },
-                backgroundColor: (theme: Theme) => (activeCondition ? theme.palette.primary.main : '')
-              }}
-            >
+            <ListItem key={index} disablePadding sx={{ '&:not(:last-child)': { mb: 1.5 } }}>
               <ListItemButton
                 disableRipple
                 onClick={() => handleChatClick('chat', chat.id)}
-                sx={{ px: 3, py: 2.5, width: '100%', borderRadius: 1, alignItems: 'flex-start' }}
+                sx={{
+                  px: 3,
+                  py: 2.5,
+                  width: '100%',
+                  borderRadius: 1,
+                  alignItems: 'flex-start',
+                  backgroundColor: (theme: Theme) => (activeCondition ? `${theme.palette.primary.main} !important` : '')
+                }}
               >
                 <ListItemAvatar sx={{ m: 0 }}>
                   <Badge
@@ -239,18 +239,18 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
                 active !== null && active.id === contact.id && active.type === 'contact' && !hasActiveId(contact.id)
 
               return (
-                <ListItem
-                  key={index}
-                  disablePadding
-                  sx={{
-                    '&:not(:last-child)': { mb: 1.5 },
-                    backgroundColor: (theme: Theme) => (activeCondition ? theme.palette.primary.main : '')
-                  }}
-                >
+                <ListItem key={index} disablePadding sx={{ '&:not(:last-child)': { mb: 1.5 } }}>
                   <ListItemButton
                     disableRipple
-                    sx={{ px: 3, py: 2.5, width: '100%', borderRadius: 1 }}
                     onClick={() => handleChatClick(hasActiveId(contact.id) ? 'chat' : 'contact', contact.id)}
+                    sx={{
+                      px: 3,
+                      py: 2.5,
+                      width: '100%',
+                      borderRadius: 1,
+                      backgroundColor: (theme: Theme) =>
+                        activeCondition ? `${theme.palette.primary.main} !important` : ''
+                    }}
                   >
                     <ListItemAvatar sx={{ m: 0 }}>
                       {contact.avatar ? (
