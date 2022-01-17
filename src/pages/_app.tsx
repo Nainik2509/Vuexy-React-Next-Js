@@ -35,6 +35,9 @@ import ThemeComponent from 'src/@core/theme/ThemeComponent'
 import AuthGuard from 'src/@core/components/auth/AuthGuard'
 import GuestGuard from 'src/@core/components/auth/GuestGuard'
 
+// ** Spinner Import
+import Spinner from 'src/@core/components/spinner'
+
 // ** Contexts
 import { AuthProvider } from 'src/@core/context/AuthContext'
 import { SettingsConsumer, SettingsProvider } from 'src/@core/context/settingsContext'
@@ -68,6 +71,7 @@ type ExtendedAppProps = AppProps & {
 
 const clientSideEmotionCache = createEmotionCache()
 
+// ** Pace Loader
 if (themeConfig.routingLoader) {
   Router.events.on('routeChangeStart', () => {
     NProgress.start()
@@ -96,11 +100,11 @@ const App = (props: ExtendedAppProps) => {
 
   const Guard = ({ children }: { children: ReactNode }) => {
     if (guestGuard) {
-      return <GuestGuard>{children}</GuestGuard>
+      return <GuestGuard fallback={<Spinner />}>{children}</GuestGuard>
     } else if (!guestGuard && !authGuard) {
       return <>{children}</>
     } else {
-      return <AuthGuard>{children}</AuthGuard>
+      return <AuthGuard fallback={<Spinner />}>{children}</AuthGuard>
     }
   }
 

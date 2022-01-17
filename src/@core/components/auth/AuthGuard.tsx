@@ -1,5 +1,5 @@
 // ** React Imports
-import { ReactNode, useEffect } from 'react'
+import { ReactNode, ReactElement, useEffect } from 'react'
 
 // ** Next Imports
 import { useRouter } from 'next/router'
@@ -7,15 +7,13 @@ import { useRouter } from 'next/router'
 // ** Hooks Import
 import { useAuth } from 'src/@core/hooks/useAuth'
 
-// ** Spinner Import
-import Spinner from 'src/@core/components/spinner'
-
 interface AuthGuardProps {
   children: ReactNode
+  fallback: ReactElement | null
 }
 
 const AuthGuard = (props: AuthGuardProps) => {
-  const { children } = props
+  const { children, fallback } = props
   const auth = useAuth()
   const router = useRouter()
 
@@ -37,7 +35,7 @@ const AuthGuard = (props: AuthGuardProps) => {
   )
 
   if (auth.loading || auth.user === null) {
-    return <Spinner />
+    return fallback
   }
 
   return <>{children}</>

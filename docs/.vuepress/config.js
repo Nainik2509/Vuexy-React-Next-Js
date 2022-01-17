@@ -32,7 +32,8 @@ module.exports = {
             '/guide/development/routing',
             '/guide/development/authentication',
             '/guide/development/internationalization',
-            '/guide/development/rtl'
+            '/guide/development/rtl',
+            '/guide/development/loaders'
             // '/guide/development/theme-configuration',
             // '/guide/development/template-styles',
             // '/guide/development/splash-screen',
