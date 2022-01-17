@@ -11,8 +11,6 @@
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
-    "@casl/ability": "^5.2.2",
-    "@casl/react": "^2.2.2",
     "@emotion/cache": "^11.6.0",
     "@emotion/react": "^11.7.0",
     "@emotion/server": "^11.4.0",
