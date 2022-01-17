@@ -79,7 +79,7 @@ const KnowledgeBaseCategoryQuestion = () => {
         <Card>
           <StyledCardContent>
             <CogOutline sx={{ fontSize: '1.5rem', color: 'primary.main' }} />
-            <Typography variant='h6' sx={{ marginLeft: 3 }}>
+            <Typography variant='h6' sx={{ ml: 3 }}>
               {`Account Settings (${questions.length})`}
             </Typography>
           </StyledCardContent>
@@ -93,7 +93,7 @@ const KnowledgeBaseCategoryQuestion = () => {
           <CardContent>
             <Box sx={{ display: 'flex' }}>
               <Cellphone sx={{ fontSize: '1.375rem', marginTop: 1.25 }} />
-              <Typography variant='h6' sx={{ marginLeft: 3.25 }}>
+              <Typography variant='h6' sx={{ ml: 3.25 }}>
                 Why Was My Developer Application Rejected?
               </Typography>
             </Box>

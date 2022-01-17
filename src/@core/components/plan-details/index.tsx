@@ -81,9 +81,7 @@ const PlanDetails = (props: PricingPlanProps) => {
         />
       </Box>
       <Box sx={{ textAlign: 'center' }}>
-        <Typography variant='h5' sx={{ fontWeight: 500 }}>
-          {data?.title}
-        </Typography>
+        <Typography variant='h5'>{data?.title}</Typography>
         <Typography variant='body2'>{data?.subtitle}</Typography>
         <Box sx={{ mt: 4.4, mb: 9.2, position: 'relative' }}>
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>

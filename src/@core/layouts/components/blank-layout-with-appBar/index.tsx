@@ -105,9 +105,9 @@ const BlankLayoutAppBar = (props: BlankLayoutWithAppBarProps) => {
                 variant='h6'
                 sx={{
                   ml: 3,
+                  fontWeight: 600,
                   lineHeight: 'normal',
-                  textTransform: 'uppercase',
-                  fontWeight: theme.typography.fontWeightBold
+                  textTransform: 'uppercase'
                 }}
               >
                 {themeConfig.templateName}

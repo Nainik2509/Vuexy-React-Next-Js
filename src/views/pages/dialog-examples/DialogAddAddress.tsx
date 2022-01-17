@@ -97,10 +97,7 @@ const DialogAddAddress = () => {
               >
                 <Box sx={{ mb: 1, display: 'flex', alignItems: 'center' }}>
                   <HomeOutline sx={{ mr: 2 }} />
-                  <Typography
-                    variant='h6'
-                    sx={{ fontWeight: 600, ...(addressType === 'home' ? { color: 'primary.main' } : {}) }}
-                  >
+                  <Typography variant='h6' sx={{ ...(addressType === 'home' ? { color: 'primary.main' } : {}) }}>
                     Home
                   </Typography>
                 </Box>
@@ -124,10 +121,7 @@ const DialogAddAddress = () => {
               >
                 <Box sx={{ mb: 1, display: 'flex', alignItems: 'center' }}>
                   <BriefcaseOutline sx={{ mr: 2 }} />
-                  <Typography
-                    variant='h6'
-                    sx={{ fontWeight: 600, ...(addressType === 'office' ? { color: 'primary.main' } : {}) }}
-                  >
+                  <Typography variant='h6' sx={{ ...(addressType === 'office' ? { color: 'primary.main' } : {}) }}>
                     Office
                   </Typography>
                 </Box>

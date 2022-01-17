@@ -50,7 +50,7 @@ const PricingCTA = () => {
     <BoxWrapper>
       <Grid container spacing={5}>
         <Grid item xs={12} md={8}>
-          <Typography variant='h5' sx={{ fontWeight: 500, marginBottom: 3, color: 'primary.main' }}>
+          <Typography variant='h5' sx={{ mb: 3, color: 'primary.main' }}>
             Still not convinced? Start with a 14-day FREE trial!
           </Typography>
           <Typography sx={{ marginBottom: 9.5, color: 'text.secondary' }}>

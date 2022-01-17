@@ -44,7 +44,7 @@ const ComingSoon = () => {
       <Box sx={{ p: 5, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <BoxWrapper>
           <Box sx={{ mb: 5.75, textAlign: 'center' }}>
-            <Typography variant='h5' sx={{ fontWeight: 600, marginBottom: 1, fontSize: '1.5rem !important' }}>
+            <Typography variant='h5' sx={{ mb: 1, fontSize: '1.5rem !important' }}>
               We are launching soon 🚀
             </Typography>
             <Typography variant='body2'>

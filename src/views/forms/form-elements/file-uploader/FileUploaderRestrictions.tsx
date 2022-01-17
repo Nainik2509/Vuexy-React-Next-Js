@@ -42,7 +42,6 @@ const Img = styled('img')(({ theme }) => ({
 
 // Styled component for the heading inside the dropzone area
 const HeadingTypography = styled(Typography)<TypographyProps>(({ theme }) => ({
-  fontWeight: 600,
   marginBottom: theme.spacing(5),
   [theme.breakpoints.down('sm')]: {
     marginBottom: theme.spacing(4)

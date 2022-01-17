@@ -28,7 +28,7 @@ const CardDeveloperMeetup = () => {
               <Typography variant='body2' sx={{ fontWeight: 500, marginBottom: 0.5, color: 'primary.main' }}>
                 Jan
               </Typography>
-              <Typography variant='h6' sx={{ fontWeight: '700', color: 'primary.main' }}>
+              <Typography variant='h6' sx={{ fontWeight: 600, color: 'primary.main' }}>
                 24
               </Typography>
             </Box>

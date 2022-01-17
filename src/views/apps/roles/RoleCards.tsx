@@ -103,9 +103,7 @@ const RolesCards = () => {
               </AvatarGroup>
             </Box>
             <Box>
-              <Typography variant='h6' sx={{ fontWeight: 600 }}>
-                {item.title}
-              </Typography>
+              <Typography variant='h6'>{item.title}</Typography>
             </Box>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <Typography
@@ -170,7 +168,7 @@ const RolesCards = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <DialogTitle sx={{ textAlign: 'center' }}>
             <Typography variant='h4' component='span'>
-              {dialogTitle} Role
+              {`${dialogTitle} Role`}
             </Typography>
             <Typography variant='body2'>Set Role Permissions</Typography>
           </DialogTitle>

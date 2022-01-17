@@ -67,8 +67,8 @@ const PreviewCard = ({ data }: Props) => {
                 <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                   <Box sx={{ mb: 6, display: 'flex', alignItems: 'center' }}>
                     <svg
-                      width={24}
-                      height={20}
+                      width={30}
+                      height={25}
                       version='1.1'
                       viewBox='0 0 30 23'
                       xmlns='http://www.w3.org/2000/svg'
@@ -126,7 +126,10 @@ const PreviewCard = ({ data }: Props) => {
                         </g>
                       </g>
                     </svg>
-                    <Typography variant='h6' sx={{ ml: 2, fontWeight: 'bold', textTransform: 'uppercase' }}>
+                    <Typography
+                      variant='h6'
+                      sx={{ ml: 2.5, fontWeight: 600, lineHeight: 'normal', textTransform: 'uppercase' }}
+                    >
                       {themeConfig.templateName}
                     </Typography>
                   </Box>
@@ -147,14 +150,10 @@ const PreviewCard = ({ data }: Props) => {
                     <TableBody>
                       <TableRow>
                         <MUITableCell>
-                          <Typography variant='h6' sx={{ fontWeight: 500 }}>
-                            Invoice
-                          </Typography>
+                          <Typography variant='h6'>Invoice</Typography>
                         </MUITableCell>
                         <MUITableCell>
-                          <Typography variant='h6' sx={{ fontWeight: 500 }}>
-                            #{data.invoice.id}
-                          </Typography>
+                          <Typography variant='h6'>{`#${data.invoice.id}`}</Typography>
                         </MUITableCell>
                       </TableRow>
                       <TableRow>

@@ -156,8 +156,8 @@ const EditCard = (props: Props) => {
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
               <Box sx={{ mb: 6, display: 'flex', alignItems: 'center' }}>
                 <svg
-                  width={24}
-                  height={20}
+                  width={30}
+                  height={25}
                   version='1.1'
                   viewBox='0 0 30 23'
                   xmlns='http://www.w3.org/2000/svg'
@@ -215,7 +215,10 @@ const EditCard = (props: Props) => {
                     </g>
                   </g>
                 </svg>
-                <Typography variant='h6' sx={{ ml: 2, fontWeight: 'bold', textTransform: 'uppercase' }}>
+                <Typography
+                  variant='h6'
+                  sx={{ ml: 2.5, fontWeight: 600, lineHeight: 'normal', textTransform: 'uppercase' }}
+                >
                   {themeConfig.templateName}
                 </Typography>
               </Box>
@@ -233,7 +236,7 @@ const EditCard = (props: Props) => {
           <Grid item lg={6} xs={12}>
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { lg: 'flex-end', xs: 'flex-start' } }}>
               <Box sx={{ mb: 4, display: 'flex', alignItems: 'center' }}>
-                <Typography variant='h6' sx={{ mr: 2, width: '105px', fontWeight: 500 }}>
+                <Typography variant='h6' sx={{ mr: 2, width: '105px' }}>
                   Invoice
                 </Typography>
                 <TextField
