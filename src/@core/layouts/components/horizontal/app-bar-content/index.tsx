@@ -15,18 +15,11 @@ import { Settings } from 'src/@core/context/settingsContext'
 // ** Theme Config Import
 import themeConfig from 'src/configs/themeConfig'
 
-// ** Components
-import ModeToggler from 'src/@core/layouts/components/shared-components/ModeToggler'
-import Autocomplete from 'src/@core/layouts/components/shared-components/Autocomplete'
-import UserDropdown from 'src/@core/layouts/components/shared-components/UserDropdown'
-import NotificationDropdown from 'src/@core/layouts/components/shared-components/NotificationDropdown'
-
 interface Props {
   hidden: boolean
   settings: Settings
   setShowBackdrop: (val: boolean) => void
   saveSettings: (values: Settings) => void
-  languageDropdown?: (props?: any) => ReactNode
   horizontalAppBarContent?: (props?: any) => ReactNode
   horizontalAppBarBranding?: (props?: any) => ReactNode
 }
@@ -41,11 +34,6 @@ const StyledLink = styled('a')(({ theme }) => ({
 const AppBarContent = (props: Props) => {
   // ** Props
   const {
-    hidden,
-    settings,
-    saveSettings,
-    setShowBackdrop,
-    languageDropdown,
     horizontalAppBarContent: userHorizontalAppBarContent,
     horizontalAppBarBranding: userHorizontalAppBarBranding
   } = props
@@ -134,17 +122,7 @@ const AppBarContent = (props: Props) => {
           </StyledLink>
         </Link>
       )}
-      {userHorizontalAppBarContent ? (
-        userHorizontalAppBarContent(props)
-      ) : (
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Autocomplete hidden={hidden} setShowBackdrop={setShowBackdrop} />
-          {(languageDropdown && languageDropdown(props)) || null}
-          <ModeToggler settings={settings} saveSettings={saveSettings} />
-          <NotificationDropdown settings={settings} />
-          <UserDropdown settings={settings} />
-        </Box>
-      )}
+      {userHorizontalAppBarContent ? userHorizontalAppBarContent(props) : null}
     </Box>
   )
 }

@@ -56,10 +56,10 @@ npm install i18next react-i18next i18next-http-backend i18next-browser-languaged
 - If you want to translate the navigation menu, then copy the whole code from `src/assets/components/Translations.tsx` file from the full version and paste that copied code into the same file in the starter-kit
 - If you want a language dropdown in the appBar to change the current language in the app, then:
   - Copy `public/images/flags` folder form the full version and paste that folder into the same directory in the starter-kit
-  - Import `src/@core/layouts/components/shared-components/LanguageDropdown.tsx` file and pass it as the following prop in `src/layouts/UserLayout.tsx` file
+  - Import `src/@core/layouts/components/shared-components/LanguageDropdown.tsx` file and render `LanguageDropdown` component in `src/layouts/components/vertical/AppBarContent.tsx` or `src/layouts/components/horizontal/AppBarContent.tsx` file
 
 ```tsx
-languageDropdown={() => <LanguageDropdown settings={settings} saveSettings={saveSettings} />}
+<LanguageDropdown settings={settings} saveSettings={saveSettings} />
 ```
 
 ## Remove i18n
@@ -85,10 +85,10 @@ const Translations = ({ text }: Props) => <>{text}</>
 export default Translations
 ```
 
-- Remove `LanguageDropdown` file import and the following prop in `src/layouts/UserLayout.tsx` file
+- Remove `LanguageDropdown` file import and rendered component from `src/layouts/components/vertical/AppBarContent.tsx` or `src/layouts/components/horizontal/AppBarContent.tsx` file
 
 ```tsx
-languageDropdown={() => <LanguageDropdown settings={settings} saveSettings={saveSettings} />}
+<LanguageDropdown settings={settings} saveSettings={saveSettings} />
 ```
 
 ## Add / Remove a language
@@ -232,10 +232,31 @@ const UserLayout = ({ children }: Props) => {
       hidden={hidden}
       settings={settings}
       saveSettings={saveSettings}
-      languageDropdown={() => <UserLanguageDropdown settings={settings} />}
       {...(settings.layout === 'horizontal'
         ? { horizontalNavItems: HorizontalNavItems() }
         : { verticalNavItems: VerticalNavItems() })}
+      {...(settings.layout === 'horizontal'
+        ? {
+            horizontalAppBarContent: props => (
+              <HorizontalAppBarContent
+                hidden={hidden}
+                settings={settings}
+                saveSettings={saveSettings}
+                setShowBackdrop={props.setShowBackdrop}
+              />
+            )
+          }
+        : {
+            verticalAppBarContent: props => (
+              <VerticalAppBarContent
+                hidden={hidden}
+                settings={settings}
+                saveSettings={saveSettings}
+                setShowBackdrop={props.setShowBackdrop}
+                toggleNavVisibility={props.toggleNavVisibility}
+              />
+            )
+          })}
     >
       {children}
     </Layout>

@@ -12,16 +12,12 @@ import { Settings } from 'src/@core/context/settingsContext'
 // ** Theme Config Import
 import themeConfig from 'src/configs/themeConfig'
 
-// ** Component Import
-import AppBarContent from './AppBarContent'
-
 interface Props {
   hidden: boolean
   settings: Settings
   toggleNavVisibility: () => void
   setShowBackdrop: (val: boolean) => void
   saveSettings: (values: Settings) => void
-  languageDropdown?: (props?: any) => ReactNode
   verticalAppBarContent?: (props?: any) => ReactNode
 }
 
@@ -44,15 +40,7 @@ const Toolbar = styled(MuiToolbar)<ToolbarProps>(({ theme }) => ({
 
 const LayoutAppBar = (props: Props) => {
   // ** Props
-  const {
-    hidden,
-    settings,
-    saveSettings,
-    setShowBackdrop,
-    languageDropdown,
-    toggleNavVisibility,
-    verticalAppBarContent: userVerticalAppBarContent
-  } = props
+  const { settings, verticalAppBarContent: userVerticalAppBarContent } = props
 
   if (settings.appBar === 'hidden') {
     return null
@@ -73,16 +61,7 @@ const LayoutAppBar = (props: Props) => {
         className='navbar-content-container'
         sx={{ ...(settings.contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } }) }}
       >
-        {(userVerticalAppBarContent && userVerticalAppBarContent(props)) || (
-          <AppBarContent
-            hidden={hidden}
-            settings={settings}
-            saveSettings={saveSettings}
-            setShowBackdrop={setShowBackdrop}
-            languageDropdown={languageDropdown}
-            toggleNavVisibility={toggleNavVisibility}
-          />
-        )}
+        {(userVerticalAppBarContent && userVerticalAppBarContent(props)) || null}
       </Toolbar>
     </AppBar>
   )

@@ -1,6 +1,3 @@
-// ** React Imports
-import { ReactNode } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import IconButton from '@mui/material/IconButton'
@@ -15,6 +12,7 @@ import { Settings } from 'src/@core/context/settingsContext'
 import ModeToggler from 'src/@core/layouts/components/shared-components/ModeToggler'
 import Autocomplete from 'src/@core/layouts/components/shared-components/Autocomplete'
 import UserDropdown from 'src/@core/layouts/components/shared-components/UserDropdown'
+import LanguageDropdown from 'src/@core/layouts/components/shared-components/LanguageDropdown'
 import NotificationDropdown from 'src/@core/layouts/components/shared-components/NotificationDropdown'
 
 interface Props {
@@ -23,12 +21,11 @@ interface Props {
   toggleNavVisibility: () => void
   setShowBackdrop: (val: boolean) => void
   saveSettings: (values: Settings) => void
-  languageDropdown?: (props?: any) => ReactNode
 }
 
 const AppBarContent = (props: Props) => {
   // ** Props
-  const { hidden, settings, saveSettings, setShowBackdrop, languageDropdown, toggleNavVisibility } = props
+  const { hidden, settings, saveSettings, setShowBackdrop, toggleNavVisibility } = props
 
   return (
     <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -41,7 +38,7 @@ const AppBarContent = (props: Props) => {
         <Autocomplete hidden={hidden} setShowBackdrop={setShowBackdrop} />
       </Box>
       <Box className='actions-right' sx={{ display: 'flex', alignItems: 'center' }}>
-        {(languageDropdown && languageDropdown(props)) || null}
+        <LanguageDropdown settings={settings} saveSettings={saveSettings} />
         <ModeToggler settings={settings} saveSettings={saveSettings} />
         <NotificationDropdown settings={settings} />
         <UserDropdown settings={settings} />
