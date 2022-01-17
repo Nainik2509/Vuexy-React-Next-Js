@@ -70,7 +70,6 @@ const userRoleObj: UserRoleType = {
 }
 
 interface CellType {
-  // eslint-disable-next-line react/no-unused-prop-types
   row: UsersType
 }
 

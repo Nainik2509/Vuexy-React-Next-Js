@@ -64,7 +64,8 @@ const Drawer = (props: Props) => {
     if (navCollapsed && hidden) {
       saveSettings({ ...settings, navCollapsed: false })
     }
-  }, [hidden]) // eslint-disable-line
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hidden])
 
   const drawerColor = () => {
     if (skin === 'semi-dark' && theme.palette.mode === 'light') {

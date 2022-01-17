@@ -1,20 +1,31 @@
 // ** Next Import
 import { NextPageContext } from 'next/types'
 
+// ** Third Party Imports
+import axios from 'axios'
+
 // ** Types
+import { InvoiceType } from 'src/types/apps/invoiceTypes'
 import { UserLayoutType } from 'src/types/apps/userTypes'
 
 // ** Demo Components Imports
-import UserLayout from 'src/views/apps/user/view/UserLayout'
+import UserViewPage from 'src/views/apps/user/view/UserViewPage'
 
-const UserView = ({ id }: UserLayoutType) => {
-  return <UserLayout id={id} />
+type Props = UserLayoutType & {
+  invoiceData: InvoiceType[]
 }
 
-export default UserView
+const UserView = ({ id, invoiceData }: Props) => {
+  return <UserViewPage id={id} invoiceData={invoiceData} />
+}
 
 UserView.getInitialProps = async ({ query }: NextPageContext) => {
   const { id } = query
 
-  return { id }
+  const res = await axios.get('/apps/invoice/invoices')
+  const invoiceData: InvoiceType[] = res.data.allData
+
+  return { id, invoiceData }
 }
+
+export default UserView

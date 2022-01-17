@@ -53,7 +53,8 @@ const useClipboard = (options: UseClipboardOptions = {}): ClipboardAPI => {
     } else if (targetRef.current) {
       clipboardCopy(targetRef.current.value)
     }
-  }, []) // eslint-disable-line
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return {
     copy: copyHandler,

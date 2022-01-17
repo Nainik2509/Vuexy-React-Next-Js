@@ -12,7 +12,6 @@ const Repeater = (props: RepeaterProps) => {
   const items = []
 
   // ** Loop passed count times and push it in items Array
-  // eslint-disable-next-line
   for (let i = 0; i < count; i++) {
     items.push(children(i))
   }
