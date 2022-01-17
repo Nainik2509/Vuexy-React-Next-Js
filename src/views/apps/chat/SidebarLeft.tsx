@@ -105,15 +105,14 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
               key={index}
               disablePadding
               sx={{
-                borderRadius: 1,
                 '&:not(:last-child)': { mb: 1.5 },
                 backgroundColor: (theme: Theme) => (activeCondition ? theme.palette.primary.main : '')
               }}
             >
               <ListItemButton
                 disableRipple
-                sx={{ px: 3, py: 2.5, width: '100%', alignItems: 'flex-start' }}
                 onClick={() => handleChatClick('chat', chat.id)}
+                sx={{ px: 3, py: 2.5, width: '100%', borderRadius: 1, alignItems: 'flex-start' }}
               >
                 <ListItemAvatar sx={{ m: 0 }}>
                   <Badge
@@ -244,15 +243,14 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
                   key={index}
                   disablePadding
                   sx={{
-                    borderRadius: 1,
                     '&:not(:last-child)': { mb: 1.5 },
                     backgroundColor: (theme: Theme) => (activeCondition ? theme.palette.primary.main : '')
                   }}
                 >
                   <ListItemButton
                     disableRipple
-                    onClick={() => handleChatClick(hasActiveId(contact.id) ? 'chat' : 'contact', contact.id)}
                     sx={{ px: 3, py: 2.5, width: '100%', borderRadius: 1 }}
+                    onClick={() => handleChatClick(hasActiveId(contact.id) ? 'chat' : 'contact', contact.id)}
                   >
                     <ListItemAvatar sx={{ m: 0 }}>
                       {contact.avatar ? (
