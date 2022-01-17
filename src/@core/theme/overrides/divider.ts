@@ -7,9 +7,6 @@ const Divider = (theme: Theme) => {
       styleOverrides: {
         root: {
           margin: `${theme.spacing(2)} 0`
-        },
-        light: {
-          borderColor: `rgba(${theme.palette.customColors.main}, 0.1)`
         }
       }
     }
