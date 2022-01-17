@@ -24,4 +24,11 @@ InvoicePrint.getInitialProps = async ({ query }: NextPageContext) => {
 }
 
 InvoicePrint.getLayout = (page: ReactNode) => <BlankLayout>{page}</BlankLayout>
+
+InvoicePrint.setConfig = () => {
+  return {
+    mode: 'light'
+  }
+}
+
 export default InvoicePrint
