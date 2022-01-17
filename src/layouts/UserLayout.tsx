@@ -13,8 +13,12 @@ import Layout from 'src/@core/layouts/Layout'
 import VerticalNavItems from 'src/navigation/vertical'
 import HorizontalNavItems from 'src/navigation/horizontal'
 
+// ** Component Import
+import VerticalAppBarContent from './components/vertical/AppBarContent'
+import HorizontalAppBarContent from './components/horizontal/AppBarContent'
+
 // ** Language Dropdown Component Import
-import LanguageDropdown from 'src/@core/layouts/components/shared-components/LanguageDropdown'
+// import LanguageDropdown from 'src/@core/layouts/components/shared-components/LanguageDropdown'
 
 // ** Hook Import
 import { useSettings } from 'src/@core/hooks/useSettings'
@@ -71,10 +75,31 @@ const UserLayout = ({ children }: Props) => {
       hidden={hidden}
       settings={settings}
       saveSettings={saveSettings}
-      languageDropdown={() => <LanguageDropdown settings={settings} saveSettings={saveSettings} />}
-      {...(settings.layout === 'horizontal'
+      {...(settings.layout === 'horizontal' // ** Navigation Items
         ? { horizontalNavItems: HorizontalNavItems() }
         : { verticalNavItems: VerticalNavItems() })}
+      {...(settings.layout === 'horizontal' // ** AppBar Content
+        ? {
+            horizontalAppBarContent: props => (
+              <HorizontalAppBarContent
+                hidden={hidden}
+                settings={settings}
+                saveSettings={saveSettings}
+                setShowBackdrop={props.setShowBackdrop}
+              />
+            )
+          }
+        : {
+            verticalAppBarContent: props => (
+              <VerticalAppBarContent
+                hidden={hidden}
+                settings={settings}
+                saveSettings={saveSettings}
+                setShowBackdrop={props.setShowBackdrop}
+                toggleNavVisibility={props.toggleNavVisibility}
+              />
+            )
+          })}
     >
       {children}
     </Layout>
