@@ -69,6 +69,12 @@ type ExtendedAppProps = AppProps & {
   emotionCache: EmotionCache
 }
 
+type GuardProps = {
+  authGuard: boolean
+  guestGuard: boolean
+  children: ReactNode
+}
+
 const clientSideEmotionCache = createEmotionCache()
 
 // ** Pace Loader
@@ -84,6 +90,16 @@ if (themeConfig.routingLoader) {
   })
 }
 
+const Guard = ({ children, authGuard, guestGuard }: GuardProps) => {
+  if (guestGuard) {
+    return <GuestGuard fallback={<Spinner />}>{children}</GuestGuard>
+  } else if (!guestGuard && !authGuard) {
+    return <>{children}</>
+  } else {
+    return <AuthGuard fallback={<Spinner />}>{children}</AuthGuard>
+  }
+}
+
 // ** Configure JSS & ClassName
 const App = (props: ExtendedAppProps) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
@@ -97,16 +113,6 @@ const App = (props: ExtendedAppProps) => {
   const authGuard = Component.authGuard ?? true
 
   const guestGuard = Component.guestGuard ?? false
-
-  const Guard = ({ children }: { children: ReactNode }) => {
-    if (guestGuard) {
-      return <GuestGuard fallback={<Spinner />}>{children}</GuestGuard>
-    } else if (!guestGuard && !authGuard) {
-      return <>{children}</>
-    } else {
-      return <AuthGuard fallback={<Spinner />}>{children}</AuthGuard>
-    }
-  }
 
   return (
     <Provider store={store}>
@@ -127,7 +133,7 @@ const App = (props: ExtendedAppProps) => {
               {({ settings }) => {
                 return (
                   <ThemeComponent settings={settings}>
-                    <Guard>
+                    <Guard authGuard={authGuard} guestGuard={guestGuard}>
                       {getLayout(
                         <div
                           key={router.route}
