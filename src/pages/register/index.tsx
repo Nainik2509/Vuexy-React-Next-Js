@@ -191,7 +191,7 @@ const Register = () => {
           <BoxWrapper>
             <Box
               sx={{
-                top: 29,
+                top: 30,
                 left: 40,
                 display: 'flex',
                 position: 'absolute',
@@ -259,7 +259,16 @@ const Register = () => {
                   </g>
                 </g>
               </svg>
-              <Typography variant='h5' sx={{ marginLeft: 3, fontWeight: 600, fontSize: '1.5rem !important' }}>
+              <Typography
+                variant='h6'
+                sx={{
+                  ml: 3,
+                  lineHeight: 1,
+                  fontWeight: 600,
+                  textTransform: 'uppercase',
+                  fontSize: '1.5rem !important'
+                }}
+              >
                 {themeConfig.templateName}
               </Typography>
             </Box>

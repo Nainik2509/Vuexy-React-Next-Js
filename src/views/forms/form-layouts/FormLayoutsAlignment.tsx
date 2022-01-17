@@ -60,9 +60,7 @@ const FormLayoutsAlignment = () => {
         <Form onSubmit={e => e.preventDefault()}>
           <Grid container spacing={5}>
             <Grid item xs={12}>
-              <Typography variant='h5' sx={{ fontWeight: 600 }}>
-                Sign In
-              </Typography>
+              <Typography variant='h5'>Sign In</Typography>
             </Grid>
             <Grid item xs={12}>
               <TextField fullWidth label='Username' placeholder='carterLeonard' />

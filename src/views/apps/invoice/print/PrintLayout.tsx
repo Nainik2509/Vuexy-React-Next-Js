@@ -89,61 +89,70 @@ const InvoicePrint = ({ id }: InvoiceLayoutProps) => {
           <Grid item xs={8} sx={{ mb: { sm: 0, xs: 4 } }}>
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
               <Box sx={{ mb: 6, display: 'flex', alignItems: 'center' }}>
-                <svg height='20px' viewBox='0 0 30 25' version='1.1' xmlns='http://www.w3.org/2000/svg'>
-                  <title>logo</title>
-                  <g id='⚛️-Symbols' stroke='none' strokeWidth='1' fill='none' fillRule='evenodd'>
-                    <g id='Menu-One' transform='translate(-26.000000, -29.000000)'>
-                      <g id='logo' transform='translate(26.000000, 29.000000)'>
+                <svg
+                  width={30}
+                  height={25}
+                  version='1.1'
+                  viewBox='0 0 30 23'
+                  xmlns='http://www.w3.org/2000/svg'
+                  xmlnsXlink='http://www.w3.org/1999/xlink'
+                >
+                  <title>🖥 Dashboard</title>
+                  <g id='🖥-Dashboard' stroke='none' strokeWidth='1' fill='none' fillRule='evenodd'>
+                    <g id='Artboard' transform='translate(-95.000000, -51.000000)'>
+                      <g id='logo' transform='translate(95.000000, 50.000000)'>
                         <path
-                          d='M3.05044703,1.88276582 L6.30851155,3.89367518 C6.89872324,4.25795962 7.25806452,4.90202396 7.25806452,5.5956038 L7.25806452,19.4422291 C7.25806452,20.1455972 6.88858935,20.7972624 6.28502902,21.1584295 L3.0269645,23.1080366 C2.07913318,23.6752135 0.850976404,23.366632 0.283799571,22.4188007 C0.0980803893,22.1084381 2.0190442e-15,21.7535219 0,21.3918362 L0,3.58469444 C-5.7935996e-16,2.48012494 0.8954305,1.58469444 2,1.58469444 C2.37101843,1.58469444 2.73472359,1.68789821 3.05044703,1.88276582 Z'
-                          id='Rectangle'
-                          fill={theme.palette.mode === 'dark' ? 'rgba(255,255,255, .5)' : 'rgba(34, 41, 47, 0.5)'}
+                          id='Combined-Shape'
+                          fill={theme.palette.primary.main}
+                          d='M30,21.3918362 C30,21.7535219 29.9019196,22.1084381 29.7162004,22.4188007 C29.1490236,23.366632 27.9208668,23.6752135 26.9730355,23.1080366 L26.9730355,23.1080366 L23.714971,21.1584295 C23.1114106,20.7972624 22.7419355,20.1455972 22.7419355,19.4422291 L22.7419355,19.4422291 L22.741,12.7425689 L15,17.1774194 L7.258,12.7425689 L7.25806452,19.4422291 C7.25806452,20.1455972 6.88858935,20.7972624 6.28502902,21.1584295 L3.0269645,23.1080366 C2.07913318,23.6752135 0.850976404,23.366632 0.283799571,22.4188007 C0.0980803893,22.1084381 2.0190442e-15,21.7535219 0,21.3918362 L0,3.58469444 L0.00548573643,3.43543209 L0.00548573643,3.43543209 L0,3.5715689 C3.0881846e-16,2.4669994 0.8954305,1.5715689 2,1.5715689 C2.36889529,1.5715689 2.73060353,1.67359571 3.04512412,1.86636639 L15,9.19354839 L26.9548759,1.86636639 C27.2693965,1.67359571 27.6311047,1.5715689 28,1.5715689 C29.1045695,1.5715689 30,2.4669994 30,3.5715689 L30,3.5715689 Z'
                         />
                         <polygon
                           id='Rectangle'
-                          fill={theme.palette.mode === 'dark' ? 'rgba(255,255,255, .5)' : 'rgba(34, 41, 47, 0.5)'}
+                          opacity='0.077704'
+                          fill={theme.palette.common.black}
                           points='0 8.58870968 7.25806452 12.7505183 7.25806452 16.8305646'
                         />
                         <polygon
                           id='Rectangle'
-                          fill={theme.palette.mode === 'dark' ? 'rgba(255,255,255, .5)' : 'rgba(34, 41, 47, 0.5)'}
+                          opacity='0.077704'
+                          fill={theme.palette.common.black}
                           points='0 8.58870968 7.25806452 12.6445567 7.25806452 15.1370162'
                         />
-                        <path
-                          d='M25.7898301,1.87488682 L29.0478946,3.87905791 C29.6395606,4.24301628 30,4.88791238 30,5.58255928 L30,19.4422291 C30,20.1455972 29.6305248,20.7972624 29.0269645,21.1584295 L25.7689,23.1080366 C24.8210687,23.6752135 23.5929119,23.366632 23.0257351,22.4188007 C22.8400159,22.1084381 22.7419355,21.7535219 22.7419355,21.3918362 L22.7419355,3.57838819 C22.7419355,2.47381869 23.637366,1.57838819 24.7419355,1.57838819 C25.1119353,1.57838819 25.4746825,1.68102644 25.7898301,1.87488682 Z'
-                          id='Rectangle'
-                          fill={theme.palette.mode === 'dark' ? 'rgba(255,255,255, .5)' : 'rgba(34, 41, 47, 0.5)'}
-                          transform='translate(26.370968, 12.459677) scale(-1, 1) translate(-26.370968, -12.459677) '
-                        />
                         <polygon
                           id='Rectangle'
-                          fill={theme.palette.mode === 'dark' ? theme.palette.common.white : theme.palette.common.black}
-                          transform='translate(26.370968, 12.771227) scale(-1, 1) translate(-26.370968, -12.771227) '
-                          points='22.7419355 8.58870968 30 12.7417372 30 16.9537453'
-                        />
-                        <polygon
-                          id='Rectangle'
-                          fill={theme.palette.mode === 'dark' ? theme.palette.common.white : theme.palette.common.black}
                           opacity='0.077704'
-                          transform='translate(26.370968, 11.924453) scale(-1, 1) translate(-26.370968, -11.924453) '
+                          fill={theme.palette.common.black}
+                          points='22.7419355 8.58870968 30 12.7417372 30 16.9537453'
+                          transform='translate(26.370968, 12.771227) scale(-1, 1) translate(-26.370968, -12.771227) '
+                        />
+                        <polygon
+                          id='Rectangle'
+                          opacity='0.077704'
+                          fill={theme.palette.common.black}
                           points='22.7419355 8.58870968 30 12.6409734 30 15.2601969'
+                          transform='translate(26.370968, 11.924453) scale(-1, 1) translate(-26.370968, -11.924453) '
                         />
                         <path
+                          id='Rectangle'
+                          fillOpacity='0.15'
+                          fill={theme.palette.common.white}
                           d='M3.04512412,1.86636639 L15,9.19354839 L15,9.19354839 L15,17.1774194 L0,8.58649679 L0,3.5715689 C3.0881846e-16,2.4669994 0.8954305,1.5715689 2,1.5715689 C2.36889529,1.5715689 2.73060353,1.67359571 3.04512412,1.86636639 Z'
-                          id='Rectangle'
-                          fill={theme.palette.mode === 'dark' ? 'rgba(255,255,255, .5)' : 'rgba(34, 41, 47, 0.5)'}
                         />
                         <path
-                          d='M18.0451241,1.86636639 L30,9.19354839 L30,9.19354839 L30,17.1774194 L15,8.58649679 L15,3.5715689 C15,2.4669994 15.8954305,1.5715689 17,1.5715689 C17.3688953,1.5715689 17.7306035,1.67359571 18.0451241,1.86636639 Z'
                           id='Rectangle'
-                          fill={theme.palette.mode === 'dark' ? 'rgba(255,255,255, .5)' : 'rgba(34, 41, 47, 0.5)'}
+                          fillOpacity='0.35'
+                          fill={theme.palette.common.white}
                           transform='translate(22.500000, 8.588710) scale(-1, 1) translate(-22.500000, -8.588710) '
+                          d='M18.0451241,1.86636639 L30,9.19354839 L30,9.19354839 L30,17.1774194 L15,8.58649679 L15,3.5715689 C15,2.4669994 15.8954305,1.5715689 17,1.5715689 C17.3688953,1.5715689 17.7306035,1.67359571 18.0451241,1.86636639 Z'
                         />
                       </g>
                     </g>
                   </g>
                 </svg>
-                <Typography variant='h6' sx={{ ml: 2, fontWeight: 'bold', textTransform: 'uppercase' }}>
+                <Typography
+                  variant='h6'
+                  sx={{ ml: 2.5, fontWeight: 600, lineHeight: 'normal', textTransform: 'uppercase' }}
+                >
                   {themeConfig.templateName}
                 </Typography>
               </Box>
@@ -160,8 +169,8 @@ const InvoicePrint = ({ id }: InvoiceLayoutProps) => {
           </Grid>
           <Grid item xs={4}>
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { sm: 'flex-end', xs: 'flex-start' } }}>
-              <Typography variant='h6' sx={{ mb: 2, fontWeight: 500 }}>
-                Invoice #{invoice.id}
+              <Typography variant='h6' sx={{ mb: 2 }}>
+                {`Invoice #${invoice.id}`}
               </Typography>
               <Box sx={{ mb: 2, display: 'flex' }}>
                 <Typography variant='body2' sx={{ mr: 3 }}>

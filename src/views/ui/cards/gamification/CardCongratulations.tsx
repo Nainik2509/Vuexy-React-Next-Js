@@ -33,7 +33,7 @@ const CardCongratulations = () => {
       <CardContent sx={{ padding: theme => theme.spacing(7.25, 7.5, 7.75, 7.5) }}>
         <Grid container spacing={6}>
           <Grid item xs={12} sm={6}>
-            <Typography variant='h5' sx={{ fontWeight: 500, marginBottom: 6.5 }}>
+            <Typography variant='h5' sx={{ mb: 6.5 }}>
               Congratulations{' '}
               <Box component='span' sx={{ fontWeight: 'bold' }}>
                 John

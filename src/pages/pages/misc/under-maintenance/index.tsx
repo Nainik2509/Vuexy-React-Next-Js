@@ -49,7 +49,7 @@ const UnderMaintenance = () => {
     <Box className='content-center'>
       <Box sx={{ p: 5, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
         <BoxWrapper>
-          <Typography variant='h5' sx={{ fontWeight: 600, marginBottom: 1, fontSize: '1.5rem !important' }}>
+          <Typography variant='h5' sx={{ mb: 1, fontSize: '1.5rem !important' }}>
             Under Maintenance! 🚧
           </Typography>
           <Typography variant='body2'>

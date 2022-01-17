@@ -75,7 +75,7 @@ const KnowledgeBase = ({ apiData }: InferGetStaticPropsType<typeof getStaticProp
                   />
                 </StyledBox>
                 <CardContent sx={{ textAlign: 'center' }}>
-                  <Typography variant='h6' sx={{ marginBottom: 1.75 }}>
+                  <Typography variant='h6' sx={{ mb: 1.75 }}>
                     {item.title}
                   </Typography>
                   <Typography variant='body2'>{item.desc}</Typography>
@@ -90,9 +90,7 @@ const KnowledgeBase = ({ apiData }: InferGetStaticPropsType<typeof getStaticProp
         <Grid item xs={12}>
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <InformationOutline sx={{ mr: 2 }} />
-            <Typography variant='h6' sx={{ fontWeight: 600 }}>
-              Data is not an array!
-            </Typography>
+            <Typography variant='h6'>Data is not an array!</Typography>
           </Box>
         </Grid>
       )
@@ -102,9 +100,7 @@ const KnowledgeBase = ({ apiData }: InferGetStaticPropsType<typeof getStaticProp
   const renderNoResult = (
     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <AlertCircleOutline sx={{ mr: 2 }} />
-      <Typography variant='h6' sx={{ fontWeight: 600 }}>
-        No Results Found!
-      </Typography>
+      <Typography variant='h6'>No Results Found!</Typography>
     </Box>
   )
 

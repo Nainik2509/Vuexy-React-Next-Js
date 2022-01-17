@@ -281,9 +281,7 @@ const TaskSidebar = (props: TaskSidebarProps) => {
           padding: theme => theme.spacing(3, 3.255, 3, 5.255)
         }}
       >
-        <Typography variant='h6' sx={{ fontWeight: 600 }}>
-          Update Task
-        </Typography>
+        <Typography variant='h6'>Update Task</Typography>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Close fontSize='small' onClick={handleTaskSidebarToggle} sx={{ cursor: 'pointer' }} />
         </Box>

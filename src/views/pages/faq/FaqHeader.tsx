@@ -50,10 +50,7 @@ const FaqHeader = (props: Props) => {
   return (
     <Card>
       <CardContent sx={{ pt: 23, textAlign: 'center', pb: theme => `${theme.spacing(23)} !important` }}>
-        <Typography
-          variant='h5'
-          sx={{ fontWeight: 600, marginBottom: 1.5, color: 'primary.main', fontSize: '1.5rem !important' }}
-        >
+        <Typography variant='h5' sx={{ mb: 1.5, color: 'primary.main', fontSize: '1.5rem !important' }}>
           Hello, how can we help?
         </Typography>
         <Typography variant='body2' sx={{ marginBottom: 7 }}>

@@ -217,7 +217,7 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
             padding: theme => theme.spacing(3, 3.255, 3, 5.255)
           }}
         >
-          <Typography variant='h6' sx={{ fontWeight: 600 }}>
+          <Typography variant='h6'>
             {store.selectedEvent !== null && store.selectedEvent.title.length ? 'Update Event' : 'Add Event'}
           </Typography>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>

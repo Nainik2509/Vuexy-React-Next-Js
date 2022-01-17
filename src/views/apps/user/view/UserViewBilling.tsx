@@ -308,7 +308,6 @@ const UserViewBilling = () => {
                   variant='h3'
                   sx={{
                     lineHeight: 1,
-                    fontWeight: 600,
                     marginBottom: -1.2,
                     color: 'primary.main',
                     fontSize: '3rem !important'

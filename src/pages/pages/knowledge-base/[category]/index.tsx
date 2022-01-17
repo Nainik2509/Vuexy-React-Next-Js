@@ -116,7 +116,7 @@ const KnowledgeBaseCategory = ({ apiData }: InferGetStaticPropsType<typeof getSt
                   <IconTag
                     sx={{ fontSize: '1.5rem', ...(item.iconColor ? { color: `${item.iconColor}.main` } : {}) }}
                   />
-                  <Typography variant='h6' sx={{ marginLeft: 3 }}>
+                  <Typography variant='h6' sx={{ ml: 3 }}>
                     {`${item.title} (${item.questions.length})`}
                   </Typography>
                 </StyledCardContent>
@@ -135,9 +135,7 @@ const KnowledgeBaseCategory = ({ apiData }: InferGetStaticPropsType<typeof getSt
         <Grid item xs={12}>
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <InformationOutline sx={{ mr: 2 }} />
-            <Typography variant='h6' sx={{ fontWeight: 600 }}>
-              Data is not an array!
-            </Typography>
+            <Typography variant='h6'>Data is not an array!</Typography>
           </Box>
         </Grid>
       )
@@ -147,9 +145,7 @@ const KnowledgeBaseCategory = ({ apiData }: InferGetStaticPropsType<typeof getSt
   const renderNoResult = (
     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <AlertCircleOutline sx={{ mr: 2 }} />
-      <Typography variant='h6' sx={{ fontWeight: 600 }}>
-        No Results Found!
-      </Typography>
+      <Typography variant='h6'>No Results Found!</Typography>
     </Box>
   )
 
