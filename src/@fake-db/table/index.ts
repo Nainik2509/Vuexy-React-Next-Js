@@ -2,9 +2,9 @@
 import mock from 'src/@fake-db/mock'
 
 // ** Types Imports
-import { DataTableRowType } from 'src/@fake-db/types'
+import { DataGridRowType } from 'src/@fake-db/types'
 
-const data = [
+const data: DataGridRowType[] = [
   {
     id: 95,
     avatar: '2.png',
@@ -668,7 +668,7 @@ mock.onGet('/api/table/data').reply(config => {
   const dataToFilter = sort === 'asc' ? dataAsc : dataAsc.reverse()
 
   const filteredData = dataToFilter.filter(
-    (item: DataTableRowType) =>
+    (item: DataGridRowType) =>
       item.id.toString().toLowerCase().includes(queryLowered) ||
       item.full_name.toLowerCase().includes(queryLowered) ||
       item.post.toLowerCase().includes(queryLowered) ||

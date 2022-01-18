@@ -83,7 +83,6 @@ const Navigation = (props: Props) => {
       // @ts-ignore
       ref._getBoundingClientRect = ref.getBoundingClientRect
 
-      // @ts-ignore
       ref.getBoundingClientRect = () => {
         // @ts-ignore
         const original = ref._getBoundingClientRect()

@@ -15,7 +15,7 @@ import QuickSearchToolbar from 'src/views/table/data-grid/QuickSearchToolbar'
 
 // ** Types Imports
 import { ThemeColor } from 'src/@core/layouts/types'
-import { DataTableRowType } from 'src/@fake-db/types'
+import { DataGridRowType } from 'src/@fake-db/types'
 
 // ** Utils Import
 import { getInitials } from 'src/@core/utils/get-initials'
@@ -144,10 +144,10 @@ const columns: GridColDef[] = [
 
 const TableColumns = () => {
   // ** States
-  const [data] = useState<DataTableRowType[]>(rows)
+  const [data] = useState<DataGridRowType[]>(rows)
   const [pageSize, setPageSize] = useState<number>(7)
   const [searchText, setSearchText] = useState<string>('')
-  const [filteredData, setFilteredData] = useState<DataTableRowType[]>([])
+  const [filteredData, setFilteredData] = useState<DataGridRowType[]>([])
 
   const handleSearch = (searchValue: string) => {
     setSearchText(searchValue)
@@ -179,10 +179,8 @@ const TableColumns = () => {
         componentsProps={{
           toolbar: {
             value: searchText,
-
-            // @ts-ignore
-            onChange: (event: ChangeEvent) => handleSearch(event.target.value),
-            clearSearch: () => handleSearch('')
+            clearSearch: () => handleSearch(''),
+            onChange: (event: ChangeEvent<HTMLInputElement>) => handleSearch(event.target.value)
           }
         }}
       />

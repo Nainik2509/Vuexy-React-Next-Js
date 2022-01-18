@@ -162,9 +162,7 @@ const SelectMultiple = () => {
                   native
                   multiple
                   label='Native'
-                  value={personNameNative}
-                  // eslint-disable-next-line
-                  // @ts-ignore
+                  value={personNameNative} // @ts-ignore
                   onChange={handleChangeMultipleNative}
                   inputProps={{ id: 'select-multiple-native' }}
                 >
@@ -265,9 +263,7 @@ const SelectMultiple = () => {
                   native
                   multiple
                   label='Native'
-                  value={personNameNative}
-                  // eslint-disable-next-line
-                  // @ts-ignore
+                  value={personNameNative} // @ts-ignore
                   onChange={handleChangeMultipleNative}
                   inputProps={{ id: 'select-multiple-native' }}
                 >
@@ -368,9 +364,7 @@ const SelectMultiple = () => {
                   native
                   multiple
                   label='Native'
-                  value={personNameNative}
-                  // eslint-disable-next-line
-                  // @ts-ignore
+                  value={personNameNative} // @ts-ignore
                   onChange={handleChangeMultipleNative}
                   inputProps={{ id: 'select-multiple-native' }}
                 >

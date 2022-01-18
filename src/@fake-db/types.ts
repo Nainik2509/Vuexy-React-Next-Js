@@ -121,7 +121,7 @@ export type CardStatsType = {
   statsHorizontal: CardStatsHorizontalType[]
 }
 
-export type DataTableRowType = {
+export type DataGridRowType = {
   id: number
   age: string
   post: string
