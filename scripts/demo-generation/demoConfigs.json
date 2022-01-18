@@ -1,0 +1,19 @@
+{
+  "demo2": {
+    "skin": "bordered"
+  },
+  "demo3": {
+    "skin": "semi-dark"
+  },
+  "demo4": {
+    "mode": "dark"
+  },
+  "demo5": {
+    "layout": "horizontal"
+  },
+  "demo6": {
+    "mode": "dark",
+    "skin": "bordered",
+    "layout": "horizontal"
+  }
+}
