@@ -145,7 +145,8 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
         startDate: event.start !== null ? event.start : new Date()
       })
     }
-  }, [setValue]) // eslint-disable-line
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [setValue])
 
   const resetToEmptyValues = useCallback(() => {
     setValue('title', '')
@@ -158,7 +159,8 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
     } else {
       resetToEmptyValues()
     }
-  }, [addEventSidebarOpen, resetToStoredValues, resetToEmptyValues]) // eslint-disable-line
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [addEventSidebarOpen, resetToStoredValues, resetToEmptyValues])
 
   const PickersComponent = forwardRef(({ ...props }: PickerProps, ref) => {
     return (

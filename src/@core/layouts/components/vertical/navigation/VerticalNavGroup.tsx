@@ -155,7 +155,8 @@ const VerticalNavGroup = (props: Props) => {
     }
     setGroupActive([...groupActive])
     setCurrentActiveGroup([...groupActive])
-  }, [router.asPath]) // eslint-disable-line
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [router.asPath])
 
   useEffect(() => {
     if (navCollapsed && !navHover) {
@@ -164,7 +165,8 @@ const VerticalNavGroup = (props: Props) => {
     if (navCollapsed && navHover) {
       setGroupActive([...currentActiveGroup, ...groupActive])
     }
-  }, [navCollapsed, navHover]) // eslint-disable-line
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [navCollapsed, navHover])
 
   const IconTag = parent && !item.icon ? themeConfig.navSubItemIcon : item.icon
 

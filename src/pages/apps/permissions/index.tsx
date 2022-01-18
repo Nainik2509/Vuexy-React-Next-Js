@@ -1,5 +1,5 @@
 // ** React Imports
-import { useMemo, useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -136,29 +136,26 @@ const PermissionsTable = () => {
     setFormValue('name', '')
   }
 
-  const columns = useMemo(
-    () => [
-      ...defaultColumns,
-      {
-        flex: 0.15,
-        minWidth: 130,
-        sortable: false,
-        field: 'actions',
-        headerName: 'Actions',
-        renderCell: ({ row }: CellType) => (
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <IconButton onClick={() => handleEditPermission(row.name)}>
-              <PencilOutline fontSize='small' />
-            </IconButton>
-            <IconButton>
-              <DeleteOutline fontSize='small' />
-            </IconButton>
-          </Box>
-        )
-      }
-    ],
-    [] // eslint-disable-line
-  )
+  const columns = [
+    ...defaultColumns,
+    {
+      flex: 0.15,
+      minWidth: 130,
+      sortable: false,
+      field: 'actions',
+      headerName: 'Actions',
+      renderCell: ({ row }: CellType) => (
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <IconButton onClick={() => handleEditPermission(row.name)}>
+            <PencilOutline fontSize='small' />
+          </IconButton>
+          <IconButton>
+            <DeleteOutline fontSize='small' />
+          </IconButton>
+        </Box>
+      )
+    }
+  ]
 
   return (
     <>

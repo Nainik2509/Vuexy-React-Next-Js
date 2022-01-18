@@ -696,7 +696,6 @@ mock.onPost('/apps/users/add-user').reply(config => {
 mock.onGet('/apps/users/list').reply(config => {
   const { q = '', role = null, status = null, currentPlan = null } = config.params
 
-  /* eslint-disable  */
   const queryLowered = q.toLowerCase()
 
   const filteredData = data.users.filter(
@@ -711,8 +710,6 @@ mock.onGet('/apps/users/list').reply(config => {
       user.currentPlan === (currentPlan || user.currentPlan) &&
       user.status === (status || user.status)
   )
-
-  /* eslint-enable  */
 
   return [
     200,

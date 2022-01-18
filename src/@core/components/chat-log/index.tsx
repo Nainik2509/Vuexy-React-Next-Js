@@ -99,7 +99,8 @@ const ChatLog = (props: ChatLogType) => {
     if (data && data.chat && data.chat.chat.length) {
       scrollToBottom()
     }
-  }, [data.chat]) // eslint-disable-line
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data.chat])
 
   // ** Renders user chat
   const renderChats = () => {

@@ -27,9 +27,6 @@ import axios from 'axios'
 // ** Configs
 import themeConfig from 'src/configs/themeConfig'
 
-// ** Hooks
-import { useSettings } from 'src/@core/hooks/useSettings'
-
 const CalcWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
@@ -54,18 +51,10 @@ const InvoicePrint = ({ id }: InvoiceLayoutProps) => {
 
   // ** Hooks
   const theme = useTheme()
-  const { settings, saveSettings } = useSettings()
 
   useEffect(() => {
     window.print()
-    if (settings.mode === 'dark') {
-      saveSettings({ ...settings, mode: 'light' })
-
-      return () => saveSettings({ ...settings, mode: 'dark' })
-    } else {
-      return () => saveSettings({ ...settings, mode: 'light' })
-    }
-  }, []) // eslint-disable-line
+  }, [])
 
   useEffect(() => {
     axios
@@ -355,10 +344,10 @@ const InvoicePrint = ({ id }: InvoiceLayoutProps) => {
   }
 }
 
-export default InvoicePrint
-
 InvoicePrint.getInitialProps = async ({ query }: NextPageContext) => {
   const { id } = query
 
   return { id }
 }
+
+export default InvoicePrint

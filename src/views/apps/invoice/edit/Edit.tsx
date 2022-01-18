@@ -20,7 +20,7 @@ import EditActions from './EditActions'
 import AddPaymentDrawer from 'src/views/apps/invoice/shared-drawer/AddPaymentDrawer'
 import SendInvoiceDrawer from 'src/views/apps/invoice/shared-drawer/SendInvoiceDrawer'
 
-const InvoiceEditLayout = ({ id }: InvoiceLayoutProps) => {
+const InvoiceEdit = ({ id }: InvoiceLayoutProps) => {
   // ** State
   const [error, setError] = useState<boolean>(false)
   const [data, setData] = useState<null | SingleInvoiceType>(null)
@@ -76,4 +76,4 @@ const InvoiceEditLayout = ({ id }: InvoiceLayoutProps) => {
   }
 }
 
-export default InvoiceEditLayout
+export default InvoiceEdit

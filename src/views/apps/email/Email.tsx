@@ -63,7 +63,7 @@ const EmailAppLayout = ({ folder, label }: MailLayoutType) => {
 
   // ** Vars
   const leftSidebarWidth = 260
-  const composePopupWidth = mdAbove ? 754 : smAbove ? 520 : '100%' //eslint-disable-line
+  const composePopupWidth = mdAbove ? 754 : smAbove ? 520 : '100%'
   const routeParams = {
     label: label || '',
     folder: folder || 'inbox'

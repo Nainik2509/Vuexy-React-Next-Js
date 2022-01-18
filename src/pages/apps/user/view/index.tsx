@@ -9,17 +9,15 @@ import { InvoiceType } from 'src/types/apps/invoiceTypes'
 import { UserLayoutType } from 'src/types/apps/userTypes'
 
 // ** Demo Components Imports
-import UserLayout from 'src/views/apps/user/view/UserLayout'
+import UserViewPage from 'src/views/apps/user/view/UserViewPage'
 
 type Props = UserLayoutType & {
   invoiceData: InvoiceType[]
 }
 
 const UserView = ({ id, invoiceData }: Props) => {
-  return <UserLayout id={id || '1'} invoiceData={invoiceData} />
+  return <UserViewPage id={id || '1'} invoiceData={invoiceData} />
 }
-
-export default UserView
 
 UserView.getInitialProps = async ({ query }: NextPageContext) => {
   const { id } = query
@@ -29,3 +27,5 @@ UserView.getInitialProps = async ({ query }: NextPageContext) => {
 
   return { id, invoiceData }
 }
+
+export default UserView

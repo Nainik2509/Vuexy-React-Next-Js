@@ -128,7 +128,8 @@ const HorizontalNavGroup = (props: Props) => {
 
   useEffect(() => {
     handleGroupClose()
-  }, [router.asPath]) // eslint-disable-line
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [router.asPath])
 
   const tooltipPosition = direction === 'rtl' ? 'left' : 'right'
   const IconTag = item.icon ? item.icon : themeConfig.navSubItemIcon
@@ -139,7 +140,7 @@ const HorizontalNavGroup = (props: Props) => {
   const ChildWrapper = WrapperCondition ? 'div' : Fragment
 
   return (
-    // eslint=disable-next-line
+    // eslint-disable-next-line lines-around-comment
     // @ts-ignore
     <MainWrapper {...(WrapperCondition ? { onClickAway: handleGroupClose } : { onMouseLeave: handleGroupClose })}>
       <ChildWrapper>

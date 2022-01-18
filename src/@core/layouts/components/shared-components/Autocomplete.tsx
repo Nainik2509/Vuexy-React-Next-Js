@@ -101,7 +101,7 @@ const AutocompleteComponent = ({ hidden, setShowBackdrop }: Props) => {
   const { settings } = useSettings()
   const wrapper = useRef<HTMLDivElement>(null)
 
-  const codes: { [key: string]: boolean } = { Slash: false, ControlLeft: false, ControlRight: false } //eslint-disable-line
+  const codes: { [key: string]: boolean } = { Slash: false, ControlLeft: false, ControlRight: false } // eslint-disable-line
 
   // Get all data using API
   useEffect(() => {

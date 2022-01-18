@@ -40,7 +40,7 @@ const labelColors: LabelColorsType = {
   'Charts & Maps': 'primary'
 }
 
-const KanbanBoardLayout = (props: KanbanBoardLayoutProps) => {
+const KanbanBoard = (props: KanbanBoardLayoutProps) => {
   // ** Props
   const { store } = props
 
@@ -155,4 +155,4 @@ const KanbanBoardLayout = (props: KanbanBoardLayoutProps) => {
   )
 }
 
-export default KanbanBoardLayout
+export default KanbanBoard

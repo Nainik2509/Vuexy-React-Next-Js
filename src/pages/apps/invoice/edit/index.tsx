@@ -5,16 +5,16 @@ import { NextPageContext } from 'next/types'
 import { InvoiceLayoutProps } from 'src/types/apps/invoiceTypes'
 
 // ** Demo Components Imports
-import EditLayout from 'src/views/apps/invoice/edit/EditLayout'
+import Edit from 'src/views/apps/invoice/edit/Edit'
 
 const InvoiceEdit = ({ id }: InvoiceLayoutProps) => {
-  return <EditLayout id={id || '4987'} />
+  return <Edit id={id || '4987'} />
 }
-
-export default InvoiceEdit
 
 InvoiceEdit.getInitialProps = async ({ query }: NextPageContext) => {
   const { id } = query
 
   return { id }
 }
+
+export default InvoiceEdit

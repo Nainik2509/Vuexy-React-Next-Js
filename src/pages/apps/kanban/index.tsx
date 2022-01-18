@@ -18,7 +18,7 @@ import { KanbanTaskType } from 'src/types/apps/kanbanTypes'
 import { fetchBoards, fetchTasks, updateTask, reorderTasks } from 'src/store/apps/kanban'
 
 // ** Kanban App Component Imports
-import KanbanBoardLayout from 'src/views/apps/kanban/KanbanBoardLayout'
+import KanbanBoard from 'src/views/apps/kanban/KanbanBoard'
 
 const Kanban = () => {
   // ** Hooks
@@ -56,7 +56,7 @@ const Kanban = () => {
 
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
-      <Box sx={{ display: 'flex' }}>{store && <KanbanBoardLayout store={store} />}</Box>
+      <Box sx={{ display: 'flex' }}>{store && <KanbanBoard store={store} />}</Box>
     </DragDropContext>
   )
 }

@@ -5,10 +5,10 @@ import { NextPageContext } from 'next/types'
 import { MailLayoutType } from 'src/types/apps/emailTypes'
 
 // ** Demo Components Imports
-import EmailLayout from 'src/views/apps/email/EmailLayout'
+import Email from 'src/views/apps/email/Email'
 
 const EmailApp = ({ folder, label }: MailLayoutType) => {
-  return <EmailLayout folder={folder} label={label} />
+  return <Email folder={folder} label={label} />
 }
 
 EmailApp.getInitialProps = async ({ query }: NextPageContext) => {

@@ -11,10 +11,10 @@ import { InvoiceLayoutProps } from 'src/types/apps/invoiceTypes'
 import BlankLayout from 'src/@core/layouts/BlankLayout'
 
 // ** Demo Components Imports
-import PrintLayout from 'src/views/apps/invoice/print/PrintLayout'
+import PrintPage from 'src/views/apps/invoice/print/PrintPage'
 
 const InvoicePrint = ({ id }: InvoiceLayoutProps) => {
-  return <PrintLayout id={id} />
+  return <PrintPage id={id} />
 }
 
 InvoicePrint.getInitialProps = async ({ query }: NextPageContext) => {
@@ -24,5 +24,11 @@ InvoicePrint.getInitialProps = async ({ query }: NextPageContext) => {
 }
 
 InvoicePrint.getLayout = (page: ReactNode) => <BlankLayout>{page}</BlankLayout>
+
+InvoicePrint.setConfig = () => {
+  return {
+    mode: 'light'
+  }
+}
 
 export default InvoicePrint
