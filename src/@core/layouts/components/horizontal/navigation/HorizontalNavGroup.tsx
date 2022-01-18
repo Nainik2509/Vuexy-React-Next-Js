@@ -33,7 +33,7 @@ import { Settings } from 'src/@core/context/settingsContext'
 
 // ** Custom Components Imports
 import HorizontalNavItems from './HorizontalNavItems'
-import Translations from 'src/assets/components/Translations'
+import Translations from 'src/layouts/components/Translations'
 
 // ** Utils
 import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'

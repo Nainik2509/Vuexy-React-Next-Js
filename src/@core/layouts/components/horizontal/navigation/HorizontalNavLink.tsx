@@ -24,7 +24,7 @@ import themeConfig from 'src/configs/themeConfig'
 import { NavLink } from 'src/@core/layouts/types'
 
 // ** Custom Components Imports
-import Translations from 'src/assets/components/Translations'
+import Translations from 'src/layouts/components/Translations'
 
 // ** Util Import
 import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'

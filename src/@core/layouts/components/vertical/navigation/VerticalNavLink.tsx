@@ -22,7 +22,7 @@ import { NavLink, NavGroup } from 'src/@core/layouts/types'
 import { Settings } from 'src/@core/context/settingsContext'
 
 // ** Custom Components Imports
-import Translations from 'src/assets/components/Translations'
+import Translations from 'src/layouts/components/Translations'
 
 // ** Utils
 import { handleURLQueries } from 'src/@core/layouts/utils'

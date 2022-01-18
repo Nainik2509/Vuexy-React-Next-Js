@@ -33,7 +33,7 @@ import { Settings } from 'src/@core/context/settingsContext'
 
 // ** Custom Components Imports
 import VerticalNavItems from './VerticalNavItems'
-import Translations from 'src/assets/components/Translations'
+import Translations from 'src/layouts/components/Translations'
 
 interface Props {
   item: NavGroup
