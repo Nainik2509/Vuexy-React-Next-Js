@@ -15,5 +15,7 @@ import './pages/pricing'
 import './app-bar-search'
 import './apps/permissions'
 import './pages/knowledge-base'
+import './server-side-menu/vertical'
+import './server-side-menu/horizontal'
 
 mock.onAny().passThrough()
