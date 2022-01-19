@@ -72,13 +72,13 @@ const GlobalStyles = (theme: Theme, settings: Settings) => {
         }
       }
     },
-    'body[dir="rtl"]': {
+    'html[dir="rtl"]': {
       '& .ps__rail-y': {
-        left: '0 !important',
-        right: 'auto !important',
+        right: '0 !important',
+        left: 'auto !important',
         '& .ps__thumb-y': {
-          left: '2px !important',
-          right: 'auto !important'
+          right: '2px !important',
+          left: 'auto !important'
         }
       }
     },
