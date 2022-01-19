@@ -24,10 +24,14 @@ const AuthGuard = (props: AuthGuardProps) => {
       }
 
       if (auth.user === null && !window.localStorage.getItem('userData')) {
-        router.replace({
-          pathname: '/login',
-          query: { returnUrl: router.asPath }
-        })
+        if (router.asPath !== '/') {
+          router.replace({
+            pathname: '/login',
+            query: { returnUrl: router.asPath }
+          })
+        } else {
+          router.replace('/login')
+        }
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
