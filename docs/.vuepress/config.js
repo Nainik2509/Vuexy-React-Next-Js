@@ -30,10 +30,14 @@ module.exports = {
             '/guide/development/installation',
             '/guide/development/folder-structure',
             '/guide/development/routing',
+            '/guide/development/deployment',
+            '/guide/development/redux',
+            '/guide/development/fakedb',
             '/guide/development/authentication',
             '/guide/development/internationalization',
             '/guide/development/rtl',
-            '/guide/development/loaders'
+            '/guide/development/loaders',
+            '/guide/development/environment-variables'
             // '/guide/development/theme-configuration',
             // '/guide/development/template-styles',
             // '/guide/development/splash-screen',
@@ -89,7 +93,6 @@ module.exports = {
           title: 'Custom Components',
           collapsable: false,
           children: [
-            '/guide/custom-components/card-actions'
             // '/guide/custom-components/card-code',
             // '/guide/custom-components/collapse'
           ]

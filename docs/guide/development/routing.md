@@ -1,63 +1,28 @@
 # Routing
 
-In this page you will find how to add new routes and how we have handled the existing routes.
+react-material-admin uses nexttsx's file-system based router built on the concept of pages.
 
-## Overview
+When a file is added to the `src/pages` directory it's automatically available as a route.
 
-You can find our template's router configuration in `src/router/index.tsx`. `src/router/routes` folder contains all routes of our template.
+## Index routes
 
-## Router.tsx
+The router will automatically route files named index to the root of the directory.
 
-In `Router.tsx` file you'll find `resolveRoutes` function which loops through the routes and renders them according to their layout.
+- `pages/index.tsx` → `/`
+- `pages/dashboard/index.tsx` → `/blog`
 
-## PrivateRoute & PublicRoute
+## Nested routes
 
-You can check the code for both custom route components in `src/@core/components/routes`
+The router supports nested files. If you create a nested folder structure files will be automatically routed in the same way still.
 
-- **PrivateRoute**: Components wrapped with Private routes will restrict the unauthorized users from accessing the routes and will redirect the user to not authorized page.
+- `pages/dashboard/ecommerce/index.tsx` → `/dashboard/ecommerce`
 
-- **PublicRoute**: Components wrapped with Public routes will be accessible to both authorized and unauthorized users.
+## Dynamic route segments
 
-## Routes
+Defining routes by using predefined paths is not always enough for complex applications. In Next.tsx you can add brackets to a page `param` to create a dynamic route (a.k.a. url slugs, pretty urls, and others).
 
-Our routes are not just simple routes. It's an array of object and few other properties are required to render a proper page.
+To match a dynamic segment you can use the bracket syntax. This allows you to match named parameters.
 
-First we define the layout component and then we pass the routes to show for that layout.
-You can refer the below mentioned code as example:
-
-```js
-const routes = [
-  {
-    path: '*',
-    component: VerticalLayout,
-    routes: [
-      {
-        path: '/dashboard/analytics',
-        component: lazy(() => import('views/dashboards/analytics'))
-      },
-      {
-        path: '/dashboard/ecommerce',
-        component: lazy(() => import('views/dashboards/ecommerce')),
-        meta: {
-          action: 'read',
-          resource: 'analytics'
-        }
-      }
-    ]
-  }
-]
-```
-
-## Route Meta
-
-There are few meta properties that you'll need for your routes. Let's find out each of them:
-
-- **action**: Use this to define if the route is readable.
-- **resource**: Use this to define the subject of route.
-- **publicRoute**: Use this to make any route a public route.
-- **restricted**: Use this to make any route a restricted route where user will be redirected to home / dashboard if they are logged in otherwise redirected to not authorized page.
-- **layout**: Use this to change page layout. You can select from ['vertical', 'horizontal', 'blank', blankWithAppBar']
-
-## Route Protection (ACL)
-
-You will learn how to add route protection for particular route in [Access Control](/guide/development/acl) page.
+- `pages/apps/email/[folder].tsx` → `/apps/email/spam`
+- `pages/apps/email/label/[label].tsx` → `/apps/email/label/company`
+- `pages/apps/email/[...all].tsx` → `/apps/email/*` (`/apps/email/view/id/1`)
