@@ -38,11 +38,6 @@ module.exports = {
             '/guide/development/rtl',
             '/guide/development/loaders',
             '/guide/development/environment-variables'
-            // '/guide/development/theme-configuration',
-            // '/guide/development/template-styles',
-            // '/guide/development/splash-screen',
-            // '/guide/development/navigation-menus',
-            // '/guide/development/redux',
           ]
         },
         {
@@ -79,22 +74,17 @@ module.exports = {
         {
           title: 'Forms',
           collapsable: false,
-          children: [
-            '/guide/forms/input-group'
-            // '/guide/forms/checkbox',
-            // '/guide/forms/radio',
-            // '/guide/forms/switch',
-            // '/guide/forms/vue-select',
-            // '/guide/forms/flat-pickr',
-            // '/guide/forms/form-wizard',
-          ]
+          children: ['/guide/forms/input-group']
         },
         {
           title: 'Custom Components',
           collapsable: false,
           children: [
-            // '/guide/custom-components/card-code',
-            // '/guide/custom-components/collapse'
+            '/guide/custom-components/sidebar',
+            '/guide/custom-components/chatlog',
+            '/guide/custom-components/repeater',
+            '/guide/custom-components/apex-charts',
+            '/guide/custom-components/react-draft-wysiwyg'
           ]
         }
       ]
