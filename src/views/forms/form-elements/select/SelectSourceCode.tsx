@@ -1,4 +1,6 @@
-export const SelectControlledUncontrolledCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+export const SelectControlledUncontrolledCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
 // ** MUI Imports
@@ -50,8 +52,12 @@ const SelectControlledUncontrolled = () => {
 }
 
 export default SelectControlledUncontrolled
-`}</code></pre>) 
-export const SelectCustomizedCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+`}</code>
+  </pre>
+)
+export const SelectCustomizedCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
 // ** MUI Imports
@@ -146,8 +152,12 @@ const SelectCustomized = () => {
 }
 
 export default SelectCustomized
-`}</code></pre>) 
-export const SelectGroupingCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+`}</code>
+  </pre>
+)
+export const SelectGroupingCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
 import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
 import InputLabel from '@mui/material/InputLabel'
@@ -190,8 +200,12 @@ const SelectGrouping = () => {
 }
 
 export default SelectGrouping
-`}</code></pre>) 
-export const SelectNativeCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+`}</code>
+  </pre>
+)
+export const SelectNativeCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
 import Select from '@mui/material/Select'
 import InputLabel from '@mui/material/InputLabel'
 import FormControl from '@mui/material/FormControl'
@@ -255,8 +269,12 @@ const SelectNative = () => {
 }
 
 export default SelectNative
-`}</code></pre>) 
-export const SelectWithDialogCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+`}</code>
+  </pre>
+)
+export const SelectWithDialogCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
 // ** MUI Imports
@@ -335,8 +353,12 @@ const SelectWithDialog = () => {
 }
 
 export default SelectWithDialog
-`}</code></pre>) 
-export const SelectMultipleCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+`}</code>
+  </pre>
+)
+export const SelectMultipleCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
 // ** MUI Imports
@@ -507,9 +529,7 @@ const SelectMultiple = () => {
             native
             multiple
             label='Native'
-            value={personNameNative}
-            // eslint-disable-next-line
-            // @ts-ignore
+            value={personNameNative} // @ts-ignore
             onChange={handleChangeMultipleNative}
             inputProps={{ id: 'select-multiple-native' }}
           >
@@ -526,8 +546,12 @@ const SelectMultiple = () => {
 }
 
 export default SelectMultiple
-`}</code></pre>) 
-export const SelectPropsCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+`}</code>
+  </pre>
+)
+export const SelectPropsCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
@@ -654,8 +678,12 @@ const SelectProps = () => {
 }
 
 export default SelectProps
-`}</code></pre>) 
-export const SelectVariantsCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+`}</code>
+  </pre>
+)
+export const SelectVariantsCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
 import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
 import InputLabel from '@mui/material/InputLabel'
@@ -704,4 +732,6 @@ const SelectVariants = () => {
 }
 
 export default SelectVariants
-`}</code></pre>) 
+`}</code>
+  </pre>
+)

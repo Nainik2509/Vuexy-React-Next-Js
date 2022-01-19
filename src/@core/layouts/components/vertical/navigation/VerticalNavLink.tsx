@@ -22,7 +22,8 @@ import { NavLink, NavGroup } from 'src/@core/layouts/types'
 import { Settings } from 'src/@core/context/settingsContext'
 
 // ** Custom Components Imports
-import Translations from 'src/assets/components/Translations'
+import UserIcon from 'src/layouts/components/UserIcon'
+import Translations from 'src/layouts/components/Translations'
 
 // ** Utils
 import { handleURLQueries } from 'src/@core/layouts/utils'
@@ -155,12 +156,15 @@ const VerticalNavLink = ({
                 ...(parent ? { marginLeft: 1.25, marginRight: 4.75 } : {})
               }}
             >
-              {/* @ts-ignore */}
-              <IconTag
-                sx={{
-                  fontSize: '0.75rem',
-                  ...(!parent ? { fontSize: '1.5rem' } : {}),
-                  ...(parent && item.icon ? { fontSize: '0.875rem' } : {})
+              <UserIcon
+                icon={IconTag}
+                componentType='vertical-menu'
+                iconProps={{
+                  sx: {
+                    fontSize: '0.75rem',
+                    ...(!parent ? { fontSize: '1.5rem' } : {}),
+                    ...(parent && item.icon ? { fontSize: '0.875rem' } : {})
+                  }
                 }}
               />
             </ListItemIcon>

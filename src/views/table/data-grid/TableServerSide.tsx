@@ -1,5 +1,5 @@
 // ** React Imports
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState, useCallback, ChangeEvent } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -18,10 +18,10 @@ import ServerSideToolbar from 'src/views/table/data-grid/ServerSideToolbar'
 
 // ** Types Imports
 import { ThemeColor } from 'src/@core/layouts/types'
+import { DataGridRowType } from 'src/@fake-db/types'
 
 // ** Utils Import
 import { getInitials } from 'src/@core/utils/get-initials'
-import { DataTableRowType } from 'src/@fake-db/types'
 
 interface StatusObj {
   [key: number]: {
@@ -142,12 +142,12 @@ const TableServerSide = () => {
   // ** State
   const [page, setPage] = useState(0)
   const [pageSize, setPageSize] = useState<number>(7)
-  const [rows, setRows] = useState<DataTableRowType[]>([])
+  const [rows, setRows] = useState<DataGridRowType[]>([])
   const [searchValue, setSearchValue] = useState<string>('')
   const [sortColumn, setSortColumn] = useState<string>('full_name')
   const [sort, setSort] = useState<'asc' | 'desc' | undefined | null>('asc')
 
-  function loadServerRows(currentPage: number, data: DataTableRowType[]) {
+  function loadServerRows(currentPage: number, data: DataGridRowType[]) {
     return data.slice(currentPage * pageSize, (currentPage + 1) * pageSize)
   }
 
@@ -209,18 +209,14 @@ const TableServerSide = () => {
         componentsProps={{
           toolbar: {
             value: searchValue,
-
-            // @ts-ignore
-            onChange: (event: ChangeEvent) => handleSearch(event.target.value),
-            clearSearch: () => handleSearch('')
+            clearSearch: () => handleSearch(''),
+            onChange: (event: ChangeEvent<HTMLInputElement>) => handleSearch(event.target.value)
           }
         }}
       />
     </Card>
   )
 }
-
-export default TableServerSide
 
 // export async function getStaticProps() {
 //   const res = await axios.get('/api/table/data', {
@@ -235,3 +231,5 @@ export default TableServerSide
 //     props: { data: res.data, test: 'test' }
 //   }
 // }
+
+export default TableServerSide

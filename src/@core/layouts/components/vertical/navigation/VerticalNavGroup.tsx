@@ -33,7 +33,8 @@ import { Settings } from 'src/@core/context/settingsContext'
 
 // ** Custom Components Imports
 import VerticalNavItems from './VerticalNavItems'
-import Translations from 'src/assets/components/Translations'
+import UserIcon from 'src/layouts/components/UserIcon'
+import Translations from 'src/layouts/components/Translations'
 
 interface Props {
   item: NavGroup
@@ -266,8 +267,11 @@ const VerticalNavGroup = (props: Props) => {
                 ...(parent && item.children ? { marginLeft: 1.25, marginRight: 4.75 } : {})
               }}
             >
-              {/* @ts-ignore */}
-              <IconTag sx={{ ...(parent ? { fontSize: '0.75rem' } : {}) }} />
+              <UserIcon
+                icon={IconTag}
+                componentType='vertical-menu'
+                iconProps={{ sx: { ...(parent ? { fontSize: '0.75rem' } : {}) } }}
+              />
             </ListItemIcon>
           )}
           <MenuItemTextWrapper sx={{ ...menuGroupCollapsedStyles, ...(isSubToSub ? { marginLeft: 9 } : {}) }}>

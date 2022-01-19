@@ -3,6 +3,7 @@ import { ChangeEvent } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
+import { styled } from '@mui/material/styles'
 import TextField from '@mui/material/TextField'
 import IconButton from '@mui/material/IconButton'
 import { GridToolbarContainer, GridToolbarExport } from '@mui/x-data-grid'
@@ -17,21 +18,18 @@ interface Props {
   onChange: (e: ChangeEvent) => void
 }
 
-const ServerSideToolbar = (props: Props) => {
-  // prettier-ignore
-  return (
-    <GridToolbarContainer
+const StyledGridToolbarContainer = styled(GridToolbarContainer)({
+  p: 2,
+  pb: 0,
+  display: 'flex',
+  flexWrap: 'wrap',
+  alignItems: 'flex-start',
+  justifyContent: 'space-between'
+})
 
-      // @ts-ignore
-      sx={{
-        p: 2,
-        pb: 0,
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'flex-start',
-        justifyContent: 'space-between'
-      }}
-    >
+const ServerSideToolbar = (props: Props) => {
+  return (
+    <StyledGridToolbarContainer>
       <Box>
         <GridToolbarExport />
       </Box>
@@ -63,7 +61,7 @@ const ServerSideToolbar = (props: Props) => {
           }
         }}
       />
-    </GridToolbarContainer>
+    </StyledGridToolbarContainer>
   )
 }
 

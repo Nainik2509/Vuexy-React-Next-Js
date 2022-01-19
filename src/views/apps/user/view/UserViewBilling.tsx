@@ -40,7 +40,7 @@ import Plus from 'mdi-material-ui/Plus'
 
 // ** Third Party Imports
 import Payment from 'payment'
-import Cards from 'react-credit-cards'
+import Cards, { Focused } from 'react-credit-cards'
 
 // ** Custom Components
 import CustomChip from 'src/@core/components/mui/chip'
@@ -118,7 +118,7 @@ const UserViewBilling = () => {
   // ** States
   const [cvc, setCvc] = useState<string>('')
   const [name, setName] = useState<string>('')
-  const [focus, setFocus] = useState<string>('')
+  const [focus, setFocus] = useState<Focused>()
   const [cardId, setCardId] = useState<number>(0)
   const [expiry, setExpiry] = useState<string>('')
   const [cardNumber, setCardNumber] = useState<string>('')
@@ -160,7 +160,7 @@ const UserViewBilling = () => {
   const handleUpgradePlansClickOpen = () => setOpenUpgradePlans(true)
   const handleUpgradePlansClose = () => setOpenUpgradePlans(false)
 
-  const handleBlur = () => setFocus('')
+  const handleBlur = () => setFocus(undefined)
 
   const handleInputChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
     if (target.name === 'number') {
@@ -416,7 +416,6 @@ const UserViewBilling = () => {
               <Grid container spacing={6}>
                 <Grid item xs={12}>
                   <CardWrapper sx={{ '& .rccs': { margin: '0 auto' } }}>
-                    {/* @ts-ignore */}
                     <Cards cvc={cvc} focused={focus} expiry={expiry} name={name} number={cardNumber} />
                   </CardWrapper>
                 </Grid>
@@ -432,7 +431,7 @@ const UserViewBilling = () => {
                         onBlur={handleBlur}
                         onChange={handleInputChange}
                         placeholder='0000 0000 0000 0000'
-                        onFocus={e => setFocus(e.target.name)}
+                        onFocus={e => setFocus(e.target.name as Focused)}
                       />
                     </Grid>
                     <Grid item xs={12} sm={8}>
@@ -444,8 +443,8 @@ const UserViewBilling = () => {
                         onBlur={handleBlur}
                         label='Name on Card'
                         placeholder='John Doe'
-                        onFocus={e => setFocus(e.target.name)}
                         onChange={e => setName(e.target.value)}
+                        onFocus={e => setFocus(e.target.name as Focused)}
                       />
                     </Grid>
                     <Grid item xs={12} sm={4}>
@@ -458,7 +457,7 @@ const UserViewBilling = () => {
                         placeholder='MM/YY'
                         onChange={handleInputChange}
                         inputProps={{ maxLength: '5' }}
-                        onFocus={e => setFocus(e.target.name)}
+                        onFocus={e => setFocus(e.target.name as Focused)}
                       />
                     </Grid>
                     <Grid item xs={12} sm={8}>
@@ -485,7 +484,7 @@ const UserViewBilling = () => {
                         autoComplete='off'
                         onBlur={handleBlur}
                         onChange={handleInputChange}
-                        onFocus={e => setFocus(e.target.name)}
+                        onFocus={e => setFocus(e.target.name as Focused)}
                         placeholder={Payment.fns.cardType(cardNumber) === 'amex' ? '1234' : '123'}
                       />
                     </Grid>

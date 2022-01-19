@@ -34,6 +34,9 @@ import themeConfig from 'src/configs/themeConfig'
 // ** Hook Import
 import { useSettings } from 'src/@core/hooks/useSettings'
 
+// ** Custom Components Imports
+import UserIcon from 'src/layouts/components/UserIcon'
+
 // ** API Icon Import with object
 import { autocompleteIconObj } from './autocompleteIconObj'
 
@@ -219,7 +222,7 @@ const AutocompleteComponent = ({ hidden, setShowBackdrop }: Props) => {
 
       return (
         <Fragment>
-          <IconTag fontSize='small' sx={{ mr: 2.5 }} />
+          <UserIcon icon={IconTag} componentType='autocomplete' iconProps={{ fontSize: 'small', sx: { mr: 2.5 } }} />
           <Typography sx={{ fontSize: '0.875rem' }}>{title}</Typography>
         </Fragment>
       )

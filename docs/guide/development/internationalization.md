@@ -53,7 +53,7 @@ npm install i18next react-i18next i18next-http-backend i18next-browser-languaged
 - Copy `src/configs/i18n.ts` file from the full version and paste that file into the same directory in the starter-kit
 - Add `import 'src/configs/i18n'` import statement in `src/pages/_app.tsx` file
 - Add your locale files in `public/locales` folder
-- If you want to translate the navigation menu, then copy the whole code from `src/assets/components/Translations.tsx` file from the full version and paste that copied code into the same file in the starter-kit
+- If you want to translate the navigation menu, then copy the whole code from `src/layouts/components/Translations.tsx` file from the full version and paste that copied code into the same file in the starter-kit
 - If you want a language dropdown in the appBar to change the current language in the app, then:
   - Copy `public/images/flags` folder form the full version and paste that folder into the same directory in the starter-kit
   - Import `src/@core/layouts/components/shared-components/LanguageDropdown.tsx` file and render `LanguageDropdown` component in `src/layouts/components/vertical/AppBarContent.tsx` or `src/layouts/components/horizontal/AppBarContent.tsx` file
@@ -73,7 +73,7 @@ If you do not want to use i18n, we recommend you start your project with the sta
 - You may remove all the packages related to i18n from `package.json` file if you want to
 - Remove `src/configs/i18n.ts` file
 - Remove `import 'src/configs/i18n'` import statement from `src/pages/_app.tsx` file
-- Replace the following code in `src/assets/components/Translations.tsx` file
+- Replace the following code in `src/layouts/components/Translations.tsx` file
 
 ```tsx
 interface Props {
@@ -100,7 +100,7 @@ Suppose you want to add `de` (German) language and remove `ar` (Arabic) language
 - Make a new file anywhere in `src/assets` folder and place the following code in this file
 
 ```tsx
-// src/assets/components/UserLanguageDropdown.tsx
+// src/layouts/components/UserLanguageDropdown.tsx
 
 import { Fragment, SyntheticEvent, useState } from 'react'
 import Menu from '@mui/material/Menu'
@@ -210,7 +210,7 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import VerticalNavItems from 'src/navigation/vertical'
 import { useSettings } from 'src/@core/hooks/useSettings'
 import HorizontalNavItems from 'src/navigation/horizontal'
-import UserLanguageDropdown from 'src/assets/components/UserLanguageDropdown'
+import UserLanguageDropdown from 'src/layouts/components/UserLanguageDropdown'
 
 // ** Layout Imports
 // !Do not remove this Layout import
