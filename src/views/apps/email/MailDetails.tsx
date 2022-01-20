@@ -96,6 +96,7 @@ const MailDetails = (props: MailDetailsType) => {
     direction,
     updateMail,
     labelColors,
+    routeParams,
     paginateMail,
     handleStarMail,
     mailDetailsOpen,
@@ -165,20 +166,24 @@ const MailDetails = (props: MailDetailsType) => {
   }
 
   const renderFoldersMenu = () => {
+    const currentFolder = routeParams && routeParams.folder ? routeParams.folder : 'inbox'
+
     return folders.map((folder: MailFoldersArrType, index: number) => {
-      return (
-        <MenuItem
-          key={`${folder.name}-${index}`}
-          sx={{ display: 'flex', alignItems: 'center' }}
-          onClick={() => {
-            handleFolderUpdate(mail.id, folder.name)
-            handleFolderMenuClose()
-          }}
-        >
-          {folder.icon}
-          <Typography sx={{ textTransform: 'capitalize' }}>{folder.name}</Typography>
-        </MenuItem>
-      )
+      if (currentFolder !== folder.name) {
+        return (
+          <MenuItem
+            key={`${folder.name}-${index}`}
+            sx={{ display: 'flex', alignItems: 'center' }}
+            onClick={() => {
+              handleFolderUpdate(mail.id, folder.name)
+              handleFolderMenuClose()
+            }}
+          >
+            {folder.icon}
+            <Typography sx={{ textTransform: 'capitalize' }}>{folder.name}</Typography>
+          </MenuItem>
+        )
+      }
     })
   }
 
@@ -292,9 +297,12 @@ const MailDetails = (props: MailDetailsType) => {
           >
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <IconButton size='small' onClick={handleMoveToTrash}>
-                  <DeleteOutline sx={{ fontSize: '1.375rem' }} />
-                </IconButton>
+                {routeParams && routeParams.folder !== 'trash' ? (
+                  <IconButton size='small' onClick={handleMoveToTrash}>
+                    <DeleteOutline sx={{ fontSize: '1.375rem' }} />
+                  </IconButton>
+                ) : null}
+
                 <IconButton size='small' onClick={handleReadMail}>
                   <EmailOutline sx={{ fontSize: '1.375rem' }} />
                 </IconButton>
@@ -415,9 +423,11 @@ const MailDetails = (props: MailDetailsType) => {
                                     hour12: true
                                   })}
                                 </Typography>
-                                <IconButton size='small'>
-                                  <Attachment sx={{ fontSize: '1.375rem' }} />
-                                </IconButton>
+                                {mail.attachments.length ? (
+                                  <IconButton size='small'>
+                                    <Attachment sx={{ fontSize: '1.375rem' }} />
+                                  </IconButton>
+                                ) : null}
                                 <IconButton size='small'>
                                   <StarOutline sx={{ fontSize: '1.375rem' }} />
                                 </IconButton>
@@ -499,9 +509,11 @@ const MailDetails = (props: MailDetailsType) => {
                             hour12: true
                           })}
                         </Typography>
-                        <IconButton size='small'>
-                          <Attachment sx={{ fontSize: '1.375rem' }} />
-                        </IconButton>
+                        {mail.attachments.length ? (
+                          <IconButton size='small'>
+                            <Attachment sx={{ fontSize: '1.375rem' }} />
+                          </IconButton>
+                        ) : null}
                         <IconButton
                           size='small'
                           onClick={e => handleStarMail(e, mail.id, !mail.isStarred)}

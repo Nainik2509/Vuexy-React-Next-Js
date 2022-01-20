@@ -61,6 +61,7 @@ const SidebarLeft = (props: MailSidebarType) => {
     leftSidebarOpen,
     leftSidebarWidth,
     toggleComposeOpen,
+    setMailDetailsOpen,
     handleSelectAllMail,
     handleLeftSidebarToggle
   } = props
@@ -82,6 +83,11 @@ const SidebarLeft = (props: MailSidebarType) => {
     } else {
       return true
     }
+  }
+
+  const handleListItemClick = () => {
+    setMailDetailsOpen(false)
+    setTimeout(() => dispatch(handleSelectAllMail(false)), 50)
   }
 
   const activeInboxCondition =
@@ -124,7 +130,7 @@ const SidebarLeft = (props: MailSidebarType) => {
             <Link href='/apps/email/inbox' passHref>
               <ListItemStyled
                 component='a'
-                onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
+                onClick={handleListItemClick}
                 sx={{
                   borderLeftColor: theme => (activeInboxCondition ? theme.palette.primary.main : 'transparent')
                 }}
@@ -148,7 +154,7 @@ const SidebarLeft = (props: MailSidebarType) => {
             <Link href='/apps/email/sent' passHref>
               <ListItemStyled
                 component='a'
-                onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
+                onClick={handleListItemClick}
                 sx={{
                   borderLeftColor: theme =>
                     handleActiveItem('folder', 'sent') ? theme.palette.primary.main : 'transparent'
@@ -172,7 +178,7 @@ const SidebarLeft = (props: MailSidebarType) => {
             <Link href='/apps/email/draft' passHref>
               <ListItemStyled
                 component='a'
-                onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
+                onClick={handleListItemClick}
                 sx={{
                   borderLeftColor: theme =>
                     handleActiveItem('folder', 'draft') ? theme.palette.primary.main : 'transparent'
@@ -197,7 +203,7 @@ const SidebarLeft = (props: MailSidebarType) => {
             <Link href='/apps/email/starred' passHref>
               <ListItemStyled
                 component='a'
-                onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
+                onClick={handleListItemClick}
                 sx={{
                   borderLeftColor: theme =>
                     handleActiveItem('folder', 'starred') ? theme.palette.primary.main : 'transparent'
@@ -221,7 +227,7 @@ const SidebarLeft = (props: MailSidebarType) => {
             <Link href='/apps/email/spam' passHref>
               <ListItemStyled
                 component='a'
-                onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
+                onClick={handleListItemClick}
                 sx={{
                   borderLeftColor: theme =>
                     handleActiveItem('folder', 'spam') ? theme.palette.primary.main : 'transparent'
@@ -246,7 +252,7 @@ const SidebarLeft = (props: MailSidebarType) => {
             <Link href='/apps/email/trash' passHref>
               <ListItemStyled
                 component='a'
-                onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
+                onClick={handleListItemClick}
                 sx={{
                   borderLeftColor: theme =>
                     handleActiveItem('folder', 'trash') ? theme.palette.primary.main : 'transparent'
@@ -279,7 +285,7 @@ const SidebarLeft = (props: MailSidebarType) => {
             <Link href='/apps/email/label/personal' passHref>
               <ListItemStyled
                 component='a'
-                onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
+                onClick={handleListItemClick}
                 sx={{
                   borderLeftColor: theme =>
                     handleActiveItem('label', 'personal') ? theme.palette.primary.main : 'transparent'
@@ -303,7 +309,7 @@ const SidebarLeft = (props: MailSidebarType) => {
             <Link href='/apps/email/label/company' passHref>
               <ListItemStyled
                 component='a'
-                onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
+                onClick={handleListItemClick}
                 sx={{
                   borderLeftColor: theme =>
                     handleActiveItem('label', 'company') ? theme.palette.primary.main : 'transparent'
@@ -327,7 +333,7 @@ const SidebarLeft = (props: MailSidebarType) => {
             <Link href='/apps/email/label/important' passHref>
               <ListItemStyled
                 component='a'
-                onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
+                onClick={handleListItemClick}
                 sx={{
                   borderLeftColor: theme =>
                     handleActiveItem('label', 'important') ? theme.palette.primary.main : 'transparent'
@@ -351,7 +357,7 @@ const SidebarLeft = (props: MailSidebarType) => {
             <Link href='/apps/email/label/private' passHref>
               <ListItemStyled
                 component='a'
-                onClick={() => setTimeout(() => dispatch(handleSelectAllMail(false)), 50)}
+                onClick={handleListItemClick}
                 sx={{
                   borderLeftColor: theme =>
                     handleActiveItem('label', 'private') ? theme.palette.primary.main : 'transparent'

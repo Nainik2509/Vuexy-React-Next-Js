@@ -76,15 +76,16 @@ const MailLog = (props: MailLogType) => {
     labelColors,
     paginateMail,
     getCurrentMail,
+    mailDetailsOpen,
     updateMailLabel,
     handleSelectMail,
+    setMailDetailsOpen,
     handleSelectAllMail,
     handleLeftSidebarToggle
   } = props
 
   // ** State
   const [refresh, setRefresh] = useState<boolean>(false)
-  const [mailDetailsOpen, setMailDetailsOpen] = useState<boolean>(false)
   const [labelAnchorEl, setLabelAnchorEl] = useState<null | HTMLElement>(null)
   const [folderAnchorEl, setFolderAnchorEl] = useState<null | HTMLElement>(null)
 
@@ -209,6 +210,7 @@ const MailLog = (props: MailLogType) => {
     dispatch,
     direction,
     updateMail,
+    routeParams,
     labelColors,
     paginateMail,
     handleStarMail,

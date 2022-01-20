@@ -47,6 +47,7 @@ const EmailAppLayout = ({ folder, label }: MailLayoutType) => {
   // ** States
   const [query, setQuery] = useState<string>('')
   const [composeOpen, setComposeOpen] = useState<boolean>(false)
+  const [mailDetailsOpen, setMailDetailsOpen] = useState<boolean>(false)
   const [leftSidebarOpen, setLeftSidebarOpen] = useState<boolean>(false)
 
   // ** Hooks
@@ -95,9 +96,11 @@ const EmailAppLayout = ({ folder, label }: MailLayoutType) => {
         store={store}
         lgAbove={lgAbove}
         dispatch={dispatch}
+        mailDetailsOpen={mailDetailsOpen}
         leftSidebarOpen={leftSidebarOpen}
         leftSidebarWidth={leftSidebarWidth}
         toggleComposeOpen={toggleComposeOpen}
+        setMailDetailsOpen={setMailDetailsOpen}
         handleSelectAllMail={handleSelectAllMail}
         handleLeftSidebarToggle={handleLeftSidebarToggle}
       />
@@ -114,7 +117,9 @@ const EmailAppLayout = ({ folder, label }: MailLayoutType) => {
         paginateMail={paginateMail}
         getCurrentMail={getCurrentMail}
         updateMailLabel={updateMailLabel}
+        mailDetailsOpen={mailDetailsOpen}
         handleSelectMail={handleSelectMail}
+        setMailDetailsOpen={setMailDetailsOpen}
         handleSelectAllMail={handleSelectAllMail}
         handleLeftSidebarToggle={handleLeftSidebarToggle}
       />

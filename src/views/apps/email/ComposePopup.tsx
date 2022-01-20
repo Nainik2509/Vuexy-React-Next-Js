@@ -195,7 +195,6 @@ const ComposePopup = (props: MailComposeType) => {
   }
 
   const addNewOption = (options: FieldMenuItems[], params: any): FieldMenuItems[] => {
-    console.log(params)
     const filtered = filter(options, params)
     const { inputValue } = params
     const isExisting = options.some(option => inputValue === option.name)
@@ -292,6 +291,7 @@ const ComposePopup = (props: MailComposeType) => {
             renderInput={params => (
               <TextField
                 {...params}
+                autoComplete='new-password'
                 sx={{
                   border: 0,
                   '& fieldset': { border: '0 !important' },
@@ -350,6 +350,7 @@ const ComposePopup = (props: MailComposeType) => {
             renderInput={params => (
               <TextField
                 {...params}
+                autoComplete='new-password'
                 sx={{
                   border: 0,
                   '& fieldset': { border: '0 !important' },
@@ -397,6 +398,7 @@ const ComposePopup = (props: MailComposeType) => {
             renderInput={params => (
               <TextField
                 {...params}
+                autoComplete='new-password'
                 sx={{
                   border: 0,
                   '& fieldset': { border: '0 !important' },

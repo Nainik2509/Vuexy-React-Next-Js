@@ -106,8 +106,10 @@ export type MailSidebarType = {
   dispatch: Dispatch<any>
   leftSidebarOpen: boolean
   leftSidebarWidth: number
+  mailDetailsOpen: boolean
   toggleComposeOpen: () => void
   handleLeftSidebarToggle: () => void
+  setMailDetailsOpen: (val: boolean) => void
   handleSelectAllMail: (val: boolean) => void
 }
 
@@ -117,12 +119,14 @@ export type MailLogType = {
   lgAbove: boolean
   dispatch: Dispatch<any>
   direction: 'ltr' | 'rtl'
+  mailDetailsOpen: boolean
   routeParams: RouteParams
   labelColors: MailLabelColors
   setQuery: (val: string) => void
   handleLeftSidebarToggle: () => void
   getCurrentMail: (id: number) => void
   handleSelectMail: (id: number) => void
+  setMailDetailsOpen: (val: boolean) => void
   handleSelectAllMail: (val: boolean) => void
   updateMail: (data: UpdateMailParamsType) => void
   updateMailLabel: (data: UpdateMailLabelType) => void
@@ -135,6 +139,7 @@ export type MailDetailsType = {
   dispatch: Dispatch<any>
   direction: 'ltr' | 'rtl'
   mailDetailsOpen: boolean
+  routeParams: RouteParams
   labelColors: MailLabelColors
   folders: MailFoldersArrType[]
   setMailDetailsOpen: (val: boolean) => void
