@@ -47,10 +47,10 @@ type ThemeConfig = {
 const themeConfig: ThemeConfig = {
   // ** Layout Configs
   templateName: 'Master' /* App Name */,
-  layout: 'horizontal' /* vertical | horizontal */,
-  mode: 'dark' /* light | dark */,
+  layout: 'vertical' /* vertical | horizontal */,
+  mode: 'light' /* light | dark */,
   direction: 'ltr' /* ltr | rtl */,
-  skin: 'bordered' /* default | bordered | semi-dark */,
+  skin: 'default' /* default | bordered | semi-dark */,
   contentWidth: 'boxed' /* full | boxed */,
   footer: 'static' /* fixed | static | hidden */,
 
