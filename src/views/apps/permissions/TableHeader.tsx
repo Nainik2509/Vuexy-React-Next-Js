@@ -56,7 +56,7 @@ const TableHeader = (props: TableHeaderProps) => {
           size='small'
           value={value}
           sx={{ mr: 4, mb: 2 }}
-          placeholder='Search Invoice'
+          placeholder='Search Permission'
           onChange={e => handleFilter(e.target.value)}
         />
         <Button sx={{ mb: 2 }} variant='contained' onClick={handleDialogToggle}>
