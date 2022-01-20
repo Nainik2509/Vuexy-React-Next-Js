@@ -46,10 +46,10 @@ const InvoiceEdit = ({ id }: InvoiceLayoutProps) => {
   if (data) {
     return (
       <Grid container spacing={6}>
-        <Grid item lg={9} md={8} xs={12}>
+        <Grid item xl={9} md={8} xs={12}>
           <EditCard data={data} />
         </Grid>
-        <Grid item lg={3} md={4} xs={12}>
+        <Grid item xl={3} md={4} xs={12}>
           <EditActions
             id={id}
             toggleSendInvoiceDrawer={toggleSendInvoiceDrawer}

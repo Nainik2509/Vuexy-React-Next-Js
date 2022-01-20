@@ -115,6 +115,9 @@ const CustomSelectItem = styled(MenuItem)<MenuItemProps>(({ theme }) => ({
   '&:hover': { backgroundColor: `${alpha(theme.palette.success.main, 0.1)} !important` }
 }))
 
+const now = new Date()
+const tomorrowDate = now.setDate(now.getDate() + 7)
+
 const EditCard = (props: Props) => {
   // ** Props
   const { clients, invoiceNumber, selectedClient, setSelectedClient, toggleAddCustomerDrawer } = props
@@ -122,8 +125,8 @@ const EditCard = (props: Props) => {
   // ** States
   const [count, setCount] = useState<number>(1)
   const [selected, setSelected] = useState<string>('')
-  const [dueDate, setDueDate] = useState<DateType>(new Date())
   const [issueDate, setIssueDate] = useState<DateType>(new Date())
+  const [dueDate, setDueDate] = useState<DateType>(new Date(tomorrowDate))
 
   // ** Hook
   const theme = useTheme()
