@@ -288,6 +288,13 @@ const data: { chats: ChatsObj[]; contacts: ContactType[]; profileUser: ProfileUs
   ]
 }
 
+const reOrderChats = (arr: ChatsObj[], from: number, to: number) => {
+  const item = arr.splice(from, 1)
+
+  // Move the item to its new position
+  arr.splice(to, 0, item[0])
+}
+
 // ------------------------------------------------
 // GET: Return Chats Contacts and Contacts
 // ------------------------------------------------
@@ -377,6 +384,12 @@ mock.onPost('/apps/chat/send-msg').reply(config => {
 
   // @ts-ignore
   if (isNewChat) response.chat = activeChat
+
+  reOrderChats(
+    data.chats,
+    data.chats.findIndex(i => i.id === response.id),
+    0
+  )
 
   return [201, { response }]
 })
