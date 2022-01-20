@@ -101,7 +101,11 @@ const renderClient = (row: UsersType) => {
   } else {
     return (
       <AvatarWithoutImageLink href={`/apps/user/view/${row.id}`}>
-        <CustomAvatar skin='light' color={row.avatarColor} sx={{ mr: 3, width: 30, height: 30, fontSize: '.875rem' }}>
+        <CustomAvatar
+          skin='light'
+          color={row.avatarColor || 'primary'}
+          sx={{ mr: 3, width: 30, height: 30, fontSize: '.875rem' }}
+        >
           {getInitials(row.fullName ? row.fullName : 'John Doe')}
         </CustomAvatar>
       </AvatarWithoutImageLink>

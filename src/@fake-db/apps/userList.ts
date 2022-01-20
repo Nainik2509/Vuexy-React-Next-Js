@@ -644,7 +644,8 @@ const data: { users: UsersType[] } = {
       email: 'owind1b@yandex.ru',
       currentPlan: 'basic',
       status: 'pending',
-      avatar: ''
+      avatar: '',
+      avatarColor: 'error'
     },
     {
       id: 49,
@@ -657,7 +658,8 @@ const data: { users: UsersType[] } = {
       email: 'pdurber1c@gov.uk',
       currentPlan: 'team',
       status: 'inactive',
-      avatar: ''
+      avatar: '',
+      avatarColor: 'warning'
     },
     {
       id: 50,
@@ -687,7 +689,7 @@ mock.onPost('/apps/users/add-user').reply(config => {
   }
   user.id = lastIndex + 1
 
-  data.users.unshift({ ...user, avatar: '', status: 'active' })
+  data.users.unshift({ ...user, avatar: '', avatarColor: 'primary', status: 'active' })
 
   return [201, { user }]
 })

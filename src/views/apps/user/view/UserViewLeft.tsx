@@ -93,10 +93,6 @@ const UserViewLeft = ({ data }: Props) => {
   const handlePlansClose = () => setOpenPlans(false)
 
   const renderUserAvatar = () => {
-    const stateNum = Math.floor(Math.random() * 6)
-    const states = ['success', 'error', 'warning', 'info', 'primary', 'secondary']
-    const color = states[stateNum]
-
     if (data) {
       if (data.avatar.length) {
         return (
@@ -111,7 +107,7 @@ const UserViewLeft = ({ data }: Props) => {
         return (
           <CustomAvatar
             skin='light'
-            color={color as ThemeColor}
+            color={data.avatarColor as ThemeColor}
             variant='rounded'
             sx={{ width: 120, height: 120, fontWeight: 600, marginBottom: 4, fontSize: '3rem' }}
           >
