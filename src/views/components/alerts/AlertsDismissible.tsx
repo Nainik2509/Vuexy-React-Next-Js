@@ -2,6 +2,7 @@
 import { useState } from 'react'
 
 // ** MUI Imports
+import Box from '@mui/material/Box'
 import Fade from '@mui/material/Fade'
 import Grow from '@mui/material/Grow'
 import Alert from '@mui/material/Alert'
@@ -21,8 +22,8 @@ const AlertsDismissible = () => {
   const [open4, setOpen4] = useState<boolean>(true)
 
   return (
-    <div className='demo-space-y'>
-      <div>
+    <Box>
+      <Box sx={{ mb: 8 }}>
         <Collapse in={open1}>
           <Alert
             action={
@@ -37,9 +38,9 @@ const AlertsDismissible = () => {
         <Button disabled={open1} variant='outlined' sx={{ mt: 2 }} onClick={() => setOpen1(true)}>
           Open Collapse
         </Button>
-      </div>
+      </Box>
 
-      <div>
+      <Box sx={{ mb: 8 }}>
         <Fade in={open2} {...(open2 ? { timeout: 700 } : {})}>
           <Alert
             action={
@@ -54,9 +55,9 @@ const AlertsDismissible = () => {
         <Button disabled={open2} variant='outlined' sx={{ mt: 2 }} onClick={() => setOpen2(true)}>
           Open Fade
         </Button>
-      </div>
+      </Box>
 
-      <div>
+      <Box sx={{ mb: 8 }}>
         <Grow in={open3} {...(open3 ? { timeout: 700 } : {})}>
           <Alert
             action={
@@ -71,9 +72,9 @@ const AlertsDismissible = () => {
         <Button disabled={open3} variant='outlined' sx={{ mt: 2 }} onClick={() => setOpen3(true)}>
           Open Grow
         </Button>
-      </div>
+      </Box>
 
-      <div>
+      <Box>
         <Slide in={open4} direction='left' {...(open4 ? { timeout: 500 } : {})}>
           <Alert
             action={
@@ -88,8 +89,8 @@ const AlertsDismissible = () => {
         <Button disabled={open4} variant='outlined' sx={{ mt: 2 }} onClick={() => setOpen4(true)}>
           Open Slide
         </Button>
-      </div>
-    </div>
+      </Box>
+    </Box>
   )
 }
 

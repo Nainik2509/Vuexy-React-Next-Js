@@ -107,8 +107,8 @@ const UserViewLeft = ({ data }: Props) => {
         return (
           <CustomAvatar
             skin='light'
-            color={data.avatarColor as ThemeColor}
             variant='rounded'
+            color={data.avatarColor as ThemeColor}
             sx={{ width: 120, height: 120, fontWeight: 600, marginBottom: 4, fontSize: '3rem' }}
           >
             {getInitials(data.fullName)}
