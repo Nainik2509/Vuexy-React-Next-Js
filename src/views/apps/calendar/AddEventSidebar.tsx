@@ -145,8 +145,7 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
         startDate: event.start !== null ? event.start : new Date()
       })
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setValue])
+  }, [setValue, store.selectedEvent])
 
   const resetToEmptyValues = useCallback(() => {
     setValue('title', '')
@@ -159,8 +158,7 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
     } else {
       resetToEmptyValues()
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [addEventSidebarOpen, resetToStoredValues, resetToEmptyValues])
+  }, [addEventSidebarOpen, resetToStoredValues, resetToEmptyValues, store.selectedEvent])
 
   const PickersComponent = forwardRef(({ ...props }: PickerProps, ref) => {
     return (
@@ -201,144 +199,148 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
     }
   }
 
-  if (store) {
-    return (
-      <Drawer
-        anchor='right'
-        open={addEventSidebarOpen}
-        onClose={handleSidebarClose}
-        ModalProps={{ keepMounted: true }}
-        sx={{ '& .MuiDrawer-paper': { width: ['100%', drawerWidth] } }}
+  return (
+    <Drawer
+      anchor='right'
+      open={addEventSidebarOpen}
+      onClose={handleSidebarClose}
+      ModalProps={{ keepMounted: true }}
+      sx={{ '& .MuiDrawer-paper': { width: ['100%', drawerWidth] } }}
+    >
+      <Box
+        className='sidebar-header'
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          backgroundColor: 'background.default',
+          padding: theme => theme.spacing(3, 3.255, 3, 5.255)
+        }}
       >
-        <Box
-          className='sidebar-header'
-          sx={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            backgroundColor: 'background.default',
-            padding: theme => theme.spacing(3, 3.255, 3, 5.255)
-          }}
-        >
-          <Typography variant='h6'>
-            {store.selectedEvent !== null && store.selectedEvent.title.length ? 'Update Event' : 'Add Event'}
-          </Typography>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            {store.selectedEvent !== null && store.selectedEvent.title.length ? (
-              <DeleteOutline
-                fontSize='small'
-                sx={{ cursor: 'pointer', mr: store.selectedEvent !== null ? 2 : 0 }}
-                onClick={handleDeleteEvent}
-              />
-            ) : null}
-            <Close fontSize='small' onClick={handleSidebarClose} sx={{ cursor: 'pointer' }} />
-          </Box>
-        </Box>
-        <Box className='sidebar-body' sx={{ padding: theme => theme.spacing(5, 6) }}>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <FormControl fullWidth sx={{ mb: 6 }}>
-              <Controller
-                name='title'
-                control={control}
-                rules={{ required: true }}
-                render={({ field: { value, onChange } }) => (
-                  <TextField label='Title' value={value} onChange={onChange} error={Boolean(errors.title)} />
-                )}
-              />
-              {errors.title && (
-                <FormHelperText sx={{ color: 'error.main' }} id='event-title-error'>
-                  This field is required
-                </FormHelperText>
-              )}
-            </FormControl>
-            <FormControl fullWidth sx={{ mb: 6 }}>
-              <InputLabel id='event-calendar'>Calendar</InputLabel>
-              <Select
-                label='Calendar'
-                value={values.calendar}
-                labelId='event-calendar'
-                onChange={e => setValues({ ...values, calendar: e.target.value })}
-              >
-                <MenuItem value='Personal'>Personal</MenuItem>
-                <MenuItem value='Business'>Business</MenuItem>
-                <MenuItem value='Family'>Family</MenuItem>
-                <MenuItem value='Holiday'>Holiday</MenuItem>
-                <MenuItem value='ETC'>ETC</MenuItem>
-              </Select>
-            </FormControl>
-            <DatePickerWrapper sx={{ mb: 6 }}>
-              <DatePicker
-                selectsStart
-                id='event-start-date'
-                endDate={values.endDate as EventDateType}
-                selected={values.startDate as EventDateType}
-                startDate={values.startDate as EventDateType}
-                showTimeSelect={!values.allDay}
-                dateFormat={!values.allDay ? 'yyyy-MM-dd hh:mm' : 'yyyy-MM-dd'}
-                customInput={<PickersComponent label='Start Date' registername='startDate' />}
-                onChange={(date: Date) => setValues({ ...values, startDate: new Date(date) })}
-                onSelect={handleStartDate}
-              />
-            </DatePickerWrapper>
-            <DatePickerWrapper sx={{ mb: 6 }}>
-              <DatePicker
-                selectsEnd
-                id='event-end-date'
-                endDate={values.endDate as EventDateType}
-                selected={values.endDate as EventDateType}
-                minDate={values.startDate as EventDateType}
-                startDate={values.startDate as EventDateType}
-                showTimeSelect={!values.allDay}
-                dateFormat={!values.allDay ? 'yyyy-MM-dd hh:mm' : 'yyyy-MM-dd'}
-                customInput={<PickersComponent label='End Date' registername='endDate' />}
-                onChange={(date: Date) => setValues({ ...values, endDate: new Date(date) })}
-              />
-            </DatePickerWrapper>
-            <FormControl sx={{ mb: 6 }}>
-              <FormControlLabel
-                label='All Day'
-                control={
-                  <Switch checked={values.allDay} onChange={e => setValues({ ...values, allDay: e.target.checked })} />
-                }
-              />
-            </FormControl>
-            <TextField fullWidth type='url' id='event-url' sx={{ mb: 6 }} label='Event URL' />
-            <FormControl fullWidth sx={{ mb: 6 }}>
-              <InputLabel id='event-guests'>Guests</InputLabel>
-              <Select
-                multiple
-                label='Guests'
-                value={values.guests}
-                labelId='event-guests'
-                id='event-guests-select'
-                onChange={e => setValues({ ...values, guests: e.target.value })}
-              >
-                <MenuItem value='bruce'>Bruce</MenuItem>
-                <MenuItem value='clark'>Clark</MenuItem>
-                <MenuItem value='diana'>Diana</MenuItem>
-                <MenuItem value='john'>John</MenuItem>
-                <MenuItem value='barry'>Barry</MenuItem>
-              </Select>
-            </FormControl>
-            <TextField
-              rows={4}
-              multiline
-              fullWidth
-              sx={{ mb: 6 }}
-              label='Description'
-              id='event-description'
-              value={values.description}
-              onChange={e => setValues({ ...values, description: e.target.value })}
+        <Typography variant='h6'>
+          {store.selectedEvent !== null && store.selectedEvent.title.length ? 'Update Event' : 'Add Event'}
+        </Typography>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          {store.selectedEvent !== null && store.selectedEvent.title.length ? (
+            <DeleteOutline
+              fontSize='small'
+              sx={{ cursor: 'pointer', mr: store.selectedEvent !== null ? 2 : 0 }}
+              onClick={handleDeleteEvent}
             />
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <RenderSidebarFooter />
-            </Box>
-          </form>
+          ) : null}
+          <Close fontSize='small' onClick={handleSidebarClose} sx={{ cursor: 'pointer' }} />
         </Box>
-      </Drawer>
-    )
-  } else {
-    return null
-  }
+      </Box>
+      <Box className='sidebar-body' sx={{ padding: theme => theme.spacing(5, 6) }}>
+        <form onSubmit={handleSubmit(onSubmit)} autoComplete='off'>
+          <FormControl fullWidth sx={{ mb: 6 }}>
+            <Controller
+              name='title'
+              control={control}
+              rules={{ required: true }}
+              render={({ field: { value, onChange } }) => (
+                <TextField label='Title' value={value} onChange={onChange} error={Boolean(errors.title)} />
+              )}
+            />
+            {errors.title && (
+              <FormHelperText sx={{ color: 'error.main' }} id='event-title-error'>
+                This field is required
+              </FormHelperText>
+            )}
+          </FormControl>
+          <FormControl fullWidth sx={{ mb: 6 }}>
+            <InputLabel id='event-calendar'>Calendar</InputLabel>
+            <Select
+              label='Calendar'
+              value={values.calendar}
+              labelId='event-calendar'
+              onChange={e => setValues({ ...values, calendar: e.target.value })}
+            >
+              <MenuItem value='Personal'>Personal</MenuItem>
+              <MenuItem value='Business'>Business</MenuItem>
+              <MenuItem value='Family'>Family</MenuItem>
+              <MenuItem value='Holiday'>Holiday</MenuItem>
+              <MenuItem value='ETC'>ETC</MenuItem>
+            </Select>
+          </FormControl>
+          <DatePickerWrapper sx={{ mb: 6 }}>
+            <DatePicker
+              selectsStart
+              id='event-start-date'
+              endDate={values.endDate as EventDateType}
+              selected={values.startDate as EventDateType}
+              startDate={values.startDate as EventDateType}
+              showTimeSelect={!values.allDay}
+              dateFormat={!values.allDay ? 'yyyy-MM-dd hh:mm' : 'yyyy-MM-dd'}
+              customInput={<PickersComponent label='Start Date' registername='startDate' />}
+              onChange={(date: Date) => setValues({ ...values, startDate: new Date(date) })}
+              onSelect={handleStartDate}
+            />
+          </DatePickerWrapper>
+          <DatePickerWrapper sx={{ mb: 6 }}>
+            <DatePicker
+              selectsEnd
+              id='event-end-date'
+              endDate={values.endDate as EventDateType}
+              selected={values.endDate as EventDateType}
+              minDate={values.startDate as EventDateType}
+              startDate={values.startDate as EventDateType}
+              showTimeSelect={!values.allDay}
+              dateFormat={!values.allDay ? 'yyyy-MM-dd hh:mm' : 'yyyy-MM-dd'}
+              customInput={<PickersComponent label='End Date' registername='endDate' />}
+              onChange={(date: Date) => setValues({ ...values, endDate: new Date(date) })}
+            />
+          </DatePickerWrapper>
+          <FormControl sx={{ mb: 6 }}>
+            <FormControlLabel
+              label='All Day'
+              control={
+                <Switch checked={values.allDay} onChange={e => setValues({ ...values, allDay: e.target.checked })} />
+              }
+            />
+          </FormControl>
+          <TextField
+            fullWidth
+            type='url'
+            id='event-url'
+            sx={{ mb: 6 }}
+            label='Event URL'
+            value={values.url}
+            onChange={e => setValues({ ...values, url: e.target.value })}
+          />
+          <FormControl fullWidth sx={{ mb: 6 }}>
+            <InputLabel id='event-guests'>Guests</InputLabel>
+            <Select
+              multiple
+              label='Guests'
+              value={values.guests}
+              labelId='event-guests'
+              id='event-guests-select'
+              onChange={e => setValues({ ...values, guests: e.target.value })}
+            >
+              <MenuItem value='bruce'>Bruce</MenuItem>
+              <MenuItem value='clark'>Clark</MenuItem>
+              <MenuItem value='diana'>Diana</MenuItem>
+              <MenuItem value='john'>John</MenuItem>
+              <MenuItem value='barry'>Barry</MenuItem>
+            </Select>
+          </FormControl>
+          <TextField
+            rows={4}
+            multiline
+            fullWidth
+            sx={{ mb: 6 }}
+            label='Description'
+            id='event-description'
+            value={values.description}
+            onChange={e => setValues({ ...values, description: e.target.value })}
+          />
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <RenderSidebarFooter />
+          </Box>
+        </form>
+      </Box>
+    </Drawer>
+  )
 }
 
 export default AddEventSidebar
