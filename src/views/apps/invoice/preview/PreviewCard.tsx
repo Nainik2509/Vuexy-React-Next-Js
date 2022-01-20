@@ -192,19 +192,19 @@ const PreviewCard = ({ data }: Props) => {
                   Invoice To:
                 </Typography>
                 <Typography variant='body2' sx={{ mb: 2 }}>
-                  {data.invoice.client.name}
+                  {data.invoice.name}
                 </Typography>
                 <Typography variant='body2' sx={{ mb: 2 }}>
-                  {data.invoice.client.company}
+                  {data.invoice.company}
                 </Typography>
                 <Typography variant='body2' sx={{ mb: 2 }}>
-                  {data.invoice.client.address}
+                  {data.invoice.address}
                 </Typography>
                 <Typography variant='body2' sx={{ mb: 2 }}>
-                  {data.invoice.client.contact}
+                  {data.invoice.contact}
                 </Typography>
                 <Typography variant='body2' sx={{ mb: 2 }}>
-                  {data.invoice.client.companyEmail}
+                  {data.invoice.companyEmail}
                 </Typography>
               </Grid>
               <Grid item xs={12} sm={6} lg={4}>

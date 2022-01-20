@@ -15,7 +15,9 @@ import MenuItem from '@mui/material/MenuItem'
 import TextField from '@mui/material/TextField'
 import CardHeader from '@mui/material/CardHeader'
 import IconButton from '@mui/material/IconButton'
+import InputLabel from '@mui/material/InputLabel'
 import Typography from '@mui/material/Typography'
+import FormControl from '@mui/material/FormControl'
 import CardContent from '@mui/material/CardContent'
 import { DataGrid, GridRowId } from '@mui/x-data-grid'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
@@ -149,20 +151,16 @@ const invoiceStatusObj: InvoiceStatusObj = {
 
 // ** renders client column
 const renderClient = (row: InvoiceType) => {
-  const stateNum = Math.floor(Math.random() * 6)
-  const states = ['success', 'error', 'warning', 'info', 'primary', 'secondary']
-  const color = states[stateNum]
-
   if (row.avatar.length) {
     return <CustomAvatar src={row.avatar} sx={{ mr: 3, width: '1.875rem', height: '1.875rem' }} />
   } else {
     return (
       <CustomAvatar
         skin='light'
-        color={color as ThemeColor}
+        color={(row.avatarColor as ThemeColor) || ('primary' as ThemeColor)}
         sx={{ mr: 3, fontSize: '.8rem', width: '1.875rem', height: '1.875rem' }}
       >
-        {getInitials(row.client ? row.client.name : 'John Doe')}
+        {getInitials(row.name || 'John Doe')}
       </CustomAvatar>
     )
   }
@@ -218,11 +216,11 @@ const defaultColumns = [
   },
   {
     flex: 0.5,
+    field: 'name',
     minWidth: 300,
-    field: 'client.name',
     headerName: 'Client',
     renderCell: ({ row }: CellType) => {
-      const { name, companyEmail } = row.client
+      const { name, companyEmail } = row
 
       return (
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -361,14 +359,25 @@ const InvoiceList = () => {
           <CardContent>
             <Grid container spacing={6}>
               <Grid item xs={12} sm={6}>
-                <Select fullWidth displayEmpty value={statusValue} sx={{ mr: 4, mb: 2 }} onChange={handleStatusValue}>
-                  <MenuItem value=''>Select Status</MenuItem>
-                  <MenuItem value='downloaded'>Downloaded</MenuItem>
-                  <MenuItem value='draft'>Draft</MenuItem>
-                  <MenuItem value='paid'>Paid</MenuItem>
-                  <MenuItem value='past due'>Past Due</MenuItem>
-                  <MenuItem value='partial payment'>Partial Payment</MenuItem>
-                </Select>
+                <FormControl fullWidth>
+                  <InputLabel id='invoice-status-select'>Invoice Status</InputLabel>
+
+                  <Select
+                    fullWidth
+                    value={statusValue}
+                    sx={{ mr: 4, mb: 2 }}
+                    label='Invoice Status'
+                    onChange={handleStatusValue}
+                    labelId='invoice-status-select'
+                  >
+                    <MenuItem value=''>none</MenuItem>
+                    <MenuItem value='downloaded'>Downloaded</MenuItem>
+                    <MenuItem value='draft'>Draft</MenuItem>
+                    <MenuItem value='paid'>Paid</MenuItem>
+                    <MenuItem value='past due'>Past Due</MenuItem>
+                    <MenuItem value='partial payment'>Partial Payment</MenuItem>
+                  </Select>
+                </FormControl>
               </Grid>
               <Grid item xs={12} sm={6}>
                 <DatePickerWrapper>

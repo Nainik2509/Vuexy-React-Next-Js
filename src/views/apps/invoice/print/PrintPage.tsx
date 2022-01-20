@@ -189,19 +189,19 @@ const InvoicePrint = ({ id }: InvoiceLayoutProps) => {
               Invoice To:
             </Typography>
             <Typography variant='body2' sx={{ mb: 2 }}>
-              {invoice.client.name}
+              {invoice.name}
             </Typography>
             <Typography variant='body2' sx={{ mb: 2 }}>
-              {invoice.client.company}
+              {invoice.company}
             </Typography>
             <Typography variant='body2' sx={{ mb: 2 }}>
-              {invoice.client.address}
+              {invoice.address}
             </Typography>
             <Typography variant='body2' sx={{ mb: 2 }}>
-              {invoice.client.contact}
+              {invoice.contact}
             </Typography>
             <Typography variant='body2' sx={{ mb: 2 }}>
-              {invoice.client.companyEmail}
+              {invoice.companyEmail}
             </Typography>
           </Grid>
           <Grid item xs={5} md={4}>
