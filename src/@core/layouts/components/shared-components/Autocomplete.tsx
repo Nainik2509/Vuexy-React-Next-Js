@@ -20,7 +20,6 @@ import MuiAutocomplete, { AutocompleteRenderInputParams } from '@mui/material/Au
 // ** Icons Imports
 import Close from 'mdi-material-ui/Close'
 import Magnify from 'mdi-material-ui/Magnify'
-import CircleOutline from 'mdi-material-ui/CircleOutline'
 
 // ** Third Party Imports
 import axios from 'axios'
@@ -218,11 +217,11 @@ const AutocompleteComponent = ({ hidden, setShowBackdrop }: Props) => {
   const RenderOptions = (option: AppBarSearchType) => {
     const { by, type, title, icon, img, size, email, time } = option
     if (type === 'pages') {
-      const IconTag = autocompleteIconObj[icon as keyof typeof autocompleteIconObj] || CircleOutline
+      const IconTag = autocompleteIconObj[icon as keyof typeof autocompleteIconObj] || themeConfig.navSubItemIcon
 
       return (
         <Fragment>
-          <UserIcon icon={IconTag} componentType='autocomplete' iconProps={{ fontSize: 'small', sx: { mr: 2.5 } }} />
+          <UserIcon icon={IconTag} componentType='search' iconProps={{ fontSize: 'small', sx: { mr: 2.5 } }} />
           <Typography sx={{ fontSize: '0.875rem' }}>{title}</Typography>
         </Fragment>
       )

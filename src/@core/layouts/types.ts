@@ -22,19 +22,19 @@ export type HorizontalMenuToggle = 'hover' | 'click'
 export type NavLink = {
   title: string
   path?: string
-  icon?: ReactNode
   disabled?: boolean
   badgeContent?: string
   externalLink?: boolean
   openInNewTab?: boolean
+  icon?: string | string[] | ReactNode
   badgeColor?: 'default' | 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info'
 }
 
 export type NavGroup = {
   title: string
-  icon?: ReactNode
   badgeContent?: string
   children?: (NavGroup | NavLink)[]
+  icon?: string | string[] | ReactNode
   badgeColor?: 'default' | 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info'
 }
 
