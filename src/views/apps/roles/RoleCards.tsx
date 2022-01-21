@@ -180,7 +180,7 @@ const RolesCards = () => {
             </Typography>
             <Typography variant='body2'>Set Role Permissions</Typography>
           </DialogTitle>
-          <DialogContent sx={{ p: 12 }}>
+          <DialogContent sx={{ p: { xs: 6, sm: 12 } }}>
             <Box sx={{ my: 4 }}>
               <FormControl fullWidth>
                 <Controller
