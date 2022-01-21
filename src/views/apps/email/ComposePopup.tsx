@@ -252,163 +252,162 @@ const ComposePopup = (props: MailComposeType) => {
           </IconButton>
         </Box>
       </Box>
-      <Box
-        sx={{
-          py: 1,
-          px: 4,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          borderBottom: theme => `1px solid ${theme.palette.divider}`
-        }}
-      >
-        <Box sx={{ width: '100%', display: 'flex', alignItems: 'center' }}>
-          <Box>
-            <InputLabel sx={{ mr: 3, fontSize: '0.875rem' }} htmlFor='email-to-select'>
-              To:
-            </InputLabel>
-          </Box>
-          <Autocomplete
-            multiple
-            freeSolo
-            value={emailTo}
-            clearIcon={false}
-            id='email-to-select'
-            filterSelectedOptions
-            options={menuItemsArr}
-            ListboxComponent={List}
-            filterOptions={addNewOption}
-            getOptionLabel={option => option.name}
-            renderOption={(props, option) => renderListItem(props, option, emailTo, setEmailTo)}
-            renderTags={(array: FieldMenuItems[], getTagProps) =>
-              renderCustomChips(array, getTagProps, emailTo, setEmailTo)
-            }
-            sx={{
-              width: '100%',
-              '& .MuiOutlinedInput-root': { p: 2 },
-              '& .MuiAutocomplete-endAdornment': { display: 'none' }
-            }}
-            renderInput={params => (
-              <TextField
-                {...params}
-                autoComplete='new-password'
-                sx={{
-                  border: 0,
-                  '& fieldset': { border: '0 !important' },
-                  '& .MuiOutlinedInput-root': { p: '0 !important' }
-                }}
-              />
-            )}
-          />
-        </Box>
-        <Typography>
-          <Box component='span' sx={{ cursor: 'pointer' }} onClick={() => toggleVisibility('cc')}>
-            Cc
-          </Box>
-          <Box component='span' sx={{ mx: 2 }}>
-            |
-          </Box>
-          <Box component='span' sx={{ cursor: 'pointer' }} onClick={() => toggleVisibility('bcc')}>
-            Bcc
-          </Box>
-        </Typography>
-      </Box>
-      {visibility.cc ? (
+      <form autoComplete='off' onSubmit={e => e.preventDefault()}>
         <Box
           sx={{
             py: 1,
             px: 4,
             display: 'flex',
             alignItems: 'center',
+            justifyContent: 'space-between',
             borderBottom: theme => `1px solid ${theme.palette.divider}`
           }}
         >
-          <Box>
-            <InputLabel sx={{ mr: 3, fontSize: '0.875rem' }} htmlFor='email-cc-select'>
-              Cc:
-            </InputLabel>
+          <Box sx={{ width: '100%', display: 'flex', alignItems: 'center' }}>
+            <Box>
+              <InputLabel sx={{ mr: 3, fontSize: '0.875rem' }} htmlFor='email-to-select'>
+                To:
+              </InputLabel>
+            </Box>
+            <Autocomplete
+              multiple
+              freeSolo
+              value={emailTo}
+              clearIcon={false}
+              id='email-to-select'
+              filterSelectedOptions
+              options={menuItemsArr}
+              ListboxComponent={List}
+              filterOptions={addNewOption}
+              getOptionLabel={option => option.name}
+              renderOption={(props, option) => renderListItem(props, option, emailTo, setEmailTo)}
+              renderTags={(array: FieldMenuItems[], getTagProps) =>
+                renderCustomChips(array, getTagProps, emailTo, setEmailTo)
+              }
+              sx={{
+                width: '100%',
+                '& .MuiOutlinedInput-root': { p: 2 },
+                '& .MuiAutocomplete-endAdornment': { display: 'none' }
+              }}
+              renderInput={params => (
+                <TextField
+                  {...params}
+                  sx={{
+                    border: 0,
+                    '& fieldset': { border: '0 !important' },
+                    '& .MuiOutlinedInput-root': { p: '0 !important' }
+                  }}
+                />
+              )}
+            />
           </Box>
-          <Autocomplete
-            multiple
-            value={ccValue}
-            clearIcon={false}
-            id='email-cc-select'
-            filterSelectedOptions
-            options={menuItemsArr}
-            ListboxComponent={List}
-            filterOptions={addNewOption}
-            getOptionLabel={option => option.name}
-            renderOption={(props, option: FieldMenuItems) => renderListItem(props, option, ccValue, setccValue)}
-            renderTags={(array: FieldMenuItems[], getTagProps) =>
-              renderCustomChips(array, getTagProps, ccValue, setccValue)
-            }
-            sx={{
-              width: '100%',
-              '& .MuiOutlinedInput-root': { p: 0 },
-              '& .MuiAutocomplete-endAdornment': { display: 'none' }
-            }}
-            renderInput={params => (
-              <TextField
-                {...params}
-                autoComplete='new-password'
-                sx={{
-                  border: 0,
-                  '& fieldset': { border: '0 !important' },
-                  '& .MuiOutlinedInput-root': { p: '0 !important' }
-                }}
-              />
-            )}
-          />
+          <Typography>
+            <Box component='span' sx={{ cursor: 'pointer' }} onClick={() => toggleVisibility('cc')}>
+              Cc
+            </Box>
+            <Box component='span' sx={{ mx: 2 }}>
+              |
+            </Box>
+            <Box component='span' sx={{ cursor: 'pointer' }} onClick={() => toggleVisibility('bcc')}>
+              Bcc
+            </Box>
+          </Typography>
         </Box>
-      ) : null}
-      {visibility.bcc ? (
-        <Box
-          sx={{
-            py: 1,
-            px: 4,
-            display: 'flex',
-            alignItems: 'center',
-            borderBottom: theme => `1px solid ${theme.palette.divider}`
-          }}
-        >
-          <Box>
-            <InputLabel sx={{ mr: 3, fontSize: '0.875rem' }} htmlFor='email-bcc-select'>
-              Bcc:
-            </InputLabel>
+        {visibility.cc ? (
+          <Box
+            sx={{
+              py: 1,
+              px: 4,
+              display: 'flex',
+              alignItems: 'center',
+              borderBottom: theme => `1px solid ${theme.palette.divider}`
+            }}
+          >
+            <Box>
+              <InputLabel sx={{ mr: 3, fontSize: '0.875rem' }} htmlFor='email-cc-select'>
+                Cc:
+              </InputLabel>
+            </Box>
+            <Autocomplete
+              multiple
+              value={ccValue}
+              clearIcon={false}
+              id='email-cc-select'
+              filterSelectedOptions
+              options={menuItemsArr}
+              ListboxComponent={List}
+              filterOptions={addNewOption}
+              getOptionLabel={option => option.name}
+              renderOption={(props, option: FieldMenuItems) => renderListItem(props, option, ccValue, setccValue)}
+              renderTags={(array: FieldMenuItems[], getTagProps) =>
+                renderCustomChips(array, getTagProps, ccValue, setccValue)
+              }
+              sx={{
+                width: '100%',
+                '& .MuiOutlinedInput-root': { p: 0 },
+                '& .MuiAutocomplete-endAdornment': { display: 'none' }
+              }}
+              renderInput={params => (
+                <TextField
+                  {...params}
+                  sx={{
+                    border: 0,
+                    '& fieldset': { border: '0 !important' },
+                    '& .MuiOutlinedInput-root': { p: '0 !important' }
+                  }}
+                />
+              )}
+            />
           </Box>
-          <Autocomplete
-            multiple
-            value={bccValue}
-            clearIcon={false}
-            id='email-bcc-select'
-            filterSelectedOptions
-            options={menuItemsArr}
-            ListboxComponent={List}
-            filterOptions={addNewOption}
-            getOptionLabel={option => option.name}
-            renderOption={(props, option: FieldMenuItems) => renderListItem(props, option, bccValue, setbccValue)}
-            renderTags={(array: FieldMenuItems[], getTagProps) =>
-              renderCustomChips(array, getTagProps, bccValue, setbccValue)
-            }
+        ) : null}
+        {visibility.bcc ? (
+          <Box
             sx={{
-              width: '100%',
-              '& .MuiOutlinedInput-root': { p: 0 },
-              '& .MuiAutocomplete-endAdornment': { display: 'none' }
+              py: 1,
+              px: 4,
+              display: 'flex',
+              alignItems: 'center',
+              borderBottom: theme => `1px solid ${theme.palette.divider}`
             }}
-            renderInput={params => (
-              <TextField
-                {...params}
-                autoComplete='new-password'
-                sx={{
-                  border: 0,
-                  '& fieldset': { border: '0 !important' },
-                  '& .MuiOutlinedInput-root': { p: '0 !important' }
-                }}
-              />
-            )}
-          />
-        </Box>
-      ) : null}
+          >
+            <Box>
+              <InputLabel sx={{ mr: 3, fontSize: '0.875rem' }} htmlFor='email-bcc-select'>
+                Bcc:
+              </InputLabel>
+            </Box>
+            <Autocomplete
+              multiple
+              value={bccValue}
+              clearIcon={false}
+              id='email-bcc-select'
+              filterSelectedOptions
+              options={menuItemsArr}
+              ListboxComponent={List}
+              filterOptions={addNewOption}
+              getOptionLabel={option => option.name}
+              renderOption={(props, option: FieldMenuItems) => renderListItem(props, option, bccValue, setbccValue)}
+              renderTags={(array: FieldMenuItems[], getTagProps) =>
+                renderCustomChips(array, getTagProps, bccValue, setbccValue)
+              }
+              sx={{
+                width: '100%',
+                '& .MuiOutlinedInput-root': { p: 0 },
+                '& .MuiAutocomplete-endAdornment': { display: 'none' }
+              }}
+              renderInput={params => (
+                <TextField
+                  {...params}
+                  sx={{
+                    border: 0,
+                    '& fieldset': { border: '0 !important' },
+                    '& .MuiOutlinedInput-root': { p: '0 !important' }
+                  }}
+                />
+              )}
+            />
+          </Box>
+        ) : null}
+      </form>
       <Box
         sx={{
           py: 1,
@@ -519,7 +518,7 @@ const ComposePopup = (props: MailComposeType) => {
             <MenuItem onClick={handleMoreBtnClose}>Check spelling</MenuItem>
             <MenuItem onClick={handleMoreBtnClose}>Plain text mode</MenuItem>
           </Menu>
-          <IconButton size='small' onClick={toggleComposeOpen}>
+          <IconButton size='small' onClick={handlePopupClose}>
             <DeleteOutline sx={{ fontSize: '1.375rem' }} />
           </IconButton>
         </Box>

@@ -36,6 +36,9 @@ import ArrowCollapseVertical from 'mdi-material-ui/ArrowCollapseVertical'
 // ** Third Party Imports
 import PerfectScrollbarComponent from 'react-perfect-scrollbar'
 
+// ** Hooks
+import { useSettings } from 'src/@core/hooks/useSettings'
+
 // ** Custom Components Imports
 import Sidebar from 'src/@core/components/sidebar'
 import CustomChip from 'src/@core/components/mui/chip'
@@ -95,6 +98,7 @@ const MailDetails = (props: MailDetailsType) => {
     dispatch,
     direction,
     updateMail,
+    foldersObj,
     labelColors,
     routeParams,
     paginateMail,
@@ -110,6 +114,9 @@ const MailDetails = (props: MailDetailsType) => {
   const [labelAnchorEl, setLabelAnchorEl] = useState<null | HTMLElement>(null)
   const [folderAnchorEl, setFolderAnchorEl] = useState<null | HTMLElement>(null)
   const [mailMenuAnchorEl, setMailMenuAnchorEl] = useState<null | HTMLElement>(null)
+
+  // ** Hooks
+  const { settings } = useSettings()
 
   // ** Vars
   const openLabelMenu = Boolean(labelAnchorEl)
@@ -166,13 +173,11 @@ const MailDetails = (props: MailDetailsType) => {
   }
 
   const renderFoldersMenu = () => {
-    const currentFolder = routeParams && routeParams.folder ? routeParams.folder : 'inbox'
-
-    return folders.map((folder: MailFoldersArrType, index: number) => {
-      if (currentFolder !== folder.name) {
+    if (routeParams && routeParams.folder && !routeParams.label && foldersObj[routeParams.folder]) {
+      return foldersObj[routeParams.folder].map((folder: MailFoldersArrType) => {
         return (
           <MenuItem
-            key={`${folder.name}-${index}`}
+            key={folder.name}
             sx={{ display: 'flex', alignItems: 'center' }}
             onClick={() => {
               handleFolderUpdate(mail.id, folder.name)
@@ -183,8 +188,40 @@ const MailDetails = (props: MailDetailsType) => {
             <Typography sx={{ textTransform: 'capitalize' }}>{folder.name}</Typography>
           </MenuItem>
         )
-      }
-    })
+      })
+    } else if (routeParams && routeParams.label) {
+      return folders.map((folder: MailFoldersArrType) => {
+        return (
+          <MenuItem
+            key={folder.name}
+            sx={{ display: 'flex', alignItems: 'center' }}
+            onClick={() => {
+              handleFolderUpdate(mail.id, folder.name)
+              handleFolderMenuClose()
+            }}
+          >
+            {folder.icon}
+            <Typography sx={{ textTransform: 'capitalize' }}>{folder.name}</Typography>
+          </MenuItem>
+        )
+      })
+    } else {
+      return foldersObj['inbox'].map((folder: MailFoldersArrType) => {
+        return (
+          <MenuItem
+            key={folder.name}
+            sx={{ display: 'flex', alignItems: 'center' }}
+            onClick={() => {
+              handleFolderUpdate(mail.id, folder.name)
+              handleFolderMenuClose()
+            }}
+          >
+            {folder.icon}
+            <Typography sx={{ textTransform: 'capitalize' }}>{folder.name}</Typography>
+          </MenuItem>
+        )
+      })
+    }
   }
 
   const PrevMailIcon = direction === 'rtl' ? ChevronRight : ChevronLeft
@@ -476,12 +513,12 @@ const MailDetails = (props: MailDetailsType) => {
                 <Box
                   sx={{
                     mb: 4,
-                    boxShadow: 6,
                     width: '100%',
                     borderRadius: 1,
                     overflow: 'visible',
                     position: 'relative',
                     backgroundColor: 'background.paper',
+                    boxShadow: settings.skin === 'bordered' ? 0 : 6,
                     border: theme => `1px solid ${theme.palette.divider}`
                   }}
                 >

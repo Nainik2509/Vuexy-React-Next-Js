@@ -80,6 +80,9 @@ export type MailFoldersArrType = {
   icon: ReactElement
   name: MailFolderType
 }
+export type MailFoldersObjType = {
+  [key: string]: any[]
+}
 
 export type MailStore = {
   mails: MailType[] | null
@@ -142,6 +145,7 @@ export type MailDetailsType = {
   routeParams: RouteParams
   labelColors: MailLabelColors
   folders: MailFoldersArrType[]
+  foldersObj: MailFoldersObjType
   setMailDetailsOpen: (val: boolean) => void
   updateMail: (data: UpdateMailParamsType) => void
   paginateMail: (data: PaginateMailParamsType) => void

@@ -43,7 +43,14 @@ import { setTimeout } from 'timers'
 import MailDetails from './MailDetails'
 
 // ** Types
-import { MailType, MailLogType, MailLabelType, MailFolderType, MailFoldersArrType } from 'src/types/apps/emailTypes'
+import {
+  MailType,
+  MailLogType,
+  MailLabelType,
+  MailFolderType,
+  MailFoldersArrType,
+  MailFoldersObjType
+} from 'src/types/apps/emailTypes'
 
 const MailItem = styled(ListItem)<ListItemProps>(({ theme }) => ({
   zIndex: 1,
@@ -111,6 +118,33 @@ const MailLog = (props: MailLogType) => {
     }
   ]
 
+  const foldersConfig = {
+    draft: {
+      name: 'draft',
+      icon: <PencilOutline fontSize='small' sx={{ mr: 2 }} />
+    },
+    spam: {
+      name: 'spam',
+      icon: <AlertOctagonOutline fontSize='small' sx={{ mr: 2 }} />
+    },
+    trash: {
+      name: 'trash',
+      icon: <DeleteOutline fontSize='small' sx={{ mr: 2 }} />
+    },
+    inbox: {
+      name: 'inbox',
+      icon: <EmailOutline fontSize='small' sx={{ mr: 2 }} />
+    }
+  }
+
+  const foldersObj: MailFoldersObjType = {
+    inbox: [foldersConfig.spam, foldersConfig.trash],
+    sent: [foldersConfig.inbox, foldersConfig.trash],
+    draft: [foldersConfig.inbox],
+    spam: [foldersConfig.inbox, foldersConfig.trash],
+    trash: [foldersConfig.inbox, foldersConfig.spam]
+  }
+
   const handleLabelMenuClick = (event: SyntheticEvent) => {
     setLabelAnchorEl(event.currentTarget as HTMLElement)
   }
@@ -165,6 +199,7 @@ const MailLog = (props: MailLogType) => {
           onClick={() => {
             handleLabelUpdate(store.selectedMails, key as MailLabelType)
             handleLabelMenuClose()
+            dispatch(handleSelectAllMail(false))
           }}
         >
           <Circle sx={{ mr: 2, fontSize: '0.75rem', color: `${value}.main` }} />
@@ -175,10 +210,8 @@ const MailLog = (props: MailLogType) => {
   }
 
   const renderFoldersMenu = () => {
-    const currentFolder = routeParams && routeParams.folder ? routeParams.folder : 'inbox'
-
-    return folders.map((folder: MailFoldersArrType) => {
-      if (currentFolder !== folder.name) {
+    if (routeParams && routeParams.folder && !routeParams.label && foldersObj[routeParams.folder]) {
+      return foldersObj[routeParams.folder].map((folder: MailFoldersArrType) => {
         return (
           <MenuItem
             key={folder.name}
@@ -186,16 +219,49 @@ const MailLog = (props: MailLogType) => {
             onClick={() => {
               handleFolderUpdate(store.selectedMails, folder.name)
               handleFolderMenuClose()
+              dispatch(handleSelectAllMail(false))
             }}
           >
             {folder.icon}
             <Typography sx={{ textTransform: 'capitalize' }}>{folder.name}</Typography>
           </MenuItem>
         )
-      } else {
-        return null
-      }
-    })
+      })
+    } else if (routeParams && routeParams.label) {
+      return folders.map((folder: MailFoldersArrType) => {
+        return (
+          <MenuItem
+            key={folder.name}
+            sx={{ display: 'flex', alignItems: 'center' }}
+            onClick={() => {
+              handleFolderUpdate(store.selectedMails, folder.name)
+              handleFolderMenuClose()
+              dispatch(handleSelectAllMail(false))
+            }}
+          >
+            {folder.icon}
+            <Typography sx={{ textTransform: 'capitalize' }}>{folder.name}</Typography>
+          </MenuItem>
+        )
+      })
+    } else {
+      return foldersObj['inbox'].map((folder: MailFoldersArrType) => {
+        return (
+          <MenuItem
+            key={folder.name}
+            sx={{ display: 'flex', alignItems: 'center' }}
+            onClick={() => {
+              handleFolderUpdate(store.selectedMails, folder.name)
+              handleFolderMenuClose()
+              dispatch(handleSelectAllMail(false))
+            }}
+          >
+            {folder.icon}
+            <Typography sx={{ textTransform: 'capitalize' }}>{folder.name}</Typography>
+          </MenuItem>
+        )
+      })
+    }
   }
 
   const renderMailLabels = (arr: MailLabelType[]) => {
@@ -209,6 +275,7 @@ const MailLog = (props: MailLogType) => {
     folders,
     dispatch,
     direction,
+    foldersObj,
     updateMail,
     routeParams,
     labelColors,
@@ -363,6 +430,9 @@ const MailLog = (props: MailLogType) => {
                           setMailDetailsOpen(true)
                           dispatch(getCurrentMail(mail.id))
                           dispatch(updateMail({ emailIds: [mail.id], dataToUpdate: { isRead: true } }))
+                          setTimeout(() => {
+                            dispatch(handleSelectAllMail(false))
+                          }, 600)
                         }}
                       >
                         <Box sx={{ mr: 4, display: 'flex', overflow: 'hidden', alignItems: 'center' }}>

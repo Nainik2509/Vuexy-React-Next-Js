@@ -88,6 +88,7 @@ const SidebarLeft = (props: MailSidebarType) => {
   const handleListItemClick = () => {
     setMailDetailsOpen(false)
     setTimeout(() => dispatch(handleSelectAllMail(false)), 50)
+    handleLeftSidebarToggle()
   }
 
   const activeInboxCondition =
