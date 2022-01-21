@@ -1,82 +1,148 @@
-# Welcome
+<h1>Welcome</h1>
+
+<h2>Rapidly build stunning React Web Apps based on MUI with Master template</h2>
+
+We present you with a Developer friendly, Highly customizable & Carefully crafted React Admin Dashboard Template.
 
 Thanks for purchasing our template 🙂. Let's get you up and running.
 
-## How to use docs
+<div class='row'>
+  <!-- Installation -->
+  <div class='col'>
+    <router-link to='/guide/development/installation.html'>
+      <div class='card'>
+        <img alt='installation-icon' :src="$withBase('/images/icons/rocket-launch-outline.png')" />
+        <h3>Installation</h3>
+        <p>Let's install your project first. Please visit the installation page for a detailed guide on how to install and run the template.</p>
+        <div class='d-flex'>
+          <a>Start now</a>
+          <img alt='right arrow' :src="$withBase('/images/icons/chevron-right.svg')" />
+        </div>
+      </div>
+    </router-link>
+  </div>
 
-This is the documentation for the Master - Material Design React Admin Template. In this documentation, you will find new features, components, Hooks, etc provided by our template other than MUI.
+  <!-- Template Customization -->
+  <div class='col'>
+    <router-link to='/guide/settings/theme-config.html'>
+      <div class='card'>
+        <img alt='customizer-icon' :src="$withBase('/images/icons/cog-outline.png')" />
+        <h3>Template Customization</h3>
+        <p>If you want to quickly update the UI of our template just like using the customizer, use our themeConfig.js file for it.</p>
+        <div class='d-flex'>
+          <a>Configure it</a>
+          <img alt='right arrow' :src="$withBase('/images/icons/chevron-right.svg')" />
+        </div>
+      </div>
+    </router-link>
+  </div>
 
-::: tip
-You can find MUI's component's docs at their official [documentation](https://mui.com/components/)
+  <!-- Folder Structure -->
+  <div class='col'>
+    <router-link to='/guide/development/folder-structure.html'>
+      <div class='card'>
+        <img alt='folder-structure-icon' :src="$withBase('/images/icons/folder-outline.png')" />
+        <h3>Folder Structure</h3>
+        <p>Get started and understand how files and folders are organized in our template to understand how it works.</p>
+        <div class='d-flex'>
+          <a>Read more</a>
+          <img alt='right arrow' :src="$withBase('/images/icons/chevron-right.svg')" />
+        </div>
+      </div>
+    </router-link>
+  </div>
+
+  <!-- Layout Structure -->
+  <div class='col'>
+    <router-link to='/guide/layout/layout-types.html'>
+      <div class='card'>
+        <img alt='layout-icon' :src="$withBase('/images/icons/view-dashboard-outline.png')" />
+        <h3>Layout Structure</h3>
+        <p>Easily create any pages of your app with the knowledge of layouts and layout components.</p>
+        <div class='d-flex'>
+          <a>Read more</a>
+          <img alt='right arrow' :src="$withBase('/images/icons/chevron-right.svg')" />
+        </div>
+      </div>
+    </router-link>
+  </div>
+
+  <!-- MUI Components -->
+  <div class='col'>
+    <a target='_blank' href='https://mui.com/components/'>
+      <div class='card'>
+        <img alt='mui-icon' :src="$withBase('/images/icons/material-ui.png')" />
+        <h3>MUI Components</h3>
+        <p>Our template is built on top of MUI. You can use any of the components as demonstrated in the MUI's documentation.</p>
+        <div class='d-flex'>
+          <a>View all components</a>
+          <img alt='right arrow' :src="$withBase('/images/icons/chevron-right.svg')" />
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- FAQs -->
+  <div class='col'>
+    <router-link to='/faq/'>
+      <div class='card'>
+        <img alt='faq-icon' :src="$withBase('/images/icons/help-circle-outline.png')" />
+        <h3>FAQs</h3>
+        <p>Stuck on a particular problem? Check some of these common gotchas first in the FAQs.</p>
+        <div class='d-flex'>
+          <a>Read more</a>
+          <img alt='right arrow' :src="$withBase('/images/icons/chevron-right.svg')" />
+        </div>
+      </div>
+    </router-link>
+  </div>
+
+  <!-- Articles -->
+  <div class='col'>
+    <router-link to='/articles/'>
+      <div class='card'>
+        <img alt='articles-icon' :src="$withBase('/images/icons/text-box-multiple-outline.png')" />
+        <h3>Articles</h3>
+        <p>You can find all the helpful articles to implement or remove certain features from the template.</p>
+        <div class='d-flex'>
+          <a>Read more</a>
+          <img alt='right arrow' :src="$withBase('/images/icons/chevron-right.svg')" />
+        </div>
+      </div>
+    </router-link>
+  </div>
+
+  <!-- Repository Access -->
+  <div class='col'>
+    <router-link to='/guide/getting-started/github-access.html'>
+      <div class='card'>
+        <img alt='github-icon' :src="$withBase('/images/icons/github.png')" />
+        <h3>Repository Access</h3>
+        <p>Get the private repository access to track the premium version development easily. Fork the repository to get the seamless updates.</p>
+        <div class='d-flex'>
+          <a>Get access</a>
+          <img alt='right arrow' :src="$withBase('/images/icons/chevron-right.svg')" />
+        </div>
+      </div>
+    </router-link>
+  </div>
+
+  <!-- Premium Support -->
+  <div class='col'>
+    <router-link to='/guide/getting-started/support.html'>
+      <div class='card'>
+        <img alt='support-icon' :src="$withBase('/images/icons/lifebuoy.png')" />
+        <h3>Premium Support</h3>
+        <p>Experience premium customer support from the people who have crafted this theme. Premium support is limited to pro version only.</p>
+        <div class='d-flex'>
+          <a>Get support</a>
+          <img alt='right arrow' :src="$withBase('/images/icons/chevron-right.svg')" />
+        </div>
+      </div>
+    </router-link>
+  </div>
+</div>
+
+:::tip
+We only provide documentation for custom components and customizations made to MUI's components. For MUI components' documentation please visit [MUI's official docs](https://mui.com/components/).
 :::
-
-Let's install your project first, please visit the [installation](/guide/development/installation.html) page for a detailed guide on how to install and run the template.
-
-To get started you can check the new improved [folder structure](/guide/development/folder-structure.html) of our template to understand how it works.
-
-If you want to quickly update the UI of our template just like you do using customizer, use our <strong>themeConfig.js</strong> file for
-it. You can find documentation for it [here](/guide/settings/theme-config.html).
-
-Next, certainly, you want to create new pages and want to get started with your project. For this, you can check our{' '}
-[Layout docs](/guide/layout/layout-types.html) to understand how to use them. Certainly, the default layout is a
-zero-config layout but still if you want to understand each layout type, Go for it.
-
-For styling, our new master have managed to provide separate space for your style where you can write your style and
-don't accidentally delete ours. Make sure to check out [Template Styles] for it.
-
-In the <strong>Components</strong> section we have provided docs for changes or extra features provided on top of existing
-Reactstrap components.
-
-In the <strong>Custom Components</strong> section you will find custom components created by us.
-
-## Starter-kit vs Full Package
-
-### Starter-kit
-
-Starter-kit is a minimal template from where you can start your project quickly instead of removing stuff that isn't needed. Below are quick notes on the starter-kit:
-
-- No Auth
-- No i18n
-- Simple Navbar
-- Four pages (Two sample pages + 404 + Login)
-- No Customizer
-- No Axios
-- No Scroll to top
-
-Use it if you don't want to clutter your project with extra libs which isn't required.
-
-Don't worry about configuring third party libs which if you want to use them in starter-kit, our template is so flexible that all you have to do is just import lib file into your file and provide a third-party package that is ready to use 😍.
-
-::: tip
-Use starter-kit to provide reproduction steps if you raise any technical issue on [GitHub](/guide/getting-started/support.html).
-:::
-
-### Full Package
-
-This setup have all the things which you can see in live demo. Except that red Buy Now button 😅.
-
-With this you have to remove things which you don't use or replace them with your content.
-
-#### Conclusion
-
-According to us, starter-kit is easy to get started with minimal setup and our folder and code structure will help you adding libs support in starter-kit more easily than ever. Still if your project becomes easy with full package go for it.
-
-::: warning
-Please make sure to copy required images from full version if you copy content from full version to starter-kit.
-:::
-
-## Getting template update
-
-::: warning
-Please keep track of which version of the template you are using in your project to easily update your project with latest release.
-:::
-
-Please refer to this for more details on how to update template to latest version. [article]()
-
-## FAQ
-
-We created list of common [FAQs](/faq) which developers ask while using our template. So it is good idea to check for our FAQ if you have any query.
-
-## Getting Support
-
-If you have any question related to our template feel free to create issue at our GitHub repository. Please check our guide on [how to create perfect issue on GitHub](/guide/getting-started/support.html).

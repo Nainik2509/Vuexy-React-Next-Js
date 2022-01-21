@@ -28,7 +28,7 @@ import CustomChip from 'src/@core/components/mui/chip'
 
 Result:
 
-![chips-skins](/images/components/chips-skin.png)
+<img alt='chips-skins' class='medium-zoom' :src="$withBase('/images/components/chips-skin.png')" />
 
 ## Props
 

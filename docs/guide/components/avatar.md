@@ -27,7 +27,7 @@ import CustomAvatar from 'src/@core/components/mui/avatar'
 
 Result:
 
-![avatar-skins](/images/components/avatar-skins.png)
+<img alt='avatar-skins' class='medium-zoom' :src="$withBase('/images/components/avatar-skins.png')" />
 
 ## Avatar Colors
 
@@ -66,7 +66,7 @@ import BellOutline from 'mdi-material-ui/BellOutline'
 
 Result:
 
-![avatar-colors](/images/components/avatar-colors.png)
+<img alt='avatar-colors' class='medium-zoom' :src="$withBase('/images/components/avatar-colors.png')" />
 
 ## Props
 

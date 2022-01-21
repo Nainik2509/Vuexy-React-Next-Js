@@ -7,7 +7,7 @@ import { SvgIconProps } from '@mui/material'
 interface UserIconProps {
   iconProps?: SvgIconProps
   icon: string | ReactNode
-  componentType: 'autocomplete' | 'vertical-menu' | 'horizontal-menu'
+  componentType: 'search' | 'vertical-menu' | 'horizontal-menu'
 }
 
 const UserIcon = (props: UserIconProps) => {
@@ -18,7 +18,7 @@ const UserIcon = (props: UserIconProps) => {
 
   let styles
 
-  if (componentType === 'autocomplete') {
+  if (componentType === 'search') {
     // Conditional Props based on component type, like have different font size or icon color
     /* styles = {
       color: 'blue',

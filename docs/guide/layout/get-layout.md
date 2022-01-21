@@ -84,4 +84,4 @@ export default BlogLayout
 
 Result:
 
-![blog-layout](/images/layouts/blog-layout.png)
+<img alt='blog-layout' class='medium-zoom' :src="$withBase('/images/layouts/blog-layout.png')" />

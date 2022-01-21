@@ -43,7 +43,7 @@ import CustomBadge from 'src/@core/components/mui/badge'
 
 Result:
 
-![badge-skins](/images/components/badge-skin.png)
+<img alt='badge-skins' class='medium-zoom' :src="$withBase('/images/components/badge-skin.png')" />
 
 ## Props
 

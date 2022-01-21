@@ -1,3 +1,80 @@
-.navbar .links {
-  right: 6rem !important;
+.navbar {
+  .home-link {
+    display: flex
+    align-items: center
+
+    .logo {
+      height: 2rem
+      min-width: 2rem
+    }
+  }
+
+  .links {
+    right: 6rem !important
+  }
+}
+
+main.home header.hero img {
+  width: 5rem
+  height: 4rem
+}
+
+.row {
+  display: flex
+  flex-wrap: wrap
+  align-items: start
+  margin-left: -1.5rem
+  box-sizing: border-box
+
+  * {
+    box-sizing: border-box
+  }
+
+  .col {
+    flex-grow: 0
+    max-width: 100%
+    flex-basis: 100%
+    padding-top: 1.5rem
+    padding-left: 1.5rem
+
+    > a {
+      color: inherit
+      font-weight: normal
+      &:hover {
+        text-decoration: none
+        a {
+          text-decoration: underline
+        }
+      }
+    }
+
+    .card {
+      padding: 1.5rem
+      border-radius: 6px
+      border: 1px solid #eaecef
+
+      > img {
+        margin-bottom: 0.5rem
+      }
+
+      p, h1, h2, h3, h4, h5, h6 {
+        margin-top: 0
+        margin-bottom: 0.75rem
+      }
+
+      .d-flex {
+        display: flex
+      }
+    }
+
+    @media (min-width: 900px) {
+      max-width: 50%
+      flex-basis: 50%
+    }
+
+    @media (min-width: 1200px) {
+      max-width: 33.333333%
+      flex-basis: 33.333333%
+    }
+  }
 }

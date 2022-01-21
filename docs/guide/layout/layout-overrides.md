@@ -98,7 +98,7 @@ export default UserLayout
 
 Result:
 
-![override-app-brand](/images/layouts/user-override-vertical-app-brand.png)
+<img alt='override-app-brand' class='medium-zoom' :src="$withBase('/images/layouts/user-override-vertical-app-brand.png')" />
 
 :::warning NOTE
 When you override the app logo and when the menu is collapsed, `padding-left` of the menu header will reduce to 0. To center align your logo, you need to manually add `margin-left` to your overridden logo.
@@ -157,11 +157,11 @@ export default UserLayout
 
 Result of `menuLockedIcon`:
 
-<img height='400' alt='override-menu-locked' src='/images/layouts/user-override-menu-locked.png'>
+<img height='400' class='medium-zoom' alt='override-menu-locked' :src="$withBase('/images/layouts/user-override-menu-locked.png')" />
 
 Result of `menuUnlockedIcon`:
 
-<img height='400' alt='override-menu-unlocked' src='/images/layouts/user-override-menu-unlocked.png'>
+<img height='400' class='medium-zoom' alt='override-menu-unlocked' :src="$withBase('/images/layouts/user-override-menu-unlocked.png')" />
 
 ### 3. Vertical menu items
 
@@ -224,7 +224,7 @@ export default UserLayout
 
 Result:
 
-![override-menu](/images/layouts/user-override-vertical-menu.png)
+<img alt='override-menu' class='medium-zoom' :src="$withBase('/images/layouts/user-override-vertical-menu.png')" />
 
 ### 4. Add content before menu items
 
@@ -312,7 +312,7 @@ export default UserLayout
 
 Result:
 
-![add-content-before-menu-items](/images/layouts/user-add-content-before-menu-items.png)
+<img alt='add-content-before-menu-items' class='medium-zoom' :src="$withBase('/images/layouts/user-add-content-before-menu-items.png')" />
 
 ### 5. Add content after menu items
 
@@ -373,7 +373,7 @@ export default UserLayout
 
 Result:
 
-![add-content-before-menu-items](/images/layouts/user-add-content-after-menu-items.png)
+<img alt='add-content-before-menu-items' class='medium-zoom' :src="$withBase('/images/layouts/user-add-content-after-menu-items.png')" />
 
 ### 6. Hide menu based on screen size
 
@@ -451,7 +451,7 @@ export default UserLayout
 
 Result:
 
-![override-appBar](/images/layouts/user-override-vertical-appBar.png)
+<img alt='override-appBar' class='medium-zoom' :src="$withBase('/images/layouts/user-override-vertical-appBar.png')" />
 
 ### 8. Footer
 
@@ -502,7 +502,7 @@ export default UserLayout
 
 Result:
 
-![override-footer](/images/layouts/user-override-vertical-footer.png)
+<img alt='override-footer' class='medium-zoom' :src="$withBase('/images/layouts/user-override-vertical-footer.png')" />
 
 ## Horizontal Layout
 
@@ -577,7 +577,7 @@ export default UserLayout
 
 Result:
 
-![override-app-brand](/images/layouts/user-override-horizontal-app-brand.png)
+<img alt='override-app-brand' class='medium-zoom' :src="$withBase('/images/layouts/user-override-horizontal-app-brand.png')" />
 
 ### 2. Horizontal menu items
 
@@ -628,7 +628,7 @@ export default UserLayout
 
 Result:
 
-![override-menu](/images/layouts/user-override-horizontal-menu.png)
+<img alt='override-menu' class='medium-zoom' :src="$withBase('/images/layouts/user-override-horizontal-menu.png')" />
 
 ### 3. Hide menu based on screen size
 
@@ -718,7 +718,7 @@ export default UserLayout
 
 Result:
 
-![override-appBar](/images/layouts/user-override-horizontal-appBar.png)
+<img alt='override-appBar' class='medium-zoom' :src="$withBase('/images/layouts/user-override-horizontal-appBar.png')" />
 
 ### 5. Footer
 
@@ -769,7 +769,7 @@ export default UserLayout
 
 Result:
 
-![override-footer](/images/layouts/user-override-horizontal-footer.png)
+<img alt='override-footer' class='medium-zoom' :src="$withBase('/images/layouts/user-override-horizontal-footer.png')" />
 
 ## Blank Layout with AppBar
 
@@ -815,7 +815,7 @@ export default UserBlankLayoutWithAppBar
 
 Result:
 
-![override-blank-layout-appBar](/images/layouts/user-override-blank-layout-appBar.png)
+<img alt='override-blank-layout-appBar' class='medium-zoom' :src="$withBase('/images/layouts/user-override-blank-layout-appBar.png')" />
 
 ## Scroll to Top
 
@@ -874,7 +874,7 @@ export default UserLayout
 
 Result:
 
-![override-scroll-to-top](/images/layouts/user-override-scroll-to-top.png)
+<img alt='override-scroll-to-top' class='medium-zoom' :src="$withBase('/images/layouts/user-override-scroll-to-top.png')" />
 
 ## Server Side Navigation
 
