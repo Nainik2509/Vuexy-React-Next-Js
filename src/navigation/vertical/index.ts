@@ -509,7 +509,7 @@ const navigation = (): VerticalNavItemsType => {
           title: 'Documentation',
           externalLink: true,
           openInNewTab: true,
-          path: 'https://themeselection.com/'
+          path: 'https://themeselection.com/docs/'
         }
       ]
     }
