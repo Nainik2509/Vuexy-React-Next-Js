@@ -25,7 +25,7 @@ All of the above layout components are configurable. You can customize any or al
 
 Vertical Layout looks like this:
 
-![vertical-layout-preview](/images/layouts/vertical-layout.png)
+<img class='medium-zoom' alt='vertical-layout-preview' :src="$withBase('/images/layouts/vertical-layout.png')" />
 
 ## Horizontal Layout
 
@@ -41,7 +41,7 @@ All of the above layout components are configurable. You can customize any or al
 
 Horizontal Layout looks like this:
 
-![horizontal-layout-preview](/images/layouts/horizontal-layout.png)
+<img alt='horizontal-layout-preview' class='medium-zoom' :src="$withBase('/images/layouts/horizontal-layout.png')" />
 
 ## Blank Layout
 
@@ -51,7 +51,7 @@ Basically, this is a blank page where you can create everything from scratch.
 
 Blank Layout in _Login_ page looks like this:
 
-![blank-layout-login-preview](/images/layouts/blank-layout-login.png)
+<img alt='blank-layout-login-preview' class='medium-zoom' :src="$withBase('/images/layouts/blank-layout-login.png')" />
 
 ## Blank Layout with AppBar
 
@@ -61,4 +61,4 @@ AppBar is explained in [this](/guide/layout/layout-components.html#blank-layout-
 
 Blank Layout with AppBar in _Login_ page looks like this:
 
-![blank-layout-with-appBar-login-preview](/images/layouts/blank-layout-with-appBar-login.png)
+<img alt='blank-layout-with-appBar-login-preview' class='medium-zoom' :src="$withBase('/images/layouts/blank-layout-with-appBar-login.png')" />

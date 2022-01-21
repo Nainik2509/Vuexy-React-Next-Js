@@ -2213,6 +2213,14 @@
     "@vuepress/types" "1.9.7"
     lodash.debounce "^4.0.8"
 
+"@vuepress/plugin-back-to-top@^1.9.7":
+  version "1.9.7"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-back-to-top/-/plugin-back-to-top-1.9.7.tgz#249a76d79f1e0c8c71a2804485ad0245837e6bfd"
+  integrity sha512-DM1S+Q8Xn/i+zhe4zThekxb1M2abfKLklg/NKtQloklHKdNdVfk+EcxWYNmNfSii+ymDWaaG8lmH0xjVhy0iXw==
+  dependencies:
+    "@vuepress/types" "1.9.7"
+    lodash.debounce "^4.0.8"
+
 "@vuepress/plugin-last-updated@1.9.7":
   version "1.9.7"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-last-updated/-/plugin-last-updated-1.9.7.tgz#9f2d78fe7ced618d0480bf40a3e32b40486bac6d"
@@ -2221,7 +2229,7 @@
     "@vuepress/types" "1.9.7"
     cross-spawn "^6.0.5"
 
-"@vuepress/plugin-medium-zoom@^1.8.2":
+"@vuepress/plugin-medium-zoom@^1.9.7":
   version "1.9.7"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-medium-zoom/-/plugin-medium-zoom-1.9.7.tgz#077330aafd23e2cc8372e0041589875345edb80a"
   integrity sha512-P00chXEEoFyQyDWiiSw1mUIdywS6vqM9jolM/3Gv3/TywqemWEm1MKMM7mLsjGiaXJbBQZE+U3/lHmzcaroYLQ==

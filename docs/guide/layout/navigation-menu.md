@@ -36,7 +36,7 @@ Here is the example code:
 
 Result:
 
-<img height='200' alt='navigation-section-header' src='/images/layouts/navigation-section-header.png'>
+<img height='200' class='medium-zoom' alt='navigation-section-header' :src="$withBase('/images/layouts/navigation-section-header.png')" />
 
 ### 2. Navigation Group
 
@@ -97,7 +97,7 @@ export default navigation
 
 Result:
 
-![navigation-group](/images/layouts/navigation-vertical-group.png)
+<img alt='navigation-group' class='medium-zoom' :src="$withBase('/images/layouts/navigation-vertical-group.png')" />
 
 ### 3. Navigation Link
 
@@ -155,7 +155,7 @@ export default navigation
 
 Result:
 
-![navigation-links](/images/layouts/navigation-vertical-links.png)
+<img alt='navigation-links' class='medium-zoom' :src="$withBase('/images/layouts/navigation-vertical-links.png')" />
 
 ## Horizontal Navigation Structure
 
@@ -229,7 +229,7 @@ export default navigation
 
 Result:
 
-![navigation-group](/images/layouts/navigation-horizontal-group.png)
+<img alt='navigation-group' class='medium-zoom' :src="$withBase('/images/layouts/navigation-horizontal-group.png')" />
 
 ### 2. Navigation Link
 
@@ -287,4 +287,4 @@ export default navigation
 
 Result:
 
-![navigation-links](/images/layouts/navigation-horizontal-links.png)
+<img alt='navigation-links' class='medium-zoom' :src="$withBase('/images/layouts/navigation-horizontal-links.png')" />

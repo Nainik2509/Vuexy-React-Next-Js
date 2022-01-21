@@ -2,7 +2,7 @@
 
 react-material-admin is built using [Create Next App](https://nextjs.org/docs/getting-started). Create Next App sets up everything automatically for you.
 
-# Guide
+## Guide
 
 First of all make sure you have installed [Node](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) / [yarn](https://yarnpkg.com/)
 
@@ -45,7 +45,7 @@ npm run dev
 ```
 
 - You will find following output after running above command in console:
-  <img :src="$withBase('/images/development/server-console.png')" alt="console-output-of-development-server" class="rounded">
+  <img class='rounded medium-zoom' alt='console-output-of-development-server' :src="$withBase('/images/development/server-console.png')" />
 - Visit [http://localhost:3000/](http://localhost:3000/) to check frontend.
 
 ::: tip NOTE

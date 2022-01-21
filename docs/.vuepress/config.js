@@ -1,8 +1,8 @@
 module.exports = {
   base: '/',
   theme: 'book',
-  title: 'MUI',
-  description: 'MUI React Admin Dashboard Template',
+  title: 'Master',
+  description: 'Master React Admin Dashboard Template',
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   themeConfig: {
     searchPlaceholder: 'Search...',
@@ -21,7 +21,11 @@ module.exports = {
         {
           title: 'Getting Started',
           collapsable: false,
-          children: ['/guide/getting-started/support', '/guide/getting-started/github-access']
+          children: [
+            '/guide/getting-started/starter-kit-vs-full-package',
+            '/guide/getting-started/support',
+            '/guide/getting-started/github-access'
+          ]
         },
         {
           title: 'Development',
@@ -58,7 +62,8 @@ module.exports = {
             '/guide/layout/layout-components',
             '/guide/layout/get-layout',
             '/guide/layout/navigation-menu',
-            '/guide/layout/layout-overrides'
+            '/guide/layout/layout-overrides',
+            '/guide/layout/icons'
           ]
         },
         {
@@ -91,6 +96,7 @@ module.exports = {
     }
   },
   plugins: [
+    ['@vuepress/back-to-top'],
     [
       '@vuepress/medium-zoom',
       {

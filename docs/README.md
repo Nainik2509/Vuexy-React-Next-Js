@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /logo.svg
-heroText: MUI Admin Dashboard Template
+heroText: Master Admin Dashboard Template
 tagline: Best selling, Production Ready, Carefully Crafted, Extensive Admin Template
 actionText: Get Started →
 actionLink: /guide/
@@ -19,6 +19,6 @@ footer: COPYRIGHT © 2021 ThemeSelection, All rights Reserved
   </div>
   <div class="feature">
     <h2>JWT Auth & Auth Guards</h2>
-    <p>MUI Admin provides extendable JWT auth which can be configured easily and provides ready to use Auth Guards.</p>
+    <p>Master Admin provides extendable JWT auth which can be configured easily and provides ready to use Auth Guards.</p>
   </div>
 </div>
