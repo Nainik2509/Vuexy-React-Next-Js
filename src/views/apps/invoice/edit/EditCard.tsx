@@ -95,7 +95,7 @@ const RepeaterWrapper = styled(CardContent)<CardContentProps>(({ theme }) => ({
   paddingTop: theme.spacing(12),
   paddingBottom: theme.spacing(12),
   '& .repeater-wrapper + .repeater-wrapper': {
-    marginTop: theme.spacing(12)
+    marginTop: theme.spacing(8)
   }
 }))
 
@@ -356,7 +356,7 @@ const EditCard = ({ data }: Props) => {
                   <Grid container>
                     <RepeatingContent item xs={12}>
                       <Grid container sx={{ py: 4, width: '100%', pr: { lg: 0, xs: 4 } }}>
-                        <Grid item lg={6} md={5} xs={12} sx={{ px: 4, my: { lg: 0, xs: 4 } }}>
+                        <Grid item lg={6} md={5} xs={12} sx={{ px: 4, my: { lg: 0, xs: 2 } }}>
                           <Typography
                             variant='body2'
                             className='col-title'
@@ -379,7 +379,7 @@ const EditCard = ({ data }: Props) => {
                             defaultValue='Customization & Bug Fixes'
                           />
                         </Grid>
-                        <Grid item lg={2} md={3} xs={12} sx={{ px: 4, my: { lg: 0, xs: 4 } }}>
+                        <Grid item lg={2} md={3} xs={12} sx={{ px: 4, my: { lg: 0, xs: 2 } }}>
                           <Typography
                             variant='body2'
                             className='col-title'
@@ -413,7 +413,7 @@ const EditCard = ({ data }: Props) => {
                             </Tooltip>
                           </Box>
                         </Grid>
-                        <Grid item lg={2} md={2} xs={12} sx={{ px: 4, my: { lg: 0, xs: 4 } }}>
+                        <Grid item lg={2} md={2} xs={12} sx={{ px: 4, my: { lg: 0, xs: 2 } }}>
                           <Typography
                             variant='body2'
                             className='col-title'
