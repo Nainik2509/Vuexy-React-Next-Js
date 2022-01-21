@@ -14,26 +14,14 @@ All the layout components explained on this page are overridden in `src/layouts/
 
 You can override the following layout components:
 
-- [Layout Overrides](#layout-overrides)
-  - [Overview](#overview)
-  - [Vertical Layout](#vertical-layout)
-    - [1. App Logo](#1-app-logo)
-    - [2. Menu collapse icons](#2-menu-collapse-icons)
-    - [3. Vertical menu items](#3-vertical-menu-items)
-    - [4. Add content before menu items](#4-add-content-before-menu-items)
-    - [5. Add content after menu items](#5-add-content-after-menu-items)
-    - [6. Hide menu based on screen size](#6-hide-menu-based-on-screen-size)
-    - [7. Navbar (or AppBar)](#7-navbar-or-appbar)
-    - [8. Footer](#8-footer)
-  - [Horizontal Layout](#horizontal-layout)
-    - [1. App Logo](#1-app-logo-1)
-    - [2. Horizontal menu items](#2-horizontal-menu-items)
-    - [3. Hide menu based on screen size](#3-hide-menu-based-on-screen-size)
-    - [4. AppBar Content](#4-appbar-content)
-    - [5. Footer](#5-footer)
-  - [Blank Layout with AppBar](#blank-layout-with-appbar)
-  - [Scroll to Top](#scroll-to-top)
-  - [Server Side Navigation](#server-side-navigation)
+- [App Logo](#_1-app-logo)
+- [Menu collapse icons](#_2-menu-collapse-icons)
+- [Vertical menu items](#_3-vertical-menu-items)
+- [Add content before menu items](#_4-add-content-before-menu-items)
+- [Add content after menu items](#_5-add-content-after-menu-items)
+- [Hide menu based on screen size](#_6-hide-menu-based-on-screen-size)
+- [Navbar (or AppBar)](#_7-navbar-or-appbar)
+- [Footer](#_8-footer)
 
 ### 1. App Logo
 
@@ -508,10 +496,10 @@ Result:
 
 You can override the following layout components:
 
-- [App Logo](#_1-app-logo)
+- [App Logo](#_1-app-logo-2)
 - [Horizontal menu items](#_2-horizontal-menu-items)
 - [Hide menu based on screen size](#_3-hide-menu-based-on-screen-size)
-- [AppBar Content](#_5-appbar-content)
+- [AppBar Content](#_4-appbar-content)
 - [Footer](#_5-footer)
 
 ### 1. App Logo
