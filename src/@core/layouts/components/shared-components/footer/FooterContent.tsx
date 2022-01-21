@@ -23,7 +23,7 @@ const FooterContent = () => {
         <Link target='_blank' href='https://themeselection.com/'>
           More Themes
         </Link>
-        <Link target='_blank' href='https://themeselection.com/'>
+        <Link target='_blank' href='https://themeselection.com/docs/'>
           Documentation
         </Link>
         <Link target='_blank' href='https://themeselection.com/support/'>
