@@ -22,6 +22,7 @@ import themeConfig from 'src/configs/themeConfig'
 
 // ** Types
 import { NavLink } from 'src/@core/layouts/types'
+import { Settings } from 'src/@core/context/settingsContext'
 
 // ** Custom Components Imports
 import UserIcon from 'src/layouts/components/UserIcon'
@@ -31,8 +32,9 @@ import Translations from 'src/layouts/components/Translations'
 import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 
 interface Props {
-  parentId?: string
   item: NavLink
+  parentId?: string
+  settings: Settings
   hasParent: boolean
   handleGroupMouseLeave: (value: string) => void
 }
@@ -58,7 +60,7 @@ const ListItem = styled(MuiListItem)<ListItemProps & { component?: ElementType; 
 
 const HorizontalNavLink = (props: Props) => {
   // ** Props
-  const { item, hasParent, parentId, handleGroupMouseLeave } = props
+  const { item, settings, hasParent, parentId, handleGroupMouseLeave } = props
 
   const IconTag = item.icon ? item.icon : themeConfig.navSubItemIcon
 
@@ -84,7 +86,7 @@ const HorizontalNavLink = (props: Props) => {
   }
 
   return (
-    <Wrapper {...(!hasParent ? { sx: { py: 3 } } : {})}>
+    <Wrapper {...(!hasParent ? { sx: { py: settings.skin === 'bordered' ? 2.875 : 3 } } : {})}>
       <Link href={`${item.path}`} passHref>
         <ListItem
           component={'a'}

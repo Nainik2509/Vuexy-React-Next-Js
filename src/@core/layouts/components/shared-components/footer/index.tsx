@@ -3,7 +3,6 @@ import { ReactNode } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
-import { styled } from '@mui/material/styles'
 
 // ** Type Import
 import { Settings } from 'src/@core/context/settingsContext'
@@ -18,35 +17,34 @@ interface Props {
   footerContent?: (props?: any) => ReactNode
 }
 
-const FooterWrapper = styled('footer')(({ theme }) => ({
-  padding: theme.spacing(4, 0)
-}))
-
 const Footer = (props: Props) => {
   // ** Props
   const { settings, showBackdrop, footerContent: userFooterContent } = props
 
   // ** Vars
-  const { footer, contentWidth } = settings
+  const { skin, footer, contentWidth } = settings
 
   if (footer === 'hidden') {
     return null
   }
 
   return (
-    <FooterWrapper
+    <Box
+      component='footer'
       className='layout-footer'
       sx={{
         zIndex: showBackdrop && footer === 'fixed' ? 13 : 10,
-        ...(footer === 'fixed' && {
-          bottom: 0,
-          position: 'sticky',
-          boxShadow: theme => theme.shadows[4],
-          backgroundColor: theme => theme.palette.background.paper
-        }),
+        py: theme => theme.spacing(footer === 'fixed' && skin === 'bordered' ? 3.875 : 4),
         ...(footer === 'static' && {
           boxShadow: 'none',
           backgroundColor: 'transparent'
+        }),
+        ...(footer === 'fixed' && {
+          bottom: 0,
+          position: 'sticky',
+          backgroundColor: theme => theme.palette.background.paper,
+          boxShadow: theme => theme.shadows[skin === 'bordered' ? 0 : 4],
+          ...(skin === 'bordered' && { borderTop: theme => `1px solid ${theme.palette.divider}` })
         })
       }}
     >
@@ -60,7 +58,7 @@ const Footer = (props: Props) => {
       >
         {userFooterContent ? userFooterContent(props) : <FooterContent />}
       </Box>
-    </FooterWrapper>
+    </Box>
   )
 }
 

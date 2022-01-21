@@ -32,7 +32,6 @@ const AppBar = styled(MuiAppBar)<AppBarProps>(({ theme }) => ({
 const Toolbar = styled(MuiToolbar)<ToolbarProps>(({ theme }) => ({
   width: '100%',
   padding: `${theme.spacing(0, 6)} !important`,
-  minHeight: `${themeConfig.appBarHeight}px !important`,
   [theme.breakpoints.down('sm')]: {
     padding: `${theme.spacing(0, 4)} !important`
   }
@@ -42,24 +41,31 @@ const LayoutAppBar = (props: Props) => {
   // ** Props
   const { settings, verticalAppBarContent: userVerticalAppBarContent } = props
 
-  if (settings.appBar === 'hidden') {
+  // ** Vars
+  const { skin, appBar, contentWidth } = settings
+
+  if (appBar === 'hidden') {
     return null
   }
 
   return (
     <AppBar
-      elevation={3}
       color='default'
       className='layout-navbar'
-      position={settings.appBar === 'fixed' ? 'sticky' : 'static'}
+      elevation={skin == 'bordered' ? 0 : 3}
+      position={appBar === 'fixed' ? 'sticky' : 'static'}
       sx={{
-        ...(settings.appBar === 'static' && { boxShadow: 'none', backgroundColor: 'transparent' }),
-        ...(settings.appBar === 'fixed' && { backgroundColor: theme => theme.palette.background.paper })
+        ...(appBar === 'static' && { boxShadow: 'none', backgroundColor: 'transparent' }),
+        ...(appBar === 'fixed' && { backgroundColor: theme => theme.palette.background.paper }),
+        ...(skin === 'bordered' && { borderBottom: theme => `1px solid ${theme.palette.divider}` })
       }}
     >
       <Toolbar
         className='navbar-content-container'
-        sx={{ ...(settings.contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } }) }}
+        sx={{
+          ...(contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } }),
+          minHeight: `${themeConfig.appBarHeight - (skin === 'bordered' ? 1 : 0)}px !important`
+        }}
       >
         {(userVerticalAppBarContent && userVerticalAppBarContent(props)) || null}
       </Toolbar>

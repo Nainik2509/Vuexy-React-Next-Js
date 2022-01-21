@@ -102,6 +102,7 @@ const AutocompleteComponent = ({ hidden, setShowBackdrop }: Props) => {
   const router = useRouter()
   const { settings } = useSettings()
   const wrapper = useRef<HTMLDivElement>(null)
+  const { skin, layout } = settings
 
   const codes: { [key: string]: boolean } = { Slash: false, ControlLeft: false, ControlRight: false } // eslint-disable-line
 
@@ -268,7 +269,7 @@ const AutocompleteComponent = ({ hidden, setShowBackdrop }: Props) => {
           <IconButton
             color='inherit'
             onClick={() => setOpenSearchBox(true)}
-            sx={!hidden && settings.layout === 'vertical' ? { ml: -2.75 } : {}}
+            sx={!hidden && layout === 'vertical' ? { ml: -2.75 } : {}}
           >
             <Magnify />
           </IconButton>
@@ -276,7 +277,9 @@ const AutocompleteComponent = ({ hidden, setShowBackdrop }: Props) => {
           <SearchBox
             sx={{
               ...(openSearchBox ? { top: 0 } : {}),
-              height: settings.layout === 'vertical' ? themeConfig.appBarHeight : themeConfig.appBarHeight - 1
+              ...(layout === 'horizontal' || skin === 'bordered'
+                ? { height: themeConfig.appBarHeight - 1 }
+                : { height: themeConfig.appBarHeight })
             }}
           >
             <Autocomplete
@@ -293,7 +296,7 @@ const AutocompleteComponent = ({ hidden, setShowBackdrop }: Props) => {
               getOptionLabel={(option: AppBarSearchType | unknown) => (option as AppBarSearchType).title}
               onInputChange={(event, value: string) => handleInputChange(value)}
               sx={
-                settings.layout === 'horizontal'
+                layout === 'horizontal'
                   ? { '& + .MuiAutocomplete-popper .MuiPaper-root': { boxShadow: theme => theme.shadows[5] } }
                   : {}
               }

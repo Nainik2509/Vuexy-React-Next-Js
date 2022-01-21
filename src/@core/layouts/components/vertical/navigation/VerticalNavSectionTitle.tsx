@@ -79,7 +79,7 @@ const VerticalNavSectionTitle = (props: Props) => {
       sx={{
         ...conditionalStyling(),
         ...(navCollapsed && !navHover
-          ? { pt: 3.12, pb: 2.875, pl: (themeConfig.collapsedNavigationSize - navigationBorderWidth - 24) / 8 }
+          ? { pt: 3.375, pb: 2.875, pl: (themeConfig.collapsedNavigationSize - navigationBorderWidth - 24) / 8 }
           : { pl: 6 })
       }}
     >

@@ -100,8 +100,8 @@ const HorizontalNavGroup = (props: Props) => {
 
   // ** Hooks & Vars
   const router = useRouter()
-  const { direction } = settings
   const currentURL = router.pathname
+  const { skin, direction } = settings
 
   // ** States
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
@@ -178,7 +178,7 @@ const HorizontalNavGroup = (props: Props) => {
             />
           }
         >
-          <List component='div' sx={{ py: 3 }}>
+          <List component='div' sx={{ py: skin === 'bordered' ? 2.875 : 3 }}>
             <ListItemComponent
               aria-haspopup='true'
               {...(WrapperCondition ? {} : { onMouseEnter: handleGroupOpen })}

@@ -73,14 +73,14 @@ const HorizontalLayout = (props: LayoutProps) => {
   const [showBackdrop, setShowBackdrop] = useState<boolean>(false)
 
   // ** Vars
-  const { appBar, navHidden, contentWidth } = settings
+  const { skin, appBar, navHidden, contentWidth } = settings
 
   return (
     <HorizontalLayoutWrapper className='layout-wrapper'>
       {/* Navbar (or AppBar) and Navigation Menu Wrapper */}
       <AppBar
-        elevation={3}
         color='default'
+        elevation={skin == 'bordered' ? 0 : 3}
         className='layout-navbar-and-nav-container'
         position={appBar === 'fixed' ? 'sticky' : 'static'}
         sx={{
@@ -89,7 +89,8 @@ const HorizontalLayout = (props: LayoutProps) => {
           color: 'text.primary',
           justifyContent: 'center',
           ...(appBar === 'static' && { zIndex: 13 }),
-          backgroundColor: theme => theme.palette.background.paper
+          backgroundColor: theme => theme.palette.background.paper,
+          ...(skin === 'bordered' && { borderBottom: theme => `1px solid ${theme.palette.divider}` })
         }}
       >
         {/* Navbar / AppBar */}
@@ -125,8 +126,8 @@ const HorizontalLayout = (props: LayoutProps) => {
               className='horizontal-nav-content-container'
               sx={{
                 mx: 'auto',
-                minHeight: `${themeConfig.appBarHeight}px !important`,
-                ...(contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } })
+                ...(contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } }),
+                minHeight: `${themeConfig.appBarHeight - (skin === 'bordered' ? 1 : 0)}px !important`
               }}
             >
               {(userHorizontalNavMenuContent && userHorizontalNavMenuContent(props)) || <Navigation {...props} />}
