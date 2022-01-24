@@ -52,7 +52,7 @@ const LayoutAppBar = (props: Props) => {
     <AppBar
       color='default'
       className='layout-navbar'
-      elevation={skin == 'bordered' ? 0 : 3}
+      elevation={skin === 'bordered' ? 0 : 3}
       position={appBar === 'fixed' ? 'sticky' : 'static'}
       sx={{
         ...(appBar === 'static' && { boxShadow: 'none', backgroundColor: 'transparent' }),

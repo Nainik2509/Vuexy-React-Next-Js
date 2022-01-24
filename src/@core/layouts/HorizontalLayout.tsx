@@ -80,7 +80,7 @@ const HorizontalLayout = (props: LayoutProps) => {
       {/* Navbar (or AppBar) and Navigation Menu Wrapper */}
       <AppBar
         color='default'
-        elevation={skin == 'bordered' ? 0 : 3}
+        elevation={skin === 'bordered' ? 0 : 3}
         className='layout-navbar-and-nav-container'
         position={appBar === 'fixed' ? 'sticky' : 'static'}
         sx={{
