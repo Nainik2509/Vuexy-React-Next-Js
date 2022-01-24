@@ -40,7 +40,19 @@ const ApexRadialBarChart = () => {
           total: {
             show: true,
             label: 'Comments',
-            fontSize: '1.125rem'
+            fontSize: '1.125rem',
+            formatter: function (w) {
+              const totalValue =
+                w.globals.seriesTotals.reduce((a: any, b: any) => {
+                  return a + b
+                }, 0) / w.globals.series.length
+
+              if (totalValue % 1 === 0) {
+                return totalValue + '%'
+              } else {
+                return totalValue.toFixed(2) + '%'
+              }
+            }
           }
         }
       }

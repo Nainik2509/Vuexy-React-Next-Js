@@ -71,6 +71,7 @@ const FormLayoutsIcons = () => {
                 minRows={3}
                 label='Message'
                 placeholder='Bio...'
+                sx={{ '& .MuiOutlinedInput-root': { alignItems: 'baseline' } }}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position='start'>

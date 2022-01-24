@@ -568,7 +568,7 @@ const StepperLinearWithValidation = () => {
                     render={({ field: { value, onChange } }) => (
                       <TextField
                         value={value}
-                        label='Google+'
+                        label='LinkedIn'
                         onChange={onChange}
                         error={Boolean(socialErrors.linkedIn)}
                         placeholder='https://linkedin.com/carterLeonard'

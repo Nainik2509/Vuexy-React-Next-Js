@@ -88,7 +88,12 @@ const FormLayoutsTabs = () => {
   return (
     <Card>
       <TabContext value={value}>
-        <TabList onChange={handleTabsChange} sx={{ borderBottom: theme => `1px solid ${theme.palette.divider}` }}>
+        <TabList
+          variant='scrollable'
+          scrollButtons={false}
+          onChange={handleTabsChange}
+          sx={{ borderBottom: theme => `1px solid ${theme.palette.divider}` }}
+        >
           <Tab value='personal-info' label='Personal Info' />
           <Tab value='account-details' label='Account Details' />
           <Tab value='social-links' label='Social Links' />

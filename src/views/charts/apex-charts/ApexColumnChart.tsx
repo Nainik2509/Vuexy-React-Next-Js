@@ -41,6 +41,7 @@ const ApexColumnChart = () => {
 
   const options: ApexOptions = {
     chart: {
+      offsetX: -10,
       stacked: true,
       parentHeightOffset: 0,
       toolbar: {
@@ -56,6 +57,18 @@ const ApexColumnChart = () => {
         }
       }
     },
+    responsive: [
+      {
+        breakpoint: 600,
+        options: {
+          plotOptions: {
+            bar: {
+              columnWidth: '35%'
+            }
+          }
+        }
+      }
+    ],
     dataLabels: {
       enabled: false
     },
@@ -76,7 +89,7 @@ const ApexColumnChart = () => {
       }
     },
     xaxis: {
-      categories: ['7/12', '8/12', '9/12', '10/12', '11/12', '12/12', '13/12', '14/12', '15/12', '16/12']
+      categories: ['7/12', '8/12', '9/12', '10/12', '11/12', '12/12', '13/12', '14/12', '15/12']
     },
     fill: {
       opacity: 1
@@ -86,11 +99,11 @@ const ApexColumnChart = () => {
   const series = [
     {
       name: 'Apple',
-      data: [90, 120, 55, 100, 80, 125, 175, 70, 88, 180]
+      data: [90, 120, 55, 100, 80, 125, 175, 70, 88]
     },
     {
       name: 'Samsung',
-      data: [85, 100, 30, 40, 95, 90, 30, 110, 62, 20]
+      data: [85, 100, 30, 40, 95, 90, 30, 110, 62]
     }
   ]
 

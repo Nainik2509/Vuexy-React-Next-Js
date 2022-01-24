@@ -132,26 +132,25 @@ const FormLayoutsBasic = () => {
               </FormControl>
             </Grid>
             <Grid item xs={12}>
-              <Grid container spacing={3}>
-                <Grid item xs={12} sm={4}>
-                  <Button type='submit' variant='contained' size='large'>
-                    Get Started!
-                  </Button>
-                </Grid>
-                <Grid
-                  item
-                  sm={8}
-                  xs={12}
-                  sx={{ display: 'flex', alignItems: 'center', justifyContent: ['flex-start', 'flex-end'] }}
-                >
-                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Typography sx={{ mr: 2 }}>Already have an account?</Typography>
-                    <Link href='/' onClick={(e: SyntheticEvent) => e.preventDefault()}>
-                      Log in
-                    </Link>
-                  </Box>
-                </Grid>
-              </Grid>
+              <Box
+                sx={{
+                  gap: 5,
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  alignItems: 'center',
+                  justifyContent: 'space-between'
+                }}
+              >
+                <Button type='submit' variant='contained' size='large'>
+                  Get Started!
+                </Button>
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                  <Typography sx={{ mr: 2 }}>Already have an account?</Typography>
+                  <Link href='/' onClick={(e: SyntheticEvent) => e.preventDefault()}>
+                    Log in
+                  </Link>
+                </Box>
+              </Box>
             </Grid>
           </Grid>
         </form>

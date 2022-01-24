@@ -34,6 +34,8 @@ const PickersOptions = () => {
           isClearable
           id='picker-clear'
           selected={dateClear}
+          popperPlacement='top-start'
+          portalId='react-datepicker-portal'
           customInput={<CustomInput label='Clear' />}
           onChange={(date: Date) => setDateClear(date)}
         />
@@ -43,6 +45,8 @@ const PickersOptions = () => {
           showWeekNumbers
           id='picker-week-num'
           selected={dateWeekNum}
+          popperPlacement='top-start'
+          portalId='react-datepicker-portal'
           onChange={(date: Date) => setDateWeekNum(date)}
           customInput={<CustomInput label='Week Numbers' />}
         />
@@ -52,6 +56,8 @@ const PickersOptions = () => {
           id='picker-filter'
           selected={dateFilter}
           filterDate={isWeekday}
+          popperPlacement='top-start'
+          portalId='react-datepicker-portal'
           onChange={(date: Date) => setDateFilter(date)}
           customInput={<CustomInput label='Filter Dates' />}
         />
@@ -60,6 +66,8 @@ const PickersOptions = () => {
         <DatePicker
           selected={dateOpen}
           id='picker-open-date'
+          popperPlacement='top-start'
+          portalId='react-datepicker-portal'
           openToDate={new Date('1993/09/28')}
           onChange={(date: Date) => setDateOpen(date)}
           customInput={<CustomInput label='Open To Date' />}
@@ -70,6 +78,8 @@ const PickersOptions = () => {
           todayButton='Today'
           selected={dateTodayBtn}
           id='picker-date-today-btn'
+          popperPlacement='top-start'
+          portalId='react-datepicker-portal'
           onChange={(date: Date) => setDateTodayBtn(date)}
           customInput={<CustomInput label='Date Today Button' />}
         />

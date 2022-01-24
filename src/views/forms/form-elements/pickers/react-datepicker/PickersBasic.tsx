@@ -45,7 +45,7 @@ const PickersBasic = () => {
           id='read-only-input'
           onChange={(date: Date) => setDate(date)}
           placeholderText='Click to select a date'
-          customInput={<CustomInput label='Readonly' />}
+          customInput={<CustomInput readOnly label='Readonly' />}
         />
       </Box>
     </Box>

@@ -44,7 +44,6 @@ const BoxWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   cursor: 'pointer',
   borderStyle: 'solid',
   padding: theme.spacing(5),
-  justifyContent: 'space-between',
   borderColor: theme.palette.divider,
   '&:first-of-type': {
     borderTopLeftRadius: theme.shape.borderRadius,
@@ -111,7 +110,7 @@ const FormLayoutsCollapsible = () => {
               <TextField multiline rows={3} fullWidth label='Address' placeholder='1456, Liberty Street' />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <TextField fullWidth label='ZIP Code' placeholder='10005' />
+              <TextField fullWidth type='number' label='ZIP Code' placeholder='10005' />
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField fullWidth label='Landmark' placeholder='Nr. Wall Street' />
@@ -169,58 +168,58 @@ const FormLayoutsCollapsible = () => {
             onClick={() => setOption('standard')}
             sx={option === 'standard' ? { borderColor: 'primary.main' } : {}}
           >
-            <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
-              <Radio
-                value='standard'
-                checked={option === 'standard'}
-                sx={{ marginRight: 2, paddingTop: 0.5 }}
-                name='form-layouts-collapsible-options-radio'
-                inputProps={{ 'aria-label': 'Standard Delivery' }}
-              />
-              <div>
-                <Typography sx={{ fontWeight: 600, marginBottom: 2 }}>Standard 3-5 Days</Typography>
-                <Typography variant='body2'>Friday, 15 Nov - Monday, 18 Nov</Typography>
-              </div>
+            <Radio
+              value='standard'
+              checked={option === 'standard'}
+              name='form-layouts-collapsible-options-radio'
+              inputProps={{ 'aria-label': 'Standard Delivery' }}
+              sx={{ mr: 2, ml: -2.5, mt: -2.5, alignItems: 'flex-start' }}
+            />
+            <Box sx={{ width: '100%' }}>
+              <Box sx={{ mb: 2, display: 'flex', justifyContent: 'space-between' }}>
+                <Typography sx={{ fontWeight: 600 }}>Standard 3-5 Days</Typography>
+                <Typography sx={{ fontWeight: 700 }}>Free</Typography>
+              </Box>
+              <Typography variant='body2'>Friday, 15 Nov - Monday, 18 Nov</Typography>
             </Box>
-            <Typography sx={{ fontWeight: 700 }}>Free</Typography>
           </BoxWrapper>
           <BoxWrapper
             onClick={() => setOption('express')}
             sx={option === 'express' ? { borderColor: 'primary.main' } : {}}
           >
-            <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
-              <Radio
-                value='express'
-                checked={option === 'express'}
-                sx={{ marginRight: 2, paddingTop: 0.5 }}
-                name='form-layouts-collapsible-options-radio'
-                inputProps={{ 'aria-label': 'Express Delivery' }}
-              />
-              <div>
-                <Typography sx={{ fontWeight: 600, marginBottom: 2 }}>Express</Typography>
-                <Typography variant='body2'>Friday, 15 Nov - Sunday, 17 Nov</Typography>
-              </div>
+            <Radio
+              value='express'
+              checked={option === 'express'}
+              name='form-layouts-collapsible-options-radio'
+              inputProps={{ 'aria-label': 'Express Delivery' }}
+              sx={{ mr: 2, ml: -2.5, mt: -2.5, alignItems: 'flex-start' }}
+            />
+            <Box sx={{ width: '100%' }}>
+              <Box sx={{ mb: 2, display: 'flex', justifyContent: 'space-between' }}>
+                <Typography sx={{ fontWeight: 600 }}>Express</Typography>
+                <Typography sx={{ fontWeight: 700 }}>$5.00</Typography>
+              </Box>
+              <Typography variant='body2'>Friday, 15 Nov - Sunday, 17 Nov</Typography>
             </Box>
-            <Typography sx={{ fontWeight: 700 }}>$5.00</Typography>
           </BoxWrapper>
           <BoxWrapper
             onClick={() => setOption('overnight')}
             sx={option === 'overnight' ? { borderColor: 'primary.main' } : {}}
           >
-            <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
-              <Radio
-                value='overnight'
-                checked={option === 'overnight'}
-                sx={{ marginRight: 2, paddingTop: 0.5 }}
-                name='form-layouts-collapsible-options-radio'
-                inputProps={{ 'aria-label': 'Overnight Delivery' }}
-              />
-              <div>
-                <Typography sx={{ fontWeight: 600, marginBottom: 2 }}>Overnight</Typography>
-                <Typography variant='body2'>Friday, 15 Nov - Saturday, 16 Nov</Typography>
-              </div>
+            <Radio
+              value='overnight'
+              checked={option === 'overnight'}
+              name='form-layouts-collapsible-options-radio'
+              inputProps={{ 'aria-label': 'Overnight Delivery' }}
+              sx={{ mr: 2, ml: -2.5, mt: -2.5, alignItems: 'flex-start' }}
+            />
+            <Box sx={{ width: '100%' }}>
+              <Box sx={{ mb: 2, display: 'flex', justifyContent: 'space-between' }}>
+                <Typography sx={{ fontWeight: 600 }}>Overnight</Typography>
+                <Typography sx={{ fontWeight: 700 }}>$10.00</Typography>
+              </Box>
+              <Typography variant='body2'>Friday, 15 Nov - Saturday, 16 Nov</Typography>
             </Box>
-            <Typography sx={{ fontWeight: 700 }}>$10.00</Typography>
           </BoxWrapper>
         </AccordionDetails>
       </Accordion>

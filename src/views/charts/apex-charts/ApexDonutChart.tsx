@@ -110,7 +110,12 @@ const ApexDonutChart = () => {
         subheader='Spending on various categories'
         subheaderTypographyProps={{ variant: 'caption', sx: { color: 'text.disabled' } }}
       />
-      <CardContent>
+      <CardContent
+        sx={{
+          '& .apexcharts-canvas .apexcharts-pie .apexcharts-datalabel-label, & .apexcharts-canvas .apexcharts-pie .apexcharts-datalabel-value':
+            { fontSize: '1.2rem' }
+        }}
+      >
         <ReactApexcharts options={options} series={series} type='donut' height={400} />
       </CardContent>
     </Card>
