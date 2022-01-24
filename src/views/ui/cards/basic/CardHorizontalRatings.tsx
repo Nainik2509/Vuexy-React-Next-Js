@@ -48,7 +48,7 @@ const CardHorizontalRatings = () => {
   return (
     <Card>
       <Grid container spacing={6}>
-        <StyledGrid1 item md={7} xs={12}>
+        <StyledGrid1 item xs={12} md={6} lg={7}>
           <CardContent>
             <Typography variant='h6' sx={{ marginBottom: 2 }}>
               Stumptown Roasters
@@ -67,7 +67,7 @@ const CardHorizontalRatings = () => {
             <Button>Reviews</Button>
           </CardActions>
         </StyledGrid1>
-        <StyledGrid2 item md={5} xs={12}>
+        <StyledGrid2 item xs={12} md={6} lg={5}>
           <CardContent sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <Img alt='Stumptown Roasters' src='/images/cards/analog-clock.jpg' />
           </CardContent>

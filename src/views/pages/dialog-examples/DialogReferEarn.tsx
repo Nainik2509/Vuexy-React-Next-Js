@@ -110,8 +110,8 @@ const DialogReferEarn = () => {
           <Grid container spacing={6} sx={{ mt: 4, textAlign: 'center' }}>
             <Grid item md={4} xs={12}>
               <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                <CustomAvatar skin='light' color='primary' sx={{ mb: 3, width: 100, height: 100 }}>
-                  <MessageOutline fontSize='large' />
+                <CustomAvatar skin='light' color='primary' sx={{ mb: 3, width: [70, 100], height: [70, 100] }}>
+                  <MessageOutline sx={{ fontSize: ['2.2rem', '2.5rem'] }} />
                 </CustomAvatar>
                 <Typography sx={{ mb: 3, fontWeight: '600' }}>Send Invitation 🤟🏻</Typography>
                 <Typography>Send your referral link to your friend</Typography>
@@ -119,8 +119,8 @@ const DialogReferEarn = () => {
             </Grid>
             <Grid item md={4} xs={12}>
               <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                <CustomAvatar skin='light' color='primary' sx={{ mb: 3, width: 100, height: 100 }}>
-                  <ClipboardOutline fontSize='large' />
+                <CustomAvatar skin='light' color='primary' sx={{ mb: 3, width: [70, 100], height: [70, 100] }}>
+                  <ClipboardOutline sx={{ fontSize: ['2.2rem', '2.5rem'] }} />
                 </CustomAvatar>
                 <Typography sx={{ mb: 3, fontWeight: '600' }}>Registration 👩🏻‍💻</Typography>
                 <Typography>Let them register to our services</Typography>
@@ -128,8 +128,8 @@ const DialogReferEarn = () => {
             </Grid>
             <Grid item md={4} xs={12}>
               <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                <CustomAvatar skin='light' color='primary' sx={{ mb: 3, width: 100, height: 100 }}>
-                  <LicenseIcon fontSize='large' />
+                <CustomAvatar skin='light' color='primary' sx={{ mb: 3, width: [70, 100], height: [70, 100] }}>
+                  <LicenseIcon sx={{ fontSize: ['2.2rem', '2.5rem'] }} />
                 </CustomAvatar>
                 <Typography sx={{ mb: 3, fontWeight: '600' }}>Free Trial 🎉</Typography>
                 <Typography>Your friend will get 30 days free trial</Typography>
@@ -178,11 +178,11 @@ const DialogReferEarn = () => {
                 fullWidth
                 size='small'
                 id='refer-social'
-                sx={{ mr: [0, 4] }}
+                sx={{ pr: 1.25, mr: [0, 4] }}
                 placeholder='http://referral.link'
                 endAdornment={
                   <InputAdornment position='end'>
-                    <Button>Copy Link</Button>
+                    <Button size='small'>Copy Link</Button>
                   </InputAdornment>
                 }
               />

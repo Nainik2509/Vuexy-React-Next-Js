@@ -141,9 +141,9 @@ const CardTeamMembers = () => {
                   <TableCell>
                     <Box sx={{ display: 'flex' }}>
                       <Typography variant='body2' sx={{ fontWeight: 600, color: 'primary.main' }}>
-                        {row.completedTasks}/
+                        {`${row.completedTasks}/`}
                       </Typography>
-                      <Typography variant='body2' sx={{ fontWeight: 600, color: 'text.primary' }}>
+                      <Typography variant='body2' sx={{ fontWeight: 600 }}>
                         {row.tasks}
                       </Typography>
                     </Box>

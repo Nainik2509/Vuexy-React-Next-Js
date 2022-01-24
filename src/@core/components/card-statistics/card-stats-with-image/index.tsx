@@ -31,7 +31,7 @@ const CardStatsCharacter = ({ data }: Props) => {
     <Card sx={{ overflow: 'visible', position: 'relative' }}>
       <CardContent>
         <Typography sx={{ fontWeight: 600, marginBottom: 8.75, lineHeight: 1.31 }}>{title}</Typography>
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start' }}>
+        <Box sx={{ rowGap: 1, width: '55%', display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start' }}>
           <Typography variant='h5' sx={{ fontWeight: 600, marginRight: 1.5, lineHeight: 0.88 }}>
             {stats}
           </Typography>

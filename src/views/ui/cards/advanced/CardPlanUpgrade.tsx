@@ -1,5 +1,5 @@
 // ** React Imports
-import { SyntheticEvent } from 'react'
+import { useState, SyntheticEvent } from 'react'
 
 // ** Next Import
 import Image from 'next/image'
@@ -25,6 +25,10 @@ import DotsVertical from 'mdi-material-ui/DotsVertical'
 import useBgColor from 'src/@core/hooks/theme/useBgColor'
 
 const CardPlanUpgrade = () => {
+  // ** States
+  const [cvc1, setCvc1] = useState<number | string>('')
+  const [cvc2, setCvc2] = useState<number | string>('')
+
   // ** Hook
   const colorClasses = useBgColor()
 
@@ -122,7 +126,18 @@ const CardPlanUpgrade = () => {
               <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Credit card</Typography>
               <Typography variant='caption'>2566 xxxx xxxx 8908</Typography>
             </Box>
-            <TextField label='CVC' size='small' sx={{ width: 70, marginTop: 0.4 }} />
+            <TextField
+              label='CVC'
+              size='small'
+              value={cvc1}
+              type='number'
+              sx={{ width: 80, mt: 0.4 }}
+              onChange={e =>
+                e.target.value.length > 3
+                  ? setCvc1(parseInt(e.target.value.slice(0, 3)))
+                  : setCvc1(parseInt(e.target.value))
+              }
+            />
           </Box>
         </Box>
 
@@ -142,7 +157,18 @@ const CardPlanUpgrade = () => {
               <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Credit card</Typography>
               <Typography variant='caption'>8990 xxxx xxxx 6852</Typography>
             </Box>
-            <TextField label='CVC' size='small' sx={{ width: 70, marginTop: 0.4 }} />
+            <TextField
+              label='CVC'
+              size='small'
+              value={cvc2}
+              type='number'
+              sx={{ width: 80, mt: 0.4 }}
+              onChange={e =>
+                e.target.value.length > 3
+                  ? setCvc2(parseInt(e.target.value.slice(0, 3)))
+                  : setCvc2(parseInt(e.target.value))
+              }
+            />
           </Box>
         </Box>
 

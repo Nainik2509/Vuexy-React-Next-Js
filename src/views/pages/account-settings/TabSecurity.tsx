@@ -1,5 +1,5 @@
 // ** React Imports
-import { ChangeEvent, Fragment, MouseEvent, useState } from 'react'
+import { ChangeEvent, MouseEvent, useState } from 'react'
 
 // ** Next Import
 import Image from 'next/image'
@@ -80,7 +80,7 @@ const TabSecurity = () => {
   }
 
   return (
-    <Fragment>
+    <form>
       <CardContent sx={{ paddingBottom: 0 }}>
         <Grid container spacing={5}>
           <Grid item xs={12} sm={6}>
@@ -208,12 +208,17 @@ const TabSecurity = () => {
           <Button variant='contained' sx={{ marginRight: 3.5 }}>
             Save Changes
           </Button>
-          <Button variant='outlined' color='secondary'>
-            Cancel
+          <Button
+            type='reset'
+            variant='outlined'
+            color='secondary'
+            onClick={() => setValues({ ...values, currentPassword: '', newPassword: '', confirmNewPassword: '' })}
+          >
+            Reset
           </Button>
         </Box>
       </CardContent>
-    </Fragment>
+    </form>
   )
 }
 export default TabSecurity
