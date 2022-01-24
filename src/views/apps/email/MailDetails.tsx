@@ -383,6 +383,13 @@ const MailDetails = (props: MailDetailsType) => {
                 </Menu>
               </Box>
               <Box>
+                <IconButton
+                  size='small'
+                  onClick={e => handleStarMail(e, mail.id, !mail.isStarred)}
+                  sx={{ ...(mail.isStarred ? { color: 'warning.main' } : {}) }}
+                >
+                  <StarOutline sx={{ fontSize: '1.375rem' }} />
+                </IconButton>
                 {mail.replies.length ? (
                   <IconButton size='small' onClick={() => (showReplies ? setShowReplies(false) : setShowReplies(true))}>
                     {showReplies ? (
@@ -466,9 +473,6 @@ const MailDetails = (props: MailDetailsType) => {
                                   </IconButton>
                                 ) : null}
                                 <IconButton size='small'>
-                                  <StarOutline sx={{ fontSize: '1.375rem' }} />
-                                </IconButton>
-                                <IconButton size='small'>
                                   <DotsVertical sx={{ fontSize: '1.375rem' }} />
                                 </IconButton>
                               </Box>
@@ -551,13 +555,6 @@ const MailDetails = (props: MailDetailsType) => {
                             <Attachment sx={{ fontSize: '1.375rem' }} />
                           </IconButton>
                         ) : null}
-                        <IconButton
-                          size='small'
-                          onClick={e => handleStarMail(e, mail.id, !mail.isStarred)}
-                          sx={{ ...(mail.isStarred ? { color: 'warning.main' } : {}) }}
-                        >
-                          <StarOutline sx={{ fontSize: '1.375rem' }} />
-                        </IconButton>
                         <IconButton size='small' onClick={handleMailMenuClick}>
                           <DotsVertical sx={{ fontSize: '1.375rem' }} />
                         </IconButton>
