@@ -23,7 +23,7 @@ interface Props {
 // ** Styled Components
 const CardContent = styled(MuiCardContent)<CardContentProps>(({ theme }) => ({
   padding: `${theme.spacing(17.5, 36)} !important`,
-  [theme.breakpoints.down('md')]: {
+  [theme.breakpoints.down('xl')]: {
     padding: `${theme.spacing(12.5, 20)} !important`
   },
   [theme.breakpoints.down('sm')]: {

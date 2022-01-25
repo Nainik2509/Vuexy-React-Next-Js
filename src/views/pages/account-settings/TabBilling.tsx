@@ -101,130 +101,142 @@ const TabBilling = () => {
 
   return (
     <CardContent>
-      <Grid container spacing={7}>
-        <Grid item xs={12} md={8} sx={{ marginTop: 2.8 }}>
-          <Grid container spacing={7}>
-            <Grid item xs={12}>
-              <FormControl>
-                <FormLabel sx={{ fontSize: '0.75rem', color: 'text.secondary' }}>Payment Method</FormLabel>
-                <RadioGroup
-                  row
-                  value={paymentMethod}
-                  aria-label='payment method'
-                  name='account-settings-billing-radio'
-                  onChange={e => setPaymentMethod(e.target.value)}
-                >
-                  <FormControlLabel value='card' label='Credit/Debit/ATM Card' control={<Radio />} />
-                  <FormControlLabel value='cod' label='COD/Cheque' control={<Radio />} />
-                </RadioGroup>
-              </FormControl>
-            </Grid>
-            {paymentMethod === 'card' ? (
+      <form>
+        <Grid container spacing={7}>
+          <Grid item xs={12} md={8} sx={{ marginTop: 2.8 }}>
+            <Grid container spacing={7}>
               <Grid item xs={12}>
-                <CreditCardWrapper>
-                  <CardWrapper>
-                    <Cards cvc={cvc} focused={focus} expiry={expiry} name={name} number={cardNumber} />
-                  </CardWrapper>
-                  <Grid container spacing={6}>
-                    <Grid item xs={12}>
-                      <TextField
-                        fullWidth
-                        name='number'
-                        value={cardNumber}
-                        autoComplete='off'
-                        label='Card Number'
-                        onBlur={handleBlur}
-                        onChange={handleInputChange}
-                        placeholder='0000 0000 0000 0000'
-                        onFocus={e => setFocus(e.target.name as Focused)}
-                      />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <TextField
-                        fullWidth
-                        name='name'
-                        value={name}
-                        label='Name'
-                        autoComplete='off'
-                        onBlur={handleBlur}
-                        placeholder='John Doe'
-                        onFocus={e => setFocus(e.target.name as Focused)}
-                        onChange={e => setName(e.target.value)}
-                      />
-                    </Grid>
-                    <Grid item xs={6}>
-                      <TextField
-                        fullWidth
-                        name='expiry'
-                        value={expiry}
-                        autoComplete='off'
-                        label='Expiry Date'
-                        placeholder='MM/YY'
-                        onBlur={handleBlur}
-                        onChange={handleInputChange}
-                        inputProps={{ maxLength: '5' }}
-                        onFocus={e => setFocus(e.target.name as Focused)}
-                      />
-                    </Grid>
-                    <Grid item xs={6}>
-                      <TextField
-                        fullWidth
-                        name='cvc'
-                        value={cvc}
-                        label='CVC Code'
-                        autoComplete='off'
-                        onBlur={handleBlur}
-                        onChange={handleInputChange}
-                        onFocus={e => setFocus(e.target.name as Focused)}
-                        placeholder={Payment.fns.cardType(cardNumber) === 'amex' ? '1234' : '123'}
-                      />
-                    </Grid>
-                  </Grid>
-                </CreditCardWrapper>
+                <FormControl>
+                  <FormLabel sx={{ fontSize: '0.75rem', color: 'text.secondary' }}>Payment Method</FormLabel>
+                  <RadioGroup
+                    row
+                    value={paymentMethod}
+                    aria-label='payment method'
+                    name='account-settings-billing-radio'
+                    onChange={e => setPaymentMethod(e.target.value)}
+                  >
+                    <FormControlLabel value='card' label='Credit/Debit/ATM Card' control={<Radio />} />
+                    <FormControlLabel value='cod' label='COD/Cheque' control={<Radio />} />
+                  </RadioGroup>
+                </FormControl>
               </Grid>
-            ) : null}
+              {paymentMethod === 'card' ? (
+                <Grid item xs={12}>
+                  <CreditCardWrapper>
+                    <CardWrapper>
+                      <Cards cvc={cvc} focused={focus} expiry={expiry} name={name} number={cardNumber} />
+                    </CardWrapper>
+                    <Grid container spacing={6}>
+                      <Grid item xs={12}>
+                        <TextField
+                          fullWidth
+                          name='number'
+                          value={cardNumber}
+                          autoComplete='off'
+                          label='Card Number'
+                          onBlur={handleBlur}
+                          onChange={handleInputChange}
+                          placeholder='0000 0000 0000 0000'
+                          onFocus={e => setFocus(e.target.name as Focused)}
+                        />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <TextField
+                          fullWidth
+                          name='name'
+                          value={name}
+                          label='Name'
+                          autoComplete='off'
+                          onBlur={handleBlur}
+                          placeholder='John Doe'
+                          onFocus={e => setFocus(e.target.name as Focused)}
+                          onChange={e => setName(e.target.value)}
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          name='expiry'
+                          value={expiry}
+                          autoComplete='off'
+                          label='Expiry Date'
+                          placeholder='MM/YY'
+                          onBlur={handleBlur}
+                          onChange={handleInputChange}
+                          inputProps={{ maxLength: '5' }}
+                          onFocus={e => setFocus(e.target.name as Focused)}
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          name='cvc'
+                          value={cvc}
+                          label='CVC Code'
+                          autoComplete='off'
+                          onBlur={handleBlur}
+                          onChange={handleInputChange}
+                          onFocus={e => setFocus(e.target.name as Focused)}
+                          placeholder={Payment.fns.cardType(cardNumber) === 'amex' ? '1234' : '123'}
+                        />
+                      </Grid>
+                    </Grid>
+                  </CreditCardWrapper>
+                </Grid>
+              ) : null}
+            </Grid>
+          </Grid>
+
+          <StyledGrid item xs={12} md={4}>
+            <Box
+              sx={{
+                borderRadius: 1,
+                p: theme => theme.spacing(2.5, 5.75, 4.75),
+                border: theme => `1px solid ${theme.palette.divider}`
+              }}
+            >
+              <Box sx={{ ml: -2.25, display: 'flex', alignItems: 'center' }}>
+                <Typography variant='h6'>Your Current Plan</Typography>
+              </Box>
+              <Chip skin='light' color='primary' label='Basic Plan' />
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <AccountOutline sx={{ marginRight: 2, fontSize: '1.125rem', color: 'text.secondary' }} />
+                <Typography variant='body2'>5 Users</Typography>
+              </Box>
+              <Box sx={{ mt: 3, display: 'flex', alignItems: 'center' }}>
+                <CloudOutline sx={{ marginRight: 2, fontSize: '1.125rem', color: 'text.secondary' }} />
+                <Typography variant='body2'>10 GB storage</Typography>
+              </Box>
+              <Box sx={{ mt: 3, display: 'flex', alignItems: 'center' }}>
+                <HelpCircleOutline sx={{ marginRight: 2, fontSize: '1.125rem', color: 'text.secondary' }} />
+                <Typography variant='body2'>Basic Support</Typography>
+              </Box>
+              <Button fullWidth variant='contained' sx={{ marginTop: 6.75 }}>
+                Upgrade Plan
+              </Button>
+            </Box>
+          </StyledGrid>
+
+          <Grid item xs={12} sx={{ mt: paymentMethod === 'card' ? 3 : undefined }}>
+            <Button variant='contained' sx={{ marginRight: 3.5 }}>
+              Save Changes
+            </Button>
+            <Button
+              type='reset'
+              variant='outlined'
+              color='secondary'
+              onClick={() => {
+                setCvc('')
+                setName('')
+                setExpiry('')
+                setCardNumber('')
+              }}
+            >
+              Reset
+            </Button>
           </Grid>
         </Grid>
-
-        <StyledGrid item xs={12} md={4}>
-          <Box
-            sx={{
-              borderRadius: 1,
-              p: theme => theme.spacing(2.5, 5.75, 4.75),
-              border: theme => `1px solid ${theme.palette.divider}`
-            }}
-          >
-            <Box sx={{ ml: -2.25, display: 'flex', alignItems: 'center' }}>
-              <Typography variant='h6'>Your Current Plan</Typography>
-            </Box>
-            <Chip skin='light' color='primary' label='Basic Plan' />
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <AccountOutline sx={{ marginRight: 2, fontSize: '1.125rem', color: 'text.secondary' }} />
-              <Typography variant='body2'>5 Users</Typography>
-            </Box>
-            <Box sx={{ mt: 3, display: 'flex', alignItems: 'center' }}>
-              <CloudOutline sx={{ marginRight: 2, fontSize: '1.125rem', color: 'text.secondary' }} />
-              <Typography variant='body2'>10 GB storage</Typography>
-            </Box>
-            <Box sx={{ mt: 3, display: 'flex', alignItems: 'center' }}>
-              <HelpCircleOutline sx={{ marginRight: 2, fontSize: '1.125rem', color: 'text.secondary' }} />
-              <Typography variant='body2'>Basic Support</Typography>
-            </Box>
-            <Button fullWidth variant='contained' sx={{ marginTop: 6.75 }}>
-              Upgrade Plan
-            </Button>
-          </Box>
-        </StyledGrid>
-
-        <Grid item xs={12} sx={{ mt: paymentMethod === 'card' ? 3 : undefined }}>
-          <Button variant='contained' sx={{ marginRight: 3.5 }}>
-            Save Changes
-          </Button>
-          <Button variant='outlined' color='secondary'>
-            Cancel
-          </Button>
-        </Grid>
-      </Grid>
+      </form>
     </CardContent>
   )
 }

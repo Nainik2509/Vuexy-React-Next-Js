@@ -67,13 +67,13 @@ const CardBasic = () => {
       <Grid item xs={12} sx={{ pb: 4, pt: theme => `${theme.spacing(17.5)} !important` }}>
         <Typography variant='h5'>Solid Cards</Typography>
       </Grid>
-      <Grid item xs={12} sm={4}>
+      <Grid item xs={12} sm={6} md={4}>
         <CardTwitter />
       </Grid>
-      <Grid item xs={12} sm={4}>
+      <Grid item xs={12} sm={6} md={4}>
         <CardFacebook />
       </Grid>
-      <Grid item xs={12} sm={4}>
+      <Grid item xs={12} sm={6} md={4}>
         <CardLinkedIn />
       </Grid>
     </Grid>

@@ -24,7 +24,7 @@ import PricingFooter from 'src/views/pages/pricing/PricingFooter'
 // ** Styled Components
 const CardContent = styled(MuiCardContent)<CardContentProps>(({ theme }) => ({
   padding: theme.spacing(17.5, 36, 28.25),
-  [theme.breakpoints.down('md')]: {
+  [theme.breakpoints.down('xl')]: {
     padding: theme.spacing(12.5, 20, 20)
   },
   [theme.breakpoints.down('sm')]: {

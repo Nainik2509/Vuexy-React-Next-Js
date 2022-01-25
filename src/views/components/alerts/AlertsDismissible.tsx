@@ -22,8 +22,8 @@ const AlertsDismissible = () => {
   const [open4, setOpen4] = useState<boolean>(true)
 
   return (
-    <Box>
-      <Box sx={{ mb: 8 }}>
+    <>
+      <Box sx={{ mb: 6 }}>
         <Collapse in={open1}>
           <Alert
             action={
@@ -40,7 +40,7 @@ const AlertsDismissible = () => {
         </Button>
       </Box>
 
-      <Box sx={{ mb: 8 }}>
+      <Box sx={{ mb: 6 }}>
         <Fade in={open2} {...(open2 ? { timeout: 700 } : {})}>
           <Alert
             action={
@@ -57,7 +57,7 @@ const AlertsDismissible = () => {
         </Button>
       </Box>
 
-      <Box sx={{ mb: 8 }}>
+      <Box sx={{ mb: 6 }}>
         <Grow in={open3} {...(open3 ? { timeout: 700 } : {})}>
           <Alert
             action={
@@ -90,7 +90,7 @@ const AlertsDismissible = () => {
           Open Slide
         </Button>
       </Box>
-    </Box>
+    </>
   )
 }
 

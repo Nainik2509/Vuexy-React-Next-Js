@@ -124,7 +124,11 @@ const CardDepositWithdraw = () => {
           title='Deposit'
           titleTypographyProps={{ variant: 'h6' }}
           sx={{ '& .MuiCardHeader-action': { marginTop: -0.8 } }}
-          action={<Typography variant='caption'>View All</Typography>}
+          action={
+            <Typography variant='caption' sx={{ color: 'primary.main' }}>
+              View All
+            </Typography>
+          }
         />
         <CardContent>
           {depositData.map((item: DataType, index: number) => {
@@ -167,7 +171,11 @@ const CardDepositWithdraw = () => {
           title='Withdraw'
           titleTypographyProps={{ variant: 'h6' }}
           sx={{ '& .MuiCardHeader-action': { marginTop: -0.8 } }}
-          action={<Typography variant='caption'>View All</Typography>}
+          action={
+            <Typography variant='caption' sx={{ color: 'primary.main' }}>
+              View All
+            </Typography>
+          }
         />
         <CardContent>
           {withdrawData.map((item: DataType, index: number) => {

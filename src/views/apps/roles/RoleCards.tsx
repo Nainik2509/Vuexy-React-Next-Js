@@ -28,6 +28,7 @@ import CardContent from '@mui/material/CardContent'
 import DialogActions from '@mui/material/DialogActions'
 import DialogContent from '@mui/material/DialogContent'
 import FormHelperText from '@mui/material/FormHelperText'
+import TableContainer from '@mui/material/TableContainer'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
 // ** Third Party Imports
@@ -140,15 +141,7 @@ const RolesCards = () => {
         >
           <Grid container sx={{ height: '100%' }}>
             <Grid item xs={5}>
-              <Box
-                sx={{
-                  height: '100%',
-                  display: 'flex',
-                  ml: { sm: 0, xs: 8 },
-                  alignItems: 'flex-end',
-                  justifyContent: { sm: 'center', xs: 'left' }
-                }}
-              >
+              <Box sx={{ height: '100%', display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }}>
                 <Image width={65} height={130} alt='add-role' src='/images/cards/pose_m1.png' />
               </Box>
             </Grid>
@@ -157,7 +150,7 @@ const RolesCards = () => {
                 <Box sx={{ textAlign: 'right' }}>
                   <Button
                     variant='contained'
-                    sx={{ mb: 3 }}
+                    sx={{ mb: 3, whiteSpace: 'nowrap' }}
                     onClick={() => {
                       handleClickOpen()
                       setDialogTitle('Add')
@@ -203,49 +196,56 @@ const RolesCards = () => {
               </FormControl>
             </Box>
             <Typography variant='h6'>Role Permissions</Typography>
-            <Table size='small'>
-              <TableHead>
-                <TableRow>
-                  <TableCell sx={{ pl: '0 !important' }}>
-                    <Box
-                      sx={{ display: 'flex', alignItems: 'center', fontSize: '0.875rem', textTransform: 'capitalize' }}
-                    >
-                      Administrator Access
-                      <Tooltip placement='top' title='Allows a full access to the system'>
-                        <InformationOutline sx={{ ml: 1, fontSize: '1rem' }} />
-                      </Tooltip>
-                    </Box>
-                  </TableCell>
-                  <TableCell colSpan={3}>
-                    <FormControlLabel
-                      label='Select All'
-                      control={<Checkbox size='small' />}
-                      sx={{ '& .MuiTypography-root': { textTransform: 'capitalize' } }}
-                    />
-                  </TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {rolesArr.map((i, index: number) => {
-                  return (
-                    <TableRow key={index} sx={{ '& .MuiTableCell-root:first-of-type': { pl: 0 } }}>
-                      <TableCell sx={{ fontWeight: 600, color: theme => `${theme.palette.text.primary} !important` }}>
-                        {i}
-                      </TableCell>
-                      <TableCell>
-                        <FormControlLabel control={<Checkbox size='small' />} label='Read' />
-                      </TableCell>
-                      <TableCell>
-                        <FormControlLabel control={<Checkbox size='small' />} label='Write' />
-                      </TableCell>
-                      <TableCell>
-                        <FormControlLabel control={<Checkbox size='small' />} label='Create' />
-                      </TableCell>
-                    </TableRow>
-                  )
-                })}
-              </TableBody>
-            </Table>
+            <TableContainer>
+              <Table size='small'>
+                <TableHead>
+                  <TableRow>
+                    <TableCell sx={{ pl: '0 !important' }}>
+                      <Box
+                        sx={{
+                          display: 'flex',
+                          fontSize: '0.875rem',
+                          alignItems: 'center',
+                          textTransform: 'capitalize'
+                        }}
+                      >
+                        Administrator Access
+                        <Tooltip placement='top' title='Allows a full access to the system'>
+                          <InformationOutline sx={{ ml: 1, fontSize: '1rem' }} />
+                        </Tooltip>
+                      </Box>
+                    </TableCell>
+                    <TableCell colSpan={3}>
+                      <FormControlLabel
+                        label='Select All'
+                        control={<Checkbox size='small' />}
+                        sx={{ '& .MuiTypography-root': { textTransform: 'capitalize' } }}
+                      />
+                    </TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {rolesArr.map((i, index: number) => {
+                    return (
+                      <TableRow key={index} sx={{ '& .MuiTableCell-root:first-of-type': { pl: 0 } }}>
+                        <TableCell sx={{ fontWeight: 600, color: theme => `${theme.palette.text.primary} !important` }}>
+                          {i}
+                        </TableCell>
+                        <TableCell>
+                          <FormControlLabel control={<Checkbox size='small' />} label='Read' />
+                        </TableCell>
+                        <TableCell>
+                          <FormControlLabel control={<Checkbox size='small' />} label='Write' />
+                        </TableCell>
+                        <TableCell>
+                          <FormControlLabel control={<Checkbox size='small' />} label='Create' />
+                        </TableCell>
+                      </TableRow>
+                    )
+                  })}
+                </TableBody>
+              </Table>
+            </TableContainer>
           </DialogContent>
           <DialogActions sx={{ pt: 0, display: 'flex', justifyContent: 'center' }}>
             <Box className='demo-space-x'>

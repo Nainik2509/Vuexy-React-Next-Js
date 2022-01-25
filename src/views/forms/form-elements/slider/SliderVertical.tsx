@@ -27,7 +27,7 @@ const valuetext = (value: number) => {
 
 const SliderVertical = () => {
   return (
-    <Box sx={{ height: 250 }}>
+    <Box sx={{ height: 250, '& > :not(:last-child)': { mr: 8 }, '& > :last-child': { mr: 0 } }}>
       <Slider orientation='vertical' getAriaValueText={valuetext} defaultValue={30} aria-labelledby='vertical-slider' />
       <Slider
         disabled

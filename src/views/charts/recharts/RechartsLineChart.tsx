@@ -87,7 +87,7 @@ const RechartsLineChart = ({ direction }: Props) => {
       <CardContent>
         <Box sx={{ height: 350 }}>
           <ResponsiveContainer>
-            <LineChart height={350} data={data} style={{ direction }}>
+            <LineChart height={350} data={data} style={{ direction }} margin={{ left: -20 }}>
               <CartesianGrid />
               <XAxis dataKey='name' reversed={direction === 'rtl'} />
               <YAxis orientation={direction === 'rtl' ? 'right' : 'left'} />

@@ -13,12 +13,13 @@ const BoxWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   position: 'relative',
   padding: theme.spacing(11.25, 36),
   backgroundColor: hexToRGBA(theme.palette.primary.main, 0.04),
-  [theme.breakpoints.down('md')]: {
-    textAlign: 'center',
+  [theme.breakpoints.down('xl')]: {
     padding: theme.spacing(11.25, 20)
   },
+  [theme.breakpoints.down('md')]: {
+    textAlign: 'center'
+  },
   [theme.breakpoints.down('sm')]: {
-    textAlign: 'center',
     padding: theme.spacing(11.25, 5)
   }
 }))

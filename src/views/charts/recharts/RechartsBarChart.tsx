@@ -197,7 +197,7 @@ const RechartsBarChart = ({ direction }: Props) => {
         }
       />
       <CardContent>
-        <Box sx={{ display: 'flex', marginBottom: 4 }}>
+        <Box sx={{ mb: 4, display: 'flex', flexWrap: 'wrap' }}>
           <Box sx={{ marginRight: 6, display: 'flex', alignItems: 'center' }}>
             <Circle sx={{ marginRight: 1.5, fontSize: '0.75rem', color: '#826af9' }} />
             <Typography>Apple</Typography>
@@ -217,7 +217,7 @@ const RechartsBarChart = ({ direction }: Props) => {
         </Box>
         <Box sx={{ height: 350 }}>
           <ResponsiveContainer>
-            <BarChart height={350} data={data} barSize={15} style={{ direction }}>
+            <BarChart height={350} data={data} barSize={15} style={{ direction }} margin={{ left: -20 }}>
               <CartesianGrid strokeDasharray='3 3' />
               <XAxis dataKey='name' reversed={direction === 'rtl'} />
               <YAxis orientation={direction === 'rtl' ? 'right' : 'left'} />

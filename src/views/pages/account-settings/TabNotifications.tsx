@@ -22,47 +22,49 @@ const FormControlLabel = styled(MuiFormControlLabel)<FormControlLabelProps>(({ t
 const TabNotifications = () => {
   return (
     <CardContent>
-      <Box sx={{ mb: 3.5, display: 'flex', alignItems: 'center' }}>
-        <ChartTimelineVariant sx={{ marginRight: 2.5 }} />
-        <Typography variant='h6'>Activity</Typography>
-      </Box>
+      <form>
+        <Box sx={{ mb: 3.5, display: 'flex', alignItems: 'center' }}>
+          <ChartTimelineVariant sx={{ marginRight: 2.5 }} />
+          <Typography variant='h6'>Activity</Typography>
+        </Box>
 
-      <div>
-        <FormControlLabel control={<Switch defaultChecked />} label='Email me when someone comments on my article' />
-      </div>
-      <div>
-        <FormControlLabel
-          control={<Switch defaultChecked />}
-          label='Email me when someone answers on my forum thread'
-        />
-      </div>
-      <div>
-        <FormControlLabel control={<Switch />} label='Email me when someone follows me' />
-      </div>
+        <div>
+          <FormControlLabel control={<Switch defaultChecked />} label='Email me when someone comments on my article' />
+        </div>
+        <div>
+          <FormControlLabel
+            control={<Switch defaultChecked />}
+            label='Email me when someone answers on my forum thread'
+          />
+        </div>
+        <div>
+          <FormControlLabel control={<Switch />} label='Email me when someone follows me' />
+        </div>
 
-      <Box sx={{ mt: 7, mb: 3.5, display: 'flex', alignItems: 'center' }}>
-        <EmailOutline sx={{ marginRight: 2.5 }} />
-        <Typography variant='h6'>Application</Typography>
-      </Box>
+        <Box sx={{ mt: 7, mb: 3.5, display: 'flex', alignItems: 'center' }}>
+          <EmailOutline sx={{ marginRight: 2.5 }} />
+          <Typography variant='h6'>Application</Typography>
+        </Box>
 
-      <div>
-        <FormControlLabel control={<Switch />} label='News and announcements' />
-      </div>
-      <div>
-        <FormControlLabel control={<Switch defaultChecked />} label='Weekly product updates' />
-      </div>
-      <div>
-        <FormControlLabel control={<Switch />} label='Weekly blog digest' />
-      </div>
+        <div>
+          <FormControlLabel control={<Switch />} label='News and announcements' />
+        </div>
+        <div>
+          <FormControlLabel control={<Switch defaultChecked />} label='Weekly product updates' />
+        </div>
+        <div>
+          <FormControlLabel control={<Switch />} label='Weekly blog digest' />
+        </div>
 
-      <Box sx={{ mt: 7.5 }}>
-        <Button variant='contained' sx={{ marginRight: 3.5 }}>
-          Save Changes
-        </Button>
-        <Button variant='outlined' color='secondary'>
-          Cancel
-        </Button>
-      </Box>
+        <Box sx={{ mt: 7.5 }}>
+          <Button variant='contained' sx={{ marginRight: 3.5 }}>
+            Save Changes
+          </Button>
+          <Button type='reset' variant='outlined' color='secondary'>
+            Reset
+          </Button>
+        </Box>
+      </form>
     </CardContent>
   )
 }

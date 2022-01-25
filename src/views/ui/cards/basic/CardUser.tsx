@@ -41,8 +41,8 @@ const CardUser = () => {
           </Box>
           <Button variant='contained'>Send Request</Button>
         </Box>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Typography variant='subtitle2' sx={{ color: 'text.primary' }}>
+        <Box sx={{ gap: 2, display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center' }}>
+          <Typography variant='subtitle2' sx={{ whiteSpace: 'nowrap', color: 'text.primary' }}>
             18 mutual friends
           </Typography>
           <AvatarGroup max={4}>

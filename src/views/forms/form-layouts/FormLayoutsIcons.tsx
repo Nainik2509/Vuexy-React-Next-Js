@@ -53,6 +53,7 @@ const FormLayoutsIcons = () => {
             <Grid item xs={12}>
               <TextField
                 fullWidth
+                type='number'
                 label='Phone No.'
                 placeholder='+1-123-456-8790'
                 InputProps={{
@@ -71,6 +72,7 @@ const FormLayoutsIcons = () => {
                 minRows={3}
                 label='Message'
                 placeholder='Bio...'
+                sx={{ '& .MuiOutlinedInput-root': { alignItems: 'baseline' } }}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position='start'>

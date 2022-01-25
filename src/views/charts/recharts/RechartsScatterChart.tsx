@@ -164,7 +164,7 @@ const RechartsScatterChart = ({ direction }: Props) => {
         </Box>
         <Box sx={{ height: 350 }}>
           <ResponsiveContainer>
-            <ScatterChart height={350} style={{ direction }}>
+            <ScatterChart height={350} style={{ direction }} margin={{ left: -20 }}>
               <CartesianGrid />
               <XAxis type='number' dataKey='x' reversed={direction === 'rtl'} />
               <YAxis type='number' dataKey='y' orientation={direction === 'rtl' ? 'right' : 'left'} />

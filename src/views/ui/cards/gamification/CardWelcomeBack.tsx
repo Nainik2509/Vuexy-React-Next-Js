@@ -39,8 +39,8 @@ const CardWelcomeBack = () => {
               </Box>
               ! 🥳
             </Typography>
-            <Typography variant='body2'>You have 4 task to finish today,</Typography>
-            <Typography variant='body2'>Your already completed 68% 😍 task good job.</Typography>
+            <Typography variant='body2'>You have 4 tasks to finish today,</Typography>
+            <Typography variant='body2'>You already completed 68% 😍 tasks. Good job!</Typography>
           </Grid>
           <StyledGrid item xs={12} sm={6}>
             <Img alt='Welcome back John' src='/images/cards/illustration-john.png' />

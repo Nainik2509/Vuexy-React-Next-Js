@@ -221,7 +221,7 @@ const RechartsAreaChart = ({ direction }: Props) => {
         </Box>
         <Box sx={{ height: 350 }}>
           <ResponsiveContainer>
-            <AreaChart height={350} data={data} style={{ direction }}>
+            <AreaChart height={350} data={data} style={{ direction }} margin={{ left: -20 }}>
               <CartesianGrid />
               <XAxis dataKey='name' reversed={direction === 'rtl'} />
               <YAxis orientation={direction === 'rtl' ? 'right' : 'left'} />
