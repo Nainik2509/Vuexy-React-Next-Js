@@ -1,9 +1,6 @@
 // ** React Imports
 import { ReactNode } from 'react'
 
-// ** Next Import
-import Image from 'next/image'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -127,7 +124,7 @@ const CardTransactions = () => {
               }}
             >
               <CustomAvatar skin='light' color={item.avatarColor} variant='rounded' sx={{ mr: 3 }}>
-                <Image alt={item.imgAlt} src={item.imgSrc} width={item.imgWidth} height={item.imgHeight} />
+                <img alt={item.imgAlt} src={item.imgSrc} width={item.imgWidth} height={item.imgHeight} />
               </CustomAvatar>
               <Box
                 sx={{

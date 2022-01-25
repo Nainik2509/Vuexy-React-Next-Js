@@ -1,9 +1,6 @@
 // ** React Imports
 import { Fragment, useState, SyntheticEvent } from 'react'
 
-// ** Next Imports
-import Image from 'next/image'
-
 // ** MUI Imports
 import List from '@mui/material/List'
 import Menu from '@mui/material/Menu'
@@ -492,7 +489,7 @@ const MailDetails = (props: MailDetailsType) => {
                                     return (
                                       <ListItem disableGutters key={item.fileName}>
                                         <ListItemIcon>
-                                          <Image src={item.thumbnail} alt={item.fileName} width='24' height='24' />
+                                          <img src={item.thumbnail} alt={item.fileName} width='24' height='24' />
                                         </ListItemIcon>
                                         <Typography variant='caption'>{item.fileName}</Typography>
                                       </ListItem>
@@ -585,7 +582,7 @@ const MailDetails = (props: MailDetailsType) => {
                             return (
                               <ListItem disableGutters key={item.fileName}>
                                 <ListItemIcon>
-                                  <Image src={item.thumbnail} alt={item.fileName} width='24' height='24' />
+                                  <img src={item.thumbnail} alt={item.fileName} width='24' height='24' />
                                 </ListItemIcon>
                                 <Typography variant='caption'>{item.fileName}</Typography>
                               </ListItem>

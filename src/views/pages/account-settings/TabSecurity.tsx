@@ -1,9 +1,6 @@
 // ** React Imports
 import { ChangeEvent, MouseEvent, useState } from 'react'
 
-// ** Next Import
-import Image from 'next/image'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
@@ -168,7 +165,7 @@ const TabSecurity = () => {
             xs={12}
             sx={{ display: 'flex', marginTop: [7.5, 2.5], alignItems: 'center', justifyContent: 'center' }}
           >
-            <Image width={183} alt='avatar' height={256} src='/images/pages/pose-m-1.png' />
+            <img width={183} alt='avatar' height={256} src='/images/pages/pose-m-1.png' />
           </Grid>
         </Grid>
       </CardContent>

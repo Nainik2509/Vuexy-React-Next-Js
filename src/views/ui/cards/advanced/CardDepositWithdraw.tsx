@@ -1,6 +1,3 @@
-// ** Next Import
-import Image from 'next/image'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -138,7 +135,7 @@ const CardDepositWithdraw = () => {
                 sx={{ display: 'flex', alignItems: 'center', mb: index !== depositData.length - 1 ? 6 : 0 }}
               >
                 <Box sx={{ minWidth: 38, display: 'flex', justifyContent: 'center' }}>
-                  <Image src={item.logo} alt={item.title} width={item.logoWidth} height={item.logoHeight} />
+                  <img src={item.logo} alt={item.title} width={item.logoWidth} height={item.logoHeight} />
                 </Box>
                 <Box
                   sx={{
@@ -185,7 +182,7 @@ const CardDepositWithdraw = () => {
                 sx={{ display: 'flex', alignItems: 'center', mb: index !== depositData.length - 1 ? 6 : 0 }}
               >
                 <Box sx={{ minWidth: 36, display: 'flex', justifyContent: 'center' }}>
-                  <Image src={item.logo} alt={item.title} width={item.logoWidth} height={item.logoHeight} />
+                  <img src={item.logo} alt={item.title} width={item.logoWidth} height={item.logoHeight} />
                 </Box>
                 <Box
                   sx={{

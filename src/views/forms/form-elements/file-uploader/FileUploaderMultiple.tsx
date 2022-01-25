@@ -1,9 +1,6 @@
 // ** React Imports
 import { Fragment, useState, SyntheticEvent } from 'react'
 
-// ** Next Import
-import Image from 'next/image'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Link from '@mui/material/Link'
@@ -61,7 +58,7 @@ const FileUploaderMultiple = () => {
 
   const renderFilePreview = (file: FileProp) => {
     if (file.type.startsWith('image')) {
-      return <Image width={38} height={38} alt={file.name} src={URL.createObjectURL(file as any)} />
+      return <img width={38} height={38} alt={file.name} src={URL.createObjectURL(file as any)} />
     } else {
       return <FileDocumentOutline />
     }

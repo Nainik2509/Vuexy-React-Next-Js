@@ -1,6 +1,3 @@
-// ** Next Import
-import Image from 'next/image'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -96,7 +93,7 @@ const CardSocialAnalytics = () => {
                   color={item.avatarColor}
                   sx={{ mr: 3.75, width: '2.5rem', height: '2.5rem' }}
                 >
-                  <Image alt={item.imgAlt} src={item.imgSrc} width={item.imgWidth} height={item.imgHeight} />
+                  <img alt={item.imgAlt} src={item.imgSrc} width={item.imgWidth} height={item.imgHeight} />
                 </CustomAvatar>
                 <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                   <Typography variant='h6' sx={{ lineHeight: 1.2, fontWeight: 600 }}>

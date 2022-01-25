@@ -1,9 +1,6 @@
 // ** React Imports
 import { Ref, useState, forwardRef, ReactElement } from 'react'
 
-// ** Next Import
-import Image from 'next/image'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -231,7 +228,7 @@ const DialogAuthentication = () => {
                   </Typography>
 
                   <Box sx={{ my: 12, display: 'flex', justifyContent: 'center' }}>
-                    <Image width={122} height={122} alt='qr-code' src='/images/pages/themeselection-qr.png' />
+                    <img width={122} height={122} alt='qr-code' src='/images/pages/themeselection-qr.png' />
                   </Box>
 
                   <Alert severity='warning' icon={false} sx={{ mb: 4, '& .MuiAlert-message': { overflow: 'hidden' } }}>

@@ -1,9 +1,6 @@
 // ** React Imports
 import { Ref, useState, forwardRef, ReactElement } from 'react'
 
-// ** Next Import
-import Image from 'next/image'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Tab from '@mui/material/Tab'
@@ -262,7 +259,7 @@ const DialogCreateApp = () => {
                     Submit to kickstart your project.
                   </Typography>
 
-                  <Image width={250} height={152} alt='submit-img' src='/images/cards/illustration-john.png' />
+                  <img width={250} height={152} alt='submit-img' src='/images/cards/illustration-john.png' />
                 </Box>
                 {renderTabFooter()}
               </TabPanel>

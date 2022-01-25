@@ -1,6 +1,3 @@
-// ** Next Import
-import Image from 'next/image'
-
 // ** MUI Import
 import Box from '@mui/material/Box'
 import List from '@mui/material/List'
@@ -92,7 +89,7 @@ const TimelineCenter = () => {
           </Typography>
           <Typography variant='caption'>6:30 AM</Typography>
           <Box sx={{ mt: 2, display: 'flex', alignItems: 'center' }}>
-            <Image width={28} height={28} alt='invoice.pdf' src='/images/icons/file-icons/pdf.png' />
+            <img width={28} height={28} alt='invoice.pdf' src='/images/icons/file-icons/pdf.png' />
             <Typography variant='subtitle2' sx={{ ml: 2, fontWeight: 600 }}>
               bookingCard.pdf
             </Typography>

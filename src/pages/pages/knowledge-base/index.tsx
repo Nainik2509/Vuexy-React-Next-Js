@@ -3,7 +3,6 @@ import { Fragment, useEffect, useState } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
-import Image from 'next/image'
 import { GetStaticProps, InferGetStaticPropsType } from 'next/types'
 
 // ** MUI Imports
@@ -67,7 +66,7 @@ const KnowledgeBase = ({ apiData }: InferGetStaticPropsType<typeof getStaticProp
             <Link passHref href={`/pages/knowledge-base/[category]`} as={`/pages/knowledge-base/${item.category}`}>
               <StyledLink>
                 <StyledBox>
-                  <Image
+                  <img
                     src={item.imgSrc}
                     width={item.imgWidth}
                     height={item.imgHeight}

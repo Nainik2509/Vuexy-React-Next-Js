@@ -1,9 +1,6 @@
 // ** React Imports
 import { useState, SyntheticEvent } from 'react'
 
-// ** Next Import
-import Image from 'next/image'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -67,7 +64,7 @@ const CardPlanUpgrade = () => {
                 border: theme => `1px solid ${theme.palette.primary.main}`
               }}
             >
-              <Image width={23} height={20} alt='briefcase' src='/images/cards/briefcase.png' />
+              <img width={23} height={20} alt='briefcase' src='/images/cards/briefcase.png' />
             </Avatar>
 
             <Box
@@ -111,7 +108,7 @@ const CardPlanUpgrade = () => {
         <Typography sx={{ mt: 4.5, mb: 2, fontWeight: 600, fontSize: '0.875rem' }}>Payment details</Typography>
 
         <Box sx={{ mb: 2, display: 'flex', alignItems: 'center' }}>
-          <Image width={42} height={30} alt='master-card' src='/images/cards/logo-mastercard-small.png' />
+          <img width={42} height={30} alt='master-card' src='/images/cards/logo-mastercard-small.png' />
           <Box
             sx={{
               ml: 3,
@@ -142,7 +139,7 @@ const CardPlanUpgrade = () => {
         </Box>
 
         <Box sx={{ mb: 2, display: 'flex', alignItems: 'center' }}>
-          <Image width={42} height={30} alt='credit-card' src='/images/cards/logo-credit-card-2.png' />
+          <img width={42} height={30} alt='credit-card' src='/images/cards/logo-credit-card-2.png' />
           <Box
             sx={{
               ml: 3,

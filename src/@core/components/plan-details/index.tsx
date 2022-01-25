@@ -1,6 +1,3 @@
-// ** Next Import
-import Image from 'next/image'
-
 // ** MUI Imports
 import Button from '@mui/material/Button'
 import { styled } from '@mui/material/styles'
@@ -73,7 +70,7 @@ const PlanDetails = (props: PricingPlanProps) => {
     >
       {data?.popularPlan ? <Chip label='Popular' skin='light' color='primary' /> : null}
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-        <Image
+        <img
           width={data?.imgWidth}
           src={`${data?.imgSrc}`}
           height={data?.imgHeight}

@@ -1,6 +1,3 @@
-// ** Next Imports
-import Image from 'next/image'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -141,16 +138,8 @@ const KanbanTasks = (props: KanbanTasksProps) => {
             {renderLabels()}
 
             {task.coverImage ? (
-              <Box sx={{ mb: 4, '& img': { borderRadius: 1 } }}>
-                <Image
-                  priority
-                  width='100%'
-                  height='100%'
-                  alt={task.title}
-                  objectFit='cover'
-                  layout='responsive'
-                  src={task.coverImage}
-                />
+              <Box sx={{ mb: 4, '& img': { borderRadius: 1, width: '100%', height: '100%', objectFit: 'cover' } }}>
+                <img alt={task.title} src={task.coverImage} />
               </Box>
             ) : null}
 

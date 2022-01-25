@@ -1,9 +1,6 @@
 // ** React Imports
 import { useState, SyntheticEvent } from 'react'
 
-// ** Next Import
-import Image from 'next/image'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Link from '@mui/material/Link'
@@ -58,13 +55,7 @@ const FileUploaderSingle = () => {
   }
 
   const img = files.map((file: FileProp) => (
-    <Image
-      layout='fill'
-      key={file.name}
-      alt={file.name}
-      className='single-file-image'
-      src={URL.createObjectURL(file as any)}
-    />
+    <img key={file.name} alt={file.name} className='single-file-image' src={URL.createObjectURL(file as any)} />
   ))
 
   return (

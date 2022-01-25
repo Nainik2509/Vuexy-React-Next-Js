@@ -1,9 +1,6 @@
 // ** React Imports
 import { ChangeEvent, Fragment, MouseEvent, useState, SyntheticEvent } from 'react'
 
-// ** Next Import
-import Image from 'next/image'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -285,7 +282,7 @@ const UserViewSecurity = () => {
                 <TableRow hover key={index} sx={{ '&:last-of-type td': { border: 0 } }}>
                   <TableCell>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      <Image width='22' height='22' alt='Chrome' src='/images/logos/chrome.png' />
+                      <img width='22' height='22' alt='Chrome' src='/images/logos/chrome.png' />
                       <Typography sx={{ marginLeft: 2, fontWeight: 500, fontSize: '0.875rem' }}>
                         {item.browser}
                       </Typography>

@@ -1,6 +1,3 @@
-// ** Next Import
-import Image from 'next/image'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -107,7 +104,7 @@ const CardTotalEarnings = () => {
                   backgroundColor: theme => `rgba(${theme.palette.customColors.main}, 0.04)`
                 }}
               >
-                <Image src={item.imgSrc} alt={item.title} width={item.imgWidth} height={item.imgHeight} />
+                <img src={item.imgSrc} alt={item.title} width={item.imgWidth} height={item.imgHeight} />
               </Avatar>
               <Box
                 sx={{
