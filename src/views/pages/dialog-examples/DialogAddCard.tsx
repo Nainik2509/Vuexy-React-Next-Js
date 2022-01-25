@@ -97,7 +97,7 @@ const DialogAddCard = () => {
         onBackdropClick={handleClose}
         TransitionComponent={Transition}
       >
-        <DialogContent sx={{ px: { xs: 4, sm: 12 }, py: 8, position: 'relative' }}>
+        <DialogContent sx={{ pb: 8, px: { xs: 8, sm: 15 }, pt: { xs: 8, sm: 12.5 }, position: 'relative' }}>
           <IconButton size='small' onClick={handleClose} sx={{ position: 'absolute', right: '1rem', top: '1rem' }}>
             <Close />
           </IconButton>
@@ -178,7 +178,7 @@ const DialogAddCard = () => {
             </Grid>
           </Grid>
         </DialogContent>
-        <DialogActions sx={{ pb: 8, justifyContent: 'center' }}>
+        <DialogActions sx={{ pb: { xs: 8, sm: 12.5 }, justifyContent: 'center' }}>
           <Button variant='contained' sx={{ mr: 1 }} onClick={handleClose}>
             Submit
           </Button>

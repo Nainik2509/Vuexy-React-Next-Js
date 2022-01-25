@@ -64,13 +64,13 @@ const TableHeader = (props: TableHeaderProps) => {
         </Button>
       </Box>
       <Dialog fullWidth maxWidth='sm' onClose={handleDialogToggle} open={open}>
-        <DialogTitle sx={{ pt: 8, mx: 'auto', textAlign: 'center' }}>
+        <DialogTitle sx={{ pt: 12, mx: 'auto', textAlign: 'center' }}>
           <Typography variant='h4' component='span' sx={{ mb: 2 }}>
             Add New Permission
           </Typography>
           <Typography variant='body2'>Permissions you may use and assign to your users.</Typography>
         </DialogTitle>
-        <DialogContent sx={{ pb: 8, mx: 'auto' }}>
+        <DialogContent sx={{ pb: 12, mx: 'auto' }}>
           <Box component='form' sx={{ mt: 4 }} onSubmit={handleSubmit(onSubmit)}>
             <FormGroup sx={{ mb: 1 }}>
               <Controller

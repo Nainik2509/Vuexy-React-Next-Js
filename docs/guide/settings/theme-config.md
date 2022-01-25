@@ -32,7 +32,7 @@ const themeConfig = {
   responsiveFontSizes: true,
   disableRipple: false,
   disableCustomizer: false,
-  toastPosition: 'top-center'
+  toastPosition: 'top-right'
 }
 ```
 

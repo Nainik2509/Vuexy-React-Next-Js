@@ -88,7 +88,7 @@ const DialogAuthentication = () => {
         onBackdropClick={handleClose}
         TransitionComponent={Transition}
       >
-        <DialogContent sx={{ px: { xs: 4, sm: 12 }, py: 8, position: 'relative' }}>
+        <DialogContent sx={{ px: { xs: 8, sm: 15 }, py: { xs: 8, sm: 12.5 }, position: 'relative' }}>
           <IconButton size='small' onClick={handleClose} sx={{ position: 'absolute', right: '1rem', top: '1rem' }}>
             <Close />
           </IconButton>
@@ -187,7 +187,7 @@ const DialogAuthentication = () => {
         TransitionComponent={Transition}
         onBackdropClick={handleAuthDialogClose}
       >
-        <DialogContent sx={{ px: { xs: 4, sm: 12 }, py: 8, position: 'relative' }}>
+        <DialogContent sx={{ px: { xs: 8, sm: 15 }, py: { xs: 8, sm: 12.5 }, position: 'relative' }}>
           <IconButton
             size='small'
             onClick={handleAuthDialogClose}

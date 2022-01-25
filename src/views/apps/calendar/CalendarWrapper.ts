@@ -9,6 +9,7 @@ export const CalendarWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   display: 'flex',
   overflow: 'hidden',
   position: 'relative',
+  borderRadius: theme.shape.borderRadius,
   '& .fc': {
     zIndex: 1,
 

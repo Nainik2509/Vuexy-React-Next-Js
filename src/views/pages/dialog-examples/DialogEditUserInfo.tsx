@@ -66,7 +66,7 @@ const DialogEditUserInfo = () => {
         TransitionComponent={Transition}
         onBackdropClick={() => setShow(false)}
       >
-        <DialogContent sx={{ px: { xs: 4, sm: 12 }, py: 8, position: 'relative' }}>
+        <DialogContent sx={{ pb: 8, px: { xs: 8, sm: 15 }, pt: { xs: 8, sm: 12.5 }, position: 'relative' }}>
           <IconButton
             size='small'
             onClick={() => setShow(false)}
@@ -165,7 +165,7 @@ const DialogEditUserInfo = () => {
             </Grid>
           </Grid>
         </DialogContent>
-        <DialogActions sx={{ pb: 8, justifyContent: 'center' }}>
+        <DialogActions sx={{ pb: { xs: 8, sm: 12.5 }, justifyContent: 'center' }}>
           <Button variant='contained' sx={{ marginRight: 1 }} onClick={() => setShow(false)}>
             Submit
           </Button>

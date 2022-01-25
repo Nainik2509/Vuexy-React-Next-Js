@@ -60,7 +60,7 @@ const EmailAppLayout = ({ folder, label }: MailLayoutType) => {
   const store = useSelector((state: RootState) => state.email)
 
   // ** Vars
-  const direction = settings.direction
+  const { skin, direction } = settings
 
   // ** Vars
   const leftSidebarWidth = 260
@@ -85,11 +85,14 @@ const EmailAppLayout = ({ folder, label }: MailLayoutType) => {
   return (
     <Box
       sx={{
-        boxShadow: 6,
         display: 'flex',
+        borderRadius: 1,
+        minHeight: '100%',
         overflow: 'hidden',
         position: 'relative',
-        height: `calc(100vh - ${calculateAppHeight()})`
+        boxShadow: skin === 'bordered' ? 0 : 6,
+        height: `calc(100vh - ${calculateAppHeight()})`,
+        ...(skin === 'bordered' && { border: `1px solid ${theme.palette.divider}` })
       }}
     >
       <SidebarLeft

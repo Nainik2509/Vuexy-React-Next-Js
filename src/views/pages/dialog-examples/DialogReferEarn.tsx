@@ -91,7 +91,7 @@ const DialogReferEarn = () => {
         TransitionComponent={Transition}
         onBackdropClick={() => setShow(false)}
       >
-        <DialogContent sx={{ px: { xs: 4, sm: 12 }, pt: 8, position: 'relative' }}>
+        <DialogContent sx={{ px: { xs: 8, sm: 15 }, pt: { xs: 8, sm: 12.5 }, position: 'relative' }}>
           <IconButton
             size='small'
             onClick={() => setShow(false)}
@@ -138,7 +138,7 @@ const DialogReferEarn = () => {
           </Grid>
         </DialogContent>
         <Divider sx={{ my: 4 }} />
-        <DialogContent sx={{ pb: 8, px: { xs: 4, sm: 12 }, position: 'relative' }}>
+        <DialogContent sx={{ px: { xs: 8, sm: 15 }, pb: { xs: 8, sm: 12.5 }, position: 'relative' }}>
           <Box sx={{ mb: 8 }}>
             <Typography variant='h6' sx={{ mb: 4 }}>
               Invite your friends

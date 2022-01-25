@@ -110,13 +110,10 @@ const SidebarLeft = (props: MailSidebarType) => {
           boxShadow: 'none',
           width: leftSidebarWidth,
           zIndex: lgAbove ? 2 : 'drawer',
-          position: lgAbove ? 'static' : 'absolute',
-          borderTopLeftRadius: theme => theme.shape.borderRadius,
-          borderBottomLeftRadius: theme => theme.shape.borderRadius
+          position: lgAbove ? 'static' : 'absolute'
         },
         '& .MuiBackdrop-root': {
-          position: 'absolute',
-          borderRadius: 1
+          position: 'absolute'
         }
       }}
     >

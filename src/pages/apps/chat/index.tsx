@@ -17,6 +17,9 @@ import { StatusObjType, StatusType } from 'src/types/apps/chatTypes'
 // ** Configs Imports
 import themeConfig from 'src/configs/themeConfig'
 
+// ** Hooks
+import { useSettings } from 'src/@core/hooks/useSettings'
+
 // ** Utils Imports
 import { getInitials } from 'src/@core/utils/get-initials'
 import { formatDateToMonthShort } from 'src/@core/utils/format'
@@ -35,9 +38,11 @@ const AppChat = () => {
   // ** Hooks
   const theme = useTheme()
   const dispatch = useDispatch()
+  const { settings } = useSettings()
   const store = useSelector((state: RootState) => state.chat)
 
   // ** Vars
+  const { skin } = settings
   const smAbove = useMediaQuery(theme.breakpoints.up('sm'))
   const sidebarWidth = smAbove ? 370 : 300
   const mdAbove = useMediaQuery(theme.breakpoints.up('md'))
@@ -65,14 +70,16 @@ const AppChat = () => {
     <Box
       className='app-chat'
       sx={{
-        boxShadow: 6,
         width: '100%',
         display: 'flex',
         borderRadius: 1,
+        minHeight: '100%',
         overflow: 'hidden',
         position: 'relative',
         backgroundColor: 'background.paper',
-        height: `calc(100vh - ${calculateAppHeight()})`
+        boxShadow: skin === 'bordered' ? 0 : 6,
+        height: `calc(100vh - ${calculateAppHeight()})`,
+        ...(skin === 'bordered' && { border: `1px solid ${theme.palette.divider}` })
       }}
     >
       <SidebarLeft

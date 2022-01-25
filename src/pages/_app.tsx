@@ -7,6 +7,9 @@ import type { NextPage } from 'next'
 import Router, { useRouter } from 'next/router'
 import type { AppProps } from 'next/app'
 
+// ** MUI Imports
+import Box from '@mui/material/Box'
+
 // ** Store Imports
 import { store } from 'src/store'
 import { Provider } from 'react-redux'
@@ -135,15 +138,16 @@ const App = (props: ExtendedAppProps) => {
                   <ThemeComponent settings={settings}>
                     <Guard authGuard={authGuard} guestGuard={guestGuard}>
                       {getLayout(
-                        <div
+                        <Box
                           key={router.route}
+                          sx={{ height: '100%' }}
                           className={clsx('animation-wrapper', {
                             [`animate__animated animate__${settings.routerTransition}`]:
                               settings.routerTransition !== 'none' || settings.routerTransition !== undefined
                           })}
                         >
                           <Component {...pageProps} />
-                        </div>
+                        </Box>
                       )}
                     </Guard>
 

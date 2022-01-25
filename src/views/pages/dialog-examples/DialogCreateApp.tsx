@@ -150,7 +150,15 @@ const DialogCreateApp = () => {
         onBackdropClick={handleClose}
         TransitionComponent={Transition}
       >
-        <DialogContent sx={{ px: { xs: 4, sm: 12 }, py: 8, position: 'relative' }}>
+        <DialogContent
+          sx={{
+            pt: { xs: 8, sm: 12.5 },
+            pr: { xs: 5, sm: 12 },
+            pb: { xs: 5, sm: 9.5 },
+            pl: { xs: 4, sm: 11 },
+            position: 'relative'
+          }}
+        >
           <IconButton size='small' onClick={handleClose} sx={{ position: 'absolute', right: '1rem', top: '1rem' }}>
             <Close />
           </IconButton>

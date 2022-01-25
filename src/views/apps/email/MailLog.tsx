@@ -271,7 +271,6 @@ const MailLog = (props: MailLogType) => {
   }
 
   const mailDetailsProps = {
-    lgAbove,
     folders,
     dispatch,
     direction,
@@ -290,16 +289,7 @@ const MailLog = (props: MailLogType) => {
 
   return (
     <Box sx={{ width: '100%', overflow: 'hidden', position: 'relative', '& .ps__rail-y': { zIndex: 5 } }}>
-      <Box
-        sx={{
-          boxShadow: 6,
-          height: '100%',
-          borderRadius: 1,
-          overflow: 'hidden',
-          backgroundColor: 'background.paper',
-          ...(lgAbove ? { borderTopLeftRadius: 0, borderBottomLeftRadius: 0 } : {})
-        }}
-      >
+      <Box sx={{ height: '100%', backgroundColor: 'background.paper' }}>
         <Box sx={{ px: 5, py: 3 }}>
           <Box sx={{ display: 'flex', alignItems: 'center', width: '100%' }}>
             {lgAbove ? null : (

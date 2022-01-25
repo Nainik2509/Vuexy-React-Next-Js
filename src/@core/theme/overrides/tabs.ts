@@ -17,8 +17,10 @@ const Tabs = (theme: Theme) => {
     },
     MuiTab: {
       styleOverrides: {
-        root: {
-          color: theme.palette.text.primary
+        textColorSecondary: {
+          '&.Mui-selected': {
+            color: theme.palette.text.secondary
+          }
         }
       }
     }

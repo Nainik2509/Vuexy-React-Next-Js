@@ -56,6 +56,7 @@ const AppCalendar = () => {
   // ** Vars
   const leftSidebarWidth = 260
   const addEventSidebarWidth = 400
+  const { skin, direction } = settings
   const mdAbove = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'))
 
   useEffect(() => {
@@ -67,7 +68,13 @@ const AppCalendar = () => {
   const handleAddEventSidebarToggle = () => setAddEventSidebarOpen(!addEventSidebarOpen)
 
   return (
-    <CalendarWrapper className='app-calendar' sx={{ position: 'relative', boxShadow: 6 }}>
+    <CalendarWrapper
+      className='app-calendar'
+      sx={{
+        boxShadow: skin === 'bordered' ? 0 : 6,
+        ...(skin === 'bordered' && { border: theme => `1px solid ${theme.palette.divider}` })
+      }}
+    >
       <SidebarLeft
         store={store}
         mdAbove={mdAbove}
@@ -96,9 +103,9 @@ const AppCalendar = () => {
         <Calendar
           store={store}
           dispatch={dispatch}
+          direction={direction}
           updateEvent={updateEvent}
           calendarApi={calendarApi}
-          direction={settings.direction}
           calendarsColor={calendarsColor}
           setCalendarApi={setCalendarApi}
           handleSelectEvent={handleSelectEvent}

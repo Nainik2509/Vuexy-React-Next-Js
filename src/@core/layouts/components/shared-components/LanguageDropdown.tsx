@@ -98,11 +98,25 @@ const LanguageDropdown = ({ settings, saveSettings }: Props) => {
         anchorOrigin={{ vertical: 'bottom', horizontal: direction === 'ltr' ? 'right' : 'left' }}
         transformOrigin={{ vertical: 'top', horizontal: direction === 'ltr' ? 'right' : 'left' }}
       >
-        <MenuItem sx={{ py: 2 }} selected={i18n.language === 'en'} onClick={() => handleLangItemClick('en')}>
+        <MenuItem
+          sx={{ py: 2 }}
+          selected={i18n.language === 'en'}
+          onClick={() => {
+            handleLangItemClick('en')
+            saveSettings({ ...settings, direction: 'ltr' })
+          }}
+        >
           <CountryFlag alt='en-flag' src='/images/flags/en.svg' />
           English
         </MenuItem>
-        <MenuItem sx={{ py: 2 }} selected={i18n.language === 'fr'} onClick={() => handleLangItemClick('fr')}>
+        <MenuItem
+          sx={{ py: 2 }}
+          selected={i18n.language === 'fr'}
+          onClick={() => {
+            handleLangItemClick('fr')
+            saveSettings({ ...settings, direction: 'ltr' })
+          }}
+        >
           <CountryFlag alt='fr-flag' src='/images/flags/fr.svg' />
           French
         </MenuItem>

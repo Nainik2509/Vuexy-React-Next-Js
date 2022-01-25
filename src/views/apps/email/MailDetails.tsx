@@ -90,7 +90,6 @@ const MailDetails = (props: MailDetailsType) => {
   // ** Props
   const {
     mail,
-    lgAbove,
     folders,
     dispatch,
     direction,
@@ -230,13 +229,7 @@ const MailDetails = (props: MailDetailsType) => {
       hideBackdrop
       direction='right'
       show={mailDetailsOpen}
-      sx={{
-        zIndex: 1,
-        width: '100%',
-        borderRadius: 1,
-        overflow: 'hidden',
-        ...(lgAbove ? { borderTopLeftRadius: 0, borderBottomLeftRadius: 0 } : {})
-      }}
+      sx={{ zIndex: 1, width: '100%', overflow: 'hidden' }}
       onClose={() => {
         setMailDetailsOpen(false)
         setShowReplies(false)
@@ -438,8 +431,8 @@ const MailDetails = (props: MailDetailsType) => {
                           <Box sx={{ p: 5 }}>
                             <Box
                               sx={{
-                                flexWrap: 'wrap',
                                 display: 'flex',
+                                flexWrap: 'wrap',
                                 alignItems: 'center',
                                 justifyContent: 'space-between'
                               }}
@@ -596,31 +589,31 @@ const MailDetails = (props: MailDetailsType) => {
 
                 <Box
                   sx={{
+                    p: 5,
                     width: '100%',
                     borderRadius: 1,
                     border: '1px solid',
                     borderColor: 'divider',
-                    backgroundColor: 'background.paper'
+                    backgroundColor: 'background.paper',
+                    boxShadow: settings.skin === 'bordered' ? 0 : 6
                   }}
                 >
-                  <Box sx={{ p: 5 }}>
-                    <Typography sx={{ fontWeight: 500 }}>
-                      Click here to{' '}
-                      <Typography
-                        component='span'
-                        sx={{ cursor: 'pointer', color: 'primary.main', fontWeight: 'inherit' }}
-                      >
-                        Reply
-                      </Typography>{' '}
-                      or{' '}
-                      <Typography
-                        component='span'
-                        sx={{ cursor: 'pointer', color: 'primary.main', fontWeight: 'inherit' }}
-                      >
-                        Forward
-                      </Typography>
+                  <Typography sx={{ fontWeight: 500 }}>
+                    Click here to{' '}
+                    <Typography
+                      component='span'
+                      sx={{ cursor: 'pointer', color: 'primary.main', fontWeight: 'inherit' }}
+                    >
+                      Reply
+                    </Typography>{' '}
+                    or{' '}
+                    <Typography
+                      component='span'
+                      sx={{ cursor: 'pointer', color: 'primary.main', fontWeight: 'inherit' }}
+                    >
+                      Forward
                     </Typography>
-                  </Box>
+                  </Typography>
                 </Box>
               </Box>
             </PerfectScrollbar>

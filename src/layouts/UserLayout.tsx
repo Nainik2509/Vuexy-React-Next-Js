@@ -17,6 +17,7 @@ import HorizontalNavItems from 'src/navigation/horizontal'
 // Uncomment the below line (according to the layout type) when using server-side menu
 // import ServerSideVerticalNavItems from './components/vertical/ServerSideNavItems'
 // import ServerSideHorizontalNavItems from './components/horizontal/ServerSideNavItems'
+import BuyNowButton from './components/BuyNowButton'
 import VerticalAppBarContent from './components/vertical/AppBarContent'
 import HorizontalAppBarContent from './components/horizontal/AppBarContent'
 
@@ -84,6 +85,7 @@ const UserLayout = ({ children }: Props) => {
           })}
     >
       {children}
+      <BuyNowButton />
     </Layout>
   )
 }

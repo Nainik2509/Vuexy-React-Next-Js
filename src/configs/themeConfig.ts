@@ -50,7 +50,7 @@ const themeConfig: ThemeConfig = {
   layout: 'vertical' /* vertical | horizontal */,
   mode: 'light' /* light | dark */,
   direction: 'ltr' /* ltr | rtl */,
-  skin: 'default' /* default | bordered | semi-dark */,
+  skin: 'default' /* default | bordered | semi-dark /*! Note: semi-dark value will only work for Vertical Layout */,
   contentWidth: 'boxed' /* full | boxed */,
   footer: 'static' /* fixed | static | hidden */,
 
@@ -62,11 +62,11 @@ const themeConfig: ThemeConfig = {
   navHidden: false /* true | false */,
   menuTextTruncate: true /* true | false */,
   navSubItemIcon: CircleOutline /* Icon Element */,
-  verticalNavToggleType: 'accordion' /* accordion | collapse, */,
-  navCollapsed: false /* true | false */,
-  navigationSize: 260 /* Number in PX(Pixels) */,
-  collapsedNavigationSize: 69 /* Number in PX(Pixels) */,
-  horizontalMenuToggle: 'hover' /* click | hover */,
+  verticalNavToggleType: 'accordion' /* accordion | collapse /*! Note: This is for Vertical navigation menu only */,
+  navCollapsed: false /* true | false /*! Note: This is for Vertical navigation menu only */,
+  navigationSize: 260 /* Number in PX(Pixels) /*! Note: This is for Vertical navigation menu only */,
+  collapsedNavigationSize: 69 /* Number in PX(Pixels) /*! Note: This is for Vertical navigation menu only */,
+  horizontalMenuToggle: 'hover' /* click | hover /*! Note: This is for Horizontal navigation menu only */,
 
   // ** AppBar Configs
   appBar: 'fixed' /* fixed | static | hidden /*! Note: hidden value will only work for Vertical Layout */,
@@ -76,7 +76,7 @@ const themeConfig: ThemeConfig = {
   responsiveFontSizes: true /* true | false */,
   disableRipple: false /* true | false */,
   disableCustomizer: false /* true | false */,
-  toastPosition: 'top-center' /* top-left | top-center | top-right | bottom-left | bottom-center | bottom-right */
+  toastPosition: 'top-right' /* top-left | top-center | top-right | bottom-left | bottom-center | bottom-right */
 }
 
 export default themeConfig
