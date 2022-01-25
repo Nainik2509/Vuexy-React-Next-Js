@@ -16,7 +16,13 @@ const Textarea = () => {
   return (
     <Grid container spacing={6} className='match-height'>
       <Grid item xs={12}>
-        <CardSnippet title='Basic Textarea' code={source.TextareaBasicCode}>
+        <CardSnippet
+          title='Basic Textarea'
+          code={{
+            tsx: source.TextareaBasicTSXCode,
+            jsx: source.TextareaBasicJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>minRows</code> prop with <code>TextareaAutosize</code> component to add minimum rows in textarea
             and <code>maxRows</code> prop to add maximum rows.
@@ -25,7 +31,13 @@ const Textarea = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12}>
-        <CardSnippet title='Variants' code={source.TextareaVariantCode}>
+        <CardSnippet
+          title='Variants'
+          code={{
+            tsx: source.TextareaVariantTSXCode,
+            jsx: source.TextareaVariantJSXCode
+          }}
+        >
           <Typography>
             Use <code>multiline</code> prop with <code>TextField</code> component to transform the text field into{' '}
             <code>textarea</code>. Use <code>variant</code> prop with <code>TextField</code> component for different

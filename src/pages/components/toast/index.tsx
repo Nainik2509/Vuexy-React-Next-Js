@@ -36,47 +36,101 @@ const ReactHotToasts = () => {
           }
         />
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastBlankCode}>
+          <CardSnippet
+            title=''
+            code={{
+              tsx: source.ToastBlankTSXCode,
+              jsx: source.ToastBlankJSXCode
+            }}
+          >
             <ToastBlank />
           </CardSnippet>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastMultiLineCode}>
+          <CardSnippet
+            title=''
+            code={{
+              tsx: source.ToastMultiLineTSXCode,
+              jsx: source.ToastMultiLineJSXCode
+            }}
+          >
             <ToastMultiLine />
           </CardSnippet>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastSuccessCode}>
+          <CardSnippet
+            title=''
+            code={{
+              tsx: source.ToastSuccessTSXCode,
+              jsx: source.ToastSuccessJSXCode
+            }}
+          >
             <ToastSuccess />
           </CardSnippet>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastErrorCode}>
+          <CardSnippet
+            title=''
+            code={{
+              tsx: source.ToastErrorTSXCode,
+              jsx: source.ToastErrorJSXCode
+            }}
+          >
             <ToastError />
           </CardSnippet>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastPromiseCode}>
+          <CardSnippet
+            title=''
+            code={{
+              tsx: source.ToastPromiseTSXCode,
+              jsx: source.ToastPromiseJSXCode
+            }}
+          >
             <ToastPromise />
           </CardSnippet>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastEmojiCode}>
+          <CardSnippet
+            title=''
+            code={{
+              tsx: source.ToastEmojiTSXCode,
+              jsx: source.ToastEmojiJSXCode
+            }}
+          >
             <ToastEmoji />
           </CardSnippet>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastThemedCode}>
+          <CardSnippet
+            title=''
+            code={{
+              tsx: source.ToastThemedTSXCode,
+              jsx: source.ToastThemedJSXCode
+            }}
+          >
             <ToastThemed />
           </CardSnippet>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastCustomCode}>
+          <CardSnippet
+            title=''
+            code={{
+              tsx: source.ToastCustomTSXCode,
+              jsx: source.ToastCustomJSXCode
+            }}
+          >
             <ToastCustom />
           </CardSnippet>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardSnippet title='' code={source.ToastCustomPositionCode}>
+          <CardSnippet
+            title=''
+            code={{
+              tsx: source.ToastCustomPositionTSXCode,
+              jsx: source.ToastCustomPositionJSXCode
+            }}
+          >
             <ToastCustomPosition />
           </CardSnippet>
         </Grid>

@@ -20,7 +20,13 @@ const Snackbar = () => {
   return (
     <Grid container spacing={6} className='match-height'>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Simple Snackbar' code={source.SnackbarSimpleCode}>
+        <CardSnippet
+          title='Simple Snackbar'
+          code={{
+            tsx: source.SnackbarSimpleTSXCode,
+            jsx: source.SnackbarSimpleJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Manage <code>open</code> prop with <code>Snackbar</code> component with the help of a state.
           </Typography>
@@ -28,7 +34,13 @@ const Snackbar = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Alert Snackbar' code={source.SnackbarAlertCode}>
+        <CardSnippet
+          title='Alert Snackbar'
+          code={{
+            tsx: source.SnackbarAlertTSXCode,
+            jsx: source.SnackbarAlertJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Add <code>Alert</code> component as a children of <code>Snackbar</code> component.
           </Typography>
@@ -36,7 +48,13 @@ const Snackbar = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Positioned Snackbar' code={source.SnackbarPositionedCode}>
+        <CardSnippet
+          title='Positioned Snackbar'
+          code={{
+            tsx: source.SnackbarPositionedTSXCode,
+            jsx: source.SnackbarPositionedJSXCode
+          }}
+        >
           <Typography>
             Use <code>anchorOrigin</code> prop to change the position of the snackbar.
           </Typography>
@@ -44,19 +62,37 @@ const Snackbar = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Consecutive Snackbars' code={source.SnackbarConsecutiveCode}>
+        <CardSnippet
+          title='Consecutive Snackbars'
+          code={{
+            tsx: source.SnackbarConsecutiveTSXCode,
+            jsx: source.SnackbarConsecutiveJSXCode
+          }}
+        >
           <Typography>When multiple snackbar updates are necessary, they should appear one at a time.</Typography>
           <SnackbarConsecutive />
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Change Transition' code={source.SnackbarTransitionCode}>
+        <CardSnippet
+          title='Change Transition'
+          code={{
+            tsx: source.SnackbarTransitionTSXCode,
+            jsx: source.SnackbarTransitionJSXCode
+          }}
+        >
           <Typography>When multiple snackbar updates are necessary, they should appear one at a time.</Typography>
           <SnackbarTransition />
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Control Slide Direction' code={source.SnackbarControlSlideDirectionCode}>
+        <CardSnippet
+          title='Control Slide Direction'
+          code={{
+            tsx: source.SnackbarControlSlideDirectionTSXCode,
+            jsx: source.SnackbarControlSlideDirectionJSXCode
+          }}
+        >
           <Typography>
             You can change the direction of the <code>Slide</code> transition.
           </Typography>

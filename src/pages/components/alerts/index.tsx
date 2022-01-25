@@ -20,7 +20,13 @@ const Alerts = () => {
   return (
     <Grid container spacing={6} className='match-height'>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Basic' code={source.AlertsBasicCode}>
+        <CardSnippet
+          title='Basic'
+          code={{
+            tsx: source.AlertsBasicTSXCode,
+            jsx: source.AlertsBasicJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>severity={`{'error' | 'warning' | 'info' | 'success'}`}</code> prop with{' '}
             <code>&lt;Alert&gt;</code> component for different colored alerts.
@@ -29,7 +35,13 @@ const Alerts = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Outlined' code={source.AlertsOutlinedCode}>
+        <CardSnippet
+          title='Outlined'
+          code={{
+            tsx: source.AlertsOutlinedTSXCode,
+            jsx: source.AlertsOutlinedJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>variant='outlined'</code> prop with <code>&lt;Alert&gt;</code> component for outlined alerts.
           </Typography>
@@ -37,7 +49,13 @@ const Alerts = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Filled' code={source.AlertsFilledCode}>
+        <CardSnippet
+          title='Filled'
+          code={{
+            tsx: source.AlertsFilledTSXCode,
+            jsx: source.AlertsFilledJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>variant='filled'</code> prop with <code>&lt;Alert&gt;</code> component for filled alerts.
           </Typography>
@@ -45,7 +63,13 @@ const Alerts = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Action' code={source.AlertsActionsCode}>
+        <CardSnippet
+          title='Action'
+          code={{
+            tsx: source.AlertsActionsTSXCode,
+            jsx: source.AlertsActionsJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             To add a button, you need to use <code>action</code> prop with <code>&lt;Alert&gt;</code> component and pass
             a button inside this prop. To add a close button, you need to use <code>onClose</code> prop with{' '}
@@ -55,7 +79,13 @@ const Alerts = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Description' code={source.AlertsDescriptionCode}>
+        <CardSnippet
+          title='Description'
+          code={{
+            tsx: source.AlertsDescriptionTSXCode,
+            jsx: source.AlertsDescriptionJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             You can use the <code>AlertTitle</code> component to display a formatted title above the content.
           </Typography>
@@ -63,7 +93,13 @@ const Alerts = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Dismissible' code={source.AlertsDismissibleCode}>
+        <CardSnippet
+          title='Dismissible'
+          code={{
+            tsx: source.AlertsDismissibleTSXCode,
+            jsx: source.AlertsDismissibleJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             You need to use one of the transition components (viz. Collapse, Fade, Grow and Slide) to make a dismissible
             alert.

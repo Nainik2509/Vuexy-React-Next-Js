@@ -22,7 +22,13 @@ const Radios = () => {
   return (
     <Grid container spacing={6} className='match-height'>
       <Grid item xs={12}>
-        <CardSnippet title='RadioGroup' code={source.RadioGroupCode}>
+        <CardSnippet
+          title='RadioGroup'
+          code={{
+            tsx: source.RadioGroupTSXCode,
+            jsx: source.RadioGroupJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 2 }}>
             <code>RadioGroup</code> is a helpful wrapper used to group <code>Radio</code> components that provides an
             easier API, and proper keyboard accessibility to the group.
@@ -31,7 +37,13 @@ const Radios = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12}>
-        <CardSnippet title='Controlled and Uncontrolled' code={source.RadioControlledUncontrolledCode}>
+        <CardSnippet
+          title='Controlled and Uncontrolled'
+          code={{
+            tsx: source.RadioControlledUncontrolledTSXCode,
+            jsx: source.RadioControlledUncontrolledJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Manage <code>value</code> prop with <code>RadioGroup</code> component with the help of a state for
             controlled radio and <code>defaultValue</code> prop with <code>RadioGroup</code> component for uncontrolled
@@ -41,7 +53,13 @@ const Radios = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Standalone Radio Buttons' code={source.RadioStandaloneCode}>
+        <CardSnippet
+          title='Standalone Radio Buttons'
+          code={{
+            tsx: source.RadioStandaloneTSXCode,
+            jsx: source.RadioStandaloneJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 2 }}>
             <code>Radio</code> can also be used standalone, without the RadioGroup wrapper.
           </Typography>
@@ -49,7 +67,13 @@ const Radios = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Colors' code={source.RadioColorCode}>
+        <CardSnippet
+          title='Colors'
+          code={{
+            tsx: source.RadioColorTSXCode,
+            jsx: source.RadioColorJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 2 }}>
             Use <code>color</code> prop with <code>Radio</code> component for different colored radio button.
           </Typography>
@@ -57,7 +81,13 @@ const Radios = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Sizes' code={source.RadioSizesCode}>
+        <CardSnippet
+          title='Sizes'
+          code={{
+            tsx: source.RadioSizesTSXCode,
+            jsx: source.RadioSizesJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 2 }}>
             Use <code>color</code> prop with <code>Radio</code> component for different colored radio button.
           </Typography>
@@ -65,7 +95,13 @@ const Radios = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Customized Radio' code={source.RadioCustomizedCode}>
+        <CardSnippet
+          title='Customized Radio'
+          code={{
+            tsx: source.RadioCustomizedTSXCode,
+            jsx: source.RadioCustomizedJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 2 }}>
             Use <code>styled</code> hook to customize your radio button.
           </Typography>
@@ -73,7 +109,13 @@ const Radios = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Label Placement' code={source.RadioLabelPlacementCode}>
+        <CardSnippet
+          title='Label Placement'
+          code={{
+            tsx: source.RadioLabelPlacementTSXCode,
+            jsx: source.RadioLabelPlacementJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             You can change the placement of the label with <code>FormControlLabel</code> component's{' '}
             <code>labelPlacement</code> prop.
@@ -82,7 +124,13 @@ const Radios = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Show Error' code={source.RadioShowErrorCode}>
+        <CardSnippet
+          title='Show Error'
+          code={{
+            tsx: source.RadioShowErrorTSXCode,
+            jsx: source.RadioShowErrorJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             In general, radio buttons should have a value selected by default. If this is not the case, you can display
             an error if no value is selected when the form is submitted.

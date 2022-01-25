@@ -20,7 +20,10 @@ const Accordion = () => {
       <Grid item xs={12} md={6}>
         <CardSnippet
           title='Simple Accordion'
-          code={source.AccordionSimpleCode}
+          code={{
+            tsx: source.AccordionSimpleTSXCode,
+            jsx: source.AccordionSimpleJSXCode
+          }}
           sx={{
             boxShadow: 'none',
             backgroundColor: 'transparent',
@@ -37,7 +40,10 @@ const Accordion = () => {
       <Grid item xs={12} md={6}>
         <CardSnippet
           title='Controlled Accordion'
-          code={source.AccordionControlledCode}
+          code={{
+            tsx: source.AccordionControlledTSXCode,
+            jsx: source.AccordionControlledJSXCode
+          }}
           sx={{
             boxShadow: 'none',
             backgroundColor: 'transparent',
@@ -53,7 +59,10 @@ const Accordion = () => {
       <Grid item xs={12} md={6}>
         <CardSnippet
           title='Customized Accordion'
-          code={source.AccordionCustomizedCode}
+          code={{
+            tsx: source.AccordionCustomizedTSXCode,
+            jsx: source.AccordionCustomizedJSXCode
+          }}
           sx={{
             boxShadow: 'none',
             backgroundColor: 'transparent',
@@ -69,7 +78,10 @@ const Accordion = () => {
       <Grid item xs={12} md={6}>
         <CardSnippet
           title='Additional Actions'
-          code={source.AccordionActionsCode}
+          code={{
+            tsx: source.AccordionActionsTSXCode,
+            jsx: source.AccordionActionsJSXCode
+          }}
           sx={{
             boxShadow: 'none',
             backgroundColor: 'transparent',

@@ -31,7 +31,13 @@ const InputMask = () => {
           subtitle={<Typography variant='body2'>Format input text content when you are typing</Typography>}
         />
         <Grid item xs={12}>
-          <CardSnippet title='Input Masks' code={source.InputMaskExamplesCode}>
+          <CardSnippet
+            title='Input Masks'
+            code={{
+              tsx: source.InputMaskExamplesTSXCode,
+              jsx: source.InputMaskExamplesJSXCode
+            }}
+          >
             <InputMaskExamples />
           </CardSnippet>
         </Grid>

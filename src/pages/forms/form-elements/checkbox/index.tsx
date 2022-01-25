@@ -22,12 +22,24 @@ const Checkboxes = () => {
   return (
     <Grid container spacing={6} className='match-height'>
       <Grid item xs={12}>
-        <CardSnippet title='Basic Checkboxes' code={source.CheckboxesBasicCode}>
+        <CardSnippet
+          title='Basic Checkboxes'
+          code={{
+            tsx: source.CheckboxesBasicTSXCode,
+            jsx: source.CheckboxesBasicJSXCode
+          }}
+        >
           <CheckboxesBasic />
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Controlled and Uncontrolled' code={source.CheckboxesControlledUncontrolledCode}>
+        <CardSnippet
+          title='Controlled and Uncontrolled'
+          code={{
+            tsx: source.CheckboxesControlledUncontrolledTSXCode,
+            jsx: source.CheckboxesControlledUncontrolledJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 2 }}>
             Manage <code>checked</code> prop with the help of a state for controlled <code>Checkbox</code> and{' '}
             <code>defaultChecked</code> prop with for uncontrolled <code>Checkbox</code>.
@@ -36,7 +48,13 @@ const Checkboxes = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Colors' code={source.CheckboxesColorsCode}>
+        <CardSnippet
+          title='Colors'
+          code={{
+            tsx: source.CheckboxesColorsTSXCode,
+            jsx: source.CheckboxesColorsJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 2 }}>
             Use <code>color</code> prop for different colored checkbox.
           </Typography>
@@ -44,7 +62,13 @@ const Checkboxes = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Customized' code={source.CheckboxesCustomizedCode}>
+        <CardSnippet
+          title='Customized'
+          code={{
+            tsx: source.CheckboxesCustomizedTSXCode,
+            jsx: source.CheckboxesCustomizedJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 2 }}>
             Use <code>styled</code> hook to customize your checkbox.
           </Typography>
@@ -52,7 +76,13 @@ const Checkboxes = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Custom Icons' code={source.CheckboxesCustomIconsCode}>
+        <CardSnippet
+          title='Custom Icons'
+          code={{
+            tsx: source.CheckboxesCustomIconsTSXCode,
+            jsx: source.CheckboxesCustomIconsJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 2 }}>
             Use <code>icon</code> and <code>checkedIcon</code> props with <code>Checkbox</code> component to change
             default checkbox icons.
@@ -61,7 +91,13 @@ const Checkboxes = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Label Placement' code={source.CheckboxesLabelPlacementCode}>
+        <CardSnippet
+          title='Label Placement'
+          code={{
+            tsx: source.CheckboxesLabelPlacementTSXCode,
+            jsx: source.CheckboxesLabelPlacementJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>labelPlacement</code> prop with <code>FormControlLabel</code> component to change the placement of
             the label.
@@ -70,7 +106,13 @@ const Checkboxes = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Show Error' code={source.CheckboxesShowErrorCode}>
+        <CardSnippet
+          title='Show Error'
+          code={{
+            tsx: source.CheckboxesShowErrorTSXCode,
+            jsx: source.CheckboxesShowErrorJSXCode
+          }}
+        >
           <Typography>
             You can display error by managing <code>error</code> prop with <code>FormControl</code> component with the
             help of a state.
@@ -79,7 +121,13 @@ const Checkboxes = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12}>
-        <CardSnippet title='Sizes' code={source.CheckboxesSizesCode}>
+        <CardSnippet
+          title='Sizes'
+          code={{
+            tsx: source.CheckboxesSizesTSXCode,
+            jsx: source.CheckboxesSizesJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 2 }}>
             Use <code>icon</code> and <code>checkedIcon</code> props with <code>Checkbox</code> component and use{' '}
             <code>fontSize='small'</code> prop with the former props for small checkbox.

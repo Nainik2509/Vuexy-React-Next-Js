@@ -27,7 +27,13 @@ const TreeView = () => {
   return (
     <Grid container spacing={6} className='match-height'>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Basic Tree View' code={source.TreeViewBasicCode}>
+        <CardSnippet
+          title='Basic Tree View'
+          code={{
+            tsx: source.TreeViewBasicTSXCode,
+            jsx: source.TreeViewBasicJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>TreeView</code> & <code>TreeItem</code> components and <code>defaultCollapseIcon</code> &{' '}
             <code>defaultExpandIcon</code> props with <code>TreeView</code> component for a simple tree view.
@@ -36,7 +42,13 @@ const TreeView = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Multi Selection' code={source.TreeViewMultiSelectionCode}>
+        <CardSnippet
+          title='Multi Selection'
+          code={{
+            tsx: source.TreeViewMultiSelectionTSXCode,
+            jsx: source.TreeViewMultiSelectionJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>multiSelect</code> prop for multiple selection in a tree view.
           </Typography>
@@ -44,7 +56,13 @@ const TreeView = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Controlled Tree View' code={source.TreeViewControlledCode}>
+        <CardSnippet
+          title='Controlled Tree View'
+          code={{
+            tsx: source.TreeViewControlledTSXCode,
+            jsx: source.TreeViewControlledJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Manage <code>expanded</code>, <code>selected</code>, <code>onNodeToggle</code> and <code>onNodeSelect</code>{' '}
             props with the help of states.
@@ -53,7 +71,13 @@ const TreeView = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Rich Object' code={source.TreeViewRichObjectCode}>
+        <CardSnippet
+          title='Rich Object'
+          code={{
+            tsx: source.TreeViewRichObjectTSXCode,
+            jsx: source.TreeViewRichObjectJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             <code>TreeView</code> and <code>TreeItem</code> components can also use APIs. Use an object and recursion
             can be used to handle it.
@@ -62,7 +86,13 @@ const TreeView = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Customized Tree View' code={source.TreeViewCustomizedCode}>
+        <CardSnippet
+          title='Customized Tree View'
+          code={{
+            tsx: source.TreeViewCustomizedTSXCode,
+            jsx: source.TreeViewCustomizedJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>styled</code> hook to customize your tree view.
           </Typography>

@@ -16,17 +16,35 @@ const TreeView = () => {
   return (
     <Grid container spacing={6} className='match-height'>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Timeline Filled' code={source.TimelineFilledCode}>
+        <CardSnippet
+          title='Timeline Filled'
+          code={{
+            tsx: source.TimelineFilledTSXCode,
+            jsx: source.TimelineFilledJSXCode
+          }}
+        >
           <TimelineFilled />
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Timeline Outlined' code={source.TimelineOutlinedCode}>
+        <CardSnippet
+          title='Timeline Outlined'
+          code={{
+            tsx: source.TimelineOutlinedTSXCode,
+            jsx: source.TimelineOutlinedJSXCode
+          }}
+        >
           <TimelineOutlined />
         </CardSnippet>
       </Grid>
       <Grid item xs={12}>
-        <CardSnippet title='Timeline Center With Icons' code={source.TimelineCenterCode}>
+        <CardSnippet
+          title='Timeline Center With Icons'
+          code={{
+            tsx: source.TimelineCenterTSXCode,
+            jsx: source.TimelineCenterJSXCode
+          }}
+        >
           <TimelineCenter />
         </CardSnippet>
       </Grid>

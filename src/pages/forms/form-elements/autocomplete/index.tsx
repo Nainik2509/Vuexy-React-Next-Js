@@ -30,7 +30,13 @@ const Autocomplete = () => {
   return (
     <Grid container spacing={6} className='match-height'>
       <Grid item xs={12}>
-        <CardSnippet title='Variants' code={source.AutocompleteVariantsCode}>
+        <CardSnippet
+          title='Variants'
+          code={{
+            tsx: source.AutocompleteVariantsTSXCode,
+            jsx: source.AutocompleteVariantsJSXCode
+          }}
+        >
           <Typography>
             Use <code>variant={`{'filled' | 'standard'}`}</code> prop with <code>TextField</code> component in{' '}
             <code>renderInput</code> prop with <code>Autocomplete</code> component for different variants of input. Use{' '}
@@ -40,7 +46,13 @@ const Autocomplete = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12}>
-        <CardSnippet title='Controlled and Uncontrolled' code={source.AutocompleteControlledUncontrolledCode}>
+        <CardSnippet
+          title='Controlled and Uncontrolled'
+          code={{
+            tsx: source.AutocompleteControlledUncontrolledTSXCode,
+            jsx: source.AutocompleteControlledUncontrolledJSXCode
+          }}
+        >
           <Typography>
             Use <code>value</code> prop with <code>Autocomplete</code> component for controlled autocomplete input.
           </Typography>
@@ -48,7 +60,13 @@ const Autocomplete = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12}>
-        <CardSnippet title='Autocomplete Props' code={source.AutocompletePropsCode}>
+        <CardSnippet
+          title='Autocomplete Props'
+          code={{
+            tsx: source.AutocompletePropsTSXCode,
+            jsx: source.AutocompletePropsJSXCode
+          }}
+        >
           <Typography>
             Each of the following examples demonstrate one feature of <code>Autocomplete</code> component.
           </Typography>
@@ -56,13 +74,25 @@ const Autocomplete = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Country Select' code={source.AutocompleteCountryCode}>
+        <CardSnippet
+          title='Country Select'
+          code={{
+            tsx: source.AutocompleteCountryTSXCode,
+            jsx: source.AutocompleteCountryJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>Choose one of the countries.</Typography>
           <AutocompleteCountry />
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Free Solo' code={source.AutocompleteFreeSoloCode}>
+        <CardSnippet
+          title='Free Solo'
+          code={{
+            tsx: source.AutocompleteFreeSoloTSXCode,
+            jsx: source.AutocompleteFreeSoloJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>freeSolo</code> prop so the textbox can contain any arbitrary value.
           </Typography>
@@ -70,13 +100,25 @@ const Autocomplete = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Creatable' code={source.AutocompleteCreatableCode}>
+        <CardSnippet
+          title='Creatable'
+          code={{
+            tsx: source.AutocompleteCreatableTSXCode,
+            jsx: source.AutocompleteCreatableJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>You can create an option other than from the list.</Typography>
           <AutocompleteCreatable />
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Grouped' code={source.AutocompleteGroupedCode}>
+        <CardSnippet
+          title='Grouped'
+          code={{
+            tsx: source.AutocompleteGroupedTSXCode,
+            jsx: source.AutocompleteGroupedJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>groupBy</code> prop to group the list according to your needs.
           </Typography>
@@ -84,7 +126,13 @@ const Autocomplete = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Disabled Options' code={source.AutocompleteDisabledOptionsCode}>
+        <CardSnippet
+          title='Disabled Options'
+          code={{
+            tsx: source.AutocompleteDisabledOptionsTSXCode,
+            jsx: source.AutocompleteDisabledOptionsJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>getOptionDisabled</code> prop to disable some options from the list.
           </Typography>
@@ -92,7 +140,13 @@ const Autocomplete = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Asynchronous Request' code={source.AutocompleteAsynchronousRequestCode}>
+        <CardSnippet
+          title='Asynchronous Request'
+          code={{
+            tsx: source.AutocompleteAsynchronousRequestTSXCode,
+            jsx: source.AutocompleteAsynchronousRequestJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             You can fetch the data with the help of APIs for the options.
           </Typography>
@@ -100,7 +154,13 @@ const Autocomplete = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12}>
-        <CardSnippet title='Multiple Values' code={source.AutocompleteMultipleValuesCode}>
+        <CardSnippet
+          title='Multiple Values'
+          code={{
+            tsx: source.AutocompleteMultipleValuesTSXCode,
+            jsx: source.AutocompleteMultipleValuesJSXCode
+          }}
+        >
           <Typography>
             Use <code>multiple</code> prop to select multiple options from the list.
           </Typography>
@@ -108,7 +168,13 @@ const Autocomplete = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Fixed Options' code={source.AutocompleteFixedOptionsCode}>
+        <CardSnippet
+          title='Fixed Options'
+          code={{
+            tsx: source.AutocompleteFixedOptionsTSXCode,
+            jsx: source.AutocompleteFixedOptionsJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             You can fix an option in the input and add any other option as well.
           </Typography>
@@ -116,7 +182,13 @@ const Autocomplete = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Checkboxes' code={source.AutocompleteCheckboxesCode}>
+        <CardSnippet
+          title='Checkboxes'
+          code={{
+            tsx: source.AutocompleteCheckboxesTSXCode,
+            jsx: source.AutocompleteCheckboxesJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>Checkbox</code> component in <code>renderOption</code> prop to render checkbox in options.
           </Typography>
@@ -124,7 +196,13 @@ const Autocomplete = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Limit Tags' code={source.AutocompleteLimitTagsCode}>
+        <CardSnippet
+          title='Limit Tags'
+          code={{
+            tsx: source.AutocompleteLimitTagsTSXCode,
+            jsx: source.AutocompleteLimitTagsJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 6 }}>
             Use <code>limitTags</code> prop to limit tags in the input.
           </Typography>
@@ -132,7 +210,13 @@ const Autocomplete = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Small Size' code={source.AutocompleteSmallSizeCode}>
+        <CardSnippet
+          title='Small Size'
+          code={{
+            tsx: source.AutocompleteSmallSizeTSXCode,
+            jsx: source.AutocompleteSmallSizeJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 5 }}>
             Use <code>size='small'</code> prop for small sized input.
           </Typography>
@@ -140,7 +224,13 @@ const Autocomplete = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Custom Input' code={source.AutocompleteCustomInputCode}>
+        <CardSnippet
+          title='Custom Input'
+          code={{
+            tsx: source.AutocompleteCustomInputTSXCode,
+            jsx: source.AutocompleteCustomInputJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>renderInput</code> prop to customize the rendered input.
           </Typography>
@@ -148,7 +238,13 @@ const Autocomplete = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Custom Filter' code={source.AutocompleteCustomFilterCode}>
+        <CardSnippet
+          title='Custom Filter'
+          code={{
+            tsx: source.AutocompleteCustomFilterTSXCode,
+            jsx: source.AutocompleteCustomFilterJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>filterOptions</code> prop to filter the search according to your needs.
           </Typography>

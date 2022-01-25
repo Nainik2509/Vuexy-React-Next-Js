@@ -33,17 +33,35 @@ const FileUploader = () => {
           subtitle={<Typography variant='body2'>Simple HTML5 drag-drop zone with React.js</Typography>}
         />
         <Grid item xs={12}>
-          <CardSnippet title='Upload Multiple Files' code={source.FileUploaderMultipleCode}>
+          <CardSnippet
+            title='Upload Multiple Files'
+            code={{
+              tsx: source.FileUploaderMultipleTSXCode,
+              jsx: source.FileUploaderMultipleJSXCode
+            }}
+          >
             <FileUploaderMultiple />
           </CardSnippet>
         </Grid>
         <Grid item xs={12}>
-          <CardSnippet title='Upload Single Files' code={source.FileUploaderSingleCode}>
+          <CardSnippet
+            title='Upload Single Files'
+            code={{
+              tsx: source.FileUploaderSingleTSXCode,
+              jsx: source.FileUploaderSingleJSXCode
+            }}
+          >
             <FileUploaderSingle />
           </CardSnippet>
         </Grid>
         <Grid item xs={12}>
-          <CardSnippet title='Upload Files with Restrictions' code={source.FileUploaderRestrictionsCode}>
+          <CardSnippet
+            title='Upload Files with Restrictions'
+            code={{
+              tsx: source.FileUploaderRestrictionsTSXCode,
+              jsx: source.FileUploaderRestrictionsJSXCode
+            }}
+          >
             <FileUploaderRestrictions />
           </CardSnippet>
         </Grid>

@@ -24,7 +24,13 @@ const Dialog = () => {
   return (
     <Grid container spacing={6} className='match-height'>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Simple Dialog' code={source.DialogSimpleCode}>
+        <CardSnippet
+          title='Simple Dialog'
+          code={{
+            tsx: source.DialogSimpleTSXCode,
+            jsx: source.DialogSimpleJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Manage <code>open</code> prop with the help of a state.
           </Typography>
@@ -32,7 +38,13 @@ const Dialog = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Alerts' code={source.DialogAlertCode}>
+        <CardSnippet
+          title='Alerts'
+          code={{
+            tsx: source.DialogAlertTSXCode,
+            jsx: source.DialogAlertJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Show an alert to the user to convey something or make the user choose from the given options.
           </Typography>
@@ -40,7 +52,13 @@ const Dialog = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Transitions' code={source.DialogTransitionCode}>
+        <CardSnippet
+          title='Transitions'
+          code={{
+            tsx: source.DialogTransitionTSXCode,
+            jsx: source.DialogTransitionJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             You can also use any of the transitions that you like. Use <code>TransitionComponent</code> prop for the
             transition.
@@ -49,7 +67,13 @@ const Dialog = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Form Dialog' code={source.DialogFormCode}>
+        <CardSnippet
+          title='Form Dialog'
+          code={{
+            tsx: source.DialogFormTSXCode,
+            jsx: source.DialogFormJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Form dialogs allow users to fill out form fields within a dialog.
           </Typography>
@@ -57,7 +81,13 @@ const Dialog = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Customized Dialog' code={source.DialogCustomizedCode}>
+        <CardSnippet
+          title='Customized Dialog'
+          code={{
+            tsx: source.DialogCustomizedTSXCode,
+            jsx: source.DialogCustomizedJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             You can customize the component the way you want using <code>styled</code> hook.
           </Typography>
@@ -65,7 +95,13 @@ const Dialog = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Full Screen Dialog' code={source.DialogFullScreenCode}>
+        <CardSnippet
+          title='Full Screen Dialog'
+          code={{
+            tsx: source.DialogFullScreenTSXCode,
+            jsx: source.DialogFullScreenJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Add <code>fullScreen</code> prop with <code>Dialog</code> component for a full screen dialog.
           </Typography>
@@ -73,7 +109,13 @@ const Dialog = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Optional Sizes' code={source.DialogSizesCode}>
+        <CardSnippet
+          title='Optional Sizes'
+          code={{
+            tsx: source.DialogSizesTSXCode,
+            jsx: source.DialogSizesJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             You can set a dialog maximum width by using the <code>maxWidth</code> enumerable in combination with the{' '}
             <code>fullWidth</code> boolean. When the <code>fullWidth</code> property is true, the dialog will adapt
@@ -83,7 +125,13 @@ const Dialog = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Responsive full-screen' code={source.DialogRespoFullScreenCode}>
+        <CardSnippet
+          title='Responsive full-screen'
+          code={{
+            tsx: source.DialogRespoFullScreenTSXCode,
+            jsx: source.DialogRespoFullScreenJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Make a full screen dialog at particular screen sizes only by using <code>useMediaQuery</code> hook.
           </Typography>
@@ -91,7 +139,13 @@ const Dialog = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Confirmation Dialog' code={source.DialogConfirmationCode}>
+        <CardSnippet
+          title='Confirmation Dialog'
+          code={{
+            tsx: source.DialogConfirmationTSXCode,
+            jsx: source.DialogConfirmationJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>disableEscapeKeyDown</code> prop to disable 'Escape' key and use <code>onClose</code> prop to
             disable the backdrop.
@@ -100,7 +154,13 @@ const Dialog = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Scrolling Long Content' code={source.DialogsScrollCode}>
+        <CardSnippet
+          title='Scrolling Long Content'
+          code={{
+            tsx: source.DialogsScrollTSXCode,
+            jsx: source.DialogsScrollJSXCode
+          }}
+        >
           <Typography>
             <code>scroll=paper</code> scrolls within the paper element and <code>scroll=body</code> scrolls within the
             body element.

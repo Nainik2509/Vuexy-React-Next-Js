@@ -21,7 +21,13 @@ const Menus = () => {
   return (
     <Grid container spacing={6} className='match-height'>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Simple Menu' code={source.MenuBasicCode}>
+        <CardSnippet
+          title='Simple Menu'
+          code={{
+            tsx: source.MenuBasicTSXCode,
+            jsx: source.MenuBasicJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Manage <code>anchorEl</code> and <code>open</code> props with the help of a state and <code>onClose</code>{' '}
             prop with the help of a function in <code>Menu</code> component.
@@ -30,7 +36,13 @@ const Menus = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Selected Menu' code={source.MenuSelectedCode}>
+        <CardSnippet
+          title='Selected Menu'
+          code={{
+            tsx: source.MenuSelectedTSXCode,
+            jsx: source.MenuSelectedJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Manage <code>selected</code> prop with the help of a state in <code>MenuItem</code> component to select an
             item.
@@ -39,7 +51,13 @@ const Menus = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='MenuList Composition' code={source.MenuCompositionCode}>
+        <CardSnippet
+          title='MenuList Composition'
+          code={{
+            tsx: source.MenuCompositionTSXCode,
+            jsx: source.MenuCompositionJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use a different positioning strategy and not blocking the page scroll by using <code>MenuList</code> and{' '}
             <code>Popper</code> components.
@@ -48,7 +66,13 @@ const Menus = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Customized Menu' code={source.MenuCustomizedCode}>
+        <CardSnippet
+          title='Customized Menu'
+          code={{
+            tsx: source.MenuCustomizedTSXCode,
+            jsx: source.MenuCustomizedJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>styled</code> hook to customize your menu.
           </Typography>
@@ -56,7 +80,13 @@ const Menus = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Max Height Menu' code={source.MenuMaxHeightCode}>
+        <CardSnippet
+          title='Max Height Menu'
+          code={{
+            tsx: source.MenuMaxHeightTSXCode,
+            jsx: source.MenuMaxHeightJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>PaperProps</code> prop and use <code>style</code> property to set the height of the menu.
           </Typography>
@@ -64,7 +94,13 @@ const Menus = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Change Transition' code={source.MenuTransitionCode}>
+        <CardSnippet
+          title='Change Transition'
+          code={{
+            tsx: source.MenuTransitionTSXCode,
+            jsx: source.MenuTransitionJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>TransitionComponent</code> prop to change the transition of the menu.
           </Typography>
@@ -72,7 +108,13 @@ const Menus = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12}>
-        <CardSnippet title='Context Menu' code={source.MenuContextCode}>
+        <CardSnippet
+          title='Context Menu'
+          code={{
+            tsx: source.MenuContextTSXCode,
+            jsx: source.MenuContextJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>onContextMenu</code> prop in the parent element to manage the context menu.
           </Typography>

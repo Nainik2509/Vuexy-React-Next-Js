@@ -38,7 +38,10 @@ const Editors = () => {
           <CardSnippet
             sx={{ overflow: 'visible' }}
             title='Controlled Wysiwyg Editor'
-            code={source.EditorControlledCode}
+            code={{
+              tsx: source.EditorControlledTSXCode,
+              jsx: source.EditorControlledJSXCode
+            }}
           >
             <EditorControlled />
           </CardSnippet>
@@ -47,7 +50,10 @@ const Editors = () => {
           <CardSnippet
             sx={{ overflow: 'visible' }}
             title='Uncontrolled Wysiwyg Editor'
-            code={source.EditorUncontrolledCode}
+            code={{
+              tsx: source.EditorUncontrolledTSXCode,
+              jsx: source.EditorUncontrolledJSXCode
+            }}
           >
             <EditorUncontrolled />
           </CardSnippet>

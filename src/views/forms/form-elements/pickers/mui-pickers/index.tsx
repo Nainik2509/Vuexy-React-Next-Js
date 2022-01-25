@@ -8,12 +8,12 @@ import PageHeader from 'src/@core/components/page-header'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
-import DatePickers from 'src/views/forms/form-elements/pickers/mui/DatePickers'
-import TimePickers from 'src/views/forms/form-elements/pickers/mui/TimePickers'
-import DateTimePickers from 'src/views/forms/form-elements/pickers/mui/DateTimePickers'
+import DatePickers from 'src/views/forms/form-elements/pickers/mui-pickers/DatePickers'
+import TimePickers from 'src/views/forms/form-elements/pickers/mui-pickers/TimePickers'
+import DateTimePickers from 'src/views/forms/form-elements/pickers/mui-pickers/DateTimePickers'
 
 // ** Source code imports
-import * as source from 'src/views/forms/form-elements/pickers/mui/MuiPickersSourceCode'
+import * as source from 'src/views/forms/form-elements/pickers/mui-pickers/MuiPickersSourceCode'
 
 const MUIPickers = () => {
   return (
@@ -33,17 +33,35 @@ const MUIPickers = () => {
         }
       />
       <Grid item xs={12}>
-        <CardSnippet title='MUI Date Pickers' code={source.DatePickersCode}>
+        <CardSnippet
+          title='MUI Date Pickers'
+          code={{
+            tsx: source.DatePickersTSXCode,
+            jsx: source.DatePickersJSXCode
+          }}
+        >
           <DatePickers />
         </CardSnippet>
       </Grid>
       <Grid item xs={12}>
-        <CardSnippet title='MUI Time Pickers' code={source.TimePickersCode}>
+        <CardSnippet
+          title='MUI Time Pickers'
+          code={{
+            tsx: source.TimePickersTSXCode,
+            jsx: source.TimePickersJSXCode
+          }}
+        >
           <TimePickers />
         </CardSnippet>
       </Grid>
       <Grid item xs={12}>
-        <CardSnippet title='MUI DateTime Pickers' code={source.DateTimePickersCode}>
+        <CardSnippet
+          title='MUI DateTime Pickers'
+          code={{
+            tsx: source.DateTimePickersTSXCode,
+            jsx: source.DateTimePickersJSXCode
+          }}
+        >
           <DateTimePickers />
         </CardSnippet>
       </Grid>

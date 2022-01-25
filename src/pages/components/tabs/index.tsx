@@ -24,13 +24,25 @@ const Tabs = () => {
   return (
     <Grid container spacing={6} className='match-height'>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Default Tabs' code={source.TabsSimpleCode}>
+        <CardSnippet
+          title='Default Tabs'
+          code={{
+            tsx: source.TabsSimpleTSXCode,
+            jsx: source.TabsSimpleJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>Tabs are managed with the help of a state.</Typography>
           <TabsSimple />
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Color' code={source.TabsColorCode}>
+        <CardSnippet
+          title='Color'
+          code={{
+            tsx: source.TabsColorTSXCode,
+            jsx: source.TabsColorJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>textColor='secondary'</code> and <code>indicatorColor='secondary'</code> props with{' '}
             <code>TabList</code> component for secondary tabs.
@@ -39,7 +51,13 @@ const Tabs = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Full Width Tabs' code={source.TabsFullWidthCode}>
+        <CardSnippet
+          title='Full Width Tabs'
+          code={{
+            tsx: source.TabsFullWidthTSXCode,
+            jsx: source.TabsFullWidthJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>variant='fullWidth'</code> prop with <code>TabList</code> component to have full width tabs.
           </Typography>
@@ -47,7 +65,13 @@ const Tabs = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Centered Tabs' code={source.TabsCenteredCode}>
+        <CardSnippet
+          title='Centered Tabs'
+          code={{
+            tsx: source.TabsCenteredTSXCode,
+            jsx: source.TabsCenteredJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>centered</code> prop with <code>TabList</code> component to have tabs on center.
           </Typography>
@@ -55,7 +79,13 @@ const Tabs = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Icon Tabs' code={source.TabsIconCode}>
+        <CardSnippet
+          title='Icon Tabs'
+          code={{
+            tsx: source.TabsIconTSXCode,
+            jsx: source.TabsIconJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>icon</code> prop with <code>Tab</code> component for icons in the tab.
           </Typography>
@@ -63,7 +93,13 @@ const Tabs = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Customized Tabs' code={source.TabsCustomizedCode}>
+        <CardSnippet
+          title='Customized Tabs'
+          code={{
+            tsx: source.TabsCustomizedTSXCode,
+            jsx: source.TabsCustomizedJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>styled</code> hook to customize your tabs.
           </Typography>
@@ -71,7 +107,13 @@ const Tabs = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Vertical Tabs' code={source.TabsVerticalCode}>
+        <CardSnippet
+          title='Vertical Tabs'
+          code={{
+            tsx: source.TabsVerticalTSXCode,
+            jsx: source.TabsVerticalJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>orientation='vertical'</code> prop with <code>TabList</code> component to have vertical tabs.
           </Typography>
@@ -79,7 +121,13 @@ const Tabs = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Customized Vertical Tabs' code={source.TabsCustomizedVerticalCode}>
+        <CardSnippet
+          title='Customized Vertical Tabs'
+          code={{
+            tsx: source.TabsCustomizedVerticalTSXCode,
+            jsx: source.TabsCustomizedVerticalJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>styled</code> hook to customize your tabs.
           </Typography>
@@ -87,7 +135,13 @@ const Tabs = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Nav Tabs' code={source.TabsNavCode}>
+        <CardSnippet
+          title='Nav Tabs'
+          code={{
+            tsx: source.TabsNavTSXCode,
+            jsx: source.TabsNavJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>component</code> prop to change the <code>Tab</code> component to the component of your choice.
           </Typography>
@@ -95,7 +149,13 @@ const Tabs = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Forced Scroll Buttons' code={source.TabsForcedScrollCode}>
+        <CardSnippet
+          title='Forced Scroll Buttons'
+          code={{
+            tsx: source.TabsForcedScrollTSXCode,
+            jsx: source.TabsForcedScrollJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>scrollButtons</code> and <code>variant='scrollable'</code> props with <code>TabList</code>{' '}
             component to have forced scrollable tabs.

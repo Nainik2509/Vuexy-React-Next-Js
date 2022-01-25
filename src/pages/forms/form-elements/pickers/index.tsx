@@ -2,7 +2,7 @@
 import Grid from '@mui/material/Grid'
 
 // ** Demo Components Imports
-import MUIPickers from 'src/views/forms/form-elements/pickers/mui'
+import MUIPickers from 'src/views/forms/form-elements/pickers/mui-pickers'
 import ReactDatePicker from 'src/views/forms/form-elements/pickers/react-datepicker'
 
 const Pickers = () => {

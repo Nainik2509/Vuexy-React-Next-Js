@@ -24,7 +24,13 @@ const Buttons = () => {
   return (
     <Grid container spacing={6} className='match-height'>
       <Grid item xs={12}>
-        <CardSnippet title='Contained' code={source.ButtonsContainedCode}>
+        <CardSnippet
+          title='Contained'
+          code={{
+            tsx: source.ButtonsContainedTSXCode,
+            jsx: source.ButtonsContainedJSXCode
+          }}
+        >
           <Typography>
             Use <code>variant='contained'</code> prop with <code>&lt;Button&gt;</code> component for contained buttons.
           </Typography>
@@ -32,7 +38,13 @@ const Buttons = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12}>
-        <CardSnippet title='Text' code={source.ButtonsTextCode}>
+        <CardSnippet
+          title='Text'
+          code={{
+            tsx: source.ButtonsTextTSXCode,
+            jsx: source.ButtonsTextJSXCode
+          }}
+        >
           <Typography>
             Use <code>variant='text'</code> prop with <code>&lt;Button&gt;</code> component for buttons with text only.
           </Typography>
@@ -40,7 +52,13 @@ const Buttons = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12}>
-        <CardSnippet title='Outlined' code={source.ButtonsOutlinedCode}>
+        <CardSnippet
+          title='Outlined'
+          code={{
+            tsx: source.ButtonsOutlinedTSXCode,
+            jsx: source.ButtonsOutlinedJSXCode
+          }}
+        >
           <Typography>
             Use <code>variant='outlined'</code> prop with <code>&lt;Button&gt;</code> component for outlined buttons.
           </Typography>
@@ -48,7 +66,13 @@ const Buttons = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Buttons With Icon and Label' code={source.ButtonsWithIconAndLabelCode}>
+        <CardSnippet
+          title='Buttons With Icon and Label'
+          code={{
+            tsx: source.ButtonsWithIconAndLabelTSXCode,
+            jsx: source.ButtonsWithIconAndLabelJSXCode
+          }}
+        >
           <Typography>
             Use <code>startIcon | endIcon</code> prop with <code>&lt;Button&gt;</code> component to add an icon inside a
             button.
@@ -57,7 +81,13 @@ const Buttons = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Icon Buttons' code={source.ButtonsIconsCode}>
+        <CardSnippet
+          title='Icon Buttons'
+          code={{
+            tsx: source.ButtonsIconsTSXCode,
+            jsx: source.ButtonsIconsJSXCode
+          }}
+        >
           <Typography>
             Use an icon component inside <code>&lt;IconButton&gt;</code> component. For different colors, use{' '}
             <code>color</code> prop with <code>&lt;IconButton&gt;</code> component.
@@ -66,7 +96,13 @@ const Buttons = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12}>
-        <CardSnippet title='Button Sizes' code={source.ButtonsSizesCode}>
+        <CardSnippet
+          title='Button Sizes'
+          code={{
+            tsx: source.ButtonsSizesTSXCode,
+            jsx: source.ButtonsSizesJSXCode
+          }}
+        >
           <Typography>
             Use <code>size={`{'small' | 'medium' | 'large'}`}</code> prop with <code>&lt;Button&gt;</code> component for
             different sized buttons. To use icon buttons, you need to use <code>size={`{small | large}`}</code> prop
@@ -77,7 +113,13 @@ const Buttons = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12}>
-        <CardSnippet title='Button Colors' code={source.ButtonsColorsCode}>
+        <CardSnippet
+          title='Button Colors'
+          code={{
+            tsx: source.ButtonsColorsTSXCode,
+            jsx: source.ButtonsColorsJSXCode
+          }}
+        >
           <Typography>
             Use <code>color</code> prop with <code>&lt;Button&gt;</code> component for different colored buttons.
           </Typography>
@@ -85,12 +127,24 @@ const Buttons = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12}>
-        <CardSnippet title='Customized Buttons' code={source.ButtonsCustomizedCode}>
+        <CardSnippet
+          title='Customized Buttons'
+          code={{
+            tsx: source.ButtonsCustomizedTSXCode,
+            jsx: source.ButtonsCustomizedJSXCode
+          }}
+        >
           <ButtonsCustomized />
         </CardSnippet>
       </Grid>
       <Grid item xs={12}>
-        <CardSnippet title='Floating Action Button' code={source.ButtonsFabCode}>
+        <CardSnippet
+          title='Floating Action Button'
+          code={{
+            tsx: source.ButtonsFabTSXCode,
+            jsx: source.ButtonsFabJSXCode
+          }}
+        >
           <Typography>
             Use <code>color</code> prop with <code>&lt;Fab&gt;</code> component for different colored Floating Action
             Button and <code>variant='extended'</code> prop for extended (not round) Floating Action Button.
@@ -99,7 +153,13 @@ const Buttons = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12}>
-        <CardSnippet title='Floating Action Button Sizes' code={source.ButtonsFabSizesCode}>
+        <CardSnippet
+          title='Floating Action Button Sizes'
+          code={{
+            tsx: source.ButtonsFabSizesTSXCode,
+            jsx: source.ButtonsFabSizesJSXCode
+          }}
+        >
           <Typography>
             Use <code>size={`{'small' | 'medium' | 'large'}`}</code> prop for different sizes of Floating Action
             Buttons.

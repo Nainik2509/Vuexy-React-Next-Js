@@ -33,7 +33,13 @@ const Pagination = () => {
   return (
     <GridContainer container spacing={6} className='match-height'>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Simple Pagination' code={source.PaginationSimpleCode}>
+        <CardSnippet
+          title='Simple Pagination'
+          code={{
+            tsx: source.PaginationSimpleTSXCode,
+            jsx: source.PaginationSimpleJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use the following props with <code>Pagination</code> component: <code>count</code> prop for number of page
             items and <code>color</code> prop for different colored pagination.
@@ -42,7 +48,13 @@ const Pagination = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Outlined Pagination' code={source.PaginationOutlinedCode}>
+        <CardSnippet
+          title='Outlined Pagination'
+          code={{
+            tsx: source.PaginationOutlinedTSXCode,
+            jsx: source.PaginationOutlinedJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>variant='outlined'</code> prop for outlined pagination.
           </Typography>
@@ -50,7 +62,13 @@ const Pagination = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Disabled Pagination' code={source.PaginationDisabledCode}>
+        <CardSnippet
+          title='Disabled Pagination'
+          code={{
+            tsx: source.PaginationDisabledTSXCode,
+            jsx: source.PaginationDisabledJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>disabled</code> prop with <code>Pagination</code> component to disable the whole pagination.
           </Typography>
@@ -58,7 +76,13 @@ const Pagination = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Rounded Pagination' code={source.PaginationRoundedCode}>
+        <CardSnippet
+          title='Rounded Pagination'
+          code={{
+            tsx: source.PaginationRoundedTSXCode,
+            jsx: source.PaginationRoundedJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>shape='rounded'</code> prop for rounded pagination.
           </Typography>
@@ -66,7 +90,13 @@ const Pagination = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Sizes' code={source.PaginationSizesCode}>
+        <CardSnippet
+          title='Sizes'
+          code={{
+            tsx: source.PaginationSizesTSXCode,
+            jsx: source.PaginationSizesJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>size={`{'small' | 'large'}`}</code> prop for different sizes of pagination.
           </Typography>
@@ -74,7 +104,13 @@ const Pagination = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Buttons' code={source.PaginationButtonsCode}>
+        <CardSnippet
+          title='Buttons'
+          code={{
+            tsx: source.PaginationButtonsTSXCode,
+            jsx: source.PaginationButtonsJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>showFirstButton</code> & <code>showLastButton</code> props to show first-page and last-page
             buttons and <code>hidePrevButton</code> & <code>hideNextButton</code> props to hide previous-page and
@@ -84,7 +120,13 @@ const Pagination = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12}>
-        <CardSnippet title='Controlled Pagination' code={source.PaginationControlledCode}>
+        <CardSnippet
+          title='Controlled Pagination'
+          code={{
+            tsx: source.PaginationControlledTSXCode,
+            jsx: source.PaginationControlledJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Manage <code>page</code> and <code>onChange</code> props with the help of a state.
           </Typography>
@@ -92,7 +134,13 @@ const Pagination = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12}>
-        <CardSnippet title='Pagination Ranges' code={source.PaginationRangesCode}>
+        <CardSnippet
+          title='Pagination Ranges'
+          code={{
+            tsx: source.PaginationRangesTSXCode,
+            jsx: source.PaginationRangesJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             You can specify how many digits to display either side of current page with the <code>siblingRange</code>{' '}
             prop, and adjacent to the start and end page number with the <code>boundaryRange</code> prop.

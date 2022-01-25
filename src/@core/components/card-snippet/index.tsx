@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'
 
 // ** MUI Imports
+import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import Tooltip from '@mui/material/Tooltip'
 import Divider from '@mui/material/Divider'
@@ -10,11 +11,15 @@ import Collapse from '@mui/material/Collapse'
 import IconButton from '@mui/material/IconButton'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
+import ToggleButton from '@mui/material/ToggleButton'
 import useMediaQuery from '@mui/material/useMediaQuery'
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 
 // ** Icons Imports
 import CodeTags from 'mdi-material-ui/CodeTags'
 import ContentCopy from 'mdi-material-ui/ContentCopy'
+import LanguageJavascript from 'mdi-material-ui/LanguageJavascript'
+import LanguageTypescript from 'mdi-material-ui/LanguageTypescript'
 
 // ** Third Party Components
 import Prism from 'prismjs'
@@ -32,6 +37,7 @@ const CardSnippet = (props: CardSnippetProps) => {
 
   // ** States
   const [showCode, setShowCode] = useState<boolean>(false)
+  const [tabValue, setTabValue] = useState<'tsx' | 'jsx'>('tsx')
 
   // ** Hooks
   const clipboard = useClipboard()
@@ -40,10 +46,12 @@ const CardSnippet = (props: CardSnippetProps) => {
   // ** Highlight code on mount
   useEffect(() => {
     Prism.highlightAll()
-  }, [showCode])
+  }, [showCode, tabValue])
 
   const handleClick = () => {
-    clipboard.copy(code.props.children.props.children)
+    const codeToCopy =
+      tabValue === 'jsx' ? code.jsx.props.children.props.children : code.tsx.props.children.props.children
+    clipboard.copy(codeToCopy)
     toast.success('The source code has been copied to your clipboard.', {
       duration: 2000
     })
@@ -72,12 +80,29 @@ const CardSnippet = (props: CardSnippetProps) => {
       {hidden ? null : (
         <Collapse in={showCode}>
           <Divider sx={{ my: 0 }} />
+
           <CardContent sx={{ position: 'relative', '& pre': { m: '0 !important', maxHeight: 500 } }}>
+            <Box sx={{ mb: 4, display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
+              <ToggleButtonGroup
+                exclusive
+                size='small'
+                color='primary'
+                value={tabValue}
+                onChange={(e, newValue) => setTabValue(newValue)}
+              >
+                <ToggleButton value='tsx'>
+                  <LanguageTypescript fontSize='small' />
+                </ToggleButton>
+                <ToggleButton value='jsx'>
+                  <LanguageJavascript fontSize='small' />
+                </ToggleButton>
+              </ToggleButtonGroup>
+            </Box>
             <Tooltip title='Copy the source' placement='top'>
               <IconButton
                 onClick={handleClick}
                 sx={{
-                  top: '1.5rem',
+                  top: '5rem',
                   right: '2.5625rem',
                   position: 'absolute',
                   color: theme => theme.palette.grey[100]
@@ -86,7 +111,7 @@ const CardSnippet = (props: CardSnippetProps) => {
                 <ContentCopy fontSize='small' />
               </IconButton>
             </Tooltip>
-            {code}
+            <Box>{tabValue === 'jsx' ? code.jsx : code.tsx}</Box>
           </CardContent>
         </Collapse>
       )}

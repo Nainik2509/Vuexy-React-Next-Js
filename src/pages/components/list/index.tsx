@@ -22,18 +22,37 @@ const Lists = () => {
   return (
     <Grid className='match-height' container spacing={6}>
       <Grid item xs={12} md={6}>
-        <CardSnippet id='simple-list' title='Simple List' code={source.ListSimpleCode}>
+        <CardSnippet
+          id='simple-list'
+          title='Simple List'
+          code={{
+            tsx: source.ListSimpleTSXCode,
+            jsx: source.ListSimpleJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>Lists are a continuous group of text or images.</Typography>
           <ListSimple />
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Nested List' code={source.ListNestedCode}>
+        <CardSnippet
+          title='Nested List'
+          code={{
+            tsx: source.ListNestedTSXCode,
+            jsx: source.ListNestedJSXCode
+          }}
+        >
           <ListNested />
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Dense List' code={source.ListDenseCode}>
+        <CardSnippet
+          title='Dense List'
+          code={{
+            tsx: source.ListDenseTSXCode,
+            jsx: source.ListDenseJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>dense</code> prop with <code>&lt;List&gt;</code> component for dense list.
           </Typography>
@@ -41,7 +60,13 @@ const Lists = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='List with Secondary Text' code={source.ListSecondaryCode}>
+        <CardSnippet
+          title='List with Secondary Text'
+          code={{
+            tsx: source.ListSecondaryTSXCode,
+            jsx: source.ListSecondaryJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>secondary</code> prop with <code>&lt;ListItemText&gt;</code> component for secondary text.
           </Typography>
@@ -49,7 +74,13 @@ const Lists = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Selected List Item' code={source.ListItemSelectedCode}>
+        <CardSnippet
+          title='Selected List Item'
+          code={{
+            tsx: source.ListItemSelectedTSXCode,
+            jsx: source.ListItemSelectedJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Manage <code>selected</code> prop with the help of a state.
           </Typography>
@@ -57,17 +88,35 @@ const Lists = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='List with Checkbox' code={source.ListWithCheckboxCode}>
+        <CardSnippet
+          title='List with Checkbox'
+          code={{
+            tsx: source.ListWithCheckboxTSXCode,
+            jsx: source.ListWithCheckboxJSXCode
+          }}
+        >
           <ListWithCheckbox />
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='List with Switch' code={source.ListWithSwitchCode}>
+        <CardSnippet
+          title='List with Switch'
+          code={{
+            tsx: source.ListWithSwitchTSXCode,
+            jsx: source.ListWithSwitchJSXCode
+          }}
+        >
           <ListWithSwitch />
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Sticky Subheader' code={source.ListWithSwitchCode}>
+        <CardSnippet
+          title='Sticky Subheader'
+          code={{
+            tsx: source.ListWithSwitchTSXCode,
+            jsx: source.ListWithSwitchJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             <code>&lt;ListSubheader&gt;</code> is by default sticky.
           </Typography>

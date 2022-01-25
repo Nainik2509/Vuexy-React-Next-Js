@@ -29,7 +29,13 @@ const ButtonGroup = () => {
         <Typography variant='h6'>Button Group</Typography>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Basic Button Group' code={source.ButtonGroupBasicCode}>
+        <CardSnippet
+          title='Basic Button Group'
+          code={{
+            tsx: source.ButtonGroupBasicTSXCode,
+            jsx: source.ButtonGroupBasicJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>variant={`{'outlined' | 'contained' | 'text'}`}</code> prop with <code>&lt;ButtonGroup&gt;</code>{' '}
             component for button groups.
@@ -38,7 +44,13 @@ const ButtonGroup = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Button Group Sizes' code={source.ButtonGroupSizesCode}>
+        <CardSnippet
+          title='Button Group Sizes'
+          code={{
+            tsx: source.ButtonGroupSizesTSXCode,
+            jsx: source.ButtonGroupSizesJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>size={`{'small' | 'medium' | 'large'}`}</code> prop with <code>&lt;ButtonGroup&gt;</code>{' '}
             component for different sizes of button groups.
@@ -47,7 +59,13 @@ const ButtonGroup = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Vertical Button Group' code={source.ButtonGroupVerticalCode}>
+        <CardSnippet
+          title='Vertical Button Group'
+          code={{
+            tsx: source.ButtonGroupVerticalTSXCode,
+            jsx: source.ButtonGroupVerticalJSXCode
+          }}
+        >
           <Typography>
             Use <code>orientation='vertical'</code> prop with <code>&lt;ButtonGroup&gt;</code> component for vertical
             button groups.
@@ -56,7 +74,13 @@ const ButtonGroup = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Split Button' code={source.ButtonGroupSplitCode}>
+        <CardSnippet
+          title='Split Button'
+          code={{
+            tsx: source.ButtonGroupSplitTSXCode,
+            jsx: source.ButtonGroupSplitJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             <code>ButtonGroup</code> can also be used to create a split button. The dropdown can change the button
             action (as in this example), or be used to immediately trigger a related action.
@@ -65,7 +89,13 @@ const ButtonGroup = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Button Group Colors' code={source.ButtonGroupColorsCode}>
+        <CardSnippet
+          title='Button Group Colors'
+          code={{
+            tsx: source.ButtonGroupColorsTSXCode,
+            jsx: source.ButtonGroupColorsJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>color</code> prop for different colored button-groups.
           </Typography>
@@ -76,7 +106,13 @@ const ButtonGroup = () => {
         <Typography variant='h6'>Toggle Button</Typography>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Simple Toggle Button' code={source.ButtonToggleSimpleCode}>
+        <CardSnippet
+          title='Simple Toggle Button'
+          code={{
+            tsx: source.ButtonToggleSimpleTSXCode,
+            jsx: source.ButtonToggleSimpleJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Manage <code>value</code> prop with <code>&lt;ToggleButtonGroup&gt;</code> component with the help of a
             state and use <code>exclusive</code> prop with <code>&lt;ToggleButtonGroup&gt;</code> component.
@@ -85,7 +121,13 @@ const ButtonGroup = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Multiple Toggle Button' code={source.ButtonToggleMultipleCode}>
+        <CardSnippet
+          title='Multiple Toggle Button'
+          code={{
+            tsx: source.ButtonToggleMultipleTSXCode,
+            jsx: source.ButtonToggleMultipleJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Manage <code>value</code> prop with the help of a state with array.
           </Typography>
@@ -93,7 +135,13 @@ const ButtonGroup = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Toggle Button Sizes' code={source.ButtonToggleSizesCode}>
+        <CardSnippet
+          title='Toggle Button Sizes'
+          code={{
+            tsx: source.ButtonToggleSizesTSXCode,
+            jsx: source.ButtonToggleSizesJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>size={`{'size' | 'large'}`}</code> prop for different sizes.
           </Typography>
@@ -101,7 +149,13 @@ const ButtonGroup = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Vertical Toggle Button' code={source.ButtonToggleVerticalCode}>
+        <CardSnippet
+          title='Vertical Toggle Button'
+          code={{
+            tsx: source.ButtonToggleVerticalTSXCode,
+            jsx: source.ButtonToggleVerticalJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>orientation='vertical'</code> prop for vertical toggle button.
           </Typography>
@@ -109,7 +163,13 @@ const ButtonGroup = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12}>
-        <CardSnippet title='Enforce Value Set' code={source.ButtonToggleEnforceValueCode}>
+        <CardSnippet
+          title='Enforce Value Set'
+          code={{
+            tsx: source.ButtonToggleEnforceValueTSXCode,
+            jsx: source.ButtonToggleEnforceValueJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>if</code> statement in handle function in <code>onChange</code> prop.
           </Typography>
@@ -117,7 +177,13 @@ const ButtonGroup = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12}>
-        <CardSnippet title='Customized Toggle Button' code={source.ButtonToggleCustomizedCode}>
+        <CardSnippet
+          title='Customized Toggle Button'
+          code={{
+            tsx: source.ButtonToggleCustomizedTSXCode,
+            jsx: source.ButtonToggleCustomizedJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>styled</code> hook to customize your toggle button.
           </Typography>
@@ -125,7 +191,13 @@ const ButtonGroup = () => {
         </CardSnippet>
       </Grid>
       <Grid item xs={12} md={6}>
-        <CardSnippet title='Toggle Button Colors' code={source.ButtonToggleColorsCode}>
+        <CardSnippet
+          title='Toggle Button Colors'
+          code={{
+            tsx: source.ButtonToggleColorsTSXCode,
+            jsx: source.ButtonToggleColorsJSXCode
+          }}
+        >
           <Typography sx={{ marginBottom: 4 }}>
             Use <code>color</code> prop for different colored toggle-buttons.
           </Typography>
