@@ -134,8 +134,13 @@ export const SettingsProvider = ({ children, pageSettings }: SettingsProviderPro
     const restoredSettings = restoreSettings()
 
     if (restoredSettings) {
-      setSettings({ ...restoredSettings, ...pageSettings })
+      setSettings({ ...restoredSettings })
     }
+    if (pageSettings) {
+      setSettings({ ...settings, ...pageSettings })
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pageSettings])
 
   const saveSettings = (updatedSettings: Settings) => {

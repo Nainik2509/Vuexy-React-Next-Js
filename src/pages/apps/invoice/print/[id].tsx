@@ -27,7 +27,8 @@ InvoicePrint.getLayout = (page: ReactNode) => <BlankLayout>{page}</BlankLayout>
 
 InvoicePrint.setConfig = () => {
   return {
-    mode: 'light'
+    mode: 'light',
+    routerTransition: 'none'
   }
 }
 
