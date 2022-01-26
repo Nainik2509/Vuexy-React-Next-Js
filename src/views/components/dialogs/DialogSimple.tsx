@@ -46,7 +46,7 @@ const DialogSimple = () => {
       </Button>
       <Dialog onClose={handleDialogClose} aria-labelledby='simple-dialog-title' open={open}>
         <DialogTitle id='simple-dialog-title'>Set backup account</DialogTitle>
-        <List sx={{ paddingTop: 0 }}>
+        <List sx={{ pt: 0, px: '0 !important' }}>
           {emails.map(email => (
             <ListItem key={email} disablePadding onClick={() => handleClose(email)}>
               <ListItemButton>
