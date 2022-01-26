@@ -1,12 +1,16 @@
 # getLayout
 
+:::tip
+We recommend you to go through the [Per page Layout Docs of NextJS](https://nextjs.org/docs/basic-features/layouts#per-page-layouts) to understand how the layout works on any single page in the app. Once you understand the layout from NextJS, then you may go through our docs for a better understanding.
+:::
+
 ## Overview
 
-If you want to change the default layout for a particular page, you can use `getLayout` method with your component.
+If you want to change the default layout for a particular page, you can use the `getLayout` method with your component.
 
 ## Blank Layout
 
-Here is the example of how to change the layout from default layout to blank layout for any page:
+Here is an example of how to change the layout from default layout to blank layout for any page:
 
 ```jsx
 import { ReactNode } from 'react'
@@ -27,7 +31,7 @@ export default Login
 
 ## Blank Layout with AppBar
 
-Here is the example of how to change the layout from default layout to blank layout with appBar for any page:
+Here is an example of how to change the layout from default layout to blank layout with appBar for any page:
 
 ```jsx
 import { ReactNode } from 'react'
@@ -48,7 +52,7 @@ export default Login
 
 ## Custom Layout
 
-Refer to the code below to create a blog like layout:
+Refer to the code below to create a blog layout:
 
 ```jsx
 import { ReactNode } from 'react'

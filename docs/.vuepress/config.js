@@ -12,8 +12,8 @@ module.exports = {
       { text: 'Guide', link: '/guide/' },
       { text: 'FAQ', link: '/faq/' },
       { text: 'Articles', link: '/articles/' },
-      { text: 'Demo', link: 'http://google.com' },
-      { text: 'Purchase', link: 'http://google.com' }
+      { text: 'Demo', link: 'https://themeselection.com/' },
+      { text: 'Purchase', link: 'https://themeselection.com/' }
     ],
     sidebar: {
       '/guide/': [

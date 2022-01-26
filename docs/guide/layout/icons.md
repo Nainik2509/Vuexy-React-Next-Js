@@ -2,16 +2,16 @@
 
 ## Overview
 
-We have used Material Design Icons from the community in the whole template. You may visit the site and check all the icons [here](https://materialdesignicons.com/). The user is free to use any icon library of his choice.
+We have used Material Design Icons from the community in the whole template. You may visit the site and check all the icons [here](https://materialdesignicons.com/). Users are free to use any icon library of their choice.
 
-We have created `UserIcon` component in `src/layouts/components/UserIcon.tsx` file, sole purpose of this component is to enable users to override icons used in the template and use any icon library of their choice. It is used in `src/@core` folder in the vertical menu, horizontal menu and search.
+We have created the `UserIcon` component in the `src/layouts/components/UserIcon.tsx` file, sole purpose of this component is to enable users to override icons used in the template and use any icon library of their choice. It is used in the `src/@core` folder in the vertical menu, horizontal menu and search.
 
 :::warning
 Do not use this component in any of your pages. You should directly import icons from your icon library and use them. This component should only be used to override menu and search icons and their styling.
 :::
 
 :::danger Heads Up!
-Do not remove `mdi-material-ui` package from `package.json` file and `src/layouts/components/UserIcon.tsx` file; otherwise, the whole app would break. There may be some instances where those icons will be used in the `src/@core` folder and will be impossible to remove that completely from the app.
+Do not remove the `mdi-material-ui` package from the `package.json` file and `src/layouts/components/UserIcon.tsx` file; otherwise, the whole app would break. There may be some instances where those icons will be used in the `src/@core` folder and will be impossible to remove that completely from the app.
 :::
 
 ## Props
@@ -28,7 +28,7 @@ The props that are available to this component are as follows:
 
 Suppose, you want to override the icons in the menu and search with Material Icons by Google. You can go through the [MUI Docs](https://mui.com/components/icons/) for installation and more details. You may check all the icons [here](https://mui.com/components/material-icons/).
 
-Now, to override the icons in the vertical menu, you need to import icons from `@mui/icons-material` package and remove other icons' import statements in and from `src/navigation/vertical/index.ts` file respectively.
+Now, to override the icons in the vertical menu, you need to import icons from the `@mui/icons-material` package and remove other icons' import statements in and from the `src/navigation/vertical/index.ts` file respectively.
 
 ```ts
 // src/navigation/vertical/index.ts
@@ -68,7 +68,7 @@ const navigation = (): VerticalNavItemsType => {
 }
 ```
 
-If you also want to change the icon for the submenu, you need to change it in `themeConfig.ts` file.
+If you also want to change the icon for the submenu, you need to change it in the `themeConfig.ts` file.
 
 ```ts
 // src/configs/themeConfig.ts
@@ -88,12 +88,12 @@ Result:
 ## Third Party Icons
 
 :::tip
-If you want to use any third party icon library, we suggest you use `react-icons` package. It provides most of the famous icons such as Material Design Icons, FontAwesome Icons, Feather Icons, React Bootstrap Icons, Ant Design Icons, BoxIcons, etc.
+If you want to use any third party icon library, we suggest you use the `react-icons` package. It provides most of the famous icons such as Material Design Icons, FontAwesome Icons, Feather Icons, React Bootstrap Icons, Ant Design Icons, BoxIcons, etc.
 :::
 
 ### React Icons
 
-You may go through the [React Icons](https://www.npmjs.com/package/react-icons) for installation and more details. Suppose you want to override the icons in the vertical menu with FontAwesome Icons from `react-icons` package, you need to import icons from `react-icons/fa` package and remove other icons' import statements in and from `src/navigation/vertical/index.ts` file respectively.
+You may go through the [React Icons](https://www.npmjs.com/package/react-icons) for installation and more details. Suppose you want to override the icons in the vertical menu with FontAwesome Icons from the `react-icons` package, you need to import icons from the `react-icons/fa` package and remove other icons' import statements in and from the `src/navigation/vertical/index.ts` file respectively.
 
 ```ts
 // src/navigation/vertical/index.ts
@@ -113,7 +113,7 @@ const navigation = (): VerticalNavItemsType => {
 }
 ```
 
-If you also want to change the icon for the submenu, you need to change it in `themeConfig.ts` file.
+If you also want to change the icon for the submenu, you need to change it in the `themeConfig.ts` file.
 
 ```ts
 // src/configs/themeConfig.ts
@@ -135,7 +135,7 @@ Result:
 You may go through the [Font Awesome Docs](https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react) for installation and more details. You may check all the icons [here](https://fontawesome.com/v5.15/icons).
 
 :::warning
-If you decide to use Font Awesome Icon as a stand alone library not using React Icons, you need to make sure you change all the icons present in menu and search due to difference in icon rendering process in `UserIcon` component in `src/layouts/components/UserIcon.tsx` file.
+If you decide to use Font Awesome Icon as a stand-alone library not using React Icons, you need to make sure you change all the icons present in the menu and search due to difference in icon rendering process in the `UserIcon` component in `src/layouts/components/UserIcon.tsx` file.
 :::
 
 You can change the icons in the vertical menu, horizontal menu and search as shown above. The icon for the submenu will also be changed as shown above. In addition to this, you need to update the return statement in `src/layouts/components/UserIcon.tsx` file:

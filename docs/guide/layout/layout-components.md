@@ -14,22 +14,22 @@ Vertical Layout is formed with the following layout components. Let's understand
 
 ### 1. Navigation Menu (left sidebar)
 
-Navigation menu is created with the following components:
+The navigation menu is created with the following components:
 
-- Menu Header which uses `VerticalNavHeader` component
+- Menu Header which uses the `VerticalNavHeader` component
 
   <img alt='vertical-menu-header' class='medium-zoom' :src="$withBase('/images/layouts/vertical-menu-header.png')" />
 
 - `VerticalNavItems` component is used to categorize whether an item is a section header, navigation group or navigation link
-- Navigation Section Header which uses `VerticalNavSectionTitle` component
+- Navigation Section Header which uses the `VerticalNavSectionTitle` component
 
   <img alt='vertical-menu-section-header' class='medium-zoom' :src="$withBase('/images/layouts/vertical-menu-section-header.png')" />
 
-- Navigation Group which uses `VerticalNavGroup` component
+- Navigation Group which uses the `VerticalNavGroup` component
 
   <img alt='vertical-menu-group' class='medium-zoom' :src="$withBase('/images/layouts/vertical-menu-group.png')" />
 
-- Navigation Link which uses `VerticalNavLink` component
+- Navigation Link which uses the `VerticalNavLink` component
 
   <img alt='vertical-menu-link' class='medium-zoom' :src="$withBase('/images/layouts/vertical-menu-link.png')" />
 
@@ -39,20 +39,21 @@ AppBar is created with the following components:
 
 #### Left side section
 
-- Template Search which uses `Autocomplete` component
+- Template Search which uses the `Autocomplete` component
 
 #### Right side section
 
-- Light and Dark Mode Toggler which uses `ModeToggler` component
-- Notifications of the User which uses `NotificationDropdown` component
-- User Actions which uses `UserDropdown` component
+- Change language by using the `LanguageDropdown` component
+- Light and Dark Mode Toggler which uses the `ModeToggler` component
+- Notifications of the User which uses the `NotificationDropdown` component
+- User Actions which uses the `UserDropdown` component
 
 ### 3. Footer
 
 Footer is created with the following components:
 
-1. Copyright on left side
-2. Important links of the company on right side
+1. Copyright on the left side
+2. Important links of the company on the right side
 
 ## Horizontal Layout Components
 
@@ -64,25 +65,26 @@ AppBar is created with the following components:
 
 #### Left side section
 
-- Company Logo and Company Name
+- Company Logo and/or Company Name
 
 #### Right side section
 
-- Template Search which uses `Autocomplete` component
-- Light and Dark Mode Toggler which uses `ModeToggler` component
-- Notifications of the User which uses `NotificationDropdown` component
-- User Actions which uses `UserDropdown` component
+- Template Search which uses the `Autocomplete` component
+- Change language by using the `LanguageDropdown` component
+- Light and Dark Mode Toggler which uses the `ModeToggler` component
+- Notifications of the User which uses the `NotificationDropdown` component
+- User Actions which uses the `UserDropdown` component
 
 ### 2. Navigation Menu
 
-Navigation menu is created with the following components:
+The navigation menu is created with the following components:
 
 - `HorizontalNavItems` component is used to categorize whether an item is a navigation group or navigation link
-- Navigation Group which uses `HorizontalNavGroup` component
+- Navigation Group which uses the `HorizontalNavGroup` component
 
   <img width='500' class='medium-zoom' alt='horizontal-menu-group' :src="$withBase('/images/layouts/horizontal-menu-group.png')" />
 
-- Navigation Link which uses `HorizontalNavLink` component
+- Navigation Link which uses the `HorizontalNavLink` component
 
   <img width='500' class='medium-zoom' alt='horizontal-menu-link' :src="$withBase('/images/layouts/horizontal-menu-link.png')" />
 
@@ -91,11 +93,11 @@ Navigation menu is created with the following components:
 Footer is created with the following components:
 
 - Copyright on left side
-- Important links of the company on right side
+- Important links of the company on the right side
 
 ## Blank Layout with AppBar Component
 
-Blank Layout with AppBar provides only appBar (at top of the page) which contains Company logo and Company name only.
+Blank Layout with AppBar provides only appBar (at top of the page) which contains the Company logo and Company name only.
 
 ## Scroll to top Component
 
