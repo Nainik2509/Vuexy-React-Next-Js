@@ -41,6 +41,7 @@ module.exports = {
             '/guide/development/internationalization',
             '/guide/development/rtl',
             '/guide/development/loaders',
+            '/guide/development/demo-config',
             '/guide/development/environment-variables'
           ]
         },
