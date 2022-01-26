@@ -3,12 +3,9 @@ import { ReactNode } from 'react'
 
 // ** Next Imports
 import Head from 'next/head'
+import Router from 'next/router'
 import type { NextPage } from 'next'
-import Router, { useRouter } from 'next/router'
 import type { AppProps } from 'next/app'
-
-// ** MUI Imports
-import Box from '@mui/material/Box'
 
 // ** Store Imports
 import { store } from 'src/store'
@@ -29,7 +26,6 @@ import themeConfig from 'src/configs/themeConfig'
 import 'src/@fake-db'
 
 // ** Third Party Import
-import clsx from 'clsx'
 import { Toaster } from 'react-hot-toast'
 
 // ** Component Imports
@@ -56,9 +52,6 @@ import 'prismjs'
 import 'prismjs/themes/prism-tomorrow.css'
 import 'prismjs/components/prism-jsx'
 import 'prismjs/components/prism-tsx'
-
-// ** Animate CSS
-import 'animate.css/animate.css'
 
 // ** React Perfect Scrollbar Style
 import 'react-perfect-scrollbar/dist/css/styles.css'
@@ -107,8 +100,6 @@ const Guard = ({ children, authGuard, guestGuard }: GuardProps) => {
 const App = (props: ExtendedAppProps) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
 
-  const router = useRouter()
-
   const getLayout = Component.getLayout ?? (page => <UserLayout>{page}</UserLayout>)
 
   const setConfig = Component.setConfig ?? undefined
@@ -137,18 +128,7 @@ const App = (props: ExtendedAppProps) => {
                 return (
                   <ThemeComponent settings={settings}>
                     <Guard authGuard={authGuard} guestGuard={guestGuard}>
-                      {getLayout(
-                        <Box
-                          key={router.route}
-                          sx={{ height: '100%' }}
-                          className={clsx('animation-wrapper', {
-                            [`animate__animated animate__${settings.routerTransition}`]:
-                              settings.routerTransition !== 'none' || settings.routerTransition !== undefined
-                          })}
-                        >
-                          <Component {...pageProps} />
-                        </Box>
-                      )}
+                      {getLayout(<Component {...pageProps} />)}
                     </Guard>
 
                     <ReactHotToast>

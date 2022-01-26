@@ -17,10 +17,4 @@ EmailApp.getInitialProps = async ({ query }: NextPageContext) => {
   return { folder, label }
 }
 
-EmailApp.setConfig = () => {
-  return {
-    routerTransition: 'none'
-  }
-}
-
 export default EmailApp

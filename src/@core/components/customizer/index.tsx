@@ -381,21 +381,6 @@ const Customizer = () => {
                 onChange={e => handleChange('direction', e.target.checked ? 'rtl' : 'ltr')}
               />
             </Box>
-
-            {/* Router Transition */}
-            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <Typography>Router Transition</Typography>
-              <Select
-                size='small'
-                value={settings.routerTransition}
-                onChange={e => handleChange('routerTransition', e.target.value as any)}
-              >
-                <MenuItem value='fadeIn'>fadeIn</MenuItem>
-                <MenuItem value='zoomIn'>zoomIn</MenuItem>
-                <MenuItem value='fadeInLeft'>fadeInLeft</MenuItem>
-                <MenuItem value='none'>none</MenuItem>
-              </Select>
-            </Box>
           </CustomizerSpacing>
         </PerfectScrollbar>
       </Drawer>

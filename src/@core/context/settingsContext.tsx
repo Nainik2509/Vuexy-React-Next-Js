@@ -8,15 +8,7 @@ import { PaletteMode, Direction } from '@mui/material'
 import themeConfig from 'src/configs/themeConfig'
 
 // ** Types Import
-import {
-  Skin,
-  AppBar,
-  Footer,
-  ThemeColor,
-  ContentWidth,
-  VerticalNavToggle,
-  RouterTransitions
-} from 'src/@core/layouts/types'
+import { Skin, AppBar, Footer, ThemeColor, ContentWidth, VerticalNavToggle } from 'src/@core/layouts/types'
 
 export type Settings = {
   skin: Skin
@@ -29,7 +21,6 @@ export type Settings = {
   themeColor: ThemeColor
   contentWidth: ContentWidth
   layout?: 'vertical' | 'horizontal'
-  routerTransition?: RouterTransitions
   lastLayout?: 'vertical' | 'horizontal'
   verticalNavToggleType: VerticalNavToggle
   toastPosition?: 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'
@@ -46,7 +37,6 @@ export type PageSpecificSettings = {
   themeColor?: ThemeColor
   contentWidth?: ContentWidth
   layout?: 'vertical' | 'horizontal'
-  routerTransition?: RouterTransitions
   lastLayout?: 'vertical' | 'horizontal'
   verticalNavToggleType?: VerticalNavToggle
   toastPosition?: 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'
@@ -72,7 +62,6 @@ const initialSettings: Settings = {
   navCollapsed: themeConfig.navCollapsed,
   contentWidth: themeConfig.contentWidth,
   toastPosition: themeConfig.toastPosition,
-  routerTransition: themeConfig.routerTransition,
   verticalNavToggleType: themeConfig.verticalNavToggleType,
   skin: themeConfig.layout === 'horizontal' && themeConfig.skin === 'semi-dark' ? 'default' : themeConfig.skin,
   appBar: themeConfig.layout === 'horizontal' && themeConfig.appBar === 'hidden' ? 'fixed' : themeConfig.appBar
@@ -84,8 +73,7 @@ const staticSettings = {
   layout: initialSettings.layout,
   navHidden: initialSettings.navHidden,
   lastLayout: initialSettings.lastLayout,
-  toastPosition: initialSettings.toastPosition,
-  routerTransition: initialSettings.routerTransition
+  toastPosition: initialSettings.toastPosition
 }
 
 const restoreSettings = (): Settings | null => {
@@ -116,7 +104,6 @@ const storeSettings = (settings: Settings) => {
   delete initSettings.navHidden
   delete initSettings.lastLayout
   delete initSettings.toastPosition
-  delete initSettings.routerTransition
   window.localStorage.setItem('settings', JSON.stringify(initSettings))
 }
 

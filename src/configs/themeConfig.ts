@@ -8,15 +8,7 @@ import { PaletteMode, Direction } from '@mui/material'
 import CircleOutline from 'mdi-material-ui/CircleOutline'
 
 // ** Types
-import {
-  Skin,
-  AppBar,
-  Footer,
-  ContentWidth,
-  RouterTransitions,
-  VerticalNavToggle,
-  HorizontalMenuToggle
-} from 'src/@core/layouts/types'
+import { Skin, AppBar, Footer, ContentWidth, VerticalNavToggle, HorizontalMenuToggle } from 'src/@core/layouts/types'
 
 type ThemeConfig = {
   skin: Skin
@@ -38,7 +30,6 @@ type ThemeConfig = {
   responsiveFontSizes: boolean
   collapsedNavigationSize: number
   layout: 'vertical' | 'horizontal'
-  routerTransition: RouterTransitions
   verticalNavToggleType: VerticalNavToggle
   horizontalMenuToggle: HorizontalMenuToggle
   toastPosition: 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'
@@ -56,7 +47,6 @@ const themeConfig: ThemeConfig = {
 
   // ** Routing Configs
   routingLoader: true /* true | false */,
-  routerTransition: 'fadeIn' /* fadeIn | zoomIn | fadeInLeft | none */,
 
   // ** Navigation (Menu) Configs
   navHidden: false /* true | false */,
