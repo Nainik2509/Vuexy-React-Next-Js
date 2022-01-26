@@ -32,7 +32,7 @@ import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 import themeConfig from 'src/configs/themeConfig'
 
 // ** Layout Import
-import UserBlankLayoutWithAppBar from 'src/layouts/UserBlankLayoutWithAppBar'
+import BlankLayoutWithAppBar from 'src/@core/layouts/BlankLayoutWithAppBar'
 
 // ** Hooks
 import { useSettings } from 'src/@core/hooks/useSettings'
@@ -233,6 +233,6 @@ const LoginWithAppBar = () => {
   )
 }
 
-LoginWithAppBar.getLayout = (page: ReactNode) => <UserBlankLayoutWithAppBar>{page}</UserBlankLayoutWithAppBar>
+LoginWithAppBar.getLayout = (page: ReactNode) => <BlankLayoutWithAppBar>{page}</BlankLayoutWithAppBar>
 
 export default LoginWithAppBar

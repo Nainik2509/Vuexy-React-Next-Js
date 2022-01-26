@@ -65,10 +65,9 @@ export type LayoutProps = {
 }
 
 export type BlankLayoutProps = {
-  children?: ReactNode
+  children: ReactNode
 }
 
 export type BlankLayoutWithAppBarProps = {
   children: ReactNode
-  appBarContent?: (props?: any) => ReactNode
 }
