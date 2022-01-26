@@ -25,20 +25,19 @@ if (fs.existsSync(settingsContextFile)) {
           return
         }
       })
-    }
-  })
-}
+      const demoConfigPath = `../../demo-configs/${demo}.ts`
 
-const demoConfigPath = `../../demo-configs/${demo}.ts`
+      if (fs.existsSync(themeConfigPath) && fs.existsSync(demoConfigPath)) {
+        fs.copyFile(demoConfigPath, themeConfigPath, err => {
+          if (err) {
+            console.log(err)
 
-if (fs.existsSync(themeConfigPath) && fs.existsSync(demoConfigPath)) {
-  fs.copyFile(demoConfigPath, themeConfigPath, err => {
-    if (err) {
-      console.log(err)
-
-      return
-    } else {
-      console.log(`Working on ${demo}`)
+            return
+          } else {
+            console.log(`Working on ${demo}`)
+          }
+        })
+      }
     }
   })
 }
