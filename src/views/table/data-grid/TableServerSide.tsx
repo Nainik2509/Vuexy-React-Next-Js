@@ -141,6 +141,7 @@ const columns: GridColDef[] = [
 const TableServerSide = () => {
   // ** State
   const [page, setPage] = useState(0)
+  const [total, setTotal] = useState<number>(0)
   const [pageSize, setPageSize] = useState<number>(7)
   const [rows, setRows] = useState<DataGridRowType[]>([])
   const [searchValue, setSearchValue] = useState<string>('')
@@ -162,11 +163,12 @@ const TableServerSide = () => {
           }
         })
         .then(res => {
+          setTotal(res.data.total)
           setRows(loadServerRows(page, res.data.data))
         })
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [page]
+    [page, pageSize]
   )
 
   useEffect(() => {
@@ -196,6 +198,7 @@ const TableServerSide = () => {
         autoHeight
         pagination
         rows={rows}
+        rowCount={total}
         columns={columns}
         checkboxSelection
         pageSize={pageSize}
@@ -217,19 +220,5 @@ const TableServerSide = () => {
     </Card>
   )
 }
-
-// export async function getStaticProps() {
-//   const res = await axios.get('/api/table/data', {
-//     q: 'test',
-//     perPage: 10,
-//     page: 1,
-//     column: '',
-//     sort: 'asc'
-//   })
-
-//   return {
-//     props: { data: res.data, test: 'test' }
-//   }
-// }
 
 export default TableServerSide
