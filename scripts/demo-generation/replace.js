@@ -1,6 +1,7 @@
 const fs = require('fs')
 
 let demo = 'demo-1'
+const nextConfigPath = '../../next.config.js'
 const themeConfigPath = '../../src/configs/themeConfig.ts'
 const settingsContextFile = '../../src/@core/context/settingsContext.tsx'
 
@@ -25,6 +26,25 @@ if (fs.existsSync(settingsContextFile)) {
           return
         }
       })
+
+      if (fs.existsSync(nextConfigPath)) {
+        const nextConfigData = fs.readFileSync(nextConfigPath).toString().split('\n')
+        nextConfigData.splice(14, 0, `basePath: '/${demo}',`)
+        const result = nextConfigData.join('\n')
+
+        fs.writeFile(nextConfigPath, result, err => {
+          if (err) {
+            console.log(err)
+
+            return
+          }
+        })
+      } else {
+        console.log('NextConfig Does Not Exists')
+
+        return
+      }
+
       const demoConfigPath = `../../demo-configs/${demo}.ts`
 
       if (fs.existsSync(themeConfigPath) && fs.existsSync(demoConfigPath)) {
