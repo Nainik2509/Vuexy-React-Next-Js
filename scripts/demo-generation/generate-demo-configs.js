@@ -23,7 +23,7 @@ if (fs.existsSync(demoConfigPath)) {
     } else {
       const demoData = JSON.parse(demoConfigString)
       Object.keys(demoData).forEach(key => {
-        const demoNumber = key.replace('demo', '')
+        const demoNumber = key.replace('demo-', '')
 
         const fileName = `${demoConfigsDir}/demo-${demoNumber}.ts`
 

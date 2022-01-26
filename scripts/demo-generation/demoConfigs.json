@@ -1,18 +1,18 @@
 {
-  "demo1": {},
-  "demo2": {
+  "demo-1": {},
+  "demo-2": {
     "skin": "bordered"
   },
-  "demo3": {
+  "demo-3": {
     "skin": "semi-dark"
   },
-  "demo4": {
+  "demo-4": {
     "mode": "dark"
   },
-  "demo5": {
+  "demo-5": {
     "layout": "horizontal"
   },
-  "demo6": {
+  "demo-6": {
     "mode": "dark",
     "skin": "bordered",
     "layout": "horizontal"
