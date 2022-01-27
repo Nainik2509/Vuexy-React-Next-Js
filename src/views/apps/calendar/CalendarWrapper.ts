@@ -7,7 +7,6 @@ import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 
 export const CalendarWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   display: 'flex',
-  overflow: 'hidden',
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
   '& .fc': {
@@ -229,6 +228,7 @@ export const CalendarWrapper = styled(Box)<BoxProps>(({ theme }) => ({
 
     '& .fc-view-harness': {
       minHeight: '650px',
+      width: 'calc(100% + 44px)',
       margin: theme.spacing(0, -6)
     },
 

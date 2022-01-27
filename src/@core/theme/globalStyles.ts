@@ -64,10 +64,14 @@ const GlobalStyles = (theme: Theme, settings: Settings) => {
         backgroundColor: theme.palette.mode === 'light' ? '#B0ACB5 !important' : '#575468 !important'
       },
       '.layout-vertical-nav &': {
-        '&:hover, &:focus, &.ps--clicking': {
+        '&:hover, &:focus, & .ps--clicking, & .ps--active-y': {
+          backgroundColor: perfectScrollbarTrackBgColor()
+        },
+        '& .ps__rail-y, & .ps__rail-y:hover': {
           backgroundColor: perfectScrollbarTrackBgColor()
         },
         '& .ps__thumb-y': {
+          height: '200px !important',
           backgroundColor: perfectScrollbarThumbBgColor()
         }
       }

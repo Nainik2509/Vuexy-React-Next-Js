@@ -44,6 +44,7 @@ import { useDispatch } from 'react-redux'
 import { updateTask, handleSelectTask } from 'src/store/apps/kanban'
 
 // ** Styled Components
+import DropzoneWrapper from 'src/@core/styles/libs/react-dropzone'
 import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 interface PickerProps {
@@ -54,6 +55,12 @@ interface PickerProps {
 
 interface FormData {
   title: string
+}
+
+interface FileProp {
+  name: string
+  type: string
+  size: number
 }
 
 const labelsArr = ['UX', 'Forms', 'Images', 'App', 'Code Review', 'Charts & Maps']
@@ -101,9 +108,8 @@ const TaskSidebar = (props: TaskSidebarProps) => {
   const [desc, setDesc] = useState<string>('')
   const [dueDate, setDueDate] = useState(new Date())
   const [labels, setLabels] = useState<string[]>([])
-  const [file, setFile] = useState<File[] | string[]>([])
+  const [files, setFiles] = useState<File[] | string[]>([])
   const [assignee, setAssignee] = useState<AssigneeMenuItems[]>([])
-  const [upload, setUpload] = useState<any>('')
 
   // ** Hooks
   const dispatch = useDispatch()
@@ -117,7 +123,7 @@ const TaskSidebar = (props: TaskSidebarProps) => {
     multiple: false,
     accept: 'image/*',
     onDrop: (acceptedFiles: File[]) => {
-      setFile(acceptedFiles.map((file: File) => Object.assign(file)))
+      setFiles(acceptedFiles.map((file: File) => Object.assign(file)))
     }
   })
 
@@ -130,9 +136,9 @@ const TaskSidebar = (props: TaskSidebarProps) => {
         dueDate,
         labels,
         assignedTo: assignee,
-        ...(file.length && typeof file[0] !== 'string'
+        ...(files.length && typeof files[0] !== 'string'
           ? {
-              coverImage: URL.createObjectURL(file[0])
+              coverImage: URL.createObjectURL(files[0])
             }
           : {})
       })
@@ -237,7 +243,7 @@ const TaskSidebar = (props: TaskSidebarProps) => {
         setLabels(selectedTask.labels)
       }
       if (selectedTask.coverImage) {
-        setFile([selectedTask.coverImage])
+        setFiles([selectedTask.coverImage])
       }
       if (selectedTask.assignedTo.length) {
         const arr = selectedTask.assignedTo.map(item => {
@@ -258,10 +264,22 @@ const TaskSidebar = (props: TaskSidebarProps) => {
     setDueDate(new Date())
     setDesc('')
     setLabels([])
-    setUpload('')
-    setFile([])
+    setFiles([])
     setAssignee([])
     dispatch(handleSelectTask(null))
+  }
+
+  const renderUploadedImage = () => {
+    if (files.length && typeof files[0] !== 'string') {
+      // @ts-ignore
+      return files.map((file: FileProp) => (
+        <img key={file.name} alt={file.name} className='single-file-image' src={URL.createObjectURL(file as any)} />
+      ))
+    } else {
+      if (typeof files[0] === 'string') {
+        return <img alt='task-img' className='single-file-image' src={files[0]} />
+      }
+    }
   }
 
   return (
@@ -364,16 +382,21 @@ const TaskSidebar = (props: TaskSidebarProps) => {
               renderInput={params => <TextField {...params} label='Assigned To' />}
             />
           </FormControl>
-          <Box {...getRootProps({ className: 'dropzone' })}>
-            <input {...getInputProps()} />
-            <TextField
-              type='file'
-              fullWidth
-              value={upload}
-              onClick={e => e.preventDefault()}
-              onChange={(e: any) => setUpload(e.target.files)}
-            />
-          </Box>
+          <DropzoneWrapper>
+            <Box
+              {...getRootProps({ className: 'dropzone' })}
+              sx={{ border: theme => `1px solid ${theme.palette.divider}` }}
+            >
+              <input {...getInputProps()} />
+              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                <img alt='Upload img' src='/images/misc/upload.png' width='160' />
+                <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
+                  <Typography>Drop files here or click to upload.</Typography>
+                </Box>
+              </Box>
+              {files.length ? renderUploadedImage() : null}
+            </Box>
+          </DropzoneWrapper>
           <FormControl fullWidth sx={{ my: 6 }}>
             <TextField
               multiline

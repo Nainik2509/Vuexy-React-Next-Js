@@ -9,45 +9,31 @@ import { rows } from 'src/@fake-db/table/static-data'
 
 const columns = [
   {
-    flex: 0.1,
     field: 'id',
-    minWidth: 110,
-    editable: true,
     headerName: 'ID'
   },
   {
-    flex: 0.3,
-    minWidth: 180,
-    editable: true,
+    minWidth: 300,
     field: 'full_name',
     headerName: 'Name'
   },
   {
-    flex: 0.3,
-    minWidth: 230,
+    minWidth: 300,
     field: 'email',
-    editable: true,
     headerName: 'Email'
   },
   {
-    flex: 0.2,
-    minWidth: 140,
-    editable: true,
-    headerName: 'Date',
-    field: 'start_date'
+    width: 180,
+    field: 'start_date',
+    headerName: 'Date'
   },
   {
-    flex: 0.2,
-    minWidth: 160,
-    editable: true,
+    width: 180,
     field: 'experience',
     headerName: 'Experience'
   },
   {
-    flex: 0.15,
     field: 'age',
-    minWidth: 120,
-    editable: true,
     headerName: 'Age'
   }
 ]
