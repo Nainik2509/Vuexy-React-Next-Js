@@ -54,14 +54,14 @@ const UserProfileLeft = (props: UserProfileLeftType) => {
       show={userProfileLeftOpen}
       backDropClick={handleUserProfileLeftSidebarToggle}
       sx={{
+        zIndex: 9,
         height: '100%',
         width: sidebarWidth,
-        zIndex: theme => theme.zIndex.drawer + 2,
         borderTopLeftRadius: theme => theme.shape.borderRadius,
         borderBottomLeftRadius: theme => theme.shape.borderRadius,
         '& + .MuiBackdrop-root': {
-          borderRadius: 1,
-          zIndex: theme => theme.zIndex.drawer + 1
+          zIndex: 8,
+          borderRadius: 1
         }
       }}
     >

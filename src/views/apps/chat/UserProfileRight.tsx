@@ -45,11 +45,15 @@ const UserProfileRight = (props: UserProfileRightType) => {
       show={userProfileRightOpen}
       backDropClick={handleUserProfileRightSidebarToggle}
       sx={{
+        zIndex: 9,
         height: '100%',
         width: sidebarWidth,
-        '& + .MuiBackdrop-root': { borderRadius: 1 },
         borderTopRightRadius: theme => theme.shape.borderRadius,
-        borderBottomRightRadius: theme => theme.shape.borderRadius
+        borderBottomRightRadius: theme => theme.shape.borderRadius,
+        '& + .MuiBackdrop-root': {
+          zIndex: 8,
+          borderRadius: 1
+        }
       }}
     >
       {store && store.selectedChat ? (

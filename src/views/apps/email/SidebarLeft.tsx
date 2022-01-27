@@ -104,6 +104,7 @@ const SidebarLeft = (props: MailSidebarType) => {
         keepMounted: true // Better open performance on mobile.
       }}
       sx={{
+        zIndex: 9,
         display: 'block',
         position: lgAbove ? 'static' : 'absolute',
         '& .MuiDrawer-paper': {

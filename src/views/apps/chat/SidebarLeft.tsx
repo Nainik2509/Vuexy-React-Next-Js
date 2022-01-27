@@ -325,13 +325,13 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
           keepMounted: true // Better open performance on mobile.
         }}
         sx={{
+          zIndex: 7,
           height: '100%',
           display: 'block',
           position: mdAbove ? 'static' : 'absolute',
           '& .MuiDrawer-paper': {
             boxShadow: 'none',
             width: sidebarWidth,
-            zIndex: mdAbove ? 2 : 'drawer',
             position: mdAbove ? 'static' : 'absolute',
             borderTopLeftRadius: (theme: Theme) => theme.shape.borderRadius,
             borderBottomLeftRadius: (theme: Theme) => theme.shape.borderRadius
