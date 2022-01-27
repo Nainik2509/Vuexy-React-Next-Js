@@ -1,6 +1,6 @@
 # Folder Structure
 
-:::danger Heads Up
+::: danger Heads Up
 Do not make any changes in the `src/@core` folder unless suggested by our team member (mostly support). It is the core functionality of the template which is responsible to run the template and will be changed/replaced with every new update. Use layouts folder to override core layouts and components.
 :::
 

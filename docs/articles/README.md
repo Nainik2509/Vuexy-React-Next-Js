@@ -15,6 +15,6 @@ pageClass: page-article-list
 <br />
 <br />
 
-:::tip Loved our Documentation and Template?
+::: tip Loved our Documentation and Template?
 If you liked our template and detailed docs, please give us ⭐⭐⭐⭐⭐ on --------. Your review motivates us to work even hard and provide top-notch features and support.
 :::

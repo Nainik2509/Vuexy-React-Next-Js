@@ -35,3 +35,7 @@ You'll need a loader to fix this. Read this [doc](https://nextjs.org/docs/api-re
 ## Vercel Deployment
 
 Read the this [documentation](https://nextjs.org/docs/deployment#managed-nextjs-with-vercel) to deploy your app to vercel.
+
+::: danger Heads Up!
+If you are going to deploy your project under a subfolder, please read this [FAQ](/faq/why-images-are-missing-on-deployment.html) before generating build or exporting your project.
+:::

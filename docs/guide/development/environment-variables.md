@@ -40,7 +40,7 @@ In order to expose a variable to the browser you have to prefix the variable wit
 NEXT_PUBLIC_ANALYTICS_ID=abcdefghijk
 ```
 
-:::warning
+::: warning
 Do not store any secrets (such as private API keys or passwords) in the public variables! These environment variables are embedded into the build, meaning anyone can view them by inspecting your app's files.
 :::
 

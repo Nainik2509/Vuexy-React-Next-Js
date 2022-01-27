@@ -6,11 +6,11 @@ We have used Material Design Icons from the community in the whole template. You
 
 We have created the `UserIcon` component in the `src/layouts/components/UserIcon.tsx` file, sole purpose of this component is to enable users to override icons used in the template and use any icon library of their choice. It is used in the `src/@core` folder in the vertical menu, horizontal menu and search.
 
-:::warning
+::: warning
 Do not use this component in any of your pages. You should directly import icons from your icon library and use them. This component should only be used to override menu and search icons and their styling.
 :::
 
-:::danger Heads Up!
+::: danger Heads Up!
 Do not remove the `mdi-material-ui` package from the `package.json` file and `src/layouts/components/UserIcon.tsx` file; otherwise, the whole app would break. There may be some instances where those icons will be used in the `src/@core` folder and will be impossible to remove that completely from the app.
 :::
 
@@ -85,7 +85,7 @@ const themeConfig = {
 
 ### Server Side Navigation Menu
 
-:::tip Note
+::: tip Note
 Use Icon component as **string** in your data.
 :::
 
@@ -97,7 +97,7 @@ Result:
 
 ## Third Party Icons
 
-:::tip
+::: tip
 If you want to use any third party icon library, we suggest you use the `react-icons` package. It provides most of the famous icons such as Material Design Icons, FontAwesome Icons, Feather Icons, React Bootstrap Icons, Ant Design Icons, BoxIcons, etc.
 :::
 
@@ -142,7 +142,7 @@ const themeConfig = {
 
 ### Server Side Navigation Menu
 
-:::tip Note
+::: tip Note
 Use Icon component as **string** in your data.
 :::
 
@@ -156,7 +156,7 @@ Result:
 
 You may go through the [Font Awesome Docs](https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react) for installation and more details. You may check all the icons [here](https://fontawesome.com/v5.15/icons).
 
-:::warning
+::: warning
 If you decide to use Font Awesome Icon as a stand-alone library and not use React Icons, you need to make sure you change all the icons present in the menu and search due to difference in icon rendering process in the `UserIcon` component in `src/layouts/components/UserIcon.tsx` file.
 :::
 

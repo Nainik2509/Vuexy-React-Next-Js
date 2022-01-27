@@ -26,6 +26,6 @@ However, you won't need fake-db if you are using real APIs. In this case please 
 
 This will remove fake-db completely from your package. 🎉
 
-:::warning NOTE
+::: warning NOTE
 Now all (fake) API calls will result in 404 error until you replace them with your real API endpoints.
 :::

@@ -143,6 +143,6 @@ Thanks for purchasing our template 🙂. Let's get you up and running.
   </div>
 </div>
 
-:::tip
+::: tip
 We only provide documentation for custom components and customizations made to MUI's components. For MUI components' documentation please visit [MUI's official docs](https://mui.com/components/).
 :::

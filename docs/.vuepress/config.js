@@ -126,7 +126,8 @@ module.exports = {
             ['how-to-update-navbar-footer', 'How to update navbar or footer'],
             ['how-to-update-this-template', 'How to update this template'],
             ['how-to-use-custom-icons', 'How to override menu icons and use custom icons in the template'],
-            ['how-to-use-nextjs-image-component', 'How to use Nextjs Image Component without Height & Width']
+            ['how-to-use-nextjs-image-component', 'How to use Nextjs Image Component without Height & Width'],
+            ['why-images-are-missing-on-deployment', 'Why images are missing on deployment']
           ]
         }
       ]

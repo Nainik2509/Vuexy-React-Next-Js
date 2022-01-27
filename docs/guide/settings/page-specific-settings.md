@@ -21,10 +21,10 @@ AnalyticsDashboard.setConfig = () => {
 export default AnalyticsDashboard
 ```
 
-:::tip Note
+::: tip Note
 Configurations are same as settings you can refer the [Settings Context](/guide/settings/context/) guide for more info.
 :::
 
-:::danger Note
+::: danger Note
 Setting `layout` or `rtl` for a specific page will throw a memory leak error.
 :::

@@ -74,6 +74,6 @@ const Component = () => {
 }
 ```
 
-:::warning
+::: warning
 We have used the fake-db for demo purposes only. fake-db will not work for the real life applications.
 :::

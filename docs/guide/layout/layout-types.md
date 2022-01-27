@@ -1,6 +1,6 @@
 # Layout Types
 
-:::tip
+::: tip
 We recommend you to go through the [Layout Docs of NextJS](https://nextjs.org/docs/basic-features/layouts) to understand how the layout works in the app. Once you understand the layout from NextJS, then you may go through our docs for a better understanding.
 :::
 

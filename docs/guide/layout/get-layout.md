@@ -1,6 +1,6 @@
 # getLayout
 
-:::tip
+::: tip
 We recommend you to go through the [Per page Layout Docs of NextJS](https://nextjs.org/docs/basic-features/layouts#per-page-layouts) to understand how the layout works on any single page in the app. Once you understand the layout from NextJS, then you may go through our docs for a better understanding.
 :::
 

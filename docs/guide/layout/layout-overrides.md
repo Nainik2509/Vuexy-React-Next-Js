@@ -88,7 +88,7 @@ Result:
 
 <img alt='override-app-brand' class='medium-zoom' :src="$withBase('/images/layouts/user-override-vertical-app-brand.png')" />
 
-:::warning NOTE
+::: warning NOTE
 When you override the app logo and when the menu is collapsed, `padding-left` of the menu header will reduce to 0. To center align your logo, you need to manually add `margin-left` to your overridden logo.
 :::
 
