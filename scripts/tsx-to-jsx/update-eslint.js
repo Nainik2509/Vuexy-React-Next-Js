@@ -113,7 +113,7 @@ const data = `module.exports = {
   // }
 }`
 
-fs.writeFile('../jsx-version/.eslintrc.js', data, err => {
+fs.writeFile('../../jsx-version/.eslintrc.js', data, err => {
   if (err) {
     console.error(err)
 

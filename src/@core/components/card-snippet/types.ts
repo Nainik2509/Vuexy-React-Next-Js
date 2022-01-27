@@ -9,8 +9,8 @@ export type CardSnippetProps = CardProps & {
   title: string
   children: ReactNode
   code: {
+    tsx: ReactElement | null
     jsx: ReactElement
-    tsx: ReactElement
   }
   className?: string
 }

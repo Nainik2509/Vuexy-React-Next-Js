@@ -1,11 +1,11 @@
 const fs = require('fs')
 const path = require('path')
 
-const srcDirPath = '../jsx-version/src'
-const packageFilePath = '../jsx-version/package.json'
+const srcDirPath = '../../jsx-version/src'
+const packageFilePath = '../../jsx-version/package.json'
 
 // deletes root types folder
-// fs.rmdirSync('../jsx-version/src/types', { recursive: true, force: true }, err =>
+// fs.rmdirSync('../../jsx-version/src/types', { recursive: true, force: true }, err =>
 //   console.log(err || 'Deleted: Root Types folder')
 // )
 
@@ -52,14 +52,9 @@ if (fs.existsSync(packageFilePath)) {
 
     let finalResult = result.replace(new RegExp(/(\r\n|\n|\r)\s*("(@types|typescript))(.*)/, 'g'), ``)
 
-    if (
-      finalResult.charAt(finalResult.lastIndexOf(',') + 6) ||
-      finalResult.charAt(finalResult.lastIndexOf(',') + 8) === '}'
-    ) {
-      finalResult = setCharAt(finalResult, finalResult.lastIndexOf(','), '')
-    }
+    const dataToWrite = finalResult.replace(/\,(?!\s*?[\{\[\"\'\w])/g, '')
 
-    fs.writeFile(packageFilePath, finalResult, 'utf8', function (err) {
+    fs.writeFile(packageFilePath, dataToWrite, 'utf8', function (err) {
       if (err) return console.log(err)
     })
   })

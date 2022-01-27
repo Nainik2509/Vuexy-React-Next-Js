@@ -1,3 +1,56 @@
+export const AccordionSimpleJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Accordion from '@mui/material/Accordion'
+import Typography from '@mui/material/Typography'
+import AccordionSummary from '@mui/material/AccordionSummary'
+import AccordionDetails from '@mui/material/AccordionDetails'
+
+// ** Icons Imports
+import ChevronDown from 'mdi-material-ui/ChevronDown'
+
+const AccordionSimple = () => {
+  return (
+    <div>
+      <Accordion>
+        <AccordionSummary expandIcon={<ChevronDown />} aria-controls='panel-content-1' id='panel-header-1'>
+          <Typography>Accordion 1</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Wafer sesame snaps chocolate bar candy canes halvah. Cupcake sesame snaps sweet tart dessert biscuit.
+            Topping soufflé tart sweet croissant.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion>
+        <AccordionSummary expandIcon={<ChevronDown />} aria-controls='panel-content-2' id='panel-header-2'>
+          <Typography>Accordion 2</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Sugar plum sesame snaps caramels. Cake pie tart fruitcake sesame snaps donut cupcake macaroon. Gingerbread
+            pudding cheesecake pie ice cream.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion>
+        <AccordionSummary expandIcon={<ChevronDown />} aria-controls='panel-content-3' id='panel-header-3'>
+          <Typography>Accordion 3</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Gingerbread lemon drops bear claw gummi bears bonbon wafer jujubes tiramisu. Jelly pie cake. Sweet roll
+            dessert sweet pastry powder.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+    </div>
+  )
+}
+
+export default AccordionSimple
+`}</code></pre>) 
 export const AccordionActionsJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
@@ -92,81 +145,6 @@ const AccordionActions = () => {
 }
 
 export default AccordionActions
-`}</code></pre>) 
-export const AccordionControlledJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import Accordion from '@mui/material/Accordion'
-import Typography from '@mui/material/Typography'
-import AccordionSummary from '@mui/material/AccordionSummary'
-import AccordionDetails from '@mui/material/AccordionDetails'
-
-// ** Icons Imports
-import ChevronDown from 'mdi-material-ui/ChevronDown'
-
-const AccordionControlled = () => {
-  // ** State
-  const [expanded, setExpanded] = useState(false)
-
-  const handleChange = panel => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false)
-  }
-
-  return (
-    <div>
-      <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-        <AccordionSummary
-          expandIcon={<ChevronDown />}
-          id='controlled-panel-header-1'
-          aria-controls='controlled-panel-content-1'
-        >
-          <Typography>Accordion 1</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Wafer sesame snaps chocolate bar candy canes halvah. Cupcake sesame snaps sweet tart dessert biscuit.
-            Topping soufflé tart sweet croissant.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-
-      <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-        <AccordionSummary
-          expandIcon={<ChevronDown />}
-          id='controlled-panel-header-2'
-          aria-controls='controlled-panel-content-2'
-        >
-          <Typography>Accordion 2</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Sugar plum sesame snaps caramels. Cake pie tart fruitcake sesame snaps donut cupcake macaroon. Gingerbread
-            pudding cheesecake pie ice cream.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-
-      <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
-        <AccordionSummary
-          expandIcon={<ChevronDown />}
-          id='controlled-panel-header-3'
-          aria-controls='controlled-panel-content-3'
-        >
-          <Typography>Accordion 3</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Gingerbread lemon drops bear claw gummi bears bonbon wafer jujubes tiramisu. Jelly pie cake. Sweet roll
-            dessert sweet pastry powder.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-    </div>
-  )
-}
-
-export default AccordionControlled
 `}</code></pre>) 
 export const AccordionCustomizedJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
@@ -298,7 +276,10 @@ const AccordionCustomized = () => {
 
 export default AccordionCustomized
 `}</code></pre>) 
-export const AccordionSimpleJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+export const AccordionControlledJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
 import Accordion from '@mui/material/Accordion'
 import Typography from '@mui/material/Typography'
 import AccordionSummary from '@mui/material/AccordionSummary'
@@ -307,11 +288,22 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 // ** Icons Imports
 import ChevronDown from 'mdi-material-ui/ChevronDown'
 
-const AccordionSimple = () => {
+const AccordionControlled = () => {
+  // ** State
+  const [expanded, setExpanded] = useState(false)
+
+  const handleChange = panel => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false)
+  }
+
   return (
     <div>
-      <Accordion>
-        <AccordionSummary expandIcon={<ChevronDown />} aria-controls='panel-content-1' id='panel-header-1'>
+      <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+        <AccordionSummary
+          expandIcon={<ChevronDown />}
+          id='controlled-panel-header-1'
+          aria-controls='controlled-panel-content-1'
+        >
           <Typography>Accordion 1</Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -322,8 +314,12 @@ const AccordionSimple = () => {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion>
-        <AccordionSummary expandIcon={<ChevronDown />} aria-controls='panel-content-2' id='panel-header-2'>
+      <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+        <AccordionSummary
+          expandIcon={<ChevronDown />}
+          id='controlled-panel-header-2'
+          aria-controls='controlled-panel-content-2'
+        >
           <Typography>Accordion 2</Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -334,8 +330,12 @@ const AccordionSimple = () => {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion>
-        <AccordionSummary expandIcon={<ChevronDown />} aria-controls='panel-content-3' id='panel-header-3'>
+      <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+        <AccordionSummary
+          expandIcon={<ChevronDown />}
+          id='controlled-panel-header-3'
+          aria-controls='controlled-panel-content-3'
+        >
           <Typography>Accordion 3</Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -349,7 +349,7 @@ const AccordionSimple = () => {
   )
 }
 
-export default AccordionSimple
+export default AccordionControlled
 `}</code></pre>) 
 export const AccordionCustomizedTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { SyntheticEvent, useState } from 'react'
@@ -479,6 +479,81 @@ const AccordionCustomized = () => {
 
 export default AccordionCustomized
 `}</code></pre>) 
+export const AccordionControlledTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { SyntheticEvent, useState } from 'react'
+
+// ** MUI Imports
+import Accordion from '@mui/material/Accordion'
+import Typography from '@mui/material/Typography'
+import AccordionSummary from '@mui/material/AccordionSummary'
+import AccordionDetails from '@mui/material/AccordionDetails'
+
+// ** Icons Imports
+import ChevronDown from 'mdi-material-ui/ChevronDown'
+
+const AccordionControlled = () => {
+  // ** State
+  const [expanded, setExpanded] = useState<string | false>(false)
+
+  const handleChange = (panel: string) => (event: SyntheticEvent, isExpanded: boolean) => {
+    setExpanded(isExpanded ? panel : false)
+  }
+
+  return (
+    <div>
+      <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+        <AccordionSummary
+          expandIcon={<ChevronDown />}
+          id='controlled-panel-header-1'
+          aria-controls='controlled-panel-content-1'
+        >
+          <Typography>Accordion 1</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Wafer sesame snaps chocolate bar candy canes halvah. Cupcake sesame snaps sweet tart dessert biscuit.
+            Topping soufflé tart sweet croissant.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+        <AccordionSummary
+          expandIcon={<ChevronDown />}
+          id='controlled-panel-header-2'
+          aria-controls='controlled-panel-content-2'
+        >
+          <Typography>Accordion 2</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Sugar plum sesame snaps caramels. Cake pie tart fruitcake sesame snaps donut cupcake macaroon. Gingerbread
+            pudding cheesecake pie ice cream.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+        <AccordionSummary
+          expandIcon={<ChevronDown />}
+          id='controlled-panel-header-3'
+          aria-controls='controlled-panel-content-3'
+        >
+          <Typography>Accordion 3</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Gingerbread lemon drops bear claw gummi bears bonbon wafer jujubes tiramisu. Jelly pie cake. Sweet roll
+            dessert sweet pastry powder.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+    </div>
+  )
+}
+
+export default AccordionControlled
+`}</code></pre>) 
 export const AccordionActionsTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { SyntheticEvent, useState } from 'react'
 
@@ -573,81 +648,6 @@ const AccordionActions = () => {
 }
 
 export default AccordionActions
-`}</code></pre>) 
-export const AccordionControlledTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { SyntheticEvent, useState } from 'react'
-
-// ** MUI Imports
-import Accordion from '@mui/material/Accordion'
-import Typography from '@mui/material/Typography'
-import AccordionSummary from '@mui/material/AccordionSummary'
-import AccordionDetails from '@mui/material/AccordionDetails'
-
-// ** Icons Imports
-import ChevronDown from 'mdi-material-ui/ChevronDown'
-
-const AccordionControlled = () => {
-  // ** State
-  const [expanded, setExpanded] = useState<string | false>(false)
-
-  const handleChange = (panel: string) => (event: SyntheticEvent, isExpanded: boolean) => {
-    setExpanded(isExpanded ? panel : false)
-  }
-
-  return (
-    <div>
-      <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-        <AccordionSummary
-          expandIcon={<ChevronDown />}
-          id='controlled-panel-header-1'
-          aria-controls='controlled-panel-content-1'
-        >
-          <Typography>Accordion 1</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Wafer sesame snaps chocolate bar candy canes halvah. Cupcake sesame snaps sweet tart dessert biscuit.
-            Topping soufflé tart sweet croissant.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-
-      <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-        <AccordionSummary
-          expandIcon={<ChevronDown />}
-          id='controlled-panel-header-2'
-          aria-controls='controlled-panel-content-2'
-        >
-          <Typography>Accordion 2</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Sugar plum sesame snaps caramels. Cake pie tart fruitcake sesame snaps donut cupcake macaroon. Gingerbread
-            pudding cheesecake pie ice cream.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-
-      <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
-        <AccordionSummary
-          expandIcon={<ChevronDown />}
-          id='controlled-panel-header-3'
-          aria-controls='controlled-panel-content-3'
-        >
-          <Typography>Accordion 3</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Gingerbread lemon drops bear claw gummi bears bonbon wafer jujubes tiramisu. Jelly pie cake. Sweet roll
-            dessert sweet pastry powder.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-    </div>
-  )
-}
-
-export default AccordionControlled
 `}</code></pre>) 
 export const AccordionSimpleTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Accordion from '@mui/material/Accordion'

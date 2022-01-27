@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-const jsConfigPath = '../jsx-version/jsconfig.json'
+const jsConfigPath = '../../jsx-version/jsconfig.json'
 
 const jsConfig = {
   compilerOptions: {

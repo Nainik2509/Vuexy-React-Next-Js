@@ -37,7 +37,7 @@ const CardSnippet = (props: CardSnippetProps) => {
 
   // ** States
   const [showCode, setShowCode] = useState<boolean>(false)
-  const [tabValue, setTabValue] = useState<'tsx' | 'jsx'>('tsx')
+  const [tabValue, setTabValue] = useState<'tsx' | 'jsx'>(code.tsx !== null ? 'tsx' : 'jsx')
 
   // ** Hooks
   const clipboard = useClipboard()
@@ -55,6 +55,14 @@ const CardSnippet = (props: CardSnippetProps) => {
     toast.success('The source code has been copied to your clipboard.', {
       duration: 2000
     })
+  }
+
+  const renderCode = () => {
+    if (code[tabValue] !== null) {
+      return code[tabValue]
+    } else {
+      return null
+    }
   }
 
   return (
@@ -88,11 +96,13 @@ const CardSnippet = (props: CardSnippetProps) => {
                 size='small'
                 color='primary'
                 value={tabValue}
-                onChange={(e, newValue) => setTabValue(newValue)}
+                onChange={(e, newValue) => (newValue !== tabValue ? setTabValue(newValue) : null)}
               >
-                <ToggleButton value='tsx'>
-                  <LanguageTypescript fontSize='small' />
-                </ToggleButton>
+                {code.tsx !== null ? (
+                  <ToggleButton value='tsx'>
+                    <LanguageTypescript fontSize='small' />
+                  </ToggleButton>
+                ) : null}
                 <ToggleButton value='jsx'>
                   <LanguageJavascript fontSize='small' />
                 </ToggleButton>
@@ -111,7 +121,7 @@ const CardSnippet = (props: CardSnippetProps) => {
                 <ContentCopy fontSize='small' />
               </IconButton>
             </Tooltip>
-            <Box>{tabValue === 'jsx' ? code.jsx : code.tsx}</Box>
+            <Box>{renderCode()}</Box>
           </CardContent>
         </Collapse>
       )}

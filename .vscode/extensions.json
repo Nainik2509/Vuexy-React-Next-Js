@@ -23,6 +23,7 @@
     "davidanson.vscode-markdownlint",
     "coenraads.bracket-pair-colorizer",
     "chakrounanas.turbo-console-log",
-    "planbcoding.vscode-react-refactor"
+    "planbcoding.vscode-react-refactor",
+    "github.copilot"
   ]
 }

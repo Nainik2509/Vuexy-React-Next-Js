@@ -405,50 +405,6 @@ const SelectNative = () => {
 
 export default SelectNative
 `}</code></pre>) 
-export const SelectGroupingJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Select from '@mui/material/Select'
-import MenuItem from '@mui/material/MenuItem'
-import InputLabel from '@mui/material/InputLabel'
-import FormControl from '@mui/material/FormControl'
-import ListSubheader from '@mui/material/ListSubheader'
-
-const SelectGrouping = () => {
-  return (
-    <div className='demo-space-x'>
-      <FormControl>
-        <InputLabel htmlFor='grouped-select'>Grouping</InputLabel>
-        <Select label='Grouping' defaultValue='' id='grouped-select'>
-          <MenuItem value=''>
-            <em>None</em>
-          </MenuItem>
-          <ListSubheader>Category 1</ListSubheader>
-          <MenuItem value={1}>Option 1</MenuItem>
-          <MenuItem value={2}>Option 2</MenuItem>
-          <ListSubheader>Category 2</ListSubheader>
-          <MenuItem value={3}>Option 3</MenuItem>
-          <MenuItem value={4}>Option 4</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl>
-        <InputLabel htmlFor='grouped-native-select'>Grouping</InputLabel>
-        <Select native label='Grouping' defaultValue='' id='grouped-native-select'>
-          <option aria-label='None' value='' />
-          <optgroup label='Category 1'>
-            <option value={1}>Option 1</option>
-            <option value={2}>Option 2</option>
-          </optgroup>
-          <optgroup label='Category 2'>
-            <option value={3}>Option 3</option>
-            <option value={4}>Option 4</option>
-          </optgroup>
-        </Select>
-      </FormControl>
-    </div>
-  )
-}
-
-export default SelectGrouping
-`}</code></pre>) 
 export const SelectPropsJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Select from '@mui/material/Select'
@@ -707,6 +663,50 @@ const SelectWithDialog = () => {
 
 export default SelectWithDialog
 `}</code></pre>) 
+export const SelectGroupingJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Select from '@mui/material/Select'
+import MenuItem from '@mui/material/MenuItem'
+import InputLabel from '@mui/material/InputLabel'
+import FormControl from '@mui/material/FormControl'
+import ListSubheader from '@mui/material/ListSubheader'
+
+const SelectGrouping = () => {
+  return (
+    <div className='demo-space-x'>
+      <FormControl>
+        <InputLabel htmlFor='grouped-select'>Grouping</InputLabel>
+        <Select label='Grouping' defaultValue='' id='grouped-select'>
+          <MenuItem value=''>
+            <em>None</em>
+          </MenuItem>
+          <ListSubheader>Category 1</ListSubheader>
+          <MenuItem value={1}>Option 1</MenuItem>
+          <MenuItem value={2}>Option 2</MenuItem>
+          <ListSubheader>Category 2</ListSubheader>
+          <MenuItem value={3}>Option 3</MenuItem>
+          <MenuItem value={4}>Option 4</MenuItem>
+        </Select>
+      </FormControl>
+      <FormControl>
+        <InputLabel htmlFor='grouped-native-select'>Grouping</InputLabel>
+        <Select native label='Grouping' defaultValue='' id='grouped-native-select'>
+          <option aria-label='None' value='' />
+          <optgroup label='Category 1'>
+            <option value={1}>Option 1</option>
+            <option value={2}>Option 2</option>
+          </optgroup>
+          <optgroup label='Category 2'>
+            <option value={3}>Option 3</option>
+            <option value={4}>Option 4</option>
+          </optgroup>
+        </Select>
+      </FormControl>
+    </div>
+  )
+}
+
+export default SelectGrouping
+`}</code></pre>) 
 export const SelectControlledUncontrolledTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
@@ -804,194 +804,55 @@ const SelectGrouping = () => {
 
 export default SelectGrouping
 `}</code></pre>) 
-export const SelectMultipleTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import Box from '@mui/material/Box'
-import Chip from '@mui/material/Chip'
+export const SelectVariantsTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
-import Checkbox from '@mui/material/Checkbox'
-import Typography from '@mui/material/Typography'
 import InputLabel from '@mui/material/InputLabel'
 import FormControl from '@mui/material/FormControl'
-import ListItemText from '@mui/material/ListItemText'
-import Select, { SelectChangeEvent } from '@mui/material/Select'
 
-const ITEM_HEIGHT = 48
-const ITEM_PADDING_TOP = 8
-const MenuProps = {
-  PaperProps: {
-    style: {
-      width: 250,
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP
-    }
-  }
-}
-
-const names = [
-  'Oliver Hansen',
-  'Van Henry',
-  'April Tucker',
-  'Ralph Hubbard',
-  'Omar Alexander',
-  'Carlos Abbott',
-  'Miriam Wagner',
-  'Bradley Wilkerson',
-  'Virginia Andrews',
-  'Kelly Snyder'
-]
-
-const SelectMultiple = () => {
-  // ** State
-  const [personName, setPersonName] = useState<string[]>([])
-  const [personNameNative, setPersonNameNative] = useState<string[]>([])
-
-  const handleChange = (event: SelectChangeEvent<string[]>) => {
-    setPersonName(event.target.value as string[])
-  }
-
-  const handleChangeMultipleNative = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const { options } = event.target
-    const value: string[] = []
-    for (let i = 0, l = options.length; i < l; i += 1) {
-      if (options[i].selected) {
-        value.push(options[i].value)
-      }
-    }
-    setPersonNameNative(value)
-  }
-
+const SelectVariants = () => {
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', '& > *': { mt: 4, maxWidth: 500 } }}>
-      <div>
-        <Typography sx={{ mb: 2, fontWeight: 500 }}>Default</Typography>
-        <FormControl fullWidth>
-          <InputLabel id='demo-multiple-name-label'>Name</InputLabel>
-          <Select
-            multiple
-            label='Name'
-            value={personName}
-            MenuProps={MenuProps}
-            id='demo-multiple-name'
-            onChange={handleChange}
-            labelId='demo-multiple-name-label'
-          >
-            {names.map(name => (
-              <MenuItem key={name} value={name}>
-                {name}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-      </div>
-      <div>
-        <Typography sx={{ mb: 2, fontWeight: 500 }}>Checkmarks</Typography>
-        <FormControl fullWidth>
-          <InputLabel id='demo-multiple-checkbox-label'>Tag</InputLabel>
-          <Select
-            multiple
-            label='Tag'
-            value={personName}
-            MenuProps={MenuProps}
-            onChange={handleChange}
-            id='demo-multiple-checkbox'
-            labelId='demo-multiple-checkbox-label'
-            renderValue={selected => (selected as unknown as string[]).join(', ')}
-          >
-            {names.map(name => (
-              <MenuItem key={name} value={name}>
-                <Checkbox checked={personName.indexOf(name) > -1} />
-                <ListItemText primary={name} />
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-      </div>
-      <div>
-        <Typography sx={{ mb: 2, fontWeight: 500 }}>Chip</Typography>
-        <FormControl fullWidth>
-          <InputLabel id='demo-multiple-chip-label'>Chip</InputLabel>
-          <Select
-            multiple
-            label='Chip'
-            value={personName}
-            MenuProps={MenuProps}
-            id='demo-multiple-chip'
-            onChange={handleChange}
-            labelId='demo-multiple-chip-label'
-            renderValue={selected => (
-              <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
-                {(selected as unknown as string[]).map(value => (
-                  <Chip key={value} label={value} sx={{ margin: 0.75 }} />
-                ))}
-              </Box>
-            )}
-          >
-            {names.map(name => (
-              <MenuItem key={name} value={name}>
-                {name}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-      </div>
-      <div>
-        <Typography sx={{ mb: 2, fontWeight: 500 }}>Placeholder</Typography>
-        <FormControl fullWidth>
-          <Select
-            multiple
-            displayEmpty
-            value={personName}
-            MenuProps={MenuProps}
-            onChange={handleChange}
-            inputProps={{ 'aria-label': 'Without label' }}
-            renderValue={selected => {
-              if ((selected as unknown as string[]).length === 0) {
-                return <em>Placeholder</em>
-              }
-
-              return (selected as unknown as string[]).join(', ')
-            }}
-          >
-            <MenuItem disabled value=''>
-              <em>Placeholder</em>
-            </MenuItem>
-            {names.map(name => (
-              <MenuItem key={name} value={name}>
-                {name}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-      </div>
-      <div>
-        <Typography sx={{ mb: 2, fontWeight: 500 }}>Native</Typography>
-        <FormControl fullWidth>
-          <InputLabel shrink htmlFor='select-multiple-native'>
-            Native
-          </InputLabel>
-          <Select
-            native
-            multiple
-            label='Native'
-            value={personNameNative} // @ts-ignore
-            onChange={handleChangeMultipleNative}
-            inputProps={{ id: 'select-multiple-native' }}
-          >
-            {names.map(name => (
-              <option key={name} value={name}>
-                {name}
-              </option>
-            ))}
-          </Select>
-        </FormControl>
-      </div>
-    </Box>
+    <div className='demo-space-x'>
+      <FormControl>
+        <InputLabel id='demo-simple-select-outlined-label'>Age</InputLabel>
+        <Select
+          label='Age'
+          defaultValue=''
+          id='demo-simple-select-outlined'
+          labelId='demo-simple-select-outlined-label'
+        >
+          <MenuItem value=''>
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+      <FormControl variant='filled'>
+        <InputLabel id='demo-simple-select-filled-label'>Age</InputLabel>
+        <Select label='Age' labelId='demo-simple-select-filled-label' id='demo-simple-select-filled' defaultValue=''>
+          <MenuItem value=''>
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+      <FormControl variant='standard'>
+        <InputLabel id='demo-simple-select-label'>Age</InputLabel>
+        <Select label='Age' labelId='demo-simple-select-label' id='demo-simple-select' defaultValue=''>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+    </div>
   )
 }
 
-export default SelectMultiple
+export default SelectVariants
 `}</code></pre>) 
 export const SelectNativeTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Select from '@mui/material/Select'
@@ -1186,6 +1047,86 @@ const SelectProps = () => {
 
 export default SelectProps
 `}</code></pre>) 
+export const SelectWithDialogTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import Button from '@mui/material/Button'
+import Dialog from '@mui/material/Dialog'
+import Select from '@mui/material/Select'
+import MenuItem from '@mui/material/MenuItem'
+import InputLabel from '@mui/material/InputLabel'
+import DialogTitle from '@mui/material/DialogTitle'
+import FormControl from '@mui/material/FormControl'
+import DialogContent from '@mui/material/DialogContent'
+import DialogActions from '@mui/material/DialogActions'
+
+const SelectWithDialog = () => {
+  // ** State
+  const [open, setOpen] = useState<boolean>(false)
+
+  const handleClickOpen = () => {
+    setOpen(true)
+  }
+
+  const handleClose = () => {
+    setOpen(false)
+  }
+
+  return (
+    <div>
+      <Button variant='outlined' onClick={handleClickOpen}>
+        Open select dialog
+      </Button>
+      <Dialog maxWidth='xs' fullWidth open={open} onClose={handleClose}>
+        <DialogTitle>Fill the form</DialogTitle>
+        <DialogContent sx={{ paddingTop: theme => {theme.spacing(2)} !important }}>
+          <form>
+            <FormControl sx={{ mr: 4 }}>
+              <InputLabel id='demo-dialog-select-label'>Age</InputLabel>
+              <Select label='Age' labelId='demo-dialog-select-label' id='demo-dialog-select' defaultValue=''>
+                <MenuItem value=''>
+                  <em>None</em>
+                </MenuItem>
+                <MenuItem value={10}>Ten</MenuItem>
+                <MenuItem value={20}>Twenty</MenuItem>
+                <MenuItem value={30}>Thirty</MenuItem>
+              </Select>
+            </FormControl>
+            <FormControl>
+              <InputLabel htmlFor='outlined-age-native-simple'>Age</InputLabel>
+              <Select
+                native
+                label='Age'
+                defaultValue=''
+                inputProps={{
+                  name: 'age',
+                  id: 'outlined-age-native-simple'
+                }}
+              >
+                <option aria-label='None' value='' />
+                <option value={10}>Ten</option>
+                <option value={20}>Twenty</option>
+                <option value={30}>Thirty</option>
+              </Select>
+            </FormControl>
+          </form>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} variant='outlined'>
+            Cancel
+          </Button>
+          <Button onClick={handleClose} variant='outlined'>
+            Ok
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </div>
+  )
+}
+
+export default SelectWithDialog
+`}</code></pre>) 
 export const SelectCustomizedTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
@@ -1282,133 +1223,192 @@ const SelectCustomized = () => {
 
 export default SelectCustomized
 `}</code></pre>) 
-export const SelectWithDialogTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+export const SelectMultipleTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
 // ** MUI Imports
-import Button from '@mui/material/Button'
-import Dialog from '@mui/material/Dialog'
-import Select from '@mui/material/Select'
+import Box from '@mui/material/Box'
+import Chip from '@mui/material/Chip'
 import MenuItem from '@mui/material/MenuItem'
+import Checkbox from '@mui/material/Checkbox'
+import Typography from '@mui/material/Typography'
 import InputLabel from '@mui/material/InputLabel'
-import DialogTitle from '@mui/material/DialogTitle'
 import FormControl from '@mui/material/FormControl'
-import DialogContent from '@mui/material/DialogContent'
-import DialogActions from '@mui/material/DialogActions'
+import ListItemText from '@mui/material/ListItemText'
+import Select, { SelectChangeEvent } from '@mui/material/Select'
 
-const SelectWithDialog = () => {
+const ITEM_HEIGHT = 48
+const ITEM_PADDING_TOP = 8
+const MenuProps = {
+  PaperProps: {
+    style: {
+      width: 250,
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP
+    }
+  }
+}
+
+const names = [
+  'Oliver Hansen',
+  'Van Henry',
+  'April Tucker',
+  'Ralph Hubbard',
+  'Omar Alexander',
+  'Carlos Abbott',
+  'Miriam Wagner',
+  'Bradley Wilkerson',
+  'Virginia Andrews',
+  'Kelly Snyder'
+]
+
+const SelectMultiple = () => {
   // ** State
-  const [open, setOpen] = useState<boolean>(false)
+  const [personName, setPersonName] = useState<string[]>([])
+  const [personNameNative, setPersonNameNative] = useState<string[]>([])
 
-  const handleClickOpen = () => {
-    setOpen(true)
+  const handleChange = (event: SelectChangeEvent<string[]>) => {
+    setPersonName(event.target.value as string[])
   }
 
-  const handleClose = () => {
-    setOpen(false)
+  const handleChangeMultipleNative = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const { options } = event.target
+    const value: string[] = []
+    for (let i = 0, l = options.length; i < l; i += 1) {
+      if (options[i].selected) {
+        value.push(options[i].value)
+      }
+    }
+    setPersonNameNative(value)
   }
 
   return (
-    <div>
-      <Button variant='outlined' onClick={handleClickOpen}>
-        Open select dialog
-      </Button>
-      <Dialog maxWidth='xs' fullWidth open={open} onClose={handleClose}>
-        <DialogTitle>Fill the form</DialogTitle>
-        <DialogContent sx={{ paddingTop: theme => {theme.spacing(2)} !important }}>
-          <form>
-            <FormControl sx={{ mr: 4 }}>
-              <InputLabel id='demo-dialog-select-label'>Age</InputLabel>
-              <Select label='Age' labelId='demo-dialog-select-label' id='demo-dialog-select' defaultValue=''>
-                <MenuItem value=''>
-                  <em>None</em>
-                </MenuItem>
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
-              </Select>
-            </FormControl>
-            <FormControl>
-              <InputLabel htmlFor='outlined-age-native-simple'>Age</InputLabel>
-              <Select
-                native
-                label='Age'
-                defaultValue=''
-                inputProps={{
-                  name: 'age',
-                  id: 'outlined-age-native-simple'
-                }}
-              >
-                <option aria-label='None' value='' />
-                <option value={10}>Ten</option>
-                <option value={20}>Twenty</option>
-                <option value={30}>Thirty</option>
-              </Select>
-            </FormControl>
-          </form>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} variant='outlined'>
-            Cancel
-          </Button>
-          <Button onClick={handleClose} variant='outlined'>
-            Ok
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </div>
+    <Box sx={{ display: 'flex', flexDirection: 'column', '& > *': { mt: 4, maxWidth: 500 } }}>
+      <div>
+        <Typography sx={{ mb: 2, fontWeight: 500 }}>Default</Typography>
+        <FormControl fullWidth>
+          <InputLabel id='demo-multiple-name-label'>Name</InputLabel>
+          <Select
+            multiple
+            label='Name'
+            value={personName}
+            MenuProps={MenuProps}
+            id='demo-multiple-name'
+            onChange={handleChange}
+            labelId='demo-multiple-name-label'
+          >
+            {names.map(name => (
+              <MenuItem key={name} value={name}>
+                {name}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+      </div>
+      <div>
+        <Typography sx={{ mb: 2, fontWeight: 500 }}>Checkmarks</Typography>
+        <FormControl fullWidth>
+          <InputLabel id='demo-multiple-checkbox-label'>Tag</InputLabel>
+          <Select
+            multiple
+            label='Tag'
+            value={personName}
+            MenuProps={MenuProps}
+            onChange={handleChange}
+            id='demo-multiple-checkbox'
+            labelId='demo-multiple-checkbox-label'
+            renderValue={selected => (selected as unknown as string[]).join(', ')}
+          >
+            {names.map(name => (
+              <MenuItem key={name} value={name}>
+                <Checkbox checked={personName.indexOf(name) > -1} />
+                <ListItemText primary={name} />
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+      </div>
+      <div>
+        <Typography sx={{ mb: 2, fontWeight: 500 }}>Chip</Typography>
+        <FormControl fullWidth>
+          <InputLabel id='demo-multiple-chip-label'>Chip</InputLabel>
+          <Select
+            multiple
+            label='Chip'
+            value={personName}
+            MenuProps={MenuProps}
+            id='demo-multiple-chip'
+            onChange={handleChange}
+            labelId='demo-multiple-chip-label'
+            renderValue={selected => (
+              <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
+                {(selected as unknown as string[]).map(value => (
+                  <Chip key={value} label={value} sx={{ margin: 0.75 }} />
+                ))}
+              </Box>
+            )}
+          >
+            {names.map(name => (
+              <MenuItem key={name} value={name}>
+                {name}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+      </div>
+      <div>
+        <Typography sx={{ mb: 2, fontWeight: 500 }}>Placeholder</Typography>
+        <FormControl fullWidth>
+          <Select
+            multiple
+            displayEmpty
+            value={personName}
+            MenuProps={MenuProps}
+            onChange={handleChange}
+            inputProps={{ 'aria-label': 'Without label' }}
+            renderValue={selected => {
+              if ((selected as unknown as string[]).length === 0) {
+                return <em>Placeholder</em>
+              }
+
+              return (selected as unknown as string[]).join(', ')
+            }}
+          >
+            <MenuItem disabled value=''>
+              <em>Placeholder</em>
+            </MenuItem>
+            {names.map(name => (
+              <MenuItem key={name} value={name}>
+                {name}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+      </div>
+      <div>
+        <Typography sx={{ mb: 2, fontWeight: 500 }}>Native</Typography>
+        <FormControl fullWidth>
+          <InputLabel shrink htmlFor='select-multiple-native'>
+            Native
+          </InputLabel>
+          <Select
+            native
+            multiple
+            label='Native'
+            value={personNameNative} // @ts-ignore
+            onChange={handleChangeMultipleNative}
+            inputProps={{ id: 'select-multiple-native' }}
+          >
+            {names.map(name => (
+              <option key={name} value={name}>
+                {name}
+              </option>
+            ))}
+          </Select>
+        </FormControl>
+      </div>
+    </Box>
   )
 }
 
-export default SelectWithDialog
-`}</code></pre>) 
-export const SelectVariantsTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Select from '@mui/material/Select'
-import MenuItem from '@mui/material/MenuItem'
-import InputLabel from '@mui/material/InputLabel'
-import FormControl from '@mui/material/FormControl'
-
-const SelectVariants = () => {
-  return (
-    <div className='demo-space-x'>
-      <FormControl>
-        <InputLabel id='demo-simple-select-outlined-label'>Age</InputLabel>
-        <Select
-          label='Age'
-          defaultValue=''
-          id='demo-simple-select-outlined'
-          labelId='demo-simple-select-outlined-label'
-        >
-          <MenuItem value=''>
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl variant='filled'>
-        <InputLabel id='demo-simple-select-filled-label'>Age</InputLabel>
-        <Select label='Age' labelId='demo-simple-select-filled-label' id='demo-simple-select-filled' defaultValue=''>
-          <MenuItem value=''>
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl variant='standard'>
-        <InputLabel id='demo-simple-select-label'>Age</InputLabel>
-        <Select label='Age' labelId='demo-simple-select-label' id='demo-simple-select' defaultValue=''>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
-    </div>
-  )
-}
-
-export default SelectVariants
+export default SelectMultiple
 `}</code></pre>) 

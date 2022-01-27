@@ -1,10 +1,10 @@
 const fs = require('fs')
 const path = require('path')
 
-const componentsPathTSX = '../src/views/components/'
-const formsPathTSX = '../src/views/forms/form-elements/'
-const componentsPathJSX = '../jsx-version/src/views/components/'
-const formsPathJSX = '../jsx-version/src/views/forms/form-elements/'
+const componentsPathTSX = '../../src/views/components/'
+const formsPathTSX = '../../src/views/forms/form-elements/'
+const componentsPathJSX = '../../jsx-version/src/views/components/'
+const formsPathJSX = '../../jsx-version/src/views/forms/form-elements/'
 
 const getAllFiles = function (dirPath, arrayOfFiles) {
   files = fs.readdirSync(dirPath)
@@ -60,7 +60,7 @@ const AllFilesJSX = [...componentFilesJSX, ...formsFilesJSX]
 const sourceFilesTSX = getAllSourceFilesTSX(AllFilesTSX)
 const sourceFilesJSX = getAllSourceFilesJSX(AllFilesJSX)
 
-if (fs.existsSync('../jsx-version')) {
+if (fs.existsSync('../../jsx-version')) {
   // ** Generation For TSX Version
   AllFilesTSX.map(fileTSX => {
     if (
@@ -148,8 +148,6 @@ if (fs.existsSync('../jsx-version')) {
       const parentFolderJSX = path.basename(path.dirname(fileJSX))
       const fileNameJSX = path.basename(fileJSX, '.js')
       const sourceToReadJSX = sourceFilesJSX.filter(j => j.includes(parentFolderJSX))[0]
-      const fileTSX = AllFilesTSX.filter(i => i.includes(fileNameJSX))[0]
-      const sourceToReadTSX = sourceFilesJSX.filter(t => t.includes(parentFolderJSX))[0]
 
       if (fileJSX && sourceToReadJSX) {
         fs.readFile(fileJSX, 'utf8', (err, dataJSX) => {
@@ -178,32 +176,6 @@ if (fs.existsSync('../jsx-version')) {
             })
           })
         })
-
-        if (fileTSX && sourceToReadTSX) {
-          fs.readFile(fileTSX, 'utf8', (err, dataTSX) => {
-            fs.readFile(sourceToReadTSX, 'utf8', () => {
-              const codeTSX =
-                'export const ' +
-                fileNameJSX +
-                'TSXCode = (' +
-                "<pre className='language-jsx'>" +
-                "<code className='language-jsx'>" +
-                '{`' +
-                dataTSX.replace(/`/g, '').replace(/\$/g, '').replace(/\\"/, '"').replace(/\\"/, '"') +
-                '`}' +
-                '</code>' +
-                '</pre>' +
-                ') \n'
-              if (sourceToReadJSX) {
-                fs.appendFile(sourceToReadJSX, codeTSX, err => {
-                  if (err) {
-                    console.log(err)
-                  }
-                })
-              }
-            })
-          })
-        }
       }
     }
 

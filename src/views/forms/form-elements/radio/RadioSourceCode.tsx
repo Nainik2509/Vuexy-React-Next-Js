@@ -138,6 +138,35 @@ const RadioCustomized = () => {
 
 export default RadioCustomized
 `}</code></pre>) 
+export const RadioLabelPlacementJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Radio from '@mui/material/Radio'
+import RadioGroup from '@mui/material/RadioGroup'
+import FormControl from '@mui/material/FormControl'
+import FormControlLabel from '@mui/material/FormControlLabel'
+
+const RadioLabelPlacement = () => {
+  return (
+    <FormControl>
+      <RadioGroup row aria-label='position' name='vertical' defaultValue='top'>
+        <FormControlLabel value='top' label='Top' labelPlacement='top' sx={{ marginRight: 8.8 }} control={<Radio />} />
+        <FormControlLabel value='bottom' control={<Radio />} label='Bottom' labelPlacement='bottom' />
+      </RadioGroup>
+      <RadioGroup row aria-label='position' name='horizontal' defaultValue='start' sx={{ marginTop: 4 }}>
+        <FormControlLabel
+          value='start'
+          label='Start'
+          labelPlacement='start'
+          sx={{ marginRight: 4 }}
+          control={<Radio />}
+        />
+        <FormControlLabel value='end' control={<Radio />} label='End' />
+      </RadioGroup>
+    </FormControl>
+  )
+}
+
+export default RadioLabelPlacement
+`}</code></pre>) 
 export const RadioShowErrorJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
@@ -214,40 +243,6 @@ const RadioSizes = () => {
 
 export default RadioSizes
 `}</code></pre>) 
-export const RadioGroupJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import Radio from '@mui/material/Radio'
-import RadioGroup from '@mui/material/RadioGroup'
-import FormControl from '@mui/material/FormControl'
-import FormControlLabel from '@mui/material/FormControlLabel'
-
-const RadioGroupComponent = () => {
-  // ** State
-  const [value, setValue] = useState('checked')
-
-  const handleChange = event => {
-    setValue(event.target.value)
-  }
-
-  return (
-    <FormControl sx={{ flexWrap: 'wrap', flexDirection: 'row' }}>
-      <RadioGroup row value={value} name='simple-radio' onChange={handleChange} aria-label='simple-radio'>
-        <FormControlLabel value='checked' control={<Radio />} label='Checked' />
-        <FormControlLabel value='unchecked' control={<Radio />} label='Unchecked' />
-      </RadioGroup>
-
-      <RadioGroup row value='disabled-checked' name='simple-disabled-radio' aria-label='simple-disabled-radio'>
-        <FormControlLabel disabled value='disabled-checked' label='Disabled Checked' control={<Radio />} />
-        <FormControlLabel disabled value='disabled-unchecked' label='Disabled Unchecked' control={<Radio />} />
-      </RadioGroup>
-    </FormControl>
-  )
-}
-
-export default RadioGroupComponent
-`}</code></pre>) 
 export const RadioStandaloneJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
@@ -284,77 +279,8 @@ const RadioStandalone = () => {
 
 export default RadioStandalone
 `}</code></pre>) 
-export const RadioLabelPlacementJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Radio from '@mui/material/Radio'
-import RadioGroup from '@mui/material/RadioGroup'
-import FormControl from '@mui/material/FormControl'
-import FormControlLabel from '@mui/material/FormControlLabel'
-
-const RadioLabelPlacement = () => {
-  return (
-    <FormControl>
-      <RadioGroup row aria-label='position' name='vertical' defaultValue='top'>
-        <FormControlLabel value='top' label='Top' labelPlacement='top' sx={{ marginRight: 8.8 }} control={<Radio />} />
-        <FormControlLabel value='bottom' control={<Radio />} label='Bottom' labelPlacement='bottom' />
-      </RadioGroup>
-      <RadioGroup row aria-label='position' name='horizontal' defaultValue='start' sx={{ marginTop: 4 }}>
-        <FormControlLabel
-          value='start'
-          label='Start'
-          labelPlacement='start'
-          sx={{ marginRight: 4 }}
-          control={<Radio />}
-        />
-        <FormControlLabel value='end' control={<Radio />} label='End' />
-      </RadioGroup>
-    </FormControl>
-  )
-}
-
-export default RadioLabelPlacement
-`}</code></pre>) 
-export const RadioControlledUncontrolledTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { ChangeEvent, useState } from 'react'
-
-// ** MUI Imports
-import Grid from '@mui/material/Grid'
-import Radio from '@mui/material/Radio'
-import Typography from '@mui/material/Typography'
-import RadioGroup from '@mui/material/RadioGroup'
-import FormControlLabel from '@mui/material/FormControlLabel'
-
-const RadioControlledUncontrolled = () => {
-  // ** State
-  const [value, setValue] = useState<string>('controlled-checked')
-
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setValue((event.target as HTMLInputElement).value)
-  }
-
-  return (
-    <Grid container spacing={6}>
-      <Grid item xs={12} sm={6}>
-        <Typography>Controlled</Typography>
-        <RadioGroup row aria-label='controlled' name='controlled' value={value} onChange={handleChange}>
-          <FormControlLabel value='controlled-checked' control={<Radio />} label='Checked' />
-          <FormControlLabel value='controlled-unchecked' control={<Radio />} label='Unchecked' />
-        </RadioGroup>
-      </Grid>
-      <Grid item xs={12} sm={6}>
-        <Typography>Uncontrolled</Typography>
-        <RadioGroup row aria-label='uncontrolled' name='uncontrolled' defaultValue='uncontrolled-checked'>
-          <FormControlLabel value='uncontrolled-checked' control={<Radio />} label='Checked' />
-          <FormControlLabel value='uncontrolled-unchecked' control={<Radio />} label='Unchecked' />
-        </RadioGroup>
-      </Grid>
-    </Grid>
-  )
-}
-
-export default RadioControlledUncontrolled
-`}</code></pre>) 
-export const RadioGroupTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { ChangeEvent, useState } from 'react'
+export const RadioGroupJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
 
 // ** MUI Imports
 import Radio from '@mui/material/Radio'
@@ -364,10 +290,10 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 
 const RadioGroupComponent = () => {
   // ** State
-  const [value, setValue] = useState<string>('checked')
+  const [value, setValue] = useState('checked')
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setValue((event.target as HTMLInputElement).value)
+  const handleChange = event => {
+    setValue(event.target.value)
   }
 
   return (
@@ -386,26 +312,6 @@ const RadioGroupComponent = () => {
 }
 
 export default RadioGroupComponent
-`}</code></pre>) 
-export const RadioColorTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Radio from '@mui/material/Radio'
-import RadioGroup from '@mui/material/RadioGroup'
-import FormControlLabel from '@mui/material/FormControlLabel'
-
-const RadioColor = () => {
-  return (
-    <RadioGroup row aria-label='colored' name='colored' defaultValue='primary'>
-      <FormControlLabel value='primary' control={<Radio />} label='Primary' />
-      <FormControlLabel value='secondary' control={<Radio color='secondary' />} label='Secondary' />
-      <FormControlLabel value='success' label='Success' control={<Radio color='success' />} />
-      <FormControlLabel value='error' label='Error' control={<Radio color='error' />} />
-      <FormControlLabel value='warning' label='Warning' control={<Radio color='warning' />} />
-      <FormControlLabel value='info' label='Info' control={<Radio color='info' />} />
-    </RadioGroup>
-  )
-}
-
-export default RadioColor
 `}</code></pre>) 
 export const RadioLabelPlacementTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Radio from '@mui/material/Radio'
@@ -515,42 +421,6 @@ const RadioCustomized = () => {
 
 export default RadioCustomized
 `}</code></pre>) 
-export const RadioStandaloneTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { ChangeEvent, useState } from 'react'
-
-// ** MUI Imports
-import Radio from '@mui/material/Radio'
-
-const RadioStandalone = () => {
-  // ** State
-  const [selectedValue, setSelectedValue] = useState<string>('a')
-
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setSelectedValue(event.target.value)
-  }
-
-  return (
-    <div>
-      <Radio
-        value='a'
-        onChange={handleChange}
-        name='radio-button-demo'
-        checked={selectedValue === 'a'}
-        inputProps={{ 'aria-label': 'A' }}
-      />
-      <Radio
-        value='b'
-        onChange={handleChange}
-        name='radio-button-demo'
-        checked={selectedValue === 'b'}
-        inputProps={{ 'aria-label': 'B' }}
-      />
-    </div>
-  )
-}
-
-export default RadioStandalone
-`}</code></pre>) 
 export const RadioSizesTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
@@ -566,6 +436,40 @@ const RadioSizes = () => {
 }
 
 export default RadioSizes
+`}</code></pre>) 
+export const RadioGroupTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { ChangeEvent, useState } from 'react'
+
+// ** MUI Imports
+import Radio from '@mui/material/Radio'
+import RadioGroup from '@mui/material/RadioGroup'
+import FormControl from '@mui/material/FormControl'
+import FormControlLabel from '@mui/material/FormControlLabel'
+
+const RadioGroupComponent = () => {
+  // ** State
+  const [value, setValue] = useState<string>('checked')
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setValue((event.target as HTMLInputElement).value)
+  }
+
+  return (
+    <FormControl sx={{ flexWrap: 'wrap', flexDirection: 'row' }}>
+      <RadioGroup row value={value} name='simple-radio' onChange={handleChange} aria-label='simple-radio'>
+        <FormControlLabel value='checked' control={<Radio />} label='Checked' />
+        <FormControlLabel value='unchecked' control={<Radio />} label='Unchecked' />
+      </RadioGroup>
+
+      <RadioGroup row value='disabled-checked' name='simple-disabled-radio' aria-label='simple-disabled-radio'>
+        <FormControlLabel disabled value='disabled-checked' label='Disabled Checked' control={<Radio />} />
+        <FormControlLabel disabled value='disabled-unchecked' label='Disabled Unchecked' control={<Radio />} />
+      </RadioGroup>
+    </FormControl>
+  )
+}
+
+export default RadioGroupComponent
 `}</code></pre>) 
 export const RadioShowErrorTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { ChangeEvent, FormEvent, useState } from 'react'
@@ -624,4 +528,100 @@ const RadioShowError = () => {
 }
 
 export default RadioShowError
+`}</code></pre>) 
+export const RadioColorTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Radio from '@mui/material/Radio'
+import RadioGroup from '@mui/material/RadioGroup'
+import FormControlLabel from '@mui/material/FormControlLabel'
+
+const RadioColor = () => {
+  return (
+    <RadioGroup row aria-label='colored' name='colored' defaultValue='primary'>
+      <FormControlLabel value='primary' control={<Radio />} label='Primary' />
+      <FormControlLabel value='secondary' control={<Radio color='secondary' />} label='Secondary' />
+      <FormControlLabel value='success' label='Success' control={<Radio color='success' />} />
+      <FormControlLabel value='error' label='Error' control={<Radio color='error' />} />
+      <FormControlLabel value='warning' label='Warning' control={<Radio color='warning' />} />
+      <FormControlLabel value='info' label='Info' control={<Radio color='info' />} />
+    </RadioGroup>
+  )
+}
+
+export default RadioColor
+`}</code></pre>) 
+export const RadioControlledUncontrolledTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { ChangeEvent, useState } from 'react'
+
+// ** MUI Imports
+import Grid from '@mui/material/Grid'
+import Radio from '@mui/material/Radio'
+import Typography from '@mui/material/Typography'
+import RadioGroup from '@mui/material/RadioGroup'
+import FormControlLabel from '@mui/material/FormControlLabel'
+
+const RadioControlledUncontrolled = () => {
+  // ** State
+  const [value, setValue] = useState<string>('controlled-checked')
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setValue((event.target as HTMLInputElement).value)
+  }
+
+  return (
+    <Grid container spacing={6}>
+      <Grid item xs={12} sm={6}>
+        <Typography>Controlled</Typography>
+        <RadioGroup row aria-label='controlled' name='controlled' value={value} onChange={handleChange}>
+          <FormControlLabel value='controlled-checked' control={<Radio />} label='Checked' />
+          <FormControlLabel value='controlled-unchecked' control={<Radio />} label='Unchecked' />
+        </RadioGroup>
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <Typography>Uncontrolled</Typography>
+        <RadioGroup row aria-label='uncontrolled' name='uncontrolled' defaultValue='uncontrolled-checked'>
+          <FormControlLabel value='uncontrolled-checked' control={<Radio />} label='Checked' />
+          <FormControlLabel value='uncontrolled-unchecked' control={<Radio />} label='Unchecked' />
+        </RadioGroup>
+      </Grid>
+    </Grid>
+  )
+}
+
+export default RadioControlledUncontrolled
+`}</code></pre>) 
+export const RadioStandaloneTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { ChangeEvent, useState } from 'react'
+
+// ** MUI Imports
+import Radio from '@mui/material/Radio'
+
+const RadioStandalone = () => {
+  // ** State
+  const [selectedValue, setSelectedValue] = useState<string>('a')
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setSelectedValue(event.target.value)
+  }
+
+  return (
+    <div>
+      <Radio
+        value='a'
+        onChange={handleChange}
+        name='radio-button-demo'
+        checked={selectedValue === 'a'}
+        inputProps={{ 'aria-label': 'A' }}
+      />
+      <Radio
+        value='b'
+        onChange={handleChange}
+        name='radio-button-demo'
+        checked={selectedValue === 'b'}
+        inputProps={{ 'aria-label': 'B' }}
+      />
+    </div>
+  )
+}
+
+export default RadioStandalone
 `}</code></pre>) 

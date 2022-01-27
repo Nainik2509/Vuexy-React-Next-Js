@@ -1,9 +1,6 @@
 export const FileUploaderMultipleJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { Fragment, useState } from 'react'
 
-// ** Next Import
-import Image from 'next/image'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Link from '@mui/material/Link'
@@ -57,7 +54,7 @@ const FileUploaderMultiple = () => {
 
   const renderFilePreview = file => {
     if (file.type.startsWith('image')) {
-      return <Image width={38} height={38} alt={file.name} src={URL.createObjectURL(file)} />
+      return <img width={38} height={38} alt={file.name} src={URL.createObjectURL(file)} />
     } else {
       return <FileDocumentOutline />
     }
@@ -136,9 +133,6 @@ export default FileUploaderMultiple
 export const FileUploaderRestrictionsJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { Fragment, useState } from 'react'
 
-// ** Next Import
-import Image from 'next/image'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import List from '@mui/material/List'
@@ -200,7 +194,7 @@ const FileUploaderRestrictions = () => {
 
   const renderFilePreview = file => {
     if (file.type.startsWith('image')) {
-      return <Image width={38} height={38} alt={file.name} src={URL.createObjectURL(file)} />
+      return <img width={38} height={38} alt={file.name} src={URL.createObjectURL(file)} />
     } else {
       return <FileDocumentOutline />
     }
@@ -270,9 +264,6 @@ export default FileUploaderRestrictions
 export const FileUploaderSingleJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
-// ** Next Import
-import Image from 'next/image'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Link from '@mui/material/Link'
@@ -323,105 +314,7 @@ const FileUploaderSingle = () => {
   }
 
   const img = files.map(file => (
-    <Image
-      layout='fill'
-      key={file.name}
-      alt={file.name}
-      className='single-file-image'
-      src={URL.createObjectURL(file)}
-    />
-  ))
-
-  return (
-    <Box {...getRootProps({ className: 'dropzone' })} sx={acceptedFiles.length ? { height: 450 } : {}}>
-      <input {...getInputProps()} />
-      <Box sx={{ display: 'flex', flexDirection: ['column', 'column', 'row'], alignItems: 'center' }}>
-        <Img alt='Upload img' src='/images/misc/upload.png' />
-        <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: ['center', 'center', 'inherit'] }}>
-          <HeadingTypography variant='h5'>Drop files here or click to upload.</HeadingTypography>
-          <Typography color='textSecondary'>
-            Drop files here or click{' '}
-            <Link href='/' onClick={handleLinkClick}>
-              browse
-            </Link>{' '}
-            thorough your machine
-          </Typography>
-        </Box>
-      </Box>
-      {files.length ? img : null}
-    </Box>
-  )
-}
-
-export default FileUploaderSingle
-`}</code></pre>) 
-export const FileUploaderSingleTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { useState, SyntheticEvent } from 'react'
-
-// ** Next Import
-import Image from 'next/image'
-
-// ** MUI Imports
-import Box from '@mui/material/Box'
-import Link from '@mui/material/Link'
-import { styled } from '@mui/material/styles'
-import Typography, { TypographyProps } from '@mui/material/Typography'
-
-// ** Third Party Imports
-import { useDropzone } from 'react-dropzone'
-
-interface FileProp {
-  name: string
-  type: string
-  size: number
-}
-
-// Styled component for the upload image inside the dropzone area
-const Img = styled('img')(({ theme }) => ({
-  [theme.breakpoints.up('md')]: {
-    marginRight: theme.spacing(15.75)
-  },
-  [theme.breakpoints.down('md')]: {
-    marginBottom: theme.spacing(4)
-  },
-  [theme.breakpoints.down('sm')]: {
-    width: 160
-  }
-}))
-
-// Styled component for the heading inside the dropzone area
-const HeadingTypography = styled(Typography)<TypographyProps>(({ theme }) => ({
-  marginBottom: theme.spacing(5),
-  [theme.breakpoints.down('sm')]: {
-    marginBottom: theme.spacing(4)
-  }
-}))
-
-const FileUploaderSingle = () => {
-  // ** State
-  const [files, setFiles] = useState<File[]>([])
-
-  // ** Hook
-  const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
-    multiple: false,
-    accept: 'image/*',
-    onDrop: (acceptedFiles: File[]) => {
-      setFiles(acceptedFiles.map((file: File) => Object.assign(file)))
-    }
-  })
-
-  const handleLinkClick = (event: SyntheticEvent) => {
-    event.preventDefault()
-  }
-
-  const img = files.map((file: FileProp) => (
-    <Image
-      layout='fill'
-      key={file.name}
-      alt={file.name}
-      className='single-file-image'
-      src={URL.createObjectURL(file as any)}
-    />
+    <img key={file.name} alt={file.name} className='single-file-image' src={URL.createObjectURL(file)} />
   ))
 
   return (
@@ -449,9 +342,6 @@ export default FileUploaderSingle
 `}</code></pre>) 
 export const FileUploaderMultipleTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { Fragment, useState, SyntheticEvent } from 'react'
-
-// ** Next Import
-import Image from 'next/image'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -510,7 +400,7 @@ const FileUploaderMultiple = () => {
 
   const renderFilePreview = (file: FileProp) => {
     if (file.type.startsWith('image')) {
-      return <Image width={38} height={38} alt={file.name} src={URL.createObjectURL(file as any)} />
+      return <img width={38} height={38} alt={file.name} src={URL.createObjectURL(file as any)} />
     } else {
       return <FileDocumentOutline />
     }
@@ -584,11 +474,91 @@ const FileUploaderMultiple = () => {
 
 export default FileUploaderMultiple
 `}</code></pre>) 
+export const FileUploaderSingleTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { useState, SyntheticEvent } from 'react'
+
+// ** MUI Imports
+import Box from '@mui/material/Box'
+import Link from '@mui/material/Link'
+import { styled } from '@mui/material/styles'
+import Typography, { TypographyProps } from '@mui/material/Typography'
+
+// ** Third Party Imports
+import { useDropzone } from 'react-dropzone'
+
+interface FileProp {
+  name: string
+  type: string
+  size: number
+}
+
+// Styled component for the upload image inside the dropzone area
+const Img = styled('img')(({ theme }) => ({
+  [theme.breakpoints.up('md')]: {
+    marginRight: theme.spacing(15.75)
+  },
+  [theme.breakpoints.down('md')]: {
+    marginBottom: theme.spacing(4)
+  },
+  [theme.breakpoints.down('sm')]: {
+    width: 160
+  }
+}))
+
+// Styled component for the heading inside the dropzone area
+const HeadingTypography = styled(Typography)<TypographyProps>(({ theme }) => ({
+  marginBottom: theme.spacing(5),
+  [theme.breakpoints.down('sm')]: {
+    marginBottom: theme.spacing(4)
+  }
+}))
+
+const FileUploaderSingle = () => {
+  // ** State
+  const [files, setFiles] = useState<File[]>([])
+
+  // ** Hook
+  const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
+    multiple: false,
+    accept: 'image/*',
+    onDrop: (acceptedFiles: File[]) => {
+      setFiles(acceptedFiles.map((file: File) => Object.assign(file)))
+    }
+  })
+
+  const handleLinkClick = (event: SyntheticEvent) => {
+    event.preventDefault()
+  }
+
+  const img = files.map((file: FileProp) => (
+    <img key={file.name} alt={file.name} className='single-file-image' src={URL.createObjectURL(file as any)} />
+  ))
+
+  return (
+    <Box {...getRootProps({ className: 'dropzone' })} sx={acceptedFiles.length ? { height: 450 } : {}}>
+      <input {...getInputProps()} />
+      <Box sx={{ display: 'flex', flexDirection: ['column', 'column', 'row'], alignItems: 'center' }}>
+        <Img alt='Upload img' src='/images/misc/upload.png' />
+        <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: ['center', 'center', 'inherit'] }}>
+          <HeadingTypography variant='h5'>Drop files here or click to upload.</HeadingTypography>
+          <Typography color='textSecondary'>
+            Drop files here or click{' '}
+            <Link href='/' onClick={handleLinkClick}>
+              browse
+            </Link>{' '}
+            thorough your machine
+          </Typography>
+        </Box>
+      </Box>
+      {files.length ? img : null}
+    </Box>
+  )
+}
+
+export default FileUploaderSingle
+`}</code></pre>) 
 export const FileUploaderRestrictionsTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { Fragment, useState } from 'react'
-
-// ** Next Import
-import Image from 'next/image'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -655,7 +625,7 @@ const FileUploaderRestrictions = () => {
 
   const renderFilePreview = (file: FileProp) => {
     if (file.type.startsWith('image')) {
-      return <Image width={38} height={38} alt={file.name} src={URL.createObjectURL(file as any)} />
+      return <img width={38} height={38} alt={file.name} src={URL.createObjectURL(file as any)} />
     } else {
       return <FileDocumentOutline />
     }
