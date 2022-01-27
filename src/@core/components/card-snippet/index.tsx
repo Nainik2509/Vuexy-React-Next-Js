@@ -48,10 +48,18 @@ const CardSnippet = (props: CardSnippetProps) => {
     Prism.highlightAll()
   }, [showCode, tabValue])
 
+  const codeToCopy = () => {
+    if (code.tsx !== null && tabValue === 'tsx') {
+      return code.tsx.props.children.props.children
+    } else if (code.jsx !== null && tabValue === 'jsx') {
+      return code.jsx.props.children.props.children
+    } else {
+      return ''
+    }
+  }
+
   const handleClick = () => {
-    const codeToCopy =
-      tabValue === 'jsx' ? code.jsx.props.children.props.children : code.tsx.props.children.props.children
-    clipboard.copy(codeToCopy)
+    clipboard.copy(codeToCopy())
     toast.success('The source code has been copied to your clipboard.', {
       duration: 2000
     })
