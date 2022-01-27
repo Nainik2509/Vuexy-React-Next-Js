@@ -70,7 +70,6 @@ const Autocomplete = styled(MuiAutocomplete)(({ theme }) => ({
   },
   '& + .MuiAutocomplete-popper': {
     paddingTop: theme.spacing(2.5),
-    width: 'calc(100% - 48px) !important',
     '& .MuiAutocomplete-listbox': {
       paddingTop: 0,
       maxHeight: 'calc(100vh - 15rem)'
@@ -101,8 +100,8 @@ const AutocompleteComponent = ({ hidden, setShowBackdrop }: Props) => {
   // ** Hooks & Vars
   const router = useRouter()
   const { settings } = useSettings()
+  const { skin, layout, appBar } = settings
   const wrapper = useRef<HTMLDivElement>(null)
-  const { skin, layout } = settings
 
   const codes: { [key: string]: boolean } = { Slash: false, ControlLeft: false, ControlRight: false } // eslint-disable-line
 
@@ -279,7 +278,15 @@ const AutocompleteComponent = ({ hidden, setShowBackdrop }: Props) => {
               ...(openSearchBox ? { top: 0 } : {}),
               ...(layout === 'horizontal' || skin === 'bordered'
                 ? { height: themeConfig.appBarHeight - 1 }
-                : { height: themeConfig.appBarHeight })
+                : { height: themeConfig.appBarHeight }),
+              ...(layout === 'vertical' && appBar === 'static'
+                ? {
+                    right: theme => theme.spacing(6),
+                    width: theme => `calc(100% - ${theme.spacing(6 * 2)})`,
+                    borderBottomLeftRadius: theme => theme.shape.borderRadius,
+                    borderBottomRightRadius: theme => theme.shape.borderRadius
+                  }
+                : {})
             }}
           >
             <Autocomplete
@@ -295,11 +302,18 @@ const AutocompleteComponent = ({ hidden, setShowBackdrop }: Props) => {
               groupBy={(option: AppBarSearchType | unknown) => (option as AppBarSearchType).type}
               getOptionLabel={(option: AppBarSearchType | unknown) => (option as AppBarSearchType).title}
               onInputChange={(event, value: string) => handleInputChange(value)}
-              sx={
-                layout === 'horizontal'
+              sx={{
+                ...(layout === 'horizontal'
                   ? { '& + .MuiAutocomplete-popper .MuiPaper-root': { boxShadow: theme => theme.shadows[5] } }
-                  : {}
-              }
+                  : {}),
+                ...(layout === 'vertical' && appBar === 'static'
+                  ? {}
+                  : {
+                      '& + .MuiAutocomplete-popper': {
+                        width: theme => `calc(100% - ${theme.spacing(6 * 2)}) !important`
+                      }
+                    })
+              }}
               renderOption={(props, option: AppBarSearchType | unknown) => (
                 <ListItem
                   {...props}
