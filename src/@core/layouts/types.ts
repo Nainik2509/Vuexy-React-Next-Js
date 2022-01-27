@@ -18,8 +18,8 @@ export type VerticalNavToggle = 'accordion' | 'collapse'
 export type HorizontalMenuToggle = 'hover' | 'click'
 
 export type NavLink = {
-  title: string
   path?: string
+  title: string
   disabled?: boolean
   badgeContent?: string
   externalLink?: boolean

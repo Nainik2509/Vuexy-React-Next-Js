@@ -1,7 +1,10 @@
 // ** Mock Adapter
 import mock from 'src/@fake-db/mock'
 
-const navigation = [
+// ** Type import
+import { VerticalNavItemsType } from 'src/@core/layouts/types'
+
+const navigation: VerticalNavItemsType = [
   {
     title: 'Dashboards',
     icon: 'HomeOutline',
