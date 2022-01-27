@@ -62,7 +62,12 @@ module.exports = {
             '/guide/layout/layout-types',
             '/guide/layout/layout-components',
             '/guide/layout/get-layout',
-            '/guide/layout/navigation-menu',
+            '/guide/layout/navigation-menu-structure',
+            {
+              title: 'Navigation Menu',
+              collapsable: true,
+              children: ['/guide/layout/navigation-menu-static', '/guide/layout/navigation-menu-server-side']
+            },
             '/guide/layout/layout-overrides',
             '/guide/layout/icons'
           ]

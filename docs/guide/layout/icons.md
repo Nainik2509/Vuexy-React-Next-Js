@@ -18,17 +18,19 @@ Do not remove the `mdi-material-ui` package from the `package.json` file and `sr
 
 The props that are available to this component are as follows:
 
-| Prop          | Type                                               | Required | Description                                                                                             |
-| ------------- | :------------------------------------------------- | :------- | :------------------------------------------------------------------------------------------------------ |
-| icon          | `string` or `ReactNode`                            | Yes      | Name of the icon                                                                                        |
-| iconProps     | SvgIconProps                                       | No       | All the props related to the icon goes in this prop as an object. For eg., fontSize, color, style, etc. |
-| componentType | `'search'`, `'vertical-menu'`, `'horizontal-menu'` | Yes      | Mention which type of component this icon is used in                                                    |
+| Prop          | Type                                                 | Required | Description                                                                                             |
+| ------------- | :--------------------------------------------------- | :------- | :------------------------------------------------------------------------------------------------------ |
+| icon          | `string`, `string[]` or `ReactNode`                  | Yes      | Name of the icon                                                                                        |
+| iconProps     | SvgIconProps                                         | No       | All the props related to the icon goes in this prop as an object. For eg., fontSize, color, style, etc. |
+| componentType | `'search'`, `'vertical-menu'` or `'horizontal-menu'` | Yes      | Mention which type of component this icon is used in                                                    |
 
 ## Override with MUI Material Icons
 
-Suppose, you want to override the icons in the menu and search with Material Icons by Google. You can go through the [MUI Docs](https://mui.com/components/icons/) for installation and more details. You may check all the icons [here](https://mui.com/components/material-icons/).
+You may go through the [MUI Docs](https://mui.com/components/icons/) for installation and more details. You may check all the icons [here](https://mui.com/components/material-icons/).
 
-Now, to override the icons in the vertical menu, you need to import icons from the `@mui/icons-material` package and remove other icons' import statements in and from the `src/navigation/vertical/index.ts` file respectively.
+### Static Navigation Menu
+
+Suppose, you want to override the icons in the vertical menu with MUI Material Icons by Google, you need to import icons from the `@mui/icons-material` package and remove other icons' import statements in and from the `src/navigation/vertical/index.ts` file respectively.
 
 ```ts
 // src/navigation/vertical/index.ts
@@ -81,6 +83,14 @@ const themeConfig = {
 }
 ```
 
+### Server Side Navigation Menu
+
+:::tip Note
+Use Icon component as **string** in your data.
+:::
+
+Do the same as shown for the static navigation menu and the only difference is that you need to change the icons as strings in your server / API. In addition to this, you need to change the import statement from `import * as Icons from 'mdi-material-ui'` to `import * as Icons from '@mui/icons-material'` in the `src/layouts/components/vertical/ServerSideNavItems.tsx` file.
+
 Result:
 
 <img alt='material icons google' class='medium-zoom' :src="$withBase('/images/icons/icons-material-google.png')" />
@@ -93,7 +103,11 @@ If you want to use any third party icon library, we suggest you use the `react-i
 
 ### React Icons
 
-You may go through the [React Icons](https://www.npmjs.com/package/react-icons) for installation and more details. Suppose you want to override the icons in the vertical menu with FontAwesome Icons from the `react-icons` package, you need to import icons from the `react-icons/fa` package and remove other icons' import statements in and from the `src/navigation/vertical/index.ts` file respectively.
+You may go through the [React Icons](https://www.npmjs.com/package/react-icons) for installation and more details.
+
+### Static Navigation Menu
+
+Suppose you want to override the icons in the vertical menu with FontAwesome Icons from the `react-icons` package, you need to import icons from the `react-icons/fa` package and remove other icons' import statements in and from the `src/navigation/vertical/index.ts` file respectively.
 
 ```ts
 // src/navigation/vertical/index.ts
@@ -126,6 +140,14 @@ const themeConfig = {
 }
 ```
 
+### Server Side Navigation Menu
+
+:::tip Note
+Use Icon component as **string** in your data.
+:::
+
+Do the same as shown for the static navigation menu and the only difference is that you need to change the icons as strings in your server / API. In addition to this, you need to change the import statement from `import * as Icons from 'mdi-material-ui'` to `import * as Icons from 'react-icons/fa'` in the `src/layouts/components/vertical/ServerSideNavItems.tsx` file.
+
 Result:
 
 <img alt='react icons - font awesome' class='medium-zoom' :src="$withBase('/images/icons/icons-react-font-awesome.png')" />
@@ -135,7 +157,7 @@ Result:
 You may go through the [Font Awesome Docs](https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react) for installation and more details. You may check all the icons [here](https://fontawesome.com/v5.15/icons).
 
 :::warning
-If you decide to use Font Awesome Icon as a stand-alone library not using React Icons, you need to make sure you change all the icons present in the menu and search due to difference in icon rendering process in the `UserIcon` component in `src/layouts/components/UserIcon.tsx` file.
+If you decide to use Font Awesome Icon as a stand-alone library and not use React Icons, you need to make sure you change all the icons present in the menu and search due to difference in icon rendering process in the `UserIcon` component in `src/layouts/components/UserIcon.tsx` file.
 :::
 
 You can change the icons in the vertical menu, horizontal menu and search as shown above. The icon for the submenu will also be changed as shown above. In addition to this, you need to update the return statement in `src/layouts/components/UserIcon.tsx` file:

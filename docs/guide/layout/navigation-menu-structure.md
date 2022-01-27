@@ -2,15 +2,15 @@
 sidebarDepth: 2
 ---
 
-# Navigation Menu
+# Navigation Menu Structure
 
 ## Overview
 
-While creating the navigation menu, you need to know the structure of it. On this page, you will understand how to create a navigation section title (only in the vertical navigation menu), navigation group and navigation link.
+While creating the navigation menu, you need to know the structure of it. On this page, you will understand how to create a navigation section title (which is only in the vertical navigation menu), navigation group and navigation link.
 
 ## Vertical Navigation Structure
 
-You can write your vertical navigation in `src/navigation/vertical/index.ts` file. Following are the items that you can create for your vertical navigation:
+Following are the items that you can create for your vertical navigation:
 
 - [Navigation Section Header](#_1-navigation-section-header)
 - [Navigation Group](#_2-navigation-group)
@@ -18,7 +18,7 @@ You can write your vertical navigation in `src/navigation/vertical/index.ts` fil
 
 ### 1. Navigation Section Header
 
-It is used to group some navigation groups and/or navigation links in some sections. This is only used in vertical navigation menu. To create a navigation section, you need to add an object with following structure:
+It is used to group some navigation groups and/or navigation links in some sections. This is only used in the vertical navigation menu. To create a navigation section, you need to add an object with the following structure:
 
 ```ts
 type NavSectionTitle = {
@@ -40,12 +40,22 @@ Result:
 
 ### 2. Navigation Group
 
-It is used to group some navigation groups and/or navigation links that can be treated as an accordion or a collapse. To create a navigation group, you need to add an object with following structure:
+It is used to group some navigation groups and/or navigation links that can be treated as an accordion or a collapse. To create a navigation group, you need to add an object with the following structure:
 
 ```ts
+// For Static Navigation Menu
 type NavGroup = {
   title: string
-  icon?: ReactNode
+  badgeContent?: string
+  children?: (NavGroup | NavLink)[]
+  icon?: string | string[] | ReactNode
+  badgeColor?: 'default' | 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info'
+}
+
+// For Server Side Navigation Menu
+type NavGroup = {
+  icon?: string
+  title: string
   badgeContent?: string
   children?: (NavGroup | NavLink)[]
   badgeColor?: 'default' | 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info'
@@ -101,15 +111,26 @@ Result:
 
 ### 3. Navigation Link
 
-To create a navigation link, you need to add an object with following structure:
+To create a navigation link, you need to add an object with the following structure:
 
 ```ts
+// For Static Navigation Menu
 type NavLink = {
-  title: string
   path?: string
-  action?: string // for ACL
-  icon?: ReactNode
-  subject?: string // for ACL
+  title: string
+  disabled?: boolean
+  badgeContent?: string
+  externalLink?: boolean
+  openInNewTab?: boolean
+  icon?: string | string[] | ReactNode
+  badgeColor?: 'default' | 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info'
+}
+
+// For Server Side Navigation Menu
+type NavLink = {
+  icon?: string
+  path?: string
+  title: string
   disabled?: boolean
   badgeContent?: string
   externalLink?: boolean
@@ -159,19 +180,29 @@ Result:
 
 ## Horizontal Navigation Structure
 
-You can write your horizontal navigation in `src/navigation/horizontal/index.ts` file. Following are the items that you can create for your horizontal navigation:
+Following are the items that you can create for your horizontal navigation:
 
 - [Navigation Group](#_1-navigation-group)
 - [Navigation Link](#_2-navigation-link)
 
 ### 1. Navigation Group
 
-It is used to group some navigation groups and/or navigation links that is opened in a tooltip. To create a navigation group, you need to add an object with following structure:
+It is used to group some navigation groups and/or navigation links that are opened in a tooltip. To create a navigation group, you need to add an object with the following structure:
 
 ```ts
+// For Static Navigation Menu
 type NavGroup = {
   title: string
-  icon?: ReactNode
+  badgeContent?: string
+  children?: (NavGroup | NavLink)[]
+  icon?: string | string[] | ReactNode
+  badgeColor?: 'default' | 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info'
+}
+
+// For Server Side Navigation Menu
+type NavGroup = {
+  icon?: string
+  title: string
   badgeContent?: string
   children?: (NavGroup | NavLink)[]
   badgeColor?: 'default' | 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info'
@@ -233,15 +264,26 @@ Result:
 
 ### 2. Navigation Link
 
-To create a navigation link, you need to add an object with following structure:
+To create a navigation link, you need to add an object with the following structure:
 
 ```ts
+// For Static Navigation Menu
 type NavLink = {
-  title: string
   path?: string
-  action?: string // for ACL
-  icon?: ReactNode
-  subject?: string // for ACL
+  title: string
+  disabled?: boolean
+  badgeContent?: string
+  externalLink?: boolean
+  openInNewTab?: boolean
+  icon?: string | string[] | ReactNode
+  badgeColor?: 'default' | 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info'
+}
+
+// For Server Side Navigation Menu
+type NavLink = {
+  icon?: string
+  path?: string
+  title: string
   disabled?: boolean
   badgeContent?: string
   externalLink?: boolean
