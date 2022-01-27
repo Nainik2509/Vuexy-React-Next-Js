@@ -60,7 +60,7 @@ const EmailAppLayout = ({ folder, label }: MailLayoutType) => {
   const store = useSelector((state: RootState) => state.email)
 
   // ** Vars
-  const { skin, direction } = settings
+  const { skin, layout, navHidden, direction } = settings
 
   // ** Vars
   const leftSidebarWidth = 260
@@ -79,7 +79,9 @@ const EmailAppLayout = ({ folder, label }: MailLayoutType) => {
   const handleLeftSidebarToggle = () => setLeftSidebarOpen(!leftSidebarOpen)
 
   const calculateAppHeight = () => {
-    return `(${themeConfig.appBarHeight + 56}px + ${theme.spacing(6)} * 2)`
+    return `(${themeConfig.appBarHeight * (layout === 'horizontal' && !navHidden ? 2 : 1) + 56}px + ${theme.spacing(
+      6
+    )} * 2)`
   }
 
   return (

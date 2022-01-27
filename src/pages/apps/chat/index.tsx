@@ -42,7 +42,7 @@ const AppChat = () => {
   const store = useSelector((state: RootState) => state.chat)
 
   // ** Vars
-  const { skin } = settings
+  const { skin, layout, navHidden } = settings
   const smAbove = useMediaQuery(theme.breakpoints.up('sm'))
   const sidebarWidth = smAbove ? 370 : 300
   const mdAbove = useMediaQuery(theme.breakpoints.up('md'))
@@ -63,7 +63,9 @@ const AppChat = () => {
   const handleUserProfileRightSidebarToggle = () => setUserProfileRightOpen(!userProfileRightOpen)
 
   const calculateAppHeight = () => {
-    return `(${themeConfig.appBarHeight + 56}px + ${theme.spacing(6)} * 2)`
+    return `(${themeConfig.appBarHeight * (layout === 'horizontal' && !navHidden ? 2 : 1) + 56}px + ${theme.spacing(
+      6
+    )} * 2)`
   }
 
   return (
