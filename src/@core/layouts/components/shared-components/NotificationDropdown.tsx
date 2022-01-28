@@ -1,11 +1,12 @@
 // ** React Imports
-import { useState, SyntheticEvent, Fragment } from 'react'
+import { useState, SyntheticEvent, Fragment, ReactNode } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
-import { styled } from '@mui/material/styles'
 import IconButton from '@mui/material/IconButton'
+import { styled, Theme } from '@mui/material/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import MuiMenu, { MenuProps } from '@mui/material/Menu'
 import MuiMenuItem, { MenuItemProps } from '@mui/material/MenuItem'
 import Typography, { TypographyProps } from '@mui/material/Typography'
@@ -50,12 +51,16 @@ const MenuItem = styled(MuiMenuItem)<MenuItemProps>(({ theme }) => ({
   borderBottom: `1px solid ${theme.palette.divider}`
 }))
 
-// ** Styled PerfectScrollbar component
-const PerfectScrollbar = styled(PerfectScrollbarComponent)({
+const styles = {
   maxHeight: 349,
   '& .MuiMenuItem-root:last-of-type': {
     border: 0
   }
+}
+
+// ** Styled PerfectScrollbar component
+const PerfectScrollbar = styled(PerfectScrollbarComponent)({
+  ...styles
 })
 
 // ** Styled Avatar component
@@ -91,6 +96,9 @@ const NotificationDropdown = (props: Props) => {
   // ** States
   const [anchorEl, setAnchorEl] = useState<(EventTarget & Element) | null>(null)
 
+  // ** Hook
+  const hidden = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
+
   // ** Vars
   const { direction } = settings
 
@@ -100,6 +108,16 @@ const NotificationDropdown = (props: Props) => {
 
   const handleDropdownClose = () => {
     setAnchorEl(null)
+  }
+
+  const ScrollWrapper = ({ children }: { children: ReactNode }) => {
+    if (hidden) {
+      return <Box sx={{ ...styles, overflowY: 'auto', overflowX: 'hidden' }}>{children}</Box>
+    } else {
+      return (
+        <PerfectScrollbar options={{ wheelPropagation: false, suppressScrollX: true }}>{children}</PerfectScrollbar>
+      )
+    }
   }
 
   return (
@@ -126,7 +144,7 @@ const NotificationDropdown = (props: Props) => {
             />
           </Box>
         </MenuItem>
-        <PerfectScrollbar options={{ wheelPropagation: false, suppressScrollX: true }}>
+        <ScrollWrapper>
           <MenuItem onClick={handleDropdownClose}>
             <Box sx={{ width: '100%', display: 'flex', alignItems: 'center' }}>
               <Avatar alt='Flora' src='/images/avatars/4.png' />
@@ -187,7 +205,7 @@ const NotificationDropdown = (props: Props) => {
               <Typography variant='caption'>27 Dec</Typography>
             </Box>
           </MenuItem>
-        </PerfectScrollbar>
+        </ScrollWrapper>
         <MenuItem
           disableRipple
           sx={{ py: 3.5, borderBottom: 0, borderTop: theme => `1px solid ${theme.palette.divider}` }}

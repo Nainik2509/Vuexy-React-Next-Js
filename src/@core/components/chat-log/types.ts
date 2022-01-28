@@ -2,6 +2,7 @@
 import { ProfileUserType, ChatsObj, ContactType, MsgFeedbackType } from 'src/types/apps/chatTypes'
 
 export type ChatLogType = {
+  hidden: boolean
   data: {
     chat: ChatsObj
     contact: ContactType

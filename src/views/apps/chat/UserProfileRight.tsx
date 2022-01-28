@@ -1,5 +1,5 @@
 // ** React Imports
-import { Fragment } from 'react'
+import { Fragment, ReactNode } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -36,8 +36,23 @@ import Sidebar from 'src/@core/components/sidebar'
 import CustomAvatar from 'src/@core/components/mui/avatar'
 
 const UserProfileRight = (props: UserProfileRightType) => {
-  const { store, statusObj, getInitials, sidebarWidth, userProfileRightOpen, handleUserProfileRightSidebarToggle } =
-    props
+  const {
+    store,
+    hidden,
+    statusObj,
+    getInitials,
+    sidebarWidth,
+    userProfileRightOpen,
+    handleUserProfileRightSidebarToggle
+  } = props
+
+  const ScrollWrapper = ({ children }: { children: ReactNode }) => {
+    if (hidden) {
+      return <Box sx={{ height: '100%', overflowY: 'auto', overflowX: 'hidden' }}>{children}</Box>
+    } else {
+      return <PerfectScrollbar options={{ wheelPropagation: false }}>{children}</PerfectScrollbar>
+    }
+  }
 
   return (
     <Sidebar
@@ -115,7 +130,7 @@ const UserProfileRight = (props: UserProfileRightType) => {
           </Box>
 
           <Box sx={{ height: 'calc(100% - 11.8125rem)' }}>
-            <PerfectScrollbar options={{ wheelPropagation: false }}>
+            <ScrollWrapper>
               <Box sx={{ padding: theme => theme.spacing(5) }}>
                 <FormGroup sx={{ mb: 10.5 }}>
                   <Typography variant='body2' sx={{ mb: 3.5, textTransform: 'uppercase' }}>
@@ -201,7 +216,7 @@ const UserProfileRight = (props: UserProfileRightType) => {
                   </List>
                 </Box>
               </Box>
-            </PerfectScrollbar>
+            </ScrollWrapper>
           </Box>
         </Fragment>
       ) : null}

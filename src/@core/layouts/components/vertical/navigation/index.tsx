@@ -139,7 +139,7 @@ const Navigation = (props: Props) => {
           {...(hidden
             ? {
                 onScroll: (container: any) => scrollMenu(container),
-                style: { height: '100%', overflow: 'auto' }
+                sx: { height: '100%', overflowY: 'auto', overflowX: 'hidden' }
               }
             : {
                 options: { wheelPropagation: false },

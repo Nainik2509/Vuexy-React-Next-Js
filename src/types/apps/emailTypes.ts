@@ -104,6 +104,7 @@ export type MailLabelColors = {
 }
 
 export type MailSidebarType = {
+  hidden: boolean
   store: MailStore
   lgAbove: boolean
   dispatch: Dispatch<any>
@@ -118,6 +119,7 @@ export type MailSidebarType = {
 
 export type MailLogType = {
   query: string
+  hidden: boolean
   store: MailStore
   lgAbove: boolean
   dispatch: Dispatch<any>
@@ -138,7 +140,7 @@ export type MailLogType = {
 
 export type MailDetailsType = {
   mail: MailType
-  lgAbove: boolean
+  hidden: boolean
   dispatch: Dispatch<any>
   direction: 'ltr' | 'rtl'
   mailDetailsOpen: boolean

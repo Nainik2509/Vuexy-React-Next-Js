@@ -1,5 +1,5 @@
 // ** React Imports
-import { ElementType } from 'react'
+import { ElementType, ReactNode } from 'react'
 
 // ** Next Import
 import Link from 'next/link'
@@ -56,6 +56,7 @@ const SidebarLeft = (props: MailSidebarType) => {
   // ** Props
   const {
     store,
+    hidden,
     lgAbove,
     dispatch,
     leftSidebarOpen,
@@ -94,6 +95,14 @@ const SidebarLeft = (props: MailSidebarType) => {
   const activeInboxCondition =
     store && handleActiveItem('folder', 'inbox') && store.filter.folder === 'inbox' && store.filter.label === ''
 
+  const ScrollWrapper = ({ children }: { children: ReactNode }) => {
+    if (hidden) {
+      return <Box sx={{ height: '100%', overflowY: 'auto', overflowX: 'hidden' }}>{children}</Box>
+    } else {
+      return <PerfectScrollbar options={{ wheelPropagation: false }}>{children}</PerfectScrollbar>
+    }
+  }
+
   return (
     <Drawer
       open={leftSidebarOpen}
@@ -123,7 +132,7 @@ const SidebarLeft = (props: MailSidebarType) => {
           Compose
         </Button>
       </Box>
-      <PerfectScrollbar options={{ wheelPropagation: false }}>
+      <ScrollWrapper>
         <Box sx={{ pt: 0, overflowY: 'hidden' }}>
           <List component='div'>
             <Link href='/apps/email/inbox' passHref>
@@ -379,7 +388,7 @@ const SidebarLeft = (props: MailSidebarType) => {
             </Link>
           </List>
         </Box>
-      </PerfectScrollbar>
+      </ScrollWrapper>
     </Drawer>
   )
 }

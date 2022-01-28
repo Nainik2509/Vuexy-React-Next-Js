@@ -1,5 +1,5 @@
 // ** React Imports
-import { useRef, useEffect, Ref } from 'react'
+import { useRef, useEffect, Ref, ReactNode } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -28,7 +28,7 @@ const PerfectScrollbar = styled(PerfectScrollbarComponent)<ScrollBarProps & { re
 
 const ChatLog = (props: ChatLogType) => {
   // ** Props
-  const { data } = props
+  const { data, hidden } = props
 
   // ** Ref
   const chatArea = useRef(null)
@@ -36,8 +36,13 @@ const ChatLog = (props: ChatLogType) => {
   // ** Scroll to chat bottom
   const scrollToBottom = () => {
     if (chatArea.current) {
-      // @ts-ignore
-      chatArea.current._container.scrollTop = Number.MAX_SAFE_INTEGER
+      if (hidden) {
+        // @ts-ignore
+        chatArea.current.scrollTop = Number.MAX_SAFE_INTEGER
+      } else {
+        // @ts-ignore
+        chatArea.current._container.scrollTop = Number.MAX_SAFE_INTEGER
+      }
     }
   }
 
@@ -194,11 +199,25 @@ const ChatLog = (props: ChatLogType) => {
     })
   }
 
+  const ScrollWrapper = ({ children }: { children: ReactNode }) => {
+    if (hidden) {
+      return (
+        <Box ref={chatArea} sx={{ p: 5, height: '100%', overflowY: 'auto', overflowX: 'hidden' }}>
+          {children}
+        </Box>
+      )
+    } else {
+      return (
+        <PerfectScrollbar ref={chatArea} options={{ wheelPropagation: false }}>
+          {children}
+        </PerfectScrollbar>
+      )
+    }
+  }
+
   return (
     <Box sx={{ height: 'calc(100% - 8.4375rem)' }}>
-      <PerfectScrollbar ref={chatArea} options={{ wheelPropagation: false }}>
-        {renderChats()}
-      </PerfectScrollbar>
+      <ScrollWrapper>{renderChats()}</ScrollWrapper>
     </Box>
   )
 }

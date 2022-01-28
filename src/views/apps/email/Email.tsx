@@ -57,6 +57,7 @@ const EmailAppLayout = ({ folder, label }: MailLayoutType) => {
   const lgAbove = useMediaQuery(theme.breakpoints.up('lg'))
   const mdAbove = useMediaQuery(theme.breakpoints.up('md'))
   const smAbove = useMediaQuery(theme.breakpoints.up('sm'))
+  const hidden = useMediaQuery(theme.breakpoints.down('lg'))
   const store = useSelector((state: RootState) => state.email)
 
   // ** Vars
@@ -99,6 +100,7 @@ const EmailAppLayout = ({ folder, label }: MailLayoutType) => {
     >
       <SidebarLeft
         store={store}
+        hidden={hidden}
         lgAbove={lgAbove}
         dispatch={dispatch}
         mailDetailsOpen={mailDetailsOpen}
@@ -112,6 +114,7 @@ const EmailAppLayout = ({ folder, label }: MailLayoutType) => {
       <MailLog
         query={query}
         store={store}
+        hidden={hidden}
         lgAbove={lgAbove}
         dispatch={dispatch}
         setQuery={setQuery}

@@ -1,5 +1,5 @@
 // ** React Imports
-import { ChangeEvent, Fragment } from 'react'
+import { ChangeEvent, Fragment, ReactNode } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -37,16 +37,25 @@ import Sidebar from 'src/@core/components/sidebar'
 const UserProfileLeft = (props: UserProfileLeftType) => {
   const {
     store,
+    hidden,
     statusObj,
     userStatus,
-    setUserStatus,
     sidebarWidth,
+    setUserStatus,
     userProfileLeftOpen,
     handleUserProfileLeftSidebarToggle
   } = props
 
   const handleUserStatus = (e: ChangeEvent<HTMLInputElement>) => {
     setUserStatus(e.target.value as StatusType)
+  }
+
+  const ScrollWrapper = ({ children }: { children: ReactNode }) => {
+    if (hidden) {
+      return <Box sx={{ height: '100%', overflowY: 'auto', overflowX: 'hidden' }}>{children}</Box>
+    } else {
+      return <PerfectScrollbar options={{ wheelPropagation: false }}>{children}</PerfectScrollbar>
+    }
   }
 
   return (
@@ -111,7 +120,7 @@ const UserProfileLeft = (props: UserProfileLeftType) => {
           </Box>
 
           <Box sx={{ height: 'calc(100% - 11.8125rem)' }}>
-            <PerfectScrollbar options={{ wheelPropagation: false }}>
+            <ScrollWrapper>
               <Box sx={{ padding: theme => theme.spacing(5) }}>
                 <Typography variant='body2' sx={{ mb: 4, textTransform: 'uppercase' }}>
                   About
@@ -185,7 +194,7 @@ const UserProfileLeft = (props: UserProfileLeftType) => {
                 </List>
                 <Button variant='contained'>Logout</Button>
               </Box>
-            </PerfectScrollbar>
+            </ScrollWrapper>
           </Box>
         </Fragment>
       ) : null}

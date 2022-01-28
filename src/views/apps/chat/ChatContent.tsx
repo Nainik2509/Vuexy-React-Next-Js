@@ -61,6 +61,7 @@ const ChatContent = (props: ChatContentType) => {
   // ** Props
   const {
     store,
+    hidden,
     sendMsg,
     mdAbove,
     dispatch,
@@ -259,7 +260,7 @@ const ChatContent = (props: ChatContentType) => {
             </Box>
 
             {selectedChat && store.userProfile ? (
-              <ChatLog data={{ ...selectedChat, userContact: store.userProfile }} />
+              <ChatLog hidden={hidden} data={{ ...selectedChat, userContact: store.userProfile }} />
             ) : null}
 
             <Form onSubmit={handleSendMsg}>
@@ -291,6 +292,7 @@ const ChatContent = (props: ChatContentType) => {
 
             <UserProfileRight
               store={store}
+              hidden={hidden}
               statusObj={statusObj}
               getInitials={getInitials}
               sidebarWidth={sidebarWidth}

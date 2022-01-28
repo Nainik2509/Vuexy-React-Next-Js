@@ -39,6 +39,7 @@ const AppChat = () => {
   const theme = useTheme()
   const dispatch = useDispatch()
   const { settings } = useSettings()
+  const hidden = useMediaQuery(theme.breakpoints.down('lg'))
   const store = useSelector((state: RootState) => state.chat)
 
   // ** Vars
@@ -86,6 +87,7 @@ const AppChat = () => {
     >
       <SidebarLeft
         store={store}
+        hidden={hidden}
         mdAbove={mdAbove}
         dispatch={dispatch}
         statusObj={statusObj}
@@ -102,6 +104,7 @@ const AppChat = () => {
       />
       <ChatContent
         store={store}
+        hidden={hidden}
         sendMsg={sendMsg}
         mdAbove={mdAbove}
         dispatch={dispatch}

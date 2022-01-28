@@ -1,5 +1,5 @@
 // ** React Imports
-import { Fragment, useState, SyntheticEvent } from 'react'
+import { Fragment, useState, SyntheticEvent, ReactNode } from 'react'
 
 // ** MUI Imports
 import List from '@mui/material/List'
@@ -31,7 +31,7 @@ import ArrowExpandVertical from 'mdi-material-ui/ArrowExpandVertical'
 import ArrowCollapseVertical from 'mdi-material-ui/ArrowCollapseVertical'
 
 // ** Third Party Imports
-import PerfectScrollbarComponent from 'react-perfect-scrollbar'
+import PerfectScrollbar from 'react-perfect-scrollbar'
 
 // ** Hooks
 import { useSettings } from 'src/@core/hooks/useSettings'
@@ -82,14 +82,11 @@ const HiddenReplyFront = styled(Box)<BoxProps>(({ theme }) => ({
   borderColor: `rgba(${theme.palette.customColors.main}, 0.12)`
 }))
 
-const PerfectScrollbar = styled(PerfectScrollbarComponent)(({ theme }) => ({
-  backgroundColor: theme.palette.action.hover
-}))
-
 const MailDetails = (props: MailDetailsType) => {
   // ** Props
   const {
     mail,
+    hidden,
     folders,
     dispatch,
     direction,
@@ -111,7 +108,7 @@ const MailDetails = (props: MailDetailsType) => {
   const [folderAnchorEl, setFolderAnchorEl] = useState<null | HTMLElement>(null)
   const [mailMenuAnchorEl, setMailMenuAnchorEl] = useState<null | HTMLElement>(null)
 
-  // ** Hooks
+  // ** Hook
   const { settings } = useSettings()
 
   // ** Vars
@@ -223,6 +220,14 @@ const MailDetails = (props: MailDetailsType) => {
   const PrevMailIcon = direction === 'rtl' ? ChevronRight : ChevronLeft
   const NextMailIcon = direction === 'rtl' ? ChevronLeft : ChevronRight
   const GoBackIcon = PrevMailIcon
+
+  const ScrollWrapper = ({ children }: { children: ReactNode }) => {
+    if (hidden) {
+      return <Box sx={{ height: '100%', overflowY: 'auto', overflowX: 'hidden' }}>{children}</Box>
+    } else {
+      return <PerfectScrollbar options={{ wheelPropagation: false }}>{children}</PerfectScrollbar>
+    }
+  }
 
   return (
     <Sidebar
@@ -395,8 +400,8 @@ const MailDetails = (props: MailDetailsType) => {
               </Box>
             </Box>
           </Box>
-          <Box sx={{ height: 'calc(100% - 7.75rem)' }}>
-            <PerfectScrollbar options={{ wheelPropagation: false }}>
+          <Box sx={{ height: 'calc(100% - 7.75rem)', backgroundColor: theme => theme.palette.action.hover }}>
+            <ScrollWrapper>
               <Box
                 sx={{
                   py: 4,
@@ -616,7 +621,7 @@ const MailDetails = (props: MailDetailsType) => {
                   </Typography>
                 </Box>
               </Box>
-            </PerfectScrollbar>
+            </ScrollWrapper>
           </Box>
         </Fragment>
       ) : null}

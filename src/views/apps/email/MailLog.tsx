@@ -1,5 +1,5 @@
 // ** React Imports
-import { Fragment, useState, SyntheticEvent } from 'react'
+import { Fragment, useState, SyntheticEvent, ReactNode } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -74,6 +74,7 @@ const MailLog = (props: MailLogType) => {
   const {
     store,
     query,
+    hidden,
     lgAbove,
     dispatch,
     setQuery,
@@ -271,6 +272,7 @@ const MailLog = (props: MailLogType) => {
   }
 
   const mailDetailsProps = {
+    hidden,
     folders,
     dispatch,
     direction,
@@ -285,6 +287,16 @@ const MailLog = (props: MailLogType) => {
     handleFolderUpdate,
     setMailDetailsOpen,
     mail: store && store.currentMail ? store.currentMail : null
+  }
+
+  const ScrollWrapper = ({ children }: { children: ReactNode }) => {
+    if (hidden) {
+      return <Box sx={{ height: '100%', overflowY: 'auto', overflowX: 'hidden' }}>{children}</Box>
+    } else {
+      return (
+        <PerfectScrollbar options={{ wheelPropagation: false, suppressScrollX: true }}>{children}</PerfectScrollbar>
+      )
+    }
   }
 
   return (
@@ -391,7 +403,7 @@ const MailLog = (props: MailLogType) => {
         </Box>
         <Divider sx={{ m: 0 }} />
         <Box sx={{ p: 0, position: 'relative', overflowX: 'hidden', height: 'calc(100% - 7.25rem)' }}>
-          <PerfectScrollbar options={{ wheelPropagation: false, suppressScrollX: true }}>
+          <ScrollWrapper>
             {store && store.mails && store.mails.length ? (
               <List sx={{ p: 0 }}>
                 {store.mails.map((mail: MailType, index: number) => {
@@ -536,7 +548,7 @@ const MailLog = (props: MailLogType) => {
                 <Typography>No Mails Found</Typography>
               </Box>
             )}
-          </PerfectScrollbar>
+          </ScrollWrapper>
           <Backdrop
             open={refresh}
             onClick={() => setRefresh(false)}

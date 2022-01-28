@@ -1,5 +1,5 @@
 // ** React Imports
-import { useState, useEffect, ChangeEvent } from 'react'
+import { useState, useEffect, ChangeEvent, ReactNode } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -38,6 +38,7 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
   // ** Props
   const {
     store,
+    hidden,
     mdAbove,
     dispatch,
     statusObj,
@@ -82,6 +83,14 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
       const arr = store.chats.filter(i => i.id === id)
 
       return !!arr.length
+    }
+  }
+
+  const ScrollWrapper = ({ children }: { children: ReactNode }) => {
+    if (hidden) {
+      return <Box sx={{ height: '100%', overflow: 'auto' }}>{children}</Box>
+    } else {
+      return <PerfectScrollbar options={{ wheelPropagation: false }}>{children}</PerfectScrollbar>
     }
   }
 
@@ -405,7 +414,7 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
         </Box>
 
         <Box sx={{ height: `calc(100% - 4.0625rem)` }}>
-          <PerfectScrollbar options={{ wheelPropagation: false }}>
+          <ScrollWrapper>
             <Box sx={{ p: (theme: Theme) => theme.spacing(7, 3, 3) }}>
               <Typography variant='h6' sx={{ ml: 3, mb: 3, color: 'primary.main' }}>
                 Chats
@@ -416,12 +425,13 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
               </Typography>
               <List sx={{ padding: 0 }}>{renderContacts()}</List>
             </Box>
-          </PerfectScrollbar>
+          </ScrollWrapper>
         </Box>
       </Drawer>
 
       <UserProfileLeft
         store={store}
+        hidden={hidden}
         statusObj={statusObj}
         userStatus={userStatus}
         sidebarWidth={sidebarWidth}

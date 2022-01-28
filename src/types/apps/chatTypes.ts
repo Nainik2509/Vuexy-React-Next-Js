@@ -85,6 +85,7 @@ export type SendMsgParamsType = {
 }
 
 export type ChatContentType = {
+  hidden: boolean
   mdAbove: boolean
   store: ChatStoreType
   sidebarWidth: number
@@ -98,6 +99,7 @@ export type ChatContentType = {
 }
 
 export type ChatSidebarLeftType = {
+  hidden: boolean
   mdAbove: boolean
   store: ChatStoreType
   sidebarWidth: number
@@ -115,9 +117,10 @@ export type ChatSidebarLeftType = {
 }
 
 export type UserProfileLeftType = {
+  hidden: boolean
   store: ChatStoreType
-  userStatus: StatusType
   sidebarWidth: number
+  userStatus: StatusType
   statusObj: StatusObjType
   userProfileLeftOpen: boolean
   setUserStatus: (status: StatusType) => void
@@ -125,6 +128,7 @@ export type UserProfileLeftType = {
 }
 
 export type UserProfileRightType = {
+  hidden: boolean
   store: ChatStoreType
   sidebarWidth: number
   statusObj: StatusObjType
