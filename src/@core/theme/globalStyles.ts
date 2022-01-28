@@ -10,13 +10,13 @@ const GlobalStyles = (theme: Theme, settings: Settings) => {
 
   const perfectScrollbarThumbBgColor = () => {
     if (skin === 'semi-dark' && theme.palette.mode === 'light') {
-      return '#575468 !important'
+      return '#504B6D !important'
     } else if (skin === 'semi-dark' && theme.palette.mode === 'dark') {
-      return '#B0ACB5 !important'
+      return '#C2C4D1 !important'
     } else if (theme.palette.mode === 'light') {
-      return '#B0ACB5 !important'
+      return '#C2C4D1 !important'
     } else {
-      return '#575468 !important'
+      return '#504B6D !important'
     }
   }
 
@@ -49,12 +49,12 @@ const GlobalStyles = (theme: Theme, settings: Settings) => {
       right: '0 !important',
       left: 'auto !important',
       '&:hover, &:focus, &.ps--clicking': {
-        backgroundColor: theme.palette.mode === 'light' ? '#DDDBDF !important' : '#353149 !important'
+        backgroundColor: theme.palette.mode === 'light' ? '#E4E5EB !important' : '#423D5D !important'
       },
       '& .ps__thumb-y': {
-        right: '2px !important',
+        right: '3px !important',
         left: 'auto !important',
-        backgroundColor: theme.palette.mode === 'light' ? '#B0ACB5 !important' : '#575468 !important'
+        backgroundColor: theme.palette.mode === 'light' ? '#C2C4D1 !important' : '#504B6D !important'
       },
       '.layout-vertical-nav &': {
         '&:hover, &:focus, &.ps--clicking': {
