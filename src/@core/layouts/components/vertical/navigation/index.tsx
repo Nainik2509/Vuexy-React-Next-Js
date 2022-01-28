@@ -41,12 +41,11 @@ interface Props {
 }
 
 const StyledBoxForShadow = styled(Box)<BoxProps>({
-  top: -20,
+  top: 50,
   left: -8,
   zIndex: 2,
   height: 75,
   display: 'none',
-  filter: 'blur(5px)',
   position: 'absolute',
   pointerEvents: 'none',
   width: 'calc(100% + 15px)',
@@ -132,8 +131,8 @@ const Navigation = (props: Props) => {
   return (
     <Drawer {...props}>
       <VerticalNavHeader {...props} />
+      <StyledBoxForShadow ref={shadowRef} sx={{ background: shadowBgColor() }} />
       <Box sx={{ position: 'relative', overflow: 'hidden' }}>
-        <StyledBoxForShadow ref={shadowRef} sx={{ background: shadowBgColor() }} />
         {/* @ts-ignore */}
         <ScrollWrapper
           containerRef={(ref: any) => handleInfiniteScroll(ref)}
