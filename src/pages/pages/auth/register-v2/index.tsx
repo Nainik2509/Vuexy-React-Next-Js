@@ -252,7 +252,7 @@ const RegisterV2 = () => {
               <Typography variant='body2'>Make your app management easy and fun!</Typography>
             </Box>
             <form noValidate autoComplete='off' onSubmit={handleSubmit}>
-              <TextField id='username' label='Username' sx={{ display: 'flex', marginBottom: 4 }} />
+              <TextField autoFocus id='username' label='Username' sx={{ display: 'flex', marginBottom: 4 }} />
               <TextField type='email' label='Email' sx={{ display: 'flex', marginBottom: 4 }} />
               <FormControl fullWidth>
                 <InputLabel htmlFor='auth-register-v2-password'>Password</InputLabel>

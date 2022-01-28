@@ -261,6 +261,7 @@ const ResetPasswordV2 = () => {
               <FormControl sx={{ display: 'flex', marginBottom: 4 }}>
                 <InputLabel htmlFor='auth-reset-password-v2-new-password'>New Password</InputLabel>
                 <OutlinedInput
+                  autoFocus
                   label='New Password'
                   value={values.newPassword}
                   id='auth-reset-password-v2-new-password'

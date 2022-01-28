@@ -156,7 +156,7 @@ const LoginWithAppBar = () => {
               <Typography variant='body2'>Please sign-in to your account and start the adventure</Typography>
             </Box>
             <form noValidate autoComplete='off' onSubmit={handleSubmit}>
-              <TextField id='email' label='Email' sx={{ display: 'flex', marginBottom: 4 }} />
+              <TextField autoFocus id='email' label='Email' sx={{ display: 'flex', marginBottom: 4 }} />
               <FormControl fullWidth>
                 <InputLabel htmlFor='auth-login-v2-password'>Password</InputLabel>
                 <OutlinedInput
