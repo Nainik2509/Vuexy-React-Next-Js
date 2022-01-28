@@ -33,6 +33,7 @@ const VerticalLayoutWrapper = styled('div')({
 
 const MainContentWrapper = styled(Box)<BoxProps>({
   flexGrow: 1,
+  minWidth: 0, // to fix horizontal scrollbar due to code snippet
   display: 'flex',
   minHeight: '100vh',
   flexDirection: 'column'
