@@ -3,7 +3,6 @@ const replace = require('replace-in-file')
 
 const packagePath = '../../downloadable-package'
 const userLayoutPath = `${packagePath}/src/layouts/UserLayout.tsx`
-const themeConfigPath = `${packagePath}/src/configs/themeConfig.ts`
 const BuyNowComponentPath = `${packagePath}/src/layouts/components/BuyNowButton.tsx`
 
 if (fs.existsSync(packagePath)) {
@@ -34,18 +33,6 @@ if (fs.existsSync(packagePath)) {
     })
   } else {
     console.log('BuyNow Component File Does Not Exist!')
-
-    return
-  }
-
-  if (fs.existsSync(themeConfigPath)) {
-    replace({
-      files: themeConfigPath,
-      from: 'disableCustomizer: false',
-      to: 'disableCustomizer: true'
-    })
-  } else {
-    console.log('ThemeConfig File Does Not Exist!')
 
     return
   }

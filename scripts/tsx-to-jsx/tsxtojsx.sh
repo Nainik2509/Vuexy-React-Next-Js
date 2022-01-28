@@ -38,7 +38,7 @@ node update-eslint.js
 # Replace unwanted Code in jsx-folder
 node findReplace.js
 
-cd /c/xampp/htdocs/master-react-mui-nextjs/jsx-version
+cd ../../jsx-version
 
 # install node_modules
 yarn install --ignore-engines
@@ -51,10 +51,13 @@ yarn lint
 
 
 # Automate source code snippets in jsx version
-cd /c/xampp/htdocs/master-react-mui-nextjs/scripts/tsx-to-jsx
+cd ../scripts/copy-source
 
-node copySourceCode.js
+node copySourceTSX.js
+node copySourceJSX.js
 
-node remove-tsx.js
+# node copySourceCode.js
 
-yarn dev
+# node remove-tsx.js
+
+# yarn dev
