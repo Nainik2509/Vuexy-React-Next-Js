@@ -58,6 +58,7 @@ const StyledBoxForShadow = styled(Box)<BoxProps>({
 const Navigation = (props: Props) => {
   // ** Props
   const {
+    hidden,
     settings,
     afterVerticalNavMenuContent,
     beforeVerticalNavMenuContent,
@@ -93,7 +94,8 @@ const Navigation = (props: Props) => {
   }
 
   // ** Scroll Menu
-  const scrollMenu = (container: HTMLElement) => {
+  const scrollMenu = (container: any) => {
+    container = hidden ? container.target : container
     if (shadowRef && container.scrollTop > 0) {
       // @ts-ignore
       if (!shadowRef.current.classList.contains('d-block')) {
@@ -125,15 +127,25 @@ const Navigation = (props: Props) => {
     }
   }
 
+  const ScrollWrapper = hidden ? Box : PerfectScrollbar
+
   return (
     <Drawer {...props}>
       <VerticalNavHeader {...props} />
       <Box sx={{ position: 'relative', overflow: 'hidden' }}>
         <StyledBoxForShadow ref={shadowRef} sx={{ background: shadowBgColor() }} />
-        <PerfectScrollbar
-          options={{ wheelPropagation: false }}
-          onScrollY={container => scrollMenu(container)}
-          containerRef={ref => handleInfiniteScroll(ref)}
+        {/* @ts-ignore */}
+        <ScrollWrapper
+          containerRef={(ref: any) => handleInfiniteScroll(ref)}
+          {...(hidden
+            ? {
+                onScroll: (container: any) => scrollMenu(container),
+                style: { height: '100%', overflow: 'auto' }
+              }
+            : {
+                options: { wheelPropagation: false },
+                onScrollY: (container: any) => scrollMenu(container)
+              })}
         >
           {beforeVerticalNavMenuContent ? beforeVerticalNavMenuContent(props) : null}
           {userVerticalNavMenuContent ? (
@@ -150,7 +162,7 @@ const Navigation = (props: Props) => {
             </List>
           )}
           {afterVerticalNavMenuContent ? afterVerticalNavMenuContent(props) : null}
-        </PerfectScrollbar>
+        </ScrollWrapper>
       </Box>
     </Drawer>
   )

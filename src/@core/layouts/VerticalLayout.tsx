@@ -34,7 +34,6 @@ const VerticalLayoutWrapper = styled('div')({
 const MainContentWrapper = styled(Box)<BoxProps>({
   flexGrow: 1,
   display: 'flex',
-  overflowX: 'clip',
   minHeight: '100vh',
   flexDirection: 'column'
 })
