@@ -8,17 +8,6 @@ const GlobalStyles = (theme: Theme, settings: Settings) => {
   // ** Vars
   const { skin } = settings
 
-  const perfectScrollbarTrackBgColor = () => {
-    if (skin === 'semi-dark' && theme.palette.mode === 'light') {
-      return '#353149 !important'
-    } else if (skin === 'semi-dark' && theme.palette.mode === 'dark') {
-      return '#DDDBDF !important'
-    } else if (theme.palette.mode === 'light') {
-      return '#DDDBDF !important'
-    } else {
-      return '#353149 !important'
-    }
-  }
   const perfectScrollbarThumbBgColor = () => {
     if (skin === 'semi-dark' && theme.palette.mode === 'light') {
       return '#575468 !important'
@@ -57,34 +46,30 @@ const GlobalStyles = (theme: Theme, settings: Settings) => {
     },
     '.ps__rail-y': {
       zIndex: 1,
+      right: '0 !important',
+      left: 'auto !important',
       '&:hover, &:focus, &.ps--clicking': {
         backgroundColor: theme.palette.mode === 'light' ? '#DDDBDF !important' : '#353149 !important'
       },
       '& .ps__thumb-y': {
+        right: '2px !important',
+        left: 'auto !important',
         backgroundColor: theme.palette.mode === 'light' ? '#B0ACB5 !important' : '#575468 !important'
       },
       '.layout-vertical-nav &': {
-        '&:hover, &:focus, & .ps--clicking, & .ps--active-y': {
-          backgroundColor: perfectScrollbarTrackBgColor()
-        },
-        '& .ps__rail-y, & .ps__rail-y:hover': {
-          backgroundColor: perfectScrollbarTrackBgColor()
+        '&:hover, &:focus, &.ps--clicking': {
+          backgroundColor: 'transparent !important'
         },
         '& .ps__thumb-y': {
-          height: '200px !important',
+          width: 4,
           backgroundColor: perfectScrollbarThumbBgColor()
+        },
+        '&:hover .ps__thumb-y': {
+          width: 6
         }
       }
     },
 
-    '& .ps__rail-y': {
-      right: '0 !important',
-      left: 'auto !important',
-      '& .ps__thumb-y': {
-        right: '2px !important',
-        left: 'auto !important'
-      }
-    },
     '#nprogress': {
       pointerEvents: 'none',
       '& .bar': {
