@@ -57,15 +57,15 @@ const GlobalStyles = (theme: Theme, settings: Settings) => {
         backgroundColor: theme.palette.mode === 'light' ? '#C2C4D1 !important' : '#504B6D !important'
       },
       '.layout-vertical-nav &': {
-        '&:hover, &:focus, &.ps--clicking': {
-          backgroundColor: 'transparent !important'
-        },
         '& .ps__thumb-y': {
           width: 4,
           backgroundColor: perfectScrollbarThumbBgColor()
         },
-        '&:hover .ps__thumb-y': {
-          width: 6
+        '&:hover, &:focus, &.ps--clicking': {
+          backgroundColor: 'transparent !important',
+          '& .ps__thumb-y': {
+            width: 6
+          }
         }
       }
     },
