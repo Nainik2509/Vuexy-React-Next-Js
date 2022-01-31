@@ -3,6 +3,8 @@ const path = require('path')
 
 const packagePath = '../../downloadable-package'
 const userLayoutPathTSX = `${packagePath}/tsx/src/layouts/UserLayout.tsx`
+const PackageJSONPathTSX = `${packagePath}/tsx/package.json`
+const PackageJSONPathJSX = `${packagePath}/jsx/package.json`
 const BuyNowComponentPathTSX = `${packagePath}/tsx/src/layouts/components/BuyNowButton.tsx`
 const userLayoutPathJSX = `${packagePath}/jsx/src/layouts/UserLayout.js`
 const BuyNowComponentPathJSX = `${packagePath}/jsx/src/layouts/components/BuyNowButton.js`
@@ -64,7 +66,7 @@ const copyRecursiveSync = (src, dest) => {
   }
 }
 
-const updateContent = (userLayoutPath, BuyNowComponentPath) => {
+const updateContent = (userLayoutPath, BuyNowComponentPath, PackageJSONPath) => {
   if (fs.existsSync(userLayoutPath)) {
     fs.readFile(userLayoutPath, 'utf-8', (err, data) => {
       if (err) console.log(err)
@@ -95,6 +97,21 @@ const updateContent = (userLayoutPath, BuyNowComponentPath) => {
 
     return
   }
+  if (fs.existsSync(PackageJSONPath)) {
+    fs.readFile(PackageJSONPath, 'utf-8', (err, data) => {
+      if (err) console.log(err)
+      else {
+        const result = data.replace(/\^/g, '').replace('~', '')
+        fs.writeFile(PackageJSONPath, result, err => {
+          if (err) console.log(err)
+        })
+      }
+    })
+  } else {
+    console.log('package.json File Does Not Exist!')
+
+    return
+  }
 }
 
 const generateTSXPackage = () => {
@@ -107,7 +124,7 @@ const generateTSXPackage = () => {
       filesToCopyTSX.map(file => {
         copyRecursiveSync(file, `${packagePath}/tsx/${file.replace('../../', '')}`)
       })
-      updateContent(userLayoutPathTSX, BuyNowComponentPathTSX)
+      updateContent(userLayoutPathTSX, BuyNowComponentPathTSX, PackageJSONPathTSX)
     }
   })
 }
@@ -123,7 +140,7 @@ const generateJSXPackage = () => {
         filesToCopyJSX.map(file => {
           copyRecursiveSync(file, `${packagePath}/jsx/${file.replace('../../jsx-version/', '')}`)
         })
-        updateContent(userLayoutPathJSX, BuyNowComponentPathJSX)
+        updateContent(userLayoutPathJSX, BuyNowComponentPathJSX, PackageJSONPathJSX)
       }
     })
   }
