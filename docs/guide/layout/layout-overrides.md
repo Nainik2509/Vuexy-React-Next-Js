@@ -8,7 +8,7 @@ sidebarDepth: 2
 
 The `layouts` folder in the root of the `src` folder is for users to override layouts built in the `@core` folder. It is highly recommended to override layouts in the `layouts` folder instead of directly working in the `@core` folder. This will ease your updates to newer versions without facing any hassle of backing up your current code, else it will override your changes in the `@core` folder each time you take an update.
 
-All the layout components explained on this page are overridden in `src/layouts/UserLayout.tsx` and `src/layouts/UserBlankLayoutWithAppBar.tsx` files.
+Most of the layout components explained on this page are overridden in the `src/layouts/UserLayout.tsx` file.
 
 ## Vertical Layout
 
@@ -20,12 +20,12 @@ You can override the following layout components:
 - [Add content before menu items](#_4-add-content-before-menu-items)
 - [Add content after menu items](#_5-add-content-after-menu-items)
 - [Hide menu based on screen size](#_6-hide-menu-based-on-screen-size)
-- [Navbar (or AppBar)](#_7-navbar-or-appbar)
+- [Navbar (or AppBar) Content](#_7-navbar-or-appbar-content)
 - [Footer](#_8-footer)
 
 ### 1. App Logo
 
-If you want to change the app logo, you need to use `verticalNavMenuBranding` prop with the `Layout` component.
+If you want to change the app logo, you need to use the `verticalNavMenuBranding` prop with the `Layout` component.
 
 The value accepted by this prop is:
 
@@ -39,13 +39,8 @@ Here is the code to change the app logo:
 import { ReactNode } from 'react'
 import Image from 'next/image'
 import Box from '@mui/material/Box'
-import { Theme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
-import useMediaQuery from '@mui/material/useMediaQuery'
 import Layout from 'src/@core/layouts/Layout'
-import VerticalNavItems from 'src/navigation/vertical'
-import { useSettings } from 'src/@core/hooks/useSettings'
-import HorizontalNavItems from 'src/navigation/horizontal'
 
 interface Props {
   children: ReactNode
@@ -63,18 +58,10 @@ const AppBrand = () => {
 }
 
 const UserLayout = ({ children }: Props) => {
-  const { settings, saveSettings } = useSettings()
-  const hidden = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
-
   return (
     <Layout
-      hidden={hidden}
-      settings={settings}
-      saveSettings={saveSettings}
+      {...} // other props
       verticalNavMenuBranding={() => <AppBrand />}
-      {...(settings.layout === 'horizontal'
-        ? { horizontalNavItems: HorizontalNavItems() }
-        : { verticalNavItems: VerticalNavItems() })}
     >
       {children}
     </Layout>
@@ -94,9 +81,9 @@ When you override the app logo and when the menu is collapsed, `padding-left` of
 
 ### 2. Menu collapse icons
 
-If you want to change the icons for collapsing the vertical menu, you need to use `menuLockedIcon` prop (when the menu is not collapsed) and `menuUnlockedIcon` prop (when the menu is collapsed) with the `Layout` component.
+If you want to change the icons for collapsing the vertical menu, you need to use the `menuLockedIcon` prop (when the menu is not collapsed) and `menuUnlockedIcon` prop (when the menu is collapsed) with the `Layout` component.
 
-The values accepted by these prop are:
+The values accepted by these props are:
 
 ```tsx
 menuLockedIcon?: ReactNode
@@ -107,33 +94,20 @@ Here is the code to change the icons for collapsing the vertical menu:
 
 ```tsx
 import { ReactNode } from 'react'
-import { Theme } from '@mui/material/styles'
-import useMediaQuery from '@mui/material/useMediaQuery'
 import ArrowLeftBoldCircleOutline from 'mdi-material-ui/ArrowLeftBoldCircleOutline'
 import ArrowRightBoldCircleOutline from 'mdi-material-ui/ArrowRightBoldCircleOutline'
 import Layout from 'src/@core/layouts/Layout'
-import VerticalNavItems from 'src/navigation/vertical'
-import { useSettings } from 'src/@core/hooks/useSettings'
-import HorizontalNavItems from 'src/navigation/horizontal'
 
 interface Props {
   children: ReactNode
 }
 
 const UserLayout = ({ children }: Props) => {
-  const { settings, saveSettings } = useSettings()
-  const hidden = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
-
   return (
     <Layout
-      hidden={hidden}
-      settings={settings}
-      saveSettings={saveSettings}
+      {...} // other props
       menuLockedIcon={<ArrowLeftBoldCircleOutline />}
       menuUnlockedIcon={<ArrowRightBoldCircleOutline />}
-      {...(settings.layout === 'horizontal'
-        ? { horizontalNavItems: HorizontalNavItems() }
-        : { verticalNavItems: VerticalNavItems() })}
     >
       {children}
     </Layout>
@@ -153,7 +127,7 @@ Result of `menuUnlockedIcon`:
 
 ### 3. Vertical menu items
 
-If you want to change the menu, you need to use `verticalNavMenuContent` prop with the `Layout` component.
+If you want to change the menu, you need to use the `verticalNavMenuContent` prop with the `Layout` component.
 
 The value accepted by this prop is:
 
@@ -165,12 +139,7 @@ Here is the code to change the menu:
 
 ```tsx
 import { ReactNode } from 'react'
-import { Theme } from '@mui/material/styles'
-import useMediaQuery from '@mui/material/useMediaQuery'
 import Layout from 'src/@core/layouts/Layout'
-import VerticalNavItems from 'src/navigation/vertical'
-import { useSettings } from 'src/@core/hooks/useSettings'
-import HorizontalNavItems from 'src/navigation/horizontal'
 
 interface Props {
   children: ReactNode
@@ -189,18 +158,10 @@ const Menu = () => {
 }
 
 const UserLayout = ({ children }: Props) => {
-  const { settings, saveSettings } = useSettings()
-  const hidden = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
-
   return (
     <Layout
-      hidden={hidden}
-      settings={settings}
-      saveSettings={saveSettings}
+      {...} // other props
       verticalNavMenuContent={() => <Menu />}
-      {...(settings.layout === 'horizontal'
-        ? { horizontalNavItems: HorizontalNavItems() }
-        : { verticalNavItems: VerticalNavItems() })}
     >
       {children}
     </Layout>
@@ -216,7 +177,7 @@ Result:
 
 ### 4. Add content before menu items
 
-If you want to add something before the menu items, you need to use `beforeVerticalNavMenuContent` prop with the `Layout` component.
+If you want to add something before the menu items, you need to use the `beforeVerticalNavMenuContent` prop with the `Layout` component.
 
 The value accepted by this prop is:
 
@@ -231,13 +192,9 @@ import { ReactNode } from 'react'
 import Box from '@mui/material/Box'
 import Badge from '@mui/material/Badge'
 import Avatar from '@mui/material/Avatar'
+import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
-import { Theme, styled } from '@mui/material/styles'
-import useMediaQuery from '@mui/material/useMediaQuery'
 import Layout from 'src/@core/layouts/Layout'
-import VerticalNavItems from 'src/navigation/vertical'
-import { useSettings } from 'src/@core/hooks/useSettings'
-import HorizontalNavItems from 'src/navigation/horizontal'
 
 interface Props {
   children: ReactNode
@@ -277,18 +234,10 @@ const User = () => {
 }
 
 const UserLayout = ({ children }: Props) => {
-  const { settings, saveSettings } = useSettings()
-  const hidden = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
-
   return (
     <Layout
-      hidden={hidden}
-      settings={settings}
-      saveSettings={saveSettings}
+      {...} // other props
       beforeVerticalNavMenuContent={() => <User />}
-      {...(settings.layout === 'horizontal'
-        ? { horizontalNavItems: HorizontalNavItems() }
-        : { verticalNavItems: VerticalNavItems() })}
     >
       {children}
     </Layout>
@@ -304,7 +253,7 @@ Result:
 
 ### 5. Add content after menu items
 
-If you want to add something after the menu items, you need to use `afterVerticalNavMenuContent` prop with the `Layout` component.
+If you want to add something after the menu items, you need to use the `afterVerticalNavMenuContent` prop with the `Layout` component.
 
 The value accepted by this prop is:
 
@@ -318,12 +267,7 @@ Here is the code to menu footer info after the menu items:
 import { ReactNode } from 'react'
 import Image from 'next/image'
 import Box from '@mui/material/Box'
-import { Theme } from '@mui/material/styles'
-import useMediaQuery from '@mui/material/useMediaQuery'
 import Layout from 'src/@core/layouts/Layout'
-import VerticalNavItems from 'src/navigation/vertical'
-import { useSettings } from 'src/@core/hooks/useSettings'
-import HorizontalNavItems from 'src/navigation/horizontal'
 
 interface Props {
   children: ReactNode
@@ -338,18 +282,10 @@ const MenuFooter = () => {
 }
 
 const UserLayout = ({ children }: Props) => {
-  const { settings, saveSettings } = useSettings()
-  const hidden = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
-
   return (
     <Layout
-      hidden={hidden}
-      settings={settings}
-      saveSettings={saveSettings}
+      {...} // other props
       afterVerticalNavMenuContent={() => <MenuFooter />}
-      {...(settings.layout === 'horizontal'
-        ? { horizontalNavItems: HorizontalNavItems() }
-        : { verticalNavItems: VerticalNavItems() })}
     >
       {children}
     </Layout>
@@ -365,9 +301,9 @@ Result:
 
 ### 6. Hide menu based on screen size
 
-`hidden` prop is used to hide the vertical menu at given screen size. The menu will be accessible from the Hamburger menu icon only which is known as the Vertical Overlay Menu. You can change the screen size from which you want to hide the vertical menu.
+The `hidden` prop is used to hide the vertical menu at a given screen size. The menu will be accessible from the Hamburger menu icon only which is known as the Vertical Overlay Menu. You can change the screen size from which you want to hide the vertical menu.
 
-In the example below, the vertical menu is visible above the `lg` breakpoint and on screen size below the `lg` breakpoint, it will change to a vertical overlay menu which can be accessed from the Hamburger menu icon.
+In the example below, the vertical menu is visible above the `lg` breakpoint and on screen size below the `lg` breakpoint, it will change to the vertical overlay menu which can be accessed from the Hamburger menu icon.
 
 ```tsx
 const hidden = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
@@ -379,9 +315,9 @@ You can also change its value using a specific screen size:
 const hidden = useMediaQuery('(max-width:1365px)')
 ```
 
-### 7. Navbar (or AppBar)
+### 7. Navbar (or AppBar) Content
 
-If you want to change the navbar, you need to use `verticalAppBarContent` prop with the `Layout` component.
+The content in the appBar comes from the user side itself and thus, it would be very easy and convenient for you to change anything in the appBar. You just have to change the code in the `src/layouts/components/vertical/AppBarContent.tsx` file. The appBar component is then passed in the `verticalAppBarContent` prop with the `Layout` component.
 
 The value accepted by this prop is:
 
@@ -392,15 +328,52 @@ verticalAppBarContent?: (props?: any) => ReactNode
 Here is the code to change the appBar:
 
 ```tsx
+// src/layouts/components/vertical/AppBarContent.tsx
+
+import Box from '@mui/material/Box'
+import IconButton from '@mui/material/IconButton'
+import MenuIcon from 'mdi-material-ui/Menu'
+import { Settings } from 'src/@core/context/settingsContext'
+import ModeToggler from 'src/@core/layouts/components/shared-components/ModeToggler'
+import UserDropdown from 'src/@core/layouts/components/shared-components/UserDropdown'
+
+interface Props {
+  hidden: boolean
+  settings: Settings
+  toggleNavVisibility: () => void
+  saveSettings: (values: Settings) => void
+}
+
+const AppBarContent = (props: Props) => {
+  const { hidden, settings, saveSettings, toggleNavVisibility } = props
+
+  return (
+    <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <Box className='actions-left' sx={{ mr: 2, display: 'flex', alignItems: 'center' }}>
+        {hidden ? (
+          <IconButton color='inherit' sx={{ ml: -2.75 }} onClick={toggleNavVisibility}>
+            <MenuIcon />
+          </IconButton>
+        ) : null}
+        <ModeToggler settings={settings} saveSettings={saveSettings} />
+      </Box>
+      <UserDropdown settings={settings} />
+    </Box>
+  )
+}
+
+export default AppBarContent
+```
+
+```tsx
+// src/layouts/UserLayout.tsx
+
 import { ReactNode } from 'react'
 import { Theme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import Layout from 'src/@core/layouts/Layout'
-import VerticalNavItems from 'src/navigation/vertical'
 import { useSettings } from 'src/@core/hooks/useSettings'
-import HorizontalNavItems from 'src/navigation/horizontal'
-import ModeToggler from 'src/@core/layouts/components/shared-components/ModeToggler'
-import UserDropdown from 'src/@core/layouts/components/shared-components/UserDropdown'
+import VerticalAppBarContent from 'src/layouts/components/vertical/AppBarContent'
 
 interface Props {
   children: ReactNode
@@ -410,24 +383,17 @@ const UserLayout = ({ children }: Props) => {
   const { settings, saveSettings } = useSettings()
   const hidden = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
 
-  const AppBar = () => {
-    return (
-      <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <ModeToggler settings={settings} saveSettings={saveSettings} />
-        <UserDropdown settings={settings} />
-      </Box>
-    )
-  }
-
   return (
     <Layout
-      hidden={hidden}
-      settings={settings}
-      saveSettings={saveSettings}
-      verticalAppBarContent={() => <AppBar />}
-      {...(settings.layout === 'horizontal'
-        ? { horizontalNavItems: HorizontalNavItems() }
-        : { verticalNavItems: VerticalNavItems() })}
+      {...} // other props
+      verticalAppBarContent={props => (
+        <VerticalAppBarContent
+          hidden={hidden}
+          settings={settings}
+          saveSettings={saveSettings}
+          toggleNavVisibility={props.toggleNavVisibility}
+        />
+      )}
     >
       {children}
     </Layout>
@@ -443,7 +409,7 @@ Result:
 
 ### 8. Footer
 
-If you want to change the footer, you need to use `footerContent` prop with the `Layout` component.
+If you want to change the footer, you need to use the `footerContent` prop with the `Layout` component.
 
 The value accepted by this prop is:
 
@@ -455,30 +421,17 @@ Here is the code to change the footer:
 
 ```tsx
 import { ReactNode } from 'react'
-import { Theme } from '@mui/material/styles'
-import useMediaQuery from '@mui/material/useMediaQuery'
 import Layout from 'src/@core/layouts/Layout'
-import VerticalNavItems from 'src/navigation/vertical'
-import { useSettings } from 'src/@core/hooks/useSettings'
-import HorizontalNavItems from 'src/navigation/horizontal'
 
 interface Props {
   children: ReactNode
 }
 
 const UserLayout = ({ children }: Props) => {
-  const { settings, saveSettings } = useSettings()
-  const hidden = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
-
   return (
     <Layout
-      hidden={hidden}
-      settings={settings}
-      saveSettings={saveSettings}
+      {...} // other props
       footerContent={() => 'I am footer which is overridden by the user'}
-      {...(settings.layout === 'horizontal'
-        ? { horizontalNavItems: HorizontalNavItems() }
-        : { verticalNavItems: VerticalNavItems() })}
     >
       {children}
     </Layout>
@@ -504,7 +457,7 @@ You can override the following layout components:
 
 ### 1. App Logo
 
-If you want to change the app logo, you need to use `horizontalAppBarBranding` prop with the `Layout` component.
+If you want to change the app logo, you need to use the `horizontalAppBarBranding` prop with the `Layout` component.
 
 The value accepted by this prop is:
 
@@ -518,13 +471,8 @@ Here is the code to change the app logo:
 import { ReactNode } from 'react'
 import Image from 'next/image'
 import Box from '@mui/material/Box'
-import { Theme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
-import useMediaQuery from '@mui/material/useMediaQuery'
 import Layout from 'src/@core/layouts/Layout'
-import VerticalNavItems from 'src/navigation/vertical'
-import { useSettings } from 'src/@core/hooks/useSettings'
-import HorizontalNavItems from 'src/navigation/horizontal'
 
 interface Props {
   children: ReactNode
@@ -533,7 +481,7 @@ interface Props {
 const AppBrand = () => {
   return (
     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-      <Image src='/images/icons/project-icons/react.png' alt='logo' width={30} height={30} />
+      <Image src='...' alt='logo' width={30} height={30} />
       <Typography variant='h6' sx={{ ml: 2 }}>
         React
       </Typography>
@@ -542,18 +490,10 @@ const AppBrand = () => {
 }
 
 const UserLayout = ({ children }: Props) => {
-  const { settings, saveSettings } = useSettings()
-  const hidden = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
-
   return (
     <Layout
-      hidden={hidden}
-      settings={settings}
-      saveSettings={saveSettings}
+      {...} // other props
       horizontalAppBarBranding={() => <AppBrand />}
-      {...(settings.layout === 'horizontal'
-        ? { horizontalNavItems: HorizontalNavItems() }
-        : { verticalNavItems: VerticalNavItems() })}
     >
       {children}
     </Layout>
@@ -569,7 +509,7 @@ Result:
 
 ### 2. Horizontal menu items
 
-If you want to change the menu, you need to use `horizontalNavMenuContent` prop with the `Layout` component.
+If you want to change the menu, you need to use the `horizontalNavMenuContent` prop with the `Layout` component.
 
 The value accepted by this prop is:
 
@@ -581,30 +521,17 @@ Here is the code to change the menu:
 
 ```tsx
 import { ReactNode } from 'react'
-import { Theme } from '@mui/material/styles'
-import useMediaQuery from '@mui/material/useMediaQuery'
 import Layout from 'src/@core/layouts/Layout'
-import VerticalNavItems from 'src/navigation/vertical'
-import { useSettings } from 'src/@core/hooks/useSettings'
-import HorizontalNavItems from 'src/navigation/horizontal'
 
 interface Props {
   children: ReactNode
 }
 
 const UserLayout = ({ children }: Props) => {
-  const { settings, saveSettings } = useSettings()
-  const hidden = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
-
   return (
     <Layout
-      hidden={hidden}
-      settings={settings}
-      saveSettings={saveSettings}
+      {...} // other props
       horizontalNavMenuContent={() => 'I am menu which is overridden by the user'}
-      {...(settings.layout === 'horizontal'
-        ? { horizontalNavItems: HorizontalNavItems() }
-        : { verticalNavItems: VerticalNavItems() })}
     >
       {children}
     </Layout>
@@ -620,9 +547,9 @@ Result:
 
 ### 3. Hide menu based on screen size
 
-`hidden` prop is used to hide the horizontal menu at given screen size. The menu will be accessible from the Hamburger menu icon only which is known as the Vertical Overlay Menu. You can change the screen size from which you want to hide the horizontal menu.
+The `hidden` prop is used to hide the horizontal menu at a given screen size. The menu will be accessible from the Hamburger menu icon only which is known as the Vertical Overlay Menu. You can change the screen size from which you want to hide the horizontal menu.
 
-In the example below, the horizontal menu is visible above the `lg` breakpoint and on screen size below the `lg` breakpoint, it will change to a vertical overlay menu which can be accessed from the Hamburger menu icon.
+In the example below, the horizontal menu is visible above the `lg` breakpoint and on screen size below the `lg` breakpoint, it will change to the vertical overlay menu which can be accessed from the Hamburger menu icon.
 
 ```tsx
 const hidden = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
@@ -636,7 +563,7 @@ const hidden = useMediaQuery('(max-width:1365px)')
 
 ### 4. AppBar Content
 
-If you want to change the content in the navbar which is on the right side, you need to use `horizontalAppBarContent` prop with the `Layout` component.
+The content in the appBar which is on the right side comes from the user side itself and thus, it would be very easy and convenient for you to change anything in the appBar. You just have to change the code in the `src/layouts/components/horizontal/AppBarContent.tsx` file. The appBar component is then passed in the `horizontalAppBarContent` prop with the `Layout` component.
 
 The value accepted by this prop is:
 
@@ -646,9 +573,9 @@ horizontalAppBarContent?: (props?: any) => ReactNode
 
 Suppose you need the app logo, navigation menu as well as some actions in one line, then you need to follow the steps given below.
 
-Firstly, you need to hide the navigation menu section which is below the appBar from `src/configs/themeConfig.ts` file:
+Firstly, you need to hide the navigation menu section which is below the appBar from the `src/configs/themeConfig.ts` file:
 
-```tsx
+```ts
 const themeConfig: ThemeConfig = {
   ...,
   navHidden: true,
@@ -656,45 +583,58 @@ const themeConfig: ThemeConfig = {
 }
 ```
 
-Then you need to add the navigation menu and some actions in the appBar using `horizontalAppBarContent` prop with the `Layout` component:
+Then you need to change the appBar accordingly:
 
 ```tsx
-import { ReactNode } from 'react'
-import { Theme } from '@mui/material/styles'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import Layout from 'src/@core/layouts/Layout'
-import VerticalNavItems from 'src/navigation/vertical'
-import { useSettings } from 'src/@core/hooks/useSettings'
-import HorizontalNavItems from 'src/navigation/horizontal'
+// src/layouts/components/horizontal/AppBarContent.tsx
+
+import Box from '@mui/material/Box'
+import { Settings } from 'src/@core/context/settingsContext'
+import { HorizontalNavItemsType } from 'src/@core/layouts/types'
 import Navigation from 'src/@core/layouts/components/horizontal/navigation'
 import UserDropdown from 'src/@core/layouts/components/shared-components/UserDropdown'
+
+interface Props {
+  settings: Settings
+  horizontalNavItems?: HorizontalNavItemsType
+}
+const AppBarContent = (props: Props) => {
+  const { settings } = props
+
+  return (
+    <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <Navigation {...props} />
+      <UserDropdown settings={settings} />
+    </Box>
+  )
+}
+
+export default AppBarContent
+```
+
+Then you need to pass that component in the `horizontalAppBarContent` prop with the `Layout` component:
+
+```tsx
+// src/layouts/UserLayout.tsx
+
+import { ReactNode } from 'react'
+import Layout from 'src/@core/layouts/Layout'
+import { useSettings } from 'src/@core/hooks/useSettings'
+import HorizontalNavItems from 'src/navigation/horizontal'
+import HorizontalAppBarContent from 'src/layouts/components/horizontal/AppBarContent'
 
 interface Props {
   children: ReactNode
 }
 
 const UserLayout = ({ children }: Props) => {
-  const { settings, saveSettings } = useSettings()
-  const hidden = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
-
-  const AppBarContent = (props: any) => {
-    return (
-      <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Navigation {...props} />
-        <UserDropdown settings={settings} />
-      </Box>
-    )
-  }
-
+  const { settings } = useSettings()
   return (
     <Layout
-      hidden={hidden}
-      settings={settings}
-      saveSettings={saveSettings}
-      horizontalAppBarContent={(props: any) => <AppBarContent {...props} />}
-      {...(settings.layout === 'horizontal'
-        ? { horizontalNavItems: HorizontalNavItems() }
-        : { verticalNavItems: VerticalNavItems() })}
+      {...} // other props
+      horizontalAppBarContent={() => (
+        <HorizontalAppBarContent settings={settings} horizontalNavItems={HorizontalNavItems()} />
+      )}
     >
       {children}
     </Layout>
@@ -710,7 +650,7 @@ Result:
 
 ### 5. Footer
 
-If you want to change the footer, you need to use `footerContent` prop with the `Layout` component.
+If you want to change the footer, you need to use the `footerContent` prop with the `Layout` component.
 
 The value accepted by this prop is:
 
@@ -722,30 +662,17 @@ Here is the code to change the footer:
 
 ```tsx
 import { ReactNode } from 'react'
-import { Theme } from '@mui/material/styles'
-import useMediaQuery from '@mui/material/useMediaQuery'
 import Layout from 'src/@core/layouts/Layout'
-import VerticalNavItems from 'src/navigation/vertical'
-import { useSettings } from 'src/@core/hooks/useSettings'
-import HorizontalNavItems from 'src/navigation/horizontal'
 
 interface Props {
   children: ReactNode
 }
 
 const UserLayout = ({ children }: Props) => {
-  const { settings, saveSettings } = useSettings()
-  const hidden = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
-
   return (
     <Layout
-      hidden={hidden}
-      settings={settings}
-      saveSettings={saveSettings}
+      {...} // other props
       footerContent={() => 'I am footer which is overridden by the user'}
-      {...(settings.layout === 'horizontal'
-        ? { horizontalNavItems: HorizontalNavItems() }
-        : { verticalNavItems: VerticalNavItems() })}
     >
       {children}
     </Layout>
@@ -759,55 +686,57 @@ Result:
 
 <img alt='override-footer' class='medium-zoom' :src="$withBase('/images/layouts/user-override-horizontal-footer.png')" />
 
-## Blank Layout with AppBar
+## Blank Layout
 
-If you want to change the navbar, you need to use `appBarContent` prop with the `BlankLayoutWithAppBar` component in `src/layouts/UserBlankLayoutWithAppBar.tsx` file.
+If you want to change the Blank Layout, you need to follow these steps:
 
-The value accepted by this prop is:
-
-```tsx
-appBarContent?: (props?: any) => ReactNode
-```
-
-Here is the code to change the appBar:
+- Make a new file (let us say `UserBlankLayout` file name) in the `src/layouts` folder
+- Copy the whole code from the `src/@core/layouts/BlankLayout.tsx` file and paste it into the `UserBlankLayout` file
+- Edit the `UserBlankLayout` file as per your requirements
+- Now, to use this layout in any of your pages, you need to do this:
 
 ```tsx
 import { ReactNode } from 'react'
-import Image from 'next/image'
-import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
-import BlankLayoutWithAppBar from 'src/@core/layouts/BlankLayoutWithAppBar'
+import UserBlankLayout from 'src/layouts/UserBlankLayout'
 
-interface Props {
-  children: ReactNode
-}
-
-const AppBarContent = () => {
+const Login = () => {
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-      <Image src='...' alt='logo' width={30} height={30} />
-      <Typography variant='h6' sx={{ ml: 2 }}>
-        React
-      </Typography>
-      <Typography sx={{ ml: 6 }}>I am appBar which is overridden by the user</Typography>
-    </Box>
+    // Your content
   )
 }
 
-const UserBlankLayoutWithAppBar = ({ children }: Props) => {
-  return <BlankLayoutWithAppBar appBarContent={() => <AppBarContent />}>{children}</BlankLayoutWithAppBar>
-}
+Login.getLayout = (page: ReactNode) => <UserBlankLayout>{page}</UserBlankLayout>
 
-export default UserBlankLayoutWithAppBar
+export default Login
 ```
 
-Result:
+## Blank Layout with AppBar
 
-<img alt='override-blank-layout-appBar' class='medium-zoom' :src="$withBase('/images/layouts/user-override-blank-layout-appBar.png')" />
+If you want to change the navbar, you need to follow these steps:
+
+- Make a new file (let us say `UserBlankLayoutWithAppBar` file name) in the `src/layouts` folder for the Blank Layout with AppBar
+- Copy the whole code from the `src/@core/layouts/BlankLayoutWithAppBar.tsx` file and paste it into the `UserBlankLayoutWithAppBar` file
+- Remove the `AppBar` component and its import statement from the `UserBlankLayoutWithAppBar` file and make your own `AppBar` component
+- Now, to use this layout in any of your pages, you need to do this:
+
+```tsx
+import { ReactNode } from 'react'
+import UserBlankLayoutWithAppBar from 'src/layouts/UserBlankLayoutWithAppBar'
+
+const LoginWithAppBar = () => {
+  return (
+    // Your content
+  )
+}
+
+LoginWithAppBar.getLayout = (page: ReactNode) => <UserBlankLayoutWithAppBar>{page}</UserBlankLayoutWithAppBar>
+
+export default LoginWithAppBar
+```
 
 ## Scroll to Top
 
-If you want to change the scroll to top component, you need to use `scrollToTop` prop with the Layout component in `src/layouts/UserLayout.tsx` file.
+If you want to change the scroll to top component, you need to use the `scrollToTop` prop with the `Layout` component in the `src/layouts/UserLayout.tsx` file.
 
 The value accepted by this prop is:
 
@@ -821,9 +750,6 @@ Here is the code to change the scroll to top component:
 import { ReactNode } from 'react'
 import Button from '@mui/material/Button'
 import Layout from 'src/@core/layouts/Layout'
-import VerticalNavItems from 'src/navigation/vertical'
-import { useSettings } from 'src/@core/hooks/useSettings'
-import HorizontalNavItems from 'src/navigation/horizontal'
 import ScrollToTop from 'src/@core/components/scroll-to-top'
 
 interface Props {
@@ -841,16 +767,10 @@ const UserScrollToTop = () => {
 }
 
 const UserLayout = ({ children }: Props) => {
-  const { settings, saveSettings } = useSettings()
-
   return (
     <Layout
-      settings={settings}
-      saveSettings={saveSettings}
+      {...} // other props
       scrollToTop={() => <UserScrollToTop />}
-      {...(settings.layout === 'horizontal'
-        ? { horizontalNavItems: HorizontalNavItems() }
-        : { verticalNavItems: VerticalNavItems() })}
     >
       {children}
     </Layout>
