@@ -61,21 +61,3 @@ replace.sync({
 })
 
 console.log('Replaced Unwanted Code')
-
-// replace.sync({
-//   files: '../../jsx-version/src/**/*.js',
-//   from: /} = _a, rest =/g,
-//   to: ',...rest }'
-// })
-
-// replace.sync({
-//   files: '../../jsx-version/src/**/*.js',
-//   from: '...rest } __rest(_a',
-//   to: '...rest } = _a'
-// })
-
-// replace.sync({
-//   files: '../../jsx-version/src/**/*.js',
-//   from: /...rest } __rest(_a, [[a-z]])/,
-//   to: ''
-// })
