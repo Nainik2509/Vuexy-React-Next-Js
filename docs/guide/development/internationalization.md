@@ -2,7 +2,7 @@
 
 ## Overview
 
-We're using [react-i18next](https://react.i18next.com/) for Internationalization. You can find its configurations in `src/configs/i18n.ts` file and the locales in `public/locales` folder.
+We're using [react-i18next](https://react.i18next.com/) for Internationalization. You can find its configurations in `src/configs/i18n.ts` file and the locales in `public/locales` folder in the full version.
 
 ## Usage
 
@@ -50,12 +50,12 @@ yarn add i18next react-i18next i18next-http-backend i18next-browser-languagedete
 npm install i18next react-i18next i18next-http-backend i18next-browser-languagedetector
 ```
 
-- Copy `src/configs/i18n.ts` file from the full version and paste that file into the same directory in the starter-kit
+- Copy `src/configs/i18n.ts` file from the full version and paste it under the same directory in your project
 - Add `import 'src/configs/i18n'` import statement in `src/pages/_app.tsx` file
 - Add your locale files in `public/locales` folder
-- If you want to translate the navigation menu, then copy the whole code from `src/layouts/components/Translations.tsx` file from the full version and paste that copied code into the same file in the starter-kit
+- If you want to translate the navigation menu, then copy the whole code from `src/layouts/components/Translations.tsx` file from the full version and paste it under the same directory in your project
 - If you want a language dropdown in the appBar to change the current language in the app, then:
-  - Copy `public/images/flags` folder form the full version and paste that folder into the same directory in the starter-kit
+  - Copy `public/images/flags` folder form the full version and paste it under the same directory in your project
   - Import `src/@core/layouts/components/shared-components/LanguageDropdown.tsx` file and render `LanguageDropdown` component in `src/layouts/components/vertical/AppBarContent.tsx` or `src/layouts/components/horizontal/AppBarContent.tsx` file
 
 ```tsx
@@ -85,7 +85,7 @@ const Translations = ({ text }: Props) => <>{text}</>
 export default Translations
 ```
 
-- Remove `LanguageDropdown` file import and rendered component from `src/layouts/components/vertical/AppBarContent.tsx` or `src/layouts/components/horizontal/AppBarContent.tsx` file
+- Remove `LanguageDropdown` file import statement and rendered component from `src/layouts/components/vertical/AppBarContent.tsx` or `src/layouts/components/horizontal/AppBarContent.tsx` file
 
 ```tsx
 <LanguageDropdown settings={settings} saveSettings={saveSettings} />
@@ -97,7 +97,7 @@ Suppose you want to add `de` (German) language and remove `ar` (Arabic) language
 
 - Remove `public/locales/ar.json` file and add `public/locales/de.json` file. You need to keep the format of the file as it is in other locale files
 - Remove `ar` related SVG images and add `de` related images in `public/images/flags` folder
-- Make a new file anywhere in `src/assets` folder and place the following code in this file
+- Make a new file in `src/layouts/components` folder and place the following code in this file
 
 ```tsx
 // src/layouts/components/UserLanguageDropdown.tsx
@@ -199,69 +199,33 @@ const UserLanguageDropdown = ({ settings }: Props) => {
 export default UserLanguageDropdown
 ```
 
-- Import the new file and pass it as a prop in `src/layouts/UserLayout.tsx` file
+- Import the `src/layouts/components/UserLanguageDropdown.tsx` file and render it in the `src/layouts/components/vertical/AppBarContent.tsx` or `src/layouts/components/horizontal/AppBarContent.tsx` file.
 
 ```tsx
-// src/layouts/UserLayout.tsx
+// src/layouts/components/vertical/AppBarContent.tsx
+// OR
+// src/layouts/components/horizontal/AppBarContent.tsx
 
-import { ReactNode } from 'react'
-import { Theme } from '@mui/material/styles'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import VerticalNavItems from 'src/navigation/vertical'
-import { useSettings } from 'src/@core/hooks/useSettings'
-import HorizontalNavItems from 'src/navigation/horizontal'
 import UserLanguageDropdown from 'src/layouts/components/UserLanguageDropdown'
 
-// ** Layout Imports
-// !Do not remove this Layout import
-import Layout from 'src/@core/layouts/Layout'
-
 interface Props {
-  children: ReactNode
+  hidden: boolean
+  settings: Settings
+  toggleNavVisibility: () => void
+  setShowBackdrop: (val: boolean) => void
+  saveSettings: (values: Settings) => void
 }
 
-const UserLayout = ({ children }: Props) => {
-  // ** Hook
-  const { settings, saveSettings } = useSettings()
-
-  // ** Var
-  const hidden = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
+const AppBarContent = (props: Props) => {
+  const { hidden, settings, saveSettings, setShowBackdrop, toggleNavVisibility } = props
 
   return (
-    <Layout
-      hidden={hidden}
-      settings={settings}
-      saveSettings={saveSettings}
-      {...(settings.layout === 'horizontal'
-        ? { horizontalNavItems: HorizontalNavItems() }
-        : { verticalNavItems: VerticalNavItems() })}
-      {...(settings.layout === 'horizontal'
-        ? {
-            horizontalAppBarContent: props => (
-              <HorizontalAppBarContent
-                hidden={hidden}
-                settings={settings}
-                saveSettings={saveSettings}
-                setShowBackdrop={props.setShowBackdrop}
-              />
-            )
-          }
-        : {
-            verticalAppBarContent: props => (
-              <VerticalAppBarContent
-                hidden={hidden}
-                settings={settings}
-                saveSettings={saveSettings}
-                setShowBackdrop={props.setShowBackdrop}
-                toggleNavVisibility={props.toggleNavVisibility}
-              />
-            )
-          })}
-    >
-      {children}
-    </Layout>
+    <>
+      {/* Your some content */}
+      <UserLanguageDropdown settings={settings} />
+    </>
   )
 }
 
-export default UserLayout
+export default AppBarContent
 ```
