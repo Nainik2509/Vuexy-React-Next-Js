@@ -6,6 +6,7 @@ const demoConfigPath = './demoConfigs.json'
 const demoConfigsDir = '../../demo-configs'
 const defaultConfigPath = '../../src/configs/themeConfig.ts'
 
+// ** Delete All Previously Generated Demo Files
 fs.readdir(demoConfigsDir, (err, files) => {
   if (err) throw err
 

@@ -4,11 +4,6 @@ const path = require('path')
 const srcDirPath = '../../jsx-version/src'
 const packageFilePath = '../../jsx-version/package.json'
 
-// deletes root types folder
-// fs.rmdirSync('../../jsx-version/src/types', { recursive: true, force: true }, err =>
-//   console.log(err || 'Deleted: Root Types folder')
-// )
-
 const scanDir = function (dir, callback) {
   fs.readdir(dir, function (err, list) {
     if (err) return callback(err)
@@ -34,12 +29,6 @@ const scanDir = function (dir, callback) {
 }
 
 scanDir(srcDirPath, () => console.log('Removed Type Files'))
-
-function setCharAt(str, index, chr) {
-  if (index > str.length - 1) return str
-
-  return str.substring(0, index) + chr + str.substring(index + 1)
-}
 
 // remove ts and tsx extensions from yarn format and yarn lint commands from package.json file
 if (fs.existsSync(packageFilePath)) {
