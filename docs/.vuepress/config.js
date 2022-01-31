@@ -83,11 +83,6 @@ module.exports = {
           ]
         },
         {
-          title: 'Forms',
-          collapsable: false,
-          children: ['/guide/forms/input-group']
-        },
-        {
           title: 'Custom Components',
           collapsable: false,
           children: [
