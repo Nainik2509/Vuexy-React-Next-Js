@@ -1,4 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+   <a href="https://themeselection.com/products/materio-mui-react-nextjs-admin-template/" target="_blank">
+      <img src="https://user-images.githubusercontent.com/64475785/151975658-07d55d5b-01c0-4481-bc40-4bfc7a8d1767.svg" alt="materio-logo" width="30px" height="auto">
+   </a>
+</p>
+  
+<h1 align="center">
+   <a href="https://themeselection.com/products/materio-mui-react-nextjs-admin-template/" target="_blank" align="center">
+      Materio - MUI React NextJS Admin Template
+   </a>
+</h1>
+
+<p align="center">Most Powerful & Comprehensive MUI React NextJS Admin Dashboard Template built for developers!</p>
+
+<p align="center">   
+  <a href="https://twitter.com/Theme_Selection" target="_blank">
+     <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/Theme_Selection">
+  </a>
+</p>
+
+[![Materio - MUI React NextJS Admin Template Demo Screenshot](https://user-images.githubusercontent.com/749684/150332366-9cbb97d3-72de-4844-a291-ca665b6c7b91.png)](https://themeselection.com/products/materio-mui-react-nextjs-admin-template/)
+
+## Introduction
+
+If you’re a developer looking for most Powerful & comprehensive **MUI React NextJS Admin Dashboard Template** built for developers, rich with features, and highly customizable, look no further than Materio. We’ve followed the highest industry standards to bring you the very best admin template that is not only easy to use but highly scalable. Offering ultimate convenience and flexibility, you’ll be able to build whatever application you want with very little hassle.
+
+Build premium quality applications with ease. Use our innovative admin template to create eye-catching, high-quality WebApps. Your apps will be completely responsive, ensuring they’ll look stunning and function flawlessly on desktops, tablets, and mobile devices.
+
+[View Demo](https://themeselection.com/demo/materio-mui-react-nextjs-admin-template/landing/)
 
 ## Getting Started
 
@@ -14,10 +42,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
@@ -32,3 +56,43 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Documentation 📜
+
+Check out our live [Documentation](https://themeselection.com/demo/materio-mui-react-nextjs-admin-template/documentation/)
+
+## Support 👨‍💻
+
+We use GitHub issues as support tickets to manage Item support.
+
+1. In order to raise the GitHub issue, you must have our Premium Item repository access. [Get repo access](https://themeselection.com/tools/github/github-access)
+2. Make sure you use our [Raise Support](https://themeselection.com/tools/github/raise-support) form to create an issue.
+
+## Contributing 🦸
+
+Contribution are always welcome and recommended! Here is how:
+
+- Fork the repository ([here is the guide](https://docs.github.com/en/get-started/quickstart/fork-a-repo)).
+- Clone to your machine `git clone https://github.com/YOUR_USERNAME/REPO_URL` Make your changes
+- Create a pull request
+
+### Contribution Requirements 🧰
+
+- When you contribute, you agree to give a non-exclusive license to ThemeSelection to use that contribution in any context as we (ThemeSelection) see appropriate.
+- If you use content provided by another party, it must be appropriately licensed using an open source license.
+- Contributions are only accepted through Github pull requests.
+- Finally, contributed code must work in all supported browsers.
+
+## Creators 😇
+
+- [ThemeSelection](https://themeselection.com)
+
+## Changelog 📆
+
+Please refer to the [CHANGELOG](CHANGELOG.md) file. We will add a detailed release notes to each new release.
+
+## Social Media 🌍
+
+- Twitter : [https://twitter.com/themeselect](https://twitter.com/themeselect)
+- Facebook : [https://www.facebook.com/ThemeSelections/](https://www.facebook.com/ThemeSelections/)
+- Pinterest : [https://pinterest.com/themeselect/](https://pinterest.com/themeselect/)
+- Instagram : [https://www.instagram.com/themeselection/](https://www.instagram.com/themeselection/)
