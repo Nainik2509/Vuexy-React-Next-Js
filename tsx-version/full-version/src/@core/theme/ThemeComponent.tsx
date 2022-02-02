@@ -23,7 +23,7 @@ import typography from './typography'
 
 // ** Theme
 import themeOptions from './ThemeOptions'
-import UserThemeOptions from 'src/assets/UserThemeOptions'
+import UserThemeOptions from 'src/layouts/UserThemeOptions'
 
 // ** Global Styles
 import GlobalStyling from './globalStyles'
