@@ -92,7 +92,7 @@ Please refer to the [CHANGELOG](CHANGELOG.md) file. We will add a detailed relea
 
 ## Social Media 🌍
 
-- Twitter : [https://twitter.com/themeselect](https://twitter.com/themeselect)
+- Twitter : [https://twitter.com/Theme_Selection](https://twitter.com/Theme_Selection)
 - Facebook : [https://www.facebook.com/ThemeSelections/](https://www.facebook.com/ThemeSelections/)
 - Pinterest : [https://pinterest.com/themeselect/](https://pinterest.com/themeselect/)
 - Instagram : [https://www.instagram.com/themeselection/](https://www.instagram.com/themeselection/)
