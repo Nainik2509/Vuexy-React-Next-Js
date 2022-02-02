@@ -34,6 +34,7 @@ module.exports = {
             '/guide/development/installation',
             '/guide/development/folder-structure',
             '/guide/development/routing',
+            '/guide/development/theming',
             '/guide/development/deployment',
             '/guide/development/redux',
             '/guide/development/fakedb',
