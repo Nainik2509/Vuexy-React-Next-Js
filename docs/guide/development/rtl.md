@@ -14,7 +14,7 @@ We have created a hook to make it easier for you to toggle between `LTR` & `RTL`
 
 You can find the hook in `src/utility/hooks/layout/useDirection`. Refer below code for usage example.
 
-```jsx
+```tsx
 import useDirection from 'hooks/layout/useDirection'
 
 const Component = () => {

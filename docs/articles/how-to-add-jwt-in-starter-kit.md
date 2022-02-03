@@ -4,7 +4,7 @@ react-material-admin uses context & fake-db to authenticate users. Follow these 
 
 1. Wrap your components with `AuthProvider` in `_app.tsx` file.
 
-```jsx _app.tsx
+```tsx _app.tsx
 // ** Contexts
 import { AuthProvider } from 'src/@core/context/AuthContext'
 

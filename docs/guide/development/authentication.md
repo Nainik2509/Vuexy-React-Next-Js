@@ -10,7 +10,7 @@ We have created an Authentication context that returns all the necessary functio
 
 ## Usage Example
 
-```jsx
+```tsx
 import { useAuth } from 'src/@core/hooks/useAuth'
 
 const Component = () => {

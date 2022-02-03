@@ -41,7 +41,7 @@ Following are the properties and their values that are stored in `localStorage` 
 
 Settings context relies on the [context feature of React](https://reactjs.org/docs/context.html) to pass the settings down to the components. Settings context exports `SettingsProvider` and `SettingsConsumer` and they must be parents of `ThemeComponent` in `_app.tsx` file. See the following code:
 
-```jsx
+```tsx
 <SettingsProvider>
   <SettingsConsumer>
     {({ settings }) => <ThemeComponent settings={settings}>{getLayout(<Component {...pageProps} />)}</ThemeComponent>}

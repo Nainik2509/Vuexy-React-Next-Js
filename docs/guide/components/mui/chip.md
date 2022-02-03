@@ -1,20 +1,22 @@
-# Chips
+# Chip
 
 ## Overview
+
+Please visit [MUI Chip Docs](https://mui.com/components/chips/) for a proper explanation of the `Chip` component.
 
 Chip component is slightly modified to make it more beautiful and useable. Let's have a glance.
 
 ::: tip Note
-We have only mentioned the extended props here you can still use the default mui Chips props.
+We have only mentioned the extended props here you can still use the default MUI chip props.
 :::
 
-## Chips Skins
+## Chip Skins
 
-There is only one Chip skin `light`.
+There is only one chip skin `light`.
 
-Here is the example of how to use the skin:
+Here is an example of how to use the skin:
 
-```jsx
+```tsx
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
 
@@ -33,5 +35,5 @@ Result:
 ## Props
 
 | Prop |  Type   | Required |      description |
-| ---- | :-----: | -------: | ---------------: |
-| skin | `light` |       No | Skin of the Chip |
+| ---- | :------ | :------- | :--------------- |
+| skin | `light` |       No | Skin of the chip |

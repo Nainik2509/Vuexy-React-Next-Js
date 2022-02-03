@@ -10,7 +10,7 @@ First of all make sure you have installed [Node](https://nodejs.org/en/) and [np
 Yarn package manager is recommended
 :::
 
-::: warning
+::: danger Requirements
 Please make sure you use the node’s LTS version which is recommended by the official node site and not the one with the latest features or previous versions. Our project is not tested wot work with other Node versions.
 :::
 

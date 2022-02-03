@@ -18,7 +18,7 @@ This loads `process.env.DB_HOST`, `process.env.DB_USER`, and `process.env.DB_PAS
 
 For example, using `getStaticProps`:
 
-```jsx
+```tsx
 // pages/index.js
 export async function getStaticProps() {
   const db = await myDB.connect({
@@ -48,7 +48,7 @@ Do not store any secrets (such as private API keys or passwords) in the public v
 
 Having access to the `NODE_ENV` is also useful for performing actions conditionally:
 
-```jsx
+```tsx
 if (process.env.NODE_ENV !== 'production') {
   analytics.disable()
 }

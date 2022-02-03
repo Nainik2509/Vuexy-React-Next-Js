@@ -12,7 +12,7 @@ If you want to change the default layout for a particular page, you can use the 
 
 Here is an example of how to change the layout from default layout to blank layout for any page:
 
-```jsx
+```tsx
 import { ReactNode } from 'react'
 import BlankLayout from 'src/@core/layouts/BlankLayout'
 
@@ -33,7 +33,7 @@ export default Login
 
 Here is an example of how to change the layout from default layout to blank layout with appBar for any page:
 
-```jsx
+```tsx
 import { ReactNode } from 'react'
 import BlankLayoutWithAppBar from 'src/@core/layouts/BlankLayoutWithAppBar'
 
@@ -54,7 +54,7 @@ export default Login
 
 Refer to the code below to create a blog layout:
 
-```jsx
+```tsx
 import { ReactNode } from 'react'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'

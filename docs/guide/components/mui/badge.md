@@ -2,19 +2,21 @@
 
 ## Overview
 
+Please visit [MUI Badge Docs](https://mui.com/components/badges/) for a proper explanation of the `Badge` component.
+
 Badge component is slightly modified to make it more beautiful and useable. Let's have a glance.
 
 ::: tip Note
-We have only mentioned the extended props here you can still use the default mui Badge props.
+We have only mentioned the extended props here you can still use the default MUI badge props.
 :::
 
 ## Badge Skins
 
 There is only one badge skin `light`.
 
-Here is the example of how to use the skin:
+Here is an example of how to use the skin:
 
-```jsx
+```tsx
 // ** MUI Imports
 import Avatar from '@mui/material/Avatar'
 
@@ -47,6 +49,6 @@ Result:
 
 ## Props
 
-| Prop |  Type   | Required |       description |
-| ---- | :-----: | -------: | ----------------: |
+| Prop |  Type   | Required |       Description |
+| ---- | :------ | :------- | :---------------- |
 | skin | `light` |       No | Skin of the Badge |

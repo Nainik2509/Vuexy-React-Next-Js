@@ -8,7 +8,7 @@ You can have a specific settings depending on your needs.
 
 To change a setting for a specific page use `setConfig` method and return a object with your settings like show below:
 
-```jsx
+```tsx
 const AnalyticsDashboard = () => <h1>Analytics Dashboard</h1>
 
 AnalyticsDashboard.setConfig = () => {

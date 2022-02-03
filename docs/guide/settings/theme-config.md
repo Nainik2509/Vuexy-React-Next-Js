@@ -8,7 +8,7 @@ To configure your template, we will be using `/src/configs/themeConfig.ts` file,
 
 Following are the properties with their values that we have used in the theme:
 
-```jsx
+```tsx
 const themeConfig = {
   templateName: 'Master',
   layout: 'vertical',

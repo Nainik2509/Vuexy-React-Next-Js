@@ -9,7 +9,7 @@ requires both height & width.
 
 In that case, you can do something like this:
 
-```jsx
+```tsx
 <Box sx={{ width: 35, height: 35 }}>
   <Img width='100%' height='100%' layout='responsive' objectFit='contain' src='/images/logos/facebook.png' />
 </Box>

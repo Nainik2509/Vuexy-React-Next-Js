@@ -19,31 +19,15 @@ module.exports = {
       '/guide/': [
         ['', 'Welcome'],
         {
-          title: 'Getting Started',
+          title: 'Overview',
           collapsable: false,
           children: [
-            '/guide/getting-started/starter-kit-vs-full-package',
-            '/guide/getting-started/support',
-            '/guide/getting-started/github-access'
-          ]
-        },
-        {
-          title: 'Development',
-          collapsable: false,
-          children: [
-            '/guide/development/installation',
-            '/guide/development/folder-structure',
-            '/guide/development/routing',
-            '/guide/development/theming',
-            '/guide/development/deployment',
-            '/guide/development/redux',
-            '/guide/development/fakedb',
-            '/guide/development/authentication',
-            '/guide/development/internationalization',
-            '/guide/development/rtl',
-            '/guide/development/loaders',
-            '/guide/development/demo-config',
-            '/guide/development/environment-variables'
+            '/guide/overview/getting-started',
+            '/guide/overview/starter-kit-vs-full-package',
+            '/guide/overview/dependencies',
+            '/guide/overview/installation',
+            '/guide/overview/support',
+            '/guide/overview/github-access'
           ]
         },
         {
@@ -74,25 +58,58 @@ module.exports = {
           ]
         },
         {
-          title: 'Components',
+          title: 'Development',
           collapsable: false,
           children: [
-            '/guide/components/cards',
-            '/guide/components/avatar',
-            '/guide/components/badge',
-            '/guide/components/chips'
+            '/guide/development/folder-structure',
+            '/guide/development/routing',
+            '/guide/development/deployment',
+            '/guide/development/redux',
+            '/guide/development/fakedb',
+            '/guide/development/authentication',
+            '/guide/development/internationalization',
+            '/guide/development/rtl',
+            '/guide/development/loaders',
+            '/guide/development/demo-config',
+            '/guide/development/environment-variables'
           ]
         },
         {
-          title: 'Custom Components',
+          title: 'Components',
           collapsable: false,
           children: [
-            '/guide/custom-components/sidebar',
-            '/guide/custom-components/chatlog',
-            '/guide/custom-components/repeater',
-            '/guide/custom-components/apex-charts',
-            '/guide/custom-components/react-draft-wysiwyg'
+            {
+              title: 'MUI',
+              collapsable: true,
+              children: [
+                '/guide/components/mui/avatar',
+                '/guide/components/mui/badge',
+                '/guide/components/mui/card',
+                '/guide/components/mui/chip',
+                '/guide/components/mui/timeline-dot'
+              ]
+            },
+            {
+              title: 'Custom',
+              collapsable: true,
+              children: [
+                '/guide/components/custom/apexcharts',
+                '/guide/components/custom/react-draft-wysiwyg',
+                '/guide/components/custom/chat-log',
+                '/guide/components/custom/page-header',
+                '/guide/components/custom/react-datepicker',
+                '/guide/components/custom/repeater',
+                '/guide/components/custom/sidebar'
+              ]
+            },
+            '/guide/components/override-components',
+            '/guide/components/styled-components'
           ]
+        },
+        {
+          title: 'Others',
+          collapsable: false,
+          children: ['/guide/others/credits']
         }
       ],
       '/faq/': [
