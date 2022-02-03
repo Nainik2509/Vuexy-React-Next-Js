@@ -196,5 +196,3 @@ sidebarDepth: 0
 "eslint-config-next"
 "eslint-config-prettier"
 ```
-
-"sharp"
