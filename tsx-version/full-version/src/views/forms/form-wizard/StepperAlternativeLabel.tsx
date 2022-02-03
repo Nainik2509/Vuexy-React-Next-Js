@@ -31,7 +31,7 @@ import StepperCustomDot from './StepperCustomDot'
 import toast from 'react-hot-toast'
 
 // ** Styled Component
-import StepperWrapper from 'src/@core/styles/mui/components/stepper'
+import StepperWrapper from 'src/@core/styles/mui/stepper'
 
 interface State {
   password: string

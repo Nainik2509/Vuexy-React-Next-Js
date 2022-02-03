@@ -36,7 +36,7 @@ import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 import StepperCustomDot from './StepperCustomDot'
 
 // ** Styled Components
-import StepperWrapper from 'src/@core/styles/mui/components/stepper'
+import StepperWrapper from 'src/@core/styles/mui/stepper'
 
 interface State {
   password: string
