@@ -31,7 +31,7 @@ If you decide to use **npm**. Make sure you use following command: **npm install
 yarn install
 
 # For npm
-npm install
+npm install --legacy-peer-deps
 ```
 
 - After installing the modules run your project with following command:
