@@ -9,9 +9,6 @@ import MuiToolbar, { ToolbarProps } from '@mui/material/Toolbar'
 // ** Type Import
 import { Settings } from 'src/@core/context/settingsContext'
 
-// ** Theme Config Import
-import themeConfig from 'src/configs/themeConfig'
-
 interface Props {
   hidden: boolean
   settings: Settings
@@ -26,7 +23,7 @@ const AppBar = styled(MuiAppBar)<AppBarProps>(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   color: theme.palette.text.primary,
-  minHeight: themeConfig.appBarHeight
+  minHeight: theme.mixins.toolbar.minHeight
 }))
 
 const Toolbar = styled(MuiToolbar)<ToolbarProps>(({ theme }) => ({
@@ -64,7 +61,8 @@ const LayoutAppBar = (props: Props) => {
         className='navbar-content-container'
         sx={{
           ...(contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } }),
-          minHeight: `${themeConfig.appBarHeight - (skin === 'bordered' ? 1 : 0)}px !important`
+          minHeight: theme =>
+            `${(theme.mixins.toolbar.minHeight as number) - (skin === 'bordered' ? 1 : 0)}px !important`
         }}
       >
         {(userVerticalAppBarContent && userVerticalAppBarContent(props)) || null}

@@ -14,9 +14,6 @@ import { sendMsg, selectChat, fetchUserProfile, fetchChatsContacts } from 'src/s
 import { RootState } from 'src/store'
 import { StatusObjType, StatusType } from 'src/types/apps/chatTypes'
 
-// ** Configs Imports
-import themeConfig from 'src/configs/themeConfig'
-
 // ** Hooks
 import { useSettings } from 'src/@core/hooks/useSettings'
 
@@ -64,9 +61,9 @@ const AppChat = () => {
   const handleUserProfileRightSidebarToggle = () => setUserProfileRightOpen(!userProfileRightOpen)
 
   const calculateAppHeight = () => {
-    return `(${themeConfig.appBarHeight * (layout === 'horizontal' && !navHidden ? 2 : 1) + 56}px + ${theme.spacing(
-      6
-    )} * 2)`
+    return `(${
+      (theme.mixins.toolbar.minHeight as number) * (layout === 'horizontal' && !navHidden ? 2 : 1) + 56
+    }px + ${theme.spacing(6)} * 2)`
   }
 
   return (

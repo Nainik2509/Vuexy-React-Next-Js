@@ -54,6 +54,11 @@ const themeOptions = (settings: Settings): ThemeOptions => {
       breakpoints: breakpoints(),
       shape: {
         borderRadius: 6
+      },
+      mixins: {
+        toolbar: {
+          minHeight: 64
+        }
       }
     },
     userThemeConfig

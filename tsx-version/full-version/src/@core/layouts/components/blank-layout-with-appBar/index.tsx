@@ -27,7 +27,7 @@ const BlankLayoutAppBar = () => {
         sx={{
           justifyContent: 'space-between',
           padding: theme => `${theme.spacing(0, 6)} !important`,
-          minHeight: `${themeConfig.appBarHeight}px !important`
+          minHeight: `${theme.mixins.toolbar.minHeight}px !important`
         }}
       >
         <Link href='/' passHref>

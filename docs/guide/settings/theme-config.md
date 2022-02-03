@@ -27,7 +27,6 @@ const themeConfig = {
   collapsedNavigationSize: 69,
   horizontalMenuToggle: 'hover',
   appBar: 'fixed',
-  appBarHeight: 64,
   responsiveFontSizes: true,
   disableRipple: false,
   disableCustomizer: false,
@@ -59,7 +58,6 @@ Following is the table of all the properties and their possible values that are 
 | collapsedNavigationSize | `number` | Width of navigation menu when menu is collapsed |
 | horizontalMenuToggle | `'click'`, `'hover'` | Set behavior of menu group in the horizontal navigation menu |
 | appBar | `'fixed'`, `'static'`, `'hidden'` | Change appBar position |
-| appBarHeight | `number` | Height of the AppBar |
 | responsiveFontSizes | `true`, `false` | If `true`, responsive font sizes are enabled |
 | disableRipple | `true`, `false` | If `true`, the Ripple effect is disabled |
 | disableCustomizer | `true`, `false` | If `true`, customizer is disabled as right sidebar to configure in live app |

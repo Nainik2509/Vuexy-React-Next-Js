@@ -9,9 +9,6 @@ import Box from '@mui/material/Box'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 
-// ** Configs Import
-import themeConfig from 'src/configs/themeConfig'
-
 // ** Hooks
 import { useSettings } from 'src/@core/hooks/useSettings'
 
@@ -80,9 +77,9 @@ const EmailAppLayout = ({ folder, label }: MailLayoutType) => {
   const handleLeftSidebarToggle = () => setLeftSidebarOpen(!leftSidebarOpen)
 
   const calculateAppHeight = () => {
-    return `(${themeConfig.appBarHeight * (layout === 'horizontal' && !navHidden ? 2 : 1) + 56}px + ${theme.spacing(
-      6
-    )} * 2)`
+    return `(${
+      (theme.mixins.toolbar.minHeight as number) * (layout === 'horizontal' && !navHidden ? 2 : 1) + 56
+    }px + ${theme.spacing(6)} * 2)`
   }
 
   return (

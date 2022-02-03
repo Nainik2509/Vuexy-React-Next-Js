@@ -276,9 +276,8 @@ const AutocompleteComponent = ({ hidden, setShowBackdrop }: Props) => {
           <SearchBox
             sx={{
               ...(openSearchBox ? { top: 0 } : {}),
-              ...(layout === 'horizontal' || skin === 'bordered'
-                ? { height: themeConfig.appBarHeight - 1 }
-                : { height: themeConfig.appBarHeight }),
+              height: theme =>
+                (theme.mixins.toolbar.minHeight as number) - (layout === 'horizontal' || skin === 'bordered' ? 1 : 0),
               ...(layout === 'vertical' && appBar === 'static'
                 ? {
                     right: theme => theme.spacing(6),

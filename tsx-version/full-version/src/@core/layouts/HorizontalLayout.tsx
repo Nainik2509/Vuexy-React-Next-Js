@@ -108,8 +108,8 @@ const HorizontalLayout = (props: LayoutProps) => {
             className='navbar-content-container'
             sx={{
               mx: 'auto',
-              minHeight: `${themeConfig.appBarHeight - 1}px !important`,
-              ...(contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } })
+              ...(contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } }),
+              minHeight: theme => `${(theme.mixins.toolbar.minHeight as number) - 1}px !important`
             }}
           >
             <AppBarContent
@@ -130,7 +130,8 @@ const HorizontalLayout = (props: LayoutProps) => {
               sx={{
                 mx: 'auto',
                 ...(contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } }),
-                minHeight: `${themeConfig.appBarHeight - (skin === 'bordered' ? 1 : 0)}px !important`
+                minHeight: theme =>
+                  `${(theme.mixins.toolbar.minHeight as number) - (skin === 'bordered' ? 1 : 0)}px !important`
               }}
             >
               {(userHorizontalNavMenuContent && userHorizontalNavMenuContent(props)) || <Navigation {...props} />}
