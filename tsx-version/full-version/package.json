@@ -61,7 +61,6 @@
     "react-redux": "^7.2.6",
     "react-to-pdf": "^0.0.14",
     "recharts": "^2.1.6",
-    "sharp": "^0.29.3",
     "stylis": "^4.0.10",
     "stylis-plugin-rtl": "^2.1.1",
     "yup": "0.32.9"

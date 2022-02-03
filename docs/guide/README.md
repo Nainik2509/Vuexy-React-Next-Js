@@ -2,7 +2,7 @@
 
 <h2>Rapidly build stunning React Web Apps based on MUI with Master template</h2>
 
-We present you with a Developer friendly, Highly customizable & Carefully crafted React Admin Dashboard Template.
+We present you with a Developer friendly, Highly customizable & Carefully crafted React Admin Dashboard Template based on Next.js.
 
 Thanks for purchasing our template 🙂. Let's get you up and running.
 
