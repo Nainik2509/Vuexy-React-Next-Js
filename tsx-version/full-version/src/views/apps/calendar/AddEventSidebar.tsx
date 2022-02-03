@@ -231,113 +231,115 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
         </Box>
       </Box>
       <Box className='sidebar-body' sx={{ padding: theme => theme.spacing(5, 6) }}>
-        <form onSubmit={handleSubmit(onSubmit)} autoComplete='off'>
-          <FormControl fullWidth sx={{ mb: 6 }}>
-            <Controller
-              name='title'
-              control={control}
-              rules={{ required: true }}
-              render={({ field: { value, onChange } }) => (
-                <TextField label='Title' value={value} onChange={onChange} error={Boolean(errors.title)} />
+        <DatePickerWrapper>
+          <form onSubmit={handleSubmit(onSubmit)} autoComplete='off'>
+            <FormControl fullWidth sx={{ mb: 6 }}>
+              <Controller
+                name='title'
+                control={control}
+                rules={{ required: true }}
+                render={({ field: { value, onChange } }) => (
+                  <TextField label='Title' value={value} onChange={onChange} error={Boolean(errors.title)} />
+                )}
+              />
+              {errors.title && (
+                <FormHelperText sx={{ color: 'error.main' }} id='event-title-error'>
+                  This field is required
+                </FormHelperText>
               )}
+            </FormControl>
+            <FormControl fullWidth sx={{ mb: 6 }}>
+              <InputLabel id='event-calendar'>Calendar</InputLabel>
+              <Select
+                label='Calendar'
+                value={values.calendar}
+                labelId='event-calendar'
+                onChange={e => setValues({ ...values, calendar: e.target.value })}
+              >
+                <MenuItem value='Personal'>Personal</MenuItem>
+                <MenuItem value='Business'>Business</MenuItem>
+                <MenuItem value='Family'>Family</MenuItem>
+                <MenuItem value='Holiday'>Holiday</MenuItem>
+                <MenuItem value='ETC'>ETC</MenuItem>
+              </Select>
+            </FormControl>
+            <Box sx={{ mb: 6 }}>
+              <DatePicker
+                selectsStart
+                id='event-start-date'
+                endDate={values.endDate as EventDateType}
+                selected={values.startDate as EventDateType}
+                startDate={values.startDate as EventDateType}
+                showTimeSelect={!values.allDay}
+                dateFormat={!values.allDay ? 'yyyy-MM-dd hh:mm' : 'yyyy-MM-dd'}
+                customInput={<PickersComponent label='Start Date' registername='startDate' />}
+                onChange={(date: Date) => setValues({ ...values, startDate: new Date(date) })}
+                onSelect={handleStartDate}
+              />
+            </Box>
+            <Box sx={{ mb: 6 }}>
+              <DatePicker
+                selectsEnd
+                id='event-end-date'
+                endDate={values.endDate as EventDateType}
+                selected={values.endDate as EventDateType}
+                minDate={values.startDate as EventDateType}
+                startDate={values.startDate as EventDateType}
+                showTimeSelect={!values.allDay}
+                dateFormat={!values.allDay ? 'yyyy-MM-dd hh:mm' : 'yyyy-MM-dd'}
+                customInput={<PickersComponent label='End Date' registername='endDate' />}
+                onChange={(date: Date) => setValues({ ...values, endDate: new Date(date) })}
+              />
+            </Box>
+            <FormControl sx={{ mb: 6 }}>
+              <FormControlLabel
+                label='All Day'
+                control={
+                  <Switch checked={values.allDay} onChange={e => setValues({ ...values, allDay: e.target.checked })} />
+                }
+              />
+            </FormControl>
+            <TextField
+              fullWidth
+              type='url'
+              id='event-url'
+              sx={{ mb: 6 }}
+              label='Event URL'
+              value={values.url}
+              onChange={e => setValues({ ...values, url: e.target.value })}
             />
-            {errors.title && (
-              <FormHelperText sx={{ color: 'error.main' }} id='event-title-error'>
-                This field is required
-              </FormHelperText>
-            )}
-          </FormControl>
-          <FormControl fullWidth sx={{ mb: 6 }}>
-            <InputLabel id='event-calendar'>Calendar</InputLabel>
-            <Select
-              label='Calendar'
-              value={values.calendar}
-              labelId='event-calendar'
-              onChange={e => setValues({ ...values, calendar: e.target.value })}
-            >
-              <MenuItem value='Personal'>Personal</MenuItem>
-              <MenuItem value='Business'>Business</MenuItem>
-              <MenuItem value='Family'>Family</MenuItem>
-              <MenuItem value='Holiday'>Holiday</MenuItem>
-              <MenuItem value='ETC'>ETC</MenuItem>
-            </Select>
-          </FormControl>
-          <DatePickerWrapper sx={{ mb: 6 }}>
-            <DatePicker
-              selectsStart
-              id='event-start-date'
-              endDate={values.endDate as EventDateType}
-              selected={values.startDate as EventDateType}
-              startDate={values.startDate as EventDateType}
-              showTimeSelect={!values.allDay}
-              dateFormat={!values.allDay ? 'yyyy-MM-dd hh:mm' : 'yyyy-MM-dd'}
-              customInput={<PickersComponent label='Start Date' registername='startDate' />}
-              onChange={(date: Date) => setValues({ ...values, startDate: new Date(date) })}
-              onSelect={handleStartDate}
+            <FormControl fullWidth sx={{ mb: 6 }}>
+              <InputLabel id='event-guests'>Guests</InputLabel>
+              <Select
+                multiple
+                label='Guests'
+                value={values.guests}
+                labelId='event-guests'
+                id='event-guests-select'
+                onChange={e => setValues({ ...values, guests: e.target.value })}
+              >
+                <MenuItem value='bruce'>Bruce</MenuItem>
+                <MenuItem value='clark'>Clark</MenuItem>
+                <MenuItem value='diana'>Diana</MenuItem>
+                <MenuItem value='john'>John</MenuItem>
+                <MenuItem value='barry'>Barry</MenuItem>
+              </Select>
+            </FormControl>
+            <TextField
+              rows={4}
+              multiline
+              fullWidth
+              sx={{ mb: 6 }}
+              label='Description'
+              id='event-description'
+              value={values.description}
+              onChange={e => setValues({ ...values, description: e.target.value })}
             />
-          </DatePickerWrapper>
-          <DatePickerWrapper sx={{ mb: 6 }}>
-            <DatePicker
-              selectsEnd
-              id='event-end-date'
-              endDate={values.endDate as EventDateType}
-              selected={values.endDate as EventDateType}
-              minDate={values.startDate as EventDateType}
-              startDate={values.startDate as EventDateType}
-              showTimeSelect={!values.allDay}
-              dateFormat={!values.allDay ? 'yyyy-MM-dd hh:mm' : 'yyyy-MM-dd'}
-              customInput={<PickersComponent label='End Date' registername='endDate' />}
-              onChange={(date: Date) => setValues({ ...values, endDate: new Date(date) })}
-            />
-          </DatePickerWrapper>
-          <FormControl sx={{ mb: 6 }}>
-            <FormControlLabel
-              label='All Day'
-              control={
-                <Switch checked={values.allDay} onChange={e => setValues({ ...values, allDay: e.target.checked })} />
-              }
-            />
-          </FormControl>
-          <TextField
-            fullWidth
-            type='url'
-            id='event-url'
-            sx={{ mb: 6 }}
-            label='Event URL'
-            value={values.url}
-            onChange={e => setValues({ ...values, url: e.target.value })}
-          />
-          <FormControl fullWidth sx={{ mb: 6 }}>
-            <InputLabel id='event-guests'>Guests</InputLabel>
-            <Select
-              multiple
-              label='Guests'
-              value={values.guests}
-              labelId='event-guests'
-              id='event-guests-select'
-              onChange={e => setValues({ ...values, guests: e.target.value })}
-            >
-              <MenuItem value='bruce'>Bruce</MenuItem>
-              <MenuItem value='clark'>Clark</MenuItem>
-              <MenuItem value='diana'>Diana</MenuItem>
-              <MenuItem value='john'>John</MenuItem>
-              <MenuItem value='barry'>Barry</MenuItem>
-            </Select>
-          </FormControl>
-          <TextField
-            rows={4}
-            multiline
-            fullWidth
-            sx={{ mb: 6 }}
-            label='Description'
-            id='event-description'
-            value={values.description}
-            onChange={e => setValues({ ...values, description: e.target.value })}
-          />
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <RenderSidebarFooter />
-          </Box>
-        </form>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <RenderSidebarFooter />
+            </Box>
+          </form>
+        </DatePickerWrapper>
       </Box>
     </Drawer>
   )

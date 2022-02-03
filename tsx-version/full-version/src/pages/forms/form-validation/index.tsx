@@ -11,6 +11,9 @@ import FormValidationBasic from 'src/views/forms/form-validation/FormValidationB
 import FormValidationAsync from 'src/views/forms/form-validation/FormValidationAsync'
 import FormValidationSchema from 'src/views/forms/form-validation/FormValidationSchema'
 
+// ** Third Party Styles Imports
+import 'react-datepicker/dist/react-datepicker.css'
+
 const FormValidation = () => {
   return (
     <Grid container spacing={6} className='match-height'>

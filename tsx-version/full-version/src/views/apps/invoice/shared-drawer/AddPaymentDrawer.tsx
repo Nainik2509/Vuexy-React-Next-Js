@@ -27,6 +27,9 @@ import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 // ** Types
 import { DateType } from 'src/types/forms/reactDatepickerTypes'
 
+// ** Third Party Styles Imports
+import 'react-datepicker/dist/react-datepicker.css'
+
 interface Props {
   open: boolean
   toggle: () => void

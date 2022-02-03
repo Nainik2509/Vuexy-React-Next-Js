@@ -2,9 +2,6 @@
 import { styled } from '@mui/material/styles'
 import Box, { BoxProps } from '@mui/material/Box'
 
-// ** Third Party Styles Imports
-import 'react-datepicker/dist/react-datepicker.css'
-
 // ** Hooks
 import { useSettings } from 'src/@core/hooks/useSettings'
 

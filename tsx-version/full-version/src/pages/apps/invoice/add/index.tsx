@@ -18,6 +18,9 @@ import AddCard from 'src/views/apps/invoice/add/AddCard'
 import AddActions from 'src/views/apps/invoice/add/AddActions'
 import AddNewCustomers from 'src/views/apps/invoice/add/AddNewCustomer'
 
+// ** Third Party Styles Imports
+import 'react-datepicker/dist/react-datepicker.css'
+
 const InvoiceAdd = ({ apiClientData, invoiceNumber }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // ** State
   const [addCustomerOpen, setAddCustomerOpen] = useState<boolean>(false)

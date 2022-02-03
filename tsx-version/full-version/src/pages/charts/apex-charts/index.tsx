@@ -22,6 +22,9 @@ import ApexHeatmapChart from 'src/views/charts/apex-charts/ApexHeatmapChart'
 import ApexRadialBarChart from 'src/views/charts/apex-charts/ApexRadialBarChart'
 import ApexCandlestickChart from 'src/views/charts/apex-charts/ApexCandlestickChart'
 
+// ** Third Party Styles Imports
+import 'react-datepicker/dist/react-datepicker.css'
+
 const ApexCharts = () => {
   return (
     <ApexChartWrapper>

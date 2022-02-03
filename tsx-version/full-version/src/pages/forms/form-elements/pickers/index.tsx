@@ -5,6 +5,9 @@ import Grid from '@mui/material/Grid'
 import MUIPickers from 'src/views/forms/form-elements/pickers/mui-pickers'
 import ReactDatePicker from 'src/views/forms/form-elements/pickers/react-datepicker'
 
+// ** Third Party Styles Imports
+import 'react-datepicker/dist/react-datepicker.css'
+
 const Pickers = () => {
   return (
     <Grid container spacing={6} className='match-height'>

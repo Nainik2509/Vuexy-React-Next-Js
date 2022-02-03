@@ -13,6 +13,9 @@ import FormLayoutsSeparator from 'src/views/forms/form-layouts/FormLayoutsSepara
 import FormLayoutsAlignment from 'src/views/forms/form-layouts/FormLayoutsAlignment'
 import FormLayoutsCollapsible from 'src/views/forms/form-layouts/FormLayoutsCollapsible'
 
+// ** Third Party Styles Imports
+import 'react-datepicker/dist/react-datepicker.css'
+
 const FormLayouts = () => {
   return (
     <DatePickerWrapper>
