@@ -5,7 +5,7 @@ import Box, { BoxProps } from '@mui/material/Box'
 const ReactHotToast = styled(Box)<BoxProps>(({ theme }) => ({
   '& > div': {
     top: '75px !important',
-    right: '24px !important'
+    right: `${theme.spacing(6)} !important`
   },
   '& .react-hot-toast': {
     fontWeight: 400,

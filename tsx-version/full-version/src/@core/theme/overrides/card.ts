@@ -62,8 +62,7 @@ const Card = (theme: Theme, skin: Skin) => {
         root: {
           padding: theme.spacing(5),
           '&.card-action-dense': {
-            padding: theme.spacing(2.5),
-            paddingTop: 0, // this must be below 'padding' property otherwise paddingTop will not be 0
+            padding: theme.spacing(0, 2.5, 2.5),
             '.MuiCard-root .MuiCardMedia-root + &': {
               paddingTop: theme.spacing(2.5)
             },

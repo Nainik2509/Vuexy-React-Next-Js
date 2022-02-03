@@ -238,7 +238,9 @@ const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
       },
       [theme.breakpoints.down('sm')]: {
         '& .react-datepicker__month': {
-          margin: 0
+          marginLeft: 0,
+          marginRight: 0,
+          marginBottom: 0
         }
       },
       '& .react-datepicker__month, & .react-datepicker__year': {
