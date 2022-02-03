@@ -253,20 +253,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@fullcalendar/common@^5.10.1", "@fullcalendar/common@~5.10.1":
+"@fullcalendar/common@~5.10.1":
   version "5.10.1"
   resolved "https://registry.yarnpkg.com/@fullcalendar/common/-/common-5.10.1.tgz#a019951743852277a4095e536fd7716f6f85b9aa"
   integrity sha512-EumKIJcQTvQdTs75/9dmeREFgjcRVWzqHJS1Xvlz5mNsmB+w9EINCHETRjChtAQg1WD/lTQyVj4sHsKO7vCMSw==
   dependencies:
-    tslib "^2.1.0"
-
-"@fullcalendar/core@^5.10.1":
-  version "5.10.1"
-  resolved "https://registry.yarnpkg.com/@fullcalendar/core/-/core-5.10.1.tgz#05c7653e5004149a63bcb03e9dc8b049186ca50b"
-  integrity sha512-8sVuC6ywXV+cxqsqTZaR1hgUqeyjVed20NyZ7lGW9AY0kma1GIEwLgqPS5Q6uVhHyin68lmgecKfJCwhxENE8w==
-  dependencies:
-    "@fullcalendar/common" "~5.10.1"
-    preact "^10.0.5"
     tslib "^2.1.0"
 
 "@fullcalendar/daygrid@^5.10.1", "@fullcalendar/daygrid@~5.10.1":
@@ -293,29 +284,12 @@
     "@fullcalendar/common" "~5.10.1"
     tslib "^2.1.0"
 
-"@fullcalendar/premium-common@~5.10.1":
-  version "5.10.1"
-  resolved "https://registry.yarnpkg.com/@fullcalendar/premium-common/-/premium-common-5.10.1.tgz#47d26406e926317fd45919c0f52ce6cc02a17baf"
-  integrity sha512-yOZgtVI/7tt1oeQABLQqTNLEv2YpxbE0ywvQ+VwtrKc5LksmUA2czO4peom1KIAwH6JsZnytpvwQ4k4cP8Ivaw==
-  dependencies:
-    "@fullcalendar/common" "~5.10.1"
-    tslib "^2.1.0"
-
 "@fullcalendar/react@^5.10.1":
   version "5.10.1"
   resolved "https://registry.yarnpkg.com/@fullcalendar/react/-/react-5.10.1.tgz#bb1652357f98b7dc01894a41e7204f1391999791"
   integrity sha512-+kV5+o9qGjkoO5j0r3oawhig+hP3inE68bHKBl6dtGQ8mi3GkEGsTL12MY2n5N0hXon6+2psIQLnAjMyRYZbmg==
   dependencies:
     "@fullcalendar/common" "~5.10.1"
-    tslib "^2.1.0"
-
-"@fullcalendar/scrollgrid@~5.10.1":
-  version "5.10.1"
-  resolved "https://registry.yarnpkg.com/@fullcalendar/scrollgrid/-/scrollgrid-5.10.1.tgz#808a5173d519ca0f7cc6014f3301cb3cbf5617e5"
-  integrity sha512-Hj6gzj2/sUUnozIMC0GBK60/ZTeDchp/Gc2S4F+05W6V4BoUXbIwav+EdAerfNFOv7EXWa9vM9Lq3A53iVWFVg==
-  dependencies:
-    "@fullcalendar/common" "~5.10.1"
-    "@fullcalendar/premium-common" "~5.10.1"
     tslib "^2.1.0"
 
 "@fullcalendar/timegrid@^5.10.1":
@@ -325,16 +299,6 @@
   dependencies:
     "@fullcalendar/common" "~5.10.1"
     "@fullcalendar/daygrid" "~5.10.1"
-    tslib "^2.1.0"
-
-"@fullcalendar/timeline@^5.10.1":
-  version "5.10.1"
-  resolved "https://registry.yarnpkg.com/@fullcalendar/timeline/-/timeline-5.10.1.tgz#a422040b6ee517904509f26b59309dda5f9f9bf9"
-  integrity sha512-pFMhK4nsCvpsA63GPJQtT1RSS2OLlT9a2+fvsf2oQregBLcottJSlCjIsIuKP7hpQLimaSdLr2kNjh5hs8jKlw==
-  dependencies:
-    "@fullcalendar/common" "~5.10.1"
-    "@fullcalendar/premium-common" "~5.10.1"
-    "@fullcalendar/scrollgrid" "~5.10.1"
     tslib "^2.1.0"
 
 "@hapi/accept@5.0.2":
@@ -3616,11 +3580,6 @@ postcss@8.2.15:
     colorette "^1.2.2"
     nanoid "^3.1.23"
     source-map "^0.6.1"
-
-preact@^10.0.5:
-  version "10.6.5"
-  resolved "https://registry.yarnpkg.com/preact/-/preact-10.6.5.tgz#726d8bd12903a0d51cdd17e2e1b90cc539403e0c"
-  integrity sha512-i+LXM6JiVjQXSt2jG2vZZFapGpCuk1fl8o6ii3G84MA3xgj686FKjs4JFDkmUVhtxyq21+4ay74zqPykz9hU6w==
 
 prelude-ls@^1.2.1:
   version "1.2.1"

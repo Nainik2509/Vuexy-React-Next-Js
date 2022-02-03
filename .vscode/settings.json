@@ -35,5 +35,6 @@
   "cSpell.words": [
     "Customizer"
   ],
+  "search-node-modules.path": "tsx-version/full-version/node_modules",
   "markdown.extension.toc.updateOnSave": false
 }
