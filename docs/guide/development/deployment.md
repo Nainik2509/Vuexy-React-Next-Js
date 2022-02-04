@@ -1,5 +1,9 @@
 # Deployment
 
+::: tip
+
+Read [official Next.js docs](https://nextjs.org/docs/deployment) to handle deployment smoothly.
+:::
 ## Node.js Server
 
 Next.js can be deployed to any hosting provider that supports Node.js. Make sure your `package.json` has the `build` and `start` scripts:

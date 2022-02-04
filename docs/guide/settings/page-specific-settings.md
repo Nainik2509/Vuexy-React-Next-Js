@@ -1,12 +1,10 @@
 # Page Specific Settings
 
-## Overview
-
-You can have a specific settings depending on your needs.
+If you want to override specific settings for specific page only, you can do that as well.
 
 ## Usage
 
-To change a setting for a specific page use `setConfig` method and return a object with your settings like show below:
+To change a setting for a specific page, use `setConfig` method and return a object with your settings like below:
 
 ```tsx
 const AnalyticsDashboard = () => <h1>Analytics Dashboard</h1>
@@ -22,9 +20,9 @@ export default AnalyticsDashboard
 ```
 
 ::: tip Note
-Configurations are same as settings you can refer the [Settings Context](/guide/settings/context/) guide for more info.
+You can override any config property at page level. Please refer [Theme Configurations](/guide/settings/theme-config.html) doc for each configurable property.
 :::
 
-::: danger Note
-Setting `layout` or `rtl` for a specific page will throw a memory leak error.
+::: danger Important
+It is not advisable to override `layout` or `rtl`  property for a specific page, they should be set only globally. Overriding them at page level will throw a memory leak error.
 :::
