@@ -2,7 +2,7 @@
 
 ## Change to RTL
 
-We provide Left to Right (LTR) by default but you can change it to Right to Left (RTL) very easily.
+We provide Left to Right (LTR) by default but you can easily change it to Right to Left (RTL).
 
 To change the whole template to RTL, you need to go to the `src/configs/themeConfig.ts` file and change the `direction` property from `ltr` to `rtl`.
 
@@ -80,4 +80,29 @@ const SomeComponent = () => {
 }
 
 export default SomeComponent
+```
+
+## Remove RTL from the template
+
+To remove the RTL from the whole template, follow these steps:
+
+- Remove all the plugins related to RTL. View all the dependencies of RTL in [this](/guide/overview/dependencies.html#right-to-left-rtl) section
+- Replace the following code in the `src/layouts/components/Direction.tsx` file:
+
+```tsx
+import { ReactNode } from 'react'
+import { Direction } from '@mui/material'
+
+interface DirectionProps {
+  children: ReactNode
+  direction: Direction
+}
+
+const Direction = (props: DirectionProps) => {
+  const { children } = props
+
+  return <>{children}</>
+}
+
+export default Direction
 ```

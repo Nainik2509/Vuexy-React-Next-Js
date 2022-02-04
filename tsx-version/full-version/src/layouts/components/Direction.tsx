@@ -11,7 +11,7 @@ import { CacheProvider } from '@emotion/react'
 // ** RTL Plugin
 import stylisRTLPlugin from 'stylis-plugin-rtl'
 
-interface RTLProps {
+interface DirectionProps {
   children: ReactNode
   direction: Direction
 }
@@ -23,7 +23,7 @@ const styleCache = () =>
     stylisPlugins: [stylisRTLPlugin]
   })
 
-const RTL = (props: RTLProps) => {
+const Direction = (props: DirectionProps) => {
   const { children, direction } = props
 
   useEffect(() => {
@@ -37,4 +37,4 @@ const RTL = (props: RTLProps) => {
   return <>{children}</>
 }
 
-export default RTL
+export default Direction
