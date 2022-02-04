@@ -52,7 +52,7 @@ Follow these steps to override the auth context:
 1. Copy the content of AuthContext from `@core/context/AuthContext.tsx`
 2. Paste the copied code from core AuthContext to a new file.
 3. Now update the authentication code according to your authentication logic in newly created file.
-4. Then replace the core AuthContext Wrapper with your in file `_app.tsx`
+4. Then replace the core AuthContext Wrapper with your in file `src/pages/_app.tsx`
 5. That's it now you can use your modified context.
 
 ## Auth Context Values
@@ -111,14 +111,19 @@ ComingSoon.authGuard = false
 
 Setting AuthGuard to false will allow all the users to visit that page whether logged in or not.
 
-## Removing Guards
+## Removing Authentication completely
 
 Removing the authentication from the app is simple.
+
 Follow these steps to remove the authentication from the app:
 
-1. Remove the `authGuard` & `guestGuard` variables from the file `_app.tsx`
-2. Remove `AuthGuard` & `GuestGuard` imports from the file `_app.tsx`
-3. Remove the `Guard` Component and Wrapper from the file `_app.tsx`
-4. Search & Remove `Component.guestGuard` & `Component.authGuard` from all the files. (where Component is the name of the component)
+1. Remove the `authGuard` & `guestGuard` variables from the file `src/pages/_app.tsx`
+2. Remove `AuthGuard` & `GuestGuard` imports from the file `src/pages/_app.tsx`
+3. Remove the `Guard` Component and Wrapper from the file `src/pages/_app.tsx`
+4. Remove `AuthProvider` import and the wrapper from the file `src/pages/_app.tsx`
+5. Remove the `GuardProps` type and `Spinner` & `ReactNode` import statements from the file `src/pages/_app.tsx`
+6. Search & Remove `Component.guestGuard` & `Component.authGuard` from all the files. (where Component is the name of the component)
+7. Remove the `src/@fake-db/auth` folder
+8. Remove the `import './auth/jwt'` import statement from the file `src/@fake-db/index.ts`
 
 **That's it. Now your app is auth free.**
