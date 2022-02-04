@@ -10,7 +10,6 @@ Starter-kit is a minimal template from where you can start your project quickly 
 - Four pages (Two sample pages + 404 + Login)
 - No Customizer
 - No Axios
-- No Scroll to top
 
 Use it if you don't want to clutter your project with extra libs which aren't required. You still need to streamline all the dependencies from package.json file. We have taken care of cleaning up unnecessary code . You can just copy components from full version into the starter kit it should work 😍.
 

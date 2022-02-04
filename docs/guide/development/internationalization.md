@@ -71,6 +71,10 @@ Only for those who are using the full version
 If you do not want to use i18n, we recommend you start your project with the starter-kit. But if you are using the full version and does not want to use i18n, then follow these steps:
 
 - You may remove all the packages related to i18n from `package.json` file if you want to
+  - `i18next`
+  - `react-i18next`
+  - `i18next-http-backend`
+  - `i18next-browser-languagedetector`
 - Remove `src/configs/i18n.ts` file
 - Remove `import 'src/configs/i18n'` import statement from `src/pages/_app.tsx` file
 - Replace the following code in `src/layouts/components/Translations.tsx` file
@@ -86,6 +90,7 @@ export default Translations
 ```
 
 - Remove `LanguageDropdown` file import statement and rendered component from `src/layouts/components/vertical/AppBarContent.tsx` or `src/layouts/components/horizontal/AppBarContent.tsx` file
+- Remove your locale files from `public/locales` folder
 
 ```tsx
 <LanguageDropdown settings={settings} saveSettings={saveSettings} />

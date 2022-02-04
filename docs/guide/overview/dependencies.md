@@ -6,6 +6,10 @@ sidebarDepth: 0
 
 ## Common
 
+:::danger Heads Up!
+The following dependencies are required to run the template. Do not try to remove any of these dependencies.
+:::
+
 ```json
 "@emotion/cache"
 "@emotion/react"
@@ -19,6 +23,8 @@ sidebarDepth: 0
 "react"
 "@types/react"
 "react-dom"
+"react-perfect-scrollbar"
+"mdi-material-ui"
 "@types/node"
 "prettier"
 "typescript"
@@ -61,9 +67,14 @@ sidebarDepth: 0
 ## Charts
 
 ```json
+// Apexcharts
 "apexcharts"
 "react-apexcharts"
+
+// Recharts
 "recharts"
+
+// ChartJs
 "chart.js"
 "react-chartjs-2"
 ```
@@ -103,12 +114,6 @@ sidebarDepth: 0
 "react-dropzone"
 ```
 
-## Scrollbar
-
-```json
-"react-perfect-scrollbar"
-```
-
 ## API Call
 
 ```json
@@ -127,12 +132,6 @@ sidebarDepth: 0
 ```json
 "cleave.js"
 "@types/cleave.js"
-```
-
-## Icons
-
-```json
-"mdi-material-ui"
 ```
 
 ## Page loader
