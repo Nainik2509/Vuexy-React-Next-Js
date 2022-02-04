@@ -4,10 +4,10 @@
 
 We have used Material Design Icons from the community in the whole template. You may visit the site and check all the icons [here](https://materialdesignicons.com/). Users are free to use any icon library of their choice.
 
-We have created the `UserIcon` component in the `src/layouts/components/UserIcon.tsx` file, sole purpose of this component is to enable users to override icons used in the template and use any icon library of their choice. It is used in the `src/@core` folder in the vertical menu, horizontal menu and search.
+We have created the `UserIcon` component in the `src/layouts/components/UserIcon.tsx` file, sole purpose of this component is to enable users to override icons used in the menu & search and use any icon library of their choice. It is used in the `src/@core` folder in the vertical menu, horizontal menu and search.
 
 ::: warning
-Do not use this component in any of your pages. You should directly import icons from your icon library and use them. This component should only be used to override menu and search icons and their styling.
+Do not use this component in any of your pages. You should import icons from your icon library and use them directly. This component should only be used to override menu and search icons and their styling.
 :::
 
 ::: danger Heads Up!

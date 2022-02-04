@@ -13,7 +13,6 @@ import Box from '@mui/material/Box'
 import { useSettings } from 'src/@core/hooks/useSettings'
 
 const SomeComponent = () => {
-  // ** Hook
   const { settings } = useSettings()
 
   return <Box sx={{ boxShadow: theme => theme.shadows[settings.skin === 'bordered' ? 0 : 7] }}>...</Box>
@@ -34,7 +33,6 @@ import WeatherSunny from 'mdi-material-ui/WeatherSunny'
 import { useSettings } from 'src/@core/hooks/useSettings'
 
 const ModeToggler = () => {
-  // ** Hook
   const { settings, saveSettings } = useSettings()
 
   const handleModeChange = (mode: PaletteMode) => {
@@ -73,7 +71,6 @@ import { useSettings } from 'src/@core/hooks/useSettings'
 import { Settings } from 'src/@core/context/settingsContext'
 
 const SomeComponent = () => {
-  // ** Hook
   const { settings, saveSettings } = useSettings()
 
   const handleChange = (field: keyof Settings, value: Settings[keyof Settings]): void => {

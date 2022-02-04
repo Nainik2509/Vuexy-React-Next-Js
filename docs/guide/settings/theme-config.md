@@ -48,7 +48,6 @@ Following is the table of all the properties and their possible values that are 
 | contentWidth  | `'full'`, `'boxed'`                      | Full or container width of AppBar, Content and Footer |
 | footer        | `'fixed'`, `'static'`, `'hidden'`        | Change footer position                                |
 | routingLoader | `true`, `false`                          | Loader on top of the app on route change              |
-
 | navHidden | `true`, `false` | If `true`, the navigation menu is hidden |
 | menuTextTruncate | `true`, `false` | If `true`, text truncate in the navigation menu is enabled |
 | navSubItemIcon | `ReactNode` | Change icon element for the sub menus in the navigation menu |

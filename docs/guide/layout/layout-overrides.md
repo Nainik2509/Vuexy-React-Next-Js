@@ -37,7 +37,6 @@ Here is the code to change the app logo:
 
 ```tsx
 import { ReactNode } from 'react'
-import Image from 'next/image'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Layout from 'src/@core/layouts/Layout'
@@ -49,7 +48,7 @@ interface Props {
 const AppBrand = () => {
   return (
     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-      <Image src='...' alt='logo' width={30} height={30} />
+      <img src='...' alt='logo' width='30' height='30' />
       <Typography variant='h6' sx={{ ml: 2 }}>
         React
       </Typography>
@@ -265,7 +264,6 @@ Here is the code to menu footer info after the menu items:
 
 ```tsx
 import { ReactNode } from 'react'
-import Image from 'next/image'
 import Box from '@mui/material/Box'
 import Layout from 'src/@core/layouts/Layout'
 
@@ -276,7 +274,7 @@ interface Props {
 const MenuFooter = () => {
   return (
     <Box sx={{ mt: 4, display: 'flex', justifyContent: 'center' }}>
-      <Image src='...' width={230} height={144} alt='menu-footer' />
+      <img src='...' width='230' height='144' alt='menu-footer' />
     </Box>
   )
 }
@@ -469,7 +467,6 @@ Here is the code to change the app logo:
 
 ```tsx
 import { ReactNode } from 'react'
-import Image from 'next/image'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Layout from 'src/@core/layouts/Layout'
@@ -481,7 +478,7 @@ interface Props {
 const AppBrand = () => {
   return (
     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-      <Image src='...' alt='logo' width={30} height={30} />
+      <img src='...' alt='logo' width='30' height='30' />
       <Typography variant='h6' sx={{ ml: 2 }}>
         React
       </Typography>

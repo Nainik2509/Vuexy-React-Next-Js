@@ -114,7 +114,7 @@ Thanks for purchasing our template 🙂. Let's get you up and running.
 
   <!-- Repository Access -->
   <div class='col'>
-    <router-link to='/guide/getting-started/github-access.html'>
+    <router-link to='/guide/overview/github-access.html'>
       <div class='card'>
         <img alt='github-icon' :src="$withBase('/images/icons/github.png')" />
         <h3>Repository Access</h3>
@@ -129,7 +129,7 @@ Thanks for purchasing our template 🙂. Let's get you up and running.
 
   <!-- Premium Support -->
   <div class='col'>
-    <router-link to='/guide/getting-started/support.html'>
+    <router-link to='/guide/overview/support.html'>
       <div class='card'>
         <img alt='support-icon' :src="$withBase('/images/icons/lifebuoy.png')" />
         <h3>Premium Support</h3>

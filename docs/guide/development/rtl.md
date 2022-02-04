@@ -1,32 +1,83 @@
 # RTL
 
-In this page you will find how RTL works.
+## Change to RTL
 
-## Overview
+We provide Left to Right (LTR) by default but you can change it to Right to Left (RTL) very easily.
 
-We are using MUI's direction property for RTL.
-You can read about it from [here](https://mui.com/guides/right-to-left/)
+To change the whole template to RTL, you need to go to the `src/configs/themeConfig.ts` file and change the `direction` property from `ltr` to `rtl`.
 
-## useDirection
+## RTL Toggler
 
-We have created a hook to make it easier for you to toggle between `LTR` & `RTL`.
-`useDirection` hook returns two things a current `direction` & `setDirection`.
-
-You can find the hook in `src/utility/hooks/layout/useDirection`. Refer below code for usage example.
+You can also make a direction toggler which toggle between LTR and RTL directions. Look at the following code to make one:
 
 ```tsx
-import useDirection from 'hooks/layout/useDirection'
+import Switch from '@mui/material/Switch'
+import { Direction } from '@mui/material'
+import { useSettings } from 'src/@core/hooks/useSettings'
+import FormControlLabel from '@mui/material/FormControlLabel'
 
-const Component = () => {
-  const { direction, setDirection } = useDirection()
+const DirectionToggler = () => {
+  const { settings, saveSettings } = useSettings()
+
+  const handleDirectionChange = (value: Direction) => {
+    saveSettings({ ...settings, direction: value })
+  }
 
   return (
-    <div>
-      <h1>direction: {direction}</h1>
-      <button onClick={() => setDirection(direction === 'ltr' ? 'rtl' : 'ltr')}>Toggle direction</button>
-    </div>
+    <FormControlLabel
+      label='RTL'
+      control={
+        <Switch
+          checked={settings.direction === 'rtl'}
+          onChange={e => handleDirectionChange(e.target.checked ? 'rtl' : 'ltr')}
+        />
+      }
+    />
   )
 }
 
-export default Component
+export default DirectionToggler
+```
+
+## Get current direction
+
+You might need to render some code conditionally based on the current direction of the template. You can write the following code to do so:
+
+```tsx
+import { useSettings } from 'src/@core/hooks/useSettings'
+
+const SomeComponent = () => {
+  const { settings } = useSettings()
+
+  if (settings.direction === 'rtl') {
+    return (
+      {/* Some code */}
+    )
+  } else {
+    return (
+      {/* Some other code */}
+    )
+  }
+}
+
+export default SomeComponent
+```
+
+If you need to style something conditionally based on the current direction of the template, do the following:
+
+```tsx
+import Box from '@mui/material/Box'
+import { useSettings } from 'src/@core/hooks/useSettings'
+
+const SomeComponent = () => {
+  const { settings } = useSettings()
+
+  return (
+    <Box sx={{ backgroundColor: settings.direction === 'rtl' ? 'red' : 'blue' }}>
+      ...
+    </Box>
+  )
+}
+
+export default SomeComponent
 ```

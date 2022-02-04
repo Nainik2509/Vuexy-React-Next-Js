@@ -17,7 +17,7 @@ Use it if you don't want to clutter your project with extra libs which aren't re
 Don't worry about configuring third party libs which if you want to use them in starter-kit, our template is so flexible that all you have to do is just import lib file into your file and provide a third-party package that is ready to use 😍.
 
 ::: tip
-Use starter-kit to provide reproduction steps if you raise any technical issue on [GitHub](/guide/getting-started/support.html).
+Use starter-kit to provide reproduction steps if you raise any technical issue on [GitHub](/guide/overview/support.html).
 :::
 
 ## Full Package
