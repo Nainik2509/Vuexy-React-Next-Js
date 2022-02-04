@@ -12,9 +12,7 @@ Starter-kit is a minimal template from where you can start your project quickly 
 - No Axios
 - No Scroll to top
 
-Use it if you don't want to clutter your project with extra libs which aren't required.
-
-Don't worry about configuring third party libs which if you want to use them in starter-kit, our template is so flexible that all you have to do is just import lib file into your file and provide a third-party package that is ready to use 😍.
+Use it if you don't want to clutter your project with extra libs which aren't required. You still need to streamline all the dependencies from package.json file. We have taken care of cleaning up unnecessary code . You can just copy components from full version into the starter kit it should work 😍.
 
 ::: tip
 Use starter-kit to provide reproduction steps if you raise any technical issue on [GitHub](/guide/overview/support.html).

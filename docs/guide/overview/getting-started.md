@@ -1,7 +1,7 @@
 # Getting Started
 
 ::: tip
-Get Started with Starter kit version and copy components from full version
+Get Started with the Starter kit version and copy components from full version
 :::
 
 There can be two possibilities, you are planning to start a new project with our template or trying to add our template into your existing project.
@@ -16,7 +16,7 @@ First step should be to verify all the [dependencies](/guide/overview/dependenci
 
 ### What's the point including all the dependencies with starter kit?
 
-Your question is totally valid and legit. We are in template making business for over 8 years and know user's requirements. To make the experience smoother, we have listed all the [dependencies](/guide/overview/dependencies.html) and provided freedom to remove dependencies which are not required in your project.
+Your question is totally valid and legit. To make the experience smoother, we have listed all the [dependencies](/guide/overview/dependencies.html) and provided freedom to remove dependencies which are not required in your project.
 
 Searching for packages that are required and to install them can be difficult and confusing for new users. Hence, we have included all the packages in the starter-kit-version. New user can just copy components from full version without worring about packages.
 
@@ -32,7 +32,7 @@ Next, Follow the [installation guide](/guide/overview/installation.html) once yo
 
 ## Demo Configs
 
-You want your local template to look like one of the 6 demos you saw online then please follow [demo configs](/guide/development/demo-config.html) documentation which help you exactly achieve your goal.
+You want your local template to look like one of the 6 demos you saw online then please follow [demo configs](/guide/development/demo-config.html) documentation which will help you achieve your goal.
 
 ## FAQs
 
