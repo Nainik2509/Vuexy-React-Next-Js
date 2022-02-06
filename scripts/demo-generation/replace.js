@@ -1,13 +1,12 @@
 const fs = require('fs')
 const path = require('path')
-const replace = require('replace-in-file')
+const pathConfig = require('../configs/paths.json')
 
 let demo = 'demo-1'
-const baseDir = '../../src'
-const i18nPath = '../../src/configs/i18n.ts'
-const nextConfigPath = '../../next.config.js'
-const themeConfigPath = '../../src/configs/themeConfig.ts'
-const settingsContextFile = '../../src/@core/context/settingsContext.tsx'
+const i18nPath = `${pathConfig.fullVersionTSXPath}/src/configs/i18n.ts`
+const nextConfigPath = `${pathConfig.fullVersionTSXPath}/next.config.js`
+const themeConfigPath = `${pathConfig.fullVersionTSXPath}/src/configs/themeConfig.ts`
+const settingsContextFile = `${pathConfig.fullVersionTSXPath}/src/@core/context/settingsContext.tsx`
 
 const demoArgs = process.argv.slice(2)
 
@@ -30,18 +29,19 @@ const replaceBasePathInImages = (dirPath, arrayOfFiles) => {
 
           return
         } else {
-          const content = data.split('\n')
-
-          content.forEach(line => {
-            if (line.includes('/images/')) {
-              const replaced = line.replace('/images/', `/demo/react-master/${demo}/images/`)
-              replace.sync({
-                files: path.join(__dirname, dirPath, '/', file),
-                from: line,
-                to: replaced
-              })
-            }
-          })
+          const splitData = data.split('\r\n')
+          const lineIndex = splitData.findIndex(i => i.includes('/images/'))
+          splitData[lineIndex] ? splitData[lineIndex].replace('/images/', `/demo/react-master/${demo}/images/`) : null
+          if(splitData[lineIndex]){
+            splitData[lineIndex] = splitData[lineIndex].replace('/images/', `/demo/react-master/${demo}/images/`) 
+            fs.writeFile(path.join(__dirname, dirPath, '/', file), splitData.join('\n'), err => {
+              if (err) {
+                console.error(err)
+  
+                return
+              }
+            })
+          }
 
           arrayOfFiles.push(path.join(__dirname, dirPath, '/', file))
         }
@@ -60,17 +60,20 @@ const replaceBasePathInI18n = () => {
       return
     } else {
       if (data.includes('/locales/')) {
-        replace.sync({
-          files: i18nPath,
-          from: '/locales/',
-          to: `/demo/react-master/${demo}/locales/`
+       
+        fs.writeFile(i18nPath, data.replace('/locales/', `/demo/react-master/${demo}/locales/`), err => {
+          if (err) {
+            console.log(err);
+
+            return
+          }
         })
       }
     }
   })
 }
 
-replaceBasePathInImages(baseDir)
+replaceBasePathInImages(`${pathConfig.fullVersionTSXPath}/src`)
 replaceBasePathInI18n()
 
 if (fs.existsSync(settingsContextFile)) {
@@ -91,8 +94,10 @@ if (fs.existsSync(settingsContextFile)) {
 
       if (fs.existsSync(nextConfigPath)) {
         const nextConfigData = fs.readFileSync(nextConfigPath).toString().split('\n')
-        nextConfigData.splice(14, 0, `basePath: '/demo/react-master/${demo}',`)
-        const result = nextConfigData.join('\n')
+        const removedBasePathIfAny = nextConfigData.filter(line => {
+          return line.indexOf('basePath') === -1
+        }).join('\n')
+        const result = removedBasePathIfAny.replace('reactStrictMode: false,', `reactStrictMode: false, \n basePath: '/demo/react-master/${demo}',`)
 
         fs.writeFile(nextConfigPath, result, err => {
           if (err) {
@@ -107,16 +112,31 @@ if (fs.existsSync(settingsContextFile)) {
         return
       }
 
-      const demoConfigPath = `../../demo-configs/${demo}.ts`
+      const demoConfigPath = `${pathConfig.demoConfigsPathTSX}/${demo}.ts`
 
       if (fs.existsSync(themeConfigPath) && fs.existsSync(demoConfigPath)) {
-        fs.copyFile(demoConfigPath, themeConfigPath, err => {
+        // fs.copyFile(demoConfigPath, themeConfigPath, err => {
+        //   if (err) {
+        //     console.log(err)
+
+        //     return
+        //   } else {
+        //     console.log(`Working on ${demo}`)
+        //   }
+        // })
+        fs.readFile(demoConfigPath, 'utf-8', (err, data) => {
           if (err) {
-            console.log(err)
+            console.log(err);
 
             return
           } else {
-            console.log(`Working on ${demo}`)
+            fs.writeFile(themeConfigPath, data, (err) => {
+              if (err) {
+                console.log(err);
+
+                return
+              }
+            })
           }
         })
       }

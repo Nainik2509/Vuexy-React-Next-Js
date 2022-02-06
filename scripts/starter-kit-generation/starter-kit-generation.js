@@ -1,9 +1,10 @@
 const fs = require('fs')
+const pathConfig = require('../configs/paths.json')
+
 
 const {
   AppPathTSX,
   AppPathJSX,
-  starterPath,
   LoginPathTSX,
   LoginPathJSX,
   filesToReplace,
@@ -122,7 +123,7 @@ const updateContent = (
       else {
         const result = data
           .replace("import { useAuth } from 'src/@core/hooks/useAuth'", '')
-          .replace(new RegExp(/\/\/[\s\S]*? Context/), '')
+          .replace(new RegExp(/\/\/ \*\* Context/), '')
           .replace('const { logout } = useAuth()', '')
           .replace('logout()', '')
           .replace(/if (url) [\s\S]*? setAnchorEl/, 'setAnchorEl')
@@ -239,15 +240,15 @@ const replaceFiles = () => {
   })
 }
 
-const generateSecondPage = (version, fileToRead) => {
-  fs.mkdir(`${starterPath}/${version}/src/pages/second-page`, err => {
+const generateSecondPage = (parentFolder, fileToRead, fileToWrite) => {
+  fs.mkdir(`${parentFolder}/src/pages/second-page`, err => {
     if (err) {
       console.log(err)
 
       return
     } else {
       fs.writeFile(
-        `${starterPath}/${version}/src/pages/second-page/index.${version === 'jsx' ? 'js' : 'tsx'}`,
+        fileToWrite,
         fs.readFileSync(fileToRead).toString(),
         err => {
           if (err) {
@@ -262,14 +263,17 @@ const generateSecondPage = (version, fileToRead) => {
 }
 
 const generateTSXStarter = () => {
-  fs.mkdir(`${starterPath}/tsx`, err => {
+
+  const createStarter = () => fs.mkdir(pathConfig.starterKitTSXPath, err => {
     if (err) {
       console.log(err)
 
       return
     } else {
       filesToCopyTSX.map(file => {
-        copyRecursiveSync(file, `${starterPath}/tsx/${file.replace('../../', '')}`)
+        const dest = file.replace('full-version', 'starter-kit')
+
+        copyRecursiveSync(file, dest)
       })
 
       foldersToRemoveTSX.map(folder => {
@@ -282,20 +286,20 @@ const generateTSXStarter = () => {
         })
       })
 
-      fs.rm(`${starterPath}/tsx/src/pages`, { recursive: true, force: true }, err => {
+      fs.rm(`${pathConfig.starterKitTSXPath}/src/pages`, { recursive: true, force: true }, err => {
         if (err) {
           console.log(err)
 
           return
         } else {
-          fs.mkdir(`${starterPath}/tsx/src/pages`, err => {
+          fs.mkdir(`${pathConfig.starterKitTSXPath}/src/pages`, err => {
             if (err) {
               console.log(err)
 
               return
             } else {
               foldersToKeepTSX.map(file => {
-                copyRecursiveSync(`../../src/${file}`, `${starterPath}/tsx/src/${file}`)
+                copyRecursiveSync(`${pathConfig.fullVersionTSXPath}/src/${file}`, `${pathConfig.starterKitTSXPath}/src/${file}`)
               })
 
               replaceFiles()
@@ -311,108 +315,117 @@ const generateTSXStarter = () => {
                 RegisterPathTSX
               )
 
-              generateSecondPage('tsx', './components/tsx/second-page/index.tsx')
+              generateSecondPage(pathConfig.starterKitTSXPath, './components/tsx/second-page/index.tsx', `${pathConfig.starterKitTSXPath}/src/pages/second-page/index.tsx`)
             }
           })
         }
       })
     }
   })
-}
 
-const generateJSXPackage = () => {
-  if (fs.existsSync('../../jsx-version')) {
-    fs.mkdir(`${starterPath}/jsx`, err => {
+  if (!fs.existsSync(pathConfig.starterKitTSXPath)) {
+    createStarter()
+
+  } else {
+    fs.rm(pathConfig.starterKitTSXPath, { recursive: true, force: true }, err => {
       if (err) {
         console.log(err)
-
-        return
       } else {
-        filesToCopyJSX.map(file => {
-          copyRecursiveSync(file, `${starterPath}/jsx/${file.replace('../../jsx-version', '')}`)
-        })
-
-        foldersToRemoveJSX.map(folder => {
-          fs.rm(folder, { recursive: true, force: true }, err => {
-            if (err) {
-              console.log(err)
-
-              return
-            }
-          })
-        })
-
-        fs.rm(`${starterPath}/jsx/src/pages`, { recursive: true, force: true }, err => {
-          if (err) {
-            console.log(err)
-
-            return
-          } else {
-            fs.mkdir(`${starterPath}/jsx/src/pages`, err => {
-              if (err) {
-                console.log(err)
-
-                return
-              } else {
-                foldersToKeepJSX.map(file => {
-                  copyRecursiveSync(`../../jsx-version/src/${file}`, `${starterPath}/jsx/src/${file}`)
-                })
-
-                replaceFiles()
-                updateContent(
-                  userLayoutPathJSX,
-                  BuyNowComponentPathJSX,
-                  PackageJSONPathJSX,
-                  TranslationsPathJSX,
-                  AppPathJSX,
-                  UserDropdownPathJSX,
-                  themeConfigPathJSX,
-                  LoginPathJSX,
-                  RegisterPathJSX
-                )
-                generateSecondPage('jsx', './components/jsx/second-page/index.js')
-              }
-            })
-          }
-        })
+        createStarter()
       }
     })
   }
 }
+
+const generateJSXStarter = () => {
+
+  const createStarter = () => fs.mkdir(pathConfig.starterKitJSXPath, err => {
+    if (err) {
+      console.log(err)
+
+      return
+    } else {
+      filesToCopyJSX.map(file => {
+        const dest = file.replace('full-version', 'starter-kit')
+
+        copyRecursiveSync(file, dest)
+      })
+
+      foldersToRemoveJSX.map(folder => {
+        fs.rm(folder, { recursive: true, force: true }, err => {
+          if (err) {
+            console.log(err)
+
+            return
+          }
+        })
+      })
+
+      fs.rm(`${pathConfig.starterKitJSXPath}/src/pages`, { recursive: true, force: true }, err => {
+        if (err) {
+          console.log(err)
+
+          return
+        } else {
+          fs.mkdir(`${pathConfig.starterKitJSXPath}/src/pages`, err => {
+            if (err) {
+              console.log(err)
+
+              return
+            } else {
+              foldersToKeepJSX.map(file => {
+                copyRecursiveSync(`${pathConfig.fullVersionJSXPath}/src/${file}`, `${pathConfig.starterKitJSXPath}/src/${file}`)
+              })
+
+              replaceFiles()
+              updateContent(
+                userLayoutPathJSX,
+                BuyNowComponentPathJSX,
+                PackageJSONPathJSX,
+                TranslationsPathJSX,
+                AppPathJSX,
+                UserDropdownPathJSX,
+                themeConfigPathJSX,
+                LoginPathJSX,
+                RegisterPathJSX
+              )
+
+              generateSecondPage(pathConfig.starterKitJSXPath, './components/jsx/second-page/index.js', `${pathConfig.starterKitJSXPath}/src/pages/second-page/index.js`)
+            }
+          })
+        }
+      })
+    }
+  })
+
+  if (!fs.existsSync(pathConfig.starterKitJSXPath)) {
+    createStarter()
+
+  } else {
+    fs.rm(pathConfig.starterKitJSXPath, { recursive: true, force: true }, err => {
+      if (err) {
+        console.log(err)
+      } else {
+        createStarter()
+      }
+    })
+  }
+}
+
+
 
 const generate = () => {
   if (arg !== null) {
     if (arg === 'tsx') {
       generateTSXStarter()
     } else {
-      generateJSXPackage()
+      generateJSXStarter()
     }
   } else {
     generateTSXStarter()
-    generateJSXPackage()
+    generateJSXStarter()
   }
 }
 
-if (!fs.existsSync(starterPath)) {
-  fs.mkdir(starterPath, err => {
-    if (err) {
-      console.log(err)
-    } else {
-      generate()
-    }
-  })
-} else {
-  fs.rm(starterPath, { recursive: true, force: true }, err => {
-    if (err) {
-      console.log(err)
-    } else {
-      fs.mkdir(starterPath, err => {
-        if (err) {
-          console.log(err)
-        } else {
-          generate()
-        }
-      })
-    }
-  })
-}
+
+generate()

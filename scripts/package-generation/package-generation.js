@@ -1,45 +1,45 @@
 const fs = require('fs')
 const path = require('path')
+const pathConfig = require('../configs/paths.json')
 
-const packagePath = '../../downloadable-package'
-const userLayoutPathTSX = `${packagePath}/tsx/src/layouts/UserLayout.tsx`
-const PackageJSONPathTSX = `${packagePath}/tsx/package.json`
-const PackageJSONPathJSX = `${packagePath}/jsx/package.json`
-const BuyNowComponentPathTSX = `${packagePath}/tsx/src/layouts/components/BuyNowButton.tsx`
-const userLayoutPathJSX = `${packagePath}/jsx/src/layouts/UserLayout.js`
-const BuyNowComponentPathJSX = `${packagePath}/jsx/src/layouts/components/BuyNowButton.js`
+const userLayoutPathTSX = `${pathConfig.packagePath}/tsx-version/full-version/src/layouts/UserLayout.tsx`
+const PackageJSONPathTSX = `${pathConfig.packagePath}/tsx-version/full-version/package.json`
+const PackageJSONPathJSX = `${pathConfig.packagePath}/jsx-version/full-version/package.json`
+const BuyNowComponentPathTSX = `${pathConfig.packagePath}/tsx-version/full-version/src/layouts/components/BuyNowButton.tsx`
+const userLayoutPathJSX = `${pathConfig.packagePath}/jsx-version/full-version/src/layouts/UserLayout.js`
+const BuyNowComponentPathJSX = `${pathConfig.packagePath}/jsx-version/full-version/src/layouts/components/BuyNowButton.js`
 
 const filesToCopyTSX = [
-  '../../demo-configs',
-  '../../public',
-  '../../src',
-  '../../styles',
-  '../../.editorconfig',
-  '../../.env',
-  '../../.eslintrc.json',
-  '../../.gitignore',
-  '../../.prettierrc.js',
-  '../../declaration.d.ts',
-  '../../next-env.d.ts',
-  '../../next.config.js',
-  '../../next.d.ts',
-  '../../package.json',
-  '../../tsconfig.json'
+  `${pathConfig.demoConfigsPathTSX}`,
+  `${pathConfig.fullVersionTSXPath}/public`,
+  `${pathConfig.fullVersionTSXPath}/src`,
+  `${pathConfig.fullVersionTSXPath}/styles`,
+  `${pathConfig.fullVersionTSXPath}/.editorconfig`,
+  `${pathConfig.fullVersionTSXPath}/.env`,
+  `${pathConfig.fullVersionTSXPath}/.eslintrc.json`,
+  `${pathConfig.fullVersionTSXPath}/.gitignore`,
+  `${pathConfig.fullVersionTSXPath}/.prettierrc.js`,
+  `${pathConfig.fullVersionTSXPath}/declaration.d.ts`,
+  `${pathConfig.fullVersionTSXPath}/next-env.d.ts`,
+  `${pathConfig.fullVersionTSXPath}/next.config.js`,
+  `${pathConfig.fullVersionTSXPath}/next.d.ts`,
+  `${pathConfig.fullVersionTSXPath}/package.json`,
+  `${pathConfig.fullVersionTSXPath}/tsconfig.json`
 ]
 
 const filesToCopyJSX = [
-  '../../demo-configs',
-  '../../jsx-version/public',
-  '../../jsx-version/src',
-  '../../jsx-version/styles',
-  '../../jsx-version/.editorconfig',
-  '../../jsx-version/.env',
-  '../../jsx-version/.eslintrc.js',
-  '../../jsx-version/.gitignore',
-  '../../jsx-version/.prettierrc.js',
-  '../../jsx-version/next.config.js',
-  '../../jsx-version/package.json',
-  '../../jsx-version/jsconfig.json'
+  `${pathConfig.demoConfigsPathJSX}`,
+  `${pathConfig.fullVersionJSXPath}/public`,
+  `${pathConfig.fullVersionJSXPath}/src`,
+  `${pathConfig.fullVersionJSXPath}/styles`,
+  `${pathConfig.fullVersionJSXPath}/.editorconfig`,
+  `${pathConfig.fullVersionJSXPath}/.env`,
+  `${pathConfig.fullVersionJSXPath}/.eslintrc.js`,
+  `${pathConfig.fullVersionJSXPath}/.gitignore`,
+  `${pathConfig.fullVersionJSXPath}/.prettierrc.js`,
+  `${pathConfig.fullVersionJSXPath}/next.config.js`,
+  `${pathConfig.fullVersionJSXPath}/package.json`,
+  `${pathConfig.fullVersionJSXPath}/jsconfig.json`
 ]
 
 let arg = null
@@ -115,14 +115,15 @@ const updateContent = (userLayoutPath, BuyNowComponentPath, PackageJSONPath) => 
 }
 
 const generateTSXPackage = () => {
-  fs.mkdir(`${packagePath}/tsx`, err => {
+  fs.mkdir(`${pathConfig.packagePath}/tsx-version/full-version`,{ recursive: true }, err => {
     if (err) {
       console.log(err)
 
       return
     } else {
       filesToCopyTSX.map(file => {
-        copyRecursiveSync(file, `${packagePath}/tsx/${file.replace('../../', '')}`)
+        const dest = file.replace(pathConfig.basePathTSX, `${pathConfig.packagePath}/tsx-version`)
+        copyRecursiveSync(file, dest)
       })
       updateContent(userLayoutPathTSX, BuyNowComponentPathTSX, PackageJSONPathTSX)
     }
@@ -130,15 +131,18 @@ const generateTSXPackage = () => {
 }
 
 const generateJSXPackage = () => {
-  if (fs.existsSync('../../jsx-version')) {
-    fs.mkdir(`${packagePath}/jsx`, err => {
+  if (fs.existsSync(`${pathConfig.basePathJSX}`)) {
+    fs.mkdir(`${pathConfig.packagePath}/jsx/full-version`, { recursive: true } , err => {
       if (err) {
         console.log(err)
 
         return
       } else {
         filesToCopyJSX.map(file => {
-          copyRecursiveSync(file, `${packagePath}/jsx/${file.replace('../../jsx-version/', '')}`)
+          const dest = file.replace(pathConfig.basePathJSX, `${pathConfig.packagePath}/jsx-version`)
+        
+         
+          copyRecursiveSync(file, dest)
         })
         updateContent(userLayoutPathJSX, BuyNowComponentPathJSX, PackageJSONPathJSX)
       }
@@ -159,8 +163,8 @@ const generate = () => {
   }
 }
 
-if (!fs.existsSync(packagePath)) {
-  fs.mkdir(packagePath, err => {
+if (!fs.existsSync(pathConfig.packagePath)) {
+  fs.mkdir(pathConfig.packagePath, err => {
     if (err) {
       console.log(err)
     } else {
@@ -168,11 +172,11 @@ if (!fs.existsSync(packagePath)) {
     }
   })
 } else {
-  fs.rm(packagePath, { recursive: true, force: true }, err => {
+  fs.rm(pathConfig.packagePath, { recursive: true, force: true }, err => {
     if (err) {
       console.log(err)
     } else {
-      fs.mkdir(packagePath, err => {
+      fs.mkdir(pathConfig.packagePath, err => {
         if (err) {
           console.log(err)
         } else {

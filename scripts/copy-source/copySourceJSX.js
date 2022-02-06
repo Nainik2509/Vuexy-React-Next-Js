@@ -1,12 +1,12 @@
 const fs = require('fs')
 const path = require('path')
 
+const pathConfig = require('../configs/paths.json')
 const { AllFilesJSX, doesJSXVersionExits, sourceFilesJSX, getAllIndexFiles, replaceCodeWithNull } = require('./helpers')
 
-const componentsPath = '../../jsx-version/src/pages/components/'
-const formsPath = '../../jsx-version/src/pages/forms/form-elements/'
 
-const AllIndexFiles = [...getAllIndexFiles(componentsPath), ...getAllIndexFiles(formsPath)]
+const componentsPath = `${pathConfig.fullVersionJSXPath}/src/pages/components/`
+const formsPath = `${pathConfig.fullVersionJSXPath}/src/pages/forms/form-elements/`
 
 const generateJSXSourceCode = () => {
   if (doesJSXVersionExits) {
@@ -59,7 +59,13 @@ const generateJSXSourceCode = () => {
 }
 
 generateJSXSourceCode()
-replaceCodeWithNull(AllIndexFiles, 'tsx')
+if (doesJSXVersionExits) {
+
+  const AllIndexFiles = [...getAllIndexFiles(componentsPath), ...getAllIndexFiles(formsPath)]
+  replaceCodeWithNull(AllIndexFiles, 'tsx')
+} else {
+  return
+}
 
 module.exports = {
   generateJSXSourceCode

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "rootDir": "src",
-    "outDir": "./jsx-version/src",
+    "outDir": "../../jsx-version/full-version/src",
     "target": "esnext",
     "lib": [
       "ES2020"

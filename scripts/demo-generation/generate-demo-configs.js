@@ -1,60 +1,100 @@
 const fs = require('fs')
-const path = require('path')
-const replace = require('replace-in-file')
+const pathConfig = require('../configs/paths.json')
 
 const demoConfigPath = './demoConfigs.json'
-const demoConfigsDir = '../../demo-configs'
-const defaultConfigPath = '../../src/configs/themeConfig.ts'
+const defaultConfigPathTSX = `${pathConfig.fullVersionTSXPath}/src/configs/themeConfig.ts`
+const defaultConfigPathJSX = `${pathConfig.fullVersionJSXPath}/src/configs/themeConfig.js`
 
 // ** Delete All Previously Generated Demo Files
-fs.readdir(demoConfigsDir, (err, files) => {
-  if (err) throw err
+const deleteExistingDemoFiles = () => {
+  if (fs.existsSync(pathConfig.demoConfigsPathTSX)) {
+    fs.rm(pathConfig.demoConfigsPathTSX, { recursive: true, force: true }, err => {
+      if (err) {
+        console.log(err);
 
-  for (const file of files) {
-    fs.unlink(path.join(demoConfigsDir, file), err => {
-      if (err) throw err
+        return
+      }
     })
+  } else {
+    console.log(`${pathConfig.demoConfigsPathTSX} Doesn't exist!`);
   }
-})
 
-if (fs.existsSync(demoConfigPath)) {
-  fs.readFile(demoConfigPath, 'utf8', (err, demoConfigString) => {
+  if (fs.existsSync(pathConfig.demoConfigsPathJSX)) {
+    fs.rm(pathConfig.demoConfigsPathJSX, { recursive: true, force: true }, err => {
+      if (err) {
+        console.log(err);
+
+        return
+      }
+    })
+  } else {
+    console.log(`${pathConfig.demoConfigsPathJSX} Doesn't exist!`);
+  }
+}
+
+
+
+const generateDemoConfigs = (version, demoConfigsFolder, defaultConfigPath) => {
+    if (fs.existsSync(demoConfigPath)) {
+    fs.readFile(demoConfigPath, 'utf8', (err, demoConfigString) => {
     if (err) {
       console.log(err)
     } else {
       const demoData = JSON.parse(demoConfigString)
-      Object.keys(demoData).forEach(key => {
+      const generateConfigs = () => {
+        Object.keys(demoData).forEach(key => {
         const demoNumber = key.replace('demo-', '')
 
-        const fileName = `${demoConfigsDir}/demo-${demoNumber}.ts`
+        const fileName = `${demoConfigsFolder}/demo-${demoNumber}.${version}`
 
         if (fs.existsSync(defaultConfigPath)) {
           fs.readFile(defaultConfigPath, 'utf-8', (err, defaultConfigData) => {
-            fs.writeFile(fileName, defaultConfigData, err => {
+
+            let dataToWrite = defaultConfigData
+
+            Object.keys(demoData[key]).forEach(val => {
+              const splitData = defaultConfigData.split('\n')
+              const lineIndex = splitData.findIndex(i => i.includes(val) && i.includes('/*'))
+              const valToReplace = splitData[lineIndex] ? splitData[lineIndex].match(/'(\w+)'/)[1] : null
+                
+              if( splitData[lineIndex] && valToReplace){
+                splitData[lineIndex] =  splitData[lineIndex].replace(valToReplace, demoData[key][val])
+              }
+              
+               dataToWrite = splitData.join('\n')
+
+            })
+            fs.writeFile(fileName, dataToWrite, err => {
               if (err) {
-                console.log(err)
-              } else {
-                fs.readFile(fileName, 'utf-8', (err, writtenConfigData) => {
-                  Object.keys(demoData[key]).forEach(val => {
-                    writtenConfigData.split(/\r?\n/).forEach(line => {
-                      const propKey = val
-                      const propValue = demoData[key][val]
-                      if (line.includes(propKey) && line.includes('/*')) {
-                        const valToReplace = line.match(/'(\w+)'/)[1]
-                        formatted = replace.sync({
-                          files: fileName,
-                          from: line,
-                          to: line.replace(valToReplace, propValue)
-                        })
-                      }
-                    })
-                  })
-                })
+                console.log(err);
+
+                return
               }
             })
           })
         }
       })
+      }
+      if(fs.existsSync(demoConfigsFolder)){
+        generateConfigs()
+      }else{
+        fs.mkdir(demoConfigsFolder, {recursive: true, force: true}, err => {
+          if(err){
+            console.log(err);
+
+            return
+          }else{
+            generateConfigs()
+          }
+        })
+      }
+      
     }
   })
 }
+}
+
+
+deleteExistingDemoFiles()
+generateDemoConfigs('ts', pathConfig.demoConfigsPathTSX, defaultConfigPathTSX)
+generateDemoConfigs('js', pathConfig.demoConfigsPathJSX, defaultConfigPathJSX)

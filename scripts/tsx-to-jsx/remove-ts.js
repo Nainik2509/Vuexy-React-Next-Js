@@ -1,8 +1,9 @@
 const fs = require('fs')
 const path = require('path')
+const pathConfig = require('../configs/paths.json')
 
-const srcDirPath = '../../jsx-version/src'
-const packageFilePath = '../../jsx-version/package.json'
+const srcDirPath = `${pathConfig.fullVersionJSXPath}/src`
+const packageFilePath = `${pathConfig.fullVersionJSXPath}/package.json`
 
 const scanDir = function (dir, callback) {
   fs.readdir(dir, function (err, list) {

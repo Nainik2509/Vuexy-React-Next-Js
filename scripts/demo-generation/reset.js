@@ -1,14 +1,13 @@
 const fs = require('fs')
 const path = require('path')
-const replace = require('replace-in-file')
+const pathConfig = require('../configs/paths.json')
 
 let demo = 'demo-1'
-const baseDir = '../../src'
-const i18nPath = '../../src/configs/i18n.ts'
-const themeConfigPath = '../../src/configs/themeConfig.ts'
-const demoConfigPath = '../../demo-configs/demo-1.ts'
-const nextConfigPath = '../../next.config.js'
-const settingsContextFile = '../../src/@core/context/settingsContext.tsx'
+const demoConfigPath = `${pathConfig.demoConfigsPathTSX}/demo-1.ts`
+const i18nPath = `${pathConfig.fullVersionTSXPath}/src/configs/i18n.ts`
+const themeConfigPath = `${pathConfig.fullVersionTSXPath}/src/configs/themeConfig.ts`
+const nextConfigPath = `${pathConfig.fullVersionTSXPath}/next.config.js`
+const settingsContextFile = `${pathConfig.fullVersionTSXPath}/src/@core/context/settingsContext.tsx`
 
 const demoArgs = process.argv.slice(2)
 
@@ -31,10 +30,14 @@ const removeBasePathInImages = (dirPath, arrayOfFiles) => {
 
           return
         } else {
-          replace.sync({
-            files: path.join(__dirname, dirPath, '/', file),
-            from: new RegExp(`/demo/react-master/${demo}/images/`, 'g'),
-            to: `/images/`
+          const updatedData = data.replace(new RegExp(`/demo/react-master/${demo}/images/`, 'g'), '/images/')
+          fs.writeFile(path.join(__dirname, dirPath, '/', file), updatedData, err => {
+            if (err) {
+
+              console.log(err);
+
+              return
+            }
           })
 
           arrayOfFiles.push(path.join(__dirname, dirPath, '/', file))
@@ -47,14 +50,35 @@ const removeBasePathInImages = (dirPath, arrayOfFiles) => {
 }
 
 const removeBasePathInI18n = () => {
-  replace.sync({
-    files: i18nPath,
-    from: `/demo/react-master/${demo}/locales/`,
-    to: '/locales/'
+  fs.readFile(i18nPath, 'utf-8', (err, data) => {
+    if (err) {
+
+      console.log(err);
+
+      return
+    } else {
+      const updatedData = data.replace(`/demo/react-master/${demo}/locales/`, '/locales/')
+      fs.writeFile(i18nPath, '', err => {
+        if (err) {
+          console.log(err);
+
+          return
+        } else {
+          fs.writeFile(i18nPath, updatedData, err => {
+            if (err) {
+
+              console.log(err);
+
+              return
+            }
+          })
+        }
+      })
+    }
   })
 }
 
-removeBasePathInImages(baseDir)
+removeBasePathInImages(`${pathConfig.fullVersionTSXPath}/src`)
 removeBasePathInI18n()
 
 if (fs.existsSync(settingsContextFile)) {
@@ -65,44 +89,68 @@ if (fs.existsSync(settingsContextFile)) {
       return
     } else {
       const result = data.replace(new RegExp(/(localStorage.(get|set)Item\(')(.*)('.*\))/, 'g'), `$1settings$4`)
-      fs.writeFile(settingsContextFile, result, function (err) {
+      fs.writeFile(settingsContextFile, '', err => {
         if (err) {
-          console.log(err)
+          console.log(err);
 
           return
         } else {
-          if (fs.existsSync(nextConfigPath)) {
-            const nextConfigData = fs.readFileSync(nextConfigPath).toString().split('\n')
+          fs.writeFile(settingsContextFile, result, function (err) {
+            if (err) {
+              console.log(err)
 
-            const result = nextConfigData
-              .filter(line => {
-                return line.indexOf('basePath') !== 0
-              })
-              .join('\n')
+              return
+            } else {
+              if (fs.existsSync(nextConfigPath)) {
+                const nextConfigData = fs.readFileSync(nextConfigPath).toString().split('\n')
 
-            fs.writeFile(nextConfigPath, result, err => {
-              if (err) {
-                console.log(err)
+                const result = nextConfigData
+                  .filter(line => {
+                    return line.indexOf('basePath') === -1
+                  })
+                  .join('\n')
 
-                return
-              }
-            })
-          } else {
-            console.log('NextConfig Does Not Exists')
 
-            return
-          }
-          if (fs.existsSync(themeConfigPath) && fs.existsSync(demoConfigPath)) {
-            fs.copyFile(demoConfigPath, themeConfigPath, err => {
-              if (err) {
-                console.log(err)
+                fs.writeFile(nextConfigPath, result, err => {
+                  if (err) {
+                    console.log(err)
 
-                return
+                    return
+                  }
+                })
               } else {
-                console.log(`Reset Complete`)
+                console.log('NextConfig Does Not Exists')
+
+                return
               }
-            })
-          }
+              if (fs.existsSync(themeConfigPath) && fs.existsSync(demoConfigPath)) {
+                // fs.copyFile(demoConfigPath, themeConfigPath, err => {
+                //   if (err) {
+                //     console.log(err)
+
+                //     return
+                //   } else {
+                //     console.log(`Reset Complete`)
+                //   }
+                // })
+                fs.readFile(demoConfigPath, 'utf-8', (err, data) => {
+                  if (err) {
+                    console.log(err);
+
+                    return
+                  } else {
+                    fs.writeFile(themeConfigPath, data, err => {
+                      if (err) {
+                        console.log(err);
+
+                        return
+                      }
+                    })
+                  }
+                })
+              }
+            }
+          })
         }
       })
     }

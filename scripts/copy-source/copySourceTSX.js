@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
+const pathConfig = require('../configs/paths.json')
 const {
   AllFilesTSX,
   AllFilesJSX,
@@ -11,8 +12,10 @@ const {
   doesJSXVersionExits
 } = require('./helpers')
 
-const componentsPath = '../../src/pages/components/'
-const formsPath = '../../src/pages/forms/form-elements/'
+
+const componentsPath = `${pathConfig.fullVersionTSXPath}/src/pages/components/`
+const formsPath = `${pathConfig.fullVersionTSXPath}/src/pages/forms/form-elements/`
+
 
 const AllIndexFiles = [...getAllIndexFiles(componentsPath), ...getAllIndexFiles(formsPath)]
 

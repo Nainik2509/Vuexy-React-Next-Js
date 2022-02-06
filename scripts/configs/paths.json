@@ -1,0 +1,12 @@
+{
+    "docsPath": "../../docs",
+    "packagePath": "../../package",
+    "basePathJSX": "../../jsx-version",
+    "basePathTSX": "../../tsx-version",
+    "starterKitTSXPath": "../../tsx-version/starter-kit",
+    "starterKitJSXPath": "../../jsx-version/starter-kit",
+    "demoConfigsPathTSX": "../../tsx-version/demo-configs",
+    "demoConfigsPathJSX": "../../jsx-version/demo-configs",
+    "fullVersionTSXPath": "../../tsx-version/full-version",
+    "fullVersionJSXPath": "../../jsx-version/full-version"
+}

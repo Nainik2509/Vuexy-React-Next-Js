@@ -39,9 +39,9 @@ const themeConfig: ThemeConfig = {
   // ** Layout Configs
   templateName: 'Master' /* App Name */,
   layout: 'horizontal' /* vertical | horizontal */,
-  mode: 'dark' /* light | dark */,
+  mode: 'light' /* light | dark */,
   direction: 'ltr' /* ltr | rtl */,
-  skin: 'bordered' /* default | bordered | semi-dark /*! Note: semi-dark value will only work for Vertical Layout */,
+  skin: 'default' /* default | bordered | semi-dark /*! Note: semi-dark value will only work for Vertical Layout */,
   contentWidth: 'boxed' /* full | boxed */,
   footer: 'static' /* fixed | static | hidden */,
 

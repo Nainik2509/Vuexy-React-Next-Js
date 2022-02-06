@@ -3,6 +3,6 @@
 node package-generation.js $1
 
 # Zip the package
-cd ../../
-zip -r downloadable-package.zip downloadable-package
-rm -rf downloadable-package
+# cd ../../
+# zip -r package.zip package
+# rm -rf package

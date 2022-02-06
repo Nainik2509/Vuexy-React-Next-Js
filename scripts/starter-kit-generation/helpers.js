@@ -1,79 +1,79 @@
 const fs = require('fs')
 const path = require('path')
+const pathConfig = require('../configs/paths.json')
 
-const starterPath = '../../starter-kit'
-const AppPathTSX = `${starterPath}/tsx/src/pages/_app.tsx`
-const AppPathJSX = `${starterPath}/jsx/src/pages/_app.js`
-const HomePathJSX = `${starterPath}/jsx/src/pages/index.js`
-const HomePathTSX = `${starterPath}/tsx/src/pages/index.tsx`
-const PackageJSONPathTSX = `${starterPath}/tsx/package.json`
-const PackageJSONPathJSX = `${starterPath}/jsx/package.json`
-const userLayoutPathJSX = `${starterPath}/jsx/src/layouts/UserLayout.js`
-const userLayoutPathTSX = `${starterPath}/tsx/src/layouts/UserLayout.tsx`
-const LoginPathTSX = `${starterPath}/tsx/src/pages/login/index.tsx`
-const LoginPathJSX = `${starterPath}/jsx/src/pages/login/index.js`
-const RegisterPathTSX = `${starterPath}/tsx/src/pages/register/index.tsx`
-const RegisterPathJSX = `${starterPath}/jsx/src/pages/register/index.js`
-const themeConfigPathTSX = `${starterPath}/tsx/src/configs/themeConfig.ts`
-const themeConfigPathJSX = `${starterPath}/jsx/src/configs/themeConfig.js`
-const navigationVerticalPathTSX = `${starterPath}/tsx/src/navigation/vertical/index.ts`
-const navigationVerticalPathJSX = `${starterPath}/jsx/src/navigation/vertical/index.js`
-const TranslationsPathJSX = `${starterPath}/jsx/src/layouts/components/Translations.js`
-const TranslationsPathTSX = `${starterPath}/tsx/src/layouts/components/Translations.tsx`
-const BuyNowComponentPathJSX = `${starterPath}/jsx/src/layouts/components/BuyNowButton.js`
-const BuyNowComponentPathTSX = `${starterPath}/tsx/src/layouts/components/BuyNowButton.tsx`
-const navigationHorizontalPathTSX = `${starterPath}/tsx/src/navigation/horizontal/index.ts`
-const navigationHorizontalPathJSX = `${starterPath}/jsx/src/navigation/horizontal/index.js`
-const appbarVerticalPathTSX = `${starterPath}/tsx/src/layouts/components/vertical/AppBarContent.tsx`
-const appbarVerticalPathJSX = `${starterPath}/jsx/src/layouts/components/vertical/AppBarContent.js`
-const appbarHorizontalPathTSX = `${starterPath}/tsx/src/layouts/components/horizontal/AppBarContent.tsx`
-const appbarHorizontalPathJSX = `${starterPath}/jsx/src/layouts/components/horizontal/AppBarContent.js`
-const UserDropdownPathTSX = `${starterPath}/tsx/src/@core/layouts/components/shared-components/UserDropdown.tsx`
-const UserDropdownPathJSX = `${starterPath}/jsx/src/@core/layouts/components/shared-components/UserDropdown.js`
+const AppPathTSX = `${pathConfig.starterKitTSXPath}/src/pages/_app.tsx`
+const AppPathJSX = `${pathConfig.starterKitJSXPath}/src/pages/_app.js`
+const HomePathJSX = `${pathConfig.starterKitJSXPath}/src/pages/index.js`
+const HomePathTSX = `${pathConfig.starterKitTSXPath}/src/pages/index.tsx`
+const PackageJSONPathTSX = `${pathConfig.starterKitTSXPath}/package.json`
+const PackageJSONPathJSX = `${pathConfig.starterKitJSXPath}/package.json`
+const userLayoutPathJSX = `${pathConfig.starterKitJSXPath}/src/layouts/UserLayout.js`
+const userLayoutPathTSX = `${pathConfig.starterKitTSXPath}/src/layouts/UserLayout.tsx`
+const LoginPathTSX = `${pathConfig.starterKitTSXPath}/src/pages/login/index.tsx`
+const LoginPathJSX = `${pathConfig.starterKitJSXPath}/src/pages/login/index.js`
+const RegisterPathTSX = `${pathConfig.starterKitTSXPath}/src/pages/register/index.tsx`
+const RegisterPathJSX = `${pathConfig.starterKitJSXPath}/src/pages/register/index.js`
+const themeConfigPathTSX = `${pathConfig.starterKitTSXPath}/src/configs/themeConfig.ts`
+const themeConfigPathJSX = `${pathConfig.starterKitJSXPath}/src/configs/themeConfig.js`
+const navigationVerticalPathTSX = `${pathConfig.starterKitTSXPath}/src/navigation/vertical/index.ts`
+const navigationVerticalPathJSX = `${pathConfig.starterKitJSXPath}/src/navigation/vertical/index.js`
+const TranslationsPathJSX = `${pathConfig.starterKitJSXPath}/src/layouts/components/Translations.js`
+const TranslationsPathTSX = `${pathConfig.starterKitTSXPath}/src/layouts/components/Translations.tsx`
+const BuyNowComponentPathJSX = `${pathConfig.starterKitJSXPath}/src/layouts/components/BuyNowButton.js`
+const BuyNowComponentPathTSX = `${pathConfig.starterKitTSXPath}/src/layouts/components/BuyNowButton.tsx`
+const navigationHorizontalPathTSX = `${pathConfig.starterKitTSXPath}/src/navigation/horizontal/index.ts`
+const navigationHorizontalPathJSX = `${pathConfig.starterKitJSXPath}/src/navigation/horizontal/index.js`
+const appbarVerticalPathTSX = `${pathConfig.starterKitTSXPath}/src/layouts/components/vertical/AppBarContent.tsx`
+const appbarVerticalPathJSX = `${pathConfig.starterKitJSXPath}/src/layouts/components/vertical/AppBarContent.js`
+const appbarHorizontalPathTSX = `${pathConfig.starterKitTSXPath}/src/layouts/components/horizontal/AppBarContent.tsx`
+const appbarHorizontalPathJSX = `${pathConfig.starterKitJSXPath}/src/layouts/components/horizontal/AppBarContent.js`
+const UserDropdownPathTSX = `${pathConfig.starterKitTSXPath}/src/@core/layouts/components/shared-components/UserDropdown.tsx`
+const UserDropdownPathJSX = `${pathConfig.starterKitJSXPath}/src/@core/layouts/components/shared-components/UserDropdown.js`
 
 const filesToCopyTSX = [
-  '../../public',
-  '../../src',
-  '../../styles',
-  '../../.editorconfig',
-  '../../.env',
-  '../../.eslintrc.json',
-  '../../.gitignore',
-  '../../.prettierrc.js',
-  '../../declaration.d.ts',
-  '../../next-env.d.ts',
-  '../../next.config.js',
-  '../../next.d.ts',
-  '../../package.json',
-  '../../tsconfig.json'
+  `${pathConfig.fullVersionTSXPath}/public`,
+  `${pathConfig.fullVersionTSXPath}/src`,
+  `${pathConfig.fullVersionTSXPath}/styles`,
+  `${pathConfig.fullVersionTSXPath}/.editorconfig`,
+  `${pathConfig.fullVersionTSXPath}/.env`,
+  `${pathConfig.fullVersionTSXPath}/.eslintrc.json`,
+  `${pathConfig.fullVersionTSXPath}/.gitignore`,
+  `${pathConfig.fullVersionTSXPath}/.prettierrc.js`,
+  `${pathConfig.fullVersionTSXPath}/declaration.d.ts`,
+  `${pathConfig.fullVersionTSXPath}/next-env.d.ts`,
+  `${pathConfig.fullVersionTSXPath}/next.config.js`,
+  `${pathConfig.fullVersionTSXPath}/next.d.ts`,
+  `${pathConfig.fullVersionTSXPath}/package.json`,
+  `${pathConfig.fullVersionTSXPath}/tsconfig.json`
 ]
 
 const filesToCopyJSX = [
-  '../../jsx-version/public',
-  '../../jsx-version/src',
-  '../../jsx-version/styles',
-  '../../jsx-version/.editorconfig',
-  '../../jsx-version/.env',
-  '../../jsx-version/.eslintrc.js',
-  '../../jsx-version/.gitignore',
-  '../../jsx-version/.prettierrc.js',
-  '../../jsx-version/next.config.js',
-  '../../jsx-version/package.json',
-  '../../jsx-version/jsconfig.json'
+  `${pathConfig.fullVersionJSXPath}/public`,
+  `${pathConfig.fullVersionJSXPath}/src`,
+  `${pathConfig.fullVersionJSXPath}/styles`,
+  `${pathConfig.fullVersionJSXPath}/.editorconfig`,
+  `${pathConfig.fullVersionJSXPath}/.env`,
+  `${pathConfig.fullVersionJSXPath}/.eslintrc.js`,
+  `${pathConfig.fullVersionJSXPath}/.gitignore`,
+  `${pathConfig.fullVersionJSXPath}/.prettierrc.js`,
+  `${pathConfig.fullVersionJSXPath}/next.config.js`,
+  `${pathConfig.fullVersionJSXPath}/package.json`,
+  `${pathConfig.fullVersionJSXPath}/jsconfig.json`
 ]
 
 const foldersToRemoveTSX = [
-  `${starterPath}/tsx/src/views`,
-  `${starterPath}/tsx/src/store`,
-  `${starterPath}/tsx/src/@fake-db`,
-  `${starterPath}/tsx/src/types/apps`
+  `${pathConfig.starterKitTSXPath}/src/views`,
+  `${pathConfig.starterKitTSXPath}/src/store`,
+  `${pathConfig.starterKitTSXPath}/src/@fake-db`,
+  `${pathConfig.starterKitTSXPath}/src/types/apps`
 ]
 
 const foldersToRemoveJSX = [
-  `${starterPath}/jsx/src/views`,
-  `${starterPath}/jsx/src/@fake-db`,
-  `${starterPath}/jsx/src/store`,
-  `${starterPath}/jsx/src/types/apps`
+  `${pathConfig.starterKitJSXPath}/src/views`,
+  `${pathConfig.starterKitJSXPath}/src/@fake-db`,
+  `${pathConfig.starterKitJSXPath}/src/store`,
+  `${pathConfig.starterKitJSXPath}/src/types/apps`
 ]
 
 const foldersToKeepTSX = [
@@ -108,12 +108,12 @@ const copyRecursiveSync = (src, dest) => {
   const stats = exists && fs.statSync(src)
   const isDirectory = exists && stats.isDirectory()
   if (isDirectory) {
-    !fs.existsSync(dest) ? fs.mkdirSync(dest, { recursive: true }) : null
+    !fs.existsSync(dest) ? fs.mkdirSync(dest, { recursive: true, force: true }) : null
     fs.readdirSync(src).forEach(function (childItemName) {
       copyRecursiveSync(path.join(src, childItemName), path.join(dest, childItemName))
     })
   } else {
-    fs.copyFileSync(src, dest)
+      fs.copyFileSync(src, dest)
   }
 }
 
@@ -159,20 +159,20 @@ const filesToReplace = [
     dest: HomePathJSX
   },
   {
-    src: '../../src/pages/pages/auth/login-v2/index.tsx',
-    dest: `${starterPath}/tsx/src/pages/login/index.tsx`
+    src: `${pathConfig.fullVersionTSXPath}/src/pages/pages/auth/login-v2/index.tsx`,
+    dest: `${pathConfig.starterKitTSXPath}/src/pages/login/index.tsx`
   },
   {
-    src: '../../jsx-version/src/pages/pages/auth/login-v2/index.js',
-    dest: `${starterPath}/jsx/src/pages/login/index.js`
+    src: `${pathConfig.fullVersionJSXPath}/src/pages/pages/auth/login-v2/index.js`,
+    dest: `${pathConfig.starterKitJSXPath}/src/pages/login/index.js`
   },
   {
-    src: '../../src/pages/pages/auth/register-v2/index.tsx',
-    dest: `${starterPath}/tsx/src/pages/register/index.tsx`
+    src: `${pathConfig.fullVersionTSXPath}/src/pages/pages/auth/register-v2/index.tsx`,
+    dest: `${pathConfig.starterKitTSXPath}/src/pages/register/index.tsx`
   },
   {
-    src: '../../jsx-version/src/pages/pages/auth/login-v2/index.js',
-    dest: `${starterPath}/jsx/src/pages/login/index.js`
+    src: `${pathConfig.fullVersionJSXPath}/src/pages/pages/auth/login-v2/index.js`,
+    dest: `${pathConfig.starterKitJSXPath}/src/pages/login/index.js`
   }
 ]
 
@@ -224,14 +224,14 @@ const appDataToReplace = [
   { from: '</AuthProvider>', to: '' },
   { from: '<Guard authGuard={authGuard} guestGuard={guestGuard}>', to: '' },
   { from: '</Guard>', to: '' },
-  { from: guardComponentTSX, to: '' },
-  { from: guardTypeTSX, to: '' },
-  { from: new RegExp(/\/\/[\s\S]*? React Imports/), to: '' },
-  { from: new RegExp(/\/\/[\s\S]*? Store Imports/), to: '' },
-  { from: new RegExp(/\/\/[\s\S]*? Config Imports/), to: '' },
-  { from: new RegExp(/\/\/[\s\S]*? Fake-DB Import/), to: '' },
-  { from: new RegExp(/\/\/[\s\S]*? Spinner Import/), to: '' },
-  { from: new RegExp(/\/\/[\s\S]*? Contexts/), to: '' },
+   { from: new RegExp(/const Guard[\s\S]*?<\/AuthGuard>[\s\S]*?}[\s\S]*?}/), to: '' },
+  { from: new RegExp(/type GuardProps[\s\S]*?ReactNode[\s\S]*?}/), to: '' },
+  { from: new RegExp(/\/\/ \*\* React Imports/), to: '' },
+  { from: new RegExp(/\/\/ \*\* Store Imports/), to: '' },
+  { from: new RegExp(/\/\/ \*\* Config Imports/), to: '' },
+  { from: new RegExp(/\/\/ \*\* Fake-DB Import/), to: '' },
+  { from: new RegExp(/\/\/ \*\* Spinner Import/), to: '' },
+  { from: new RegExp(/\/\/ \*\* Contexts/), to: '' },
   { from: 'const authGuard = Component.authGuard ?? true', to: '' },
   { from: 'const guestGuard = Component.guestGuard ?? false', to: '' }
 ]
@@ -240,7 +240,6 @@ module.exports = {
   AppPathTSX,
   removeAuth,
   AppPathJSX,
-  starterPath,
   guardTypeTSX,
   LoginPathTSX,
   LoginPathJSX,

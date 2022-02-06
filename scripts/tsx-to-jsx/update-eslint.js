@@ -1,4 +1,5 @@
 const fs = require('fs')
+const pathConfig = require('../configs/paths.json')
 
 const data = `module.exports = {
   env: {
@@ -27,7 +28,7 @@ const data = `module.exports = {
     'prefer-destructuring': 'off',
     'no-nested-ternary': 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'react/jsx-filename-extension': 'off',
     // Best Practices
     eqeqeq: 'error',
     'no-invalid-this': 'error',
@@ -113,7 +114,7 @@ const data = `module.exports = {
   // }
 }`
 
-fs.writeFile('../../jsx-version/.eslintrc.js', data, err => {
+fs.writeFile(`${pathConfig.fullVersionJSXPath}/.eslintrc.js`, data, err => {
   if (err) {
     console.error(err)
 

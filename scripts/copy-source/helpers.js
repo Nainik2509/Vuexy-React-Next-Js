@@ -1,12 +1,12 @@
 const fs = require('fs')
 const path = require('path')
-const replace = require('replace-in-file')
+const pathConfig = require('../configs/paths.json')
 
-const basePathJSX = '../../jsx-version/'
-const componentsPathTSX = '../../src/views/components/'
-const formsPathTSX = '../../src/views/forms/form-elements/'
-const componentsPathJSX = '../../jsx-version/src/views/components/'
-const formsPathJSX = '../../jsx-version/src/views/forms/form-elements/'
+const basePathJSX = pathConfig.basePathJSX
+const componentsPathTSX = `${pathConfig.fullVersionTSXPath}/src/views/components/`
+const formsPathTSX = `${pathConfig.fullVersionTSXPath}/src/views/forms/form-elements/`
+const componentsPathJSX = `${pathConfig.fullVersionJSXPath}/src/views/components/`
+const formsPathJSX = `${pathConfig.fullVersionJSXPath}/src/views/forms/form-elements/`
 
 const doesJSXVersionExits = fs.existsSync(basePathJSX)
 
@@ -62,7 +62,7 @@ const getAllSourceFilesJSX = arr => {
   return files
 }
 
-const getAllIndexFiles = function (dirPath, arrayOfFiles) {
+const getAllIndexFiles = (dirPath, arrayOfFiles) => {
   if (fs.existsSync(dirPath)) {
     files = fs.readdirSync(dirPath)
 
@@ -79,7 +79,6 @@ const getAllIndexFiles = function (dirPath, arrayOfFiles) {
         arrayOfFiles.push(path.join(__dirname, dirPath, '/', file))
       }
     })
-
     return arrayOfFiles
   } else {
     console.log('Dir does not exist')
@@ -94,17 +93,18 @@ const replaceCodeWithNull = (dir, version) => {
 
         return
       } else {
-        const content = data.split('\n')
-
-        content.map(line => {
-          if (line.includes(`${version}:`)) {
-            replace.sync({
-              files: file,
-              from: line,
-              to: `${version}: null,`
+        let splitData = data.split('\r\n')
+        splitData.forEach(line => {
+          if (line.toLowerCase().trim().includes(`${version}: source.`)) {
+            console.log();
+            fs.writeFile(file, data.replace(line, `${version}: null`), err => {
+              if (err) {
+                console.log(err);
+              }
             })
           }
         })
+
       }
     })
   })
