@@ -36,7 +36,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 
 // ** Hooks
 import { useAuth } from 'src/@core/hooks/useAuth'
-import useBgColor from 'src/@core/hooks/theme/useBgColor'
+import useBgColor from 'src/@core/hooks/useBgColor'
 import { useSettings } from 'src/@core/hooks/useSettings'
 
 // ** Configs
