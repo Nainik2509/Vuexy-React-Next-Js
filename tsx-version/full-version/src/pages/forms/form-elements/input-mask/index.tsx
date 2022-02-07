@@ -35,7 +35,7 @@ const InputMask = () => {
             title='Input Masks'
             code={{
               tsx: source.InputMaskExamplesTSXCode,
-              jsx: source.InputMaskExamplesJSXCode
+              jsx: null,
             }}
           >
             <InputMaskExamples />

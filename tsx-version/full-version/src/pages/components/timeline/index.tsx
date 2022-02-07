@@ -20,7 +20,7 @@ const TreeView = () => {
           title='Timeline Filled'
           code={{
             tsx: source.TimelineFilledTSXCode,
-            jsx: source.TimelineFilledJSXCode
+            jsx: null,
           }}
         >
           <TimelineFilled />
@@ -31,7 +31,7 @@ const TreeView = () => {
           title='Timeline Outlined'
           code={{
             tsx: source.TimelineOutlinedTSXCode,
-            jsx: source.TimelineOutlinedJSXCode
+            jsx: null,
           }}
         >
           <TimelineOutlined />
@@ -42,7 +42,7 @@ const TreeView = () => {
           title='Timeline Center With Icons'
           code={{
             tsx: source.TimelineCenterTSXCode,
-            jsx: source.TimelineCenterJSXCode
+            jsx: null,
           }}
         >
           <TimelineCenter />

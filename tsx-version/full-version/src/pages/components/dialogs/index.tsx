@@ -28,7 +28,7 @@ const Dialog = () => {
           title='Simple Dialog'
           code={{
             tsx: source.DialogSimpleTSXCode,
-            jsx: source.DialogSimpleJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -42,7 +42,7 @@ const Dialog = () => {
           title='Alerts'
           code={{
             tsx: source.DialogAlertTSXCode,
-            jsx: source.DialogAlertJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -56,7 +56,7 @@ const Dialog = () => {
           title='Transitions'
           code={{
             tsx: source.DialogTransitionTSXCode,
-            jsx: source.DialogTransitionJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -71,7 +71,7 @@ const Dialog = () => {
           title='Form Dialog'
           code={{
             tsx: source.DialogFormTSXCode,
-            jsx: source.DialogFormJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -85,7 +85,7 @@ const Dialog = () => {
           title='Customized Dialog'
           code={{
             tsx: source.DialogCustomizedTSXCode,
-            jsx: source.DialogCustomizedJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -99,7 +99,7 @@ const Dialog = () => {
           title='Full Screen Dialog'
           code={{
             tsx: source.DialogFullScreenTSXCode,
-            jsx: source.DialogFullScreenJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -113,7 +113,7 @@ const Dialog = () => {
           title='Optional Sizes'
           code={{
             tsx: source.DialogSizesTSXCode,
-            jsx: source.DialogSizesJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -129,7 +129,7 @@ const Dialog = () => {
           title='Responsive full-screen'
           code={{
             tsx: source.DialogRespoFullScreenTSXCode,
-            jsx: source.DialogRespoFullScreenJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -143,7 +143,7 @@ const Dialog = () => {
           title='Confirmation Dialog'
           code={{
             tsx: source.DialogConfirmationTSXCode,
-            jsx: source.DialogConfirmationJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -158,7 +158,7 @@ const Dialog = () => {
           title='Scrolling Long Content'
           code={{
             tsx: source.DialogsScrollTSXCode,
-            jsx: source.DialogsScrollJSXCode
+            jsx: null,
           }}
         >
           <Typography>

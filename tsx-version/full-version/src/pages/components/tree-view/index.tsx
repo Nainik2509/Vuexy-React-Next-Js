@@ -31,7 +31,7 @@ const TreeView = () => {
           title='Basic Tree View'
           code={{
             tsx: source.TreeViewBasicTSXCode,
-            jsx: source.TreeViewBasicJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -46,7 +46,7 @@ const TreeView = () => {
           title='Multi Selection'
           code={{
             tsx: source.TreeViewMultiSelectionTSXCode,
-            jsx: source.TreeViewMultiSelectionJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -60,7 +60,7 @@ const TreeView = () => {
           title='Controlled Tree View'
           code={{
             tsx: source.TreeViewControlledTSXCode,
-            jsx: source.TreeViewControlledJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -75,7 +75,7 @@ const TreeView = () => {
           title='Rich Object'
           code={{
             tsx: source.TreeViewRichObjectTSXCode,
-            jsx: source.TreeViewRichObjectJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -90,7 +90,7 @@ const TreeView = () => {
           title='Customized Tree View'
           code={{
             tsx: source.TreeViewCustomizedTSXCode,
-            jsx: source.TreeViewCustomizedJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>

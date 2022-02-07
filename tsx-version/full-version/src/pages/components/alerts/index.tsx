@@ -24,7 +24,7 @@ const Alerts = () => {
           title='Basic'
           code={{
             tsx: source.AlertsBasicTSXCode,
-            jsx: source.AlertsBasicJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -39,7 +39,7 @@ const Alerts = () => {
           title='Outlined'
           code={{
             tsx: source.AlertsOutlinedTSXCode,
-            jsx: source.AlertsOutlinedJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -53,7 +53,7 @@ const Alerts = () => {
           title='Filled'
           code={{
             tsx: source.AlertsFilledTSXCode,
-            jsx: source.AlertsFilledJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -67,7 +67,7 @@ const Alerts = () => {
           title='Action'
           code={{
             tsx: source.AlertsActionsTSXCode,
-            jsx: source.AlertsActionsJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -83,7 +83,7 @@ const Alerts = () => {
           title='Description'
           code={{
             tsx: source.AlertsDescriptionTSXCode,
-            jsx: source.AlertsDescriptionJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -97,7 +97,7 @@ const Alerts = () => {
           title='Dismissible'
           code={{
             tsx: source.AlertsDismissibleTSXCode,
-            jsx: source.AlertsDismissibleJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>

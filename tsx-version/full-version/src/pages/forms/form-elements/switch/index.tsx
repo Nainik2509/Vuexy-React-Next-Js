@@ -25,7 +25,7 @@ const Switches = () => {
           title='Basic Switches'
           code={{
             tsx: source.SwitchesBasicTSXCode,
-            jsx: source.SwitchesBasicJSXCode
+            jsx: null,
           }}
         >
           <SwitchesBasic />
@@ -36,7 +36,7 @@ const Switches = () => {
           title='Controlled and Uncontrolled'
           code={{
             tsx: source.SwitchesControlledUncontrolledTSXCode,
-            jsx: source.SwitchesControlledUncontrolledJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -51,7 +51,7 @@ const Switches = () => {
           title='Label Placement'
           code={{
             tsx: source.SwitchesLabelPlacementTSXCode,
-            jsx: source.SwitchesLabelPlacementJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -66,7 +66,7 @@ const Switches = () => {
           title='Colors'
           code={{
             tsx: source.SwitchesColorsTSXCode,
-            jsx: source.SwitchesColorsJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -80,7 +80,7 @@ const Switches = () => {
           title='Customized Switches'
           code={{
             tsx: source.SwitchesCustomizedTSXCode,
-            jsx: source.SwitchesCustomizedJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -94,7 +94,7 @@ const Switches = () => {
           title='Sizes'
           code={{
             tsx: source.SwitchesSizesTSXCode,
-            jsx: source.SwitchesSizesJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -108,7 +108,7 @@ const Switches = () => {
           title='Standalone Switches'
           code={{
             tsx: source.SwitchesStandaloneTSXCode,
-            jsx: source.SwitchesStandaloneJSXCode
+            jsx: null,
           }}
         >
           <SwitchesStandalone />

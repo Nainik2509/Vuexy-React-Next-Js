@@ -28,7 +28,7 @@ const Tabs = () => {
           title='Default Tabs'
           code={{
             tsx: source.TabsSimpleTSXCode,
-            jsx: source.TabsSimpleJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>Tabs are managed with the help of a state.</Typography>
@@ -40,7 +40,7 @@ const Tabs = () => {
           title='Color'
           code={{
             tsx: source.TabsColorTSXCode,
-            jsx: source.TabsColorJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -55,7 +55,7 @@ const Tabs = () => {
           title='Full Width Tabs'
           code={{
             tsx: source.TabsFullWidthTSXCode,
-            jsx: source.TabsFullWidthJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -69,7 +69,7 @@ const Tabs = () => {
           title='Centered Tabs'
           code={{
             tsx: source.TabsCenteredTSXCode,
-            jsx: source.TabsCenteredJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -83,7 +83,7 @@ const Tabs = () => {
           title='Icon Tabs'
           code={{
             tsx: source.TabsIconTSXCode,
-            jsx: source.TabsIconJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -97,7 +97,7 @@ const Tabs = () => {
           title='Customized Tabs'
           code={{
             tsx: source.TabsCustomizedTSXCode,
-            jsx: source.TabsCustomizedJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -111,7 +111,7 @@ const Tabs = () => {
           title='Vertical Tabs'
           code={{
             tsx: source.TabsVerticalTSXCode,
-            jsx: source.TabsVerticalJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -125,7 +125,7 @@ const Tabs = () => {
           title='Customized Vertical Tabs'
           code={{
             tsx: source.TabsCustomizedVerticalTSXCode,
-            jsx: source.TabsCustomizedVerticalJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -139,7 +139,7 @@ const Tabs = () => {
           title='Nav Tabs'
           code={{
             tsx: source.TabsNavTSXCode,
-            jsx: source.TabsNavJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -153,7 +153,7 @@ const Tabs = () => {
           title='Forced Scroll Buttons'
           code={{
             tsx: source.TabsForcedScrollTSXCode,
-            jsx: source.TabsForcedScrollJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>

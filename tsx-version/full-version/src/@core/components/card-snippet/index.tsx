@@ -111,9 +111,11 @@ const CardSnippet = (props: CardSnippetProps) => {
                     <LanguageTypescript fontSize='small' />
                   </ToggleButton>
                 ) : null}
-                <ToggleButton value='jsx'>
-                  <LanguageJavascript fontSize='small' />
-                </ToggleButton>
+                {code.jsx !== null ? (
+                  <ToggleButton value='jsx'>
+                    <LanguageJavascript fontSize='small' />
+                  </ToggleButton>
+                ) : null}
               </ToggleButtonGroup>
             </Box>
             <Tooltip title='Copy the source' placement='top'>

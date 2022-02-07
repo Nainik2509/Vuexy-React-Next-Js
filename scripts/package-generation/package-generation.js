@@ -23,8 +23,10 @@ const filesToCopyTSX = [
   `${pathConfig.fullVersionTSXPath}/next-env.d.ts`,
   `${pathConfig.fullVersionTSXPath}/next.config.js`,
   `${pathConfig.fullVersionTSXPath}/next.d.ts`,
+  `${pathConfig.fullVersionTSXPath}/yarn.lock`,
   `${pathConfig.fullVersionTSXPath}/package.json`,
-  `${pathConfig.fullVersionTSXPath}/tsconfig.json`
+  `${pathConfig.fullVersionTSXPath}/tsconfig.json`,
+  `${pathConfig.fullVersionTSXPath}/package-lock.json`,
 ]
 
 const filesToCopyJSX = [
@@ -39,7 +41,9 @@ const filesToCopyJSX = [
   `${pathConfig.fullVersionJSXPath}/.prettierrc.js`,
   `${pathConfig.fullVersionJSXPath}/next.config.js`,
   `${pathConfig.fullVersionJSXPath}/package.json`,
-  `${pathConfig.fullVersionJSXPath}/jsconfig.json`
+  `${pathConfig.fullVersionTSXPath}/yarn.lock`,
+  `${pathConfig.fullVersionJSXPath}/jsconfig.json`,
+  `${pathConfig.fullVersionTSXPath}/package-lock.json`,
 ]
 
 let arg = null

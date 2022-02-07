@@ -93,22 +93,19 @@ const replaceCodeWithNull = (dir, version) => {
 
         return
       } else {
-        let splitData = data.split('\r\n')
-        splitData.forEach(line => {
-          if (line.toLowerCase().trim().includes(`${version}: source.`)) {
-            console.log();
-            fs.writeFile(file, data.replace(line, `${version}: null`), err => {
-              if (err) {
-                console.log(err);
-              }
-            })
+        let result = data
+        version === 'tsx' ? result = data.replace(new RegExp(/tsx:.*/, 'g'), `tsx: null,`) : result = data.replace(new RegExp(/jsx:.*/, 'g'), `jsx: null,`)
+        fs.writeFile(file, result, err => {
+          if(err){
+            console.log(err);
           }
         })
-
+        
       }
     })
   })
 }
+
 
 const componentFilesTSX = getAllFilesWithSource(componentsPathTSX)
 const formsFilesTSX = getAllFilesWithSource(formsPathTSX)

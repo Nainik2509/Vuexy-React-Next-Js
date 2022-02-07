@@ -25,7 +25,7 @@ const Pagination = () => {
           title='Simple Badges'
           code={{
             tsx: source.BadgesBasicTSXCode,
-            jsx: source.BadgesBasicJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -40,7 +40,7 @@ const Pagination = () => {
           title='Dot Badges'
           code={{
             tsx: source.BadgesDotTSXCode,
-            jsx: source.BadgesDotJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -54,7 +54,7 @@ const Pagination = () => {
           title='Badge Alignment'
           code={{
             tsx: source.BadgesAlignmentTSXCode,
-            jsx: source.BadgesAlignmentJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -68,7 +68,7 @@ const Pagination = () => {
           title='Maximum Value'
           code={{
             tsx: source.BadgesMaxValueTSXCode,
-            jsx: source.BadgesMaxValueJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -82,7 +82,7 @@ const Pagination = () => {
           title='Badge Overlap'
           code={{
             tsx: source.BadgesOverlapTSXCode,
-            jsx: source.BadgesOverlapJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -96,7 +96,7 @@ const Pagination = () => {
           title='Badge visibility'
           code={{
             tsx: source.BadgesVisibilityTSXCode,
-            jsx: source.BadgesVisibilityJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -110,7 +110,7 @@ const Pagination = () => {
           title='Custom Light Badges'
           code={{
             tsx: source.BadgesLightTSXCode,
-            jsx: source.BadgesLightJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>

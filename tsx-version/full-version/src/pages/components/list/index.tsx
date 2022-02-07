@@ -27,7 +27,7 @@ const Lists = () => {
           title='Simple List'
           code={{
             tsx: source.ListSimpleTSXCode,
-            jsx: source.ListSimpleJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>Lists are a continuous group of text or images.</Typography>
@@ -39,7 +39,7 @@ const Lists = () => {
           title='Nested List'
           code={{
             tsx: source.ListNestedTSXCode,
-            jsx: source.ListNestedJSXCode
+            jsx: null,
           }}
         >
           <ListNested />
@@ -50,7 +50,7 @@ const Lists = () => {
           title='Dense List'
           code={{
             tsx: source.ListDenseTSXCode,
-            jsx: source.ListDenseJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -64,7 +64,7 @@ const Lists = () => {
           title='List with Secondary Text'
           code={{
             tsx: source.ListSecondaryTSXCode,
-            jsx: source.ListSecondaryJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -78,7 +78,7 @@ const Lists = () => {
           title='Selected List Item'
           code={{
             tsx: source.ListItemSelectedTSXCode,
-            jsx: source.ListItemSelectedJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -92,7 +92,7 @@ const Lists = () => {
           title='List with Checkbox'
           code={{
             tsx: source.ListWithCheckboxTSXCode,
-            jsx: source.ListWithCheckboxJSXCode
+            jsx: null,
           }}
         >
           <ListWithCheckbox />
@@ -103,7 +103,7 @@ const Lists = () => {
           title='List with Switch'
           code={{
             tsx: source.ListWithSwitchTSXCode,
-            jsx: source.ListWithSwitchJSXCode
+            jsx: null,
           }}
         >
           <ListWithSwitch />
@@ -114,7 +114,7 @@ const Lists = () => {
           title='Sticky Subheader'
           code={{
             tsx: source.ListWithSwitchTSXCode,
-            jsx: source.ListWithSwitchJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>

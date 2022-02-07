@@ -34,7 +34,7 @@ const Autocomplete = () => {
           title='Variants'
           code={{
             tsx: source.AutocompleteVariantsTSXCode,
-            jsx: source.AutocompleteVariantsJSXCode
+            jsx: null,
           }}
         >
           <Typography>
@@ -50,7 +50,7 @@ const Autocomplete = () => {
           title='Controlled and Uncontrolled'
           code={{
             tsx: source.AutocompleteControlledUncontrolledTSXCode,
-            jsx: source.AutocompleteControlledUncontrolledJSXCode
+            jsx: null,
           }}
         >
           <Typography>
@@ -64,7 +64,7 @@ const Autocomplete = () => {
           title='Autocomplete Props'
           code={{
             tsx: source.AutocompletePropsTSXCode,
-            jsx: source.AutocompletePropsJSXCode
+            jsx: null,
           }}
         >
           <Typography>
@@ -78,7 +78,7 @@ const Autocomplete = () => {
           title='Country Select'
           code={{
             tsx: source.AutocompleteCountryTSXCode,
-            jsx: source.AutocompleteCountryJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>Choose one of the countries.</Typography>
@@ -90,7 +90,7 @@ const Autocomplete = () => {
           title='Free Solo'
           code={{
             tsx: source.AutocompleteFreeSoloTSXCode,
-            jsx: source.AutocompleteFreeSoloJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -104,7 +104,7 @@ const Autocomplete = () => {
           title='Creatable'
           code={{
             tsx: source.AutocompleteCreatableTSXCode,
-            jsx: source.AutocompleteCreatableJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>You can create an option other than from the list.</Typography>
@@ -116,7 +116,7 @@ const Autocomplete = () => {
           title='Grouped'
           code={{
             tsx: source.AutocompleteGroupedTSXCode,
-            jsx: source.AutocompleteGroupedJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -130,7 +130,7 @@ const Autocomplete = () => {
           title='Disabled Options'
           code={{
             tsx: source.AutocompleteDisabledOptionsTSXCode,
-            jsx: source.AutocompleteDisabledOptionsJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -144,7 +144,7 @@ const Autocomplete = () => {
           title='Asynchronous Request'
           code={{
             tsx: source.AutocompleteAsynchronousRequestTSXCode,
-            jsx: source.AutocompleteAsynchronousRequestJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -158,7 +158,7 @@ const Autocomplete = () => {
           title='Multiple Values'
           code={{
             tsx: source.AutocompleteMultipleValuesTSXCode,
-            jsx: source.AutocompleteMultipleValuesJSXCode
+            jsx: null,
           }}
         >
           <Typography>
@@ -172,7 +172,7 @@ const Autocomplete = () => {
           title='Fixed Options'
           code={{
             tsx: source.AutocompleteFixedOptionsTSXCode,
-            jsx: source.AutocompleteFixedOptionsJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -186,7 +186,7 @@ const Autocomplete = () => {
           title='Checkboxes'
           code={{
             tsx: source.AutocompleteCheckboxesTSXCode,
-            jsx: source.AutocompleteCheckboxesJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -200,7 +200,7 @@ const Autocomplete = () => {
           title='Limit Tags'
           code={{
             tsx: source.AutocompleteLimitTagsTSXCode,
-            jsx: source.AutocompleteLimitTagsJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 6 }}>
@@ -214,7 +214,7 @@ const Autocomplete = () => {
           title='Small Size'
           code={{
             tsx: source.AutocompleteSmallSizeTSXCode,
-            jsx: source.AutocompleteSmallSizeJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 5 }}>
@@ -228,7 +228,7 @@ const Autocomplete = () => {
           title='Custom Input'
           code={{
             tsx: source.AutocompleteCustomInputTSXCode,
-            jsx: source.AutocompleteCustomInputJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -242,7 +242,7 @@ const Autocomplete = () => {
           title='Custom Filter'
           code={{
             tsx: source.AutocompleteCustomFilterTSXCode,
-            jsx: source.AutocompleteCustomFilterJSXCode
+            jsx: null,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>

@@ -40,7 +40,7 @@ const ReactHotToasts = () => {
             title=''
             code={{
               tsx: source.ToastBlankTSXCode,
-              jsx: source.ToastBlankJSXCode
+              jsx: null,
             }}
           >
             <ToastBlank />
@@ -51,7 +51,7 @@ const ReactHotToasts = () => {
             title=''
             code={{
               tsx: source.ToastMultiLineTSXCode,
-              jsx: source.ToastMultiLineJSXCode
+              jsx: null,
             }}
           >
             <ToastMultiLine />
@@ -62,7 +62,7 @@ const ReactHotToasts = () => {
             title=''
             code={{
               tsx: source.ToastSuccessTSXCode,
-              jsx: source.ToastSuccessJSXCode
+              jsx: null,
             }}
           >
             <ToastSuccess />
@@ -73,7 +73,7 @@ const ReactHotToasts = () => {
             title=''
             code={{
               tsx: source.ToastErrorTSXCode,
-              jsx: source.ToastErrorJSXCode
+              jsx: null,
             }}
           >
             <ToastError />
@@ -84,7 +84,7 @@ const ReactHotToasts = () => {
             title=''
             code={{
               tsx: source.ToastPromiseTSXCode,
-              jsx: source.ToastPromiseJSXCode
+              jsx: null,
             }}
           >
             <ToastPromise />
@@ -95,7 +95,7 @@ const ReactHotToasts = () => {
             title=''
             code={{
               tsx: source.ToastEmojiTSXCode,
-              jsx: source.ToastEmojiJSXCode
+              jsx: null,
             }}
           >
             <ToastEmoji />
@@ -106,7 +106,7 @@ const ReactHotToasts = () => {
             title=''
             code={{
               tsx: source.ToastThemedTSXCode,
-              jsx: source.ToastThemedJSXCode
+              jsx: null,
             }}
           >
             <ToastThemed />
@@ -117,7 +117,7 @@ const ReactHotToasts = () => {
             title=''
             code={{
               tsx: source.ToastCustomTSXCode,
-              jsx: source.ToastCustomJSXCode
+              jsx: null,
             }}
           >
             <ToastCustom />
@@ -128,7 +128,7 @@ const ReactHotToasts = () => {
             title=''
             code={{
               tsx: source.ToastCustomPositionTSXCode,
-              jsx: source.ToastCustomPositionJSXCode
+              jsx: null,
             }}
           >
             <ToastCustomPosition />
