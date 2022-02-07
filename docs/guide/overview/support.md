@@ -70,7 +70,7 @@ Never upload our package or modified version of our package on public sites wher
 
 ## Support Portal
 
-Once you have purchased our template, You can get support at our [support portal](https://pixinvent.ticksy.com/) by raising support ticket.
+Once you have purchased our template, You can get support at our [support portal](https://themeselection.com/support/) by raising support ticket.
 
 Please make sure to follow standards defined in [Raising Support Ticket](#raising-support-ticket) section.
 
@@ -90,5 +90,3 @@ Good candidates for framework support are:
 ### Third Party Package Support
 
 Same as framework support, if you have any query regarding how to use any provided package other than their UI you can ask it in their respective **Github** repo issue section.
-
-[Create Support Ticket](https://pixinvent.ticksy.com/)

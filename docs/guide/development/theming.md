@@ -56,6 +56,7 @@ Colors given in the above palette object are current primary colors used in our 
 Above example shows how to change primary colors. You can change any colors of the palette in the same way shown above. Please refer [how to customize MUI palette documentation](https://mui.com/customization/palette/). Also refer our core palette from the file `src/@core/theme/palette/index.ts` in order to check custom colors, dark / light colors etc.. for better idea.
 
 ### Colors Tool
+
 Eva color tool [https://colors.eva.design/](https://colors.eva.design/)
 
 We recommend picking colors with these values:
@@ -118,7 +119,7 @@ typography: {
 ```
 
 ::: tip Reference:
-[https://themeselection.com/products/materio-mui-react-nextjs-admin-template/](https://themeselection.com/products/materio-mui-react-nextjs-admin-template/demo-1/ui/typography)
+[https://themeselection.com/products/master-mui-react-nextjs-admin-template/](https://themeselection.com/products/master-mui-react-nextjs-admin-template/demo-1/ui/typography)
 
 MUI: [https://mui.com/customization/typography/](https://mui.com/customization/typography/)
 :::
@@ -161,7 +162,6 @@ breakpoints: {
 ::: tip Reference:
 [https://mui.com/customization/breakpoints/](https://mui.com/customization/breakpoints/)
 :::
-
 
 ## How to override components styling
 

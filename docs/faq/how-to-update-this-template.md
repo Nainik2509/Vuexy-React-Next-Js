@@ -16,8 +16,8 @@ Let's check how you can view each and every change in our template's latest rele
 
 - [VS Code](https://code.visualstudio.com/download)
 - VS Code Extension: [Compare Folders](https://marketplace.visualstudio.com/items?itemName=moshfeu.compare-folders)
-- Materio Package you started your project with (Older version of materio package which you used)
-- Materio Latest Package
+- Master Package you started your project with (Older version of Master package which you used)
+- Master Latest Package
 
 ## Step 1
 
@@ -25,7 +25,7 @@ Install VS Code and install "Compare Folders" extension using above link.
 
 ## Step 2
 
-unzip/extract/decompress Materio Latest Package and Materio old package in your desired folder
+unzip/extract/decompress Master Latest Package and Master old package in your desired folder
 
 ## Step 3
 
