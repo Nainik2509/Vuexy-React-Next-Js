@@ -78,6 +78,21 @@ const Customizer = () => {
   // ** Hook
   const { settings, saveSettings } = useSettings()
 
+  // ** Vars
+  const {
+    mode,
+    skin,
+    appBar,
+    footer,
+    layout,
+    navHidden,
+    direction,
+    themeColor,
+    navCollapsed,
+    contentWidth,
+    verticalNavToggleType
+  } = settings
+
   const handleChange = (field: keyof Settings, value: Settings[keyof Settings]): void => {
     saveSettings({ ...settings, [field]: value })
   }
@@ -128,13 +143,13 @@ const Customizer = () => {
               <Typography>Skin</Typography>
               <RadioGroup
                 row
-                value={settings.skin}
+                value={skin}
                 onChange={e => handleChange('skin', e.target.value as Settings['skin'])}
                 sx={{ '& .MuiFormControlLabel-label': { fontSize: '.875rem', color: 'text.secondary' } }}
               >
                 <FormControlLabel value='default' label='Default' control={<Radio />} />
                 <FormControlLabel value='bordered' label='Bordered' control={<Radio />} />
-                {settings.layout === 'horizontal' ? null : (
+                {layout === 'horizontal' ? null : (
                   <FormControlLabel value='semi-dark' label='Semi Dark' control={<Radio />} />
                 )}
               </RadioGroup>
@@ -153,7 +168,7 @@ const Customizer = () => {
                 <Switch
                   id='change-mode'
                   name='change-mode'
-                  checked={settings.mode === 'dark'}
+                  checked={mode === 'dark'}
                   onChange={e => handleChange('mode', e.target.checked ? 'dark' : 'light')}
                 />
                 <InputLabel
@@ -170,58 +185,56 @@ const Customizer = () => {
               <Typography>Primary Color</Typography>
               <Box sx={{ display: 'flex' }}>
                 <ColorBox
+                  onClick={() => handleChange('themeColor', 'primary')}
                   sx={{
                     backgroundColor: '#9155FD',
-                    ...(settings.themeColor === 'primary'
+                    ...(themeColor === 'primary'
                       ? { width: 53, height: 53, m: theme => theme.spacing(1.5, 0.75, 0) }
                       : {})
                   }}
-                  onClick={() => handleChange('themeColor', 'primary')}
                 />
                 <ColorBox
+                  onClick={() => handleChange('themeColor', 'secondary')}
                   sx={{
                     backgroundColor: 'secondary.main',
-                    ...(settings.themeColor === 'secondary'
+                    ...(themeColor === 'secondary'
                       ? { width: 53, height: 53, m: theme => theme.spacing(1.5, 0.75, 0) }
                       : {})
                   }}
-                  onClick={() => handleChange('themeColor', 'secondary')}
                 />
                 <ColorBox
+                  onClick={() => handleChange('themeColor', 'success')}
                   sx={{
                     backgroundColor: 'success.main',
-                    ...(settings.themeColor === 'success'
+                    ...(themeColor === 'success'
                       ? { width: 53, height: 53, m: theme => theme.spacing(1.5, 0.75, 0) }
                       : {})
                   }}
-                  onClick={() => handleChange('themeColor', 'success')}
                 />
                 <ColorBox
+                  onClick={() => handleChange('themeColor', 'error')}
                   sx={{
                     backgroundColor: 'error.main',
-                    ...(settings.themeColor === 'error'
+                    ...(themeColor === 'error'
                       ? { width: 53, height: 53, m: theme => theme.spacing(1.5, 0.75, 0) }
                       : {})
                   }}
-                  onClick={() => handleChange('themeColor', 'error')}
                 />
                 <ColorBox
+                  onClick={() => handleChange('themeColor', 'warning')}
                   sx={{
                     backgroundColor: 'warning.main',
-                    ...(settings.themeColor === 'warning'
+                    ...(themeColor === 'warning'
                       ? { width: 53, height: 53, m: theme => theme.spacing(1.5, 0.75, 0) }
                       : {})
                   }}
-                  onClick={() => handleChange('themeColor', 'warning')}
                 />
                 <ColorBox
+                  onClick={() => handleChange('themeColor', 'info')}
                   sx={{
                     backgroundColor: 'info.main',
-                    ...(settings.themeColor === 'info'
-                      ? { width: 53, height: 53, m: theme => theme.spacing(1.5, 0.75, 0) }
-                      : {})
+                    ...(themeColor === 'info' ? { width: 53, height: 53, m: theme => theme.spacing(1.5, 0.75, 0) } : {})
                   }}
-                  onClick={() => handleChange('themeColor', 'info')}
                 />
               </Box>
             </Box>
@@ -243,7 +256,7 @@ const Customizer = () => {
               <Typography>Content Width</Typography>
               <RadioGroup
                 row
-                value={settings.contentWidth}
+                value={contentWidth}
                 onChange={e => handleChange('contentWidth', e.target.value as Settings['contentWidth'])}
                 sx={{ '& .MuiFormControlLabel-label': { fontSize: '.875rem', color: 'text.secondary' } }}
               >
@@ -257,13 +270,13 @@ const Customizer = () => {
               <Typography>AppBar Type</Typography>
               <RadioGroup
                 row
-                value={settings.appBar}
+                value={appBar}
                 onChange={e => handleChange('appBar', e.target.value as Settings['appBar'])}
                 sx={{ '& .MuiFormControlLabel-label': { fontSize: '.875rem', color: 'text.secondary' } }}
               >
                 <FormControlLabel value='fixed' label='Fixed' control={<Radio />} />
                 <FormControlLabel value='static' label='Static' control={<Radio />} />
-                {settings.layout === 'horizontal' ? null : (
+                {layout === 'horizontal' ? null : (
                   <FormControlLabel value='hidden' label='Hidden' control={<Radio />} />
                 )}
               </RadioGroup>
@@ -274,7 +287,7 @@ const Customizer = () => {
               <Typography>Footer Type</Typography>
               <RadioGroup
                 row
-                value={settings.footer}
+                value={footer}
                 onChange={e => handleChange('footer', e.target.value as Settings['footer'])}
                 sx={{ '& .MuiFormControlLabel-label': { fontSize: '.875rem', color: 'text.secondary' } }}
               >
@@ -297,11 +310,11 @@ const Customizer = () => {
             </Typography>
 
             {/* Menu Layout */}
-            <Box sx={{ mb: settings.layout === 'horizontal' && settings.appBar === 'hidden' ? {} : 5 }}>
+            <Box sx={{ mb: layout === 'horizontal' && appBar === 'hidden' ? {} : 5 }}>
               <Typography>Menu Layout</Typography>
               <RadioGroup
                 row
-                value={settings.layout}
+                value={layout}
                 onChange={e => {
                   saveSettings({
                     ...settings,
@@ -317,12 +330,12 @@ const Customizer = () => {
             </Box>
 
             {/* Menu Toggle */}
-            {settings.layout === 'horizontal' ? null : (
+            {layout === 'horizontal' ? null : (
               <Box sx={{ mb: 5 }}>
                 <Typography>Menu Toggle</Typography>
                 <RadioGroup
                   row
-                  value={settings.verticalNavToggleType}
+                  value={verticalNavToggleType}
                   onChange={e =>
                     handleChange('verticalNavToggleType', e.target.value as Settings['verticalNavToggleType'])
                   }
@@ -335,24 +348,24 @@ const Customizer = () => {
             )}
 
             {/* Menu Collapsed */}
-            {settings.navHidden || settings.layout === 'horizontal' ? null : (
+            {navHidden || layout === 'horizontal' ? null : (
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 5 }}>
                 <Typography>Menu Collapsed</Typography>
                 <Switch
                   name='navCollapsed'
-                  checked={settings.navCollapsed}
+                  checked={navCollapsed}
                   onChange={e => handleChange('navCollapsed', e.target.checked)}
                 />
               </Box>
             )}
 
             {/* Menu Hidden */}
-            {settings.layout === 'horizontal' && settings.appBar === 'hidden' ? null : (
+            {layout === 'horizontal' && appBar === 'hidden' ? null : (
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <Typography>Menu Hidden</Typography>
                 <Switch
                   name='navHidden'
-                  checked={settings.navHidden}
+                  checked={navHidden}
                   onChange={e => handleChange('navHidden', e.target.checked)}
                 />
               </Box>
@@ -375,7 +388,7 @@ const Customizer = () => {
               <Typography>RTL</Typography>
               <Switch
                 name='direction'
-                checked={settings.direction === 'rtl'}
+                checked={direction === 'rtl'}
                 onChange={e => handleChange('direction', e.target.checked ? 'rtl' : 'ltr')}
               />
             </Box>
