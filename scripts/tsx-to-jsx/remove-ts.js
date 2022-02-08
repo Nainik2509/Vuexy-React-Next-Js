@@ -5,7 +5,8 @@ const pathConfig = require('../configs/paths.json')
 const srcDirPath = `${pathConfig.fullVersionJSXPath}/src`
 const packageFilePath = `${pathConfig.fullVersionJSXPath}/package.json`
 
-const scanDir = function (dir, callback) {
+// ** Removes type/types.js files
+const removeTypeFiles = function (dir, callback) {
   fs.readdir(dir, function (err, list) {
     if (err) return callback(err)
     var i = 0
@@ -15,7 +16,7 @@ const scanDir = function (dir, callback) {
       file = path.resolve(dir, file)
       fs.stat(file, function (err, stat) {
         if (stat && stat.isDirectory()) {
-          scanDir(file, function (err, res) {
+          removeTypeFiles(file, function (err, res) {
             done()
           })
         } else {
@@ -29,9 +30,9 @@ const scanDir = function (dir, callback) {
   })
 }
 
-scanDir(srcDirPath, () => console.log('Removed Type Files'))
+removeTypeFiles(srcDirPath, () => console.log('Removed Type Files'))
 
-// remove ts and tsx extensions from yarn format and yarn lint commands from package.json file
+// ** Remove ts and tsx extensions from yarn format and yarn lint commands from package.json file
 if (fs.existsSync(packageFilePath)) {
   fs.readFile(packageFilePath, 'utf8', function (err, data) {
     if (err) {
@@ -50,9 +51,7 @@ if (fs.existsSync(packageFilePath)) {
   })
 }
 
-// Change all files extension from jsx to js
-renameFiles(srcDirPath)
-
+// ** Change files extension from jsx to js
 function renameFiles(dirPath) {
   files = fs.readdirSync(dirPath)
 
@@ -69,5 +68,7 @@ function renameFiles(dirPath) {
     }
   })
 }
+
+renameFiles(srcDirPath)
 
 console.log('Removed TS Files')

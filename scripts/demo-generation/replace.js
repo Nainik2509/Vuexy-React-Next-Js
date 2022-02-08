@@ -10,10 +10,12 @@ const settingsContextFile = `${pathConfig.fullVersionTSXPath}/src/@core/context/
 
 const demoArgs = process.argv.slice(2)
 
+// ** Update demo number
 if (demoArgs[0] !== undefined) {
   demo = demoArgs[0]
 }
 
+// ** Replace Images src
 const replaceBasePathInImages = (dirPath, arrayOfFiles) => {
   files = fs.readdirSync(dirPath)
 
@@ -31,9 +33,9 @@ const replaceBasePathInImages = (dirPath, arrayOfFiles) => {
         } else {
           const splitData = data.split('\r\n')
           const lineIndex = splitData.findIndex(i => i.includes('/images/'))
-          splitData[lineIndex] ? splitData[lineIndex].replace('/images/', `/demo/react-master/${demo}/images/`) : null
+          splitData[lineIndex] ? splitData[lineIndex].replace('/images/', `${pathConfig.demoURL}/${demo}/images/`) : null
           if(splitData[lineIndex]){
-            splitData[lineIndex] = splitData[lineIndex].replace('/images/', `/demo/react-master/${demo}/images/`) 
+            splitData[lineIndex] = splitData[lineIndex].replace('/images/', `${pathConfig.demoURL}/${demo}/images/`) 
             fs.writeFile(path.join(__dirname, dirPath, '/', file), splitData.join('\n'), err => {
               if (err) {
                 console.error(err)
@@ -52,6 +54,7 @@ const replaceBasePathInImages = (dirPath, arrayOfFiles) => {
   return arrayOfFiles
 }
 
+// ** Replace locales path
 const replaceBasePathInI18n = () => {
   fs.readFile(i18nPath, 'utf-8', (err, data) => {
     if (err) {
@@ -61,7 +64,7 @@ const replaceBasePathInI18n = () => {
     } else {
       if (data.includes('/locales/')) {
        
-        fs.writeFile(i18nPath, data.replace('/locales/', `/demo/react-master/${demo}/locales/`), err => {
+        fs.writeFile(i18nPath, data.replace('/locales/', `${pathConfig.demoURL}/${demo}/locales/`), err => {
           if (err) {
             console.log(err);
 
@@ -76,6 +79,8 @@ const replaceBasePathInI18n = () => {
 replaceBasePathInImages(`${pathConfig.fullVersionTSXPath}/src`)
 replaceBasePathInI18n()
 
+
+// ** Replace settings in localStorage if settingsContextFile exist
 if (fs.existsSync(settingsContextFile)) {
   fs.readFile(settingsContextFile, 'utf-8', (err, data) => {
     if (err) {
@@ -91,55 +96,52 @@ if (fs.existsSync(settingsContextFile)) {
           return
         }
       })
-
-      if (fs.existsSync(nextConfigPath)) {
-        const nextConfigData = fs.readFileSync(nextConfigPath).toString().split('\n')
-        const removedBasePathIfAny = nextConfigData.filter(line => {
-          return line.indexOf('basePath') === -1
-        }).join('\n')
-        const result = removedBasePathIfAny.replace('reactStrictMode: false,', `reactStrictMode: false, \n basePath: '/demo/react-master/${demo}',`)
-
-        fs.writeFile(nextConfigPath, result, err => {
-          if (err) {
-            console.log(err)
-
-            return
-          }
-        })
-      } else {
-        console.log('NextConfig Does Not Exists')
-
-        return
-      }
-
-      const demoConfigPath = `${pathConfig.demoConfigsPathTSX}/${demo}.ts`
-
-      if (fs.existsSync(themeConfigPath) && fs.existsSync(demoConfigPath)) {
-        // fs.copyFile(demoConfigPath, themeConfigPath, err => {
-        //   if (err) {
-        //     console.log(err)
-
-        //     return
-        //   } else {
-        //     console.log(`Working on ${demo}`)
-        //   }
-        // })
-        fs.readFile(demoConfigPath, 'utf-8', (err, data) => {
-          if (err) {
-            console.log(err);
-
-            return
-          } else {
-            fs.writeFile(themeConfigPath, data, (err) => {
-              if (err) {
-                console.log(err);
-
-                return
-              }
-            })
-          }
-        })
-      }
     }
   })
+} else {
+  console.log("settingsContext File Doesn't exists")
+}
+
+// ** Replace basePath in nextConfigPath if nextConfigPath exist
+if (fs.existsSync(nextConfigPath)) {
+  const nextConfigData = fs.readFileSync(nextConfigPath).toString().split('\n')
+  const removedBasePathIfAny = nextConfigData.filter(line => {
+    return line.indexOf('basePath') === -1
+  }).join('\n')
+  const result = removedBasePathIfAny.replace('reactStrictMode: false,', `reactStrictMode: false, \n basePath: '${pathConfig.demoURL}/${demo}',`)
+
+  fs.writeFile(nextConfigPath, result, err => {
+    if (err) {
+      console.log(err)
+
+      return
+    }
+  })
+} else {
+  console.log('NextConfig File Does Not Exists')
+
+  return
+}
+
+// ** Replace themeConfig file based on demo number
+const demoConfigPath = `${pathConfig.demoConfigsPathTSX}/${demo}.ts`
+
+if (fs.existsSync(themeConfigPath) && fs.existsSync(demoConfigPath)) {
+  fs.readFile(demoConfigPath, 'utf-8', (err, data) => {
+    if (err) {
+      console.log(err);
+
+      return
+    } else {
+      fs.writeFile(themeConfigPath, data, (err) => {
+        if (err) {
+          console.log(err);
+
+          return
+        }
+      })
+    }
+  })
+} else {
+  console.log("themeConfigPath file & demoConfigPath file doesn't exist");
 }

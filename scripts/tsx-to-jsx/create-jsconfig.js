@@ -10,7 +10,7 @@ const jsConfig = {
   include: ['src']
 }
 
-// Write jsconfig.json in jsx-version
+// ** Write jsconfig.json in jsx-version dir
 fs.writeFile(jsConfigPath, JSON.stringify(jsConfig), err => {
   if (err) {
     console.error(err)

@@ -11,10 +11,12 @@ const settingsContextFile = `${pathConfig.fullVersionTSXPath}/src/@core/context/
 
 const demoArgs = process.argv.slice(2)
 
+// ** Update demo number
 if (demoArgs[0] !== undefined) {
   demo = demoArgs[0]
 }
 
+// ** Reset replaced Images src
 const removeBasePathInImages = (dirPath, arrayOfFiles) => {
   files = fs.readdirSync(dirPath)
 
@@ -30,7 +32,7 @@ const removeBasePathInImages = (dirPath, arrayOfFiles) => {
 
           return
         } else {
-          const updatedData = data.replace(new RegExp(`/demo/react-master/${demo}/images/`, 'g'), '/images/')
+          const updatedData = data.replace(new RegExp(`${pathConfig.demoURL}/${demo}/images/`, 'g'), '/images/')
           fs.writeFile(path.join(__dirname, dirPath, '/', file), updatedData, err => {
             if (err) {
 
@@ -49,6 +51,8 @@ const removeBasePathInImages = (dirPath, arrayOfFiles) => {
   return arrayOfFiles
 }
 
+
+// ** Reset replaced locales path
 const removeBasePathInI18n = () => {
   fs.readFile(i18nPath, 'utf-8', (err, data) => {
     if (err) {
@@ -57,7 +61,7 @@ const removeBasePathInI18n = () => {
 
       return
     } else {
-      const updatedData = data.replace(`/demo/react-master/${demo}/locales/`, '/locales/')
+      const updatedData = data.replace(`${pathConfig.demoURL}/${demo}/locales/`, '/locales/')
       fs.writeFile(i18nPath, '', err => {
         if (err) {
           console.log(err);
@@ -81,6 +85,7 @@ const removeBasePathInI18n = () => {
 removeBasePathInImages(`${pathConfig.fullVersionTSXPath}/src`)
 removeBasePathInI18n()
 
+// ** Reset replaced settings in localStorage if settingsContextFile exist
 if (fs.existsSync(settingsContextFile)) {
   fs.readFile(settingsContextFile, 'utf-8', (err, data) => {
     if (err) {
@@ -100,59 +105,58 @@ if (fs.existsSync(settingsContextFile)) {
               console.log(err)
 
               return
-            } else {
-              if (fs.existsSync(nextConfigPath)) {
-                const nextConfigData = fs.readFileSync(nextConfigPath).toString().split('\n')
-
-                const result = nextConfigData
-                  .filter(line => {
-                    return line.indexOf('basePath') === -1
-                  })
-                  .join('\n')
-
-
-                fs.writeFile(nextConfigPath, result, err => {
-                  if (err) {
-                    console.log(err)
-
-                    return
-                  }
-                })
-              } else {
-                console.log('NextConfig Does Not Exists')
-
-                return
-              }
-              if (fs.existsSync(themeConfigPath) && fs.existsSync(demoConfigPath)) {
-                // fs.copyFile(demoConfigPath, themeConfigPath, err => {
-                //   if (err) {
-                //     console.log(err)
-
-                //     return
-                //   } else {
-                //     console.log(`Reset Complete`)
-                //   }
-                // })
-                fs.readFile(demoConfigPath, 'utf-8', (err, data) => {
-                  if (err) {
-                    console.log(err);
-
-                    return
-                  } else {
-                    fs.writeFile(themeConfigPath, data, err => {
-                      if (err) {
-                        console.log(err);
-
-                        return
-                      }
-                    })
-                  }
-                })
-              }
             }
           })
         }
       })
     }
   })
+}
+
+// ** Reset replaced basePath if nextConfigPath exist
+if (fs.existsSync(nextConfigPath)) {
+  const nextConfigData = fs.readFileSync(nextConfigPath).toString().split('\n')
+
+  const result = nextConfigData
+    .filter(line => {
+      return line.indexOf('basePath') === -1
+    })
+    .join('\n')
+
+
+  fs.writeFile(nextConfigPath, result, err => {
+    if (err) {
+      console.log(err)
+
+      return
+    }
+  })
+} else {
+  console.log('NextConfig file Does Not Exists')
+
+  return
+}
+
+// ** Reset replaced themeConfig if themeConfigPath & demoConfigPath exist
+if (fs.existsSync(themeConfigPath) && fs.existsSync(demoConfigPath)) {
+
+  fs.readFile(demoConfigPath, 'utf-8', (err, data) => {
+    if (err) {
+      console.log(err);
+
+      return
+    } else {
+      fs.writeFile(themeConfigPath, data, err => {
+        if (err) {
+          console.log(err);
+
+          return
+        }
+      })
+    }
+  })
+} else {
+  console.log('themeConfigPath file & demoConfigPath file Does Not Exists')
+
+  return
 }

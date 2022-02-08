@@ -89,6 +89,7 @@ const foldersToKeepTSX = [
   'pages/500.tsx',
   'pages/index.tsx'
 ]
+
 const foldersToKeepJSX = [
   'views/pages/auth',
   'views/pages/misc',
@@ -102,20 +103,6 @@ const foldersToKeepJSX = [
   'pages/500.js',
   'pages/index.js'
 ]
-
-const copyRecursiveSync = (src, dest) => {
-  const exists = fs.existsSync(src)
-  const stats = exists && fs.statSync(src)
-  const isDirectory = exists && stats.isDirectory()
-  if (isDirectory) {
-    !fs.existsSync(dest) ? fs.mkdirSync(dest, { recursive: true, force: true }) : null
-    fs.readdirSync(src).forEach(function (childItemName) {
-      copyRecursiveSync(path.join(src, childItemName), path.join(dest, childItemName))
-    })
-  } else {
-      fs.copyFileSync(src, dest)
-  }
-}
 
 const filesToReplace = [
   {
@@ -176,37 +163,19 @@ const filesToReplace = [
   }
 ]
 
-const removeAuth = (src, dest) => {
-  fs.readFile(src, 'utf-8', (err, data) => {
-    if (err) {
-      console.log(err)
-
-      return
-    } else {
-      fs.writeFile(dest, data, err => {
-        if (err) {
-          console.log(err)
-        }
-      })
-    }
-  })
-}
-
-const guardComponentTSX = `const Guard = ({ children, authGuard, guestGuard }: GuardProps) => {
-  if (guestGuard) {
-    return <GuestGuard fallback={<Spinner />}>{children}</GuestGuard>
-  } else if (!guestGuard && !authGuard) {
-    return <>{children}</>
+const copyRecursiveSync = (src, dest) => {
+  const exists = fs.existsSync(src)
+  const stats = exists && fs.statSync(src)
+  const isDirectory = exists && stats.isDirectory()
+  if (isDirectory) {
+    !fs.existsSync(dest) ? fs.mkdirSync(dest, { recursive: true, force: true }) : null
+    fs.readdirSync(src).forEach(function (childItemName) {
+      copyRecursiveSync(path.join(src, childItemName), path.join(dest, childItemName))
+    })
   } else {
-    return <AuthGuard fallback={<Spinner />}>{children}</AuthGuard>
+      fs.copyFileSync(src, dest)
   }
-}`
-
-const guardTypeTSX = `type GuardProps = {
-  authGuard: boolean
-  guestGuard: boolean
-  children: ReactNode
-}`
+}
 
 const appDataToReplace = [
   { from: "import { ReactNode } from 'react'", to: '' },
@@ -238,9 +207,7 @@ const appDataToReplace = [
 
 module.exports = {
   AppPathTSX,
-  removeAuth,
   AppPathJSX,
-  guardTypeTSX,
   LoginPathTSX,
   LoginPathJSX,
   filesToCopyTSX,
@@ -252,7 +219,6 @@ module.exports = {
   appDataToReplace,
   foldersToKeepJSX,
   copyRecursiveSync,
-  guardComponentTSX,
   userLayoutPathTSX,
   userLayoutPathJSX,
   themeConfigPathTSX,

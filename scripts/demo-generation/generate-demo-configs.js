@@ -1,7 +1,7 @@
 const fs = require('fs')
 const pathConfig = require('../configs/paths.json')
 
-const demoConfigPath = './demoConfigs.json'
+const demoConfigPath = '../configs/demoConfigs.json'
 const defaultConfigPathTSX = `${pathConfig.fullVersionTSXPath}/src/configs/themeConfig.ts`
 const defaultConfigPathJSX = `${pathConfig.fullVersionJSXPath}/src/configs/themeConfig.js`
 
@@ -32,8 +32,7 @@ const deleteExistingDemoFiles = () => {
   }
 }
 
-
-
+// ** Generates demo configs based on version, demoConfigs folder & default themeConfig(src/configs/themeConfig)
 const generateDemoConfigs = (version, demoConfigsFolder, defaultConfigPath) => {
     if (fs.existsSync(demoConfigPath)) {
     fs.readFile(demoConfigPath, 'utf8', (err, demoConfigString) => {
@@ -95,6 +94,11 @@ const generateDemoConfigs = (version, demoConfigsFolder, defaultConfigPath) => {
 }
 
 
+// ** Delete Previous Demo Configs
 deleteExistingDemoFiles()
+
+// ** Generate Demo Configs for TSX version
 generateDemoConfigs('ts', pathConfig.demoConfigsPathTSX, defaultConfigPathTSX)
+
+// ** Generate Demo Configs for JSX version
 generateDemoConfigs('js', pathConfig.demoConfigsPathJSX, defaultConfigPathJSX)

@@ -105,6 +105,52 @@ generateTSXSourceCode()
 if (!doesJSXVersionExits) {
   replaceCodeWithNull(AllIndexFiles, 'jsx')
 } else {
+  if(AllIndexFiles){
+    AllIndexFiles.map(file => {
+      fs.readFile(file, 'utf-8', (err, data) => {
+        if(err){
+          console.log(err);
+          return
+        }else{
+            const splitData = data.split('\r\n')
+            // const lineIndex = splitData.findIndex(i => i.trim().includes('jsx: null'))
+            // const prevLineIndex = lineIndex - 1
+
+            splitData.forEach((line, index) => {
+              if(line.trim().includes('jsx:')){
+                const replaced = splitData[index - 1] ? splitData[index - 1].replace('tsx: ', '').replace('TSXCode', 'JSXCode').replace(',', '') : null
+                if(replaced){
+
+                  line = line.replace('null', replaced)
+                }
+                return line
+              }else{
+                return line
+              }
+            })
+
+              fs.writeFile(file, splitData.join('\r\n'), err => {
+                if(err){
+                  console.log(err);
+
+                  return
+                }
+              })
+
+            // if(splitData[lineIndex]){
+            //   const replacedLine = splitData[prevLineIndex].replace('tsx:', 'jsx:').replace('TSXCode', 'JSXCode')
+            //   splitData[lineIndex] = splitData[lineIndex].replace(splitData[lineIndex], replacedLine)
+             
+            //   result = splitData.join('\n')
+             
+            
+            // }
+
+            // console.log(result);
+        }
+      })
+    })
+  }
   return
 }
 

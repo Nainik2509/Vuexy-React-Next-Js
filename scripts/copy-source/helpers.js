@@ -8,8 +8,10 @@ const formsPathTSX = `${pathConfig.fullVersionTSXPath}/src/views/forms/form-elem
 const componentsPathJSX = `${pathConfig.fullVersionJSXPath}/src/views/components/`
 const formsPathJSX = `${pathConfig.fullVersionJSXPath}/src/views/forms/form-elements/`
 
+// ** Checks for jsx-version directory and returns boolean
 const doesJSXVersionExits = fs.existsSync(basePathJSX)
 
+// ** Returns files with source code.
 const getAllFilesWithSource = function (dirPath, arrayOfFiles) {
   if (fs.existsSync(dirPath)) {
     files = fs.readdirSync(dirPath)
@@ -34,6 +36,7 @@ const getAllFilesWithSource = function (dirPath, arrayOfFiles) {
   }
 }
 
+// ** Returns array of files with source code.
 const getAllSourceFilesTSX = arr => {
   const files = []
 
@@ -46,6 +49,7 @@ const getAllSourceFilesTSX = arr => {
   return files
 }
 
+// ** Returns array of files with source code if jsx-version directory exists.
 const getAllSourceFilesJSX = arr => {
   const files = []
 
@@ -62,6 +66,7 @@ const getAllSourceFilesJSX = arr => {
   return files
 }
 
+// ** Returns array of index files.
 const getAllIndexFiles = (dirPath, arrayOfFiles) => {
   if (fs.existsSync(dirPath)) {
     files = fs.readdirSync(dirPath)
@@ -85,6 +90,8 @@ const getAllIndexFiles = (dirPath, arrayOfFiles) => {
   }
 }
 
+
+// ** Replaces code with null based on dir & version.
 const replaceCodeWithNull = (dir, version) => {
   dir.map(file => {
     fs.readFile(file, 'utf8', (err, data) => {
@@ -94,7 +101,15 @@ const replaceCodeWithNull = (dir, version) => {
         return
       } else {
         let result = data
-        version === 'tsx' ? result = data.replace(new RegExp(/tsx:.*/, 'g'), `tsx: null,`) : result = data.replace(new RegExp(/jsx:.*/, 'g'), `jsx: null,`)
+        
+        if(version === 'tsx'){
+          result = data.replace(new RegExp(/tsx:.*/, 'g'), `tsx: null,`)
+        }else if (version === 'jsx'){
+          result = data.replace(new RegExp(/jsx:.*/, 'g'), `jsx: null,`)
+        }else{
+          return 
+        }
+        
         fs.writeFile(file, result, err => {
           if(err){
             console.log(err);

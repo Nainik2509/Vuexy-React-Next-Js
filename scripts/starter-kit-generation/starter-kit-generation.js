@@ -1,7 +1,6 @@
 const fs = require('fs')
 const pathConfig = require('../configs/paths.json')
 
-
 const {
   AppPathTSX,
   AppPathJSX,
@@ -36,12 +35,23 @@ let arg = null
 
 const passedArgs = process.argv.slice(2)
 
+// ** Updated args var
 if (passedArgs[0] !== undefined) {
   arg = passedArgs[0]
 } else {
   arg = null
 }
 
+/* 
+ - Remove BuyNow
+ - Replaces "^" & "~" in package.json 
+ - Removes i18n 
+ - Removes Auth & urls in user dropdown 
+ - Replace imports, types & wrapper in _app file 
+ - Disable customizer in ThemeConfig file
+ - Removes Auth from login file
+ - Removes Auth from Register file
+*/
 const updateContent = (
   UserLayoutPath,
   BuyNowComponentPath,
@@ -228,6 +238,7 @@ const updateContent = (
   }
 }
 
+// ** Replaces whole files
 const replaceFiles = () => {
   filesToReplace.map(file => {
     if (fs.existsSync(file.src)) {
@@ -240,6 +251,7 @@ const replaceFiles = () => {
   })
 }
 
+// ** Generates second page in src/pages folder
 const generateSecondPage = (parentFolder, fileToRead, fileToWrite) => {
   fs.mkdir(`${parentFolder}/src/pages/second-page`, err => {
     if (err) {
@@ -262,6 +274,7 @@ const generateSecondPage = (parentFolder, fileToRead, fileToWrite) => {
   })
 }
 
+// ** Generates TSX StarterKit
 const generateTSXStarter = () => {
 
   const createStarter = () => fs.mkdir(pathConfig.starterKitTSXPath, err => {
@@ -337,6 +350,7 @@ const generateTSXStarter = () => {
   }
 }
 
+// ** Generates JSX StarterKit
 const generateJSXStarter = () => {
 
   const createStarter = () => fs.mkdir(pathConfig.starterKitJSXPath, err => {
@@ -412,8 +426,7 @@ const generateJSXStarter = () => {
   }
 }
 
-
-
+// ** Generates StarterKit based on args
 const generate = () => {
   if (arg !== null) {
     if (arg === 'tsx') {

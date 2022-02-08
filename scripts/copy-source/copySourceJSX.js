@@ -8,8 +8,11 @@ const { AllFilesJSX, doesJSXVersionExits, sourceFilesJSX, getAllIndexFiles, repl
 const componentsPath = `${pathConfig.fullVersionJSXPath}/src/pages/components/`
 const formsPath = `${pathConfig.fullVersionJSXPath}/src/pages/forms/form-elements/`
 
+// ** Generates JSX source code if jsx-version directory exists
 const generateJSXSourceCode = () => {
   if (doesJSXVersionExits) {
+
+    const AllIndexFiles = [...getAllIndexFiles(componentsPath), ...getAllIndexFiles(formsPath)]
     AllFilesJSX.map(fileJSX => {
       if (
         !fileJSX.endsWith('SourceCode.js') &&
@@ -53,19 +56,15 @@ const generateJSXSourceCode = () => {
 
       return
     })
+    
+    // ** Replace tsx code with null to hide it.
+    replaceCodeWithNull(AllIndexFiles, 'tsx')
   } else {
     console.log('JSX version does not exist')
   }
 }
 
 generateJSXSourceCode()
-if (doesJSXVersionExits) {
-
-  const AllIndexFiles = [...getAllIndexFiles(componentsPath), ...getAllIndexFiles(formsPath)]
-  replaceCodeWithNull(AllIndexFiles, 'tsx')
-} else {
-  return
-}
 
 module.exports = {
   generateJSXSourceCode

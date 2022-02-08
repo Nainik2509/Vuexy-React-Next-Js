@@ -50,12 +50,14 @@ let arg = null
 
 const passedArgs = process.argv.slice(2)
 
+// ** If any args then update arg var
 if (passedArgs[0] !== undefined) {
   arg = passedArgs[0]
 } else {
   arg = null
 }
 
+// ** Recursively copies files/folders
 const copyRecursiveSync = (src, dest) => {
   const exists = fs.existsSync(src)
   const stats = exists && fs.statSync(src)
@@ -70,6 +72,7 @@ const copyRecursiveSync = (src, dest) => {
   }
 }
 
+// ** Remove BuyNow & Replace "^" & "~" in package.json file 
 const updateContent = (userLayoutPath, BuyNowComponentPath, PackageJSONPath) => {
   if (fs.existsSync(userLayoutPath)) {
     fs.readFile(userLayoutPath, 'utf-8', (err, data) => {
@@ -118,6 +121,7 @@ const updateContent = (userLayoutPath, BuyNowComponentPath, PackageJSONPath) => 
   }
 }
 
+// ** Generates TSX package
 const generateTSXPackage = () => {
   fs.mkdir(`${pathConfig.packagePath}/tsx-version/full-version`,{ recursive: true }, err => {
     if (err) {
@@ -134,6 +138,7 @@ const generateTSXPackage = () => {
   })
 }
 
+// ** Generates JSX package if jsx-version dir exists
 const generateJSXPackage = () => {
   if (fs.existsSync(`${pathConfig.basePathJSX}`)) {
     fs.mkdir(`${pathConfig.packagePath}/jsx/full-version`, { recursive: true } , err => {
@@ -154,6 +159,7 @@ const generateJSXPackage = () => {
   }
 }
 
+// ** Generates package based on args
 const generate = () => {
   if (arg !== null) {
     if (arg === 'tsx') {
@@ -167,6 +173,7 @@ const generate = () => {
   }
 }
 
+// ** If packagePath exists the remove folder generate else create folder & generate
 if (!fs.existsSync(pathConfig.packagePath)) {
   fs.mkdir(pathConfig.packagePath, err => {
     if (err) {
