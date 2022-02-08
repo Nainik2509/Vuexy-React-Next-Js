@@ -17,7 +17,7 @@ import DotsVertical from 'mdi-material-ui/DotsVertical'
 const CardCafe = () => {
   return (
     <Card>
-      <CardMedia title='Cafe Badilico' sx={{ height: '12.25rem' }} image='/images/cards/cafe-badilico.png' />
+      <CardMedia sx={{ height: '12.25rem' }} image='/images/cards/cafe-badilico.png' />
       <CardContent>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Typography variant='h6'>Cafe Badilico</Typography>

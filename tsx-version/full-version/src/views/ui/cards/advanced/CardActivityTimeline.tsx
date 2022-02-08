@@ -28,7 +28,7 @@ const Timeline = styled(MuiTimeline)<TimelineProps>({
 const CardActivityTimeline = () => {
   return (
     <Card>
-      <CardMedia title='Activity Timeline' sx={{ height: '12.875rem' }} image='/images/cards/activity-timeline.png' />
+      <CardMedia sx={{ height: '12.875rem' }} image='/images/cards/activity-timeline.png' />
       <CardContent>
         <Typography variant='h6' sx={{ mb: 1 }}>
           Activity Timeline

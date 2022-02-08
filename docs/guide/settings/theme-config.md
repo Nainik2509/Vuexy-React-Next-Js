@@ -4,7 +4,8 @@
 
 To configure your template, we will be using `/src/configs/themeConfig.ts` file, which has all the template configurations listed with their valid values. Just change the configurations as per your requirement and you are done.
 
-If you are looking to match up one of our demo then please read [demo configs](/guide/development/demo-config.html) doc.
+If you are looking to match up with one of our demos, then please read [demo configs](/guide/development/demo-config.html) doc.
+
 ## Properties
 
 Following are the properties with their values that we have used in the theme:

@@ -318,7 +318,6 @@ const VerticalNavGroup = (props: Props) => {
           onClick={e => e.stopPropagation()}
           in={groupActive.includes(item.title)}
           sx={{
-            m: 0,
             pl: 0,
             width: '100%',
             ...menuGroupCollapsedStyles,

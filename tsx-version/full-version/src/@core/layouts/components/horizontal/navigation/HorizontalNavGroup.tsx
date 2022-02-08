@@ -12,7 +12,7 @@ import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ClickAwayListener from '@mui/material/ClickAwayListener'
-import ListItem, { ListItemProps } from '@mui/material/ListItem'
+import MuiListItem, { ListItemProps } from '@mui/material/ListItem'
 import Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip'
 
 // ** Third Party Imports
@@ -50,7 +50,7 @@ interface Props {
 }
 
 // ** Styled Components
-const ListItemComponent = styled(ListItem)<ListItemProps>(({ theme }) => ({
+const ListItem = styled(MuiListItem)<ListItemProps>(({ theme }) => ({
   cursor: 'pointer',
   '&:hover': {
     background: theme.palette.action.hover
@@ -179,7 +179,7 @@ const HorizontalNavGroup = (props: Props) => {
           }
         >
           <List component='div' sx={{ py: skin === 'bordered' ? 2.875 : 3 }}>
-            <ListItemComponent
+            <ListItem
               aria-haspopup='true'
               {...(WrapperCondition ? {} : { onMouseEnter: handleGroupOpen })}
               className={clsx('menu-group', { 'Mui-selected': hasActiveChild(item, currentURL) })}
@@ -247,7 +247,7 @@ const HorizontalNavGroup = (props: Props) => {
                   )}
                 </Box>
               </Box>
-            </ListItemComponent>
+            </ListItem>
           </List>
         </NavigationMenu>
       </ChildWrapper>

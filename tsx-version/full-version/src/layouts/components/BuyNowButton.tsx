@@ -5,7 +5,7 @@ import Button from '@mui/material/Button'
 const BuyNowButton = () => {
   return (
     <Box
-      className='buy-now-button'
+      className='buy-now-button mui-fixed'
       sx={{ right: theme => theme.spacing(20), bottom: theme => theme.spacing(10), zIndex: 11, position: 'fixed' }}
     >
       <Button

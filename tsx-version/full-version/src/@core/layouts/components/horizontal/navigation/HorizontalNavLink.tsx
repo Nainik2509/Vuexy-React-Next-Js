@@ -14,6 +14,9 @@ import Typography from '@mui/material/Typography'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import MuiListItem, { ListItemProps } from '@mui/material/ListItem'
 
+// ** Third Party Imports
+import clsx from 'clsx'
+
 // ** Icon Imports
 import CircleOutline from 'mdi-material-ui/CircleOutline'
 
@@ -62,12 +65,12 @@ const HorizontalNavLink = (props: Props) => {
   // ** Props
   const { item, settings, hasParent, parentId, handleGroupMouseLeave } = props
 
+  // ** Hook
+  const router = useRouter()
+
   const IconTag = item.icon ? item.icon : themeConfig.navSubItemIcon
 
   const Wrapper = !hasParent ? List : Fragment
-
-  // ** Hook
-  const router = useRouter()
 
   const handleURLQueries = () => {
     if (Object.keys(router.query).length && item.path) {
@@ -86,12 +89,12 @@ const HorizontalNavLink = (props: Props) => {
   }
 
   return (
-    <Wrapper {...(!hasParent ? { sx: { py: settings.skin === 'bordered' ? 2.875 : 3 } } : {})}>
+    <Wrapper {...(!hasParent ? { component: 'div', sx: { py: settings.skin === 'bordered' ? 2.875 : 3 } } : {})}>
       <Link href={`${item.path}`} passHref>
         <ListItem
           component={'a'}
-          className={isNavLinkActive() ? 'active' : ''}
           disabled={item.disabled}
+          className={clsx({ active: isNavLinkActive() })}
           target={item.openInNewTab ? '_blank' : undefined}
           onClick={e => {
             if (item.path === undefined) {

@@ -20,7 +20,7 @@ import CustomAvatar from 'src/@core/components/mui/avatar'
 const CardDeveloperMeetup = () => {
   return (
     <Card>
-      <CardMedia title='Developers Meetup' sx={{ height: '11.25rem' }} image='/images/cards/workstation.png' />
+      <CardMedia sx={{ height: '11.25rem' }} image='/images/cards/workstation.png' />
       <CardContent>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <CustomAvatar skin='light' variant='rounded' sx={{ mr: 3, width: '3rem', height: '3.375rem' }}>
