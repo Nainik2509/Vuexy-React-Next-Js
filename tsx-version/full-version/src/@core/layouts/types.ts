@@ -20,6 +20,8 @@ export type HorizontalMenuToggle = 'hover' | 'click'
 export type NavLink = {
   path?: string
   title: string
+  action?: string
+  subject?: string
   disabled?: boolean
   badgeContent?: string
   externalLink?: boolean
@@ -30,6 +32,8 @@ export type NavLink = {
 
 export type NavGroup = {
   title: string
+  action?: string
+  subject?: string
   badgeContent?: string
   children?: (NavGroup | NavLink)[]
   icon?: string | string[] | ReactNode
@@ -38,6 +42,8 @@ export type NavGroup = {
 
 export type NavSectionTitle = {
   sectionTitle: string
+  action?: string
+  subject?: string
 }
 
 export type VerticalNavItemsType = (NavLink | NavGroup | NavSectionTitle)[]

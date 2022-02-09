@@ -80,7 +80,8 @@ const AuthProvider = ({ children }: Props) => {
           .then(async response => {
             const returnUrl = router.query.returnUrl
 
-            const redirectURL = returnUrl && returnUrl !== '/' ? returnUrl : '/'
+            const redirectURL =
+              returnUrl && returnUrl !== '/' ? returnUrl : authConfig.getHomeRoute(response.data.userData.role)
 
             setUser({ ...response.data.userData })
             await window.localStorage.setItem('userData', JSON.stringify(response.data.userData))

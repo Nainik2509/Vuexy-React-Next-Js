@@ -264,8 +264,11 @@ const LoginPage = () => {
             </Box>
             <Box sx={{ mb: 6 }}>
               <Box sx={{ py: 3, px: 4, borderRadius: 1, ...bgClasses.primaryLight }}>
-                <Typography variant='caption' sx={{ display: 'block', color: 'primary.main' }}>
+                <Typography variant='caption' sx={{ mb: 2, display: 'block', color: 'primary.main' }}>
                   Admin: <strong>admin@materio.com</strong> / Pass: <strong>admin</strong>
+                </Typography>
+                <Typography variant='caption' sx={{ display: 'block', color: 'primary.main' }}>
+                  Client: <strong>client@materio.com</strong> / Pass: <strong>client</strong>
                 </Typography>
               </Box>
             </Box>

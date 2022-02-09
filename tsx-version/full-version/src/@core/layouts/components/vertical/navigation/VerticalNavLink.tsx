@@ -24,6 +24,7 @@ import { Settings } from 'src/@core/context/settingsContext'
 // ** Custom Components Imports
 import UserIcon from 'src/layouts/components/UserIcon'
 import Translations from 'src/layouts/components/Translations'
+import CanViewNavLink from 'src/layouts/components/CanViewNavLink'
 
 // ** Utils
 import { handleURLQueries } from 'src/@core/layouts/utils'
@@ -110,85 +111,87 @@ const VerticalNavLink = ({
   }
 
   return (
-    <ListItem
-      disablePadding
-      className='nav-link'
-      disabled={item.disabled || false}
-      sx={{ marginTop: 1, px: '0 !important' }}
-    >
-      <Link passHref href={item.path === undefined ? '/' : `${item.path}`}>
-        <MenuNavLink
-          component={'a'}
-          className={isNavLinkActive() ? 'active' : ''}
-          {...(item.openInNewTab ? { target: '_blank' } : null)}
-          onClick={e => {
-            if (item.path === undefined) {
-              e.preventDefault()
-              e.stopPropagation()
-            }
-            if (navVisible) {
-              toggleNavVisibility()
-            }
-          }}
-          sx={{
-            ...conditionalBgColor(),
-            ...(item.disabled ? { pointerEvents: 'none' } : { cursor: 'pointer' }),
-            paddingLeft:
-              navCollapsed && !navHover ? (themeConfig.collapsedNavigationSize - navigationBorderWidth - 24) / 8 : 5.5
-          }}
-        >
-          {isSubToSub ? null : (
-            <ListItemIcon
-              sx={{
-                color: 'text.primary',
-                transition: 'margin .25s ease-in-out',
-                ...(navCollapsed && !navHover ? { marginRight: 0 } : { marginRight: 3.25 }),
-                ...(parent ? { marginLeft: 1.25, marginRight: 4.75 } : {})
-              }}
-            >
-              <UserIcon
-                icon={IconTag}
-                componentType='vertical-menu'
-                iconProps={{
-                  sx: {
-                    fontSize: '0.75rem',
-                    ...(!parent ? { fontSize: '1.5rem' } : {}),
-                    ...(parent && item.icon ? { fontSize: '0.875rem' } : {})
-                  }
-                }}
-              />
-            </ListItemIcon>
-          )}
-
-          <MenuItemTextMetaWrapper
+    <CanViewNavLink navLink={item}>
+      <ListItem
+        disablePadding
+        className='nav-link'
+        disabled={item.disabled || false}
+        sx={{ marginTop: 1, px: '0 !important' }}
+      >
+        <Link passHref href={item.path === undefined ? '/' : `${item.path}`}>
+          <MenuNavLink
+            component={'a'}
+            className={isNavLinkActive() ? 'active' : ''}
+            {...(item.openInNewTab ? { target: '_blank' } : null)}
+            onClick={e => {
+              if (item.path === undefined) {
+                e.preventDefault()
+                e.stopPropagation()
+              }
+              if (navVisible) {
+                toggleNavVisibility()
+              }
+            }}
             sx={{
-              ...(isSubToSub ? { marginLeft: 9 } : {}),
-              ...(navCollapsed && !navHover ? { opacity: 0 } : { opacity: 1 })
+              ...conditionalBgColor(),
+              ...(item.disabled ? { pointerEvents: 'none' } : { cursor: 'pointer' }),
+              paddingLeft:
+                navCollapsed && !navHover ? (themeConfig.collapsedNavigationSize - navigationBorderWidth - 24) / 8 : 5.5
             }}
           >
-            <Typography
-              {...((themeConfig.menuTextTruncate || (!themeConfig.menuTextTruncate && navCollapsed && !navHover)) && {
-                noWrap: true
-              })}
-            >
-              <Translations text={item.title} />
-            </Typography>
-            {item.badgeContent ? (
-              <Chip
-                label={item.badgeContent}
-                color={item.badgeColor || 'primary'}
+            {isSubToSub ? null : (
+              <ListItemIcon
                 sx={{
-                  height: 20,
-                  fontWeight: 500,
-                  marginLeft: 1.25,
-                  '& .MuiChip-label': { px: 1.5, textTransform: 'capitalize' }
+                  color: 'text.primary',
+                  transition: 'margin .25s ease-in-out',
+                  ...(navCollapsed && !navHover ? { marginRight: 0 } : { marginRight: 3.25 }),
+                  ...(parent ? { marginLeft: 1.25, marginRight: 4.75 } : {})
                 }}
-              />
-            ) : null}
-          </MenuItemTextMetaWrapper>
-        </MenuNavLink>
-      </Link>
-    </ListItem>
+              >
+                <UserIcon
+                  icon={IconTag}
+                  componentType='vertical-menu'
+                  iconProps={{
+                    sx: {
+                      fontSize: '0.75rem',
+                      ...(!parent ? { fontSize: '1.5rem' } : {}),
+                      ...(parent && item.icon ? { fontSize: '0.875rem' } : {})
+                    }
+                  }}
+                />
+              </ListItemIcon>
+            )}
+
+            <MenuItemTextMetaWrapper
+              sx={{
+                ...(isSubToSub ? { marginLeft: 9 } : {}),
+                ...(navCollapsed && !navHover ? { opacity: 0 } : { opacity: 1 })
+              }}
+            >
+              <Typography
+                {...((themeConfig.menuTextTruncate || (!themeConfig.menuTextTruncate && navCollapsed && !navHover)) && {
+                  noWrap: true
+                })}
+              >
+                <Translations text={item.title} />
+              </Typography>
+              {item.badgeContent ? (
+                <Chip
+                  label={item.badgeContent}
+                  color={item.badgeColor || 'primary'}
+                  sx={{
+                    height: 20,
+                    fontWeight: 500,
+                    marginLeft: 1.25,
+                    '& .MuiChip-label': { px: 1.5, textTransform: 'capitalize' }
+                  }}
+                />
+              ) : null}
+            </MenuItemTextMetaWrapper>
+          </MenuNavLink>
+        </Link>
+      </ListItem>
+    </CanViewNavLink>
   )
 }
 

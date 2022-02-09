@@ -15,6 +15,7 @@ import { Settings } from 'src/@core/context/settingsContext'
 
 // ** Custom Components Imports
 import Translations from 'src/layouts/components/Translations'
+import CanViewNavSectionTitle from 'src/layouts/components/CanViewNavSectionTitle'
 
 interface Props {
   navHover: boolean
@@ -74,23 +75,25 @@ const VerticalNavSectionTitle = (props: Props) => {
   }
 
   return (
-    <ListSubheader
-      className='nav-section-title'
-      sx={{
-        ...conditionalStyling(),
-        ...(navCollapsed && !navHover
-          ? { pt: 3.375, pb: 2.875, pl: (themeConfig.collapsedNavigationSize - navigationBorderWidth - 24) / 8 }
-          : { pl: 6 })
-      }}
-    >
-      {navCollapsed && !navHover ? (
-        <DotsHorizontal />
-      ) : (
-        <TypographyHeaderText noWrap>
-          <Translations text={item.sectionTitle} />
-        </TypographyHeaderText>
-      )}
-    </ListSubheader>
+    <CanViewNavSectionTitle navTitle={item}>
+      <ListSubheader
+        className='nav-section-title'
+        sx={{
+          ...conditionalStyling(),
+          ...(navCollapsed && !navHover
+            ? { pt: 3.375, pb: 2.875, pl: (themeConfig.collapsedNavigationSize - navigationBorderWidth - 24) / 8 }
+            : { pl: 6 })
+        }}
+      >
+        {navCollapsed && !navHover ? (
+          <DotsHorizontal />
+        ) : (
+          <TypographyHeaderText noWrap>
+            <Translations text={item.sectionTitle} />
+          </TypographyHeaderText>
+        )}
+      </ListSubheader>
+    </CanViewNavSectionTitle>
   )
 }
 

@@ -6,6 +6,7 @@ import CubeOutline from 'mdi-material-ui/CubeOutline'
 import LockOutline from 'mdi-material-ui/LockOutline'
 import HomeOutline from 'mdi-material-ui/HomeOutline'
 import EmailOutline from 'mdi-material-ui/EmailOutline'
+import ShieldOutline from 'mdi-material-ui/ShieldOutline'
 import AccountOutline from 'mdi-material-ui/AccountOutline'
 import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
 import DotsHorizontal from 'mdi-material-ui/DotsHorizontal'
@@ -471,6 +472,13 @@ const navigation = (): VerticalNavItemsType => {
           path: '/charts/chartjs'
         }
       ]
+    },
+    {
+      path: '/acl',
+      action: 'read',
+      subject: 'acl',
+      icon: ShieldOutline,
+      title: 'Access Control'
     },
     {
       title: 'Others',
