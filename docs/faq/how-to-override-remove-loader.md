@@ -2,7 +2,7 @@
 sidebarDepth: 0
 ---
 
-# How to override splash screen and page loader ?
+# How to override / remove splash screen and page loader ?
 
 A splash screen is a screen that is visible at the first time of launching or refreshing any page or project.
 

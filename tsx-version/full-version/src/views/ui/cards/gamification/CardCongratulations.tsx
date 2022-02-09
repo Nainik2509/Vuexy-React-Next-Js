@@ -30,7 +30,7 @@ const Img = styled('img')(({ theme }) => ({
 const CardCongratulations = () => {
   return (
     <Card sx={{ position: 'relative', overflow: 'visible', marginTop: { xs: 0, sm: 14.4, md: 0 } }}>
-      <CardContent sx={{ padding: theme => theme.spacing(7.25, 7.5, 7.75, 7.5) }}>
+      <CardContent sx={{ padding: theme => `${theme.spacing(7.25, 7.5, 7.75, 7.5)} !important` }}>
         <Grid container spacing={6}>
           <Grid item xs={12} sm={6}>
             <Typography variant='h5' sx={{ mb: 6.5 }}>

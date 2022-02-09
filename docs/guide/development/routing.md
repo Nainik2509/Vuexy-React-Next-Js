@@ -9,13 +9,13 @@ When a file is added to the `src/pages` directory it's automatically available a
 The router will automatically route files named index to the root of the directory.
 
 - `pages/index.tsx` → `/`
-- `pages/dashboard/index.tsx` → `/blog`
+- `pages/dashboards/index.tsx` → `/blog`
 
 ## Nested routes
 
 The router supports nested files. If you create a nested folder structure files will be automatically routed in the same way still.
 
-- `pages/dashboard/ecommerce/index.tsx` → `/dashboard/ecommerce`
+- `pages/dashboards/ecommerce/index.tsx` → `/dashboards/ecommerce`
 
 ## Dynamic route segments
 

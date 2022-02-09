@@ -10,14 +10,14 @@ const navigation: HorizontalNavItemsType = [
     title: 'Dashboards',
     children: [
       {
-        icon: 'TrendingUp',
+        icon: 'ChartTimelineVariant',
         title: 'Analytics',
         path: '/'
       },
       {
         icon: 'CartOutline',
         title: 'eCommerce',
-        path: '/dashboard/ecommerce'
+        path: '/dashboards/ecommerce'
       }
     ]
   },
