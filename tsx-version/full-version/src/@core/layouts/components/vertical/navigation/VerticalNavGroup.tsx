@@ -156,6 +156,11 @@ const VerticalNavGroup = (props: Props) => {
     }
     setGroupActive([...groupActive])
     setCurrentActiveGroup([...groupActive])
+
+    // Empty Active Group When Menu is collapsed and not hovered, to fix issue route change
+    if (navCollapsed && !navHover) {
+      setGroupActive([])
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.asPath])
 
