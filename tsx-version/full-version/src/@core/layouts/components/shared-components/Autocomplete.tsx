@@ -216,6 +216,7 @@ const AutocompleteComponent = ({ hidden, setShowBackdrop }: Props) => {
   // Render all options for the search
   const RenderOptions = (option: AppBarSearchType) => {
     const { by, type, title, icon, img, size, email, time } = option
+
     if (type === 'pages') {
       const IconTag = autocompleteIconObj[icon as keyof typeof autocompleteIconObj] || themeConfig.navSubItemIcon
 
@@ -329,38 +330,43 @@ const AutocompleteComponent = ({ hidden, setShowBackdrop }: Props) => {
                   </ListItemButton>
                 </ListItem>
               )}
-              renderInput={(params: AutocompleteRenderInputParams) => (
-                <TextField
-                  {...params}
-                  onChange={(event: ChangeEvent<HTMLInputElement>) => setSearchValue(event.target.value)}
-                  inputRef={input => {
-                    if (input) {
-                      if (openSearchBox) {
-                        input.focus()
-                      } else {
-                        input.blur()
+              renderInput={(params: AutocompleteRenderInputParams) => {
+                const scrollPosition = document.documentElement.scrollTop
+
+                return (
+                  <TextField
+                    {...params}
+                    {...(appBar === 'fixed' ? { onFocus: () => window.scrollTo(0, scrollPosition) } : {})}
+                    onChange={(event: ChangeEvent<HTMLInputElement>) => setSearchValue(event.target.value)}
+                    inputRef={input => {
+                      if (input) {
+                        if (openSearchBox) {
+                          input.focus()
+                        } else {
+                          input.blur()
+                        }
                       }
-                    }
-                  }}
-                  InputProps={{
-                    ...params.InputProps,
-                    startAdornment: (
-                      <InputAdornment position='start' sx={{ color: 'text.primary' }}>
-                        <Magnify />
-                      </InputAdornment>
-                    ),
-                    endAdornment: (
-                      <InputAdornment
-                        position='end'
-                        onClick={() => handleAllStates(false)}
-                        sx={{ cursor: 'pointer', color: 'text.primary' }}
-                      >
-                        <Close fontSize='small' />
-                      </InputAdornment>
-                    )
-                  }}
-                />
-              )}
+                    }}
+                    InputProps={{
+                      ...params.InputProps,
+                      startAdornment: (
+                        <InputAdornment position='start' sx={{ color: 'text.primary' }}>
+                          <Magnify />
+                        </InputAdornment>
+                      ),
+                      endAdornment: (
+                        <InputAdornment
+                          position='end'
+                          onClick={() => handleAllStates(false)}
+                          sx={{ cursor: 'pointer', color: 'text.primary' }}
+                        >
+                          <Close fontSize='small' />
+                        </InputAdornment>
+                      )
+                    }}
+                  />
+                )
+              }}
             />
           </SearchBox>
         </Box>

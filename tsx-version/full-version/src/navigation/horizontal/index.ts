@@ -7,7 +7,6 @@ import ChartLine from 'mdi-material-ui/ChartLine'
 import CogOutline from 'mdi-material-ui/CogOutline'
 import ChartDonut from 'mdi-material-ui/ChartDonut'
 import FormSelect from 'mdi-material-ui/FormSelect'
-import TrendingUp from 'mdi-material-ui/TrendingUp'
 import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
 import CartOutline from 'mdi-material-ui/CartOutline'
 import CubeOutline from 'mdi-material-ui/CubeOutline'
@@ -29,6 +28,7 @@ import CreditCardOutline from 'mdi-material-ui/CreditCardOutline'
 import VectorArrangeBelow from 'mdi-material-ui/VectorArrangeBelow'
 import FileDocumentOutline from 'mdi-material-ui/FileDocumentOutline'
 import CalendarBlankOutline from 'mdi-material-ui/CalendarBlankOutline'
+import ChartTimelineVariant from 'mdi-material-ui/ChartTimelineVariant'
 import PackageVariantClosed from 'mdi-material-ui/PackageVariantClosed'
 import PaletteSwatchOutline from 'mdi-material-ui/PaletteSwatchOutline'
 import CheckboxMarkedOutline from 'mdi-material-ui/CheckboxMarkedOutline'
@@ -45,14 +45,14 @@ const navigation = (): HorizontalNavItemsType => [
     title: 'Dashboards',
     children: [
       {
-        icon: TrendingUp,
+        icon: ChartTimelineVariant,
         title: 'Analytics',
         path: '/'
       },
       {
         icon: CartOutline,
         title: 'eCommerce',
-        path: '/dashboard/ecommerce'
+        path: '/dashboards/ecommerce'
       }
     ]
   },

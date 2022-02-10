@@ -139,7 +139,7 @@ module.exports = {
             ['how-to-override-custom-components', "How to override custom components"],
             ['how-to-override-component-styling', "How to override component's styling"],
             ['how-to-update-navbar-footer', 'How to update navbar or footer'],
-            ['how-to-override-splash-screen-and-page-loader', 'How to override splash screen and page loader'],
+            ['how-to-override-remove-loader', 'How to override / remove loader'],
             ['how-to-update-this-template', 'How to update this template'],
             ['how-to-use-custom-icons', 'How to override menu icons and use custom icons in the template'],
             ['how-to-use-nextjs-image-component', 'How to use Nextjs Image Component without Height & Width'],
