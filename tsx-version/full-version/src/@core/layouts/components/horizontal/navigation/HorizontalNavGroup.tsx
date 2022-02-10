@@ -98,7 +98,9 @@ const HorizontalNavGroup = (props: Props) => {
   const currentURL = router.pathname
   const { skin, direction } = settings
 
-  // const popperPlacement = direction === 'rtl' ? 'left' : 'right'
+  const popperOffsetHorizontal = direction === 'rtl' ? 15 : -15
+  const popperPlacement = direction === 'rtl' ? 'bottom-end' : 'bottom-start'
+  const popperPlacementSubMenu = direction === 'rtl' ? 'left-start' : 'right-start'
 
   // ** States
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
@@ -107,13 +109,13 @@ const HorizontalNavGroup = (props: Props) => {
   const [referenceElement, setReferenceElement] = useState(null)
   const [popperElement, setPopperElement] = useState(null)
   const { styles, attributes, update } = usePopper(referenceElement, popperElement, {
-    placement: hasParent ? 'right-start' : 'bottom',
+    placement: hasParent ? popperPlacementSubMenu : popperPlacement,
     modifiers: [
       {
         enabled: true,
         name: 'offset',
         options: {
-          offset: hasParent ? [0, 15] : [0, 15]
+          offset: hasParent ? [0, 15] : [popperOffsetHorizontal, 15]
         }
       }
     ]
@@ -238,7 +240,11 @@ const HorizontalNavGroup = (props: Props) => {
             ref={setPopperElement}
             style={styles.popper}
             {...attributes.popper}
-            sx={{ display: menuOpen ? 'block' : 'none' }}
+            sx={{
+              zIndex: 1000,
+              display: menuOpen ? 'block' : 'none',
+              ...(hasParent ? { position: 'fixed !important' } : {})
+            }}
           >
             <NavigationMenu
               sx={{
