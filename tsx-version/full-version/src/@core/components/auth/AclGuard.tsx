@@ -1,22 +1,28 @@
 // ** React Imports
-import { ReactNode, useContext } from 'react'
+import { ReactNode } from 'react'
 
 // ** Next Imports
 import { useRouter } from 'next/router'
+
+// ** Types
+import type { ACLObj } from 'src/configs/acl'
 
 // ** Context Imports
 import { AbilityContext } from 'src/layouts/components/Can'
 
 // ** Config Import
-import { NotAuthPagePath } from 'src/configs/acl'
+import { buildAbilityFor } from 'src/configs/acl'
 
-// ** Types
-import type { ACLObj } from 'src/configs/acl'
+// ** Component Import
+import NotAuthorized from 'src/pages/401'
+
+// ** Hooks
+import { useAuth } from 'src/@core/hooks/useAuth'
 
 interface AclGuardProps {
   children: ReactNode
   guestGuard: boolean
-  aclAbilities: ACLObj | undefined
+  aclAbilities: ACLObj
 }
 
 const AclGuard = (props: AclGuardProps) => {
@@ -24,29 +30,28 @@ const AclGuard = (props: AclGuardProps) => {
   const { aclAbilities, children, guestGuard } = props
 
   // ** Hooks
+  const auth = useAuth()
   const router = useRouter()
-  const ability = useContext(AbilityContext)
 
-  if (ability) {
-    if (aclAbilities) {
-      if (ability && ability.can(aclAbilities.action, aclAbilities.subject)) {
-        return <>{children}</>
-      }
-    } else {
-      const hasManageAll = ability.rules.some(r => r.subject === 'all')
-      if (!hasManageAll && router.asPath !== NotAuthPagePath && !guestGuard) {
-        router.replace(NotAuthPagePath)
-      }
+  let ability
 
-      return <>{children}</>
-    }
-  } else {
-    if (router.asPath !== NotAuthPagePath && !guestGuard) {
-      router.replace(NotAuthPagePath)
-    }
-
+  // If guestGuard is true and user is not logged in or its an error page, render the page without checking access
+  if (guestGuard || router.route === '/404' || router.route === '/500') {
     return <>{children}</>
   }
+
+  // User is logged in, build ability for the user based on his role
+  if (auth.user && auth.user.role) {
+    ability = buildAbilityFor(auth.user.role, aclAbilities.subject)
+  }
+
+  // Check the access of current user and render pages
+  if (ability && ability.can(aclAbilities.action, aclAbilities.subject)) {
+    return <AbilityContext.Provider value={ability}>{children}</AbilityContext.Provider>
+  }
+
+  // Render Not Authorized component if the current user has limited access
+  return <NotAuthorized />
 }
 
 export default AclGuard

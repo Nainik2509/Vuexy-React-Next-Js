@@ -476,7 +476,7 @@ const navigation = (): VerticalNavItemsType => {
     {
       path: '/acl',
       action: 'read',
-      subject: 'acl',
+      subject: 'acl-page',
       icon: ShieldOutline,
       title: 'Access Control'
     },

@@ -1,8 +1,8 @@
-// ** MUI Imports
-import Typography from '@mui/material/Typography'
+// ** Component Import
+import NotAuthorized from 'src/pages/401'
 
-const AnalyticsDashboard = () => {
-  return <Typography variant='h4'>Analytics Dashboard</Typography>
+const Home = () => {
+  return <NotAuthorized />
 }
 
-export default AnalyticsDashboard
+export default Home

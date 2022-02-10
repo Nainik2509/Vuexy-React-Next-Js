@@ -3,7 +3,7 @@ import { ReactNode } from 'react'
 
 // ** Next Imports
 import Head from 'next/head'
-import Router from 'next/router'
+import { Router } from 'next/router'
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 
@@ -20,7 +20,7 @@ import type { EmotionCache } from '@emotion/cache'
 
 // ** Config Imports
 import 'src/configs/i18n'
-import { buildAbilityFor } from 'src/configs/acl'
+import { defaultACLObj } from 'src/configs/acl'
 import themeConfig from 'src/configs/themeConfig'
 
 // ** Fake-DB Import
@@ -34,7 +34,6 @@ import UserLayout from 'src/layouts/UserLayout'
 import AclGuard from 'src/@core/components/auth/AclGuard'
 import ThemeComponent from 'src/@core/theme/ThemeComponent'
 import AuthGuard from 'src/@core/components/auth/AuthGuard'
-import { AbilityContext } from 'src/layouts/components/Can'
 import GuestGuard from 'src/@core/components/auth/GuestGuard'
 
 // ** Spinner Import
@@ -103,6 +102,7 @@ const Guard = ({ children, authGuard, guestGuard }: GuardProps) => {
 const App = (props: ExtendedAppProps) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
 
+  // Variables
   const getLayout = Component.getLayout ?? (page => <UserLayout>{page}</UserLayout>)
 
   const setConfig = Component.setConfig ?? undefined
@@ -111,30 +111,7 @@ const App = (props: ExtendedAppProps) => {
 
   const guestGuard = Component.guestGuard ?? false
 
-  const storedRole =
-    typeof window !== 'undefined' && window.localStorage.getItem('userData')
-      ? JSON.parse(window.localStorage.getItem('userData')!).role
-      : 'admin'
-
-  const aclAbilities = Component.acl ?? undefined
-
-  const handleAbility = () => {
-    if (storedRole) {
-      if (aclAbilities) {
-        return buildAbilityFor(storedRole, aclAbilities.subject)
-      } else {
-        if (storedRole === 'admin') {
-          return buildAbilityFor('admin', 'all')
-        } else {
-          return undefined
-        }
-      }
-    } else {
-      return undefined
-    }
-  }
-
-  const ability = handleAbility()
+  const aclAbilities = Component.acl ?? defaultACLObj
 
   return (
     <Provider store={store}>
@@ -150,27 +127,25 @@ const App = (props: ExtendedAppProps) => {
         </Head>
 
         <AuthProvider>
-          <AbilityContext.Provider value={ability}>
-            <SettingsProvider {...(setConfig ? { pageSettings: setConfig() } : {})}>
-              <SettingsConsumer>
-                {({ settings }) => {
-                  return (
-                    <ThemeComponent settings={settings}>
-                      <Guard authGuard={authGuard} guestGuard={guestGuard}>
-                        <AclGuard aclAbilities={aclAbilities} guestGuard={guestGuard}>
-                          {getLayout(<Component {...pageProps} />)}
-                        </AclGuard>
-                      </Guard>
+          <SettingsProvider {...(setConfig ? { pageSettings: setConfig() } : {})}>
+            <SettingsConsumer>
+              {({ settings }) => {
+                return (
+                  <ThemeComponent settings={settings}>
+                    <Guard authGuard={authGuard} guestGuard={guestGuard}>
+                      <AclGuard aclAbilities={aclAbilities} guestGuard={guestGuard}>
+                        {getLayout(<Component {...pageProps} />)}
+                      </AclGuard>
+                    </Guard>
 
-                      <ReactHotToast>
-                        <Toaster position={settings.toastPosition} toastOptions={{ className: 'react-hot-toast' }} />
-                      </ReactHotToast>
-                    </ThemeComponent>
-                  )
-                }}
-              </SettingsConsumer>
-            </SettingsProvider>
-          </AbilityContext.Provider>
+                    <ReactHotToast>
+                      <Toaster position={settings.toastPosition} toastOptions={{ className: 'react-hot-toast' }} />
+                    </ReactHotToast>
+                  </ThemeComponent>
+                )
+              }}
+            </SettingsConsumer>
+          </SettingsProvider>
         </AuthProvider>
       </CacheProvider>
     </Provider>

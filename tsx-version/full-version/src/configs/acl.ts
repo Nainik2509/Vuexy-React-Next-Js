@@ -5,21 +5,24 @@ export type Actions = 'manage' | 'create' | 'read' | 'update' | 'delete'
 
 export type AppAbility = Ability<[Actions, Subjects]> | undefined
 
-// export const AppAbility = Ability as AbilityClass<AppAbility>
-export const NotAuthPagePath = '/401'
 export const AppAbility = Ability as any
 export type ACLObj = {
   action: Actions
   subject: string
 }
 
+/**
+ * Please define your own Ability rules according to your app requirements.
+ * We have just shown Admin and Client rules for demo purpose where
+ * admin can manage everything and client can just visit ACL page
+ */
 const defineRulesFor = (role: string, subject: string) => {
   const { can, rules } = new AbilityBuilder(AppAbility)
 
   if (role === 'admin') {
     can('manage', 'all')
   } else if (role === 'client') {
-    can(['read'], 'acl')
+    can(['read'], 'acl-page')
   } else {
     can(['read', 'create'], subject)
     can(['update', 'delete'], subject)
@@ -34,6 +37,11 @@ export const buildAbilityFor = (role: string, subject: string): AppAbility => {
     // @ts-ignore
     detectSubjectType: object => object!.type
   })
+}
+
+export const defaultACLObj: ACLObj = {
+  action: 'manage',
+  subject: 'all'
 }
 
 export default defineRulesFor

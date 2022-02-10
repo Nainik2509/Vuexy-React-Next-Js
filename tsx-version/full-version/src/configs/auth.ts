@@ -5,6 +5,6 @@ export default {
   storageTokenKeyName: 'accessToken',
   getHomeRoute: (role: string) => {
     if (role === 'client') return '/acl'
-    else return '/'
+    else return '/dashboard/analytics'
   }
 }
