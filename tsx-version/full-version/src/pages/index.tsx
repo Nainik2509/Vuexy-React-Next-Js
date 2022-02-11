@@ -1,17 +1,43 @@
-// ** Component Import
-// import NotAuthorized from 'src/pages/401'
+// ** React Imports
+import { useEffect } from 'react'
 
-// const Home = () => {
-//   return <NotAuthorized />
-// }
+// ** Next Imports
+import { useRouter } from 'next/router'
 
-// export default Home
+// ** Spinner Import
+import Spinner from 'src/@core/components/spinner'
 
-// ** MUI Imports
-import Typography from '@mui/material/Typography'
+// ** Hook Imports
+import { useAuth } from 'src/@core/hooks/useAuth'
 
-const AnalyticsDashboard = () => {
-  return <Typography variant='h4'>Analytics Dashboard</Typography>
+/**
+ *  Set Home URL based on User Roles
+ */
+export const getHomeRoute = (role: string) => {
+  if (role === 'client') return '/acl'
+  else return '/dashboards/analytics'
 }
 
-export default AnalyticsDashboard
+const Home = () => {
+  // ** Hooks
+  const auth = useAuth()
+  const router = useRouter()
+
+  useEffect(() => {
+    if (!router.isReady) {
+      return
+    }
+
+    if (auth.user && auth.user.role) {
+      const homeRoute = getHomeRoute(auth.user.role)
+
+      // Redirect user to Home URL
+      router.replace(homeRoute)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  return <Spinner />
+}
+
+export default Home

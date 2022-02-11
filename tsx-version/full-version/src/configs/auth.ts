@@ -2,9 +2,5 @@ export default {
   meEndpoint: '/auth/me',
   loginEndpoint: '/jwt/login',
   registerEndpoint: '/jwt/register',
-  storageTokenKeyName: 'accessToken',
-  getHomeRoute: (role: string) => {
-    if (role === 'client') return '/acl'
-    else return '/'
-  }
+  storageTokenKeyName: 'accessToken'
 }
