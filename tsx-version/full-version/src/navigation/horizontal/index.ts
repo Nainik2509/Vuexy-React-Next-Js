@@ -48,7 +48,7 @@ const navigation = (): HorizontalNavItemsType => [
       {
         icon: ChartTimelineVariant,
         title: 'Analytics',
-        path: '/'
+        path: '/dashboards/analytics'
       },
       {
         icon: CartOutline,
