@@ -68,6 +68,7 @@ module.exports = {
             '/guide/development/redux',
             '/guide/development/fakedb',
             '/guide/development/authentication',
+            '/guide/development/access-control',
             '/guide/development/internationalization',
             '/guide/development/rtl',
             '/guide/development/loaders',

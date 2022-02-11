@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 import type { ACLObj } from 'src/configs/acl'
 
 // ** Context Imports
-import { AbilityContext } from 'src/layouts/components/Can'
+import { AbilityContext } from 'src/layouts/components/acl/Can'
 
 // ** Config Import
 import { buildAbilityFor } from 'src/configs/acl'

@@ -24,7 +24,7 @@ import { Settings } from 'src/@core/context/settingsContext'
 // ** Custom Components Imports
 import UserIcon from 'src/layouts/components/UserIcon'
 import Translations from 'src/layouts/components/Translations'
-import CanViewNavLink from 'src/layouts/components/CanViewNavLink'
+import CanViewNavLink from 'src/layouts/components/acl/CanViewNavLink'
 
 // ** Utils
 import { handleURLQueries } from 'src/@core/layouts/utils'

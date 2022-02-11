@@ -14,6 +14,7 @@ const {
   RegisterPathTSX,
   RegisterPathJSX,
   appDataToReplace,
+  aclDataToReplace,
   copyRecursiveSync,
   userLayoutPathTSX,
   userLayoutPathJSX,
@@ -238,6 +239,34 @@ const updateContent = (
   }
 }
 
+const removeACL = () => {
+  aclDataToReplace.forEach(obj => {
+    if(fs.existsSync(obj.file)){
+      console.log(obj.file);
+      fs.readFile(obj.file, 'utf-8', (err, data) => {
+        if(err){
+          console.log(err);
+
+          return
+        }else{
+          const result = data
+          obj.replacements.forEach(rep => {
+            result.replace(rep.from, rep.to)
+          })
+          fs.writeFile(obj.file, result, (err) => {
+            if(err){
+          console.log(err);
+
+          return
+        }
+          })
+        }
+
+      })
+    }
+  })
+}
+
 // ** Replaces whole files
 const replaceFiles = () => {
   filesToReplace.map(file => {
@@ -440,5 +469,5 @@ const generate = () => {
   }
 }
 
-
 generate()
+removeACL()

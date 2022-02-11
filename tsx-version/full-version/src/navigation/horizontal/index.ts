@@ -14,6 +14,7 @@ import LockOutline from 'mdi-material-ui/LockOutline'
 import FileOutline from 'mdi-material-ui/FileOutline'
 import HomeOutline from 'mdi-material-ui/HomeOutline'
 import EmailOutline from 'mdi-material-ui/EmailOutline'
+import ShieldOutline from 'mdi-material-ui/ShieldOutline'
 import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 import DotsHorizontal from 'mdi-material-ui/DotsHorizontal'
 import AccountOutline from 'mdi-material-ui/AccountOutline'
@@ -503,6 +504,13 @@ const navigation = (): HorizontalNavItemsType => [
     title: 'Others',
     icon: DotsHorizontal,
     children: [
+      {
+        path: '/acl',
+        action: 'read',
+        subject: 'acl-page',
+        icon: ShieldOutline,
+        title: 'Access Control'
+      },
       {
         title: 'Menu Levels',
         icon: Menu,

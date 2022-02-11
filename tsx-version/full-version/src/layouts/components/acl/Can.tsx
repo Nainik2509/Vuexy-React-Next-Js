@@ -1,7 +1,7 @@
 import { createContext } from 'react'
-import { AppAbility } from 'src/configs/acl'
+import { AnyAbility } from '@casl/ability'
 import { createContextualCan } from '@casl/react'
 
-export const AbilityContext = createContext<AppAbility>(undefined!)
+export const AbilityContext = createContext<AnyAbility>(undefined!)
 
 export default createContextualCan(AbilityContext.Consumer)

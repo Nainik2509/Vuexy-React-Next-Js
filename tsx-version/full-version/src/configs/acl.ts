@@ -24,8 +24,7 @@ const defineRulesFor = (role: string, subject: string) => {
   } else if (role === 'client') {
     can(['read'], 'acl-page')
   } else {
-    can(['read', 'create'], subject)
-    can(['update', 'delete'], subject)
+    can(['read', 'create', 'update', 'delete'], subject)
   }
 
   return rules

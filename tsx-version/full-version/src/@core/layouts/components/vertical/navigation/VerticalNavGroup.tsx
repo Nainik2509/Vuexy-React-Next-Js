@@ -35,7 +35,7 @@ import { Settings } from 'src/@core/context/settingsContext'
 import VerticalNavItems from './VerticalNavItems'
 import UserIcon from 'src/layouts/components/UserIcon'
 import Translations from 'src/layouts/components/Translations'
-import CanViewNavGroup from 'src/layouts/components/CanViewNavGroup'
+import CanViewNavGroup from 'src/layouts/components/acl/CanViewNavGroup'
 
 interface Props {
   item: NavGroup
