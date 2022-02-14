@@ -1,10 +1,10 @@
 # How to add ACL in starter-kit
 
-react-material-admin uses [CASL](https://casl.js.org/v5/en/) for ACL. Follow these steps to integrate ACL in starter-kit:
+Master uses [CASL](https://casl.js.org/v5/en/) for ACL. Follow these steps to integrate ACL in starter-kit:
 
 **Note**: You must have Auth integrated to integrate the ACL. Refer [this](/articles/how-to-add-jwt-in-starter-kit) article to integrate Auth in starter-kit.
 
-1. Copy ACL config file from `full-version/src/configs` to `starter-kit/src/configs`
+1. Copy `acl.ts` config file from `full-version/src/configs` to `starter-kit/src/configs`
 2. Navigate to `_app.tsx`
 3. Import `ACLGuard` from `src/@core/component/auth` folder.
 4. Import `defaultACLObj` from `src/configs/acl`.

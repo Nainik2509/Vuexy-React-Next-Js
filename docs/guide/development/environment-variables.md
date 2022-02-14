@@ -1,6 +1,6 @@
 # Environment Variables
 
-react-material-admin comes with support for environment variables, which allows you to use `.env` to load the environment variables.
+Master comes with support for environment variables, which allows you to use `.env` to load the environment variables.
 
 ## Loading Environment Variables
 

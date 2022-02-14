@@ -1,6 +1,6 @@
 # How to add JWT in starter-kit
 
-react-material-admin uses context & fake-db to authenticate users. Follow these steps to integrate authentication in starter-kit:
+Master uses context & fake-db to authenticate users. Follow these steps to integrate authentication in starter-kit:
 
 1. Wrap your components with `AuthProvider` in `_app.tsx` file.
 

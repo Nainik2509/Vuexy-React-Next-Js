@@ -2,7 +2,7 @@
 
 ## Overview
 
-react-material-admin uses the [CASL](https://casl.js.org/v5/en/) package to provide access control. CASL is future-oriented and is more detailed on Access Control.
+Master uses the [CASL](https://casl.js.org/v5/en/) package to provide access control. CASL is future-oriented and is more detailed on Access Control.
 
 We suggest you read the [CASL](https://casl.js.org/v5/en/) documentation to learn how it works.
 
@@ -34,9 +34,9 @@ const defineRulesFor = (role, subject) => {
 
 ## Component
 
-To define a accessible component use `acl` method with `action` & `subject` properties like shown below.
+To define an accessible component use `acl` method with `action` & `subject` properties like shown below.
 
-You can also refer `full-version/src/pages/acl/index.tsx` file.
+You can also refer `full-version/src/pages/acl/index.tsx` file for implementation.
 
 ```jsx
 const Component = () => <h1>Component</h1>
@@ -65,10 +65,14 @@ Refer to the example below:
 }
 ```
 
-## Redirection
-Users are redirected on the basis of their role. You can the redirection URL in `sec/pages/index.tsx`
+## Home URL
 
-```jsx
+Please update Home URL based on User role in `src/pages/index.tsx` file. Currently we have set default URL for client and Admin like following:
+
+```tsx
+/**
+ *  Set Home URL based on User Roles
+ */
 export const getHomeRoute = (role: string) => {
   if (role === 'client') return '/acl'
   else return '/dashboards/analytics'
@@ -76,10 +80,96 @@ export const getHomeRoute = (role: string) => {
 ```
 
 ## How to remove ACL
+
 It is quite easy to remove access control from the template.
 
 1. Remove the ACLGuard wrapper & ACL related imports from `_app.tsx` file.
-2. Remove `action` & `subject` properties if defined in any component or navigation files.
-3. Remove the `ability` & `ability.can` function in CanView files in `src/layouts/components/acl` folder.
-4. Remove acl config file in `src/configs` folder
 
+    Change Following code from:
+
+    ```tsx
+    // Code before removing ACL Guard
+    <Guard authGuard={authGuard} guestGuard={guestGuard}>
+      <AclGuard aclAbilities={aclAbilities} guestGuard={guestGuard}>
+        {getLayout(<Component {...pageProps} />)}
+      </AclGuard>
+    </Guard>
+    ```
+
+    to
+
+    ``` tsx
+    // Code after removing ACL Guard
+    <Guard authGuard={authGuard} guestGuard={guestGuard}>
+      {getLayout(<Component {...pageProps} />)}
+    </Guard>
+    ```
+
+2. Remove `acl` object from components, `action` & `subject` properties if defined in any navigation files.
+
+    Component from:
+
+    ```tsx
+    const Component = () => <h1>Component</h1>
+
+    Component.acl = {
+      action: 'read',
+      subject: 'component'
+    }
+
+    export default Component
+    ```
+
+    to
+
+    ```tsx
+    const Component = () => <h1>Component</h1>
+
+    export default Component
+    ```
+
+    Navigation object from:
+
+    ```ts
+    {
+      path: '/acl',
+      action: 'read',
+      subject: 'acl-page',
+      icon: ShieldOutline,
+      title: 'Access Control'
+    }
+    ```
+
+    to
+
+    ```ts
+    {
+      path: '/acl',
+      icon: ShieldOutline,
+      title: 'Access Control'
+    }
+    ```
+
+3. Update Home URL like following:
+
+    ```jsx
+    /**
+    *  Set Home URL based on User Roles
+    */
+    export const getHomeRoute = (role: string) => {
+      return '/dashboards/analytics'
+    }
+    ```
+
+    OR
+
+    Empty `src/pages/index.tsx` file and render your Home component like following:
+
+    ```tsx
+    const Component = () => <h1>Component</h1>
+    
+    export default Component
+    ```
+
+4. Remove the `ability` & `ability.can` function in all the CanView files in `src/layouts/components/acl` folder.
+5. Remove `acl.ts` config file from `src/configs` folder.

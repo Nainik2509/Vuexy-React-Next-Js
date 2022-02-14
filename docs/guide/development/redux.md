@@ -1,10 +1,10 @@
 # Redux
 
-react-material-admin uses [redux-toolkit](https://redux-toolkit.js.org/introduction/getting-started) for state-management.
+Master uses [redux-toolkit](https://redux-toolkit.js.org/introduction/getting-started) for state-management.
 
 ## Overview
 
-react-material-admin uses `redux-toolkit` with hooks to manage the state for the applications.
+Master uses `redux-toolkit` with hooks to manage the state for the applications.
 
 ## Usage
 

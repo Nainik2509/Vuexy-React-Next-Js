@@ -1,10 +1,10 @@
 # FakeDB
 
-react-material-admin is built using FakeDB to mock the real life application functionalities.
+Master is built using FakeDB to mock the real life application functionalities.
 
 ## Overview
 
-react-material-admin uses [axios-mock-adapter](https://github.com/ctimmerm/axios-mock-adapter) to simulate the server calls.
+Master uses [axios-mock-adapter](https://github.com/ctimmerm/axios-mock-adapter) to simulate the server calls.
 
 All of the server calls are located in `src/@fake-db`.
 

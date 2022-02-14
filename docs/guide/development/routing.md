@@ -1,6 +1,6 @@
 # Routing
 
-react-material-admin uses nexttsx's file-system based router built on the concept of pages.
+Master uses nexttsx's file-system based router built on the concept of pages.
 
 When a file is added to the `src/pages` directory it's automatically available as a route.
 
