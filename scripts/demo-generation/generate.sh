@@ -13,10 +13,11 @@ do
   yarn next export
 # Move the demo to root folder
   mv out ../../demo-$i
+  cd ../../
 # Zip and remove demo folder 
   zip -r demo-$i.zip demo-$i
   rm -rf demo-$i
 # Reset the replaced content before
-  cd ../../scripts/demo-generation
+  cd scripts/demo-generation
   node reset.js demo-$i
 done
