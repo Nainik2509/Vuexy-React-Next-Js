@@ -68,7 +68,9 @@ const copyRecursiveSync = (src, dest) => {
       copyRecursiveSync(path.join(src, childItemName), path.join(dest, childItemName))
     })
   } else {
-    fs.copyFileSync(src, dest)
+    if (fs.existsSync(src)){
+      fs.copyFileSync(src, dest)
+    }
   }
 }
 
