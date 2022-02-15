@@ -173,7 +173,7 @@ const copyRecursiveSync = (src, dest) => {
       copyRecursiveSync(path.join(src, childItemName), path.join(dest, childItemName))
     })
   } else {
-      fs.copyFileSync(src, dest)
+    fs.copyFileSync(src, dest)
   }
 }
 
@@ -197,7 +197,7 @@ const appDataToReplace = [
   { from: '</AclGuard>', to: '' },
   { from: '<Guard authGuard={authGuard} guestGuard={guestGuard}>', to: '' },
   { from: '</Guard>', to: '' },
-   { from: new RegExp(/const Guard[\s\S]*?<\/AuthGuard>[\s\S]*?}[\s\S]*?}/), to: '' },
+  { from: new RegExp(/const Guard[\s\S]*?<\/AuthGuard>[\s\S]*?}[\s\S]*?}/), to: '' },
   { from: new RegExp(/type GuardProps[\s\S]*?ReactNode[\s\S]*?}/), to: '' },
   { from: new RegExp(/\/\/ \*\* React Imports/), to: '' },
   { from: new RegExp(/\/\/ \*\* Store Imports/), to: '' },
@@ -208,82 +208,363 @@ const appDataToReplace = [
   { from: 'const aclAbilities = Component.acl ?? defaultACLObj', to: '' }
 ]
 
-const aclDataToReplace = [
+const newLoginBtn = `<Link href='/' passHref>
+     <Button fullWidth size='large' type='submit' variant='contained' sx={{ marginBottom: 7 }}>
+      Login
+      </Button>
+</Link>`
+
+const newRegisterBtn = `<Link href='/' passHref>
+     <Button fullWidth size='large' type='submit' variant='contained' sx={{ marginBottom: 7 }}>
+      Register
+      </Button>
+</Link>`
+
+const dataToReplace = [
   {
     file: `${pathConfig.starterKitTSXPath}/src/layouts/components/acl/CanViewNavGroup.tsx`,
     replacements: [
-        { from: "import { ReactNode, useContext } from 'react'", to: "import { ReactNode } from 'react'" },
-        { from: "import { NavGroup, NavLink } from 'src/@core/layouts/types'", to: "import { NavGroup } from 'src/@core/layouts/types'" },
-        { from: new RegExp(/\/\/ \*\* Component Imports/), to: '' },
-        { from: "import { AbilityContext } from 'src/layouts/components/acl/Can'", to: '' },
-        { from: "const { children, navGroup } = props", to: 'const { children } = props' },
-        { from: new RegExp(/\/\/ \*\* Hook/), to: '' },
-        { from: "const ability = useContext(AbilityContext)", to: '' },
-        { from: new RegExp(/const canViewMenuGroup[\s\S]*?&& hasAnyVisibleChild[\s\S]*?}/), to: '' },
-        { from: "return canViewMenuGroup(navGroup) ? <>{children}</> : null", to: 'return <>{children}</>' },
+      { from: "import { ReactNode, useContext } from 'react'", to: "import { ReactNode } from 'react'" },
+      { from: "import { NavGroup, NavLink } from 'src/@core/layouts/types'", to: "import { NavGroup } from 'src/@core/layouts/types'" },
+      { from: new RegExp(/\/\/ \*\* Component Imports/), to: '' },
+      { from: "import { AbilityContext } from 'src/layouts/components/acl/Can'", to: '' },
+      { from: "const { children, navGroup } = props", to: 'const { children } = props' },
+      { from: new RegExp(/\/\/ \*\* Hook/), to: '' },
+      { from: "const ability = useContext(AbilityContext)", to: '' },
+      { from: new RegExp(/const canViewMenuGroup[\s\S]*?&& hasAnyVisibleChild[\s\S]*?}/), to: '' },
+      { from: "return canViewMenuGroup(navGroup) ? <>{children}</> : null", to: 'return <>{children}</>' },
     ]
   },
   {
     file: `${pathConfig.starterKitTSXPath}/src/layouts/components/acl/CanViewNavLink.tsx`,
     replacements: [
-        { from: "import { ReactNode, useContext } from 'react'", to: "import { ReactNode } from 'react'" },
-        { from: new RegExp(/\/\/ \*\* Component Imports/), to: '' },
-        { from: "import { AbilityContext } from 'src/layouts/components/acl/Can'", to: '' },
-        { from: "const { children, navLink } = props", to: 'const { children } = props' },
-        { from: new RegExp(/\/\/ \*\* Hook/), to: '' },
-        { from: "const ability = useContext(AbilityContext)", to: '' },
-        { from: "return ability && ability.can(navLink.action, navLink.subject) ? <>{children}</> : null", to: 'return <>{children}</>' },
+      { from: "import { ReactNode, useContext } from 'react'", to: "import { ReactNode } from 'react'" },
+      { from: new RegExp(/\/\/ \*\* Component Imports/), to: '' },
+      { from: "import { AbilityContext } from 'src/layouts/components/acl/Can'", to: '' },
+      { from: "const { children, navLink } = props", to: 'const { children } = props' },
+      { from: new RegExp(/\/\/ \*\* Hook/), to: '' },
+      { from: "const ability = useContext(AbilityContext)", to: '' },
+      { from: "return ability && ability.can(navLink.action, navLink.subject) ? <>{children}</> : null", to: 'return <>{children}</>' },
     ]
   },
   {
     file: `${pathConfig.starterKitTSXPath}/src/layouts/components/acl/CanViewNavSectionTitle.tsx`,
     replacements: [
-        { from: "import { ReactNode, useContext } from 'react'", to: "import { ReactNode } from 'react'" },
-        { from: new RegExp(/\/\/ \*\* Component Imports/), to: '' },
-        { from: "import { AbilityContext } from 'src/layouts/components/acl/Can'", to: '' },
-        { from: "const { children, navTitle } = props", to: 'const { children } = props' },
-        { from: new RegExp(/\/\/ \*\* Hook/), to: '' },
-        { from: "const ability = useContext(AbilityContext)", to: '' },
-        { from: "return ability && ability.can(navTitle.action, navTitle.subject) ? <>{children}</> : null", to: 'return <>{children}</>' },
+      { from: "import { ReactNode, useContext } from 'react'", to: "import { ReactNode } from 'react'" },
+      { from: new RegExp(/\/\/ \*\* Component Imports/), to: '' },
+      { from: "import { AbilityContext } from 'src/layouts/components/acl/Can'", to: '' },
+      { from: "const { children, navTitle } = props", to: 'const { children } = props' },
+      { from: new RegExp(/\/\/ \*\* Hook/), to: '' },
+      { from: "const ability = useContext(AbilityContext)", to: '' },
+      { from: "return ability && ability.can(navTitle.action, navTitle.subject) ? <>{children}</> : null", to: 'return <>{children}</>' },
     ]
   },
   {
     file: `${pathConfig.starterKitJSXPath}/src/layouts/components/acl/CanViewNavGroup.js`,
     replacements: [
-        { from: "import { ReactNode, useContext } from 'react'", to: "import { ReactNode } from 'react'" },
-        { from: new RegExp(/\/\/ \*\* Component Imports/), to: '' },
-        { from: "import { AbilityContext } from 'src/layouts/components/acl/Can'", to: '' },
-        { from: "const { children, navGroup } = props", to: 'const { children } = props' },
-        { from: new RegExp(/\/\/ \*\* Hook/), to: '' },
-        { from: "const ability = useContext(AbilityContext)", to: '' },
-        { from: new RegExp(/const canViewMenuGroup[\s\S]*?hasAnyVisibleChild[\s\S]*?}/), to: '' },
-        { from: "return canViewMenuGroup(navGroup) ? <>{children}</> : null", to: 'return <>{children}</>' },
+      { from: new RegExp(/\/\/ \*\* React Imports/), to: '' },
+      { from: "import { useContext } from 'react'", to: '' },
+      { from: new RegExp(/\/\/ \*\* Component Imports/), to: '' },
+      { from: "import { AbilityContext } from 'src/layouts/components/acl/Can'", to: '' },
+      { from: "const { children, navGroup } = props", to: 'const { children } = props' },
+      { from: new RegExp(/\/\/ \*\* Hook/), to: '' },
+      { from: "const ability = useContext(AbilityContext)", to: '' },
+      { from: new RegExp(/const canViewMenuGroup[\s\S]*?&& hasAnyVisibleChild[\s\S]*?}/), to: '' },
+      { from: "return canViewMenuGroup(navGroup) ? <>{children}</> : null", to: 'return <>{children}</>' },
     ]
   },
   {
     file: `${pathConfig.starterKitJSXPath}/src/layouts/components/acl/CanViewNavLink.js`,
     replacements: [
-        { from: "import { ReactNode, useContext } from 'react'", to: "import { ReactNode } from 'react'" },
-        { from: new RegExp(/\/\/ \*\* Component Imports/), to: '' },
-        { from: "import { AbilityContext } from 'src/layouts/components/acl/Can'", to: '' },
-        { from: "const { children, navLink } = props", to: 'const { children } = props' },
-        { from: new RegExp(/\/\/ \*\* Hook/), to: '' },
-        { from: "const ability = useContext(AbilityContext)", to: '' },
-        { from: "return ability && ability.can(navLink.action, navLink.subject) ? <>{children}</> : null", to: 'return <>{children}</>' },
+      { from: new RegExp(/\/\/ \*\* React Imports/), to: '' },
+      { from: "import { useContext } from 'react'", to: '' },
+      { from: new RegExp(/\/\/ \*\* Component Imports/), to: '' },
+      { from: "import { AbilityContext } from 'src/layouts/components/acl/Can'", to: '' },
+      { from: "const { children, navLink } = props", to: 'const { children } = props' },
+      { from: new RegExp(/\/\/ \*\* Hook/), to: '' },
+      { from: "const ability = useContext(AbilityContext)", to: '' },
+      { from: "return ability && ability.can(navLink.action, navLink.subject) ? <>{children}</> : null", to: 'return <>{children}</>' },
     ]
   },
   {
     file: `${pathConfig.starterKitJSXPath}/src/layouts/components/acl/CanViewNavSectionTitle.js`,
     replacements: [
-        { from: "import { ReactNode, useContext } from 'react'", to: "import { ReactNode } from 'react'" },
-        { from: new RegExp(/\/\/ \*\* Component Imports/), to: '' },
-        { from: "import { AbilityContext } from 'src/layouts/components/acl/Can'", to: '' },
-        { from: "const { children, navTitle } = props", to: 'const { children } = props' },
-        { from: new RegExp(/\/\/ \*\* Hook/), to: '' },
-        { from: "const ability = useContext(AbilityContext)", to: '' },
-        { from: "return ability && ability.can(navTitle.action, navTitle.subject) ? <>{children}</> : null", to: 'return <>{children}</>' },
+      { from: new RegExp(/\/\/ \*\* React Imports/), to: '' },
+      { from: "import { useContext } from 'react'", to: '' },
+      { from: new RegExp(/\/\/ \*\* Component Imports/), to: '' },
+      { from: "import { AbilityContext } from 'src/layouts/components/acl/Can'", to: '' },
+      { from: "const { children, navTitle } = props", to: 'const { children } = props' },
+      { from: new RegExp(/\/\/ \*\* Hook/), to: '' },
+      { from: "const ability = useContext(AbilityContext)", to: '' },
+      { from: "return ability && ability.can(navTitle.action, navTitle.subject) ? <>{children}</> : null", to: 'return <>{children}</>' },
     ]
-  }
+  },
+  {
+    file: userLayoutPathTSX,
+    replacements: [
+      {
+        from: "import BuyNowButton from './components/BuyNowButton'",
+        to: ''
+      },
+      {
+        from: '<BuyNowButton />',
+        to: ''
+      },
+    ]
+  },
+  {
+    file: userLayoutPathJSX,
+    replacements: [
+      {
+        from: "import BuyNowButton from './components/BuyNowButton'",
+        to: ''
+      },
+      {
+        from: '<BuyNowButton />',
+        to: ''
+      },
+    ]
+  },
+  {
+    file: PackageJSONPathTSX,
+    replacements: [
+      {
+        from: /\^/g,
+        to: ''
+      },
+      {
+        from: '~',
+        to: ''
+      },
+    ]
+  },
+  {
+    file: PackageJSONPathJSX,
+    replacements: [
+      {
+        from: /\^/g,
+        to: ''
+      },
+      {
+        from: '~',
+        to: ''
+      },
+    ]
+  },
+  {
+    file: TranslationsPathTSX,
+    replacements: [
+      {
+        from: "import { useTranslation } from 'react-i18next'",
+        to: ''
+      },
+      {
+        from: 'const { t } = useTranslation()',
+        to: ''
+      },
+      {
+        from: '{`${t(text)}`}',
+        to: '{text}'
+      },
+    ]
+  },
+  {
+    file: TranslationsPathJSX,
+    replacements: [
+      {
+        from: "import { useTranslation } from 'react-i18next'",
+        to: ''
+      },
+      {
+        from: 'const { t } = useTranslation()',
+        to: ''
+      },
+      {
+        from: '{`${t(text)}`}',
+        to: '{text}'
+      },
+    ]
+  },
+  {
+    file: UserDropdownPathTSX,
+    replacements: [
+      {
+        from: "import { useAuth } from 'src/@core/hooks/useAuth'",
+        to: ''
+      },
+      {
+        from: new RegExp(/\/\/ \*\* Context/),
+        to: ''
+      },
+      {
+        from: 'const { logout } = useAuth()',
+        to: ''
+      },
+      {
+        from: 'logout()',
+        to: ''
+      },
+      {
+        from: /if (url) [\s\S]*? setAnchorEl/,
+        to: 'setAnchorEl'
+      },
+      {
+        from: new RegExp(/(handleDropdownClose\(')(.*)('.*\))/, 'g'),
+        to: 'handleDropdownClose()'
+      },
+      {
+        from: 'onClick={handleLogout}',
+        to: "onClick={() => handleDropdownClose('/login')}"
+      },
+      {
+        from: new RegExp(/const handleLogout = \(\) => {[\s\S]*? }/),
+        to: ''
+      },
+    ]
+  },
+  {
+    file: UserDropdownPathJSX,
+    replacements: [
+      {
+        from: "import { useAuth } from 'src/@core/hooks/useAuth'",
+        to: ''
+      },
+      {
+        from: new RegExp(/\/\/ \*\* Context/),
+        to: ''
+      },
+      {
+        from: 'const { logout } = useAuth()',
+        to: ''
+      },
+      {
+        from: 'logout()',
+        to: ''
+      },
+      {
+        from: /if (url) [\s\S]*? setAnchorEl/,
+        to: 'setAnchorEl'
+      },
+      {
+        from: new RegExp(/(handleDropdownClose\(')(.*)('.*\))/, 'g'),
+        to: 'handleDropdownClose()'
+      },
+      {
+        from: 'onClick={handleLogout}',
+        to: "onClick={() => handleDropdownClose('/login')}"
+      },
+      {
+        from: new RegExp(/const handleLogout = \(\) => {[\s\S]*? }/),
+        to: ''
+      },
+    ]
+  },
+  {
+    file: AppPathTSX,
+    replacements: appDataToReplace
+  },
+  {
+    file: AppPathJSX,
+    replacements: appDataToReplace
+  },
+  {
+    file: themeConfigPathTSX,
+    replacements: [
+      {
+        from: 'disableCustomizer: false',
+        to: 'disableCustomizer: true'
+      }
+    ]
+  },
+  {
+    file: themeConfigPathJSX,
+    replacements: [
+      {
+        from: 'disableCustomizer: false',
+        to: 'disableCustomizer: true'
+      }
+    ]
+  },
+  {
+    file: LoginPathTSX,
+    replacements: [
+      {
+        from: '/pages/auth/forgot-password-v2',
+        to: '/forgot-password'
+      },
+      {
+        from: '/pages/auth/register-v2',
+        to: '/register'
+      },
+      {
+        from: new RegExp('LoginV2', 'g'),
+        to: 'Login'
+      },
+      {
+        from: new RegExp(/<Button .*>[\s\S]*? <\/Button>/),
+        to: newLoginBtn
+      },
+
+    ]
+  },
+  {
+    file: LoginPathJSX,
+    replacements: [
+      {
+        from: '/pages/auth/forgot-password-v2',
+        to: '/forgot-password'
+      },
+      {
+        from: '/pages/auth/register-v2',
+        to: '/register'
+      },
+      {
+        from: new RegExp('LoginV2', 'g'),
+        to: 'Login'
+      },
+      {
+        from: new RegExp(/<Button .*>[\s\S]*? <\/Button>/),
+        to: newLoginBtn
+      },
+
+    ]
+  },
+  {
+    file: RegisterPathTSX,
+    replacements: [
+      {
+        from: '/pages/auth/login-v2',
+        to: '/login'
+      },
+      {
+        from: new RegExp('RegisterV2', 'g'),
+        to: 'Register'
+      },
+      {
+        from: new RegExp(/<Button .*>[\s\S]*? <\/Button>/),
+        to: newRegisterBtn
+      },
+
+    ]
+  },
+  {
+    file: RegisterPathJSX,
+    replacements: [
+      {
+        from: '/pages/auth/login-v2',
+        to: '/login'
+      },
+      {
+        from: new RegExp('RegisterV2', 'g'),
+        to: 'Register'
+      },
+      {
+        from: new RegExp(/<Button .*>[\s\S]*? <\/Button>/),
+        to: newRegisterBtn
+      },
+
+    ]
+  },
 ]
 
 module.exports = {
@@ -296,7 +577,7 @@ module.exports = {
   filesToReplace,
   RegisterPathTSX,
   RegisterPathJSX,
-  aclDataToReplace,
+  dataToReplace,
   foldersToKeepTSX,
   appDataToReplace,
   foldersToKeepJSX,
