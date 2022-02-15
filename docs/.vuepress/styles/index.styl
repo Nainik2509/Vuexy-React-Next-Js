@@ -4,6 +4,7 @@
   .home-link {
     display: flex
     align-items: center
+    padding-left: 1rem
 
     .logo {
       height: 2rem
@@ -13,12 +14,59 @@
 
   .links {
     right: 6rem !important
+
+    .search-box {
+      margin-left: 2rem
+      input {
+        width: 13rem
+        margin-left: 1rem
+      }
+    }
   }
 }
 
 main.home header.hero img {
   width: 5rem
   height: 4rem
+}
+
+.sidebar-group {
+  &.is-sub-group > .sidebar-heading:not(.clickable) {
+    opacity: unset !important
+  }
+  &:not(.collapsable) {
+    .sidebar-heading:not(.clickable) {
+      color: rgba(136,153,168,1.00) !important
+      font-weight: 500
+    }
+  }
+  .sidebar-group {
+    &.is-sub-group {
+      margin-bottom: 0
+      .sidebar-heading:not(.clickable) {
+        color: #3b454e !important
+        text-transform: none
+        letter-spacing: inherit
+        display: flex;
+        justify-content: space-between
+        align-items: center
+        padding-left: 1rem
+        &:hover {
+          background-color: #e6ecf1
+        }
+      }
+    }
+  }
+} 
+
+.sidebar-links a.sidebar-link {
+  font-size: 0.875rem
+
+  &.active{
+    &:hover {
+      background-color: #FFF !important
+    }
+  }
 }
 
 .row {
