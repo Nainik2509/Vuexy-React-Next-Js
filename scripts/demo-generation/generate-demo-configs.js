@@ -5,32 +5,6 @@ const demoConfigPath = '../configs/demoConfigs.json'
 const defaultConfigPathTSX = `${pathConfig.fullVersionTSXPath}/src/configs/themeConfig.ts`
 const defaultConfigPathJSX = `${pathConfig.fullVersionJSXPath}/src/configs/themeConfig.js`
 
-// ** Delete All Previously Generated Demo Files
-const deleteExistingDemoFiles = () => {
-  if (fs.existsSync(pathConfig.demoConfigsPathTSX)) {
-    fs.rm(pathConfig.demoConfigsPathTSX, { recursive: true, force: true }, err => {
-      if (err) {
-        console.log(err);
-
-        return
-      }
-    })
-  } else {
-    console.log(`${pathConfig.demoConfigsPathTSX} Doesn't exist!`);
-  }
-
-  if (fs.existsSync(pathConfig.demoConfigsPathJSX)) {
-    fs.rm(pathConfig.demoConfigsPathJSX, { recursive: true, force: true }, err => {
-      if (err) {
-        console.log(err);
-
-        return
-      }
-    })
-  } else {
-    console.log(`${pathConfig.demoConfigsPathJSX} Doesn't exist!`);
-  }
-}
 
 // ** Generates demo configs based on version, demoConfigs folder & default themeConfig(src/configs/themeConfig)
 const generateDemoConfigs = (version, demoConfigsFolder, defaultConfigPath) => {
@@ -94,11 +68,11 @@ const generateDemoConfigs = (version, demoConfigsFolder, defaultConfigPath) => {
 }
 
 
-// ** Delete Previous Demo Configs
-deleteExistingDemoFiles()
-
 // ** Generate Demo Configs for TSX version
 generateDemoConfigs('ts', pathConfig.demoConfigsPathTSX, defaultConfigPathTSX)
 
+
 // ** Generate Demo Configs for JSX version
-generateDemoConfigs('js', pathConfig.demoConfigsPathJSX, defaultConfigPathJSX)
+if(fs.existsSync(pathConfig.basePathJSX)){
+  generateDemoConfigs('js', pathConfig.demoConfigsPathJSX, defaultConfigPathJSX)
+}

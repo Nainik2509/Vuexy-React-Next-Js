@@ -146,13 +146,22 @@ if (fs.existsSync(themeConfigPath) && fs.existsSync(demoConfigPath)) {
 
       return
     } else {
-      fs.writeFile(themeConfigPath, data, err => {
+      fs.writeFile(themeConfigPath, '', err => {
         if (err) {
           console.log(err);
 
           return
+        } else {
+          fs.writeFile(themeConfigPath, data, err => {
+            if (err) {
+              console.log(err);
+
+              return
+            }
+          })
         }
       })
+
     }
   })
 } else {

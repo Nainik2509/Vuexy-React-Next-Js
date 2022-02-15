@@ -31,19 +31,30 @@ const replaceBasePathInImages = (dirPath, arrayOfFiles) => {
 
           return
         } else {
-          const splitData = data.split('\r\n')
-          const lineIndex = splitData.findIndex(i => i.includes('/images/'))
-          splitData[lineIndex] ? splitData[lineIndex].replace('/images/', `${pathConfig.demoURL}/${demo}/images/`) : null
-          if(splitData[lineIndex]){
-            splitData[lineIndex] = splitData[lineIndex].replace('/images/', `${pathConfig.demoURL}/${demo}/images/`) 
-            fs.writeFile(path.join(__dirname, dirPath, '/', file), splitData.join('\n'), err => {
-              if (err) {
-                console.error(err)
-  
-                return
-              }
-            })
-          }
+          // const splitData = data.split('\r\n')
+          // const lineIndex = splitData.findIndex(i => i.includes('/images/'))
+          // splitData[lineIndex] ? splitData[lineIndex].replace('/images/', `${pathConfig.demoURL}/${demo}/images/`) : null
+          // if(splitData[lineIndex]){
+          //   splitData[lineIndex] = splitData[lineIndex].replace('/images/', `${pathConfig.demoURL}/${demo}/images/`) 
+          //   fs.writeFile(path.join(__dirname, dirPath, '/', file), splitData.join('\n'), err => {
+          //     if (err) {
+          //       console.error(err)
+
+          //       return
+          //     }
+          //   })
+          // }
+
+          const result = data.replace(new RegExp('/images/', 'g'), `${pathConfig.demoURL}/${demo}/images/`)
+
+          fs.writeFile(path.join(__dirname, dirPath, '/', file), result, err => {
+            if (err) {
+
+              console.log(err);
+
+              return
+            }
+          })
 
           arrayOfFiles.push(path.join(__dirname, dirPath, '/', file))
         }
@@ -63,7 +74,7 @@ const replaceBasePathInI18n = () => {
       return
     } else {
       if (data.includes('/locales/')) {
-       
+
         fs.writeFile(i18nPath, data.replace('/locales/', `${pathConfig.demoURL}/${demo}/locales/`), err => {
           if (err) {
             console.log(err);
@@ -133,13 +144,22 @@ if (fs.existsSync(themeConfigPath) && fs.existsSync(demoConfigPath)) {
 
       return
     } else {
-      fs.writeFile(themeConfigPath, data, (err) => {
+      fs.writeFile(themeConfigPath, '', (err) => {
         if (err) {
           console.log(err);
 
           return
+        } else {
+          fs.writeFile(themeConfigPath, data, (err) => {
+            if (err) {
+              console.log(err);
+
+              return
+            }
+          })
         }
       })
+
     }
   })
 } else {
