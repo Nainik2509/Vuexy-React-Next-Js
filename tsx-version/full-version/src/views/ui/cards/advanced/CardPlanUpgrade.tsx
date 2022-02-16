@@ -40,13 +40,12 @@ const CardPlanUpgrade = () => {
         }
       />
       <CardContent>
-        <Typography variant='body2' sx={{ fontSize: '0.75rem' }}>
+        <Typography component='p' variant='caption' sx={{ mb: 3.5 }}>
           Please make the payment to start enjoying all the features of our premium plan as soon as possible.
         </Typography>
 
         <Box
           sx={{
-            mt: 4,
             borderRadius: '4px',
             color: 'text.primary',
             padding: theme => theme.spacing(2.25, 2.75),

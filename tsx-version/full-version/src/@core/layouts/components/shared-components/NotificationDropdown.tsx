@@ -152,7 +152,9 @@ const NotificationDropdown = (props: Props) => {
                 <MenuItemTitle>Congratulation Flora! 🎉</MenuItemTitle>
                 <MenuItemSubtitle variant='body2'>Won the monthly best seller badge</MenuItemSubtitle>
               </Box>
-              <Typography variant='caption'>Today</Typography>
+              <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+                Today
+              </Typography>
             </Box>
           </MenuItem>
           <MenuItem onClick={handleDropdownClose}>
@@ -162,7 +164,9 @@ const NotificationDropdown = (props: Props) => {
                 <MenuItemTitle>New user registered.</MenuItemTitle>
                 <MenuItemSubtitle variant='body2'>5 hours ago</MenuItemSubtitle>
               </Box>
-              <Typography variant='caption'>Yesterday</Typography>
+              <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+                Yesterday
+              </Typography>
             </Box>
           </MenuItem>
           <MenuItem onClick={handleDropdownClose}>
@@ -172,7 +176,9 @@ const NotificationDropdown = (props: Props) => {
                 <MenuItemTitle>New message received 👋🏻</MenuItemTitle>
                 <MenuItemSubtitle variant='body2'>You have 10 unread messages</MenuItemSubtitle>
               </Box>
-              <Typography variant='caption'>11 Aug</Typography>
+              <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+                11 Aug
+              </Typography>
             </Box>
           </MenuItem>
           <MenuItem onClick={handleDropdownClose}>
@@ -182,7 +188,9 @@ const NotificationDropdown = (props: Props) => {
                 <MenuItemTitle>Paypal</MenuItemTitle>
                 <MenuItemSubtitle variant='body2'>Received Payment</MenuItemSubtitle>
               </Box>
-              <Typography variant='caption'>25 May</Typography>
+              <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+                25 May
+              </Typography>
             </Box>
           </MenuItem>
           <MenuItem onClick={handleDropdownClose}>
@@ -192,7 +200,9 @@ const NotificationDropdown = (props: Props) => {
                 <MenuItemTitle>Revised Order 📦</MenuItemTitle>
                 <MenuItemSubtitle variant='body2'>New order revised from john</MenuItemSubtitle>
               </Box>
-              <Typography variant='caption'>19 Mar</Typography>
+              <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+                19 Mar
+              </Typography>
             </Box>
           </MenuItem>
           <MenuItem onClick={handleDropdownClose}>
@@ -202,7 +212,9 @@ const NotificationDropdown = (props: Props) => {
                 <MenuItemTitle>Finance report has been generated</MenuItemTitle>
                 <MenuItemSubtitle variant='body2'>25 hrs ago</MenuItemSubtitle>
               </Box>
-              <Typography variant='caption'>27 Dec</Typography>
+              <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+                27 Dec
+              </Typography>
             </Box>
           </MenuItem>
         </ScrollWrapper>

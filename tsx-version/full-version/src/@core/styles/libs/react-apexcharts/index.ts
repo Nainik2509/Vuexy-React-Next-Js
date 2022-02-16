@@ -70,9 +70,6 @@ const ApexChartWrapper = styled('div')(({ theme }) => ({
       fill: theme.palette.common.white
     },
     '& .apexcharts-pie': {
-      '& .apexcharts-pie-series .apexcharts-pie-area': {
-        strokeWidth: 0
-      },
       '& .apexcharts-datalabel-label, .apexcharts-datalabel-value': {
         fontSize: '1.5rem'
       }

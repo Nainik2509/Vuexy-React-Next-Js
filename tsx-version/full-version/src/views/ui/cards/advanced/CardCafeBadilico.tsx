@@ -17,23 +17,21 @@ import DotsVertical from 'mdi-material-ui/DotsVertical'
 const CardCafe = () => {
   return (
     <Card>
-      <CardMedia sx={{ height: '12.25rem' }} image='/images/cards/cafe-badilico.png' />
+      <CardMedia sx={{ height: 168 }} image='/images/cards/cafe-badilico.png' />
       <CardContent>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <Box sx={{ mb: 1.5, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Typography variant='h6'>Cafe Badilico</Typography>
           <IconButton size='small' aria-label='settings' className='card-more-options' sx={{ color: 'text.secondary' }}>
             <DotsVertical />
           </IconButton>
         </Box>
 
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Rating name='cafe-ratings' value={5} readOnly />
-          <Typography variant='body2' sx={{ marginLeft: 1.25 }}>
-            5 Star (245)
-          </Typography>
+        <Box sx={{ mb: 5, display: 'flex', alignItems: 'center' }}>
+          <Rating readOnly sx={{ mr: 2.5 }} value={4.6} precision={0.1} name='cafe-ratings' />
+          <Typography>4.6 Star (12.4k)</Typography>
         </Box>
 
-        <Typography variant='body2' sx={{ my: 3.5 }}>
+        <Typography variant='body2' sx={{ mb: 4 }}>
           Italian Cafe
         </Typography>
 
@@ -42,13 +40,25 @@ const CardCafe = () => {
           for your.
         </Typography>
 
-        <Divider sx={{ mt: 3.75, mb: 3.5 }} />
+        <Divider sx={{ my: 4 }} />
 
-        <Typography sx={{ marginBottom: 2.5 }}>Tonight’s availability</Typography>
+        <Typography sx={{ marginBottom: 4 }}>Tonight’s availability</Typography>
 
-        <Chip size='small' label='5:30PM' sx={{ marginRight: 3, fontSize: '0.875rem', color: 'text.secondary' }} />
-        <Chip size='small' label='7:00AM' sx={{ marginRight: 3, fontSize: '0.875rem', color: 'text.secondary' }} />
-        <Chip size='small' label='7:15PM' sx={{ fontSize: '0.875rem', color: 'text.secondary' }} />
+        <Chip
+          size='small'
+          label='5:30PM'
+          sx={{ mr: 4, height: 32, fontSize: '0.875rem', color: 'text.secondary', '& .MuiChip-label': { px: 2.5 } }}
+        />
+        <Chip
+          size='small'
+          label='7:00AM'
+          sx={{ mr: 4, height: 32, fontSize: '0.875rem', color: 'text.secondary', '& .MuiChip-label': { px: 2.5 } }}
+        />
+        <Chip
+          size='small'
+          label='7:15PM'
+          sx={{ height: 32, fontSize: '0.875rem', color: 'text.secondary', '& .MuiChip-label': { px: 2.5 } }}
+        />
       </CardContent>
 
       <CardActions className='card-action-dense'>

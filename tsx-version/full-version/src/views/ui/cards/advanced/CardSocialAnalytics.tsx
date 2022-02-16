@@ -69,13 +69,14 @@ const CardSocialAnalytics = () => {
     <Card>
       <CardHeader
         title='Social Analytics'
+        titleTypographyProps={{ sx: { lineHeight: '2rem !important', letterSpacing: '0.15px !important' } }}
         action={
           <IconButton size='small' aria-label='settings' className='card-more-options' sx={{ color: 'text.secondary' }}>
             <DotsVertical />
           </IconButton>
         }
       />
-      <CardContent>
+      <CardContent sx={{ pt: theme => `${theme.spacing(1.5)} !important` }}>
         {data.map((item: DataType, index: number) => {
           return (
             <Box
@@ -84,7 +85,7 @@ const CardSocialAnalytics = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                marginBottom: index !== data.length - 1 ? 6 : undefined
+                marginBottom: index !== data.length - 1 ? 4 : undefined
               }}
             >
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -96,10 +97,8 @@ const CardSocialAnalytics = () => {
                   <img alt={item.imgAlt} src={item.imgSrc} width={item.imgWidth} height={item.imgHeight} />
                 </CustomAvatar>
                 <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                  <Typography variant='h6' sx={{ lineHeight: 1.2, fontWeight: 600 }}>
-                    {item.title}
-                  </Typography>
-                  <Typography variant='body2'>{item.subtitle}</Typography>
+                  <Typography variant='h6'>{item.title}</Typography>
+                  <Typography variant='caption'>{item.subtitle}</Typography>
                 </Box>
               </Box>
             </Box>

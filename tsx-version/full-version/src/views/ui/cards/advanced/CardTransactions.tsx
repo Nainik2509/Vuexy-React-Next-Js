@@ -120,7 +120,7 @@ const CardTransactions = () => {
               sx={{
                 display: 'flex',
                 alignItems: 'center',
-                marginBottom: index !== data.length - 1 ? 6.75 : undefined
+                marginBottom: index !== data.length - 1 ? 7 : undefined
               }}
             >
               <CustomAvatar skin='light' color={item.avatarColor} variant='rounded' sx={{ mr: 3 }}>
@@ -136,10 +136,8 @@ const CardTransactions = () => {
                 }}
               >
                 <Box sx={{ marginRight: 2, display: 'flex', flexDirection: 'column' }}>
-                  <Typography sx={{ fontWeight: 600, fontSize: '0.875rem' }}>{item.title}</Typography>
-                  <Typography variant='body2' sx={{ fontSize: '0.75rem' }}>
-                    {item.subtitle}
-                  </Typography>
+                  <Typography sx={{ mb: 0.5, fontWeight: 600, fontSize: '0.875rem' }}>{item.title}</Typography>
+                  <Typography variant='caption'>{item.subtitle}</Typography>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
                   <Typography sx={{ mr: 1, fontWeight: 600 }}>{item.amount}</Typography>

@@ -23,6 +23,9 @@ const ApexDonutChart = () => {
       show: true,
       position: 'bottom'
     },
+    stroke: {
+      width: 0
+    },
     labels: ['Operational', 'Networking', 'Hiring', 'R&D'],
     colors: [donutColors.series1, donutColors.series5, donutColors.series3, donutColors.series2],
     dataLabels: {

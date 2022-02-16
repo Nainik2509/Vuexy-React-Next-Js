@@ -40,7 +40,7 @@ const data: DataType[] = [
     trendNumber: '25.8%',
     avatarColor: 'success',
     subtitle: 'United states of america',
-    trend: <ChevronUp sx={{ color: 'success.main', fontWeight: 600 }} />
+    trend: <ChevronUp sx={{ mr: 0.5, color: 'success.main' }} />
   },
   {
     sales: '645k',
@@ -50,7 +50,7 @@ const data: DataType[] = [
     trendNumber: '-6.2%',
     avatarColor: 'error',
     subtitle: 'United Kingdom',
-    trend: <ChevronDown sx={{ color: 'error.main', fontWeight: 600 }} />
+    trend: <ChevronDown sx={{ mr: 0.5, color: 'error.main' }} />
   },
   {
     sales: '148k',
@@ -60,7 +60,7 @@ const data: DataType[] = [
     subtitle: 'India',
     trendNumber: '12.4%',
     avatarColor: 'warning',
-    trend: <ChevronUp sx={{ color: 'success.main', fontWeight: 600 }} />
+    trend: <ChevronUp sx={{ mr: 0.5, color: 'success.main' }} />
   },
   {
     sales: '86k',
@@ -70,7 +70,7 @@ const data: DataType[] = [
     subtitle: 'Japan',
     trendNumber: '-11.9%',
     avatarColor: 'secondary',
-    trend: <ChevronDown sx={{ color: 'error.main', fontWeight: 600 }} />
+    trend: <ChevronDown sx={{ mr: 0.5, color: 'error.main' }} />
   },
   {
     sales: '42k',
@@ -80,7 +80,7 @@ const data: DataType[] = [
     subtitle: 'Korea',
     trendNumber: '16.2%',
     avatarColor: 'error',
-    trend: <ChevronUp sx={{ color: 'success.main', fontWeight: 600 }} />
+    trend: <ChevronUp sx={{ mr: 0.5, color: 'success.main' }} />
   },
   {
     sales: '8k',
@@ -90,7 +90,7 @@ const data: DataType[] = [
     subtitle: 'China',
     trendNumber: '14.8%',
     avatarColor: 'primary',
-    trend: <ChevronUp sx={{ color: 'success.main', fontWeight: 600 }} />
+    trend: <ChevronUp sx={{ mr: 0.5, color: 'success.main' }} />
   }
 ]
 
@@ -99,6 +99,7 @@ const CardSalesByCountries = () => {
     <Card>
       <CardHeader
         title='Sales by Countries'
+        titleTypographyProps={{ sx: { lineHeight: '2rem !important', letterSpacing: '0.15px !important' } }}
         action={
           <IconButton size='small' aria-label='settings' className='card-more-options' sx={{ color: 'text.secondary' }}>
             <DotsVertical />
@@ -113,14 +114,10 @@ const CardSalesByCountries = () => {
               sx={{
                 display: 'flex',
                 alignItems: 'center',
-                marginBottom: index !== data.length - 1 ? 6 : undefined
+                marginBottom: index !== data.length - 1 ? 5 : undefined
               }}
             >
-              <CustomAvatar
-                skin='light'
-                color={item.avatarColor}
-                sx={{ width: 38, height: 38, marginRight: 3, fontSize: '1rem' }}
-              >
+              <CustomAvatar skin='light' color={item.avatarColor} sx={{ mr: 3, fontSize: '1.125rem' }}>
                 {item.avatarText}
               </CustomAvatar>
 
@@ -134,28 +131,24 @@ const CardSalesByCountries = () => {
                 }}
               >
                 <Box sx={{ marginRight: 2, display: 'flex', flexDirection: 'column' }}>
-                  <Box sx={{ display: 'flex' }}>
-                    <Typography sx={{ fontWeight: 600, mr: 0.5 }}>{item.title}</Typography>
+                  <Box sx={{ mb: 0.5, display: 'flex', alignItems: 'center' }}>
+                    <Typography sx={{ mr: 0.5, fontWeight: 600, fontSize: '0.875rem' }}>{item.title}</Typography>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
                       {item.trend}
                       <Typography
                         variant='caption'
-                        sx={{ fontWeight: 600, color: item.trendDir === 'down' ? 'error.main' : 'success.main' }}
+                        sx={{ color: item.trendDir === 'down' ? 'error.main' : 'success.main' }}
                       >
                         {item.trendNumber}
                       </Typography>
                     </Box>
                   </Box>
-                  <Typography variant='caption' sx={{ letterSpacing: '0.4px' }}>
-                    {item.subtitle}
-                  </Typography>
+                  <Typography variant='caption'>{item.subtitle}</Typography>
                 </Box>
 
                 <Box sx={{ display: 'flex', textAlign: 'end', flexDirection: 'column' }}>
-                  <Typography sx={{ fontWeight: 600, fontSize: '0.875rem' }}>{item.sales}</Typography>
-                  <Typography variant='caption' sx={{ letterSpacing: '0.4px' }}>
-                    Sales
-                  </Typography>
+                  <Typography sx={{ mb: 0.5, fontWeight: 600, fontSize: '0.875rem' }}>{item.sales}</Typography>
+                  <Typography variant='caption'>Sales</Typography>
                 </Box>
               </Box>
             </Box>

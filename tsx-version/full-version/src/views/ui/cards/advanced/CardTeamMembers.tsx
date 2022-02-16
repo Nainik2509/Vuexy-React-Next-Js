@@ -91,7 +91,7 @@ const CardTeamMembers = () => {
     <Card>
       <CardHeader
         title='Team Members'
-        sx={{ paddingBottom: 0 }}
+        titleTypographyProps={{ sx: { lineHeight: '2rem !important', letterSpacing: '0.15px !important' } }}
         action={
           <IconButton size='small' aria-label='settings' className='card-more-options' sx={{ color: 'text.secondary' }}>
             <DotsVertical />
@@ -101,7 +101,7 @@ const CardTeamMembers = () => {
       <TableContainer>
         <Table>
           <TableHead>
-            <TableRow sx={{ '& .MuiTableCell-root': { paddingBottom: 1.25 } }}>
+            <TableRow sx={{ '& .MuiTableCell-root': { py: 0.75 } }}>
               <TableCell>Name</TableCell>
               <TableCell>Project</TableCell>
               <TableCell>Tasks</TableCell>
@@ -111,7 +111,13 @@ const CardTeamMembers = () => {
           <TableBody>
             {data.map((row: DataType) => {
               return (
-                <TableRow key={row.name} sx={{ '& td': { border: 0 }, '& .MuiTableCell-root': { py: 2.5 } }}>
+                <TableRow
+                  key={row.name}
+                  sx={{
+                    '&:last-child .MuiTableCell-root': { pb: theme => `${theme.spacing(4)} !important` },
+                    '& .MuiTableCell-root': { border: 0, py: theme => `${theme.spacing(2.5)} !important` }
+                  }}
+                >
                   <TableCell>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
                       <Avatar
@@ -120,7 +126,7 @@ const CardTeamMembers = () => {
                         sx={{ width: '2.375rem', height: '2.375rem', marginRight: 3 }}
                       />
                       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                        <Typography noWrap variant='subtitle2' sx={{ fontWeight: 600 }}>
+                        <Typography noWrap variant='body2' sx={{ mb: 0.5, fontWeight: 600, color: 'text.primary' }}>
                           {row.name}
                         </Typography>
                         <Typography noWrap variant='caption'>

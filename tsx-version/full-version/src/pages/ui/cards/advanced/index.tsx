@@ -31,7 +31,7 @@ const CardsAdvanced = () => {
       <Grid item xs={12} md={6} lg={5}>
         <CardTeamMembers />
       </Grid>
-      <Grid item xs={12} md={6} lg={7}>
+      <Grid item xs={12} lg={7}>
         <CardDepositWithdraw />
       </Grid>
       <Grid item xs={12} md={6} lg={4}>
@@ -52,7 +52,7 @@ const CardsAdvanced = () => {
       <Grid item xs={12} md={6} lg={4}>
         <CardSalesByCountries />
       </Grid>
-      <Grid item xs={12} md={6} lg={6}>
+      <Grid item xs={12} md={6} lg={8}>
         <CardActivityTimeline />
       </Grid>
       <Grid item xs={12} md={6} lg={4}>

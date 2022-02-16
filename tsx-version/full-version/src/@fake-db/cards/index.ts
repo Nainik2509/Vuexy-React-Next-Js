@@ -17,7 +17,7 @@ const cardStatsData: CardStatsType = {
       stats: '28.6K',
       color: 'success',
       icon: 'CurrencyUsd',
-      trendNumber: '-25.8%',
+      trendNumber: '25.8%',
       title: 'Total Revenue'
     },
     {
@@ -25,7 +25,7 @@ const cardStatsData: CardStatsType = {
       stats: '16.6K',
       trend: 'negative',
       icon: 'TrendingUp',
-      trendNumber: '-12.1%',
+      trendNumber: '12.1%',
       title: 'New Transactions'
     },
     {
@@ -51,7 +51,7 @@ const cardStatsData: CardStatsType = {
       color: 'secondary',
       trendNumber: '+42%',
       title: 'Total Profit',
-      subtitle: 'Weekly Project'
+      subtitle: 'Weekly Profit'
     },
     {
       stats: '$95.2k',

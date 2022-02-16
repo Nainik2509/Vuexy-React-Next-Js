@@ -89,7 +89,7 @@ const CardMeetingSchedule = () => {
               sx={{
                 display: 'flex',
                 alignItems: 'center',
-                marginBottom: index !== data.length - 1 ? 6 : undefined
+                marginBottom: index !== data.length - 1 ? 6.5 : undefined
               }}
             >
               <Avatar src={item.src} sx={{ mr: 3, width: 38, height: 38 }} />
@@ -103,16 +103,16 @@ const CardMeetingSchedule = () => {
                 }}
               >
                 <Box sx={{ marginRight: 2, display: 'flex', marginBottom: 0.4, flexDirection: 'column' }}>
-                  <Typography variant='subtitle2' sx={{ fontWeight: 600 }}>
+                  <Typography variant='body2' sx={{ mb: 0.5, fontWeight: 600, color: 'text.primary' }}>
                     {item.title}
                   </Typography>
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
                     <CalendarBlankOutline
                       sx={{
-                        mr: 1,
+                        mr: 1.5,
+                        fontSize: '1rem',
                         color: 'text.secondary',
-                        verticalAlign: 'middle',
-                        fontSize: theme => theme.typography.caption.fontSize
+                        verticalAlign: 'middle'
                       }}
                     />
                     <Typography variant='caption'>{item.subtitle}</Typography>

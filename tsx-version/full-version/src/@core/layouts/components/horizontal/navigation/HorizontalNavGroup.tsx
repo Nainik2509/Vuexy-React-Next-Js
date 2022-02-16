@@ -205,7 +205,7 @@ const HorizontalNavGroup = (props: Props) => {
                     ...(themeConfig.menuTextTruncate && { overflow: 'hidden' })
                   }}
                 >
-                  <ListItemIcon sx={{ mr: 2 }}>
+                  <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
                     <UserIcon
                       icon={IconTag}
                       componentType='horizontal-menu'
@@ -230,9 +230,9 @@ const HorizontalNavGroup = (props: Props) => {
                     />
                   ) : null}
                   {hasParent ? (
-                    <ToggleIcon sx={{ width: 18, height: 18, color: 'text.primary' }} />
+                    <ToggleIcon sx={{ width: 18, height: 18, color: 'text.secondary' }} />
                   ) : (
-                    <ChevronDown sx={{ width: 18, height: 18, color: 'text.primary' }} />
+                    <ChevronDown sx={{ width: 18, height: 18, color: 'text.secondary' }} />
                   )}
                 </Box>
               </Box>

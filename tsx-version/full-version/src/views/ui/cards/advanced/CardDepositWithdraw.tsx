@@ -119,8 +119,8 @@ const CardDepositWithdraw = () => {
       <Box sx={{ width: '100%' }}>
         <CardHeader
           title='Deposit'
-          titleTypographyProps={{ variant: 'h6' }}
           sx={{ '& .MuiCardHeader-action': { marginTop: -0.8 } }}
+          titleTypographyProps={{ sx: { lineHeight: '2rem !important', letterSpacing: '0.15px !important' } }}
           action={
             <Typography variant='caption' sx={{ color: 'primary.main' }}>
               View All
@@ -132,7 +132,7 @@ const CardDepositWithdraw = () => {
             return (
               <Box
                 key={item.title}
-                sx={{ display: 'flex', alignItems: 'center', mb: index !== depositData.length - 1 ? 6 : 0 }}
+                sx={{ display: 'flex', alignItems: 'center', mb: index !== depositData.length - 1 ? 7.3125 : 0 }}
               >
                 <Box sx={{ minWidth: 38, display: 'flex', justifyContent: 'center' }}>
                   <img src={item.logo} alt={item.title} width={item.logoWidth} height={item.logoHeight} />
@@ -148,10 +148,10 @@ const CardDepositWithdraw = () => {
                   }}
                 >
                   <Box sx={{ marginRight: 2, display: 'flex', flexDirection: 'column' }}>
-                    <Typography sx={{ fontWeight: 600, fontSize: '0.875rem' }}>{item.title}</Typography>
+                    <Typography sx={{ mb: 0.5, fontWeight: 600, fontSize: '0.875rem' }}>{item.title}</Typography>
                     <Typography variant='caption'>{item.subtitle}</Typography>
                   </Box>
-                  <Typography variant='subtitle2' sx={{ fontWeight: 600, color: 'success.main' }}>
+                  <Typography variant='body2' sx={{ fontWeight: 600, color: 'success.main' }}>
                     {item.amount}
                   </Typography>
                 </Box>
@@ -166,8 +166,8 @@ const CardDepositWithdraw = () => {
       <Box sx={{ width: '100%' }}>
         <CardHeader
           title='Withdraw'
-          titleTypographyProps={{ variant: 'h6' }}
           sx={{ '& .MuiCardHeader-action': { marginTop: -0.8 } }}
+          titleTypographyProps={{ sx: { lineHeight: '2rem !important', letterSpacing: '0.15px !important' } }}
           action={
             <Typography variant='caption' sx={{ color: 'primary.main' }}>
               View All
@@ -179,7 +179,7 @@ const CardDepositWithdraw = () => {
             return (
               <Box
                 key={item.title}
-                sx={{ display: 'flex', alignItems: 'center', mb: index !== depositData.length - 1 ? 6 : 0 }}
+                sx={{ display: 'flex', alignItems: 'center', mb: index !== depositData.length - 1 ? 7.3125 : 0 }}
               >
                 <Box sx={{ minWidth: 36, display: 'flex', justifyContent: 'center' }}>
                   <img src={item.logo} alt={item.title} width={item.logoWidth} height={item.logoHeight} />
@@ -195,10 +195,10 @@ const CardDepositWithdraw = () => {
                   }}
                 >
                   <Box sx={{ marginRight: 2, display: 'flex', flexDirection: 'column' }}>
-                    <Typography sx={{ fontWeight: 600, fontSize: '0.875rem' }}>{item.title}</Typography>
+                    <Typography sx={{ mb: 0.5, fontWeight: 600, fontSize: '0.875rem' }}>{item.title}</Typography>
                     <Typography variant='caption'>{item.subtitle}</Typography>
                   </Box>
-                  <Typography variant='subtitle2' sx={{ fontWeight: 600, color: 'error.main' }}>
+                  <Typography variant='body2' sx={{ fontWeight: 600, color: 'error.main' }}>
                     {item.amount}
                   </Typography>
                 </Box>

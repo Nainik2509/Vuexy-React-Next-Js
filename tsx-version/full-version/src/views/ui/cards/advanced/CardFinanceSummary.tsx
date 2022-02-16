@@ -22,43 +22,39 @@ const CardFinanceSummary = () => {
       <CardHeader
         title='Finance Summary'
         subheader='Check out each Column for more details'
-        titleTypographyProps={{ variant: 'h6', sx: { marginBottom: 1 } }}
+        titleTypographyProps={{ sx: { lineHeight: '2rem !important', letterSpacing: '0.15px !important' } }}
         action={
           <CustomAvatar skin='light' sx={{ width: 48, height: 48 }}>
             <CurrencyUsd sx={{ fontSize: '2rem', color: 'primary.main' }} />
           </CustomAvatar>
         }
       />
-      <CardContent sx={{ pt: theme => `${theme.spacing(6)} !important` }}>
+      <CardContent sx={{ pt: theme => `${theme.spacing(5)} !important` }}>
         <Grid container spacing={6}>
           <Grid item xs={12} sm={6} sx={{ marginBottom: 3 }}>
             <Typography variant='body2'>Annual Companies Taxes</Typography>
-            <Typography variant='h6' sx={{ fontWeight: 600 }}>
-              $1450.35
-            </Typography>
+            <Typography variant='h6'>$1450.35</Typography>
           </Grid>
 
           <Grid item xs={12} sm={6} sx={{ marginBottom: 3 }}>
             <Typography variant='body2'>Next Tax Review Date</Typography>
-            <Typography variant='h6' sx={{ fontWeight: 600 }}>
-              July 14, 2021
-            </Typography>
+            <Typography variant='h6'>July 14, 2021</Typography>
           </Grid>
 
           <Grid item xs={12} sm={6} sx={{ marginBottom: 3 }}>
             <Typography variant='body2'>Average Product Price</Typography>
-            <Typography variant='h6' sx={{ fontWeight: 600 }}>
-              $85.50
-            </Typography>
+            <Typography variant='h6'>$85.50</Typography>
           </Grid>
 
           <Grid item xs={12} sm={6} sx={{ marginBottom: 3 }}>
-            <Typography variant='body2'>Satisfaction Rate</Typography>
+            <Typography variant='body2' sx={{ mb: 1.5 }}>
+              Satisfaction Rate
+            </Typography>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <Box sx={{ width: 130, mr: 3 }}>
+              <Box sx={{ width: 130, mr: 5 }}>
                 <LinearProgress value={75} sx={{ height: 6 }} variant='determinate' />
               </Box>
-              <Typography sx={{ fontWeight: 600 }}>75%</Typography>
+              <Typography variant='body2'>75%</Typography>
             </Box>
           </Grid>
 

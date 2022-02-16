@@ -98,6 +98,7 @@ const CardWebsiteStats = () => {
     <Card>
       <CardHeader
         title='Website Statistics'
+        titleTypographyProps={{ sx: { lineHeight: '2rem !important', letterSpacing: '0.15px !important' } }}
         action={
           <IconButton size='small' aria-label='settings' className='card-more-options' sx={{ color: 'text.secondary' }}>
             <DotsVertical sx={{ fontSize: '1.375rem' }} />
@@ -105,15 +106,12 @@ const CardWebsiteStats = () => {
         }
       />
       <CardContent>
-        <Box sx={{ mb: 3.25, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <Box sx={{ mb: 4.5, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-            <Typography
-              variant='h4'
-              sx={{ fontWeight: 600, lineHeight: 1.17, marginBottom: 0.5, fontSize: '2.5rem !important' }}
-            >
+            <Typography variant='h3' sx={{ mb: 0.5 }}>
               4,590
             </Typography>
-            <Typography sx={{ color: 'text.secondary' }}>Total Traffic</Typography>
+            <Typography variant='caption'>Total Traffic</Typography>
           </Box>
           <Box sx={{ height: 75, width: '100%', maxWidth: '120px' }}>
             <ResponsiveContainer>
@@ -133,16 +131,16 @@ const CardWebsiteStats = () => {
                     sx={{
                       '&:last-of-type td': { border: 0, paddingBottom: 0 },
                       '& .MuiTableCell-root': {
-                        py: 2.5,
-                        '&:first-of-type': { paddingLeft: 0 },
-                        '&:last-of-type': { paddingRight: 0 }
+                        '&:last-of-type': { pr: 0 },
+                        '&:first-of-type': { pl: 0 },
+                        py: theme => `${theme.spacing(2.75)} !important`
                       },
                       '&:first-of-type td': { borderTop: theme => `1px solid ${theme.palette.divider}` }
                     }}
                   >
                     <TableCell>
                       <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                        <Circle sx={{ marginRight: 1.8, fontSize: '1.05rem', color: `${row.color}.main` }} />
+                        <Circle sx={{ marginRight: 1.8, fontSize: '1rem', color: `${row.color}.main` }} />
                         <Typography sx={{ fontSize: '0.875rem' }}>{row.title}</Typography>
                       </Box>
                     </TableCell>
@@ -151,7 +149,9 @@ const CardWebsiteStats = () => {
                     </TableCell>
                     <TableCell>
                       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
-                        <Typography sx={{ fontWeight: 600, fontSize: '0.875rem' }}>{row.trendNumber}</Typography>
+                        <Typography sx={{ mr: 1.5, fontWeight: 600, fontSize: '0.875rem' }}>
+                          {row.trendNumber}
+                        </Typography>
                         {row.trend}
                       </Box>
                     </TableCell>
