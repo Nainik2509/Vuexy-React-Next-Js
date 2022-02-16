@@ -21,6 +21,9 @@ cd ../../jsx-version/full-version
 # install node_modules
 yarn install
 
+# Add jsx version specific eslint plugins
+yarn add eslint-plugin-react eslint-plugin-import babel-eslint
+
 # Run yarn format command to format all the files using prettier
 yarn format
 

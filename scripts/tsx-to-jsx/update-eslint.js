@@ -7,7 +7,8 @@ const data = `module.exports = {
     es6: true,
     browser: true
   },
-
+  parser: 'babel-eslint',
+  plugins: ['react', 'react-hooks', 'jsx-a11y', 'import'],  
   parserOptions: {
     ecmaVersion: 6,
     sourceType: 'module',
@@ -33,7 +34,7 @@ const data = `module.exports = {
     eqeqeq: 'error',
     'no-invalid-this': 'error',
     'no-return-assign': 'off',
-    'no-unused-expressions': ['error', { allowTernary: true }],
+    'no-unused-expressions': 'off',
     'no-useless-concat': 'error',
     'no-useless-return': 'error',
 
