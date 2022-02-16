@@ -68,7 +68,26 @@ const copyRecursiveSync = (src, dest) => {
       copyRecursiveSync(path.join(src, childItemName), path.join(dest, childItemName))
     })
   } else {
-    if (fs.existsSync(src)){
+    if (fs.existsSync(src)) {
+      fs.copyFileSync(src, dest)
+    }
+  }
+}
+
+// ** Recursively copies files/folders
+const copyRecursiveStarterKitSync = (src, dest) => {
+  const exists = fs.existsSync(src)
+  const stats = exists && fs.statSync(src)
+  const isDirectory = exists && stats.isDirectory()
+  if (isDirectory) {
+    !fs.existsSync(dest) ? fs.mkdirSync(dest) : null
+    if (!src.includes('node_modules')) {
+      fs.readdirSync(src).forEach(function (childItemName) {
+        copyRecursiveStarterKitSync(path.join(src, childItemName), path.join(dest, childItemName))
+      })
+    }
+  } else {
+    if (fs.existsSync(src)) {
       fs.copyFileSync(src, dest)
     }
   }
@@ -125,7 +144,7 @@ const updateContent = (userLayoutPath, BuyNowComponentPath, PackageJSONPath) => 
 
 // ** Generates TSX package
 const generateTSXPackage = () => {
-  fs.mkdir(`${pathConfig.packagePath}/tsx-version/full-version`,{ recursive: true }, err => {
+  fs.mkdir(`${pathConfig.packagePath}/tsx-version/full-version`, { recursive: true }, err => {
     if (err) {
       console.log(err)
 
@@ -136,29 +155,45 @@ const generateTSXPackage = () => {
         copyRecursiveSync(file, dest)
       })
       updateContent(userLayoutPathTSX, BuyNowComponentPathTSX, PackageJSONPathTSX)
+      if (fs.existsSync(pathConfig.starterKitTSXPath)) {
+        fs.mkdir(`${pathConfig.packagePath}/tsx-version/starter-kit`, (err) => {
+          if (err) {
+            console.log(err);
+          } else {
+            copyRecursiveStarterKitSync(pathConfig.starterKitTSXPath, `${pathConfig.packagePath}/tsx-version/starter-kit`)
+            fs.rmdirSync(`${pathConfig.packagePath}/tsx-version/starter-kit/node_modules`)
+          }
+        })
+      }
     }
   })
 }
 
 // ** Generates JSX package if jsx-version dir exists
 const generateJSXPackage = () => {
-  if (fs.existsSync(`${pathConfig.basePathJSX}`)) {
-    fs.mkdir(`${pathConfig.packagePath}/jsx/full-version`, { recursive: true } , err => {
-      if (err) {
-        console.log(err)
+  fs.mkdir(`${pathConfig.packagePath}/jsx-version/full-version`, { recursive: true }, err => {
+    if (err) {
+      console.log(err)
 
-        return
-      } else {
-        filesToCopyJSX.map(file => {
-          const dest = file.replace(pathConfig.basePathJSX, `${pathConfig.packagePath}/jsx-version`)
-        
-         
-          copyRecursiveSync(file, dest)
+      return
+    } else {
+      filesToCopyJSX.map(file => {
+        const dest = file.replace(pathConfig.basePathJSX, `${pathConfig.packagePath}/jsx-version`)
+        copyRecursiveSync(file, dest)
+      })
+      updateContent(userLayoutPathJSX, BuyNowComponentPathJSX, PackageJSONPathJSX)
+      if (fs.existsSync(pathConfig.starterKitJSXPath)) {
+        fs.mkdir(`${pathConfig.packagePath}/jsx-version/starter-kit`, (err) => {
+          if (err) {
+            console.log(err);
+          } else {
+            copyRecursiveStarterKitSync(pathConfig.starterKitJSXPath, `${pathConfig.packagePath}/jsx-version/starter-kit`)
+            fs.rmdirSync(`${pathConfig.packagePath}/jsx-version/starter-kit/node_modules`)
+          }
         })
-        updateContent(userLayoutPathJSX, BuyNowComponentPathJSX, PackageJSONPathJSX)
       }
-    })
-  }
+    }
+  })
 }
 
 // ** Generates package based on args

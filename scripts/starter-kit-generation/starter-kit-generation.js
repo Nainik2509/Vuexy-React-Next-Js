@@ -66,7 +66,9 @@ const generateTSXStarter = () => {
 
       foldersToRemoveTSX.map(folder => {
         try{
-          fs.rmdirSync(folder, { recursive: true, force: true })
+          fs.rm(folder, { recursive: true, force: true }, err => {
+            err ? console.log(err) : null
+          })
         }catch{
           console.log(`Error while deleting ${folder}`);
         }
@@ -129,7 +131,9 @@ const generateJSXStarter = () => {
 
       foldersToRemoveJSX.map(folder => {
         try{
-          fs.rmdirSync(folder, { recursive: true, force: true })
+          fs.rm(folder, { recursive: true, force: true }, err => {
+            err ? console.log(err) : null
+          })
         }catch{
           console.log(`Error while deleting ${folder}`);
         }

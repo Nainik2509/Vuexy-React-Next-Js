@@ -31,10 +31,12 @@ yarn format
 yarn lint
 
 
-# Automate source code snippets in jsx version
-cd ../../scripts/copy-source
-
 # Copy SourceCode
+cd ../../scripts/copy-source
 node copySourceTSX.js
 node copySourceJSX.js
+
+# Generate DemoConfigs
+cd ../../scripts/demo-generation
+node generate-demo-configs.js
 
