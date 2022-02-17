@@ -18,7 +18,7 @@ import NotAuthorized from 'src/pages/401'
 import BlankLayout from 'src/@core/layouts/BlankLayout'
 
 // ** Hooks
-import { useAuth } from 'src/@core/hooks/useAuth'
+import { useAuth } from 'src/hooks/useAuth'
 
 interface AclGuardProps {
   children: ReactNode

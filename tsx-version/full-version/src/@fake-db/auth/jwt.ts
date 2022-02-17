@@ -5,7 +5,7 @@ import jwt from 'jsonwebtoken'
 import mock from 'src/@fake-db/mock'
 
 // ** Types
-import { UserDataType } from 'src/@core/context/types'
+import { UserDataType } from 'src/context/types'
 
 const users: UserDataType[] = [
   {
