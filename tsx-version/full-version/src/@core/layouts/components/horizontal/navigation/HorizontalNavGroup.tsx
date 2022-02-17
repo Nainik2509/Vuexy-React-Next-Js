@@ -9,11 +9,11 @@ import Box from '@mui/material/Box'
 import Chip from '@mui/material/Chip'
 import List from '@mui/material/List'
 import Paper from '@mui/material/Paper'
-import ListItem from '@mui/material/ListItem'
 import Typography from '@mui/material/Typography'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import { styled, useTheme } from '@mui/material/styles'
 import ClickAwayListener from '@mui/material/ClickAwayListener'
+import MuiListItem, { ListItemProps } from '@mui/material/ListItem'
 
 // ** Third Party Imports
 import clsx from 'clsx'
@@ -50,6 +50,14 @@ interface Props {
   handleGroupMouseLeave: (value: string) => void
   handleGroupMouseEnter: (value: string) => void
 }
+
+// ** Styled Components
+const ListItem = styled(MuiListItem)<ListItemProps>(({ theme }) => ({
+  cursor: 'pointer',
+  '&:hover': {
+    background: theme.palette.action.hover
+  }
+}))
 
 const NavigationMenu = styled(Paper)(({ theme }) => ({
   boxShadow: theme.shadows[4],
@@ -89,7 +97,7 @@ const HorizontalNavGroup = (props: Props) => {
   const currentURL = router.pathname
   const { skin, direction } = settings
 
-  const popperOffsetHorizontal = direction === 'rtl' ? 15 : -15
+  const popperOffsetHorizontal = direction === 'rtl' ? 16 : -16
   const popperPlacement = direction === 'rtl' ? 'bottom-end' : 'bottom-start'
   const popperPlacementSubMenu = direction === 'rtl' ? 'left-start' : 'right-start'
 
@@ -182,7 +190,6 @@ const HorizontalNavGroup = (props: Props) => {
               className={clsx('menu-group', { 'Mui-selected': hasActiveChild(item, currentURL) })}
               {...(themeConfig.horizontalMenuToggle === 'click' ? { onClick: handleMenuToggleOnClick } : {})}
               sx={{
-                cursor: 'pointer',
                 ...(menuOpen ? { backgroundColor: theme.palette.action.hover } : {}),
                 ...(!hasParent
                   ? {

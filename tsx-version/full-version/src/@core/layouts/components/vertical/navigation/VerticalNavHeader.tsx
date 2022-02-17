@@ -25,6 +25,7 @@ interface Props {
   hidden: boolean
   navHover: boolean
   settings: Settings
+  collapsedNavWidth: number
   menuLockedIcon?: ReactNode
   menuUnlockedIcon?: ReactNode
   navigationBorderWidth: number
@@ -64,6 +65,7 @@ const VerticalNavHeader = (props: Props) => {
     navHover,
     settings,
     saveSettings,
+    collapsedNavWidth,
     toggleNavVisibility,
     navigationBorderWidth,
     menuLockedIcon: userMenuLockedIcon,
@@ -81,7 +83,7 @@ const VerticalNavHeader = (props: Props) => {
       if (userVerticalNavMenuBranding) {
         return 0
       } else {
-        return (themeConfig.collapsedNavigationSize - navigationBorderWidth - 30) / 8
+        return (collapsedNavWidth - navigationBorderWidth - 30) / 8
       }
     } else {
       return 6

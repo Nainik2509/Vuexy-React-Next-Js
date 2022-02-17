@@ -35,6 +35,7 @@ interface Props {
   navHover?: boolean
   settings: Settings
   navVisible?: boolean
+  collapsedNavWidth: number
   navigationBorderWidth: number
   toggleNavVisibility: () => void
   isSubToSub?: NavGroup | undefined
@@ -72,6 +73,7 @@ const VerticalNavLink = ({
   settings,
   navVisible,
   isSubToSub,
+  collapsedNavWidth,
   toggleNavVisibility,
   navigationBorderWidth
 }: Props) => {
@@ -135,8 +137,7 @@ const VerticalNavLink = ({
             sx={{
               ...conditionalBgColor(),
               ...(item.disabled ? { pointerEvents: 'none' } : { cursor: 'pointer' }),
-              paddingLeft:
-                navCollapsed && !navHover ? (themeConfig.collapsedNavigationSize - navigationBorderWidth - 24) / 8 : 5.5
+              pl: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 5.5
             }}
           >
             {isSubToSub ? null : (
@@ -145,7 +146,7 @@ const VerticalNavLink = ({
                   color: 'text.primary',
                   transition: 'margin .25s ease-in-out',
                   ...(navCollapsed && !navHover ? { marginRight: 0 } : { marginRight: 3.25 }),
-                  ...(parent ? { marginLeft: 1.25, marginRight: 4.75 } : {})
+                  ...(parent ? { ml: 1.25, mr: 4.75 } : {}) // This line should be after (navCollapsed && !navHover) condition for proper styling
                 }}
               >
                 <UserIcon

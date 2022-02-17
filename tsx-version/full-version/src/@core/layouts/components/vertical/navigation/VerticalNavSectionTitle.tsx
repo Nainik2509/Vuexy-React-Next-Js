@@ -6,9 +6,6 @@ import MuiListSubheader, { ListSubheaderProps } from '@mui/material/ListSubheade
 // ** Icons Imports
 import DotsHorizontal from 'mdi-material-ui/DotsHorizontal'
 
-// ** Configs Import
-import themeConfig from 'src/configs/themeConfig'
-
 // ** Types
 import { NavSectionTitle } from 'src/@core/layouts/types'
 import { Settings } from 'src/@core/context/settingsContext'
@@ -21,6 +18,7 @@ interface Props {
   navHover: boolean
   settings: Settings
   item: NavSectionTitle
+  collapsedNavWidth: number
   navigationBorderWidth: number
 }
 
@@ -50,7 +48,7 @@ const TypographyHeaderText = styled(Typography)<TypographyProps>(({ theme }) => 
 
 const VerticalNavSectionTitle = (props: Props) => {
   // ** Props
-  const { item, navHover, settings, navigationBorderWidth } = props
+  const { item, navHover, settings, collapsedNavWidth, navigationBorderWidth } = props
 
   // ** Hook
   const theme = useTheme()
@@ -81,7 +79,7 @@ const VerticalNavSectionTitle = (props: Props) => {
         sx={{
           ...conditionalStyling(),
           ...(navCollapsed && !navHover
-            ? { pt: 3.375, pb: 2.875, pl: (themeConfig.collapsedNavigationSize - navigationBorderWidth - 24) / 8 }
+            ? { pt: 3.375, pb: 2.875, pl: (collapsedNavWidth - navigationBorderWidth - 24) / 8 }
             : { pl: 6 })
         }}
       >

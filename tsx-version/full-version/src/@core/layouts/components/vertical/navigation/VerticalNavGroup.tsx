@@ -44,6 +44,7 @@ interface Props {
   settings: Settings
   navVisible?: boolean
   groupActive: string[]
+  collapsedNavWidth: number
   currentActiveGroup: string[]
   navigationBorderWidth: number
   isSubToSub?: NavGroup | undefined
@@ -81,6 +82,7 @@ const VerticalNavGroup = (props: Props) => {
     isSubToSub,
     groupActive,
     setGroupActive,
+    collapsedNavWidth,
     currentActiveGroup,
     setCurrentActiveGroup,
     navigationBorderWidth
@@ -257,9 +259,7 @@ const VerticalNavGroup = (props: Props) => {
                   2.5,
                   4.5,
                   2.5,
-                  navCollapsed && !navHover
-                    ? (themeConfig.collapsedNavigationSize - navigationBorderWidth - 24) / 8
-                    : 5.5
+                  navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 5.5
                 )
             }}
           >
