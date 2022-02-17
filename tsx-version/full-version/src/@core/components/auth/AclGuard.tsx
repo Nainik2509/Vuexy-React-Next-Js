@@ -15,6 +15,7 @@ import { buildAbilityFor } from 'src/configs/acl'
 
 // ** Component Import
 import NotAuthorized from 'src/pages/401'
+import BlankLayout from 'src/@core/layouts/BlankLayout'
 
 // ** Hooks
 import { useAuth } from 'src/@core/hooks/useAuth'
@@ -51,7 +52,11 @@ const AclGuard = (props: AclGuardProps) => {
   }
 
   // Render Not Authorized component if the current user has limited access
-  return <NotAuthorized />
+  return (
+    <BlankLayout>
+      <NotAuthorized />
+    </BlankLayout>
+  )
 }
 
 export default AclGuard
