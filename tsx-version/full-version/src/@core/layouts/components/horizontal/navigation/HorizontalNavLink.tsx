@@ -48,10 +48,10 @@ const ListItem = styled(MuiListItem)<ListItemProps & { component?: ElementType; 
     width: 'auto',
     color: theme.palette.text.primary,
     '&:hover': {
-      background: theme.palette.action.hover
+      backgroundColor: theme.palette.action.hover
     },
     '&.active, &.active:hover': {
-      background: hexToRGBA(theme.palette.primary.main, 0.08)
+      backgroundColor: hexToRGBA(theme.palette.primary.main, 0.08)
     },
     '&.active .MuiTypography-root, &.active:hover .MuiTypography-root': {
       color: theme.palette.primary.main
@@ -113,7 +113,7 @@ const HorizontalNavLink = (props: Props) => {
                 ? {
                     borderRadius: 1,
                     '&.active, &.active:hover': {
-                      background: theme => theme.palette.primary.main,
+                      backgroundColor: theme => theme.palette.primary.main,
                       '& .MuiTypography-root, & .MuiListItemIcon-root, & .MuiSvgIcon-root': {
                         color: 'common.white'
                       }
@@ -130,7 +130,7 @@ const HorizontalNavLink = (props: Props) => {
                   ...(themeConfig.menuTextTruncate && { overflow: 'hidden' })
                 }}
               >
-                <ListItemIcon sx={{ mr: 2 }}>
+                <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
                   <UserIcon
                     icon={IconTag}
                     componentType='horizontal-menu'

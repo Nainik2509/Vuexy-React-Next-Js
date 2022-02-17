@@ -224,13 +224,10 @@ const VerticalNavGroup = (props: Props) => {
       }
     } else {
       return {
-        '&:hover': {
-          backgroundColor: theme.palette.action.hover
-        },
         '&.Mui-selected': {
-          backgroundColor: theme.palette.action.selected,
+          backgroundColor: theme.palette.action.hover,
           '&:hover': {
-            backgroundColor: `rgba(${theme.palette.customColors.main}, 0.12)`
+            backgroundColor: theme.palette.action.hover
           }
         }
       }
