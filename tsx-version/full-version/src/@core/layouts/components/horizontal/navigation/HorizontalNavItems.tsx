@@ -6,13 +6,8 @@ import HorizontalNavLink from './HorizontalNavLink'
 import HorizontalNavGroup from './HorizontalNavGroup'
 
 interface Props {
-  parentId?: string
-  openNav?: string[]
   hasParent?: boolean
-  setOpenNav?: (value: string[]) => void
   horizontalNavItems?: HorizontalNavItemsType
-  handleGroupMouseLeave?: (value: string) => void
-  handleGroupMouseEnter?: (value: string) => void
 }
 const resolveComponent = (item: NavGroup | NavLink) => {
   if ((item as NavGroup).children) return HorizontalNavGroup

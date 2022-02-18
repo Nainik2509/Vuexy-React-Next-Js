@@ -44,11 +44,8 @@ import { hasActiveChild } from 'src/@core/layouts/utils'
 
 interface Props {
   item: NavGroup
-  openNav: string[]
   settings: Settings
   hasParent?: boolean
-  handleGroupMouseLeave: (value: string) => void
-  handleGroupMouseEnter: (value: string) => void
 }
 
 // ** Styled Components
@@ -89,7 +86,7 @@ const NavigationMenu = styled(Paper)(({ theme }) => ({
 
 const HorizontalNavGroup = (props: Props) => {
   // ** Props
-  const { item, hasParent, settings, handleGroupMouseLeave, handleGroupMouseEnter } = props
+  const { item, hasParent, settings } = props
 
   // ** Hooks & Vars
   const theme = useTheme()
@@ -122,15 +119,12 @@ const HorizontalNavGroup = (props: Props) => {
 
   const handleGroupOpen = (event: SyntheticEvent) => {
     setAnchorEl(event.currentTarget)
-    handleGroupMouseEnter(item.title)
     setMenuOpen(true)
     update ? update() : null
   }
 
   const handleGroupClose = () => {
     setAnchorEl(null)
-    handleGroupMouseLeave(item.title)
-
     setMenuOpen(false)
   }
 
@@ -272,14 +266,7 @@ const HorizontalNavGroup = (props: Props) => {
                   ...(hasParent ? { overflowY: 'auto', overflowX: 'visible', maxHeight: 'calc(100vh - 20rem)' } : {})
                 }}
               >
-                <HorizontalNavItems
-                  {...props}
-                  hasParent
-                  parentId={item.title}
-                  horizontalNavItems={item.children}
-                  handleGroupMouseEnter={handleGroupMouseEnter}
-                  handleGroupMouseLeave={handleGroupMouseLeave}
-                />
+                <HorizontalNavItems {...props} hasParent horizontalNavItems={item.children} />
               </NavigationMenu>
             </Box>
           </List>

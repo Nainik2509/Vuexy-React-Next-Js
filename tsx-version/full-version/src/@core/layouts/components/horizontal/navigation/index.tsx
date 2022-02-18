@@ -1,6 +1,3 @@
-// ** React Imports
-import { useState } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 
@@ -22,21 +19,6 @@ interface Props {
 }
 
 const Navigation = (props: Props) => {
-  // ** States
-  const [openNav, setOpenNav] = useState<string[]>([])
-
-  const handleGroupMouseEnter = (id: string) => {
-    const arr = openNav
-    arr.push(id)
-    setOpenNav([...arr])
-  }
-
-  const handleGroupMouseLeave = (id: string) => {
-    const arr = openNav
-    arr.splice(arr.indexOf(id), 1)
-    setOpenNav([...arr])
-  }
-
   return (
     <Box
       className='menu-content'
@@ -62,13 +44,7 @@ const Navigation = (props: Props) => {
             } */
       }}
     >
-      <HorizontalNavItems
-        openNav={openNav}
-        setOpenNav={setOpenNav}
-        handleGroupMouseEnter={handleGroupMouseEnter}
-        handleGroupMouseLeave={handleGroupMouseLeave}
-        {...props}
-      />
+      <HorizontalNavItems {...props} />
     </Box>
   )
 }

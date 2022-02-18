@@ -37,10 +37,8 @@ import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 
 interface Props {
   item: NavLink
-  parentId?: string
   settings: Settings
   hasParent: boolean
-  handleGroupMouseLeave: (value: string) => void
 }
 
 const ListItem = styled(MuiListItem)<ListItemProps & { component?: ElementType; target?: '_blank' | undefined }>(
@@ -64,7 +62,7 @@ const ListItem = styled(MuiListItem)<ListItemProps & { component?: ElementType; 
 
 const HorizontalNavLink = (props: Props) => {
   // ** Props
-  const { item, settings, hasParent, parentId, handleGroupMouseLeave } = props
+  const { item, settings, hasParent } = props
 
   // ** Hook
   const router = useRouter()
@@ -102,9 +100,6 @@ const HorizontalNavLink = (props: Props) => {
               if (item.path === undefined) {
                 e.preventDefault()
                 e.stopPropagation()
-              }
-              if (parentId) {
-                handleGroupMouseLeave(parentId)
               }
             }}
             sx={{
