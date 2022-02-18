@@ -17,7 +17,7 @@
     "skipDefaultLibCheck": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "jsx": "preserve",
+    "jsx": "preserve"
   },
   "include": [
     "src"

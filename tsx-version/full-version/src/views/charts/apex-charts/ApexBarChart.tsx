@@ -44,7 +44,6 @@ const ApexBarChart = () => {
         borderRadius: 8,
         barHeight: '30%',
         horizontal: true,
-        endingShape: 'rounded',
         startingShape: 'rounded'
       }
     },

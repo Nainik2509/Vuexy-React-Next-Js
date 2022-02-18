@@ -3,6 +3,9 @@ import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
+// ** Third Party Imports
+import { ApexOptions } from 'apexcharts'
+
 // ** Component Import
 import ReactApexcharts from 'src/@core/components/react-apexcharts'
 
@@ -12,7 +15,7 @@ const radarColors = {
 }
 
 const ApexRadarChart = () => {
-  const options = {
+  const options: ApexOptions = {
     chart: {
       toolbar: {
         show: false
