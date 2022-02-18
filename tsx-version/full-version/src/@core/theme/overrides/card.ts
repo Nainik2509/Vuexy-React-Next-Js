@@ -78,13 +78,8 @@ const Card = (theme: Theme, skin: Skin) => {
             }
           },
           '& .MuiButton-text': {
-            padding: `${theme.spacing(1.5)} ${theme.spacing(2.5)}`
-          },
-          '& .MuiButton-text.MuiButton-textSizeSmall': {
-            padding: `${theme.spacing(1)} ${theme.spacing(2.5)}`
-          },
-          '& .MuiButton-text.MuiButton-textSizeLarge': {
-            padding: `${theme.spacing(2)} ${theme.spacing(2.5)}`
+            paddingLeft: theme.spacing(2.5),
+            paddingRight: theme.spacing(2.5)
           }
         }
       }
