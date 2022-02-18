@@ -6,7 +6,7 @@ Master uses context & fake-db to authenticate users. Follow these steps to integ
 
 ```tsx _app.tsx
 // ** Contexts
-import { AuthProvider } from 'src/@core/context/AuthContext'
+import { AuthProvider } from 'src/context/AuthContext'
 
 type ExtendedAppProps = AppProps & {
   Component: NextPage

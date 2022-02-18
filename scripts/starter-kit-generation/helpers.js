@@ -183,7 +183,7 @@ const appDataToReplace = [
   { from: "import 'src/configs/i18n'", to: '' },
   { from: "import { defaultACLObj } from 'src/configs/acl'", to: '' },
   { from: "import AclGuard from 'src/@core/components/auth/AclGuard'", to: '' },
-  { from: "import { AuthProvider } from 'src/@core/context/AuthContext'", to: '' },
+  { from: "import { AuthProvider } from 'src/context/AuthContext'", to: '' },
   { from: "import AuthGuard from 'src/@core/components/auth/AuthGuard'", to: '' },
   { from: "import GuestGuard from 'src/@core/components/auth/GuestGuard'", to: '' },
   { from: "import Spinner from 'src/@core/components/spinner'", to: '' },
@@ -389,7 +389,7 @@ const dataToReplace = [
     file: UserDropdownPathTSX,
     replacements: [
       {
-        from: "import { useAuth } from 'src/@core/hooks/useAuth'",
+        from: "import { useAuth } from 'src/hooks/useAuth'",
         to: ''
       },
       {
@@ -426,7 +426,7 @@ const dataToReplace = [
     file: UserDropdownPathJSX,
     replacements: [
       {
-        from: "import { useAuth } from 'src/@core/hooks/useAuth'",
+        from: "import { useAuth } from 'src/hooks/useAuth'",
         to: ''
       },
       {

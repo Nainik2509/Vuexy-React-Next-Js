@@ -1,4 +1,4 @@
-# Access Control
+# Access Control (ACL)
 
 ## Overview
 
@@ -16,7 +16,7 @@ We have defined two roles `admin` & `client` and their actions in the configurat
 
 You'll have to update these roles & actions according to your application requirement.
 
-```js
+```ts
 const defineRulesFor = (role, subject) => {
   const { can, rules } = new AbilityBuilder(AppAbility)
 
@@ -38,7 +38,7 @@ To define an accessible component use `acl` method with `action` & `subject` pro
 
 You can also refer `full-version/src/pages/acl/index.tsx` file for implementation.
 
-```jsx
+```tsx{3-6}
 const Component = () => <h1>Component</h1>
 
 Component.acl = {
@@ -55,7 +55,7 @@ Define the `action` & `subject` properties in navigation file to show/hide the n
 
 Refer to the example below:
 
-```js
+```ts{3-4}
 {
   path: '/acl',
   action: 'read',
@@ -83,29 +83,35 @@ export const getHomeRoute = (role: string) => {
 
 It is quite easy to remove access control from the template.
 
-1. Remove the ACLGuard wrapper & ACL related imports from `_app.tsx` file.
+1. Remove `src/configs/acl.ts` file
+2. Remove the `import type { ACLObj } from 'src/configs/acl'` import statement & `acl?: ACLObj` from `next.d.ts` file.
 
-    Change Following code from:
+3. Remove the AclGuard wrapper & ACL related imports from `src/pages/_app.tsx` file.
+
+    Change following code from:
 
     ```tsx
     // Code before removing ACL Guard
-    <Guard authGuard={authGuard} guestGuard={guestGuard}>
-      <AclGuard aclAbilities={aclAbilities} guestGuard={guestGuard}>
-        {getLayout(<Component {...pageProps} />)}
-      </AclGuard>
-    </Guard>
+    import { defaultACLObj } from 'src/configs/acl'
+    import AclGuard from 'src/@core/components/auth/AclGuard'
+
+    const aclAbilities = Component.acl ?? defaultACLObj
+
+   <AclGuard aclAbilities={aclAbilities} guestGuard={guestGuard}>
+     {getLayout(<Component {...pageProps} />)}
+   </AclGuard>
     ```
 
     to
 
     ``` tsx
     // Code after removing ACL Guard
-    <Guard authGuard={authGuard} guestGuard={guestGuard}>
-      {getLayout(<Component {...pageProps} />)}
-    </Guard>
+   {getLayout(<Component {...pageProps} />)}
     ```
 
-2. Remove `acl` object from components, `action` & `subject` properties if defined in any navigation files.
+4. Remove `acl?: ACLObj` from `next.d.ts` file
+
+5. Remove `acl` method from all the components.
 
     Component from:
 
@@ -127,6 +133,8 @@ It is quite easy to remove access control from the template.
 
     export default Component
     ```
+
+6. Remove `action` & `subject` properties if defined in your navigation files.
 
     Navigation object from:
 
@@ -150,9 +158,9 @@ It is quite easy to remove access control from the template.
     }
     ```
 
-3. Update Home URL like following:
+7. Update Home URL like following:
 
-    ```jsx
+    ```tsx
     /**
     *  Set Home URL based on User Roles
     */
@@ -171,5 +179,57 @@ It is quite easy to remove access control from the template.
     export default Component
     ```
 
-4. Remove the `ability` & `ability.can` function in all the CanView files in `src/layouts/components/acl` folder.
-5. Remove `acl.ts` config file from `src/configs` folder.
+8. Remove the `ability` & `ability.can` function in all the CanView files in `src/layouts/components/acl` folder.
+
+    Replace the following codes in respective files in order to remove ACL functionality.
+
+    ```tsx
+    // src/layouts/components/acl/CanViewNavNavGroup.tsx
+    import { ReactNode } from 'react'
+
+    interface Props {
+      children: ReactNode
+    }
+
+    const CanViewNavNavGroup = (props: Props) => {
+      const { children } = props
+
+      return <>{children}</>
+    }
+
+    export default CanViewNavNavGroup
+    ```
+
+    ```tsx
+    // src/layouts/components/acl/CanViewNavNavLink.tsx
+    import { ReactNode } from 'react'
+
+    interface Props {
+      children: ReactNode
+    }
+
+    const CanViewNavNavLink = (props: Props) => {
+      const { children } = props
+
+      return <>{children}</>
+    }
+
+    export default CanViewNavNavLink
+    ```
+
+    ```tsx
+    // src/layouts/components/acl/CanViewNavSectionTitle.tsx
+    import { ReactNode } from 'react'
+
+    interface Props {
+      children: ReactNode
+    }
+
+    const CanViewNavSectionTitle = (props: Props) => {
+      const { children } = props
+
+      return <>{children}</>
+    }
+
+    export default CanViewNavSectionTitle
+    ```
