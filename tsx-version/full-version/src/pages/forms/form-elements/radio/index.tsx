@@ -26,7 +26,7 @@ const Radios = () => {
           title='RadioGroup'
           code={{
             tsx: source.RadioGroupTSXCode,
-            jsx: null,
+            jsx: source.RadioGroupJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -41,7 +41,7 @@ const Radios = () => {
           title='Controlled and Uncontrolled'
           code={{
             tsx: source.RadioControlledUncontrolledTSXCode,
-            jsx: null,
+            jsx: source.RadioControlledUncontrolledJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -57,7 +57,7 @@ const Radios = () => {
           title='Standalone Radio Buttons'
           code={{
             tsx: source.RadioStandaloneTSXCode,
-            jsx: null,
+            jsx: source.RadioStandaloneJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -71,7 +71,7 @@ const Radios = () => {
           title='Colors'
           code={{
             tsx: source.RadioColorTSXCode,
-            jsx: null,
+            jsx: source.RadioColorJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -85,7 +85,7 @@ const Radios = () => {
           title='Sizes'
           code={{
             tsx: source.RadioSizesTSXCode,
-            jsx: null,
+            jsx: source.RadioSizesJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -99,7 +99,7 @@ const Radios = () => {
           title='Customized Radio'
           code={{
             tsx: source.RadioCustomizedTSXCode,
-            jsx: null,
+            jsx: source.RadioCustomizedJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -113,7 +113,7 @@ const Radios = () => {
           title='Label Placement'
           code={{
             tsx: source.RadioLabelPlacementTSXCode,
-            jsx: null,
+            jsx: source.RadioLabelPlacementJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -128,7 +128,7 @@ const Radios = () => {
           title='Show Error'
           code={{
             tsx: source.RadioShowErrorTSXCode,
-            jsx: null,
+            jsx: source.RadioShowErrorJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>

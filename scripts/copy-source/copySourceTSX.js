@@ -65,7 +65,6 @@ const generateTSXSourceCode = () => {
 
         if (doesJSXVersionExits) {
           if (sourceToReadJSX && fileJSX) {
-            // sourceToReadJSX.includes('MuiPickersSourceCode') ? console.log(fileJSX) : null
             fs.readFile(fileJSX, 'utf8', (err, dataJSX) => {
               fs.readFile(sourceToReadJSX, 'utf8', (err, source) => {
                 const codeJSX =
@@ -105,48 +104,38 @@ generateTSXSourceCode()
 if (!doesJSXVersionExits) {
   replaceCodeWithNull(AllIndexFiles, 'jsx')
 } else {
-  if(AllIndexFiles){
+  if (AllIndexFiles.length) {
     AllIndexFiles.map(file => {
       fs.readFile(file, 'utf-8', (err, data) => {
-        if(err){
+        if (err) {
           console.log(err);
           return
-        }else{
-            const splitData = data.split('\r\n')
-            // const lineIndex = splitData.findIndex(i => i.trim().includes('jsx: null'))
-            // const prevLineIndex = lineIndex - 1
+        } else {
+          const arr = []
+          let result = data
+          const splitData = data.split('\r\n')
 
-            splitData.forEach((line, index) => {
-              if(line.trim().includes('jsx:')){
-                const replaced = splitData[index - 1] ? splitData[index - 1].replace('tsx: ', '').replace('TSXCode', 'JSXCode').replace(',', '') : null
-                if(replaced){
+          splitData.forEach((line, index) => {
+            if (line.trim().includes('jsx: null')) {
+              const replaced = splitData[index - 1] ? splitData[index - 1].replace('tsx: ', '').replace('TSXCode', 'JSXCode').replace(',', '').trim() : null
 
-                  line = line.replace('null', replaced)
-                }
-                return line
-              }else{
-                return line
-              }
-            })
+              arr.push({ line: line.trim(), replacement: replaced ? line.trim().replace('null', replaced) : '' })
+            }
+          })
 
-              fs.writeFile(file, splitData.join('\r\n'), err => {
-                if(err){
-                  console.log(err);
 
-                  return
-                }
-              })
+          arr.forEach(r => {
+            result = result.replace(r.line, r.replacement)
+          })
 
-            // if(splitData[lineIndex]){
-            //   const replacedLine = splitData[prevLineIndex].replace('tsx:', 'jsx:').replace('TSXCode', 'JSXCode')
-            //   splitData[lineIndex] = splitData[lineIndex].replace(splitData[lineIndex], replacedLine)
-             
-            //   result = splitData.join('\n')
-             
-            
-            // }
+          fs.writeFile(file, result, err => {
+            if (err) {
+              console.log(err);
 
-            // console.log(result);
+              return
+            }
+          })
+
         }
       })
     })

@@ -28,7 +28,7 @@ const Pagination = () => {
           title='Chip Variants'
           code={{
             tsx: source.ChipsVariantsTSXCode,
-            jsx: null,
+            jsx: source.ChipsVariantsJSXCode,
           }}
         >
           <Typography>
@@ -42,7 +42,7 @@ const Pagination = () => {
           title='Disabled Chips'
           code={{
             tsx: source.ChipsDisabledTSXCode,
-            jsx: null,
+            jsx: source.ChipsDisabledJSXCode,
           }}
         >
           <Typography>
@@ -56,7 +56,7 @@ const Pagination = () => {
           title='Colors'
           code={{
             tsx: source.ChipsColorsTSXCode,
-            jsx: null,
+            jsx: source.ChipsColorsJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -70,7 +70,7 @@ const Pagination = () => {
           title='onDelete'
           code={{
             tsx: source.ChipsOnDeleteTSXCode,
-            jsx: null,
+            jsx: source.ChipsOnDeleteJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -85,7 +85,7 @@ const Pagination = () => {
           title='Chip Sizes'
           code={{
             tsx: source.ChipsSizesTSXCode,
-            jsx: null,
+            jsx: source.ChipsSizesJSXCode,
           }}
         >
           <Typography>
@@ -99,7 +99,7 @@ const Pagination = () => {
           title='Clickable Chip'
           code={{
             tsx: source.ChipsClickableTSXCode,
-            jsx: null,
+            jsx: source.ChipsClickableJSXCode,
           }}
         >
           <Typography>
@@ -114,7 +114,7 @@ const Pagination = () => {
           title='Chip with Avatar'
           code={{
             tsx: source.ChipsAvatarTSXCode,
-            jsx: null,
+            jsx: source.ChipsAvatarJSXCode,
           }}
         >
           <Typography>
@@ -128,7 +128,7 @@ const Pagination = () => {
           title='Icon Chip'
           code={{
             tsx: source.ChipsIconTSXCode,
-            jsx: null,
+            jsx: source.ChipsIconJSXCode,
           }}
         >
           <Typography>
@@ -142,7 +142,7 @@ const Pagination = () => {
           title='Chips Array'
           code={{
             tsx: source.ChipsArrayTSXCode,
-            jsx: null,
+            jsx: source.ChipsArrayJSXCode,
           }}
         >
           <Typography>You can make a list of chips that can make some or all chips deletable.</Typography>
@@ -154,7 +154,7 @@ const Pagination = () => {
           title='Custom Light Chips'
           code={{
             tsx: source.ChipsLightTSXCode,
-            jsx: null,
+            jsx: source.ChipsLightJSXCode,
           }}
         >
           <Typography>

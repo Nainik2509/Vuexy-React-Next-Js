@@ -33,7 +33,7 @@ const ButtonGroup = () => {
           title='Basic Button Group'
           code={{
             tsx: source.ButtonGroupBasicTSXCode,
-            jsx: null,
+            jsx: source.ButtonGroupBasicJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -48,7 +48,7 @@ const ButtonGroup = () => {
           title='Button Group Sizes'
           code={{
             tsx: source.ButtonGroupSizesTSXCode,
-            jsx: null,
+            jsx: source.ButtonGroupSizesJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -63,7 +63,7 @@ const ButtonGroup = () => {
           title='Vertical Button Group'
           code={{
             tsx: source.ButtonGroupVerticalTSXCode,
-            jsx: null,
+            jsx: source.ButtonGroupVerticalJSXCode,
           }}
         >
           <Typography>
@@ -78,7 +78,7 @@ const ButtonGroup = () => {
           title='Split Button'
           code={{
             tsx: source.ButtonGroupSplitTSXCode,
-            jsx: null,
+            jsx: source.ButtonGroupSplitJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -93,7 +93,7 @@ const ButtonGroup = () => {
           title='Button Group Colors'
           code={{
             tsx: source.ButtonGroupColorsTSXCode,
-            jsx: null,
+            jsx: source.ButtonGroupColorsJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -110,7 +110,7 @@ const ButtonGroup = () => {
           title='Simple Toggle Button'
           code={{
             tsx: source.ButtonToggleSimpleTSXCode,
-            jsx: null,
+            jsx: source.ButtonToggleSimpleJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -125,7 +125,7 @@ const ButtonGroup = () => {
           title='Multiple Toggle Button'
           code={{
             tsx: source.ButtonToggleMultipleTSXCode,
-            jsx: null,
+            jsx: source.ButtonToggleMultipleJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -139,7 +139,7 @@ const ButtonGroup = () => {
           title='Toggle Button Sizes'
           code={{
             tsx: source.ButtonToggleSizesTSXCode,
-            jsx: null,
+            jsx: source.ButtonToggleSizesJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -153,7 +153,7 @@ const ButtonGroup = () => {
           title='Vertical Toggle Button'
           code={{
             tsx: source.ButtonToggleVerticalTSXCode,
-            jsx: null,
+            jsx: source.ButtonToggleVerticalJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -167,7 +167,7 @@ const ButtonGroup = () => {
           title='Enforce Value Set'
           code={{
             tsx: source.ButtonToggleEnforceValueTSXCode,
-            jsx: null,
+            jsx: source.ButtonToggleEnforceValueJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -181,7 +181,7 @@ const ButtonGroup = () => {
           title='Customized Toggle Button'
           code={{
             tsx: source.ButtonToggleCustomizedTSXCode,
-            jsx: null,
+            jsx: source.ButtonToggleCustomizedJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -195,7 +195,7 @@ const ButtonGroup = () => {
           title='Toggle Button Colors'
           code={{
             tsx: source.ButtonToggleColorsTSXCode,
-            jsx: null,
+            jsx: source.ButtonToggleColorsJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>

@@ -26,7 +26,7 @@ const Selects = () => {
           title='Variants'
           code={{
             tsx: source.SelectVariantsTSXCode,
-            jsx: null,
+            jsx: source.SelectVariantsJSXCode,
           }}
         >
           <Typography>
@@ -42,7 +42,7 @@ const Selects = () => {
           title='Native Select'
           code={{
             tsx: source.SelectNativeTSXCode,
-            jsx: null,
+            jsx: source.SelectNativeJSXCode,
           }}
         >
           <Typography>
@@ -57,7 +57,7 @@ const Selects = () => {
           title='Select Props'
           code={{
             tsx: source.SelectPropsTSXCode,
-            jsx: null,
+            jsx: source.SelectPropsJSXCode,
           }}
         >
           <Typography>
@@ -73,7 +73,7 @@ const Selects = () => {
           title='Controlled and Uncontrolled'
           code={{
             tsx: source.SelectControlledUncontrolledTSXCode,
-            jsx: null,
+            jsx: source.SelectControlledUncontrolledJSXCode,
           }}
         >
           <Typography>
@@ -88,7 +88,7 @@ const Selects = () => {
           title='Customized Select'
           code={{
             tsx: source.SelectCustomizedTSXCode,
-            jsx: null,
+            jsx: source.SelectCustomizedJSXCode,
           }}
         >
           <Typography>
@@ -102,7 +102,7 @@ const Selects = () => {
           title='Multiple Select'
           code={{
             tsx: source.SelectMultipleTSXCode,
-            jsx: null,
+            jsx: source.SelectMultipleJSXCode,
           }}
         >
           <Typography>
@@ -118,7 +118,7 @@ const Selects = () => {
               title='Select with Dialog'
               code={{
                 tsx: source.SelectWithDialogTSXCode,
-                jsx: null,
+                jsx: source.SelectWithDialogJSXCode,
               }}
             >
               <SelectWithDialog />
@@ -129,7 +129,7 @@ const Selects = () => {
               title='Grouping'
               code={{
                 tsx: source.SelectGroupingTSXCode,
-                jsx: null,
+                jsx: source.SelectGroupingJSXCode,
               }}
             >
               <Typography>

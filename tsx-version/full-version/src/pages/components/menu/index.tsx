@@ -25,7 +25,7 @@ const Menus = () => {
           title='Simple Menu'
           code={{
             tsx: source.MenuBasicTSXCode,
-            jsx: null,
+            jsx: source.MenuBasicJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -40,7 +40,7 @@ const Menus = () => {
           title='Selected Menu'
           code={{
             tsx: source.MenuSelectedTSXCode,
-            jsx: null,
+            jsx: source.MenuSelectedJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -55,7 +55,7 @@ const Menus = () => {
           title='MenuList Composition'
           code={{
             tsx: source.MenuCompositionTSXCode,
-            jsx: null,
+            jsx: source.MenuCompositionJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -70,7 +70,7 @@ const Menus = () => {
           title='Customized Menu'
           code={{
             tsx: source.MenuCustomizedTSXCode,
-            jsx: null,
+            jsx: source.MenuCustomizedJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -84,7 +84,7 @@ const Menus = () => {
           title='Max Height Menu'
           code={{
             tsx: source.MenuMaxHeightTSXCode,
-            jsx: null,
+            jsx: source.MenuMaxHeightJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -98,7 +98,7 @@ const Menus = () => {
           title='Change Transition'
           code={{
             tsx: source.MenuTransitionTSXCode,
-            jsx: null,
+            jsx: source.MenuTransitionJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -112,7 +112,7 @@ const Menus = () => {
           title='Context Menu'
           code={{
             tsx: source.MenuContextTSXCode,
-            jsx: null,
+            jsx: source.MenuContextJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>

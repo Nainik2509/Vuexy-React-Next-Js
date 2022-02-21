@@ -22,7 +22,7 @@ const Accordion = () => {
           title='Simple Accordion'
           code={{
             tsx: source.AccordionSimpleTSXCode,
-            jsx: null,
+            jsx: source.AccordionSimpleJSXCode,
           }}
           sx={{
             boxShadow: 'none',
@@ -42,7 +42,7 @@ const Accordion = () => {
           title='Controlled Accordion'
           code={{
             tsx: source.AccordionControlledTSXCode,
-            jsx: null,
+            jsx: source.AccordionControlledJSXCode,
           }}
           sx={{
             boxShadow: 'none',
@@ -61,7 +61,7 @@ const Accordion = () => {
           title='Customized Accordion'
           code={{
             tsx: source.AccordionCustomizedTSXCode,
-            jsx: null,
+            jsx: source.AccordionCustomizedJSXCode,
           }}
           sx={{
             boxShadow: 'none',
@@ -80,7 +80,7 @@ const Accordion = () => {
           title='Additional Actions'
           code={{
             tsx: source.AccordionActionsTSXCode,
-            jsx: null,
+            jsx: source.AccordionActionsJSXCode,
           }}
           sx={{
             boxShadow: 'none',

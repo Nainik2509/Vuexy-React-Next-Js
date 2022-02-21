@@ -26,7 +26,7 @@ const Checkboxes = () => {
           title='Basic Checkboxes'
           code={{
             tsx: source.CheckboxesBasicTSXCode,
-            jsx: null,
+            jsx: source.CheckboxesBasicJSXCode,
           }}
         >
           <CheckboxesBasic />
@@ -37,7 +37,7 @@ const Checkboxes = () => {
           title='Controlled and Uncontrolled'
           code={{
             tsx: source.CheckboxesControlledUncontrolledTSXCode,
-            jsx: null,
+            jsx: source.CheckboxesControlledUncontrolledJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -52,7 +52,7 @@ const Checkboxes = () => {
           title='Colors'
           code={{
             tsx: source.CheckboxesColorsTSXCode,
-            jsx: null,
+            jsx: source.CheckboxesColorsJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -66,7 +66,7 @@ const Checkboxes = () => {
           title='Customized'
           code={{
             tsx: source.CheckboxesCustomizedTSXCode,
-            jsx: null,
+            jsx: source.CheckboxesCustomizedJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -80,7 +80,7 @@ const Checkboxes = () => {
           title='Custom Icons'
           code={{
             tsx: source.CheckboxesCustomIconsTSXCode,
-            jsx: null,
+            jsx: source.CheckboxesCustomIconsJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -95,7 +95,7 @@ const Checkboxes = () => {
           title='Label Placement'
           code={{
             tsx: source.CheckboxesLabelPlacementTSXCode,
-            jsx: null,
+            jsx: source.CheckboxesLabelPlacementJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -110,7 +110,7 @@ const Checkboxes = () => {
           title='Show Error'
           code={{
             tsx: source.CheckboxesShowErrorTSXCode,
-            jsx: null,
+            jsx: source.CheckboxesShowErrorJSXCode,
           }}
         >
           <Typography>
@@ -125,7 +125,7 @@ const Checkboxes = () => {
           title='Sizes'
           code={{
             tsx: source.CheckboxesSizesTSXCode,
-            jsx: null,
+            jsx: source.CheckboxesSizesJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>

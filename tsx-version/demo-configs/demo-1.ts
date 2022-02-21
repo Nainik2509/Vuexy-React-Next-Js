@@ -17,7 +17,6 @@ type ThemeConfig = {
   mode: PaletteMode
   navHidden: boolean
   direction: Direction
-  appBarHeight: number
   templateName: string
   navCollapsed: boolean
   routingLoader: boolean
@@ -60,7 +59,6 @@ const themeConfig: ThemeConfig = {
 
   // ** AppBar Configs
   appBar: 'fixed' /* fixed | static | hidden /*! Note: hidden value will only work for Vertical Layout */,
-  appBarHeight: 64 /* Number in PX(Pixels) [recommended height is 50px or greater] */,
 
   // ** Other Configs
   responsiveFontSizes: true /* true | false */,

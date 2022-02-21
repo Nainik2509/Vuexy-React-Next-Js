@@ -24,7 +24,7 @@ const Snackbar = () => {
           title='Simple Snackbar'
           code={{
             tsx: source.SnackbarSimpleTSXCode,
-            jsx: null,
+            jsx: source.SnackbarSimpleJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -38,7 +38,7 @@ const Snackbar = () => {
           title='Alert Snackbar'
           code={{
             tsx: source.SnackbarAlertTSXCode,
-            jsx: null,
+            jsx: source.SnackbarAlertJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -52,7 +52,7 @@ const Snackbar = () => {
           title='Positioned Snackbar'
           code={{
             tsx: source.SnackbarPositionedTSXCode,
-            jsx: null,
+            jsx: source.SnackbarPositionedJSXCode,
           }}
         >
           <Typography>
@@ -66,7 +66,7 @@ const Snackbar = () => {
           title='Consecutive Snackbars'
           code={{
             tsx: source.SnackbarConsecutiveTSXCode,
-            jsx: null,
+            jsx: source.SnackbarConsecutiveJSXCode,
           }}
         >
           <Typography>When multiple snackbar updates are necessary, they should appear one at a time.</Typography>
@@ -78,7 +78,7 @@ const Snackbar = () => {
           title='Change Transition'
           code={{
             tsx: source.SnackbarTransitionTSXCode,
-            jsx: null,
+            jsx: source.SnackbarTransitionJSXCode,
           }}
         >
           <Typography>When multiple snackbar updates are necessary, they should appear one at a time.</Typography>
@@ -90,7 +90,7 @@ const Snackbar = () => {
           title='Control Slide Direction'
           code={{
             tsx: source.SnackbarControlSlideDirectionTSXCode,
-            jsx: null,
+            jsx: source.SnackbarControlSlideDirectionJSXCode,
           }}
         >
           <Typography>

@@ -20,7 +20,7 @@ const Textarea = () => {
           title='Basic Textarea'
           code={{
             tsx: source.TextareaBasicTSXCode,
-            jsx: null,
+            jsx: source.TextareaBasicJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -35,7 +35,7 @@ const Textarea = () => {
           title='Variants'
           code={{
             tsx: source.TextareaVariantTSXCode,
-            jsx: null,
+            jsx: source.TextareaVariantJSXCode,
           }}
         >
           <Typography>

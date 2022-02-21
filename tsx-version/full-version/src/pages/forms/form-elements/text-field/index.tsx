@@ -30,7 +30,7 @@ const TextFields = () => {
           title='Variants'
           code={{
             tsx: source.TextFieldVariantTSXCode,
-            jsx: null,
+            jsx: source.TextFieldVariantJSXCode,
           }}
         >
           <Typography>
@@ -44,7 +44,7 @@ const TextFields = () => {
           title='Form Props'
           code={{
             tsx: source.TextFieldFormPropsTSXCode,
-            jsx: null,
+            jsx: source.TextFieldFormPropsJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -60,7 +60,7 @@ const TextFields = () => {
           title='Controlled and Uncontrolled'
           code={{
             tsx: source.TextFieldControlledUncontrolledTSXCode,
-            jsx: null,
+            jsx: source.TextFieldControlledUncontrolledJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -75,7 +75,7 @@ const TextFields = () => {
           title='Sizes'
           code={{
             tsx: source.TextFieldSizesTSXCode,
-            jsx: null,
+            jsx: source.TextFieldSizesJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -89,7 +89,7 @@ const TextFields = () => {
           title='Color'
           code={{
             tsx: source.TextFieldColorTSXCode,
-            jsx: null,
+            jsx: source.TextFieldColorJSXCode,
           }}
         >
           <Typography>
@@ -104,7 +104,7 @@ const TextFields = () => {
           title='Icons'
           code={{
             tsx: source.TextFieldIconsTSXCode,
-            jsx: null,
+            jsx: source.TextFieldIconsJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -118,7 +118,7 @@ const TextFields = () => {
           title='Input Adornment'
           code={{
             tsx: source.TextFieldInputAdornmentTSXCode,
-            jsx: null,
+            jsx: source.TextFieldInputAdornmentJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -133,7 +133,7 @@ const TextFields = () => {
           title='Layout'
           code={{
             tsx: source.TextFieldLayoutTSXCode,
-            jsx: null,
+            jsx: source.TextFieldLayoutJSXCode,
           }}
         >
           <Typography>
@@ -152,7 +152,7 @@ const TextFields = () => {
           title='Components'
           code={{
             tsx: source.TextFieldComponentsTSXCode,
-            jsx: null,
+            jsx: source.TextFieldComponentsJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -168,7 +168,7 @@ const TextFields = () => {
           title='Inputs'
           code={{
             tsx: source.TextFieldInputsTSXCode,
-            jsx: null,
+            jsx: source.TextFieldInputsJSXCode,
           }}
         >
           <TextFieldInputs />
@@ -179,7 +179,7 @@ const TextFields = () => {
           title='Customized'
           code={{
             tsx: source.TextFieldCustomizedTSXCode,
-            jsx: null,
+            jsx: source.TextFieldCustomizedJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -193,7 +193,7 @@ const TextFields = () => {
           title='Validation'
           code={{
             tsx: source.TextFieldValidationTSXCode,
-            jsx: null,
+            jsx: source.TextFieldValidationJSXCode,
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>

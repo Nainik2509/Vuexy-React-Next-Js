@@ -28,7 +28,7 @@ const Buttons = () => {
           title='Contained'
           code={{
             tsx: source.ButtonsContainedTSXCode,
-            jsx: null,
+            jsx: source.ButtonsContainedJSXCode,
           }}
         >
           <Typography>
@@ -42,7 +42,7 @@ const Buttons = () => {
           title='Text'
           code={{
             tsx: source.ButtonsTextTSXCode,
-            jsx: null,
+            jsx: source.ButtonsTextJSXCode,
           }}
         >
           <Typography>
@@ -56,7 +56,7 @@ const Buttons = () => {
           title='Outlined'
           code={{
             tsx: source.ButtonsOutlinedTSXCode,
-            jsx: null,
+            jsx: source.ButtonsOutlinedJSXCode,
           }}
         >
           <Typography>
@@ -70,7 +70,7 @@ const Buttons = () => {
           title='Buttons With Icon and Label'
           code={{
             tsx: source.ButtonsWithIconAndLabelTSXCode,
-            jsx: null,
+            jsx: source.ButtonsWithIconAndLabelJSXCode,
           }}
         >
           <Typography>
@@ -85,7 +85,7 @@ const Buttons = () => {
           title='Icon Buttons'
           code={{
             tsx: source.ButtonsIconsTSXCode,
-            jsx: null,
+            jsx: source.ButtonsIconsJSXCode,
           }}
         >
           <Typography>
@@ -100,7 +100,7 @@ const Buttons = () => {
           title='Button Sizes'
           code={{
             tsx: source.ButtonsSizesTSXCode,
-            jsx: null,
+            jsx: source.ButtonsSizesJSXCode,
           }}
         >
           <Typography>
@@ -117,7 +117,7 @@ const Buttons = () => {
           title='Button Colors'
           code={{
             tsx: source.ButtonsColorsTSXCode,
-            jsx: null,
+            jsx: source.ButtonsColorsJSXCode,
           }}
         >
           <Typography>
@@ -131,7 +131,7 @@ const Buttons = () => {
           title='Customized Buttons'
           code={{
             tsx: source.ButtonsCustomizedTSXCode,
-            jsx: null,
+            jsx: source.ButtonsCustomizedJSXCode,
           }}
         >
           <ButtonsCustomized />
@@ -142,7 +142,7 @@ const Buttons = () => {
           title='Floating Action Button'
           code={{
             tsx: source.ButtonsFabTSXCode,
-            jsx: null,
+            jsx: source.ButtonsFabJSXCode,
           }}
         >
           <Typography>
@@ -157,7 +157,7 @@ const Buttons = () => {
           title='Floating Action Button Sizes'
           code={{
             tsx: source.ButtonsFabSizesTSXCode,
-            jsx: null,
+            jsx: source.ButtonsFabSizesJSXCode,
           }}
         >
           <Typography>
