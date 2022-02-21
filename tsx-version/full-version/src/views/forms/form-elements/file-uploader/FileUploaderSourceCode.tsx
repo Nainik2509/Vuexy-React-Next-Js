@@ -31,7 +31,6 @@ const Img = styled('img')(({ theme }) => ({
   }
 }))
 
-
 // Styled component for the heading inside the dropzone area
 const HeadingTypography = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(5),
@@ -43,7 +42,6 @@ const HeadingTypography = styled(Typography)(({ theme }) => ({
 const FileUploaderMultiple = () => {
   // ** State
   const [files, setFiles] = useState([])
-
 
   // ** Hooks
   const { getRootProps, getInputProps } = useDropzone({
@@ -163,7 +161,6 @@ const Img = styled('img')(({ theme }) => ({
   }
 }))
 
-
 // Styled component for the heading inside the dropzone area
 const HeadingTypography = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(5),
@@ -175,7 +172,6 @@ const HeadingTypography = styled(Typography)(({ theme }) => ({
 const FileUploaderRestrictions = () => {
   // ** State
   const [files, setFiles] = useState([])
-
 
   // ** Hooks
   const { getRootProps, getInputProps } = useDropzone({
@@ -286,7 +282,6 @@ const Img = styled('img')(({ theme }) => ({
   }
 }))
 
-
 // Styled component for the heading inside the dropzone area
 const HeadingTypography = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(5),
@@ -298,7 +293,6 @@ const HeadingTypography = styled(Typography)(({ theme }) => ({
 const FileUploaderSingle = () => {
   // ** State
   const [files, setFiles] = useState([])
-
 
   // ** Hook
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
@@ -473,6 +467,7 @@ const FileUploaderRestrictions = () => {
 
 export default FileUploaderRestrictions
 `}</code></pre>) 
+
 export const FileUploaderMultipleTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { Fragment, useState, SyntheticEvent } from 'react'
 
@@ -607,6 +602,7 @@ const FileUploaderMultiple = () => {
 
 export default FileUploaderMultiple
 `}</code></pre>) 
+
 export const FileUploaderSingleTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { useState, SyntheticEvent } from 'react'
 
@@ -690,3 +686,4 @@ const FileUploaderSingle = () => {
 
 export default FileUploaderSingle
 `}</code></pre>) 
+

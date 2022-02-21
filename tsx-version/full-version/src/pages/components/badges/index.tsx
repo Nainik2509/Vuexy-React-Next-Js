@@ -15,7 +15,7 @@ import BadgesAlignment from 'src/views/components/badges/BadgesAlignment'
 import BadgesVisibility from 'src/views/components/badges/BadgesVisibility'
 
 // ** Source code imports
-import * as source from 'src/views/components/badges/BadgeSourceCode'
+import * as source from 'src/views/components/badges/BadgesSourceCode'
 
 const Pagination = () => {
   return (
@@ -25,7 +25,7 @@ const Pagination = () => {
           title='Simple Badges'
           code={{
             tsx: source.BadgesBasicTSXCode,
-            jsx: source.BadgesBasicJSXCode,
+            jsx: source.BadgesBasicJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -40,7 +40,7 @@ const Pagination = () => {
           title='Dot Badges'
           code={{
             tsx: source.BadgesDotTSXCode,
-            jsx: source.BadgesDotJSXCode,
+            jsx: source.BadgesDotJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -54,7 +54,7 @@ const Pagination = () => {
           title='Badge Alignment'
           code={{
             tsx: source.BadgesAlignmentTSXCode,
-            jsx: source.BadgesAlignmentJSXCode,
+            jsx: source.BadgesAlignmentJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -68,7 +68,7 @@ const Pagination = () => {
           title='Maximum Value'
           code={{
             tsx: source.BadgesMaxValueTSXCode,
-            jsx: source.BadgesMaxValueJSXCode,
+            jsx: source.BadgesMaxValueJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -82,7 +82,7 @@ const Pagination = () => {
           title='Badge Overlap'
           code={{
             tsx: source.BadgesOverlapTSXCode,
-            jsx: source.BadgesOverlapJSXCode,
+            jsx: source.BadgesOverlapJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -96,7 +96,7 @@ const Pagination = () => {
           title='Badge visibility'
           code={{
             tsx: source.BadgesVisibilityTSXCode,
-            jsx: source.BadgesVisibilityJSXCode,
+            jsx: source.BadgesVisibilityJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>
@@ -110,7 +110,7 @@ const Pagination = () => {
           title='Custom Light Badges'
           code={{
             tsx: source.BadgesLightTSXCode,
-            jsx: source.BadgesLightJSXCode,
+            jsx: source.BadgesLightJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 2 }}>

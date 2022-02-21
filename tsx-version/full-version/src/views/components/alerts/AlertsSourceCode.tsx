@@ -38,6 +38,46 @@ const AlertsBasic = () => {
 
 export default AlertsBasic
 `}</code></pre>) 
+export const AlertsBasicJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Alert from '@mui/material/Alert'
+
+const AlertsBasic = () => {
+  return (
+    <div className='demo-space-y'>
+      <Alert severity='error'>This is an error alert — check it out!</Alert>
+      <Alert severity='warning'>This is an warning alert — check it out!</Alert>
+      <Alert severity='info'>This is an info alert — check it out!</Alert>
+      <Alert severity='success'>This is an success alert — check it out!</Alert>
+    </div>
+  )
+}
+
+export default AlertsBasic
+`}</code></pre>) 
+export const AlertsFilledJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Alert from '@mui/material/Alert'
+
+const AlertsFilled = () => {
+  return (
+    <div className='demo-space-y'>
+      <Alert variant='filled' severity='error'>
+        This is an error alert — check it out!
+      </Alert>
+      <Alert variant='filled' severity='warning'>
+        This is an warning alert — check it out!
+      </Alert>
+      <Alert variant='filled' severity='info'>
+        This is an info alert — check it out!
+      </Alert>
+      <Alert variant='filled' severity='success'>
+        This is an success alert — check it out!
+      </Alert>
+    </div>
+  )
+}
+
+export default AlertsFilled
+`}</code></pre>) 
 export const AlertsDescriptionJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Alert from '@mui/material/Alert'
 import AlertTitle from '@mui/material/AlertTitle'
@@ -66,22 +106,6 @@ const AlertsDescription = () => {
 }
 
 export default AlertsDescription
-`}</code></pre>) 
-export const AlertsBasicJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Alert from '@mui/material/Alert'
-
-const AlertsBasic = () => {
-  return (
-    <div className='demo-space-y'>
-      <Alert severity='error'>This is an error alert — check it out!</Alert>
-      <Alert severity='warning'>This is an warning alert — check it out!</Alert>
-      <Alert severity='info'>This is an info alert — check it out!</Alert>
-      <Alert severity='success'>This is an success alert — check it out!</Alert>
-    </div>
-  )
-}
-
-export default AlertsBasic
 `}</code></pre>) 
 export const AlertsDismissibleJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
@@ -184,30 +208,6 @@ const AlertsDismissible = () => {
 
 export default AlertsDismissible
 `}</code></pre>) 
-export const AlertsFilledJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Alert from '@mui/material/Alert'
-
-const AlertsFilled = () => {
-  return (
-    <div className='demo-space-y'>
-      <Alert variant='filled' severity='error'>
-        This is an error alert — check it out!
-      </Alert>
-      <Alert variant='filled' severity='warning'>
-        This is an warning alert — check it out!
-      </Alert>
-      <Alert variant='filled' severity='info'>
-        This is an info alert — check it out!
-      </Alert>
-      <Alert variant='filled' severity='success'>
-        This is an success alert — check it out!
-      </Alert>
-    </div>
-  )
-}
-
-export default AlertsFilled
-`}</code></pre>) 
 export const AlertsOutlinedJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Alert from '@mui/material/Alert'
 
@@ -272,6 +272,7 @@ const AlertsBasic = () => {
 
 export default AlertsBasic
 `}</code></pre>) 
+
 export const AlertsBasicTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Alert from '@mui/material/Alert'
 
@@ -288,6 +289,7 @@ const AlertsBasic = () => {
 
 export default AlertsBasic
 `}</code></pre>) 
+
 export const AlertsDismissibleTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
@@ -386,30 +388,7 @@ const AlertsDismissible = () => {
 
 export default AlertsDismissible
 `}</code></pre>) 
-export const AlertsOutlinedTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Alert from '@mui/material/Alert'
 
-const AlertsOutlined = () => {
-  return (
-    <div className='demo-space-y'>
-      <Alert variant='outlined' severity='error'>
-        This is an error alert — check it out!
-      </Alert>
-      <Alert variant='outlined' severity='warning'>
-        This is an warning alert — check it out!
-      </Alert>
-      <Alert variant='outlined' severity='info'>
-        This is an info alert — check it out!
-      </Alert>
-      <Alert variant='outlined' severity='success'>
-        This is an success alert — check it out!
-      </Alert>
-    </div>
-  )
-}
-
-export default AlertsOutlined
-`}</code></pre>) 
 export const AlertsDescriptionTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Alert from '@mui/material/Alert'
 import AlertTitle from '@mui/material/AlertTitle'
@@ -439,6 +418,32 @@ const AlertsDescription = () => {
 
 export default AlertsDescription
 `}</code></pre>) 
+
+export const AlertsOutlinedTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Alert from '@mui/material/Alert'
+
+const AlertsOutlined = () => {
+  return (
+    <div className='demo-space-y'>
+      <Alert variant='outlined' severity='error'>
+        This is an error alert — check it out!
+      </Alert>
+      <Alert variant='outlined' severity='warning'>
+        This is an warning alert — check it out!
+      </Alert>
+      <Alert variant='outlined' severity='info'>
+        This is an info alert — check it out!
+      </Alert>
+      <Alert variant='outlined' severity='success'>
+        This is an success alert — check it out!
+      </Alert>
+    </div>
+  )
+}
+
+export default AlertsOutlined
+`}</code></pre>) 
+
 export const AlertsFilledTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Alert from '@mui/material/Alert'
 
@@ -463,3 +468,4 @@ const AlertsFilled = () => {
 
 export default AlertsFilled
 `}</code></pre>) 
+

@@ -1,8 +1,8 @@
 // ** MUI imports
-import Box from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
+import Box, { BoxProps } from '@mui/material/Box'
 
-const DropzoneWrapper = styled(Box)(({ theme }) => ({
+const DropzoneWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   '&.dropzone, & .dropzone': {
     minHeight: 300,
     display: 'flex',

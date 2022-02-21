@@ -1,7 +1,7 @@
 /**
  * ! Icons Imports:
  * ! You need to import all the icons which come from the API or from your server and then add these icons in 'icons' variable.
- * ! If you need all the icons from the library, use "import * as Icon from '@mitch528/mdi-material-ui'"
+ * ! If you need all the icons from the library, use "import * as Icon from 'mdi-material-ui'"
  * */
 import Tab from 'mdi-material-ui/Tab'
 import Menu from 'mdi-material-ui/Menu'

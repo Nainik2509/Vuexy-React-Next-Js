@@ -1,10 +1,3 @@
-export const EditorUncontrolledJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** Component Import
-import ReactDraftWysiwyg from 'src/@core/components/react-draft-wysiwyg'
-
-const EditorUncontrolled = () => <ReactDraftWysiwyg />
-
-export default EditorUncontrolled
-`}</code></pre>) 
 export const EditorControlledJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
@@ -23,7 +16,7 @@ const EditorControlled = () => {
 
 export default EditorControlled
 `}</code></pre>) 
-export const EditorUncontrolledTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** Component Import
+export const EditorUncontrolledJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** Component Import
 import ReactDraftWysiwyg from 'src/@core/components/react-draft-wysiwyg'
 
 const EditorUncontrolled = () => <ReactDraftWysiwyg />
@@ -48,3 +41,12 @@ const EditorControlled = () => {
 
 export default EditorControlled
 `}</code></pre>) 
+
+export const EditorUncontrolledTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** Component Import
+import ReactDraftWysiwyg from 'src/@core/components/react-draft-wysiwyg'
+
+const EditorUncontrolled = () => <ReactDraftWysiwyg />
+
+export default EditorUncontrolled
+`}</code></pre>) 
+

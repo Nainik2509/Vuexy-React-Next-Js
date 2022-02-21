@@ -19,8 +19,8 @@ import { CalendarColors, CalendarFiltersType } from 'src/types/apps/calendarType
 // ** FullCalendar & App Components Imports
 import Calendar from 'src/views/apps/calendar/Calendar'
 import SidebarLeft from 'src/views/apps/calendar/SidebarLeft'
+import CalendarWrapper from 'src/@core/styles/libs/fullcalendar'
 import AddEventSidebar from 'src/views/apps/calendar/AddEventSidebar'
-import { CalendarWrapper } from 'src/views/apps/calendar/CalendarWrapper'
 
 // ** Actions
 import {

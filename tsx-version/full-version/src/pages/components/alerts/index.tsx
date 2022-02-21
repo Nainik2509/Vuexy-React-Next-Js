@@ -14,7 +14,7 @@ import AlertsDescription from 'src/views/components/alerts/AlertsDescription'
 import AlertsDismissible from 'src/views/components/alerts/AlertsDismissible'
 
 // ** Source code imports
-import * as source from 'src/views/components/alerts/AlertSourceCode'
+import * as source from 'src/views/components/alerts/AlertsSourceCode'
 
 const Alerts = () => {
   return (
@@ -24,7 +24,7 @@ const Alerts = () => {
           title='Basic'
           code={{
             tsx: source.AlertsBasicTSXCode,
-            jsx: source.AlertsBasicJSXCode,
+            jsx: source.AlertsBasicJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -39,7 +39,7 @@ const Alerts = () => {
           title='Outlined'
           code={{
             tsx: source.AlertsOutlinedTSXCode,
-            jsx: source.AlertsOutlinedJSXCode,
+            jsx: source.AlertsOutlinedJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -53,7 +53,7 @@ const Alerts = () => {
           title='Filled'
           code={{
             tsx: source.AlertsFilledTSXCode,
-            jsx: source.AlertsFilledJSXCode,
+            jsx: source.AlertsFilledJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -67,7 +67,7 @@ const Alerts = () => {
           title='Action'
           code={{
             tsx: source.AlertsActionsTSXCode,
-            jsx: source.AlertsActionsJSXCode,
+            jsx: source.AlertsActionsJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -83,7 +83,7 @@ const Alerts = () => {
           title='Description'
           code={{
             tsx: source.AlertsDescriptionTSXCode,
-            jsx: source.AlertsDescriptionJSXCode,
+            jsx: source.AlertsDescriptionJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -97,7 +97,7 @@ const Alerts = () => {
           title='Dismissible'
           code={{
             tsx: source.AlertsDismissibleTSXCode,
-            jsx: source.AlertsDismissibleJSXCode,
+            jsx: source.AlertsDismissibleJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>

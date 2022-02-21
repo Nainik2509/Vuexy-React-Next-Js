@@ -75,8 +75,6 @@ const StepperAlternativeLabel = () => {
     showPassword2: false
   })
 
-  // Handle Snackbar
-
   // Handle Stepper
   const handleBack = () => {
     setActiveStep(prevActiveStep => prevActiveStep - 1)

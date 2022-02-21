@@ -104,7 +104,7 @@ const CardSnippet = (props: CardSnippetProps) => {
                 size='small'
                 color='primary'
                 value={tabValue}
-                onChange={(e, newValue) => (newValue !== tabValue ? setTabValue(newValue) : null)}
+                onChange={(e, newValue) => (newValue !== null ? setTabValue(newValue) : null)}
               >
                 {code.tsx !== null ? (
                   <ToggleButton value='tsx'>

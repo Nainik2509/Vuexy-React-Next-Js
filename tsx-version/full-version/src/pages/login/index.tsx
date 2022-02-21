@@ -118,14 +118,12 @@ const LoginPage = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false)
 
   // ** Hooks
-  const theme = useTheme()
-
-  // const { login } = useContext(Auth)
   const auth = useAuth()
+  const theme = useTheme()
+  const bgClasses = useBgColor()
   const {
     settings: { skin }
   } = useSettings()
-  const bgClasses = useBgColor()
   const {
     control,
     setError,

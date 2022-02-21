@@ -1,30 +1,3 @@
-export const ChipsAvatarJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Chip from '@mui/material/Chip'
-import Avatar from '@mui/material/Avatar'
-
-// ** Icons Imports
-import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
-
-const ChipsAvatar = () => {
-  return (
-    <div className='demo-space-x'>
-      <Chip label='Default' avatar={<Avatar />} />
-      <Chip label='Howard Paul' avatar={<Avatar src='/images/avatars/7.png' alt='User Avatar' />} />
-      <Chip label='Maurice Bell' avatar={<Avatar>M</Avatar>} />
-      <Chip
-        label='Archived'
-        avatar={
-          <Avatar>
-            <ArchiveOutline fontSize='small' />
-          </Avatar>
-        }
-      />
-    </div>
-  )
-}
-
-export default ChipsAvatar
-`}</code></pre>) 
 export const ChipsArrayJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
@@ -62,6 +35,65 @@ const ChipsArray = () => {
 
 export default ChipsArray
 `}</code></pre>) 
+export const ChipsAvatarJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Chip from '@mui/material/Chip'
+import Avatar from '@mui/material/Avatar'
+
+// ** Icons Imports
+import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
+
+const ChipsAvatar = () => {
+  return (
+    <div className='demo-space-x'>
+      <Chip label='Default' avatar={<Avatar />} />
+      <Chip label='Howard Paul' avatar={<Avatar src='/images/avatars/7.png' alt='User Avatar' />} />
+      <Chip label='Maurice Bell' avatar={<Avatar>M</Avatar>} />
+      <Chip
+        label='Archived'
+        avatar={
+          <Avatar>
+            <ArchiveOutline fontSize='small' />
+          </Avatar>
+        }
+      />
+    </div>
+  )
+}
+
+export default ChipsAvatar
+`}</code></pre>) 
+export const ChipsClickableJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Chip from '@mui/material/Chip'
+
+const ChipsClickable = () => {
+  const handleClick = () => {
+    console.info('You clicked the Chip.')
+  }
+
+  return (
+    <div className='demo-space-x'>
+      <Chip label='Clickable' onClick={handleClick} />
+      <Chip label='Clickable Link' component='a' href='https://themeselection.com/' target='_blank' clickable />
+    </div>
+  )
+}
+
+export default ChipsClickable
+`}</code></pre>) 
+export const ChipsDisabledJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Chip from '@mui/material/Chip'
+
+const ChipsDisabled = () => {
+  return (
+    <div className='demo-space-x'>
+      <Chip label='Basic' disabled />
+      <Chip label='Outlined' variant='outlined' disabled />
+    </div>
+  )
+}
+
+export default ChipsDisabled
+`}</code></pre>) 
 export const ChipsColorsJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { Fragment } from 'react'
 
@@ -95,6 +127,55 @@ const ChipsColors = () => {
 }
 
 export default ChipsColors
+`}</code></pre>) 
+export const ChipsOnDeleteJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { Fragment } from 'react'
+
+// ** MUI Imports
+import Chip from '@mui/material/Chip'
+import Typography from '@mui/material/Typography'
+
+// ** Icons Imports
+import DeleteOutline from 'mdi-material-ui/DeleteOutline'
+
+const ChipsOnDelete = () => {
+  const handleDelete = () => {
+    console.info('You clicked the delete icon.')
+  }
+
+  return (
+    <Fragment>
+      <Typography sx={{ fontWeight: 500 }}>Default</Typography>
+      <div className='demo-space-x'>
+        <Chip label='Basic' variant='outlined' onDelete={handleDelete} />
+        <Chip label='Primary' color='primary' variant='outlined' onDelete={handleDelete} />
+        <Chip label='Secondary' color='secondary' variant='outlined' onDelete={handleDelete} />
+      </div>
+      <Typography sx={{ marginTop: 4, fontWeight: 500 }}>Custom</Typography>
+      <div className='demo-space-x'>
+        <Chip label='Basic' onDelete={handleDelete} deleteIcon={<DeleteOutline />} />
+        <Chip label='Primary' color='primary' onDelete={handleDelete} deleteIcon={<DeleteOutline />} />
+        <Chip label='Secondary' color='secondary' onDelete={handleDelete} deleteIcon={<DeleteOutline />} />
+      </div>
+    </Fragment>
+  )
+}
+
+export default ChipsOnDelete
+`}</code></pre>) 
+export const ChipsSizesJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Chip from '@mui/material/Chip'
+
+const ChipsSizes = () => {
+  return (
+    <div className='demo-space-x'>
+      <Chip label='Default' />
+      <Chip label='Small' size='small' />
+    </div>
+  )
+}
+
+export default ChipsSizes
 `}</code></pre>) 
 export const ChipsIconJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Chip from '@mui/material/Chip'
@@ -132,87 +213,6 @@ const ChipsCustomized = () => {
 
 export default ChipsCustomized
 `}</code></pre>) 
-export const ChipsOnDeleteJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { Fragment } from 'react'
-
-// ** MUI Imports
-import Chip from '@mui/material/Chip'
-import Typography from '@mui/material/Typography'
-
-// ** Icons Imports
-import DeleteOutline from 'mdi-material-ui/DeleteOutline'
-
-const ChipsOnDelete = () => {
-  const handleDelete = () => {
-    console.info('You clicked the delete icon.')
-  }
-
-  return (
-    <Fragment>
-      <Typography sx={{ fontWeight: 500 }}>Default</Typography>
-      <div className='demo-space-x'>
-        <Chip label='Basic' variant='outlined' onDelete={handleDelete} />
-        <Chip label='Primary' color='primary' variant='outlined' onDelete={handleDelete} />
-        <Chip label='Secondary' color='secondary' variant='outlined' onDelete={handleDelete} />
-      </div>
-      <Typography sx={{ marginTop: 4, fontWeight: 500 }}>Custom</Typography>
-      <div className='demo-space-x'>
-        <Chip label='Basic' onDelete={handleDelete} deleteIcon={<DeleteOutline />} />
-        <Chip label='Primary' color='primary' onDelete={handleDelete} deleteIcon={<DeleteOutline />} />
-        <Chip label='Secondary' color='secondary' onDelete={handleDelete} deleteIcon={<DeleteOutline />} />
-      </div>
-    </Fragment>
-  )
-}
-
-export default ChipsOnDelete
-`}</code></pre>) 
-export const ChipsClickableJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Chip from '@mui/material/Chip'
-
-const ChipsClickable = () => {
-  const handleClick = () => {
-    console.info('You clicked the Chip.')
-  }
-
-  return (
-    <div className='demo-space-x'>
-      <Chip label='Clickable' onClick={handleClick} />
-      <Chip label='Clickable Link' component='a' href='https://themeselection.com/' target='_blank' clickable />
-    </div>
-  )
-}
-
-export default ChipsClickable
-`}</code></pre>) 
-export const ChipsSizesJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Chip from '@mui/material/Chip'
-
-const ChipsSizes = () => {
-  return (
-    <div className='demo-space-x'>
-      <Chip label='Default' />
-      <Chip label='Small' size='small' />
-    </div>
-  )
-}
-
-export default ChipsSizes
-`}</code></pre>) 
-export const ChipsDisabledJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Chip from '@mui/material/Chip'
-
-const ChipsDisabled = () => {
-  return (
-    <div className='demo-space-x'>
-      <Chip label='Basic' disabled />
-      <Chip label='Outlined' variant='outlined' disabled />
-    </div>
-  )
-}
-
-export default ChipsDisabled
-`}</code></pre>) 
 export const ChipsVariantsJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Chip from '@mui/material/Chip'
 
@@ -245,6 +245,85 @@ const ChipsClickable = () => {
 
 export default ChipsClickable
 `}</code></pre>) 
+
+export const ChipsColorsTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { Fragment } from 'react'
+
+// ** MUI Imports
+import Chip from '@mui/material/Chip'
+import Typography from '@mui/material/Typography'
+
+const ChipsColors = () => {
+  return (
+    <Fragment>
+      <Typography sx={{ fontWeight: 500 }}>Filled Chips</Typography>
+      <div className='demo-space-x'>
+        <Chip label='Primary' color='primary' />
+        <Chip label='Secondary' color='secondary' />
+        <Chip label='Success' color='success' />
+        <Chip label='Error' color='error' />
+        <Chip label='Warning' color='warning' />
+        <Chip label='Info' color='info' />
+      </div>
+      <Typography sx={{ marginTop: 4, fontWeight: 500 }}>Outlined Chips</Typography>
+      <div className='demo-space-x'>
+        <Chip label='Primary' color='primary' variant='outlined' />
+        <Chip label='Secondary' color='secondary' variant='outlined' />
+        <Chip label='Success' color='success' variant='outlined' />
+        <Chip label='Error' color='error' variant='outlined' />
+        <Chip label='Warning' color='warning' variant='outlined' />
+        <Chip label='Info' color='info' variant='outlined' />
+      </div>
+    </Fragment>
+  )
+}
+
+export default ChipsColors
+`}</code></pre>) 
+
+export const ChipsDisabledTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Chip from '@mui/material/Chip'
+
+const ChipsDisabled = () => {
+  return (
+    <div className='demo-space-x'>
+      <Chip label='Basic' disabled />
+      <Chip label='Outlined' variant='outlined' disabled />
+    </div>
+  )
+}
+
+export default ChipsDisabled
+`}</code></pre>) 
+
+export const ChipsAvatarTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Chip from '@mui/material/Chip'
+import Avatar from '@mui/material/Avatar'
+
+// ** Icons Imports
+import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
+
+const ChipsAvatar = () => {
+  return (
+    <div className='demo-space-x'>
+      <Chip label='Default' avatar={<Avatar />} />
+      <Chip label='Howard Paul' avatar={<Avatar src='/images/avatars/7.png' alt='User Avatar' />} />
+      <Chip label='Maurice Bell' avatar={<Avatar>M</Avatar>} />
+      <Chip
+        label='Archived'
+        avatar={
+          <Avatar>
+            <ArchiveOutline fontSize='small' />
+          </Avatar>
+        }
+      />
+    </div>
+  )
+}
+
+export default ChipsAvatar
+`}</code></pre>) 
+
 export const ChipsArrayTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
@@ -289,67 +368,7 @@ const ChipsArray = () => {
 
 export default ChipsArray
 `}</code></pre>) 
-export const ChipsColorsTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { Fragment } from 'react'
 
-// ** MUI Imports
-import Chip from '@mui/material/Chip'
-import Typography from '@mui/material/Typography'
-
-const ChipsColors = () => {
-  return (
-    <Fragment>
-      <Typography sx={{ fontWeight: 500 }}>Filled Chips</Typography>
-      <div className='demo-space-x'>
-        <Chip label='Primary' color='primary' />
-        <Chip label='Secondary' color='secondary' />
-        <Chip label='Success' color='success' />
-        <Chip label='Error' color='error' />
-        <Chip label='Warning' color='warning' />
-        <Chip label='Info' color='info' />
-      </div>
-      <Typography sx={{ marginTop: 4, fontWeight: 500 }}>Outlined Chips</Typography>
-      <div className='demo-space-x'>
-        <Chip label='Primary' color='primary' variant='outlined' />
-        <Chip label='Secondary' color='secondary' variant='outlined' />
-        <Chip label='Success' color='success' variant='outlined' />
-        <Chip label='Error' color='error' variant='outlined' />
-        <Chip label='Warning' color='warning' variant='outlined' />
-        <Chip label='Info' color='info' variant='outlined' />
-      </div>
-    </Fragment>
-  )
-}
-
-export default ChipsColors
-`}</code></pre>) 
-export const ChipsAvatarTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Chip from '@mui/material/Chip'
-import Avatar from '@mui/material/Avatar'
-
-// ** Icons Imports
-import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
-
-const ChipsAvatar = () => {
-  return (
-    <div className='demo-space-x'>
-      <Chip label='Default' avatar={<Avatar />} />
-      <Chip label='Howard Paul' avatar={<Avatar src='/images/avatars/7.png' alt='User Avatar' />} />
-      <Chip label='Maurice Bell' avatar={<Avatar>M</Avatar>} />
-      <Chip
-        label='Archived'
-        avatar={
-          <Avatar>
-            <ArchiveOutline fontSize='small' />
-          </Avatar>
-        }
-      />
-    </div>
-  )
-}
-
-export default ChipsAvatar
-`}</code></pre>) 
 export const ChipsIconTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Chip from '@mui/material/Chip'
 
@@ -368,24 +387,7 @@ const ChipsIcon = () => {
 
 export default ChipsIcon
 `}</code></pre>) 
-export const ChipsLightTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** Custom Components Imports
-import CustomChip from 'src/@core/components/mui/chip'
 
-const ChipsCustomized = () => {
-  return (
-    <div className='demo-space-x'>
-      <CustomChip label='Primary' skin='light' color='primary' />
-      <CustomChip label='Secondary' skin='light' color='secondary' />
-      <CustomChip label='Success' skin='light' color='success' />
-      <CustomChip label='Error' skin='light' color='error' />
-      <CustomChip label='Warning' skin='light' color='warning' />
-      <CustomChip label='Info' skin='light' color='info' />
-    </div>
-  )
-}
-
-export default ChipsCustomized
-`}</code></pre>) 
 export const ChipsOnDeleteTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { Fragment } from 'react'
 
@@ -421,20 +423,26 @@ const ChipsOnDelete = () => {
 
 export default ChipsOnDelete
 `}</code></pre>) 
-export const ChipsDisabledTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Chip from '@mui/material/Chip'
 
-const ChipsDisabled = () => {
+export const ChipsLightTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** Custom Components Imports
+import CustomChip from 'src/@core/components/mui/chip'
+
+const ChipsCustomized = () => {
   return (
     <div className='demo-space-x'>
-      <Chip label='Basic' disabled />
-      <Chip label='Outlined' variant='outlined' disabled />
+      <CustomChip label='Primary' skin='light' color='primary' />
+      <CustomChip label='Secondary' skin='light' color='secondary' />
+      <CustomChip label='Success' skin='light' color='success' />
+      <CustomChip label='Error' skin='light' color='error' />
+      <CustomChip label='Warning' skin='light' color='warning' />
+      <CustomChip label='Info' skin='light' color='info' />
     </div>
   )
 }
 
-export default ChipsDisabled
+export default ChipsCustomized
 `}</code></pre>) 
+
 export const ChipsVariantsTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Chip from '@mui/material/Chip'
 
@@ -449,6 +457,7 @@ const ChipsVariants = () => {
 
 export default ChipsVariants
 `}</code></pre>) 
+
 export const ChipsSizesTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Chip from '@mui/material/Chip'
 
@@ -463,3 +472,4 @@ const ChipsSizes = () => {
 
 export default ChipsSizes
 `}</code></pre>) 
+
