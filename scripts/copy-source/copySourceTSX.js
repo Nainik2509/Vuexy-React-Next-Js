@@ -111,7 +111,7 @@ if (!doesJSXVersionExits) {
           console.log(err);
           return
         } else {
-          const arr = []
+          const linesToReplace = []
           let result = data
           const splitData = data.split('\r\n')
 
@@ -119,12 +119,12 @@ if (!doesJSXVersionExits) {
             if (line.trim().includes('jsx: null')) {
               const replaced = splitData[index - 1] ? splitData[index - 1].replace('tsx: ', '').replace('TSXCode', 'JSXCode').replace(',', '').trim() : null
 
-              arr.push({ line: line.trim(), replacement: replaced ? line.trim().replace('null', replaced) : '' })
+              linesToReplace.push({ line: line.trim(), replacement: replaced ? line.trim().replace('null', replaced) : '' })
             }
           })
 
 
-          arr.forEach(r => {
+          linesToReplace.forEach(r => {
             result = result.replace(r.line, r.replacement)
           })
 
