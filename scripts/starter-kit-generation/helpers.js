@@ -358,6 +358,8 @@ const dataToReplace = [
         from: "import { useTranslation } from 'react-i18next'",
         to: ''
       },
+      { from: new RegExp(/\/\/ \*\* Third Party Import/), to: '' },
+      { from: new RegExp(/\/\/ \*\* Hook/), to: '' },
       {
         from: 'const { t } = useTranslation()',
         to: ''
@@ -375,6 +377,8 @@ const dataToReplace = [
         from: "import { useTranslation } from 'react-i18next'",
         to: ''
       },
+      { from: new RegExp(/\/\/ \*\* Third Party Import/), to: '' },
+      { from: new RegExp(/\/\/ \*\* Hook/), to: '' },
       {
         from: 'const { t } = useTranslation()',
         to: ''
@@ -565,6 +569,39 @@ const dataToReplace = [
 
     ]
   },
+  {
+    file: `${pathConfig.starterKitTSXPath}/src/next.d.ts`,
+    replacements: [
+      {
+        from: "import type { ACLObj } from 'src/configs/acl'",
+        to: ''
+      },
+      {
+        from: 'acl?: ACLObj',
+        to: ''
+      },
+      {
+        from: 'authGuard?: boolean',
+        to: ''
+      },
+      {
+        from: 'guestGuard?: boolean',
+        to: ''
+      },
+    ]
+  },
+]
+
+const filesToRemove = [
+  BuyNowComponentPathTSX,
+  BuyNowComponentPathJSX,
+  `${pathConfig.starterKitTSXPath}/src/configs/acl.ts`,
+  `${pathConfig.starterKitJSXPath}/src/configs/acl.js`,
+  `${pathConfig.starterKitTSXPath}/src/configs/auth.ts`,
+  `${pathConfig.starterKitTSXPath}/src/configs/auth.ts`,
+  `${pathConfig.starterKitTSXPath}/src/configs/i18n.ts`,
+  `${pathConfig.starterKitJSXPath}/src/configs/i18n.js`,
+
 ]
 
 module.exports = {
@@ -572,6 +609,7 @@ module.exports = {
   AppPathJSX,
   LoginPathTSX,
   LoginPathJSX,
+  filesToRemove,
   filesToCopyTSX,
   filesToCopyJSX,
   filesToReplace,
