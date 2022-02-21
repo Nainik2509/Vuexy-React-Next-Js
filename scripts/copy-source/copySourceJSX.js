@@ -41,7 +41,7 @@ const generateJSXSourceCode = () => {
                 '`}' +
                 '</code>' +
                 '</pre>' +
-                ') \n'
+                ') \n\n'
               fs.writeFile(sourceToReadJSX, '', err => {
                 if (err) {
                   console.log(err)

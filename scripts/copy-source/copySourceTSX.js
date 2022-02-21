@@ -48,7 +48,7 @@ const generateTSXSourceCode = () => {
               '`}' +
               '</code>' +
               '</pre>' +
-              ') \n'
+              ') \n\n'
 
             fs.writeFile(sourceToReadTSX, '', err => {
               if (err) {
