@@ -1,4 +1,6 @@
-export const InputMaskExamplesJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+export const InputMaskExamplesJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
 import Grid from '@mui/material/Grid'
 import InputLabel from '@mui/material/InputLabel'
 
@@ -80,8 +82,13 @@ const InputMaskExamples = () => {
 }
 
 export default InputMaskExamples
-`}</code></pre>) 
-export const InputMaskExamplesTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+`}</code>
+  </pre>
+)
+
+export const InputMaskExamplesTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
 import Grid from '@mui/material/Grid'
 import InputLabel from '@mui/material/InputLabel'
 
@@ -163,5 +170,6 @@ const InputMaskExamples = () => {
 }
 
 export default InputMaskExamples
-`}</code></pre>) 
-
+`}</code>
+  </pre>
+)

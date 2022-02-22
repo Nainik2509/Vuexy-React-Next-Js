@@ -37,7 +37,7 @@ const Pagination = () => {
           title='Simple Pagination'
           code={{
             tsx: source.PaginationSimpleTSXCode,
-            jsx: source.PaginationSimpleJSXCode,
+            jsx: source.PaginationSimpleJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -52,7 +52,7 @@ const Pagination = () => {
           title='Outlined Pagination'
           code={{
             tsx: source.PaginationOutlinedTSXCode,
-            jsx: source.PaginationOutlinedJSXCode,
+            jsx: source.PaginationOutlinedJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -66,7 +66,7 @@ const Pagination = () => {
           title='Disabled Pagination'
           code={{
             tsx: source.PaginationDisabledTSXCode,
-            jsx: source.PaginationDisabledJSXCode,
+            jsx: source.PaginationDisabledJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -80,7 +80,7 @@ const Pagination = () => {
           title='Rounded Pagination'
           code={{
             tsx: source.PaginationRoundedTSXCode,
-            jsx: source.PaginationRoundedJSXCode,
+            jsx: source.PaginationRoundedJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -94,7 +94,7 @@ const Pagination = () => {
           title='Sizes'
           code={{
             tsx: source.PaginationSizesTSXCode,
-            jsx: source.PaginationSizesJSXCode,
+            jsx: source.PaginationSizesJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -108,7 +108,7 @@ const Pagination = () => {
           title='Buttons'
           code={{
             tsx: source.PaginationButtonsTSXCode,
-            jsx: source.PaginationButtonsJSXCode,
+            jsx: source.PaginationButtonsJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -124,7 +124,7 @@ const Pagination = () => {
           title='Controlled Pagination'
           code={{
             tsx: source.PaginationControlledTSXCode,
-            jsx: source.PaginationControlledJSXCode,
+            jsx: source.PaginationControlledJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -138,7 +138,7 @@ const Pagination = () => {
           title='Pagination Ranges'
           code={{
             tsx: source.PaginationRangesTSXCode,
-            jsx: source.PaginationRangesJSXCode,
+            jsx: source.PaginationRangesJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>

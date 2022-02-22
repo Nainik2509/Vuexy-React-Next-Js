@@ -40,7 +40,7 @@ const Editors = () => {
             title='Controlled Wysiwyg Editor'
             code={{
               tsx: source.EditorControlledTSXCode,
-              jsx: source.EditorControlledJSXCode,
+              jsx: source.EditorControlledJSXCode
             }}
           >
             <EditorControlled />
@@ -52,7 +52,7 @@ const Editors = () => {
             title='Uncontrolled Wysiwyg Editor'
             code={{
               tsx: source.EditorUncontrolledTSXCode,
-              jsx: source.EditorUncontrolledJSXCode,
+              jsx: source.EditorUncontrolledJSXCode
             }}
           >
             <EditorUncontrolled />

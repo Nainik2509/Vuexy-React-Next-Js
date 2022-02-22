@@ -34,7 +34,7 @@ const Sliders = () => {
           title='Basic Slider'
           code={{
             tsx: source.SliderBasicTSXCode,
-            jsx: source.SliderBasicJSXCode,
+            jsx: source.SliderBasicJSXCode
           }}
           sx={{ px: 2 }}
         >
@@ -51,7 +51,7 @@ const Sliders = () => {
           title='Controlled and Uncontrolled'
           code={{
             tsx: source.SliderControlledUncontrolledTSXCode,
-            jsx: source.SliderControlledUncontrolledJSXCode,
+            jsx: source.SliderControlledUncontrolledJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -66,7 +66,7 @@ const Sliders = () => {
           title='Discrete Slider'
           code={{
             tsx: source.SliderDiscreteTSXCode,
-            jsx: source.SliderDiscreteJSXCode,
+            jsx: source.SliderDiscreteJSXCode
           }}
           sx={{ px: 2 }}
         >
@@ -81,7 +81,7 @@ const Sliders = () => {
           title='Small Steps'
           code={{
             tsx: source.SliderSmallStepsTSXCode,
-            jsx: source.SliderSmallStepsJSXCode,
+            jsx: source.SliderSmallStepsJSXCode
           }}
           sx={{ px: 2 }}
         >
@@ -96,7 +96,7 @@ const Sliders = () => {
           title='Custom Marks'
           code={{
             tsx: source.SliderCustomMarksTSXCode,
-            jsx: source.SliderCustomMarksJSXCode,
+            jsx: source.SliderCustomMarksJSXCode
           }}
           sx={{ px: 2 }}
         >
@@ -111,7 +111,7 @@ const Sliders = () => {
           title='Restricted Values'
           code={{
             tsx: source.SliderRestrictedValuesTSXCode,
-            jsx: source.SliderRestrictedValuesJSXCode,
+            jsx: source.SliderRestrictedValuesJSXCode
           }}
           sx={{ px: 2 }}
         >
@@ -128,7 +128,7 @@ const Sliders = () => {
           sx={{ px: 2 }}
           code={{
             tsx: source.SliderLabelAlwaysVisibleTSXCode,
-            jsx: source.SliderLabelAlwaysVisibleJSXCode,
+            jsx: source.SliderLabelAlwaysVisibleJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -142,7 +142,7 @@ const Sliders = () => {
           title='Range Slider'
           code={{
             tsx: source.SliderRangeTSXCode,
-            jsx: source.SliderRangeJSXCode,
+            jsx: source.SliderRangeJSXCode
           }}
           sx={{ px: 2 }}
         >
@@ -158,7 +158,7 @@ const Sliders = () => {
           title='Colors'
           code={{
             tsx: source.SliderColorsTSXCode,
-            jsx: source.SliderColorsJSXCode,
+            jsx: source.SliderColorsJSXCode
           }}
           sx={{ px: 2 }}
         >
@@ -173,7 +173,7 @@ const Sliders = () => {
           title='Customized Slider'
           code={{
             tsx: source.SliderCustomizedTSXCode,
-            jsx: source.SliderCustomizedJSXCode,
+            jsx: source.SliderCustomizedJSXCode
           }}
           sx={{ px: 2 }}
         >
@@ -188,7 +188,7 @@ const Sliders = () => {
           title='Custom Colors'
           code={{
             tsx: source.SliderCustomColorsTSXCode,
-            jsx: source.SliderCustomColorsJSXCode,
+            jsx: source.SliderCustomColorsJSXCode
           }}
           sx={{ px: 2 }}
         >
@@ -203,7 +203,7 @@ const Sliders = () => {
           title='Vertical Sliders'
           code={{
             tsx: source.SliderVerticalTSXCode,
-            jsx: source.SliderVerticalJSXCode,
+            jsx: source.SliderVerticalJSXCode
           }}
           sx={{ px: 2 }}
         >
@@ -218,7 +218,7 @@ const Sliders = () => {
           title='Removed Track'
           code={{
             tsx: source.SliderRemovedTrackTSXCode,
-            jsx: source.SliderRemovedTrackJSXCode,
+            jsx: source.SliderRemovedTrackJSXCode
           }}
           sx={{ px: 2 }}
         >
@@ -233,7 +233,7 @@ const Sliders = () => {
           title='Inverted Track'
           code={{
             tsx: source.SliderInvertedTrackTSXCode,
-            jsx: source.SliderInvertedTrackJSXCode,
+            jsx: source.SliderInvertedTrackJSXCode
           }}
           sx={{ px: 2 }}
         >
@@ -248,7 +248,7 @@ const Sliders = () => {
           title='Sizes'
           code={{
             tsx: source.SliderSizesTSXCode,
-            jsx: source.SliderSizesJSXCode,
+            jsx: source.SliderSizesJSXCode
           }}
           sx={{ px: 2 }}
         >
@@ -263,7 +263,7 @@ const Sliders = () => {
           title='Minimum Distance'
           code={{
             tsx: source.SliderMinimumDistanceTSXCode,
-            jsx: source.SliderMinimumDistanceJSXCode,
+            jsx: source.SliderMinimumDistanceJSXCode
           }}
           sx={{ px: 2 }}
         >

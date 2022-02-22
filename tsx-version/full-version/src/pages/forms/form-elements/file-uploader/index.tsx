@@ -37,7 +37,7 @@ const FileUploader = () => {
             title='Upload Multiple Files'
             code={{
               tsx: source.FileUploaderMultipleTSXCode,
-              jsx: source.FileUploaderMultipleJSXCode,
+              jsx: source.FileUploaderMultipleJSXCode
             }}
           >
             <FileUploaderMultiple />
@@ -48,7 +48,7 @@ const FileUploader = () => {
             title='Upload Single Files'
             code={{
               tsx: source.FileUploaderSingleTSXCode,
-              jsx: source.FileUploaderSingleJSXCode,
+              jsx: source.FileUploaderSingleJSXCode
             }}
           >
             <FileUploaderSingle />
@@ -59,7 +59,7 @@ const FileUploader = () => {
             title='Upload Files with Restrictions'
             code={{
               tsx: source.FileUploaderRestrictionsTSXCode,
-              jsx: source.FileUploaderRestrictionsJSXCode,
+              jsx: source.FileUploaderRestrictionsJSXCode
             }}
           >
             <FileUploaderRestrictions />

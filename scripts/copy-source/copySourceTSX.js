@@ -78,7 +78,7 @@ const generateTSXSourceCode = () => {
                   '`}' +
                   '</code>' +
                   '</pre>' +
-                  ') \n'
+                  ') \n\n'
                 if (sourceToReadTSX) {
                   fs.appendFile(sourceToReadTSX, codeJSX, err => {
                     if (err) {

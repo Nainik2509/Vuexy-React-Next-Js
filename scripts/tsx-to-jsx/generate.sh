@@ -40,3 +40,6 @@ node copySourceJSX.js
 cd ../../scripts/demo-generation
 node generate-demo-configs.js
 
+# Format tsx-version
+cd ../../tsx-version/full-version
+yarn format

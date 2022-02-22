@@ -23,7 +23,7 @@ const Ratings = () => {
           title='Basic Ratings'
           code={{
             tsx: source.RatingsBasicTSXCode,
-            jsx: source.RatingsBasicJSXCode,
+            jsx: source.RatingsBasicJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -38,7 +38,7 @@ const Ratings = () => {
           title='Customized Ratings'
           code={{
             tsx: source.RatingsCustomizedTSXCode,
-            jsx: source.RatingsCustomizedJSXCode,
+            jsx: source.RatingsCustomizedJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -54,7 +54,7 @@ const Ratings = () => {
           title='Half Ratings'
           code={{
             tsx: source.RatingsHalfTSXCode,
-            jsx: source.RatingsHalfJSXCode,
+            jsx: source.RatingsHalfJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -68,7 +68,7 @@ const Ratings = () => {
           title='Sizes'
           code={{
             tsx: source.RatingsSizesTSXCode,
-            jsx: source.RatingsSizesJSXCode,
+            jsx: source.RatingsSizesJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>
@@ -82,7 +82,7 @@ const Ratings = () => {
           title='Hover Feedback'
           code={{
             tsx: source.RatingsHoverFeedbackTSXCode,
-            jsx: source.RatingsHoverFeedbackJSXCode,
+            jsx: source.RatingsHoverFeedbackJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>

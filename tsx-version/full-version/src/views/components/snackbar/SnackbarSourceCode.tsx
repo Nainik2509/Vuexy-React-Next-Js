@@ -1,4 +1,6 @@
-export const SnackbarAlertJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+export const SnackbarAlertJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { Fragment, useState } from 'react'
 
 // ** MUI Imports
@@ -36,8 +38,13 @@ const SnackbarAlert = () => {
 }
 
 export default SnackbarAlert
-`}</code></pre>) 
-export const SnackbarConsecutiveJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+`}</code>
+  </pre>
+)
+
+export const SnackbarConsecutiveJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { Fragment, useEffect, useState } from 'react'
 
 // ** MUI Imports
@@ -109,8 +116,13 @@ const SnackbarConsecutive = () => {
 }
 
 export default SnackbarConsecutive
-`}</code></pre>) 
-export const SnackbarControlSlideDirectionJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+`}</code>
+  </pre>
+)
+
+export const SnackbarControlSlideDirectionJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { Fragment, useState } from 'react'
 
 // ** MUI Imports
@@ -178,8 +190,13 @@ const SnackbarControlSlideDirection = () => {
 }
 
 export default SnackbarControlSlideDirection
-`}</code></pre>) 
-export const SnackbarPositionedJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+`}</code>
+  </pre>
+)
+
+export const SnackbarPositionedJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { Fragment, useState } from 'react'
 
 // ** MUI Imports
@@ -239,61 +256,13 @@ const SnackbarPositioned = () => {
 }
 
 export default SnackbarPositioned
-`}</code></pre>) 
-export const SnackbarSimpleJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { Fragment, useState } from 'react'
+`}</code>
+  </pre>
+)
 
-// ** MUI Imports
-import Button from '@mui/material/Button'
-import Snackbar from '@mui/material/Snackbar'
-import IconButton from '@mui/material/IconButton'
-
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
-
-const SnackbarSimple = () => {
-  // ** State
-  const [open, setOpen] = useState(false)
-
-  const handleClick = () => {
-    setOpen(true)
-  }
-
-  const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
-      return
-    }
-    setOpen(false)
-  }
-
-  return (
-    <Fragment>
-      <Button variant='outlined' onClick={handleClick}>
-        Open simple snackbar
-      </Button>
-      <Snackbar
-        open={open}
-        onClose={handleClose}
-        message='Note archived'
-        autoHideDuration={3000}
-        action={
-          <Fragment>
-            <Button size='small' onClick={handleClose}>
-              UNDO
-            </Button>
-            <IconButton size='small' aria-label='close' color='inherit' onClick={handleClose}>
-              <Close fontSize='small' />
-            </IconButton>
-          </Fragment>
-        }
-      />
-    </Fragment>
-  )
-}
-
-export default SnackbarSimple
-`}</code></pre>) 
-export const SnackbarTransitionJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+export const SnackbarTransitionJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { Fragment, useState } from 'react'
 
 // ** MUI Imports
@@ -358,8 +327,115 @@ const SnackbarTransition = () => {
 }
 
 export default SnackbarTransition
-`}</code></pre>) 
-export const SnackbarConsecutiveTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+`}</code>
+  </pre>
+)
+
+export const SnackbarSimpleJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { Fragment, useState } from 'react'
+
+// ** MUI Imports
+import Button from '@mui/material/Button'
+import Snackbar from '@mui/material/Snackbar'
+import IconButton from '@mui/material/IconButton'
+
+// ** Icons Imports
+import Close from 'mdi-material-ui/Close'
+
+const SnackbarSimple = () => {
+  // ** State
+  const [open, setOpen] = useState(false)
+
+  const handleClick = () => {
+    setOpen(true)
+  }
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return
+    }
+    setOpen(false)
+  }
+
+  return (
+    <Fragment>
+      <Button variant='outlined' onClick={handleClick}>
+        Open simple snackbar
+      </Button>
+      <Snackbar
+        open={open}
+        onClose={handleClose}
+        message='Note archived'
+        autoHideDuration={3000}
+        action={
+          <Fragment>
+            <Button size='small' onClick={handleClose}>
+              UNDO
+            </Button>
+            <IconButton size='small' aria-label='close' color='inherit' onClick={handleClose}>
+              <Close fontSize='small' />
+            </IconButton>
+          </Fragment>
+        }
+      />
+    </Fragment>
+  )
+}
+
+export default SnackbarSimple
+`}</code>
+  </pre>
+)
+
+export const SnackbarAlertTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { Fragment, SyntheticEvent, useState } from 'react'
+
+// ** MUI Imports
+import Alert from '@mui/material/Alert'
+import Button from '@mui/material/Button'
+import Snackbar from '@mui/material/Snackbar'
+
+const SnackbarAlert = () => {
+  // ** State
+  const [open, setOpen] = useState<boolean>(false)
+
+  const handleClick = () => {
+    setOpen(true)
+  }
+
+  const handleClose = (event?: Event | SyntheticEvent, reason?: string) => {
+    if (reason === 'clickaway') {
+      return
+    }
+    setOpen(false)
+  }
+
+  return (
+    <Fragment>
+      <Button variant='outlined' onClick={handleClick}>
+        Open alert snackbar
+      </Button>
+      <Snackbar open={open} onClose={handleClose} autoHideDuration={3000}>
+        <Alert variant='filled' elevation={3} onClose={handleClose} severity='success'>
+          This is a success message!
+        </Alert>
+      </Snackbar>
+    </Fragment>
+  )
+}
+
+export default SnackbarAlert
+`}</code>
+  </pre>
+)
+
+export const SnackbarConsecutiveTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { Fragment, SyntheticEvent, useEffect, useState } from 'react'
 
 // ** MUI Imports
@@ -435,49 +511,13 @@ const SnackbarConsecutive = () => {
 }
 
 export default SnackbarConsecutive
-`}</code></pre>) 
+`}</code>
+  </pre>
+)
 
-export const SnackbarAlertTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { Fragment, SyntheticEvent, useState } from 'react'
-
-// ** MUI Imports
-import Alert from '@mui/material/Alert'
-import Button from '@mui/material/Button'
-import Snackbar from '@mui/material/Snackbar'
-
-const SnackbarAlert = () => {
-  // ** State
-  const [open, setOpen] = useState<boolean>(false)
-
-  const handleClick = () => {
-    setOpen(true)
-  }
-
-  const handleClose = (event?: Event | SyntheticEvent, reason?: string) => {
-    if (reason === 'clickaway') {
-      return
-    }
-    setOpen(false)
-  }
-
-  return (
-    <Fragment>
-      <Button variant='outlined' onClick={handleClick}>
-        Open alert snackbar
-      </Button>
-      <Snackbar open={open} onClose={handleClose} autoHideDuration={3000}>
-        <Alert variant='filled' elevation={3} onClose={handleClose} severity='success'>
-          This is a success message!
-        </Alert>
-      </Snackbar>
-    </Fragment>
-  )
-}
-
-export default SnackbarAlert
-`}</code></pre>) 
-
-export const SnackbarControlSlideDirectionTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+export const SnackbarControlSlideDirectionTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { ComponentType, Fragment, useState } from 'react'
 
 // ** MUI Imports
@@ -546,9 +586,140 @@ const SnackbarControlSlideDirection = () => {
 }
 
 export default SnackbarControlSlideDirection
-`}</code></pre>) 
+`}</code>
+  </pre>
+)
 
-export const SnackbarTransitionTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+export const SnackbarPositionedTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { Fragment, useState } from 'react'
+
+// ** MUI Imports
+import Button from '@mui/material/Button'
+import Snackbar, { SnackbarOrigin } from '@mui/material/Snackbar'
+
+interface State extends SnackbarOrigin {
+  open: boolean
+}
+
+const SnackbarPositioned = () => {
+  // ** States
+  const [state, setState] = useState<State>({
+    open: false,
+    vertical: 'top',
+    horizontal: 'center'
+  })
+  const { vertical, horizontal, open } = state
+
+  const handleClick = (newState: SnackbarOrigin) => () => {
+    setState({ open: true, ...newState })
+  }
+
+  const handleClose = () => {
+    setState({ ...state, open: false })
+  }
+
+  return (
+    <Fragment>
+      <div className='demo-space-x'>
+        <Button variant='outlined' onClick={handleClick({ vertical: 'top', horizontal: 'center' })}>
+          Top Center
+        </Button>
+        <Button variant='outlined' onClick={handleClick({ vertical: 'top', horizontal: 'right' })}>
+          Top Right
+        </Button>
+        <Button variant='outlined' onClick={handleClick({ vertical: 'bottom', horizontal: 'right' })}>
+          Bottom Right
+        </Button>
+        <Button variant='outlined' onClick={handleClick({ vertical: 'bottom', horizontal: 'center' })}>
+          Bottom Center
+        </Button>
+        <Button variant='outlined' onClick={handleClick({ vertical: 'bottom', horizontal: 'left' })}>
+          Bottom Left
+        </Button>
+        <Button variant='outlined' onClick={handleClick({ vertical: 'top', horizontal: 'left' })}>
+          Top Left
+        </Button>
+      </div>
+      <Snackbar
+        open={open}
+        onClose={handleClose}
+        message='I love snacks'
+        autoHideDuration={3000}
+        key={vertical + horizontal}
+        anchorOrigin={{ vertical, horizontal }}
+      />
+    </Fragment>
+  )
+}
+
+export default SnackbarPositioned
+`}</code>
+  </pre>
+)
+
+export const SnackbarSimpleTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { Fragment, SyntheticEvent, useState } from 'react'
+
+// ** MUI Imports
+import Button from '@mui/material/Button'
+import Snackbar from '@mui/material/Snackbar'
+import IconButton from '@mui/material/IconButton'
+
+// ** Icons Imports
+import Close from 'mdi-material-ui/Close'
+
+const SnackbarSimple = () => {
+  // ** State
+  const [open, setOpen] = useState<boolean>(false)
+
+  const handleClick = () => {
+    setOpen(true)
+  }
+
+  const handleClose = (event: Event | SyntheticEvent, reason?: string) => {
+    if (reason === 'clickaway') {
+      return
+    }
+    setOpen(false)
+  }
+
+  return (
+    <Fragment>
+      <Button variant='outlined' onClick={handleClick}>
+        Open simple snackbar
+      </Button>
+      <Snackbar
+        open={open}
+        onClose={handleClose}
+        message='Note archived'
+        autoHideDuration={3000}
+        action={
+          <Fragment>
+            <Button size='small' onClick={handleClose}>
+              UNDO
+            </Button>
+            <IconButton size='small' aria-label='close' color='inherit' onClick={handleClose}>
+              <Close fontSize='small' />
+            </IconButton>
+          </Fragment>
+        }
+      />
+    </Fragment>
+  )
+}
+
+export default SnackbarSimple
+`}</code>
+  </pre>
+)
+
+export const SnackbarTransitionTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { ComponentType, Fragment, ReactElement, useState } from 'react'
 
 // ** MUI Imports
@@ -628,124 +799,6 @@ const SnackbarTransition = () => {
 }
 
 export default SnackbarTransition
-`}</code></pre>) 
-
-export const SnackbarPositionedTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { Fragment, useState } from 'react'
-
-// ** MUI Imports
-import Button from '@mui/material/Button'
-import Snackbar, { SnackbarOrigin } from '@mui/material/Snackbar'
-
-interface State extends SnackbarOrigin {
-  open: boolean
-}
-
-const SnackbarPositioned = () => {
-  // ** States
-  const [state, setState] = useState<State>({
-    open: false,
-    vertical: 'top',
-    horizontal: 'center'
-  })
-  const { vertical, horizontal, open } = state
-
-  const handleClick = (newState: SnackbarOrigin) => () => {
-    setState({ open: true, ...newState })
-  }
-
-  const handleClose = () => {
-    setState({ ...state, open: false })
-  }
-
-  return (
-    <Fragment>
-      <div className='demo-space-x'>
-        <Button variant='outlined' onClick={handleClick({ vertical: 'top', horizontal: 'center' })}>
-          Top Center
-        </Button>
-        <Button variant='outlined' onClick={handleClick({ vertical: 'top', horizontal: 'right' })}>
-          Top Right
-        </Button>
-        <Button variant='outlined' onClick={handleClick({ vertical: 'bottom', horizontal: 'right' })}>
-          Bottom Right
-        </Button>
-        <Button variant='outlined' onClick={handleClick({ vertical: 'bottom', horizontal: 'center' })}>
-          Bottom Center
-        </Button>
-        <Button variant='outlined' onClick={handleClick({ vertical: 'bottom', horizontal: 'left' })}>
-          Bottom Left
-        </Button>
-        <Button variant='outlined' onClick={handleClick({ vertical: 'top', horizontal: 'left' })}>
-          Top Left
-        </Button>
-      </div>
-      <Snackbar
-        open={open}
-        onClose={handleClose}
-        message='I love snacks'
-        autoHideDuration={3000}
-        key={vertical + horizontal}
-        anchorOrigin={{ vertical, horizontal }}
-      />
-    </Fragment>
-  )
-}
-
-export default SnackbarPositioned
-`}</code></pre>) 
-
-export const SnackbarSimpleTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { Fragment, SyntheticEvent, useState } from 'react'
-
-// ** MUI Imports
-import Button from '@mui/material/Button'
-import Snackbar from '@mui/material/Snackbar'
-import IconButton from '@mui/material/IconButton'
-
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
-
-const SnackbarSimple = () => {
-  // ** State
-  const [open, setOpen] = useState<boolean>(false)
-
-  const handleClick = () => {
-    setOpen(true)
-  }
-
-  const handleClose = (event: Event | SyntheticEvent, reason?: string) => {
-    if (reason === 'clickaway') {
-      return
-    }
-    setOpen(false)
-  }
-
-  return (
-    <Fragment>
-      <Button variant='outlined' onClick={handleClick}>
-        Open simple snackbar
-      </Button>
-      <Snackbar
-        open={open}
-        onClose={handleClose}
-        message='Note archived'
-        autoHideDuration={3000}
-        action={
-          <Fragment>
-            <Button size='small' onClick={handleClose}>
-              UNDO
-            </Button>
-            <IconButton size='small' aria-label='close' color='inherit' onClick={handleClose}>
-              <Close fontSize='small' />
-            </IconButton>
-          </Fragment>
-        }
-      />
-    </Fragment>
-  )
-}
-
-export default SnackbarSimple
-`}</code></pre>) 
-
+`}</code>
+  </pre>
+)

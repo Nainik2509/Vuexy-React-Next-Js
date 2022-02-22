@@ -1,4 +1,6 @@
-export const ToastBlankJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+export const ToastBlankJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
@@ -23,8 +25,13 @@ const ToastSimple = () => {
 }
 
 export default ToastSimple
-`}</code></pre>) 
-export const ToastCustomJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+`}</code>
+  </pre>
+)
+
+export const ToastCustomJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Avatar from '@mui/material/Avatar'
@@ -76,34 +83,13 @@ const ToastCustom = () => {
 }
 
 export default ToastCustom
-`}</code></pre>) 
-export const ToastEmojiJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
-import Typography from '@mui/material/Typography'
+`}</code>
+  </pre>
+)
 
-// ** Icons Imports
-import StickerEmoji from 'mdi-material-ui/StickerEmoji'
-
-// ** Third Party Components
-import toast from 'react-hot-toast'
-
-const ToastEmoji = () => {
-  return (
-    <Box sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column' }}>
-      <StickerEmoji sx={{ mb: 2, fontSize: '2rem' }} />
-      <Typography sx={{ mb: 4, fontWeight: 600 }}>Emoji</Typography>
-      <Typography sx={{ mb: 3 }}>Add any emoji instead of an icon</Typography>
-      <Button sx={{ mb: 8 }} variant='contained' onClick={() => toast('Good Job!', { icon: '👏' })}>
-        Emoji
-      </Button>
-    </Box>
-  )
-}
-
-export default ToastEmoji
-`}</code></pre>) 
-export const ToastCustomPositionJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+export const ToastCustomPositionJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
@@ -134,8 +120,44 @@ const ToastCustomPosition = () => {
 }
 
 export default ToastCustomPosition
-`}</code></pre>) 
-export const ToastMultiLineJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+`}</code>
+  </pre>
+)
+
+export const ToastErrorJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
+
+// ** Icons Imports
+import Close from 'mdi-material-ui/Close'
+
+// ** Third Party Components
+import toast from 'react-hot-toast'
+
+const ToastError = () => {
+  return (
+    <Box sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column' }}>
+      <Close sx={{ mb: 2, fontSize: '2rem' }} />
+      <Typography sx={{ mb: 4, fontWeight: 600 }}>Error</Typography>
+      <Typography sx={{ mb: 3 }}>Creates a notification with an animated error icon.</Typography>
+      <Button sx={{ mb: 8 }} color='error' variant='contained' onClick={() => toast.error("This didn't work.")}>
+        Error
+      </Button>
+    </Box>
+  )
+}
+
+export default ToastError
+`}</code>
+  </pre>
+)
+
+export const ToastMultiLineJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
@@ -166,78 +188,75 @@ const ToastMultiLine = () => {
 }
 
 export default ToastMultiLine
-`}</code></pre>) 
-export const ToastErrorJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+`}</code>
+  </pre>
+)
+
+export const ToastEmojiJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 
 // ** Icons Imports
-import Close from 'mdi-material-ui/Close'
+import StickerEmoji from 'mdi-material-ui/StickerEmoji'
 
 // ** Third Party Components
 import toast from 'react-hot-toast'
 
-const ToastError = () => {
+const ToastEmoji = () => {
   return (
     <Box sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column' }}>
-      <Close sx={{ mb: 2, fontSize: '2rem' }} />
-      <Typography sx={{ mb: 4, fontWeight: 600 }}>Error</Typography>
-      <Typography sx={{ mb: 3 }}>Creates a notification with an animated error icon.</Typography>
-      <Button sx={{ mb: 8 }} color='error' variant='contained' onClick={() => toast.error("This didn't work.")}>
-        Error
+      <StickerEmoji sx={{ mb: 2, fontSize: '2rem' }} />
+      <Typography sx={{ mb: 4, fontWeight: 600 }}>Emoji</Typography>
+      <Typography sx={{ mb: 3 }}>Add any emoji instead of an icon</Typography>
+      <Button sx={{ mb: 8 }} variant='contained' onClick={() => toast('Good Job!', { icon: '👏' })}>
+        Emoji
       </Button>
     </Box>
   )
 }
 
-export default ToastError
-`}</code></pre>) 
-export const ToastPromiseJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+export default ToastEmoji
+`}</code>
+  </pre>
+)
+
+export const ToastSuccessJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 
 // ** Icons Imports
-import TimerSand from 'mdi-material-ui/TimerSand'
+import CheckCircleOutline from 'mdi-material-ui/CheckCircleOutline'
 
 // ** Third Party Components
 import toast from 'react-hot-toast'
 
-const ToastPromise = () => {
-  const handleClick = () => {
-    const myPromise = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (Math.random() < 0.5) {
-          resolve('foo')
-        } else {
-          reject('fox')
-        }
-      }, 1000)
-    })
-
-    return toast.promise(myPromise, {
-      loading: 'Loading',
-      success: 'Got the data',
-      error: 'Error when fetching'
-    })
-  }
-
+const ToastSuccess = () => {
   return (
     <Box sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column' }}>
-      <TimerSand sx={{ mb: 2, fontSize: '2rem' }} />
-      <Typography sx={{ mb: 4, fontWeight: 600 }}>Promise</Typography>
-      <Typography sx={{ mb: 3 }}>Update automatically when promise resolves / fails.</Typography>
-      <Button sx={{ mb: 8 }} variant='contained' onClick={handleClick}>
-        Promise
+      <CheckCircleOutline sx={{ mb: 2, fontSize: '2rem' }} />
+      <Typography sx={{ mb: 4, fontWeight: 600 }}>Success</Typography>
+      <Typography sx={{ mb: 3 }}>Creates a notification with an animated checkmark.</Typography>
+      <Button sx={{ mb: 8 }} color='success' variant='contained' onClick={() => toast.success('Successfully toasted!')}>
+        Success
       </Button>
     </Box>
   )
 }
 
-export default ToastPromise
-`}</code></pre>) 
-export const ToastThemedJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+export default ToastSuccess
+`}</code>
+  </pre>
+)
+
+export const ToastThemedJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import { useTheme } from '@mui/material/styles'
@@ -280,34 +299,130 @@ const ToastThemed = () => {
 }
 
 export default ToastThemed
-`}</code></pre>) 
-export const ToastSuccessJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+`}</code>
+  </pre>
+)
+
+export const ToastPromiseJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 
 // ** Icons Imports
-import CheckCircleOutline from 'mdi-material-ui/CheckCircleOutline'
+import TimerSand from 'mdi-material-ui/TimerSand'
 
 // ** Third Party Components
 import toast from 'react-hot-toast'
 
-const ToastSuccess = () => {
+const ToastPromise = () => {
+  const handleClick = () => {
+    const myPromise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (Math.random() < 0.5) {
+          resolve('foo')
+        } else {
+          reject('fox')
+        }
+      }, 1000)
+    })
+
+    return toast.promise(myPromise, {
+      loading: 'Loading',
+      success: 'Got the data',
+      error: 'Error when fetching'
+    })
+  }
+
   return (
     <Box sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column' }}>
-      <CheckCircleOutline sx={{ mb: 2, fontSize: '2rem' }} />
-      <Typography sx={{ mb: 4, fontWeight: 600 }}>Success</Typography>
-      <Typography sx={{ mb: 3 }}>Creates a notification with an animated checkmark.</Typography>
-      <Button sx={{ mb: 8 }} color='success' variant='contained' onClick={() => toast.success('Successfully toasted!')}>
-        Success
+      <TimerSand sx={{ mb: 2, fontSize: '2rem' }} />
+      <Typography sx={{ mb: 4, fontWeight: 600 }}>Promise</Typography>
+      <Typography sx={{ mb: 3 }}>Update automatically when promise resolves / fails.</Typography>
+      <Button sx={{ mb: 8 }} variant='contained' onClick={handleClick}>
+        Promise
       </Button>
     </Box>
   )
 }
 
-export default ToastSuccess
-`}</code></pre>) 
-export const ToastCustomTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+export default ToastPromise
+`}</code>
+  </pre>
+)
+
+export const ToastBlankTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
+
+// ** Icons Imports
+import CheckboxBlankOutline from 'mdi-material-ui/CheckboxBlankOutline'
+
+// ** Third Party Components
+import toast from 'react-hot-toast'
+
+const ToastSimple = () => {
+  return (
+    <Box sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column' }}>
+      <CheckboxBlankOutline sx={{ mb: 2, fontSize: '2rem' }} />
+      <Typography sx={{ mb: 4, fontWeight: 600 }}>Blank</Typography>
+      <Typography sx={{ mb: 3 }}>The most basic variant does not have an icon.</Typography>
+      <Button sx={{ mb: 8 }} variant='contained' onClick={() => toast('Blank Toast')}>
+        Blank
+      </Button>
+    </Box>
+  )
+}
+
+export default ToastSimple
+`}</code>
+  </pre>
+)
+
+export const ToastCustomPositionTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
+
+// ** Icons Imports
+import ViewGridPlusOutline from 'mdi-material-ui/ViewGridPlusOutline'
+
+// ** Third Party Components
+import toast from 'react-hot-toast'
+
+const ToastCustomPosition = () => {
+  const handleClick = () => {
+    return toast.success('Always at the bottom.', {
+      position: 'bottom-right'
+    })
+  }
+
+  return (
+    <Box sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column' }}>
+      <ViewGridPlusOutline sx={{ mb: 2, fontSize: '2rem' }} />
+      <Typography sx={{ mb: 4, fontWeight: 600 }}>Custom Position</Typography>
+      <Typography sx={{ mb: 3 }}>You can change the toast's position as you like.</Typography>
+      <Button color='warning' sx={{ mb: 8 }} variant='contained' onClick={handleClick}>
+        Position
+      </Button>
+    </Box>
+  )
+}
+
+export default ToastCustomPosition
+`}</code>
+  </pre>
+)
+
+export const ToastCustomTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Avatar from '@mui/material/Avatar'
@@ -359,123 +474,44 @@ const ToastCustom = () => {
 }
 
 export default ToastCustom
-`}</code></pre>) 
+`}</code>
+  </pre>
+)
 
-export const ToastBlankTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+export const ToastEmojiTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 
 // ** Icons Imports
-import CheckboxBlankOutline from 'mdi-material-ui/CheckboxBlankOutline'
+import StickerEmoji from 'mdi-material-ui/StickerEmoji'
 
 // ** Third Party Components
 import toast from 'react-hot-toast'
 
-const ToastSimple = () => {
+const ToastEmoji = () => {
   return (
     <Box sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column' }}>
-      <CheckboxBlankOutline sx={{ mb: 2, fontSize: '2rem' }} />
-      <Typography sx={{ mb: 4, fontWeight: 600 }}>Blank</Typography>
-      <Typography sx={{ mb: 3 }}>The most basic variant does not have an icon.</Typography>
-      <Button sx={{ mb: 8 }} variant='contained' onClick={() => toast('Blank Toast')}>
-        Blank
+      <StickerEmoji sx={{ mb: 2, fontSize: '2rem' }} />
+      <Typography sx={{ mb: 4, fontWeight: 600 }}>Emoji</Typography>
+      <Typography sx={{ mb: 3 }}>Add any emoji instead of an icon</Typography>
+      <Button sx={{ mb: 8 }} variant='contained' onClick={() => toast('Good Job!', { icon: '👏' })}>
+        Emoji
       </Button>
     </Box>
   )
 }
 
-export default ToastSimple
-`}</code></pre>) 
+export default ToastEmoji
+`}</code>
+  </pre>
+)
 
-export const ToastSuccessTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
-import Typography from '@mui/material/Typography'
-
-// ** Icons Imports
-import CheckCircleOutline from 'mdi-material-ui/CheckCircleOutline'
-
-// ** Third Party Components
-import toast from 'react-hot-toast'
-
-const ToastSuccess = () => {
-  return (
-    <Box sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column' }}>
-      <CheckCircleOutline sx={{ mb: 2, fontSize: '2rem' }} />
-      <Typography sx={{ mb: 4, fontWeight: 600 }}>Success</Typography>
-      <Typography sx={{ mb: 3 }}>Creates a notification with an animated checkmark.</Typography>
-      <Button sx={{ mb: 8 }} color='success' variant='contained' onClick={() => toast.success('Successfully toasted!')}>
-        Success
-      </Button>
-    </Box>
-  )
-}
-
-export default ToastSuccess
-`}</code></pre>) 
-
-export const ToastErrorTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
-import Typography from '@mui/material/Typography'
-
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
-
-// ** Third Party Components
-import toast from 'react-hot-toast'
-
-const ToastError = () => {
-  return (
-    <Box sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column' }}>
-      <Close sx={{ mb: 2, fontSize: '2rem' }} />
-      <Typography sx={{ mb: 4, fontWeight: 600 }}>Error</Typography>
-      <Typography sx={{ mb: 3 }}>Creates a notification with an animated error icon.</Typography>
-      <Button sx={{ mb: 8 }} color='error' variant='contained' onClick={() => toast.error("This didn't work.")}>
-        Error
-      </Button>
-    </Box>
-  )
-}
-
-export default ToastError
-`}</code></pre>) 
-
-export const ToastCustomPositionTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
-import Typography from '@mui/material/Typography'
-
-// ** Icons Imports
-import ViewGridPlusOutline from 'mdi-material-ui/ViewGridPlusOutline'
-
-// ** Third Party Components
-import toast from 'react-hot-toast'
-
-const ToastCustomPosition = () => {
-  const handleClick = () => {
-    return toast.success('Always at the bottom.', {
-      position: 'bottom-right'
-    })
-  }
-
-  return (
-    <Box sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column' }}>
-      <ViewGridPlusOutline sx={{ mb: 2, fontSize: '2rem' }} />
-      <Typography sx={{ mb: 4, fontWeight: 600 }}>Custom Position</Typography>
-      <Typography sx={{ mb: 3 }}>You can change the toast's position as you like.</Typography>
-      <Button color='warning' sx={{ mb: 8 }} variant='contained' onClick={handleClick}>
-        Position
-      </Button>
-    </Box>
-  )
-}
-
-export default ToastCustomPosition
-`}</code></pre>) 
-
-export const ToastMultiLineTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+export const ToastMultiLineTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
@@ -506,9 +542,13 @@ const ToastMultiLine = () => {
 }
 
 export default ToastMultiLine
-`}</code></pre>) 
+`}</code>
+  </pre>
+)
 
-export const ToastPromiseTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+export const ToastPromiseTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
@@ -551,36 +591,44 @@ const ToastPromise = () => {
 }
 
 export default ToastPromise
-`}</code></pre>) 
+`}</code>
+  </pre>
+)
 
-export const ToastEmojiTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+export const ToastSuccessTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 
 // ** Icons Imports
-import StickerEmoji from 'mdi-material-ui/StickerEmoji'
+import CheckCircleOutline from 'mdi-material-ui/CheckCircleOutline'
 
 // ** Third Party Components
 import toast from 'react-hot-toast'
 
-const ToastEmoji = () => {
+const ToastSuccess = () => {
   return (
     <Box sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column' }}>
-      <StickerEmoji sx={{ mb: 2, fontSize: '2rem' }} />
-      <Typography sx={{ mb: 4, fontWeight: 600 }}>Emoji</Typography>
-      <Typography sx={{ mb: 3 }}>Add any emoji instead of an icon</Typography>
-      <Button sx={{ mb: 8 }} variant='contained' onClick={() => toast('Good Job!', { icon: '👏' })}>
-        Emoji
+      <CheckCircleOutline sx={{ mb: 2, fontSize: '2rem' }} />
+      <Typography sx={{ mb: 4, fontWeight: 600 }}>Success</Typography>
+      <Typography sx={{ mb: 3 }}>Creates a notification with an animated checkmark.</Typography>
+      <Button sx={{ mb: 8 }} color='success' variant='contained' onClick={() => toast.success('Successfully toasted!')}>
+        Success
       </Button>
     </Box>
   )
 }
 
-export default ToastEmoji
-`}</code></pre>) 
+export default ToastSuccess
+`}</code>
+  </pre>
+)
 
-export const ToastThemedTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+export const ToastThemedTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import { useTheme } from '@mui/material/styles'
@@ -623,5 +671,37 @@ const ToastThemed = () => {
 }
 
 export default ToastThemed
-`}</code></pre>) 
+`}</code>
+  </pre>
+)
 
+export const ToastErrorTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
+
+// ** Icons Imports
+import Close from 'mdi-material-ui/Close'
+
+// ** Third Party Components
+import toast from 'react-hot-toast'
+
+const ToastError = () => {
+  return (
+    <Box sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column' }}>
+      <Close sx={{ mb: 2, fontSize: '2rem' }} />
+      <Typography sx={{ mb: 4, fontWeight: 600 }}>Error</Typography>
+      <Typography sx={{ mb: 3 }}>Creates a notification with an animated error icon.</Typography>
+      <Button sx={{ mb: 8 }} color='error' variant='contained' onClick={() => toast.error("This didn't work.")}>
+        Error
+      </Button>
+    </Box>
+  )
+}
+
+export default ToastError
+`}</code>
+  </pre>
+)

@@ -25,7 +25,7 @@ const Avatars = () => {
           title='Image Avatars'
           code={{
             tsx: source.AvatarsImageTSXCode,
-            jsx: source.AvatarsImageJSXCode,
+            jsx: source.AvatarsImageJSXCode
           }}
         >
           <Typography>
@@ -39,7 +39,7 @@ const Avatars = () => {
           title='Letter Avatars'
           code={{
             tsx: source.AvatarsLetterTSXCode,
-            jsx: source.AvatarsLetterJSXCode,
+            jsx: source.AvatarsLetterJSXCode
           }}
         >
           <Typography>
@@ -55,7 +55,7 @@ const Avatars = () => {
           title='Sizes'
           code={{
             tsx: source.AvatarsSizesTSXCode,
-            jsx: source.AvatarsSizesJSXCode,
+            jsx: source.AvatarsSizesJSXCode
           }}
         >
           <Typography>
@@ -69,7 +69,7 @@ const Avatars = () => {
           title='Icon Avatars'
           code={{
             tsx: source.AvatarsIconTSXCode,
-            jsx: source.AvatarsIconJSXCode,
+            jsx: source.AvatarsIconJSXCode
           }}
         >
           <Typography>
@@ -83,7 +83,7 @@ const Avatars = () => {
           title='Variants'
           code={{
             tsx: source.AvatarsVariantsTSXCode,
-            jsx: source.AvatarsVariantsJSXCode,
+            jsx: source.AvatarsVariantsJSXCode
           }}
         >
           <Typography>
@@ -98,7 +98,7 @@ const Avatars = () => {
           title='Avatars With Badge'
           code={{
             tsx: source.AvatarsWithBadgeTSXCode,
-            jsx: source.AvatarsWithBadgeJSXCode,
+            jsx: source.AvatarsWithBadgeJSXCode
           }}
         >
           <Typography>
@@ -112,7 +112,7 @@ const Avatars = () => {
           title='Grouped Avatars'
           code={{
             tsx: source.AvatarsGroupedTSXCode,
-            jsx: source.AvatarsGroupedJSXCode,
+            jsx: source.AvatarsGroupedJSXCode
           }}
         >
           <Typography sx={{ marginBottom: 4 }}>

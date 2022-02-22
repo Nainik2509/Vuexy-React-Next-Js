@@ -1,4 +1,6 @@
-export const ListDenseJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+export const ListDenseJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { Fragment } from 'react'
 
 // ** MUI Imports
@@ -60,8 +62,89 @@ const ListDense = () => {
 }
 
 export default ListDense
-`}</code></pre>) 
-export const ListSecondaryJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+`}</code>
+  </pre>
+)
+
+export const ListItemSelectedJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import List from '@mui/material/List'
+import Avatar from '@mui/material/Avatar'
+import ListItem from '@mui/material/ListItem'
+import IconButton from '@mui/material/IconButton'
+import ListItemText from '@mui/material/ListItemText'
+import ListItemButton from '@mui/material/ListItemButton'
+import ListItemAvatar from '@mui/material/ListItemAvatar'
+import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
+
+// ** Icons Imports
+import MessageTextOutline from 'mdi-material-ui/MessageTextOutline'
+
+const ListItemSelected = () => {
+  // ** State
+  const [selectedIndex, setSelectedIndex] = useState(1)
+
+  const handleListItemClick = index => {
+    setSelectedIndex(index)
+  }
+
+  return (
+    <List>
+      <ListItem disablePadding>
+        <ListItemButton selected={selectedIndex === 0} onClick={() => handleListItemClick(0)}>
+          <ListItemAvatar>
+            <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
+          </ListItemAvatar>
+          <ListItemText primary='Caroline Black' />
+          <ListItemSecondaryAction>
+            <IconButton edge='end'>
+              <MessageTextOutline fontSize='small' />
+            </IconButton>
+          </ListItemSecondaryAction>
+        </ListItemButton>
+      </ListItem>
+      <ListItem disablePadding>
+        <ListItemButton selected={selectedIndex === 1} onClick={() => handleListItemClick(1)}>
+          <ListItemAvatar>
+            <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' />
+          </ListItemAvatar>
+          <ListItemText primary='Alfred Copeland' />
+          <ListItemSecondaryAction>
+            <IconButton edge='end'>
+              <MessageTextOutline fontSize='small' />
+            </IconButton>
+          </ListItemSecondaryAction>
+        </ListItemButton>
+      </ListItem>
+      <ListItem disablePadding>
+        <ListItemButton selected={selectedIndex === 2} onClick={() => handleListItemClick(2)}>
+          <ListItemAvatar>
+            <Avatar src='/images/avatars/8.png' alt='Celia Schneider' />
+          </ListItemAvatar>
+          <ListItemText primary='Celia Schneider' />
+          <ListItemSecondaryAction>
+            <IconButton edge='end'>
+              <MessageTextOutline fontSize='small' />
+            </IconButton>
+          </ListItemSecondaryAction>
+        </ListItemButton>
+      </ListItem>
+    </List>
+  )
+}
+
+export default ListItemSelected
+`}</code>
+  </pre>
+)
+
+export const ListSecondaryJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
 import List from '@mui/material/List'
 import Avatar from '@mui/material/Avatar'
 import ListItem from '@mui/material/ListItem'
@@ -114,8 +197,81 @@ const ListSecondary = () => {
 }
 
 export default ListSecondary
-`}</code></pre>) 
-export const ListNestedJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+`}</code>
+  </pre>
+)
+
+export const ListSimpleJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { Fragment } from 'react'
+
+// ** MUI Imports
+import List from '@mui/material/List'
+import Divider from '@mui/material/Divider'
+import ListItem from '@mui/material/ListItem'
+import ListItemIcon from '@mui/material/ListItemIcon'
+import ListItemText from '@mui/material/ListItemText'
+import ListItemButton from '@mui/material/ListItemButton'
+
+// ** Icons Imports
+import ContentCopy from 'mdi-material-ui/ContentCopy'
+import EmailOutline from 'mdi-material-ui/EmailOutline'
+import ClockOutline from 'mdi-material-ui/ClockOutline'
+import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
+
+const ListSimple = () => {
+  return (
+    <Fragment>
+      <List component='nav' aria-label='main mailbox'>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <EmailOutline fontSize='small' />
+            </ListItemIcon>
+            <ListItemText primary='Inbox' />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <ContentCopy fontSize='small' />
+            </ListItemIcon>
+            <ListItemText primary='Draft' />
+          </ListItemButton>
+        </ListItem>
+      </List>
+      <Divider sx={{ m: 0 }} />
+      <List component='nav' aria-label='secondary mailbox'>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <ClockOutline fontSize='small' />
+            </ListItemIcon>
+            <ListItemText primary='Snoozed' />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton component='a' href='#simple-list'>
+            <ListItemIcon>
+              <AlertCircleOutline fontSize='small' />
+            </ListItemIcon>
+            <ListItemText primary='Spam' />
+          </ListItemButton>
+        </ListItem>
+      </List>
+    </Fragment>
+  )
+}
+
+export default ListSimple
+`}</code>
+  </pre>
+)
+
+export const ListNestedJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { Fragment, useState } from 'react'
 
 // ** MUI Imports
@@ -201,8 +357,46 @@ const ListNested = () => {
 }
 
 export default ListNested
-`}</code></pre>) 
-export const ListWithSwitchJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+`}</code>
+  </pre>
+)
+
+export const ListStickySubheaderJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemText from '@mui/material/ListItemText'
+import ListSubheader from '@mui/material/ListSubheader'
+
+const ListWithSwitch = () => {
+  return (
+    <List subheader={<li />} sx={{ maxHeight: 300, overflow: 'auto', position: 'relative' }}>
+      {[0, 1, 2, 3, 4].map(sectionId => (
+        <Box component='li' key={section-{sectionId}} sx={{ backgroundColor: 'background.paper' }}>
+          <Box component='ul' sx={{ padding: 0, backgroundColor: 'inherit' }}>
+            <ListSubheader>{I'm sticky {sectionId}}</ListSubheader>
+            {[0, 1, 2].map(item => (
+              <ListItem key={item-{sectionId}-{item}}>
+                <ListItemText primary={Item {item}} />
+              </ListItem>
+            ))}
+          </Box>
+        </Box>
+      ))}
+    </List>
+  )
+}
+
+export default ListWithSwitch
+`}</code>
+  </pre>
+)
+
+export const ListWithSwitchJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
 // ** MUI Imports
@@ -304,142 +498,13 @@ const ListWithSwitch = () => {
 }
 
 export default ListWithSwitch
-`}</code></pre>) 
-export const ListItemSelectedJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
+`}</code>
+  </pre>
+)
 
-// ** MUI Imports
-import List from '@mui/material/List'
-import Avatar from '@mui/material/Avatar'
-import ListItem from '@mui/material/ListItem'
-import IconButton from '@mui/material/IconButton'
-import ListItemText from '@mui/material/ListItemText'
-import ListItemButton from '@mui/material/ListItemButton'
-import ListItemAvatar from '@mui/material/ListItemAvatar'
-import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
-
-// ** Icons Imports
-import MessageTextOutline from 'mdi-material-ui/MessageTextOutline'
-
-const ListItemSelected = () => {
-  // ** State
-  const [selectedIndex, setSelectedIndex] = useState(1)
-
-  const handleListItemClick = index => {
-    setSelectedIndex(index)
-  }
-
-  return (
-    <List>
-      <ListItem disablePadding>
-        <ListItemButton selected={selectedIndex === 0} onClick={() => handleListItemClick(0)}>
-          <ListItemAvatar>
-            <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
-          </ListItemAvatar>
-          <ListItemText primary='Caroline Black' />
-          <ListItemSecondaryAction>
-            <IconButton edge='end'>
-              <MessageTextOutline fontSize='small' />
-            </IconButton>
-          </ListItemSecondaryAction>
-        </ListItemButton>
-      </ListItem>
-      <ListItem disablePadding>
-        <ListItemButton selected={selectedIndex === 1} onClick={() => handleListItemClick(1)}>
-          <ListItemAvatar>
-            <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' />
-          </ListItemAvatar>
-          <ListItemText primary='Alfred Copeland' />
-          <ListItemSecondaryAction>
-            <IconButton edge='end'>
-              <MessageTextOutline fontSize='small' />
-            </IconButton>
-          </ListItemSecondaryAction>
-        </ListItemButton>
-      </ListItem>
-      <ListItem disablePadding>
-        <ListItemButton selected={selectedIndex === 2} onClick={() => handleListItemClick(2)}>
-          <ListItemAvatar>
-            <Avatar src='/images/avatars/8.png' alt='Celia Schneider' />
-          </ListItemAvatar>
-          <ListItemText primary='Celia Schneider' />
-          <ListItemSecondaryAction>
-            <IconButton edge='end'>
-              <MessageTextOutline fontSize='small' />
-            </IconButton>
-          </ListItemSecondaryAction>
-        </ListItemButton>
-      </ListItem>
-    </List>
-  )
-}
-
-export default ListItemSelected
-`}</code></pre>) 
-export const ListSimpleJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { Fragment } from 'react'
-
-// ** MUI Imports
-import List from '@mui/material/List'
-import Divider from '@mui/material/Divider'
-import ListItem from '@mui/material/ListItem'
-import ListItemIcon from '@mui/material/ListItemIcon'
-import ListItemText from '@mui/material/ListItemText'
-import ListItemButton from '@mui/material/ListItemButton'
-
-// ** Icons Imports
-import ContentCopy from 'mdi-material-ui/ContentCopy'
-import EmailOutline from 'mdi-material-ui/EmailOutline'
-import ClockOutline from 'mdi-material-ui/ClockOutline'
-import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
-
-const ListSimple = () => {
-  return (
-    <Fragment>
-      <List component='nav' aria-label='main mailbox'>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <EmailOutline fontSize='small' />
-            </ListItemIcon>
-            <ListItemText primary='Inbox' />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <ContentCopy fontSize='small' />
-            </ListItemIcon>
-            <ListItemText primary='Draft' />
-          </ListItemButton>
-        </ListItem>
-      </List>
-      <Divider sx={{ m: 0 }} />
-      <List component='nav' aria-label='secondary mailbox'>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <ClockOutline fontSize='small' />
-            </ListItemIcon>
-            <ListItemText primary='Snoozed' />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton component='a' href='#simple-list'>
-            <ListItemIcon>
-              <AlertCircleOutline fontSize='small' />
-            </ListItemIcon>
-            <ListItemText primary='Spam' />
-          </ListItemButton>
-        </ListItem>
-      </List>
-    </Fragment>
-  )
-}
-
-export default ListSimple
-`}</code></pre>) 
-export const ListWithCheckboxJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+export const ListWithCheckboxJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
 // ** MUI Imports
@@ -530,100 +595,13 @@ const ListWithCheckbox = () => {
 }
 
 export default ListWithCheckbox
-`}</code></pre>) 
-export const ListStickySubheaderJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Box from '@mui/material/Box'
-import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
-import ListItemText from '@mui/material/ListItemText'
-import ListSubheader from '@mui/material/ListSubheader'
+`}</code>
+  </pre>
+)
 
-const ListWithSwitch = () => {
-  return (
-    <List subheader={<li />} sx={{ maxHeight: 300, overflow: 'auto', position: 'relative' }}>
-      {[0, 1, 2, 3, 4].map(sectionId => (
-        <Box component='li' key={section-{sectionId}} sx={{ backgroundColor: 'background.paper' }}>
-          <Box component='ul' sx={{ padding: 0, backgroundColor: 'inherit' }}>
-            <ListSubheader>{I'm sticky {sectionId}}</ListSubheader>
-            {[0, 1, 2].map(item => (
-              <ListItem key={item-{sectionId}-{item}}>
-                <ListItemText primary={Item {item}} />
-              </ListItem>
-            ))}
-          </Box>
-        </Box>
-      ))}
-    </List>
-  )
-}
-
-export default ListWithSwitch
-`}</code></pre>) 
-export const ListDenseTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { Fragment } from 'react'
-
-// ** MUI Imports
-import List from '@mui/material/List'
-import Divider from '@mui/material/Divider'
-import ListItem from '@mui/material/ListItem'
-import ListItemIcon from '@mui/material/ListItemIcon'
-import ListItemText from '@mui/material/ListItemText'
-import ListItemButton from '@mui/material/ListItemButton'
-
-// ** Icons Imports
-import ContentCopy from 'mdi-material-ui/ContentCopy'
-import EmailOutline from 'mdi-material-ui/EmailOutline'
-import ClockOutline from 'mdi-material-ui/ClockOutline'
-import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
-
-const ListDense = () => {
-  return (
-    <Fragment>
-      <List dense>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <EmailOutline fontSize='small' />
-            </ListItemIcon>
-            <ListItemText primary='Inbox' />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <ContentCopy fontSize='small' />
-            </ListItemIcon>
-            <ListItemText primary='Draft' />
-          </ListItemButton>
-        </ListItem>
-      </List>
-      <Divider sx={{ m: 0 }} />
-      <List dense>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <ClockOutline fontSize='small' />
-            </ListItemIcon>
-            <ListItemText primary='Snoozed' />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <AlertCircleOutline fontSize='small' />
-            </ListItemIcon>
-            <ListItemText primary='Spam' />
-          </ListItemButton>
-        </ListItem>
-      </List>
-    </Fragment>
-  )
-}
-
-export default ListDense
-`}</code></pre>) 
-
-export const ListItemSelectedTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+export const ListItemSelectedTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
 // ** MUI Imports
@@ -693,9 +671,13 @@ const ListItemSelected = () => {
 }
 
 export default ListItemSelected
-`}</code></pre>) 
+`}</code>
+  </pre>
+)
 
-export const ListNestedTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+export const ListNestedTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { Fragment, useState } from 'react'
 
 // ** MUI Imports
@@ -781,64 +763,13 @@ const ListNested = () => {
 }
 
 export default ListNested
-`}</code></pre>) 
+`}</code>
+  </pre>
+)
 
-export const ListSecondaryTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import List from '@mui/material/List'
-import Avatar from '@mui/material/Avatar'
-import ListItem from '@mui/material/ListItem'
-import IconButton from '@mui/material/IconButton'
-import ListItemText from '@mui/material/ListItemText'
-import ListItemAvatar from '@mui/material/ListItemAvatar'
-import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
-
-// ** Icons Imports
-import Plus from 'mdi-material-ui/Plus'
-
-const ListSecondary = () => {
-  return (
-    <List>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
-        </ListItemAvatar>
-        <ListItemText primary='Caroline Black' secondary='Sweet dessert brownie.' />
-        <ListItemSecondaryAction>
-          <IconButton edge='end'>
-            <Plus />
-          </IconButton>
-        </ListItemSecondaryAction>
-      </ListItem>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' />
-        </ListItemAvatar>
-        <ListItemText primary='Alfred Copeland' secondary='Pudding pie tiramisu.' />
-        <ListItemSecondaryAction>
-          <IconButton edge='end'>
-            <Plus />
-          </IconButton>
-        </ListItemSecondaryAction>
-      </ListItem>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar src='/images/avatars/8.png' alt='Celia Schneider' />
-        </ListItemAvatar>
-        <ListItemText primary='Celia Schneider' secondary='Muffin pie chupa chups.' />
-        <ListItemSecondaryAction>
-          <IconButton edge='end'>
-            <Plus />
-          </IconButton>
-        </ListItemSecondaryAction>
-      </ListItem>
-    </List>
-  )
-}
-
-export default ListSecondary
-`}</code></pre>) 
-
-export const ListSimpleTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+export const ListSimpleTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { Fragment } from 'react'
 
 // ** MUI Imports
@@ -900,9 +831,140 @@ const ListSimple = () => {
 }
 
 export default ListSimple
-`}</code></pre>) 
+`}</code>
+  </pre>
+)
 
-export const ListWithCheckboxTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+export const ListDenseTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { Fragment } from 'react'
+
+// ** MUI Imports
+import List from '@mui/material/List'
+import Divider from '@mui/material/Divider'
+import ListItem from '@mui/material/ListItem'
+import ListItemIcon from '@mui/material/ListItemIcon'
+import ListItemText from '@mui/material/ListItemText'
+import ListItemButton from '@mui/material/ListItemButton'
+
+// ** Icons Imports
+import ContentCopy from 'mdi-material-ui/ContentCopy'
+import EmailOutline from 'mdi-material-ui/EmailOutline'
+import ClockOutline from 'mdi-material-ui/ClockOutline'
+import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
+
+const ListDense = () => {
+  return (
+    <Fragment>
+      <List dense>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <EmailOutline fontSize='small' />
+            </ListItemIcon>
+            <ListItemText primary='Inbox' />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <ContentCopy fontSize='small' />
+            </ListItemIcon>
+            <ListItemText primary='Draft' />
+          </ListItemButton>
+        </ListItem>
+      </List>
+      <Divider sx={{ m: 0 }} />
+      <List dense>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <ClockOutline fontSize='small' />
+            </ListItemIcon>
+            <ListItemText primary='Snoozed' />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <AlertCircleOutline fontSize='small' />
+            </ListItemIcon>
+            <ListItemText primary='Spam' />
+          </ListItemButton>
+        </ListItem>
+      </List>
+    </Fragment>
+  )
+}
+
+export default ListDense
+`}</code>
+  </pre>
+)
+
+export const ListSecondaryTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import List from '@mui/material/List'
+import Avatar from '@mui/material/Avatar'
+import ListItem from '@mui/material/ListItem'
+import IconButton from '@mui/material/IconButton'
+import ListItemText from '@mui/material/ListItemText'
+import ListItemAvatar from '@mui/material/ListItemAvatar'
+import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
+
+// ** Icons Imports
+import Plus from 'mdi-material-ui/Plus'
+
+const ListSecondary = () => {
+  return (
+    <List>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
+        </ListItemAvatar>
+        <ListItemText primary='Caroline Black' secondary='Sweet dessert brownie.' />
+        <ListItemSecondaryAction>
+          <IconButton edge='end'>
+            <Plus />
+          </IconButton>
+        </ListItemSecondaryAction>
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' />
+        </ListItemAvatar>
+        <ListItemText primary='Alfred Copeland' secondary='Pudding pie tiramisu.' />
+        <ListItemSecondaryAction>
+          <IconButton edge='end'>
+            <Plus />
+          </IconButton>
+        </ListItemSecondaryAction>
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar src='/images/avatars/8.png' alt='Celia Schneider' />
+        </ListItemAvatar>
+        <ListItemText primary='Celia Schneider' secondary='Muffin pie chupa chups.' />
+        <ListItemSecondaryAction>
+          <IconButton edge='end'>
+            <Plus />
+          </IconButton>
+        </ListItemSecondaryAction>
+      </ListItem>
+    </List>
+  )
+}
+
+export default ListSecondary
+`}</code>
+  </pre>
+)
+
+export const ListWithCheckboxTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
 // ** MUI Imports
@@ -993,9 +1055,13 @@ const ListWithCheckbox = () => {
 }
 
 export default ListWithCheckbox
-`}</code></pre>) 
+`}</code>
+  </pre>
+)
 
-export const ListWithSwitchTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+export const ListWithSwitchTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
 // ** MUI Imports
@@ -1097,9 +1163,13 @@ const ListWithSwitch = () => {
 }
 
 export default ListWithSwitch
-`}</code></pre>) 
+`}</code>
+  </pre>
+)
 
-export const ListStickySubheaderTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+export const ListStickySubheaderTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
@@ -1126,5 +1196,6 @@ const ListWithSwitch = () => {
 }
 
 export default ListWithSwitch
-`}</code></pre>) 
-
+`}</code>
+  </pre>
+)

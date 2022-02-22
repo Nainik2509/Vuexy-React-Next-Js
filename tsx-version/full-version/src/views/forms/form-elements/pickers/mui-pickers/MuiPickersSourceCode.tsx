@@ -1,4 +1,6 @@
-export const DatePickersJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+export const DatePickersJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
 // ** MUI Imports
@@ -83,8 +85,12 @@ const DatePickers = () => {
 }
 
 export default DatePickers
-`}</code></pre>) 
-export const DateTimePickersJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+`}</code>
+  </pre>
+)
+export const DateTimePickersJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
 // ** MUI Imports
@@ -167,8 +173,12 @@ const DateTimePickers = () => {
 }
 
 export default DateTimePickers
-`}</code></pre>) 
-export const TimePickersJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+`}</code>
+  </pre>
+)
+export const TimePickersJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
 // ** MUI Imports
@@ -251,8 +261,12 @@ const DateTimePickers = () => {
 }
 
 export default DateTimePickers
-`}</code></pre>) 
-export const DatePickersTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+`}</code>
+  </pre>
+)
+export const DatePickersTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
 // ** MUI Imports
@@ -339,8 +353,12 @@ const DatePickers = () => {
 }
 
 export default DatePickers
-`}</code></pre>) 
-export const DateTimePickersTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+`}</code>
+  </pre>
+)
+export const DateTimePickersTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
 // ** MUI Imports
@@ -425,8 +443,12 @@ const DateTimePickers = () => {
 }
 
 export default DateTimePickers
-`}</code></pre>) 
-export const TimePickersTSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+`}</code>
+  </pre>
+)
+export const TimePickersTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
 // ** MUI Imports
@@ -522,4 +544,6 @@ const TimePickers = () => {
 }
 
 export default TimePickers
-`}</code></pre>) 
+`}</code>
+  </pre>
+)
