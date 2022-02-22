@@ -7,7 +7,7 @@ Please visit [MUI Avatar Docs](https://mui.com/components/avatars/) for a proper
 Avatar component is slightly modified to make it more beautiful and useable. Let's have a glance.
 
 ::: tip Note
-We have only mentioned the extended props here you can still use the default MUI avatar props.
+We have only mentioned the extended props here but you can still use the default MUI avatar props.
 :::
 
 ## Avatar Colors

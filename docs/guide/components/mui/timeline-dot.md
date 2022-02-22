@@ -7,7 +7,7 @@ Please visit [MUI Timeline Docs](https://mui.com/components/timeline/) for a pro
 TimelineDot component is slightly modified to make it more beautiful and useable. Let's have a glance.
 
 ::: tip Note
-We have only mentioned the extended props here you can still use the default MUI TimelineDot props.
+We have only mentioned the extended props here but you can still use the default MUI TimelineDot props.
 :::
 
 ## Timeline Dot Skins

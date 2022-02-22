@@ -5,6 +5,7 @@
 These are the styles available in the `src/@core/styles` folder:
 
 - MUI Stepper
+- Fullcalendar
 - React Apexcharts
 - CleaveJs
 - React Credit Cards

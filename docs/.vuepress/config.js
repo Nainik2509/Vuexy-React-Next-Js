@@ -80,6 +80,7 @@ module.exports = {
           title: 'Components',
           collapsable: false,
           children: [
+            ['/guide/components/overview', 'Overview'],
             {
               title: 'MUI',
               collapsable: true,
@@ -122,6 +123,7 @@ module.exports = {
           children: [
             ['installation-errors', 'Installation errors'],
             ['installation-warnings', 'Installation warnings'],
+            ['first-child-console-error', ':first-child console error'],
             ['cra-support', 'CRA Support'],
             ['how-to-change-branding', 'How to change Logo / Branding'],
             ['how-to-change-colors', 'How to change colors'],

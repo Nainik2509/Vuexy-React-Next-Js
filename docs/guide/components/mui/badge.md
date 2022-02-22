@@ -7,7 +7,7 @@ Please visit [MUI Badge Docs](https://mui.com/components/badges/) for a proper e
 Badge component is slightly modified to make it more beautiful and useable. Let's have a glance.
 
 ::: tip Note
-We have only mentioned the extended props here you can still use the default MUI badge props.
+We have only mentioned the extended props here but you can still use the default MUI badge props.
 :::
 
 ## Badge Skins
