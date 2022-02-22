@@ -60,8 +60,7 @@ const ForgotPasswordV1 = () => {
               xmlns='http://www.w3.org/2000/svg'
               xmlnsXlink='http://www.w3.org/1999/xlink'
             >
-              <title>🖥 Dashboard</title>
-              <g id='🖥-Dashboard' stroke='none' strokeWidth='1' fill='none' fillRule='evenodd'>
+              <g stroke='none' strokeWidth='1' fill='none' fillRule='evenodd'>
                 <g id='Artboard' transform='translate(-95.000000, -51.000000)'>
                   <g id='logo' transform='translate(95.000000, 50.000000)'>
                     <path
