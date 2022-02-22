@@ -57,7 +57,6 @@ const ListItem = styled(MuiListItem)<ListItemProps>(({ theme }) => ({
 }))
 
 const NavigationMenu = styled(Paper)(({ theme }) => ({
-  boxShadow: theme.shadows[4],
   padding: theme.spacing(2, 0),
   maxHeight: 'calc(100vh - 5rem)',
   backgroundColor: theme.palette.background.paper,
@@ -111,7 +110,7 @@ const HorizontalNavGroup = (props: Props) => {
         enabled: true,
         name: 'offset',
         options: {
-          offset: hasParent ? [-8, 15] : [popperOffsetHorizontal, 20]
+          offset: hasParent ? [-8, 15] : [popperOffsetHorizontal, 5]
         }
       }
     ]
@@ -256,14 +255,17 @@ const HorizontalNavGroup = (props: Props) => {
               sx={{
                 zIndex: theme.zIndex.appBar,
                 display: menuOpen ? 'block' : 'none',
-                pl: childMenuGroupStyles() === 'left' ? 1.25 : 0,
-                pr: childMenuGroupStyles() === 'right' ? 1.25 : 0,
-                ...(hasParent ? { position: 'fixed !important' } : { pt: 1.5 })
+                pl: childMenuGroupStyles() === 'left' ? (skin === 'bordered' ? 1.5 : 1.25) : 0,
+                pr: childMenuGroupStyles() === 'right' ? (skin === 'bordered' ? 1.5 : 1.25) : 0,
+                ...(hasParent ? { position: 'fixed !important' } : { pt: skin === 'bordered' ? 5.25 : 5.5 })
               }}
             >
               <NavigationMenu
                 sx={{
-                  ...(hasParent ? { overflowY: 'auto', overflowX: 'visible', maxHeight: 'calc(100vh - 20rem)' } : {})
+                  ...(hasParent ? { overflowY: 'auto', overflowX: 'visible', maxHeight: 'calc(100vh - 20rem)' } : {}),
+                  ...(skin === 'bordered'
+                    ? { boxShadow: theme.shadows[0], border: `1px solid ${theme.palette.divider}` }
+                    : { boxShadow: theme.shadows[4] })
                 }}
               >
                 <HorizontalNavItems {...props} hasParent horizontalNavItems={item.children} />

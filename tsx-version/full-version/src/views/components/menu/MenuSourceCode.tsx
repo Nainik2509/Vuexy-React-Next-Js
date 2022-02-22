@@ -53,9 +53,18 @@ import MenuList from '@mui/material/MenuList'
 import MenuItem from '@mui/material/MenuItem'
 import ClickAwayListener from '@mui/material/ClickAwayListener'
 
+// ** Hook Import
+import { useSettings } from 'src/@core/hooks/useSettings'
+
 const MenuComposition = () => {
   // ** States
   const [open, setOpen] = useState(false)
+
+
+  // ** Hook & Var
+  const { settings } = useSettings()
+
+  const { skin } = settings
 
 
   // ** Ref
@@ -129,7 +138,10 @@ const MenuComposition = () => {
             {...TransitionProps}
             style={{ transformOrigin: placement === 'bottom-start' ? 'left top' : 'left bottom' }}
           >
-            <Paper elevation={6}>
+            <Paper
+              elevation={skin === 'bordered' ? 0 : 6}
+              sx={skin === 'bordered' ? { border: theme => 1px solid {theme.palette.divider} } : {}}
+            >
               <ClickAwayListener onClickAway={() => setOpen(false)}>
                 <MenuList autoFocusItem={open} id='composition-menu' onKeyDown={handleListKeyDown}>
                   <MenuItem onClick={handleClose}>Profile</MenuItem>
@@ -637,9 +649,16 @@ import MenuList from '@mui/material/MenuList'
 import MenuItem from '@mui/material/MenuItem'
 import ClickAwayListener from '@mui/material/ClickAwayListener'
 
+// ** Hook Import
+import { useSettings } from 'src/@core/hooks/useSettings'
+
 const MenuComposition = () => {
   // ** States
   const [open, setOpen] = useState<boolean>(false)
+
+  // ** Hook & Var
+  const { settings } = useSettings()
+  const { skin } = settings
 
   // ** Ref
   const anchorRef = useRef<HTMLButtonElement | null>(null)
@@ -713,7 +732,10 @@ const MenuComposition = () => {
             {...TransitionProps}
             style={{ transformOrigin: placement === 'bottom-start' ? 'left top' : 'left bottom' }}
           >
-            <Paper elevation={6}>
+            <Paper
+              elevation={skin === 'bordered' ? 0 : 6}
+              sx={skin === 'bordered' ? { border: theme => 1px solid {theme.palette.divider} } : {}}
+            >
               <ClickAwayListener onClickAway={() => setOpen(false)}>
                 <MenuList autoFocusItem={open} id='composition-menu' onKeyDown={handleListKeyDown}>
                   <MenuItem onClick={handleClose}>Profile</MenuItem>

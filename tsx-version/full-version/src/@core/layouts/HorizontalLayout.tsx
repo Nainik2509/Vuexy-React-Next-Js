@@ -87,13 +87,13 @@ const HorizontalLayout = (props: LayoutProps) => {
         className='layout-navbar-and-nav-container'
         position={appBar === 'fixed' ? 'sticky' : 'static'}
         sx={{
-          transition: 'none',
           alignItems: 'center',
           color: 'text.primary',
           justifyContent: 'center',
           ...(appBar === 'static' && { zIndex: 13 }),
+          transition: 'border-bottom 0.2s ease-in-out',
           backgroundColor: theme => theme.palette.background.paper,
-          ...(skin === 'bordered' && { borderBottom: theme => `1px solid ${theme.palette.divider}` })
+          ...(!showBackdrop && skin === 'bordered' && { borderBottom: theme => `1px solid ${theme.palette.divider}` })
         }}
       >
         {/* Navbar / AppBar */}
