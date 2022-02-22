@@ -42,7 +42,7 @@ const ToastCustom = () => {
       <PencilOutline sx={{ mb: 2, fontSize: '2rem' }} />
       <Typography sx={{ mb: 4, fontWeight: 600 }}>Custom</Typography>
       <Typography sx={{ mb: 3 }}>Make a toast using any custom content</Typography>
-      <Button color='info' sx={{ mb: 8 }} variant='contained' onClick={handleClick}>
+      <Button sx={{ mb: 8 }} variant='contained' onClick={handleClick}>
         Custom
       </Button>
     </Box>

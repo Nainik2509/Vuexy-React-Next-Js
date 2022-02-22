@@ -4,7 +4,7 @@ sidebarDepth: 0
 
 # Installation warnings
 
-You might get some warnings while running `yarn install` or `npm install` like below:
+You might get some warnings while running `yarn install` or `npm install --legacy-peer-deps` like below:
 
 <img alt='installation warnings' class='medium-zoom' :src="$withBase('/images/faqs/installation-warnings.png')" />
 
@@ -14,4 +14,4 @@ We always keep our packages up to date when we make a major release. However, th
 
 **Also, check if you're missing files staring with a dot(.eslintrc.json)**
 
-Even if you like to try you can install this packages in fresh React project without our template and you will get the same.
+Even if you like to try, you can install this packages in fresh React project without our template and you will get the same.

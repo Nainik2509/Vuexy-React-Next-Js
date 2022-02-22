@@ -14,12 +14,12 @@ Yarn package manager is recommended
 Please make sure you use the node’s LTS version which is recommended by the official node site and not the one with the latest features or previous versions. Our project is not tested to work with other Node versions.
 :::
 
-::: danger Important
+::: danger Important!
 Before installing the **node_modules** make sure you have files starting with a **dot(.eslintrc, .env etc..)**. It mostly happens when hidden files are not enabled on your machine and you try to copy our template at some other place on your system.
 :::
 
-::: danger Important
-If you decide to use **npm**. Make sure you use following command: **npm install --legacy-peer-deps**
+::: danger Important!
+If you decide to use **npm**, make sure you use following command: **npm install --legacy-peer-deps**
 :::
 
 - After downloading zip, copy this zip to your desired location and then unzip it. **Do not unzip first and then copy files to another location**, it may not be able to run the template due to missing hidden files not copied over.

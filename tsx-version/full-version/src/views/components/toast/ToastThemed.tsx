@@ -33,7 +33,7 @@ const ToastThemed = () => {
       <PaletteOutline sx={{ mb: 2, fontSize: '2rem' }} />
       <Typography sx={{ mb: 4, fontWeight: 600 }}>Themed</Typography>
       <Typography sx={{ mb: 3 }}>Customize the default styles the way you want.</Typography>
-      <Button sx={{ mb: 8 }} color='success' variant='contained' onClick={handleClick}>
+      <Button sx={{ mb: 8 }} variant='contained' onClick={handleClick}>
         Themed
       </Button>
     </Box>

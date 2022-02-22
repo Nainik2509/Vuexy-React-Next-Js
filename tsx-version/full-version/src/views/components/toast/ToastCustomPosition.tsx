@@ -21,7 +21,7 @@ const ToastCustomPosition = () => {
       <ViewGridPlusOutline sx={{ mb: 2, fontSize: '2rem' }} />
       <Typography sx={{ mb: 4, fontWeight: 600 }}>Custom Position</Typography>
       <Typography sx={{ mb: 3 }}>You can change the toast's position as you like.</Typography>
-      <Button color='warning' sx={{ mb: 8 }} variant='contained' onClick={handleClick}>
+      <Button sx={{ mb: 8 }} variant='contained' onClick={handleClick}>
         Position
       </Button>
     </Box>
