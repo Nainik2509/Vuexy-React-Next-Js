@@ -24,7 +24,8 @@ const DefaultPalette = (mode: PaletteMode, skin: Skin) => {
       main: mainColor,
       light: lightColor,
       darkBg: '#28243d',
-      lightBg: '#F4F5FA'
+      lightBg: '#F4F5FA',
+      tableHeaderBg: mode === 'light' ? '#F9FAFC' : '#3D3759'
     },
     common: {
       black: '#000',

@@ -10,8 +10,8 @@ import TableCell, { TableCellProps, tableCellClasses } from '@mui/material/Table
 
 const StyledTableCell = styled(TableCell)<TableCellProps>(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white
+    color: theme.palette.common.white,
+    backgroundColor: theme.palette.common.black
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14

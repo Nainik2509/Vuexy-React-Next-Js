@@ -6,6 +6,7 @@ declare module '@mui/material/styles' {
       light: string
       darkBg: string
       lightBg: string
+      tableHeaderBg: string
     }
   }
   interface PaletteOptions {
@@ -15,6 +16,7 @@ declare module '@mui/material/styles' {
       light?: string
       darkBg?: string
       lightBg?: string
+      tableHeaderBg?: string
     }
   }
 }

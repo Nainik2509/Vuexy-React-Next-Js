@@ -57,31 +57,9 @@ const Table = (theme: Theme) => {
             textTransform: 'uppercase',
             color: theme.palette.text.secondary
           }
-        }
-      }
-    },
-    MUIDataTableHeadCell: {
-      styleOverrides: {
-        root: {
-          backgroundColor:
-            theme.palette.mode === 'light'
-              ? `${theme.palette.grey[50]} !important`
-              : `${theme.palette.background.default} !important`,
-          borderTop: `1px solid ${theme.palette.divider}`
         },
-        toolButton: {
-          padding: `0 ${theme.spacing(2)}`
-        }
-      }
-    },
-    MUIDataTableSelectCell: {
-      styleOverrides: {
-        headerCell: {
-          backgroundColor:
-            theme.palette.mode === 'light'
-              ? `${theme.palette.grey[50]} !important`
-              : `${theme.palette.background.default} !important`,
-          borderTop: `1px solid ${theme.palette.divider}`
+        stickyHeader: {
+          backgroundColor: theme.palette.customColors.tableHeaderBg
         }
       }
     }
