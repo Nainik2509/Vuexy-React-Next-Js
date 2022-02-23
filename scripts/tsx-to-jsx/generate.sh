@@ -24,12 +24,11 @@ yarn install
 # Add jsx version specific eslint plugins
 yarn add eslint-plugin-react eslint-plugin-import babel-eslint
 
-# Run yarn format command to format all the files using prettier
-yarn format
-
 # Run yarn lint command to fix all the linting error and give space after imports
 yarn lint
 
+# Run yarn format command to format all the files using prettier
+yarn format
 
 # Copy SourceCode
 cd ../../scripts/copy-source
