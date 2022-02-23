@@ -13,6 +13,7 @@ You can find all of the slices in `src/store` folder and
 You should read the [redux-toolkit](https://redux-toolkit.js.org/introduction/getting-started) documentation to better understand the template.
 
 ## Creating a slice
+
 Create a new file in `src/store`, and name it `email.ts` and import `createSlice` from `@reduxjs/toolkit` package to create the new slice.
 
 ```js
@@ -32,6 +33,7 @@ export default appEmailSlice.reducer
 ```
 
 ## Creating a reducer action
+
 Let's create an action `handleSelectMail` that pushes a mail into `selectedMails` state.
 
 ```js
@@ -63,15 +65,15 @@ export const { handleSelectMail } = emailSlice.actions
 
 export default appEmailSlice.reducer
 ```
+
 ::: tip Important
 The state is a Proxy object, you cannot update it directly, and you have to update its keys instead.
-
 
 For example: `state = { ...mailData } will break the state, but state.selectedMails = { ...mailData }` works as expected.
 :::
 
-
 ## Fetching Data
+
 Use `createAsyncThunk` to fetch data from an api.
 
 ```js
@@ -106,7 +108,9 @@ const emailSlice = createSlice({
 
 export default appEmailSlice.reducer
 ```
+
 ## Combine the new slice in the root reducer
+
 In the file `src/store/index.ts` use the reducer from your newly created slice.
 
 ```js
@@ -124,6 +128,7 @@ export const store = configureStore({
 ```
 
 ## Using the store state
+
 Use `useSelector` hook to access the store state.
 
 ```jsx
@@ -141,9 +146,10 @@ const Email = () => {
 
 export default Email
 ```
-## Dispatching an action
-Use `useDispatch` hook to dispatch an action.
 
+## Dispatching an action
+
+Use `useDispatch` hook to dispatch an action.
 
 ```jsx
 import { useDispatch, useSelector } from 'react-redux'

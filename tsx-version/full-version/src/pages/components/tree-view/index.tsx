@@ -13,9 +13,8 @@ import TreeViewBasic from 'src/views/components/tree-view/TreeViewBasic'
 import TreeViewControlled from 'src/views/components/tree-view/TreeViewControlled'
 import TreeViewRichObject from 'src/views/components/tree-view/TreeViewRichObject'
 import TreeViewCustomized from 'src/views/components/tree-view/TreeViewCustomized'
+import TreeViewGmailClone from 'src/views/components/tree-view/TreeViewGmailClone'
 import TreeViewMultiSelection from 'src/views/components/tree-view/TreeViewMultiSelection'
-
-// import TreeViewGmailClone from 'src/views/components/tree-view/TreeViewGmailClone'
 
 // ** Source code imports
 import * as source from 'src/views/components/tree-view/TreeViewSourceCode'
@@ -99,11 +98,17 @@ const TreeView = () => {
           <TreeViewCustomized />
         </CardSnippet>
       </Grid>
-      {/* <Grid item xs={12} md={6}>
-        <CardSnippet title='Gmail Clone' code={source.TreeViewGmailCloneCode}>
+      <Grid item xs={12} md={6}>
+        <CardSnippet
+          title='Gmail Clone'
+          code={{
+            tsx: source.TreeViewGmailCloneTSXCode,
+            jsx: source.TreeViewGmailCloneJSXCode
+          }}
+        >
           <TreeViewGmailClone direction={settings.direction} />
         </CardSnippet>
-      </Grid> */}
+      </Grid>
     </Grid>
   )
 }

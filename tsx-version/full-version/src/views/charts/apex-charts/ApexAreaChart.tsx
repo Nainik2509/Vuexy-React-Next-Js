@@ -38,6 +38,7 @@ const ApexAreaChart = () => {
   // ** States
   const [endDate, setEndDate] = useState<DateType>(null)
   const [startDate, setStartDate] = useState<DateType>(new Date())
+
   const options: ApexOptions = {
     chart: {
       parentHeightOffset: 0,

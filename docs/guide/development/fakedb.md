@@ -12,47 +12,47 @@ All of the server calls are located in `src/@fake-db`.
 
 If you're using the starter-kit you'll have to manually setup the fake-db.
 
-1.  First create a folder with name `fake-db` and create a `mock.ts` file inside it.
-2.  Initialize the axios-mock-adapter in `mock.ts` file.
+1. First create a folder with name `fake-db` and create a `mock.ts` file inside it.
+2. Initialize the axios-mock-adapter in `mock.ts` file.
 
-```js
-import axios from 'axios'
-import MockAdapter from 'axios-mock-adapter'
+   ```js
+   import axios from 'axios'
+   import MockAdapter from 'axios-mock-adapter'
 
-const mock = new MockAdapter(axios)
+   const mock = new MockAdapter(axios)
 
-export default mock
-```
+   export default mock
+   ```
 
 3. Create a `index.ts` file in `fake-db` folder & add the following:
 
-```js
-import mock from './mock'
+   ```js
+   import mock from './mock'
 
-mock.onAny().passThrough()
-```
+   mock.onAny().passThrough()
+   ```
 
-4.  To initialize your fake data create a ts file in `fake-db` folder. Import `mock` and use it like following:
+4. To initialize your fake data create a ts file in `fake-db` folder. Import `mock` and use it like following:
 
-```js
-import mock from '../mock'
+   ```js
+   import mock from '../mock'
 
-const data = [{...}]
+   const data = [{...}]
 
-mock.onGet('/url/get-data').reply(config => {
-  return [200, data]
-})
-```
+   mock.onGet('/url/get-data').reply(config => {
+     return [200, data]
+   })
+   ```
 
-5.  Import the above created file in `fake-db/index.ts`:
+5. Import the above created file in `fake-db/index.ts`:
 
-```js
-import mock from './mock'
+   ```js
+   import mock from './mock'
 
-import './FILE_WITH_DATA'
+   import './FILE_WITH_DATA'
 
-mock.onAny().passThrough()
-```
+   mock.onAny().passThrough()
+   ```
 
 6. Import your `fake-db/index.ts` in `src/pages/_app_.ts` to be able to get your data in your app.
 

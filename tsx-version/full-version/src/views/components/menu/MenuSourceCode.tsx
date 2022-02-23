@@ -39,6 +39,70 @@ export default MenuBasic
   </pre>
 )
 
+export const MenuContextJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import Box from '@mui/material/Box'
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
+import Typography from '@mui/material/Typography'
+
+const initialState = {
+  mouseX: null,
+  mouseY: null
+}
+
+const MenuContext = () => {
+  // ** State
+  const [state, setState] = useState(initialState)
+
+  const handleClick = event => {
+    event.preventDefault()
+    setState({
+      mouseX: event.clientX - 2,
+      mouseY: event.clientY - 4
+    })
+  }
+
+  const handleClose = () => {
+    setState(initialState)
+  }
+
+  return (
+    <Box onContextMenu={handleClick} sx={{ cursor: 'context-menu' }}>
+      <Typography>
+        Apple pie bonbon sweet brownie cake lemon drops carrot cake danish carrot cake. Marzipan jujubes cupcake cake
+        bear claw jujubes. Macaroon candy canes jelly-o sugar plum biscuit. Cupcake cupcake oat cake cookie donut candy
+        canes chupa chups. Jelly beans carrot cake soufflé gummies sweet cake halvah carrot cake. Candy marshmallow
+        apple pie donut toffee pudding jelly croissant jelly. Dragée cake liquorice cake gummi bears. Gummi bears
+        caramels tootsie roll caramels lemon drops caramels chocolate cake jelly oat cake. Oat cake tart biscuit cake.
+      </Typography>
+      <Menu
+        keepMounted
+        onClose={handleClose}
+        open={state.mouseY !== null}
+        anchorReference='anchorPosition'
+        anchorPosition={
+          state.mouseY !== null && state.mouseX !== null ? { top: state.mouseY, left: state.mouseX } : undefined
+        }
+      >
+        <MenuItem onClick={handleClose}>Copy</MenuItem>
+        <MenuItem onClick={handleClose}>Print</MenuItem>
+        <MenuItem onClick={handleClose}>Email</MenuItem>
+        <MenuItem onClick={handleClose}>Highlight</MenuItem>
+      </Menu>
+    </Box>
+  )
+}
+
+export default MenuContext
+`}</code>
+  </pre>
+)
+
 export const MenuCompositionJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -59,6 +123,10 @@ import { useSettings } from 'src/@core/hooks/useSettings'
 const MenuComposition = () => {
   // ** States
   const [open, setOpen] = useState(false)
+
+  // ** Hook & Var
+  const { settings } = useSettings()
+  const { skin } = settings
 
   // ** Ref
   const anchorRef = useRef(null)
@@ -150,70 +218,6 @@ const MenuComposition = () => {
 }
 
 export default MenuComposition
-`}</code>
-  </pre>
-)
-
-export const MenuContextJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import Box from '@mui/material/Box'
-import Menu from '@mui/material/Menu'
-import MenuItem from '@mui/material/MenuItem'
-import Typography from '@mui/material/Typography'
-
-const initialState = {
-  mouseX: null,
-  mouseY: null
-}
-
-const MenuContext = () => {
-  // ** State
-  const [state, setState] = useState(initialState)
-
-  const handleClick = event => {
-    event.preventDefault()
-    setState({
-      mouseX: event.clientX - 2,
-      mouseY: event.clientY - 4
-    })
-  }
-
-  const handleClose = () => {
-    setState(initialState)
-  }
-
-  return (
-    <Box onContextMenu={handleClick} sx={{ cursor: 'context-menu' }}>
-      <Typography>
-        Apple pie bonbon sweet brownie cake lemon drops carrot cake danish carrot cake. Marzipan jujubes cupcake cake
-        bear claw jujubes. Macaroon candy canes jelly-o sugar plum biscuit. Cupcake cupcake oat cake cookie donut candy
-        canes chupa chups. Jelly beans carrot cake soufflé gummies sweet cake halvah carrot cake. Candy marshmallow
-        apple pie donut toffee pudding jelly croissant jelly. Dragée cake liquorice cake gummi bears. Gummi bears
-        caramels tootsie roll caramels lemon drops caramels chocolate cake jelly oat cake. Oat cake tart biscuit cake.
-      </Typography>
-      <Menu
-        keepMounted
-        onClose={handleClose}
-        open={state.mouseY !== null}
-        anchorReference='anchorPosition'
-        anchorPosition={
-          state.mouseY !== null && state.mouseX !== null ? { top: state.mouseY, left: state.mouseX } : undefined
-        }
-      >
-        <MenuItem onClick={handleClose}>Copy</MenuItem>
-        <MenuItem onClick={handleClose}>Print</MenuItem>
-        <MenuItem onClick={handleClose}>Email</MenuItem>
-        <MenuItem onClick={handleClose}>Highlight</MenuItem>
-      </Menu>
-    </Box>
-  )
-}
-
-export default MenuContext
 `}</code>
   </pre>
 )
@@ -314,38 +318,18 @@ export default MenuCustomized
   </pre>
 )
 
-export const MenuMaxHeightJSXCode = (
+export const MenuTransitionJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
 // ** MUI Imports
 import Menu from '@mui/material/Menu'
+import Fade from '@mui/material/Fade'
+import Button from '@mui/material/Button'
 import MenuItem from '@mui/material/MenuItem'
-import IconButton from '@mui/material/IconButton'
 
-// ** Icons Imports
-import DotsVertical from 'mdi-material-ui/DotsVertical'
-
-const options = [
-  'None',
-  'Atria',
-  'Callisto',
-  'Dione',
-  'Ganymede',
-  'Hangouts Call',
-  'Luna',
-  'Oberon',
-  'Phobos',
-  'Pyxis',
-  'Sedna',
-  'Titania',
-  'Triton',
-  'Umbriel'
-]
-const ITEM_HEIGHT = 48
-
-const MenuMaxHeight = () => {
+const MenuTransition = () => {
   // ** State
   const [anchorEl, setAnchorEl] = useState(null)
 
@@ -359,32 +343,26 @@ const MenuMaxHeight = () => {
 
   return (
     <div>
-      <IconButton aria-label='more' aria-controls='long-menu' aria-haspopup='true' onClick={handleClick}>
-        <DotsVertical />
-      </IconButton>
+      <Button variant='outlined' aria-controls='fade-menu' aria-haspopup='true' onClick={handleClick}>
+        Open with fade transition
+      </Button>
       <Menu
         keepMounted
-        id='long-menu'
+        id='fade-menu'
         anchorEl={anchorEl}
         onClose={handleClose}
         open={Boolean(anchorEl)}
-        PaperProps={{
-          style: {
-            maxHeight: ITEM_HEIGHT * 4.5
-          }
-        }}
+        TransitionComponent={Fade}
       >
-        {options.map(option => (
-          <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
-            {option}
-          </MenuItem>
-        ))}
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem onClick={handleClose}>Logout</MenuItem>
       </Menu>
     </div>
   )
 }
 
-export default MenuMaxHeight
+export default MenuTransition
 `}</code>
   </pre>
 )
@@ -465,18 +443,38 @@ export default MenuSelected
   </pre>
 )
 
-export const MenuTransitionJSXCode = (
+export const MenuMaxHeightJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
 // ** MUI Imports
 import Menu from '@mui/material/Menu'
-import Fade from '@mui/material/Fade'
-import Button from '@mui/material/Button'
 import MenuItem from '@mui/material/MenuItem'
+import IconButton from '@mui/material/IconButton'
 
-const MenuTransition = () => {
+// ** Icons Imports
+import DotsVertical from 'mdi-material-ui/DotsVertical'
+
+const options = [
+  'None',
+  'Atria',
+  'Callisto',
+  'Dione',
+  'Ganymede',
+  'Hangouts Call',
+  'Luna',
+  'Oberon',
+  'Phobos',
+  'Pyxis',
+  'Sedna',
+  'Titania',
+  'Triton',
+  'Umbriel'
+]
+const ITEM_HEIGHT = 48
+
+const MenuMaxHeight = () => {
   // ** State
   const [anchorEl, setAnchorEl] = useState(null)
 
@@ -490,17 +488,64 @@ const MenuTransition = () => {
 
   return (
     <div>
-      <Button variant='outlined' aria-controls='fade-menu' aria-haspopup='true' onClick={handleClick}>
-        Open with fade transition
-      </Button>
+      <IconButton aria-label='more' aria-controls='long-menu' aria-haspopup='true' onClick={handleClick}>
+        <DotsVertical />
+      </IconButton>
       <Menu
         keepMounted
-        id='fade-menu'
+        id='long-menu'
         anchorEl={anchorEl}
         onClose={handleClose}
         open={Boolean(anchorEl)}
-        TransitionComponent={Fade}
+        PaperProps={{
+          style: {
+            maxHeight: ITEM_HEIGHT * 4.5
+          }
+        }}
       >
+        {options.map(option => (
+          <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
+            {option}
+          </MenuItem>
+        ))}
+      </Menu>
+    </div>
+  )
+}
+
+export default MenuMaxHeight
+`}</code>
+  </pre>
+)
+
+export const MenuBasicTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { MouseEvent, useState } from 'react'
+
+// ** MUI Imports
+import Menu from '@mui/material/Menu'
+import Button from '@mui/material/Button'
+import MenuItem from '@mui/material/MenuItem'
+
+const MenuBasic = () => {
+  // ** State
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+
+  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
+
+  return (
+    <div>
+      <Button variant='outlined' aria-controls='simple-menu' aria-haspopup='true' onClick={handleClick}>
+        Open Menu
+      </Button>
+      <Menu keepMounted id='simple-menu' anchorEl={anchorEl} onClose={handleClose} open={Boolean(anchorEl)}>
         <MenuItem onClick={handleClose}>Profile</MenuItem>
         <MenuItem onClick={handleClose}>My account</MenuItem>
         <MenuItem onClick={handleClose}>Logout</MenuItem>
@@ -509,7 +554,7 @@ const MenuTransition = () => {
   )
 }
 
-export default MenuTransition
+export default MenuBasic
 `}</code>
   </pre>
 )
@@ -635,6 +680,102 @@ export default MenuComposition
   </pre>
 )
 
+export const MenuCustomizedTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { MouseEvent, useState } from 'react'
+
+// ** MUI Imports
+import Button from '@mui/material/Button'
+import { styled } from '@mui/material/styles'
+import ListItemIcon from '@mui/material/ListItemIcon'
+import ListItemText from '@mui/material/ListItemText'
+import MuiMenu, { MenuProps } from '@mui/material/Menu'
+import MuiMenuItem, { MenuItemProps } from '@mui/material/MenuItem'
+
+// ** Icons Imports
+import Send from 'mdi-material-ui/Send'
+import EmailOpen from 'mdi-material-ui/EmailOpen'
+import InboxArrowDown from 'mdi-material-ui/InboxArrowDown'
+
+// Styled Menu component
+const Menu = styled(MuiMenu)<MenuProps>(({ theme }) => ({
+  '& .MuiMenu-paper': {
+    border: 1px solid {theme.palette.divider}
+  }
+}))
+
+// Styled MenuItem component
+const MenuItem = styled(MuiMenuItem)<MenuItemProps>(({ theme }) => ({
+  '&:focus': {
+    backgroundColor: theme.palette.primary.main,
+    '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
+      color: theme.palette.common.white
+    }
+  }
+}))
+
+const MenuCustomized = () => {
+  // ** State
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+
+  const handleClick = (event: MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
+
+  return (
+    <div>
+      <Button variant='outlined' aria-haspopup='true' onClick={handleClick} aria-controls='customized-menu'>
+        Open Menu
+      </Button>
+      <Menu
+        keepMounted
+        elevation={0}
+        anchorEl={anchorEl}
+        id='customized-menu'
+        onClose={handleClose}
+        open={Boolean(anchorEl)}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'center'
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'center'
+        }}
+      >
+        <MenuItem>
+          <ListItemIcon>
+            <Send fontSize='small' />
+          </ListItemIcon>
+          <ListItemText primary='Sent mail' />
+        </MenuItem>
+        <MenuItem>
+          <ListItemIcon>
+            <EmailOpen fontSize='small' />
+          </ListItemIcon>
+          <ListItemText primary='Drafts' />
+        </MenuItem>
+        <MenuItem>
+          <ListItemIcon>
+            <InboxArrowDown fontSize='small' />
+          </ListItemIcon>
+          <ListItemText primary='Inbox' />
+        </MenuItem>
+      </Menu>
+    </div>
+  )
+}
+
+export default MenuCustomized
+`}</code>
+  </pre>
+)
+
 export const MenuContextTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -700,82 +841,6 @@ const MenuContext = () => {
 }
 
 export default MenuContext
-`}</code>
-  </pre>
-)
-
-export const MenuMaxHeightTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { MouseEvent, useState } from 'react'
-
-// ** MUI Imports
-import Menu from '@mui/material/Menu'
-import MenuItem from '@mui/material/MenuItem'
-import IconButton from '@mui/material/IconButton'
-
-// ** Icons Imports
-import DotsVertical from 'mdi-material-ui/DotsVertical'
-
-const options = [
-  'None',
-  'Atria',
-  'Callisto',
-  'Dione',
-  'Ganymede',
-  'Hangouts Call',
-  'Luna',
-  'Oberon',
-  'Phobos',
-  'Pyxis',
-  'Sedna',
-  'Titania',
-  'Triton',
-  'Umbriel'
-]
-
-const ITEM_HEIGHT = 48
-
-const MenuMaxHeight = () => {
-  // ** State
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-
-  const handleClick = (event: MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget)
-  }
-
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
-
-  return (
-    <div>
-      <IconButton aria-label='more' aria-controls='long-menu' aria-haspopup='true' onClick={handleClick}>
-        <DotsVertical />
-      </IconButton>
-      <Menu
-        keepMounted
-        id='long-menu'
-        anchorEl={anchorEl}
-        onClose={handleClose}
-        open={Boolean(anchorEl)}
-        PaperProps={{
-          style: {
-            maxHeight: ITEM_HEIGHT * 4.5
-          }
-        }}
-      >
-        {options.map(option => (
-          <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
-            {option}
-          </MenuItem>
-        ))}
-      </Menu>
-    </div>
-  )
-}
-
-export default MenuMaxHeight
 `}</code>
   </pre>
 )
@@ -905,83 +970,39 @@ export default MenuSelected
   </pre>
 )
 
-export const MenuBasicTSXCode = (
+export const MenuMaxHeightTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
 import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import Menu from '@mui/material/Menu'
-import Button from '@mui/material/Button'
 import MenuItem from '@mui/material/MenuItem'
-
-const MenuBasic = () => {
-  // ** State
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-
-  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget)
-  }
-
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
-
-  return (
-    <div>
-      <Button variant='outlined' aria-controls='simple-menu' aria-haspopup='true' onClick={handleClick}>
-        Open Menu
-      </Button>
-      <Menu keepMounted id='simple-menu' anchorEl={anchorEl} onClose={handleClose} open={Boolean(anchorEl)}>
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
-      </Menu>
-    </div>
-  )
-}
-
-export default MenuBasic
-`}</code>
-  </pre>
-)
-
-export const MenuCustomizedTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { MouseEvent, useState } from 'react'
-
-// ** MUI Imports
-import Button from '@mui/material/Button'
-import { styled } from '@mui/material/styles'
-import ListItemIcon from '@mui/material/ListItemIcon'
-import ListItemText from '@mui/material/ListItemText'
-import MuiMenu, { MenuProps } from '@mui/material/Menu'
-import MuiMenuItem, { MenuItemProps } from '@mui/material/MenuItem'
+import IconButton from '@mui/material/IconButton'
 
 // ** Icons Imports
-import Send from 'mdi-material-ui/Send'
-import EmailOpen from 'mdi-material-ui/EmailOpen'
-import InboxArrowDown from 'mdi-material-ui/InboxArrowDown'
+import DotsVertical from 'mdi-material-ui/DotsVertical'
 
-// Styled Menu component
-const Menu = styled(MuiMenu)<MenuProps>(({ theme }) => ({
-  '& .MuiMenu-paper': {
-    border: 1px solid {theme.palette.divider}
-  }
-}))
+const options = [
+  'None',
+  'Atria',
+  'Callisto',
+  'Dione',
+  'Ganymede',
+  'Hangouts Call',
+  'Luna',
+  'Oberon',
+  'Phobos',
+  'Pyxis',
+  'Sedna',
+  'Titania',
+  'Triton',
+  'Umbriel'
+]
 
-// Styled MenuItem component
-const MenuItem = styled(MuiMenuItem)<MenuItemProps>(({ theme }) => ({
-  '&:focus': {
-    backgroundColor: theme.palette.primary.main,
-    '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
-      color: theme.palette.common.white
-    }
-  }
-}))
+const ITEM_HEIGHT = 48
 
-const MenuCustomized = () => {
+const MenuMaxHeight = () => {
   // ** State
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
@@ -995,49 +1016,32 @@ const MenuCustomized = () => {
 
   return (
     <div>
-      <Button variant='outlined' aria-haspopup='true' onClick={handleClick} aria-controls='customized-menu'>
-        Open Menu
-      </Button>
+      <IconButton aria-label='more' aria-controls='long-menu' aria-haspopup='true' onClick={handleClick}>
+        <DotsVertical />
+      </IconButton>
       <Menu
         keepMounted
-        elevation={0}
+        id='long-menu'
         anchorEl={anchorEl}
-        id='customized-menu'
         onClose={handleClose}
         open={Boolean(anchorEl)}
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'center'
-        }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'center'
+        PaperProps={{
+          style: {
+            maxHeight: ITEM_HEIGHT * 4.5
+          }
         }}
       >
-        <MenuItem>
-          <ListItemIcon>
-            <Send fontSize='small' />
-          </ListItemIcon>
-          <ListItemText primary='Sent mail' />
-        </MenuItem>
-        <MenuItem>
-          <ListItemIcon>
-            <EmailOpen fontSize='small' />
-          </ListItemIcon>
-          <ListItemText primary='Drafts' />
-        </MenuItem>
-        <MenuItem>
-          <ListItemIcon>
-            <InboxArrowDown fontSize='small' />
-          </ListItemIcon>
-          <ListItemText primary='Inbox' />
-        </MenuItem>
+        {options.map(option => (
+          <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
+            {option}
+          </MenuItem>
+        ))}
       </Menu>
     </div>
   )
 }
 
-export default MenuCustomized
+export default MenuMaxHeight
 `}</code>
   </pre>
 )

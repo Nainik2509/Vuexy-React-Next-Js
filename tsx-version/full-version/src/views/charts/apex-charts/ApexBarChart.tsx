@@ -10,6 +10,7 @@ import InputAdornment from '@mui/material/InputAdornment'
 
 // ** Third Party Imports
 import format from 'date-fns/format'
+import { ApexOptions } from 'apexcharts'
 import DatePicker from 'react-datepicker'
 
 // ** Icons Imports
@@ -32,7 +33,7 @@ const ApexBarChart = () => {
   const [endDate, setEndDate] = useState<DateType>(null)
   const [startDate, setStartDate] = useState<DateType>(new Date())
 
-  const options = {
+  const options: ApexOptions = {
     chart: {
       parentHeightOffset: 0,
       toolbar: {
