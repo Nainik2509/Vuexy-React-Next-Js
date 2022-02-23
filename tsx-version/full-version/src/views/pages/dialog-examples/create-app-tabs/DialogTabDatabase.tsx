@@ -24,7 +24,7 @@ const TabDatabase = () => {
 
   return (
     <Box>
-      <TextField fullWidth sx={{ mb: 4 }} label='Database Name' placeholder='materio_database' />
+      <TextField fullWidth sx={{ mb: 4 }} label='Database Name' placeholder='master_database' />
       <Typography variant='h6' sx={{ mb: 4 }}>
         Select Database Engine
       </Typography>

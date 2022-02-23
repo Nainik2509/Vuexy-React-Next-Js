@@ -144,7 +144,7 @@ const DialogReferEarn = () => {
               Invite your friends
             </Typography>
             <InputLabel sx={{ mb: 2, display: 'inline-flex' }} htmlFor='refer-email'>
-              Enter your friend’s email address and invite them to join Materio 😍
+              Enter your friend’s email address and invite them to join Master 😍
             </InputLabel>
             <Box sx={{ display: 'flex', alignItems: 'center', width: '100%', flexWrap: { xs: 'wrap', sm: 'nowrap' } }}>
               <TextField

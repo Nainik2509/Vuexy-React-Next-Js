@@ -14,7 +14,7 @@ const users: UserDataType[] = [
     password: 'admin',
     fullName: 'John Doe',
     username: 'johndoe',
-    email: 'admin@materio.com'
+    email: 'admin@master.com'
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const users: UserDataType[] = [
     password: 'client',
     fullName: 'Jane Doe',
     username: 'janedoe',
-    email: 'client@materio.com'
+    email: 'client@master.com'
   }
 ]
 
