@@ -161,7 +161,9 @@ const generateTSXPackage = () => {
             console.log(err);
           } else {
             copyRecursiveStarterKitSync(pathConfig.starterKitTSXPath, `${pathConfig.packagePath}/tsx-version/starter-kit`)
-            fs.rmdirSync(`${pathConfig.packagePath}/tsx-version/starter-kit/node_modules`)
+            if(fs.existsSync(`${pathConfig.packagePath}/tsx-version/starter-kit/node_modules`)){
+              fs.rmdirSync(`${pathConfig.packagePath}/tsx-version/starter-kit/node_modules`)
+            }
           }
         })
       }
@@ -188,7 +190,9 @@ const generateJSXPackage = () => {
             console.log(err);
           } else {
             copyRecursiveStarterKitSync(pathConfig.starterKitJSXPath, `${pathConfig.packagePath}/jsx-version/starter-kit`)
-            fs.rmdirSync(`${pathConfig.packagePath}/jsx-version/starter-kit/node_modules`)
+            if(fs.existsSync(`${pathConfig.packagePath}/jsx-version/starter-kit/node_modules`)){
+              fs.rmdirSync(`${pathConfig.packagePath}/jsx-version/starter-kit/node_modules`)
+            }
           }
         })
       }
