@@ -60,7 +60,11 @@ export const appChatSlice = createSlice({
     userProfile: null,
     selectedChat: null
   },
-  reducers: {},
+  reducers: {
+    removeSelectedChat: state => {
+      state.selectedChat = null
+    }
+  },
   extraReducers: builder => {
     builder.addCase(fetchUserProfile.fulfilled, (state, action) => {
       state.userProfile = action.payload
@@ -74,5 +78,7 @@ export const appChatSlice = createSlice({
     })
   }
 })
+
+export const { removeSelectedChat } = appChatSlice.actions
 
 export default appChatSlice.reducer

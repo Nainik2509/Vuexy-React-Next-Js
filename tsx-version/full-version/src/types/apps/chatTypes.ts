@@ -108,6 +108,7 @@ export type ChatSidebarLeftType = {
   leftSidebarOpen: boolean
   statusObj: StatusObjType
   userProfileLeftOpen: boolean
+  removeSelectedChat: () => void
   selectChat: (id: number) => void
   handleLeftSidebarToggle: () => void
   getInitials: (val: string) => string
@@ -135,4 +136,10 @@ export type UserProfileRightType = {
   userProfileRightOpen: boolean
   getInitials: (val: string) => string
   handleUserProfileRightSidebarToggle: () => void
+}
+
+export type SendMsgComponentType = {
+  store: ChatStoreType
+  dispatch: Dispatch<any>
+  sendMsg: (params: SendMsgParamsType) => void
 }

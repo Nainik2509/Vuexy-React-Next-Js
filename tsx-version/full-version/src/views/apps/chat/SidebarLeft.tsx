@@ -1,6 +1,9 @@
 // ** React Imports
 import { useState, useEffect, ChangeEvent, ReactNode } from 'react'
 
+// ** Next Imports
+import { useRouter } from 'next/router'
+
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import List from '@mui/material/List'
@@ -48,6 +51,7 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
     sidebarWidth,
     setUserStatus,
     leftSidebarOpen,
+    removeSelectedChat,
     userProfileLeftOpen,
     formatDateToMonthShort,
     handleLeftSidebarToggle,
@@ -59,6 +63,9 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
   const [filteredChat, setFilteredChat] = useState<ChatsArrType[]>([])
   const [filteredContacts, setFilteredContacts] = useState<ContactType[]>([])
   const [active, setActive] = useState<null | { type: string; id: string | number }>(null)
+
+  // ** Hooks
+  const router = useRouter()
 
   const handleChatClick = (type: 'chat' | 'contact', id: number) => {
     dispatch(selectChat(id))
@@ -77,6 +84,18 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
       }
     }
   }, [store, active])
+
+  useEffect(() => {
+    router.events.on('routeChangeComplete', () => {
+      setActive(null)
+      dispatch(removeSelectedChat())
+    })
+
+    return () => {
+      setActive(null)
+      dispatch(removeSelectedChat())
+    }
+  }, [])
 
   const hasActiveId = (id: number | string) => {
     if (store.chats !== null) {

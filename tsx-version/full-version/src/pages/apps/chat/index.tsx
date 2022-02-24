@@ -8,7 +8,7 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 
 // ** Store & Actions Imports
 import { useDispatch, useSelector } from 'react-redux'
-import { sendMsg, selectChat, fetchUserProfile, fetchChatsContacts } from 'src/store/apps/chat'
+import { sendMsg, selectChat, fetchUserProfile, fetchChatsContacts, removeSelectedChat } from 'src/store/apps/chat'
 
 // ** Types
 import { RootState } from 'src/store'
@@ -94,6 +94,7 @@ const AppChat = () => {
         sidebarWidth={sidebarWidth}
         setUserStatus={setUserStatus}
         leftSidebarOpen={leftSidebarOpen}
+        removeSelectedChat={removeSelectedChat}
         userProfileLeftOpen={userProfileLeftOpen}
         formatDateToMonthShort={formatDateToMonthShort}
         handleLeftSidebarToggle={handleLeftSidebarToggle}

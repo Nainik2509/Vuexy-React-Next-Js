@@ -4,11 +4,9 @@ import { useState, SyntheticEvent, Fragment } from 'react'
 // ** MUI Imports
 import Menu from '@mui/material/Menu'
 import Badge from '@mui/material/Badge'
-import Button from '@mui/material/Button'
 import MuiAvatar from '@mui/material/Avatar'
 import MenuItem from '@mui/material/MenuItem'
 import { styled } from '@mui/material/styles'
-import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 import Box, { BoxProps } from '@mui/material/Box'
@@ -16,8 +14,6 @@ import Box, { BoxProps } from '@mui/material/Box'
 // ** Icons Imports
 import MenuIcon from 'mdi-material-ui/Menu'
 import Magnify from 'mdi-material-ui/Magnify'
-import Microphone from 'mdi-material-ui/Microphone'
-import Attachment from 'mdi-material-ui/Attachment'
 import PhoneOutline from 'mdi-material-ui/PhoneOutline'
 import VideoOutline from 'mdi-material-ui/VideoOutline'
 import DotsVertical from 'mdi-material-ui/DotsVertical'
@@ -27,21 +23,12 @@ import MessageOutline from 'mdi-material-ui/MessageOutline'
 import ChatLog from 'src/@core/components/chat-log'
 import CustomAvatar from 'src/@core/components/mui/avatar'
 import UserProfileRight from 'src/views/apps/chat/UserProfileRight'
+import SendMsgForm from 'src/views/apps/chat/SendMsgForm'
 
 // ** Types
 import { ChatContentType } from 'src/types/apps/chatTypes'
 
 // ** Styled Components
-const ChatFormWrapper = styled(Box)<BoxProps>(({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
-  boxShadow: theme.shadows[1],
-  padding: theme.spacing(1.25, 4),
-  justifyContent: 'space-between',
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: theme.palette.background.paper
-}))
-
 const ChatWrapperStartChat = styled(Box)<BoxProps>(({ theme }) => ({
   flexGrow: 1,
   height: '100%',
@@ -51,10 +38,6 @@ const ChatWrapperStartChat = styled(Box)<BoxProps>(({ theme }) => ({
   flexDirection: 'column',
   justifyContent: 'center',
   backgroundColor: theme.palette.action.hover
-}))
-
-const Form = styled('form')(({ theme }) => ({
-  padding: theme.spacing(0, 5, 5)
 }))
 
 const ChatContent = (props: ChatContentType) => {
@@ -74,7 +57,6 @@ const ChatContent = (props: ChatContentType) => {
   } = props
 
   // ** State
-  const [msg, setMsg] = useState<string>('')
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
   const open = Boolean(anchorEl)
@@ -84,14 +66,6 @@ const ChatContent = (props: ChatContentType) => {
   }
   const handleClose = () => {
     setAnchorEl(null)
-  }
-
-  const handleSendMsg = (e: SyntheticEvent) => {
-    e.preventDefault()
-    if (store && store.selectedChat && msg.length) {
-      dispatch(sendMsg({ ...store.selectedChat, message: msg }))
-    }
-    setMsg('')
   }
 
   const handleStartConversation = () => {
@@ -263,32 +237,7 @@ const ChatContent = (props: ChatContentType) => {
               <ChatLog hidden={hidden} data={{ ...selectedChat, userContact: store.userProfile }} />
             ) : null}
 
-            <Form onSubmit={handleSendMsg}>
-              <ChatFormWrapper>
-                <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
-                  <TextField
-                    fullWidth
-                    value={msg}
-                    size='small'
-                    placeholder='Type your message here…'
-                    onChange={e => setMsg(e.target.value)}
-                    sx={{ '& .MuiOutlinedInput-input': { pl: 0 }, '& fieldset': { border: '0 !important' } }}
-                  />
-                </Box>
-                <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                  <IconButton size='small' sx={{ color: 'text.primary' }}>
-                    <Microphone sx={{ fontSize: '1.375rem' }} />
-                  </IconButton>
-                  <IconButton size='small' component='label' htmlFor='upload-img' sx={{ mr: 4, color: 'text.primary' }}>
-                    <Attachment sx={{ fontSize: '1.375rem' }} />
-                    <input hidden type='file' id='upload-img' />
-                  </IconButton>
-                  <Button type='submit' variant='contained'>
-                    Send
-                  </Button>
-                </Box>
-              </ChatFormWrapper>
-            </Form>
+            <SendMsgForm store={store} dispatch={dispatch} sendMsg={sendMsg} />
 
             <UserProfileRight
               store={store}
