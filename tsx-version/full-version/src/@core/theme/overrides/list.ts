@@ -28,6 +28,15 @@ const List = (theme: Theme) => {
           }
         }
       }
+    },
+    MuiListSubheader: {
+      styleOverrides: {
+        root: {
+          fontWeight: 600,
+          textTransform: 'uppercase',
+          color: theme.palette.text.primary
+        }
+      }
     }
   }
 }

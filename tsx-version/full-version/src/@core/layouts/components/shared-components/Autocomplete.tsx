@@ -75,9 +75,11 @@ const Autocomplete = styled(MuiAutocomplete)(({ theme }) => ({
       maxHeight: 'calc(100vh - 15rem)'
     },
     '& .MuiListSubheader-root': {
+      fontWeight: 'normal',
       lineHeight: 'normal',
       textTransform: 'capitalize',
-      padding: theme.spacing(5, 5, 2.5)
+      padding: theme.spacing(5, 5, 2.5),
+      color: theme.palette.text.secondary
     }
   }
 }))
