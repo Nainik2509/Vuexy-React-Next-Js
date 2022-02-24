@@ -79,7 +79,7 @@ If you do not want to use i18n, we recommend you start your project with the sta
 - Remove `import 'src/configs/i18n'` import statement from `src/pages/_app.tsx` file
 - Replace the following code in `src/layouts/components/Translations.tsx` file
 
-```tsx
+```tsx{5}
 interface Props {
   text: string
 }
@@ -206,7 +206,7 @@ export default UserLanguageDropdown
 
 - Import the `src/layouts/components/UserLanguageDropdown.tsx` file and render it in the `src/layouts/components/vertical/AppBarContent.tsx` or `src/layouts/components/horizontal/AppBarContent.tsx` file.
 
-```tsx
+```tsx{5,21}
 // src/layouts/components/vertical/AppBarContent.tsx
 // OR
 // src/layouts/components/horizontal/AppBarContent.tsx

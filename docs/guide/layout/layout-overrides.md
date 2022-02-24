@@ -35,7 +35,7 @@ verticalNavMenuBranding?: (props?: any) => ReactNode
 
 Here is the code to change the app logo:
 
-```tsx
+```tsx{25}
 import { ReactNode } from 'react'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
@@ -91,7 +91,7 @@ menuUnlockedIcon?: ReactNode
 
 Here is the code to change the icons for collapsing the vertical menu:
 
-```tsx
+```tsx{14-15}
 import { ReactNode } from 'react'
 import ArrowLeftBoldCircleOutline from 'mdi-material-ui/ArrowLeftBoldCircleOutline'
 import ArrowRightBoldCircleOutline from 'mdi-material-ui/ArrowRightBoldCircleOutline'
@@ -136,7 +136,7 @@ verticalNavMenuContent?: (props?: any) => ReactNode
 
 Here is the code to change the menu:
 
-```tsx
+```tsx{24}
 import { ReactNode } from 'react'
 import Layout from 'src/@core/layouts/Layout'
 
@@ -186,7 +186,7 @@ beforeVerticalNavMenuContent?: (props?: any) => ReactNode
 
 Here is the code to add user info before the menu items:
 
-```tsx
+```tsx{50}
 import { ReactNode } from 'react'
 import Box from '@mui/material/Box'
 import Badge from '@mui/material/Badge'
@@ -262,7 +262,7 @@ afterVerticalNavMenuContent?: (props?: any) => ReactNode
 
 Here is the code to menu footer info after the menu items:
 
-```tsx
+```tsx{21}
 import { ReactNode } from 'react'
 import Box from '@mui/material/Box'
 import Layout from 'src/@core/layouts/Layout'
@@ -315,7 +315,7 @@ const hidden = useMediaQuery('(max-width:1365px)')
 
 ### 7. Navbar (or AppBar) Content
 
-The content in the appBar comes from the user side itself and thus, it would be very easy and convenient for you to change anything in the appBar. You just have to change the code in the `src/layouts/components/vertical/AppBarContent.tsx` file. The appBar component is then passed in the `verticalAppBarContent` prop with the `Layout` component.
+The content in the appBar comes from the user side itself and thus, it would be very easy and convenient for you to change anything in the appBar. You just have to change the code in the `src/layouts/components/vertical/AppBarContent.tsx` file as per your requirements. The appBar component is then passed in the `verticalAppBarContent` prop with the `Layout` component.
 
 The value accepted by this prop is:
 
@@ -363,7 +363,7 @@ const AppBarContent = (props: Props) => {
 export default AppBarContent
 ```
 
-```tsx
+```tsx{8,21-28}
 // src/layouts/UserLayout.tsx
 
 import { ReactNode } from 'react'
@@ -417,7 +417,7 @@ footerContent?: (props?: any) => ReactNode
 
 Here is the code to change the footer:
 
-```tsx
+```tsx{12}
 import { ReactNode } from 'react'
 import Layout from 'src/@core/layouts/Layout'
 
@@ -465,7 +465,7 @@ horizontalAppBarBranding?: (props?: any) => ReactNode
 
 Here is the code to change the app logo:
 
-```tsx
+```tsx{25}
 import { ReactNode } from 'react'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
@@ -516,7 +516,7 @@ horizontalNavMenuContent?: (props?: any) => ReactNode
 
 Here is the code to change the menu:
 
-```tsx
+```tsx{12}
 import { ReactNode } from 'react'
 import Layout from 'src/@core/layouts/Layout'
 
@@ -572,7 +572,9 @@ Suppose you need the app logo, navigation menu as well as some actions in one li
 
 Firstly, you need to hide the navigation menu section which is below the appBar from the `src/configs/themeConfig.ts` file:
 
-```ts
+```ts{5}
+// src/configs/themeConfig.ts
+
 const themeConfig: ThemeConfig = {
   ...,
   navHidden: true,
@@ -611,7 +613,7 @@ export default AppBarContent
 
 Then you need to pass that component in the `horizontalAppBarContent` prop with the `Layout` component:
 
-```tsx
+```tsx{6-7,18-20}
 // src/layouts/UserLayout.tsx
 
 import { ReactNode } from 'react'
@@ -657,7 +659,7 @@ footerContent?: (props?: any) => ReactNode
 
 Here is the code to change the footer:
 
-```tsx
+```tsx{12}
 import { ReactNode } from 'react'
 import Layout from 'src/@core/layouts/Layout'
 
@@ -687,12 +689,12 @@ Result:
 
 If you want to change the Blank Layout, you need to follow these steps:
 
-- Make a new file (let us say `UserBlankLayout` file name) in the `src/layouts` folder
-- Copy the whole code from the `src/@core/layouts/BlankLayout.tsx` file and paste it into the `UserBlankLayout` file
-- Edit the `UserBlankLayout` file as per your requirements
+- Make a new file (let us say `UserBlankLayout.tsx` file name) in the `src/layouts` folder
+- Copy the whole code from the `src/@core/layouts/BlankLayout.tsx` file and paste it into the `src/layouts/UserBlankLayout.tsx` file
+- Edit the `src/layouts/UserBlankLayout.tsx` file as per your requirements
 - Now, to use this layout in any of your pages, you need to do this:
 
-```tsx
+```tsx{2,10}
 import { ReactNode } from 'react'
 import UserBlankLayout from 'src/layouts/UserBlankLayout'
 
@@ -711,12 +713,12 @@ export default Login
 
 If you want to change the navbar, you need to follow these steps:
 
-- Make a new file (let us say `UserBlankLayoutWithAppBar` file name) in the `src/layouts` folder for the Blank Layout with AppBar
-- Copy the whole code from the `src/@core/layouts/BlankLayoutWithAppBar.tsx` file and paste it into the `UserBlankLayoutWithAppBar` file
-- Remove the `AppBar` component and its import statement from the `UserBlankLayoutWithAppBar` file and make your own `AppBar` component
+- Make a new file (let us say `UserBlankLayoutWithAppBar.tsx` file name) in the `src/layouts` folder
+- Copy the whole code from the `src/@core/layouts/BlankLayoutWithAppBar.tsx` file and paste it into the `src/layouts/UserBlankLayoutWithAppBar.tsx` file
+- Remove the `AppBar` component and its import statement from the `src/layouts/UserBlankLayoutWithAppBar.tsx` file and make your own `AppBar` component
 - Now, to use this layout in any of your pages, you need to do this:
 
-```tsx
+```tsx{2,10}
 import { ReactNode } from 'react'
 import UserBlankLayoutWithAppBar from 'src/layouts/UserBlankLayoutWithAppBar'
 
@@ -743,7 +745,7 @@ scrollToTop?: (props?: any) => ReactNode
 
 Here is the code to change the scroll to top component:
 
-```tsx
+```tsx{24}
 import { ReactNode } from 'react'
 import Button from '@mui/material/Button'
 import Layout from 'src/@core/layouts/Layout'

@@ -17,14 +17,14 @@ There is only one skin type of timeline dot: `light`.
 Here is an example of how to use the skin:
 
 ```tsx
-// ** Custom Components Imports
-import CustomTimelineDot from 'src/@core/components/mui/timeline-dot'
-
 // ** Icons Imports
 import Airplane from 'mdi-material-ui/Airplane'
 import CartOutline from 'mdi-material-ui/CartOutline'
 import ClockOutline from 'mdi-material-ui/ClockOutline'
 import FileEditOutline from 'mdi-material-ui/FileEditOutline'
+
+// ** Custom Components Imports
+import CustomTimelineDot from 'src/@core/components/mui/timeline-dot'
 
 <CustomTimelineDot skin='light' color='error'>
   <Airplane fontSize='small' />

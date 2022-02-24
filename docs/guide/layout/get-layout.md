@@ -12,7 +12,7 @@ If you want to change the default layout for a particular page, you can use the 
 
 Here is an example of how to change the layout from default layout to blank layout for any page:
 
-```tsx
+```tsx{2,10-12}
 import { ReactNode } from 'react'
 import BlankLayout from 'src/@core/layouts/BlankLayout'
 
@@ -33,7 +33,7 @@ export default Login
 
 Here is an example of how to change the layout from default layout to blank layout with appBar for any page:
 
-```tsx
+```tsx{2,10-12}
 import { ReactNode } from 'react'
 import BlankLayoutWithAppBar from 'src/@core/layouts/BlankLayoutWithAppBar'
 

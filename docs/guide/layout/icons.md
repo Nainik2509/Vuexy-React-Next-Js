@@ -72,12 +72,12 @@ const navigation = (): VerticalNavItemsType => {
 
 If you also want to change the icon for the submenu, you need to change it in the `themeConfig.ts` file.
 
-```ts
+```ts{7}
 // src/configs/themeConfig.ts
 
 import CircleTwoTone from '@mui/icons-material/CircleTwoTone'
 
-const themeConfig = {
+const themeConfig: ThemeConfig = {
   ...,
   navSubItemIcon: CircleTwoTone
 }
@@ -129,12 +129,12 @@ const navigation = (): VerticalNavItemsType => {
 
 If you also want to change the icon for the submenu, you need to change it in the `themeConfig.ts` file.
 
-```ts
+```ts{7}
 // src/configs/themeConfig.ts
 
 import { FaArrowRight } from 'react-icons/fa'
 
-const themeConfig = {
+const themeConfig: ThemeConfig = {
   ...,
   navSubItemIcon: FaArrowRight
 }

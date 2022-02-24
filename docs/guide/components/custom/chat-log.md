@@ -6,7 +6,7 @@ You can use the Chat log component to show your chats i.e. exchange of messages 
 
 ## Usage
 
-```tsx
+```tsx{3,11}
 import { Theme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import ChatLog from 'src/@core/components/chat-log'

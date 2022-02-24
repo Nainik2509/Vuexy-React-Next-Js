@@ -43,7 +43,7 @@ export default DirectionToggler
 
 You might need to render some code conditionally based on the current direction of the template. You can write the following code to do so:
 
-```tsx
+```tsx{1,4,6}
 import { useSettings } from 'src/@core/hooks/useSettings'
 
 const SomeComponent = () => {
@@ -65,7 +65,7 @@ export default SomeComponent
 
 If you need to style something conditionally based on the current direction of the template, do the following:
 
-```tsx
+```tsx{2,5,8}
 import Box from '@mui/material/Box'
 import { useSettings } from 'src/@core/hooks/useSettings'
 
@@ -89,13 +89,11 @@ To remove the RTL from the whole template, follow these steps:
 - Remove all the plugins related to RTL. View all the dependencies of RTL in [this](/guide/overview/dependencies.html#right-to-left-rtl) section
 - Replace the following code in the `src/layouts/components/Direction.tsx` file:
 
-```tsx
+```tsx{10}
 import { ReactNode } from 'react'
-import { Direction } from '@mui/material'
 
 interface DirectionProps {
   children: ReactNode
-  direction: Direction
 }
 
 const Direction = (props: DirectionProps) => {

@@ -6,7 +6,7 @@ We have created a sidebar component with position `absolute` in case you need to
 
 ## Usage
 
-```tsx
+```tsx{2,9}
 import { useEffect } from 'react'
 import Sidebar from 'src/@core/components/sidebar'
 

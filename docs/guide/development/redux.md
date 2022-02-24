@@ -131,17 +131,17 @@ export const store = configureStore({
 
 Use `useSelector` hook to access the store state.
 
-```jsx
+```jsx{1,4}
 import { useSelector } from 'react-redux'
 
 const Email = () => {
-    const store = useSelector((state) => state.email)
+  const store = useSelector((state) => state.email)
 
-    return (
-        <div>
-            { store.mails ? store.mails.map(mail => <div>{mail.id}</div>) : null }
-        </div>
-    )
+  return (
+    <div>
+      {store.mails ? store.mails.map(mail => <div>{mail.id}</div>) : null}
+    </div>
+  )
 }
 
 export default Email
@@ -151,26 +151,25 @@ export default Email
 
 Use `useDispatch` hook to dispatch an action.
 
-```jsx
+```jsx{1,5-6,9}
 import { useDispatch, useSelector } from 'react-redux'
-
 import { handleSelectMail } from 'src/store/email.ts'
 
 const Email = () => {
-    const dispatch = useDispatch()
-    const store = useSelector((state) => state.email)
+  const dispatch = useDispatch()
+  const store = useSelector((state) => state.email)
 
-    const handleMailClick = mail => {
-        dispatch(handleSelectMail(mail))
-    }
+  const handleMailClick = mail => {
+    dispatch(handleSelectMail(mail))
+  }
 
-    return (
-        <div>
-            { store.mails ? 
-            store.mails.map(mail => <div onClick={() => handleMailClick(mail)}>{mail.id}</div>) 
-            : null }
-        </div>
-    )
+  return (
+    <div>
+      {store.mails
+        ? store.mails.map(mail => <div onClick={() => handleMailClick(mail)}>{mail.id}</div>)
+        : null}
+    </div>
+  )
 }
 
 export default Email

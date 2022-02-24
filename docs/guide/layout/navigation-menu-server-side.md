@@ -12,7 +12,7 @@ To use the server side navigation menu in the Vertical layout, follow these step
 - Make an API call from your server in `src/layouts/components/vertical/ServerSideNavItems.tsx` file
 - And then import `src/layouts/components/vertical/ServerSideNavItems.tsx` file in `src/layouts/UserLayout.tsx` file and pass it in `verticalNavItems` prop.
 
-```tsx
+```tsx{5,15}
 // src/layouts/UserLayout.tsx
 
 import { ReactNode } from 'react'
@@ -42,7 +42,7 @@ To use the server side navigation menu in the Horizontal layout, follow these st
 - Make an API call from your server in `src/layouts/components/horizontal/ServerSideNavItems.tsx` file
 - And then import `src/layouts/components/horizontal/ServerSideNavItems.tsx` file in `src/layouts/UserLayout.tsx` file and pass it in `horizontalNavItems` prop.
 
-```tsx
+```tsx{5,15}
 // src/layouts/UserLayout.tsx
 
 import { ReactNode } from 'react'

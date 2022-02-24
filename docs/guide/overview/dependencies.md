@@ -68,7 +68,7 @@ The following dependencies are required to run the template. Do not try to remov
 
 ```json
 // Apexcharts
-"apexcharts"
+"apexcharts-clevision"
 "react-apexcharts"
 
 // Recharts

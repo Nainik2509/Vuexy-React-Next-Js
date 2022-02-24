@@ -6,7 +6,7 @@ We have created a Repeater component to duplicate a component.
 
 ## Usage
 
-```tsx
+```tsx{4,12-14}
 import { useState } from 'react'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'

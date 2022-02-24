@@ -44,7 +44,9 @@ Settings context relies on the [context feature of React](https://reactjs.org/do
 ```tsx
 <SettingsProvider>
   <SettingsConsumer>
-    {({ settings }) => <ThemeComponent settings={settings}>{getLayout(<Component {...pageProps} />)}</ThemeComponent>}
+    {({ settings }) => (
+      <ThemeComponent settings={settings}>{getLayout(<Component {...pageProps} />)}</ThemeComponent>
+    )}
   </SettingsConsumer>
 </SettingsProvider>
 ```

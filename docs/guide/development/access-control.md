@@ -88,7 +88,7 @@ It is quite easy to remove access control from the template.
 
 3. Remove the AclGuard wrapper & ACL related imports from `src/pages/_app.tsx` file.
 
-    Change following code from:
+    Change following code ***from***:
 
     ```tsx
     // Code before removing ACL Guard
@@ -102,7 +102,7 @@ It is quite easy to remove access control from the template.
    </AclGuard>
     ```
 
-    to
+    ***to***
 
     ``` tsx
     // Code after removing ACL Guard
@@ -113,7 +113,7 @@ It is quite easy to remove access control from the template.
 
 5. Remove `acl` method from all the components.
 
-    Component from:
+    Component ***from***:
 
     ```tsx
     const Component = () => <h1>Component</h1>
@@ -126,7 +126,7 @@ It is quite easy to remove access control from the template.
     export default Component
     ```
 
-    to
+    ***to***
 
     ```tsx
     const Component = () => <h1>Component</h1>
@@ -136,7 +136,7 @@ It is quite easy to remove access control from the template.
 
 6. Remove `action` & `subject` properties if defined in your navigation files.
 
-    Navigation object from:
+    Navigation object ***from***:
 
     ```ts
     {
@@ -148,7 +148,7 @@ It is quite easy to remove access control from the template.
     }
     ```
 
-    to
+    ***to***
 
     ```ts
     {
@@ -164,7 +164,7 @@ It is quite easy to remove access control from the template.
     /**
     *  Set Home URL based on User Roles
     */
-    export const getHomeRoute = (role: string) => {
+    export const getHomeRoute = () => {
       return '/dashboards/analytics'
     }
     ```
@@ -183,7 +183,7 @@ It is quite easy to remove access control from the template.
 
     Replace the following codes in respective files in order to remove ACL functionality.
 
-    ```tsx
+    ```tsx{11}
     // src/layouts/components/acl/CanViewNavNavGroup.tsx
     import { ReactNode } from 'react'
 
@@ -200,7 +200,7 @@ It is quite easy to remove access control from the template.
     export default CanViewNavNavGroup
     ```
 
-    ```tsx
+    ```tsx{11}
     // src/layouts/components/acl/CanViewNavNavLink.tsx
     import { ReactNode } from 'react'
 
@@ -217,7 +217,7 @@ It is quite easy to remove access control from the template.
     export default CanViewNavNavLink
     ```
 
-    ```tsx
+    ```tsx{11}
     // src/layouts/components/acl/CanViewNavSectionTitle.tsx
     import { ReactNode } from 'react'
 

@@ -20,7 +20,7 @@ If you are using a text button inside the `CardActions` component, you need to a
 
 Here is the example of how to use the class mentioned above:
 
-```tsx
+```tsx{3}
 <Card>
   <CardContent>...</CardContent>
   <CardActions className='card-action-dense'>

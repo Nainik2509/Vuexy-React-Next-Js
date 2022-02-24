@@ -10,8 +10,8 @@ If you are looking to match up with one of our demos, then please read [demo con
 
 Following are the properties with their values that we have used in the theme:
 
-```tsx
-const themeConfig = {
+```ts
+const themeConfig: ThemeConfig = {
   templateName: 'Master',
   layout: 'vertical',
   mode: 'light',
