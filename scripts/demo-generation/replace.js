@@ -119,7 +119,7 @@ if (fs.existsSync(nextConfigPath)) {
   const removedBasePathIfAny = nextConfigData.filter(line => {
     return line.indexOf('basePath') === -1
   }).join('\n')
-  const result = removedBasePathIfAny.replace('reactStrictMode: false,', `reactStrictMode: false, \n basePath: '${pathConfig.demoURL}/${demo}',`)
+  const result = removedBasePathIfAny.replace('reactStrictMode: false,', `reactStrictMode: false,\n  basePath: '${pathConfig.demoURL}/${demo}',`)
 
   fs.writeFile(nextConfigPath, result, err => {
     if (err) {
