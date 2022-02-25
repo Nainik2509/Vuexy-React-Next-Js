@@ -1,6 +1,12 @@
 const fs = require('fs')
 const path = require('path')
 const pathConfig = require('../configs/paths.json')
+const {
+  copyDirectory,
+  testFoldersToModify,
+  filesWithTestObj,
+  testFoldersToCopy
+} = require('./helpers')
 
 let demo = 'demo-1'
 const demoConfigPath = `${pathConfig.demoConfigsPathTSX}/demo-1.ts`
@@ -169,3 +175,33 @@ if (fs.existsSync(themeConfigPath) && fs.existsSync(demoConfigPath)) {
 
   return
 }
+
+const resetTestFolders = () => {
+  const resetPromise = testFoldersToModify.map(folder => {
+
+    return new Promise(resolve => {
+
+      if (fs.existsSync(folder.to)) {
+        copyDirectory(folder.to, folder.from)
+      }
+
+      resolve()
+    })
+
+
+  })
+
+  Promise.all(resetPromise).then(() => {
+    testFoldersToCopy.map(folder => {
+      if (fs.existsSync(folder.to)) {
+        copyDirectory(folder.to, folder.from)
+      }
+    })
+  }).then(() => {
+    if (fs.existsSync('./temp-folder')) {
+      fs.rmSync('./temp-folder', { recursive: true })
+    }
+  })
+}
+
+resetTestFolders()

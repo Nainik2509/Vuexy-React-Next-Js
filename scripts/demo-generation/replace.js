@@ -1,6 +1,13 @@
 const fs = require('fs')
 const path = require('path')
 const pathConfig = require('../configs/paths.json')
+const {
+  copyDirectory,
+  testFoldersToModify,
+  filesWithTestObj,
+  testFoldersToCopy
+} = require('./helpers')
+
 
 let demo = 'demo-1'
 const i18nPath = `${pathConfig.fullVersionTSXPath}/src/configs/i18n.ts`
@@ -165,3 +172,63 @@ if (fs.existsSync(themeConfigPath) && fs.existsSync(demoConfigPath)) {
 } else {
   console.log("themeConfigPath file & demoConfigPath file doesn't exist");
 }
+
+const removeTest = () => {
+  const removePromise = testFoldersToModify.map(folder => {
+
+    return new Promise(resolve => {
+
+      if (fs.existsSync(folder.from)) {
+        copyDirectory(folder.from, folder.to)
+      }
+
+      resolve()
+    })
+
+
+  })
+
+  Promise.all(removePromise).then(() => {
+    testFoldersToModify.map(folder => {
+      if (fs.existsSync(folder.from)) {
+        fs.rmSync(folder.from, {
+          recursive: true
+        })
+      }
+    })
+  }).then(() => {
+    filesWithTestObj.map(file => {
+      if (fs.existsSync(file)) {
+        fs.readFile(file, 'utf-8', (err, data) => {
+          if (err) {
+            console.log(err);
+          } else {
+            const updatedData = data
+              .replace(/title: 'Test',/g, '')
+              .replace("path: '/components/test'", '')
+              .replace("path: '/forms/form-elements/test'", '')
+              .replace(/[\s]*?{[\s]*?[\s]*?}/g, '')
+            fs.writeFile(file, '', err => {
+              if (err) {
+                console.log(err);
+              }
+              fs.writeFile(file, updatedData, err => {
+                if (err) {
+                  console.log(err);
+                }
+              })
+            })
+          }
+        })
+      }
+    })
+  }).then(() => {
+    testFoldersToCopy.map(folder => {
+      if (fs.existsSync(folder.from)) {
+        copyDirectory(folder.from, folder.to)
+      }
+    })
+  })
+}
+
+removeTest()
