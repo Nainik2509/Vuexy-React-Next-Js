@@ -250,10 +250,6 @@ const navigation = (): HorizontalNavItemsType => {
               title: 'More',
               path: '/components/more'
             },
-            {
-              title: 'Test',
-              path: '/components/test'
-            }
           ]
         }
       ]
@@ -447,10 +443,6 @@ const navigation = (): HorizontalNavItemsType => {
               title: 'Input Mask',
               path: '/forms/form-elements/input-mask'
             },
-            {
-              title: 'Test',
-              path: '/forms/form-elements/test'
-            }
           ]
         },
         {

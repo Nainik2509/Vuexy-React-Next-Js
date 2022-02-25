@@ -4,7 +4,6 @@ const pathConfig = require('../configs/paths.json')
 const {
   copyDirectory,
   testFoldersToModify,
-  filesWithTestObj,
   testFoldersToCopy
 } = require('./helpers')
 
