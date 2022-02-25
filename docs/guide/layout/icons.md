@@ -39,7 +39,7 @@ Suppose, you want to override the icons in the vertical menu with MUI Material I
 
 import MailTwoTone from '@mui/icons-material/MailTwoTone'
 import ChatBubbleTwoTone from '@mui/icons-material/ChatBubbleTwoTone'
-import CalendarTodayTwoTone from '@mui/icons-material/CalendarTodayTwoTone'
+import PersonOutlineTwoTone from '@mui/icons-material/PersonOutlineTwoTone'
 import { VerticalNavItemsType } from 'src/@core/layouts/types'
 
 const navigation = (): VerticalNavItemsType => {
@@ -81,7 +81,7 @@ export default navigation
 
 import MailTwoTone from '@mui/icons-material/MailTwoTone'
 import ChatBubbleTwoTone from '@mui/icons-material/ChatBubbleTwoTone'
-import CalendarTodayTwoTone from '@mui/icons-material/CalendarTodayTwoTone'
+import PersonOutlineTwoTone from '@mui/icons-material/PersonOutlineTwoTone'
 
 const navigation = () => {
   return [
