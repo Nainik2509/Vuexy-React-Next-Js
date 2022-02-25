@@ -9,7 +9,7 @@ Thanks for purchasing our template 🙂. Let's get you up and running.
 <div class='row'>
   <!-- Installation -->
   <div class='col'>
-    <router-link to='/guide/development/installation.html'>
+    <router-link to='/guide/overview/installation.html'>
       <div class='card'>
         <img alt='installation-icon' :src="$withBase('/images/icons/rocket-launch-outline.png')" />
         <h3>Installation</h3>

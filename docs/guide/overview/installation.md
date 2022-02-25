@@ -27,27 +27,35 @@ If you decide to use **npm**, make sure you use following command: **npm install
 - In uncompressed folder you will find `ts-version` / `js-version` folders which contains `full-version` & `starter-kit` folders. Unzip the one you want to get started with and open this folder in your console/terminal.
 - Run below command in console:
 
+<code-group>
+<code-block title="YARN (Highly Recommended)" active>
 ```bash
-# For Yarn (Highly Recommended)
 yarn install
+```
+</code-block>
 
-OR
-
-# For npm
+<code-block title="NPM">
+```bash
 npm install --legacy-peer-deps
 ```
+</code-block>
+</code-group>
 
 - After installing the modules run your project with following command:
 
+<code-group>
+<code-block title="YARN (Highly Recommended)" active>
 ```bash
-# For Yarn
 yarn dev
+```
+</code-block>
 
-OR
-
-# For npm
+<code-block title="NPM">
+```bash
 npm run dev
 ```
+</code-block>
+</code-group>
 
 - You will find following output after running above command in console:
   

@@ -46,6 +46,8 @@ It is used to group some navigation groups and/or navigation links that can be t
 // For Static Navigation Menu
 type NavGroup = {
   title: string
+  action?: string
+  subject?: string
   badgeContent?: string
   children?: (NavGroup | NavLink)[]
   icon?: string | string[] | ReactNode
@@ -56,6 +58,8 @@ type NavGroup = {
 type NavGroup = {
   icon?: string
   title: string
+  action?: string
+  subject?: string
   badgeContent?: string
   children?: (NavGroup | NavLink)[]
   badgeColor?: 'default' | 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info'
@@ -64,6 +68,8 @@ type NavGroup = {
 
 Here is the example code:
 
+<code-group>
+<code-block title="TS" active>
 ```ts
 import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
 import { VerticalNavItemsType } from 'src/@core/layouts/types'
@@ -104,6 +110,50 @@ const navigation = (): VerticalNavItemsType => {
 
 export default navigation
 ```
+</code-block>
+
+<code-block title="JS">
+```js
+import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
+
+const navigation = () => {
+  return [
+    {
+      badgeContent: '3',
+      title: 'Components',
+      icon: ArchiveOutline,
+      badgeColor: 'success',
+      children: [
+        {
+          title: 'Accordion',
+          path: '/components/accordion'
+        },
+        {
+          title: 'Cards',
+          children: [
+            {
+              title: 'Basic',
+              path: '/components/cards/basic'
+            },
+            {
+              title: 'Advanced',
+              path: '/components/cards/advanced'
+            }
+          ]
+        },
+        {
+          title: 'Chips',
+          path: '/components/chips'
+        }
+      ]
+    }
+  ]
+}
+
+export default navigation
+```
+</code-block>
+</code-group>
 
 Result:
 
@@ -118,6 +168,8 @@ To create a navigation link, you need to add an object with the following struct
 type NavLink = {
   path?: string
   title: string
+  action?: string
+  subject?: string
   disabled?: boolean
   badgeContent?: string
   externalLink?: boolean
@@ -131,6 +183,8 @@ type NavLink = {
   icon?: string
   path?: string
   title: string
+  action?: string
+  subject?: string
   disabled?: boolean
   badgeContent?: string
   externalLink?: boolean
@@ -141,6 +195,8 @@ type NavLink = {
 
 Here is the example code:
 
+<code-group>
+<code-block title="TS" active>
 ```ts
 import MaterialUi from 'mdi-material-ui/MaterialUi'
 import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
@@ -173,6 +229,42 @@ const navigation = (): VerticalNavItemsType => {
 
 export default navigation
 ```
+</code-block>
+
+<code-block title="JS">
+```js
+import MaterialUi from 'mdi-material-ui/MaterialUi'
+import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
+import CheckboxMarkedCircleOutline from 'mdi-material-ui/CheckboxMarkedCircleOutline'
+
+const navigation = () => {
+  return [
+    {
+      badgeColor: 'error',
+      badgeContent: 'New',
+      title: 'Form Validation',
+      path: '/forms/form-validation',
+      icon: CheckboxMarkedCircleOutline
+    },
+    {
+      disabled: true,
+      icon: EyeOffOutline,
+      title: 'Disabled Menu'
+    },
+    {
+      icon: MaterialUi,
+      title: 'MUI Docs',
+      externalLink: true,
+      openInNewTab: true,
+      path: 'https://mui.com/getting-started/usage/'
+    }
+  ]
+}
+
+export default navigation
+```
+</code-block>
+</code-group>
 
 Result:
 
@@ -193,6 +285,8 @@ It is used to group some navigation groups and/or navigation links that are open
 // For Static Navigation Menu
 type NavGroup = {
   title: string
+  action?: string
+  subject?: string
   badgeContent?: string
   children?: (NavGroup | NavLink)[]
   icon?: string | string[] | ReactNode
@@ -203,6 +297,8 @@ type NavGroup = {
 type NavGroup = {
   icon?: string
   title: string
+  action?: string
+  subject?: string
   badgeContent?: string
   children?: (NavGroup | NavLink)[]
   badgeColor?: 'default' | 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info'
@@ -211,6 +307,8 @@ type NavGroup = {
 
 Here is the example code:
 
+<code-group>
+<code-block title="TS" active>
 ```ts
 import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
 import FormatLetterCase from 'mdi-material-ui/FormatLetterCase'
@@ -257,6 +355,56 @@ const navigation = (): HorizontalNavItemsType => {
 
 export default navigation
 ```
+</code-block>
+
+<code-block title="JS">
+```js
+import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
+import FormatLetterCase from 'mdi-material-ui/FormatLetterCase'
+import PaletteSwatchOutline from 'mdi-material-ui/PaletteSwatchOutline'
+import GoogleCirclesExtended from 'mdi-material-ui/GoogleCirclesExtended'
+
+const navigation = () => {
+  return [
+    {
+      title: 'UI',
+      badgeContent: '3',
+      badgeColor: 'warning',
+      icon: PaletteSwatchOutline,
+      children: [
+        {
+          title: 'Typography',
+          icon: FormatLetterCase,
+          path: '/ui/typography'
+        },
+        {
+          title: 'Components',
+          icon: ArchiveOutline,
+          children: [
+            {
+              title: 'Accordion',
+              path: '/components/accordion'
+            },
+            {
+              title: 'Alerts',
+              path: '/components/alerts'
+            }
+          ]
+        },
+        {
+          title: 'Icons',
+          path: '/ui/icons',
+          icon: GoogleCirclesExtended
+        }
+      ]
+    }
+  ]
+}
+
+export default navigation
+```
+</code-block>
+</code-group>
 
 Result:
 
@@ -271,6 +419,8 @@ To create a navigation link, you need to add an object with the following struct
 type NavLink = {
   path?: string
   title: string
+  action?: string
+  subject?: string
   disabled?: boolean
   badgeContent?: string
   externalLink?: boolean
@@ -284,6 +434,8 @@ type NavLink = {
   icon?: string
   path?: string
   title: string
+  action?: string
+  subject?: string
   disabled?: boolean
   badgeContent?: string
   externalLink?: boolean
@@ -294,6 +446,8 @@ type NavLink = {
 
 Here is the example code:
 
+<code-group>
+<code-block title="TS" active>
 ```ts
 import MaterialUi from 'mdi-material-ui/MaterialUi'
 import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
@@ -326,6 +480,42 @@ const navigation = (): HorizontalNavItemsType => {
 
 export default navigation
 ```
+</code-block>
+
+<code-block title="JS">
+```js
+import MaterialUi from 'mdi-material-ui/MaterialUi'
+import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
+import CheckboxMarkedCircleOutline from 'mdi-material-ui/CheckboxMarkedCircleOutline'
+
+const navigation = () => {
+  return [
+    {
+      badgeColor: 'error',
+      badgeContent: 'New',
+      title: 'Form Validation',
+      path: '/forms/form-validation',
+      icon: CheckboxMarkedCircleOutline
+    },
+    {
+      disabled: true,
+      icon: EyeOffOutline,
+      title: 'Disabled Menu'
+    },
+    {
+      icon: MaterialUi,
+      title: 'MUI Docs',
+      externalLink: true,
+      openInNewTab: true,
+      path: 'https://mui.com/getting-started/usage/'
+    }
+  ]
+}
+
+export default navigation
+```
+</code-block>
+</code-group>
 
 Result:
 

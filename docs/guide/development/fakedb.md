@@ -15,7 +15,7 @@ If you're using the starter-kit you'll have to manually setup the fake-db.
 1. First create a folder with name `fake-db` and create a `mock.ts` file inside it.
 2. Initialize the axios-mock-adapter in `mock.ts` file.
 
-   ```js
+   ```ts
    import axios from 'axios'
    import MockAdapter from 'axios-mock-adapter'
 
@@ -26,7 +26,7 @@ If you're using the starter-kit you'll have to manually setup the fake-db.
 
 3. Create a `index.ts` file in `fake-db` folder & add the following:
 
-   ```js
+   ```ts
    import mock from './mock'
 
    mock.onAny().passThrough()
@@ -34,7 +34,7 @@ If you're using the starter-kit you'll have to manually setup the fake-db.
 
 4. To initialize your fake data create a ts file in `fake-db` folder. Import `mock` and use it like following:
 
-   ```js
+   ```ts
    import mock from '../mock'
 
    const data = [{...}]
@@ -46,7 +46,7 @@ If you're using the starter-kit you'll have to manually setup the fake-db.
 
 5. Import the above created file in `fake-db/index.ts`:
 
-   ```js
+   ```ts
    import mock from './mock'
 
    import './FILE_WITH_DATA'
@@ -58,7 +58,7 @@ If you're using the starter-kit you'll have to manually setup the fake-db.
 
 7. Finally, use axios to fetch your data from fake-db
 
-```js
+```ts
 import { useState, useEffect } from 'react'
 
 import axios from 'axios'

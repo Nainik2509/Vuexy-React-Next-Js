@@ -35,6 +35,8 @@ verticalNavMenuBranding?: (props?: any) => ReactNode
 
 Here is the code to change the app logo:
 
+<code-group>
+<code-block title="TSX" active>
 ```tsx{25}
 import { ReactNode } from 'react'
 import Box from '@mui/material/Box'
@@ -69,6 +71,40 @@ const UserLayout = ({ children }: Props) => {
 
 export default UserLayout
 ```
+</code-block>
+
+<code-block title="JSX">
+```JSX{20}
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
+import Layout from 'src/@core/layouts/Layout'
+
+const AppBrand = () => {
+  return (
+    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+      <img src='...' alt='logo' width='30' height='30' />
+      <Typography variant='h6' sx={{ ml: 2 }}>
+        React
+      </Typography>
+    </Box>
+  )
+}
+
+const UserLayout = ({ children }) => {
+  return (
+    <Layout
+      {...} // other props
+      verticalNavMenuBranding={() => <AppBrand />}
+    >
+      {children}
+    </Layout>
+  )
+}
+
+export default UserLayout
+```
+</code-block>
+</code-group>
 
 Result:
 
@@ -91,6 +127,8 @@ menuUnlockedIcon?: ReactNode
 
 Here is the code to change the icons for collapsing the vertical menu:
 
+<code-group>
+<code-block title="TSX" active>
 ```tsx{14-15}
 import { ReactNode } from 'react'
 import ArrowLeftBoldCircleOutline from 'mdi-material-ui/ArrowLeftBoldCircleOutline'
@@ -115,6 +153,30 @@ const UserLayout = ({ children }: Props) => {
 
 export default UserLayout
 ```
+</code-block>
+
+<code-block title="JSX">
+```jsx{9-10}
+import ArrowLeftBoldCircleOutline from 'mdi-material-ui/ArrowLeftBoldCircleOutline'
+import ArrowRightBoldCircleOutline from 'mdi-material-ui/ArrowRightBoldCircleOutline'
+import Layout from 'src/@core/layouts/Layout'
+
+const UserLayout = ({ children }) => {
+  return (
+    <Layout
+      {...} // other props
+      menuLockedIcon={<ArrowLeftBoldCircleOutline />}
+      menuUnlockedIcon={<ArrowRightBoldCircleOutline />}
+    >
+      {children}
+    </Layout>
+  )
+}
+
+export default UserLayout
+```
+</code-block>
+</code-group>
 
 Result of `menuLockedIcon`:
 
@@ -136,6 +198,8 @@ verticalNavMenuContent?: (props?: any) => ReactNode
 
 Here is the code to change the menu:
 
+<code-group>
+<code-block title="TSX" active>
 ```tsx{24}
 import { ReactNode } from 'react'
 import Layout from 'src/@core/layouts/Layout'
@@ -169,6 +233,39 @@ const UserLayout = ({ children }: Props) => {
 
 export default UserLayout
 ```
+</code-block>
+
+<code-block title="JSX">
+```jsx{19}
+import Layout from 'src/@core/layouts/Layout'
+
+const Menu = () => {
+  return (
+    <ul>
+      <li>Menu Item 1</li>
+      <li>Menu Item 2</li>
+      <li>Menu Item 3</li>
+      <li>Menu Item 4</li>
+      <li>Menu Item 5</li>
+    </ul>
+  )
+}
+
+const UserLayout = ({ children }) => {
+  return (
+    <Layout
+      {...} // other props
+      verticalNavMenuContent={() => <Menu />}
+    >
+      {children}
+    </Layout>
+  )
+}
+
+export default UserLayout
+```
+</code-block>
+</code-group>
 
 Result:
 
@@ -186,6 +283,8 @@ beforeVerticalNavMenuContent?: (props?: any) => ReactNode
 
 Here is the code to add user info before the menu items:
 
+<code-group>
+<code-block title="TSX" active>
 ```tsx{50}
 import { ReactNode } from 'react'
 import Box from '@mui/material/Box'
@@ -245,6 +344,65 @@ const UserLayout = ({ children }: Props) => {
 
 export default UserLayout
 ```
+</code-block>
+
+<code-block title="JSX">
+```jsx{45}
+import Box from '@mui/material/Box'
+import Badge from '@mui/material/Badge'
+import Avatar from '@mui/material/Avatar'
+import { styled } from '@mui/material/styles'
+import Typography from '@mui/material/Typography'
+import Layout from 'src/@core/layouts/Layout'
+
+const User = () => {
+  const BadgeContentSpan = styled('span')(({ theme }) => ({
+    width: 8,
+    height: 8,
+    borderRadius: '50%',
+    backgroundColor: theme.palette.success.main,
+    boxShadow: `0 0 0 2px ${theme.palette.background.paper}`
+  }))
+
+  return (
+    <Box sx={{ pt: 2, pb: 3, px: 4 }}>
+      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+        <Badge
+          overlap='circular'
+          badgeContent={<BadgeContentSpan />}
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'right'
+          }}
+        >
+          <Avatar src='...' alt='John Doe' sx={{ width: '2.5rem', height: '2.5rem' }} />
+        </Badge>
+        <Box sx={{ display: 'flex', marginLeft: 3, alignItems: 'flex-start', flexDirection: 'column' }}>
+          <Typography sx={{ fontWeight: 600 }}>John Doe</Typography>
+          <Typography variant='body2' sx={{ fontSize: '0.8rem', color: 'text.disabled' }}>
+            Admin
+          </Typography>
+        </Box>
+      </Box>
+    </Box>
+  )
+}
+
+const UserLayout = ({ children }) => {
+  return (
+    <Layout
+      {...} // other props
+      beforeVerticalNavMenuContent={() => <User />}
+    >
+      {children}
+    </Layout>
+  )
+}
+
+export default UserLayout
+```
+</code-block>
+</code-group>
 
 Result:
 
@@ -262,6 +420,8 @@ afterVerticalNavMenuContent?: (props?: any) => ReactNode
 
 Here is the code to menu footer info after the menu items:
 
+<code-group>
+<code-block title="TSX" active>
 ```tsx{21}
 import { ReactNode } from 'react'
 import Box from '@mui/material/Box'
@@ -292,6 +452,36 @@ const UserLayout = ({ children }: Props) => {
 
 export default UserLayout
 ```
+</code-block>
+
+<code-block title="JSX">
+```jsx{16}
+import Box from '@mui/material/Box'
+import Layout from 'src/@core/layouts/Layout'
+
+const MenuFooter = () => {
+  return (
+    <Box sx={{ mt: 4, display: 'flex', justifyContent: 'center' }}>
+      <img src='...' width='230' height='144' alt='menu-footer' />
+    </Box>
+  )
+}
+
+const UserLayout = ({ children }) => {
+  return (
+    <Layout
+      {...} // other props
+      afterVerticalNavMenuContent={() => <MenuFooter />}
+    >
+      {children}
+    </Layout>
+  )
+}
+
+export default UserLayout
+```
+</code-block>
+</code-group>
 
 Result:
 
@@ -325,6 +515,8 @@ verticalAppBarContent?: (props?: any) => ReactNode
 
 Here is the code to change the appBar:
 
+<code-group>
+<code-block title="TSX" active>
 ```tsx
 // src/layouts/components/vertical/AppBarContent.tsx
 
@@ -362,7 +554,43 @@ const AppBarContent = (props: Props) => {
 
 export default AppBarContent
 ```
+</code-block>
 
+<code-block title="JSX">
+```jsx
+// src/layouts/components/vertical/AppBarContent.jsx
+
+import Box from '@mui/material/Box'
+import IconButton from '@mui/material/IconButton'
+import MenuIcon from 'mdi-material-ui/Menu'
+import ModeToggler from 'src/@core/layouts/components/shared-components/ModeToggler'
+import UserDropdown from 'src/@core/layouts/components/shared-components/UserDropdown'
+
+const AppBarContent = props => {
+  const { hidden, settings, saveSettings, toggleNavVisibility } = props
+
+  return (
+    <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <Box className='actions-left' sx={{ mr: 2, display: 'flex', alignItems: 'center' }}>
+        {hidden ? (
+          <IconButton color='inherit' sx={{ ml: -2.75 }} onClick={toggleNavVisibility}>
+            <MenuIcon />
+          </IconButton>
+        ) : null}
+        <ModeToggler settings={settings} saveSettings={saveSettings} />
+      </Box>
+      <UserDropdown settings={settings} />
+    </Box>
+  )
+}
+
+export default AppBarContent
+```
+</code-block>
+</code-group>
+
+<code-group>
+<code-block title="TSX" active>
 ```tsx{8,21-28}
 // src/layouts/UserLayout.tsx
 
@@ -400,6 +628,42 @@ const UserLayout = ({ children }: Props) => {
 
 export default UserLayout
 ```
+</code-block>
+
+<code-block title="JSX">
+```jsx{6,15-22}
+// src/layouts/UserLayout.jsx
+
+import useMediaQuery from '@mui/material/useMediaQuery'
+import Layout from 'src/@core/layouts/Layout'
+import { useSettings } from 'src/@core/hooks/useSettings'
+import VerticalAppBarContent from 'src/layouts/components/vertical/AppBarContent'
+
+const UserLayout = ({ children }) => {
+  const { settings, saveSettings } = useSettings()
+  const hidden = useMediaQuery(theme => theme.breakpoints.down('lg'))
+
+  return (
+    <Layout
+      {...} // other props
+      verticalAppBarContent={props => (
+        <VerticalAppBarContent
+          hidden={hidden}
+          settings={settings}
+          saveSettings={saveSettings}
+          toggleNavVisibility={props.toggleNavVisibility}
+        />
+      )}
+    >
+      {children}
+    </Layout>
+  )
+}
+
+export default UserLayout
+```
+</code-block>
+</code-group>
 
 Result:
 
@@ -417,6 +681,8 @@ footerContent?: (props?: any) => ReactNode
 
 Here is the code to change the footer:
 
+<code-group>
+<code-block title="TSX" active>
 ```tsx{12}
 import { ReactNode } from 'react'
 import Layout from 'src/@core/layouts/Layout'
@@ -438,6 +704,27 @@ const UserLayout = ({ children }: Props) => {
 
 export default UserLayout
 ```
+</code-block>
+
+<code-block title="JSX">
+```jsx{7}
+import Layout from 'src/@core/layouts/Layout'
+
+const UserLayout = ({ children }) => {
+  return (
+    <Layout
+      {...} // other props
+      footerContent={() => 'I am footer which is overridden by the user'}
+    >
+      {children}
+    </Layout>
+  )
+}
+
+export default UserLayout
+```
+</code-block>
+</code-group>
 
 Result:
 
@@ -465,6 +752,8 @@ horizontalAppBarBranding?: (props?: any) => ReactNode
 
 Here is the code to change the app logo:
 
+<code-group>
+<code-block title="TSX" active>
 ```tsx{25}
 import { ReactNode } from 'react'
 import Box from '@mui/material/Box'
@@ -499,6 +788,40 @@ const UserLayout = ({ children }: Props) => {
 
 export default UserLayout
 ```
+</code-block>
+
+<code-block title="JSX">
+```jsx{20}
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
+import Layout from 'src/@core/layouts/Layout'
+
+const AppBrand = () => {
+  return (
+    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+      <img src='...' alt='logo' width='30' height='30' />
+      <Typography variant='h6' sx={{ ml: 2 }}>
+        React
+      </Typography>
+    </Box>
+  )
+}
+
+const UserLayout = ({ children }) => {
+  return (
+    <Layout
+      {...} // other props
+      horizontalAppBarBranding={() => <AppBrand />}
+    >
+      {children}
+    </Layout>
+  )
+}
+
+export default UserLayout
+```
+</code-block>
+</code-group>
 
 Result:
 
@@ -516,6 +839,8 @@ horizontalNavMenuContent?: (props?: any) => ReactNode
 
 Here is the code to change the menu:
 
+<code-group>
+<code-block title="TSX" active>
 ```tsx{12}
 import { ReactNode } from 'react'
 import Layout from 'src/@core/layouts/Layout'
@@ -537,6 +862,27 @@ const UserLayout = ({ children }: Props) => {
 
 export default UserLayout
 ```
+</code-block>
+
+<code-block title="JSX">
+```tsx{7}
+import Layout from 'src/@core/layouts/Layout'
+
+const UserLayout = ({ children }) => {
+  return (
+    <Layout
+      {...} // other props
+      horizontalNavMenuContent={() => 'I am menu which is overridden by the user'}
+    >
+      {children}
+    </Layout>
+  )
+}
+
+export default UserLayout
+```
+</code-block>
+</code-group>
 
 Result:
 
@@ -572,6 +918,8 @@ Suppose you need the app logo, navigation menu as well as some actions in one li
 
 Firstly, you need to hide the navigation menu section which is below the appBar from the `src/configs/themeConfig.ts` file:
 
+<code-group>
+<code-block title="TS" active>
 ```ts{5}
 // src/configs/themeConfig.ts
 
@@ -581,9 +929,25 @@ const themeConfig: ThemeConfig = {
   ...
 }
 ```
+</code-block>
+
+<code-block title="JS">
+```js{5}
+// src/configs/themeConfig.js
+
+const themeConfig = {
+  ...,
+  navHidden: true,
+  ...
+}
+```
+</code-block>
+</code-group>
 
 Then you need to change the appBar accordingly:
 
+<code-group>
+<code-block title="TSX" active>
 ```tsx
 // src/layouts/components/horizontal/AppBarContent.tsx
 
@@ -597,6 +961,7 @@ interface Props {
   settings: Settings
   horizontalNavItems?: HorizontalNavItemsType
 }
+
 const AppBarContent = (props: Props) => {
   const { settings } = props
 
@@ -610,9 +975,36 @@ const AppBarContent = (props: Props) => {
 
 export default AppBarContent
 ```
+</code-block>
+
+<code-block title="JSX">
+```jsx
+// src/layouts/components/horizontal/AppBarContent.jsx
+
+import Box from '@mui/material/Box'
+import Navigation from 'src/@core/layouts/components/horizontal/navigation'
+import UserDropdown from 'src/@core/layouts/components/shared-components/UserDropdown'
+
+const AppBarContent = props => {
+  const { settings } = props
+
+  return (
+    <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <Navigation {...props} />
+      <UserDropdown settings={settings} />
+    </Box>
+  )
+}
+
+export default AppBarContent
+```
+</code-block>
+</code-group>
 
 Then you need to pass that component in the `horizontalAppBarContent` prop with the `Layout` component:
 
+<code-group>
+<code-block title="TSX" active>
 ```tsx{6-7,18-20}
 // src/layouts/UserLayout.tsx
 
@@ -642,6 +1034,35 @@ const UserLayout = ({ children }: Props) => {
 
 export default UserLayout
 ```
+</code-block>
+
+<code-block title="JSX">
+```jsx{5-6,13-15}
+// src/layouts/UserLayout.jsx
+
+import Layout from 'src/@core/layouts/Layout'
+import { useSettings } from 'src/@core/hooks/useSettings'
+import HorizontalNavItems from 'src/navigation/horizontal'
+import HorizontalAppBarContent from 'src/layouts/components/horizontal/AppBarContent'
+
+const UserLayout = ({ children }) => {
+  const { settings } = useSettings()
+  return (
+    <Layout
+      {...} // other props
+      horizontalAppBarContent={() => (
+        <HorizontalAppBarContent settings={settings} horizontalNavItems={HorizontalNavItems()} />
+      )}
+    >
+      {children}
+    </Layout>
+  )
+}
+
+export default UserLayout
+```
+</code-block>
+</code-group>
 
 Result:
 
@@ -659,6 +1080,8 @@ footerContent?: (props?: any) => ReactNode
 
 Here is the code to change the footer:
 
+<code-group>
+<code-block title="TSX" active>
 ```tsx{12}
 import { ReactNode } from 'react'
 import Layout from 'src/@core/layouts/Layout'
@@ -680,6 +1103,27 @@ const UserLayout = ({ children }: Props) => {
 
 export default UserLayout
 ```
+</code-block>
+
+<code-block title="JSX">
+```jsx{7}
+import Layout from 'src/@core/layouts/Layout'
+
+const UserLayout = ({ children }) => {
+  return (
+    <Layout
+      {...} // other props
+      footerContent={() => 'I am footer which is overridden by the user'}
+    >
+      {children}
+    </Layout>
+  )
+}
+
+export default UserLayout
+```
+</code-block>
+</code-group>
 
 Result:
 
@@ -694,6 +1138,8 @@ If you want to change the Blank Layout, you need to follow these steps:
 - Edit the `src/layouts/UserBlankLayout.tsx` file as per your requirements
 - Now, to use this layout in any of your pages, you need to do this:
 
+<code-group>
+<code-block title="TSX" active>
 ```tsx{2,10}
 import { ReactNode } from 'react'
 import UserBlankLayout from 'src/layouts/UserBlankLayout'
@@ -708,6 +1154,24 @@ Login.getLayout = (page: ReactNode) => <UserBlankLayout>{page}</UserBlankLayout>
 
 export default Login
 ```
+</code-block>
+
+<code-block title="JSX">
+```jsx{1,9}
+import UserBlankLayout from 'src/layouts/UserBlankLayout'
+
+const Login = () => {
+  return (
+    // Your content
+  )
+}
+
+Login.getLayout = page => <UserBlankLayout>{page}</UserBlankLayout>
+
+export default Login
+```
+</code-block>
+</code-group>
 
 ## Blank Layout with AppBar
 
@@ -718,6 +1182,8 @@ If you want to change the navbar, you need to follow these steps:
 - Remove the `AppBar` component and its import statement from the `src/layouts/UserBlankLayoutWithAppBar.tsx` file and make your own `AppBar` component
 - Now, to use this layout in any of your pages, you need to do this:
 
+<code-group>
+<code-block title="TSX" active>
 ```tsx{2,10}
 import { ReactNode } from 'react'
 import UserBlankLayoutWithAppBar from 'src/layouts/UserBlankLayoutWithAppBar'
@@ -732,6 +1198,24 @@ LoginWithAppBar.getLayout = (page: ReactNode) => <UserBlankLayoutWithAppBar>{pag
 
 export default LoginWithAppBar
 ```
+</code-block>
+
+<code-block title="JSX">
+```jsx{1,9}
+import UserBlankLayoutWithAppBar from 'src/layouts/UserBlankLayoutWithAppBar'
+
+const LoginWithAppBar = () => {
+  return (
+    // Your content
+  )
+}
+
+LoginWithAppBar.getLayout = page => <UserBlankLayoutWithAppBar>{page}</UserBlankLayoutWithAppBar>
+
+export default LoginWithAppBar
+```
+</code-block>
+</code-group>
 
 ## Scroll to Top
 
@@ -745,6 +1229,8 @@ scrollToTop?: (props?: any) => ReactNode
 
 Here is the code to change the scroll to top component:
 
+<code-group>
+<code-block title="TSX" active>
 ```tsx{24}
 import { ReactNode } from 'react'
 import Button from '@mui/material/Button'
@@ -778,6 +1264,39 @@ const UserLayout = ({ children }: Props) => {
 
 export default UserLayout
 ```
+</code-block>
+
+<code-block title="JSX">
+```jsx{19}
+import Button from '@mui/material/Button'
+import Layout from 'src/@core/layouts/Layout'
+import ScrollToTop from 'src/@core/components/scroll-to-top'
+
+const UserScrollToTop = () => {
+  return (
+    <ScrollToTop>
+      <Button color='success' variant='contained'>
+        Scroll To Top
+      </Button>
+    </ScrollToTop>
+  )
+}
+
+const UserLayout = ({ children } => {
+  return (
+    <Layout
+      {...} // other props
+      scrollToTop={() => <UserScrollToTop />}
+    >
+      {children}
+    </Layout>
+  )
+}
+
+export default UserLayout
+```
+</code-block>
+</code-group>
 
 Result:
 

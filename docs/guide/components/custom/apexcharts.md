@@ -16,6 +16,8 @@ You can create your chart as it is in the [React Apexcharts Docs](https://apexch
 
 Let us take an example of a line chart:
 
+<code-group>
+<code-block title="TSX" active>
 ```tsx
 import { ApexOptions } from 'apexcharts'
 import ReactApexcharts from 'src/@core/components/react-apexcharts'
@@ -32,3 +34,23 @@ const ApexLineChart = () => {
 
 export default ApexLineChart
 ```
+</code-block>
+
+<code-block title="JSX">
+```jsx
+import ReactApexcharts from 'src/@core/components/react-apexcharts'
+
+const ApexLineChart = () => {
+  const options = {
+    ...
+  }
+
+  const series = [...]
+
+  return <ReactApexcharts options={options} series={series} type='line' height={400} />
+}
+
+export default ApexLineChart
+```
+</code-block>
+</code-group>

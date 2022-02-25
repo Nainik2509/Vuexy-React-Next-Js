@@ -40,15 +40,19 @@ If you are using the full version, then you don't need to add i18n as it is alre
   - `i18next-http-backend`
   - `i18next-browser-languagedetector`
 
+<code-group>
+<code-block title="YARN (Highly Recommended)" active>
 ```bash
-# For yarn (Highly Recommended)
 yarn add i18next react-i18next i18next-http-backend i18next-browser-languagedetector
+```
+</code-block>
 
-# OR
-
-# For npm
+<code-block title="NPM">
+```bash
 npm install i18next react-i18next i18next-http-backend i18next-browser-languagedetector
 ```
+</code-block>
+</code-group>
 
 - Copy `src/configs/i18n.ts` file from the full version and paste it under the same directory in your project
 - Add `import 'src/configs/i18n'` import statement in `src/pages/_app.tsx` file
@@ -79,6 +83,8 @@ If you do not want to use i18n, we recommend you start your project with the sta
 - Remove `import 'src/configs/i18n'` import statement from `src/pages/_app.tsx` file
 - Replace the following code in `src/layouts/components/Translations.tsx` file
 
+<code-group>
+<code-block title="TSX" active>
 ```tsx{5}
 interface Props {
   text: string
@@ -88,6 +94,16 @@ const Translations = ({ text }: Props) => <>{text}</>
 
 export default Translations
 ```
+</code-block>
+
+<code-block title="JSX">
+```jsx{1}
+const Translations = ({ text }) => <>{text}</>
+
+export default Translations
+```
+</code-block>
+</code-group>
 
 - Remove `LanguageDropdown` file import statement and rendered component from `src/layouts/components/vertical/AppBarContent.tsx` or `src/layouts/components/horizontal/AppBarContent.tsx` file
 - Remove your locale files from `public/locales` folder
@@ -104,6 +120,8 @@ Suppose you want to add `de` (German) language and remove `ar` (Arabic) language
 - Remove `ar` related SVG images and add `de` related images in `public/images/flags` folder
 - Make a new file in `src/layouts/components` folder and place the following code in this file
 
+<code-group>
+<code-block title="TSX" active>
 ```tsx
 // src/layouts/components/UserLanguageDropdown.tsx
 
@@ -203,14 +221,116 @@ const UserLanguageDropdown = ({ settings }: Props) => {
 
 export default UserLanguageDropdown
 ```
+</code-block>
+
+<code-block title="JSX">
+```jsx
+// src/layouts/components/UserLanguageDropdown.jsx
+
+import { Fragment, useState } from 'react'
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
+import { styled } from '@mui/material/styles'
+import IconButton from '@mui/material/IconButton'
+import { useTranslation } from 'react-i18next'
+
+const CountryFlag = styled('img')({
+  marginRight: '0.5rem',
+  width: '22px !important',
+  height: '16.5px !important',
+  '&.selected-lang': {
+    marginRight: 0,
+    width: '24px !important',
+    height: '24px !important',
+    borderRadius: '50% !important'
+  }
+})
+
+const UserLanguageDropdown = ({ settings }) => {
+  // ** State
+  const [anchorEl, setAnchorEl] = useState(null)
+
+  // ** Hook
+  const { i18n } = useTranslation()
+
+  // ** Vars
+  const { layout, direction } = settings
+
+  const handleLangDropdownOpen = event => {
+    setAnchorEl(event.currentTarget)
+  }
+  const handleLangDropdownClose = () => {
+    setAnchorEl(null)
+  }
+  const selectedLangCountryCode = () => {
+    if (i18n.language === 'fr') {
+      return 'fr'
+    } else if (i18n.language === 'de') {
+      return 'de'
+    } else {
+      return 'en'
+    }
+  }
+  const handleLangItemClick = lang => {
+    i18n.changeLanguage(lang)
+    handleLangDropdownClose()
+  }
+
+  return (
+    <Fragment>
+      <IconButton
+        color='inherit'
+        aria-haspopup='true'
+        aria-controls='customized-menu'
+        onClick={handleLangDropdownOpen}
+        sx={layout === 'vertical' ? { mr: 0.75 } : { mx: 0.75 }}
+      >
+        <CountryFlag
+          className='selected-lang'
+          alt={`${selectedLangCountryCode()}-flag`}
+          src={`/images/flags/${selectedLangCountryCode()}-round.svg`}
+        />
+      </IconButton>
+      <Menu
+        anchorEl={anchorEl}
+        open={Boolean(anchorEl)}
+        onClose={handleLangDropdownClose}
+        sx={{ '& .MuiMenu-paper': { mt: 4, minWidth: 160 } }}
+        anchorOrigin={{ vertical: 'bottom', horizontal: direction === 'ltr' ? 'right' : 'left' }}
+        transformOrigin={{ vertical: 'top', horizontal: direction === 'ltr' ? 'right' : 'left' }}
+      >
+        <MenuItem sx={{ py: 2 }} selected={i18n.language === 'en'} onClick={() => handleLangItemClick('en')}>
+          <CountryFlag alt='en-flag' src='/images/flags/en.svg' />
+          English
+        </MenuItem>
+        <MenuItem sx={{ py: 2 }} selected={i18n.language === 'fr'} onClick={() => handleLangItemClick('fr')}>
+          <CountryFlag alt='fr-flag' src='/images/flags/fr.svg' />
+          French
+        </MenuItem>
+        <MenuItem sx={{ py: 2 }} selected={i18n.language === 'de'} onClick={() => handleLangItemClick('de')}>
+          <CountryFlag alt='de-flag' src='/images/flags/de.svg' />
+          German
+        </MenuItem>
+      </Menu>
+    </Fragment>
+  )
+}
+
+export default UserLanguageDropdown
+```
+</code-block>
+</code-group>
 
 - Import the `src/layouts/components/UserLanguageDropdown.tsx` file and render it in the `src/layouts/components/vertical/AppBarContent.tsx` or `src/layouts/components/horizontal/AppBarContent.tsx` file.
 
-```tsx{5,21}
+<code-group>
+<code-block title="TSX" active>
+```tsx{6,22}
 // src/layouts/components/vertical/AppBarContent.tsx
 // OR
 // src/layouts/components/horizontal/AppBarContent.tsx
 
+import { Settings } from 'src/@core/context/settingsContext'
 import UserLanguageDropdown from 'src/layouts/components/UserLanguageDropdown'
 
 interface Props {
@@ -234,3 +354,28 @@ const AppBarContent = (props: Props) => {
 
 export default AppBarContent
 ```
+</code-block>
+
+<code-block title="JSX">
+```jsx{5,13}
+// src/layouts/components/vertical/AppBarContent.jsx
+// OR
+// src/layouts/components/horizontal/AppBarContent.jsx
+
+import UserLanguageDropdown from 'src/layouts/components/UserLanguageDropdown'
+
+const AppBarContent = props => {
+  const { hidden, settings, saveSettings, setShowBackdrop, toggleNavVisibility } = props
+
+  return (
+    <>
+      {/* Your some content */}
+      <UserLanguageDropdown settings={settings} />
+    </>
+  )
+}
+
+export default AppBarContent
+```
+</code-block>
+</code-group>

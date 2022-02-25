@@ -67,17 +67,29 @@ Refer to the example below:
 
 ## Home URL
 
-Please update Home URL based on User role in `src/pages/index.tsx` file. Currently we have set default URL for client and Admin like following:
+Please update home URL based on yser role in `src/pages/index.tsx` file. Currently, we have set default URL for client and admin like following:
 
+<code-group>
+<code-block title="TSX" active>
 ```tsx
-/**
- *  Set Home URL based on User Roles
- */
+// Set Home URL based on User Roles
 export const getHomeRoute = (role: string) => {
   if (role === 'client') return '/acl'
   else return '/dashboards/analytics'
 }
 ```
+</code-block>
+
+<code-block title="JSX">
+```jsx
+// Set Home URL based on User Roles
+export const getHomeRoute = role => {
+  if (role === 'client') return '/acl'
+  else return '/dashboards/analytics'
+}
+```
+</code-block>
+</code-group>
 
 ## How to remove ACL
 
@@ -161,9 +173,7 @@ It is quite easy to remove access control from the template.
 7. Update Home URL like following:
 
     ```tsx
-    /**
-    *  Set Home URL based on User Roles
-    */
+    // Set Home URL based on User Roles
     export const getHomeRoute = () => {
       return '/dashboards/analytics'
     }
@@ -175,7 +185,7 @@ It is quite easy to remove access control from the template.
 
     ```tsx
     const Component = () => <h1>Component</h1>
-    
+
     export default Component
     ```
 
@@ -183,6 +193,8 @@ It is quite easy to remove access control from the template.
 
     Replace the following codes in respective files in order to remove ACL functionality.
 
+    <code-group>
+    <code-block title="TSX" active>
     ```tsx{11}
     // src/layouts/components/acl/CanViewNavNavGroup.tsx
     import { ReactNode } from 'react'
@@ -199,7 +211,25 @@ It is quite easy to remove access control from the template.
 
     export default CanViewNavNavGroup
     ```
+    </code-block>
 
+    <code-block title="JSX">
+    ```jsx{6}
+    // src/layouts/components/acl/CanViewNavNavGroup.jsx
+
+    const CanViewNavNavGroup = props => {
+      const { children } = props
+
+      return <>{children}</>
+    }
+
+    export default CanViewNavNavGroup
+    ```
+    </code-block>
+    </code-group>
+
+    <code-group>
+    <code-block title="TSX" active>
     ```tsx{11}
     // src/layouts/components/acl/CanViewNavNavLink.tsx
     import { ReactNode } from 'react'
@@ -216,7 +246,25 @@ It is quite easy to remove access control from the template.
 
     export default CanViewNavNavLink
     ```
+    </code-block>
 
+    <code-block title="JSX">
+    ```tsx{6}
+    // src/layouts/components/acl/CanViewNavNavLink.jsx
+
+    const CanViewNavNavLink = props => {
+      const { children } = props
+
+      return <>{children}</>
+    }
+
+    export default CanViewNavNavLink
+    ```
+    </code-block>
+    </code-group>
+
+    <code-group>
+    <code-block title="TSX" active>
     ```tsx{11}
     // src/layouts/components/acl/CanViewNavSectionTitle.tsx
     import { ReactNode } from 'react'
@@ -233,3 +281,19 @@ It is quite easy to remove access control from the template.
 
     export default CanViewNavSectionTitle
     ```
+    </code-block>
+
+    <code-block title="JSX">
+    ```jsx{6}
+    // src/layouts/components/acl/CanViewNavSectionTitle.jsx
+
+    const CanViewNavSectionTitle = props => {
+      const { children } = props
+
+      return <>{children}</>
+    }
+
+    export default CanViewNavSectionTitle
+    ```
+    </code-block>
+    </code-group>

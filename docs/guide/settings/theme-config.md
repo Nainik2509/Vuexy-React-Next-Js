@@ -10,6 +10,8 @@ If you are looking to match up with one of our demos, then please read [demo con
 
 Following are the properties with their values that we have used in the theme:
 
+<code-group>
+<code-block title="TS" active>
 ```ts
 const themeConfig: ThemeConfig = {
   templateName: 'Master',
@@ -35,6 +37,36 @@ const themeConfig: ThemeConfig = {
   toastPosition: 'top-right'
 }
 ```
+</code-block>
+
+<code-block title="JS">
+```js
+const themeConfig = {
+  templateName: 'Master',
+  layout: 'vertical',
+  mode: 'light',
+  direction: 'ltr',
+  skin: 'default',
+  contentWidth: 'boxed',
+  footer: 'static',
+  routingLoader: true,
+  navHidden: false,
+  menuTextTruncate: true,
+  navSubItemIcon: CircleOutline,
+  verticalNavToggleType: 'accordion',
+  navCollapsed: false,
+  navigationSize: 260,
+  collapsedNavigationSize: 69,
+  horizontalMenuToggle: 'hover',
+  appBar: 'fixed',
+  responsiveFontSizes: true,
+  disableRipple: false,
+  disableCustomizer: false,
+  toastPosition: 'top-right'
+}
+```
+</code-block>
+</code-group>
 
 ## Property Options
 

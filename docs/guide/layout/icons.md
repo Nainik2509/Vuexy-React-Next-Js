@@ -32,6 +32,8 @@ You may go through the [MUI Docs](https://mui.com/components/icons/) for install
 
 Suppose, you want to override the icons in the vertical menu with MUI Material Icons by Google, you need to import icons from the `@mui/icons-material` package and remove other icons' import statements in and from the `src/navigation/vertical/index.ts` file respectively.
 
+<code-group>
+<code-block title="TS" active>
 ```ts
 // src/navigation/vertical/index.ts
 
@@ -68,10 +70,57 @@ const navigation = (): VerticalNavItemsType => {
     }
   ]
 }
+
+export default navigation
 ```
+</code-block>
+
+<code-block title="JS">
+```js
+// src/navigation/vertical/index.js
+
+import MailTwoTone from '@mui/icons-material/MailTwoTone'
+import ChatBubbleTwoTone from '@mui/icons-material/ChatBubbleTwoTone'
+import CalendarTodayTwoTone from '@mui/icons-material/CalendarTodayTwoTone'
+
+const navigation = () => {
+  return [
+    {
+      title: 'Email',
+      icon: MailTwoTone,
+      path: '/apps/email'
+    },
+    {
+      title: 'Chat',
+      icon: ChatBubbleTwoTone,
+      path: '/apps/chat'
+    },
+    {
+      title: 'User',
+      icon: PersonOutlineTwoTone,
+      children: [
+        {
+          title: 'List',
+          path: '/apps/user/list'
+        },
+        {
+          title: 'View',
+          path: '/apps/user/view'
+        }
+      ]
+    }
+  ]
+}
+
+export default navigation
+```
+</code-block>
+</code-group>
 
 If you also want to change the icon for the submenu, you need to change it in the `themeConfig.ts` file.
 
+<code-group>
+<code-block title="TS" active>
 ```ts{7}
 // src/configs/themeConfig.ts
 
@@ -82,6 +131,21 @@ const themeConfig: ThemeConfig = {
   navSubItemIcon: CircleTwoTone
 }
 ```
+</code-block>
+
+<code-block title="JS">
+```js{7}
+// src/configs/themeConfig.js
+
+import CircleTwoTone from '@mui/icons-material/CircleTwoTone'
+
+const themeConfig = {
+  ...,
+  navSubItemIcon: CircleTwoTone
+}
+```
+</code-block>
+</code-group>
 
 ### Server Side Navigation Menu
 
@@ -109,6 +173,8 @@ You may go through the [React Icons](https://www.npmjs.com/package/react-icons) 
 
 Suppose you want to override the icons in the vertical menu with FontAwesome Icons from the `react-icons` package, you need to import icons from the `react-icons/fa` package and remove other icons' import statements in and from the `src/navigation/vertical/index.ts` file respectively.
 
+<code-group>
+<code-block title="TS" active>
 ```ts
 // src/navigation/vertical/index.ts
 
@@ -125,10 +191,37 @@ const navigation = (): VerticalNavItemsType => {
     }
   ]
 }
+
+export default navigation
 ```
+</code-block>
+
+<code-block title="JS">
+```js
+// src/navigation/vertical/index.js
+
+import { FaEnvelope } from 'react-icons/fa'
+
+const navigation = () => {
+  return [
+    ...,
+    {
+      title: 'Email',
+      icon: FaEnvelope,
+      path: '/apps/email'
+    }
+  ]
+}
+
+export default navigation
+```
+</code-block>
+</code-group>
 
 If you also want to change the icon for the submenu, you need to change it in the `themeConfig.ts` file.
 
+<code-group>
+<code-block title="TS" active>
 ```ts{7}
 // src/configs/themeConfig.ts
 
@@ -139,6 +232,21 @@ const themeConfig: ThemeConfig = {
   navSubItemIcon: FaArrowRight
 }
 ```
+</code-block>
+
+<code-block title="JS">
+```js{7}
+// src/configs/themeConfig.js
+
+import { FaArrowRight } from 'react-icons/fa'
+
+const themeConfig = {
+  ...,
+  navSubItemIcon: FaArrowRight
+}
+```
+</code-block>
+</code-group>
 
 ### Server Side Navigation Menu
 
@@ -162,6 +270,8 @@ If you decide to use Font Awesome Icon as a stand-alone library and not use Reac
 
 You can change the icons in the vertical menu, horizontal menu and search as shown above. The icon for the submenu will also be changed as shown above. In addition to this, you need to update the return statement in `src/layouts/components/UserIcon.tsx` file:
 
+<code-group>
+<code-block title="TSx" active>
 ```tsx
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -169,6 +279,18 @@ const UserIcon = (props: UserIconProps) => {
   return <FontAwesomeIcon icon={icon} {...iconProps} style={{ ...styles }} />
 }
 ```
+</code-block>
+
+<code-block title="JSX">
+```jsx
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+const UserIcon = props => {
+  return <FontAwesomeIcon icon={icon} {...iconProps} style={{ ...styles }} />
+}
+```
+</code-block>
+</code-group>
 
 Result:
 

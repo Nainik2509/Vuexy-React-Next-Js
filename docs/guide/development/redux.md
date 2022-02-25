@@ -16,7 +16,7 @@ You should read the [redux-toolkit](https://redux-toolkit.js.org/introduction/ge
 
 Create a new file in `src/store`, and name it `email.ts` and import `createSlice` from `@reduxjs/toolkit` package to create the new slice.
 
-```js
+```ts
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
@@ -36,7 +36,7 @@ export default appEmailSlice.reducer
 
 Let's create an action `handleSelectMail` that pushes a mail into `selectedMails` state.
 
-```js
+```ts
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
@@ -76,7 +76,7 @@ For example: `state = { ...mailData } will break the state, but state.selectedMa
 
 Use `createAsyncThunk` to fetch data from an api.
 
-```js
+```ts
 import axios from 'axios'
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
@@ -113,7 +113,7 @@ export default appEmailSlice.reducer
 
 In the file `src/store/index.ts` use the reducer from your newly created slice.
 
-```js
+```ts
 import { configureStore } from '@reduxjs/toolkit'
 
 import email from 'src/store/apps/email'
@@ -131,11 +131,11 @@ export const store = configureStore({
 
 Use `useSelector` hook to access the store state.
 
-```jsx{1,4}
+```tsx{1,4}
 import { useSelector } from 'react-redux'
 
 const Email = () => {
-  const store = useSelector((state) => state.email)
+  const store = useSelector(state => state.email)
 
   return (
     <div>
@@ -151,13 +151,13 @@ export default Email
 
 Use `useDispatch` hook to dispatch an action.
 
-```jsx{1,5-6,9}
+```tsx{1,5-6,9}
 import { useDispatch, useSelector } from 'react-redux'
 import { handleSelectMail } from 'src/store/email.ts'
 
 const Email = () => {
   const dispatch = useDispatch()
-  const store = useSelector((state) => state.email)
+  const store = useSelector(state => state.email)
 
   const handleMailClick = mail => {
     dispatch(handleSelectMail(mail))
