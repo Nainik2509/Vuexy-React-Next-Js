@@ -40,29 +40,6 @@ export default ChipsArray
   </pre>
 )
 
-export const ChipsClickableJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Chip from '@mui/material/Chip'
-
-const ChipsClickable = () => {
-  const handleClick = () => {
-    console.info('You clicked the Chip.')
-  }
-
-  return (
-    <div className='demo-space-x'>
-      <Chip label='Clickable' onClick={handleClick} />
-      <Chip label='Clickable Link' component='a' href='https://themeselection.com/' target='_blank' clickable />
-    </div>
-  )
-}
-
-export default ChipsClickable
-`}</code>
-  </pre>
-)
-
 export const ChipsColorsJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -98,6 +75,52 @@ const ChipsColors = () => {
 }
 
 export default ChipsColors
+`}</code>
+  </pre>
+)
+
+export const ChipsClickableJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Chip from '@mui/material/Chip'
+
+const ChipsClickable = () => {
+  const handleClick = () => {
+    console.info('You clicked the Chip.')
+  }
+
+  return (
+    <div className='demo-space-x'>
+      <Chip label='Clickable' onClick={handleClick} />
+      <Chip label='Clickable Link' component='a' href='https://themeselection.com/' target='_blank' clickable />
+    </div>
+  )
+}
+
+export default ChipsClickable
+`}</code>
+  </pre>
+)
+
+export const ChipsIconJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Chip from '@mui/material/Chip'
+
+// ** Icons Imports
+import Battery10 from 'mdi-material-ui/Battery10'
+import BatteryCharging30 from 'mdi-material-ui/BatteryCharging30'
+
+const ChipsIcon = () => {
+  return (
+    <div className='demo-space-x'>
+      <Chip label='Battery Low' icon={<Battery10 fontSize='small' />} />
+      <Chip label='Charging' color='primary' variant='outlined' icon={<BatteryCharging30 fontSize='small' />} />
+    </div>
+  )
+}
+
+export default ChipsIcon
 `}</code>
   </pre>
 )
@@ -144,6 +167,38 @@ export default ChipsCustomized
   </pre>
 )
 
+export const ChipsAvatarJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Chip from '@mui/material/Chip'
+import Avatar from '@mui/material/Avatar'
+
+// ** Icons Imports
+import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
+
+const ChipsAvatar = () => {
+  return (
+    <div className='demo-space-x'>
+      <Chip label='Default' avatar={<Avatar />} />
+      <Chip label='Howard Paul' avatar={<Avatar src='/images/avatars/7.png' alt='User Avatar' />} />
+      <Chip label='Maurice Bell' avatar={<Avatar>M</Avatar>} />
+      <Chip
+        label='Archived'
+        avatar={
+          <Avatar>
+            <ArchiveOutline fontSize='small' />
+          </Avatar>
+        }
+      />
+    </div>
+  )
+}
+
+export default ChipsAvatar
+`}</code>
+  </pre>
+)
+
 export const ChipsOnDeleteJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -184,57 +239,6 @@ export default ChipsOnDelete
   </pre>
 )
 
-export const ChipsSizesJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Chip from '@mui/material/Chip'
-
-const ChipsSizes = () => {
-  return (
-    <div className='demo-space-x'>
-      <Chip label='Default' />
-      <Chip label='Small' size='small' />
-    </div>
-  )
-}
-
-export default ChipsSizes
-`}</code>
-  </pre>
-)
-
-export const ChipsAvatarJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Chip from '@mui/material/Chip'
-import Avatar from '@mui/material/Avatar'
-
-// ** Icons Imports
-import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
-
-const ChipsAvatar = () => {
-  return (
-    <div className='demo-space-x'>
-      <Chip label='Default' avatar={<Avatar />} />
-      <Chip label='Howard Paul' avatar={<Avatar src='/images/avatars/7.png' alt='User Avatar' />} />
-      <Chip label='Maurice Bell' avatar={<Avatar>M</Avatar>} />
-      <Chip
-        label='Archived'
-        avatar={
-          <Avatar>
-            <ArchiveOutline fontSize='small' />
-          </Avatar>
-        }
-      />
-    </div>
-  )
-}
-
-export default ChipsAvatar
-`}</code>
-  </pre>
-)
-
 export const ChipsVariantsJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** MUI Imports
@@ -254,25 +258,21 @@ export default ChipsVariants
   </pre>
 )
 
-export const ChipsIconJSXCode = (
+export const ChipsSizesJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** MUI Imports
 import Chip from '@mui/material/Chip'
 
-// ** Icons Imports
-import Battery10 from 'mdi-material-ui/Battery10'
-import BatteryCharging30 from 'mdi-material-ui/BatteryCharging30'
-
-const ChipsIcon = () => {
+const ChipsSizes = () => {
   return (
     <div className='demo-space-x'>
-      <Chip label='Battery Low' icon={<Battery10 fontSize='small' />} />
-      <Chip label='Charging' color='primary' variant='outlined' icon={<BatteryCharging30 fontSize='small' />} />
+      <Chip label='Default' />
+      <Chip label='Small' size='small' />
     </div>
   )
 }
 
-export default ChipsIcon
+export default ChipsSizes
 `}</code>
   </pre>
 )
@@ -326,34 +326,25 @@ export default ChipsArray
   </pre>
 )
 
-export const ChipsAvatarTSXCode = (
+export const ChipsClickableTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** MUI Imports
 import Chip from '@mui/material/Chip'
-import Avatar from '@mui/material/Avatar'
 
-// ** Icons Imports
-import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
+const ChipsClickable = () => {
+  const handleClick = () => {
+    console.info('You clicked the Chip.')
+  }
 
-const ChipsAvatar = () => {
   return (
     <div className='demo-space-x'>
-      <Chip label='Default' avatar={<Avatar />} />
-      <Chip label='Howard Paul' avatar={<Avatar src='/images/avatars/7.png' alt='User Avatar' />} />
-      <Chip label='Maurice Bell' avatar={<Avatar>M</Avatar>} />
-      <Chip
-        label='Archived'
-        avatar={
-          <Avatar>
-            <ArchiveOutline fontSize='small' />
-          </Avatar>
-        }
-      />
+      <Chip label='Clickable' onClick={handleClick} />
+      <Chip label='Clickable Link' component='a' href='https://themeselection.com/' target='_blank' clickable />
     </div>
   )
 }
 
-export default ChipsAvatar
+export default ChipsClickable
 `}</code>
   </pre>
 )
@@ -397,21 +388,34 @@ export default ChipsColors
   </pre>
 )
 
-export const ChipsDisabledTSXCode = (
+export const ChipsAvatarTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** MUI Imports
 import Chip from '@mui/material/Chip'
+import Avatar from '@mui/material/Avatar'
 
-const ChipsDisabled = () => {
+// ** Icons Imports
+import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
+
+const ChipsAvatar = () => {
   return (
     <div className='demo-space-x'>
-      <Chip label='Basic' disabled />
-      <Chip label='Outlined' variant='outlined' disabled />
+      <Chip label='Default' avatar={<Avatar />} />
+      <Chip label='Howard Paul' avatar={<Avatar src='/images/avatars/7.png' alt='User Avatar' />} />
+      <Chip label='Maurice Bell' avatar={<Avatar>M</Avatar>} />
+      <Chip
+        label='Archived'
+        avatar={
+          <Avatar>
+            <ArchiveOutline fontSize='small' />
+          </Avatar>
+        }
+      />
     </div>
   )
 }
 
-export default ChipsDisabled
+export default ChipsAvatar
 `}</code>
   </pre>
 )
@@ -435,6 +439,48 @@ const ChipsCustomized = () => {
 }
 
 export default ChipsCustomized
+`}</code>
+  </pre>
+)
+
+export const ChipsDisabledTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Chip from '@mui/material/Chip'
+
+const ChipsDisabled = () => {
+  return (
+    <div className='demo-space-x'>
+      <Chip label='Basic' disabled />
+      <Chip label='Outlined' variant='outlined' disabled />
+    </div>
+  )
+}
+
+export default ChipsDisabled
+`}</code>
+  </pre>
+)
+
+export const ChipsIconTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Chip from '@mui/material/Chip'
+
+// ** Icons Imports
+import Battery10 from 'mdi-material-ui/Battery10'
+import BatteryCharging30 from 'mdi-material-ui/BatteryCharging30'
+
+const ChipsIcon = () => {
+  return (
+    <div className='demo-space-x'>
+      <Chip label='Battery Low' icon={<Battery10 fontSize='small' />} />
+      <Chip label='Charging' color='primary' variant='outlined' icon={<BatteryCharging30 fontSize='small' />} />
+    </div>
+  )
+}
+
+export default ChipsIcon
 `}</code>
   </pre>
 )
@@ -513,52 +559,6 @@ const ChipsSizes = () => {
 }
 
 export default ChipsSizes
-`}</code>
-  </pre>
-)
-
-export const ChipsClickableTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Chip from '@mui/material/Chip'
-
-const ChipsClickable = () => {
-  const handleClick = () => {
-    console.info('You clicked the Chip.')
-  }
-
-  return (
-    <div className='demo-space-x'>
-      <Chip label='Clickable' onClick={handleClick} />
-      <Chip label='Clickable Link' component='a' href='https://themeselection.com/' target='_blank' clickable />
-    </div>
-  )
-}
-
-export default ChipsClickable
-`}</code>
-  </pre>
-)
-
-export const ChipsIconTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Chip from '@mui/material/Chip'
-
-// ** Icons Imports
-import Battery10 from 'mdi-material-ui/Battery10'
-import BatteryCharging30 from 'mdi-material-ui/BatteryCharging30'
-
-const ChipsIcon = () => {
-  return (
-    <div className='demo-space-x'>
-      <Chip label='Battery Low' icon={<Battery10 fontSize='small' />} />
-      <Chip label='Charging' color='primary' variant='outlined' icon={<BatteryCharging30 fontSize='small' />} />
-    </div>
-  )
-}
-
-export default ChipsIcon
 `}</code>
   </pre>
 )

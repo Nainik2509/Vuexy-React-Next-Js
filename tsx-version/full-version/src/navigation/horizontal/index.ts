@@ -249,7 +249,7 @@ const navigation = (): HorizontalNavItemsType => {
             {
               title: 'More',
               path: '/components/more'
-            },
+            }
           ]
         }
       ]
@@ -442,7 +442,7 @@ const navigation = (): HorizontalNavItemsType => {
             {
               title: 'Input Mask',
               path: '/forms/form-elements/input-mask'
-            },
+            }
           ]
         },
         {
