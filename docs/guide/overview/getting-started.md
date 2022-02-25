@@ -2,6 +2,16 @@
 
 ::: tip
 Get Started with the Starter kit version and copy components from full version
+
+We only provide documentation for custom components and customizations made to MUI's components. For MUI components' documentation please visit [MUI's official docs](https://mui.com/components/).
+:::
+
+::: danger Heaps Up!
+When using JSX version, please consider respective file paths, we only show `ts` & `tsx` file paths for reference code in documentation.
+
+e.g. following is the `ts` file path: `src/layouts/UserLayout.tsx`
+
+then consider looking at following path in JSX version: `src/layouts/UserLayout.js`
 :::
 
 There can be two possibilities, you are planning to start a new project with our template or trying to add our template into your existing project.

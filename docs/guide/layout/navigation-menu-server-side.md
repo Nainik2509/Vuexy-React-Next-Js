@@ -41,7 +41,7 @@ export default UserLayout
 
 <code-block title="JSX">
 ```jsx{4,10}
-// src/layouts/UserLayout.jsx
+// src/layouts/UserLayout.js
 
 import Layout from 'src/@core/layouts/Layout'
 import ServerSideVerticalNavItems from 'src/layouts/components/vertical/ServerSideNavItems.tsx'
@@ -98,7 +98,7 @@ export default UserLayout
 
 <code-block title="JSX">
 ```jsx{4,10}
-// src/layouts/UserLayout.jsx
+// src/layouts/UserLayout.js
 
 import Layout from 'src/@core/layouts/Layout'
 import ServerSideHorizontalNavItems from 'src/layouts/components/horizontal/ServerSideNavItems.tsx'

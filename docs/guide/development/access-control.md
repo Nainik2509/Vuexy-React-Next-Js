@@ -215,7 +215,7 @@ It is quite easy to remove access control from the template.
 
     <code-block title="JSX">
     ```jsx{6}
-    // src/layouts/components/acl/CanViewNavNavGroup.jsx
+    // src/layouts/components/acl/CanViewNavNavGroup.js
 
     const CanViewNavNavGroup = props => {
       const { children } = props
@@ -250,7 +250,7 @@ It is quite easy to remove access control from the template.
 
     <code-block title="JSX">
     ```tsx{6}
-    // src/layouts/components/acl/CanViewNavNavLink.jsx
+    // src/layouts/components/acl/CanViewNavNavLink.js
 
     const CanViewNavNavLink = props => {
       const { children } = props
@@ -285,7 +285,7 @@ It is quite easy to remove access control from the template.
 
     <code-block title="JSX">
     ```jsx{6}
-    // src/layouts/components/acl/CanViewNavSectionTitle.jsx
+    // src/layouts/components/acl/CanViewNavSectionTitle.js
 
     const CanViewNavSectionTitle = props => {
       const { children } = props

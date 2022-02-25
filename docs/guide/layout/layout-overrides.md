@@ -558,7 +558,7 @@ export default AppBarContent
 
 <code-block title="JSX">
 ```jsx
-// src/layouts/components/vertical/AppBarContent.jsx
+// src/layouts/components/vertical/AppBarContent.js
 
 import Box from '@mui/material/Box'
 import IconButton from '@mui/material/IconButton'
@@ -632,7 +632,7 @@ export default UserLayout
 
 <code-block title="JSX">
 ```jsx{6,15-22}
-// src/layouts/UserLayout.jsx
+// src/layouts/UserLayout.js
 
 import useMediaQuery from '@mui/material/useMediaQuery'
 import Layout from 'src/@core/layouts/Layout'
@@ -979,7 +979,7 @@ export default AppBarContent
 
 <code-block title="JSX">
 ```jsx
-// src/layouts/components/horizontal/AppBarContent.jsx
+// src/layouts/components/horizontal/AppBarContent.js
 
 import Box from '@mui/material/Box'
 import Navigation from 'src/@core/layouts/components/horizontal/navigation'
@@ -1038,7 +1038,7 @@ export default UserLayout
 
 <code-block title="JSX">
 ```jsx{5-6,13-15}
-// src/layouts/UserLayout.jsx
+// src/layouts/UserLayout.js
 
 import Layout from 'src/@core/layouts/Layout'
 import { useSettings } from 'src/@core/hooks/useSettings'

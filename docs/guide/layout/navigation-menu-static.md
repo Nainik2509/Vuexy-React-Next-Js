@@ -40,7 +40,7 @@ export default UserLayout
 
 <code-block title="JSX">
 ```jsx{4,10}
-// src/layouts/UserLayout.jsx
+// src/layouts/UserLayout.js
 
 import Layout from 'src/@core/layouts/Layout'
 import VerticalNavItems from 'src/navigation/vertical'

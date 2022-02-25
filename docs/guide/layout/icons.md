@@ -167,7 +167,7 @@ If you want to use any third party icon library, we suggest you use the `react-i
 
 ### React Icons
 
-You may go through the [React Icons](https://www.npmjs.com/package/react-icons) for installation and more details.
+You may go through the [React Icons](https://github.com/react-icons/react-icons#readme) for installation and more details.
 
 ### Static Navigation Menu
 

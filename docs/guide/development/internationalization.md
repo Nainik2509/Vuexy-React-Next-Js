@@ -225,7 +225,7 @@ export default UserLanguageDropdown
 
 <code-block title="JSX">
 ```jsx
-// src/layouts/components/UserLanguageDropdown.jsx
+// src/layouts/components/UserLanguageDropdown.js
 
 import { Fragment, useState } from 'react'
 import Menu from '@mui/material/Menu'
@@ -358,9 +358,9 @@ export default AppBarContent
 
 <code-block title="JSX">
 ```jsx{5,13}
-// src/layouts/components/vertical/AppBarContent.jsx
+// src/layouts/components/vertical/AppBarContent.js
 // OR
-// src/layouts/components/horizontal/AppBarContent.jsx
+// src/layouts/components/horizontal/AppBarContent.js
 
 import UserLanguageDropdown from 'src/layouts/components/UserLanguageDropdown'
 

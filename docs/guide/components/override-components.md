@@ -34,7 +34,7 @@ export default UserPageHeader
 
 <code-block title="JSX">
 ```jsx
-// src/layouts/components/page-header/index.jsx
+// src/layouts/components/page-header/index.js
 
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'

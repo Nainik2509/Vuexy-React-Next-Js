@@ -7,11 +7,26 @@ We present you with a Developer friendly, Highly customizable & Carefully crafte
 Thanks for purchasing our template 🙂. Let's get you up and running.
 
 <div class='row'>
+  <!-- Getting Started -->
+  <div class='col'>
+    <router-link to='/guide/overview/getting-started.html'>
+      <div class='card'>
+        <img alt='getting-started-icon' :src="$withBase('/images/icons/rocket-launch-outline.png')" />
+        <h3>Getting Started</h3>
+        <p>Must read guide before getting started. It will answer all of your questions to get started with our template.</p>
+        <div class='d-flex'>
+          <a>Get started</a>
+          <img alt='right arrow' :src="$withBase('/images/icons/chevron-right.svg')" />
+        </div>
+      </div>
+    </router-link>
+  </div>
+
   <!-- Installation -->
   <div class='col'>
     <router-link to='/guide/overview/installation.html'>
       <div class='card'>
-        <img alt='installation-icon' :src="$withBase('/images/icons/rocket-launch-outline.png')" />
+        <img alt='installation-icon' :src="$withBase('/images/icons/monitor-arrow-down-variant.png')" />
         <h3>Installation</h3>
         <p>Let's install your project first. Please visit the installation page for a detailed guide on how to install and run the template.</p>
         <div class='d-flex'>
@@ -65,21 +80,6 @@ Thanks for purchasing our template 🙂. Let's get you up and running.
         </div>
       </div>
     </router-link>
-  </div>
-
-  <!-- MUI Components -->
-  <div class='col'>
-    <a target='_blank' href='https://mui.com/components/'>
-      <div class='card'>
-        <img alt='mui-icon' :src="$withBase('/images/icons/material-ui.png')" />
-        <h3>MUI Components</h3>
-        <p>Our template is built on top of MUI. You can use any of the components as demonstrated in the MUI's documentation.</p>
-        <div class='d-flex'>
-          <a>View all components</a>
-          <img alt='right arrow' :src="$withBase('/images/icons/chevron-right.svg')" />
-        </div>
-      </div>
-    </a>
   </div>
 
   <!-- FAQs -->
@@ -142,7 +142,3 @@ Thanks for purchasing our template 🙂. Let's get you up and running.
     </router-link>
   </div>
 </div>
-
-::: tip
-We only provide documentation for custom components and customizations made to MUI's components. For MUI components' documentation please visit [MUI's official docs](https://mui.com/components/).
-:::
