@@ -1,6 +1,8 @@
 /javascript-version
 /typescript-version/starter-kit
 /package
+/scripts/demo-generation/temp-folder
+/docs-build
 /docs.zip
 /demo-1.zip
 /demo-1
