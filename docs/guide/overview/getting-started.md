@@ -7,11 +7,11 @@ We only provide documentation for custom components and customizations made to M
 :::
 
 ::: danger Heaps Up!
-When using JSX version, please consider respective file paths, we only show `ts` & `tsx` file paths for reference code in documentation.
+When using Javascript version, please consider respective file paths, we only show `ts` & `tsx` file paths for reference code in documentation.
 
 e.g. following is the `ts` file path: `src/layouts/UserLayout.tsx`
 
-then consider looking at following path in JSX version: `src/layouts/UserLayout.js`
+then consider looking at following path in Javascript version: `src/layouts/UserLayout.js`
 :::
 
 There can be two possibilities, you are planning to start a new project with our template or trying to add our template into your existing project.

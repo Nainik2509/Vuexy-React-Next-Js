@@ -90,7 +90,7 @@ const generateTSXSourceCode = () => {
             })
           }
         } else {
-          console.log('JSX Version does not exist')
+          console.log('Javascript version does not exist')
         }
       }
     }

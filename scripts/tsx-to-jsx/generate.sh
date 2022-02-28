@@ -1,27 +1,27 @@
-# Compile Typescript files to React JS files in a new directory jsx-version in the new folder
-tsc --project ../../tsx-version/full-version/tsconfig.jsx.json
+# Compile Typescript files to React JS files in a new directory javascript-version in the new folder
+tsc --project ../../typescript-version/full-version/tsconfig.jsx.json
 
-# Copy package.json, eslintrc, gitignore, prettierrc, Readme, editorconfig files into newly created folder jsx-version
-cp ../../tsx-version/full-version/package.json ../../tsx-version/full-version/next.config.js ../../tsx-version/full-version/next-env.d.ts ../../tsx-version/full-version/.gitignore ../../tsx-version/full-version/.prettierrc.js ../../tsx-version/full-version/.editorconfig ../../tsx-version/full-version/.env ../../jsx-version/full-version/
+# Copy package.json, eslintrc, gitignore, prettierrc, Readme, editorconfig files into newly created folder javascript-version
+cp ../../typescript-version/full-version/package.json ../../typescript-version/full-version/next.config.js ../../typescript-version/full-version/next-env.d.ts ../../typescript-version/full-version/.gitignore ../../typescript-version/full-version/.prettierrc.js ../../typescript-version/full-version/.editorconfig ../../typescript-version/full-version/.env ../../javascript-version/full-version/
 
-# Copy .vscode & public directories into jsx-version for assets and .vscode configurations
-cp -r  ../../tsx-version/full-version/public ../../tsx-version/full-version/styles ../../jsx-version/full-version/
+# Copy .vscode & public directories into javascript-version for assets and .vscode configurations
+cp -r  ../../typescript-version/full-version/public ../../typescript-version/full-version/styles ../../javascript-version/full-version/
 
-# Remove Typescript from the jsx-version
+# Remove Typescript from the javascript-version
 node create-jsconfig.js
 
-# Remove Typescript from the jsx-version
+# Remove Typescript from the javascript-version
 node remove-ts.js
 
-# Create .eslint in jsx-version
+# Create .eslint in javascript-version
 node update-eslint.js
 
-cd ../../jsx-version/full-version
+cd ../../javascript-version/full-version
 
 # install node_modules
 yarn install
 
-# Add jsx version specific eslint plugins
+# Add javascript version specific eslint plugins
 yarn add eslint-plugin-react eslint-plugin-import babel-eslint
 
 # Run yarn lint command to fix all the linting error and give space after imports
@@ -39,6 +39,6 @@ node copySourceJSX.js
 cd ../../scripts/demo-generation
 node generate-demo-configs.js
 
-# Format tsx-version
-cd ../../tsx-version/full-version
+# Format typescript-version
+cd ../../typescript-version/full-version
 yarn format

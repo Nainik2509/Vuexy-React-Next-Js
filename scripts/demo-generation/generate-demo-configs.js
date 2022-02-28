@@ -77,11 +77,11 @@ const generateDemoConfigs = (version, demoConfigsFolder, defaultConfigPath) => {
 }
 
 
-// ** Generate Demo Configs for TSX version
+// ** Generate Demo Configs for TypeScript version
 generateDemoConfigs('ts', pathConfig.demoConfigsPathTSX, defaultConfigPathTSX)
 
 
-// ** Generate Demo Configs for JSX version
+// ** Generate Demo Configs for Javascript version
 if(fs.existsSync(pathConfig.basePathJSX)){
   generateDemoConfigs('js', pathConfig.demoConfigsPathJSX, defaultConfigPathJSX)
 }

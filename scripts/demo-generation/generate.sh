@@ -7,7 +7,7 @@ for i in {1..6}
 do
 # Replace necessary in src folder
 	node replace.js demo-$i
-  cd ../../tsx-version/full-version/
+  cd ../../typescript-version/full-version/
 # Build the template with replaced content
   yarn build
   yarn next export

@@ -57,5 +57,5 @@ export default Component
 | data   | `Object`  |      Yes | the object must have following properties: `chat`, `contact` & `userContact` |
 
 ::: tip
-You can see the format of the `data` prop in `tsx-version/full-version/src/@core/components/chat-log/types.ts` and `tsx-version/full-version/src/types/apps/chatTypes.ts` files combined.
+You can see the format of the `data` prop in `typescript-version/full-version/src/@core/components/chat-log/types.ts` and `typescript-version/full-version/src/types/apps/chatTypes.ts` files combined.
 :::

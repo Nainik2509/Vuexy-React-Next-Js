@@ -11,7 +11,7 @@ const formsPath = `${pathConfig.fullVersionJSXPath}/src/pages/forms/form-element
 
 // const AllIndexFiles = [...getAllIndexFiles(componentsPath), ...getAllIndexFiles(formsPath)]
 
-// ** Generates JSX source code if jsx-version directory exists
+// ** Generates JSX source code if javascript-version directory exists
 const generateJSXSourceCode = () => {
   if (doesJSXVersionExits) {
 
@@ -101,7 +101,7 @@ const generateJSXSourceCode = () => {
     // }
 
   } else {
-    console.log('JSX version does not exist')
+    console.log('Javascript version does not exist')
   }
 }
 
