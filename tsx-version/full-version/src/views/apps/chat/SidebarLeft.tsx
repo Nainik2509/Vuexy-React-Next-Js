@@ -95,6 +95,7 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
       setActive(null)
       dispatch(removeSelectedChat())
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const hasActiveId = (id: number | string) => {
