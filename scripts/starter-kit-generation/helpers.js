@@ -156,6 +156,10 @@ const filesToReplace = [
     dest: `${pathConfig.starterKitTSXPath}/src/pages/register/index.tsx`
   },
   {
+    src: `${pathConfig.fullVersionJSXPath}/src/pages/pages/auth/register-v2/index.js`,
+    dest: `${pathConfig.starterKitJSXPath}/src/pages/register/index.js`
+  },
+  {
     src: `${pathConfig.fullVersionJSXPath}/src/pages/pages/auth/login-v2/index.js`,
     dest: `${pathConfig.starterKitJSXPath}/src/pages/login/index.js`
   }
