@@ -2,17 +2,17 @@ const fs = require('fs')
 const path = require('path')
 const pathConfig = require('../configs/paths.json')
 const {
+  i18nPath,
   copyDirectory,
-  testFoldersToModify,
-  testFoldersToCopy
+  demoConfigPath,
+  nextConfigPath,
+  themeConfigPath,
+  testFoldersToCopy,
+  settingsContextFile,
+  testFoldersToModify
 } = require('./helpers')
 
 let demo = 'demo-1'
-const demoConfigPath = `${pathConfig.demoConfigsPathTSX}/demo-1.ts`
-const i18nPath = `${pathConfig.fullVersionTSXPath}/src/configs/i18n.ts`
-const themeConfigPath = `${pathConfig.fullVersionTSXPath}/src/configs/themeConfig.ts`
-const nextConfigPath = `${pathConfig.fullVersionTSXPath}/next.config.js`
-const settingsContextFile = `${pathConfig.fullVersionTSXPath}/src/@core/context/settingsContext.tsx`
 
 const demoArgs = process.argv.slice(2)
 

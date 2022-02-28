@@ -3,54 +3,20 @@ const path = require('path')
 const pathConfig = require('../configs/paths.json')
 const {
   copyDirectory,
-  testFoldersToModify,
+  filesToCopyTSX,
+  filesToCopyJSX,
   filesWithTestObj,
-  testFoldersToCopy
+  testFoldersToCopy,
+  userLayoutPathJSX,
+  userLayoutPathTSX,
+  PackageJSONPathTSX,
+  PackageJSONPathJSX,
+  testFoldersToModify,
+  BuyNowComponentPathTSX,
+  BuyNowComponentPathJSX,
 } = require('./helpers')
 
-const userLayoutPathTSX = `${pathConfig.packagePath}/tsx-version/full-version/src/layouts/UserLayout.tsx`
-const PackageJSONPathTSX = `${pathConfig.packagePath}/tsx-version/full-version/package.json`
-const PackageJSONPathJSX = `${pathConfig.packagePath}/jsx-version/full-version/package.json`
-const BuyNowComponentPathTSX = `${pathConfig.packagePath}/tsx-version/full-version/src/layouts/components/BuyNowButton.tsx`
-const userLayoutPathJSX = `${pathConfig.packagePath}/jsx-version/full-version/src/layouts/UserLayout.js`
-const BuyNowComponentPathJSX = `${pathConfig.packagePath}/jsx-version/full-version/src/layouts/components/BuyNowButton.js`
 
-const filesToCopyTSX = [
-  `${pathConfig.demoConfigsPathTSX}`,
-  `${pathConfig.fullVersionTSXPath}/public`,
-  `${pathConfig.fullVersionTSXPath}/src`,
-  `${pathConfig.fullVersionTSXPath}/styles`,
-  `${pathConfig.fullVersionTSXPath}/.editorconfig`,
-  `${pathConfig.fullVersionTSXPath}/.env`,
-  `${pathConfig.fullVersionTSXPath}/.eslintrc.json`,
-  `${pathConfig.fullVersionTSXPath}/.gitignore`,
-  `${pathConfig.fullVersionTSXPath}/.prettierrc.js`,
-  `${pathConfig.fullVersionTSXPath}/declaration.d.ts`,
-  `${pathConfig.fullVersionTSXPath}/next-env.d.ts`,
-  `${pathConfig.fullVersionTSXPath}/next.config.js`,
-  `${pathConfig.fullVersionTSXPath}/next.d.ts`,
-  `${pathConfig.fullVersionTSXPath}/yarn.lock`,
-  `${pathConfig.fullVersionTSXPath}/package.json`,
-  `${pathConfig.fullVersionTSXPath}/tsconfig.json`,
-  `${pathConfig.fullVersionTSXPath}/package-lock.json`,
-]
-
-const filesToCopyJSX = [
-  `${pathConfig.demoConfigsPathJSX}`,
-  `${pathConfig.fullVersionJSXPath}/public`,
-  `${pathConfig.fullVersionJSXPath}/src`,
-  `${pathConfig.fullVersionJSXPath}/styles`,
-  `${pathConfig.fullVersionJSXPath}/.editorconfig`,
-  `${pathConfig.fullVersionJSXPath}/.env`,
-  `${pathConfig.fullVersionJSXPath}/.eslintrc.js`,
-  `${pathConfig.fullVersionJSXPath}/.gitignore`,
-  `${pathConfig.fullVersionJSXPath}/.prettierrc.js`,
-  `${pathConfig.fullVersionJSXPath}/next.config.js`,
-  `${pathConfig.fullVersionJSXPath}/package.json`,
-  `${pathConfig.fullVersionTSXPath}/yarn.lock`,
-  `${pathConfig.fullVersionJSXPath}/jsconfig.json`,
-  `${pathConfig.fullVersionTSXPath}/package-lock.json`,
-]
 
 let arg = null
 

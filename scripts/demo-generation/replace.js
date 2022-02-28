@@ -2,18 +2,19 @@ const fs = require('fs')
 const path = require('path')
 const pathConfig = require('../configs/paths.json')
 const {
+  i18nPath,
   copyDirectory,
-  testFoldersToModify,
+  nextConfigPath,
+  themeConfigPath,
   filesWithTestObj,
-  testFoldersToCopy
+  testFoldersToCopy,
+  settingsContextFile,
+  testFoldersToModify,
 } = require('./helpers')
 
 
 let demo = 'demo-1'
-const i18nPath = `${pathConfig.fullVersionTSXPath}/src/configs/i18n.ts`
-const nextConfigPath = `${pathConfig.fullVersionTSXPath}/next.config.js`
-const themeConfigPath = `${pathConfig.fullVersionTSXPath}/src/configs/themeConfig.ts`
-const settingsContextFile = `${pathConfig.fullVersionTSXPath}/src/@core/context/settingsContext.tsx`
+
 
 const demoArgs = process.argv.slice(2)
 
@@ -38,19 +39,6 @@ const replaceBasePathInImages = (dirPath, arrayOfFiles) => {
 
           return
         } else {
-          // const splitData = data.split('\r\n')
-          // const lineIndex = splitData.findIndex(i => i.includes('/images/'))
-          // splitData[lineIndex] ? splitData[lineIndex].replace('/images/', `${pathConfig.demoURL}/${demo}/images/`) : null
-          // if(splitData[lineIndex]){
-          //   splitData[lineIndex] = splitData[lineIndex].replace('/images/', `${pathConfig.demoURL}/${demo}/images/`) 
-          //   fs.writeFile(path.join(__dirname, dirPath, '/', file), splitData.join('\n'), err => {
-          //     if (err) {
-          //       console.error(err)
-
-          //       return
-          //     }
-          //   })
-          // }
 
           const result = data.replace(new RegExp('/images/', 'g'), `${pathConfig.demoURL}/${demo}/images/`)
 

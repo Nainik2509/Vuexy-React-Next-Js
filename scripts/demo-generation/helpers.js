@@ -2,6 +2,12 @@ const fs = require('fs')
 const path = require('path')
 const pathConfig = require('../configs/paths.json')
 
+const demoConfigPath = `${pathConfig.demoConfigsPathTSX}/demo-1.ts`
+const i18nPath = `${pathConfig.fullVersionTSXPath}/src/configs/i18n.ts`
+const nextConfigPath = `${pathConfig.fullVersionTSXPath}/next.config.js`
+const themeConfigPath = `${pathConfig.fullVersionTSXPath}/src/configs/themeConfig.ts`
+const settingsContextFile = `${pathConfig.fullVersionTSXPath}/src/@core/context/settingsContext.tsx`
+
 const copyDirectory = (source, destination) => {
     fs.mkdirSync(destination, {
         recursive: true
@@ -86,8 +92,13 @@ const filesWithTestObj = [
 ]
 
 module.exports = {
+    i18nPath,
     copyDirectory,
+    demoConfigPath,
+    nextConfigPath,
+    themeConfigPath,
     filesWithTestObj,
     testFoldersToCopy,
+    settingsContextFile,
     testFoldersToModify
 }
