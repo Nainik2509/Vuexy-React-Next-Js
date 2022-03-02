@@ -1,4 +1,3 @@
-const fs = require('fs')
 const pathConfig = require('../configs/paths.json')
 
 const userLayoutPathTSX = `${pathConfig.packagePath}/typescript-version/full-version/src/layouts/UserLayout.tsx`

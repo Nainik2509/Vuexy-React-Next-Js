@@ -43,7 +43,7 @@ const testFoldersToModify = [
         from: `${pathConfig.fullVersionTSXPath}/src/pages/forms/form-elements/test`,
         to: `./temp-folder/${pathConfig.fullVersionTSXPath.replace('../../', '')}/src/pages/forms/form-elements/test`,
     },
-
+    
     {
         from: `${pathConfig.fullVersionJSXPath}/src/views/components/test`,
         to: `./temp-folder/${pathConfig.fullVersionJSXPath.replace('../../', '')}/src/views/components/test`,
@@ -59,10 +59,12 @@ const testFoldersToModify = [
     {
         from: `${pathConfig.fullVersionJSXPath}/src/pages/forms/form-elements/test`,
         to: `./temp-folder/${pathConfig.fullVersionJSXPath.replace('../../', '')}/src/pages/forms/form-elements/test`,
-    }
+    },
+
 ]
 
-const testFoldersToCopy = [{
+const testFoldersToCopy = [
+    {
         from: `${pathConfig.fullVersionTSXPath}/src/@fake-db/server-side-menu`,
         to: `./temp-folder/${pathConfig.fullVersionTSXPath.replace('../../', '')}/src/@fake-db/server-side-menu`,
     },
@@ -72,11 +74,11 @@ const testFoldersToCopy = [{
     },
     {
         from: `${pathConfig.fullVersionJSXPath}/src/@fake-db/server-side-menu`,
-        to: `./temp-folder/${pathConfig.fullVersionJSXPath.replace('../../', '')}/src/views/components/test`,
+        to: `./temp-folder/${pathConfig.fullVersionJSXPath.replace('../../', '')}/src/@fake-db/server-side-menu`,
     },
     {
         from: `${pathConfig.fullVersionJSXPath}/src/navigation`,
-        to: `./temp-folder/${pathConfig.fullVersionJSXPath.replace('../../', '')}/src/views/components/test`,
+        to: `./temp-folder/${pathConfig.fullVersionJSXPath.replace('../../', '')}/src/navigation`,
     },
 ]
 
@@ -85,10 +87,10 @@ const filesWithTestObj = [
     `${pathConfig.fullVersionTSXPath}/src/navigation/horizontal/index.ts`,
     `${pathConfig.fullVersionTSXPath}/src/@fake-db/server-side-menu/vertical.ts`,
     `${pathConfig.fullVersionTSXPath}/src/@fake-db/server-side-menu/horizontal.ts`,    
-    `${pathConfig.fullVersionJSXPath}/src/navigation/vertical/index.js`,
-    `${pathConfig.fullVersionJSXPath}/src/navigation/horizontal/index.js`,
-    `${pathConfig.fullVersionJSXPath}/src/@fake-db/server-side-menu/vertical.js`,
-    `${pathConfig.fullVersionJSXPath}/src/@fake-db/server-side-menu/horizontal.js`,
+    `${pathConfig.fullVersionJSXPath}/src/navigation/vertical/index.ts`,
+    `${pathConfig.fullVersionJSXPath}/src/navigation/horizontal/index.ts`,
+    `${pathConfig.fullVersionJSXPath}/src/@fake-db/server-side-menu/vertical.ts`,
+    `${pathConfig.fullVersionJSXPath}/src/@fake-db/server-side-menu/horizontal.ts`,    
 ]
 
 module.exports = {

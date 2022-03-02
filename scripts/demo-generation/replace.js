@@ -180,9 +180,10 @@ const removeTest = () => {
   Promise.all(removePromise).then(() => {
     testFoldersToModify.map(folder => {
       if (fs.existsSync(folder.from)) {
-         
-        fs.rmSync(folder.from, {
-          recursive: true
+        fs.rm(folder.from, { recursive: true }, (err) => {
+          if(err){
+            console.log(err);
+          }
         })
       }
     })
