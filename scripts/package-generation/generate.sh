@@ -13,6 +13,20 @@
 # generate package folder
 node package-generation.js $1
 
+wait
+
+if [ -d "../../package" ]; then
+    node remove-test.js
+fi
+
+cd ../../typescript-version/full-version
+yarn format
+
+if [ -d "../../javascript-version/full-version" ]; then
+    cd ../../javascript-version/full-version
+    yarn format
+fi
+
 # # Zip the package
 # cd ../../
 # zip -r package.zip package

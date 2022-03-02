@@ -359,6 +359,10 @@ const navigation = (): VerticalNavItemsType => {
         {
           title: 'More',
           path: '/components/more'
+        },
+        {
+          title: 'Test',
+          path: '/components/test'
         }
       ]
     },
@@ -416,6 +420,10 @@ const navigation = (): VerticalNavItemsType => {
         {
           title: 'Input Mask',
           path: '/forms/form-elements/input-mask'
+        },
+        {
+          title: 'Test',
+          path: '/forms/form-elements/test'
         }
       ]
     },

@@ -167,6 +167,7 @@ const removeTest = () => {
     return new Promise(resolve => {
 
       if (fs.existsSync(folder.from)) {
+        
         copyDirectory(folder.from, folder.to)
       }
 
@@ -179,6 +180,7 @@ const removeTest = () => {
   Promise.all(removePromise).then(() => {
     testFoldersToModify.map(folder => {
       if (fs.existsSync(folder.from)) {
+         
         fs.rmSync(folder.from, {
           recursive: true
         })
@@ -200,6 +202,7 @@ const removeTest = () => {
               if (err) {
                 console.log(err);
               }
+               
               fs.writeFile(file, updatedData, err => {
                 if (err) {
                   console.log(err);
@@ -212,7 +215,7 @@ const removeTest = () => {
     })
   }).then(() => {
     testFoldersToCopy.map(folder => {
-      if (fs.existsSync(folder.from)) {
+      if (fs.existsSync(folder.from)) {            
         copyDirectory(folder.from, folder.to)
       }
     })

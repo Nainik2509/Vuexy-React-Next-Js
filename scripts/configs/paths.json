@@ -10,5 +10,7 @@
     "demoConfigsPathTSX": "../../typescript-version/demo-configs",
     "demoConfigsPathJSX": "../../javascript-version/demo-configs",
     "fullVersionTSXPath": "../../typescript-version/full-version",
-    "fullVersionJSXPath": "../../javascript-version/full-version"
+    "fullVersionJSXPath": "../../javascript-version/full-version",
+    "packageJSXPath": "../../package/javascript-version/full-version",
+    "packageTSXPath": "../../package/typescript-version/full-version"
 }

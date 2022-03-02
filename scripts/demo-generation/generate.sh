@@ -3,7 +3,7 @@ set -e
 node generate-demo-configs.js
 
 # Demo generation loop
-for i in {1..6}
+for i in {1..2}
 do
 # Replace necessary in src folder
 	node replace.js demo-$i
@@ -15,8 +15,8 @@ do
   mv out ../../demo-$i
   cd ../../
 # Zip and remove demo folder 
-  zip -r demo-$i.zip demo-$i
-  rm -rf demo-$i
+  # zip -r demo-$i.zip demo-$i
+  # rm -rf demo-$i
 # Reset the replaced content before
   cd scripts/demo-generation
   node reset.js demo-$i
