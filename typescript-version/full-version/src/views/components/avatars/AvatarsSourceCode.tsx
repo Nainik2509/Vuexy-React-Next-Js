@@ -1,3 +1,38 @@
+export const AvatarsIconJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
+import Avatar from '@mui/material/Avatar'
+
+// ** Icons Imports
+import Cached from 'mdi-material-ui/Cached'
+import FolderOutline from 'mdi-material-ui/FolderOutline'
+import CheckboxMarkedCircleOutline from 'mdi-material-ui/CheckboxMarkedCircleOutline'
+
+// ** Custom Components Imports
+import CustomAvatar from 'src/@core/components/mui/avatar'
+
+const AvatarsIcon = () => {
+  return (
+    <Box className='demo-space-x' sx={{ display: 'flex' }}>
+      <Avatar>
+        <FolderOutline />
+      </Avatar>
+      <CustomAvatar color='success'>
+        <Cached />
+      </CustomAvatar>
+      <CustomAvatar skin='light' color='info'>
+        <CheckboxMarkedCircleOutline />
+      </CustomAvatar>
+    </Box>
+  )
+}
+
+export default AvatarsIcon
+`}</code>
+  </pre>
+)
+
 export const AvatarsGroupedJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** MUI Imports
@@ -33,27 +68,6 @@ const AvatarsGrouped = () => {
 }
 
 export default AvatarsGrouped
-`}</code>
-  </pre>
-)
-
-export const AvatarsImageJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Box from '@mui/material/Box'
-import Avatar from '@mui/material/Avatar'
-
-const AvatarsImage = () => {
-  return (
-    <Box className='demo-space-x' sx={{ display: 'flex' }}>
-      <Avatar src='/images/avatars/1.png' alt='Victor Anderson' />
-      <Avatar src='/images/avatars/8.png' alt='Alice Cobb' />
-      <Avatar src='/images/avatars/7.png' alt='Jeffery Warner' />
-    </Box>
-  )
-}
-
-export default AvatarsImage
 `}</code>
   </pre>
 )
@@ -199,37 +213,23 @@ export default AvatarsVariants
   </pre>
 )
 
-export const AvatarsIconJSXCode = (
+export const AvatarsImageJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Avatar from '@mui/material/Avatar'
 
-// ** Icons Imports
-import Cached from 'mdi-material-ui/Cached'
-import FolderOutline from 'mdi-material-ui/FolderOutline'
-import CheckboxMarkedCircleOutline from 'mdi-material-ui/CheckboxMarkedCircleOutline'
-
-// ** Custom Components Imports
-import CustomAvatar from 'src/@core/components/mui/avatar'
-
-const AvatarsIcon = () => {
+const AvatarsImage = () => {
   return (
     <Box className='demo-space-x' sx={{ display: 'flex' }}>
-      <Avatar>
-        <FolderOutline />
-      </Avatar>
-      <CustomAvatar color='success'>
-        <Cached />
-      </CustomAvatar>
-      <CustomAvatar skin='light' color='info'>
-        <CheckboxMarkedCircleOutline />
-      </CustomAvatar>
+      <Avatar src='/images/avatars/1.png' alt='Victor Anderson' />
+      <Avatar src='/images/avatars/8.png' alt='Alice Cobb' />
+      <Avatar src='/images/avatars/7.png' alt='Jeffery Warner' />
     </Box>
   )
 }
 
-export default AvatarsIcon
+export default AvatarsImage
 `}</code>
   </pre>
 )
@@ -302,41 +302,6 @@ export default AvatarsLetter
   </pre>
 )
 
-export const AvatarsIconTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Box from '@mui/material/Box'
-import Avatar from '@mui/material/Avatar'
-
-// ** Icons Imports
-import Cached from 'mdi-material-ui/Cached'
-import FolderOutline from 'mdi-material-ui/FolderOutline'
-import CheckboxMarkedCircleOutline from 'mdi-material-ui/CheckboxMarkedCircleOutline'
-
-// ** Custom Components Imports
-import CustomAvatar from 'src/@core/components/mui/avatar'
-
-const AvatarsIcon = () => {
-  return (
-    <Box className='demo-space-x' sx={{ display: 'flex' }}>
-      <Avatar>
-        <FolderOutline />
-      </Avatar>
-      <CustomAvatar color='success'>
-        <Cached />
-      </CustomAvatar>
-      <CustomAvatar skin='light' color='info'>
-        <CheckboxMarkedCircleOutline />
-      </CustomAvatar>
-    </Box>
-  )
-}
-
-export default AvatarsIcon
-`}</code>
-  </pre>
-)
-
 export const AvatarsVariantsTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** MUI Imports
@@ -373,44 +338,37 @@ export default AvatarsVariants
   </pre>
 )
 
-export const AvatarsImageTSXCode = (
+export const AvatarsIconTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Avatar from '@mui/material/Avatar'
 
-const AvatarsImage = () => {
+// ** Icons Imports
+import Cached from 'mdi-material-ui/Cached'
+import FolderOutline from 'mdi-material-ui/FolderOutline'
+import CheckboxMarkedCircleOutline from 'mdi-material-ui/CheckboxMarkedCircleOutline'
+
+// ** Custom Components Imports
+import CustomAvatar from 'src/@core/components/mui/avatar'
+
+const AvatarsIcon = () => {
   return (
     <Box className='demo-space-x' sx={{ display: 'flex' }}>
-      <Avatar src='/images/avatars/1.png' alt='Victor Anderson' />
-      <Avatar src='/images/avatars/8.png' alt='Alice Cobb' />
-      <Avatar src='/images/avatars/7.png' alt='Jeffery Warner' />
+      <Avatar>
+        <FolderOutline />
+      </Avatar>
+      <CustomAvatar color='success'>
+        <Cached />
+      </CustomAvatar>
+      <CustomAvatar skin='light' color='info'>
+        <CheckboxMarkedCircleOutline />
+      </CustomAvatar>
     </Box>
   )
 }
 
-export default AvatarsImage
-`}</code>
-  </pre>
-)
-
-export const AvatarsSizesTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Box from '@mui/material/Box'
-import Avatar from '@mui/material/Avatar'
-
-const AvatarsSizes = () => {
-  return (
-    <Box className='demo-space-x' sx={{ display: 'flex', alignItems: 'center' }}>
-      <Avatar alt='Victor Anderson' sx={{ width: 25, height: 25 }} src='/images/avatars/3.png' />
-      <Avatar alt='Victor Anderson' src='/images/avatars/3.png' />
-      <Avatar alt='Victor Anderson' sx={{ width: 56, height: 56 }} src='/images/avatars/3.png' />
-    </Box>
-  )
-}
-
-export default AvatarsSizes
+export default AvatarsIcon
 `}</code>
   </pre>
 )
@@ -466,6 +424,48 @@ const AvatarsWithBadge = () => {
 }
 
 export default AvatarsWithBadge
+`}</code>
+  </pre>
+)
+
+export const AvatarsImageTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
+import Avatar from '@mui/material/Avatar'
+
+const AvatarsImage = () => {
+  return (
+    <Box className='demo-space-x' sx={{ display: 'flex' }}>
+      <Avatar src='/images/avatars/1.png' alt='Victor Anderson' />
+      <Avatar src='/images/avatars/8.png' alt='Alice Cobb' />
+      <Avatar src='/images/avatars/7.png' alt='Jeffery Warner' />
+    </Box>
+  )
+}
+
+export default AvatarsImage
+`}</code>
+  </pre>
+)
+
+export const AvatarsSizesTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
+import Avatar from '@mui/material/Avatar'
+
+const AvatarsSizes = () => {
+  return (
+    <Box className='demo-space-x' sx={{ display: 'flex', alignItems: 'center' }}>
+      <Avatar alt='Victor Anderson' sx={{ width: 25, height: 25 }} src='/images/avatars/3.png' />
+      <Avatar alt='Victor Anderson' src='/images/avatars/3.png' />
+      <Avatar alt='Victor Anderson' sx={{ width: 56, height: 56 }} src='/images/avatars/3.png' />
+    </Box>
+  )
+}
+
+export default AvatarsSizes
 `}</code>
   </pre>
 )

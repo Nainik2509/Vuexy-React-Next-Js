@@ -1,3 +1,61 @@
+export const SelectControlledUncontrolledJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import MenuItem from '@mui/material/MenuItem'
+import InputLabel from '@mui/material/InputLabel'
+import FormControl from '@mui/material/FormControl'
+import Select from '@mui/material/Select'
+
+const SelectControlledUncontrolled = () => {
+  // ** State
+  const [value, setValue] = useState('')
+
+  const handleChange = event => {
+    setValue(event.target.value)
+  }
+
+  return (
+    <div className='demo-space-x'>
+      <FormControl>
+        <InputLabel id='controlled-select-label'>Controlled</InputLabel>
+        <Select
+          value={value}
+          label='Controlled'
+          id='controlled-select'
+          onChange={handleChange}
+          labelId='controlled-select-label'
+        >
+          <MenuItem value=''>
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+      <FormControl>
+        <InputLabel id='uncontrolled-select-label'>Uncontrolled</InputLabel>
+        <Select defaultValue='' label='Uncontrolled' id='uncontrolled-select' labelId='uncontrolled-select-label'>
+          <MenuItem value=''>
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+    </div>
+  )
+}
+
+export default SelectControlledUncontrolled
+`}</code>
+  </pre>
+)
+
 export const SelectCustomizedJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -95,64 +153,6 @@ const SelectCustomized = () => {
 }
 
 export default SelectCustomized
-`}</code>
-  </pre>
-)
-
-export const SelectControlledUncontrolledJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import MenuItem from '@mui/material/MenuItem'
-import InputLabel from '@mui/material/InputLabel'
-import FormControl from '@mui/material/FormControl'
-import Select from '@mui/material/Select'
-
-const SelectControlledUncontrolled = () => {
-  // ** State
-  const [value, setValue] = useState('')
-
-  const handleChange = event => {
-    setValue(event.target.value)
-  }
-
-  return (
-    <div className='demo-space-x'>
-      <FormControl>
-        <InputLabel id='controlled-select-label'>Controlled</InputLabel>
-        <Select
-          value={value}
-          label='Controlled'
-          id='controlled-select'
-          onChange={handleChange}
-          labelId='controlled-select-label'
-        >
-          <MenuItem value=''>
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl>
-        <InputLabel id='uncontrolled-select-label'>Uncontrolled</InputLabel>
-        <Select defaultValue='' label='Uncontrolled' id='uncontrolled-select' labelId='uncontrolled-select-label'>
-          <MenuItem value=''>
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
-    </div>
-  )
-}
-
-export default SelectControlledUncontrolled
 `}</code>
   </pre>
 )
@@ -894,6 +894,76 @@ export default SelectGrouping
   </pre>
 )
 
+export const SelectNativeTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Select from '@mui/material/Select'
+import InputLabel from '@mui/material/InputLabel'
+import FormControl from '@mui/material/FormControl'
+
+const SelectNative = () => {
+  return (
+    <div className='demo-space-x'>
+      <FormControl>
+        <InputLabel htmlFor='outlined-age-native-simple'>Age</InputLabel>
+        <Select
+          native
+          label='Age'
+          defaultValue=''
+          inputProps={{
+            name: 'age',
+            id: 'outlined-age-native-simple'
+          }}
+        >
+          <option aria-label='None' value='' />
+          <option value={10}>Ten</option>
+          <option value={20}>Twenty</option>
+          <option value={30}>Thirty</option>
+        </Select>
+      </FormControl>
+      <FormControl variant='filled'>
+        <InputLabel htmlFor='filled-age-native-simple'>Age</InputLabel>
+        <Select
+          native
+          label='Age'
+          defaultValue=''
+          inputProps={{
+            name: 'age',
+            id: 'filled-age-native-simple'
+          }}
+        >
+          <option aria-label='None' value='' />
+          <option value={10}>Ten</option>
+          <option value={20}>Twenty</option>
+          <option value={30}>Thirty</option>
+        </Select>
+      </FormControl>
+      <FormControl variant='standard'>
+        <InputLabel htmlFor='age-native-simple'>Age</InputLabel>
+        <Select
+          native
+          label='Age'
+          defaultValue=''
+          inputProps={{
+            name: 'age',
+            id: 'age-native-simple'
+          }}
+        >
+          <option aria-label='None' value='' />
+          <option value={10}>Ten</option>
+          <option value={20}>Twenty</option>
+          <option value={30}>Thirty</option>
+        </Select>
+      </FormControl>
+    </div>
+  )
+}
+
+export default SelectNative
+`}</code>
+  </pre>
+)
+
 export const SelectPropsTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** MUI Imports
@@ -1221,76 +1291,6 @@ export default SelectMultiple
   </pre>
 )
 
-export const SelectNativeTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Select from '@mui/material/Select'
-import InputLabel from '@mui/material/InputLabel'
-import FormControl from '@mui/material/FormControl'
-
-const SelectNative = () => {
-  return (
-    <div className='demo-space-x'>
-      <FormControl>
-        <InputLabel htmlFor='outlined-age-native-simple'>Age</InputLabel>
-        <Select
-          native
-          label='Age'
-          defaultValue=''
-          inputProps={{
-            name: 'age',
-            id: 'outlined-age-native-simple'
-          }}
-        >
-          <option aria-label='None' value='' />
-          <option value={10}>Ten</option>
-          <option value={20}>Twenty</option>
-          <option value={30}>Thirty</option>
-        </Select>
-      </FormControl>
-      <FormControl variant='filled'>
-        <InputLabel htmlFor='filled-age-native-simple'>Age</InputLabel>
-        <Select
-          native
-          label='Age'
-          defaultValue=''
-          inputProps={{
-            name: 'age',
-            id: 'filled-age-native-simple'
-          }}
-        >
-          <option aria-label='None' value='' />
-          <option value={10}>Ten</option>
-          <option value={20}>Twenty</option>
-          <option value={30}>Thirty</option>
-        </Select>
-      </FormControl>
-      <FormControl variant='standard'>
-        <InputLabel htmlFor='age-native-simple'>Age</InputLabel>
-        <Select
-          native
-          label='Age'
-          defaultValue=''
-          inputProps={{
-            name: 'age',
-            id: 'age-native-simple'
-          }}
-        >
-          <option aria-label='None' value='' />
-          <option value={10}>Ten</option>
-          <option value={20}>Twenty</option>
-          <option value={30}>Thirty</option>
-        </Select>
-      </FormControl>
-    </div>
-  )
-}
-
-export default SelectNative
-`}</code>
-  </pre>
-)
-
 export const SelectControlledUncontrolledTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -1345,61 +1345,6 @@ const SelectControlledUncontrolled = () => {
 }
 
 export default SelectControlledUncontrolled
-`}</code>
-  </pre>
-)
-
-export const SelectVariantsTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Select from '@mui/material/Select'
-import MenuItem from '@mui/material/MenuItem'
-import InputLabel from '@mui/material/InputLabel'
-import FormControl from '@mui/material/FormControl'
-
-const SelectVariants = () => {
-  return (
-    <div className='demo-space-x'>
-      <FormControl>
-        <InputLabel id='demo-simple-select-outlined-label'>Age</InputLabel>
-        <Select
-          label='Age'
-          defaultValue=''
-          id='demo-simple-select-outlined'
-          labelId='demo-simple-select-outlined-label'
-        >
-          <MenuItem value=''>
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl variant='filled'>
-        <InputLabel id='demo-simple-select-filled-label'>Age</InputLabel>
-        <Select label='Age' labelId='demo-simple-select-filled-label' id='demo-simple-select-filled' defaultValue=''>
-          <MenuItem value=''>
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl variant='standard'>
-        <InputLabel id='demo-simple-select-label'>Age</InputLabel>
-        <Select label='Age' labelId='demo-simple-select-label' id='demo-simple-select' defaultValue=''>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
-    </div>
-  )
-}
-
-export default SelectVariants
 `}</code>
   </pre>
 )
@@ -1485,6 +1430,61 @@ const SelectWithDialog = () => {
 }
 
 export default SelectWithDialog
+`}</code>
+  </pre>
+)
+
+export const SelectVariantsTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Select from '@mui/material/Select'
+import MenuItem from '@mui/material/MenuItem'
+import InputLabel from '@mui/material/InputLabel'
+import FormControl from '@mui/material/FormControl'
+
+const SelectVariants = () => {
+  return (
+    <div className='demo-space-x'>
+      <FormControl>
+        <InputLabel id='demo-simple-select-outlined-label'>Age</InputLabel>
+        <Select
+          label='Age'
+          defaultValue=''
+          id='demo-simple-select-outlined'
+          labelId='demo-simple-select-outlined-label'
+        >
+          <MenuItem value=''>
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+      <FormControl variant='filled'>
+        <InputLabel id='demo-simple-select-filled-label'>Age</InputLabel>
+        <Select label='Age' labelId='demo-simple-select-filled-label' id='demo-simple-select-filled' defaultValue=''>
+          <MenuItem value=''>
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+      <FormControl variant='standard'>
+        <InputLabel id='demo-simple-select-label'>Age</InputLabel>
+        <Select label='Age' labelId='demo-simple-select-label' id='demo-simple-select' defaultValue=''>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+    </div>
+  )
+}
+
+export default SelectVariants
 `}</code>
   </pre>
 )

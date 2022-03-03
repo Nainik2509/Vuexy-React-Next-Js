@@ -73,43 +73,29 @@ export default RatingsCustomized
   </pre>
 )
 
-export const RatingsBasicJSXCode = (
+export const RatingsHalfJSXCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
+    <code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Rating from '@mui/material/Rating'
 import Typography from '@mui/material/Typography'
 
-const RatingsBasic = () => {
-  // ** State
-  const [value, setValue] = useState(2)
-
+const RatingsHalf = () => {
   return (
     <div>
       <Box sx={{ mb: 3 }}>
-        <Typography sx={{ fontWeight: 500 }}>Controlled</Typography>
-        <Rating value={value} name='simple-controlled' onChange={(event, newValue) => setValue(newValue)} />
-      </Box>
-      <Box sx={{ mb: 3 }}>
-        <Typography sx={{ fontWeight: 500 }}>Read only</Typography>
-        <Rating readOnly value={value} name='read-only' />
-      </Box>
-      <Box sx={{ mb: 3 }}>
-        <Typography sx={{ fontWeight: 500 }}>Disabled</Typography>
-        <Rating disabled value={value} name='disabled' />
+        <Typography sx={{ fontWeight: 500 }}>Half Ratings</Typography>
+        <Rating defaultValue={2.5} precision={0.5} name='half-rating' />
       </Box>
       <Box>
-        <Typography sx={{ fontWeight: 500 }}>No rating given</Typography>
-        <Rating value={null} name='no-value' />
+        <Typography sx={{ fontWeight: 500 }}>Read only</Typography>
+        <Rating readOnly defaultValue={2.5} precision={0.5} name='read-only' />
       </Box>
     </div>
   )
 }
 
-export default RatingsBasic
+export default RatingsHalf
 `}</code>
   </pre>
 )
@@ -183,29 +169,43 @@ export default RatingsSizes
   </pre>
 )
 
-export const RatingsHalfJSXCode = (
+export const RatingsBasicJSXCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
+    <code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
 import Box from '@mui/material/Box'
 import Rating from '@mui/material/Rating'
 import Typography from '@mui/material/Typography'
 
-const RatingsHalf = () => {
+const RatingsBasic = () => {
+  // ** State
+  const [value, setValue] = useState(2)
+
   return (
     <div>
       <Box sx={{ mb: 3 }}>
-        <Typography sx={{ fontWeight: 500 }}>Half Ratings</Typography>
-        <Rating defaultValue={2.5} precision={0.5} name='half-rating' />
+        <Typography sx={{ fontWeight: 500 }}>Controlled</Typography>
+        <Rating value={value} name='simple-controlled' onChange={(event, newValue) => setValue(newValue)} />
+      </Box>
+      <Box sx={{ mb: 3 }}>
+        <Typography sx={{ fontWeight: 500 }}>Read only</Typography>
+        <Rating readOnly value={value} name='read-only' />
+      </Box>
+      <Box sx={{ mb: 3 }}>
+        <Typography sx={{ fontWeight: 500 }}>Disabled</Typography>
+        <Rating disabled value={value} name='disabled' />
       </Box>
       <Box>
-        <Typography sx={{ fontWeight: 500 }}>Read only</Typography>
-        <Rating readOnly defaultValue={2.5} precision={0.5} name='read-only' />
+        <Typography sx={{ fontWeight: 500 }}>No rating given</Typography>
+        <Rating value={null} name='no-value' />
       </Box>
     </div>
   )
 }
 
-export default RatingsHalf
+export default RatingsBasic
 `}</code>
   </pre>
 )
@@ -333,6 +333,33 @@ export default RatingsCustomized
   </pre>
 )
 
+export const RatingsHalfTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
+import Rating from '@mui/material/Rating'
+import Typography from '@mui/material/Typography'
+
+const RatingsHalf = () => {
+  return (
+    <div>
+      <Box sx={{ mb: 3 }}>
+        <Typography sx={{ fontWeight: 500 }}>Half Ratings</Typography>
+        <Rating defaultValue={2.5} precision={0.5} name='half-rating' />
+      </Box>
+      <Box>
+        <Typography sx={{ fontWeight: 500 }}>Read only</Typography>
+        <Rating readOnly defaultValue={2.5} precision={0.5} name='read-only' />
+      </Box>
+    </div>
+  )
+}
+
+export default RatingsHalf
+`}</code>
+  </pre>
+)
+
 export const RatingsHoverFeedbackTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -377,33 +404,6 @@ const RatingsHoverFeedback = () => {
 }
 
 export default RatingsHoverFeedback
-`}</code>
-  </pre>
-)
-
-export const RatingsHalfTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Box from '@mui/material/Box'
-import Rating from '@mui/material/Rating'
-import Typography from '@mui/material/Typography'
-
-const RatingsHalf = () => {
-  return (
-    <div>
-      <Box sx={{ mb: 3 }}>
-        <Typography sx={{ fontWeight: 500 }}>Half Ratings</Typography>
-        <Rating defaultValue={2.5} precision={0.5} name='half-rating' />
-      </Box>
-      <Box>
-        <Typography sx={{ fontWeight: 500 }}>Read only</Typography>
-        <Rating readOnly defaultValue={2.5} precision={0.5} name='read-only' />
-      </Box>
-    </div>
-  )
-}
-
-export default RatingsHalf
 `}</code>
   </pre>
 )

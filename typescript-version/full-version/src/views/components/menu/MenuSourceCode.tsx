@@ -1,3 +1,44 @@
+export const MenuBasicJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import Menu from '@mui/material/Menu'
+import Button from '@mui/material/Button'
+import MenuItem from '@mui/material/MenuItem'
+
+const MenuBasic = () => {
+  // ** State
+  const [anchorEl, setAnchorEl] = useState(null)
+
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
+
+  return (
+    <div>
+      <Button variant='outlined' aria-controls='simple-menu' aria-haspopup='true' onClick={handleClick}>
+        Open Menu
+      </Button>
+      <Menu keepMounted id='simple-menu' anchorEl={anchorEl} onClose={handleClose} open={Boolean(anchorEl)}>
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem onClick={handleClose}>Logout</MenuItem>
+      </Menu>
+    </div>
+  )
+}
+
+export default MenuBasic
+`}</code>
+  </pre>
+)
+
 export const MenuCompositionJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -113,81 +154,6 @@ const MenuComposition = () => {
 }
 
 export default MenuComposition
-`}</code>
-  </pre>
-)
-
-export const MenuMaxHeightJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import Menu from '@mui/material/Menu'
-import MenuItem from '@mui/material/MenuItem'
-import IconButton from '@mui/material/IconButton'
-
-// ** Icons Imports
-import DotsVertical from 'mdi-material-ui/DotsVertical'
-
-const options = [
-  'None',
-  'Atria',
-  'Callisto',
-  'Dione',
-  'Ganymede',
-  'Hangouts Call',
-  'Luna',
-  'Oberon',
-  'Phobos',
-  'Pyxis',
-  'Sedna',
-  'Titania',
-  'Triton',
-  'Umbriel'
-]
-const ITEM_HEIGHT = 48
-
-const MenuMaxHeight = () => {
-  // ** State
-  const [anchorEl, setAnchorEl] = useState(null)
-
-  const handleClick = event => {
-    setAnchorEl(event.currentTarget)
-  }
-
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
-
-  return (
-    <div>
-      <IconButton aria-label='more' aria-controls='long-menu' aria-haspopup='true' onClick={handleClick}>
-        <DotsVertical />
-      </IconButton>
-      <Menu
-        keepMounted
-        id='long-menu'
-        anchorEl={anchorEl}
-        onClose={handleClose}
-        open={Boolean(anchorEl)}
-        PaperProps={{
-          style: {
-            maxHeight: ITEM_HEIGHT * 4.5
-          }
-        }}
-      >
-        {options.map(option => (
-          <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
-            {option}
-          </MenuItem>
-        ))}
-      </Menu>
-    </div>
-  )
-}
-
-export default MenuMaxHeight
 `}</code>
   </pre>
 )
@@ -352,6 +318,81 @@ export default MenuCustomized
   </pre>
 )
 
+export const MenuMaxHeightJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
+import IconButton from '@mui/material/IconButton'
+
+// ** Icons Imports
+import DotsVertical from 'mdi-material-ui/DotsVertical'
+
+const options = [
+  'None',
+  'Atria',
+  'Callisto',
+  'Dione',
+  'Ganymede',
+  'Hangouts Call',
+  'Luna',
+  'Oberon',
+  'Phobos',
+  'Pyxis',
+  'Sedna',
+  'Titania',
+  'Triton',
+  'Umbriel'
+]
+const ITEM_HEIGHT = 48
+
+const MenuMaxHeight = () => {
+  // ** State
+  const [anchorEl, setAnchorEl] = useState(null)
+
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
+
+  return (
+    <div>
+      <IconButton aria-label='more' aria-controls='long-menu' aria-haspopup='true' onClick={handleClick}>
+        <DotsVertical />
+      </IconButton>
+      <Menu
+        keepMounted
+        id='long-menu'
+        anchorEl={anchorEl}
+        onClose={handleClose}
+        open={Boolean(anchorEl)}
+        PaperProps={{
+          style: {
+            maxHeight: ITEM_HEIGHT * 4.5
+          }
+        }}
+      >
+        {options.map(option => (
+          <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
+            {option}
+          </MenuItem>
+        ))}
+      </Menu>
+    </div>
+  )
+}
+
+export default MenuMaxHeight
+`}</code>
+  </pre>
+)
+
 export const MenuSelectedJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -424,47 +465,6 @@ const MenuSelected = () => {
 }
 
 export default MenuSelected
-`}</code>
-  </pre>
-)
-
-export const MenuBasicJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import Menu from '@mui/material/Menu'
-import Button from '@mui/material/Button'
-import MenuItem from '@mui/material/MenuItem'
-
-const MenuBasic = () => {
-  // ** State
-  const [anchorEl, setAnchorEl] = useState(null)
-
-  const handleClick = event => {
-    setAnchorEl(event.currentTarget)
-  }
-
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
-
-  return (
-    <div>
-      <Button variant='outlined' aria-controls='simple-menu' aria-haspopup='true' onClick={handleClick}>
-        Open Menu
-      </Button>
-      <Menu keepMounted id='simple-menu' anchorEl={anchorEl} onClose={handleClose} open={Boolean(anchorEl)}>
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
-      </Menu>
-    </div>
-  )
-}
-
-export default MenuBasic
 `}</code>
   </pre>
 )
@@ -555,6 +555,127 @@ const MenuBasic = () => {
 }
 
 export default MenuBasic
+`}</code>
+  </pre>
+)
+
+export const MenuCompositionTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { KeyboardEvent, useEffect, useRef, useState, MouseEvent, TouchEvent } from 'react'
+
+// ** MUI Imports
+import Grow from '@mui/material/Grow'
+import Paper from '@mui/material/Paper'
+import Button from '@mui/material/Button'
+import Popper from '@mui/material/Popper'
+import MenuList from '@mui/material/MenuList'
+import MenuItem from '@mui/material/MenuItem'
+import ClickAwayListener from '@mui/material/ClickAwayListener'
+
+// ** Hook Import
+import { useSettings } from 'src/@core/hooks/useSettings'
+
+const MenuComposition = () => {
+  // ** States
+  const [open, setOpen] = useState<boolean>(false)
+
+  // ** Hook & Var
+  const { settings } = useSettings()
+  const { skin } = settings
+
+  // ** Ref
+  const anchorRef = useRef<HTMLButtonElement | null>(null)
+
+  const handleToggle = () => {
+    setOpen(prevOpen => !prevOpen)
+  }
+
+  const handleClose = (event: MouseEvent | TouchEvent): void => {
+    if (anchorRef.current && anchorRef.current.contains(event.target as HTMLElement)) {
+      return
+    }
+    setOpen(false)
+  }
+
+  const handleListKeyDown = (event: KeyboardEvent) => {
+    if (event.key === 'Tab') {
+      event.preventDefault()
+      setOpen(false)
+    } else if (event.key === 'Escape') {
+      setOpen(false)
+    }
+  }
+
+  // return focus to the button when we transitioned from !open -> open
+  const prevOpen = useRef(open)
+
+  useEffect(() => {
+    if (prevOpen.current === true && open === false) {
+      anchorRef.current!.focus()
+    }
+
+    prevOpen.current = open
+  }, [open])
+
+  return (
+    <div>
+      <Button
+        ref={anchorRef}
+        variant='outlined'
+        aria-haspopup='true'
+        onClick={handleToggle}
+        id='composition-button'
+        aria-expanded={open ? 'true' : undefined}
+        aria-controls={open ? 'composition-menu' : undefined}
+        sx={{ '& + div': { zIndex: theme => theme.zIndex.modal } }}
+      >
+        Open Menu
+      </Button>
+      <Popper
+        transition
+        open={open}
+        disablePortal
+        role={undefined}
+        placement='bottom-start'
+        anchorEl={anchorRef.current}
+        popperOptions={{
+          modifiers: [
+            {
+              name: 'flip',
+              options: {
+                enabled: true,
+                boundary: 'window'
+              }
+            }
+          ]
+        }}
+      >
+        {({ TransitionProps, placement }) => (
+          <Grow
+            {...TransitionProps}
+            style={{ transformOrigin: placement === 'bottom-start' ? 'left top' : 'left bottom' }}
+          >
+            <Paper
+              elevation={skin === 'bordered' ? 0 : 6}
+              sx={skin === 'bordered' ? { border: theme => 1px solid {theme.palette.divider} } : {}}
+            >
+              <ClickAwayListener onClickAway={() => setOpen(false)}>
+                <MenuList autoFocusItem={open} id='composition-menu' onKeyDown={handleListKeyDown}>
+                  <MenuItem onClick={handleClose}>Profile</MenuItem>
+                  <MenuItem onClick={handleClose}>My account</MenuItem>
+                  <MenuItem onClick={handleClose}>Logout</MenuItem>
+                </MenuList>
+              </ClickAwayListener>
+            </Paper>
+          </Grow>
+        )}
+      </Popper>
+    </div>
+  )
+}
+
+export default MenuComposition
 `}</code>
   </pre>
 )
@@ -724,139 +845,39 @@ export default MenuCustomized
   </pre>
 )
 
-export const MenuCompositionTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { KeyboardEvent, useEffect, useRef, useState, MouseEvent, TouchEvent } from 'react'
-
-// ** MUI Imports
-import Grow from '@mui/material/Grow'
-import Paper from '@mui/material/Paper'
-import Button from '@mui/material/Button'
-import Popper from '@mui/material/Popper'
-import MenuList from '@mui/material/MenuList'
-import MenuItem from '@mui/material/MenuItem'
-import ClickAwayListener from '@mui/material/ClickAwayListener'
-
-// ** Hook Import
-import { useSettings } from 'src/@core/hooks/useSettings'
-
-const MenuComposition = () => {
-  // ** States
-  const [open, setOpen] = useState<boolean>(false)
-
-  // ** Hook & Var
-  const { settings } = useSettings()
-  const { skin } = settings
-
-  // ** Ref
-  const anchorRef = useRef<HTMLButtonElement | null>(null)
-
-  const handleToggle = () => {
-    setOpen(prevOpen => !prevOpen)
-  }
-
-  const handleClose = (event: MouseEvent | TouchEvent): void => {
-    if (anchorRef.current && anchorRef.current.contains(event.target as HTMLElement)) {
-      return
-    }
-    setOpen(false)
-  }
-
-  const handleListKeyDown = (event: KeyboardEvent) => {
-    if (event.key === 'Tab') {
-      event.preventDefault()
-      setOpen(false)
-    } else if (event.key === 'Escape') {
-      setOpen(false)
-    }
-  }
-
-  // return focus to the button when we transitioned from !open -> open
-  const prevOpen = useRef(open)
-
-  useEffect(() => {
-    if (prevOpen.current === true && open === false) {
-      anchorRef.current!.focus()
-    }
-
-    prevOpen.current = open
-  }, [open])
-
-  return (
-    <div>
-      <Button
-        ref={anchorRef}
-        variant='outlined'
-        aria-haspopup='true'
-        onClick={handleToggle}
-        id='composition-button'
-        aria-expanded={open ? 'true' : undefined}
-        aria-controls={open ? 'composition-menu' : undefined}
-        sx={{ '& + div': { zIndex: theme => theme.zIndex.modal } }}
-      >
-        Open Menu
-      </Button>
-      <Popper
-        transition
-        open={open}
-        disablePortal
-        role={undefined}
-        placement='bottom-start'
-        anchorEl={anchorRef.current}
-        popperOptions={{
-          modifiers: [
-            {
-              name: 'flip',
-              options: {
-                enabled: true,
-                boundary: 'window'
-              }
-            }
-          ]
-        }}
-      >
-        {({ TransitionProps, placement }) => (
-          <Grow
-            {...TransitionProps}
-            style={{ transformOrigin: placement === 'bottom-start' ? 'left top' : 'left bottom' }}
-          >
-            <Paper
-              elevation={skin === 'bordered' ? 0 : 6}
-              sx={skin === 'bordered' ? { border: theme => 1px solid {theme.palette.divider} } : {}}
-            >
-              <ClickAwayListener onClickAway={() => setOpen(false)}>
-                <MenuList autoFocusItem={open} id='composition-menu' onKeyDown={handleListKeyDown}>
-                  <MenuItem onClick={handleClose}>Profile</MenuItem>
-                  <MenuItem onClick={handleClose}>My account</MenuItem>
-                  <MenuItem onClick={handleClose}>Logout</MenuItem>
-                </MenuList>
-              </ClickAwayListener>
-            </Paper>
-          </Grow>
-        )}
-      </Popper>
-    </div>
-  )
-}
-
-export default MenuComposition
-`}</code>
-  </pre>
-)
-
-export const MenuTransitionTSXCode = (
+export const MenuMaxHeightTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
 import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import Menu from '@mui/material/Menu'
-import Fade from '@mui/material/Fade'
-import Button from '@mui/material/Button'
 import MenuItem from '@mui/material/MenuItem'
+import IconButton from '@mui/material/IconButton'
 
-const MenuTransition = () => {
+// ** Icons Imports
+import DotsVertical from 'mdi-material-ui/DotsVertical'
+
+const options = [
+  'None',
+  'Atria',
+  'Callisto',
+  'Dione',
+  'Ganymede',
+  'Hangouts Call',
+  'Luna',
+  'Oberon',
+  'Phobos',
+  'Pyxis',
+  'Sedna',
+  'Titania',
+  'Triton',
+  'Umbriel'
+]
+
+const ITEM_HEIGHT = 48
+
+const MenuMaxHeight = () => {
   // ** State
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
@@ -870,26 +891,32 @@ const MenuTransition = () => {
 
   return (
     <div>
-      <Button variant='outlined' aria-controls='fade-menu' aria-haspopup='true' onClick={handleClick}>
-        Open with fade transition
-      </Button>
+      <IconButton aria-label='more' aria-controls='long-menu' aria-haspopup='true' onClick={handleClick}>
+        <DotsVertical />
+      </IconButton>
       <Menu
         keepMounted
-        id='fade-menu'
+        id='long-menu'
         anchorEl={anchorEl}
         onClose={handleClose}
         open={Boolean(anchorEl)}
-        TransitionComponent={Fade}
+        PaperProps={{
+          style: {
+            maxHeight: ITEM_HEIGHT * 4.5
+          }
+        }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        {options.map(option => (
+          <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
+            {option}
+          </MenuItem>
+        ))}
       </Menu>
     </div>
   )
 }
 
-export default MenuTransition
+export default MenuMaxHeight
 `}</code>
   </pre>
 )
@@ -970,39 +997,18 @@ export default MenuSelected
   </pre>
 )
 
-export const MenuMaxHeightTSXCode = (
+export const MenuTransitionTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
 import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import Menu from '@mui/material/Menu'
+import Fade from '@mui/material/Fade'
+import Button from '@mui/material/Button'
 import MenuItem from '@mui/material/MenuItem'
-import IconButton from '@mui/material/IconButton'
 
-// ** Icons Imports
-import DotsVertical from 'mdi-material-ui/DotsVertical'
-
-const options = [
-  'None',
-  'Atria',
-  'Callisto',
-  'Dione',
-  'Ganymede',
-  'Hangouts Call',
-  'Luna',
-  'Oberon',
-  'Phobos',
-  'Pyxis',
-  'Sedna',
-  'Titania',
-  'Triton',
-  'Umbriel'
-]
-
-const ITEM_HEIGHT = 48
-
-const MenuMaxHeight = () => {
+const MenuTransition = () => {
   // ** State
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
@@ -1016,32 +1022,26 @@ const MenuMaxHeight = () => {
 
   return (
     <div>
-      <IconButton aria-label='more' aria-controls='long-menu' aria-haspopup='true' onClick={handleClick}>
-        <DotsVertical />
-      </IconButton>
+      <Button variant='outlined' aria-controls='fade-menu' aria-haspopup='true' onClick={handleClick}>
+        Open with fade transition
+      </Button>
       <Menu
         keepMounted
-        id='long-menu'
+        id='fade-menu'
         anchorEl={anchorEl}
         onClose={handleClose}
         open={Boolean(anchorEl)}
-        PaperProps={{
-          style: {
-            maxHeight: ITEM_HEIGHT * 4.5
-          }
-        }}
+        TransitionComponent={Fade}
       >
-        {options.map(option => (
-          <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
-            {option}
-          </MenuItem>
-        ))}
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem onClick={handleClose}>Logout</MenuItem>
       </Menu>
     </div>
   )
 }
 
-export default MenuMaxHeight
+export default MenuTransition
 `}</code>
   </pre>
 )

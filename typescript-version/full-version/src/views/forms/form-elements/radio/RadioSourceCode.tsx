@@ -152,66 +152,6 @@ export default RadioCustomized
   </pre>
 )
 
-export const RadioGroupJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import Radio from '@mui/material/Radio'
-import RadioGroup from '@mui/material/RadioGroup'
-import FormControl from '@mui/material/FormControl'
-import FormControlLabel from '@mui/material/FormControlLabel'
-
-const RadioGroupComponent = () => {
-  // ** State
-  const [value, setValue] = useState('checked')
-
-  const handleChange = event => {
-    setValue(event.target.value)
-  }
-
-  return (
-    <FormControl sx={{ flexWrap: 'wrap', flexDirection: 'row' }}>
-      <RadioGroup row value={value} name='simple-radio' onChange={handleChange} aria-label='simple-radio'>
-        <FormControlLabel value='checked' control={<Radio />} label='Checked' />
-        <FormControlLabel value='unchecked' control={<Radio />} label='Unchecked' />
-      </RadioGroup>
-
-      <RadioGroup row value='disabled-checked' name='simple-disabled-radio' aria-label='simple-disabled-radio'>
-        <FormControlLabel disabled value='disabled-checked' label='Disabled Checked' control={<Radio />} />
-        <FormControlLabel disabled value='disabled-unchecked' label='Disabled Unchecked' control={<Radio />} />
-      </RadioGroup>
-    </FormControl>
-  )
-}
-
-export default RadioGroupComponent
-`}</code>
-  </pre>
-)
-
-export const RadioSizesJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Radio from '@mui/material/Radio'
-import RadioGroup from '@mui/material/RadioGroup'
-import FormControlLabel from '@mui/material/FormControlLabel'
-
-const RadioSizes = () => {
-  return (
-    <RadioGroup row aria-label='sizes' name='sizes' defaultValue='small'>
-      <FormControlLabel value='small' control={<Radio size='small' />} label='Small' />
-      <FormControlLabel value='default' control={<Radio />} label='Default' />
-    </RadioGroup>
-  )
-}
-
-export default RadioSizes
-`}</code>
-  </pre>
-)
-
 export const RadioLabelPlacementJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** MUI Imports
@@ -304,6 +244,66 @@ const RadioShowError = () => {
 }
 
 export default RadioShowError
+`}</code>
+  </pre>
+)
+
+export const RadioGroupJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import Radio from '@mui/material/Radio'
+import RadioGroup from '@mui/material/RadioGroup'
+import FormControl from '@mui/material/FormControl'
+import FormControlLabel from '@mui/material/FormControlLabel'
+
+const RadioGroupComponent = () => {
+  // ** State
+  const [value, setValue] = useState('checked')
+
+  const handleChange = event => {
+    setValue(event.target.value)
+  }
+
+  return (
+    <FormControl sx={{ flexWrap: 'wrap', flexDirection: 'row' }}>
+      <RadioGroup row value={value} name='simple-radio' onChange={handleChange} aria-label='simple-radio'>
+        <FormControlLabel value='checked' control={<Radio />} label='Checked' />
+        <FormControlLabel value='unchecked' control={<Radio />} label='Unchecked' />
+      </RadioGroup>
+
+      <RadioGroup row value='disabled-checked' name='simple-disabled-radio' aria-label='simple-disabled-radio'>
+        <FormControlLabel disabled value='disabled-checked' label='Disabled Checked' control={<Radio />} />
+        <FormControlLabel disabled value='disabled-unchecked' label='Disabled Unchecked' control={<Radio />} />
+      </RadioGroup>
+    </FormControl>
+  )
+}
+
+export default RadioGroupComponent
+`}</code>
+  </pre>
+)
+
+export const RadioSizesJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Radio from '@mui/material/Radio'
+import RadioGroup from '@mui/material/RadioGroup'
+import FormControlLabel from '@mui/material/FormControlLabel'
+
+const RadioSizes = () => {
+  return (
+    <RadioGroup row aria-label='sizes' name='sizes' defaultValue='small'>
+      <FormControlLabel value='small' control={<Radio size='small' />} label='Small' />
+      <FormControlLabel value='default' control={<Radio />} label='Default' />
+    </RadioGroup>
+  )
+}
+
+export default RadioSizes
 `}</code>
   </pre>
 )
@@ -503,40 +503,6 @@ export default RadioControlledUncontrolled
   </pre>
 )
 
-export const RadioLabelPlacementTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Radio from '@mui/material/Radio'
-import RadioGroup from '@mui/material/RadioGroup'
-import FormControl from '@mui/material/FormControl'
-import FormControlLabel from '@mui/material/FormControlLabel'
-
-const RadioLabelPlacement = () => {
-  return (
-    <FormControl>
-      <RadioGroup row aria-label='position' name='vertical' defaultValue='top'>
-        <FormControlLabel value='top' label='Top' labelPlacement='top' sx={{ marginRight: 8.8 }} control={<Radio />} />
-        <FormControlLabel value='bottom' control={<Radio />} label='Bottom' labelPlacement='bottom' />
-      </RadioGroup>
-      <RadioGroup row aria-label='position' name='horizontal' defaultValue='start' sx={{ marginTop: 4 }}>
-        <FormControlLabel
-          value='start'
-          label='Start'
-          labelPlacement='start'
-          sx={{ marginRight: 4 }}
-          control={<Radio />}
-        />
-        <FormControlLabel value='end' control={<Radio />} label='End' />
-      </RadioGroup>
-    </FormControl>
-  )
-}
-
-export default RadioLabelPlacement
-`}</code>
-  </pre>
-)
-
 export const RadioGroupTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -639,6 +605,61 @@ export default RadioShowError
   </pre>
 )
 
+export const RadioLabelPlacementTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Radio from '@mui/material/Radio'
+import RadioGroup from '@mui/material/RadioGroup'
+import FormControl from '@mui/material/FormControl'
+import FormControlLabel from '@mui/material/FormControlLabel'
+
+const RadioLabelPlacement = () => {
+  return (
+    <FormControl>
+      <RadioGroup row aria-label='position' name='vertical' defaultValue='top'>
+        <FormControlLabel value='top' label='Top' labelPlacement='top' sx={{ marginRight: 8.8 }} control={<Radio />} />
+        <FormControlLabel value='bottom' control={<Radio />} label='Bottom' labelPlacement='bottom' />
+      </RadioGroup>
+      <RadioGroup row aria-label='position' name='horizontal' defaultValue='start' sx={{ marginTop: 4 }}>
+        <FormControlLabel
+          value='start'
+          label='Start'
+          labelPlacement='start'
+          sx={{ marginRight: 4 }}
+          control={<Radio />}
+        />
+        <FormControlLabel value='end' control={<Radio />} label='End' />
+      </RadioGroup>
+    </FormControl>
+  )
+}
+
+export default RadioLabelPlacement
+`}</code>
+  </pre>
+)
+
+export const RadioSizesTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Radio from '@mui/material/Radio'
+import RadioGroup from '@mui/material/RadioGroup'
+import FormControlLabel from '@mui/material/FormControlLabel'
+
+const RadioSizes = () => {
+  return (
+    <RadioGroup row aria-label='sizes' name='sizes' defaultValue='small'>
+      <FormControlLabel value='small' control={<Radio size='small' />} label='Small' />
+      <FormControlLabel value='default' control={<Radio />} label='Default' />
+    </RadioGroup>
+  )
+}
+
+export default RadioSizes
+`}</code>
+  </pre>
+)
+
 export const RadioStandaloneTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -676,27 +697,6 @@ const RadioStandalone = () => {
 }
 
 export default RadioStandalone
-`}</code>
-  </pre>
-)
-
-export const RadioSizesTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Radio from '@mui/material/Radio'
-import RadioGroup from '@mui/material/RadioGroup'
-import FormControlLabel from '@mui/material/FormControlLabel'
-
-const RadioSizes = () => {
-  return (
-    <RadioGroup row aria-label='sizes' name='sizes' defaultValue='small'>
-      <FormControlLabel value='small' control={<Radio size='small' />} label='Small' />
-      <FormControlLabel value='default' control={<Radio />} label='Default' />
-    </RadioGroup>
-  )
-}
-
-export default RadioSizes
 `}</code>
   </pre>
 )
