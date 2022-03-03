@@ -163,7 +163,7 @@ const CardTeamMembers = () => {
                       sx={{
                         position: 'absolute',
                         color: theme =>
-                          theme.palette.mode === 'light' ? theme.palette.grey[200] : theme.palette.background.default
+                          theme.palette.mode === 'light' ? theme.palette.grey[200] : theme.palette.customColors.bodyBg
                       }}
                     />
                     <CircularProgress
