@@ -4,6 +4,7 @@ declare module '@mui/material/styles' {
       dark: string
       main: string
       light: string
+      bodyBg: string
       darkBg: string
       lightBg: string
       tableHeaderBg: string
@@ -14,6 +15,7 @@ declare module '@mui/material/styles' {
       dark?: string
       main?: string
       light?: string
+      bodyBg?: string
       darkBg?: string
       lightBg?: string
       tableHeaderBg?: string

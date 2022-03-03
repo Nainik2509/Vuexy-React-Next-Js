@@ -32,12 +32,12 @@ const ApexChartWrapper = styled('div')(({ theme }) => ({
     },
     '& .apexcharts-xaxistooltip': {
       borderColor: theme.palette.divider,
-      background: theme.palette.mode === 'light' ? theme.palette.grey[50] : theme.palette.background.default,
+      background: theme.palette.mode === 'light' ? theme.palette.grey[50] : theme.palette.customColors.bodyBg,
       '& .apexcharts-xaxistooltip-text': {
         color: theme.palette.text.primary
       },
       '&:after': {
-        borderBottomColor: theme.palette.mode === 'light' ? theme.palette.grey[50] : theme.palette.background.default
+        borderBottomColor: theme.palette.mode === 'light' ? theme.palette.grey[50] : theme.palette.customColors.bodyBg
       },
       '&:before': {
         borderBottomColor: theme.palette.divider
@@ -45,12 +45,12 @@ const ApexChartWrapper = styled('div')(({ theme }) => ({
     },
     '& .apexcharts-yaxistooltip': {
       borderColor: theme.palette.divider,
-      background: theme.palette.mode === 'light' ? theme.palette.grey[50] : theme.palette.background.default,
+      background: theme.palette.mode === 'light' ? theme.palette.grey[50] : theme.palette.customColors.bodyBg,
       '& .apexcharts-yaxistooltip-text': {
         color: theme.palette.text.primary
       },
       '&:after': {
-        borderLeftColor: theme.palette.mode === 'light' ? theme.palette.grey[50] : theme.palette.background.default
+        borderLeftColor: theme.palette.mode === 'light' ? theme.palette.grey[50] : theme.palette.customColors.bodyBg
       },
       '&:before': {
         borderLeftColor: theme.palette.divider
@@ -88,14 +88,14 @@ const ApexChartWrapper = styled('div')(({ theme }) => ({
       stroke: theme.palette.divider
     },
     '& .apexcharts-heatmap-rect': {
-      stroke: theme.palette.mode === 'light' ? theme.palette.background.paper : theme.palette.background.default
+      stroke: theme.palette.mode === 'light' ? theme.palette.background.paper : theme.palette.customColors.bodyBg
     },
     '& .apexcharts-radialbar > g > g:first-of-type .apexcharts-radialbar-area': {
-      stroke: theme.palette.background.default
+      stroke: theme.palette.customColors.bodyBg
     },
     '& .apexcharts-radar-series polygon': {
       stroke: theme.palette.divider,
-      fill: theme.palette.mode === 'light' ? theme.palette.background.paper : theme.palette.background.default
+      fill: theme.palette.customColors.bodyBg
     },
     '& .apexcharts-radar-series line': {
       stroke: theme.palette.divider
