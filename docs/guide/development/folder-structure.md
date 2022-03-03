@@ -23,7 +23,8 @@ Following is the folder structure of the full-version under both typescript / ja
 ├── public
 │   ├── favicon.ico              -> Favicon
 │   ├── images                   -> Static assets
-│   └── locales                  -> Translations
+│   ├── locales                  -> Translations
+│   └── other files
 ├── src
 │   ├── @core                    -> Template's core files
 │   ├── @fake-db                 -> Fake Database for mocking axios requests (Fake API Calls)
@@ -31,6 +32,8 @@ Following is the folder structure of the full-version under both typescript / ja
 │   │   ├── auth.ts              -> Your authentication files/configuration
 │   │   ├── i18n.ts              -> i18n configuration and initialization
 │   │   └── themeConfig.ts       -> Template configurations
+│   ├── context                  -> Your context files go here
+│   ├── hooks                    -> Your hooks go here
 │   ├── layouts                  -> Your layouts
 │   │   ├── components           -> Your components, layout components
 │   │   ├── UserLayout.tsx       -> File responsible to render layout & template

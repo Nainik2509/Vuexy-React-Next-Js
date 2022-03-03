@@ -7,7 +7,7 @@ sidebarDepth: 0
 ## Common
 
 :::danger Heads Up!
-The following dependencies are required to run the template. Do not try to remove any of these dependencies.
+The following dependencies are common and required to run the template. Do not try to remove any of these dependencies. You may add / update / remove any other dependencies according to your requirements.
 :::
 
 ```json
@@ -21,20 +21,20 @@ The following dependencies are required to run the template. Do not try to remov
 "next"
 "next-transpile-modules"
 "react"
-"@types/react"
+"@types/react" // Typescript version only
 "react-dom"
 "react-perfect-scrollbar"
 "mdi-material-ui"
-"@types/node"
+"@types/node" // Typescript version only
 "prettier"
-"typescript"
+"typescript" // Typescript version only
 ```
 
 ## Authentication
 
 ```json
 "jsonwebtoken"
-"@types/jsonwebtoken"
+"@types/jsonwebtoken" // Typescript version only
 ```
 
 ## Calendar
@@ -90,9 +90,9 @@ The following dependencies are required to run the template. Do not try to remov
 
 ```json
 "react-draft-wysiwyg"
-"@types/react-draft-wysiwyg"
+"@types/react-draft-wysiwyg" // Typescript version only
 "draft-js"
-"@types/draft-js"
+"@types/draft-js" // Typescript version only
 ```
 
 ## Right to Left (RTL)
@@ -131,21 +131,21 @@ The following dependencies are required to run the template. Do not try to remov
 
 ```json
 "cleave.js"
-"@types/cleave.js"
+"@types/cleave.js" // Typescript version only
 ```
 
 ## Page loader
 
 ```json
 "nprogress"
-"@types/nprogress"
+"@types/nprogress" // Typescript version only
 ```
 
 ## Markdown
 
 ```json
 "prismjs"
-"@types/prismjs"
+"@types/prismjs" // Typescript version only
 ```
 
 ## Toast
@@ -164,7 +164,7 @@ The following dependencies are required to run the template. Do not try to remov
 
 ```json
 "react-datepicker"
-"@types/react-datepicker"
+"@types/react-datepicker" // Typescript version only
 "date-fns" // date formatter
 ```
 
@@ -172,23 +172,27 @@ The following dependencies are required to run the template. Do not try to remov
 
 ```json
 "payment"
-"@types/payment"
+"@types/payment" // Typescript version only
 "react-credit-cards"
-"@types/react-credit-cards"
+"@types/react-credit-cards" // Typescript version only
 ```
 
 ## Kanban
 
 ```json
 "react-beautiful-dnd"
-"@types/react-beautiful-dnd"
+"@types/react-beautiful-dnd" // Typescript version only
 ```
 
 ## Eslint
 
 ```json
-"@typescript-eslint/eslint-plugin"
+"@typescript-eslint/eslint-plugin" // Typescript version only
+"@typescript-eslint/parser" // Typescript version only
 "eslint"
 "eslint-config-next"
 "eslint-config-prettier"
+"eslint-import-resolver-alias"
+"eslint-import-resolver-typescript" // Typescript version only
+"eslint-plugin-import"
 ```
