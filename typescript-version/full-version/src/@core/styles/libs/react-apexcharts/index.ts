@@ -95,7 +95,7 @@ const ApexChartWrapper = styled('div')(({ theme }) => ({
     },
     '& .apexcharts-radar-series polygon': {
       stroke: theme.palette.divider,
-      fill: theme.palette.customColors.bodyBg
+      fill: theme.palette.background.paper
     },
     '& .apexcharts-radar-series line': {
       stroke: theme.palette.divider
