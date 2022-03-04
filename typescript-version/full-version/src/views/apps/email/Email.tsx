@@ -58,11 +58,9 @@ const EmailAppLayout = ({ folder, label }: MailLayoutType) => {
   const store = useSelector((state: RootState) => state.email)
 
   // ** Vars
-  const { skin, layout, navHidden, direction } = settings
-
-  // ** Vars
   const leftSidebarWidth = 260
   const composePopupWidth = mdAbove ? 754 : smAbove ? 520 : '100%'
+  const { skin, appBar, footer, layout, navHidden, direction } = settings
   const routeParams = {
     label: label || '',
     folder: folder || 'inbox'
@@ -78,7 +76,9 @@ const EmailAppLayout = ({ folder, label }: MailLayoutType) => {
 
   const calculateAppHeight = () => {
     return `(${
-      (theme.mixins.toolbar.minHeight as number) * (layout === 'horizontal' && !navHidden ? 2 : 1) + 56
+      (appBar === 'hidden' ? 0 : (theme.mixins.toolbar.minHeight as number)) *
+        (layout === 'horizontal' && !navHidden ? 2 : 1) +
+      (footer === 'hidden' ? 0 : 56)
     }px + ${theme.spacing(6)} * 2)`
   }
 
@@ -87,7 +87,6 @@ const EmailAppLayout = ({ folder, label }: MailLayoutType) => {
       sx={{
         display: 'flex',
         borderRadius: 1,
-        minHeight: '100%',
         overflow: 'hidden',
         position: 'relative',
         boxShadow: skin === 'bordered' ? 0 : 6,
