@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Chip from '@mui/material/Chip'
+import Fade from '@mui/material/Fade'
 import List from '@mui/material/List'
 import Paper from '@mui/material/Paper'
 import Typography from '@mui/material/Typography'
@@ -248,29 +249,30 @@ const HorizontalNavGroup = (props: Props) => {
                 </Box>
               </Box>
             </ListItem>
-            <Box
-              ref={setPopperElement}
-              style={styles.popper}
-              {...attributes.popper}
-              sx={{
-                zIndex: theme.zIndex.appBar,
-                display: menuOpen ? 'block' : 'none',
-                pl: childMenuGroupStyles() === 'left' ? (skin === 'bordered' ? 1.5 : 1.25) : 0,
-                pr: childMenuGroupStyles() === 'right' ? (skin === 'bordered' ? 1.5 : 1.25) : 0,
-                ...(hasParent ? { position: 'fixed !important' } : { pt: skin === 'bordered' ? 5.25 : 5.5 })
-              }}
-            >
-              <NavigationMenu
+            <Fade in={menuOpen} timeout={{ exit: 300, enter: 400 }}>
+              <Box
+                ref={setPopperElement}
+                style={styles.popper}
+                {...attributes.popper}
                 sx={{
-                  ...(hasParent ? { overflowY: 'auto', overflowX: 'visible', maxHeight: 'calc(100vh - 20rem)' } : {}),
-                  ...(skin === 'bordered'
-                    ? { boxShadow: theme.shadows[0], border: `1px solid ${theme.palette.divider}` }
-                    : { boxShadow: theme.shadows[4] })
+                  zIndex: theme.zIndex.appBar,
+                  pl: childMenuGroupStyles() === 'left' ? (skin === 'bordered' ? 1.5 : 1.25) : 0,
+                  pr: childMenuGroupStyles() === 'right' ? (skin === 'bordered' ? 1.5 : 1.25) : 0,
+                  ...(hasParent ? { position: 'fixed !important' } : { pt: skin === 'bordered' ? 5.25 : 5.5 })
                 }}
               >
-                <HorizontalNavItems {...props} hasParent horizontalNavItems={item.children} />
-              </NavigationMenu>
-            </Box>
+                <NavigationMenu
+                  sx={{
+                    ...(hasParent ? { overflowY: 'auto', overflowX: 'visible', maxHeight: 'calc(100vh - 20rem)' } : {}),
+                    ...(skin === 'bordered'
+                      ? { boxShadow: theme.shadows[0], border: `1px solid ${theme.palette.divider}` }
+                      : { boxShadow: theme.shadows[4] })
+                  }}
+                >
+                  <HorizontalNavItems {...props} hasParent horizontalNavItems={item.children} />
+                </NavigationMenu>
+              </Box>
+            </Fade>
           </List>
         </ChildWrapper>
       </MainWrapper>

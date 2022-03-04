@@ -33,6 +33,7 @@ import { hexToRGBA } from '../utils/hex-to-rgba'
 
 const HorizontalLayoutWrapper = styled('div')({
   display: 'flex',
+  overflow: 'clip',
   minHeight: '100vh',
   flexDirection: 'column'
 })
