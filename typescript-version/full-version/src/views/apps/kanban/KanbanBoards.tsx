@@ -104,11 +104,11 @@ const KanbanBoard = (props: KanbanBoardProps) => {
             rules={{ required: true }}
             render={({ field: { value, onChange } }) => (
               <TextField
+                autoFocus
                 value={value}
                 label='Task Title'
                 onChange={onChange}
                 placeholder='Task Title'
-                inputProps={{ autoFocus: true }}
                 error={Boolean(errors.taskTitle)}
                 aria-describedby='validation-add-task'
               />
@@ -142,8 +142,9 @@ const KanbanBoard = (props: KanbanBoardProps) => {
               value={title}
               onChange={e => setTitle(e.target.value)}
               sx={{
-                '&:hover': { backgroundColor: 'background.paper' },
-                '& fieldset': { border: 'none !important' }
+                borderRadius: 1,
+                '& fieldset': { border: 'none !important' },
+                '&:hover': { backgroundColor: 'background.paper' }
               }}
             />
           </Box>

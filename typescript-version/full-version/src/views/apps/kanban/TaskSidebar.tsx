@@ -208,10 +208,14 @@ const TaskSidebar = (props: TaskSidebarProps) => {
     return (
       <ListItem key={option.value} sx={{ cursor: 'pointer' }} onClick={() => setState([...array, option])}>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          {option.avatar.length ? (
+          {option.avatar && option.avatar.length ? (
             <CustomAvatar src={option.avatar} alt={option.name} sx={{ mr: 3, width: 22, height: 22 }} />
           ) : (
-            <CustomAvatar skin='light' color='primary' sx={{ mr: 3, width: 22, height: 22, fontSize: '.75rem' }}>
+            <CustomAvatar
+              skin='light'
+              color='primary'
+              sx={{ mr: 3, width: 22, height: 22, fontSize: '.75rem', textTransform: 'uppercase' }}
+            >
               {getInitials(option.name)}
             </CustomAvatar>
           )}
@@ -365,21 +369,21 @@ const TaskSidebar = (props: TaskSidebarProps) => {
           </FormControl>
           <FormControl fullWidth sx={{ mb: 6 }}>
             <Autocomplete
-              multiple
               freeSolo
+              multiple
               value={assignee}
-              id='assignee-label'
               clearIcon={false}
-              filterSelectedOptions
+              id='assignee-label'
               options={assigneeArr}
+              filterSelectedOptions
               ListboxComponent={List}
               filterOptions={addNewOption}
               getOptionLabel={option => option.name}
+              renderInput={params => <TextField {...params} label='Assigned To' />}
               renderOption={(props, option) => renderListItem(props, option, assignee, setAssignee)}
               renderTags={(array: AssigneeMenuItems[], getTagProps) =>
                 renderCustomChips(array, getTagProps, assignee, setAssignee)
               }
-              renderInput={params => <TextField {...params} label='Assigned To' />}
             />
           </FormControl>
           <DropzoneWrapper>
