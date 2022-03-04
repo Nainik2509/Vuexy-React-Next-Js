@@ -145,6 +145,7 @@ module.exports = {
             ['how-to-override-remove-loader', 'How to override / remove loader'],
             ['how-to-update-this-template', 'How to update this template'],
             ['how-to-use-custom-icons', 'How to override menu icons and use custom icons in the template'],
+            ['slow-speed-in-local', 'Why app runs slow in local'],
             ['how-to-use-nextjs-image-component', 'How to use Nextjs Image Component without Height & Width'],
             ['why-images-are-missing-on-deployment', 'Why images are missing on deployment']
           ]
