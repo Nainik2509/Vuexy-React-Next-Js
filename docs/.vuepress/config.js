@@ -147,7 +147,8 @@ module.exports = {
             ['how-to-use-custom-icons', 'How to override menu icons and use custom icons in the template'],
             ['slow-speed-in-local', 'Why app runs slow in local'],
             ['how-to-use-nextjs-image-component', 'How to use Nextjs Image Component without Height & Width'],
-            ['why-images-are-missing-on-deployment', 'Why images are missing on deployment']
+            ['why-images-are-missing-on-deployment', 'Why images are missing on deployment'],
+            ['horizontal-scroll-horizontal-layout', 'Horizontal scrollbar in Horizontal layout']
           ]
         }
       ]

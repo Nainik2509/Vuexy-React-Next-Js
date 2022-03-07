@@ -1,3 +1,7 @@
+---
+sidebarDepth: 0
+---
+
 # :first-child console error
 
 When we use one of the pseudo-classes  `:first-child`, `:nth-child(N)` or `:nth-last-child(N)`, we may get errors in the browser console like the following:
