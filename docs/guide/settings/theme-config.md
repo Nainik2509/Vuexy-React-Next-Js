@@ -30,6 +30,7 @@ const themeConfig: ThemeConfig = {
   navigationSize: 260,
   collapsedNavigationSize: 69,
   horizontalMenuToggle: 'hover',
+  horizontalMenuAnimation: true,
   appBar: 'fixed',
   responsiveFontSizes: true,
   disableRipple: false,
@@ -58,6 +59,7 @@ const themeConfig = {
   navigationSize: 260,
   collapsedNavigationSize: 69,
   horizontalMenuToggle: 'hover',
+  horizontalMenuAnimation: true,
   appBar: 'fixed',
   responsiveFontSizes: true,
   disableRipple: false,
@@ -90,6 +92,7 @@ Following is the table of all the properties and their possible values that are 
 | navigationSize | `number` | Width of navigation menu when menu is not collapsed |
 | collapsedNavigationSize | `number` | Width of navigation menu when menu is collapsed |
 | horizontalMenuToggle | `'click'`, `'hover'` | Set behavior of menu group in the horizontal navigation menu |
+| horizontalMenuAnimation | `true`, `false` | If `true`, animation is enabled for the horizontal navigation menu |
 | appBar | `'fixed'`, `'static'`, `'hidden'` | Change appBar position |
 | responsiveFontSizes | `true`, `false` | If `true`, responsive font sizes are enabled |
 | disableRipple | `true`, `false` | If `true`, the Ripple effect is disabled |

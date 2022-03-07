@@ -93,6 +93,7 @@ const HorizontalNavGroup = (props: Props) => {
   const router = useRouter()
   const currentURL = router.pathname
   const { skin, direction } = settings
+  const { navSubItemIcon, menuTextTruncate, horizontalMenuToggle, horizontalMenuAnimation } = themeConfig
 
   const popperOffsetHorizontal = direction === 'rtl' ? 16 : -16
   const popperPlacement = direction === 'rtl' ? 'bottom-end' : 'bottom-start'
@@ -145,12 +146,13 @@ const HorizontalNavGroup = (props: Props) => {
     setMenuOpen(!menuOpen)
   }
 
-  const IconTag = item.icon ? item.icon : themeConfig.navSubItemIcon
+  const IconTag = item.icon ? item.icon : navSubItemIcon
   const ToggleIcon = direction === 'rtl' ? ChevronLeft : ChevronRight
 
-  const WrapperCondition = themeConfig.horizontalMenuToggle === 'click'
+  const WrapperCondition = horizontalMenuToggle === 'click'
   const MainWrapper = WrapperCondition ? ClickAwayListener : 'div'
   const ChildWrapper = WrapperCondition ? 'div' : Fragment
+  const AnimationWrapper = horizontalMenuAnimation ? Fade : Fragment
 
   const childMenuGroupStyles = () => {
     if (attributes && attributes.popper) {
@@ -182,7 +184,7 @@ const HorizontalNavGroup = (props: Props) => {
               aria-haspopup='true'
               {...(WrapperCondition ? {} : { onMouseEnter: handleGroupOpen })}
               className={clsx('menu-group', { 'Mui-selected': hasActiveChild(item, currentURL) })}
-              {...(themeConfig.horizontalMenuToggle === 'click' ? { onClick: handleMenuToggleOnClick } : {})}
+              {...(horizontalMenuToggle === 'click' ? { onClick: handleMenuToggleOnClick } : {})}
               sx={{
                 ...(menuOpen ? { backgroundColor: theme.palette.action.hover } : {}),
                 ...(!hasParent
@@ -214,7 +216,7 @@ const HorizontalNavGroup = (props: Props) => {
                     display: 'flex',
                     alignItems: 'center',
                     flexDirection: 'row',
-                    ...(themeConfig.menuTextTruncate && { overflow: 'hidden' })
+                    ...(menuTextTruncate && { overflow: 'hidden' })
                   }}
                 >
                   <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
@@ -224,7 +226,7 @@ const HorizontalNavGroup = (props: Props) => {
                       iconProps={{ sx: IconTag === CircleOutline ? { fontSize: '1rem' } : { fontSize: '1.125rem' } }}
                     />
                   </ListItemIcon>
-                  <Typography {...(themeConfig.menuTextTruncate && { noWrap: true })}>
+                  <Typography {...(menuTextTruncate && { noWrap: true })}>
                     <Translations text={item.title} />
                   </Typography>
                 </Box>
@@ -249,13 +251,14 @@ const HorizontalNavGroup = (props: Props) => {
                 </Box>
               </Box>
             </ListItem>
-            <Fade in={menuOpen} timeout={{ exit: 300, enter: 400 }}>
+            <AnimationWrapper {...(horizontalMenuAnimation && { in: menuOpen, timeout: { exit: 300, enter: 400 } })}>
               <Box
                 ref={setPopperElement}
                 style={styles.popper}
                 {...attributes.popper}
                 sx={{
                   zIndex: theme.zIndex.appBar,
+                  ...(!horizontalMenuAnimation && { display: menuOpen ? 'block' : 'none' }),
                   pl: childMenuGroupStyles() === 'left' ? (skin === 'bordered' ? 1.5 : 1.25) : 0,
                   pr: childMenuGroupStyles() === 'right' ? (skin === 'bordered' ? 1.5 : 1.25) : 0,
                   ...(hasParent ? { position: 'fixed !important' } : { pt: skin === 'bordered' ? 5.25 : 5.5 })
@@ -272,7 +275,7 @@ const HorizontalNavGroup = (props: Props) => {
                   <HorizontalNavItems {...props} hasParent horizontalNavItems={item.children} />
                 </NavigationMenu>
               </Box>
-            </Fade>
+            </AnimationWrapper>
           </List>
         </ChildWrapper>
       </MainWrapper>
