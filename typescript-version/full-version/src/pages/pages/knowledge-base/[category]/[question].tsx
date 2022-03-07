@@ -3,6 +3,7 @@ import { SyntheticEvent } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
+import { GetStaticPaths, GetStaticProps } from 'next/types'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -16,6 +17,12 @@ import CardContent, { CardContentProps } from '@mui/material/CardContent'
 import Cellphone from 'mdi-material-ui/Cellphone'
 import CogOutline from 'mdi-material-ui/CogOutline'
 import CircleOutline from 'mdi-material-ui/CircleOutline'
+
+// ** Third Party Imports
+import axios from 'axios'
+
+// ** Types
+import { KnowledgeBaseData, KnowledgeBaseCategoryData, KnowledgeBaseCategoryQuestion } from 'src/@fake-db/types'
 
 // Styled CardContent component
 const StyledCardContent = styled(CardContent)<CardContentProps>(({ theme }) => ({
@@ -148,6 +155,35 @@ const KnowledgeBaseCategoryQuestion = () => {
       </StyledGrid>
     </Grid>
   )
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const res = await axios.get('/pages/knowledge-base')
+  const data: KnowledgeBaseData[] = await res.data
+
+  const CategoryResponse = await axios.get('/pages/knowledge-base/categories')
+  const categoryData: KnowledgeBaseCategoryData[] = await CategoryResponse.data
+
+  const paths: any = []
+  data.forEach((item: KnowledgeBaseData) => {
+    const category = `${item.category}`
+    categoryData.forEach((categoryItem: KnowledgeBaseCategoryData) => {
+      categoryItem.questions.forEach((question: KnowledgeBaseCategoryQuestion) => {
+        paths.push({ params: { category, question: `${question.slug}` } })
+      })
+    })
+  })
+
+  return {
+    paths,
+    fallback: false
+  }
+}
+
+export const getStaticProps: GetStaticProps = () => {
+  return {
+    props: {}
+  }
 }
 
 export default KnowledgeBaseCategoryQuestion

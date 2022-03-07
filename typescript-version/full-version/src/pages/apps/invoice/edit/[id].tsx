@@ -1,20 +1,39 @@
 // ** Next Import
-import { NextPageContext } from 'next/types'
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext, InferGetStaticPropsType } from 'next/types'
+
+// ** Third Party Imports
+import axios from 'axios'
 
 // ** Types
-import { InvoiceLayoutProps } from 'src/types/apps/invoiceTypes'
+import { InvoiceType } from 'src/types/apps/invoiceTypes'
 
 // ** Demo Components Imports
 import Edit from 'src/views/apps/invoice/edit/Edit'
 
-const InvoiceEdit = ({ id }: InvoiceLayoutProps) => {
+const InvoiceEdit = ({ id }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return <Edit id={id} />
 }
 
-InvoiceEdit.getInitialProps = async ({ query }: NextPageContext) => {
-  const { id } = query
+export const getStaticPaths: GetStaticPaths = async () => {
+  const res = await axios.get('/apps/invoice/invoices')
+  const data: InvoiceType[] = await res.data.allData
 
-  return { id }
+  const paths = data.map((item: InvoiceType) => ({
+    params: { id: `${item.id}` }
+  }))
+
+  return {
+    paths,
+    fallback: false
+  }
+}
+
+export const getStaticProps: GetStaticProps = ({ params }: GetStaticPropsContext) => {
+  return {
+    props: {
+      id: params?.id
+    }
+  }
 }
 
 export default InvoiceEdit
