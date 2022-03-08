@@ -75,11 +75,11 @@ const navigation = (): VerticalNavItemsType => {
         },
         {
           title: 'Preview',
-          path: '/apps/invoice/preview'
+          path: '/apps/invoice/preview/4987'
         },
         {
           title: 'Edit',
-          path: '/apps/invoice/edit'
+          path: '/apps/invoice/edit/4987'
         },
         {
           title: 'Add',
@@ -97,7 +97,7 @@ const navigation = (): VerticalNavItemsType => {
         },
         {
           title: 'View',
-          path: '/apps/user/view'
+          path: '/apps/user/view/1'
         }
       ]
     },
