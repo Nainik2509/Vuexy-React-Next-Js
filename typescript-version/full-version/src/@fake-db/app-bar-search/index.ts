@@ -546,6 +546,13 @@ const searchData: AppBarSearchType[] = [
   },
   {
     id: 78,
+    url: '/acl',
+    icon: 'ShieldOutline',
+    title: 'Access Control (ACL)',
+    type: 'pages'
+  },
+  {
+    id: 79,
     img: '/images/icons/file-icons/doc.png',
     title: 'Passport Image',
     by: 'Herman Chapman',
@@ -553,7 +560,7 @@ const searchData: AppBarSearchType[] = [
     type: 'files'
   },
   {
-    id: 79,
+    id: 80,
     img: '/images/icons/file-icons/xls.png',
     title: 'Questions',
     by: 'Lola Waters',
@@ -561,7 +568,7 @@ const searchData: AppBarSearchType[] = [
     type: 'files'
   },
   {
-    id: 80,
+    id: 81,
     img: '/images/icons/file-icons/pdf.png',
     title: 'Parenting Guide',
     by: 'Ethan Spencer',
@@ -569,7 +576,7 @@ const searchData: AppBarSearchType[] = [
     type: 'files'
   },
   {
-    id: 81,
+    id: 82,
     img: '/images/icons/file-icons/txt.png',
     title: 'Class Notes',
     by: 'Jerry Hughes',
@@ -577,7 +584,7 @@ const searchData: AppBarSearchType[] = [
     type: 'files'
   },
   {
-    id: 82,
+    id: 83,
     img: '/images/icons/file-icons/xls.png',
     title: 'Class Attendance',
     by: 'Jessie Rivera',
@@ -585,7 +592,7 @@ const searchData: AppBarSearchType[] = [
     type: 'files'
   },
   {
-    id: 83,
+    id: 84,
     img: '/images/icons/file-icons/pdf.png',
     title: 'Company Salary',
     by: 'Lizzie Lawson',
@@ -593,7 +600,7 @@ const searchData: AppBarSearchType[] = [
     type: 'files'
   },
   {
-    id: 84,
+    id: 85,
     img: '/images/icons/file-icons/doc.png',
     title: 'Company Logo',
     by: 'Steve Sheldon',
@@ -601,7 +608,7 @@ const searchData: AppBarSearchType[] = [
     type: 'files'
   },
   {
-    id: 85,
+    id: 86,
     img: '/images/icons/file-icons/js.png',
     title: 'Crime Rates',
     by: 'Myra Hammond',
@@ -609,7 +616,7 @@ const searchData: AppBarSearchType[] = [
     type: 'files'
   },
   {
-    id: 86,
+    id: 87,
     img: '/images/icons/file-icons/pdf.png',
     title: 'Ulysses',
     by: 'Lena Briggs',
@@ -617,7 +624,7 @@ const searchData: AppBarSearchType[] = [
     type: 'files'
   },
   {
-    id: 87,
+    id: 88,
     img: '/images/avatars/6.png',
     title: 'Nora Alvarado',
     email: 'nephrod@preany.co.uk',
@@ -625,7 +632,7 @@ const searchData: AppBarSearchType[] = [
     type: 'contacts'
   },
   {
-    id: 88,
+    id: 89,
     img: '/images/avatars/4.png',
     title: 'Betty Davidson',
     email: 'seek@sparaxis.org',
@@ -633,7 +640,7 @@ const searchData: AppBarSearchType[] = [
     type: 'contacts'
   },
   {
-    id: 89,
+    id: 90,
     img: '/images/avatars/3.png',
     title: 'Lilly Mitchell',
     email: 'vagary@unblist.org',
@@ -641,7 +648,7 @@ const searchData: AppBarSearchType[] = [
     type: 'contacts'
   },
   {
-    id: 90,
+    id: 91,
     img: '/images/avatars/7.png',
     title: 'Fanny Bowers',
     email: 'designed@insanely.net',
@@ -649,7 +656,7 @@ const searchData: AppBarSearchType[] = [
     type: 'contacts'
   },
   {
-    id: 91,
+    id: 92,
     img: '/images/avatars/8.png',
     title: 'Christina Leonard',
     email: 'unwieldable@unblist.org',
@@ -657,7 +664,7 @@ const searchData: AppBarSearchType[] = [
     type: 'contacts'
   },
   {
-    id: 92,
+    id: 93,
     img: '/images/avatars/5.png',
     title: 'Lawrence Hopkins',
     email: 'museist@anaphyte.co.uk',
@@ -665,7 +672,7 @@ const searchData: AppBarSearchType[] = [
     type: 'contacts'
   },
   {
-    id: 93,
+    id: 94,
     img: '/images/avatars/6.png',
     title: 'Abbey Darden',
     email: 'astema@defectively.co.uk',
@@ -673,7 +680,7 @@ const searchData: AppBarSearchType[] = [
     type: 'contacts'
   },
   {
-    id: 94,
+    id: 95,
     img: '/images/avatars/1.png',
     title: 'Sophia Manning',
     email: 'fernando@storkish.co.uk',
@@ -681,7 +688,7 @@ const searchData: AppBarSearchType[] = [
     type: 'contacts'
   },
   {
-    id: 95,
+    id: 96,
     img: '/images/avatars/3.png',
     title: 'Lydia Howard',
     email: 'furphy@cannibal.net',
@@ -689,7 +696,7 @@ const searchData: AppBarSearchType[] = [
     type: 'contacts'
   },
   {
-    id: 96,
+    id: 97,
     img: '/images/avatars/5.png',
     title: 'Isaac Keller',
     email: 'insignia@markab.org',
