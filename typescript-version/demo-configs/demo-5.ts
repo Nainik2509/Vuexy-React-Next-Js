@@ -28,6 +28,7 @@ type ThemeConfig = {
   disableCustomizer: boolean
   responsiveFontSizes: boolean
   collapsedNavigationSize: number
+  horizontalMenuAnimation: boolean
   layout: 'vertical' | 'horizontal'
   verticalNavToggleType: VerticalNavToggle
   horizontalMenuToggle: HorizontalMenuToggle
@@ -56,6 +57,7 @@ const themeConfig: ThemeConfig = {
   navigationSize: 260 /* Number in PX(Pixels) /*! Note: This is for Vertical navigation menu only */,
   collapsedNavigationSize: 69 /* Number in PX(Pixels) /*! Note: This is for Vertical navigation menu only */,
   horizontalMenuToggle: 'hover' /* click | hover /*! Note: This is for Horizontal navigation menu only */,
+  horizontalMenuAnimation: true /* true | false */,
 
   // ** AppBar Configs
   appBar: 'fixed' /* fixed | static | hidden /*! Note: hidden value will only work for Vertical Layout */,
