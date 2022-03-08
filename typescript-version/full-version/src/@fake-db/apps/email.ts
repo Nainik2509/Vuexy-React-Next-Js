@@ -1034,6 +1034,12 @@ let paramsFilteredMails: MailType[] = []
 
 // ------------------------------------------------
 // GET: Return Emails
+mock.onGet('/apps/email/allEmails').reply(() => {
+  return [200, { emails: data.emails }]
+})
+
+// ------------------------------------------------
+// GET: Return Emails
 mock.onGet('/apps/email/emails').reply(config => {
   const { q = '', folder = 'inbox', label } = config.params
 

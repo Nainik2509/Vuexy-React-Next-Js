@@ -1,20 +1,39 @@
 // ** Next Import
-import { NextPageContext } from 'next/types'
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next/types'
+
+// ** Third Party Imports
+import axios from 'axios'
 
 // ** Types
-import { MailLayoutType } from 'src/types/apps/emailTypes'
+import { MailLayoutType, MailType } from 'src/types/apps/emailTypes'
 
 // ** Demo Components Imports
 import Email from 'src/views/apps/email/Email'
 
-const EmailApp = ({ folder, label }: MailLayoutType) => {
-  return <Email folder={folder} label={label} />
+const EmailApp = ({ folder }: MailLayoutType) => {
+  return <Email folder={folder} />
 }
 
-EmailApp.getInitialProps = async ({ query }: NextPageContext) => {
-  const { folder, label } = query
+export const getStaticPaths: GetStaticPaths = async () => {
+  const res = await axios.get('/apps/email/allEmails')
+  const data: MailType[] = await res.data.emails
 
-  return { folder, label }
+  const paths = data.map((mail: MailType) => ({
+    params: { folder: mail.folder }
+  }))
+
+  return {
+    paths,
+    fallback: true
+  }
+}
+
+export const getStaticProps: GetStaticProps = ({ params }: GetStaticPropsContext) => {
+  return {
+    props: {
+      folder: params?.folder
+    }
+  }
 }
 
 export default EmailApp
