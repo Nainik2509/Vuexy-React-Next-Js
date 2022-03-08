@@ -92,11 +92,11 @@ const navigation = (): HorizontalNavItemsType => {
             },
             {
               title: 'Preview',
-              path: '/apps/invoice/preview/4987'
+              path: '/apps/invoice/preview'
             },
             {
               title: 'Edit',
-              path: '/apps/invoice/edit/4987'
+              path: '/apps/invoice/edit'
             },
             {
               title: 'Add',
@@ -114,7 +114,7 @@ const navigation = (): HorizontalNavItemsType => {
             },
             {
               title: 'View',
-              path: '/apps/user/view/1'
+              path: '/apps/user/view'
             }
           ]
         },
