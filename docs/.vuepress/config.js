@@ -4,6 +4,7 @@ module.exports = {
   title: 'Master',
   description: 'Master React Admin Dashboard Template',
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+  globalUIComponents: ['SurveyPopup'],
   themeConfig: {
     searchPlaceholder: 'Search...',
     lastUpdated: 'Last Updated',
