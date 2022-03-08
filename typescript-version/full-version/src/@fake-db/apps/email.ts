@@ -1026,6 +1026,32 @@ const data: { emails: MailType[] } = {
       ],
       folder: 'inbox',
       isRead: true
+    },
+    {
+      id: 66,
+      from: {
+        email: 'hidden@mail.com',
+        name: 'Hidden Mail',
+        avatar: '/images/avatars/1.png'
+      },
+      to: [
+        {
+          name: 'me',
+          email: 'johndoe@mail.com'
+        }
+      ],
+      subject: 'Hidden Mail',
+      cc: [],
+      bcc: [],
+      message:
+        '<p>Hi John,</p><p>Biscuit lemon drops marshmallow. Cotton candy marshmallow bear claw. Dragée tiramisu cookie cotton candy. Carrot cake sweet roll I love macaroon wafer jelly soufflé I love dragée. Jujubes jelly I love carrot cake topping I love. Sweet candy I love chupa chups dragée. Tart I love gummies. Chocolate bar carrot cake candy wafer candy canes oat cake I love. Sesame snaps icing pudding sweet roll marshmallow. Cupcake brownie sweet roll chocolate bar I love gummies. Biscuit biscuit macaroon sesame snaps macaroon icing I love soufflé caramels. Apple pie candy jelly. I love icing gummi bears jelly-o pie muffin apple pie.</p><p>Marshmallow halvah brownie cake marzipan ice cream marshmallow. I love lollipop toffee croissant liquorice wafer muffin. Lollipop jelly beans caramels lollipop tootsie roll pudding pie macaroon tootsie roll. Oat cake jujubes gummies cake cake powder cupcake soufflé muffin. Chocolate caramels muffin tart. Jelly beans caramels dessert cotton candy liquorice chocolate cake. Chupa chups muffin bear claw I love. Biscuit jujubes soufflé tart caramels pie sugar plum. Croissant jelly beans cake. Ice cream chocolate liquorice dessert cookie chocolate cake. Powder tart sweet roll macaroon croissant. Sweet tootsie roll macaroon gummi bears macaroon. Gingerbread cake tart.</p><p>Regrads,</p><p>Kristeen Sicilia</p>',
+      attachments: [],
+      isStarred: true,
+      labels: ['private'],
+      time: 'Mon Dec 10 2018 07:46:00 GMT+0000 (GMT)',
+      replies: [],
+      folder: 'starred',
+      isRead: true
     }
   ]
 }
