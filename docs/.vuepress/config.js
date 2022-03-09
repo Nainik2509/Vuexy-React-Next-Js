@@ -14,6 +14,7 @@ module.exports = {
       { text: 'FAQ', link: '/faq/' },
       { text: 'Articles', link: '/articles/' },
       { text: 'Demo', link: 'https://themeselection.com/' },
+      { text: 'Changelog', link: 'https://themeselection.com/' },
       { text: 'Purchase', link: 'https://themeselection.com/' }
     ],
     sidebar: {
