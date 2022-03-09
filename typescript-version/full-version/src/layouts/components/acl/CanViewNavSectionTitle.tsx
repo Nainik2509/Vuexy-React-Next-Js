@@ -9,7 +9,7 @@ import { NavSectionTitle } from 'src/@core/layouts/types'
 
 interface Props {
   children: ReactNode
-  navTitle: NavSectionTitle
+  navTitle?: NavSectionTitle
 }
 
 const CanViewNavSectionTitle = (props: Props) => {
@@ -19,7 +19,7 @@ const CanViewNavSectionTitle = (props: Props) => {
   // ** Hook
   const ability = useContext(AbilityContext)
 
-  return ability && ability.can(navTitle.action, navTitle.subject) ? <>{children}</> : null
+  return ability && ability.can(navTitle?.action, navTitle?.subject) ? <>{children}</> : null
 }
 
 export default CanViewNavSectionTitle

@@ -8,7 +8,7 @@ import { AbilityContext } from 'src/layouts/components/acl/Can'
 import { NavGroup, NavLink } from 'src/@core/layouts/types'
 
 interface Props {
-  navGroup: NavGroup
+  navGroup?: NavGroup
   children: ReactNode
 }
 
@@ -30,7 +30,7 @@ const CanViewNavGroup = (props: Props) => {
     return ability && ability.can(item.action, item.subject) && hasAnyVisibleChild
   }
 
-  return canViewMenuGroup(navGroup) ? <>{children}</> : null
+  return navGroup && canViewMenuGroup(navGroup) ? <>{children}</> : null
 }
 
 export default CanViewNavGroup

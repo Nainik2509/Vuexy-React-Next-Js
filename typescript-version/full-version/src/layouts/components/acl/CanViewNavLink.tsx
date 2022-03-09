@@ -8,7 +8,7 @@ import { AbilityContext } from 'src/layouts/components/acl/Can'
 import { NavLink } from 'src/@core/layouts/types'
 
 interface Props {
-  navLink: NavLink
+  navLink?: NavLink
   children: ReactNode
 }
 
@@ -19,7 +19,7 @@ const CanViewNavLink = (props: Props) => {
   // ** Hook
   const ability = useContext(AbilityContext)
 
-  return ability && ability.can(navLink.action, navLink.subject) ? <>{children}</> : null
+  return ability && ability.can(navLink?.action, navLink?.subject) ? <>{children}</> : null
 }
 
 export default CanViewNavLink

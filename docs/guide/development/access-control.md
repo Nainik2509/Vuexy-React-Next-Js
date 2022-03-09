@@ -200,6 +200,7 @@ It is quite easy to remove access control from the template.
     import { ReactNode } from 'react'
 
     interface Props {
+      navGroup?: NavGroup
       children: ReactNode
     }
 
@@ -235,6 +236,7 @@ It is quite easy to remove access control from the template.
     import { ReactNode } from 'react'
 
     interface Props {
+      navLink?: NavLink
       children: ReactNode
     }
 
@@ -271,6 +273,7 @@ It is quite easy to remove access control from the template.
 
     interface Props {
       children: ReactNode
+      navTitle?: NavSectionTitle
     }
 
     const CanViewNavSectionTitle = (props: Props) => {
