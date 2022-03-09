@@ -105,12 +105,13 @@ export default Translations
 </code-block>
 </code-group>
 
-- Remove `LanguageDropdown` file import statement and rendered component from `src/layouts/components/vertical/AppBarContent.tsx` or `src/layouts/components/horizontal/AppBarContent.tsx` file
-- Remove your locale files from `public/locales` folder
+- Remove `LanguageDropdown` file import statement and rendered component from `src/layouts/components/vertical/AppBarContent.tsx` and/or `src/layouts/components/horizontal/AppBarContent.tsx` file
 
 ```tsx
 <LanguageDropdown settings={settings} saveSettings={saveSettings} />
 ```
+
+- Remove your locale files from `public/locales` folder
 
 ## Add / Remove a language
 
