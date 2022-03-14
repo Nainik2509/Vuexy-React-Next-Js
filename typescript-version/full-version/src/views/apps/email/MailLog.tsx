@@ -69,6 +69,14 @@ const MailItem = styled(ListItem)<ListItemProps>(({ theme }) => ({
   }
 }))
 
+const ScrollWrapper = ({ children, hidden }: { children: ReactNode; hidden: boolean }) => {
+  if (hidden) {
+    return <Box sx={{ height: '100%', overflowY: 'auto', overflowX: 'hidden' }}>{children}</Box>
+  } else {
+    return <PerfectScrollbar options={{ wheelPropagation: false, suppressScrollX: true }}>{children}</PerfectScrollbar>
+  }
+}
+
 const MailLog = (props: MailLogType) => {
   // ** Props
   const {
@@ -289,16 +297,6 @@ const MailLog = (props: MailLogType) => {
     mail: store && store.currentMail ? store.currentMail : null
   }
 
-  const ScrollWrapper = ({ children }: { children: ReactNode }) => {
-    if (hidden) {
-      return <Box sx={{ height: '100%', overflowY: 'auto', overflowX: 'hidden' }}>{children}</Box>
-    } else {
-      return (
-        <PerfectScrollbar options={{ wheelPropagation: false, suppressScrollX: true }}>{children}</PerfectScrollbar>
-      )
-    }
-  }
-
   return (
     <Box sx={{ width: '100%', overflow: 'hidden', position: 'relative', '& .ps__rail-y': { zIndex: 5 } }}>
       <Box sx={{ height: '100%', backgroundColor: 'background.paper' }}>
@@ -340,7 +338,7 @@ const MailLog = (props: MailLogType) => {
                 />
               ) : null}
 
-              {store && store.selectedMails.length ? (
+              {store && store.selectedMails.length && store.mails && store.mails.length ? (
                 <Fragment>
                   {routeParams && routeParams.folder !== 'trash' ? (
                     <IconButton onClick={handleMoveToTrash}>
@@ -403,7 +401,7 @@ const MailLog = (props: MailLogType) => {
         </Box>
         <Divider sx={{ m: 0 }} />
         <Box sx={{ p: 0, position: 'relative', overflowX: 'hidden', height: 'calc(100% - 7.25rem)' }}>
-          <ScrollWrapper>
+          <ScrollWrapper hidden={hidden}>
             {store && store.mails && store.mails.length ? (
               <List sx={{ p: 0 }}>
                 {store.mails.map((mail: MailType, index: number) => {
