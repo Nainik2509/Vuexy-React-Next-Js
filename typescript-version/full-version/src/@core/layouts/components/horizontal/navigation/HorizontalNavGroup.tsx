@@ -142,10 +142,6 @@ const HorizontalNavGroup = (props: Props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.asPath])
 
-  const handleMenuClick = () => {
-    setMenuOpen(!menuOpen)
-  }
-
   const IconTag = item.icon ? item.icon : navSubItemIcon
   const ToggleIcon = direction === 'rtl' ? ChevronLeft : ChevronRight
 
@@ -209,7 +205,6 @@ const HorizontalNavGroup = (props: Props) => {
                   justifyContent: 'space-between'
                 }}
                 ref={setReferenceElement}
-                onClick={handleMenuClick}
               >
                 <Box
                   sx={{
