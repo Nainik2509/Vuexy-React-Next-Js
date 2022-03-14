@@ -7,7 +7,7 @@ import TypographyHeadings from 'src/views/ui/typography/TypographyHeadings'
 
 const TypographyPage = () => {
   return (
-    <Grid container spacing={6} className='match-height'>
+    <Grid container spacing={6}>
       <Grid item xs={12}>
         <TypographyHeadings />
       </Grid>

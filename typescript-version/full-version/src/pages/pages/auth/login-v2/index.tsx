@@ -131,7 +131,7 @@ const LoginV2 = () => {
           <LoginIllustrationWrapper>
             <LoginIllustration
               alt='login-illustration'
-              src={`/images/pages/auth-v2-login-illustration-${theme.palette.mode === 'light' ? 'light' : 'dark'}.png`}
+              src={`/images/pages/auth-v2-login-illustration-${theme.palette.mode}.png`}
             />
           </LoginIllustrationWrapper>
           <FooterIllustrationsV2 />
