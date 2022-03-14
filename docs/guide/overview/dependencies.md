@@ -40,6 +40,8 @@ The following dependencies are common and required to run the template. Do not t
 ## Calendar
 
 ```json
+"@fullcalendar/common"
+"@fullcalendar/core"
 "@fullcalendar/daygrid"
 "@fullcalendar/interaction"
 "@fullcalendar/list"
