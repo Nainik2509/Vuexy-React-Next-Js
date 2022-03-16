@@ -58,8 +58,9 @@ const ListItem = styled(MuiListItem)<ListItemProps>(({ theme }) => ({
 }))
 
 const NavigationMenu = styled(Paper)(({ theme }) => ({
+  overflowY: 'scroll',
   padding: theme.spacing(2, 0),
-  maxHeight: 'calc(100vh - 5rem)',
+  maxHeight: 'calc(100vh - 15rem)',
   backgroundColor: theme.palette.background.paper,
   ...(themeConfig.menuTextTruncate ? { width: 250 } : { minWidth: 250 }),
 
