@@ -58,9 +58,9 @@ const ListItem = styled(MuiListItem)<ListItemProps>(({ theme }) => ({
 }))
 
 const NavigationMenu = styled(Paper)(({ theme }) => ({
-  overflowY: 'scroll',
+  overflowY: 'auto',
   padding: theme.spacing(2, 0),
-  maxHeight: 'calc(100vh - 15rem)',
+  maxHeight: 'calc(100vh - 13rem)',
   backgroundColor: theme.palette.background.paper,
   ...(themeConfig.menuTextTruncate ? { width: 250 } : { minWidth: 250 }),
 
@@ -262,7 +262,7 @@ const HorizontalNavGroup = (props: Props) => {
               >
                 <NavigationMenu
                   sx={{
-                    ...(hasParent ? { overflowY: 'auto', overflowX: 'visible', maxHeight: 'calc(100vh - 20rem)' } : {}),
+                    ...(hasParent ? { overflowY: 'auto', overflowX: 'visible', maxHeight: 'calc(100vh - 21rem)' } : {}),
                     ...(skin === 'bordered'
                       ? { boxShadow: theme.shadows[0], border: `1px solid ${theme.palette.divider}` }
                       : { boxShadow: theme.shadows[4] })
