@@ -1,9 +1,18 @@
+<script>
+export default {
+  data() {
+    return {
+      isHidden: false,
+    };
+  },
+};
+</script>
+
 <template>
-    <div class="survey-popupxx" style="
+    <div v-show="!isHidden" class="survey-popupxx" style="
         position: fixed;
         right: 2rem;
         bottom: 2rem;
-
         width: 235px;
         box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.08);
         border: 1px solid #ddd;
@@ -11,7 +20,10 @@
         border-radius: 6px;
         padding: 1rem;
     ">
-        <span style="font-size: 1.3rem">🥳</span>
+        <div style="display: flex; justify-content: space-between; align-items: center">
+            <span style="font-size: 1.3rem">🥳</span>
+            <span style="font-size: 1.3rem; color: #939393; cursor: pointer;" @click="isHidden = true">&times;</span>
+        </div>
         <p style="font-size: 0.9rem; color: #4e6e8e">Help us provide the integration and customization you need.
         <br>
         <b>Save more hours</b> 🕖 by letting us know how you want our template to be.</p>
