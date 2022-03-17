@@ -37,6 +37,14 @@ import CustomAvatar from 'src/@core/components/mui/avatar'
 // ** Chat App Components Imports
 import UserProfileLeft from 'src/views/apps/chat/UserProfileLeft'
 
+const ScrollWrapper = ({ children, hidden }: { children: ReactNode; hidden: boolean }) => {
+  if (hidden) {
+    return <Box sx={{ height: '100%', overflow: 'auto' }}>{children}</Box>
+  } else {
+    return <PerfectScrollbar options={{ wheelPropagation: false }}>{children}</PerfectScrollbar>
+  }
+}
+
 const SidebarLeft = (props: ChatSidebarLeftType) => {
   // ** Props
   const {
@@ -103,14 +111,6 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
       const arr = store.chats.filter(i => i.id === id)
 
       return !!arr.length
-    }
-  }
-
-  const ScrollWrapper = ({ children }: { children: ReactNode }) => {
-    if (hidden) {
-      return <Box sx={{ height: '100%', overflow: 'auto' }}>{children}</Box>
-    } else {
-      return <PerfectScrollbar options={{ wheelPropagation: false }}>{children}</PerfectScrollbar>
     }
   }
 
@@ -434,7 +434,7 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
         </Box>
 
         <Box sx={{ height: `calc(100% - 4.0625rem)` }}>
-          <ScrollWrapper>
+          <ScrollWrapper hidden={hidden}>
             <Box sx={{ p: (theme: Theme) => theme.spacing(7, 3, 3) }}>
               <Typography variant='h6' sx={{ ml: 3, mb: 3, color: 'primary.main' }}>
                 Chats
