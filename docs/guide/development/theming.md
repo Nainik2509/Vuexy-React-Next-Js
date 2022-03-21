@@ -119,7 +119,7 @@ typography: {
 ```
 
 ::: tip Reference:
-[https://themeselection.com/products/master-mui-react-nextjs-admin-template/](https://themeselection.com/products/master-mui-react-nextjs-admin-template/demo-1/ui/typography)
+[https://demos.themeselection.com/master-react-mui-nextjs/demo-1/ui/typography/](https://demos.themeselection.com/master-react-mui-nextjs/demo-1/ui/typography/)
 
 MUI: [https://mui.com/customization/typography/](https://mui.com/customization/typography/)
 :::
