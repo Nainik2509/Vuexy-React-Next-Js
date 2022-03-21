@@ -1,9 +1,9 @@
 <p align="center">
    <a href="https://themeselection.com/products/master-mui-react-nextjs-admin-template/" target="_blank">
-      <img src="https://user-images.githubusercontent.com/64475785/151975658-07d55d5b-01c0-4481-bc40-4bfc7a8d1767.svg" alt="master-logo" width="30px" height="auto">
+      <img src="https://user-images.githubusercontent.com/64475785/159212288-c7d90c1a-4a72-409f-b687-4863931cda29.svg" alt="materio-logo" width="60px" height="auto">
    </a>
 </p>
-  
+
 <h1 align="center">
    <a href="https://themeselection.com/products/master-mui-react-nextjs-admin-template/" target="_blank" align="center">
       Master - MUI React NextJS Admin Template
@@ -12,7 +12,7 @@
 
 <p align="center">Most Powerful & Comprehensive MUI React NextJS Admin Dashboard Template built for developers!</p>
 
-<p align="center">   
+<p align="center">
   <a href="https://twitter.com/Theme_Selection" target="_blank">
      <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/Theme_Selection">
   </a>
