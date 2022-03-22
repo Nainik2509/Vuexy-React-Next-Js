@@ -101,7 +101,6 @@ const navigation = (): VerticalNavItemsType => {
         }
       ]
     },
-
     {
       title: 'Roles & Permissions',
       icon: LockOutline,

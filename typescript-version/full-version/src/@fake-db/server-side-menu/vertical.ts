@@ -13,7 +13,7 @@ const navigation: VerticalNavItemsType = [
     children: [
       {
         title: 'Analytics',
-        path: '/'
+        path: '/dashboards/analytics'
       },
       {
         title: 'eCommerce',
@@ -80,7 +80,6 @@ const navigation: VerticalNavItemsType = [
       }
     ]
   },
-
   {
     title: 'Roles & Permissions',
     icon: 'LockOutline',
@@ -451,6 +450,13 @@ const navigation: VerticalNavItemsType = [
         path: '/charts/chartjs'
       }
     ]
+  },
+  {
+    path: '/acl',
+    action: 'read',
+    subject: 'acl-page',
+    icon: 'ShieldOutline',
+    title: 'Access Control'
   },
   {
     title: 'Others',

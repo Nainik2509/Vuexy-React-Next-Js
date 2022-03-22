@@ -10,7 +10,7 @@ const navigation = [
     children: [
       {
         title: 'Analytics',
-        path: '/'
+        path: '/dashboards/analytics'
       },
       {
         title: 'eCommerce',
@@ -447,6 +447,13 @@ const navigation = [
         path: '/charts/chartjs'
       }
     ]
+  },
+  {
+    path: '/acl',
+    action: 'read',
+    subject: 'acl-page',
+    icon: 'ShieldOutline',
+    title: 'Access Control'
   },
   {
     title: 'Others',

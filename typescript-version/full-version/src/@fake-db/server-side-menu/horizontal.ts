@@ -12,7 +12,7 @@ const navigation: HorizontalNavItemsType = [
       {
         icon: 'ChartTimelineVariant',
         title: 'Analytics',
-        path: '/'
+        path: '/dashboards/analytics'
       },
       {
         icon: 'CartOutline',
@@ -468,6 +468,13 @@ const navigation: HorizontalNavItemsType = [
     title: 'Others',
     icon: 'DotsHorizontal',
     children: [
+      {
+        path: '/acl',
+        action: 'read',
+        subject: 'acl-page',
+        icon: 'ShieldOutline',
+        title: 'Access Control'
+      },
       {
         title: 'Menu Levels',
         icon: 'Menu',
