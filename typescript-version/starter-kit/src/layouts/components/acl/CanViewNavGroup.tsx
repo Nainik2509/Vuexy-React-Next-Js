@@ -8,7 +8,7 @@ import { ReactNode } from 'react'
 import { NavGroup } from 'src/@core/layouts/types'
 
 interface Props {
-  navGroup: NavGroup
+  navGroup?: NavGroup
   children: ReactNode
 }
 

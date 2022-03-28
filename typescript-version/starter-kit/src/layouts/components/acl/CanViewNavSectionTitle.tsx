@@ -9,7 +9,7 @@ import { NavSectionTitle } from 'src/@core/layouts/types'
 
 interface Props {
   children: ReactNode
-  navTitle: NavSectionTitle
+  navTitle?: NavSectionTitle
 }
 
 const CanViewNavSectionTitle = (props: Props) => {

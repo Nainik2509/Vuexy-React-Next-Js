@@ -8,7 +8,7 @@ import { ReactNode } from 'react'
 import { NavLink } from 'src/@core/layouts/types'
 
 interface Props {
-  navLink: NavLink
+  navLink?: NavLink
   children: ReactNode
 }
 

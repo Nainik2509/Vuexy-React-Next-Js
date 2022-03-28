@@ -4,8 +4,10 @@ import { Fragment, SyntheticEvent, useEffect, useState } from 'react'
 // ** MUI Imports
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
-import { styled } from '@mui/material/styles'
 import IconButton from '@mui/material/IconButton'
+
+// ** Icons Imports
+import Translate from 'mdi-material-ui/Translate'
 
 // ** Third Party Import
 import { useTranslation } from 'react-i18next'
@@ -17,19 +19,6 @@ interface Props {
   settings: Settings
   saveSettings: (values: Settings) => void
 }
-
-// Styled component for flag images
-const CountryFlag = styled('img')({
-  marginRight: '0.5rem',
-  width: '22px !important',
-  height: '16.5px !important',
-  '&.selected-lang': {
-    marginRight: 0,
-    width: '24px !important',
-    height: '24px !important',
-    borderRadius: '50% !important'
-  }
-})
 
 const LanguageDropdown = ({ settings, saveSettings }: Props) => {
   // ** State
@@ -60,16 +49,6 @@ const LanguageDropdown = ({ settings, saveSettings }: Props) => {
     setAnchorEl(null)
   }
 
-  const selectedLangCountryCode = () => {
-    if (i18n.language === 'fr') {
-      return 'fr'
-    } else if (i18n.language === 'ar') {
-      return 'ar'
-    } else {
-      return 'en'
-    }
-  }
-
   const handleLangItemClick = (lang: 'en' | 'fr' | 'ar') => {
     i18n.changeLanguage(lang)
     handleLangDropdownClose()
@@ -84,17 +63,13 @@ const LanguageDropdown = ({ settings, saveSettings }: Props) => {
         onClick={handleLangDropdownOpen}
         sx={layout === 'vertical' ? { mr: 0.75 } : { mx: 0.75 }}
       >
-        <CountryFlag
-          className='selected-lang'
-          alt={`${selectedLangCountryCode()}-flag`}
-          src={`/images/flags/${selectedLangCountryCode()}-round.svg`}
-        />
+        <Translate />
       </IconButton>
       <Menu
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
         onClose={handleLangDropdownClose}
-        sx={{ '& .MuiMenu-paper': { mt: 4, minWidth: 160 } }}
+        sx={{ '& .MuiMenu-paper': { mt: 4, minWidth: 130 } }}
         anchorOrigin={{ vertical: 'bottom', horizontal: direction === 'ltr' ? 'right' : 'left' }}
         transformOrigin={{ vertical: 'top', horizontal: direction === 'ltr' ? 'right' : 'left' }}
       >
@@ -106,7 +81,6 @@ const LanguageDropdown = ({ settings, saveSettings }: Props) => {
             saveSettings({ ...settings, direction: 'ltr' })
           }}
         >
-          <CountryFlag alt='en-flag' src='/images/flags/en.svg' />
           English
         </MenuItem>
         <MenuItem
@@ -117,7 +91,6 @@ const LanguageDropdown = ({ settings, saveSettings }: Props) => {
             saveSettings({ ...settings, direction: 'ltr' })
           }}
         >
-          <CountryFlag alt='fr-flag' src='/images/flags/fr.svg' />
           French
         </MenuItem>
         <MenuItem
@@ -128,7 +101,6 @@ const LanguageDropdown = ({ settings, saveSettings }: Props) => {
             saveSettings({ ...settings, direction: 'rtl' })
           }}
         >
-          <CountryFlag alt='ar-flag' src='/images/flags/ar.svg' />
           Arabic
         </MenuItem>
       </Menu>

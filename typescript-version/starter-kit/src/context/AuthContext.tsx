@@ -57,6 +57,13 @@ const AuthProvider = ({ children }: Props) => {
             setLoading(false)
             setUser({ ...response.data.userData })
           })
+          .catch(() => {
+            localStorage.removeItem('userData')
+            localStorage.removeItem('refreshToken')
+            localStorage.removeItem('accessToken')
+            setUser(null)
+            setLoading(false)
+          })
       } else {
         setLoading(false)
       }
