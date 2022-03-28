@@ -13,7 +13,7 @@ const CanViewNavGroup = props => {
 
   
 
-  return <>{children}</>
+  return navGroup && canViewMenuGroup(navGroup) ? <>{children}</> : null
 }
 
 export default CanViewNavGroup

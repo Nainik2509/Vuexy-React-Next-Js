@@ -691,7 +691,7 @@ mock.onPost('/apps/users/add-user').reply(config => {
 
 // GET: Updated DATA
 mock.onGet('/apps/users/list').reply(config => {
-  const { q = '', role = null, status = null, currentPlan = null } = config.params
+  const { q = '', role = null, status = null, currentPlan = null } = config.params ?? ''
   const queryLowered = q.toLowerCase()
 
   const filteredData = data.users.filter(

@@ -14,6 +14,9 @@ import Cellphone from 'mdi-material-ui/Cellphone'
 import CogOutline from 'mdi-material-ui/CogOutline'
 import CircleOutline from 'mdi-material-ui/CircleOutline'
 
+// ** Third Party Imports
+import axios from 'axios'
+
 // Styled CardContent component
 const StyledCardContent = styled(CardContent)(({ theme }) => ({
   display: 'flex',
@@ -145,6 +148,33 @@ const KnowledgeBaseCategoryQuestion = () => {
       </StyledGrid>
     </Grid>
   )
+}
+
+export const getStaticPaths = async () => {
+  const res = await axios.get('/pages/knowledge-base')
+  const data = await res.data
+  const CategoryResponse = await axios.get('/pages/knowledge-base/categories')
+  const categoryData = await CategoryResponse.data
+  const paths = []
+  data.forEach(item => {
+    const category = `${item.category}`
+    categoryData.forEach(categoryItem => {
+      categoryItem.questions.forEach(question => {
+        paths.push({ params: { category, question: `${question.slug}` } })
+      })
+    })
+  })
+
+  return {
+    paths,
+    fallback: false
+  }
+}
+
+export const getStaticProps = () => {
+  return {
+    props: {}
+  }
 }
 
 export default KnowledgeBaseCategoryQuestion

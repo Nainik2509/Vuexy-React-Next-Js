@@ -97,11 +97,14 @@ mock.onGet('/auth/me').reply(config => {
 
   // get the decoded payload and header
   const decoded = jwt.decode(token, { complete: true })
+  if (decoded) {
+    // @ts-ignore
+    const { id: userId } = decoded.payload
+    const userData = JSON.parse(JSON.stringify(users.find(u => u.id === userId)))
+    delete userData.password
 
-  // @ts-ignore
-  const { id: userId } = decoded.payload
-  const userData = JSON.parse(JSON.stringify(users.find(u => u.id === userId)))
-  delete userData.password
-
-  return [200, { userData }]
+    return [200, { userData }]
+  } else {
+    return [401, { error: { error: 'Invalid User' } }]
+  }
 })

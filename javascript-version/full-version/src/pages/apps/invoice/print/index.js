@@ -4,13 +4,8 @@ import BlankLayout from 'src/@core/layouts/BlankLayout'
 // ** Demo Components Imports
 import PrintPage from 'src/views/apps/invoice/print/PrintPage'
 
-const InvoicePrint = ({ id }) => {
-  return <PrintPage id={id || '4987'} />
-}
-InvoicePrint.getInitialProps = async ({ query }) => {
-  const { id } = query
-
-  return { id }
+const InvoicePrint = () => {
+  return <PrintPage id='4987' />
 }
 InvoicePrint.getLayout = page => <BlankLayout>{page}</BlankLayout>
 InvoicePrint.setConfig = () => {

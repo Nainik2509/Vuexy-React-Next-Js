@@ -98,6 +98,7 @@ const KanbanBoard = props => {
             rules={{ required: true }}
             render={({ field: { value, onChange } }) => (
               <TextField
+                autoFocus
                 size='small'
                 value={value}
                 label='Board Title'

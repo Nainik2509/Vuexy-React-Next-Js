@@ -36,10 +36,7 @@ const FooterIllustrationsV2 = props => {
     return (
       <Fragment>
         {image || <TreeImg alt='tree' src='/images/pages/tree.png' />}
-        <MaskImg
-          alt='mask'
-          src={`/images/pages/auth-v2-mask-${theme.palette.mode === 'light' ? 'light' : 'dark'}.png`}
-        />
+        <MaskImg alt='mask' src={`/images/pages/auth-v2-mask-${theme.palette.mode}.png`} />
       </Fragment>
     )
   } else {

@@ -31,7 +31,8 @@ import { hexToRGBA } from '../utils/hex-to-rgba'
 const HorizontalLayoutWrapper = styled('div')({
   display: 'flex',
   minHeight: '100vh',
-  flexDirection: 'column'
+  flexDirection: 'column',
+  ...(themeConfig.horizontalMenuAnimation && { overflow: 'clip' })
 })
 
 const Toolbar = styled(MuiToolbar)(({ theme }) => ({

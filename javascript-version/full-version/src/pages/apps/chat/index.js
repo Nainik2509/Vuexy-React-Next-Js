@@ -36,10 +36,10 @@ const AppChat = () => {
   const store = useSelector(state => state.chat)
 
   // ** Vars
-  const { skin, layout, navHidden } = settings
   const smAbove = useMediaQuery(theme.breakpoints.up('sm'))
   const sidebarWidth = smAbove ? 370 : 300
   const mdAbove = useMediaQuery(theme.breakpoints.up('md'))
+  const { skin, appBar, footer, layout, navHidden } = settings
 
   const statusObj = {
     busy: 'error',
@@ -57,7 +57,8 @@ const AppChat = () => {
 
   const calculateAppHeight = () => {
     return `(${
-      theme.mixins.toolbar.minHeight * (layout === 'horizontal' && !navHidden ? 2 : 1) + 56
+      (appBar === 'hidden' ? 0 : theme.mixins.toolbar.minHeight) * (layout === 'horizontal' && !navHidden ? 2 : 1) +
+      (footer === 'hidden' ? 0 : 56)
     }px + ${theme.spacing(6)} * 2)`
   }
 
@@ -68,7 +69,6 @@ const AppChat = () => {
         width: '100%',
         display: 'flex',
         borderRadius: 1,
-        minHeight: '100%',
         overflow: 'hidden',
         position: 'relative',
         backgroundColor: 'background.paper',

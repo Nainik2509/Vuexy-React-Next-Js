@@ -11,7 +11,7 @@ const CanViewNavSectionTitle = props => {
   
   
 
-  return <>{children}</>
+  return ability && ability.can(navTitle?.action, navTitle?.subject) ? <>{children}</> : null
 }
 
 export default CanViewNavSectionTitle

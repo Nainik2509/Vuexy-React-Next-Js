@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Chip from '@mui/material/Chip'
+import Fade from '@mui/material/Fade'
 import List from '@mui/material/List'
 import Paper from '@mui/material/Paper'
 import Typography from '@mui/material/Typography'
@@ -47,8 +48,9 @@ const ListItem = styled(MuiListItem)(({ theme }) => ({
 }))
 
 const NavigationMenu = styled(Paper)(({ theme }) => ({
+  overflowY: 'auto',
   padding: theme.spacing(2, 0),
-  maxHeight: 'calc(100vh - 5rem)',
+  maxHeight: 'calc(100vh - 13rem)',
   backgroundColor: theme.palette.background.paper,
   ...(themeConfig.menuTextTruncate ? { width: 250 } : { minWidth: 250 }),
   '&::-webkit-scrollbar': {
@@ -81,6 +83,7 @@ const HorizontalNavGroup = props => {
   const router = useRouter()
   const currentURL = router.pathname
   const { skin, direction } = settings
+  const { navSubItemIcon, menuTextTruncate, horizontalMenuToggle, horizontalMenuAnimation } = themeConfig
   const popperOffsetHorizontal = direction === 'rtl' ? 16 : -16
   const popperPlacement = direction === 'rtl' ? 'bottom-end' : 'bottom-start'
   const popperPlacementSubMenu = direction === 'rtl' ? 'left-start' : 'right-start'
@@ -126,15 +129,12 @@ const HorizontalNavGroup = props => {
     handleGroupClose()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.asPath])
-
-  const handleMenuClick = () => {
-    setMenuOpen(!menuOpen)
-  }
-  const IconTag = item.icon ? item.icon : themeConfig.navSubItemIcon
+  const IconTag = item.icon ? item.icon : navSubItemIcon
   const ToggleIcon = direction === 'rtl' ? ChevronLeft : ChevronRight
-  const WrapperCondition = themeConfig.horizontalMenuToggle === 'click'
+  const WrapperCondition = horizontalMenuToggle === 'click'
   const MainWrapper = WrapperCondition ? ClickAwayListener : 'div'
   const ChildWrapper = WrapperCondition ? 'div' : Fragment
+  const AnimationWrapper = horizontalMenuAnimation ? Fade : Fragment
 
   const childMenuGroupStyles = () => {
     if (attributes && attributes.popper) {
@@ -165,7 +165,7 @@ const HorizontalNavGroup = props => {
               aria-haspopup='true'
               {...(WrapperCondition ? {} : { onMouseEnter: handleGroupOpen })}
               className={clsx('menu-group', { 'Mui-selected': hasActiveChild(item, currentURL) })}
-              {...(themeConfig.horizontalMenuToggle === 'click' ? { onClick: handleMenuToggleOnClick } : {})}
+              {...(horizontalMenuToggle === 'click' ? { onClick: handleMenuToggleOnClick } : {})}
               sx={{
                 ...(menuOpen ? { backgroundColor: theme.palette.action.hover } : {}),
                 ...(!hasParent
@@ -190,14 +190,13 @@ const HorizontalNavGroup = props => {
                   justifyContent: 'space-between'
                 }}
                 ref={setReferenceElement}
-                onClick={handleMenuClick}
               >
                 <Box
                   sx={{
                     display: 'flex',
                     alignItems: 'center',
                     flexDirection: 'row',
-                    ...(themeConfig.menuTextTruncate && { overflow: 'hidden' })
+                    ...(menuTextTruncate && { overflow: 'hidden' })
                   }}
                 >
                   <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
@@ -207,7 +206,7 @@ const HorizontalNavGroup = props => {
                       iconProps={{ sx: IconTag === CircleOutline ? { fontSize: '1rem' } : { fontSize: '1.125rem' } }}
                     />
                   </ListItemIcon>
-                  <Typography {...(themeConfig.menuTextTruncate && { noWrap: true })}>
+                  <Typography {...(menuTextTruncate && { noWrap: true })}>
                     <Translations text={item.title} />
                   </Typography>
                 </Box>
@@ -232,29 +231,31 @@ const HorizontalNavGroup = props => {
                 </Box>
               </Box>
             </ListItem>
-            <Box
-              ref={setPopperElement}
-              style={styles.popper}
-              {...attributes.popper}
-              sx={{
-                zIndex: theme.zIndex.appBar,
-                display: menuOpen ? 'block' : 'none',
-                pl: childMenuGroupStyles() === 'left' ? (skin === 'bordered' ? 1.5 : 1.25) : 0,
-                pr: childMenuGroupStyles() === 'right' ? (skin === 'bordered' ? 1.5 : 1.25) : 0,
-                ...(hasParent ? { position: 'fixed !important' } : { pt: skin === 'bordered' ? 5.25 : 5.5 })
-              }}
-            >
-              <NavigationMenu
+            <AnimationWrapper {...(horizontalMenuAnimation && { in: menuOpen, timeout: { exit: 300, enter: 400 } })}>
+              <Box
+                ref={setPopperElement}
+                style={styles.popper}
+                {...attributes.popper}
                 sx={{
-                  ...(hasParent ? { overflowY: 'auto', overflowX: 'visible', maxHeight: 'calc(100vh - 20rem)' } : {}),
-                  ...(skin === 'bordered'
-                    ? { boxShadow: theme.shadows[0], border: `1px solid ${theme.palette.divider}` }
-                    : { boxShadow: theme.shadows[4] })
+                  zIndex: theme.zIndex.appBar,
+                  ...(!horizontalMenuAnimation && { display: menuOpen ? 'block' : 'none' }),
+                  pl: childMenuGroupStyles() === 'left' ? (skin === 'bordered' ? 1.5 : 1.25) : 0,
+                  pr: childMenuGroupStyles() === 'right' ? (skin === 'bordered' ? 1.5 : 1.25) : 0,
+                  ...(hasParent ? { position: 'fixed !important' } : { pt: skin === 'bordered' ? 5.25 : 5.5 })
                 }}
               >
-                <HorizontalNavItems {...props} hasParent horizontalNavItems={item.children} />
-              </NavigationMenu>
-            </Box>
+                <NavigationMenu
+                  sx={{
+                    ...(hasParent ? { overflowY: 'auto', overflowX: 'visible', maxHeight: 'calc(100vh - 21rem)' } : {}),
+                    ...(skin === 'bordered'
+                      ? { boxShadow: theme.shadows[0], border: `1px solid ${theme.palette.divider}` }
+                      : { boxShadow: theme.shadows[4] })
+                  }}
+                >
+                  <HorizontalNavItems {...props} hasParent horizontalNavItems={item.children} />
+                </NavigationMenu>
+              </Box>
+            </AnimationWrapper>
           </List>
         </ChildWrapper>
       </MainWrapper>

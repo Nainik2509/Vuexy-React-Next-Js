@@ -1,13 +1,8 @@
 // ** Demo Components Imports
 import Preview from 'src/views/apps/invoice/preview/Preview'
 
-const InvoicePreview = ({ id }) => {
-  return <Preview id={id || '4987'} />
-}
-InvoicePreview.getInitialProps = async ({ query }) => {
-  const { id } = query
-
-  return { id }
+const InvoicePreview = () => {
+  return <Preview id='4987' />
 }
 
 export default InvoicePreview

@@ -335,10 +335,5 @@ const InvoicePrint = ({ id }) => {
     return null
   }
 }
-InvoicePrint.getInitialProps = async ({ query }) => {
-  const { id } = query
-
-  return { id }
-}
 
 export default InvoicePrint

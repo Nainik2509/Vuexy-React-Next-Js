@@ -285,10 +285,10 @@ const data = {
   ]
 }
 
-const reOrderChats = (arr, from, to) => {
+const reorderChats = (arr, from, to) => {
   const item = arr.splice(from, 1)
 
-  // Move the item to its new position
+  // ** Move the item to its new position
   arr.splice(to, 0, item[0])
 }
 
@@ -305,6 +305,12 @@ mock.onGet('/apps/chat/chats-and-contacts').reply(() => {
     return contact
   })
 
+  const contactsToShow = data.contacts.filter(co => {
+    return !data.chats.some(ch => {
+      return co.id === ch.id
+    })
+  })
+
   const profileUserData = {
     id: data.profileUser.id,
     avatar: data.profileUser.avatar,
@@ -312,7 +318,7 @@ mock.onGet('/apps/chat/chats-and-contacts').reply(() => {
     status: data.profileUser.status
   }
 
-  return [200, { chatsContacts, contacts: data.contacts, profileUser: profileUserData }]
+  return [200, { chatsContacts, contacts: contactsToShow, profileUser: profileUserData }]
 })
 
 // ------------------------------------------------
@@ -376,7 +382,7 @@ mock.onPost('/apps/chat/send-msg').reply(config => {
 
   // @ts-ignore
   if (isNewChat) response.chat = activeChat
-  reOrderChats(
+  reorderChats(
     data.chats,
     data.chats.findIndex(i => i.id === response.id),
     0
