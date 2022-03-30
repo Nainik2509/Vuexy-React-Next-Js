@@ -272,6 +272,12 @@ Result:
 
 ## Horizontal Navigation Structure
 
+::: danger Important!
+So, you have decided to use the Horizontal Layout and will create Horizontal Navigation based on the below docs. Please note that on smaller screens, our layout is converted to Vertical and you will also need to create Vertical Navigation.
+
+Please refer to the [Vertical Navigation Structure](/guide/layout/navigation-menu-structure.html#vertical-navigation-structure) guide as well.
+:::
+
 Following are the items that you can create for your horizontal navigation:
 
 - [Navigation Group](#_1-navigation-group)
