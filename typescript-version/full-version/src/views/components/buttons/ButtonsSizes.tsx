@@ -54,7 +54,7 @@ const ButtonsSizes = () => {
         <IconButton aria-label='capture screenshot' color='secondary'>
           <CameraIris />
         </IconButton>
-        <IconButton aria-label='capture screenshot' color='secondary'>
+        <IconButton aria-label='capture screenshot' color='secondary' size='large'>
           <CameraIris fontSize='large' />
         </IconButton>
       </div>
