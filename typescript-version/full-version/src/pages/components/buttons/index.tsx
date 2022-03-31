@@ -145,7 +145,7 @@ const Buttons = () => {
             jsx: source.ButtonsFabJSXCode
           }}
         >
-          <Typography>
+          <Typography sx={{ mb: 4 }}>
             Use <code>color</code> prop with <code>&lt;Fab&gt;</code> component for different colored Floating Action
             Button and <code>variant='extended'</code> prop for extended (not round) Floating Action Button.
           </Typography>
