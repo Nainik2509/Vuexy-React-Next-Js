@@ -156,12 +156,12 @@ const DefaultSuggestions = ({ setOpenDialog }: DefaultSuggestionsProps) => {
   return (
     <Grid container spacing={6} sx={{ ml: 0 }}>
       <Grid item xs={6}>
-        <Typography color='primary' sx={{ textAlign: 'center' }}>
+        <Typography color='primary'>
           <SearchWeb sx={{ mr: 1, fontSize: '1rem', verticalAlign: 'middle' }} />
           Popular Searches
         </Typography>
         <List>
-          <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+          <ListItem disablePadding sx={{ py: 1 }} onClick={() => setOpenDialog(false)}>
             <Link href='/dashboards/ecommerce/' passHref>
               <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
                 <Typography color='primary'>Ecommerce Dashboard</Typography>
@@ -169,7 +169,7 @@ const DefaultSuggestions = ({ setOpenDialog }: DefaultSuggestionsProps) => {
               </Box>
             </Link>
           </ListItem>
-          <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+          <ListItem disablePadding sx={{ py: 1 }} onClick={() => setOpenDialog(false)}>
             <Link href='/pages/account-settings/' passHref>
               <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
                 <Typography color='primary'>Account Settings</Typography>
@@ -177,7 +177,7 @@ const DefaultSuggestions = ({ setOpenDialog }: DefaultSuggestionsProps) => {
               </Box>
             </Link>
           </ListItem>
-          <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+          <ListItem disablePadding sx={{ py: 1 }} onClick={() => setOpenDialog(false)}>
             <Link href='/ui/cards/statistics/' passHref>
               <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
                 <Typography color='primary'>Card Statistics</Typography>
@@ -188,12 +188,12 @@ const DefaultSuggestions = ({ setOpenDialog }: DefaultSuggestionsProps) => {
         </List>
       </Grid>
       <Grid item xs={6}>
-        <Typography color='primary' sx={{ textAlign: 'center' }}>
+        <Typography color='primary'>
           <FileDocumentOutline sx={{ mr: 1, fontSize: '1rem', verticalAlign: 'middle' }} />
           Pages
         </Typography>
         <List>
-          <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+          <ListItem disablePadding sx={{ py: 1 }} onClick={() => setOpenDialog(false)}>
             <Link href='/pages/pricing/' passHref>
               <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
                 <Typography color='primary'>Pricing</Typography>
@@ -201,7 +201,7 @@ const DefaultSuggestions = ({ setOpenDialog }: DefaultSuggestionsProps) => {
               </Box>
             </Link>
           </ListItem>
-          <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+          <ListItem disablePadding sx={{ py: 1 }} onClick={() => setOpenDialog(false)}>
             <Link href='/pages/faq/' passHref>
               <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
                 <Typography color='primary'>FAQ</Typography>
@@ -209,7 +209,7 @@ const DefaultSuggestions = ({ setOpenDialog }: DefaultSuggestionsProps) => {
               </Box>
             </Link>
           </ListItem>
-          <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+          <ListItem disablePadding sx={{ py: 1 }} onClick={() => setOpenDialog(false)}>
             <Link href='/pages/dialog-examples/' passHref>
               <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
                 <Typography color='primary'>Dialog Examples</Typography>
@@ -220,12 +220,12 @@ const DefaultSuggestions = ({ setOpenDialog }: DefaultSuggestionsProps) => {
         </List>
       </Grid>
       <Grid item xs={6}>
-        <Typography color='primary' sx={{ textAlign: 'center' }}>
+        <Typography color='primary'>
           <CardOutline sx={{ mr: 1, fontSize: '1rem', verticalAlign: 'middle' }} />
           Components
         </Typography>
         <List>
-          <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+          <ListItem disablePadding sx={{ py: 1 }} onClick={() => setOpenDialog(false)}>
             <Link href='/components/buttons/' passHref>
               <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
                 <Typography color='primary'>Buttons</Typography>
@@ -233,7 +233,7 @@ const DefaultSuggestions = ({ setOpenDialog }: DefaultSuggestionsProps) => {
               </Box>
             </Link>
           </ListItem>
-          <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+          <ListItem disablePadding sx={{ py: 1 }} onClick={() => setOpenDialog(false)}>
             <Link href='/components/avatars/' passHref>
               <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
                 <Typography color='primary'>Avatars</Typography>
@@ -241,7 +241,7 @@ const DefaultSuggestions = ({ setOpenDialog }: DefaultSuggestionsProps) => {
               </Box>
             </Link>
           </ListItem>
-          <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+          <ListItem disablePadding sx={{ py: 1 }} onClick={() => setOpenDialog(false)}>
             <Link href='/components/timeline/' passHref>
               <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
                 <Typography color='primary'>Timeline</Typography>
@@ -252,12 +252,12 @@ const DefaultSuggestions = ({ setOpenDialog }: DefaultSuggestionsProps) => {
         </List>
       </Grid>
       <Grid item xs={6}>
-        <Typography color='primary' sx={{ textAlign: 'center' }}>
+        <Typography color='primary'>
           <AlertCircleOutline sx={{ mr: 1, fontSize: '1rem', verticalAlign: 'middle' }} />
           Forms
         </Typography>
         <List>
-          <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+          <ListItem disablePadding sx={{ py: 1 }} onClick={() => setOpenDialog(false)}>
             <Link href='/forms/form-elements/text-field/' passHref>
               <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
                 <Typography color='primary'>Textfield</Typography>
@@ -265,7 +265,7 @@ const DefaultSuggestions = ({ setOpenDialog }: DefaultSuggestionsProps) => {
               </Box>
             </Link>
           </ListItem>
-          <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+          <ListItem disablePadding sx={{ py: 1 }} onClick={() => setOpenDialog(false)}>
             <Link href='/forms/form-layouts/' passHref>
               <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
                 <Typography color='primary'>Form Layouts</Typography>
@@ -273,7 +273,7 @@ const DefaultSuggestions = ({ setOpenDialog }: DefaultSuggestionsProps) => {
               </Box>
             </Link>
           </ListItem>
-          <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+          <ListItem disablePadding sx={{ py: 1 }} onClick={() => setOpenDialog(false)}>
             <Link href='/forms/form-validation/' passHref>
               <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
                 <Typography color='primary'>Form Validation</Typography>
@@ -424,9 +424,9 @@ const AutocompleteComponent = () => {
                       <UserIcon
                         icon={IconTag}
                         componentType='search'
-                        iconProps={{ color: 'primary', fontSize: 'small', sx: { mr: 2.5 } }}
+                        iconProps={{ fontSize: 'small', sx: { mr: 2.5, color: 'text.primary' } }}
                       />
-                      <Typography color='primary' sx={{ fontSize: '0.875rem' }}>
+                      <Typography color='text.primary' sx={{ fontSize: '0.875rem' }}>
                         {(option as AppBarSearchType).title}
                       </Typography>
                     </ListItemButton>
