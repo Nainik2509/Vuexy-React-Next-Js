@@ -31,7 +31,7 @@ const ServerSideToolbar = (props: Props) => {
   return (
     <StyledGridToolbarContainer>
       <Box>
-        <GridToolbarExport />
+        <GridToolbarExport printOptions={{ disableToolbarButton: true }} />
       </Box>
       <TextField
         variant='standard'
