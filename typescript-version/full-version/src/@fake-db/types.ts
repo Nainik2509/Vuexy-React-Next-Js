@@ -6,44 +6,17 @@ export type AppBarSearchPagesSection = {
   id: number
   url: string
   icon: string
-  type: string
-  title: string
-}
-
-export type AppBarSearchFilesSection = {
-  id: number
-  by: string
-  img: string
-  size: string
-  type: string
-  title: string
-}
-
-export type AppBarSearchContactsSection = {
-  id: number
-  img: string
-  type: string
-  time: string
-  email: string
   title: string
 }
 
 export type AppBarSearchSortedData = {
-  files: AppBarSearchFilesSection[]
   pages: AppBarSearchPagesSection[]
-  contacts: AppBarSearchContactsSection[]
 }
 
 export type AppBarSearchType = {
   id: number
   url?: string
-  type: string
-  img?: string
   title: string
-  by?: string
-  size?: string
-  email?: string
-  time?: string
   icon?: string | string[] | ReactNode
 }
 

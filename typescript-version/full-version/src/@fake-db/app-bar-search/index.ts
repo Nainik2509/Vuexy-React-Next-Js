@@ -9,699 +9,469 @@ const searchData: AppBarSearchType[] = [
     id: 1,
     url: '/',
     icon: 'HomeVariantOutline',
-    title: 'Analytics Dashboard',
-    type: 'pages'
+    title: 'Analytics Dashboard'
   },
   {
     id: 2,
     url: '/dashboards/ecommerce',
     icon: 'HomeVariantOutline',
-    title: 'eCommerce Dashboard',
-    type: 'pages'
+    title: 'eCommerce Dashboard'
   },
   {
     id: 3,
     url: '/apps/email',
     icon: 'EmailOutline',
-    title: 'Email',
-    type: 'pages'
+    title: 'Email'
   },
   {
     id: 4,
     url: '/apps/chat',
     icon: 'MessageOutline',
-    title: 'Chat',
-    type: 'pages'
+    title: 'Chat'
   },
   {
     id: 5,
     url: '/apps/calendar',
     icon: 'CalendarBlankOutline',
-    title: 'Calendar',
-    type: 'pages'
+    title: 'Calendar'
   },
   {
     id: 6,
     url: '/apps/invoice/list',
     icon: 'FormatListNumbered',
-    title: 'Invoice List',
-    type: 'pages'
+    title: 'Invoice List'
   },
   {
     id: 7,
     url: '/apps/invoice/preview',
     icon: 'FileDocumentOutline',
-    title: 'Invoice Preview',
-    type: 'pages'
+    title: 'Invoice Preview'
   },
   {
     id: 8,
     url: '/apps/invoice/edit',
     icon: 'PencilOutline',
-    title: 'Invoice Edit',
-    type: 'pages'
+    title: 'Invoice Edit'
   },
   {
     id: 9,
     url: '/apps/invoice/add',
     icon: 'Plus',
-    title: 'Invoice Add',
-    type: 'pages'
+    title: 'Invoice Add'
   },
   {
     id: 10,
     url: '/apps/user/list',
     icon: 'AccountOutline',
-    title: 'User List',
-    type: 'pages'
+    title: 'User List'
   },
   {
     id: 11,
     url: '/apps/user/view',
     icon: 'FormatListNumbered',
-    title: 'User View',
-    type: 'pages'
+    title: 'User View'
   },
   {
     id: 12,
     url: '/apps/roles',
     icon: 'ShieldOutline',
-    title: 'Roles',
-    type: 'pages'
+    title: 'Roles'
   },
   {
     id: 13,
     url: '/apps/permissions',
     icon: 'LockOutline',
-    title: 'Permissions',
-    type: 'pages'
+    title: 'Permissions'
   },
   {
     id: 14,
     url: '/pages/auth/login-v1',
     icon: 'Login',
-    title: 'Login V1',
-    type: 'pages'
+    title: 'Login V1'
   },
   {
     id: 15,
     url: '/pages/auth/login-v2',
     icon: 'Login',
-    title: 'Login V2',
-    type: 'pages'
+    title: 'Login V2'
   },
   {
     id: 16,
     url: '/pages/auth/login-with-appbar',
     icon: 'Login',
-    title: 'Login With AppBar',
-    type: 'pages'
+    title: 'Login With AppBar'
   },
   {
     id: 17,
     url: '/pages/auth/register-v1',
     icon: 'AccountPlusOutline',
-    title: 'Register V1',
-    type: 'pages'
+    title: 'Register V1'
   },
   {
     id: 18,
     url: '/pages/auth/register-v2',
     icon: 'AccountPlusOutline',
-    title: 'Register V2',
-    type: 'pages'
+    title: 'Register V2'
   },
   {
     id: 19,
     url: '/pages/auth/forgot-password-v1',
     icon: 'LockOutline',
-    title: 'Forgot Password V1',
-    type: 'pages'
+    title: 'Forgot Password V1'
   },
   {
     id: 20,
     url: '/pages/auth/forgot-password-v2',
     icon: 'LockOutline',
-    title: 'Forgot Password V2',
-    type: 'pages'
+    title: 'Forgot Password V2'
   },
   {
     id: 21,
     url: '/pages/auth/reset-password-v1',
     icon: 'LockReset',
-    title: 'Reset Password V1',
-    type: 'pages'
+    title: 'Reset Password V1'
   },
   {
     id: 22,
     url: '/pages/auth/reset-password-v2',
     icon: 'LockReset',
-    title: 'Reset Password V2',
-    type: 'pages'
+    title: 'Reset Password V2'
   },
   {
     id: 23,
     url: '/pages/account-settings',
     icon: 'CogOutline',
-    title: 'Account Settings',
-    type: 'pages'
+    title: 'Account Settings'
   },
   {
     id: 24,
     url: '/pages/pricing',
     icon: 'CurrencyUsd',
-    title: 'Pricing',
-    type: 'pages'
+    title: 'Pricing'
   },
   {
     id: 25,
     url: '/pages/faq',
     icon: 'HelpCircleOutline',
-    title: 'FAQ',
-    type: 'pages'
+    title: 'FAQ'
   },
   {
     id: 26,
     url: '/pages/knowledge-base',
     icon: 'BookOpenOutline',
-    title: 'Knowledge Base',
-    type: 'pages'
+    title: 'Knowledge Base'
   },
   {
     id: 27,
     url: '/pages/misc/coming-soon',
     icon: 'ClockOutline',
-    title: 'Coming Soon',
-    type: 'pages'
+    title: 'Coming Soon'
   },
   {
     id: 28,
     url: '/pages/misc/under-maintenance',
     icon: 'Screwdriver',
-    title: 'Under Maintenance',
-    type: 'pages'
+    title: 'Under Maintenance'
   },
   {
     id: 29,
     url: '/pages/misc/404-not-found',
     icon: 'AlertCircleOutline',
-    title: 'Page Not Found - 404',
-    type: 'pages'
+    title: 'Page Not Found - 404'
   },
   {
     id: 30,
     url: '/pages/misc/401-not-authorized',
     icon: 'AccountMultipleRemoveOutline',
-    title: 'Not Authorized - 401',
-    type: 'pages'
+    title: 'Not Authorized - 401'
   },
   {
     id: 31,
     url: '/pages/misc/500-server-error',
     icon: 'AccountMultipleRemoveOutline',
-    title: 'Server Error - 500',
-    type: 'pages'
+    title: 'Server Error - 500'
   },
   {
     id: 32,
     url: '/pages/dialog-examples',
     icon: 'VectorArrangeBelow',
-    title: 'Dialog Examples',
-    type: 'pages'
+    title: 'Dialog Examples'
   },
   {
     id: 33,
     url: '/ui/typography',
     icon: 'FormatTextVariantOutline',
-    title: 'Typography',
-    type: 'pages'
+    title: 'Typography'
   },
   {
     id: 34,
     url: '/ui/icons',
     icon: 'StarOutline',
-    title: 'Icons',
-    type: 'pages'
+    title: 'Icons'
   },
   {
     id: 35,
     url: '/ui/cards/basic',
     icon: 'CardOutline',
-    title: 'Card Basic',
-    type: 'pages'
+    title: 'Card Basic'
   },
   {
     id: 36,
     url: '/ui/cards/statistics',
     icon: 'CardTextOutline',
-    title: 'Card Statistics',
-    type: 'pages'
+    title: 'Card Statistics'
   },
   {
     id: 37,
     url: '/ui/cards/advanced',
     icon: 'CardBulletedSettingsOutline',
-    title: 'Card Advanced',
-    type: 'pages'
+    title: 'Card Advanced'
   },
   {
     id: 38,
     url: '/ui/cards/gamification',
     icon: 'CardAccountDetailsOutline',
-    title: 'Card Gamification',
-    type: 'pages'
+    title: 'Card Gamification'
   },
   {
     id: 39,
     url: '/ui/cards/actions',
     icon: 'CardPlusOutline',
-    title: 'Card Actions',
-    type: 'pages'
+    title: 'Card Actions'
   },
   {
     id: 40,
     url: '/components/accordion',
     icon: 'FullscreenExit',
-    title: 'Accordion',
-    type: 'pages'
+    title: 'Accordion'
   },
   {
     id: 41,
     url: '/components/alerts',
     icon: 'AlertOutline',
-    title: 'Alerts',
-    type: 'pages'
+    title: 'Alerts'
   },
   {
     id: 42,
     url: '/components/avatars',
     icon: 'AccountCircleOutline',
-    title: 'Avatars',
-    type: 'pages'
+    title: 'Avatars'
   },
   {
     id: 43,
     url: '/components/badges',
     icon: 'CircleOutline',
-    title: 'Badges',
-    type: 'pages'
+    title: 'Badges'
   },
   {
     id: 44,
     url: '/components/buttons',
     icon: 'GestureTapButton',
-    title: 'Buttons',
-    type: 'pages'
+    title: 'Buttons'
   },
   {
     id: 45,
     url: '/components/button-group',
     icon: 'CheckboxMultipleBlankOutline',
-    title: 'Button Group',
-    type: 'pages'
+    title: 'Button Group'
   },
   {
     id: 46,
     url: '/components/chips',
     icon: 'CardOutline',
-    title: 'Chips',
-    type: 'pages'
+    title: 'Chips'
   },
   {
     id: 47,
     url: '/components/dialogs',
     icon: 'TextBoxOutline',
-    title: 'Dialogs',
-    type: 'pages'
+    title: 'Dialogs'
   },
   {
     id: 48,
     url: '/components/list',
     icon: 'FormatListBulleted',
-    title: 'List',
-    type: 'pages'
+    title: 'List'
   },
   {
     id: 49,
     url: '/components/menu',
     icon: 'Menu',
-    title: 'Menu',
-    type: 'pages'
+    title: 'Menu'
   },
   {
     id: 50,
     url: '/components/pagination',
     icon: 'DotsHorizontal',
-    title: 'Pagination',
-    type: 'pages'
+    title: 'Pagination'
   },
   {
     id: 51,
     url: '/components/ratings',
     icon: 'StarOutline',
-    title: 'Ratings',
-    type: 'pages'
+    title: 'Ratings'
   },
   {
     id: 52,
     url: '/components/snackbar',
     icon: 'AlertCircleOutline',
-    title: 'Snackbar',
-    type: 'pages'
+    title: 'Snackbar'
   },
   {
     id: 53,
     url: '/components/tabs',
     icon: 'Tab',
-    title: 'Tabs',
-    type: 'pages'
+    title: 'Tabs'
   },
   {
     id: 54,
     url: '/components/toast',
     icon: 'RectangleOutline',
-    title: 'Toast',
-    type: 'pages'
+    title: 'Toast'
   },
   {
     id: 55,
     url: '/components/timeline',
     icon: 'TimelineOutline',
-    title: 'Timeline',
-    type: 'pages'
+    title: 'Timeline'
   },
   {
     id: 56,
     url: '/components/tree-view',
     icon: 'FileTreeOutline',
-    title: 'Tree View',
-    type: 'pages'
+    title: 'Tree View'
   },
   {
     id: 57,
     url: '/components/more',
     icon: 'ViewGridPlusOutline',
-    title: 'More Components',
-    type: 'pages'
+    title: 'More Components'
   },
   {
     id: 58,
     url: '/forms/form-elements/text-field',
     icon: 'Lastpass',
-    title: 'TextField',
-    type: 'pages'
+    title: 'TextField'
   },
   {
     id: 59,
     url: '/forms/form-elements/select',
     icon: 'FormatListCheckbox',
-    title: 'Select',
-    type: 'pages'
+    title: 'Select'
   },
   {
     id: 60,
     url: '/forms/form-elements/checkbox',
     icon: 'CheckboxOutline',
-    title: 'Checkbox',
-    type: 'pages'
+    title: 'Checkbox'
   },
   {
     id: 61,
     url: '/forms/form-elements/radio',
     icon: 'RadioboxMarked',
-    title: 'Radio',
-    type: 'pages'
+    title: 'Radio'
   },
   {
     id: 62,
     url: '/forms/form-elements/textarea',
     icon: 'CardTextOutline',
-    title: 'Textarea',
-    type: 'pages'
+    title: 'Textarea'
   },
   {
     id: 63,
     url: '/forms/form-elements/autocomplete',
     icon: 'Lastpass',
-    title: 'Autocomplete',
-    type: 'pages'
+    title: 'Autocomplete'
   },
   {
     id: 64,
     url: '/forms/form-elements/pickers',
     icon: 'CalendarRange',
-    title: 'Date Pickers',
-    type: 'pages'
+    title: 'Date Pickers'
   },
   {
     id: 65,
     url: '/forms/form-elements/switch',
     icon: 'ToggleSwitchOutline',
-    title: 'Switch',
-    type: 'pages'
+    title: 'Switch'
   },
   {
     id: 66,
     url: '/forms/form-elements/file-uploader',
     icon: 'TrayArrowUp',
-    title: 'File Uploader',
-    type: 'pages'
+    title: 'File Uploader'
   },
   {
     id: 67,
     url: '/forms/form-elements/editor',
     icon: 'SquareEditOutline',
-    title: 'Editor',
-    type: 'pages'
+    title: 'Editor'
   },
   {
     id: 68,
     url: '/forms/form-elements/slider',
     icon: 'TransitConnectionHorizontal',
-    title: 'Slider',
-    type: 'pages'
+    title: 'Slider'
   },
   {
     id: 69,
     url: '/forms/form-elements/input-mask',
     icon: 'Lastpass',
-    title: 'Input Mask',
-    type: 'pages'
+    title: 'Input Mask'
   },
   {
     id: 70,
     url: '/forms/form-layouts',
     icon: 'ViewGridOutline',
-    title: 'Form Layouts',
-    type: 'pages'
+    title: 'Form Layouts'
   },
   {
     id: 71,
     url: '/forms/form-validation',
     icon: 'AlertOutline',
-    title: 'Form Validation',
-    type: 'pages'
+    title: 'Form Validation'
   },
   {
     id: 72,
     url: '/forms/form-wizard',
     icon: 'TransitConnectionHorizontal',
-    title: 'Form Wizard',
-    type: 'pages'
+    title: 'Form Wizard'
   },
   {
     id: 73,
     url: '/tables/mui',
     icon: 'Table',
-    title: 'Table',
-    type: 'pages'
+    title: 'Table'
   },
   {
     id: 74,
     url: '/tables/data-grid',
     icon: 'Table',
-    title: 'Mui DataGrid',
-    type: 'pages'
+    title: 'Mui DataGrid'
   },
   {
     id: 75,
     url: '/charts/apex-charts',
     icon: 'ChartLine',
-    title: 'Apex Charts',
-    type: 'pages'
+    title: 'Apex Charts'
   },
   {
     id: 76,
     url: '/charts/recharts',
     icon: 'ChartBellCurveCumulative',
-    title: 'Recharts',
-    type: 'pages'
+    title: 'Recharts'
   },
   {
     id: 77,
     url: '/charts/chartjs',
     icon: 'ChartBellCurve',
-    title: 'ChartJS',
-    type: 'pages'
+    title: 'ChartJS'
   },
   {
     id: 78,
     url: '/acl',
     icon: 'ShieldOutline',
-    title: 'Access Control (ACL)',
-    type: 'pages'
-  },
-  {
-    id: 79,
-    img: '/images/icons/file-icons/doc.png',
-    title: 'Passport Image',
-    by: 'Herman Chapman',
-    size: '1.7 mb',
-    type: 'files'
-  },
-  {
-    id: 80,
-    img: '/images/icons/file-icons/xls.png',
-    title: 'Questions',
-    by: 'Lola Waters',
-    size: '52 kb',
-    type: 'files'
-  },
-  {
-    id: 81,
-    img: '/images/icons/file-icons/pdf.png',
-    title: 'Parenting Guide',
-    by: 'Ethan Spencer',
-    size: '1.5 gb',
-    type: 'files'
-  },
-  {
-    id: 82,
-    img: '/images/icons/file-icons/txt.png',
-    title: 'Class Notes',
-    by: 'Jerry Hughes',
-    size: '2.3 mb',
-    type: 'files'
-  },
-  {
-    id: 83,
-    img: '/images/icons/file-icons/xls.png',
-    title: 'Class Attendance',
-    by: 'Jessie Rivera',
-    size: ' 30 kb',
-    type: 'files'
-  },
-  {
-    id: 84,
-    img: '/images/icons/file-icons/pdf.png',
-    title: 'Company Salary',
-    by: 'Lizzie Lawson',
-    size: '52 mb',
-    type: 'files'
-  },
-  {
-    id: 85,
-    img: '/images/icons/file-icons/doc.png',
-    title: 'Company Logo',
-    by: 'Steve Sheldon',
-    size: '29 mb',
-    type: 'files'
-  },
-  {
-    id: 86,
-    img: '/images/icons/file-icons/js.png',
-    title: 'Crime Rates',
-    by: 'Myra Hammond',
-    size: '1.3 mb',
-    type: 'files'
-  },
-  {
-    id: 87,
-    img: '/images/icons/file-icons/pdf.png',
-    title: 'Ulysses',
-    by: 'Lena Briggs',
-    size: '37 kb',
-    type: 'files'
-  },
-  {
-    id: 88,
-    img: '/images/avatars/6.png',
-    title: 'Nora Alvarado',
-    email: 'nephrod@preany.co.uk',
-    time: '21/05/2019',
-    type: 'contacts'
-  },
-  {
-    id: 89,
-    img: '/images/avatars/4.png',
-    title: 'Betty Davidson',
-    email: 'seek@sparaxis.org',
-    time: '14/01/2018',
-    type: 'contacts'
-  },
-  {
-    id: 90,
-    img: '/images/avatars/3.png',
-    title: 'Lilly Mitchell',
-    email: 'vagary@unblist.org',
-    time: '10/08/2019',
-    type: 'contacts'
-  },
-  {
-    id: 91,
-    img: '/images/avatars/7.png',
-    title: 'Fanny Bowers',
-    email: 'designed@insanely.net',
-    time: '01/12/2019',
-    type: 'contacts'
-  },
-  {
-    id: 92,
-    img: '/images/avatars/8.png',
-    title: 'Christina Leonard',
-    email: 'unwieldable@unblist.org',
-    time: '21/05/2019',
-    type: 'contacts'
-  },
-  {
-    id: 93,
-    img: '/images/avatars/5.png',
-    title: 'Lawrence Hopkins',
-    email: 'museist@anaphyte.co.uk',
-    time: '15/11/2019',
-    type: 'contacts'
-  },
-  {
-    id: 94,
-    img: '/images/avatars/6.png',
-    title: 'Abbey Darden',
-    email: 'astema@defectively.co.uk',
-    time: '07/05/2019',
-    type: 'contacts'
-  },
-  {
-    id: 95,
-    img: '/images/avatars/1.png',
-    title: 'Sophia Manning',
-    email: 'fernando@storkish.co.uk',
-    time: '13/08/2017',
-    type: 'contacts'
-  },
-  {
-    id: 96,
-    img: '/images/avatars/3.png',
-    title: 'Lydia Howard',
-    email: 'furphy@cannibal.net',
-    time: '11/08/1891',
-    type: 'contacts'
-  },
-  {
-    id: 97,
-    img: '/images/avatars/5.png',
-    title: 'Isaac Keller',
-    email: 'insignia@markab.org',
-    time: '18/01/2015',
-    type: 'contacts'
+    title: 'Access Control (ACL)'
   }
 ]
 
@@ -711,38 +481,27 @@ mock.onGet('/app-bar/search').reply(config => {
   const queryLowered = q.toLowerCase()
 
   const exactData: { [k: string]: AppBarSearchType[] } = {
-    pages: [],
-    files: [],
-    contacts: []
+    pages: []
   }
 
   const includeData: { [k: string]: AppBarSearchType[] } = {
-    pages: [],
-    files: [],
-    contacts: []
+    pages: []
   }
 
   searchData.forEach(obj => {
     const isMatched = obj.title.toLowerCase().startsWith(queryLowered)
-    if (isMatched && exactData[obj.type].length < 4) {
-      exactData[obj.type].push(obj)
+    if (isMatched) {
+      exactData.pages.push(obj)
     }
   })
 
   searchData.forEach(obj => {
     const isMatched =
       !obj.title.toLowerCase().startsWith(queryLowered) && obj.title.toLowerCase().includes(queryLowered)
-    if (isMatched && includeData[obj.type].length < 4) {
-      includeData[obj.type].push(obj)
+    if (isMatched) {
+      includeData.pages.push(obj)
     }
   })
 
-  return [
-    200,
-    [
-      ...exactData.pages.concat(includeData.pages).slice(0, 4),
-      ...exactData.files.concat(includeData.files).slice(0, 4),
-      ...exactData.contacts.concat(includeData.contacts).slice(0, 4)
-    ]
-  ]
+  return [200, [...exactData.pages.concat(includeData.pages).slice(0, 8)]]
 })

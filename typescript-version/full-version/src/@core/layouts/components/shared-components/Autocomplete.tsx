@@ -1,37 +1,41 @@
 // ** React Imports
-import { SyntheticEvent, ChangeEvent, Fragment, useCallback, useEffect, useRef, useState } from 'react'
+import { useEffect, useCallback, useRef, useState, ChangeEvent } from 'react'
 
-// ** Next Import
+// ** Next Imports
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 // ** MUI Imports
-import Avatar from '@mui/material/Avatar'
-import ListItem from '@mui/material/ListItem'
+import Box from '@mui/material/Box'
+import Grid from '@mui/material/Grid'
+import List from '@mui/material/List'
+import Divider from '@mui/material/Divider'
+import MuiDialog from '@mui/material/Dialog'
 import { styled } from '@mui/material/styles'
 import TextField from '@mui/material/TextField'
-import IconButton from '@mui/material/IconButton'
+import ListItem from '@mui/material/ListItem'
 import Typography from '@mui/material/Typography'
-import Box, { BoxProps } from '@mui/material/Box'
-import ClickAway from '@mui/material/ClickAwayListener'
-import InputAdornment from '@mui/material/InputAdornment'
+import IconButton from '@mui/material/IconButton'
 import ListItemButton from '@mui/material/ListItemButton'
+import InputAdornment from '@mui/material/InputAdornment'
 import MuiAutocomplete, { AutocompleteRenderInputParams } from '@mui/material/Autocomplete'
 
 // ** Icons Imports
 import Close from 'mdi-material-ui/Close'
 import Magnify from 'mdi-material-ui/Magnify'
+import SearchWeb from 'mdi-material-ui/SearchWeb'
+import CardOutline from 'mdi-material-ui/CardOutline'
+import ChevronRight from 'mdi-material-ui/ChevronRight'
+import ArrowLeftBottom from 'mdi-material-ui/ArrowLeftBottom'
+import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
+import FileDocumentOutline from 'mdi-material-ui/FileDocumentOutline'
+import FileRemoveOutline from 'mdi-material-ui/FileRemoveOutline'
 
 // ** Third Party Imports
 import axios from 'axios'
 
-// ** Types Imports
-import { AppBarSearchType } from 'src/@fake-db/types'
-
 // ** Configs Imports
 import themeConfig from 'src/configs/themeConfig'
-
-// ** Hook Import
-import { useSettings } from 'src/@core/hooks/useSettings'
 
 // ** Custom Components Imports
 import UserIcon from 'src/layouts/components/UserIcon'
@@ -39,21 +43,17 @@ import UserIcon from 'src/layouts/components/UserIcon'
 // ** API Icon Import with object
 import { autocompleteIconObj } from './autocompleteIconObj'
 
-interface Props {
-  hidden?: boolean
-  setShowBackdrop: (val: boolean) => void
+// ** Types Imports
+import { AppBarSearchType } from 'src/@fake-db/types'
+
+interface DefaultSuggestionsProps {
+  setOpenDialog: (val: boolean) => void
 }
 
-// ** Styled component for search in the appBar
-const SearchBox = styled(Box)<BoxProps>(({ theme }) => ({
-  right: 0,
-  top: '-100%',
-  width: '100%',
-  position: 'absolute',
-  zIndex: theme.zIndex.appBar + 1,
-  transition: 'top .25s ease-in-out',
-  backgroundColor: theme.palette.background.paper
-}))
+interface NoResultProps {
+  value: string
+  setOpenDialog: (val: boolean) => void
+}
 
 // ** Styled Autocomplete component
 const Autocomplete = styled(MuiAutocomplete)(({ theme }) => ({
@@ -62,47 +62,240 @@ const Autocomplete = styled(MuiAutocomplete)(({ theme }) => ({
     height: '100%',
     '& .MuiInputBase-root': {
       height: '100%',
-      padding: theme.spacing(0, 5),
+      paddingLeft: theme.spacing(8),
+      paddingRight: theme.spacing(8),
       '& fieldset': {
         border: 0
       }
     }
   },
   '& + .MuiAutocomplete-popper': {
-    paddingTop: theme.spacing(2.5),
+    paddingTop: theme.spacing(4),
     '& .MuiAutocomplete-listbox': {
+      padding: 0,
       paddingTop: 0,
-      maxHeight: 'calc(100vh - 15rem)'
+      height: '100%',
+      maxHeight: '100%'
     },
-    '& .MuiListSubheader-root': {
-      fontWeight: 'normal',
-      lineHeight: 'normal',
-      textTransform: 'capitalize',
-      padding: theme.spacing(5, 5, 2.5),
-      color: theme.palette.text.secondary
+    '& .MuiPaper-root': {
+      boxShadow: 'none'
+    },
+    '& .MuiListItem-root.suggestion': {
+      '&:not(:hover)': {
+        '& .MuiListItemSecondaryAction-root': {
+          display: 'none'
+        }
+      },
+      '&:not(:last-child)': {
+        borderBottom: `1px solid ${theme.palette.divider}`
+      }
     }
   }
 }))
 
-// ** Styled component for the images of files in search popup
-const ImgFiles = styled('img')(({ theme }) => ({
-  height: 24,
-  marginRight: theme.spacing(2.5)
+// ** Styled Dialog component
+const Dialog = styled(MuiDialog)(({ theme }) => ({
+  '& .MuiBackdrop-root': {
+    backdropFilter: 'blur(4px)'
+  },
+  '& .MuiDialog-paper, & .MuiDialog-paper:not(.MuiDialog-paperFullScreen)': {
+    height: '100%',
+    maxHeight: 550,
+    [theme.breakpoints.down('sm')]: {
+      maxHeight: '100%',
+      margin: '0 !important',
+      width: '100% !important',
+      maxWidth: '100% !important'
+    }
+  }
 }))
 
-const AutocompleteComponent = ({ hidden, setShowBackdrop }: Props) => {
+const NoResult = ({ value, setOpenDialog }: NoResultProps) => {
+  return (
+    <Box sx={{ height: '100%', display: 'flex', alignItems: 'center', flexDirection: 'column', flexWrap: 'wrap' }}>
+      <FileRemoveOutline sx={{ fontSize: '4rem', mb: 4 }} />
+      <Typography sx={{ mb: 8, wordWrap: 'break-word' }}>
+        No results for{' '}
+        <Typography component='span' sx={{ wordWrap: 'break-word' }}>
+          "{value}"
+        </Typography>
+      </Typography>
+
+      <Typography variant='body2'>Try searching for</Typography>
+      <List>
+        <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+          <Link href='/dashboards/ecommerce/' passHref>
+            <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+              <Typography color='primary'>Ecommerce Dashboard</Typography>
+              <ChevronRight sx={{ ml: 1, color: 'primary.main', fontSize: '1rem' }} />
+            </Box>
+          </Link>
+        </ListItem>
+        <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+          <Link href='/pages/account-settings/' passHref>
+            <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+              <Typography color='primary'>Account Settings</Typography>
+              <ChevronRight sx={{ ml: 1, color: 'primary.main', fontSize: '1rem' }} />
+            </Box>
+          </Link>
+        </ListItem>
+        <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+          <Link href='/ui/cards/statistics/' passHref>
+            <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+              <Typography color='primary'>Card Statistics</Typography>
+              <ChevronRight sx={{ ml: 1, color: 'primary.main', fontSize: '1rem' }} />
+            </Box>
+          </Link>
+        </ListItem>
+      </List>
+    </Box>
+  )
+}
+
+const DefaultSuggestions = ({ setOpenDialog }: DefaultSuggestionsProps) => {
+  return (
+    <Grid container spacing={6} sx={{ ml: 0 }}>
+      <Grid item xs={6}>
+        <Typography color='primary' sx={{ textAlign: 'center' }}>
+          <SearchWeb sx={{ mr: 1, fontSize: '1rem', verticalAlign: 'middle' }} />
+          Popular Searches
+        </Typography>
+        <List>
+          <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+            <Link href='/dashboards/ecommerce/' passHref>
+              <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+                <Typography color='primary'>Ecommerce Dashboard</Typography>
+                <ChevronRight sx={{ ml: 1, color: 'primary.main', fontSize: '1rem' }} />
+              </Box>
+            </Link>
+          </ListItem>
+          <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+            <Link href='/pages/account-settings/' passHref>
+              <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+                <Typography color='primary'>Account Settings</Typography>
+                <ChevronRight sx={{ ml: 1, color: 'primary.main', fontSize: '1rem' }} />
+              </Box>
+            </Link>
+          </ListItem>
+          <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+            <Link href='/ui/cards/statistics/' passHref>
+              <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+                <Typography color='primary'>Card Statistics</Typography>
+                <ChevronRight sx={{ ml: 1, color: 'primary.main', fontSize: '1rem' }} />
+              </Box>
+            </Link>
+          </ListItem>
+        </List>
+      </Grid>
+      <Grid item xs={6}>
+        <Typography color='primary' sx={{ textAlign: 'center' }}>
+          <FileDocumentOutline sx={{ mr: 1, fontSize: '1rem', verticalAlign: 'middle' }} />
+          Pages
+        </Typography>
+        <List>
+          <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+            <Link href='/pages/pricing/' passHref>
+              <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+                <Typography color='primary'>Pricing</Typography>
+                <ChevronRight sx={{ ml: 1, color: 'primary.main', fontSize: '1rem' }} />
+              </Box>
+            </Link>
+          </ListItem>
+          <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+            <Link href='/pages/faq/' passHref>
+              <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+                <Typography color='primary'>FAQ</Typography>
+                <ChevronRight sx={{ ml: 1, color: 'primary.main', fontSize: '1rem' }} />
+              </Box>
+            </Link>
+          </ListItem>
+          <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+            <Link href='/pages/dialog-examples/' passHref>
+              <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+                <Typography color='primary'>Dialog Examples</Typography>
+                <ChevronRight sx={{ ml: 1, color: 'primary.main', fontSize: '1rem' }} />
+              </Box>
+            </Link>
+          </ListItem>
+        </List>
+      </Grid>
+      <Grid item xs={6}>
+        <Typography color='primary' sx={{ textAlign: 'center' }}>
+          <CardOutline sx={{ mr: 1, fontSize: '1rem', verticalAlign: 'middle' }} />
+          Components
+        </Typography>
+        <List>
+          <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+            <Link href='/components/buttons/' passHref>
+              <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+                <Typography color='primary'>Buttons</Typography>
+                <ChevronRight sx={{ ml: 1, color: 'primary.main', fontSize: '1rem' }} />
+              </Box>
+            </Link>
+          </ListItem>
+          <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+            <Link href='/components/avatars/' passHref>
+              <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+                <Typography color='primary'>Avatars</Typography>
+                <ChevronRight sx={{ ml: 1, color: 'primary.main', fontSize: '1rem' }} />
+              </Box>
+            </Link>
+          </ListItem>
+          <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+            <Link href='/components/timeline/' passHref>
+              <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+                <Typography color='primary'>Timeline</Typography>
+                <ChevronRight sx={{ ml: 1, color: 'primary.main', fontSize: '1rem' }} />
+              </Box>
+            </Link>
+          </ListItem>
+        </List>
+      </Grid>
+      <Grid item xs={6}>
+        <Typography color='primary' sx={{ textAlign: 'center' }}>
+          <AlertCircleOutline sx={{ mr: 1, fontSize: '1rem', verticalAlign: 'middle' }} />
+          Forms
+        </Typography>
+        <List>
+          <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+            <Link href='/forms/form-elements/text-field/' passHref>
+              <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+                <Typography color='primary'>Textfield</Typography>
+                <ChevronRight sx={{ ml: 1, color: 'primary.main', fontSize: '1rem' }} />
+              </Box>
+            </Link>
+          </ListItem>
+          <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+            <Link href='/forms/form-layouts/' passHref>
+              <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+                <Typography color='primary'>Form Layouts</Typography>
+                <ChevronRight sx={{ ml: 1, color: 'primary.main', fontSize: '1rem' }} />
+              </Box>
+            </Link>
+          </ListItem>
+          <ListItem disablePadding sx={{ py: 1, justifyContent: 'center' }} onClick={() => setOpenDialog(false)}>
+            <Link href='/forms/form-validation/' passHref>
+              <Box component='a' sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+                <Typography color='primary'>Form Validation</Typography>
+                <ChevronRight sx={{ ml: 1, color: 'primary.main', fontSize: '1rem' }} />
+              </Box>
+            </Link>
+          </ListItem>
+        </List>
+      </Grid>
+    </Grid>
+  )
+}
+
+const AutocompleteComponent = () => {
   // ** States
   const [isMounted, setIsMounted] = useState<boolean>(false)
   const [searchValue, setSearchValue] = useState<string>('')
+  const [openDialog, setOpenDialog] = useState<boolean>(false)
   const [options, setOptions] = useState<AppBarSearchType[]>([])
-  const [autocompleteKey, setAutocompleteKey] = useState<number>(0)
-  const [openSearchBox, setOpenSearchBox] = useState<boolean>(false)
-  const [openAutocompletePopup, setOpenAutocompletePopup] = useState<boolean>(false)
 
   // ** Hooks & Vars
   const router = useRouter()
-  const { settings } = useSettings()
-  const { skin, layout, appBar } = settings
   const wrapper = useRef<HTMLDivElement>(null)
 
   const codes: { [key: string]: boolean } = { Slash: false, ControlLeft: false, ControlRight: false } // eslint-disable-line
@@ -128,12 +321,21 @@ const AutocompleteComponent = ({ hidden, setShowBackdrop }: Props) => {
     return () => setIsMounted(false)
   }, [])
 
+  // Handle click event on a list item in search result
+  const handleOptionClick = (obj: AppBarSearchType) => {
+    setSearchValue('')
+    setOpenDialog(false)
+    if (obj.url) {
+      router.push(obj.url)
+    }
+  }
+
   // Handle ESC & shortcut keys keydown events
   const handleKeydown = useCallback(
     event => {
       // ** ESC key to close searchbox
-      if (openSearchBox && event.keyCode === 27) {
-        setOpenSearchBox(false)
+      if (openDialog && event.keyCode === 27) {
+        setOpenDialog(false)
       }
 
       // ** Shortcut keys to open searchbox (Ctrl + /)
@@ -146,11 +348,11 @@ const AutocompleteComponent = ({ hidden, setShowBackdrop }: Props) => {
       if (event.code === 'ControlRight') {
         codes.ControlRight = true
       }
-      if (!openSearchBox && (codes.ControlLeft || codes.ControlRight) && codes.Slash) {
-        setOpenSearchBox(true)
+      if (!openDialog && (codes.ControlLeft || codes.ControlRight) && codes.Slash) {
+        setOpenDialog(true)
       }
     },
-    [codes, openSearchBox]
+    [codes, openDialog]
   )
 
   // Handle shortcut keys keyup events
@@ -179,170 +381,66 @@ const AutocompleteComponent = ({ hidden, setShowBackdrop }: Props) => {
     }
   }, [handleKeyUp, handleKeydown])
 
-  // Handle all states
-  const handleAllStates = (value: boolean) => {
-    setSearchValue('')
-    setShowBackdrop(value)
-    setOpenSearchBox(value)
-    setOpenAutocompletePopup(value)
-  }
-
-  // Handle input change on Autocomplete component
-  const handleInputChange = (value: string) => {
-    if (value.length) {
-      setShowBackdrop(true)
-      setOpenAutocompletePopup(true)
-    } else {
-      setShowBackdrop(false)
-      setOpenAutocompletePopup(false)
-    }
-  }
-
-  // Handle click event on a list item in search result
-  const handleOptionClick = (url?: string) => {
-    setSearchValue('')
-    handleAllStates(false)
-    if (url) {
-      router.push(url)
-    }
-  }
-
-  // Handle option change on Autocomplete component
-  const handleAutocompleteChange = (event: SyntheticEvent, obj: AppBarSearchType | unknown) => {
-    setAutocompleteKey(autocompleteKey + 1)
-    if ((obj as AppBarSearchType).url) {
-      handleOptionClick((obj as AppBarSearchType).url)
-    }
-  }
-
-  // Render all options for the search
-  const RenderOptions = (option: AppBarSearchType) => {
-    const { by, type, title, icon, img, size, email, time } = option
-
-    if (type === 'pages') {
-      const IconTag = autocompleteIconObj[icon as keyof typeof autocompleteIconObj] || themeConfig.navSubItemIcon
-
-      return (
-        <Fragment>
-          <UserIcon icon={IconTag} componentType='search' iconProps={{ fontSize: 'small', sx: { mr: 2.5 } }} />
-          <Typography sx={{ fontSize: '0.875rem' }}>{title}</Typography>
-        </Fragment>
-      )
-    } else if (type === 'files') {
-      return (
-        <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <ImgFiles src={img} alt={title} />
-            <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-              <Typography sx={{ fontSize: '0.875rem' }}>{title}</Typography>
-              <Typography variant='caption' sx={{ mt: 0.75, lineHeight: 1.5 }}>
-                {by}
-              </Typography>
-            </Box>
-          </Box>
-          <Typography variant='caption'>{size}</Typography>
-        </Box>
-      )
-    } else if (type === 'contacts') {
-      return (
-        <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Avatar src={img} alt={title} sx={{ mr: 2.5, width: 35, height: 35 }} />
-            <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-              <Typography sx={{ fontSize: '0.875rem' }}>{title}</Typography>
-              <Typography variant='caption' sx={{ mt: 0.75, lineHeight: 1.5 }}>
-                {email}
-              </Typography>
-            </Box>
-          </Box>
-          <Typography variant='caption'>{time}</Typography>
-        </Box>
-      )
-    } else {
-      return null
-    }
-  }
   if (!isMounted) {
     return null
   } else {
     return (
-      <ClickAway onClickAway={() => handleAllStates(false)}>
-        <Box ref={wrapper}>
-          <IconButton
-            color='inherit'
-            onClick={() => setOpenSearchBox(true)}
-            sx={!hidden && layout === 'vertical' ? { ml: -2.75 } : {}}
-          >
-            <Magnify />
-          </IconButton>
-
-          <SearchBox
-            sx={{
-              ...(openSearchBox ? { top: 0 } : {}),
-              height: theme =>
-                (theme.mixins.toolbar.minHeight as number) - (layout === 'horizontal' || skin === 'bordered' ? 1 : 0),
-              ...(layout === 'vertical' && appBar === 'static'
-                ? {
-                    right: theme => theme.spacing(6),
-                    width: theme => `calc(100% - ${theme.spacing(6 * 2)})`,
-                    borderBottomLeftRadius: theme => theme.shape.borderRadius,
-                    borderBottomRightRadius: theme => theme.shape.borderRadius
-                  }
-                : {})
-            }}
-          >
+      <Box ref={wrapper}>
+        <IconButton color='inherit' onClick={() => setOpenDialog(true)}>
+          <Magnify />
+        </IconButton>
+        <Dialog fullWidth onClose={() => setOpenDialog(false)} open={openDialog}>
+          <Box sx={{ py: 2, width: '100%' }}>
             <Autocomplete
               autoHighlight
               disablePortal
+              open
               options={options}
               id='appBar-search'
-              key={autocompleteKey}
-              open={openAutocompletePopup}
-              noOptionsText='No results found!'
-              onChange={handleAutocompleteChange}
-              onClose={() => handleAllStates(false)}
-              groupBy={(option: AppBarSearchType | unknown) => (option as AppBarSearchType).type}
+              noOptionsText={<NoResult value={searchValue} setOpenDialog={setOpenDialog} />}
+              onInputChange={(event, value: string) => setSearchValue(value)}
+              onChange={(event, obj) => handleOptionClick(obj as AppBarSearchType)}
               getOptionLabel={(option: AppBarSearchType | unknown) => (option as AppBarSearchType).title}
-              onInputChange={(event, value: string) => handleInputChange(value)}
-              sx={{
-                ...(layout === 'horizontal'
-                  ? { '& + .MuiAutocomplete-popper .MuiPaper-root': { boxShadow: theme => theme.shadows[5] } }
-                  : {}),
-                ...(layout === 'vertical' && appBar === 'static'
-                  ? {}
-                  : {
-                      '& + .MuiAutocomplete-popper': {
-                        width: theme => `calc(100% - ${theme.spacing(6 * 2)}) !important`
-                      }
-                    })
-              }}
-              renderOption={(props, option: AppBarSearchType | unknown) => (
-                <ListItem
-                  {...props}
-                  sx={{ p: '0 !important' }}
-                  key={(option as AppBarSearchType).title}
-                  onClick={() =>
-                    (option as AppBarSearchType).url
-                      ? handleOptionClick((option as AppBarSearchType).url)
-                      : handleOptionClick()
-                  }
-                >
-                  <ListItemButton sx={{ padding: theme => theme.spacing(2.5, 5) }}>
-                    {RenderOptions(option as AppBarSearchType)}
-                  </ListItemButton>
-                </ListItem>
-              )}
-              renderInput={(params: AutocompleteRenderInputParams) => {
-                const scrollPosition = document.documentElement.scrollTop
+              renderOption={(props, option: AppBarSearchType | unknown) => {
+                const IconTag =
+                  autocompleteIconObj[(option as AppBarSearchType).icon as keyof typeof autocompleteIconObj] ||
+                  themeConfig.navSubItemIcon
 
+                return searchValue.length ? (
+                  <ListItem
+                    {...props}
+                    className='suggestion'
+                    key={(option as AppBarSearchType).title}
+                    secondaryAction={<ArrowLeftBottom sx={{ height: 16, width: 16, color: 'secondary.main' }} />}
+                    onClick={() => handleOptionClick(option as AppBarSearchType)}
+                    sx={{
+                      p: 0,
+                      ...(options.length <= 2
+                        ? { '&:last-child': { borderBottom: theme => `1px solid ${theme.palette.divider}` } }
+                        : {})
+                    }}
+                  >
+                    <ListItemButton sx={{ py: 4, px: 8 }}>
+                      <UserIcon
+                        icon={IconTag}
+                        componentType='search'
+                        iconProps={{ color: 'primary', fontSize: 'small', sx: { mr: 2.5 } }}
+                      />
+                      <Typography color='primary' sx={{ fontSize: '0.875rem' }}>
+                        {(option as AppBarSearchType).title}
+                      </Typography>
+                    </ListItemButton>
+                  </ListItem>
+                ) : null
+              }}
+              renderInput={(params: AutocompleteRenderInputParams) => {
                 return (
                   <TextField
                     {...params}
-                    {...(appBar === 'fixed' ? { onFocus: () => window.scrollTo(0, scrollPosition) } : {})}
                     onChange={(event: ChangeEvent<HTMLInputElement>) => setSearchValue(event.target.value)}
                     inputRef={input => {
                       if (input) {
-                        if (openSearchBox) {
+                        if (openDialog) {
                           input.focus()
                         } else {
                           input.blur()
@@ -357,12 +455,8 @@ const AutocompleteComponent = ({ hidden, setShowBackdrop }: Props) => {
                         </InputAdornment>
                       ),
                       endAdornment: (
-                        <InputAdornment
-                          position='end'
-                          onClick={() => handleAllStates(false)}
-                          sx={{ cursor: 'pointer', color: 'text.primary' }}
-                        >
-                          <Close fontSize='small' />
+                        <InputAdornment position='end' onClick={() => setOpenDialog(false)}>
+                          <Close sx={{ cursor: 'pointer', color: 'action.disabled' }} />
                         </InputAdornment>
                       )
                     }}
@@ -370,9 +464,23 @@ const AutocompleteComponent = ({ hidden, setShowBackdrop }: Props) => {
                 )
               }}
             />
-          </SearchBox>
-        </Box>
-      </ClickAway>
+          </Box>
+          <Divider sx={{ mt: 0 }} />
+          <Box
+            sx={{
+              p: 8,
+              height: '100%',
+              ...(searchValue.length >= 1 && options.length !== 0 && options.length <= 2
+                ? { mt: 24 }
+                : { display: 'flex', alignItems: 'center', justifyContent: 'center' })
+            }}
+          >
+            {searchValue.length === 0 || (searchValue.length >= 1 && options.length !== 0 && options.length <= 2) ? (
+              <DefaultSuggestions setOpenDialog={setOpenDialog} />
+            ) : null}
+          </Box>
+        </Dialog>
+      </Box>
     )
   }
 }
