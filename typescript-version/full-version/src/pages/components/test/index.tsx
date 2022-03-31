@@ -49,7 +49,7 @@ const Test = () => {
         <OutsideProgress />
       </Grid>
       <Grid item xs={12}>
-        <Typography variant='h5'>Breadcrumb</Typography>
+        <Typography variant='h5'>Breadcrumbs</Typography>
       </Grid>
       <Grid item xs={12} md={6}>
         <CardBreadcrumb />
