@@ -64,7 +64,7 @@ const TransferListBasic = () => {
 
   const customList = (items: readonly number[]) => (
     <Card>
-      <List dense component='div' role='list' sx={{ width: 200, height: 230, overflow: 'auto' }}>
+      <List component='div' role='list' sx={{ width: 200, height: 265, overflow: 'auto' }}>
         {items.map((value: number) => {
           const labelId = `transfer-list-item-${value}-label`
 

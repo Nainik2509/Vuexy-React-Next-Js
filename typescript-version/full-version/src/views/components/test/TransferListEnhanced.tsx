@@ -73,7 +73,7 @@ const TransferListEnhanced = () => {
       <CardHeader
         title={title}
         sx={{ px: 4, py: 2 }}
-        titleTypographyProps={{ sx: { fontSize: '1rem !important' } }}
+        titleTypographyProps={{ sx: { fontSize: '1rem !important', lineHeight: '1.5 !important' } }}
         subheader={`${numberOfChecked(items)}/${items.length} selected`}
         avatar={
           <Checkbox
@@ -86,7 +86,7 @@ const TransferListEnhanced = () => {
         }
       />
       <Divider sx={{ m: 0 }} />
-      <List dense role='list' component='div' sx={{ width: 200, height: 230, overflow: 'auto' }}>
+      <List role='list' component='div' sx={{ width: 200, height: 265, overflow: 'auto' }}>
         {items.map((value: number) => {
           const labelId = `transfer-list-all-item-${value}-label`
 
