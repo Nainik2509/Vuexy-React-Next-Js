@@ -472,6 +472,12 @@ const searchData: AppBarSearchType[] = [
     url: '/acl',
     icon: 'ShieldOutline',
     title: 'Access Control (ACL)'
+  },
+  {
+    id: 79,
+    url: '/components/swiper/',
+    icon: 'CardOutline',
+    title: 'Swiper'
   }
 ]
 

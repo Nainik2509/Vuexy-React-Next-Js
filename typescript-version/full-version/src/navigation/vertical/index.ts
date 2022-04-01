@@ -340,6 +340,10 @@ const navigation = (): VerticalNavItemsType => {
           path: '/components/snackbar'
         },
         {
+          title: 'Swiper',
+          path: '/components/swiper'
+        },
+        {
           title: 'Tabs',
           path: '/components/tabs'
         },

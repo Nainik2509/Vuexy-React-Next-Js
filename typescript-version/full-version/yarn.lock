@@ -3025,6 +3025,11 @@ jws@^3.2.2:
     jwa "^1.4.1"
     safe-buffer "^5.0.1"
 
+keen-slider@^6.6.5:
+  version "6.6.5"
+  resolved "https://registry.yarnpkg.com/keen-slider/-/keen-slider-6.6.5.tgz#53f6c5db13f0bcd3b3fded99eb82c68a5af3a183"
+  integrity sha512-1ycZiZRztCdUjtjyHFchczBpSJLWiz2b6oQFXKbOexPS9tlLVc054UEfRXfXGLh2O4X3LgLnvbpSlEzkiYmhVw==
+
 language-subtag-registry@~0.3.2:
   version "0.3.21"
   resolved "https://registry.yarnpkg.com/language-subtag-registry/-/language-subtag-registry-0.3.21.tgz#04ac218bea46f04cb039084602c6da9e788dd45a"
