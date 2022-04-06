@@ -6,6 +6,10 @@ To configure your template, we will be using `/src/configs/themeConfig.ts` file,
 
 If you are looking to match up with one of our demos, then please read [demo configs](/guide/development/demo-config.html) doc.
 
+::: danger Important
+Make sure you clear the browser local storage in order to see the config changes in the template. Refer: <strong>[How to clear local storage?](https://www.leadshook.com/help/how-to-clear-local-storage-in-google-chrome-browser/)</strong>
+:::
+
 ## Properties
 
 Following are the properties with their values that we have used in the theme:
