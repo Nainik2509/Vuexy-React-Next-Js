@@ -14,13 +14,13 @@ const BadgesMaxValue = () => {
   return (
     <Wrapper className='demo-space-x'>
       <Badge badgeContent={99} color='primary'>
-        <Avatar src='/images/avatars/5.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
       <Badge badgeContent={100} color='primary'>
-        <Avatar src='/images/avatars/5.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
       <Badge badgeContent={1000} max={999} color='primary'>
-        <Avatar src='/images/avatars/5.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
     </Wrapper>
   )
