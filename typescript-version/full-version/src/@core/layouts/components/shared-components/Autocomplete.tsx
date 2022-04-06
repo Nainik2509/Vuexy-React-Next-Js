@@ -78,12 +78,21 @@ const Autocomplete = styled(MuiAutocomplete)(({ theme }) => ({
       maxHeight: '100%'
     },
     '& .MuiPaper-root': {
+      borderRadius: 0,
       boxShadow: 'none'
     },
     '& .MuiListItem-root.suggestion': {
+      '&.Mui-focused.Mui-focusVisible, &:hover': {
+        backgroundColor: theme.palette.action.hover
+      },
       '&:not(:hover)': {
         '& .MuiListItemSecondaryAction-root': {
           display: 'none'
+        },
+        '&.Mui-focused.Mui-focusVisible:not(:hover)': {
+          '& .MuiListItemSecondaryAction-root': {
+            display: 'block'
+          }
         }
       },
       '&:not(:last-child)': {
@@ -333,11 +342,6 @@ const AutocompleteComponent = () => {
   // Handle ESC & shortcut keys keydown events
   const handleKeydown = useCallback(
     event => {
-      // ** ESC key to close searchbox
-      if (openDialog && event.keyCode === 27) {
-        setOpenDialog(false)
-      }
-
       // ** Shortcut keys to open searchbox (Ctrl + /)
       if (event.code === 'Slash') {
         codes.Slash = true
@@ -358,6 +362,10 @@ const AutocompleteComponent = () => {
   // Handle shortcut keys keyup events
   const handleKeyUp = useCallback(
     event => {
+      // ** ESC key to close searchbox
+      if (openDialog && event.keyCode === 27) {
+        setOpenDialog(false)
+      }
       if (event.code === 'Slash') {
         codes.Slash = false
       }
@@ -368,7 +376,7 @@ const AutocompleteComponent = () => {
         codes.ControlRight = false
       }
     },
-    [codes]
+    [codes, openDialog]
   )
 
   useEffect(() => {
@@ -394,7 +402,6 @@ const AutocompleteComponent = () => {
             <Autocomplete
               autoHighlight
               disablePortal
-              open
               options={options}
               id='appBar-search'
               noOptionsText={<NoResult value={searchValue} setOpenDialog={setOpenDialog} />}
@@ -411,8 +418,10 @@ const AutocompleteComponent = () => {
                     {...props}
                     className='suggestion'
                     key={(option as AppBarSearchType).title}
-                    secondaryAction={<ArrowLeftBottom sx={{ height: 16, width: 16, color: 'secondary.main' }} />}
                     onClick={() => handleOptionClick(option as AppBarSearchType)}
+                    secondaryAction={
+                      <ArrowLeftBottom sx={{ height: 16, width: 16, cursor: 'pointer', color: 'secondary.main' }} />
+                    }
                     sx={{
                       p: 0,
                       ...(options.length <= 2
@@ -433,10 +442,12 @@ const AutocompleteComponent = () => {
                   </ListItem>
                 ) : null
               }}
+              isOptionEqualToValue={() => true}
               renderInput={(params: AutocompleteRenderInputParams) => {
                 return (
                   <TextField
                     {...params}
+                    value={searchValue}
                     onChange={(event: ChangeEvent<HTMLInputElement>) => setSearchValue(event.target.value)}
                     inputRef={input => {
                       if (input) {
@@ -456,7 +467,9 @@ const AutocompleteComponent = () => {
                       ),
                       endAdornment: (
                         <InputAdornment position='end' onClick={() => setOpenDialog(false)}>
-                          <Close sx={{ cursor: 'pointer', color: 'action.disabled' }} />
+                          <IconButton>
+                            <Close />
+                          </IconButton>
                         </InputAdornment>
                       )
                     }}
