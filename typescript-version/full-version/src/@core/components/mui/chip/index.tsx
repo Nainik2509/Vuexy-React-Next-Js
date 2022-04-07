@@ -23,7 +23,14 @@ const Chip = (props: CustomChipProps) => {
     info: { ...bgColors.infoLight }
   }
 
-  return <MuiChip {...props} variant='filled' sx={skin === 'light' && color ? Object.assign(colors[color], sx) : sx} />
+  return (
+    <MuiChip
+      {...props}
+      variant='filled'
+      {...(skin === 'light' && { className: 'MuiChip-light' })}
+      sx={skin === 'light' && color ? Object.assign(colors[color], sx) : sx}
+    />
+  )
 }
 
 export default Chip
