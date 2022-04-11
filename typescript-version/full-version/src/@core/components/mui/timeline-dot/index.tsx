@@ -48,8 +48,8 @@ const TimelineDot = (props: CustomTimelineDotProps) => {
     },
     grey: {
       boxShadow: 'none',
-      color: theme.palette.grey[200],
-      backgroundColor: hexToRGBA(theme.palette.grey[200], 0.12)
+      color: theme.palette.grey[500],
+      backgroundColor: hexToRGBA(theme.palette.grey[500], 0.12)
     }
   }
 
