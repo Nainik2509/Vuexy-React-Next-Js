@@ -14,7 +14,6 @@ import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 import CustomChip from 'src/@core/components/mui/chip'
 
 // ** Types
-import { CustomChipProps } from 'src/@core/components/mui/chip/types'
 import { PricingPlanProps } from './types'
 
 // ** Styled Component for the wrapper of whole component
@@ -29,20 +28,6 @@ const BoxFeature = styled(Box)<BoxProps>(({ theme }) => ({
   marginBottom: theme.spacing(5.75),
   '& > :not(:first-of-type)': {
     marginTop: theme.spacing(3.5)
-  }
-}))
-
-// ** Styled Chip Component
-const Chip = styled(CustomChip)<CustomChipProps>(({ theme }) => ({
-  top: 11,
-  right: 12,
-  height: 20,
-  position: 'absolute',
-  '& .MuiChip-label': {
-    fontWeight: 600,
-    fontSize: '0.75rem',
-    paddingLeft: theme.spacing(1.75),
-    paddingRight: theme.spacing(1.75)
   }
 }))
 
@@ -68,7 +53,24 @@ const PlanDetails = (props: PricingPlanProps) => {
             : `1px solid ${hexToRGBA(theme.palette.primary.main, 0.5)}`
       }}
     >
-      {data?.popularPlan ? <Chip label='Popular' skin='light' color='primary' /> : null}
+      {data?.popularPlan ? (
+        <CustomChip
+          label='Popular'
+          skin='light'
+          color='primary'
+          sx={{
+            top: 11,
+            right: 12,
+            height: 20,
+            position: 'absolute',
+            '& .MuiChip-label': {
+              px: 1.75,
+              fontWeight: 600,
+              fontSize: '0.75rem'
+            }
+          }}
+        />
+      ) : null}
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
         <img
           width={data?.imgWidth}
