@@ -20,7 +20,14 @@ import CustomAvatar from 'src/@core/components/mui/avatar'
 import { getInitials } from 'src/@core/utils/get-initials'
 
 // ** Types Imports
-import { ChatType, ChatLogType, MessageType, FeedbackType, MessageGroupType, FormattedChatsType } from './types'
+import {
+  ChatType,
+  ChatLogType,
+  MessageType,
+  FeedbackType,
+  MessageGroupType,
+  FormattedChatsType
+} from 'src/types/apps/chatLogTypes'
 
 const PerfectScrollbar = styled(PerfectScrollbarComponent)<ScrollBarProps & { ref: Ref<unknown> }>(({ theme }) => ({
   padding: theme.spacing(5)

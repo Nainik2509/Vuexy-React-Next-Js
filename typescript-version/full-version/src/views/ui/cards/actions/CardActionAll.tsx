@@ -34,12 +34,12 @@ const CardActionAll = () => {
   }
 
   return (
-    <Fade in={visibility} timeout={600}>
+    <Fade in={visibility} timeout={300}>
       <Card sx={{ position: 'relative' }}>
         <CardHeader
           title='All Actions'
           action={
-            <Box>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
               <IconButton
                 size='small'
                 aria-label='collapse'

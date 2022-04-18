@@ -9,8 +9,8 @@ import MenuIcon from 'mdi-material-ui/Menu'
 import { Settings } from 'src/@core/context/settingsContext'
 
 // ** Components
+import Autocomplete from 'src/layouts/components/Autocomplete'
 import ModeToggler from 'src/@core/layouts/components/shared-components/ModeToggler'
-import Autocomplete from 'src/@core/layouts/components/shared-components/Autocomplete'
 import UserDropdown from 'src/@core/layouts/components/shared-components/UserDropdown'
 import LanguageDropdown from 'src/@core/layouts/components/shared-components/LanguageDropdown'
 import NotificationDropdown from 'src/@core/layouts/components/shared-components/NotificationDropdown'
@@ -19,13 +19,12 @@ interface Props {
   hidden: boolean
   settings: Settings
   toggleNavVisibility: () => void
-  setShowBackdrop: (val: boolean) => void
   saveSettings: (values: Settings) => void
 }
 
 const AppBarContent = (props: Props) => {
   // ** Props
-  const { hidden, settings, saveSettings, setShowBackdrop, toggleNavVisibility } = props
+  const { hidden, settings, saveSettings, toggleNavVisibility } = props
 
   return (
     <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -35,7 +34,7 @@ const AppBarContent = (props: Props) => {
             <MenuIcon />
           </IconButton>
         ) : null}
-        <Autocomplete hidden={hidden} setShowBackdrop={setShowBackdrop} />
+        <Autocomplete />
       </Box>
       <Box className='actions-right' sx={{ display: 'flex', alignItems: 'center' }}>
         <LanguageDropdown settings={settings} saveSettings={saveSettings} />

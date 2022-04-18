@@ -1,5 +1,5 @@
 // ** Types
-import { ProfileUserType, ChatsObj, ContactType, MsgFeedbackType } from 'src/types/apps/chatTypes'
+import { ProfileUserType, ChatsObj, ContactType, MsgFeedbackType } from './chatTypes'
 
 export type ChatLogType = {
   hidden: boolean

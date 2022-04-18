@@ -27,9 +27,9 @@ import SearchWeb from 'mdi-material-ui/SearchWeb'
 import CardOutline from 'mdi-material-ui/CardOutline'
 import ChevronRight from 'mdi-material-ui/ChevronRight'
 import ArrowLeftBottom from 'mdi-material-ui/ArrowLeftBottom'
+import FileRemoveOutline from 'mdi-material-ui/FileRemoveOutline'
 import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
 import FileDocumentOutline from 'mdi-material-ui/FileDocumentOutline'
-import FileRemoveOutline from 'mdi-material-ui/FileRemoveOutline'
 
 // ** Third Party Imports
 import axios from 'axios'

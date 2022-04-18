@@ -20,10 +20,10 @@ import DotsVertical from 'mdi-material-ui/DotsVertical'
 import MessageOutline from 'mdi-material-ui/MessageOutline'
 
 // ** Custom Components Import
-import ChatLog from 'src/@core/components/chat-log'
+import ChatLog from './ChatLog'
+import SendMsgForm from 'src/views/apps/chat/SendMsgForm'
 import CustomAvatar from 'src/@core/components/mui/avatar'
 import UserProfileRight from 'src/views/apps/chat/UserProfileRight'
-import SendMsgForm from 'src/views/apps/chat/SendMsgForm'
 
 // ** Types
 import { ChatContentType } from 'src/types/apps/chatTypes'

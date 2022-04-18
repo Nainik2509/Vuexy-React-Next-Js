@@ -64,19 +64,19 @@ const UserViewRight = ({ invoiceData }: Props) => {
         <Tab value='connection' label='Connection' icon={<LinkVariant />} />
       </TabList>
       <Box sx={{ marginTop: 6 }}>
-        <TabPanel value='overview'>
+        <TabPanel sx={{ p: 0 }} value='overview'>
           <UserViewOverview invoiceData={invoiceData} />
         </TabPanel>
-        <TabPanel value='security'>
+        <TabPanel sx={{ p: 0 }} value='security'>
           <UserViewSecurity />
         </TabPanel>
-        <TabPanel value='billing-plan'>
+        <TabPanel sx={{ p: 0 }} value='billing-plan'>
           <UserViewBilling />
         </TabPanel>
-        <TabPanel value='notification'>
+        <TabPanel sx={{ p: 0 }} value='notification'>
           <UserViewNotification />
         </TabPanel>
-        <TabPanel value='connection'>
+        <TabPanel sx={{ p: 0 }} value='connection'>
           <UserViewConnection />
         </TabPanel>
       </Box>
