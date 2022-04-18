@@ -95,10 +95,11 @@ export const getHomeRoute = role => {
 
 It is quite easy to remove access control from the template.
 
-1. Remove `src/configs/acl.ts` file
-2. Remove the `import type { ACLObj } from 'src/configs/acl'` import statement & `acl?: ACLObj` from `next.d.ts` file.
+1. Remove the `src/configs/acl.ts` file
+2. Remove the `import type { ACLObj } from 'src/configs/acl'` import statement & `acl?: ACLObj` from `next.d.ts` file if `next.d.ts` file is present in your project.
+3. Remove the `src/@core/components/auth/AclGuard.tsx` file
 
-3. Remove the AclGuard wrapper & ACL related imports from `src/pages/_app.tsx` file.
+4. Remove the AclGuard wrapper & ACL related imports from `src/pages/_app.tsx` file.
 
     Change following code ***from***:
 
@@ -109,9 +110,9 @@ It is quite easy to remove access control from the template.
 
     const aclAbilities = Component.acl ?? defaultACLObj
 
-   <AclGuard aclAbilities={aclAbilities} guestGuard={guestGuard}>
-     {getLayout(<Component {...pageProps} />)}
-   </AclGuard>
+    <AclGuard aclAbilities={aclAbilities} guestGuard={guestGuard}>
+      {getLayout(<Component {...pageProps} />)}
+    </AclGuard>
     ```
 
     ***to***
@@ -121,9 +122,7 @@ It is quite easy to remove access control from the template.
    {getLayout(<Component {...pageProps} />)}
     ```
 
-4. Remove `acl?: ACLObj` from `next.d.ts` file
-
-5. Remove `acl` method from all the components.
+5. Remove the `acl` method from all the components.
 
     Component ***from***:
 
@@ -170,13 +169,16 @@ It is quite easy to remove access control from the template.
     }
     ```
 
-7. Update Home URL like following:
+7. In the `src/pages/index.tsx` file, update Home URL like the following:
 
     ```tsx
     // Set Home URL based on User Roles
     export const getHomeRoute = () => {
       return '/dashboards/analytics'
     }
+
+    // And call this function like this:
+    const homeRoute = getHomeRoute()
     ```
 
     OR
@@ -198,6 +200,7 @@ It is quite easy to remove access control from the template.
     ```tsx{11}
     // src/layouts/components/acl/CanViewNavNavGroup.tsx
     import { ReactNode } from 'react'
+    import { NavGroup } from 'src/@core/layouts/types'
 
     interface Props {
       navGroup?: NavGroup
@@ -234,6 +237,7 @@ It is quite easy to remove access control from the template.
     ```tsx{11}
     // src/layouts/components/acl/CanViewNavNavLink.tsx
     import { ReactNode } from 'react'
+    import { NavLink } from 'src/@core/layouts/types'
 
     interface Props {
       navLink?: NavLink
@@ -270,6 +274,7 @@ It is quite easy to remove access control from the template.
     ```tsx{11}
     // src/layouts/components/acl/CanViewNavSectionTitle.tsx
     import { ReactNode } from 'react'
+    import { NavSectionTitle } from 'src/@core/layouts/types'
 
     interface Props {
       children: ReactNode

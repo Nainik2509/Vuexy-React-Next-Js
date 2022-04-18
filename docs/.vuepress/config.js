@@ -36,6 +36,7 @@ module.exports = {
           title: 'Settings',
           collapsable: false,
           children: [
+            '/guide/settings/vscode-config',
             '/guide/settings/theme-config',
             '/guide/settings/context',
             '/guide/settings/hooks',
@@ -141,6 +142,8 @@ module.exports = {
             ['how-to-hide-menu-custom-screen-size', 'How to change screen size to hide menu'],
             ['how-to-implement-server-side-menu', 'How to implement server side menu'],
             ['how-to-integrate-into-existing-project', 'How to integrate this template in to my existing project'],
+            ['how-to-remove-acl', 'How to remove ACL from the project'],
+            ['how-to-remove-auth', 'How to remove Auth from the project'],
             ['how-to-override-custom-components', "How to override custom components"],
             ['how-to-override-component-styling', "How to override component's styling"],
             ['how-to-update-navbar-footer', 'How to update navbar or footer'],

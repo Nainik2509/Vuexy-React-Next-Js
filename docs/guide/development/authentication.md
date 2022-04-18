@@ -109,21 +109,13 @@ ComingSoon.authGuard = false
 
 Setting AuthGuard to false will allow all the users to visit that page whether logged in or not.
 
-## Remove Authentication
+## How to remove Authentication
 
 Removing the authentication from the app is simple.
 
-:::danger Tip!
-Easiest way to remove Auth and ACL from the app is to just copy the `starter-kit/src/pages/_app.tsx` file and replace it in your project at the same location. It is required to make changes in other files mentioned below after replacing `src/pages/_app.tsx` file.
-
-OR
-
-Follow all the steps mentioned below manually.
-:::
-
 **Changes in `scr/pages/_app.tsx` file**
 
-1. Remove all Auth related import statements from the file `src/pages/_app.tsx`
+1. Remove all Auth related import statements
 
     ```tsx
     import { ReactNode } from 'react'
@@ -133,20 +125,22 @@ Follow all the steps mentioned below manually.
     import { AuthProvider } from 'src/context/AuthContext'
     ```
 
-2. Remove the `Guard` Component and its wrapper from the file `src/pages/_app.tsx`
-3. Remove the wrapper of `AuthProvider` component from the file `src/pages/_app.tsx`
-4. Remove the `authGuard` & `guestGuard` variables from the file `src/pages/_app.tsx`
-5. Remove the `GuardProps` type from the file `src/pages/_app.tsx`
+2. Remove the `Guard` Component and its wrapper
+3. Remove the wrapper of the `AuthProvider` component
+4. Remove the `authGuard` & `guestGuard` variables
+5. Remove the `GuardProps` type
 
 ---
 
 **Changes in other files**
 
-1. Search & Remove `Component.guestGuard` & `Component.authGuard` from all the files (where Component is the name of the component)
-2. Remove `authGuard?: boolean` and `guestGuard?: boolean` from `next.d.ts` file
-3. Remove the `src/@fake-db/auth` folder and the `import './auth/jwt'` import statement from the file `src/@fake-db/index.ts`
-4. Remove `src/context/AuthContext.tsx` & `src/hooks/useAuth.tsx` files and their import statements & their usage inside `src` folder **(except in `src/@core` folder)**
-5. If you want the user dropdown in the appBar, you need to override that component and import it in `src/layouts/components/vertical/AppBarContent.tsx` or `src/layouts/components/horizontal/AppBarContent.tsx` file. Please read [how to override appBar in vertical layout](/guide/layout/layout-overrides.html#_7-navbar-or-appbar-content) and [how to override appBar in horizontal layout](/guide/layout/layout-overrides.html#_4-appbar-content) guides. If you do not require the user dropdown, remove its import statement and the component usage in `src/layouts/components/vertical/AppBarContent.tsx`  and `src/layouts/components/horizontal/AppBarContent.tsx` files
-6. You also need to remove Access Control (ACL) as it won't be of any use without authentication. Please read [how to remove ACL](/guide/development/access-control.html#how-to-remove-acl) guide.
+1. Remove `src/@core/components/auth` folder
+2. Search and remove `Component.guestGuard` & `Component.authGuard` methods from all the files (where Component is the name of the component)
+3. Remove `authGuard?: boolean` and `guestGuard?: boolean` from the `next.d.ts` file
+4. Remove the `src/@fake-db/auth` folder and the `import './auth/jwt'` import statement from the file `src/@fake-db/index.ts`
+5. Remove `src/context/AuthContext.tsx` & all types related to the Auth from the `src/context/types.ts` file and their import statements & their usage inside `src` folder
+6. Remove `src/hooks/useAuth.tsx` file and its import statements & their usage inside `src` folder
+7. If you want the user dropdown in the appBar, you need to override that component in `src/@core/layouts/components/shared-components/UserDropdown.tsx` file. If you do not require the user dropdown, then remove `src/@core/layouts/components/shared-components/UserDropdown.tsx` file, its import statements and its usage in `src/layouts/components/vertical/AppBarContent.tsx`  and `src/layouts/components/horizontal/AppBarContent.tsx` files
+8. You also need to remove Access Control (ACL) as it won't be of any use without authentication. Please read [how to remove ACL](/guide/development/access-control.html#how-to-remove-acl) guide.
 
 **That's it. Now your app is auth free.**
