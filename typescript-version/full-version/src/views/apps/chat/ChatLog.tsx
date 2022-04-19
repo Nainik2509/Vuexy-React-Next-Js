@@ -21,13 +21,13 @@ import { getInitials } from 'src/@core/utils/get-initials'
 
 // ** Types Imports
 import {
-  ChatType,
   ChatLogType,
   MessageType,
-  FeedbackType,
+  MsgFeedbackType,
+  ChatLogChatType,
   MessageGroupType,
   FormattedChatsType
-} from 'src/types/apps/chatLogTypes'
+} from 'src/types/apps/chatTypes'
 
 const PerfectScrollbar = styled(PerfectScrollbarComponent)<ScrollBarProps & { ref: Ref<unknown> }>(({ theme }) => ({
   padding: theme.spacing(5)
@@ -95,7 +95,7 @@ const ChatLog = (props: ChatLogType) => {
     return formattedChatLog
   }
 
-  const renderMsgFeedback = (isSender: boolean, feedback: FeedbackType) => {
+  const renderMsgFeedback = (isSender: boolean, feedback: MsgFeedbackType) => {
     if (isSender) {
       if (feedback.isSent && !feedback.isDelivered) {
         return <Check sx={{ mr: 2, fontSize: '1rem', color: 'text.secondary' }} />
@@ -157,7 +157,7 @@ const ChatLog = (props: ChatLogType) => {
           </Box>
 
           <Box className='chat-body' sx={{ maxWidth: ['calc(100% - 5.75rem)', '75%', '65%'] }}>
-            {item.messages.map((chat: ChatType, index: number, { length }: { length: number }) => {
+            {item.messages.map((chat: ChatLogChatType, index: number, { length }: { length: number }) => {
               const time = new Date(chat.time)
 
               return (

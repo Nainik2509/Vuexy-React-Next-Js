@@ -143,3 +143,35 @@ export type SendMsgComponentType = {
   dispatch: Dispatch<any>
   sendMsg: (params: SendMsgParamsType) => void
 }
+
+export type ChatLogType = {
+  hidden: boolean
+  data: {
+    chat: ChatsObj
+    contact: ContactType
+    userContact: ProfileUserType
+  }
+}
+
+export type MessageType = {
+  time: string | Date
+  message: string
+  senderId: number
+  feedback: MsgFeedbackType
+}
+
+export type ChatLogChatType = {
+  msg: string
+  time: string | Date
+  feedback: MsgFeedbackType
+}
+
+export type FormattedChatsType = {
+  senderId: number
+  messages: ChatLogChatType[]
+}
+
+export type MessageGroupType = {
+  senderId: number
+  messages: ChatLogChatType[]
+}
