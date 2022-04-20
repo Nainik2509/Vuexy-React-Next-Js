@@ -101,7 +101,6 @@ module.exports = {
               children: [
                 '/guide/components/custom/apexcharts',
                 '/guide/components/custom/react-draft-wysiwyg',
-                '/guide/components/custom/chat-log',
                 '/guide/components/custom/page-header',
                 '/guide/components/custom/react-datepicker',
                 '/guide/components/custom/repeater',
