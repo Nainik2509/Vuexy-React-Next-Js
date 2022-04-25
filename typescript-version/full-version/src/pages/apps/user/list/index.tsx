@@ -151,7 +151,6 @@ const RowOptions = ({ id }: { id: number | string }) => {
       </IconButton>
       <Menu
         keepMounted
-        disablePortal
         anchorEl={anchorEl}
         open={rowOptionsOpen}
         onClose={handleRowOptionsClose}
@@ -412,7 +411,7 @@ const UserList = () => {
             disableSelectionOnClick
             columns={defaultColumns}
             rowsPerPageOptions={[10, 25, 50]}
-            onPageSizeChange={newPageSize => setPageSize(newPageSize)}
+            onPageSizeChange={(newPageSize: number) => setPageSize(newPageSize)}
           />
         </Card>
       </Grid>

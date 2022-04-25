@@ -110,7 +110,6 @@ const RowOptions = ({ id }: { id: number | string }) => {
       </IconButton>
       <Menu
         keepMounted
-        disablePortal
         anchorEl={anchorEl}
         open={rowOptionsOpen}
         onClose={handleRowOptionsClose}

@@ -82,6 +82,48 @@ const HiddenReplyFront = styled(Box)<BoxProps>(({ theme }) => ({
   borderColor: `rgba(${theme.palette.customColors.main}, 0.12)`
 }))
 
+const MailCardMenu = () => {
+  const [mailMenuAnchorEl, setMailMenuAnchorEl] = useState<null | HTMLElement>(null)
+  const openMailMenu = Boolean(mailMenuAnchorEl)
+
+  const handleMailMenuClick = (event: SyntheticEvent) => {
+    setMailMenuAnchorEl(event.currentTarget as HTMLElement)
+  }
+  const handleMailMenuClose = () => {
+    setMailMenuAnchorEl(null)
+  }
+
+  return (
+    <>
+      <IconButton size='small' onClick={handleMailMenuClick}>
+        <DotsVertical sx={{ fontSize: '1.375rem' }} />
+      </IconButton>
+      <Menu
+        anchorEl={mailMenuAnchorEl}
+        open={openMailMenu}
+        onClose={handleMailMenuClose}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'right'
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'right'
+        }}
+      >
+        <MenuItem>
+          <ShareOutline fontSize='small' sx={{ mr: 2 }} />
+          Reply
+        </MenuItem>
+        <MenuItem>
+          <ReplyOutline fontSize='small' sx={{ mr: 2 }} />
+          Forward
+        </MenuItem>
+      </Menu>
+    </>
+  )
+}
+
 const MailDetails = (props: MailDetailsType) => {
   // ** Props
   const {
@@ -106,26 +148,17 @@ const MailDetails = (props: MailDetailsType) => {
   const [showReplies, setShowReplies] = useState<boolean>(false)
   const [labelAnchorEl, setLabelAnchorEl] = useState<null | HTMLElement>(null)
   const [folderAnchorEl, setFolderAnchorEl] = useState<null | HTMLElement>(null)
-  const [mailMenuAnchorEl, setMailMenuAnchorEl] = useState<null | HTMLElement>(null)
 
   // ** Hook
   const { settings } = useSettings()
 
   // ** Vars
   const openLabelMenu = Boolean(labelAnchorEl)
-  const openMailMenu = Boolean(mailMenuAnchorEl)
   const openFolderMenu = Boolean(folderAnchorEl)
 
   const handleMoveToTrash = () => {
     dispatch(updateMail({ emailIds: [mail.id], dataToUpdate: { folder: 'trash' } }))
     setMailDetailsOpen(false)
-  }
-
-  const handleMailMenuClick = (event: SyntheticEvent) => {
-    setMailMenuAnchorEl(event.currentTarget as HTMLElement)
-  }
-  const handleMailMenuClose = () => {
-    setMailMenuAnchorEl(null)
   }
 
   const handleLabelMenuClick = (event: SyntheticEvent) => {
@@ -550,19 +583,7 @@ const MailDetails = (props: MailDetailsType) => {
                             <Attachment sx={{ fontSize: '1.375rem' }} />
                           </IconButton>
                         ) : null}
-                        <IconButton size='small' onClick={handleMailMenuClick}>
-                          <DotsVertical sx={{ fontSize: '1.375rem' }} />
-                        </IconButton>
-                        <Menu anchorEl={mailMenuAnchorEl} open={openMailMenu} onClose={handleMailMenuClose}>
-                          <MenuItem>
-                            <ShareOutline fontSize='small' sx={{ mr: 2 }} />
-                            Reply
-                          </MenuItem>
-                          <MenuItem>
-                            <ReplyOutline fontSize='small' sx={{ mr: 2 }} />
-                            Forward
-                          </MenuItem>
-                        </Menu>
+                        <MailCardMenu />
                       </Box>
                     </Box>
                   </Box>
