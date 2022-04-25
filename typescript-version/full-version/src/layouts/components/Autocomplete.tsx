@@ -222,6 +222,9 @@ const Autocomplete = styled(MuiAutocomplete)(({ theme }) => ({
     },
     '& .MuiListItem-root.suggestion': {
       padding: 0,
+      '& .MuiListItemSecondaryAction-root': {
+        display: 'flex'
+      },
       '&.Mui-focused.Mui-focusVisible, &:hover': {
         backgroundColor: theme.palette.action.hover
       },
@@ -232,9 +235,14 @@ const Autocomplete = styled(MuiAutocomplete)(({ theme }) => ({
         '& .MuiListItemSecondaryAction-root': {
           display: 'none'
         },
-        '&.Mui-focused.Mui-focusVisible:not(:hover)': {
+        '&.Mui-focused, &.Mui-focused.Mui-focusVisible:not(:hover)': {
           '& .MuiListItemSecondaryAction-root': {
             display: 'block'
+          }
+        },
+        [theme.breakpoints.down('sm')]: {
+          '&.Mui-focused:not(.Mui-focusVisible) .MuiListItemSecondaryAction-root': {
+            display: 'none'
           }
         }
       }
@@ -537,8 +545,8 @@ const AutocompleteComponent = ({ hidden, settings }: Props) => {
                 return searchValue.length ? (
                   <ListItem
                     {...props}
-                    className='suggestion'
                     key={(option as AppBarSearchType).title}
+                    className={`suggestion ${props.className}`}
                     onClick={() => handleOptionClick(option as AppBarSearchType)}
                     secondaryAction={
                       <SubdirectoryArrowLeft fontSize='small' sx={{ cursor: 'pointer', color: 'text.disabled' }} />
