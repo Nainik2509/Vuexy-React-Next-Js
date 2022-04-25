@@ -337,13 +337,13 @@ import UserLanguageDropdown from 'src/layouts/components/UserLanguageDropdown'
 interface Props {
   hidden: boolean
   settings: Settings
-  toggleNavVisibility: () => void
-  setShowBackdrop: (val: boolean) => void
+  toggleNavVisibility: () => void // in src/layouts/components/vertical/AppBarContent.tsx file only
   saveSettings: (values: Settings) => void
 }
 
 const AppBarContent = (props: Props) => {
-  const { hidden, settings, saveSettings, setShowBackdrop, toggleNavVisibility } = props
+  // in src/layouts/components/horizontal/AppBarContent.tsx file, toggleNavVisibility prop will not come in the next line
+  const { hidden, settings, saveSettings, toggleNavVisibility } = props
 
   return (
     <>
@@ -366,7 +366,7 @@ export default AppBarContent
 import UserLanguageDropdown from 'src/layouts/components/UserLanguageDropdown'
 
 const AppBarContent = props => {
-  const { hidden, settings, saveSettings, setShowBackdrop, toggleNavVisibility } = props
+  const { hidden, settings, saveSettings, toggleNavVisibility } = props
 
   return (
     <>

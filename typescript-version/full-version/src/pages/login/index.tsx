@@ -121,9 +121,12 @@ const LoginPage = () => {
   const auth = useAuth()
   const theme = useTheme()
   const bgClasses = useBgColor()
-  const {
-    settings: { skin }
-  } = useSettings()
+  const { settings } = useSettings()
+  const hidden = useMediaQuery(theme.breakpoints.down('md'))
+
+  // ** Vars
+  const { skin } = settings
+
   const {
     control,
     setError,
@@ -134,9 +137,6 @@ const LoginPage = () => {
     mode: 'onBlur',
     resolver: yupResolver(schema)
   })
-
-  // ** Vars
-  const hidden = useMediaQuery(theme.breakpoints.down('md'))
 
   const onSubmit = (data: FormData) => {
     const { email, password } = data

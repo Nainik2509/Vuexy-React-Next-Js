@@ -116,11 +116,14 @@ const Register = () => {
   // ** States
   const [showPassword, setShowPassword] = useState<boolean>(false)
 
-  // ** Hook
+  // ** Hooks
   const theme = useTheme()
+  const { register } = useAuth()
+  const { settings } = useSettings()
+  const hidden = useMediaQuery(theme.breakpoints.down('md'))
 
   // ** Vars
-  const hidden = useMediaQuery(theme.breakpoints.down('md'))
+  const { skin } = settings
   const schema = yup.object().shape({
     password: yup.string().min(5).required(),
     username: yup.string().min(3).required(),
@@ -128,11 +131,6 @@ const Register = () => {
     terms: yup.bool().oneOf([true], 'You must accept the privacy policy & terms')
   })
 
-  // ** Hooks
-  const {
-    settings: { skin }
-  } = useSettings()
-  const { register } = useAuth()
   const {
     control,
     setError,

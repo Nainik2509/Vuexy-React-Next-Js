@@ -1,23 +1,12 @@
 // Type Imports
-import { ReactNode } from 'react'
 import { ThemeColor } from 'src/@core/layouts/types'
 
-export type AppBarSearchPagesSection = {
+export type AppBarSearchType = {
   id: number
   url: string
   icon: string
   title: string
-}
-
-export type AppBarSearchSortedData = {
-  pages: AppBarSearchPagesSection[]
-}
-
-export type AppBarSearchType = {
-  id: number
-  url?: string
-  title: string
-  icon?: string | string[] | ReactNode
+  category: string
 }
 
 export type AutocompleteType = {

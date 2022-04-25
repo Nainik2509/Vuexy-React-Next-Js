@@ -3,7 +3,6 @@ import { useState } from 'react'
 
 // ** MUI Imports
 import Fab from '@mui/material/Fab'
-import Backdrop from '@mui/material/Backdrop'
 import { styled } from '@mui/material/styles'
 import Box, { BoxProps } from '@mui/material/Box'
 
@@ -63,7 +62,6 @@ const VerticalLayout = (props: LayoutProps) => {
   // ** States
   const [navHover, setNavHover] = useState<boolean>(false)
   const [navVisible, setNavVisible] = useState<boolean>(false)
-  const [showBackdrop, setShowBackdrop] = useState<boolean>(false)
 
   // ** Toggle Functions
   const toggleNavVisibility = () => setNavVisible(!navVisible)
@@ -87,7 +85,7 @@ const VerticalLayout = (props: LayoutProps) => {
         )}
         <MainContentWrapper className='layout-content-wrapper'>
           {/* AppBar Component */}
-          <AppBar setShowBackdrop={setShowBackdrop} toggleNavVisibility={toggleNavVisibility} {...props} />
+          <AppBar toggleNavVisibility={toggleNavVisibility} {...props} />
 
           {/* Content */}
           <ContentWrapper
@@ -104,16 +102,13 @@ const VerticalLayout = (props: LayoutProps) => {
           </ContentWrapper>
 
           {/* Footer Component */}
-          <Footer showBackdrop={showBackdrop} {...props} />
+          <Footer {...props} />
 
           {/* Portal for React Datepicker */}
           <DatePickerWrapper sx={{ zIndex: 11 }}>
             <Box id='react-datepicker-portal'></Box>
           </DatePickerWrapper>
         </MainContentWrapper>
-
-        {/* Backdrop */}
-        <Backdrop open={showBackdrop} onClick={() => setShowBackdrop(false)} sx={{ zIndex: 12 }} />
       </VerticalLayoutWrapper>
 
       {/* Customizer */}

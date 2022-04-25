@@ -13,7 +13,6 @@ interface Props {
   hidden: boolean
   settings: Settings
   toggleNavVisibility: () => void
-  setShowBackdrop: (val: boolean) => void
   saveSettings: (values: Settings) => void
   verticalAppBarContent?: (props?: any) => ReactNode
 }

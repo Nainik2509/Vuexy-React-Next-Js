@@ -1,11 +1,7 @@
-// ** React Imports
-import { useState } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Fab from '@mui/material/Fab'
 import AppBar from '@mui/material/AppBar'
-import Backdrop from '@mui/material/Backdrop'
 import { styled } from '@mui/material/styles'
 import MuiToolbar, { ToolbarProps } from '@mui/material/Toolbar'
 
@@ -27,9 +23,6 @@ import AppBarContent from './components/horizontal/app-bar-content'
 
 // ** Styled Component
 import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
-// ** Util Import
-import { hexToRGBA } from '../utils/hex-to-rgba'
 
 const HorizontalLayoutWrapper = styled('div')({
   display: 'flex',
@@ -73,9 +66,6 @@ const HorizontalLayout = (props: LayoutProps) => {
     horizontalNavMenuContent: userHorizontalNavMenuContent
   } = props
 
-  // ** States
-  const [showBackdrop, setShowBackdrop] = useState<boolean>(false)
-
   // ** Vars
   const { skin, appBar, navHidden, contentWidth } = settings
 
@@ -93,8 +83,7 @@ const HorizontalLayout = (props: LayoutProps) => {
           justifyContent: 'center',
           ...(appBar === 'static' && { zIndex: 13 }),
           transition: 'border-bottom 0.2s ease-in-out',
-          backgroundColor: theme => theme.palette.background.paper,
-          ...(!showBackdrop && skin === 'bordered' && { borderBottom: theme => `1px solid ${theme.palette.divider}` })
+          backgroundColor: theme => theme.palette.background.paper
         }}
       >
         {/* Navbar / AppBar */}
@@ -113,19 +102,13 @@ const HorizontalLayout = (props: LayoutProps) => {
               minHeight: theme => `${(theme.mixins.toolbar.minHeight as number) - 1}px !important`
             }}
           >
-            <AppBarContent
-              {...props}
-              hidden={hidden}
-              settings={settings}
-              saveSettings={saveSettings}
-              setShowBackdrop={setShowBackdrop}
-            />
+            <AppBarContent {...props} hidden={hidden} settings={settings} saveSettings={saveSettings} />
           </Toolbar>
         </Box>
 
         {/* Navigation Menu */}
         {navHidden ? null : (
-          <Box className='layout-horizontal-nav' sx={{ width: '100%', position: 'relative' }}>
+          <Box className='layout-horizontal-nav' sx={{ width: '100%' }}>
             <Toolbar
               className='horizontal-nav-content-container'
               sx={{
@@ -137,17 +120,6 @@ const HorizontalLayout = (props: LayoutProps) => {
             >
               {(userHorizontalNavMenuContent && userHorizontalNavMenuContent(props)) || <Navigation {...props} />}
             </Toolbar>
-            <Backdrop
-              open={showBackdrop}
-              onClick={() => setShowBackdrop(false)}
-              sx={{
-                position: 'absolute',
-                backgroundColor: theme =>
-                  theme.palette.mode === 'light'
-                    ? `rgba(${theme.palette.customColors.main}, 0.665)`
-                    : hexToRGBA(theme.palette.background.default, 0.7)
-              }}
-            />
           </Box>
         )}
       </AppBar>
@@ -167,7 +139,7 @@ const HorizontalLayout = (props: LayoutProps) => {
       </ContentWrapper>
 
       {/* Footer */}
-      <Footer showBackdrop={showBackdrop} {...props} />
+      <Footer {...props} />
 
       {/* Portal for React Datepicker */}
       <DatePickerWrapper sx={{ zIndex: 11 }}>
@@ -187,9 +159,6 @@ const HorizontalLayout = (props: LayoutProps) => {
           </Fab>
         </ScrollToTop>
       )}
-
-      {/* Backdrop */}
-      <Backdrop open={showBackdrop} onClick={() => setShowBackdrop(false)} sx={{ zIndex: 12 }} />
     </HorizontalLayoutWrapper>
   )
 }

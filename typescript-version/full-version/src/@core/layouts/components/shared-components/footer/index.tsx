@@ -12,14 +12,13 @@ import FooterContent from './FooterContent'
 
 interface Props {
   settings: Settings
-  showBackdrop: boolean
   saveSettings: (values: Settings) => void
   footerContent?: (props?: any) => ReactNode
 }
 
 const Footer = (props: Props) => {
   // ** Props
-  const { settings, showBackdrop, footerContent: userFooterContent } = props
+  const { settings, footerContent: userFooterContent } = props
 
   // ** Vars
   const { skin, footer, contentWidth } = settings
@@ -33,7 +32,7 @@ const Footer = (props: Props) => {
       component='footer'
       className='layout-footer'
       sx={{
-        zIndex: showBackdrop && footer === 'fixed' ? 13 : 10,
+        zIndex: 10,
         py: theme => theme.spacing(footer === 'fixed' && skin === 'bordered' ? 3.875 : 4),
         ...(footer === 'static' && {
           boxShadow: 'none',

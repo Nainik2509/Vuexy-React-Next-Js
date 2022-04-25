@@ -18,7 +18,6 @@ import themeConfig from 'src/configs/themeConfig'
 interface Props {
   hidden: boolean
   settings: Settings
-  setShowBackdrop: (val: boolean) => void
   saveSettings: (values: Settings) => void
   horizontalAppBarContent?: (props?: any) => ReactNode
   horizontalAppBarBranding?: (props?: any) => ReactNode
