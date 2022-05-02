@@ -7,15 +7,17 @@ import { useKeenSlider } from 'keen-slider/react'
 const SwiperVertical = () => {
   // ** Hook
   const [ref] = useKeenSlider<HTMLDivElement>({
+    loop: true,
     vertical: true,
     slides: {
-      origin: 'center',
-      spacing: 8
+      perView: 2,
+      spacing: 8,
+      origin: 'center'
     }
   })
 
   return (
-    <Box ref={ref} className='keen-slider vertical'>
+    <Box ref={ref} className='keen-slider vertical' sx={{ maxHeight: 300 }}>
       {[...Array(10).keys()].map((num: number) => (
         <Box key={num} className='keen-slider__slide default-slide'>
           {num + 1}

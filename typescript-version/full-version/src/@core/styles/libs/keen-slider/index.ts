@@ -24,7 +24,7 @@ const KeenSliderWrapper = styled('div')(({ theme }) => ({
           '& img': {
             width: '100%',
             height: '100%',
-            objectFit: 'cover',
+            objectFit: 'fill',
             position: 'absolute',
             backgroundColor: 'transparent'
           }
@@ -37,12 +37,6 @@ const KeenSliderWrapper = styled('div')(({ theme }) => ({
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: theme.palette.background.default
-    },
-    '&.vertical': {
-      '& .default-slide': {
-        minHeight: '150px !important',
-        maxHeight: '150px !important'
-      }
     }
   },
 
@@ -60,7 +54,7 @@ const KeenSliderWrapper = styled('div')(({ theme }) => ({
       '& img': {
         width: ' 100%',
         height: ' 100%',
-        objectFit: 'cover',
+        objectFit: 'fill',
         position: 'absolute'
       }
     }

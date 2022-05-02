@@ -38,6 +38,11 @@ const SwiperMutationObserver = ({ direction }: { direction: Direction }) => {
       slides: {
         perView: 3,
         spacing: 16
+      },
+      breakpoints: {
+        '(max-width: 375px)': {
+          slides: { perView: 1, spacing: 16 }
+        }
       }
     },
     [MutationPlugin]
