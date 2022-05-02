@@ -1,5 +1,5 @@
 // ** React Imports
-import { ReactNode } from 'react'
+import { ReactNode, useEffect, useRef } from 'react'
 
 // ** MUI Imports
 import { Theme } from '@mui/material/styles'
@@ -31,6 +31,7 @@ interface Props {
 const UserLayout = ({ children }: Props) => {
   // ** Hooks
   const { settings, saveSettings } = useSettings()
+  const isCollapsed = useRef(settings.navCollapsed)
 
   /**
    *  The below variable will hide the current layout menu at given screen size.
@@ -41,6 +42,19 @@ const UserLayout = ({ children }: Props) => {
    *  ! Do not change this value unless you know what you are doing. It can break the template.
    */
   const hidden = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
+
+  useEffect(() => {
+    if (settings.navCollapsed && hidden) {
+      saveSettings({ ...settings, navCollapsed: false })
+      isCollapsed.current = true
+    }
+
+    if (!hidden && isCollapsed.current) {
+      saveSettings({ ...settings, navCollapsed: true })
+      isCollapsed.current = false
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hidden])
 
   return (
     <Layout

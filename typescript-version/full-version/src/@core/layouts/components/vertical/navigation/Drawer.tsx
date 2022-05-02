@@ -1,5 +1,5 @@
 // ** React Imports
-import { ReactNode, useEffect } from 'react'
+import { ReactNode } from 'react'
 
 // ** MUI Imports
 import { styled, useTheme } from '@mui/material/styles'
@@ -41,31 +41,14 @@ const SwipeableDrawer = styled(MuiSwipeableDrawer)<SwipeableDrawerProps>({
 
 const Drawer = (props: Props) => {
   // ** Props
-  const {
-    hidden,
-    children,
-    navHover,
-    navWidth,
-    settings,
-    navVisible,
-    setNavHover,
-    saveSettings,
-    setNavVisible,
-    collapsedNavWidth
-  } = props
+  const { hidden, children, navHover, navWidth, settings, navVisible, setNavHover, setNavVisible, collapsedNavWidth } =
+    props
 
   // ** Hook
   const theme = useTheme()
 
   // ** Vars
   const { skin, navCollapsed } = settings
-
-  useEffect(() => {
-    if (navCollapsed && hidden) {
-      saveSettings({ ...settings, navCollapsed: false })
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [hidden])
 
   const drawerColor = () => {
     if (skin === 'semi-dark' && theme.palette.mode === 'light') {
