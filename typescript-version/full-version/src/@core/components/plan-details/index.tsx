@@ -55,8 +55,8 @@ const PlanDetails = (props: PricingPlanProps) => {
     >
       {data?.popularPlan ? (
         <CustomChip
-          label='Popular'
           skin='light'
+          label='Popular'
           color='primary'
           sx={{
             top: 11,
@@ -87,10 +87,7 @@ const PlanDetails = (props: PricingPlanProps) => {
             <Typography variant='body2' sx={{ mt: 1.6, alignSelf: 'flex-start' }}>
               $
             </Typography>
-            <Typography
-              variant='h3'
-              sx={{ fontWeight: 600, alignSelf: 'center', color: 'primary.main', lineHeight: 1.17 }}
-            >
+            <Typography variant='h3' sx={{ fontWeight: 600, color: 'primary.main', lineHeight: 1.17 }}>
               {plan === 'monthly' ? data?.monthlyPrice : data?.yearlyPlan.perMonth}
             </Typography>
             <Typography variant='body2' sx={{ mb: 1.6, alignSelf: 'flex-end' }}>

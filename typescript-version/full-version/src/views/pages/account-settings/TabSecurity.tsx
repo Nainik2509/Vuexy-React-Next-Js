@@ -170,15 +170,15 @@ const TabSecurity = () => {
         </Grid>
       </CardContent>
 
-      <Divider sx={{ margin: 0 }} />
+      <Divider sx={{ mt: 0, mb: 1.75 }} />
 
       <CardContent>
-        <Box sx={{ mt: 1.75, display: 'flex', alignItems: 'center' }}>
+        <Box sx={{ mb: 5.75, display: 'flex', alignItems: 'center' }}>
           <KeyOutline sx={{ marginRight: 3 }} />
           <Typography variant='h6'>Two-factor authentication</Typography>
         </Box>
 
-        <Box sx={{ mt: 5.75, display: 'flex', justifyContent: 'center' }}>
+        <Box sx={{ mb: 11, display: 'flex', justifyContent: 'center' }}>
           <Box
             sx={{
               maxWidth: 368,
@@ -188,12 +188,10 @@ const TabSecurity = () => {
               flexDirection: 'column'
             }}
           >
-            <CustomAvatar skin='light' variant='rounded' sx={{ width: 48, height: 48 }}>
+            <CustomAvatar skin='light' variant='rounded' sx={{ mb: 3.5, width: 48, height: 48 }}>
               <LockOpenOutline sx={{ fontSize: '1.75rem' }} />
             </CustomAvatar>
-            <Typography sx={{ fontWeight: 600, marginTop: 3.5, marginBottom: 3.5 }}>
-              Two factor authentication is not enabled yet.
-            </Typography>
+            <Typography sx={{ fontWeight: 600, mb: 3.5 }}>Two factor authentication is not enabled yet.</Typography>
             <Typography variant='body2'>
               Two-factor authentication adds an additional layer of security to your account by requiring more than just
               a password to log in. Learn more.
@@ -201,7 +199,7 @@ const TabSecurity = () => {
           </Box>
         </Box>
 
-        <Box sx={{ mt: 11 }}>
+        <Box>
           <Button variant='contained' sx={{ marginRight: 3.5 }}>
             Save Changes
           </Button>

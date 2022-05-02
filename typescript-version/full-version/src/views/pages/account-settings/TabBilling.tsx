@@ -199,19 +199,19 @@ const TabBilling = () => {
                 <Typography variant='h6'>Your Current Plan</Typography>
               </Box>
               <Chip skin='light' color='primary' label='Basic Plan' />
-              <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <AccountOutline sx={{ marginRight: 2, fontSize: '1.125rem', color: 'text.secondary' }} />
+              <Box sx={{ my: 3, display: 'flex', alignItems: 'center' }}>
+                <AccountOutline sx={{ mr: 2, fontSize: '1.125rem', color: 'text.secondary' }} />
                 <Typography variant='body2'>5 Users</Typography>
               </Box>
-              <Box sx={{ mt: 3, display: 'flex', alignItems: 'center' }}>
-                <CloudOutline sx={{ marginRight: 2, fontSize: '1.125rem', color: 'text.secondary' }} />
+              <Box sx={{ mb: 3, display: 'flex', alignItems: 'center' }}>
+                <CloudOutline sx={{ mr: 2, fontSize: '1.125rem', color: 'text.secondary' }} />
                 <Typography variant='body2'>10 GB storage</Typography>
               </Box>
-              <Box sx={{ mt: 3, display: 'flex', alignItems: 'center' }}>
-                <HelpCircleOutline sx={{ marginRight: 2, fontSize: '1.125rem', color: 'text.secondary' }} />
+              <Box sx={{ mb: 6.75, display: 'flex', alignItems: 'center' }}>
+                <HelpCircleOutline sx={{ mr: 2, fontSize: '1.125rem', color: 'text.secondary' }} />
                 <Typography variant='body2'>Basic Support</Typography>
               </Box>
-              <Button fullWidth variant='contained' sx={{ marginTop: 6.75 }}>
+              <Button fullWidth variant='contained'>
                 Upgrade Plan
               </Button>
             </Box>

@@ -91,7 +91,7 @@ const DialogReferEarn = () => {
         TransitionComponent={Transition}
         onBackdropClick={() => setShow(false)}
       >
-        <DialogContent sx={{ px: { xs: 8, sm: 15 }, pt: { xs: 8, sm: 12.5 }, position: 'relative' }}>
+        <DialogContent sx={{ px: [8, 15], pt: [8, 12.5], position: 'relative' }}>
           <IconButton
             size='small'
             onClick={() => setShow(false)}
@@ -143,7 +143,7 @@ const DialogReferEarn = () => {
             <Typography variant='h6' sx={{ mb: 4 }}>
               Invite your friends
             </Typography>
-            <InputLabel sx={{ mb: 2, display: 'inline-flex' }} htmlFor='refer-email'>
+            <InputLabel htmlFor='refer-email' sx={{ mb: 2, display: 'inline-flex', whiteSpace: 'break-spaces' }}>
               Enter your friend’s email address and invite them to join Master 😍
             </InputLabel>
             <Box sx={{ display: 'flex', alignItems: 'center', width: '100%', flexWrap: { xs: 'wrap', sm: 'nowrap' } }}>
@@ -163,7 +163,7 @@ const DialogReferEarn = () => {
             <Typography variant='h6' sx={{ mb: 4 }}>
               Share the referral link
             </Typography>
-            <InputLabel sx={{ mb: 2, display: 'inline-flex' }} htmlFor='refer-social'>
+            <InputLabel htmlFor='refer-social' sx={{ mb: 2, display: 'inline-flex', whiteSpace: 'break-spaces' }}>
               You can also copy and send it or share it on your social media. 🥳
             </InputLabel>
             <Box

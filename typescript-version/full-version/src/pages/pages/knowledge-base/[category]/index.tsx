@@ -94,7 +94,7 @@ const KnowledgeBaseCategory = ({ apiData }: InferGetStaticPropsType<typeof getSt
         <Anchor passHref key={index} href={`/pages/knowledge-base/${category}/${obj.slug}`}>
           <StyledLink>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <CircleOutline sx={{ fontSize: '0.875rem', marginRight: 2.25, color: 'text.secondary' }} />
+              <CircleOutline sx={{ mr: 2.25, fontSize: '0.875rem', color: 'text.secondary' }} />
               <Typography variant='body2'>{obj.question}</Typography>
             </Box>
           </StyledLink>
@@ -114,11 +114,9 @@ const KnowledgeBaseCategory = ({ apiData }: InferGetStaticPropsType<typeof getSt
               <Card>
                 <StyledCardContent>
                   <IconTag
-                    sx={{ fontSize: '1.5rem', ...(item.iconColor ? { color: `${item.iconColor}.main` } : {}) }}
+                    sx={{ mr: 3, fontSize: '1.5rem', ...(item.iconColor ? { color: `${item.iconColor}.main` } : {}) }}
                   />
-                  <Typography variant='h6' sx={{ ml: 3 }}>
-                    {`${item.title} (${item.questions.length})`}
-                  </Typography>
+                  <Typography variant='h6'>{`${item.title} (${item.questions.length})`}</Typography>
                 </StyledCardContent>
                 <CardContent sx={{ padding: theme => `${theme.spacing(6.75, 5.5, 7.5)} !important` }}>
                   {renderQuestions(item)}

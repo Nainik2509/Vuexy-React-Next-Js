@@ -85,10 +85,8 @@ const KnowledgeBaseCategoryQuestion = () => {
       <Grid item xs={12} md={4}>
         <Card>
           <StyledCardContent>
-            <CogOutline sx={{ fontSize: '1.5rem', color: 'primary.main' }} />
-            <Typography variant='h6' sx={{ ml: 3 }}>
-              {`Account Settings (${questions.length})`}
-            </Typography>
+            <CogOutline sx={{ mr: 3, color: 'primary.main' }} />
+            <Typography variant='h6'>{`Account Settings (${questions.length})`}</Typography>
           </StyledCardContent>
           <CardContent sx={{ padding: theme => `${theme.spacing(6.75, 5.5, 7.5)} !important` }}>
             {renderQuestions()}
@@ -98,13 +96,11 @@ const KnowledgeBaseCategoryQuestion = () => {
       <StyledGrid item xs={12} md={8}>
         <Card>
           <CardContent>
-            <Box sx={{ display: 'flex' }}>
-              <Cellphone sx={{ fontSize: '1.375rem', marginTop: 1.25 }} />
-              <Typography variant='h6' sx={{ ml: 3.25 }}>
-                Why Was My Developer Application Rejected?
-              </Typography>
+            <Box sx={{ mb: 3, display: 'flex' }}>
+              <Cellphone sx={{ mr: 3.25, fontSize: '1.375rem', marginTop: 1.25 }} />
+              <Typography variant='h6'>Why Was My Developer Application Rejected?</Typography>
             </Box>
-            <Typography variant='body2' sx={{ marginTop: 3, marginBottom: 7 }}>
+            <Typography variant='body2' sx={{ marginBottom: 7 }}>
               Last updated on 10 Dec 2020
             </Typography>
             <Typography variant='body2' sx={{ marginBottom: 7 }}>

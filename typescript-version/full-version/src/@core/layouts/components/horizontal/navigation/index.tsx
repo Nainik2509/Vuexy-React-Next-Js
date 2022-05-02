@@ -26,22 +26,10 @@ const Navigation = (props: Props) => {
         display: 'flex',
         flexWrap: 'wrap',
         alignItems: 'center',
-        '& > *:not(.MuiTooltip-popper)': {
-          '&:not(:last-child)': { mr: 3 },
+        '& > *': {
+          '&:not(:last-child)': { mr: 2 },
           ...(themeConfig.menuTextTruncate && { maxWidth: 200 })
         }
-
-        /* '&::-webkit-scrollbar': {
-              height: 6
-            },
-            '&::-webkit-scrollbar-thumb': {
-              borderRadius: 20,
-              background: theme => hexToRGBA(theme.palette.mode === 'light' ? '#B0ACB5' : '#575468', 0.6)
-            },
-            '&::-webkit-scrollbar-track': {
-              borderRadius: 20,
-              background: 'transparent'
-            } */
       }}
     >
       <HorizontalNavItems {...props} />

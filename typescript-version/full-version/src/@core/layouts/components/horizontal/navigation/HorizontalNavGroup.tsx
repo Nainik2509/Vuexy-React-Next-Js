@@ -240,17 +240,17 @@ const HorizontalNavGroup = (props: Props) => {
                     />
                   ) : null}
                   {hasParent ? (
-                    <ToggleIcon sx={{ width: 18, height: 18, color: 'text.secondary' }} />
+                    <ToggleIcon sx={{ fontSize: '1.125rem', color: 'text.secondary' }} />
                   ) : (
-                    <ChevronDown sx={{ width: 18, height: 18, color: 'text.secondary' }} />
+                    <ChevronDown sx={{ fontSize: '1.125rem', color: 'text.secondary' }} />
                   )}
                 </Box>
               </Box>
             </ListItem>
             <AnimationWrapper {...(horizontalMenuAnimation && { in: menuOpen, timeout: { exit: 300, enter: 400 } })}>
               <Box
-                ref={setPopperElement}
                 style={styles.popper}
+                ref={setPopperElement}
                 {...attributes.popper}
                 sx={{
                   zIndex: theme.zIndex.appBar,

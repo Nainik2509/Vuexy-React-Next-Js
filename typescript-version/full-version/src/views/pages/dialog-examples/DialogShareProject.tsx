@@ -214,7 +214,7 @@ const DialogShareProject = () => {
               </ListItem>
             )}
           />
-          <Typography variant='h6'>{data.length} Members</Typography>
+          <Typography variant='h6'>{`${data.length} Members`}</Typography>
           <List dense sx={{ mb: 3 }}>
             {data.map(member => {
               return (

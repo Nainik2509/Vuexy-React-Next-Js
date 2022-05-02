@@ -51,10 +51,7 @@ const ListItem = styled(MuiListItem)<ListItemProps & { component?: ElementType; 
     '&.active, &.active:hover': {
       backgroundColor: hexToRGBA(theme.palette.primary.main, 0.08)
     },
-    '&.active .MuiTypography-root, &.active:hover .MuiTypography-root': {
-      color: theme.palette.primary.main
-    },
-    '&.active, &.active .MuiSvgIcon-root': {
+    '&.active .MuiTypography-root, &.active .MuiListItemIcon-root': {
       color: theme.palette.primary.main
     }
   })
@@ -109,7 +106,7 @@ const HorizontalNavLink = (props: Props) => {
                     borderRadius: 1,
                     '&.active, &.active:hover': {
                       backgroundColor: theme => theme.palette.primary.main,
-                      '& .MuiTypography-root, & .MuiListItemIcon-root, & .MuiSvgIcon-root': {
+                      '& .MuiTypography-root, & .MuiListItemIcon-root': {
                         color: 'common.white'
                       }
                     }
