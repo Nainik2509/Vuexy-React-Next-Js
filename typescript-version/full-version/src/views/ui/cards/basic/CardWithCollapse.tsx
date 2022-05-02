@@ -29,7 +29,7 @@ const CardWithCollapse = () => {
     <Card>
       <CardMedia sx={{ height: '14.5625rem' }} image='/images/cards/paper-boat.png' />
       <CardContent>
-        <Typography variant='h6' sx={{ marginBottom: 2 }}>
+        <Typography variant='h6' sx={{ mb: 2 }}>
           Popular Uses Of The Internet
         </Typography>
         <Typography variant='body2'>
@@ -52,7 +52,7 @@ const CardWithCollapse = () => {
         </Box>
       </CardActions>
       <Collapse in={collapse}>
-        <Divider sx={{ margin: 0 }} />
+        <Divider sx={{ m: 0 }} />
         <CardContent>
           <Typography variant='body2'>
             I&prime;m a thing. But, like most politicians, he promised more than he could deliver. You won&prime;t have

@@ -30,7 +30,7 @@ const RatingsHoverFeedback = () => {
         value={value}
         precision={0.5}
         name='hover-feedback'
-        sx={{ marginRight: 4 }}
+        sx={{ mr: 4 }}
         onChange={(event, newValue) => setValue(newValue)}
         onChangeActive={(event, newHover) => setHover(newHover)}
       />

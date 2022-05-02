@@ -71,14 +71,14 @@ const AutocompleteVariants = () => {
             filterSelectedOptions
             defaultValue={[top100Films[13]]}
             getOptionLabel={option => option.title}
-            sx={{ width: 250, marginTop: 5, marginRight: 5 }}
+            sx={{ width: 250, mt: 5, mr: 5 }}
             renderInput={params => <TextField {...params} label='filterSelectedOptions' placeholder='Favorites' />}
           />
           <Autocomplete
             freeSolo
             multiple
             defaultValue={[top100Films[13].title]}
-            sx={{ width: 250, marginTop: 5, marginRight: 5 }}
+            sx={{ width: 250, mt: 5, mr: 5 }}
             options={top100Films.map(option => option.title)}
             renderInput={params => <TextField {...params} variant='filled' label='freeSolo' placeholder='Favorites' />}
             renderTags={(value: string[], getTagProps) =>
@@ -91,7 +91,7 @@ const AutocompleteVariants = () => {
             multiple
             options={top100Films}
             defaultValue={[top100Films[13]]}
-            sx={{ width: 250, marginTop: 5 }}
+            sx={{ width: 250, mt: 5 }}
             getOptionLabel={option => option.title}
             renderInput={params => (
               <TextField {...params} label='Multiple values' placeholder='Favorites' variant='standard' />
@@ -101,7 +101,7 @@ const AutocompleteVariants = () => {
       </CardContent>
 
       <CardContent>
-        <Typography variant='h6' sx={{ marginBottom: 4 }}>
+        <Typography variant='h6' sx={{ mb: 4 }}>
           Small Size
         </Typography>
         <Grid container spacing={4}>
@@ -116,7 +116,7 @@ const AutocompleteVariants = () => {
             <Autocomplete
               multiple
               size='small'
-              sx={{ marginTop: 5 }}
+              sx={{ mt: 5 }}
               options={top100Films}
               defaultValue={[top100Films[13]]}
               getOptionLabel={option => option.title}
@@ -137,7 +137,7 @@ const AutocompleteVariants = () => {
             <Autocomplete
               multiple
               size='small'
-              sx={{ marginTop: 5 }}
+              sx={{ mt: 5 }}
               defaultValue={[top100Films[13].title]}
               options={top100Films.map(option => option.title)}
               renderInput={params => (
@@ -164,7 +164,7 @@ const AutocompleteVariants = () => {
             <Autocomplete
               multiple
               size='small'
-              sx={{ marginTop: 5 }}
+              sx={{ mt: 5 }}
               options={top100Films}
               defaultValue={[top100Films[13]]}
               getOptionLabel={option => option.title}

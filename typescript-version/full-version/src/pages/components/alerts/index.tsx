@@ -27,7 +27,7 @@ const Alerts = () => {
             jsx: source.AlertsBasicJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>severity={`{'error' | 'warning' | 'info' | 'success'}`}</code> prop with{' '}
             <code>&lt;Alert&gt;</code> component for different colored alerts.
           </Typography>
@@ -42,7 +42,7 @@ const Alerts = () => {
             jsx: source.AlertsOutlinedJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>variant='outlined'</code> prop with <code>&lt;Alert&gt;</code> component for outlined alerts.
           </Typography>
           <AlertsOutlined />
@@ -56,7 +56,7 @@ const Alerts = () => {
             jsx: source.AlertsFilledJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>variant='filled'</code> prop with <code>&lt;Alert&gt;</code> component for filled alerts.
           </Typography>
           <AlertsFilled />
@@ -70,7 +70,7 @@ const Alerts = () => {
             jsx: source.AlertsActionsJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             To add a button, you need to use <code>action</code> prop with <code>&lt;Alert&gt;</code> component and pass
             a button inside this prop. To add a close button, you need to use <code>onClose</code> prop with{' '}
             <code>&lt;Alert&gt;</code> component.
@@ -86,7 +86,7 @@ const Alerts = () => {
             jsx: source.AlertsDescriptionJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             You can use the <code>AlertTitle</code> component to display a formatted title above the content.
           </Typography>
           <AlertsDescription />
@@ -100,7 +100,7 @@ const Alerts = () => {
             jsx: source.AlertsDismissibleJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             You need to use one of the transition components (viz. Collapse, Fade, Grow and Slide) to make a dismissible
             alert.
           </Typography>

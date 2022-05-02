@@ -40,7 +40,7 @@ const OutsidePopover = () => {
           horizontal: 'center'
         }}
       >
-        <Typography sx={{ padding: 4 }}>The content of the Popover.</Typography>
+        <Typography sx={{ p: 4 }}>The content of the Popover.</Typography>
       </Popover>
     </div>
   )

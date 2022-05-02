@@ -22,7 +22,7 @@ const TypographyTexts = () => {
             <Typography>subtitle1</Typography>
           </Grid>
           <DemoGrid item xs={12} sm={10}>
-            <Typography variant='subtitle1' sx={{ marginBottom: 2 }}>
+            <Typography variant='subtitle1' sx={{ mb: 2 }}>
               Cupcake ipsum dolor sit amet chocolate bar pastry sesame snaps.
             </Typography>
             <Typography variant='body2'>font-size: 16px / line-height: 28px / font-weight: 400</Typography>
@@ -32,7 +32,7 @@ const TypographyTexts = () => {
             <Typography>subtitle2</Typography>
           </Grid>
           <DemoGrid item xs={12} sm={10}>
-            <Typography variant='subtitle2' sx={{ marginBottom: 2 }}>
+            <Typography variant='subtitle2' sx={{ mb: 2 }}>
               Cupcake ipsum dolor sit amet chocolate bar pastry sesame snaps.
             </Typography>
             <Typography variant='body2'>font-size: 14px / line-height: 21px / font-weight: 500</Typography>
@@ -42,9 +42,7 @@ const TypographyTexts = () => {
             <Typography>body1</Typography>
           </Grid>
           <DemoGrid item xs={12} sm={10}>
-            <Typography sx={{ marginBottom: 2 }}>
-              Cupcake ipsum dolor sit amet chocolate bar pastry sesame snaps.
-            </Typography>
+            <Typography sx={{ mb: 2 }}>Cupcake ipsum dolor sit amet chocolate bar pastry sesame snaps.</Typography>
             <Typography variant='body2'>font-size: 16px / line-height: 24px / font-weight: 400</Typography>
           </DemoGrid>
 
@@ -52,7 +50,7 @@ const TypographyTexts = () => {
             <Typography>body2</Typography>
           </Grid>
           <DemoGrid item xs={12} sm={10}>
-            <Typography variant='body2' sx={{ marginBottom: 2 }}>
+            <Typography variant='body2' sx={{ mb: 2 }}>
               Cupcake ipsum dolor sit amet chocolate bar pastry sesame snaps.
             </Typography>
             <Typography variant='body2'>font-size: 14px / line-height: 21px / font-weight: 400</Typography>

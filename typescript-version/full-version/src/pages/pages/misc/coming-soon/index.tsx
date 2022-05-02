@@ -54,7 +54,7 @@ const ComingSoon = () => {
           <form noValidate autoComplete='off' onSubmit={handleSubmit}>
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <TextField autoFocus size='small' type='email' placeholder='Enter your email' />
-              <Button type='submit' variant='contained' sx={{ marginLeft: 2.5, paddingLeft: 5.5, paddingRight: 5.5 }}>
+              <Button type='submit' variant='contained' sx={{ ml: 2.5, pl: 5.5, pr: 5.5 }}>
                 Notify
               </Button>
             </Box>

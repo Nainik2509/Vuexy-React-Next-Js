@@ -42,8 +42,8 @@ const ListNested = () => {
         <Collapse in={open} timeout='auto' unmountOnExit>
           <List component='div' disablePadding>
             <ListItem disablePadding>
-              <ListItemButton sx={{ paddingLeft: 8 }}>
-                <ListItemIcon sx={{ marginRight: 4 }}>
+              <ListItemButton sx={{ pl: 8 }}>
+                <ListItemIcon sx={{ mr: 4 }}>
                   <SendClock fontSize='small' />
                 </ListItemIcon>
                 <ListItemText primary='Scheduled' />

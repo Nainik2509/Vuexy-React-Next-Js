@@ -81,7 +81,7 @@ const UserProfileRight = (props: UserProfileRightType) => {
             >
               <Close sx={{ fontSize: '1.375rem' }} />
             </IconButton>
-            <Box sx={{ display: 'flex', flexDirection: 'column', padding: theme => theme.spacing(5) }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', p: theme => theme.spacing(5) }}>
               <Box sx={{ mb: 5.5, display: 'flex', justifyContent: 'center' }}>
                 <Badge
                   overlap='circular'
@@ -131,7 +131,7 @@ const UserProfileRight = (props: UserProfileRightType) => {
 
           <Box sx={{ height: 'calc(100% - 11.8125rem)' }}>
             <ScrollWrapper>
-              <Box sx={{ padding: theme => theme.spacing(5) }}>
+              <Box sx={{ p: theme => theme.spacing(5) }}>
                 <FormGroup sx={{ mb: 10.5 }}>
                   <Typography variant='body2' sx={{ mb: 3.5, textTransform: 'uppercase' }}>
                     About

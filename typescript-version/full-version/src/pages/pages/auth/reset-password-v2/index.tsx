@@ -257,7 +257,7 @@ const ResetPasswordV2 = () => {
               </Typography>
             </Box>
             <form noValidate autoComplete='off' onSubmit={handleSubmit}>
-              <FormControl sx={{ display: 'flex', marginBottom: 4 }}>
+              <FormControl sx={{ display: 'flex', mb: 4 }}>
                 <InputLabel htmlFor='auth-reset-password-v2-new-password'>New Password</InputLabel>
                 <OutlinedInput
                   autoFocus
@@ -280,7 +280,7 @@ const ResetPasswordV2 = () => {
                   }
                 />
               </FormControl>
-              <FormControl sx={{ display: 'flex', marginBottom: 4 }}>
+              <FormControl sx={{ display: 'flex', mb: 4 }}>
                 <InputLabel htmlFor='auth-reset-password-v2-confirm-password'>Confirm Password</InputLabel>
                 <OutlinedInput
                   label='Confirm Password'
@@ -302,7 +302,7 @@ const ResetPasswordV2 = () => {
                   }
                 />
               </FormControl>
-              <Button fullWidth size='large' type='submit' variant='contained' sx={{ marginBottom: 5.25 }}>
+              <Button fullWidth size='large' type='submit' variant='contained' sx={{ mb: 5.25 }}>
                 Set New Password
               </Button>
               <Typography variant='body2' sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

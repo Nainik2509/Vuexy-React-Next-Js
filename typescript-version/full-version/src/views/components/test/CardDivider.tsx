@@ -15,7 +15,7 @@ const CardDivider = () => {
         <Divider light />
         <Box sx={{ display: 'flex' }}>
           <Typography>Vertical</Typography>
-          <Divider flexItem orientation='vertical' sx={{ margin: theme => theme.spacing(0.25, 0, 0.25, 4) }} />
+          <Divider flexItem orientation='vertical' sx={{ m: theme => theme.spacing(0.25, 0, 0.25, 4) }} />
         </Box>
       </CardContent>
     </Card>

@@ -40,8 +40,8 @@ const CardStatsHorizontal = (props: CardStatsHorizontalProps) => {
           </Avatar>
           <Box sx={{ display: 'flex', flexDirection: 'column' }}>
             <Typography variant='caption'>{title}</Typography>
-            <Box sx={{ marginTop: 0.5, display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
-              <Typography variant='h6' sx={{ marginRight: 1, fontWeight: 600, lineHeight: 1.05 }}>
+            <Box sx={{ mt: 0.5, display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
+              <Typography variant='h6' sx={{ mr: 1, fontWeight: 600, lineHeight: 1.05 }}>
                 {stats}
               </Typography>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>

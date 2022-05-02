@@ -40,7 +40,7 @@ const Checkboxes = () => {
             jsx: source.CheckboxesControlledUncontrolledJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 2 }}>
+          <Typography sx={{ mb: 2 }}>
             Manage <code>checked</code> prop with the help of a state for controlled <code>Checkbox</code> and{' '}
             <code>defaultChecked</code> prop with for uncontrolled <code>Checkbox</code>.
           </Typography>
@@ -55,7 +55,7 @@ const Checkboxes = () => {
             jsx: source.CheckboxesColorsJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 2 }}>
+          <Typography sx={{ mb: 2 }}>
             Use <code>color</code> prop for different colored checkbox.
           </Typography>
           <CheckboxesColors />
@@ -69,7 +69,7 @@ const Checkboxes = () => {
             jsx: source.CheckboxesCustomizedJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 2 }}>
+          <Typography sx={{ mb: 2 }}>
             Use <code>styled</code> hook to customize your checkbox.
           </Typography>
           <CheckboxesCustomized />
@@ -83,7 +83,7 @@ const Checkboxes = () => {
             jsx: source.CheckboxesCustomIconsJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 2 }}>
+          <Typography sx={{ mb: 2 }}>
             Use <code>icon</code> and <code>checkedIcon</code> props with <code>Checkbox</code> component to change
             default checkbox icons.
           </Typography>
@@ -98,7 +98,7 @@ const Checkboxes = () => {
             jsx: source.CheckboxesLabelPlacementJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>labelPlacement</code> prop with <code>FormControlLabel</code> component to change the placement of
             the label.
           </Typography>
@@ -128,7 +128,7 @@ const Checkboxes = () => {
             jsx: source.CheckboxesSizesJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 2 }}>
+          <Typography sx={{ mb: 2 }}>
             Use <code>icon</code> and <code>checkedIcon</code> props with <code>Checkbox</code> component and use{' '}
             <code>fontSize='small'</code> prop with the former props for small checkbox.
           </Typography>

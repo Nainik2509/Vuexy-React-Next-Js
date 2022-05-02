@@ -92,7 +92,7 @@ const ResetPasswordV1 = () => {
   return (
     <Box className='content-center'>
       <Card sx={{ zIndex: 1 }}>
-        <CardContent sx={{ padding: theme => `${theme.spacing(12, 9, 7)} !important` }}>
+        <CardContent sx={{ p: theme => `${theme.spacing(12, 9, 7)} !important` }}>
           <Box sx={{ mb: 8, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <svg
               width={35}
@@ -167,13 +167,13 @@ const ResetPasswordV1 = () => {
             </Typography>
           </Box>
           <Box sx={{ mb: 6 }}>
-            <Typography variant='h5' sx={{ fontWeight: 600, marginBottom: 1.5 }}>
+            <Typography variant='h5' sx={{ fontWeight: 600, mb: 1.5 }}>
               Reset Password 🔒
             </Typography>
             <Typography variant='body2'>Your new password must be different from previously used passwords</Typography>
           </Box>
           <form noValidate autoComplete='off' onSubmit={handleSubmit}>
-            <FormControl sx={{ display: 'flex', marginBottom: 4 }}>
+            <FormControl sx={{ display: 'flex', mb: 4 }}>
               <InputLabel htmlFor='auth-reset-password-new-password'>New Password</InputLabel>
               <OutlinedInput
                 autoFocus
@@ -196,7 +196,7 @@ const ResetPasswordV1 = () => {
                 }
               />
             </FormControl>
-            <FormControl sx={{ display: 'flex', marginBottom: 4 }}>
+            <FormControl sx={{ display: 'flex', mb: 4 }}>
               <InputLabel htmlFor='auth-reset-password-confirm-password'>Confirm Password</InputLabel>
               <OutlinedInput
                 label='Confirm Password'
@@ -218,7 +218,7 @@ const ResetPasswordV1 = () => {
                 }
               />
             </FormControl>
-            <Button fullWidth size='large' type='submit' variant='contained' sx={{ marginBottom: 5.25 }}>
+            <Button fullWidth size='large' type='submit' variant='contained' sx={{ mb: 5.25 }}>
               Set New Password
             </Button>
             <Typography variant='body2' sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

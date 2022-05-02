@@ -31,7 +31,7 @@ const Dialog = () => {
             jsx: source.DialogSimpleJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Manage <code>open</code> prop with the help of a state.
           </Typography>
           <DialogSimple />
@@ -45,7 +45,7 @@ const Dialog = () => {
             jsx: source.DialogAlertJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Show an alert to the user to convey something or make the user choose from the given options.
           </Typography>
           <DialogAlert />
@@ -59,7 +59,7 @@ const Dialog = () => {
             jsx: source.DialogTransitionJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             You can also use any of the transitions that you like. Use <code>TransitionComponent</code> prop for the
             transition.
           </Typography>
@@ -74,9 +74,7 @@ const Dialog = () => {
             jsx: source.DialogFormJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
-            Form dialogs allow users to fill out form fields within a dialog.
-          </Typography>
+          <Typography sx={{ mb: 4 }}>Form dialogs allow users to fill out form fields within a dialog.</Typography>
           <DialogForm />
         </CardSnippet>
       </Grid>
@@ -88,7 +86,7 @@ const Dialog = () => {
             jsx: source.DialogCustomizedJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             You can customize the component the way you want using <code>styled</code> hook.
           </Typography>
           <DialogCustomized />
@@ -102,7 +100,7 @@ const Dialog = () => {
             jsx: source.DialogFullScreenJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Add <code>fullScreen</code> prop with <code>Dialog</code> component for a full screen dialog.
           </Typography>
           <DialogFullScreen />
@@ -116,7 +114,7 @@ const Dialog = () => {
             jsx: source.DialogSizesJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             You can set a dialog maximum width by using the <code>maxWidth</code> enumerable in combination with the{' '}
             <code>fullWidth</code> boolean. When the <code>fullWidth</code> property is true, the dialog will adapt
             based on the <code>maxWidth</code> value.
@@ -132,7 +130,7 @@ const Dialog = () => {
             jsx: source.DialogRespoFullScreenJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Make a full screen dialog at particular screen sizes only by using <code>useMediaQuery</code> hook.
           </Typography>
           <DialogRespoFullScreen />
@@ -146,7 +144,7 @@ const Dialog = () => {
             jsx: source.DialogConfirmationJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>disableEscapeKeyDown</code> prop to disable 'Escape' key and use <code>onClose</code> prop to
             disable the backdrop.
           </Typography>

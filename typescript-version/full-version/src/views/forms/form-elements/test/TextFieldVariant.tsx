@@ -62,7 +62,7 @@ const TextFieldVariant = () => {
         </form>
       </CardContent>
       <CardContent>
-        <Typography variant='h6' sx={{ marginBottom: 2 }}>
+        <Typography variant='h6' sx={{ mb: 2 }}>
           Customized
         </Typography>
         <form noValidate autoComplete='off'>

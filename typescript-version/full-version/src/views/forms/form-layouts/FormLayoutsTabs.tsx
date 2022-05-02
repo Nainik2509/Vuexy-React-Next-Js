@@ -244,7 +244,7 @@ const FormLayoutsTabs = () => {
               </Grid>
             </TabPanel>
           </CardContent>
-          <Divider sx={{ margin: 0 }} />
+          <Divider sx={{ m: 0 }} />
           <CardActions>
             <Button size='large' type='submit' sx={{ mr: 2 }} variant='contained'>
               Submit

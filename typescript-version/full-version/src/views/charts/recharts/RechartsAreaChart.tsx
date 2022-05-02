@@ -127,7 +127,7 @@ const CustomTooltip = (data: TooltipProps<any, any>) => {
           data.payload.map((i: any) => {
             return (
               <Box sx={{ display: 'flex', alignItems: 'center' }} key={i.dataKey}>
-                <Circle sx={{ color: i.fill, marginRight: 2.5, fontSize: '0.6rem' }} />
+                <Circle sx={{ color: i.fill, mr: 2.5, fontSize: '0.6rem' }} />
                 <span>
                   {i.dataKey} : {i.payload[i.dataKey]}
                 </span>
@@ -188,8 +188,8 @@ const RechartsAreaChart = ({ direction }: Props) => {
         sx={{
           flexDirection: ['column', 'row'],
           alignItems: ['flex-start', 'center'],
-          '& .MuiCardHeader-action': { marginBottom: 0 },
-          '& .MuiCardHeader-content': { marginBottom: [2, 0] }
+          '& .MuiCardHeader-action': { mb: 0 },
+          '& .MuiCardHeader-content': { mb: [2, 0] }
         }}
         action={
           <DatePicker
@@ -205,17 +205,17 @@ const RechartsAreaChart = ({ direction }: Props) => {
         }
       />
       <CardContent>
-        <Box sx={{ display: 'flex', marginBottom: 4 }}>
-          <Box sx={{ marginRight: 6, display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ marginRight: 1.5, fontSize: '0.75rem', color: 'rgb(115, 103, 240)' }} />
+        <Box sx={{ display: 'flex', mb: 4 }}>
+          <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
+            <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: 'rgb(115, 103, 240)' }} />
             <Typography>Click</Typography>
           </Box>
-          <Box sx={{ marginRight: 6, display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ marginRight: 1.5, fontSize: '0.75rem', color: 'rgba(115, 103, 240, .5)' }} />
+          <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
+            <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: 'rgba(115, 103, 240, .5)' }} />
             <Typography>Sales</Typography>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ marginRight: 1.5, fontSize: '0.75rem', color: 'rgba(115, 103, 240, .2)' }} />
+            <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: 'rgba(115, 103, 240, .2)' }} />
             <Typography>Visits</Typography>
           </Box>
         </Box>

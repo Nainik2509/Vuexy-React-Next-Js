@@ -70,8 +70,8 @@ const SidebarLeft = (props: SidebarLeftType) => {
             width: leftSidebarWidth,
             borderTopRightRadius: 0,
             borderBottomRightRadius: 0,
+            p: theme => theme.spacing(5),
             zIndex: mdAbove ? '2' : 'drawer',
-            padding: theme => theme.spacing(5),
             position: mdAbove ? 'static' : 'absolute'
           },
           '& .MuiBackdrop-root': {

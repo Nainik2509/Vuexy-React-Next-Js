@@ -174,26 +174,24 @@ const UserViewBilling = () => {
 
   return (
     <Fragment>
-      <Card sx={{ marginBottom: 6 }}>
+      <Card sx={{ mb: 6 }}>
         <CardHeader title='Current plan' titleTypographyProps={{ variant: 'h6' }} />
         <CardContent>
           <Grid container spacing={6}>
             <Grid item xs={12} md={6}>
-              <Box sx={{ marginBottom: 4 }}>
-                <Typography sx={{ fontWeight: 500, marginBottom: 1, fontSize: '0.875rem' }}>
+              <Box sx={{ mb: 4 }}>
+                <Typography sx={{ fontWeight: 500, mb: 1, fontSize: '0.875rem' }}>
                   Your Current Plan is <strong>Basic</strong>
                 </Typography>
                 <Typography variant='body2'>A simple start for everyone</Typography>
               </Box>
-              <Box sx={{ marginBottom: 4 }}>
-                <Typography sx={{ fontWeight: 500, marginBottom: 1, fontSize: '0.875rem' }}>
-                  Active until Dec 09, 2021
-                </Typography>
+              <Box sx={{ mb: 4 }}>
+                <Typography sx={{ fontWeight: 500, mb: 1, fontSize: '0.875rem' }}>Active until Dec 09, 2021</Typography>
                 <Typography variant='body2'>We will send you a notification upon Subscription expiration</Typography>
               </Box>
               <Box>
-                <Box sx={{ display: 'flex', marginBottom: 1, alignItems: 'center' }}>
-                  <Typography sx={{ marginRight: 2, fontWeight: 500, fontSize: '0.875rem' }}>$99 Per Month</Typography>
+                <Box sx={{ display: 'flex', mb: 1, alignItems: 'center' }}>
+                  <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>$99 Per Month</Typography>
                   <CustomChip
                     skin='light'
                     size='small'
@@ -206,29 +204,25 @@ const UserViewBilling = () => {
               </Box>
             </Grid>
 
-            <Grid item xs={12} md={6} sx={{ marginTop: [4, 4, 0] }}>
-              <Alert icon={false} severity='warning' sx={{ marginBottom: 4 }}>
-                <AlertTitle sx={{ fontWeight: 600, marginBottom: theme => `${theme.spacing(1)} !important` }}>
+            <Grid item xs={12} md={6} sx={{ mt: [4, 4, 0] }}>
+              <Alert icon={false} severity='warning' sx={{ mb: 4 }}>
+                <AlertTitle sx={{ fontWeight: 600, mb: theme => `${theme.spacing(1)} !important` }}>
                   We need your attention!
                 </AlertTitle>
                 Your plan requires updates
               </Alert>
-              <Box sx={{ display: 'flex', marginBottom: 2, justifyContent: 'space-between' }}>
+              <Box sx={{ display: 'flex', mb: 2, justifyContent: 'space-between' }}>
                 <Typography sx={{ fontWeight: 600, fontSize: '0.875rem' }}>Days</Typography>
                 <Typography sx={{ fontWeight: 600, fontSize: '0.875rem' }}>26 of 30 Days</Typography>
               </Box>
               <LinearProgress value={86.6666666} variant='determinate' sx={{ height: 10, borderRadius: '5px' }} />
-              <Typography variant='body2' sx={{ marginTop: 2, marginBottom: 4 }}>
+              <Typography variant='body2' sx={{ mt: 2, mb: 4 }}>
                 Your plan requires update
               </Typography>
             </Grid>
 
-            <Grid item xs={12} sx={{ marginTop: 4, display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start' }}>
-              <Button
-                variant='contained'
-                onClick={handleUpgradePlansClickOpen}
-                sx={{ marginRight: 3, marginBottom: [3, 0] }}
-              >
+            <Grid item xs={12} sx={{ mt: 4, display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start' }}>
+              <Button variant='contained' onClick={handleUpgradePlansClickOpen} sx={{ mr: 3, mb: [3, 0] }}>
                 Upgrade Plan
               </Button>
               <Button variant='outlined' color='error'>
@@ -243,7 +237,7 @@ const UserViewBilling = () => {
           onClose={handleUpgradePlansClose}
           aria-labelledby='user-view-plans'
           aria-describedby='user-view-plans-description'
-          sx={{ '& .MuiPaper-root': { width: '100%', maxWidth: 650, paddingTop: 8, paddingBottom: 8 } }}
+          sx={{ '& .MuiPaper-root': { width: '100%', maxWidth: 650, pt: 8, pb: 8 } }}
         >
           <DialogTitle id='user-view-plans' sx={{ textAlign: 'center', fontSize: '1.5rem !important' }}>
             Upgrade Plan
@@ -257,16 +251,16 @@ const UserViewBilling = () => {
 
           <DialogContent
             sx={{
+              pb: 8,
+              pr: [6, 15],
+              pl: [6, 15],
               display: 'flex',
-              paddingBottom: 8,
               alignItems: 'center',
-              paddingLeft: [6, 15],
-              paddingRight: [6, 15],
               flexWrap: ['wrap', 'nowrap'],
-              paddingTop: theme => `${theme.spacing(2)} !important`
+              pt: theme => `${theme.spacing(2)} !important`
             }}
           >
-            <FormControl fullWidth size='small' sx={{ marginRight: [0, 3], marginBottom: [3, 0] }}>
+            <FormControl fullWidth size='small' sx={{ mr: [0, 3], mb: [3, 0] }}>
               <InputLabel id='user-view-plans-select-label'>Choose Plan</InputLabel>
               <Select
                 label='Choose Plan'
@@ -285,10 +279,10 @@ const UserViewBilling = () => {
             </Button>
           </DialogContent>
 
-          <Divider sx={{ margin: 0 }} />
+          <Divider sx={{ m: 0 }} />
 
-          <DialogContent sx={{ paddingTop: 8, paddingLeft: [6, 15], paddingRight: [6, 15] }}>
-            <Typography sx={{ fontWeight: 500, marginBottom: 2, fontSize: '0.875rem' }}>
+          <DialogContent sx={{ pt: 8, pl: [6, 15], pr: [6, 15] }}>
+            <Typography sx={{ fontWeight: 500, mb: 2, fontSize: '0.875rem' }}>
               User current plan is standard plan
             </Typography>
             <Box
@@ -299,13 +293,13 @@ const UserViewBilling = () => {
                 justifyContent: 'space-between'
               }}
             >
-              <Box sx={{ marginRight: 3, display: 'flex', marginLeft: 2.4, position: 'relative' }}>
+              <Box sx={{ mr: 3, display: 'flex', ml: 2.4, position: 'relative' }}>
                 <Sup>$</Sup>
                 <Typography
                   variant='h3'
                   sx={{
+                    mb: -1.2,
                     lineHeight: 1,
-                    marginBottom: -1.2,
                     color: 'primary.main',
                     fontSize: '3rem !important'
                   }}
@@ -314,7 +308,7 @@ const UserViewBilling = () => {
                 </Typography>
                 <Sub>/ month</Sub>
               </Box>
-              <Button color='error' variant='outlined' sx={{ marginTop: 2 }}>
+              <Button color='error' variant='outlined' sx={{ mt: 2 }}>
                 Cancel Subscription
               </Button>
             </Box>
@@ -322,13 +316,13 @@ const UserViewBilling = () => {
         </Dialog>
       </Card>
 
-      <Card sx={{ marginBottom: 6 }}>
+      <Card sx={{ mb: 6 }}>
         <CardHeader
           title='Payment Methods'
           titleTypographyProps={{ variant: 'h6' }}
           action={
             <Button variant='contained' onClick={handleAddCardClickOpen}>
-              <Plus sx={{ marginRight: 1, fontSize: '1.125rem' }} />
+              <Plus sx={{ mr: 1, fontSize: '1.125rem' }} />
               Add Card
             </Button>
           }
@@ -338,19 +332,19 @@ const UserViewBilling = () => {
             <Box
               key={index}
               sx={{
-                padding: 5,
+                p: 5,
                 display: 'flex',
                 borderRadius: 1,
                 flexDirection: ['column', 'row'],
                 justifyContent: ['space-between'],
                 alignItems: ['flex-start', 'center'],
-                border: theme => `1px solid ${theme.palette.divider}`,
-                marginBottom: index !== data.length - 1 ? 4 : undefined
+                mb: index !== data.length - 1 ? 4 : undefined,
+                border: theme => `1px solid ${theme.palette.divider}`
               }}
             >
               <div>
                 <img height='25' alt={item.imgAlt} src={item.imgSrc} />
-                <Box sx={{ marginTop: 0.5, display: 'flex', alignItems: 'center' }}>
+                <Box sx={{ mt: 0.5, display: 'flex', alignItems: 'center' }}>
                   <Typography sx={{ fontWeight: 500 }}>{item.name}</Typography>
                   {item.cardStatus ? (
                     <CustomChip
@@ -358,7 +352,7 @@ const UserViewBilling = () => {
                       size='small'
                       label={item.cardStatus}
                       color={item.badgeColor}
-                      sx={{ height: 20, marginLeft: 2, fontSize: '0.75rem', fontWeight: 600, borderRadius: '5px' }}
+                      sx={{ height: 20, ml: 2, fontSize: '0.75rem', fontWeight: 600, borderRadius: '5px' }}
                     />
                   ) : null}
                 </Box>
@@ -367,14 +361,14 @@ const UserViewBilling = () => {
                 </Typography>
               </div>
 
-              <Box sx={{ marginTop: [3, 0], textAlign: ['start', 'end'] }}>
-                <Button variant='outlined' sx={{ marginRight: 3 }} onClick={() => handleEditCardClickOpen(index)}>
+              <Box sx={{ mt: [3, 0], textAlign: ['start', 'end'] }}>
+                <Button variant='outlined' sx={{ mr: 3 }} onClick={() => handleEditCardClickOpen(index)}>
                   Edit
                 </Button>
                 <Button variant='outlined' color='secondary'>
                   Delete
                 </Button>
-                <Typography variant='body2' sx={{ marginTop: 5 }}>
+                <Typography variant='body2' sx={{ mt: 5 }}>
                   Card expires at {item.expiryDate}
                 </Typography>
               </Box>
@@ -386,7 +380,7 @@ const UserViewBilling = () => {
           open={openEditCard}
           onClose={handleEditCardClose}
           aria-labelledby='user-view-billing-edit-card'
-          sx={{ '& .MuiPaper-root': { width: '100%', maxWidth: 650, padding: [2, 10] } }}
+          sx={{ '& .MuiPaper-root': { width: '100%', maxWidth: 650, p: [2, 10] } }}
           aria-describedby='user-view-billing-edit-card-description'
         >
           <DialogTitle id='user-view-billing-edit-card' sx={{ textAlign: 'center', fontSize: '1.5rem !important' }}>
@@ -396,14 +390,14 @@ const UserViewBilling = () => {
             <DialogContentText
               variant='body2'
               id='user-view-billing-edit-card-description'
-              sx={{ textAlign: 'center', marginBottom: 7 }}
+              sx={{ textAlign: 'center', mb: 7 }}
             >
               {dialogTitle} card for future billing
             </DialogContentText>
             <form>
               <Grid container spacing={6}>
                 <Grid item xs={12}>
-                  <CardWrapper sx={{ '& .rccs': { margin: '0 auto' } }}>
+                  <CardWrapper sx={{ '& .rccs': { m: '0 auto' } }}>
                     <Cards cvc={cvc} focused={focus} expiry={expiry} name={name} number={cardNumber} />
                   </CardWrapper>
                 </Grid>
@@ -489,7 +483,7 @@ const UserViewBilling = () => {
             </form>
           </DialogContent>
           <DialogActions sx={{ justifyContent: 'center' }}>
-            <Button variant='contained' sx={{ marginRight: 1 }} onClick={handleEditCardClose}>
+            <Button variant='contained' sx={{ mr: 1 }} onClick={handleEditCardClose}>
               Submit
             </Button>
             <Button variant='outlined' color='secondary' onClick={handleEditCardClose}>
@@ -518,10 +512,10 @@ const UserViewBilling = () => {
                     sx={{
                       '& .MuiTableCell-root': {
                         border: 0,
-                        paddingTop: 2,
-                        paddingBottom: 2,
-                        paddingLeft: '0 !important',
-                        paddingRight: '0 !important',
+                        pt: 2,
+                        pb: 2,
+                        pl: '0 !important',
+                        pr: '0 !important',
                         '&:first-of-type': {
                           width: 148
                         }
@@ -620,10 +614,10 @@ const UserViewBilling = () => {
                     sx={{
                       '& .MuiTableCell-root': {
                         border: 0,
-                        paddingTop: 2,
-                        paddingBottom: 2,
-                        paddingLeft: '0 !important',
-                        paddingRight: '0 !important',
+                        pt: 2,
+                        pb: 2,
+                        pl: '0 !important',
+                        pr: '0 !important',
                         '&:first-of-type': {
                           width: 148
                         }
@@ -705,18 +699,14 @@ const UserViewBilling = () => {
           open={openAddressCard}
           onClose={() => setOpenAddressCard(false)}
           aria-labelledby='user-address-edit'
-          sx={{ '& .MuiPaper-root': { width: '100%', maxWidth: 650, padding: [2, 10] } }}
+          sx={{ '& .MuiPaper-root': { width: '100%', maxWidth: 650, p: [2, 10] } }}
           aria-describedby='user-address-edit-description'
         >
           <DialogTitle id='user-address-edit' sx={{ textAlign: 'center', fontSize: '1.5rem !important' }}>
             Edit Address
           </DialogTitle>
           <DialogContent>
-            <DialogContentText
-              variant='body2'
-              id='user-address-edit-description'
-              sx={{ textAlign: 'center', marginBottom: 7 }}
-            >
+            <DialogContentText variant='body2' id='user-address-edit-description' sx={{ textAlign: 'center', mb: 7 }}>
               Edit Address for future billing
             </DialogContentText>
             <form>
@@ -768,7 +758,7 @@ const UserViewBilling = () => {
             </form>
           </DialogContent>
           <DialogActions sx={{ justifyContent: 'center' }}>
-            <Button variant='contained' sx={{ marginRight: 1 }} onClick={() => setOpenAddressCard(false)}>
+            <Button variant='contained' sx={{ mr: 1 }} onClick={() => setOpenAddressCard(false)}>
               Submit
             </Button>
             <Button variant='outlined' color='secondary' onClick={() => setOpenAddressCard(false)}>

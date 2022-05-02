@@ -134,7 +134,7 @@ const DialogCustomized = () => {
         Open dialog
       </Button>
       <Dialog onClose={handleClose} aria-labelledby='customized-dialog-title' open={open}>
-        <DialogTitle id='customized-dialog-title' sx={{ padding: 4 }}>
+        <DialogTitle id='customized-dialog-title' sx={{ p: 4 }}>
           <Typography variant='h6' component='span'>
             Modal title
           </Typography>
@@ -146,7 +146,7 @@ const DialogCustomized = () => {
             <Close />
           </IconButton>
         </DialogTitle>
-        <DialogContent dividers sx={{ padding: 4 }}>
+        <DialogContent dividers sx={{ p: 4 }}>
           <Typography gutterBottom>
             Chupa chups jelly-o candy sweet roll wafer cake chocolate bar. Brownie sweet roll topping cake chocolate
             cake cheesecake tiramisu chocolate cake. Jujubes liquorice chocolate bar pastry. Chocolate jujubes caramels
@@ -161,7 +161,7 @@ const DialogCustomized = () => {
             chocolate bar chocolate marzipan candy fruitcake jujubes.
           </Typography>
         </DialogContent>
-        <DialogActions sx={{ padding: theme => {theme.spacing(3)} !important }}>
+        <DialogActions sx={{ p: theme => {theme.spacing(3)} !important }}>
           <Button onClick={handleClose}>Save changes</Button>
         </DialogActions>
       </Dialog>
@@ -230,7 +230,7 @@ const DialogFullScreen = () => {
             chocolate bar chocolate marzipan candy fruitcake jujubes.
           </Typography>
         </DialogContent>
-        <DialogActions sx={{ padding: theme => {theme.spacing(3)} !important }}>
+        <DialogActions sx={{ p: theme => {theme.spacing(3)} !important }}>
           <Button onClick={handleClose}>Save changes</Button>
         </DialogActions>
       </Dialog>
@@ -435,11 +435,11 @@ const DialogSizes = () => {
       >
         <DialogTitle id='max-width-dialog-title'>Optional sizes</DialogTitle>
         <DialogContent>
-          <DialogContentText sx={{ marginBottom: 4 }}>
+          <DialogContentText sx={{ mb: 4 }}>
             You can set my maximum width and whether to adapt or not.
           </DialogContentText>
           <Form noValidate>
-            <FormControl sx={{ marginTop: 2, minWidth: 120 }}>
+            <FormControl sx={{ mt: 2, minWidth: 120 }}>
               <InputLabel htmlFor='max-width'>maxWidth</InputLabel>
               <Select
                 label='maxWidth'
@@ -460,7 +460,7 @@ const DialogSizes = () => {
             </FormControl>
             <FormControlLabel
               label='Full width'
-              sx={{ marginTop: 2 }}
+              sx={{ mt: 2 }}
               control={<Switch checked={fullWidth} onChange={handleFullWidthChange} />}
             />
           </Form>
@@ -506,7 +506,7 @@ const DialogForm = () => {
       <Dialog open={open} onClose={handleClose} aria-labelledby='form-dialog-title'>
         <DialogTitle id='form-dialog-title'>Subscribe</DialogTitle>
         <DialogContent>
-          <DialogContentText sx={{ marginBottom: 3 }}>
+          <DialogContentText sx={{ mb: 3 }}>
             To subscribe to this website, please enter your email address here. We will send updates occasionally.
           </DialogContentText>
           <TextField id='name' autoFocus fullWidth type='email' label='Email Address' />
@@ -585,7 +585,7 @@ const DialogsScroll = () => {
             )}
           </DialogContentText>
         </DialogContent>
-        <DialogActions sx={{ padding: theme => {theme.spacing(2.5)} !important }}>
+        <DialogActions sx={{ p: theme => {theme.spacing(2.5)} !important }}>
           <Button onClick={handleClose}>Cancel</Button>
           <Button onClick={handleClose}>Subscribe</Button>
         </DialogActions>
@@ -746,7 +746,7 @@ const DialogCustomized = () => {
         Open dialog
       </Button>
       <Dialog onClose={handleClose} aria-labelledby='customized-dialog-title' open={open}>
-        <DialogTitle id='customized-dialog-title' sx={{ padding: 4 }}>
+        <DialogTitle id='customized-dialog-title' sx={{ p: 4 }}>
           <Typography variant='h6' component='span'>
             Modal title
           </Typography>
@@ -758,7 +758,7 @@ const DialogCustomized = () => {
             <Close />
           </IconButton>
         </DialogTitle>
-        <DialogContent dividers sx={{ padding: 4 }}>
+        <DialogContent dividers sx={{ p: 4 }}>
           <Typography gutterBottom>
             Chupa chups jelly-o candy sweet roll wafer cake chocolate bar. Brownie sweet roll topping cake chocolate
             cake cheesecake tiramisu chocolate cake. Jujubes liquorice chocolate bar pastry. Chocolate jujubes caramels
@@ -773,7 +773,7 @@ const DialogCustomized = () => {
             chocolate bar chocolate marzipan candy fruitcake jujubes.
           </Typography>
         </DialogContent>
-        <DialogActions sx={{ padding: theme => {theme.spacing(3)} !important }}>
+        <DialogActions sx={{ p: theme => {theme.spacing(3)} !important }}>
           <Button onClick={handleClose}>Save changes</Button>
         </DialogActions>
       </Dialog>
@@ -816,7 +816,7 @@ const DialogForm = () => {
       <Dialog open={open} onClose={handleClose} aria-labelledby='form-dialog-title'>
         <DialogTitle id='form-dialog-title'>Subscribe</DialogTitle>
         <DialogContent>
-          <DialogContentText sx={{ marginBottom: 3 }}>
+          <DialogContentText sx={{ mb: 3 }}>
             To subscribe to this website, please enter your email address here. We will send updates occasionally.
           </DialogContentText>
           <TextField id='name' autoFocus fullWidth type='email' label='Email Address' />
@@ -1000,7 +1000,7 @@ const DialogFullScreen = () => {
             chocolate bar chocolate marzipan candy fruitcake jujubes.
           </Typography>
         </DialogContent>
-        <DialogActions sx={{ padding: theme => {theme.spacing(3)} !important }}>
+        <DialogActions sx={{ p: theme => {theme.spacing(3)} !important }}>
           <Button onClick={handleClose}>Save changes</Button>
         </DialogActions>
       </Dialog>
@@ -1073,11 +1073,11 @@ const DialogSizes = () => {
       >
         <DialogTitle id='max-width-dialog-title'>Optional sizes</DialogTitle>
         <DialogContent>
-          <DialogContentText sx={{ marginBottom: 4 }}>
+          <DialogContentText sx={{ mb: 4 }}>
             You can set my maximum width and whether to adapt or not.
           </DialogContentText>
           <Form noValidate>
-            <FormControl sx={{ marginTop: 2, minWidth: 120 }}>
+            <FormControl sx={{ mt: 2, minWidth: 120 }}>
               <InputLabel htmlFor='max-width'>maxWidth</InputLabel>
               <Select
                 label='maxWidth'
@@ -1098,7 +1098,7 @@ const DialogSizes = () => {
             </FormControl>
             <FormControlLabel
               label='Full width'
-              sx={{ marginTop: 2 }}
+              sx={{ mt: 2 }}
               control={<Switch checked={fullWidth} onChange={handleFullWidthChange} />}
             />
           </Form>
@@ -1263,7 +1263,7 @@ const DialogsScroll = () => {
             )}
           </DialogContentText>
         </DialogContent>
-        <DialogActions sx={{ padding: theme => {theme.spacing(2.5)} !important }}>
+        <DialogActions sx={{ p: theme => {theme.spacing(2.5)} !important }}>
           <Button onClick={handleClose}>Cancel</Button>
           <Button onClick={handleClose}>Subscribe</Button>
         </DialogActions>

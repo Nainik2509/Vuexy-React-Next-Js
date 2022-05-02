@@ -204,8 +204,8 @@ const ForgotPassword = () => {
               </Typography>
             </Box>
             <form noValidate autoComplete='off' onSubmit={handleSubmit}>
-              <TextField autoFocus type='email' label='Email' sx={{ display: 'flex', marginBottom: 4 }} />
-              <Button fullWidth size='large' type='submit' variant='contained' sx={{ marginBottom: 5.25 }}>
+              <TextField autoFocus type='email' label='Email' sx={{ display: 'flex', mb: 4 }} />
+              <Button fullWidth size='large' type='submit' variant='contained' sx={{ mb: 5.25 }}>
                 Send reset link
               </Button>
               <Typography variant='body2' sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

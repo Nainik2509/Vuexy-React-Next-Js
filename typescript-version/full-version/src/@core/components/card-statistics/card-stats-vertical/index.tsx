@@ -21,8 +21,8 @@ const CardStatsVertical = (props: CardStatsVerticalProps) => {
   return (
     <Card>
       <CardContent>
-        <Box sx={{ display: 'flex', marginBottom: 5.5, alignItems: 'flex-start', justifyContent: 'space-between' }}>
-          <CustomAvatar color={color} sx={{ width: 38, height: 38, boxShadow: 3, marginRight: 4 }}>
+        <Box sx={{ display: 'flex', mb: 5.5, alignItems: 'flex-start', justifyContent: 'space-between' }}>
+          <CustomAvatar color={color} sx={{ width: 38, height: 38, boxShadow: 3, mr: 4 }}>
             {icon}
           </CustomAvatar>
           <IconButton size='small' aria-label='settings' className='card-more-options' sx={{ color: 'text.secondary' }}>
@@ -30,8 +30,8 @@ const CardStatsVertical = (props: CardStatsVerticalProps) => {
           </IconButton>
         </Box>
         <Typography sx={{ fontWeight: 600, fontSize: '0.875rem' }}>{title}</Typography>
-        <Box sx={{ marginTop: 1.5, display: 'flex', flexWrap: 'wrap', marginBottom: 1.5, alignItems: 'flex-start' }}>
-          <Typography variant='h5' sx={{ marginRight: 1, fontWeight: 600 }}>
+        <Box sx={{ mt: 1.5, display: 'flex', flexWrap: 'wrap', mb: 1.5, alignItems: 'flex-start' }}>
+          <Typography variant='h5' sx={{ mr: 1, fontWeight: 600 }}>
             {stats}
           </Typography>
           <Typography

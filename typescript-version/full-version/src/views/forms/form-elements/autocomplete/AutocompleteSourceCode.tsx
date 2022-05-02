@@ -103,7 +103,7 @@ const AutocompleteCheckboxes = () => {
       renderInput={params => <TextField {...params} label='Checkboxes' placeholder='Favorites' />}
       renderOption={(props, option, { selected }) => (
         <li {...props}>
-          <Checkbox checked={selected} sx={{ marginRight: 2 }} />
+          <Checkbox checked={selected} sx={{ mr: 2 }} />
           {option.title}
         </li>
       )}
@@ -486,7 +486,7 @@ const AutocompleteMultipleValues = () => {
         defaultValue={[top100Films[13]]}
         id='autocomplete-multiple-outlined'
         getOptionLabel={option => option.title}
-        sx={{ width: 250, marginTop: 5, marginRight: 5 }}
+        sx={{ width: 250, mt: 5, mr: 5 }}
         renderInput={params => <TextField {...params} label='filterSelectedOptions' placeholder='Favorites' />}
       />
       <Autocomplete
@@ -494,7 +494,7 @@ const AutocompleteMultipleValues = () => {
         multiple
         id='autocomplete-multiple-filled'
         defaultValue={[top100Films[13].title]}
-        sx={{ width: 250, marginTop: 5, marginRight: 5 }}
+        sx={{ width: 250, mt: 5, mr: 5 }}
         options={top100Films.map(option => option.title)}
         renderInput={params => <TextField {...params} variant='filled' label='freeSolo' placeholder='Favorites' />}
         renderTags={(value, getTagProps) =>
@@ -507,7 +507,7 @@ const AutocompleteMultipleValues = () => {
         multiple
         options={top100Films}
         defaultValue={[top100Films[13]]}
-        sx={{ width: 250, marginTop: 5 }}
+        sx={{ width: 250, mt: 5 }}
         id='autocomplete-multiple-standard'
         getOptionLabel={option => option.title}
         renderInput={params => (
@@ -572,7 +572,7 @@ const AutocompleteSmallSize = () => {
       <Autocomplete
         multiple
         size='small'
-        sx={{ marginTop: 5 }}
+        sx={{ mt: 5 }}
         options={top100Films}
         defaultValue={[top100Films[13]]}
         id='autocomplete-size-small-multi'
@@ -929,7 +929,7 @@ const AutocompleteCheckboxes = () => {
       renderInput={params => <TextField {...params} label='Checkboxes' placeholder='Favorites' />}
       renderOption={(props, option, { selected }) => (
         <li {...props}>
-          <Checkbox checked={selected} sx={{ marginRight: 2 }} />
+          <Checkbox checked={selected} sx={{ mr: 2 }} />
           {option.title}
         </li>
       )}
@@ -1341,7 +1341,7 @@ const AutocompleteMultipleValues = () => {
         defaultValue={[top100Films[13]]}
         id='autocomplete-multiple-outlined'
         getOptionLabel={option => option.title}
-        sx={{ width: 250, marginTop: 5, marginRight: 5 }}
+        sx={{ width: 250, mt: 5, mr: 5 }}
         renderInput={params => <TextField {...params} label='filterSelectedOptions' placeholder='Favorites' />}
       />
       <Autocomplete
@@ -1349,7 +1349,7 @@ const AutocompleteMultipleValues = () => {
         multiple
         id='autocomplete-multiple-filled'
         defaultValue={[top100Films[13].title]}
-        sx={{ width: 250, marginTop: 5, marginRight: 5 }}
+        sx={{ width: 250, mt: 5, mr: 5 }}
         options={top100Films.map(option => option.title)}
         renderInput={params => <TextField {...params} variant='filled' label='freeSolo' placeholder='Favorites' />}
         renderTags={(value: string[], getTagProps) =>
@@ -1362,7 +1362,7 @@ const AutocompleteMultipleValues = () => {
         multiple
         options={top100Films}
         defaultValue={[top100Films[13]]}
-        sx={{ width: 250, marginTop: 5 }}
+        sx={{ width: 250, mt: 5 }}
         id='autocomplete-multiple-standard'
         getOptionLabel={option => option.title}
         renderInput={params => (
@@ -1495,7 +1495,7 @@ const AutocompleteSmallSize = () => {
       <Autocomplete
         multiple
         size='small'
-        sx={{ marginTop: 5 }}
+        sx={{ mt: 5 }}
         options={top100Films}
         defaultValue={[top100Films[13]]}
         id='autocomplete-size-small-multi'

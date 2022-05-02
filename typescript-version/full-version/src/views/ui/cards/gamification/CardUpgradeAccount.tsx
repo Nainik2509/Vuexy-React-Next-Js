@@ -36,7 +36,7 @@ const CardUpgradeAccount = () => {
       <CardContent>
         <Typography variant='h6'>Upgrade Account 👩🏻‍💻</Typography>
         <Typography variant='body2'>Add 15 team members</Typography>
-        <Typography variant='h5' sx={{ color: 'primary.main', fontWeight: 600, marginTop: 3.5 }}>
+        <Typography variant='h5' sx={{ color: 'primary.main', fontWeight: 600, mt: 3.5 }}>
           $199
         </Typography>
         <Typography variant='body2' sx={{ mb: 4.25 }}>

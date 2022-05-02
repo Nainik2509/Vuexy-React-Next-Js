@@ -40,7 +40,7 @@ const Pagination = () => {
             jsx: source.PaginationSimpleJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use the following props with <code>Pagination</code> component: <code>count</code> prop for number of page
             items and <code>color</code> prop for different colored pagination.
           </Typography>
@@ -55,7 +55,7 @@ const Pagination = () => {
             jsx: source.PaginationOutlinedJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>variant='outlined'</code> prop for outlined pagination.
           </Typography>
           <PaginationOutlined />
@@ -69,7 +69,7 @@ const Pagination = () => {
             jsx: source.PaginationDisabledJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>disabled</code> prop with <code>Pagination</code> component to disable the whole pagination.
           </Typography>
           <PaginationDisabled />
@@ -83,7 +83,7 @@ const Pagination = () => {
             jsx: source.PaginationRoundedJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>shape='rounded'</code> prop for rounded pagination.
           </Typography>
           <PaginationRounded />
@@ -97,7 +97,7 @@ const Pagination = () => {
             jsx: source.PaginationSizesJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>size={`{'small' | 'large'}`}</code> prop for different sizes of pagination.
           </Typography>
           <PaginationSizes />
@@ -111,7 +111,7 @@ const Pagination = () => {
             jsx: source.PaginationButtonsJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>showFirstButton</code> & <code>showLastButton</code> props to show first-page and last-page
             buttons and <code>hidePrevButton</code> & <code>hideNextButton</code> props to hide previous-page and
             next-page buttons.
@@ -127,7 +127,7 @@ const Pagination = () => {
             jsx: source.PaginationControlledJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Manage <code>page</code> and <code>onChange</code> props with the help of a state.
           </Typography>
           <PaginationControlled />
@@ -141,7 +141,7 @@ const Pagination = () => {
             jsx: source.PaginationRangesJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             You can specify how many digits to display either side of current page with the <code>siblingRange</code>{' '}
             prop, and adjacent to the start and end page number with the <code>boundaryRange</code> prop.
           </Typography>

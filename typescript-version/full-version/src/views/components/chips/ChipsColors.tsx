@@ -17,7 +17,7 @@ const ChipsColors = () => {
         <Chip label='Warning' color='warning' />
         <Chip label='Info' color='info' />
       </div>
-      <Typography sx={{ marginTop: 4, fontWeight: 500 }}>Outlined Chips</Typography>
+      <Typography sx={{ mt: 4, fontWeight: 500 }}>Outlined Chips</Typography>
       <div className='demo-space-x'>
         <Chip label='Primary' color='primary' variant='outlined' />
         <Chip label='Secondary' color='secondary' variant='outlined' />

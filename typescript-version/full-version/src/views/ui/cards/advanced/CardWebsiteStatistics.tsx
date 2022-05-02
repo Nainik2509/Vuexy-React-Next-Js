@@ -129,7 +129,7 @@ const CardWebsiteStats = () => {
                   <TableRow
                     key={row.title}
                     sx={{
-                      '&:last-of-type td': { border: 0, paddingBottom: 0 },
+                      '&:last-of-type td': { border: 0, pb: 0 },
                       '& .MuiTableCell-root': {
                         '&:last-of-type': { pr: 0 },
                         '&:first-of-type': { pl: 0 },
@@ -140,7 +140,7 @@ const CardWebsiteStats = () => {
                   >
                     <TableCell>
                       <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                        <Circle sx={{ marginRight: 1.8, fontSize: '1rem', color: `${row.color}.main` }} />
+                        <Circle sx={{ mr: 1.8, fontSize: '1rem', color: `${row.color}.main` }} />
                         <Typography sx={{ fontSize: '0.875rem' }}>{row.title}</Typography>
                       </Box>
                     </TableCell>

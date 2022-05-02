@@ -137,10 +137,10 @@ const Img = styled('img')(({ theme }) => ({
 const UserViewOverview = ({ invoiceData }: Props) => {
   return (
     <Fragment>
-      <Card sx={{ marginBottom: 6 }}>
+      <Card sx={{ mb: 6 }}>
         <CardHeader title='Project List' titleTypographyProps={{ variant: 'h6' }} />
 
-        <Divider sx={{ margin: 0 }} />
+        <Divider sx={{ m: 0 }} />
 
         <TableContainer>
           <Table size='small' sx={{ minWidth: 500 }}>
@@ -176,7 +176,7 @@ const UserViewOverview = ({ invoiceData }: Props) => {
                       variant='determinate'
                       value={item.progressValue}
                       color={item.progressColor}
-                      sx={{ height: 6, marginTop: 1, borderRadius: '5px' }}
+                      sx={{ height: 6, mt: 1, borderRadius: '5px' }}
                     />
                   </TableCell>
                   <TableCell>{item.hours}</TableCell>
@@ -187,7 +187,7 @@ const UserViewOverview = ({ invoiceData }: Props) => {
         </TableContainer>
       </Card>
 
-      <Card sx={{ marginBottom: 6 }}>
+      <Card sx={{ mb: 6 }}>
         <CardHeader title='User Activity Timeline' titleTypographyProps={{ variant: 'h6' }} />
         <CardContent>
           <Timeline>
@@ -239,7 +239,7 @@ const UserViewOverview = ({ invoiceData }: Props) => {
                   React Project meeting with John @10:15am
                 </Typography>
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                  <Avatar alt='Avatar' src='/images/avatars/2.png' sx={{ width: 40, height: 40, marginRight: 2 }} />
+                  <Avatar alt='Avatar' src='/images/avatars/2.png' sx={{ width: 40, height: 40, mr: 2 }} />
                   <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                     <Typography variant='body2' sx={{ fontWeight: 600, color: 'text.primary' }}>
                       Leona Watkins (Client)

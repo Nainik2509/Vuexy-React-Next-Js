@@ -134,8 +134,8 @@ const ChartjsBarChart = (props: BarProp) => {
         sx={{
           flexDirection: ['column', 'row'],
           alignItems: ['flex-start', 'center'],
-          '& .MuiCardHeader-action': { marginBottom: 0 },
-          '& .MuiCardHeader-content': { marginBottom: [2, 0] }
+          '& .MuiCardHeader-action': { mb: 0 },
+          '& .MuiCardHeader-content': { mb: [2, 0] }
         }}
         action={
           <DatePicker

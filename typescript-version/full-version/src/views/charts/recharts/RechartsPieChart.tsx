@@ -65,21 +65,21 @@ const RechartsPieChart = () => {
             </PieChart>
           </ResponsiveContainer>
         </Box>
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', marginBottom: 4, justifyContent: 'center' }}>
-          <Box sx={{ marginRight: 6, display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ marginRight: 1.5, fontSize: '0.75rem', color: '#00d4bd' }} />
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', mb: 4, justifyContent: 'center' }}>
+          <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
+            <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#00d4bd' }} />
             <Typography>R&D</Typography>
           </Box>
-          <Box sx={{ marginRight: 6, display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ marginRight: 1.5, fontSize: '0.75rem', color: '#ffe700' }} />
+          <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
+            <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#ffe700' }} />
             <Typography>Operational</Typography>
           </Box>
-          <Box sx={{ marginRight: 6, display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ marginRight: 1.5, fontSize: '0.75rem', color: '#FFA1A1' }} />
+          <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
+            <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#FFA1A1' }} />
             <Typography>Networking</Typography>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ marginRight: 1.5, fontSize: '0.75rem', color: '#826bf8' }} />
+            <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#826bf8' }} />
             <Typography>Hiring</Typography>
           </Box>
         </Box>

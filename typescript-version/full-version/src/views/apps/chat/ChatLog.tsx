@@ -170,7 +170,7 @@ const ChatLog = (props: ChatLogType) => {
                         width: 'fit-content',
                         fontSize: '0.875rem',
                         p: theme => theme.spacing(3, 4),
-                        marginLeft: isSender ? 'auto' : undefined,
+                        ml: isSender ? 'auto' : undefined,
                         borderTopLeftRadius: !isSender ? 0 : undefined,
                         borderTopRightRadius: isSender ? 0 : undefined,
                         color: isSender ? 'common.white' : 'text.primary',

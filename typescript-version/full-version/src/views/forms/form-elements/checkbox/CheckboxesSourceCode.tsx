@@ -232,7 +232,7 @@ const CheckboxesShowError = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
-      <FormControl sx={{ marginTop: 4, marginRight: 4 }}>
+      <FormControl sx={{ mt: 4, mr: 4 }}>
         <FormLabel>Assign responsibility</FormLabel>
         <FormGroup>
           <FormControlLabel
@@ -250,7 +250,7 @@ const CheckboxesShowError = () => {
         </FormGroup>
         <FormHelperText>Be careful</FormHelperText>
       </FormControl>
-      <FormControl required error={error} sx={{ marginTop: 4 }}>
+      <FormControl required error={error} sx={{ mt: 4 }}>
         <FormLabel>Pick two</FormLabel>
         <FormGroup>
           <FormControlLabel
@@ -328,17 +328,17 @@ const CheckboxesLabelPlacement = () => {
           label='Top'
           labelPlacement='top'
           control={<Checkbox />}
-          sx={{ marginRight: 9.2 }}
+          sx={{ mr: 9.2 }}
         />
         <FormControlLabel value='bottom' label='Bottom' labelPlacement='bottom' control={<Checkbox />} />
       </FormGroup>
-      <FormGroup row sx={{ marginTop: 4 }}>
+      <FormGroup row sx={{ mt: 4 }}>
         <FormControlLabel
           value='start'
           label='Start'
           control={<Checkbox />}
           labelPlacement='start'
-          sx={{ marginRight: 4 }}
+          sx={{ mr: 4 }}
         />
         <FormControlLabel value='end' control={<Checkbox />} label='End' labelPlacement='end' />
       </FormGroup>
@@ -589,7 +589,7 @@ const CheckboxesShowError = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
-      <FormControl sx={{ marginTop: 4, marginRight: 4 }}>
+      <FormControl sx={{ mt: 4, mr: 4 }}>
         <FormLabel>Assign responsibility</FormLabel>
         <FormGroup>
           <FormControlLabel
@@ -607,7 +607,7 @@ const CheckboxesShowError = () => {
         </FormGroup>
         <FormHelperText>Be careful</FormHelperText>
       </FormControl>
-      <FormControl required error={error} sx={{ marginTop: 4 }}>
+      <FormControl required error={error} sx={{ mt: 4 }}>
         <FormLabel>Pick two</FormLabel>
         <FormGroup>
           <FormControlLabel
@@ -650,17 +650,17 @@ const CheckboxesLabelPlacement = () => {
           label='Top'
           labelPlacement='top'
           control={<Checkbox />}
-          sx={{ marginRight: 9.2 }}
+          sx={{ mr: 9.2 }}
         />
         <FormControlLabel value='bottom' label='Bottom' labelPlacement='bottom' control={<Checkbox />} />
       </FormGroup>
-      <FormGroup row sx={{ marginTop: 4 }}>
+      <FormGroup row sx={{ mt: 4 }}>
         <FormControlLabel
           value='start'
           label='Start'
           control={<Checkbox />}
           labelPlacement='start'
-          sx={{ marginRight: 4 }}
+          sx={{ mr: 4 }}
         />
         <FormControlLabel value='end' control={<Checkbox />} label='End' labelPlacement='end' />
       </FormGroup>

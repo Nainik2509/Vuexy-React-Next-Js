@@ -47,7 +47,7 @@ const TextFields = () => {
             jsx: source.TextFieldFormPropsJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 2 }}>
+          <Typography sx={{ mb: 2 }}>
             Standard form attributes are supported e.g. <code>required</code>, <code>disabled</code>, <code>type</code>,
             etc. as well as <code>helperText</code> which is used to give context about a field’s input, such as how the
             input will be used.
@@ -63,7 +63,7 @@ const TextFields = () => {
             jsx: source.TextFieldControlledUncontrolledJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 2 }}>
+          <Typography sx={{ mb: 2 }}>
             Manage <code>value</code> prop with the help of a state for controlled <code>TextField</code> and use
             <code>defaultChecked</code> prop for uncontrolled <code>TextField</code>.
           </Typography>
@@ -78,7 +78,7 @@ const TextFields = () => {
             jsx: source.TextFieldSizesJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 2 }}>
+          <Typography sx={{ mb: 2 }}>
             Use <code>size</code> prop for different sizes of text fields.
           </Typography>
           <TextFieldSizes />
@@ -107,9 +107,7 @@ const TextFields = () => {
             jsx: source.TextFieldIconsJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 2 }}>
-            There are multiple ways to display an icon with a text field.
-          </Typography>
+          <Typography sx={{ mb: 2 }}>There are multiple ways to display an icon with a text field.</Typography>
           <TextFieldIcons />
         </CardSnippet>
       </Grid>
@@ -121,7 +119,7 @@ const TextFields = () => {
             jsx: source.TextFieldInputAdornmentJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 2 }}>
+          <Typography sx={{ mb: 2 }}>
             The main way is with an <code>InputAdornment</code>. This can be used to add a prefix, a suffix or an action
             to an input. For instance, you can use an icon button to hide or reveal the password.
           </Typography>
@@ -139,7 +137,7 @@ const TextFields = () => {
           <Typography>
             <code>fullWidth</code> can be used to make the input take up the full width of its container.
           </Typography>
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             <code>margin</code> prop can be used to alter the vertical spacing of inputs. Using <code>none</code>{' '}
             (default) doesn't apply margins to the <code>FormControl</code> whereas <code>dense</code> and{' '}
             <code>normal</code> do.
@@ -155,7 +153,7 @@ const TextFields = () => {
             jsx: source.TextFieldComponentsJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 2 }}>
+          <Typography sx={{ mb: 2 }}>
             <code>TextField</code> is composed of smaller components (<code>FormControl</code>, <code>Input</code>,{' '}
             <code>FilledInput</code>, <code>InputLabel</code>, <code>OutlinedInput</code>, and{' '}
             <code>FormHelperText</code>) that you can leverage directly to significantly customize your form inputs.
@@ -182,7 +180,7 @@ const TextFields = () => {
             jsx: source.TextFieldCustomizedJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>styled</code> hook to customize your text field.
           </Typography>
           <TextFieldCustomized />
@@ -196,7 +194,7 @@ const TextFields = () => {
             jsx: source.TextFieldValidationJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 2 }}>
+          <Typography sx={{ mb: 2 }}>
             The <code>error</code> prop toggles the error state, the <code>helperText</code> prop can then be used to
             provide feedback to the user about the error.
           </Typography>

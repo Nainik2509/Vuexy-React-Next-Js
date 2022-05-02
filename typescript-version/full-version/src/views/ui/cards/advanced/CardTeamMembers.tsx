@@ -120,11 +120,7 @@ const CardTeamMembers = () => {
                 >
                   <TableCell>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      <Avatar
-                        src={row.src}
-                        alt={row.name}
-                        sx={{ width: '2.375rem', height: '2.375rem', marginRight: 3 }}
-                      />
+                      <Avatar src={row.src} alt={row.name} sx={{ width: '2.375rem', height: '2.375rem', mr: 3 }} />
                       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                         <Typography noWrap variant='body2' sx={{ mb: 0.5, fontWeight: 600, color: 'text.primary' }}>
                           {row.name}

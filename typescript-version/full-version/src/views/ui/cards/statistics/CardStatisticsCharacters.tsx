@@ -15,18 +15,18 @@ interface Props {
 const CardStatsCharacter = ({ data }: Props) => {
   if (data) {
     return (
-      <Box sx={{ marginTop: 7 }}>
+      <Box sx={{ mt: 7 }}>
         <Grid container spacing={6}>
           <Grid item xs={12} sm={6} lg={3}>
             <CardStatisticsCharacter data={data[0]} />
           </Grid>
-          <Grid item xs={12} sm={6} lg={3} sx={{ marginTop: [7, 0] }}>
+          <Grid item xs={12} sm={6} lg={3} sx={{ mt: [7, 0] }}>
             <CardStatisticsCharacter data={data[1]} />
           </Grid>
-          <Grid item xs={12} sm={6} lg={3} sx={{ marginTop: { xs: 7, lg: 0 } }}>
+          <Grid item xs={12} sm={6} lg={3} sx={{ mt: { xs: 7, lg: 0 } }}>
             <CardStatisticsCharacter data={data[2]} />
           </Grid>
-          <Grid item xs={12} sm={6} lg={3} sx={{ marginTop: { xs: 7, lg: 0 } }}>
+          <Grid item xs={12} sm={6} lg={3} sx={{ mt: { xs: 7, lg: 0 } }}>
             <CardStatisticsCharacter data={data[3]} />
           </Grid>
         </Grid>

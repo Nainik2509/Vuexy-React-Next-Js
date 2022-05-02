@@ -54,7 +54,7 @@ const KnowledgeBaseHeader = (props: Props) => {
         <Typography variant='h5' sx={{ mb: 1.5, color: 'primary.main', fontSize: '1.5rem !important' }}>
           Hello, how can we help?
         </Typography>
-        <Typography variant='body2' sx={{ marginBottom: 7 }}>
+        <Typography variant='body2' sx={{ mb: 7 }}>
           or choose a category to quickly find the help you need
         </Typography>
         <TextField

@@ -204,7 +204,7 @@ const FormValidationAsync = () => {
                       color: 'common.white',
                       width: '20px !important',
                       height: '20px !important',
-                      marginRight: theme => theme.spacing(2)
+                      mr: theme => theme.spacing(2)
                     }}
                   />
                 ) : null}

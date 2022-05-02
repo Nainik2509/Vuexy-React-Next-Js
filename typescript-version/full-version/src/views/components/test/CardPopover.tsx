@@ -30,7 +30,7 @@ const CardPopover = () => {
           Open Popover
         </Button>
         <Popover open={open} anchorEl={anchorEl} onClose={handleClose} id='card-simple-popover'>
-          <Typography sx={{ padding: 4 }}>The content of the Popover.</Typography>
+          <Typography sx={{ p: 4 }}>The content of the Popover.</Typography>
         </Popover>
       </CardContent>
     </Card>

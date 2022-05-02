@@ -165,35 +165,35 @@ const ButtonsFab = () => {
       <Typography sx={{ fontWeight: 500 }}>Extended Variant</Typography>
       <div className='demo-space-x'>
         <Fab variant='extended'>
-          <Plus sx={{ marginRight: 1 }} />
+          <Plus sx={{ mr: 1 }} />
           Add
         </Fab>
         <Fab color='primary' variant='extended'>
-          <Plus sx={{ marginRight: 1 }} />
+          <Plus sx={{ mr: 1 }} />
           Add
         </Fab>
         <Fab color='secondary' variant='extended'>
-          <Plus sx={{ marginRight: 1 }} />
+          <Plus sx={{ mr: 1 }} />
           Add
         </Fab>
         <Fab color='success' variant='extended'>
-          <Plus sx={{ marginRight: 1 }} />
+          <Plus sx={{ mr: 1 }} />
           Add
         </Fab>
         <Fab color='error' variant='extended'>
-          <Plus sx={{ marginRight: 1 }} />
+          <Plus sx={{ mr: 1 }} />
           Add
         </Fab>
         <Fab color='warning' variant='extended'>
-          <Plus sx={{ marginRight: 1 }} />
+          <Plus sx={{ mr: 1 }} />
           Add
         </Fab>
         <Fab color='info' variant='extended'>
-          <Plus sx={{ marginRight: 1 }} />
+          <Plus sx={{ mr: 1 }} />
           Add
         </Fab>
         <Fab disabled variant='extended'>
-          <Plus sx={{ marginRight: 1 }} />
+          <Plus sx={{ mr: 1 }} />
           Add
         </Fab>
       </div>
@@ -261,15 +261,15 @@ const ButtonsFabSizes = () => {
       </div>
       <div className='demo-space-x'>
         <Fab variant='extended' size='small'>
-          <NavigationOutline sx={{ marginRight: 1 }} />
+          <NavigationOutline sx={{ mr: 1 }} />
           Navigate
         </Fab>
         <Fab variant='extended' size='medium'>
-          <NavigationOutline sx={{ marginRight: 1 }} />
+          <NavigationOutline sx={{ mr: 1 }} />
           Navigate
         </Fab>
         <Fab variant='extended' size='large'>
-          <NavigationOutline sx={{ marginRight: 1 }} />
+          <NavigationOutline sx={{ mr: 1 }} />
           Navigate
         </Fab>
       </div>
@@ -660,35 +660,35 @@ const ButtonsFab = () => {
       <Typography sx={{ fontWeight: 500 }}>Extended Variant</Typography>
       <div className='demo-space-x'>
         <Fab variant='extended'>
-          <Plus sx={{ marginRight: 1 }} />
+          <Plus sx={{ mr: 1 }} />
           Add
         </Fab>
         <Fab color='primary' variant='extended'>
-          <Plus sx={{ marginRight: 1 }} />
+          <Plus sx={{ mr: 1 }} />
           Add
         </Fab>
         <Fab color='secondary' variant='extended'>
-          <Plus sx={{ marginRight: 1 }} />
+          <Plus sx={{ mr: 1 }} />
           Add
         </Fab>
         <Fab color='success' variant='extended'>
-          <Plus sx={{ marginRight: 1 }} />
+          <Plus sx={{ mr: 1 }} />
           Add
         </Fab>
         <Fab color='error' variant='extended'>
-          <Plus sx={{ marginRight: 1 }} />
+          <Plus sx={{ mr: 1 }} />
           Add
         </Fab>
         <Fab color='warning' variant='extended'>
-          <Plus sx={{ marginRight: 1 }} />
+          <Plus sx={{ mr: 1 }} />
           Add
         </Fab>
         <Fab color='info' variant='extended'>
-          <Plus sx={{ marginRight: 1 }} />
+          <Plus sx={{ mr: 1 }} />
           Add
         </Fab>
         <Fab disabled variant='extended'>
-          <Plus sx={{ marginRight: 1 }} />
+          <Plus sx={{ mr: 1 }} />
           Add
         </Fab>
       </div>
@@ -729,15 +729,15 @@ const ButtonsFabSizes = () => {
       </div>
       <div className='demo-space-x'>
         <Fab variant='extended' size='small'>
-          <NavigationOutline sx={{ marginRight: 1 }} />
+          <NavigationOutline sx={{ mr: 1 }} />
           Navigate
         </Fab>
         <Fab variant='extended' size='medium'>
-          <NavigationOutline sx={{ marginRight: 1 }} />
+          <NavigationOutline sx={{ mr: 1 }} />
           Navigate
         </Fab>
         <Fab variant='extended' size='large'>
-          <NavigationOutline sx={{ marginRight: 1 }} />
+          <NavigationOutline sx={{ mr: 1 }} />
           Navigate
         </Fab>
       </div>

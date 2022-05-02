@@ -253,8 +253,8 @@ const VerticalNavGroup = (props: Props) => {
               width: '100%',
               ...conditionalBgColor(),
               transition: 'padding .25s ease-in-out',
-              ...(parent && !item.children ? { paddingLeft: 5 } : {}),
-              padding: theme =>
+              ...(parent && !item.children ? { pl: 5 } : {}),
+              p: theme =>
                 theme.spacing(
                   2.5,
                   4.5,
@@ -268,9 +268,9 @@ const VerticalNavGroup = (props: Props) => {
                 sx={{
                   color: 'text.primary',
                   transition: 'margin .25s ease-in-out',
-                  ...(parent && navCollapsed && !navHover ? {} : { marginRight: 3.25 }),
-                  ...(navCollapsed && !navHover ? { marginRight: 0 } : {}), // this condition should come after (parent && navCollapsed && !navHover) condition for proper styling
-                  ...(parent && item.children ? { marginLeft: 1.25, marginRight: 4.75 } : {})
+                  ...(parent && navCollapsed && !navHover ? {} : { mr: 3.25 }),
+                  ...(navCollapsed && !navHover ? { mr: 0 } : {}), // this condition should come after (parent && navCollapsed && !navHover) condition for proper styling
+                  ...(parent && item.children ? { ml: 1.25, mr: 4.75 } : {})
                 }}
               >
                 <UserIcon
@@ -280,7 +280,7 @@ const VerticalNavGroup = (props: Props) => {
                 />
               </ListItemIcon>
             )}
-            <MenuItemTextWrapper sx={{ ...menuGroupCollapsedStyles, ...(isSubToSub ? { marginLeft: 9 } : {}) }}>
+            <MenuItemTextWrapper sx={{ ...menuGroupCollapsedStyles, ...(isSubToSub ? { ml: 9 } : {}) }}>
               <Typography
                 {...((themeConfig.menuTextTruncate || (!themeConfig.menuTextTruncate && navCollapsed && !navHover)) && {
                   noWrap: true

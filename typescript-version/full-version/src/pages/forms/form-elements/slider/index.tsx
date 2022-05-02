@@ -38,7 +38,7 @@ const Sliders = () => {
           }}
           sx={{ px: 2 }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>defaultValue</code> prop for default slider value and <code>disabled</code> prop for disabled
             slider.
           </Typography>
@@ -54,7 +54,7 @@ const Sliders = () => {
             jsx: source.SliderControlledUncontrolledJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Manage <code>value</code> prop with the help of a state for controlled slider and use{' '}
             <code>defaultValue</code> prop for uncontrolled slider.
           </Typography>
@@ -70,7 +70,7 @@ const Sliders = () => {
           }}
           sx={{ px: 2 }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             You can generate a mark for each step with <code>marks</code> prop.
           </Typography>
           <SliderDiscrete />
@@ -85,7 +85,7 @@ const Sliders = () => {
           }}
           sx={{ px: 2 }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             You can change the default step increment with <code>step</code> prop.
           </Typography>
           <SliderSmallSteps />
@@ -100,7 +100,7 @@ const Sliders = () => {
           }}
           sx={{ px: 2 }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             You can have custom marks by providing a rich array to the <code>marks</code> prop.
           </Typography>
           <SliderCustomMarks />
@@ -115,7 +115,7 @@ const Sliders = () => {
           }}
           sx={{ px: 2 }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             You can restrict the selectable values to those provided with the <code>marks</code> prop with{' '}
             <code>step={null}</code>.
           </Typography>
@@ -131,7 +131,7 @@ const Sliders = () => {
             jsx: source.SliderLabelAlwaysVisibleJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             You can force the thumb label to be always visible with <code>valueLabelDisplay='on'</code>.
           </Typography>
           <SliderLabelAlwaysVisible />
@@ -146,7 +146,7 @@ const Sliders = () => {
           }}
           sx={{ px: 2 }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             The slider can be used to set the start and end of a range by supplying an array of values to the{' '}
             <code>value</code> or <code>defaultValue</code> prop.
           </Typography>
@@ -162,7 +162,7 @@ const Sliders = () => {
           }}
           sx={{ px: 2 }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>color</code> prop for different colored slider.
           </Typography>
           <SliderColors />
@@ -177,7 +177,7 @@ const Sliders = () => {
           }}
           sx={{ px: 2 }}
         >
-          <Typography sx={{ marginBottom: 8 }}>
+          <Typography sx={{ mb: 8 }}>
             Use <code>styled</code> hook to customize your slider.
           </Typography>
           <SliderCustomized />
@@ -192,7 +192,7 @@ const Sliders = () => {
           }}
           sx={{ px: 2 }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>styled</code> hook to customize your slider.
           </Typography>
           <SliderCustomColors />
@@ -207,7 +207,7 @@ const Sliders = () => {
           }}
           sx={{ px: 2 }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>orientation='vertical'</code> prop for vertical slider.
           </Typography>
           <SliderVertical />
@@ -222,7 +222,7 @@ const Sliders = () => {
           }}
           sx={{ px: 2 }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             The track can be turned off with <code>track={`{false}`}</code> prop.
           </Typography>
           <SliderRemovedTrack />
@@ -237,7 +237,7 @@ const Sliders = () => {
           }}
           sx={{ px: 2 }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             The track can be inverted with <code>track='inverted'</code> prop.
           </Typography>
           <SliderInvertedTrack />
@@ -252,7 +252,7 @@ const Sliders = () => {
           }}
           sx={{ px: 2 }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>size</code> prop for different sizes of slider.
           </Typography>
           <SliderSizes />
@@ -267,7 +267,7 @@ const Sliders = () => {
           }}
           sx={{ px: 2 }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             You can enforce a minimum distance between values in the <code>onChange</code> event handler.
           </Typography>
           <SliderMinimumDistance />

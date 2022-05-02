@@ -78,11 +78,11 @@ const TabSecurity = () => {
 
   return (
     <form>
-      <CardContent sx={{ paddingBottom: 0 }}>
+      <CardContent sx={{ pb: 0 }}>
         <Grid container spacing={5}>
           <Grid item xs={12} sm={6}>
             <Grid container spacing={5}>
-              <Grid item xs={12} sx={{ marginTop: 4.75 }}>
+              <Grid item xs={12} sx={{ mt: 4.75 }}>
                 <FormControl fullWidth>
                   <InputLabel htmlFor='account-settings-current-password'>Current Password</InputLabel>
                   <OutlinedInput
@@ -107,7 +107,7 @@ const TabSecurity = () => {
                 </FormControl>
               </Grid>
 
-              <Grid item xs={12} sx={{ marginTop: 6 }}>
+              <Grid item xs={12} sx={{ mt: 6 }}>
                 <FormControl fullWidth>
                   <InputLabel htmlFor='account-settings-new-password'>New Password</InputLabel>
                   <OutlinedInput
@@ -163,7 +163,7 @@ const TabSecurity = () => {
             item
             sm={6}
             xs={12}
-            sx={{ display: 'flex', marginTop: [7.5, 2.5], alignItems: 'center', justifyContent: 'center' }}
+            sx={{ display: 'flex', mt: [7.5, 2.5], alignItems: 'center', justifyContent: 'center' }}
           >
             <img width={183} alt='avatar' height={256} src='/images/pages/pose-m-1.png' />
           </Grid>
@@ -174,7 +174,7 @@ const TabSecurity = () => {
 
       <CardContent>
         <Box sx={{ mb: 5.75, display: 'flex', alignItems: 'center' }}>
-          <KeyOutline sx={{ marginRight: 3 }} />
+          <KeyOutline sx={{ mr: 3 }} />
           <Typography variant='h6'>Two-factor authentication</Typography>
         </Box>
 
@@ -200,7 +200,7 @@ const TabSecurity = () => {
         </Box>
 
         <Box>
-          <Button variant='contained' sx={{ marginRight: 3.5 }}>
+          <Button variant='contained' sx={{ mr: 3.5 }}>
             Save Changes
           </Button>
           <Button

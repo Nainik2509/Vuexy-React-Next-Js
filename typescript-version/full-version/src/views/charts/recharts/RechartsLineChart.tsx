@@ -62,12 +62,12 @@ const RechartsLineChart = ({ direction }: Props) => {
         sx={{
           flexDirection: ['column', 'row'],
           alignItems: ['flex-start', 'center'],
-          '& .MuiCardHeader-action': { marginBottom: 0 },
-          '& .MuiCardHeader-content': { marginBottom: [2, 0] }
+          '& .MuiCardHeader-action': { mb: 0 },
+          '& .MuiCardHeader-content': { mb: [2, 0] }
         }}
         action={
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Typography variant='h6' sx={{ marginRight: 5 }}>
+            <Typography variant='h6' sx={{ mr: 5 }}>
               $221,267
             </Typography>
             <CustomChip
@@ -76,7 +76,7 @@ const RechartsLineChart = ({ direction }: Props) => {
               sx={{ fontWeight: 500, borderRadius: 1, fontSize: '0.875rem' }}
               label={
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                  <ArrowUp sx={{ fontSize: '1rem', marginRight: 1 }} />
+                  <ArrowUp sx={{ fontSize: '1rem', mr: 1 }} />
                   <span>22%</span>
                 </Box>
               }

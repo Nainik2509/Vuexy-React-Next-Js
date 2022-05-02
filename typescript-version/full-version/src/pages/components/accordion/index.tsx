@@ -30,7 +30,7 @@ const Accordion = () => {
             border: theme => `1px solid ${theme.palette.divider}`
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>Accordion</code>, <code>AccordionSummary</code> and <code>AccordionDetails</code> components to
             make a simple accordion.
           </Typography>
@@ -50,7 +50,7 @@ const Accordion = () => {
             border: theme => `1px solid ${theme.palette.divider}`
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Manage <code>expanded</code> prop with the help of a state.
           </Typography>
           <AccordionControlled />
@@ -69,7 +69,7 @@ const Accordion = () => {
             border: theme => `1px solid ${theme.palette.divider}`
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>styled</code> hook to customize the component the way you want it.
           </Typography>
           <AccordionCustomized />
@@ -88,7 +88,7 @@ const Accordion = () => {
             border: theme => `1px solid ${theme.palette.divider}`
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             In order to put an action such as a Checkbox or a button inside <code>AccordionSummary</code>, you need to
             stop the propagation of the focus and click events to prevent the accordion from expanding/collapsing when
             using the action.

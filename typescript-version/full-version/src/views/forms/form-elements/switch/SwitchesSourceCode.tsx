@@ -156,15 +156,15 @@ const SwitchedLabelPlacement = () => {
   return (
     <div>
       <FormGroup row>
-        <FormControlLabel value='top' label='Top' labelPlacement='top' sx={{ marginRight: 8 }} control={<Switch />} />
+        <FormControlLabel value='top' label='Top' labelPlacement='top' sx={{ mr: 8 }} control={<Switch />} />
         <FormControlLabel value='bottom' control={<Switch />} label='Bottom' labelPlacement='bottom' />
       </FormGroup>
-      <FormGroup row sx={{ marginTop: 4 }}>
+      <FormGroup row sx={{ mt: 4 }}>
         <FormControlLabel
           value='start'
           label='Start'
           labelPlacement='start'
-          sx={{ marginRight: 4 }}
+          sx={{ mr: 4 }}
           control={<Switch />}
         />
         <FormControlLabel value='end' control={<Switch />} label='End' labelPlacement='end' />
@@ -358,15 +358,15 @@ const SwitchedLabelPlacement = () => {
   return (
     <div>
       <FormGroup row>
-        <FormControlLabel value='top' label='Top' labelPlacement='top' sx={{ marginRight: 8 }} control={<Switch />} />
+        <FormControlLabel value='top' label='Top' labelPlacement='top' sx={{ mr: 8 }} control={<Switch />} />
         <FormControlLabel value='bottom' control={<Switch />} label='Bottom' labelPlacement='bottom' />
       </FormGroup>
-      <FormGroup row sx={{ marginTop: 4 }}>
+      <FormGroup row sx={{ mt: 4 }}>
         <FormControlLabel
           value='start'
           label='Start'
           labelPlacement='start'
-          sx={{ marginRight: 4 }}
+          sx={{ mr: 4 }}
           control={<Switch />}
         />
         <FormControlLabel value='end' control={<Switch />} label='End' labelPlacement='end' />

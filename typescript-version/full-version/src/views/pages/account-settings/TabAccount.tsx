@@ -64,7 +64,7 @@ const TabAccount = () => {
     <CardContent>
       <form>
         <Grid container spacing={7}>
-          <Grid item xs={12} sx={{ marginTop: 4.8, marginBottom: 3 }}>
+          <Grid item xs={12} sx={{ mt: 4.8, mb: 3 }}>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
               <ImgStyled src={imgSrc} alt='Profile Pic' />
               <Box>
@@ -81,7 +81,7 @@ const TabAccount = () => {
                 <ResetButtonStyled color='error' variant='outlined' onClick={() => setImgSrc('/images/avatars/1.png')}>
                   Reset
                 </ResetButtonStyled>
-                <Typography variant='body2' sx={{ marginTop: 5 }}>
+                <Typography variant='body2' sx={{ mt: 5 }}>
                   Allowed PNG or JPEG. Max size of 800K.
                 </Typography>
               </Box>
@@ -149,7 +149,7 @@ const TabAccount = () => {
           ) : null}
 
           <Grid item xs={12}>
-            <Button variant='contained' sx={{ marginRight: 3.5 }}>
+            <Button variant='contained' sx={{ mr: 3.5 }}>
               Save Changes
             </Button>
             <Button type='reset' variant='outlined' color='secondary'>

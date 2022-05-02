@@ -118,7 +118,7 @@ const KnowledgeBaseCategory = ({ apiData }: InferGetStaticPropsType<typeof getSt
                   />
                   <Typography variant='h6'>{`${item.title} (${item.questions.length})`}</Typography>
                 </StyledCardContent>
-                <CardContent sx={{ padding: theme => `${theme.spacing(6.75, 5.5, 7.5)} !important` }}>
+                <CardContent sx={{ p: theme => `${theme.spacing(6.75, 5.5, 7.5)} !important` }}>
                   {renderQuestions(item)}
                 </CardContent>
               </Card>

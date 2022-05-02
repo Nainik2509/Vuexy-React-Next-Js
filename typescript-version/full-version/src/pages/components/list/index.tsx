@@ -30,7 +30,7 @@ const Lists = () => {
             jsx: source.ListSimpleJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>Lists are a continuous group of text or images.</Typography>
+          <Typography sx={{ mb: 4 }}>Lists are a continuous group of text or images.</Typography>
           <ListSimple />
         </CardSnippet>
       </Grid>
@@ -53,7 +53,7 @@ const Lists = () => {
             jsx: source.ListDenseJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>dense</code> prop with <code>&lt;List&gt;</code> component for dense list.
           </Typography>
           <ListDense />
@@ -67,7 +67,7 @@ const Lists = () => {
             jsx: source.ListSecondaryJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>secondary</code> prop with <code>&lt;ListItemText&gt;</code> component for secondary text.
           </Typography>
           <ListSecondary />
@@ -81,7 +81,7 @@ const Lists = () => {
             jsx: source.ListItemSelectedJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Manage <code>selected</code> prop with the help of a state.
           </Typography>
           <ListItemSelected />
@@ -117,7 +117,7 @@ const Lists = () => {
             jsx: source.ListWithSwitchJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             <code>&lt;ListSubheader&gt;</code> is by default sticky.
           </Typography>
           <ListStickySubheader />

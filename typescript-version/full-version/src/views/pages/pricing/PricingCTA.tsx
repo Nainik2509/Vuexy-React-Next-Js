@@ -54,7 +54,7 @@ const PricingCTA = () => {
           <Typography variant='h5' sx={{ mb: 3, color: 'primary.main' }}>
             Still not convinced? Start with a 14-day FREE trial!
           </Typography>
-          <Typography sx={{ marginBottom: 9.5, color: 'text.secondary' }}>
+          <Typography sx={{ mb: 9.5, color: 'text.secondary' }}>
             You will get full access to with all the features for 14 days.
           </Typography>
           <Button variant='contained'>Start 14-day FREE trial</Button>

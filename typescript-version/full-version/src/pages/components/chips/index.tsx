@@ -59,7 +59,7 @@ const Pagination = () => {
             jsx: source.ChipsColorsJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>color</code> prop for different colored chips.
           </Typography>
           <ChipsColors />
@@ -73,7 +73,7 @@ const Pagination = () => {
             jsx: source.ChipsOnDeleteJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>onDelete</code> prop for delete icon in a chip. Use <code>deleteIcon</code> prop to change the
             default delete icon.
           </Typography>

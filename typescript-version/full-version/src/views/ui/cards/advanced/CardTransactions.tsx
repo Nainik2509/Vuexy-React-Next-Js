@@ -120,7 +120,7 @@ const CardTransactions = () => {
               sx={{
                 display: 'flex',
                 alignItems: 'center',
-                marginBottom: index !== data.length - 1 ? 7 : undefined
+                mb: index !== data.length - 1 ? 7 : undefined
               }}
             >
               <CustomAvatar skin='light' color={item.avatarColor} variant='rounded' sx={{ mr: 3 }}>
@@ -135,7 +135,7 @@ const CardTransactions = () => {
                   justifyContent: 'space-between'
                 }}
               >
-                <Box sx={{ marginRight: 2, display: 'flex', flexDirection: 'column' }}>
+                <Box sx={{ mr: 2, display: 'flex', flexDirection: 'column' }}>
                   <Typography sx={{ mb: 0.5, fontWeight: 600, fontSize: '0.875rem' }}>{item.title}</Typography>
                   <Typography variant='caption'>{item.subtitle}</Typography>
                 </Box>

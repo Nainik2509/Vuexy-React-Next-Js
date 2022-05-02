@@ -89,7 +89,7 @@ const CardMeetingSchedule = () => {
               sx={{
                 display: 'flex',
                 alignItems: 'center',
-                marginBottom: index !== data.length - 1 ? 6.5 : undefined
+                mb: index !== data.length - 1 ? 6.5 : undefined
               }}
             >
               <Avatar src={item.src} sx={{ mr: 3, width: 38, height: 38 }} />
@@ -102,7 +102,7 @@ const CardMeetingSchedule = () => {
                   justifyContent: 'space-between'
                 }}
               >
-                <Box sx={{ marginRight: 2, display: 'flex', marginBottom: 0.4, flexDirection: 'column' }}>
+                <Box sx={{ mr: 2, display: 'flex', mb: 0.4, flexDirection: 'column' }}>
                   <Typography variant='body2' sx={{ mb: 0.5, fontWeight: 600, color: 'text.primary' }}>
                     {item.title}
                   </Typography>
@@ -123,7 +123,7 @@ const CardMeetingSchedule = () => {
                   size='small'
                   label={item.chipText}
                   color={item.chipColor}
-                  sx={{ height: 20, marginTop: 0.4, fontSize: '0.75rem', fontWeight: 600 }}
+                  sx={{ height: 20, mt: 0.4, fontSize: '0.75rem', fontWeight: 600 }}
                 />
               </Box>
             </Box>

@@ -50,7 +50,7 @@ const ForgotPasswordV1 = () => {
   return (
     <Box className='content-center'>
       <Card sx={{ zIndex: 1 }}>
-        <CardContent sx={{ padding: theme => `${theme.spacing(12, 9, 7)} !important` }}>
+        <CardContent sx={{ p: theme => `${theme.spacing(12, 9, 7)} !important` }}>
           <Box sx={{ mb: 8, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <svg
               width={35}
@@ -125,7 +125,7 @@ const ForgotPasswordV1 = () => {
             </Typography>
           </Box>
           <Box sx={{ mb: 6 }}>
-            <Typography variant='h5' sx={{ fontWeight: 600, marginBottom: 1.5 }}>
+            <Typography variant='h5' sx={{ fontWeight: 600, mb: 1.5 }}>
               Forgot Password? 🔒
             </Typography>
             <Typography variant='body2'>
@@ -133,8 +133,8 @@ const ForgotPasswordV1 = () => {
             </Typography>
           </Box>
           <form noValidate autoComplete='off' onSubmit={handleSubmit}>
-            <TextField autoFocus type='email' label='Email' sx={{ display: 'flex', marginBottom: 4 }} />
-            <Button fullWidth size='large' type='submit' variant='contained' sx={{ marginBottom: 5.25 }}>
+            <TextField autoFocus type='email' label='Email' sx={{ display: 'flex', mb: 4 }} />
+            <Button fullWidth size='large' type='submit' variant='contained' sx={{ mb: 5.25 }}>
               Send reset link
             </Button>
             <Typography variant='body2' sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

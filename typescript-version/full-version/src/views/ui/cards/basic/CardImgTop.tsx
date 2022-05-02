@@ -9,7 +9,7 @@ const CardImgTop = () => {
     <Card>
       <CardMedia sx={{ height: '14.5625rem' }} image='/images/cards/glass-house.png' />
       <CardContent>
-        <Typography variant='h6' sx={{ marginBottom: 2 }}>
+        <Typography variant='h6' sx={{ mb: 2 }}>
           Influencing The Influencer
         </Typography>
         <Typography variant='body2'>

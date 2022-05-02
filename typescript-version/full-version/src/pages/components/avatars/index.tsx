@@ -115,7 +115,7 @@ const Avatars = () => {
             jsx: source.AvatarsGroupedJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Wrap all your avatars with <code>AvatarGroup</code> component to have grouped avatars. Use <code>max</code>{' '}
             prop with <code>AvatarGroup</code> component to restrict maximum number of avatars shown.
           </Typography>

@@ -103,7 +103,7 @@ const TabBilling = () => {
     <CardContent>
       <form>
         <Grid container spacing={7}>
-          <Grid item xs={12} md={8} sx={{ marginTop: 2.8 }}>
+          <Grid item xs={12} md={8} sx={{ mt: 2.8 }}>
             <Grid container spacing={7}>
               <Grid item xs={12}>
                 <FormControl>
@@ -218,7 +218,7 @@ const TabBilling = () => {
           </StyledGrid>
 
           <Grid item xs={12} sx={{ mt: paymentMethod === 'card' ? 3 : undefined }}>
-            <Button variant='contained' sx={{ marginRight: 3.5 }}>
+            <Button variant='contained' sx={{ mr: 3.5 }}>
               Save Changes
             </Button>
             <Button

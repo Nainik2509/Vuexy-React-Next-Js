@@ -8,7 +8,7 @@ import FormHelperText from '@mui/material/FormHelperText'
 
 const SelectProps = () => {
   return (
-    <Box sx={{ '& > *': { marginTop: 6, marginRight: 6 } }}>
+    <Box sx={{ '& > *': { mt: 6, mr: 6 } }}>
       <FormControl>
         <InputLabel id='demo-simple-select-helper-label'>Age</InputLabel>
         <Select label='Age' defaultValue='' id='demo-simple-select-helper' labelId='demo-simple-select-helper-label'>

@@ -115,11 +115,11 @@ const UserViewSecurity = () => {
 
   return (
     <Fragment>
-      <Card sx={{ marginBottom: 6 }}>
+      <Card sx={{ mb: 6 }}>
         <CardHeader title='Change Password' titleTypographyProps={{ variant: 'h6' }} />
         <CardContent>
-          <Alert icon={false} severity='warning' sx={{ marginBottom: 6 }}>
-            <AlertTitle sx={{ fontWeight: 600, marginBottom: theme => `${theme.spacing(1)} !important` }}>
+          <Alert icon={false} severity='warning' sx={{ mb: 6 }}>
+            <AlertTitle sx={{ fontWeight: 600, mb: theme => `${theme.spacing(1)} !important` }}>
               Ensure that these requirements are met
             </AlertTitle>
             Minimum 8 characters long, uppercase & symbol
@@ -187,11 +187,11 @@ const UserViewSecurity = () => {
         </CardContent>
       </Card>
 
-      <Card sx={{ marginBottom: 6 }}>
+      <Card sx={{ mb: 6 }}>
         <CardHeader
           title='Two-step verification'
           subheader='Keep your account secure with authentication step.'
-          titleTypographyProps={{ variant: 'h6', sx: { marginBottom: 1 } }}
+          titleTypographyProps={{ variant: 'h6', sx: { mb: 1 } }}
         />
         <CardContent>
           <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>SMS</Typography>
@@ -208,7 +208,7 @@ const UserViewSecurity = () => {
             </Box>
           </Box>
 
-          <Divider sx={{ marginTop: 0, marginBottom: 4 }} />
+          <Divider sx={{ mt: 0, mb: 4 }} />
 
           <Typography variant='body2'>
             Two-factor authentication adds an additional layer of security to your account by requiring more than just a
@@ -224,7 +224,7 @@ const UserViewSecurity = () => {
           open={openEditMobileNumber}
           onClose={handleEditMobileNumberClose}
           aria-labelledby='user-view-security-edit-mobile-number'
-          sx={{ '& .MuiPaper-root': { width: '100%', maxWidth: 650, padding: [2, 10] } }}
+          sx={{ '& .MuiPaper-root': { width: '100%', maxWidth: 650, p: [2, 10] } }}
           aria-describedby='user-view-security-edit-mobile-number-description'
         >
           <DialogTitle
@@ -236,7 +236,7 @@ const UserViewSecurity = () => {
 
           <DialogContent>
             <Typography variant='h6'>Verify Your Mobile Number for SMS</Typography>
-            <Typography variant='body2' sx={{ marginTop: 2, marginBottom: 5 }}>
+            <Typography variant='body2' sx={{ mt: 2, mb: 5 }}>
               Enter your mobile phone number with country code and we will send you a verification code.
             </Typography>
             <form onSubmit={e => e.preventDefault()}>
@@ -246,11 +246,11 @@ const UserViewSecurity = () => {
                 label='Mobile number with country code'
                 onChange={e => setMobileNumber(e.target.value)}
               />
-              <Box sx={{ marginTop: 6.5, display: 'flex', justifyContent: 'flex-end' }}>
+              <Box sx={{ mt: 6.5, display: 'flex', justifyContent: 'flex-end' }}>
                 <Button color='secondary' variant='outlined' onClick={handleEditMobileNumberClose}>
                   Cancel
                 </Button>
-                <Button type='submit' variant='contained' sx={{ marginLeft: 3 }} onClick={handleEditMobileNumberClose}>
+                <Button type='submit' variant='contained' sx={{ ml: 3 }} onClick={handleEditMobileNumberClose}>
                   Send
                 </Button>
               </Box>
@@ -262,7 +262,7 @@ const UserViewSecurity = () => {
       <Card>
         <CardHeader title='Recent devices' titleTypographyProps={{ variant: 'h6' }} />
 
-        <Divider sx={{ margin: 0 }} />
+        <Divider sx={{ m: 0 }} />
 
         <TableContainer>
           <Table sx={{ minWidth: 500 }}>
@@ -283,9 +283,7 @@ const UserViewSecurity = () => {
                   <TableCell>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
                       <img width='22' height='22' alt='Chrome' src='/images/logos/chrome.png' />
-                      <Typography sx={{ marginLeft: 2, fontWeight: 500, fontSize: '0.875rem' }}>
-                        {item.browser}
-                      </Typography>
+                      <Typography sx={{ ml: 2, fontWeight: 500, fontSize: '0.875rem' }}>{item.browser}</Typography>
                     </Box>
                   </TableCell>
                   <TableCell>{item.device}</TableCell>

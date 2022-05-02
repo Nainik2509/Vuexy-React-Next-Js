@@ -48,7 +48,7 @@ const CardPlanUpgrade = () => {
           sx={{
             borderRadius: '4px',
             color: 'text.primary',
-            padding: theme => theme.spacing(2.25, 2.75),
+            p: theme => theme.spacing(2.25, 2.75),
             backgroundColor: colorClasses.primaryLight.backgroundColor
           }}
         >
@@ -118,7 +118,7 @@ const CardPlanUpgrade = () => {
               justifyContent: 'space-between'
             }}
           >
-            <Box sx={{ marginRight: 2, display: 'flex', marginBottom: 0.4, flexDirection: 'column' }}>
+            <Box sx={{ mr: 2, display: 'flex', mb: 0.4, flexDirection: 'column' }}>
               <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Credit card</Typography>
               <Typography variant='caption'>2566 xxxx xxxx 8908</Typography>
             </Box>
@@ -149,7 +149,7 @@ const CardPlanUpgrade = () => {
               justifyContent: 'space-between'
             }}
           >
-            <Box sx={{ marginRight: 2, display: 'flex', marginBottom: 0.4, flexDirection: 'column' }}>
+            <Box sx={{ mr: 2, display: 'flex', mb: 0.4, flexDirection: 'column' }}>
               <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Credit card</Typography>
               <Typography variant='caption'>8990 xxxx xxxx 6852</Typography>
             </Box>
@@ -171,7 +171,7 @@ const CardPlanUpgrade = () => {
         <Link
           href='/'
           onClick={(e: SyntheticEvent) => e.preventDefault()}
-          sx={{ marginTop: 4, fontWeight: 500, marginBottom: 4, fontSize: '0.75rem' }}
+          sx={{ mt: 4, fontWeight: 500, mb: 4, fontSize: '0.75rem' }}
         >
           Add Payment Method
         </Link>

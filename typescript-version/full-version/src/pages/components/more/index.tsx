@@ -22,7 +22,7 @@ const Misc = () => {
         <Card>
           <CardHeader title='More Components' titleTypographyProps={{ variant: 'h6' }} />
           <CardContent>
-            <Alert severity='info' sx={{ marginBottom: 4 }}>
+            <Alert severity='info' sx={{ mb: 4 }}>
               We have themed each of the MUI components but we have skipped the demos of the following components. User
               can always copy component's code and use from links given below.
             </Alert>

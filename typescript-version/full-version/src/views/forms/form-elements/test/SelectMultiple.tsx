@@ -116,7 +116,7 @@ const SelectMultiple = () => {
                   renderValue={selected => (
                     <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
                       {(selected as string[]).map(value => (
-                        <Chip key={value} label={value} sx={{ margin: 0.75 }} />
+                        <Chip key={value} label={value} sx={{ m: 0.75 }} />
                       ))}
                     </Box>
                   )}
@@ -217,7 +217,7 @@ const SelectMultiple = () => {
                   renderValue={selected => (
                     <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
                       {(selected as string[]).map(value => (
-                        <Chip key={value} label={value} sx={{ margin: 0.75 }} />
+                        <Chip key={value} label={value} sx={{ m: 0.75 }} />
                       ))}
                     </Box>
                   )}
@@ -318,7 +318,7 @@ const SelectMultiple = () => {
                   renderValue={selected => (
                     <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
                       {(selected as string[]).map(value => (
-                        <Chip key={value} label={value} sx={{ margin: 0.75 }} />
+                        <Chip key={value} label={value} sx={{ m: 0.75 }} />
                       ))}
                     </Box>
                   )}

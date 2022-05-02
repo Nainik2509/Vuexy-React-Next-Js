@@ -37,7 +37,7 @@ const CardAward = () => {
       <CardContent>
         <Typography variant='h6'>Congratulations John! 🥳</Typography>
         <Typography variant='body2'>Best seller of the month</Typography>
-        <Typography variant='h5' sx={{ color: 'primary.main', fontWeight: 600, marginTop: 3.5 }}>
+        <Typography variant='h5' sx={{ color: 'primary.main', fontWeight: 600, mt: 3.5 }}>
           $42.8k
         </Typography>
         <Typography variant='body2' sx={{ mb: 4.25 }}>

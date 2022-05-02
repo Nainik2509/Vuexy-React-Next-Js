@@ -119,7 +119,7 @@ const CustomTooltip = (data: TooltipProps<any, any>) => {
           data.payload.map((i: any) => {
             return (
               <Box sx={{ display: 'flex', alignItems: 'center' }} key={i.dataKey}>
-                <Circle sx={{ color: i.fill, marginRight: 2.5, fontSize: '0.6rem' }} />
+                <Circle sx={{ color: i.fill, mr: 2.5, fontSize: '0.6rem' }} />
                 <span>
                   {i.dataKey} : {i.payload[i.dataKey]}
                 </span>
@@ -180,8 +180,8 @@ const RechartsBarChart = ({ direction }: Props) => {
         sx={{
           flexDirection: ['column', 'row'],
           alignItems: ['flex-start', 'center'],
-          '& .MuiCardHeader-action': { marginBottom: 0 },
-          '& .MuiCardHeader-content': { marginBottom: [2, 0] }
+          '& .MuiCardHeader-action': { mb: 0 },
+          '& .MuiCardHeader-content': { mb: [2, 0] }
         }}
         action={
           <DatePicker
@@ -198,20 +198,20 @@ const RechartsBarChart = ({ direction }: Props) => {
       />
       <CardContent>
         <Box sx={{ mb: 4, display: 'flex', flexWrap: 'wrap' }}>
-          <Box sx={{ marginRight: 6, display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ marginRight: 1.5, fontSize: '0.75rem', color: '#826af9' }} />
+          <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
+            <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#826af9' }} />
             <Typography>Apple</Typography>
           </Box>
-          <Box sx={{ marginRight: 6, display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ marginRight: 1.5, fontSize: '0.75rem', color: '#9f87ff' }} />
+          <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
+            <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#9f87ff' }} />
             <Typography>Samsung</Typography>
           </Box>
-          <Box sx={{ marginRight: 6, display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ marginRight: 1.5, fontSize: '0.75rem', color: '#d2b0ff' }} />
+          <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
+            <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#d2b0ff' }} />
             <Typography>Oneplus</Typography>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ marginRight: 1.5, fontSize: '0.75rem', color: '#f8d3ff' }} />
+            <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#f8d3ff' }} />
             <Typography>Motorola</Typography>
           </Box>
         </Box>

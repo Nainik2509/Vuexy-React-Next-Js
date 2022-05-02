@@ -31,22 +31,22 @@ const CardFinanceSummary = () => {
       />
       <CardContent sx={{ pt: theme => `${theme.spacing(5)} !important` }}>
         <Grid container spacing={6}>
-          <Grid item xs={12} sm={6} sx={{ marginBottom: 3 }}>
+          <Grid item xs={12} sm={6} sx={{ mb: 3 }}>
             <Typography variant='body2'>Annual Companies Taxes</Typography>
             <Typography variant='h6'>$1450.35</Typography>
           </Grid>
 
-          <Grid item xs={12} sm={6} sx={{ marginBottom: 3 }}>
+          <Grid item xs={12} sm={6} sx={{ mb: 3 }}>
             <Typography variant='body2'>Next Tax Review Date</Typography>
             <Typography variant='h6'>July 14, 2021</Typography>
           </Grid>
 
-          <Grid item xs={12} sm={6} sx={{ marginBottom: 3 }}>
+          <Grid item xs={12} sm={6} sx={{ mb: 3 }}>
             <Typography variant='body2'>Average Product Price</Typography>
             <Typography variant='h6'>$85.50</Typography>
           </Grid>
 
-          <Grid item xs={12} sm={6} sx={{ marginBottom: 3 }}>
+          <Grid item xs={12} sm={6} sx={{ mb: 3 }}>
             <Typography variant='body2' sx={{ mb: 1.5 }}>
               Satisfaction Rate
             </Typography>

@@ -61,18 +61,18 @@ const CardMobile = () => {
           xs={12}
           md={7}
           sx={{
-            paddingTop: ['0 !important', '0 !important', '1.5rem !important'],
-            paddingLeft: ['1.5rem !important', '1.5rem !important', '0 !important']
+            pt: ['0 !important', '0 !important', '1.5rem !important'],
+            pl: ['1.5rem !important', '1.5rem !important', '0 !important']
           }}
         >
           <CardContent>
-            <Typography variant='h6' sx={{ marginBottom: 2 }}>
+            <Typography variant='h6' sx={{ mb: 2 }}>
               Apple iPhone 11 Pro
             </Typography>
-            <Typography variant='body2' sx={{ marginBottom: 3.5 }}>
+            <Typography variant='body2' sx={{ mb: 3.5 }}>
               Apple iPhone 11 Pro smartphone. Announced Sep 2019. Features 5.8″ display Apple A13 Bionic
             </Typography>
-            <Typography sx={{ fontWeight: 500, marginBottom: 3 }}>
+            <Typography sx={{ fontWeight: 500, mb: 3 }}>
               Price:{' '}
               <Box component='span' sx={{ fontWeight: 'bold' }}>
                 $899
@@ -82,7 +82,7 @@ const CardMobile = () => {
           <CardActions className='card-action-dense'>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
               <Button>
-                <CartPlus fontSize='small' sx={{ marginRight: 2 }} />
+                <CartPlus fontSize='small' sx={{ mr: 2 }} />
                 Add to Card
               </Button>
               <IconButton

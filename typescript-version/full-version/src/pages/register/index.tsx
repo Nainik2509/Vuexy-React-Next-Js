@@ -392,11 +392,11 @@ const Register = () => {
                   <FormHelperText sx={{ mt: 0, color: 'error.main' }}>{errors.terms.message}</FormHelperText>
                 )}
               </FormControl>
-              <Button fullWidth size='large' type='submit' variant='contained' sx={{ marginBottom: 7 }}>
+              <Button fullWidth size='large' type='submit' variant='contained' sx={{ mb: 7 }}>
                 Sign up
               </Button>
               <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' }}>
-                <Typography variant='body2' sx={{ marginRight: 2 }}>
+                <Typography variant='body2' sx={{ mr: 2 }}>
                   Already have an account?
                 </Typography>
                 <Typography variant='body2'>

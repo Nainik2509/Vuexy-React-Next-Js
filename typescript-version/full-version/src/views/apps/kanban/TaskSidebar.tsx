@@ -300,7 +300,7 @@ const TaskSidebar = (props: TaskSidebarProps) => {
           display: 'flex',
           justifyContent: 'space-between',
           backgroundColor: 'background.default',
-          padding: theme => theme.spacing(3, 3.255, 3, 5.255)
+          p: theme => theme.spacing(3, 3.255, 3, 5.255)
         }}
       >
         <Typography variant='h6'>Update Task</Typography>
@@ -308,7 +308,7 @@ const TaskSidebar = (props: TaskSidebarProps) => {
           <Close fontSize='small' onClick={handleTaskSidebarToggle} sx={{ cursor: 'pointer' }} />
         </Box>
       </Box>
-      <Box className='sidebar-body' sx={{ padding: theme => theme.spacing(5, 6) }}>
+      <Box className='sidebar-body' sx={{ p: theme => theme.spacing(5, 6) }}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <FormControl fullWidth sx={{ mb: 6 }}>
             <Controller

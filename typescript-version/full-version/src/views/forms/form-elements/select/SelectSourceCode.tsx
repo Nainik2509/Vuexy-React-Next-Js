@@ -279,7 +279,7 @@ const SelectMultiple = () => {
             renderValue={selected => (
               <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
                 {selected.map(value => (
-                  <Chip key={value} label={value} sx={{ margin: 0.75 }} />
+                  <Chip key={value} label={value} sx={{ m: 0.75 }} />
                 ))}
               </Box>
             )}
@@ -434,7 +434,7 @@ import FormHelperText from '@mui/material/FormHelperText'
 
 const SelectProps = () => {
   return (
-    <Box sx={{ '& > *': { marginTop: 6, marginRight: 6 } }}>
+    <Box sx={{ '& > *': { mt: 6, mr: 6 } }}>
       <FormControl>
         <InputLabel id='demo-simple-select-helper-label'>Age</InputLabel>
         <Select label='Age' defaultValue='' id='demo-simple-select-helper' labelId='demo-simple-select-helper-label'>
@@ -590,7 +590,7 @@ const SelectWithDialog = () => {
       </Button>
       <Dialog maxWidth='xs' fullWidth open={open} onClose={handleClose}>
         <DialogTitle>Fill the form</DialogTitle>
-        <DialogContent sx={{ paddingTop: theme => {theme.spacing(2)} !important }}>
+        <DialogContent sx={{ pt: theme => {theme.spacing(2)} !important }}>
           <form>
             <FormControl sx={{ mr: 4 }}>
               <InputLabel id='demo-dialog-select-label'>Age</InputLabel>
@@ -976,7 +976,7 @@ import FormHelperText from '@mui/material/FormHelperText'
 
 const SelectProps = () => {
   return (
-    <Box sx={{ '& > *': { marginTop: 6, marginRight: 6 } }}>
+    <Box sx={{ '& > *': { mt: 6, mr: 6 } }}>
       <FormControl>
         <InputLabel id='demo-simple-select-helper-label'>Age</InputLabel>
         <Select label='Age' defaultValue='' id='demo-simple-select-helper' labelId='demo-simple-select-helper-label'>
@@ -1218,7 +1218,7 @@ const SelectMultiple = () => {
             renderValue={selected => (
               <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
                 {(selected as unknown as string[]).map(value => (
-                  <Chip key={value} label={value} sx={{ margin: 0.75 }} />
+                  <Chip key={value} label={value} sx={{ m: 0.75 }} />
                 ))}
               </Box>
             )}
@@ -1384,7 +1384,7 @@ const SelectWithDialog = () => {
       </Button>
       <Dialog maxWidth='xs' fullWidth open={open} onClose={handleClose}>
         <DialogTitle>Fill the form</DialogTitle>
-        <DialogContent sx={{ paddingTop: theme => {theme.spacing(2)} !important }}>
+        <DialogContent sx={{ pt: theme => {theme.spacing(2)} !important }}>
           <form>
             <FormControl sx={{ mr: 4 }}>
               <InputLabel id='demo-dialog-select-label'>Age</InputLabel>

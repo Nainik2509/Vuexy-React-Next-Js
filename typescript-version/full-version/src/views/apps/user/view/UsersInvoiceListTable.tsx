@@ -229,7 +229,7 @@ const InvoiceListTable = ({ invoiceData }: Props) => {
     <Card>
       <CardHeader
         title='Invoice List'
-        sx={{ '& .MuiCardHeader-action': { margin: 0 } }}
+        sx={{ '& .MuiCardHeader-action': { m: 0 } }}
         titleTypographyProps={{
           variant: 'h6',
           sx: { lineHeight: '32px !important', letterSpacing: '0.15px !important' }

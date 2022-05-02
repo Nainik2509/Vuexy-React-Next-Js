@@ -24,7 +24,7 @@ const TabNotifications = () => {
     <CardContent>
       <form>
         <Box sx={{ mb: 3.5, display: 'flex', alignItems: 'center' }}>
-          <ChartTimelineVariant sx={{ marginRight: 2.5 }} />
+          <ChartTimelineVariant sx={{ mr: 2.5 }} />
           <Typography variant='h6'>Activity</Typography>
         </Box>
 
@@ -42,7 +42,7 @@ const TabNotifications = () => {
         </div>
 
         <Box sx={{ mt: 7, mb: 3.5, display: 'flex', alignItems: 'center' }}>
-          <EmailOutline sx={{ marginRight: 2.5 }} />
+          <EmailOutline sx={{ mr: 2.5 }} />
           <Typography variant='h6'>Application</Typography>
         </Box>
 
@@ -57,7 +57,7 @@ const TabNotifications = () => {
         </div>
 
         <Box sx={{ mt: 7.5 }}>
-          <Button variant='contained' sx={{ marginRight: 3.5 }}>
+          <Button variant='contained' sx={{ mr: 3.5 }}>
             Save Changes
           </Button>
           <Button type='reset' variant='outlined' color='secondary'>

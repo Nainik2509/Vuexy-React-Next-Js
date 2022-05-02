@@ -37,7 +37,7 @@ const TabInfo = () => {
     <CardContent>
       <form>
         <Grid container spacing={7}>
-          <Grid item xs={12} sx={{ marginTop: 4.8 }}>
+          <Grid item xs={12} sx={{ mt: 4.8 }}>
             <TextField
               fullWidth
               multiline
@@ -113,7 +113,7 @@ const TabInfo = () => {
             </FormControl>
           </Grid>
           <Grid item xs={12}>
-            <Button variant='contained' sx={{ marginRight: 3.5 }}>
+            <Button variant='contained' sx={{ mr: 3.5 }}>
               Save Changes
             </Button>
             <Button type='reset' variant='outlined' color='secondary' onClick={() => setDate(null)}>

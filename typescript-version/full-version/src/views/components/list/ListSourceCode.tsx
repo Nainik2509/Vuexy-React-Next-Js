@@ -120,8 +120,8 @@ const ListNested = () => {
         <Collapse in={open} timeout='auto' unmountOnExit>
           <List component='div' disablePadding>
             <ListItem disablePadding>
-              <ListItemButton sx={{ paddingLeft: 8 }}>
-                <ListItemIcon sx={{ marginRight: 4 }}>
+              <ListItemButton sx={{ pl: 8 }}>
+                <ListItemIcon sx={{ mr: 4 }}>
                   <SendClock fontSize='small' />
                 </ListItemIcon>
                 <ListItemText primary='Scheduled' />
@@ -180,7 +180,7 @@ const ListWithSwitch = () => {
     <List subheader={<li />} sx={{ maxHeight: 300, overflow: 'auto', position: 'relative' }}>
       {[0, 1, 2, 3, 4].map(sectionId => (
         <Box component='li' key={section-{sectionId}} sx={{ backgroundColor: 'background.paper' }}>
-          <Box component='ul' sx={{ padding: 0, backgroundColor: 'inherit' }}>
+          <Box component='ul' sx={{ p: 0, backgroundColor: 'inherit' }}>
             <ListSubheader>{I'm sticky {sectionId}}</ListSubheader>
             {[0, 1, 2].map(item => (
               <ListItem key={item-{sectionId}-{item}}>
@@ -709,8 +709,8 @@ const ListNested = () => {
         <Collapse in={open} timeout='auto' unmountOnExit>
           <List component='div' disablePadding>
             <ListItem disablePadding>
-              <ListItemButton sx={{ paddingLeft: 8 }}>
-                <ListItemIcon sx={{ marginRight: 4 }}>
+              <ListItemButton sx={{ pl: 8 }}>
+                <ListItemIcon sx={{ mr: 4 }}>
                   <SendClock fontSize='small' />
                 </ListItemIcon>
                 <ListItemText primary='Scheduled' />
@@ -1177,7 +1177,7 @@ const ListWithSwitch = () => {
     <List subheader={<li />} sx={{ maxHeight: 300, overflow: 'auto', position: 'relative' }}>
       {[0, 1, 2, 3, 4].map(sectionId => (
         <Box component='li' key={section-{sectionId}} sx={{ backgroundColor: 'background.paper' }}>
-          <Box component='ul' sx={{ padding: 0, backgroundColor: 'inherit' }}>
+          <Box component='ul' sx={{ p: 0, backgroundColor: 'inherit' }}>
             <ListSubheader>{I'm sticky {sectionId}}</ListSubheader>
             {[0, 1, 2].map(item => (
               <ListItem key={item-{sectionId}-{item}}>

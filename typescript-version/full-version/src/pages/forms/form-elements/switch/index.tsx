@@ -39,7 +39,7 @@ const Switches = () => {
             jsx: source.SwitchesControlledUncontrolledJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 2 }}>
+          <Typography sx={{ mb: 2 }}>
             Manage <code>checked</code> prop with the help of a state for controlled <code>Switch</code> and use
             <code>defaultChecked</code> prop for uncontrolled <code>Switch</code>.
           </Typography>
@@ -54,7 +54,7 @@ const Switches = () => {
             jsx: source.SwitchesLabelPlacementJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 2 }}>
+          <Typography sx={{ mb: 2 }}>
             Use <code>labelPlacement</code> prop with <code>FormControlLabel</code> component to change the placement of
             the label.
           </Typography>
@@ -69,7 +69,7 @@ const Switches = () => {
             jsx: source.SwitchesColorsJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 2 }}>
+          <Typography sx={{ mb: 2 }}>
             Use <code>color</code> prop with <code>Switch</code> component for different colored switch.
           </Typography>
           <SwitchesColors />
@@ -83,7 +83,7 @@ const Switches = () => {
             jsx: source.SwitchesCustomizedJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>styled</code> hook to customize your switch.
           </Typography>
           <SwitchesCustomized />
@@ -97,7 +97,7 @@ const Switches = () => {
             jsx: source.SwitchesSizesJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 2 }}>
+          <Typography sx={{ mb: 2 }}>
             Use <code>size='small'</code> prop with <code>Switch</code> component for small switch.
           </Typography>
           <SwitchesSizes />

@@ -131,8 +131,8 @@ const RechartsScatterChart = ({ direction }: Props) => {
         sx={{
           flexDirection: ['column', 'row'],
           alignItems: ['flex-start', 'center'],
-          '& .MuiCardHeader-action': { marginBottom: 0 },
-          '& .MuiCardHeader-content': { marginBottom: [2, 0] }
+          '& .MuiCardHeader-action': { mb: 0 },
+          '& .MuiCardHeader-content': { mb: [2, 0] }
         }}
         action={
           <DatePicker
@@ -148,17 +148,17 @@ const RechartsScatterChart = ({ direction }: Props) => {
         }
       />
       <CardContent>
-        <Box sx={{ display: 'flex', marginBottom: 4 }}>
-          <Box sx={{ marginRight: 6, display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ marginRight: 1.5, fontSize: '0.75rem', color: 'primary.main' }} />
+        <Box sx={{ display: 'flex', mb: 4 }}>
+          <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
+            <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: 'primary.main' }} />
             <Typography>React</Typography>
           </Box>
-          <Box sx={{ marginRight: 6, display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ marginRight: 1.5, fontSize: '0.75rem', color: 'success.main' }} />
+          <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
+            <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: 'success.main' }} />
             <Typography>Vue</Typography>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ marginRight: 1.5, fontSize: '0.75rem', color: 'error.main' }} />
+            <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: 'error.main' }} />
             <Typography>Angular</Typography>
           </Box>
         </Box>

@@ -24,15 +24,15 @@ const ButtonsFabSizes = () => {
       </div>
       <div className='demo-space-x'>
         <Fab variant='extended' size='small'>
-          <NavigationOutline sx={{ marginRight: 1 }} />
+          <NavigationOutline sx={{ mr: 1 }} />
           Navigate
         </Fab>
         <Fab variant='extended' size='medium'>
-          <NavigationOutline sx={{ marginRight: 1 }} />
+          <NavigationOutline sx={{ mr: 1 }} />
           Navigate
         </Fab>
         <Fab variant='extended' size='large'>
-          <NavigationOutline sx={{ marginRight: 1 }} />
+          <NavigationOutline sx={{ mr: 1 }} />
           Navigate
         </Fab>
       </div>

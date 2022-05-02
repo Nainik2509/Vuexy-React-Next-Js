@@ -96,12 +96,7 @@ const UserViewLeft = ({ data }: Props) => {
     if (data) {
       if (data.avatar.length) {
         return (
-          <CustomAvatar
-            alt='User Image'
-            src={data.avatar}
-            variant='rounded'
-            sx={{ width: 120, height: 120, marginBottom: 4 }}
-          />
+          <CustomAvatar alt='User Image' src={data.avatar} variant='rounded' sx={{ width: 120, height: 120, mb: 4 }} />
         )
       } else {
         return (
@@ -109,7 +104,7 @@ const UserViewLeft = ({ data }: Props) => {
             skin='light'
             variant='rounded'
             color={data.avatarColor as ThemeColor}
-            sx={{ width: 120, height: 120, fontWeight: 600, marginBottom: 4, fontSize: '3rem' }}
+            sx={{ width: 120, height: 120, fontWeight: 600, mb: 4, fontSize: '3rem' }}
           >
             {getInitials(data.fullName)}
           </CustomAvatar>
@@ -125,9 +120,9 @@ const UserViewLeft = ({ data }: Props) => {
       <Grid container spacing={6}>
         <Grid item xs={12}>
           <Card>
-            <CardContent sx={{ paddingTop: 15, display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+            <CardContent sx={{ pt: 15, display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
               {renderUserAvatar()}
-              <Typography variant='h6' sx={{ marginBottom: 2 }}>
+              <Typography variant='h6' sx={{ mb: 2 }}>
                 {data.fullName}
               </Typography>
               <CustomChip
@@ -146,10 +141,10 @@ const UserViewLeft = ({ data }: Props) => {
               />
             </CardContent>
 
-            <CardContent sx={{ marginTop: 2 }}>
+            <CardContent sx={{ mt: 2 }}>
               <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}>
-                <Box sx={{ marginRight: 8, display: 'flex', alignItems: 'center' }}>
-                  <CustomAvatar skin='light' variant='rounded' sx={{ marginRight: 3 }}>
+                <Box sx={{ mr: 8, display: 'flex', alignItems: 'center' }}>
+                  <CustomAvatar skin='light' variant='rounded' sx={{ mr: 3 }}>
                     <Check />
                   </CustomAvatar>
                   <Box>
@@ -160,7 +155,7 @@ const UserViewLeft = ({ data }: Props) => {
                   </Box>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                  <CustomAvatar skin='light' variant='rounded' sx={{ marginRight: 3 }}>
+                  <CustomAvatar skin='light' variant='rounded' sx={{ mr: 3 }}>
                     <BriefcaseVariantOutline />
                   </CustomAvatar>
                   <Box>
@@ -176,17 +171,17 @@ const UserViewLeft = ({ data }: Props) => {
             <CardContent>
               <Typography variant='h6'>Details</Typography>
               <Divider />
-              <Box sx={{ paddingTop: 2, paddingBottom: 2 }}>
-                <Box sx={{ display: 'flex', marginBottom: 2.7 }}>
-                  <Typography sx={{ marginRight: 2, fontWeight: 500, fontSize: '0.875rem' }}>Username:</Typography>
+              <Box sx={{ pt: 2, pb: 2 }}>
+                <Box sx={{ display: 'flex', mb: 2.7 }}>
+                  <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Username:</Typography>
                   <Typography variant='body2'>@{data.username}</Typography>
                 </Box>
-                <Box sx={{ display: 'flex', marginBottom: 2.7 }}>
-                  <Typography sx={{ marginRight: 2, fontWeight: 500, fontSize: '0.875rem' }}>Billing Email:</Typography>
+                <Box sx={{ display: 'flex', mb: 2.7 }}>
+                  <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Billing Email:</Typography>
                   <Typography variant='body2'>{data.email}</Typography>
                 </Box>
-                <Box sx={{ display: 'flex', marginBottom: 2.7 }}>
-                  <Typography sx={{ marginRight: 2, fontWeight: 500, fontSize: '0.875rem' }}>Status:</Typography>
+                <Box sx={{ display: 'flex', mb: 2.7 }}>
+                  <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Status:</Typography>
                   <CustomChip
                     skin='light'
                     size='small'
@@ -201,33 +196,33 @@ const UserViewLeft = ({ data }: Props) => {
                     }}
                   />
                 </Box>
-                <Box sx={{ display: 'flex', marginBottom: 2.7 }}>
-                  <Typography sx={{ marginRight: 2, fontWeight: 500, fontSize: '0.875rem' }}>Role:</Typography>
+                <Box sx={{ display: 'flex', mb: 2.7 }}>
+                  <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Role:</Typography>
                   <Typography variant='body2' sx={{ textTransform: 'capitalize' }}>
                     {data.role}
                   </Typography>
                 </Box>
-                <Box sx={{ display: 'flex', marginBottom: 2.7 }}>
-                  <Typography sx={{ marginRight: 2, fontWeight: 500, fontSize: '0.875rem' }}>Tax ID:</Typography>
+                <Box sx={{ display: 'flex', mb: 2.7 }}>
+                  <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Tax ID:</Typography>
                   <Typography variant='body2'>Tax-8894</Typography>
                 </Box>
-                <Box sx={{ display: 'flex', marginBottom: 2.7 }}>
-                  <Typography sx={{ marginRight: 2, fontWeight: 500, fontSize: '0.875rem' }}>Contact:</Typography>
+                <Box sx={{ display: 'flex', mb: 2.7 }}>
+                  <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Contact:</Typography>
                   <Typography variant='body2'>+1 {data.contact}</Typography>
                 </Box>
-                <Box sx={{ display: 'flex', marginBottom: 2.7 }}>
-                  <Typography sx={{ marginRight: 2, fontWeight: 500, fontSize: '0.875rem' }}>Language:</Typography>
+                <Box sx={{ display: 'flex', mb: 2.7 }}>
+                  <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Language:</Typography>
                   <Typography variant='body2'>English</Typography>
                 </Box>
                 <Box sx={{ display: 'flex' }}>
-                  <Typography sx={{ marginRight: 2, fontWeight: 500, fontSize: '0.875rem' }}>Country:</Typography>
+                  <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Country:</Typography>
                   <Typography variant='body2'>{data.country}</Typography>
                 </Box>
               </Box>
             </CardContent>
 
             <CardActions sx={{ display: 'flex', justifyContent: 'center' }}>
-              <Button variant='contained' sx={{ marginRight: 3 }} onClick={handleEditClickOpen}>
+              <Button variant='contained' sx={{ mr: 3 }} onClick={handleEditClickOpen}>
                 Edit
               </Button>
               <Button color='error' variant='outlined'>
@@ -239,18 +234,14 @@ const UserViewLeft = ({ data }: Props) => {
               open={openEdit}
               onClose={handleEditClose}
               aria-labelledby='user-view-edit'
-              sx={{ '& .MuiPaper-root': { width: '100%', maxWidth: 650, padding: [2, 10] } }}
+              sx={{ '& .MuiPaper-root': { width: '100%', maxWidth: 650, p: [2, 10] } }}
               aria-describedby='user-view-edit-description'
             >
               <DialogTitle id='user-view-edit' sx={{ textAlign: 'center', fontSize: '1.5rem !important' }}>
                 Edit User Information
               </DialogTitle>
               <DialogContent>
-                <DialogContentText
-                  variant='body2'
-                  id='user-view-edit-description'
-                  sx={{ textAlign: 'center', marginBottom: 7 }}
-                >
+                <DialogContentText variant='body2' id='user-view-edit-description' sx={{ textAlign: 'center', mb: 7 }}>
                   Updating user details will receive a privacy audit.
                 </DialogContentText>
                 <form>
@@ -337,7 +328,7 @@ const UserViewLeft = ({ data }: Props) => {
                 </form>
               </DialogContent>
               <DialogActions sx={{ justifyContent: 'center' }}>
-                <Button variant='contained' sx={{ marginRight: 1 }} onClick={handleEditClose}>
+                <Button variant='contained' sx={{ mr: 1 }} onClick={handleEditClose}>
                   Submit
                 </Button>
                 <Button variant='outlined' color='secondary' onClick={handleEditClose}>
@@ -351,7 +342,7 @@ const UserViewLeft = ({ data }: Props) => {
         <Grid item xs={12}>
           <Card sx={{ boxShadow: 'none', border: theme => `2px solid ${theme.palette.primary.main}` }}>
             <CardContent
-              sx={{ display: 'flex', flexWrap: 'wrap', paddingBottom: '0 !important', justifyContent: 'space-between' }}
+              sx={{ display: 'flex', flexWrap: 'wrap', pb: '0 !important', justifyContent: 'space-between' }}
             >
               <CustomChip
                 skin='light'
@@ -365,9 +356,9 @@ const UserViewLeft = ({ data }: Props) => {
                 <Typography
                   variant='h3'
                   sx={{
+                    mb: -1.2,
                     lineHeight: 1,
                     fontWeight: 600,
-                    marginBottom: -1.2,
                     color: 'primary.main',
                     fontSize: '3rem !important'
                   }}
@@ -379,32 +370,32 @@ const UserViewLeft = ({ data }: Props) => {
             </CardContent>
 
             <CardContent>
-              <Box sx={{ marginTop: 4, marginBottom: 5 }}>
-                <Box sx={{ display: 'flex', marginBottom: 2.5, alignItems: 'center' }}>
-                  <Circle sx={{ marginRight: 2, fontSize: '0.625rem', color: 'text.secondary' }} />
+              <Box sx={{ mt: 4, mb: 5 }}>
+                <Box sx={{ display: 'flex', mb: 2.5, alignItems: 'center' }}>
+                  <Circle sx={{ mr: 2, fontSize: '0.625rem', color: 'text.secondary' }} />
                   <Typography component='span' sx={{ fontSize: '0.875rem' }}>
                     10 Users
                   </Typography>
                 </Box>
-                <Box sx={{ marginTop: 2.5, display: 'flex', marginBottom: 2.5, alignItems: 'center' }}>
-                  <Circle sx={{ marginRight: 2, fontSize: '0.625rem', color: 'text.secondary' }} />
+                <Box sx={{ mt: 2.5, display: 'flex', mb: 2.5, alignItems: 'center' }}>
+                  <Circle sx={{ mr: 2, fontSize: '0.625rem', color: 'text.secondary' }} />
                   <Typography component='span' sx={{ fontSize: '0.875rem' }}>
                     Up to 10GB storage
                   </Typography>
                 </Box>
-                <Box sx={{ marginTop: 2.5, display: 'flex', marginBottom: 2.5, alignItems: 'center' }}>
-                  <Circle sx={{ marginRight: 2, fontSize: '0.625rem', color: 'text.secondary' }} />
+                <Box sx={{ mt: 2.5, display: 'flex', mb: 2.5, alignItems: 'center' }}>
+                  <Circle sx={{ mr: 2, fontSize: '0.625rem', color: 'text.secondary' }} />
                   <Typography component='span' sx={{ fontSize: '0.875rem' }}>
                     Basic Support
                   </Typography>
                 </Box>
               </Box>
-              <Box sx={{ display: 'flex', marginBottom: 2, justifyContent: 'space-between' }}>
+              <Box sx={{ display: 'flex', mb: 2, justifyContent: 'space-between' }}>
                 <Typography sx={{ fontWeight: 600, fontSize: '0.875rem' }}>Days</Typography>
                 <Typography sx={{ fontWeight: 600, fontSize: '0.875rem' }}>26 of 30 Days</Typography>
               </Box>
               <LinearProgress value={86.66} variant='determinate' sx={{ height: 8, borderRadius: '5px' }} />
-              <Typography variant='body2' sx={{ marginTop: 2, marginBottom: 4 }}>
+              <Typography variant='body2' sx={{ mt: 2, mb: 4 }}>
                 4 days remaining
               </Typography>
               <Button variant='contained' sx={{ width: '100%' }} onClick={handlePlansClickOpen}>
@@ -417,7 +408,7 @@ const UserViewLeft = ({ data }: Props) => {
               onClose={handlePlansClose}
               aria-labelledby='user-view-plans'
               aria-describedby='user-view-plans-description'
-              sx={{ '& .MuiPaper-root': { width: '100%', maxWidth: 650, paddingTop: 8, paddingBottom: 8 } }}
+              sx={{ '& .MuiPaper-root': { width: '100%', maxWidth: 650, pt: 8, pb: 8 } }}
             >
               <DialogTitle id='user-view-plans' sx={{ textAlign: 'center', fontSize: '1.5rem !important' }}>
                 Upgrade Plan
@@ -432,15 +423,15 @@ const UserViewLeft = ({ data }: Props) => {
               <DialogContent
                 sx={{
                   display: 'flex',
-                  paddingBottom: 8,
+                  pb: 8,
+                  pl: [6, 15],
+                  pr: [6, 15],
                   alignItems: 'center',
-                  paddingLeft: [6, 15],
-                  paddingRight: [6, 15],
                   flexWrap: ['wrap', 'nowrap'],
-                  paddingTop: theme => `${theme.spacing(2)} !important`
+                  pt: theme => `${theme.spacing(2)} !important`
                 }}
               >
-                <FormControl fullWidth size='small' sx={{ marginRight: [0, 3], marginBottom: [3, 0] }}>
+                <FormControl fullWidth size='small' sx={{ mr: [0, 3], mb: [3, 0] }}>
                   <InputLabel id='user-view-plans-select-label'>Choose Plan</InputLabel>
                   <Select
                     label='Choose Plan'
@@ -459,10 +450,10 @@ const UserViewLeft = ({ data }: Props) => {
                 </Button>
               </DialogContent>
 
-              <Divider sx={{ margin: 0 }} />
+              <Divider sx={{ m: 0 }} />
 
-              <DialogContent sx={{ paddingTop: 8, paddingLeft: [6, 15], paddingRight: [6, 15] }}>
-                <Typography sx={{ fontWeight: 500, marginBottom: 2, fontSize: '0.875rem' }}>
+              <DialogContent sx={{ pt: 8, pl: [6, 15], pr: [6, 15] }}>
+                <Typography sx={{ fontWeight: 500, mb: 2, fontSize: '0.875rem' }}>
                   User current plan is standard plan
                 </Typography>
                 <Box
@@ -473,13 +464,13 @@ const UserViewLeft = ({ data }: Props) => {
                     justifyContent: 'space-between'
                   }}
                 >
-                  <Box sx={{ marginRight: 3, display: 'flex', marginLeft: 2.4, position: 'relative' }}>
+                  <Box sx={{ mr: 3, display: 'flex', ml: 2.4, position: 'relative' }}>
                     <Sup>$</Sup>
                     <Typography
                       variant='h3'
+                      mb: -1.2,
                       sx={{
                         lineHeight: 1,
-                        marginBottom: -1.2,
                         color: 'primary.main',
                         fontSize: '3rem !important'
                       }}
@@ -488,7 +479,7 @@ const UserViewLeft = ({ data }: Props) => {
                     </Typography>
                     <Sub>/ month</Sub>
                   </Box>
-                  <Button color='error' variant='outlined' sx={{ marginTop: 2 }}>
+                  <Button color='error' variant='outlined' sx={{ mt: 2 }}>
                     Cancel Subscription
                   </Button>
                 </Box>

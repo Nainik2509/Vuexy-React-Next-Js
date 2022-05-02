@@ -56,11 +56,11 @@ const DialogSizes = () => {
       >
         <DialogTitle id='max-width-dialog-title'>Optional sizes</DialogTitle>
         <DialogContent>
-          <DialogContentText sx={{ marginBottom: 4 }}>
+          <DialogContentText sx={{ mb: 4 }}>
             You can set my maximum width and whether to adapt or not.
           </DialogContentText>
           <Form noValidate>
-            <FormControl sx={{ marginTop: 2, minWidth: 120 }}>
+            <FormControl sx={{ mt: 2, minWidth: 120 }}>
               <InputLabel htmlFor='max-width'>maxWidth</InputLabel>
               <Select
                 label='maxWidth'
@@ -81,7 +81,7 @@ const DialogSizes = () => {
             </FormControl>
             <FormControlLabel
               label='Full width'
-              sx={{ marginTop: 2 }}
+              sx={{ mt: 2 }}
               control={<Switch checked={fullWidth} onChange={handleFullWidthChange} />}
             />
           </Form>

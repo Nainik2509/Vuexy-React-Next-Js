@@ -334,11 +334,11 @@ const LoginPage = () => {
                   <LinkStyled>Forgot Password?</LinkStyled>
                 </Link>
               </Box>
-              <Button fullWidth size='large' type='submit' variant='contained' sx={{ marginBottom: 7 }}>
+              <Button fullWidth size='large' type='submit' variant='contained' sx={{ mb: 7 }}>
                 Login
               </Button>
               <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' }}>
-                <Typography variant='body2' sx={{ marginRight: 2 }}>
+                <Typography variant='body2' sx={{ mr: 2 }}>
                   New on our platform?
                 </Typography>
                 <Typography variant='body2'>

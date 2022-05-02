@@ -97,7 +97,7 @@ const FormLayoutsCollapsible = () => {
             Delivery Address
           </Typography>
         </AccordionSummary>
-        <Divider sx={{ margin: 0 }} />
+        <Divider sx={{ m: 0 }} />
         <AccordionDetails>
           <Grid container spacing={5}>
             <Grid item xs={12} sm={6}>
@@ -162,8 +162,8 @@ const FormLayoutsCollapsible = () => {
             Delivery Options
           </Typography>
         </AccordionSummary>
-        <Divider sx={{ margin: 0 }} />
-        <AccordionDetails sx={{ paddingTop: 6, paddingBottom: 6 }}>
+        <Divider sx={{ m: 0 }} />
+        <AccordionDetails sx={{ pt: 6, pb: 6 }}>
           <BoxWrapper
             onClick={() => setOption('standard')}
             sx={option === 'standard' ? { borderColor: 'primary.main' } : {}}
@@ -234,7 +234,7 @@ const FormLayoutsCollapsible = () => {
             Payment Method
           </Typography>
         </AccordionSummary>
-        <Divider sx={{ margin: 0 }} />
+        <Divider sx={{ m: 0 }} />
         <AccordionDetails>
           <Grid container spacing={5}>
             <Grid item xs={12}>
@@ -323,9 +323,9 @@ const FormLayoutsCollapsible = () => {
             </Grid>
           </Grid>
         </AccordionDetails>
-        <Divider sx={{ margin: 0 }} />
+        <Divider sx={{ m: 0 }} />
         <AccordionDetails>
-          <Button size='large' type='submit' variant='contained' sx={{ marginRight: 4 }}>
+          <Button size='large' type='submit' variant='contained' sx={{ mr: 4 }}>
             Place Order
           </Button>
           <Button size='large' variant='outlined'>

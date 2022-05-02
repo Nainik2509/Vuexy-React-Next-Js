@@ -38,7 +38,7 @@ const PlanDetails = (props: PricingPlanProps) => {
   const renderFeatures = () => {
     return data?.planBenefits.map((item: string, index: number) => (
       <Box key={index} sx={{ display: 'flex', alignItems: 'center' }}>
-        <CircleOutline sx={{ fontSize: '0.75rem', marginRight: 2, color: 'text.secondary' }} />
+        <CircleOutline sx={{ fontSize: '0.75rem', mr: 2, color: 'text.secondary' }} />
         <Typography variant='body2'>{item}</Typography>
       </Box>
     ))

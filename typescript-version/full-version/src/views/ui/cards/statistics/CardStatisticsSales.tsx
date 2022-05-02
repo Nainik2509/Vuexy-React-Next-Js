@@ -61,11 +61,11 @@ const renderStats = () => {
   return salesData.map((sale: SaleDataType, index: number) => (
     <Grid item xs={6} md={3} key={index}>
       <Box key={index} sx={{ display: 'flex', alignItems: 'center' }}>
-        <CustomAvatar variant='rounded' color={sale.color} sx={{ boxShadow: 3, marginRight: 4, width: 44, height: 44 }}>
+        <CustomAvatar variant='rounded' color={sale.color} sx={{ boxShadow: 3, mr: 4, width: 44, height: 44 }}>
           {sale.icon}
         </CustomAvatar>
         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-          <Typography variant='caption' sx={{ marginBottom: 0.5 }}>
+          <Typography variant='caption' sx={{ mb: 0.5 }}>
             {sale.title}
           </Typography>
           <Typography variant='h6' sx={{ fontWeight: 600, lineHeight: 1.05 }}>
@@ -84,7 +84,7 @@ const CardStatisticsSales = () => {
         <Card>
           <CardHeader
             title='Statistics Card'
-            sx={{ paddingTop: 4 }}
+            sx={{ pt: 4 }}
             titleTypographyProps={{
               sx: {
                 fontSize: '1rem !important',

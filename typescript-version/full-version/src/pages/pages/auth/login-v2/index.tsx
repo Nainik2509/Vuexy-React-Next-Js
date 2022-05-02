@@ -238,7 +238,7 @@ const LoginV2 = () => {
               <Typography variant='body2'>Please sign-in to your account and start the adventure</Typography>
             </Box>
             <form noValidate autoComplete='off' onSubmit={handleSubmit}>
-              <TextField autoFocus id='email' label='Email' sx={{ display: 'flex', marginBottom: 4 }} />
+              <TextField autoFocus id='email' label='Email' sx={{ display: 'flex', mb: 4 }} />
               <FormControl fullWidth>
                 <InputLabel htmlFor='auth-login-v2-password'>Password</InputLabel>
                 <OutlinedInput
@@ -269,11 +269,11 @@ const LoginV2 = () => {
                   <LinkStyled>Forgot Password?</LinkStyled>
                 </Link>
               </Box>
-              <Button fullWidth size='large' type='submit' variant='contained' sx={{ marginBottom: 7 }}>
+              <Button fullWidth size='large' type='submit' variant='contained' sx={{ mb: 7 }}>
                 Login
               </Button>
               <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' }}>
-                <Typography variant='body2' sx={{ marginRight: 2 }}>
+                <Typography variant='body2' sx={{ mr: 2 }}>
                   New on our platform?
                 </Typography>
                 <Typography variant='body2'>

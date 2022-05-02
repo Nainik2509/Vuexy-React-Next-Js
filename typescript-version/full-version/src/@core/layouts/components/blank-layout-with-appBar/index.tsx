@@ -26,7 +26,7 @@ const BlankLayoutAppBar = () => {
       <Toolbar
         sx={{
           justifyContent: 'space-between',
-          padding: theme => `${theme.spacing(0, 6)} !important`,
+          p: theme => `${theme.spacing(0, 6)} !important`,
           minHeight: `${theme.mixins.toolbar.minHeight}px !important`
         }}
       >

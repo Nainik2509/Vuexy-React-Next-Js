@@ -118,7 +118,7 @@ const VerticalNavLink = ({
         disablePadding
         className='nav-link'
         disabled={item.disabled || false}
-        sx={{ marginTop: 1, px: '0 !important' }}
+        sx={{ mt: 1, px: '0 !important' }}
       >
         <Link passHref href={item.path === undefined ? '/' : `${item.path}`}>
           <MenuNavLink
@@ -145,7 +145,7 @@ const VerticalNavLink = ({
                 sx={{
                   color: 'text.primary',
                   transition: 'margin .25s ease-in-out',
-                  ...(navCollapsed && !navHover ? { marginRight: 0 } : { marginRight: 3.25 }),
+                  ...(navCollapsed && !navHover ? { mr: 0 } : { mr: 3.25 }),
                   ...(parent ? { ml: 1.25, mr: 4.75 } : {}) // This line should be after (navCollapsed && !navHover) condition for proper styling
                 }}
               >
@@ -165,7 +165,7 @@ const VerticalNavLink = ({
 
             <MenuItemTextMetaWrapper
               sx={{
-                ...(isSubToSub ? { marginLeft: 9 } : {}),
+                ...(isSubToSub ? { ml: 9 } : {}),
                 ...(navCollapsed && !navHover ? { opacity: 0 } : { opacity: 1 })
               }}
             >
@@ -181,9 +181,9 @@ const VerticalNavLink = ({
                   label={item.badgeContent}
                   color={item.badgeColor || 'primary'}
                   sx={{
+                    ml: 1.25,
                     height: 20,
                     fontWeight: 500,
-                    marginLeft: 1.25,
                     '& .MuiChip-label': { px: 1.5, textTransform: 'capitalize' }
                   }}
                 />

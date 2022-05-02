@@ -33,7 +33,7 @@ const TreeView = () => {
             jsx: source.TreeViewBasicJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>TreeView</code> & <code>TreeItem</code> components and <code>defaultCollapseIcon</code> &{' '}
             <code>defaultExpandIcon</code> props with <code>TreeView</code> component for a simple tree view.
           </Typography>
@@ -48,7 +48,7 @@ const TreeView = () => {
             jsx: source.TreeViewMultiSelectionJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>multiSelect</code> prop for multiple selection in a tree view.
           </Typography>
           <TreeViewMultiSelection direction={settings.direction} />
@@ -62,7 +62,7 @@ const TreeView = () => {
             jsx: source.TreeViewControlledJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Manage <code>expanded</code>, <code>selected</code>, <code>onNodeToggle</code> and <code>onNodeSelect</code>{' '}
             props with the help of states.
           </Typography>
@@ -77,7 +77,7 @@ const TreeView = () => {
             jsx: source.TreeViewRichObjectJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             <code>TreeView</code> and <code>TreeItem</code> components can also use APIs. Use an object and recursion
             can be used to handle it.
           </Typography>
@@ -92,7 +92,7 @@ const TreeView = () => {
             jsx: source.TreeViewCustomizedJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>styled</code> hook to customize your tree view.
           </Typography>
           <TreeViewCustomized />

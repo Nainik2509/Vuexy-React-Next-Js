@@ -164,15 +164,15 @@ const RadioLabelPlacement = () => {
   return (
     <FormControl>
       <RadioGroup row aria-label='position' name='vertical' defaultValue='top'>
-        <FormControlLabel value='top' label='Top' labelPlacement='top' sx={{ marginRight: 8.8 }} control={<Radio />} />
+        <FormControlLabel value='top' label='Top' labelPlacement='top' sx={{ mr: 8.8 }} control={<Radio />} />
         <FormControlLabel value='bottom' control={<Radio />} label='Bottom' labelPlacement='bottom' />
       </RadioGroup>
-      <RadioGroup row aria-label='position' name='horizontal' defaultValue='start' sx={{ marginTop: 4 }}>
+      <RadioGroup row aria-label='position' name='horizontal' defaultValue='start' sx={{ mt: 4 }}>
         <FormControlLabel
           value='start'
           label='Start'
           labelPlacement='start'
-          sx={{ marginRight: 4 }}
+          sx={{ mr: 4 }}
           control={<Radio />}
         />
         <FormControlLabel value='end' control={<Radio />} label='End' />
@@ -235,7 +235,7 @@ const RadioShowError = () => {
           <FormControlLabel value='worst' control={<Radio />} label='The worst.' />
         </RadioGroup>
         <FormHelperText>{helperText}</FormHelperText>
-        <Button type='submit' variant='outlined' sx={{ marginTop: 3 }}>
+        <Button type='submit' variant='outlined' sx={{ mt: 3 }}>
           Check Answer
         </Button>
       </FormControl>
@@ -592,7 +592,7 @@ const RadioShowError = () => {
           <FormControlLabel value='worst' control={<Radio />} label='The worst.' />
         </RadioGroup>
         <FormHelperText>{helperText}</FormHelperText>
-        <Button type='submit' variant='outlined' sx={{ marginTop: 3 }}>
+        <Button type='submit' variant='outlined' sx={{ mt: 3 }}>
           Check Answer
         </Button>
       </FormControl>
@@ -617,15 +617,15 @@ const RadioLabelPlacement = () => {
   return (
     <FormControl>
       <RadioGroup row aria-label='position' name='vertical' defaultValue='top'>
-        <FormControlLabel value='top' label='Top' labelPlacement='top' sx={{ marginRight: 8.8 }} control={<Radio />} />
+        <FormControlLabel value='top' label='Top' labelPlacement='top' sx={{ mr: 8.8 }} control={<Radio />} />
         <FormControlLabel value='bottom' control={<Radio />} label='Bottom' labelPlacement='bottom' />
       </RadioGroup>
-      <RadioGroup row aria-label='position' name='horizontal' defaultValue='start' sx={{ marginTop: 4 }}>
+      <RadioGroup row aria-label='position' name='horizontal' defaultValue='start' sx={{ mt: 4 }}>
         <FormControlLabel
           value='start'
           label='Start'
           labelPlacement='start'
-          sx={{ marginRight: 4 }}
+          sx={{ mr: 4 }}
           control={<Radio />}
         />
         <FormControlLabel value='end' control={<Radio />} label='End' />

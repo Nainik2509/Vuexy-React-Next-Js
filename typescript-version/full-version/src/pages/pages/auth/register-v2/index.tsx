@@ -251,8 +251,8 @@ const RegisterV2 = () => {
               <Typography variant='body2'>Make your app management easy and fun!</Typography>
             </Box>
             <form noValidate autoComplete='off' onSubmit={handleSubmit}>
-              <TextField autoFocus id='username' label='Username' sx={{ display: 'flex', marginBottom: 4 }} />
-              <TextField type='email' label='Email' sx={{ display: 'flex', marginBottom: 4 }} />
+              <TextField autoFocus id='username' label='Username' sx={{ display: 'flex', mb: 4 }} />
+              <TextField type='email' label='Email' sx={{ display: 'flex', mb: 4 }} />
               <FormControl fullWidth>
                 <InputLabel htmlFor='auth-register-v2-password'>Password</InputLabel>
                 <OutlinedInput
@@ -288,11 +288,11 @@ const RegisterV2 = () => {
                   </Fragment>
                 }
               />
-              <Button fullWidth size='large' type='submit' variant='contained' sx={{ marginBottom: 7 }}>
+              <Button fullWidth size='large' type='submit' variant='contained' sx={{ mb: 7 }}>
                 Sign up
               </Button>
               <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' }}>
-                <Typography variant='body2' sx={{ marginRight: 2 }}>
+                <Typography variant='body2' sx={{ mr: 2 }}>
                   Already have an account?
                 </Typography>
                 <Typography variant='body2'>

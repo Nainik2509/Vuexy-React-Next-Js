@@ -604,7 +604,7 @@ const StepperLinearWithValidation = () => {
       return (
         <Fragment>
           <Typography>All steps are completed!</Typography>
-          <Box sx={{ marginTop: 4, display: 'flex', justifyContent: 'flex-end' }}>
+          <Box sx={{ mt: 4, display: 'flex', justifyContent: 'flex-end' }}>
             <Button size='large' variant='contained' onClick={handleReset}>
               Reset
             </Button>
@@ -671,7 +671,7 @@ const StepperLinearWithValidation = () => {
         </StepperWrapper>
       </CardContent>
 
-      <Divider sx={{ margin: 0 }} />
+      <Divider sx={{ m: 0 }} />
 
       <CardContent>{renderContent()}</CardContent>
     </Card>

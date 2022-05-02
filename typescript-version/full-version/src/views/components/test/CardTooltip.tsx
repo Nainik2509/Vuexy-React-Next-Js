@@ -7,7 +7,7 @@ import CardContent from '@mui/material/CardContent'
 import Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip'
 
 const LightTooltip = styled((props: TooltipProps) => (
-  <Tooltip {...props} classes={{ popper: props.className }} sx={{ marginRight: 4 }} />
+  <Tooltip {...props} classes={{ popper: props.className }} sx={{ mr: 4 }} />
 ))(({ theme }) => ({
   [`& .${tooltipClasses.tooltip}`]: {
     borderRadius: 4,
@@ -21,13 +21,13 @@ const CardTooltip = () => {
   return (
     <Card>
       <CardContent>
-        <Tooltip title='Tooltip' sx={{ marginRight: 4 }}>
+        <Tooltip title='Tooltip' sx={{ mr: 4 }}>
           <Button variant='outlined'>Button</Button>
         </Tooltip>
         <LightTooltip title='Light'>
           <Button variant='outlined'>Light</Button>
         </LightTooltip>
-        <Tooltip arrow title='Arrow' sx={{ marginRight: 4 }}>
+        <Tooltip arrow title='Arrow' sx={{ mr: 4 }}>
           <Button variant='outlined'>Arrow</Button>
         </Tooltip>
         <Tooltip TransitionComponent={Zoom} title='Zoom'>

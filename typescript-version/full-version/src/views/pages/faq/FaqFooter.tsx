@@ -44,7 +44,7 @@ const FaqFooter = () => {
     <Box sx={{ mt: 13 }}>
       <Box sx={{ textAlign: 'center' }}>
         <Typography variant='h6'>You still have a question?</Typography>
-        <Typography variant='body2' sx={{ marginBottom: 11 }}>
+        <Typography variant='body2' sx={{ mb: 11 }}>
           If you cannot find a question in our FAQ, you can always contact us. We will answer to you shortly!
         </Typography>
       </Box>
@@ -58,10 +58,10 @@ const FaqFooter = () => {
             >
               <Phone sx={{ fontSize: '1.375rem' }} />
             </Avatar>
-            <Typography variant='h6' sx={{ marginTop: 5 }}>
+            <Typography variant='h6' sx={{ mt: 5 }}>
               + (810) 2548 2568
             </Typography>
-            <Typography variant='body2' sx={{ marginTop: 1.5 }}>
+            <Typography variant='body2' sx={{ mt: 1.5 }}>
               We are always happy to help!
             </Typography>
           </StyledBox1>
@@ -75,10 +75,10 @@ const FaqFooter = () => {
             >
               <EmailOutline sx={{ fontSize: '1.375rem' }} />
             </Avatar>
-            <Typography variant='h6' sx={{ marginTop: 5 }}>
+            <Typography variant='h6' sx={{ mt: 5 }}>
               hello@help.com
             </Typography>
-            <Typography variant='body2' sx={{ marginTop: 1.5 }}>
+            <Typography variant='body2' sx={{ mt: 1.5 }}>
               Best way to get answer faster!
             </Typography>
           </StyledBox2>

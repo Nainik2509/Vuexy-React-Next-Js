@@ -32,7 +32,7 @@ const CheckboxesShowError = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
-      <FormControl sx={{ marginTop: 4, marginRight: 4 }}>
+      <FormControl sx={{ mt: 4, mr: 4 }}>
         <FormLabel>Assign responsibility</FormLabel>
         <FormGroup>
           <FormControlLabel
@@ -50,7 +50,7 @@ const CheckboxesShowError = () => {
         </FormGroup>
         <FormHelperText>Be careful</FormHelperText>
       </FormControl>
-      <FormControl required error={error} sx={{ marginTop: 4 }}>
+      <FormControl required error={error} sx={{ mt: 4 }}>
         <FormLabel>Pick two</FormLabel>
         <FormGroup>
           <FormControlLabel

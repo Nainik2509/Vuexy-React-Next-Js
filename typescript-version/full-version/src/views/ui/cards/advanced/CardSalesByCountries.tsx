@@ -114,7 +114,7 @@ const CardSalesByCountries = () => {
               sx={{
                 display: 'flex',
                 alignItems: 'center',
-                marginBottom: index !== data.length - 1 ? 5 : undefined
+                mb: index !== data.length - 1 ? 5 : undefined
               }}
             >
               <CustomAvatar skin='light' color={item.avatarColor} sx={{ mr: 3, fontSize: '1.125rem' }}>
@@ -130,7 +130,7 @@ const CardSalesByCountries = () => {
                   justifyContent: 'space-between'
                 }}
               >
-                <Box sx={{ marginRight: 2, display: 'flex', flexDirection: 'column' }}>
+                <Box sx={{ mr: 2, display: 'flex', flexDirection: 'column' }}>
                   <Box sx={{ mb: 0.5, display: 'flex', alignItems: 'center' }}>
                     <Typography sx={{ mr: 0.5, fontWeight: 600, fontSize: '0.875rem' }}>{item.title}</Typography>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>

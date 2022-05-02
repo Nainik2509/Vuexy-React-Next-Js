@@ -176,7 +176,7 @@ const DialogAddAddress = () => {
           </Grid>
         </DialogContent>
         <DialogActions sx={{ pb: { xs: 8, sm: 12.5 }, justifyContent: 'center' }}>
-          <Button variant='contained' sx={{ marginRight: 1 }} onClick={() => setShow(false)}>
+          <Button variant='contained' sx={{ mr: 1 }} onClick={() => setShow(false)}>
             Submit
           </Button>
           <Button variant='outlined' color='secondary' onClick={() => setShow(false)}>

@@ -27,7 +27,7 @@ const DialogCustomized = () => {
         Open dialog
       </Button>
       <Dialog onClose={handleClose} aria-labelledby='customized-dialog-title' open={open}>
-        <DialogTitle id='customized-dialog-title' sx={{ padding: 4 }}>
+        <DialogTitle id='customized-dialog-title' sx={{ p: 4 }}>
           <Typography variant='h6' component='span'>
             Modal title
           </Typography>
@@ -39,7 +39,7 @@ const DialogCustomized = () => {
             <Close />
           </IconButton>
         </DialogTitle>
-        <DialogContent dividers sx={{ padding: 4 }}>
+        <DialogContent dividers sx={{ p: 4 }}>
           <Typography gutterBottom>
             Chupa chups jelly-o candy sweet roll wafer cake chocolate bar. Brownie sweet roll topping cake chocolate
             cake cheesecake tiramisu chocolate cake. Jujubes liquorice chocolate bar pastry. Chocolate jujubes caramels
@@ -54,7 +54,7 @@ const DialogCustomized = () => {
             chocolate bar chocolate marzipan candy fruitcake jujubes.
           </Typography>
         </DialogContent>
-        <DialogActions sx={{ padding: theme => `${theme.spacing(3)} !important` }}>
+        <DialogActions sx={{ p: theme => `${theme.spacing(3)} !important` }}>
           <Button onClick={handleClose}>Save changes</Button>
         </DialogActions>
       </Dialog>

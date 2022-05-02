@@ -26,7 +26,7 @@ const DialogForm = () => {
       <Dialog open={open} onClose={handleClose} aria-labelledby='form-dialog-title'>
         <DialogTitle id='form-dialog-title'>Subscribe</DialogTitle>
         <DialogContent>
-          <DialogContentText sx={{ marginBottom: 3 }}>
+          <DialogContentText sx={{ mb: 3 }}>
             To subscribe to this website, please enter your email address here. We will send updates occasionally.
           </DialogContentText>
           <TextField id='name' autoFocus fullWidth type='email' label='Email Address' />

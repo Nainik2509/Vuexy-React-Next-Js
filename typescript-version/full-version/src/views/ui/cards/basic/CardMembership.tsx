@@ -26,8 +26,8 @@ const CardMembership = () => {
     <Card>
       <Grid container spacing={6}>
         <Grid item xs={12} sm={7}>
-          <CardContent sx={{ padding: theme => `${theme.spacing(3.25, 5.75, 6.25)} !important` }}>
-            <Typography variant='h6' sx={{ marginBottom: 3.5 }}>
+          <CardContent sx={{ p: theme => `${theme.spacing(3.25, 5.75, 6.25)} !important` }}>
+            <Typography variant='h6' sx={{ mb: 3.5 }}>
               Lifetime Membership
             </Typography>
             <Typography variant='body2'>
@@ -36,27 +36,27 @@ const CardMembership = () => {
               fundamentally necessary, they are such that you can use them for a good laugh, at a drinks party or for
               picking up women or men.
             </Typography>
-            <Divider sx={{ marginTop: 6.5, marginBottom: 6.75 }} />
+            <Divider sx={{ mt: 6.5, mb: 6.75 }} />
             <Grid container spacing={4}>
               <Grid item xs={12} sm={5}>
                 <StyledBox>
                   <Box sx={{ mb: 6.75, display: 'flex', alignItems: 'center' }}>
-                    <LockOpenOutline sx={{ color: 'primary.main', marginRight: 2.75 }} fontSize='small' />
+                    <LockOpenOutline sx={{ color: 'primary.main', mr: 2.75 }} fontSize='small' />
                     <Typography variant='body2'>Full Access</Typography>
                   </Box>
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <AccountOutline sx={{ color: 'primary.main', marginRight: 2.75 }} fontSize='small' />
+                    <AccountOutline sx={{ color: 'primary.main', mr: 2.75 }} fontSize='small' />
                     <Typography variant='body2'>15 Members</Typography>
                   </Box>
                 </StyledBox>
               </Grid>
               <Grid item xs={12} sm={7}>
                 <Box sx={{ mb: 6.75, display: 'flex', alignItems: 'center' }}>
-                  <StarOutline sx={{ color: 'primary.main', marginRight: 2.75 }} fontSize='small' />
+                  <StarOutline sx={{ color: 'primary.main', mr: 2.75 }} fontSize='small' />
                   <Typography variant='body2'>Access all Features</Typography>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                  <TrendingUp sx={{ color: 'primary.main', marginRight: 2.75 }} fontSize='small' />
+                  <TrendingUp sx={{ color: 'primary.main', mr: 2.75 }} fontSize='small' />
                   <Typography variant='body2'>Lifetime Free Update</Typography>
                 </Box>
               </Grid>
@@ -67,7 +67,7 @@ const CardMembership = () => {
           item
           sm={5}
           xs={12}
-          sx={{ paddingTop: ['0 !important', '1.5rem !important'], paddingLeft: ['1.5rem !important', '0 !important'] }}
+          sx={{ pt: ['0 !important', '1.5rem !important'], pl: ['1.5rem !important', '0 !important'] }}
         >
           <CardContent
             sx={{
@@ -77,7 +77,7 @@ const CardMembership = () => {
               alignItems: 'center',
               justifyContent: 'center',
               backgroundColor: 'action.hover',
-              padding: theme => `${theme.spacing(18, 5, 16)} !important`
+              p: theme => `${theme.spacing(18, 5, 16)} !important`
             }}
           >
             <Box>

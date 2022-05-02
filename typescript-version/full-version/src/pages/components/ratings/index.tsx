@@ -26,7 +26,7 @@ const Ratings = () => {
             jsx: source.RatingsBasicJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>name</code> prop to name the rating and use <code>value</code> or <code>defaultValue</code> prop
             to set any initial value to a rating.
           </Typography>
@@ -41,7 +41,7 @@ const Ratings = () => {
             jsx: source.RatingsCustomizedJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>icon</code> or <code>emptyIcon</code> prop to change default icon or empty icon respectively,{' '}
             <code>max</code> prop to set number of ratings and <code>IconContainerComponent</code> prop to change every
             icons in the ratings.
@@ -57,7 +57,7 @@ const Ratings = () => {
             jsx: source.RatingsHalfJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>precision</code> prop to define the minimum increment value change allowed.
           </Typography>
           <RatingsHalf />
@@ -71,7 +71,7 @@ const Ratings = () => {
             jsx: source.RatingsSizesJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>size={`{'small' | 'large'}`}</code> prop for different sizes of ratings.
           </Typography>
           <RatingsSizes />
@@ -85,7 +85,7 @@ const Ratings = () => {
             jsx: source.RatingsHoverFeedbackJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             You can display a label on hover to help users pick the correct rating value. The demo uses the{' '}
             <code>onChangeActive</code> prop.
           </Typography>

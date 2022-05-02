@@ -42,7 +42,7 @@ const CardCafe = () => {
 
         <Divider sx={{ my: 4 }} />
 
-        <Typography sx={{ marginBottom: 4 }}>Tonight’s availability</Typography>
+        <Typography sx={{ mb: 4 }}>Tonight’s availability</Typography>
 
         <Chip
           size='small'

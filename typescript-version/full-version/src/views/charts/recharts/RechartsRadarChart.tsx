@@ -77,7 +77,7 @@ const CustomTooltip = (data: TooltipProps<any, any>) => {
           data.payload.map((i: any) => {
             return (
               <Box sx={{ display: 'flex', alignItems: 'center' }} key={i.dataKey}>
-                <Circle sx={{ color: i.fill, marginRight: 2.5, fontSize: '0.6rem' }} />
+                <Circle sx={{ color: i.fill, mr: 2.5, fontSize: '0.6rem' }} />
                 <span>
                   {i.dataKey}: {i.payload[i.dataKey]}
                 </span>
@@ -108,13 +108,13 @@ const RechartsRadarChart = () => {
             </RadarChart>
           </ResponsiveContainer>
         </Box>
-        <Box sx={{ display: 'flex', marginBottom: 4, justifyContent: 'center' }}>
-          <Box sx={{ marginRight: 6, display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ marginRight: 1.5, fontSize: '0.75rem', color: '#fde802' }} />
+        <Box sx={{ display: 'flex', mb: 4, justifyContent: 'center' }}>
+          <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
+            <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#fde802' }} />
             <Typography>iPhone 11</Typography>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ marginRight: 1.5, fontSize: '0.75rem', color: '#9b88fa' }} />
+            <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#9b88fa' }} />
             <Typography>Samsung s20</Typography>
           </Box>
         </Box>

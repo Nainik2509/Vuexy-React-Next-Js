@@ -92,7 +92,7 @@ const StepperVerticalWithNumbers = () => {
                       >
                         Back
                       </Button>
-                      <Button size='small' variant='contained' onClick={handleNext} sx={{ marginLeft: 4 }}>
+                      <Button size='small' variant='contained' onClick={handleNext} sx={{ ml: 4 }}>
                         {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                       </Button>
                     </div>

@@ -85,7 +85,7 @@ const CardSocialAnalytics = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                marginBottom: index !== data.length - 1 ? 4 : undefined
+                mb: index !== data.length - 1 ? 4 : undefined
               }}
             >
               <Box sx={{ display: 'flex', alignItems: 'center' }}>

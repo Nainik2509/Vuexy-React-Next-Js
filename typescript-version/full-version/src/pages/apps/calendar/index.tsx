@@ -93,10 +93,10 @@ const AppCalendar = () => {
       />
       <Box
         sx={{
-          padding: 5,
+          p: 5,
+          pb: 0,
           flexGrow: 1,
           borderRadius: 1,
-          paddingBottom: 0,
           boxShadow: 'none',
           backgroundColor: 'background.paper',
           ...(mdAbove ? { borderTopLeftRadius: 0, borderBottomLeftRadius: 0 } : {})

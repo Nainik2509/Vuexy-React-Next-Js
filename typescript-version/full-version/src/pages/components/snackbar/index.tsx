@@ -27,7 +27,7 @@ const Snackbar = () => {
             jsx: source.SnackbarSimpleJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Manage <code>open</code> prop with <code>Snackbar</code> component with the help of a state.
           </Typography>
           <SnackbarSimple />
@@ -41,7 +41,7 @@ const Snackbar = () => {
             jsx: source.SnackbarAlertJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Add <code>Alert</code> component as a children of <code>Snackbar</code> component.
           </Typography>
           <SnackbarAlert />

@@ -213,7 +213,7 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
           display: 'flex',
           justifyContent: 'space-between',
           backgroundColor: 'background.default',
-          padding: theme => theme.spacing(3, 3.255, 3, 5.255)
+          p: theme => theme.spacing(3, 3.255, 3, 5.255)
         }}
       >
         <Typography variant='h6'>
@@ -230,7 +230,7 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
           <Close fontSize='small' onClick={handleSidebarClose} sx={{ cursor: 'pointer' }} />
         </Box>
       </Box>
-      <Box className='sidebar-body' sx={{ padding: theme => theme.spacing(5, 6) }}>
+      <Box className='sidebar-body' sx={{ p: theme => theme.spacing(5, 6) }}>
         <DatePickerWrapper>
           <form onSubmit={handleSubmit(onSubmit)} autoComplete='off'>
             <FormControl fullWidth sx={{ mb: 6 }}>

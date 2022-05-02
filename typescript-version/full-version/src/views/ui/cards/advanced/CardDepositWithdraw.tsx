@@ -119,7 +119,7 @@ const CardDepositWithdraw = () => {
       <Box sx={{ width: '100%' }}>
         <CardHeader
           title='Deposit'
-          sx={{ '& .MuiCardHeader-action': { marginTop: -0.8 } }}
+          sx={{ '& .MuiCardHeader-action': { mt: -0.8 } }}
           titleTypographyProps={{ sx: { lineHeight: '2rem !important', letterSpacing: '0.15px !important' } }}
           action={
             <Typography variant='caption' sx={{ color: 'primary.main' }}>
@@ -147,7 +147,7 @@ const CardDepositWithdraw = () => {
                     justifyContent: 'space-between'
                   }}
                 >
-                  <Box sx={{ marginRight: 2, display: 'flex', flexDirection: 'column' }}>
+                  <Box sx={{ mr: 2, display: 'flex', flexDirection: 'column' }}>
                     <Typography sx={{ mb: 0.5, fontWeight: 600, fontSize: '0.875rem' }}>{item.title}</Typography>
                     <Typography variant='caption'>{item.subtitle}</Typography>
                   </Box>
@@ -166,7 +166,7 @@ const CardDepositWithdraw = () => {
       <Box sx={{ width: '100%' }}>
         <CardHeader
           title='Withdraw'
-          sx={{ '& .MuiCardHeader-action': { marginTop: -0.8 } }}
+          sx={{ '& .MuiCardHeader-action': { mt: -0.8 } }}
           titleTypographyProps={{ sx: { lineHeight: '2rem !important', letterSpacing: '0.15px !important' } }}
           action={
             <Typography variant='caption' sx={{ color: 'primary.main' }}>
@@ -194,7 +194,7 @@ const CardDepositWithdraw = () => {
                     justifyContent: 'space-between'
                   }}
                 >
-                  <Box sx={{ marginRight: 2, display: 'flex', flexDirection: 'column' }}>
+                  <Box sx={{ mr: 2, display: 'flex', flexDirection: 'column' }}>
                     <Typography sx={{ mb: 0.5, fontWeight: 600, fontSize: '0.875rem' }}>{item.title}</Typography>
                     <Typography variant='caption'>{item.subtitle}</Typography>
                   </Box>

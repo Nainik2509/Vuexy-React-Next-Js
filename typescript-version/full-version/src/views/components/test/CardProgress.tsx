@@ -14,7 +14,7 @@ const CardProgress = () => {
           <CircularProgress />
           <CircularProgress value={75} color='secondary' variant='determinate' />
         </div>
-        <Typography sx={{ marginTop: 4 }}>Linear Progress</Typography>
+        <Typography sx={{ mt: 4 }}>Linear Progress</Typography>
         <div className='demo-space-x'>
           <LinearProgress />
           <LinearProgress value={60} color='secondary' variant='determinate' />

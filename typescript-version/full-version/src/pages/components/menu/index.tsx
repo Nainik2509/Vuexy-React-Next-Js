@@ -28,7 +28,7 @@ const Menus = () => {
             jsx: source.MenuBasicJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Manage <code>anchorEl</code> and <code>open</code> props with the help of a state and <code>onClose</code>{' '}
             prop with the help of a function in <code>Menu</code> component.
           </Typography>
@@ -43,7 +43,7 @@ const Menus = () => {
             jsx: source.MenuSelectedJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Manage <code>selected</code> prop with the help of a state in <code>MenuItem</code> component to select an
             item.
           </Typography>
@@ -58,7 +58,7 @@ const Menus = () => {
             jsx: source.MenuCompositionJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use a different positioning strategy and not blocking the page scroll by using <code>MenuList</code> and{' '}
             <code>Popper</code> components.
           </Typography>
@@ -73,7 +73,7 @@ const Menus = () => {
             jsx: source.MenuCustomizedJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>styled</code> hook to customize your menu.
           </Typography>
           <MenuCustomized />
@@ -87,7 +87,7 @@ const Menus = () => {
             jsx: source.MenuMaxHeightJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>PaperProps</code> prop and use <code>style</code> property to set the height of the menu.
           </Typography>
           <MenuMaxHeight />
@@ -101,7 +101,7 @@ const Menus = () => {
             jsx: source.MenuTransitionJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>TransitionComponent</code> prop to change the transition of the menu.
           </Typography>
           <MenuTransition />
@@ -115,7 +115,7 @@ const Menus = () => {
             jsx: source.MenuContextJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>onContextMenu</code> prop in the parent element to manage the context menu.
           </Typography>
           <MenuContext />

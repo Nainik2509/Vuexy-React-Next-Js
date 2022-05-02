@@ -31,7 +31,7 @@ const Tabs = () => {
             jsx: source.TabsSimpleJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>Tabs are managed with the help of a state.</Typography>
+          <Typography sx={{ mb: 4 }}>Tabs are managed with the help of a state.</Typography>
           <TabsSimple />
         </CardSnippet>
       </Grid>
@@ -43,7 +43,7 @@ const Tabs = () => {
             jsx: source.TabsColorJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>textColor='secondary'</code> and <code>indicatorColor='secondary'</code> props with{' '}
             <code>TabList</code> component for secondary tabs.
           </Typography>
@@ -58,7 +58,7 @@ const Tabs = () => {
             jsx: source.TabsFullWidthJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>variant='fullWidth'</code> prop with <code>TabList</code> component to have full width tabs.
           </Typography>
           <TabsFullWidth />
@@ -72,7 +72,7 @@ const Tabs = () => {
             jsx: source.TabsCenteredJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>centered</code> prop with <code>TabList</code> component to have tabs on center.
           </Typography>
           <TabsCentered />
@@ -86,7 +86,7 @@ const Tabs = () => {
             jsx: source.TabsIconJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>icon</code> prop with <code>Tab</code> component for icons in the tab.
           </Typography>
           <TabsIcon />
@@ -100,7 +100,7 @@ const Tabs = () => {
             jsx: source.TabsCustomizedJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>styled</code> hook to customize your tabs.
           </Typography>
           <TabsCustomized />
@@ -114,7 +114,7 @@ const Tabs = () => {
             jsx: source.TabsVerticalJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>orientation='vertical'</code> prop with <code>TabList</code> component to have vertical tabs.
           </Typography>
           <TabsVertical />
@@ -128,7 +128,7 @@ const Tabs = () => {
             jsx: source.TabsCustomizedVerticalJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>styled</code> hook to customize your tabs.
           </Typography>
           <TabsCustomizedVertical />
@@ -142,7 +142,7 @@ const Tabs = () => {
             jsx: source.TabsNavJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>component</code> prop to change the <code>Tab</code> component to the component of your choice.
           </Typography>
           <TabsNav />
@@ -156,7 +156,7 @@ const Tabs = () => {
             jsx: source.TabsForcedScrollJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>scrollButtons</code> and <code>variant='scrollable'</code> props with <code>TabList</code>{' '}
             component to have forced scrollable tabs.
           </Typography>

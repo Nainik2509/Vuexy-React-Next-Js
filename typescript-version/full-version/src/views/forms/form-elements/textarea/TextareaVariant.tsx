@@ -15,7 +15,7 @@ const TextareaVariant = () => {
 
   return (
     <form noValidate autoComplete='off'>
-      <Box className='demo-space-x' sx={{ marginBottom: 4 }}>
+      <Box className='demo-space-x' sx={{ mb: 4 }}>
         <TextField
           multiline
           maxRows={4}
@@ -27,7 +27,7 @@ const TextareaVariant = () => {
         <TextField multiline id='textarea-outlined' placeholder='Placeholder' label='Multiline Placeholder' />
         <TextField rows={4} multiline label='Multiline' defaultValue='Default Value' id='textarea-outlined-static' />
       </Box>
-      <Box className='demo-space-x' sx={{ marginBottom: 4 }}>
+      <Box className='demo-space-x' sx={{ mb: 4 }}>
         <TextField
           multiline
           maxRows={4}

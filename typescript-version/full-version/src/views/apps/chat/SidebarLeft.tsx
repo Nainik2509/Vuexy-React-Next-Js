@@ -439,11 +439,11 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
               <Typography variant='h6' sx={{ ml: 3, mb: 3, color: 'primary.main' }}>
                 Chats
               </Typography>
-              <List sx={{ mb: 4, padding: 0 }}>{renderChats()}</List>
+              <List sx={{ mb: 4, p: 0 }}>{renderChats()}</List>
               <Typography variant='h6' sx={{ ml: 3, mb: 3, color: 'primary.main' }}>
                 Contacts
               </Typography>
-              <List sx={{ padding: 0 }}>{renderContacts()}</List>
+              <List sx={{ p: 0 }}>{renderContacts()}</List>
             </Box>
           </ScrollWrapper>
         </Box>

@@ -81,7 +81,7 @@ const Autocomplete = () => {
             jsx: source.AutocompleteCountryJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>Choose one of the countries.</Typography>
+          <Typography sx={{ mb: 4 }}>Choose one of the countries.</Typography>
           <AutocompleteCountry />
         </CardSnippet>
       </Grid>
@@ -93,7 +93,7 @@ const Autocomplete = () => {
             jsx: source.AutocompleteFreeSoloJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>freeSolo</code> prop so the textbox can contain any arbitrary value.
           </Typography>
           <AutocompleteFreeSolo />
@@ -107,7 +107,7 @@ const Autocomplete = () => {
             jsx: source.AutocompleteCreatableJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>You can create an option other than from the list.</Typography>
+          <Typography sx={{ mb: 4 }}>You can create an option other than from the list.</Typography>
           <AutocompleteCreatable />
         </CardSnippet>
       </Grid>
@@ -119,7 +119,7 @@ const Autocomplete = () => {
             jsx: source.AutocompleteGroupedJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>groupBy</code> prop to group the list according to your needs.
           </Typography>
           <AutocompleteGrouped />
@@ -133,7 +133,7 @@ const Autocomplete = () => {
             jsx: source.AutocompleteDisabledOptionsJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>getOptionDisabled</code> prop to disable some options from the list.
           </Typography>
           <AutocompleteDisabledOptions />
@@ -147,9 +147,7 @@ const Autocomplete = () => {
             jsx: source.AutocompleteAsynchronousRequestJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
-            You can fetch the data with the help of APIs for the options.
-          </Typography>
+          <Typography sx={{ mb: 4 }}>You can fetch the data with the help of APIs for the options.</Typography>
           <AutocompleteAsynchronousRequest />
         </CardSnippet>
       </Grid>
@@ -175,9 +173,7 @@ const Autocomplete = () => {
             jsx: source.AutocompleteFixedOptionsJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
-            You can fix an option in the input and add any other option as well.
-          </Typography>
+          <Typography sx={{ mb: 4 }}>You can fix an option in the input and add any other option as well.</Typography>
           <AutocompleteFixedOptions />
         </CardSnippet>
       </Grid>
@@ -189,7 +185,7 @@ const Autocomplete = () => {
             jsx: source.AutocompleteCheckboxesJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>Checkbox</code> component in <code>renderOption</code> prop to render checkbox in options.
           </Typography>
           <AutocompleteCheckboxes />
@@ -203,7 +199,7 @@ const Autocomplete = () => {
             jsx: source.AutocompleteLimitTagsJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 6 }}>
+          <Typography sx={{ mb: 6 }}>
             Use <code>limitTags</code> prop to limit tags in the input.
           </Typography>
           <AutocompleteLimitTags />
@@ -217,7 +213,7 @@ const Autocomplete = () => {
             jsx: source.AutocompleteSmallSizeJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 5 }}>
+          <Typography sx={{ mb: 5 }}>
             Use <code>size='small'</code> prop for small sized input.
           </Typography>
           <AutocompleteSmallSize />
@@ -231,7 +227,7 @@ const Autocomplete = () => {
             jsx: source.AutocompleteCustomInputJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>renderInput</code> prop to customize the rendered input.
           </Typography>
           <AutocompleteCustomInput />
@@ -245,7 +241,7 @@ const Autocomplete = () => {
             jsx: source.AutocompleteCustomFilterJSXCode
           }}
         >
-          <Typography sx={{ marginBottom: 4 }}>
+          <Typography sx={{ mb: 4 }}>
             Use <code>filterOptions</code> prop to filter the search according to your needs.
           </Typography>
           <AutocompleteCustomFilter />

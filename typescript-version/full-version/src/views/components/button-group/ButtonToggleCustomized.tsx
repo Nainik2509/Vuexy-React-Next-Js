@@ -60,7 +60,7 @@ const ButtonToggleCustomized = () => {
           <FormatAlignJustify />
         </ToggleButton>
       </ToggleButtonGroup>
-      <Divider flexItem orientation='vertical' sx={{ margin: 1 }} />
+      <Divider flexItem orientation='vertical' sx={{ m: 1 }} />
       <ToggleButtonGroup value={formats} onChange={handleFormat} aria-label='text alignment'>
         <ToggleButton value='bold' aria-label='bold'>
           <FormatBold />

@@ -30,9 +30,9 @@ const CardStatsCharacter = ({ data }: Props) => {
   return (
     <Card sx={{ overflow: 'visible', position: 'relative' }}>
       <CardContent>
-        <Typography sx={{ fontWeight: 600, marginBottom: 8.75, lineHeight: 1.31 }}>{title}</Typography>
+        <Typography sx={{ fontWeight: 600, mb: 8.75, lineHeight: 1.31 }}>{title}</Typography>
         <Box sx={{ rowGap: 1, width: '55%', display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start' }}>
-          <Typography variant='h5' sx={{ fontWeight: 600, marginRight: 1.5, lineHeight: 0.88 }}>
+          <Typography variant='h5' sx={{ fontWeight: 600, mr: 1.5, lineHeight: 0.88 }}>
             {stats}
           </Typography>
           <Typography
@@ -47,7 +47,7 @@ const CardStatsCharacter = ({ data }: Props) => {
           skin='light'
           label={chipText}
           color={chipColor}
-          sx={{ height: 20, marginTop: 3.5, fontWeight: 600, fontSize: '0.75rem' }}
+          sx={{ height: 20, mt: 3.5, fontWeight: 600, fontSize: '0.75rem' }}
         />
         <Img src={src} alt={title} />
       </CardContent>
