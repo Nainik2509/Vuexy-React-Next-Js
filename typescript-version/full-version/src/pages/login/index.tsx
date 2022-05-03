@@ -5,6 +5,7 @@ import { useState, ReactNode, MouseEvent } from 'react'
 import Link from 'next/link'
 
 // ** MUI Components
+import Alert from '@mui/material/Alert'
 import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
 import Checkbox from '@mui/material/Checkbox'
@@ -259,16 +260,14 @@ const LoginPage = () => {
               <TypographyStyled variant='h5'>Welcome to {themeConfig.templateName}! 👋🏻</TypographyStyled>
               <Typography variant='body2'>Please sign-in to your account and start the adventure</Typography>
             </Box>
-            <Box sx={{ mb: 6 }}>
-              <Box sx={{ py: 3, px: 4, borderRadius: 1, ...bgClasses.primaryLight }}>
-                <Typography variant='caption' sx={{ mb: 2, display: 'block', color: 'primary.main' }}>
-                  Admin: <strong>admin@master.com</strong> / Pass: <strong>admin</strong>
-                </Typography>
-                <Typography variant='caption' sx={{ display: 'block', color: 'primary.main' }}>
-                  Client: <strong>client@master.com</strong> / Pass: <strong>client</strong>
-                </Typography>
-              </Box>
-            </Box>
+            <Alert icon={false} sx={{ py: 3, mb: 6, ...bgClasses.primaryLight, '& .MuiAlert-message': { p: 0 } }}>
+              <Typography variant='caption' sx={{ mb: 2, display: 'block', color: 'primary.main' }}>
+                Admin: <strong>admin@master.com</strong> / Pass: <strong>admin</strong>
+              </Typography>
+              <Typography variant='caption' sx={{ display: 'block', color: 'primary.main' }}>
+                Client: <strong>client@master.com</strong> / Pass: <strong>client</strong>
+              </Typography>
+            </Alert>
             <form noValidate autoComplete='off' onSubmit={handleSubmit(onSubmit)}>
               <FormControl fullWidth sx={{ mb: 4 }}>
                 <Controller
