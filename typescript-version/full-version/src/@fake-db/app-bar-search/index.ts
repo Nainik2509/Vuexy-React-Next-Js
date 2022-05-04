@@ -583,7 +583,7 @@ mock.onGet('/app-bar/search').reply(config => {
 
   searchData.forEach(obj => {
     const isMatched = obj.title.toLowerCase().startsWith(queryLowered)
-    if (isMatched && exactData[obj.category].length < 4) {
+    if (isMatched && exactData[obj.category].length < 5) {
       exactData[obj.category].push(obj)
     }
   })
@@ -591,19 +591,29 @@ mock.onGet('/app-bar/search').reply(config => {
   searchData.forEach(obj => {
     const isMatched =
       !obj.title.toLowerCase().startsWith(queryLowered) && obj.title.toLowerCase().includes(queryLowered)
-    if (isMatched && includeData[obj.category].length < 4) {
+    if (isMatched && includeData[obj.category].length < 5) {
       includeData[obj.category].push(obj)
     }
   })
 
+  const categoriesCheck: string[] = []
+
+  Object.keys(exactData).forEach(category => {
+    if (exactData[category].length > 0) {
+      categoriesCheck.push(category)
+    }
+  })
+
+  const resultsLength = categoriesCheck.length === 1 ? 5 : 3
+
   return [
     200,
     [
-      ...exactData.dashboards.concat(includeData.dashboards).slice(0, 3),
-      ...exactData.appsPages.concat(includeData.appsPages).slice(0, 3),
-      ...exactData.userInterface.concat(includeData.userInterface).slice(0, 3),
-      ...exactData.formsTables.concat(includeData.formsTables).slice(0, 3),
-      ...exactData.chartsMisc.concat(includeData.chartsMisc).slice(0, 3)
+      ...exactData.dashboards.concat(includeData.dashboards).slice(0, resultsLength),
+      ...exactData.appsPages.concat(includeData.appsPages).slice(0, resultsLength),
+      ...exactData.userInterface.concat(includeData.userInterface).slice(0, resultsLength),
+      ...exactData.formsTables.concat(includeData.formsTables).slice(0, resultsLength),
+      ...exactData.chartsMisc.concat(includeData.chartsMisc).slice(0, resultsLength)
     ]
   ]
 })
