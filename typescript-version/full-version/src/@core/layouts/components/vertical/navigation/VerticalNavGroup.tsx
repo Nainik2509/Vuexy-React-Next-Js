@@ -171,11 +171,23 @@ const VerticalNavGroup = (props: Props) => {
     if (navCollapsed && !navHover) {
       setGroupActive([])
     }
-    if (navCollapsed && navHover) {
+
+    if ((navCollapsed && navHover) || (groupActive.length === 0 && !navCollapsed)) {
       setGroupActive([...currentActiveGroup, ...groupActive])
     }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [navCollapsed, navHover])
+
+  useEffect(() => {
+    if (
+      (groupActive.length === 0 && !navCollapsed && !navHover) ||
+      (groupActive.length === 0 && !navCollapsed && navHover)
+    ) {
+      setGroupActive([])
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [navHover])
 
   const IconTag = parent && !item.icon ? themeConfig.navSubItemIcon : item.icon
 
