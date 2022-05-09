@@ -44,7 +44,9 @@ const FileUploaderSingle = () => {
   // ** Hook
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
     multiple: false,
-    accept: 'image/*',
+    accept: {
+      'image/*': ['.png', '.jpg', '.jpeg', '.gif']
+    },
     onDrop: (acceptedFiles: File[]) => {
       setFiles(acceptedFiles.map((file: File) => Object.assign(file)))
     }

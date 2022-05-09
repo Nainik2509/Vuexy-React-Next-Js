@@ -24,7 +24,7 @@ const ChartjsPolarAreaChart = (props: PolarAreaProps) => {
   // ** Props
   const { info, grey, green, yellow, primary, warning, labelColor } = props
 
-  const options = {
+  const options: any = {
     responsive: true,
     maintainAspectRatio: false,
     animation: { duration: 500 },
@@ -77,7 +77,7 @@ const ChartjsPolarAreaChart = (props: PolarAreaProps) => {
         }
       />
       <CardContent>
-        <PolarArea data={data} options={options as any} height={350} />
+        <PolarArea data={data} options={options} height={350} />
       </CardContent>
     </Card>
   )

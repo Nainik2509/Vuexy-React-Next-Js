@@ -31,7 +31,7 @@ const ChartjsScatterChart = (props: ScatterProps) => {
     setActive(newActive)
   }
 
-  const options = {
+  const options: any = {
     responsive: true,
     maintainAspectRatio: false,
     animation: { duration: 800 },
@@ -180,7 +180,7 @@ const ChartjsScatterChart = (props: ScatterProps) => {
         }
       />
       <CardContent>
-        <Scatter data={data} options={options as any} height={400} />
+        <Scatter data={data} options={options} height={400} />
       </CardContent>
     </Card>
   )

@@ -182,7 +182,9 @@ const FileUploaderRestrictions = () => {
   const { getRootProps, getInputProps } = useDropzone({
     maxFiles: 2,
     maxSize: 2000000,
-    accept: 'image/*',
+    accept: {
+      'image/*': ['.png', '.jpg', '.jpeg', '.gif']
+    },
     onDrop: acceptedFiles => {
       setFiles(acceptedFiles.map(file => Object.assign(file)))
     },
@@ -305,7 +307,9 @@ const FileUploaderSingle = () => {
   // ** Hook
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
     multiple: false,
-    accept: 'image/*',
+    accept: {
+      'image/*': ['.png', '.jpg', '.jpeg', '.gif']
+    },
     onDrop: acceptedFiles => {
       setFiles(acceptedFiles.map(file => Object.assign(file)))
     }
@@ -540,7 +544,9 @@ const FileUploaderRestrictions = () => {
   const { getRootProps, getInputProps } = useDropzone({
     maxFiles: 2,
     maxSize: 2000000,
-    accept: 'image/*',
+    accept: {
+      'image/*': ['.png', '.jpg', '.jpeg', '.gif']
+    },
     onDrop: (acceptedFiles: File[]) => {
       setFiles(acceptedFiles.map((file: File) => Object.assign(file)))
     },
@@ -669,7 +675,9 @@ const FileUploaderSingle = () => {
   // ** Hook
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
     multiple: false,
-    accept: 'image/*',
+    accept: {
+      'image/*': ['.png', '.jpg', '.jpeg', '.gif']
+    },
     onDrop: (acceptedFiles: File[]) => {
       setFiles(acceptedFiles.map((file: File) => Object.assign(file)))
     }

@@ -42,7 +42,7 @@ const ChartjsAreaChart = (props: AreaProps) => {
   const [endDate, setEndDate] = useState<DateType>(null)
   const [startDate, setStartDate] = useState<DateType>(new Date())
 
-  const options = {
+  const options: any = {
     responsive: true,
     maintainAspectRatio: false,
     layout: {
@@ -209,7 +209,7 @@ const ChartjsAreaChart = (props: AreaProps) => {
         }
       />
       <CardContent>
-        <Line data={data} options={options as any} height={450} />
+        <Line data={data} options={options} height={450} />
       </CardContent>
     </Card>
   )

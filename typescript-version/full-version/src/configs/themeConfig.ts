@@ -5,9 +5,6 @@
  * ! To clear local storage, you may refer https://www.leadshook.com/help/how-to-clear-local-storage-in-google-chrome-browser/.
  */
 
-// ** React Imports
-import { ReactNode } from 'react'
-
 // ** MUI Imports
 import { PaletteMode, Direction } from '@mui/material'
 
@@ -30,7 +27,7 @@ type ThemeConfig = {
   disableRipple: boolean
   navigationSize: number
   menuTextTruncate: boolean
-  navSubItemIcon: ReactNode
+  navSubItemIcon: any
   contentWidth: ContentWidth
   disableCustomizer: boolean
   responsiveFontSizes: boolean

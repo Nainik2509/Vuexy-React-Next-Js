@@ -21,6 +21,7 @@ import ChartjsPolarAreaChart from 'src/views/charts/chartjs/ChartjsPolarAreaChar
 import ChartjsHorizontalBarChart from 'src/views/charts/chartjs/ChartjsHorizontalBarChart'
 
 // ** Third Party Styles Imports
+import 'chart.js/auto'
 import 'react-datepicker/dist/react-datepicker.css'
 
 const ChartJS = () => {

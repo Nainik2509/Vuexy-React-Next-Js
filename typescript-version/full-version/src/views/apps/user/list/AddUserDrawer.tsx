@@ -28,6 +28,9 @@ import { useDispatch } from 'react-redux'
 // ** Actions Imports
 import { addUser } from 'src/store/apps/user'
 
+// ** Types Imports
+import { AppDispatch } from 'src/store'
+
 interface SidebarAddUserType {
   open: boolean
   toggle: () => void
@@ -97,7 +100,7 @@ const SidebarAddUser = (props: SidebarAddUserType) => {
   const [role, setRole] = useState<string>('subscriber')
 
   // ** Hooks
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
   const {
     reset,
     control,

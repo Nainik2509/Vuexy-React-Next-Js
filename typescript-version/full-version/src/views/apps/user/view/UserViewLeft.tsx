@@ -468,8 +468,8 @@ const UserViewLeft = ({ data }: Props) => {
                     <Sup>$</Sup>
                     <Typography
                       variant='h3'
-                      mb: -1.2,
                       sx={{
+                        mb: -1.2,
                         lineHeight: 1,
                         color: 'primary.main',
                         fontSize: '3rem !important'

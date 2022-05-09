@@ -227,7 +227,7 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
                     variant='body2'
                     sx={{ whiteSpace: 'nowrap', color: activeCondition ? 'common.white' : 'text.disabled' }}
                   >
-                    {lastMessage ? String(formatDateToMonthShort(lastMessage.time as string, true)) : new Date()}
+                    <>{lastMessage ? formatDateToMonthShort(lastMessage.time as string, true) : new Date()}</>
                   </Typography>
                   {chat.chat.unseenMsgs && chat.chat.unseenMsgs > 0 ? (
                     <Chip

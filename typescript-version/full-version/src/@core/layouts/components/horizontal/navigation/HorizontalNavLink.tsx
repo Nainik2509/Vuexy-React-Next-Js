@@ -17,9 +17,6 @@ import MuiListItem, { ListItemProps } from '@mui/material/ListItem'
 // ** Third Party Imports
 import clsx from 'clsx'
 
-// ** Icon Imports
-import CircleOutline from 'mdi-material-ui/CircleOutline'
-
 // ** Theme Config Import
 import themeConfig from 'src/configs/themeConfig'
 
@@ -126,7 +123,14 @@ const HorizontalNavLink = (props: Props) => {
                   <UserIcon
                     icon={IconTag}
                     componentType='horizontal-menu'
-                    iconProps={{ sx: IconTag === CircleOutline ? { fontSize: '1rem' } : { fontSize: '1.125rem' } }}
+                    iconProps={{
+                      sx:
+                        // eslint-disable-next-line lines-around-comment
+                        // @ts-ignore
+                        IconTag.type.render.displayName === 'CircleOutlineIcon'
+                          ? { fontSize: '1rem' }
+                          : { fontSize: '1.125rem' }
+                    }}
                   />
                 </ListItemIcon>
                 <Typography {...(themeConfig.menuTextTruncate && { noWrap: true })}>

@@ -13,7 +13,7 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import { useSettings } from 'src/@core/hooks/useSettings'
 
 // ** Types
-import { RootState } from 'src/store'
+import { RootState, AppDispatch } from 'src/store'
 import { MailLayoutType, MailLabelColors } from 'src/types/apps/emailTypes'
 
 // ** Email App Component Imports
@@ -49,8 +49,8 @@ const EmailAppLayout = ({ folder, label }: MailLayoutType) => {
 
   // ** Hooks
   const theme = useTheme()
-  const dispatch = useDispatch()
   const { settings } = useSettings()
+  const dispatch = useDispatch<AppDispatch>()
   const lgAbove = useMediaQuery(theme.breakpoints.up('lg'))
   const mdAbove = useMediaQuery(theme.breakpoints.up('md'))
   const smAbove = useMediaQuery(theme.breakpoints.up('sm'))

@@ -23,6 +23,7 @@ import { handleSelectTask } from 'src/store/apps/kanban'
 import CustomChip from 'src/@core/components/mui/chip'
 
 // ** Types
+import { AppDispatch } from 'src/store'
 import { ThemeColor } from 'src/@core/layouts/types'
 import { KanbanTasksProps } from 'src/types/apps/kanbanTypes'
 
@@ -31,7 +32,7 @@ const KanbanTasks = (props: KanbanTasksProps) => {
   const { task, index, labelColors, handleTaskSidebarToggle } = props
 
   // ** Hooks
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
 
   const handleTaskClick = () => {
     dispatch(handleSelectTask(task))

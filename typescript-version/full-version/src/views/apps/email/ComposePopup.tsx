@@ -278,7 +278,7 @@ const ComposePopup = (props: MailComposeType) => {
             options={menuItemsArr}
             ListboxComponent={List}
             filterOptions={addNewOption}
-            getOptionLabel={option => option.name}
+            getOptionLabel={option => (option as FieldMenuItems).name as string}
             renderOption={(props, option) => renderListItem(props, option, emailTo, setEmailTo)}
             renderTags={(array: FieldMenuItems[], getTagProps) =>
               renderCustomChips(array, getTagProps, emailTo, setEmailTo)

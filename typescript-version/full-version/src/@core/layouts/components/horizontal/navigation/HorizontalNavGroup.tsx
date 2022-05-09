@@ -24,7 +24,6 @@ import { usePopper } from 'react-popper'
 import ChevronDown from 'mdi-material-ui/ChevronDown'
 import ChevronLeft from 'mdi-material-ui/ChevronLeft'
 import ChevronRight from 'mdi-material-ui/ChevronRight'
-import CircleOutline from 'mdi-material-ui/CircleOutline'
 
 // ** Theme Config Import
 import themeConfig from 'src/configs/themeConfig'
@@ -219,7 +218,14 @@ const HorizontalNavGroup = (props: Props) => {
                     <UserIcon
                       icon={IconTag}
                       componentType='horizontal-menu'
-                      iconProps={{ sx: IconTag === CircleOutline ? { fontSize: '1rem' } : { fontSize: '1.125rem' } }}
+                      iconProps={{
+                        sx:
+                          // eslint-disable-next-line lines-around-comment
+                          // @ts-ignore
+                          IconTag.type.render.displayName === 'CircleOutlineIcon'
+                            ? { fontSize: '1rem' }
+                            : { fontSize: '1.125rem' }
+                      }}
                     />
                   </ListItemIcon>
                   <Typography {...(menuTextTruncate && { noWrap: true })}>

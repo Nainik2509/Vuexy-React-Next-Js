@@ -21,6 +21,7 @@ import { useDispatch } from 'react-redux'
 import { addBoard } from 'src/store/apps/kanban'
 
 // ** Types
+import { AppDispatch } from 'src/store'
 import { BoardType, LabelColorsType, KanbanBoardLayoutProps, AddNewBoardType } from 'src/types/apps/kanbanTypes'
 
 // ** Kanban Component
@@ -49,7 +50,7 @@ const KanbanBoard = (props: KanbanBoardLayoutProps) => {
   const [showAddBoard, setShowAddBoard] = useState<boolean>(false)
 
   // ** Hooks
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
   const {
     reset,
     control,

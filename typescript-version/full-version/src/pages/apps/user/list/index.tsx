@@ -44,7 +44,7 @@ import { getInitials } from 'src/@core/utils/get-initials'
 import { fetchData, deleteUser } from 'src/store/apps/user'
 
 // ** Types Imports
-import { RootState } from 'src/store'
+import { RootState, AppDispatch } from 'src/store'
 import { ThemeColor } from 'src/@core/layouts/types'
 import { UsersType } from 'src/types/apps/userTypes'
 
@@ -125,7 +125,7 @@ const MenuItemLink = styled('a')(({ theme }) => ({
 
 const RowOptions = ({ id }: { id: number | string }) => {
   // ** Hooks
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
 
   // ** State
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
@@ -297,7 +297,7 @@ const UserList = () => {
   const [addUserOpen, setAddUserOpen] = useState<boolean>(false)
 
   // ** Hooks
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
   const store = useSelector((state: RootState) => state.user)
 
   useEffect(() => {

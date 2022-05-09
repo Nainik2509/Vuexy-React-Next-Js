@@ -27,6 +27,7 @@ import { useDispatch } from 'react-redux'
 import { clearTasks, deleteBoard, addTask } from 'src/store/apps/kanban'
 
 // ** Types
+import { AppDispatch } from 'src/store'
 import { KanbanTaskType, KanbanBoardProps, AddNewTaskType } from 'src/types/apps/kanbanTypes'
 
 // ** Kanban Component
@@ -49,7 +50,7 @@ const KanbanBoard = (props: KanbanBoardProps) => {
   const openOptionsMenu = Boolean(optionsAnchorEl)
 
   // ** Hooks
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
   const {
     reset,
     control,

@@ -34,6 +34,7 @@ import CustomAvatar from 'src/@core/components/mui/avatar'
 import { getInitials } from 'src/@core/utils/get-initials'
 
 // ** Types
+import { AppDispatch } from 'src/store'
 import { ThemeColor } from 'src/@core/layouts/types'
 import { TaskSidebarProps, AssigneeMenuItems } from 'src/types/apps/kanbanTypes'
 
@@ -112,7 +113,7 @@ const TaskSidebar = (props: TaskSidebarProps) => {
   const [assignee, setAssignee] = useState<AssigneeMenuItems[]>([])
 
   // ** Hooks
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
   const {
     control,
     setValue,
@@ -121,7 +122,9 @@ const TaskSidebar = (props: TaskSidebarProps) => {
   } = useForm({ defaultValues: { title: '' } })
   const { getRootProps, getInputProps } = useDropzone({
     multiple: false,
-    accept: 'image/*',
+    accept: {
+      'image/*': ['.png', '.jpg', '.jpeg', '.gif']
+    },
     onDrop: (acceptedFiles: File[]) => {
       setFiles(acceptedFiles.map((file: File) => Object.assign(file)))
     }
@@ -378,7 +381,7 @@ const TaskSidebar = (props: TaskSidebarProps) => {
               filterSelectedOptions
               ListboxComponent={List}
               filterOptions={addNewOption}
-              getOptionLabel={option => option.name}
+              getOptionLabel={option => (option as AssigneeMenuItems).name as string}
               renderInput={params => <TextField {...params} label='Assigned To' />}
               renderOption={(props, option) => renderListItem(props, option, assignee, setAssignee)}
               renderTags={(array: AssigneeMenuItems[], getTagProps) =>

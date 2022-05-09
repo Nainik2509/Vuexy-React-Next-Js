@@ -36,7 +36,7 @@ import PageHeader from 'src/@core/components/page-header'
 import TableHeader from 'src/views/apps/permissions/TableHeader'
 
 // ** Types Imports
-import { RootState } from 'src/store'
+import { RootState, AppDispatch } from 'src/store'
 import { PermissionRowType } from 'src/types/apps/permissionTypes'
 
 // ** Actions Imports
@@ -109,7 +109,7 @@ const PermissionsTable = () => {
     handleSubmit,
     formState: { errors }
   } = useForm({ defaultValues: { name: '' } })
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
   const store = useSelector((state: RootState) => state.permissions)
 
   useEffect(() => {

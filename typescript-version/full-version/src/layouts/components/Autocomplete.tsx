@@ -429,7 +429,7 @@ const AutocompleteComponent = ({ hidden, settings }: Props) => {
 
   // Handle ESC & shortcut keys keydown events
   const handleKeydown = useCallback(
-    event => {
+    (event: KeyboardEvent) => {
       // ** Shortcut keys to open searchbox (Ctrl + /)
       if (!openDialog && event.ctrlKey && event.which === 191) {
         setOpenDialog(true)
@@ -440,7 +440,7 @@ const AutocompleteComponent = ({ hidden, settings }: Props) => {
 
   // Handle shortcut keys keyup events
   const handleKeyUp = useCallback(
-    event => {
+    (event: KeyboardEvent) => {
       // ** ESC key to close searchbox
       if (openDialog && event.keyCode === 27) {
         setOpenDialog(false)
@@ -554,7 +554,7 @@ const AutocompleteComponent = ({ hidden, settings }: Props) => {
                   >
                     <ListItemButton sx={{ py: 2.5, px: ` ${theme.spacing(6)} !important` }}>
                       <UserIcon
-                        icon={IconTag}
+                        icon={IconTag as any}
                         componentType='search'
                         iconProps={{ fontSize: 'small', sx: { mr: 2.5, color: 'text.primary' } }}
                       />

@@ -36,7 +36,7 @@ import { getInitials } from 'src/@core/utils/get-initials'
 import { fetchData } from 'src/store/apps/user'
 
 // ** Types Imports
-import { RootState } from 'src/store'
+import { RootState, AppDispatch } from 'src/store'
 import { UsersType } from 'src/types/apps/userTypes'
 import { ThemeColor } from 'src/@core/layouts/types'
 
@@ -215,7 +215,7 @@ const UserList = () => {
   const [pageSize, setPageSize] = useState<number>(10)
 
   // ** Hooks
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
   const store = useSelector((state: RootState) => state.user)
 
   useEffect(() => {

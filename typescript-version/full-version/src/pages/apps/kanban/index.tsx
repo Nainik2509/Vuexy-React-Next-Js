@@ -11,7 +11,7 @@ import { DragDropContext } from 'react-beautiful-dnd'
 import { useDispatch, useSelector } from 'react-redux'
 
 // ** Types
-import { RootState } from 'src/store'
+import { RootState, AppDispatch } from 'src/store'
 import { KanbanTaskType } from 'src/types/apps/kanbanTypes'
 
 // ** Actions
@@ -25,7 +25,7 @@ import 'react-datepicker/dist/react-datepicker.css'
 
 const Kanban = () => {
   // ** Hooks
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
   const store = useSelector((state: RootState) => state.kanban)
 
   useEffect(() => {

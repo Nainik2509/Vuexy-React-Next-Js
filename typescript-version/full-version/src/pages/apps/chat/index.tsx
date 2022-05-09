@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { sendMsg, selectChat, fetchUserProfile, fetchChatsContacts, removeSelectedChat } from 'src/store/apps/chat'
 
 // ** Types
-import { RootState } from 'src/store'
+import { RootState, AppDispatch } from 'src/store'
 import { StatusObjType, StatusType } from 'src/types/apps/chatTypes'
 
 // ** Hooks
@@ -34,8 +34,8 @@ const AppChat = () => {
 
   // ** Hooks
   const theme = useTheme()
-  const dispatch = useDispatch()
   const { settings } = useSettings()
+  const dispatch = useDispatch<AppDispatch>()
   const hidden = useMediaQuery(theme.breakpoints.down('lg'))
   const store = useSelector((state: RootState) => state.chat)
 

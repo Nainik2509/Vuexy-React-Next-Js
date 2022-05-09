@@ -18,6 +18,7 @@ export type VerticalNavToggle = 'accordion' | 'collapse'
 export type HorizontalMenuToggle = 'hover' | 'click'
 
 export type NavLink = {
+  icon?: any
   path?: string
   title: string
   action?: string
@@ -26,17 +27,16 @@ export type NavLink = {
   badgeContent?: string
   externalLink?: boolean
   openInNewTab?: boolean
-  icon?: string | string[] | ReactNode
   badgeColor?: 'default' | 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info'
 }
 
 export type NavGroup = {
+  icon?: any
   title: string
   action?: string
   subject?: string
   badgeContent?: string
   children?: (NavGroup | NavLink)[]
-  icon?: string | string[] | ReactNode
   badgeColor?: 'default' | 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info'
 }
 

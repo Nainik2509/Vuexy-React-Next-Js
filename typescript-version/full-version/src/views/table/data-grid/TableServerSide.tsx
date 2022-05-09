@@ -30,6 +30,8 @@ interface StatusObj {
   }
 }
 
+type SortType = 'asc' | 'desc' | undefined | null
+
 // ** renders client column
 const renderClient = (params: GridRenderCellParams) => {
   const { row } = params
@@ -142,18 +144,18 @@ const TableServerSide = () => {
   // ** State
   const [page, setPage] = useState(0)
   const [total, setTotal] = useState<number>(0)
+  const [sort, setSort] = useState<SortType>('asc')
   const [pageSize, setPageSize] = useState<number>(7)
   const [rows, setRows] = useState<DataGridRowType[]>([])
   const [searchValue, setSearchValue] = useState<string>('')
   const [sortColumn, setSortColumn] = useState<string>('full_name')
-  const [sort, setSort] = useState<'asc' | 'desc' | undefined | null>('asc')
 
   function loadServerRows(currentPage: number, data: DataGridRowType[]) {
     return data.slice(currentPage * pageSize, (currentPage + 1) * pageSize)
   }
 
   const fetchTableData = useCallback(
-    async (sort, q, column) => {
+    async (sort: SortType, q: string, column: string) => {
       await axios
         .get('/api/table/data', {
           params: {
