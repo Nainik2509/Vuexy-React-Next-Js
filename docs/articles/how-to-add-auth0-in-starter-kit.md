@@ -9,17 +9,22 @@ Follow these steps to integrate Auth0 in starter-kit:
 5. Add your login and logout URLs.
 6. Run `yarn add @auth0/auth0-react` in your project root.
 7. Open `_app.tsx` file.
-8. Add following Import: 
-```jsx 
+8. Add following Import:
+
+```jsx
 import { Auth0Provider } from '@auth0/auth0-react'
 ```
+
 9. Wrap everything in `_app.tsx` with `Auth0Provider`.
+
 ```jsx
 <Auth0Provider domain='YOUR_DOMAIN' clientId='YOUR_CLIENT_ID' redirectUri='http://localhost:3000'>
 ...
 </Auth0Provider>
 ```
+
 10. Usage:
+
 ```jsx
 import { useAuth0 } from '@auth0/auth0-react'
 
@@ -37,4 +42,5 @@ const Component = () => {
 
 export default Component
 ```
-1.  You also refer this [guide](https://auth0.github.io/auth0-react/) for more info on `useAuth0` hook.
+
+11. You also refer this [guide](https://auth0.github.io/auth0-react/) for more info on `useAuth0` hook.
