@@ -308,7 +308,7 @@ const User = () => {
   }))
 
   return (
-    <Box sx={{ pt: 2, pb: 3, px: 4 }}>
+    <Box sx={{ mb: 2, pb: 3, px: 4, borderBottom: theme => `1px solid ${theme.palette.divider}` }}>
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <Badge
           overlap='circular'
@@ -365,7 +365,7 @@ const User = () => {
   }))
 
   return (
-    <Box sx={{ pt: 2, pb: 3, px: 4 }}>
+    <Box sx={{ mb: 2, pb: 3, px: 4, borderBottom: theme => `1px solid ${theme.palette.divider}` }}>
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <Badge
           overlap='circular'
@@ -433,7 +433,14 @@ interface Props {
 
 const MenuFooter = () => {
   return (
-    <Box sx={{ mt: 4, display: 'flex', justifyContent: 'center' }}>
+    <Box
+      sx={{
+        pt: 4,
+        display: 'flex',
+        justifyContent: 'center',
+        borderTop: theme => `1px solid ${theme.palette.divider}`
+      }}
+    >
       <img src='...' width='230' height='144' alt='menu-footer' />
     </Box>
   )
@@ -461,7 +468,14 @@ import Layout from 'src/@core/layouts/Layout'
 
 const MenuFooter = () => {
   return (
-    <Box sx={{ mt: 4, display: 'flex', justifyContent: 'center' }}>
+    <Box
+      sx={{
+        pt: 4,
+        display: 'flex',
+        justifyContent: 'center',
+        borderTop: theme => `1px solid ${theme.palette.divider}`
+      }}
+    >
       <img src='...' width='230' height='144' alt='menu-footer' />
     </Box>
   )
@@ -485,7 +499,7 @@ export default UserLayout
 
 Result:
 
-<img alt='add-content-before-menu-items' class='medium-zoom' :src="$withBase('/images/layouts/user-add-content-after-menu-items.png')" />
+<img alt='add-content-after-menu-items' class='medium-zoom' :src="$withBase('/images/layouts/user-add-content-after-menu-items.png')" />
 
 ### 6. Hide menu based on screen size
 

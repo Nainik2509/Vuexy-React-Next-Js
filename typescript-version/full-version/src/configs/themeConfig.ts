@@ -20,6 +20,7 @@ type ThemeConfig = {
   footer: Footer
   mode: PaletteMode
   navHidden: boolean
+  navSubItemIcon: any
   direction: Direction
   templateName: string
   navCollapsed: boolean
@@ -27,7 +28,6 @@ type ThemeConfig = {
   disableRipple: boolean
   navigationSize: number
   menuTextTruncate: boolean
-  navSubItemIcon: any
   contentWidth: ContentWidth
   disableCustomizer: boolean
   responsiveFontSizes: boolean
@@ -36,6 +36,8 @@ type ThemeConfig = {
   layout: 'vertical' | 'horizontal'
   verticalNavToggleType: VerticalNavToggle
   horizontalMenuToggle: HorizontalMenuToggle
+  afterVerticalNavMenuContentPosition: 'fixed' | 'static'
+  beforeVerticalNavMenuContentPosition: 'fixed' | 'static'
   toastPosition: 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'
 }
 
@@ -60,6 +62,8 @@ const themeConfig: ThemeConfig = {
   navCollapsed: false /* true | false /*! Note: This is for Vertical navigation menu only */,
   navigationSize: 260 /* Number in PX(Pixels) /*! Note: This is for Vertical navigation menu only */,
   collapsedNavigationSize: 69 /* Number in PX(Pixels) /*! Note: This is for Vertical navigation menu only */,
+  afterVerticalNavMenuContentPosition: 'fixed' /* fixed | static */,
+  beforeVerticalNavMenuContentPosition: 'fixed' /* fixed | static */,
   horizontalMenuToggle: 'hover' /* click | hover /*! Note: This is for Horizontal navigation menu only */,
   horizontalMenuAnimation: true /* true | false */,
 

@@ -13,6 +13,8 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 import { Settings } from 'src/@core/context/settingsContext'
 import { VerticalNavItemsType } from 'src/@core/layouts/types'
 
+import themeConfig from 'src/configs/themeConfig'
+
 // ** Component Imports
 import Drawer from './Drawer'
 import VerticalNavItems from './VerticalNavItems'
@@ -76,6 +78,7 @@ const Navigation = (props: Props) => {
 
   // ** Var
   const { skin } = settings
+  const { afterVerticalNavMenuContentPosition, beforeVerticalNavMenuContentPosition } = themeConfig
 
   // ** Fixes Navigation InfiniteScroll
   const handleInfiniteScroll = (ref: HTMLElement) => {
@@ -94,16 +97,18 @@ const Navigation = (props: Props) => {
 
   // ** Scroll Menu
   const scrollMenu = (container: any) => {
-    container = hidden ? container.target : container
-    if (shadowRef && container.scrollTop > 0) {
-      // @ts-ignore
-      if (!shadowRef.current.classList.contains('d-block')) {
+    if (beforeVerticalNavMenuContentPosition === 'static') {
+      container = hidden ? container.target : container
+      if (shadowRef && container.scrollTop > 0) {
         // @ts-ignore
-        shadowRef.current.classList.add('d-block')
+        if (!shadowRef.current.classList.contains('d-block')) {
+          // @ts-ignore
+          shadowRef.current.classList.add('d-block')
+        }
+      } else {
+        // @ts-ignore
+        shadowRef.current.classList.remove('d-block')
       }
-    } else {
-      // @ts-ignore
-      shadowRef.current.classList.remove('d-block')
     }
   }
 
@@ -131,7 +136,12 @@ const Navigation = (props: Props) => {
   return (
     <Drawer {...props}>
       <VerticalNavHeader {...props} />
-      <StyledBoxForShadow ref={shadowRef} sx={{ background: shadowBgColor() }} />
+      {beforeVerticalNavMenuContent && beforeVerticalNavMenuContentPosition === 'fixed'
+        ? beforeVerticalNavMenuContent(props)
+        : null}
+      {beforeVerticalNavMenuContentPosition === 'static' && (
+        <StyledBoxForShadow ref={shadowRef} sx={{ background: shadowBgColor() }} />
+      )}
       <Box sx={{ position: 'relative', overflow: 'hidden' }}>
         {/* @ts-ignore */}
         <ScrollWrapper
@@ -146,7 +156,9 @@ const Navigation = (props: Props) => {
                 onScrollY: (container: any) => scrollMenu(container)
               })}
         >
-          {beforeVerticalNavMenuContent ? beforeVerticalNavMenuContent(props) : null}
+          {beforeVerticalNavMenuContent && beforeVerticalNavMenuContentPosition === 'static'
+            ? beforeVerticalNavMenuContent(props)
+            : null}
           {userVerticalNavMenuContent ? (
             userVerticalNavMenuContent(props)
           ) : (
@@ -160,9 +172,14 @@ const Navigation = (props: Props) => {
               />
             </List>
           )}
-          {afterVerticalNavMenuContent ? afterVerticalNavMenuContent(props) : null}
+          {afterVerticalNavMenuContent && afterVerticalNavMenuContentPosition === 'static'
+            ? afterVerticalNavMenuContent(props)
+            : null}
         </ScrollWrapper>
       </Box>
+      {afterVerticalNavMenuContent && afterVerticalNavMenuContentPosition === 'fixed'
+        ? afterVerticalNavMenuContent(props)
+        : null}
     </Drawer>
   )
 }
