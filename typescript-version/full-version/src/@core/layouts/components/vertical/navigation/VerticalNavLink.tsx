@@ -46,9 +46,8 @@ const MenuNavLink = styled(ListItemButton)<
   ListItemButtonProps & { component?: ElementType; target?: '_blank' | undefined }
 >(({ theme }) => ({
   width: '100%',
-  padding: theme.spacing(2.5, 4.5),
   color: theme.palette.text.primary,
-  transition: 'opacity .25s ease-in-out',
+  transition: 'padding .25s ease-in-out',
   '&.active, &.active:hover': {
     backgroundColor: theme.palette.primary.light
   },
@@ -135,8 +134,10 @@ const VerticalNavLink = ({
               }
             }}
             sx={{
+              py: 2.5,
               ...conditionalBgColor(),
               ...(item.disabled ? { pointerEvents: 'none' } : { cursor: 'pointer' }),
+              pr: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 4.5,
               pl: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 5.5
             }}
           >

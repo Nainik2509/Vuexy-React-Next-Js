@@ -262,17 +262,12 @@ const VerticalNavGroup = (props: Props) => {
               'Mui-selected': groupActive.includes(item.title) || currentActiveGroup.includes(item.title)
             })}
             sx={{
+              py: 2.5,
               width: '100%',
               ...conditionalBgColor(),
               transition: 'padding .25s ease-in-out',
-              ...(parent && !item.children ? { pl: 5 } : {}),
-              p: theme =>
-                theme.spacing(
-                  2.5,
-                  4.5,
-                  2.5,
-                  navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 5.5
-                )
+              pr: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 4.5,
+              pl: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 5.5
             }}
           >
             {isSubToSub ? null : (

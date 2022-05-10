@@ -17,8 +17,8 @@ const Alert = (theme: Theme) => {
             marginBottom: theme.spacing(1.6)
           },
           '& a': {
-            color: 'inherit',
-            fontWeight: 500
+            fontWeight: 500,
+            color: 'inherit'
           }
         },
         standardSuccess: {
