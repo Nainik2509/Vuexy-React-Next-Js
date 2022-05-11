@@ -4,6 +4,7 @@ import { MutableRefObject } from 'react'
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import { Direction } from '@mui/material'
+import { useTheme } from '@mui/material/styles'
 
 // ** Third Party Components
 import { useKeenSlider, KeenSliderPlugin, KeenSliderInstance } from 'keen-slider/react'
@@ -42,18 +43,25 @@ const ThumbnailPlugin = (mainRef: MutableRefObject<KeenSliderInstance | null>): 
 }
 
 const SwiperThumbnails = ({ direction }: { direction: Direction }) => {
-  // ** Hook
+  // ** Hooks
+  const theme = useTheme()
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
-    initial: 0,
     rtl: direction === 'rtl'
   })
   const [thumbnailRef] = useKeenSlider<HTMLDivElement>(
     {
-      initial: 0,
       rtl: direction === 'rtl',
       slides: {
         perView: 4,
-        spacing: 10
+        spacing: 8
+      },
+      breakpoints: {
+        [`(max-width: ${theme.breakpoints.values.sm}px)`]: {
+          slides: {
+            perView: 3,
+            spacing: 8
+          }
+        }
       }
     },
     [ThumbnailPlugin(instanceRef)]
@@ -79,7 +87,7 @@ const SwiperThumbnails = ({ direction }: { direction: Direction }) => {
         </Box>
       </Box>
 
-      <Box ref={thumbnailRef} className='keen-slider thumbnail'>
+      <Box sx={{ mt: 2 }} ref={thumbnailRef} className='keen-slider thumbnail'>
         <Box className='keen-slider__slide'>
           <img src='/images/banner/banner-1.jpg' alt='swiper 1' />
         </Box>

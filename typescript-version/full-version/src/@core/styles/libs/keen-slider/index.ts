@@ -7,13 +7,16 @@ import 'keen-slider/keen-slider.min.css'
 const KeenSliderWrapper = styled('div')(({ theme }) => ({
   '& .keen-slider': {
     '& .keen-slider__slide': {
+      display: 'flex',
       '& img': {
-        maxWidth: '100%',
-        height: 'auto'
+        height: 'auto',
+        maxWidth: '100%'
       }
     },
+    '&.thumbnail .keen-slider__slide:not(.active)': {
+      opacity: 0.4
+    },
     '&.zoom-out': {
-      height: '300px',
       perspective: '1000px',
 
       '& .zoom-out__slide': {
@@ -24,7 +27,7 @@ const KeenSliderWrapper = styled('div')(({ theme }) => ({
           '& img': {
             width: '100%',
             height: '100%',
-            objectFit: 'fill',
+            objectFit: 'cover',
             position: 'absolute',
             backgroundColor: 'transparent'
           }
@@ -42,7 +45,6 @@ const KeenSliderWrapper = styled('div')(({ theme }) => ({
 
   //  ** Fade
   '& .fader': {
-    height: '300px',
     position: 'relative',
     overflow: 'hidden',
 
@@ -54,7 +56,7 @@ const KeenSliderWrapper = styled('div')(({ theme }) => ({
       '& img': {
         width: ' 100%',
         height: ' 100%',
-        objectFit: 'fill',
+        objectFit: 'cover',
         position: 'absolute'
       }
     }

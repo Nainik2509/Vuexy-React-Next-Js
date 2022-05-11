@@ -8,13 +8,12 @@ import { useKeenSlider } from 'keen-slider/react'
 const SwiperCentered = ({ direction }: { direction: Direction }) => {
   // ** Hook
   const [ref] = useKeenSlider<HTMLDivElement>({
-    mode: 'free-snap',
+    rtl: direction === 'rtl',
     slides: {
-      origin: 'center',
       perView: 2,
-      spacing: 16
-    },
-    rtl: direction === 'rtl'
+      spacing: 16,
+      origin: 'center'
+    }
   })
 
   return (

@@ -5,6 +5,7 @@ import { useState } from 'react'
 import Box from '@mui/material/Box'
 import { Direction } from '@mui/material'
 import Button from '@mui/material/Button'
+import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 
 // ** Third Party Components
@@ -30,17 +31,17 @@ const SwiperMutationObserver = ({ direction }: { direction: Direction }) => {
   // ** States
   const [slides, setSlides] = useState<number[]>([1])
 
-  // ** Hook
+  // ** Hooks
+  const theme = useTheme()
   const [ref] = useKeenSlider<HTMLDivElement>(
     {
-      initial: 0,
       rtl: direction === 'rtl',
       slides: {
         perView: 3,
         spacing: 16
       },
       breakpoints: {
-        '(max-width: 375px)': {
+        [`(max-width: ${theme.breakpoints.values.sm}px)`]: {
           slides: { perView: 1, spacing: 16 }
         }
       }
@@ -59,7 +60,7 @@ const SwiperMutationObserver = ({ direction }: { direction: Direction }) => {
           )
         })}
       </Box>
-      <Box className='demo-space-x' sx={{ mt: 4 }}>
+      <Box sx={{ mt: 4 }} className='demo-space-x'>
         <Button variant='contained' onClick={() => setSlides([...slides, slides.length + 1])}>
           Add
         </Button>

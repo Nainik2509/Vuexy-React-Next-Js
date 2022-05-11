@@ -1,6 +1,6 @@
 // ** MUI Imports
+import Grid from '@mui/material/Grid'
 import Link from '@mui/material/Link'
-import MuiGrid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 
 // ** Custom Components Imports
@@ -13,12 +13,12 @@ import SwiperZoom from 'src/views/components/swiper/SwiperZoom'
 import SwiperFader from 'src/views/components/swiper/SwiperFader'
 import SwiperDefault from 'src/views/components/swiper/SwiperDefault'
 import SwiperSpacing from 'src/views/components/swiper/SwiperSpacing'
-import SwiperAutoplay from 'src/views/components/swiper/SwiperAutoplay'
 import SwiperFreeMode from 'src/views/components/swiper/SwiperFreeMode'
 import SwiperCentered from 'src/views/components/swiper/SwiperCentered'
 import SwiperVertical from 'src/views/components/swiper/SwiperVertical'
 import SwiperControls from 'src/views/components/swiper/SwiperControls'
 import SwiperThumbnails from 'src/views/components/swiper/SwiperThumbnails'
+import SwiperAutoSwitch from 'src/views/components/swiper/SwiperAutoSwitch'
 import SwiperMultipleSlides from 'src/views/components/swiper/SwiperMultipleSlides'
 import SwiperMutationObserver from 'src/views/components/swiper/SwiperMutationObserver'
 
@@ -39,7 +39,7 @@ const Swiper = () => {
 
   return (
     <KeenSliderWrapper>
-      <MuiGrid container spacing={6} className='match-height'>
+      <Grid container spacing={6} className='match-height'>
         <PageHeader
           subtitle={<Typography variant='body2'>Swiper is the most modern free mobile touch slider.</Typography>}
           title={
@@ -50,7 +50,7 @@ const Swiper = () => {
             </Typography>
           }
         />
-        <MuiGrid item xs={12}>
+        <Grid item xs={12}>
           <CardSnippet
             title='Default'
             code={{
@@ -60,140 +60,140 @@ const Swiper = () => {
           >
             <SwiperDefault direction={direction} />
           </CardSnippet>
-        </MuiGrid>
-        <MuiGrid item xs={12}>
+        </Grid>
+        <Grid item xs={12}>
           <CardSnippet
             title='Loop'
             code={{
-              tsx: source.SwiperDefaultTSXCode,
-              jsx: source.SwiperDefaultJSXCode
+              tsx: source.SwiperLoopTSXCode,
+              jsx: source.SwiperLoopJSXCode
             }}
           >
             <SwiperLoop direction={direction} />
           </CardSnippet>
-        </MuiGrid>
-        <MuiGrid item xs={12}>
+        </Grid>
+        <Grid item xs={12}>
           <CardSnippet
             title='Multiple Slides'
             code={{
-              tsx: source.SwiperDefaultTSXCode,
-              jsx: source.SwiperDefaultJSXCode
+              tsx: source.SwiperMultipleSlidesTSXCode,
+              jsx: source.SwiperMultipleSlidesJSXCode
             }}
           >
             <SwiperMultipleSlides direction={direction} />
           </CardSnippet>
-        </MuiGrid>
-        <MuiGrid item xs={12}>
+        </Grid>
+        <Grid item xs={12}>
           <CardSnippet
             title='Spacing'
             code={{
-              tsx: source.SwiperDefaultTSXCode,
-              jsx: source.SwiperDefaultJSXCode
+              tsx: source.SwiperSpacingTSXCode,
+              jsx: source.SwiperSpacingJSXCode
             }}
           >
             <SwiperSpacing direction={direction} />
           </CardSnippet>
-        </MuiGrid>
-        <MuiGrid item xs={12}>
+        </Grid>
+        <Grid item xs={12}>
           <CardSnippet
             title='FreeMode'
             code={{
-              tsx: source.SwiperDefaultTSXCode,
-              jsx: source.SwiperDefaultJSXCode
+              tsx: source.SwiperFreeModeTSXCode,
+              jsx: source.SwiperFreeModeJSXCode
             }}
           >
             <SwiperFreeMode direction={direction} />
           </CardSnippet>
-        </MuiGrid>
-        <MuiGrid item xs={12}>
+        </Grid>
+        <Grid item xs={12}>
           <CardSnippet
             title='Centered'
             code={{
-              tsx: source.SwiperDefaultTSXCode,
-              jsx: source.SwiperDefaultJSXCode
+              tsx: source.SwiperCenteredTSXCode,
+              jsx: source.SwiperCenteredJSXCode
             }}
           >
             <SwiperCentered direction={direction} />
           </CardSnippet>
-        </MuiGrid>
-        <MuiGrid item xs={12}>
+        </Grid>
+        <Grid item xs={12}>
           <CardSnippet
             title='Vertical'
             code={{
-              tsx: source.SwiperDefaultTSXCode,
-              jsx: source.SwiperDefaultJSXCode
+              tsx: source.SwiperVerticalTSXCode,
+              jsx: source.SwiperVerticalJSXCode
             }}
           >
             <SwiperVertical />
           </CardSnippet>
-        </MuiGrid>
-        <MuiGrid item xs={12}>
+        </Grid>
+        <Grid item xs={12}>
           <CardSnippet
             title='Controls'
             code={{
-              tsx: source.SwiperDefaultTSXCode,
-              jsx: source.SwiperDefaultJSXCode
+              tsx: source.SwiperControlsTSXCode,
+              jsx: source.SwiperControlsJSXCode
             }}
           >
             <SwiperControls direction={direction} />
           </CardSnippet>
-        </MuiGrid>
-        <MuiGrid item xs={12}>
+        </Grid>
+        <Grid item xs={12}>
           <CardSnippet
             title='Thumbnails'
             code={{
-              tsx: source.SwiperDefaultTSXCode,
-              jsx: source.SwiperDefaultJSXCode
+              tsx: source.SwiperThumbnailsTSXCode,
+              jsx: source.SwiperThumbnailsJSXCode
             }}
           >
             <SwiperThumbnails direction={direction} />
           </CardSnippet>
-        </MuiGrid>
-        <MuiGrid item xs={12}>
+        </Grid>
+        <Grid item xs={12}>
           <CardSnippet
             title='Fader'
             code={{
-              tsx: source.SwiperDefaultTSXCode,
-              jsx: source.SwiperDefaultJSXCode
+              tsx: source.SwiperFaderTSXCode,
+              jsx: source.SwiperFaderJSXCode
             }}
           >
             <SwiperFader direction={direction} />
           </CardSnippet>
-        </MuiGrid>
-        <MuiGrid item xs={12}>
+        </Grid>
+        <Grid item xs={12}>
           <CardSnippet
             title='Zoom'
             code={{
-              tsx: source.SwiperDefaultTSXCode,
-              jsx: source.SwiperDefaultJSXCode
+              tsx: source.SwiperZoomTSXCode,
+              jsx: source.SwiperZoomJSXCode
             }}
           >
             <SwiperZoom direction={direction} />
           </CardSnippet>
-        </MuiGrid>
-        <MuiGrid item xs={12}>
+        </Grid>
+        <Grid item xs={12}>
           <CardSnippet
-            title='Autoplay'
+            title='Auto Switch'
             code={{
-              tsx: source.SwiperDefaultTSXCode,
-              jsx: source.SwiperDefaultJSXCode
+              tsx: source.SwiperAutoSwitchTSXCode,
+              jsx: source.SwiperAutoSwitchJSXCode
             }}
           >
-            <SwiperAutoplay direction={direction} />
+            <SwiperAutoSwitch direction={direction} />
           </CardSnippet>
-        </MuiGrid>
-        <MuiGrid item xs={12}>
+        </Grid>
+        <Grid item xs={12}>
           <CardSnippet
             title='Mutation Observer'
             code={{
-              tsx: source.SwiperDefaultTSXCode,
-              jsx: source.SwiperDefaultJSXCode
+              tsx: source.SwiperMutationObserverTSXCode,
+              jsx: source.SwiperMutationObserverJSXCode
             }}
           >
             <SwiperMutationObserver direction={direction} />
           </CardSnippet>
-        </MuiGrid>
-      </MuiGrid>
+        </Grid>
+      </Grid>
     </KeenSliderWrapper>
   )
 }

@@ -7,12 +7,10 @@ import { useKeenSlider } from 'keen-slider/react'
 const SwiperVertical = () => {
   // ** Hook
   const [ref] = useKeenSlider<HTMLDivElement>({
-    loop: true,
     vertical: true,
     slides: {
       perView: 2,
-      spacing: 8,
-      origin: 'center'
+      spacing: 8
     }
   })
 

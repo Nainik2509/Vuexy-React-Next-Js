@@ -21,7 +21,6 @@ const SwiperControls = ({ direction }: { direction: Direction }) => {
 
   // ** Hook
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
-    initial: 0,
     rtl: direction === 'rtl',
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel)

@@ -16,13 +16,12 @@ const images = [
   '/images/banner/banner-10.jpg'
 ]
 
-const SwiperFader = ({ direction }: { direction: Direction }) => {
+const SwiperZoom = ({ direction }: { direction: Direction }) => {
   // ** State
   const [details, setDetails] = useState<TrackDetails | null>(null)
 
   // ** Hook
   const [sliderRef] = useKeenSlider<HTMLDivElement>({
-    loop: true,
     initial: 2,
     rtl: direction === 'rtl',
     detailsChanged(s) {
@@ -33,7 +32,7 @@ const SwiperFader = ({ direction }: { direction: Direction }) => {
   const scaleStyle = (idx: number) => {
     if (!details) return {}
     const slide = details.slides[idx]
-    const scale_size = 0.7
+    const scale_size = 1
     const scale = 1 - (scale_size - scale_size * slide.portion)
 
     return {
@@ -43,7 +42,7 @@ const SwiperFader = ({ direction }: { direction: Direction }) => {
   }
 
   return (
-    <Box ref={sliderRef} className='keen-slider zoom-out'>
+    <Box ref={sliderRef} className='keen-slider zoom-out' sx={{ height: [200, 250, 395] }}>
       {images.map((src, idx) => (
         <Box key={idx} className='keen-slider__slide zoom-out__slide'>
           <Box className='slider-content-wrapper' sx={{ ...scaleStyle(idx) }}>
@@ -55,4 +54,4 @@ const SwiperFader = ({ direction }: { direction: Direction }) => {
   )
 }
 
-export default SwiperFader
+export default SwiperZoom
