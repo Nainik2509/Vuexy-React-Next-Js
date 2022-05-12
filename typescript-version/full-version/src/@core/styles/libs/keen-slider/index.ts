@@ -7,7 +7,6 @@ import 'keen-slider/keen-slider.min.css'
 const KeenSliderWrapper = styled('div')(({ theme }) => ({
   '& .keen-slider': {
     '& .keen-slider__slide': {
-      display: 'flex',
       '& img': {
         height: 'auto',
         maxWidth: '100%'
