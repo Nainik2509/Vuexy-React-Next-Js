@@ -173,17 +173,14 @@ const VerticalNavGroup = (props: Props) => {
     }
 
     if ((navCollapsed && navHover) || (groupActive.length === 0 && !navCollapsed)) {
-      setGroupActive([...currentActiveGroup, ...groupActive])
+      setGroupActive([...currentActiveGroup])
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [navCollapsed, navHover])
 
   useEffect(() => {
-    if (
-      (groupActive.length === 0 && !navCollapsed && !navHover) ||
-      (groupActive.length === 0 && !navCollapsed && navHover)
-    ) {
+    if (groupActive.length === 0 && !navCollapsed) {
       setGroupActive([])
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

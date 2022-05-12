@@ -18,7 +18,6 @@ interface Props {
   collapsedNavWidth: number
   setNavHover: (values: boolean) => void
   setNavVisible: (value: boolean) => void
-  saveSettings: (values: Settings) => void
 }
 
 const SwipeableDrawer = styled(MuiSwipeableDrawer)<SwipeableDrawerProps>({

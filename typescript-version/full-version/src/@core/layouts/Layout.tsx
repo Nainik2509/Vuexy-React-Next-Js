@@ -1,5 +1,5 @@
 // ** React Import
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
 // ** Type Import
 import { LayoutProps } from 'src/@core/layouts/types'
@@ -12,11 +12,24 @@ const Layout = (props: LayoutProps) => {
   // ** Props
   const { hidden, children, settings, saveSettings } = props
 
+  // ** Ref
+  const isCollapsed = useRef(settings.navCollapsed)
+
   useEffect(() => {
     if (hidden) {
-      saveSettings({ ...settings, layout: 'vertical' })
+      if (settings.navCollapsed) {
+        saveSettings({ ...settings, navCollapsed: false, layout: 'vertical' })
+        isCollapsed.current = true
+      } else {
+        saveSettings({ ...settings, layout: 'vertical' })
+      }
     } else {
-      saveSettings({ ...settings, layout: settings.lastLayout })
+      if (isCollapsed.current) {
+        saveSettings({ ...settings, navCollapsed: true, layout: settings.lastLayout })
+        isCollapsed.current = false
+      } else {
+        saveSettings({ ...settings, layout: settings.lastLayout })
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hidden])
