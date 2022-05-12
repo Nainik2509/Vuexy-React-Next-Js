@@ -330,7 +330,7 @@ const Customizer = () => {
             </Box>
 
             {/* Menu Toggle */}
-            {layout === 'horizontal' ? null : (
+            {navHidden || layout === 'horizontal' ? null : (
               <Box sx={{ mb: 5 }}>
                 <Typography>Menu Toggle</Typography>
                 <RadioGroup
