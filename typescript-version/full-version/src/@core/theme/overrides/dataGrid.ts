@@ -79,6 +79,9 @@ const DataGrid = (theme: Theme) => {
           },
           '&:last-of-type': {
             paddingRight: theme.spacing(5)
+          },
+          '&:focus, &:focus-within': {
+            outline: 'none'
           }
         },
         cellCheckbox: {
