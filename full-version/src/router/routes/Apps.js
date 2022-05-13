@@ -5,6 +5,7 @@ import { Navigate } from 'react-router-dom'
 const Chat = lazy(() => import('../../views/apps/chat'))
 const Todo = lazy(() => import('../../views/apps/todo'))
 const Email = lazy(() => import('../../views/apps/email'))
+const Kanban = lazy(() => import('../../views/apps/kanban'))
 const Calendar = lazy(() => import('../../views/apps/calendar'))
 
 const InvoiceAdd = lazy(() => import('../../views/apps/invoice/add'))
@@ -88,6 +89,14 @@ const AppRoutes = [
   {
     element: <Calendar />,
     path: '/apps/calendar'
+  },
+  {
+    element: <Kanban />,
+    path: '/apps/kanban',
+    meta: {
+      appLayout: true,
+      className: 'kanban-application'
+    }
   },
   {
     element: <InvoiceList />,

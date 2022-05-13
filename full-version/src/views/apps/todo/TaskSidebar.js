@@ -187,7 +187,7 @@ const TaskSidebar = props => {
     clearErrors()
   }
 
-  // ** Function to reset fileds
+  // ** Function to reset fields
   const handleResetFields = () => {
     const descValue = EditorState.createWithContent(ContentState.createFromText(store.selectedTask.description))
 

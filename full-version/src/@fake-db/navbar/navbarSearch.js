@@ -993,6 +993,14 @@ export const searchArr = [
         target: 'TwoStepCover',
         link: '/pages/two-steps-cover',
         title: 'Two Step Verification Cover'
+      },
+      {
+        id: 129,
+        icon: 'CheckSquare',
+        isBookmarked: false,
+        target: 'appKanban',
+        link: '/apps/kanban',
+        title: 'Kanban'
       }
     ]
   },

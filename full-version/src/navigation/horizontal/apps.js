@@ -43,6 +43,12 @@ export default [
         navLink: '/apps/calendar'
       },
       {
+        id: 'kanban',
+        title: 'Kanban',
+        icon: <CheckSquare size={20} />,
+        navLink: '/apps/kanban'
+      },
+      {
         id: 'invoiceApp',
         title: 'Invoice',
         icon: <FileText />,
