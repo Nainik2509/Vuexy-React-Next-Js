@@ -17,10 +17,6 @@ const WindowWrapper = ({ children }: Props) => {
 
   useEffect(
     () => {
-      if (!router.isReady) {
-        return
-      }
-
       if (typeof window !== 'undefined') {
         setWindowReadyFlag(true)
       }
