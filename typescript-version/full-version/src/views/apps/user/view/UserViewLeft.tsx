@@ -142,7 +142,7 @@ const UserViewLeft = ({ data }: Props) => {
             </CardContent>
 
             <CardContent sx={{ mt: 2 }}>
-              <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Box sx={{ mr: 8, display: 'flex', alignItems: 'center' }}>
                   <CustomAvatar skin='light' variant='rounded' sx={{ mr: 3 }}>
                     <Check />

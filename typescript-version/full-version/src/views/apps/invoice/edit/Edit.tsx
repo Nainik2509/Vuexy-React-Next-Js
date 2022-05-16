@@ -45,20 +45,22 @@ const InvoiceEdit = ({ id }: InvoiceLayoutProps) => {
 
   if (data) {
     return (
-      <Grid container spacing={6}>
-        <Grid item xl={9} md={8} xs={12}>
-          <EditCard data={data} />
-        </Grid>
-        <Grid item xl={3} md={4} xs={12}>
-          <EditActions
-            id={id}
-            toggleSendInvoiceDrawer={toggleSendInvoiceDrawer}
-            toggleAddPaymentDrawer={toggleAddPaymentDrawer}
-          />
+      <>
+        <Grid container spacing={6}>
+          <Grid item xl={9} md={8} xs={12}>
+            <EditCard data={data} />
+          </Grid>
+          <Grid item xl={3} md={4} xs={12}>
+            <EditActions
+              id={id}
+              toggleSendInvoiceDrawer={toggleSendInvoiceDrawer}
+              toggleAddPaymentDrawer={toggleAddPaymentDrawer}
+            />
+          </Grid>
         </Grid>
         <SendInvoiceDrawer open={sendInvoiceOpen} toggle={toggleSendInvoiceDrawer} />
         <AddPaymentDrawer open={addPaymentOpen} toggle={toggleAddPaymentDrawer} />
-      </Grid>
+      </>
     )
   } else if (error) {
     return (

@@ -19,6 +19,7 @@ import Box, { BoxProps } from '@mui/material/Box'
 import Grid, { GridProps } from '@mui/material/Grid'
 import { styled, useTheme } from '@mui/material/styles'
 import InputAdornment from '@mui/material/InputAdornment'
+import TableContainer from '@mui/material/TableContainer'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 import TableCell, { TableCellBaseProps } from '@mui/material/TableCell'
 import CardContent, { CardContentProps } from '@mui/material/CardContent'
@@ -150,7 +151,7 @@ const EditCard = ({ data }: Props) => {
       <Card>
         <CardContent>
           <Grid container>
-            <Grid item lg={6} xs={12} sx={{ mb: { lg: 0, xs: 4 } }}>
+            <Grid item xl={6} xs={12} sx={{ mb: { xl: 0, xs: 4 } }}>
               <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                 <Box sx={{ mb: 6, display: 'flex', alignItems: 'center' }}>
                   <svg
@@ -230,10 +231,10 @@ const EditCard = ({ data }: Props) => {
                 </Box>
               </Box>
             </Grid>
-            <Grid item lg={6} xs={12}>
+            <Grid item xl={6} xs={12}>
               <DatePickerWrapper sx={{ '& .react-datepicker-wrapper': { width: 'auto' } }}>
                 <Box
-                  sx={{ display: 'flex', flexDirection: 'column', alignItems: { lg: 'flex-end', xs: 'flex-start' } }}
+                  sx={{ display: 'flex', flexDirection: 'column', alignItems: { xl: 'flex-end', xs: 'flex-start' } }}
                 >
                   <Box sx={{ mb: 4, display: 'flex', alignItems: 'center' }}>
                     <Typography variant='h6' sx={{ mr: 2, width: '105px' }}>
@@ -282,7 +283,7 @@ const EditCard = ({ data }: Props) => {
 
         <CardContent>
           <Grid container>
-            <Grid item xs={12} sm={6} lg={8} sx={{ mb: { lg: 0, xs: 4 } }}>
+            <Grid item xs={12} sm={6} sx={{ mb: { lg: 0, xs: 4 } }}>
               <Typography variant='body2' sx={{ mb: 3.5, color: 'text.primary', fontWeight: 600 }}>
                 Invoice To:
               </Typography>
@@ -311,34 +312,38 @@ const EditCard = ({ data }: Props) => {
                 </Box>
               ) : null}
             </Grid>
-            <Grid item xs={12} sm={6} lg={4}>
-              <Typography variant='body2' sx={{ mb: 3.5, color: 'text.primary', fontWeight: 600 }}>
-                Bill To:
-              </Typography>
-              <Table>
-                <TableBody>
-                  <TableRow>
-                    <MUITableCell>Total Due:</MUITableCell>
-                    <MUITableCell>{data.paymentDetails.totalDue}</MUITableCell>
-                  </TableRow>
-                  <TableRow>
-                    <MUITableCell>Bank name:</MUITableCell>
-                    <MUITableCell>{data.paymentDetails.bankName}</MUITableCell>
-                  </TableRow>
-                  <TableRow>
-                    <MUITableCell>Country:</MUITableCell>
-                    <MUITableCell>{data.paymentDetails.country}</MUITableCell>
-                  </TableRow>
-                  <TableRow>
-                    <MUITableCell>IBAN:</MUITableCell>
-                    <MUITableCell>{data.paymentDetails.iban}</MUITableCell>
-                  </TableRow>
-                  <TableRow>
-                    <MUITableCell>SWIFT code:</MUITableCell>
-                    <MUITableCell>{data.paymentDetails.swiftCode}</MUITableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
+            <Grid item xs={12} sm={6} sx={{ display: 'flex', justifyContent: ['flex-start', 'flex-end'] }}>
+              <div>
+                <Typography variant='body2' sx={{ mb: 3.5, color: 'text.primary', fontWeight: 600 }}>
+                  Bill To:
+                </Typography>
+                <TableContainer>
+                  <Table>
+                    <TableBody>
+                      <TableRow>
+                        <MUITableCell>Total Due:</MUITableCell>
+                        <MUITableCell>{data.paymentDetails.totalDue}</MUITableCell>
+                      </TableRow>
+                      <TableRow>
+                        <MUITableCell>Bank name:</MUITableCell>
+                        <MUITableCell>{data.paymentDetails.bankName}</MUITableCell>
+                      </TableRow>
+                      <TableRow>
+                        <MUITableCell>Country:</MUITableCell>
+                        <MUITableCell>{data.paymentDetails.country}</MUITableCell>
+                      </TableRow>
+                      <TableRow>
+                        <MUITableCell>IBAN:</MUITableCell>
+                        <MUITableCell>{data.paymentDetails.iban}</MUITableCell>
+                      </TableRow>
+                      <TableRow>
+                        <MUITableCell>SWIFT code:</MUITableCell>
+                        <MUITableCell>{data.paymentDetails.swiftCode}</MUITableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+              </div>
             </Grid>
           </Grid>
         </CardContent>

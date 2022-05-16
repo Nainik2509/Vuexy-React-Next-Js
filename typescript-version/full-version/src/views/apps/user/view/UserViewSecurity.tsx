@@ -78,7 +78,8 @@ const data: DataType[] = [
 
 const UserViewSecurity = () => {
   // ** States
-  const [mobileNumber, setMobileNumber] = useState<string>('+1(968) 819-2547')
+  const [defaultValues, setDefaultValues] = useState<any>({ mobile: '+1(968) 819-2547' })
+  const [mobileNumber, setMobileNumber] = useState<string>(defaultValues.mobile)
   const [openEditMobileNumber, setOpenEditMobileNumber] = useState<boolean>(false)
   const [values, setValues] = useState<State>({
     newPassword: '',
@@ -112,6 +113,16 @@ const UserViewSecurity = () => {
   // Handle edit mobile number dialog
   const handleEditMobileNumberClickOpen = () => setOpenEditMobileNumber(true)
   const handleEditMobileNumberClose = () => setOpenEditMobileNumber(false)
+
+  // Handle button click inside the dialog
+  const handleCancelClick = () => {
+    setMobileNumber(defaultValues.mobile)
+    handleEditMobileNumberClose()
+  }
+  const handleSubmitClick = () => {
+    setDefaultValues({ ...defaultValues, mobile: mobileNumber })
+    handleEditMobileNumberClose()
+  }
 
   return (
     <Fragment>
@@ -222,7 +233,7 @@ const UserViewSecurity = () => {
 
         <Dialog
           open={openEditMobileNumber}
-          onClose={handleEditMobileNumberClose}
+          onClose={handleCancelClick}
           aria-labelledby='user-view-security-edit-mobile-number'
           sx={{ '& .MuiPaper-root': { width: '100%', maxWidth: 650, p: [2, 10] } }}
           aria-describedby='user-view-security-edit-mobile-number-description'
@@ -247,10 +258,10 @@ const UserViewSecurity = () => {
                 onChange={e => setMobileNumber(e.target.value)}
               />
               <Box sx={{ mt: 6.5, display: 'flex', justifyContent: 'flex-end' }}>
-                <Button color='secondary' variant='outlined' onClick={handleEditMobileNumberClose}>
+                <Button type='reset' color='secondary' variant='outlined' onClick={handleCancelClick}>
                   Cancel
                 </Button>
-                <Button type='submit' variant='contained' sx={{ ml: 3 }} onClick={handleEditMobileNumberClose}>
+                <Button type='submit' sx={{ ml: 3 }} variant='contained' onClick={handleSubmitClick}>
                   Send
                 </Button>
               </Box>

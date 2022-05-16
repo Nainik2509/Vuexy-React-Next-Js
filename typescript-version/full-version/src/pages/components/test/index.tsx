@@ -84,16 +84,16 @@ const Test = () => {
       <Grid item xs={12} md={6}>
         <OutsideAppBar />
       </Grid>
-      <Grid item xs={12} lg={6}>
-        <Typography variant='h5'>Basic Transfer List</Typography>
-      </Grid>
-      <Grid item xs={12} lg={6}>
-        <Typography variant='h5'>Enhanced Transfer List</Typography>
-      </Grid>
-      <Grid item xs={12} lg={6}>
+      <Grid item xs={12} xl={6}>
+        <Typography variant='h5' sx={{ mb: 6 }}>
+          Basic Transfer List
+        </Typography>
         <TransferListBasic />
       </Grid>
-      <Grid item xs={12} lg={6}>
+      <Grid item xs={12} xl={6}>
+        <Typography variant='h5' sx={{ mb: 6 }}>
+          Enhanced Transfer List
+        </Typography>
         <TransferListEnhanced />
       </Grid>
       <Grid item xs={12}>

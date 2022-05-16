@@ -30,18 +30,20 @@ const InvoiceAdd = ({ apiClientData, invoiceNumber }: InferGetStaticPropsType<ty
   const toggleAddCustomerDrawer = () => setAddCustomerOpen(!addCustomerOpen)
 
   return (
-    <Grid container spacing={6}>
-      <Grid item lg={9} md={8} xs={12}>
-        <AddCard
-          clients={clients}
-          invoiceNumber={invoiceNumber}
-          selectedClient={selectedClient}
-          setSelectedClient={setSelectedClient}
-          toggleAddCustomerDrawer={toggleAddCustomerDrawer}
-        />
-      </Grid>
-      <Grid item lg={3} md={4} xs={12}>
-        <AddActions />
+    <>
+      <Grid container spacing={6}>
+        <Grid item xl={9} md={8} xs={12}>
+          <AddCard
+            clients={clients}
+            invoiceNumber={invoiceNumber}
+            selectedClient={selectedClient}
+            setSelectedClient={setSelectedClient}
+            toggleAddCustomerDrawer={toggleAddCustomerDrawer}
+          />
+        </Grid>
+        <Grid item xl={3} md={4} xs={12}>
+          <AddActions />
+        </Grid>
       </Grid>
       <AddNewCustomers
         clients={clients}
@@ -50,7 +52,7 @@ const InvoiceAdd = ({ apiClientData, invoiceNumber }: InferGetStaticPropsType<ty
         toggle={toggleAddCustomerDrawer}
         setSelectedClient={setSelectedClient}
       />
-    </Grid>
+    </>
   )
 }
 

@@ -45,20 +45,22 @@ const InvoicePreview = ({ id }: InvoiceLayoutProps) => {
 
   if (data) {
     return (
-      <Grid container spacing={6}>
-        <Grid item xl={9} md={8} xs={12}>
-          <PreviewCard data={data} />
-        </Grid>
-        <Grid item xl={3} md={4} xs={12}>
-          <PreviewActions
-            id={id}
-            toggleAddPaymentDrawer={toggleAddPaymentDrawer}
-            toggleSendInvoiceDrawer={toggleSendInvoiceDrawer}
-          />
+      <>
+        <Grid container spacing={6}>
+          <Grid item xl={9} md={8} xs={12}>
+            <PreviewCard data={data} />
+          </Grid>
+          <Grid item xl={3} md={4} xs={12}>
+            <PreviewActions
+              id={id}
+              toggleAddPaymentDrawer={toggleAddPaymentDrawer}
+              toggleSendInvoiceDrawer={toggleSendInvoiceDrawer}
+            />
+          </Grid>
         </Grid>
         <SendInvoiceDrawer open={sendInvoiceOpen} toggle={toggleSendInvoiceDrawer} />
         <AddPaymentDrawer open={addPaymentOpen} toggle={toggleAddPaymentDrawer} />
-      </Grid>
+      </>
     )
   } else if (error) {
     return (

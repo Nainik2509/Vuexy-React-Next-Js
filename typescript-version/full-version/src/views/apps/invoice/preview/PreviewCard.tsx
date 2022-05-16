@@ -186,7 +186,7 @@ const PreviewCard = ({ data }: Props) => {
 
           <CardContent>
             <Grid container>
-              <Grid item xs={12} sm={6} lg={8} sx={{ mb: { lg: 0, xs: 4 } }}>
+              <Grid item xs={12} sm={6} sx={{ mb: { lg: 0, xs: 4 } }}>
                 <Typography variant='body2' sx={{ mb: 3.5, fontWeight: 600 }}>
                   Invoice To:
                 </Typography>
@@ -206,34 +206,38 @@ const PreviewCard = ({ data }: Props) => {
                   {data.invoice.companyEmail}
                 </Typography>
               </Grid>
-              <Grid item xs={12} sm={6} lg={4}>
-                <Typography variant='body2' sx={{ mb: 3.5, fontWeight: 600 }}>
-                  Bill To:
-                </Typography>
-                <Table>
-                  <TableBody>
-                    <TableRow>
-                      <MUITableCell>Total Due:</MUITableCell>
-                      <MUITableCell>{data.paymentDetails.totalDue}</MUITableCell>
-                    </TableRow>
-                    <TableRow>
-                      <MUITableCell>Bank name:</MUITableCell>
-                      <MUITableCell>{data.paymentDetails.bankName}</MUITableCell>
-                    </TableRow>
-                    <TableRow>
-                      <MUITableCell>Country:</MUITableCell>
-                      <MUITableCell>{data.paymentDetails.country}</MUITableCell>
-                    </TableRow>
-                    <TableRow>
-                      <MUITableCell>IBAN:</MUITableCell>
-                      <MUITableCell>{data.paymentDetails.iban}</MUITableCell>
-                    </TableRow>
-                    <TableRow>
-                      <MUITableCell>SWIFT code:</MUITableCell>
-                      <MUITableCell>{data.paymentDetails.swiftCode}</MUITableCell>
-                    </TableRow>
-                  </TableBody>
-                </Table>
+              <Grid item xs={12} sm={6} sx={{ display: 'flex', justifyContent: ['flex-start', 'flex-end'] }}>
+                <div>
+                  <Typography variant='body2' sx={{ mb: 3.5, fontWeight: 600 }}>
+                    Bill To:
+                  </Typography>
+                  <TableContainer>
+                    <Table>
+                      <TableBody>
+                        <TableRow>
+                          <MUITableCell>Total Due:</MUITableCell>
+                          <MUITableCell>{data.paymentDetails.totalDue}</MUITableCell>
+                        </TableRow>
+                        <TableRow>
+                          <MUITableCell>Bank name:</MUITableCell>
+                          <MUITableCell>{data.paymentDetails.bankName}</MUITableCell>
+                        </TableRow>
+                        <TableRow>
+                          <MUITableCell>Country:</MUITableCell>
+                          <MUITableCell>{data.paymentDetails.country}</MUITableCell>
+                        </TableRow>
+                        <TableRow>
+                          <MUITableCell>IBAN:</MUITableCell>
+                          <MUITableCell>{data.paymentDetails.iban}</MUITableCell>
+                        </TableRow>
+                        <TableRow>
+                          <MUITableCell>SWIFT code:</MUITableCell>
+                          <MUITableCell>{data.paymentDetails.swiftCode}</MUITableCell>
+                        </TableRow>
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
+                </div>
               </Grid>
             </Grid>
           </CardContent>
