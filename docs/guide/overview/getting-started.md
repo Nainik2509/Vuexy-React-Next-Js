@@ -6,12 +6,12 @@ Get Started with the Starter kit version and copy components from full version
 We only provide documentation for custom components and customizations made to MUI's components. For MUI components' documentation please visit [MUI's official docs](https://mui.com/components/).
 :::
 
-::: danger Heaps Up!
+::: danger Heads Up!
 When using Javascript version, please consider respective file paths, we only show `ts` & `tsx` file paths for reference code in documentation.
 
-e.g. following is the `ts` file path: `src/layouts/UserLayout.tsx`
+e.g. Following is the file path in TypeScript version: `src/layouts/UserLayout.tsx`
 
-then consider looking at following path in Javascript version: `src/layouts/UserLayout.js`
+and consider looking at following path in JavaScript version: `src/layouts/UserLayout.js`
 :::
 
 There can be two possibilities, you are planning to start a new project with our template or trying to add our template into your existing project.
@@ -20,7 +20,7 @@ There can be two possibilities, you are planning to start a new project with our
 
 It is always suggested to get started with the minimal setup and we exactly provide that with our starter kit version.
 
-Once you unzip the template you will find TypeScript / JavaScript version folder and under that full-version and starter-kit-version folders.
+Once you unzip the template you will find TypeScript / JavaScript version folder and under that full-version and starter-kit folders.
 
 First step should be to verify all the [dependencies](/guide/overview/dependencies.html) and clean up all the packages that are not required for your project.
 
@@ -28,7 +28,7 @@ First step should be to verify all the [dependencies](/guide/overview/dependenci
 
 Your question is totally valid and legit. To make the experience smoother, we have listed all the [dependencies](/guide/overview/dependencies.html) and provided freedom to remove dependencies which are not required in your project.
 
-Searching for packages that are required and to install them can be difficult and confusing for new users. Hence, we have included all the packages in the starter-kit-version. New user can just copy components from full version without worring about packages.
+Searching for packages that are required and to install them can be difficult and confusing for new users. Hence, we have included all the packages in the starter-kit. New user can just copy components from full version without worring about packages.
 
 ## Integrating our template into your existing project
 
@@ -46,7 +46,7 @@ You want your local template to look like one of the 6 demos you saw online then
 
 ## FAQs
 
-If you face any difficulties with installation, or has any question on usage of this template like changing colors, fonts, branding etc.. Treat yourself by visiting [FAQs](/faq/) section. You are most likely to find your answer there.
+If you face any difficulties with installation, or has any question on usage of this template like changing colors, fonts, branding etc., then treat yourself by visiting [FAQs](/faq/) section. You are most likely to find your answer there.
 
 ## Search Docs
 

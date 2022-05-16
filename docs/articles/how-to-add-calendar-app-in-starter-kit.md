@@ -23,7 +23,7 @@ export const store = configureStore({
 export type RootState = ReturnType<typeof store.getState>
 ```
 
-4. Navigate to `_app.tsx` & add the following imports
+4. Navigate to `src/pages/_app.tsx` & add the following imports
 
 ```jsx
 // ** Store Imports
@@ -55,7 +55,7 @@ import './apps/calendar'
 mock.onAny().passThrough()
 ```
 
-10. Add the following import in `_app.tsx`:
+10. Add the following import in `src/pages/_app.tsx`:
 
 ```jsx
 // ** Fake-DB Import

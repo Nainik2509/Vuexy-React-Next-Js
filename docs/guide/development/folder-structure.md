@@ -21,7 +21,6 @@ Following is the folder structure of the full-version under both typescript / ja
 
 ```
 ├── public
-│   ├── favicon.ico              -> Favicon
 │   ├── images                   -> Static assets
 │   ├── locales                  -> Translations
 │   └── other files

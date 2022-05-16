@@ -15,7 +15,7 @@ Please make sure you use the node’s LTS version which is recommended by the of
 :::
 
 ::: danger Important!
-Before installing the **node_modules** make sure you have files starting with a **dot(.eslintrc, .env etc..)**. It mostly happens when hidden files are not enabled on your machine and you try to copy our template at some other place on your system.
+Before installing the **node_modules**, make sure you have files starting with a **dot(.eslintrc, .env etc..)**. It mostly happens when hidden files are not enabled on your machine and you try to copy our template at some other place on your system.
 :::
 
 ::: danger Important!

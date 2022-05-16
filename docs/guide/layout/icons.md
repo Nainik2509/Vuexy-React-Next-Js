@@ -117,7 +117,7 @@ export default navigation
 </code-block>
 </code-group>
 
-If you also want to change the icon for the submenu, you need to change it in the `themeConfig.ts` file.
+If you also want to change the icon for the submenu, you need to change it in the `src/configs/themeConfig.ts` file.
 
 <code-group>
 <code-block title="TS" active>
@@ -218,7 +218,7 @@ export default navigation
 </code-block>
 </code-group>
 
-If you also want to change the icon for the submenu, you need to change it in the `themeConfig.ts` file.
+If you also want to change the icon for the submenu, you need to change it in the `src/configs/themeConfig.ts` file.
 
 <code-group>
 <code-block title="TS" active>

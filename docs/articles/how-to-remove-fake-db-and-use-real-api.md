@@ -5,7 +5,7 @@ Master uses [axios-mock-adapter](https://github.com/ctimmerm/axios-mock-adapter)
 However, you won't need fake-db if you are using real APIs. In this case please follow below steps to remove fake-db from template.
 
 1. Remove `@fake-db` folder from `src` directory
-2. Remove fake-db import from `_app.tsx` file
+2. Remove fake-db import from `src/pages/_app.tsx` file
 
 ```diff
 // File: src/pages/_app.tsx

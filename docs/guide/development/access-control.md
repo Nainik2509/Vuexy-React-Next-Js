@@ -198,7 +198,7 @@ It is quite easy to remove access control from the template.
     <code-group>
     <code-block title="TSX" active>
     ```tsx{11}
-    // src/layouts/components/acl/CanViewNavNavGroup.tsx
+    // src/layouts/components/acl/CanViewNavGroup.tsx
     import { ReactNode } from 'react'
     import { NavGroup } from 'src/@core/layouts/types'
 
@@ -207,27 +207,27 @@ It is quite easy to remove access control from the template.
       children: ReactNode
     }
 
-    const CanViewNavNavGroup = (props: Props) => {
+    const CanViewNavGroup = (props: Props) => {
       const { children } = props
 
       return <>{children}</>
     }
 
-    export default CanViewNavNavGroup
+    export default CanViewNavGroup
     ```
     </code-block>
 
     <code-block title="JSX">
     ```jsx{6}
-    // src/layouts/components/acl/CanViewNavNavGroup.js
+    // src/layouts/components/acl/CanViewNavGroup.js
 
-    const CanViewNavNavGroup = props => {
+    const CanViewNavGroup = props => {
       const { children } = props
 
       return <>{children}</>
     }
 
-    export default CanViewNavNavGroup
+    export default CanViewNavGroup
     ```
     </code-block>
     </code-group>
@@ -235,7 +235,7 @@ It is quite easy to remove access control from the template.
     <code-group>
     <code-block title="TSX" active>
     ```tsx{11}
-    // src/layouts/components/acl/CanViewNavNavLink.tsx
+    // src/layouts/components/acl/CanViewNavLink.tsx
     import { ReactNode } from 'react'
     import { NavLink } from 'src/@core/layouts/types'
 
@@ -244,27 +244,27 @@ It is quite easy to remove access control from the template.
       children: ReactNode
     }
 
-    const CanViewNavNavLink = (props: Props) => {
+    const CanViewNavLink = (props: Props) => {
       const { children } = props
 
       return <>{children}</>
     }
 
-    export default CanViewNavNavLink
+    export default CanViewNavLink
     ```
     </code-block>
 
     <code-block title="JSX">
     ```tsx{6}
-    // src/layouts/components/acl/CanViewNavNavLink.js
+    // src/layouts/components/acl/CanViewNavLink.js
 
-    const CanViewNavNavLink = props => {
+    const CanViewNavLink = props => {
       const { children } = props
 
       return <>{children}</>
     }
 
-    export default CanViewNavNavLink
+    export default CanViewNavLink
     ```
     </code-block>
     </code-group>
