@@ -139,7 +139,7 @@ const ChatLog = props => {
   // ** Sends New Msg
   const handleSendMsg = e => {
     e.preventDefault()
-    if (msg.length) {
+    if (msg.trim().length) {
       dispatch(sendMsg({ ...selectedUser, message: msg }))
       setMsg('')
     }

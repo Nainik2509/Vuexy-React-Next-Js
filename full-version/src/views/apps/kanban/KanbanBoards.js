@@ -181,7 +181,7 @@ const KanbanBoard = props => {
                   />
                 )
               } else {
-                return <Fragment></Fragment>
+                return <Fragment key={`${task.boardId}-${index}`}></Fragment>
               }
             })}
           </ReactSortable>

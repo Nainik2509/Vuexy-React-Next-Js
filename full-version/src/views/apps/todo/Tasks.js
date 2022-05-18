@@ -111,7 +111,7 @@ const Tasks = props => {
             list={tasks}
             handle='.drag-icon'
             className='todo-task-list media-list'
-            setList={newState => dispatch(reOrderTasks([newState]))}
+            setList={newState => dispatch(reOrderTasks(newState))}
           >
             {tasks.map((item, index) => {
               return (
