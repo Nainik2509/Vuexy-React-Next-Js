@@ -41,9 +41,9 @@ export type NavGroup = {
 }
 
 export type NavSectionTitle = {
-  sectionTitle: string
   action?: string
   subject?: string
+  sectionTitle: string
 }
 
 export type VerticalNavItemsType = (NavLink | NavGroup | NavSectionTitle)[]

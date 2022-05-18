@@ -55,9 +55,10 @@ const VerticalLayout = (props: LayoutProps) => {
 
   // ** Vars
   const navigationBorderWidth = 1
-  const { contentWidth } = settings
-  const navWidth = themeConfig.navigationSize
-  const collapsedNavWidth = themeConfig.collapsedNavigationSize
+  const { navHidden, contentWidth } = settings
+  const { navigationSize, disableCustomizer, collapsedNavigationSize } = themeConfig
+  const navWidth = navigationSize
+  const collapsedNavWidth = collapsedNavigationSize
 
   // ** States
   const [navHover, setNavHover] = useState<boolean>(false)
@@ -70,7 +71,9 @@ const VerticalLayout = (props: LayoutProps) => {
     <>
       <VerticalLayoutWrapper className='layout-wrapper'>
         {/* Navigation Menu */}
-        {settings.navHidden ? null : (
+        {navHidden &&
+        themeConfig.layout === 'vertical' &&
+        !(navHidden && settings.lastLayout === 'horizontal') ? null : (
           <Navigation
             navWidth={navWidth}
             navHover={navHover}
@@ -112,7 +115,7 @@ const VerticalLayout = (props: LayoutProps) => {
       </VerticalLayoutWrapper>
 
       {/* Customizer */}
-      {themeConfig.disableCustomizer || hidden ? null : <Customizer />}
+      {disableCustomizer || hidden ? null : <Customizer />}
 
       {/* Scroll to top button */}
       {scrollToTop ? (

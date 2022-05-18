@@ -125,9 +125,7 @@ const HorizontalNavLink = (props: Props) => {
                     componentType='horizontal-menu'
                     iconProps={{
                       sx:
-                        // eslint-disable-next-line lines-around-comment
-                        // @ts-ignore
-                        IconTag.type.render.displayName === 'CircleOutlineIcon'
+                        IconTag.type.render.displayName === themeConfig.navSubItemIcon.type.render.displayName
                           ? { fontSize: '1rem' }
                           : { fontSize: '1.125rem' }
                     }}
