@@ -14,7 +14,7 @@ Here is an example of how to change the layout from default layout to blank layo
 
 <code-group>
 <code-block title="TSX" active>
-```tsx{2,10-12}
+```tsx{2,10}
 import { ReactNode } from 'react'
 import BlankLayout from 'src/@core/layouts/BlankLayout'
 
@@ -24,16 +24,14 @@ const Login = () => {
   }
 }
 
-Login.getLayout = (page: ReactNode) => {
-  return <BlankLayout>{page}</BlankLayout>
-}
+Login.getLayout = (page: ReactNode) => <BlankLayout>{page}</BlankLayout>
 
 export default Login
 ```
 </code-block>
 
 <code-block title="JSX">
-```jsx{1,9-11}
+```jsx{1,9}
 import BlankLayout from 'src/@core/layouts/BlankLayout'
 
 const Login = () => {
@@ -42,9 +40,7 @@ const Login = () => {
   }
 }
 
-Login.getLayout = page => {
-  return <BlankLayout>{page}</BlankLayout>
-}
+Login.getLayout = page => <BlankLayout>{page}</BlankLayout>
 
 export default Login
 ```
@@ -57,7 +53,7 @@ Here is an example of how to change the layout from default layout to blank layo
 
 <code-group>
 <code-block title="TSX" active>
-```tsx{2,10-12}
+```tsx{2,10}
 import { ReactNode } from 'react'
 import BlankLayoutWithAppBar from 'src/@core/layouts/BlankLayoutWithAppBar'
 
@@ -67,16 +63,14 @@ const Login = () => {
   }
 }
 
-Login.getLayout = (page: ReactNode) => {
-  return <BlankLayoutWithAppBar>{page}</BlankLayoutWithAppBar>
-}
+Login.getLayout = (page: ReactNode) => <BlankLayoutWithAppBar>{page}</BlankLayoutWithAppBar>
 
 export default Login
 ```
 </code-block>
 
 <code-block title="JSX">
-```jsx{1,9-11}
+```jsx{1,9}
 import BlankLayoutWithAppBar from 'src/@core/layouts/BlankLayoutWithAppBar'
 
 const Login = () => {
@@ -85,9 +79,7 @@ const Login = () => {
   }
 }
 
-Login.getLayout = page => {
-  return <BlankLayoutWithAppBar>{page}</BlankLayoutWithAppBar>
-}
+Login.getLayout = page => <BlankLayoutWithAppBar>{page}</BlankLayoutWithAppBar>
 
 export default Login
 ```

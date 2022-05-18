@@ -22,6 +22,8 @@ It is used to group some navigation groups and/or navigation links in some secti
 
 ```ts
 type NavSectionTitle = {
+  action?: string
+  subject?: string
   sectionTitle: string
 }
 ```

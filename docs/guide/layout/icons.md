@@ -20,9 +20,9 @@ The props that are available to this component are as follows:
 
 | Prop          | Type                                                 | Required | Description                                                                                             |
 | ------------- | :--------------------------------------------------- | :------- | :------------------------------------------------------------------------------------------------------ |
-| icon          | `string`, `string[]` or `ReactNode`                  | Yes      | Name of the icon                                                                                        |
+| icon          | `string` \| `string[]` \| `ReactNode`                  | Yes      | Name of the icon                                                                                        |
 | iconProps     | SvgIconProps                                         | No       | All the props related to the icon goes in this prop as an object. For eg., fontSize, color, style, etc. |
-| componentType | `'search'`, `'vertical-menu'` or `'horizontal-menu'` | Yes      | Mention which type of component this icon is used in                                                    |
+| componentType | `'search'` \| `'vertical-menu'` \| `'horizontal-menu'` | Yes      | Mention which type of component this icon is used in                                                    |
 
 ## Override with MUI Material Icons
 

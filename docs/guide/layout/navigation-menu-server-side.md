@@ -63,6 +63,10 @@ export default UserLayout
 
 ## Horizontal layout
 
+::: danger Important!
+As mentioned [here](/guide/layout/navigation-menu-structure.html#horizontal-navigation-structure), you need to add menu items for Vertical Navigation as well. Please follow [these steps](/guide/layout/navigation-menu-server-side.html#vertical-layout) to add the Vertical Navigation and then follow the steps explained below.
+:::
+
 To use the server side navigation menu in the Horizontal layout, follow these steps:
 
 - You need to write all of your navigation groups and navigation links in [this](/guide/layout/navigation-menu-structure.html#horizontal-navigation-structure) structure either on your sever / API or in the `src/@fake-db/server-side-menu/horizontal.ts` file
@@ -71,11 +75,12 @@ To use the server side navigation menu in the Horizontal layout, follow these st
 
 <code-group>
 <code-block title="TSX" active>
-```tsx{5,15}
+```tsx{5-6,16-18}
 // src/layouts/UserLayout.tsx
 
 import { ReactNode } from 'react'
 import Layout from 'src/@core/layouts/Layout'
+import ServerSideVerticalNavItems from 'src/layouts/components/vertical/ServerSideNavItems.tsx'
 import ServerSideHorizontalNavItems from 'src/layouts/components/horizontal/ServerSideNavItems.tsx'
 
 interface Props {
@@ -86,7 +91,9 @@ const UserLayout = ({ children }: Props) => {
   return (
     <Layout
       {...} // other props
-      horizontalNavItems={ServerSideHorizontalNavItems()}
+      {...(settings.layout === 'horizontal'
+        ? { horizontalNavItems: ServerSideHorizontalNavItems() }
+        : { verticalNavItems: ServerSideVerticalNavItems() })}
     >
       {children}
     </Layout>
@@ -97,17 +104,20 @@ export default UserLayout
 </code-block>
 
 <code-block title="JSX">
-```jsx{4,10}
+```jsx{4-5,11-13}
 // src/layouts/UserLayout.js
 
 import Layout from 'src/@core/layouts/Layout'
+import ServerSideVerticalNavItems from 'src/layouts/components/vertical/ServerSideNavItems.tsx'
 import ServerSideHorizontalNavItems from 'src/layouts/components/horizontal/ServerSideNavItems.tsx'
 
 const UserLayout = ({ children }) => {
   return (
     <Layout
       {...} // other props
-      horizontalNavItems={ServerSideHorizontalNavItems()}
+      {...(settings.layout === 'horizontal'
+        ? { horizontalNavItems: ServerSideHorizontalNavItems() }
+        : { verticalNavItems: ServerSideVerticalNavItems() })}
     >
       {children}
     </Layout>

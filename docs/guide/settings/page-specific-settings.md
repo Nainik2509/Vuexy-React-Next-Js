@@ -4,7 +4,7 @@ If you want to override specific settings for specific page only, you can do tha
 
 ## Usage
 
-To change a setting for a specific page, use `setConfig` method and return a object with your settings like below:
+To change a setting for a specific page, use `setConfig` method and return an object with your settings like below:
 
 ```tsx
 const AnalyticsDashboard = () => <h1>Analytics Dashboard</h1>

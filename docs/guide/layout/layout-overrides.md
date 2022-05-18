@@ -422,7 +422,7 @@ Here is the code to menu footer info after the menu items:
 
 <code-group>
 <code-block title="TSX" active>
-```tsx{21}
+```tsx{28}
 import { ReactNode } from 'react'
 import Box from '@mui/material/Box'
 import Layout from 'src/@core/layouts/Layout'
@@ -462,7 +462,7 @@ export default UserLayout
 </code-block>
 
 <code-block title="JSX">
-```jsx{16}
+```jsx{23}
 import Box from '@mui/material/Box'
 import Layout from 'src/@core/layouts/Layout'
 
@@ -746,6 +746,10 @@ Result:
 
 ## Horizontal Layout
 
+::: danger Important!
+As mentioned [here](/guide/layout/navigation-menu-structure.html#horizontal-navigation-structure), you need to add all the necessary items for the Vertical Layout. Please follow [these steps](/guide/layout/layout-overrides.html#vertical-layout) to add items for the Vertical Layout and then follow the steps explained below.
+:::
+
 You can override the following layout components:
 
 - [App Logo](#_1-app-logo-2)
@@ -756,11 +760,12 @@ You can override the following layout components:
 
 ### 1. App Logo
 
-If you want to change the app logo, you need to use the `horizontalAppBarBranding` prop with the `Layout` component.
+If you want to change the app logo, you need to use the `verticalNavMenuBranding` and `horizontalAppBarBranding` props with the `Layout` component.
 
-The value accepted by this prop is:
+The value accepted by these props is:
 
 ```tsx
+verticalNavMenuBranding?: (props?: any) => ReactNode
 horizontalAppBarBranding?: (props?: any) => ReactNode
 ```
 
@@ -768,7 +773,7 @@ Here is the code to change the app logo:
 
 <code-group>
 <code-block title="TSX" active>
-```tsx{25}
+```tsx{25-27}
 import { ReactNode } from 'react'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
@@ -793,7 +798,9 @@ const UserLayout = ({ children }: Props) => {
   return (
     <Layout
       {...} // other props
-      horizontalAppBarBranding={() => <AppBrand />}
+      {...(settings.layout === 'horizontal'
+        ? { horizontalAppBarBranding: () => <AppBrand /> }
+        : { verticalNavMenuBranding: () => <AppBrand /> })}
     >
       {children}
     </Layout>
@@ -805,7 +812,7 @@ export default UserLayout
 </code-block>
 
 <code-block title="JSX">
-```jsx{20}
+```jsx{20-22}
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Layout from 'src/@core/layouts/Layout'
@@ -825,7 +832,9 @@ const UserLayout = ({ children }) => {
   return (
     <Layout
       {...} // other props
-      horizontalAppBarBranding={() => <AppBrand />}
+      {...(settings.layout === 'horizontal'
+        ? { horizontalAppBarBranding: () => <AppBrand /> }
+        : { verticalNavMenuBranding: () => <AppBrand /> })}
     >
       {children}
     </Layout>
@@ -843,11 +852,12 @@ Result:
 
 ### 2. Horizontal menu items
 
-If you want to change the menu, you need to use the `horizontalNavMenuContent` prop with the `Layout` component.
+If you want to change the menu, you need to use the `verticalNavMenuContent` and `horizontalNavMenuContent` props with the `Layout` component.
 
-The value accepted by this prop is:
+The value accepted by these props is:
 
 ```tsx
+verticalNavMenuContent?: (props?: any) => ReactNode
 horizontalNavMenuContent?: (props?: any) => ReactNode
 ```
 
@@ -855,7 +865,7 @@ Here is the code to change the menu:
 
 <code-group>
 <code-block title="TSX" active>
-```tsx{12}
+```tsx{24-26}
 import { ReactNode } from 'react'
 import Layout from 'src/@core/layouts/Layout'
 
@@ -863,11 +873,25 @@ interface Props {
   children: ReactNode
 }
 
+const Menu = () => {
+  return (
+    <ul>
+      <li>Menu Item 1</li>
+      <li>Menu Item 2</li>
+      <li>Menu Item 3</li>
+      <li>Menu Item 4</li>
+      <li>Menu Item 5</li>
+    </ul>
+  )
+}
+
 const UserLayout = ({ children }: Props) => {
   return (
     <Layout
       {...} // other props
-      horizontalNavMenuContent={() => 'I am menu which is overridden by the user'}
+      {...(settings.layout === 'horizontal'
+        ? { horizontalNavMenuContent: () => 'I am menu which is overridden by the user' }
+        : { verticalNavMenuContent: () => <Menu /> })}
     >
       {children}
     </Layout>
@@ -879,14 +903,28 @@ export default UserLayout
 </code-block>
 
 <code-block title="JSX">
-```tsx{7}
+```tsx{19-21}
 import Layout from 'src/@core/layouts/Layout'
+
+const Menu = () => {
+  return (
+    <ul>
+      <li>Menu Item 1</li>
+      <li>Menu Item 2</li>
+      <li>Menu Item 3</li>
+      <li>Menu Item 4</li>
+      <li>Menu Item 5</li>
+    </ul>
+  )
+}
 
 const UserLayout = ({ children }) => {
   return (
     <Layout
       {...} // other props
-      horizontalNavMenuContent={() => 'I am menu which is overridden by the user'}
+      {...(settings.layout === 'horizontal'
+        ? { horizontalNavMenuContent: () => 'I am menu which is overridden by the user' }
+        : { verticalNavMenuContent: () => <Menu /> })}
     >
       {children}
     </Layout>
@@ -920,11 +958,12 @@ const hidden = useMediaQuery('(max-width:1365px)')
 
 ### 4. AppBar Content
 
-The content in the appBar which is on the right side comes from the user side itself and thus, it would be very easy and convenient for you to change anything in the appBar. You just have to change the code in the `src/layouts/components/horizontal/AppBarContent.tsx` file. The appBar component is then passed in the `horizontalAppBarContent` prop with the `Layout` component.
+The content in the appBar which is on the right side comes from the user side itself and thus, it would be very easy and convenient for you to change anything in the appBar. You just have to change the code in the `src/layouts/components/horizontal/AppBarContent.tsx` file. The appBar component is then passed in the `horizontalAppBarContent` prop with the `Layout` component. The appBar component for the Vertical Layout (which comes from the `src/layouts/components/vertical/AppBarContent.tsx` file) is passed in the `verticalAppBarContent` prop with the `Layout` component.
 
-The value accepted by this prop is:
+The value accepted by these props is:
 
 ```tsx
+verticalAppBarContent?: (props?: any) => ReactNode
 horizontalAppBarContent?: (props?: any) => ReactNode
 ```
 
@@ -1019,14 +1058,15 @@ Then you need to pass that component in the `horizontalAppBarContent` prop with 
 
 <code-group>
 <code-block title="TSX" active>
-```tsx{6-7,18-20}
+```tsx{6-8,19-34}
 // src/layouts/UserLayout.tsx
 
 import { ReactNode } from 'react'
 import Layout from 'src/@core/layouts/Layout'
 import { useSettings } from 'src/@core/hooks/useSettings'
 import HorizontalNavItems from 'src/navigation/horizontal'
-import HorizontalAppBarContent from 'src/layouts/components/horizontal/AppBarContent'
+import VerticalAppBarContent from './components/vertical/AppBarContent'
+import HorizontalAppBarContent from './components/horizontal/AppBarContent'
 
 interface Props {
   children: ReactNode
@@ -1037,9 +1077,22 @@ const UserLayout = ({ children }: Props) => {
   return (
     <Layout
       {...} // other props
-      horizontalAppBarContent={() => (
-        <HorizontalAppBarContent settings={settings} horizontalNavItems={HorizontalNavItems()} />
-      )}
+      {...(settings.layout === 'horizontal'
+        ? {
+            horizontalAppBarContent: () => (
+              <HorizontalAppBarContent settings={settings} horizontalNavItems={HorizontalNavItems()} />
+            )
+          }
+        : {
+            verticalAppBarContent: props => (
+              <VerticalAppBarContent
+                hidden={hidden}
+                settings={settings}
+                saveSettings={saveSettings}
+                toggleNavVisibility={props.toggleNavVisibility}
+              />
+            )
+          })}
     >
       {children}
     </Layout>
@@ -1051,22 +1104,36 @@ export default UserLayout
 </code-block>
 
 <code-block title="JSX">
-```jsx{5-6,13-15}
+```jsx{5-7,14-29}
 // src/layouts/UserLayout.js
 
 import Layout from 'src/@core/layouts/Layout'
 import { useSettings } from 'src/@core/hooks/useSettings'
 import HorizontalNavItems from 'src/navigation/horizontal'
-import HorizontalAppBarContent from 'src/layouts/components/horizontal/AppBarContent'
+import VerticalAppBarContent from './components/vertical/AppBarContent'
+import HorizontalAppBarContent from './components/horizontal/AppBarContent'
 
 const UserLayout = ({ children }) => {
   const { settings } = useSettings()
   return (
     <Layout
       {...} // other props
-      horizontalAppBarContent={() => (
-        <HorizontalAppBarContent settings={settings} horizontalNavItems={HorizontalNavItems()} />
-      )}
+      {...(settings.layout === 'horizontal'
+        ? {
+            horizontalAppBarContent: () => (
+              <HorizontalAppBarContent settings={settings} horizontalNavItems={HorizontalNavItems()} />
+            )
+          }
+        : {
+            verticalAppBarContent: props => (
+              <VerticalAppBarContent
+                hidden={hidden}
+                settings={settings}
+                saveSettings={saveSettings}
+                toggleNavVisibility={props.toggleNavVisibility}
+              />
+            )
+          })}
     >
       {children}
     </Layout>

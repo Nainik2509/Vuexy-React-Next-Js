@@ -13,7 +13,7 @@ Before checking folder structure it is better you know some stuff related to fol
 - `@core` folder contains core files of template which **shall not get modified** unless our support team guide you to do it.
 - Outside of `@core` folder are files you can move and modify as per your wish. Basically that is your playground where you can modify anything.
 - `@fake-db` folder just contains dummy data which we get in response of API call. This enables us to take step forward in providing **API ready template**.
-- `/src/layouts` folder outside of `@core` are your layouts which you can modify however you like. Template will always render these layouts.
+- `src/layouts` folder outside of `@core` are your layouts which you can modify however you like. Template will always render these layouts.
 
 ## Main Package
 
