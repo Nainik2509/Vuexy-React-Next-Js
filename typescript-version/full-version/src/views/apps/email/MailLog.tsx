@@ -147,9 +147,9 @@ const MailLog = (props: MailLogType) => {
 
   const foldersObj: MailFoldersObjType = {
     inbox: [foldersConfig.spam, foldersConfig.trash],
-    sent: [foldersConfig.inbox, foldersConfig.trash],
+    sent: [foldersConfig.trash],
     draft: [foldersConfig.inbox],
-    spam: [foldersConfig.inbox, foldersConfig.trash],
+    spam: [foldersConfig.trash],
     trash: [foldersConfig.inbox, foldersConfig.spam]
   }
 

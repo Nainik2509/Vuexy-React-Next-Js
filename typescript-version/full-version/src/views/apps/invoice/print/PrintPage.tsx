@@ -52,7 +52,9 @@ const InvoicePrint = ({ id }: InvoiceLayoutProps) => {
   const theme = useTheme()
 
   useEffect(() => {
-    window.print()
+    setTimeout(() => {
+      window.print()
+    }, 100)
   }, [])
 
   useEffect(() => {

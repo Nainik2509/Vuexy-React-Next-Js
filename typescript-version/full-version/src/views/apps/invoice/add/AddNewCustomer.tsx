@@ -248,7 +248,7 @@ const AddNewCustomer = ({ open, toggle, setSelectedClient, clients, setClients }
           <Button size='large' type='submit' variant='contained' sx={{ mr: 4 }}>
             Add
           </Button>
-          <Button size='large' variant='outlined' color='secondary' onClick={toggle}>
+          <Button size='large' variant='outlined' color='secondary' onClick={handleDrawerClose}>
             Cancel
           </Button>
         </Box>
