@@ -71,11 +71,11 @@ const SimpleRadarChart = ({ series1, series3 }) => {
         <div className='d-flex align-items-center justify-content-center'>
           <div className='me-2'>
             <span className='bullet bullet-sm bullet-primary bullet-bordered me-50'></span>
-            <span className='align-middle me-75'>Replies</span>
+            <span className='me-75'>Replies</span>
           </div>
           <div>
             <span className='bullet bullet-sm bullet-bordered me-50' style={{ backgroundColor: '#ffe700' }}></span>
-            <span className='align-middle me-75'>Shares</span>
+            <span className='me-75'>Shares</span>
           </div>
         </div>
       </CardBody>

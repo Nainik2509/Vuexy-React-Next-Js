@@ -111,12 +111,12 @@ const Tasks = props => {
             list={tasks}
             handle='.drag-icon'
             className='todo-task-list media-list'
-            setList={newState => dispatch(reOrderTasks(newState))}
+            setList={newState => dispatch(reOrderTasks([newState]))}
           >
-            {tasks.map(item => {
+            {tasks.map((item, index) => {
               return (
                 <li
-                  key={item.id}
+                  key={`${item.id}-${index}`}
                   onClick={() => handleTaskClick(item)}
                   className={classnames('todo-item', {
                     completed: item.isCompleted
@@ -140,7 +140,9 @@ const Tasks = props => {
                       <span className='todo-title'>{item.title}</span>
                     </div>
                     <div className='todo-item-action mt-lg-0 mt-50'>
-                      {item.tags.length ? <div className='badge-wrapper me-1'>{renderTags(item.tags)}</div> : null}
+                      {item.tags && item.tags.length ? (
+                        <div className='badge-wrapper me-1'>{renderTags(item.tags)}</div>
+                      ) : null}
                       {item.dueDate ? (
                         <small className='text-nowrap text-muted me-1'>
                           {new Date(item.dueDate).toLocaleString('default', { month: 'short' })}{' '}

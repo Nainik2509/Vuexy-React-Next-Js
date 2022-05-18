@@ -56,19 +56,19 @@ const SimplePieChart = props => {
         <div className='d-flex align-items-center justify-content-center flex-wrap'>
           <div className='me-2'>
             <span className='bullet bullet-sm bullet-bordered me-50' style={{ backgroundColor: '#ffe700' }}></span>
-            <span className='align-middle me-75'>Operational</span>
+            <span className='me-75'>Operational</span>
           </div>
           <div className='me-2'>
             <span className='bullet bullet-sm bullet-bordered me-50' style={{ backgroundColor: '#ffa1a1' }}></span>
-            <span className='align-middle me-75'>Networking</span>
+            <span className='me-75'>Networking</span>
           </div>
           <div className='me-2'>
             <span className='bullet bullet-sm bullet-primary bullet-bordered me-50'></span>
-            <span className='align-middle me-75'>Hiring</span>
+            <span className='me-75'>Hiring</span>
           </div>
           <div>
             <span className='bullet bullet-sm bullet-bordered me-50' style={{ backgroundColor: '#00d4bd' }}></span>
-            <span className='align-middle me-75'>R&amp;D</span>
+            <span className='me-75'>R&amp;D</span>
           </div>
         </div>
       </CardBody>

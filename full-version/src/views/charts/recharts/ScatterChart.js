@@ -77,15 +77,15 @@ const SimpleScatterChart = ({ primary, success, danger }) => {
         <div className='d-flex align-items-center mb-2'>
           <div className='me-2'>
             <span className='bullet bullet-sm bullet-primary bullet-bordered me-50'></span>
-            <span className='align-middle me-75'>React</span>
+            <span className='me-75'>React</span>
           </div>
           <div className='me-2'>
             <span className='bullet bullet-sm bullet-success bullet-bordered me-50'></span>
-            <span className='align-middle me-75'>Vue</span>
+            <span className='me-75'>Vue</span>
           </div>
           <div>
             <span className='bullet bullet-sm bullet-danger bullet-bordered me-50'></span>
-            <span className='align-middle'>Angular</span>
+            <span>Angular</span>
           </div>
         </div>
         <div className='recharts-wrapper'>

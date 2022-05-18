@@ -103,9 +103,7 @@ const DndMultiDrag = () => {
         <CardText>
           Use <code>MultiDrag</code> prop to create a multiple drag list.
         </CardText>
-        <CardText>
-          Use <code>CTRL</code> key to select multiple items.
-        </CardText>
+        <CardText>Click on list item to select them.</CardText>
         <Row>
           <Col md='6' sm='12'>
             <h4 className='my-1'>People Group 1</h4>

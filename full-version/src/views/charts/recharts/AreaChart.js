@@ -104,7 +104,7 @@ const CustomTooltip = data => {
                     backgroundColor: i.fill
                   }}
                 ></span>
-                <span className='align-middle text-capitalize me-75'>
+                <span className='text-capitalize me-75'>
                   {i.dataKey} : {i.payload[i.dataKey]}
                 </span>
               </div>

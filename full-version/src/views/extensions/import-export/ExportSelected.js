@@ -21,8 +21,8 @@ import {
 } from 'reactstrap'
 
 // ** Third Party Components
-import XLSX from 'xlsx'
 import classnames from 'classnames'
+import { utils, writeFile } from 'xlsx'
 
 const initialData = [
   {
@@ -148,10 +148,10 @@ const ExportSelected = () => {
     })
     setDataToExport([...exportArr])
     const name = fileName.length ? `${fileName}.${fileFormat}` : `excel-sheet.${fileFormat}`
-    const wb = XLSX.utils.json_to_sheet(dataToExport)
-    const wbout = XLSX.utils.book_new()
-    XLSX.utils.book_append_sheet(wbout, wb, 'test')
-    XLSX.writeFile(wbout, name)
+    const wb = utils.json_to_sheet(dataToExport)
+    const wbout = utils.book_new()
+    utils.book_append_sheet(wbout, wb, 'test')
+    writeFile(wbout, name)
     toggleModal()
   }
 

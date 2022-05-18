@@ -15,7 +15,9 @@ const FileUploaderRestrictions = () => {
 
   const { getRootProps, getInputProps } = useDropzone({
     multiple: false,
-    accept: 'image/*',
+    accept: {
+      'image/*': ['.png', '.jpg', '.jpeg', '.gif']
+    },
     onDrop: (acceptedFiles, rejectedFiles) => {
       if (rejectedFiles.length) {
         toast.error('You can only upload image Files!.')

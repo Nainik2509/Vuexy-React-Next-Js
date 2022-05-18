@@ -6,6 +6,14 @@
   top: 0;
 }
 
+.noUi-horizontal {
+  .noUi-origin {
+    .noUi-handle {
+      right: -10px;
+    }
+  }
+}
+
 html[dir='rtl'] .noUi-horizontal {
   .noUi-origin {
     left: auto !important;

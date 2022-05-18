@@ -159,7 +159,7 @@ const ApexHeatmapChart = () => {
       <CardHeader>
         <CardTitle tag='h4'>Daily Sales States</CardTitle>
       </CardHeader>
-      <CardBody>
+      <CardBody className='apex-charts-heatmap'>
         <Chart options={options} series={series} type='heatmap' height={350} />
       </CardBody>
     </Card>

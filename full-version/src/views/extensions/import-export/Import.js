@@ -2,10 +2,10 @@
 import { Fragment, useState } from 'react'
 
 // ** Third Party Components
-import XLSX from 'xlsx'
+import { read, utils } from 'xlsx'
 import toast from 'react-hot-toast'
 import { useDropzone } from 'react-dropzone'
-import { X, DownloadCloud } from 'react-feather'
+import { DownloadCloud } from 'react-feather'
 
 // ** Custom Components
 import ExtensionsHeader from '@components/extensions-header'
@@ -34,10 +34,10 @@ const Import = () => {
       const reader = new FileReader()
       reader.onload = function () {
         const fileData = reader.result
-        const wb = XLSX.read(fileData, { type: 'binary' })
+        const wb = read(fileData, { type: 'binary' })
 
         wb.SheetNames.forEach(function (sheetName) {
-          const rowObj = XLSX.utils.sheet_to_row_object_array(wb.Sheets[sheetName])
+          const rowObj = utils.sheet_to_row_object_array(wb.Sheets[sheetName])
           getTableData(rowObj, result[0].name)
         })
       }

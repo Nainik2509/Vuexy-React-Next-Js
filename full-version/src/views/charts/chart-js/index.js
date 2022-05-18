@@ -24,6 +24,9 @@ import { useSkin } from '@hooks/useSkin'
 // ** Context
 import { ThemeColors } from '@src/utility/context/ThemeColors'
 
+// ** Third Party Components
+import 'chart.js/auto'
+
 // ** Styles
 import '@styles/react/libs/flatpickr/flatpickr.scss'
 

@@ -91,12 +91,12 @@ const CustomTooltip = data => {
             return (
               <div className='d-flex align-items-center' key={i.dataKey}>
                 <span
-                  className='bullet  bullet-sm bullet-bordered me-50'
+                  className='bullet bullet-sm bullet-bordered me-50'
                   style={{
                     backgroundColor: i.fill
                   }}
                 ></span>
-                <span className='align-middle text-capitalize me-75'>
+                <span className='text-capitalize me-75'>
                   {i.dataKey} : {i.payload[i.dataKey]}
                 </span>
               </div>

@@ -5,7 +5,7 @@ import { Fragment, useState, useRef } from 'react'
 import ExtensionsHeader from '@components/extensions-header'
 
 // ** Third Party Components
-import XLSX from 'xlsx'
+import { utils, write } from 'xlsx'
 import * as FileSaver from 'file-saver'
 
 // ** Reactstrap Imports
@@ -144,8 +144,8 @@ const Export = () => {
   const handleExport = () => {
     toggleModal()
     const bookType = fileFormat
-    const wb = XLSX.utils.table_to_book(tableRef.current, { sheet: 'Sheet JS' })
-    const wbout = XLSX.write(wb, { bookType, bookSST: true, type: 'binary' })
+    const wb = utils.table_to_book(tableRef.current, { sheet: 'Sheet JS' })
+    const wbout = write(wb, { bookType, bookSST: true, type: 'binary' })
 
     const s2ab = s => {
       const buf = new ArrayBuffer(s.length)
