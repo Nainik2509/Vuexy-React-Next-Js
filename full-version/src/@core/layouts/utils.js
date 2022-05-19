@@ -1,3 +1,4 @@
+/* eslint-disable implicit-arrow-linebreak */
 // ** React Imports
 import { useContext } from 'react'
 import { AbilityContext } from '@src/utility/context/Can'
@@ -81,10 +82,20 @@ export const removeChildren = (children, openGroup, currentActiveGroup) => {
   })
 }
 
+const checkForVisibleChild = (arr, ability) => {
+  return arr.some(i => {
+    if (i.children) {
+      return checkForVisibleChild(i.children, ability)
+    } else {
+      return ability.can(i.action, i.resource)
+    }
+  })
+}
+
 export const canViewMenuGroup = item => {
   const ability = useContext(AbilityContext)
   // ! This same logic is used in canViewHorizontalNavMenuGroup and canViewHorizontalNavMenuHeaderGroup. So make sure to update logic in them as well
-  const hasAnyVisibleChild = item.children && item.children.some(i => ability.can(i.action, i.resource))
+  const hasAnyVisibleChild = item.children && checkForVisibleChild(item.children, ability)
 
   // ** If resource and action is defined in item => Return based on children visibility (Hide group if no child is visible)
   // ** Else check for ability using provided resource and action along with checking if has any visible child
