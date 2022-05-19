@@ -58,10 +58,11 @@ const HorizontalNavLink = (props: Props) => {
   // ** Props
   const { item, settings, hasParent } = props
 
-  // ** Hook
+  // ** Hook & Vars
   const router = useRouter()
+  const { navSubItemIcon, menuTextTruncate } = themeConfig
 
-  const IconTag = item.icon ? item.icon : themeConfig.navSubItemIcon
+  const IconTag = item.icon ? item.icon : navSubItemIcon
 
   const Wrapper = !hasParent ? List : Fragment
 
@@ -116,22 +117,17 @@ const HorizontalNavLink = (props: Props) => {
                 sx={{
                   display: 'flex',
                   alignItems: 'center',
-                  ...(themeConfig.menuTextTruncate && { overflow: 'hidden' })
+                  ...(menuTextTruncate && { overflow: 'hidden' })
                 }}
               >
                 <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
                   <UserIcon
                     icon={IconTag}
                     componentType='horizontal-menu'
-                    iconProps={{
-                      sx:
-                        IconTag.type.render.displayName === themeConfig.navSubItemIcon.type.render.displayName
-                          ? { fontSize: '1rem' }
-                          : { fontSize: '1.125rem' }
-                    }}
+                    iconProps={{ sx: IconTag === navSubItemIcon ? { fontSize: '1rem' } : { fontSize: '1.125rem' } }}
                   />
                 </ListItemIcon>
-                <Typography {...(themeConfig.menuTextTruncate && { noWrap: true })}>
+                <Typography {...(menuTextTruncate && { noWrap: true })}>
                   <Translations text={item.title} />
                 </Typography>
               </Box>

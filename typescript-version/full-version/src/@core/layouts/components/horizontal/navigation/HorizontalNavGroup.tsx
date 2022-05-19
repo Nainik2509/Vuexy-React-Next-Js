@@ -218,12 +218,7 @@ const HorizontalNavGroup = (props: Props) => {
                     <UserIcon
                       icon={IconTag}
                       componentType='horizontal-menu'
-                      iconProps={{
-                        sx:
-                          IconTag.type.render.displayName === themeConfig.navSubItemIcon.type.render.displayName
-                            ? { fontSize: '1rem' }
-                            : { fontSize: '1.125rem' }
-                      }}
+                      iconProps={{ sx: IconTag === navSubItemIcon ? { fontSize: '1rem' } : { fontSize: '1.125rem' } }}
                     />
                   </ListItemIcon>
                   <Typography {...(menuTextTruncate && { noWrap: true })}>
