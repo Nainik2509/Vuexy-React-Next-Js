@@ -4,7 +4,7 @@ sidebarDepth: 0
 
 # Card
 
-Please visit [MUI Card Docs](https://mui.com/components/cards/) for a proper explanation of the `Card` component.
+Please visit [MUI Card Docs](https://mui.com/material-ui/react-card/) for a proper explanation of the `Card` component.
 
 ## How to use Text Button inside Card Actions
 

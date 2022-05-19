@@ -31,7 +31,7 @@ export default Component
 ## Props
 
 | Prop       | Type                     | Required | Description                                           |
-| ---------- | :----------------------- | :------- | :---------------------------------------------------- |
-| count      | `number`                 |      Yes | Number of times that the component should be repeated |
-| tag        | `React.ComponentType`    |       No | Component Tag                                         |
-| children   | `(i: number): ReactNode` |      Yes | Your content that you want to repeat                  |
+| :--------- | :----------------------- | :------- | :---------------------------------------------------- |
+| count      | `number`                 | Yes      | Number of times that the component should be repeated |
+| tag        | `React.ComponentType`    | No       | Component Tag                                         |
+| children   | `(i: number): ReactNode` | Yes      | Your content that you want to repeat                  |

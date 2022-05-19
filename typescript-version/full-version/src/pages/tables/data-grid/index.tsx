@@ -21,7 +21,7 @@ const DataGrid = () => {
       <PageHeader
         title={
           <Typography variant='h5'>
-            <Link href='https://mui.com/components/data-grid/' target='_blank'>
+            <Link href='https://mui.com/x/react-data-grid/' target='_blank'>
               Data Grid
             </Link>
           </Typography>

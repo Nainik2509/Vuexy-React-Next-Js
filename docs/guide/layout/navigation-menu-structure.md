@@ -224,7 +224,7 @@ const navigation = (): VerticalNavItemsType => {
       title: 'MUI Docs',
       externalLink: true,
       openInNewTab: true,
-      path: 'https://mui.com/getting-started/usage/'
+      path: 'https://mui.com/material-ui/getting-started/usage/'
     }
   ]
 }
@@ -258,7 +258,7 @@ const navigation = () => {
       title: 'MUI Docs',
       externalLink: true,
       openInNewTab: true,
-      path: 'https://mui.com/getting-started/usage/'
+      path: 'https://mui.com/material-ui/getting-started/usage/'
     }
   ]
 }
@@ -481,7 +481,7 @@ const navigation = (): HorizontalNavItemsType => {
       title: 'MUI Docs',
       externalLink: true,
       openInNewTab: true,
-      path: 'https://mui.com/getting-started/usage/'
+      path: 'https://mui.com/material-ui/getting-started/usage/'
     }
   ]
 }
@@ -515,7 +515,7 @@ const navigation = () => {
       title: 'MUI Docs',
       externalLink: true,
       openInNewTab: true,
-      path: 'https://mui.com/getting-started/usage/'
+      path: 'https://mui.com/material-ui/getting-started/usage/'
     }
   ]
 }

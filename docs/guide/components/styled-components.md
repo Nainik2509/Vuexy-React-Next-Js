@@ -105,7 +105,7 @@ To override the styles, you need to follow the same steps that are explained abo
 
 - Make a new file in the `src/layouts/styles` folder (say `src/layouts/styles/react-hot-toast/index.ts`)
 - Copy the code from the `src/@core/styles/react-hot-toast/index.ts` file and paste it into the `src/layouts/styles/react-hot-toast/index.ts` file
-- Remove the following code for it
+- Remove the following code:
 
 ```ts
 '& > div': {

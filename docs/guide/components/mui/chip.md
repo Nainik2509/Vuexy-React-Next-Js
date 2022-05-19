@@ -2,7 +2,7 @@
 
 ## Overview
 
-Please visit [MUI Chip Docs](https://mui.com/components/chips/) for a proper explanation of the `Chip` component.
+Please visit [MUI Chip Docs](https://mui.com/material-ui/react-chip/) for a proper explanation of the `Chip` component.
 
 Chip component is slightly modified to make it more beautiful and useable. Let's have a glance.
 
@@ -34,6 +34,6 @@ Result:
 
 ## Props
 
-| Prop |  Type   | Required |      description |
-| ---- | :------ | :------- | :--------------- |
-| skin | `light` |       No | Skin of the chip |
+| Prop | Type    | Required | Description      |
+| :--- | :------ | :------- | :--------------- |
+| skin | `light` | No       | Skin of the chip |

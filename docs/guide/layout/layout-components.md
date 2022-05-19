@@ -16,7 +16,7 @@ Vertical Layout is formed with the following layout components. Let's understand
 
 The navigation menu is created with the following components:
 
-- Menu Header which uses the `VerticalNavHeader` component
+- Navigation Header which uses the `VerticalNavHeader` component
 
   <img alt='vertical-menu-header' class='medium-zoom' :src="$withBase('/images/layouts/vertical-menu-header.png')" />
 

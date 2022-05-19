@@ -34,7 +34,7 @@ If you want to keep the splash screen as it is with your logo, then follow these
 
 - Make a new file in the `src/layouts/components` folder
 - Copy the code from the `src/@core/components/spinner/index.tsx` file and paste it in the file you just made
-- Remove our SVG logo and add you logo (you can add the logo of any format viz. JPEG, PNG, SVG, etc.)
+- Remove our SVG logo and add your logo (you can add the logo of any format viz. JPEG, PNG, SVG, etc.)
 - Pass your component in the `fallback` prop with the `AuthGuard` and `GuestGuard` components in the `src/pages/_app.tsx` file.
 
 ```tsx
@@ -48,7 +48,7 @@ import UserSpinner from 'src/layouts/components/UserSpinner.tsx'
 
 If you want to change the whole splash screen, then follow these steps:
 
-- Make your own loader component
+- Make your own loader component in the `src/layouts/components` folder
 - Pass your component in the `fallback` prop with the `AuthGuard` and `GuestGuard` components in the `src/pages/_app.tsx` file.
 
 ```tsx

@@ -21,7 +21,7 @@ const MUIPickers = () => {
       <PageHeader
         title={
           <Typography variant='h5'>
-            <Link href='https://mui.com/components/pickers/' target='_blank'>
+            <Link href='https://mui.com/material-ui/lab-date-and-time-pickers/' target='_blank'>
               MUI Pickers
             </Link>
           </Typography>

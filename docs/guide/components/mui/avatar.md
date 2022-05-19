@@ -2,7 +2,7 @@
 
 ## Overview
 
-Please visit [MUI Avatar Docs](https://mui.com/components/avatars/) for a proper explanation of the `Avatar` component.
+Please visit [MUI Avatar Docs](https://mui.com/material-ui/react-avatar/) for a proper explanation of the `Avatar` component.
 
 Avatar component is slightly modified to make it more beautiful and useable. Let's have a glance.
 
@@ -53,7 +53,7 @@ Result:
 
 There are three skins avatar skins `filled` | `light` | `light-static`.
 
-**Please Note:** The difference between `light` & `light-static` can only be seen in `dark-layout`.
+**Please Note:** The difference between `light` & `light-static` can only be seen in the **Dark layout**.
 
 Here is the example of how to use the skins mentioned above:
 
@@ -72,7 +72,7 @@ Result:
 
 ## Props
 
-| Prop  |                             Type                              | Default | Required |        Description |
-| ----- | :------------------------------------------------------------ | :------- | :------- | :----------------- |
-| skin  |               `filled`, `light`, `light-static`               |       `filled` |       No | Skin of the avatar |
-| color | `primary`, `secondary`, `success`, `error`, `warning`, `info` |       `primary` |       No |       Background color of the avatar |
+| Prop  | Type                                                          | Default   | Required | Description                    |
+| :---- | :------------------------------------------------------------ | :-------- | :------- | :----------------------------- |
+| skin  | `filled`, `light`, `light-static`                             | `filled`  | No       | Skin of the avatar             |
+| color | `primary`, `secondary`, `success`, `error`, `warning`, `info` | `primary` | No       | Background color of the avatar |

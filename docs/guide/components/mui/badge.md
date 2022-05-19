@@ -2,7 +2,7 @@
 
 ## Overview
 
-Please visit [MUI Badge Docs](https://mui.com/components/badges/) for a proper explanation of the `Badge` component.
+Please visit [MUI Badge Docs](https://mui.com/material-ui/react-badge/) for a proper explanation of the `Badge` component.
 
 Badge component is slightly modified to make it more beautiful and useable. Let's have a glance.
 
@@ -49,6 +49,6 @@ Result:
 
 ## Props
 
-| Prop |  Type   | Required |       Description |
-| ---- | :------ | :------- | :---------------- |
-| skin | `light` |       No | Skin of the Badge |
+| Prop | Type    | Required | Description       |
+| :--- | :------ | :------- | :---------------- |
+| skin | `light` | No       | Skin of the Badge |

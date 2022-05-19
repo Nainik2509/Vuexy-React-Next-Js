@@ -2,7 +2,7 @@
 
 ## Overview
 
-Please visit [MUI Timeline Docs](https://mui.com/components/timeline/) for a proper explanation of the `TimelineDot` component.
+Please visit [MUI Timeline Docs](https://mui.com/material-ui/react-timeline/) for a proper explanation of the `TimelineDot` component.
 
 TimelineDot component is slightly modified to make it more beautiful and useable. Let's have a glance.
 
@@ -46,6 +46,6 @@ Result:
 
 ## Props
 
-| Prop |  Type   | Required |      description |
-| ---- | :------ | :------- | :--------------- |
-| skin | `light` |       No | Skin of the timeline dot |
+| Prop | Type    | Required | Description              |
+| :--- | :------ | :------- | :----------------------- |
+| skin | `light` | No       | Skin of the timeline dot |

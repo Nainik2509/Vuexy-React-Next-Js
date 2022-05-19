@@ -26,11 +26,11 @@ export default Component
 
 ## Props
 
-| Prop          |      Type       | Required |                              Description |
-| ------------- | :-------------- | :------- | :--------------------------------------- |
-| show          | `true`, `false` |      Yes | If `true`, sidebar is visible |
-| hideBackdrop  | `true`, `false` |       No | If `true`, sidebar backdrop is hidden |
-| direction     | `left`, `right` |       No | If `left`, open sidebar from the left side |
-| onOpen        |   `function`    |       No | Callback function on open of sidebar |
-| onClose       |   `function`    |       No | Callback function on close of sidebar |
-| backDropClick |   `function`    |       No | Callback function on click of sidebar backdrop |
+| Prop          | Type            | Required | Description                                    |
+| :------------ | :-------------- | :------- | :--------------------------------------------- |
+| show          | `true`, `false` | Yes      | If `true`, sidebar is visible                  |
+| hideBackdrop  | `true`, `false` | No       | If `true`, sidebar backdrop is hidden          |
+| direction     | `left`, `right` | No       | If `left`, open sidebar from the left side     |
+| onOpen        | `function`      | No       | Callback function on open of sidebar           |
+| onClose       | `function`      | No       | Callback function on close of sidebar          |
+| backDropClick | `function`      | No       | Callback function on click of sidebar backdrop |

@@ -23,7 +23,7 @@ const MUITable = () => {
       <PageHeader
         title={
           <Typography variant='h5'>
-            <Link href='https://mui.com/components/tables/' target='_blank'>
+            <Link href='https://mui.com/material-ui/react-table/' target='_blank'>
               MUI Tables
             </Link>
           </Typography>

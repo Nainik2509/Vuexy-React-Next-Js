@@ -9,7 +9,7 @@ MUI offers a utility function: createTheme() that creates a theme which can be p
 ::: danger Important
 Make your changes in `src/layouts/UserThemeOptions.ts` file in order to override colors, typography, spacing or any other component styling. Do not make any changes related to theme inside of @core folder unless suggested by our support team.
 
-Consider reading [MUI theming docs](https://mui.com/customization/theming/) to understand how it works and how to access and override theme.
+Consider reading [MUI theming docs](https://mui.com/material-ui/customization/theming/) to understand how it works and how to access and override theme.
 :::
 
 - [How to override Color Palette](#how-to-override-color-palette)
@@ -53,7 +53,7 @@ palette:{
 
 Colors given in the above palette object are current primary colors used in our template, update those colors according to your project requirements.
 
-Above example shows how to change primary colors. You can change any colors of the palette in the same way shown above. Please refer [how to customize MUI palette documentation](https://mui.com/customization/palette/). Also refer our core palette from the file `src/@core/theme/palette/index.ts` in order to check custom colors, dark / light colors etc.. for better idea.
+Above example shows how to change primary colors. You can change any colors of the palette in the same way shown above. Please refer [how to customize MUI palette documentation](https://mui.com/material-ui/customization/palette/). Also refer our core palette from the file `src/@core/theme/palette/index.ts` in order to check custom colors, dark / light colors etc.. for better idea.
 
 ### Colors Tool
 
@@ -66,21 +66,21 @@ We recommend picking colors with these values:
 - dark : 600
 - contrastText: '#FFF'
 
-<img alt='color-tool' class='medium-zoom' :src="$withBase('/images/development/color-palette.png')" height="500"/>
+<img height="500" alt='color-tool' class='medium-zoom' :src="$withBase('/images/development/color-palette.png')" />
 
 ## How to customize MUI component appearance
 
 You can easily customize the appearance of any component, but it is important to understand how to customize it right way which will save the time, resources and provide optimum performance.
 
-Please read MUI doc on how to [customize component appearance](https://mui.com/customization/how-to-customize/) to get clear idea.
+Please read MUI doc on how to [customize component appearance](https://mui.com/material-ui/customization/how-to-customize/) to get clear idea.
 
 ## How to override Typography
 
 ### How to change font
 
-We have used [Inter fonts](https://fonts.google.com/specimen/Inter?query=inter) in the whole template. Now, I want to implement [Montserrat fonts](https://fonts.google.com/specimen/Montserrat?query=montserrat).
+We have used [Inter fonts](https://fonts.google.com/specimen/Inter?query=inter) in the whole template. Now suppose you want to implement [Montserrat fonts](https://fonts.google.com/specimen/Montserrat?query=montserrat).
 
-First open `src/pages/_document.tsx` file and change fonts URL like following:
+First open `src/pages/_document.tsx` file and change font's URL like following:
 
 ```tsx
 <Head>
@@ -121,7 +121,7 @@ typography: {
 ::: tip Reference:
 [https://demos.themeselection.com/master-react-mui-nextjs/demo-1/ui/typography/](https://demos.themeselection.com/master-react-mui-nextjs/demo-1/ui/typography/)
 
-MUI: [https://mui.com/customization/typography/](https://mui.com/customization/typography/)
+MUI: [https://mui.com/material-ui/customization/typography/](https://mui.com/material-ui/customization/typography/)
 :::
 
 ## How to override Shadows
@@ -160,7 +160,7 @@ breakpoints: {
 ```
 
 ::: tip Reference:
-[https://mui.com/customization/breakpoints/](https://mui.com/customization/breakpoints/)
+[https://mui.com/material-ui/customization/breakpoints/](https://mui.com/material-ui/customization/breakpoints/)
 :::
 
 ## How to override components styling
@@ -182,5 +182,5 @@ components: {
 ```
 
 ::: tip Reference:
-[https://mui.com/customization/theme-components/](https://mui.com/customization/theme-components/)
+[https://mui.com/material-ui/customization/theme-components/](https://mui.com/material-ui/customization/theme-components/)
 :::

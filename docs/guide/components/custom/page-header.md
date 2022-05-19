@@ -40,7 +40,7 @@ export default Component
 
 ## Props
 
-| Prop      |   Type      | Required | Description                    |
-| --------- | :---------- | :------- | :----------------------------- |
-| title     | `ReactNode` |      Yes | Title of the page goes here    |
-| subtitle  | `ReactNode` |       No | Subtitle of the page goes here |
+| Prop      | Type        | Required | Description                    |
+| :-------- | :---------- | :------- | :----------------------------- |
+| title     | `ReactNode` | Yes      | Title of the page goes here    |
+| subtitle  | `ReactNode` | No       | Subtitle of the page goes here |

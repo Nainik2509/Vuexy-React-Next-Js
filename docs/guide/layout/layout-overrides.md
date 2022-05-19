@@ -6,7 +6,7 @@ sidebarDepth: 2
 
 ## Overview
 
-The `layouts` folder in the root of the `src` folder is for users to override layouts built in the `@core` folder. It is highly recommended to override layouts in the `layouts` folder instead of directly working in the `@core` folder. This will ease your updates to newer versions without facing any hassle of backing up your current code, else it will override your changes in the `@core` folder each time you take an update.
+The `src/layouts` folder in the root of the `src` folder is for users to override layouts built in the `src/@core` folder. It is highly recommended to override layouts in the `src/layouts` folder instead of directly working in the `src/@core` folder. This will ease your updates to newer versions without facing any hassle of backing up your current code, else it will override your changes in the `src/@core` folder each time you take an update.
 
 Most of the layout components explained on this page are overridden in the `src/layouts/UserLayout.tsx` file.
 

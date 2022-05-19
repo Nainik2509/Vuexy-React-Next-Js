@@ -18,15 +18,15 @@ Do not remove the `mdi-material-ui` package from the `package.json` file and `sr
 
 The props that are available to this component are as follows:
 
-| Prop          | Type                                                 | Required | Description                                                                                             |
-| ------------- | :--------------------------------------------------- | :------- | :------------------------------------------------------------------------------------------------------ |
-| icon          | `string` \| `string[]` \| `ReactNode`                  | Yes      | Name of the icon                                                                                        |
-| iconProps     | SvgIconProps                                         | No       | All the props related to the icon goes in this prop as an object. For eg., fontSize, color, style, etc. |
-| componentType | `'search'` \| `'vertical-menu'` \| `'horizontal-menu'` | Yes      | Mention which type of component this icon is used in                                                    |
+| Prop          | Type                                                   | Required | Description                                          |
+| :------------ | :----------------------------------------------------- | :------- | :--------------------------------------------------- |
+| icon          | `string` \| `string[]` \| `ReactNode`                  | Yes      | Name of the icon                                     |
+| iconProps     | SvgIconProps                                           | No       | All the props related to the icon goes in this prop as an object. For eg., fontSize, color, style, etc. |
+| componentType | `'search'` \| `'vertical-menu'` \| `'horizontal-menu'` | Yes      | Mention which type of component this icon is used in |
 
 ## Override with MUI Material Icons
 
-You may go through the [MUI Docs](https://mui.com/components/icons/) for installation and more details. You may check all the icons [here](https://mui.com/components/material-icons/).
+You may go through the [MUI Docs](https://mui.com/material-ui/icons/) for installation and more details. You may check all the icons [here](https://mui.com/material-ui/material-icons/).
 
 ### Static Navigation Menu
 
@@ -262,7 +262,7 @@ Result:
 
 ### Font Awesome Icons
 
-You may go through the [Font Awesome Docs](https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react) for installation and more details. You may check all the icons [here](https://fontawesome.com/v5.15/icons).
+You may go through the [Font Awesome Docs](https://fontawesome.com/v6/docs/web/use-with/react/) for installation and more details. You may check all the icons [here](https://fontawesome.com/v6/search).
 
 ::: warning
 If you decide to use Font Awesome Icon as a stand-alone library and not use React Icons, you need to make sure you change all the icons present in the menu and search due to difference in icon rendering process in the `UserIcon` component in `src/layouts/components/UserIcon.tsx` file.
@@ -272,20 +272,22 @@ You can change the icons in the vertical menu, horizontal menu and search as sho
 
 <code-group>
 <code-block title="TSx" active>
-```tsx
+```tsx{5}
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const UserIcon = (props: UserIconProps) => {
+  ...
   return <FontAwesomeIcon icon={icon} {...iconProps} style={{ ...styles }} />
 }
 ```
 </code-block>
 
 <code-block title="JSX">
-```jsx
+```jsx{5}
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const UserIcon = props => {
+  ...
   return <FontAwesomeIcon icon={icon} {...iconProps} style={{ ...styles }} />
 }
 ```

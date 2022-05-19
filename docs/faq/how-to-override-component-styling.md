@@ -4,7 +4,7 @@ sidebarDepth: 0
 
 # How to override component's styling ?
 
-Please refer to [MUI Docs](https://mui.com/customization/theme-components/) if a user is to override MUI's components.
+Please refer to [MUI Docs](https://mui.com/material-ui/customization/theme-components/) if a user is to override MUI's components.
 
 We have created some components which will provide styles to some components.
 

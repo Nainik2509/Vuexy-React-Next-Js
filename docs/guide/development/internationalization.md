@@ -326,7 +326,7 @@ export default UserLanguageDropdown
 
 <code-group>
 <code-block title="TSX" active>
-```tsx{6,22}
+```tsx{6,23}
 // src/layouts/components/vertical/AppBarContent.tsx
 // OR
 // src/layouts/components/horizontal/AppBarContent.tsx
@@ -342,7 +342,8 @@ interface Props {
 }
 
 const AppBarContent = (props: Props) => {
-  // in src/layouts/components/horizontal/AppBarContent.tsx file, toggleNavVisibility prop will not come in the next line
+  // in src/layouts/components/horizontal/AppBarContent.tsx file,
+  // toggleNavVisibility prop will not come in the next line
   const { hidden, settings, saveSettings, toggleNavVisibility } = props
 
   return (
@@ -358,7 +359,7 @@ export default AppBarContent
 </code-block>
 
 <code-block title="JSX">
-```jsx{5,13}
+```jsx{5,15}
 // src/layouts/components/vertical/AppBarContent.js
 // OR
 // src/layouts/components/horizontal/AppBarContent.js
@@ -366,6 +367,8 @@ export default AppBarContent
 import UserLanguageDropdown from 'src/layouts/components/UserLanguageDropdown'
 
 const AppBarContent = props => {
+  // in src/layouts/components/horizontal/AppBarContent.js file,
+  // toggleNavVisibility prop will not come in the next line
   const { hidden, settings, saveSettings, toggleNavVisibility } = props
 
   return (

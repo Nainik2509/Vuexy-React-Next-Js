@@ -8,4 +8,4 @@ Most of the time very first question to start any project would be to setup proj
 
 You should easily be able to override any colors like primary, secondary, info, warning, success, error or any other.
 
-Also consider reading official MUI docs on [how to customize MUI palette documentation](https://mui.com/customization/palette/) for detailed understanding.
+Also consider reading official MUI docs on [how to customize MUI palette documentation](https://mui.com/material-ui/customization/palette/) for detailed understanding.

@@ -4,8 +4,13 @@ sidebarDepth: 0
 
 # Credits
 
-| Name |  URL   | License |
-| ---- | :------ | :---------------- |
+| Name |  URL    | License           |
+| :--- | :------ | :---------------- |
+| @auth0/auth0-react | [https://github.com/auth0/auth0-react](https://github.com/auth0/auth0-react) | MIT |
+| @aws-amplify/auth | [https://github.com/aws-amplify/amplify-js](https://github.com/aws-amplify/amplify-js) | Apache-2.0 |
+| @aws-amplify/ui-react | [https://github.com/aws-amplify/amplify-ui](https://github.com/aws-amplify/amplify-ui) | Apache-2.0 |
+| @casl/ability | [https://github.com/stalniy/casl](https://github.com/stalniy/casl) | MIT |
+| @casl/react | [https://github.com/stalniy/casl](https://github.com/stalniy/casl) | MIT |
 | @emotion/cache | [https://github.com/emotion-js/emotion/tree/main/packages/cache](https://github.com/emotion-js/emotion/tree/main/packages/cache) | MIT |
 | @emotion/react | [https://github.com/emotion-js/emotion/tree/main/packages/react](https://github.com/emotion-js/emotion/tree/main/packages/react) | MIT |
 | @emotion/server | [https://github.com/emotion-js/emotion/tree/main/packages/server](https://github.com/emotion-js/emotion/tree/main/packages/server) | MIT |
@@ -24,6 +29,7 @@ sidebarDepth: 0
 | @mui/x-data-grid | [https://github.com/mui-org/material-ui-x](https://github.com/mui-org/material-ui-x) | MIT |
 | @reduxjs/toolkit | [https://github.com/reduxjs/redux-toolkit](https://github.com/reduxjs/redux-toolkit) | MIT |
 | apexcharts | [https://github.com/apexcharts/apexcharts.js](https://github.com/apexcharts/apexcharts.js) | MIT |
+| aws-amplify | [https://github.com/aws-amplify/amplify-js](https://github.com/aws-amplify/amplify-js) | Apache-2.0 |
 | axios | [https://github.com/axios/axios](https://github.com/axios/axios) | MIT |
 | axios-mock-adapter | [https://github.com/ctimmerm/axios-mock-adapter](https://github.com/ctimmerm/axios-mock-adapter) | MIT |
 | chart.js | [https://github.com/chartjs/Chart.js](https://github.com/chartjs/Chart.js) | MIT |
@@ -32,10 +38,12 @@ sidebarDepth: 0
 | clsx | [https://github.com/lukeed/clsx](https://github.com/lukeed/clsx) | MIT |
 | date-fns | [https://github.com/date-fns/date-fns](https://github.com/date-fns/date-fns) | MIT |
 | draft-js | [https://github.com/facebook/draft-js](https://github.com/facebook/draft-js) | MIT |
+| firebase | [https://github.com/firebase/firebase-js-sdk](https://github.com/firebase/firebase-js-sdk) | Apache-2.0 |
 | i18next | [https://github.com/i18next/i18next](https://github.com/i18next/i18next) | MIT |
 | i18next-browser-languagedetector | [https://github.com/i18next/i18next-browser-languageDetector](https://github.com/i18next/i18next-browser-languageDetector) | MIT |
 | i18next-http-backend | [https://github.com/i18next/i18next-http-backend](https://github.com/i18next/i18next-http-backend) | MIT |
 | jsonwebtoken | [https://github.com/auth0/node-jsonwebtoken](https://github.com/auth0/node-jsonwebtoken) | MIT |
+| keen-slider | [https://github.com/rcbyr/keen-slider](https://github.com/rcbyr/keen-slider) | MIT |
 | mdi-material-ui | [https://github.com/TeamWertarbyte/mdi-material-ui](https://github.com/TeamWertarbyte/mdi-material-ui) | MIT |
 | next | [https://github.com/vercel/next.js](https://github.com/vercel/next.js) | MIT |
 | nprogress | [https://github.com/rstacruz/nprogress](https://github.com/rstacruz/nprogress) | MIT |
