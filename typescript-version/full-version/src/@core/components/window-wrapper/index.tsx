@@ -3,7 +3,6 @@ import { useState, useEffect, ReactNode } from 'react'
 
 // ** Next Import
 import { useRouter } from 'next/router'
-import Spinner from 'src/@core/components/spinner'
 
 interface Props {
   children: ReactNode
@@ -29,7 +28,7 @@ const WindowWrapper = ({ children }: Props) => {
   if (windowReadyFlag) {
     return <>{children}</>
   } else {
-    return <Spinner />
+    return null
   }
 }
 
