@@ -7,7 +7,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Getting Started',
-      items: ['getting-support', 'gitlab-access']
+      items: ['getting-support', 'gitlab-access', 'dependencies']
     },
     {
       type: 'category',

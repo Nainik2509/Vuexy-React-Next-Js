@@ -2,7 +2,6 @@ const fs = require('fs')
 const path = require('path')
 const pathsConfig = require('../configs/paths.json')
 
-
 const foldersToCopy = [
   `${pathsConfig.fullVersionPath}public`,
   `${pathsConfig.fullVersionPath}src`,
@@ -14,36 +13,35 @@ const foldersToCopy = [
   `${pathsConfig.fullVersionPath}yarn.lock`
 ]
 
-
 const dataToReplace = [
   {
-    file: `${pathsConfig.packagePath}/src/@core/layouts/VerticalLayout.js`,
+    file: `${pathsConfig.packagePath}/full-version/src/@core/layouts/VerticalLayout.js`,
     replacements: [
       {
         from: "import BuyNow from './components/BuyNow'",
         to: ''
       },
       {
-        from: "<BuyNow />",
+        from: '<BuyNow />',
         to: ''
       }
     ]
   },
   {
-    file: `${pathsConfig.packagePath}/src/@core/layouts/HorizontalLayout.js`,
+    file: `${pathsConfig.packagePath}/full-version/src/@core/layouts/HorizontalLayout.js`,
     replacements: [
       {
         from: "import BuyNow from './components/BuyNow'",
         to: ''
       },
       {
-        from: "<BuyNow />",
+        from: '<BuyNow />',
         to: ''
       }
     ]
   },
   {
-    file: `${pathsConfig.packagePath}/src/configs/themeConfig.js`,
+    file: `${pathsConfig.packagePath}/full-version/src/configs/themeConfig.js`,
     replacements: [
       {
         from: 'customizer: true',
@@ -67,7 +65,6 @@ const copyRecursiveSync = (src, dest) => {
     fs.copyFileSync(src, dest)
   }
 }
-
 
 module.exports = {
   foldersToCopy,

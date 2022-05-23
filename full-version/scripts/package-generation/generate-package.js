@@ -6,7 +6,7 @@ const { foldersToCopy, copyRecursiveSync, dataToReplace } = require('./helpers')
 const generatePackage = () => {
   // ** Copy Folders
   foldersToCopy.forEach(f => {
-    copyRecursiveSync(f, `${pathsConfig.packagePath}/${f.replace('../../', '')}`)
+    copyRecursiveSync(f, `${pathsConfig.packagePath}/full-version/${f.replace('../../', '')}`)
   })
 
   // ** Replace content in files
@@ -38,10 +38,12 @@ const generatePackage = () => {
 
   // ** Copy Base SCSS
   if (fs.existsSync('../../../vuexy-html-template/src/scss')) {
-    copyRecursiveSync('../../../vuexy-html-template/src/scss', `${pathsConfig.packagePath}/src/@core/scss/base`)
+    copyRecursiveSync(
+      '../../../vuexy-html-template/src/scss',
+      `${pathsConfig.packagePath}/full-version/src/@core/scss/base`
+    )
   }
 }
-
 
 if (fs.existsSync(pathsConfig.packagePath)) {
   fs.rm(pathsConfig.packagePath, { recursive: true, force: true }, err => {

@@ -119,3 +119,14 @@ import { Alert } from 'reactstrap'
     there's no need to import it. Other SCSS Files are meant to get imported only if they are required.
   </div>
 </Alert>
+
+### Using Variables in your scss file
+
+---
+
+If you want to use the variables you'll have to add two imports on top of your file which will give you access to all the scss variables used in the template.
+
+ ```scss
+@import '../../@core/scss/base/bootstrap-extended/include';
+@import '../../@core/scss/base/components/include';
+ ```

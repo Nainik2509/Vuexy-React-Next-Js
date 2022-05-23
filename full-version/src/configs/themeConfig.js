@@ -27,7 +27,6 @@ const themeConfig = {
     customizer: true,
     scrollTop: true, // Enable scroll to top button
     toastPosition: 'top-right'
-
   }
 }
 

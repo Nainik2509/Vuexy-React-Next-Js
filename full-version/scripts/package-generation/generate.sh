@@ -1,6 +1,6 @@
 node generate-package.js
 
-cd ../../../full-version
+cd ../../../package
 
 yarn
 
@@ -10,23 +10,21 @@ rm -rf node_modules
 
 cd ../
 
-echo $PWD
+# zip -r package.zip package
 
-zip -r full-version.zip full-version
+# wait
 
-wait
-
-rm -rf full-version
+# rm -rf package
 
 wait
 
-cd vuexy-react-template/scripts/starter-kit-generation
+cd full-version/scripts/starter-kit-generation
 
 sh generate.sh
 
 wait
 
-cd ../../../vuexy-react-starter-kit
+cd ../../../starter-kit
 
 rm -rf node_modules
 
@@ -34,6 +32,8 @@ wait
 
 cd ../
 
-wait
+# wait
 
-zip -r starter-kit.zip vuexy-react-starter-kit
+# zip -r starter-kit.zip vuexy-react-starter-kit
+
+cp -r starter-kit package/

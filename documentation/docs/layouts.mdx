@@ -148,8 +148,34 @@ import Layout from '@layouts/VerticalLayout'
 // ** Menu Items Array
 import navigation from '@src/navigation/vertical'
 
+const CustomNavbar = (props) => {
+  console.log(props)
+  return <p className='mb-0'>Custom Navbar</p>
+}
+
+const CustomFooter = () => {
+  return <p className='mb-0'>@ Some Company 2022</p>
+}
+
+const CustomMenu = (props) => {
+  console.log(props)
+  return(
+    <ul>
+      <li>Menu Item 1</li>
+      <li>Menu Item 2</li>
+      <li>Menu Item 3</li>
+    </ul>
+  )
+}
+
 const VerticalLayout = props => (
-  <Layout menuData={navigation} navbar={props => <CustomNavbar {...props}/>} menu={props => <CustomMenu {...props}/>} footer={<CustomFooter />} {...props}>
+  <Layout 
+    menuData={navigation} 
+    footer={<CustomFooter />}
+    menu={props => <CustomMenu {...props} />} 
+    navbar={props => <CustomNavbar {...props} />}
+    {...props}
+  >
     {props.children}
   </Layout>
 )
@@ -175,8 +201,34 @@ import Layout from '@layouts/HorizontalLayout'
 // ** Menu Items Array
 import navigation from '@src/navigation/horizontal'
 
+const CustomNavbar = (props) => {
+  console.log(props)
+  return <p className='mb-0'>Custom Navbar</p>
+}
+
+const CustomFooter = () => {
+  return <p className='mb-0'>@ Some Company 2022</p>
+}
+
+const CustomMenu = (props) => {
+  console.log(props)
+  return(
+    <ul>
+      <li>Menu Item 1</li>
+      <li>Menu Item 2</li>
+      <li>Menu Item 3</li>
+    </ul>
+  )
+}
+
 const HorizontalLayout = props => (
-  <Layout menuData={navigation} navbar={props => <CustomNavbar {...props} />} menu={props => <CustomMenu {...props} />} footer={<CustomFooter />} {...props}>
+  <Layout 
+    menuData={navigation} 
+    footer={<CustomFooter />}
+    menu={props => <CustomMenu {...props} />} 
+    navbar={props => <CustomNavbar {...props} />}
+    {...props}
+  >
     {props.children}
   </Layout>
 )
@@ -204,9 +256,15 @@ import Layout from '@layouts/VerticalLayout'
 // ** Menu Items Array
 import navigation from '@src/navigation/vertical'
 
+const CustomNavbar = (props) => {
+  console.log(props)
+  return <p className='mb-0'>I am in navbar everything else is removed</p>
+}
+
+
 const VerticalLayout = props => {
   return (
-    <Layout menuData={navigation} {...props}>
+    <Layout navbar={props => <CustomNavbar {...props} />} menuData={navigation} {...props}>
       {props.children}
     </Layout>
   )
