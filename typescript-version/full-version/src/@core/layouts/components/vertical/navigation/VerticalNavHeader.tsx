@@ -73,13 +73,14 @@ const VerticalNavHeader = (props: Props) => {
     verticalNavMenuBranding: userVerticalNavMenuBranding
   } = props
 
-  // ** Hooks
+  // ** Hooks & Vars
   const theme = useTheme()
+  const { navCollapsed } = settings
 
-  const menuCollapsedStyles = settings.navCollapsed && !navHover ? { opacity: 0 } : { opacity: 1 }
+  const menuCollapsedStyles = navCollapsed && !navHover ? { opacity: 0 } : { opacity: 1 }
 
   const menuHeaderPaddingLeft = () => {
-    if (settings.navCollapsed && !navHover) {
+    if (navCollapsed && !navHover) {
       if (userVerticalNavMenuBranding) {
         return 0
       } else {
@@ -180,10 +181,7 @@ const VerticalNavHeader = (props: Props) => {
                 </g>
               </g>
             </svg>
-            <HeaderTitle
-              variant='h6'
-              sx={{ ...menuCollapsedStyles, ...(settings.navCollapsed && !navHover ? {} : { ml: 3 }) }}
-            >
+            <HeaderTitle variant='h6' sx={{ ...menuCollapsedStyles, ...(navCollapsed && !navHover ? {} : { ml: 3 }) }}>
               {themeConfig.templateName}
             </HeaderTitle>
           </StyledLink>
@@ -203,10 +201,10 @@ const VerticalNavHeader = (props: Props) => {
         <IconButton
           disableRipple
           disableFocusRipple
-          onClick={() => saveSettings({ ...settings, navCollapsed: !settings.navCollapsed })}
+          onClick={() => saveSettings({ ...settings, navCollapsed: !navCollapsed })}
           sx={{ p: 0, color: 'text.primary', backgroundColor: 'transparent !important' }}
         >
-          {settings.navCollapsed ? MenuUnlockedIcon() : MenuLockedIcon()}
+          {navCollapsed ? MenuUnlockedIcon() : MenuLockedIcon()}
         </IconButton>
       )}
     </MenuHeaderWrapper>

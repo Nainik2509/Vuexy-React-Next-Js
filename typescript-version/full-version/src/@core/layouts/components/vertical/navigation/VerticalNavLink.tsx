@@ -47,12 +47,14 @@ const MenuNavLink = styled(ListItemButton)<
 >(({ theme }) => ({
   width: '100%',
   color: theme.palette.text.primary,
-  transition: 'padding .25s ease-in-out',
-  '&.active, &.active:hover': {
-    backgroundColor: theme.palette.primary.light
-  },
-  '&.active .MuiTypography-root, &.active .MuiSvgIcon-root': {
-    color: `${theme.palette.common.white} !important`
+  transition: 'padding-left .25s ease-in-out',
+  '&.active': {
+    '&, &:hover': {
+      backgroundColor: theme.palette.primary.light
+    },
+    '& .MuiTypography-root, & .MuiListItemIcon-root': {
+      color: `${theme.palette.common.white} !important`
+    }
   }
 }))
 
