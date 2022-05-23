@@ -262,7 +262,7 @@ const VerticalNavGroup = (props: Props) => {
               py: 2.5,
               width: '100%',
               ...conditionalBgColor(),
-              transition: 'padding .25s ease-in-out',
+              transition: 'padding-left .25s ease-in-out',
               pr: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 4.5,
               pl: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 5.5
             }}

@@ -237,7 +237,7 @@ const Autocomplete = styled(MuiAutocomplete)(({ theme }) => ({
         },
         '&.Mui-focused, &.Mui-focused.Mui-focusVisible:not(:hover)': {
           '& .MuiListItemSecondaryAction-root': {
-            display: 'block'
+            display: 'flex'
           }
         },
         [theme.breakpoints.down('sm')]: {

@@ -42,19 +42,19 @@ interface Props {
   beforeVerticalNavMenuContent?: (props?: any) => ReactNode
 }
 
-const StyledBoxForShadow = styled(Box)<BoxProps>({
-  top: 50,
+const StyledBoxForShadow = styled(Box)<BoxProps>(({ theme }) => ({
+  top: 60,
   left: -8,
   zIndex: 2,
-  height: 75,
   display: 'none',
   position: 'absolute',
   pointerEvents: 'none',
   width: 'calc(100% + 15px)',
+  height: theme.mixins.toolbar.minHeight,
   '&.d-block': {
     display: 'block'
   }
-})
+}))
 
 const Navigation = (props: Props) => {
   // ** Props
@@ -97,7 +97,7 @@ const Navigation = (props: Props) => {
 
   // ** Scroll Menu
   const scrollMenu = (container: any) => {
-    if (beforeVerticalNavMenuContentPosition === 'static') {
+    if (beforeVerticalNavMenuContentPosition === 'static' || !beforeVerticalNavMenuContent) {
       container = hidden ? container.target : container
       if (shadowRef && container.scrollTop > 0) {
         // @ts-ignore
@@ -114,20 +114,29 @@ const Navigation = (props: Props) => {
 
   const shadowBgColor = () => {
     if (skin === 'semi-dark' && theme.palette.mode === 'light') {
-      return `linear-gradient(${theme.palette.customColors.darkBg} 40%,${hexToRGBA(
+      return `linear-gradient(${theme.palette.customColors.darkBg} 5%,${hexToRGBA(
         theme.palette.customColors.darkBg,
-        0.1
-      )} 95%,${hexToRGBA(theme.palette.customColors.darkBg, 0.05)})`
+        0.85
+      )} 30%,${hexToRGBA(theme.palette.customColors.darkBg, 0.5)} 65%,${hexToRGBA(
+        theme.palette.customColors.darkBg,
+        0.3
+      )} 75%,transparent)`
     } else if (skin === 'semi-dark' && theme.palette.mode === 'dark') {
-      return `linear-gradient(${theme.palette.customColors.lightBg} 40%,${hexToRGBA(
+      return `linear-gradient(${theme.palette.customColors.lightBg} 5%,${hexToRGBA(
         theme.palette.customColors.lightBg,
-        0.1
-      )} 95%,${hexToRGBA(theme.palette.customColors.lightBg, 0.05)})`
+        0.85
+      )} 30%,${hexToRGBA(theme.palette.customColors.lightBg, 0.5)} 65%,${hexToRGBA(
+        theme.palette.customColors.lightBg,
+        0.3
+      )} 75%,transparent)`
     } else {
-      return `linear-gradient(${theme.palette.background.default} 40%,${hexToRGBA(
+      return `linear-gradient(${theme.palette.background.default} 5%,${hexToRGBA(
         theme.palette.background.default,
-        0.1
-      )} 95%,${hexToRGBA(theme.palette.background.default, 0.05)})`
+        0.85
+      )} 30%,${hexToRGBA(theme.palette.background.default, 0.5)} 65%,${hexToRGBA(
+        theme.palette.background.default,
+        0.3
+      )} 75%,transparent)`
     }
   }
 
@@ -139,7 +148,7 @@ const Navigation = (props: Props) => {
       {beforeVerticalNavMenuContent && beforeVerticalNavMenuContentPosition === 'fixed'
         ? beforeVerticalNavMenuContent(props)
         : null}
-      {beforeVerticalNavMenuContentPosition === 'static' && (
+      {(beforeVerticalNavMenuContentPosition === 'static' || !beforeVerticalNavMenuContent) && (
         <StyledBoxForShadow ref={shadowRef} sx={{ background: shadowBgColor() }} />
       )}
       <Box sx={{ position: 'relative', overflow: 'hidden' }}>

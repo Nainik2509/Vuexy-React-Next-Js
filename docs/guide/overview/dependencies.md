@@ -184,6 +184,12 @@ The following dependencies are common and required to run the template. Do not t
 "@types/react-credit-cards" // Typescript version only
 ```
 
+## Swiper
+
+```json
+"keen-slider"
+```
+
 ## Kanban
 
 ```json
