@@ -19,9 +19,18 @@ const CanViewNavGroup = (props: Props) => {
   // ** Hook
   const ability = useContext(AbilityContext)
 
+  const checkForVisibleChild = (arr: NavLink[] | NavGroup[]): boolean => {
+    return arr.some((i: NavGroup) => {
+      if (i.children) {
+        return checkForVisibleChild(i.children)
+      } else {
+        return ability?.can(i.action, i.subject)
+      }
+    })
+  }
+
   const canViewMenuGroup = (item: NavGroup) => {
-    const hasAnyVisibleChild =
-      item.children && item.children.some((i: NavLink) => ability && ability.can(i.action, i.subject))
+    const hasAnyVisibleChild = item.children && checkForVisibleChild(item.children)
 
     if (!(item.action && item.subject)) {
       return hasAnyVisibleChild
