@@ -9,7 +9,6 @@ const themeConfig = {
   layout: {
     isRTL: false,
     skin: 'light', // light, dark, bordered, semi-dark
-    routerTransition: 'fadeIn', // fadeIn, fadeInLeft, zoomIn, none or check this for more transition https://animate.style/
     type: 'vertical', // vertical, horizontal
     contentWidth: 'boxed', // full, boxed
     menu: {
@@ -27,7 +26,6 @@ const themeConfig = {
     customizer: true,
     scrollTop: true, // Enable scroll to top button
     toastPosition: 'top-right' // top-left, top-center, top-right, bottom-left, bottom-center, bottom-right
-
   }
 }
 

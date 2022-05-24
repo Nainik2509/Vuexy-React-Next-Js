@@ -4,7 +4,6 @@ import { useState } from 'react'
 // ** Third Party Components
 import Select from 'react-select'
 import classnames from 'classnames'
-import { selectThemeColors } from '@utils'
 import { Settings, X } from 'react-feather'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
@@ -26,13 +25,11 @@ const Customizer = props => {
     setLayout,
     navbarType,
     footerType,
-    transition,
     navbarColor,
     setIsHidden,
     contentWidth,
     menuCollapsed,
     setLastLayout,
-    setTransition,
     setNavbarType,
     setFooterType,
     setNavbarColor,
@@ -190,17 +187,6 @@ const Customizer = props => {
     })
   }
 
-  // **  Router Transition Options
-  const transitionOptions = [
-    { value: 'fadeIn', label: 'Fade' },
-    { value: 'fadeInLeft', label: 'Fade In Left' },
-    { value: 'zoomIn', label: 'Zoom In' },
-    { value: 'none', label: 'None' }
-  ]
-
-  // ** Get Current Transition
-  const transitionValue = transitionOptions.find(i => i.value === transition)
-
   return (
     <div
       className={classnames('customizer d-none d-md-block', {
@@ -259,22 +245,6 @@ const Customizer = props => {
             <div className='d-flex'>
               <p className='fw-bold me-auto mb-0'>RTL</p>
               <Input type='switch' id='rtl' name='RTL' checked={isRtl} onChange={() => setIsRtl(!isRtl)} />
-            </div>
-          </div>
-
-          <div className='mb-2'>
-            <div className='d-flex justify-content-between align-items-center'>
-              <p className='fw-bold mb-0'>Router Transition</p>
-              <Select
-                theme={selectThemeColors}
-                className='react-select'
-                classNamePrefix='select'
-                defaultValue={transitionOptions[0]}
-                value={transitionValue}
-                options={transitionOptions}
-                isClearable={false}
-                onChange={({ value }) => setTransition(value)}
-              />
             </div>
           </div>
         </div>

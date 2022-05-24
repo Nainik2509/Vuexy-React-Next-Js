@@ -31,7 +31,6 @@ import { useLayout } from '@hooks/useLayout'
 import { useNavbarType } from '@hooks/useNavbarType'
 import { useFooterType } from '@hooks/useFooterType'
 import { useNavbarColor } from '@hooks/useNavbarColor'
-import { useRouterTransition } from '@hooks/useRouterTransition'
 
 // ** Styles
 import '@styles/base/core/menu/menu-types/vertical-menu.scss'
@@ -48,7 +47,6 @@ const VerticalLayout = props => {
   const { footerType, setFooterType } = useFooterType()
   const { navbarColor, setNavbarColor } = useNavbarColor()
   const { layout, setLayout, setLastLayout } = useLayout()
-  const { transition, setTransition } = useRouterTransition()
 
   // ** States
   const [isMounted, setIsMounted] = useState(false)
@@ -197,12 +195,10 @@ const VerticalLayout = props => {
           setLayout={setLayout}
           footerType={footerType}
           navbarType={navbarType}
-          transition={transition}
           setIsHidden={setIsHidden}
           themeConfig={themeConfig}
           navbarColor={navbarColor}
           contentWidth={contentWidth}
-          setTransition={setTransition}
           setFooterType={setFooterType}
           setNavbarType={setNavbarType}
           setLastLayout={setLastLayout}
