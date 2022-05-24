@@ -93,9 +93,7 @@ const ForgotPassword = () => {
           <ForgotPasswordIllustrationWrapper>
             <ForgotPasswordIllustration
               alt='forgot-password-illustration'
-              src={`/images/pages/auth-v2-forgot-password-illustration-${
-                theme.palette.mode === 'light' ? 'light' : 'dark'
-              }.png`}
+              src={`/images/pages/auth-v2-forgot-password-illustration-${theme.palette.mode}.png`}
             />
           </ForgotPasswordIllustrationWrapper>
           <FooterIllustrationsV2 />
