@@ -1,13 +1,13 @@
 // ** React Imports
-import { Link } from 'react-router-dom'
-import { Fragment, useEffect, useState } from 'react'
+import { Link } from "react-router-dom"
+import { Fragment, useEffect, useState } from "react"
 
 // ** Third Party Components
-import * as Icon from 'react-feather'
-import classnames from 'classnames'
+import * as Icon from "react-feather"
+import classnames from "classnames"
 
 // ** Custom Component
-import Autocomplete from '@components/autocomplete'
+import Autocomplete from "@components/autocomplete"
 
 // ** Reactstrap Imports
 import {
@@ -18,23 +18,27 @@ import {
   DropdownToggle,
   UncontrolledTooltip,
   UncontrolledDropdown
-} from 'reactstrap'
+} from "reactstrap"
 
 // ** Store & Actions
-import { useDispatch, useSelector } from 'react-redux'
-import { getBookmarks, updateBookmarked, handleSearchQuery } from '@store/navbar'
+import { useDispatch, useSelector } from "react-redux"
+import {
+  getBookmarks,
+  updateBookmarked,
+  handleSearchQuery
+} from "@store/navbar"
 
-const NavbarBookmarks = props => {
+const NavbarBookmarks = (props) => {
   // ** Props
   const { setMenuVisibility } = props
 
   // ** State
-  const [value, setValue] = useState('')
+  const [value, setValue] = useState("")
   const [openSearch, setOpenSearch] = useState(false)
 
   // ** Store Vars
   const dispatch = useDispatch()
-  const store = useSelector(state => state.navbar)
+  const store = useSelector((state) => state.navbar)
 
   // ** ComponentDidMount
   useEffect(() => {
@@ -45,13 +49,15 @@ const NavbarBookmarks = props => {
   const renderBookmarks = () => {
     if (store.bookmarks.length) {
       return store.bookmarks
-        .map(item => {
+        .map((item) => {
           const IconTag = Icon[item.icon]
           return (
-            <NavItem key={item.target} className='d-none d-lg-block'>
+            <NavItem key={item.target} className="d-none d-lg-block">
               <NavLink tag={Link} to={item.link} id={item.target}>
-                <IconTag className='ficon' />
-                <UncontrolledTooltip target={item.target}>{item.title}</UncontrolledTooltip>
+                <IconTag className="ficon" />
+                <UncontrolledTooltip target={item.target}>
+                  {item.title}
+                </UncontrolledTooltip>
               </NavLink>
             </NavItem>
           )
@@ -66,20 +72,20 @@ const NavbarBookmarks = props => {
   const renderExtraBookmarksDropdown = () => {
     if (store.bookmarks.length && store.bookmarks.length >= 11) {
       return (
-        <NavItem className='d-none d-lg-block'>
-          <NavLink tag='span'>
+        <NavItem className="d-none d-lg-block">
+          <NavLink tag="span">
             <UncontrolledDropdown>
-              <DropdownToggle tag='span'>
-                <Icon.ChevronDown className='ficon' />
+              <DropdownToggle tag="span">
+                <Icon.ChevronDown className="ficon" />
               </DropdownToggle>
               <DropdownMenu end>
                 {store.bookmarks
-                  .map(item => {
+                  .map((item) => {
                     const IconTag = Icon[item.icon]
                     return (
                       <DropdownItem tag={Link} to={item.link} key={item.id}>
-                        <IconTag className='me-50' size={14} />
-                        <span className='align-middle'>{item.title}</span>
+                        <IconTag className="me-50" size={14} />
+                        <span className="align-middle">{item.title}</span>
                       </DropdownItem>
                     )
                   })
@@ -95,10 +101,10 @@ const NavbarBookmarks = props => {
   }
 
   // ** Removes query in store
-  const handleClearQueryInStore = () => dispatch(handleSearchQuery(''))
+  const handleClearQueryInStore = () => dispatch(handleSearchQuery(""))
 
   // ** Loops through Bookmarks Array to return Bookmarks
-  const onKeyDown = e => {
+  const onKeyDown = (e) => {
     if (e.keyCode === 27 || e.keyCode === 13) {
       setTimeout(() => {
         setOpenSearch(false)
@@ -108,17 +114,17 @@ const NavbarBookmarks = props => {
   }
 
   // ** Function to toggle Bookmarks
-  const handleBookmarkUpdate = id => dispatch(updateBookmarked(id))
+  const handleBookmarkUpdate = (id) => dispatch(updateBookmarked(id))
 
   // ** Function to handle Bookmarks visibility
   const handleBookmarkVisibility = () => {
     setOpenSearch(!openSearch)
-    setValue('')
+    setValue("")
     handleClearQueryInStore()
   }
 
   // ** Function to handle Input change
-  const handleInputChange = e => {
+  const handleInputChange = (e) => {
     setValue(e.target.value)
     dispatch(handleSearchQuery(e.target.value))
   }
@@ -132,47 +138,57 @@ const NavbarBookmarks = props => {
   }
 
   // ** Function to clear input value
-  const handleClearInput = setUserInput => {
+  const handleClearInput = (setUserInput) => {
     if (!openSearch) {
-      setUserInput('')
+      setUserInput("")
       handleClearQueryInStore()
     }
   }
 
   return (
     <Fragment>
-      <ul className='navbar-nav d-xl-none'>
-        <NavItem className='mobile-menu me-auto'>
-          <NavLink className='nav-menu-main menu-toggle hidden-xs is-active' onClick={() => setMenuVisibility(true)}>
-            <Icon.Menu className='ficon' />
+      <ul className="navbar-nav d-xl-none">
+        <NavItem className="mobile-menu me-auto">
+          <NavLink
+            className="nav-menu-main menu-toggle hidden-xs is-active"
+            onClick={() => setMenuVisibility(true)}
+          >
+            <Icon.Menu className="ficon" />
           </NavLink>
         </NavItem>
       </ul>
-      <ul className='nav navbar-nav bookmark-icons'>
+      <ul className="nav navbar-nav bookmark-icons">
         {renderBookmarks()}
         {renderExtraBookmarksDropdown()}
-        <NavItem className='nav-item d-none d-lg-block'>
-          <NavLink className='bookmark-star' onClick={handleBookmarkVisibility}>
-            <Icon.Star className='ficon text-warning' />
+        <NavItem className="nav-item d-none d-lg-block">
+          <NavLink className="bookmark-star" onClick={handleBookmarkVisibility}>
+            <Icon.Star className="ficon text-warning" />
           </NavLink>
-          <div className={classnames('bookmark-input search-input', { show: openSearch })}>
-            <div className='bookmark-input-icon'>
+          <div
+            className={classnames("bookmark-input search-input", {
+              show: openSearch
+            })}
+          >
+            <div className="bookmark-input-icon">
               <Icon.Search size={14} />
             </div>
             {openSearch && store.suggestions.length ? (
               <Autocomplete
-                wrapperClass={classnames('search-list search-list-bookmark', {
+                wrapperClass={classnames("search-list search-list-bookmark", {
                   show: openSearch
                 })}
-                className='form-control'
-                suggestions={!value.length ? store.bookmarks : store.suggestions}
-                filterKey='title'
+                className="form-control"
+                suggestions={
+                  !value.length ? store.bookmarks : store.suggestions
+                }
+                filterKey="title"
                 autoFocus={true}
                 defaultSuggestions
                 suggestionLimit={!value.length ? store.bookmarks.length : 6}
-                placeholder='Search...'
+                placeholder="Search..."
                 externalClick={handleExternalClick}
-                clearInput={(userInput, setUserInput) => handleClearInput(setUserInput)}
+                clearInput={(userInput, setUserInput) => handleClearInput(setUserInput)
+                }
                 onKeyDown={onKeyDown}
                 value={value}
                 onChange={handleInputChange}
@@ -184,35 +200,40 @@ const NavbarBookmarks = props => {
                   onSuggestionItemClick,
                   onSuggestionItemHover
                 ) => {
-                  const IconTag = Icon[item.icon ? item.icon : 'X']
+                  const IconTag = Icon[item.icon ? item.icon : "X"]
                   return (
                     <li
                       key={i}
-                      onMouseEnter={() => onSuggestionItemHover(filteredData.indexOf(item))}
-                      className={classnames('suggestion-item d-flex align-items-center justify-content-between', {
-                        active: filteredData.indexOf(item) === activeSuggestion
-                      })}
+                      onMouseEnter={() => onSuggestionItemHover(filteredData.indexOf(item))
+                      }
+                      className={classnames(
+                        "suggestion-item d-flex align-items-center justify-content-between",
+                        {
+                          active:
+                            filteredData.indexOf(item) === activeSuggestion
+                        }
+                      )}
                     >
                       <Link
                         to={item.link}
-                        className='d-flex align-items-center justify-content-between p-0'
+                        className="d-flex align-items-center justify-content-between p-0"
                         onClick={() => {
                           setOpenSearch(false)
                           handleClearQueryInStore()
                         }}
                         style={{
-                          width: 'calc(90%)'
+                          width: "calc(90%)"
                         }}
                       >
-                        <div className='d-flex justify-content-start align-items-center overflow-hidden'>
-                          <IconTag size={17.5} className='me-75' />
-                          <span className='text-truncate'>{item.title}</span>
+                        <div className="d-flex justify-content-start align-items-center overflow-hidden">
+                          <IconTag size={17.5} className="me-75" />
+                          <span className="text-truncate">{item.title}</span>
                         </div>
                       </Link>
                       <Icon.Star
                         size={17.5}
-                        className={classnames('bookmark-icon float-end', {
-                          'text-warning': item.isBookmarked
+                        className={classnames("bookmark-icon float-end", {
+                          "text-warning": item.isBookmarked
                         })}
                         onClick={() => handleBookmarkUpdate(item.id)}
                       />

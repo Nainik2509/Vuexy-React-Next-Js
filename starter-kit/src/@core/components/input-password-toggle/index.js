@@ -1,13 +1,13 @@
 // ** React Imports
-import { Fragment, useState, forwardRef } from 'react'
+import { Fragment, useState, forwardRef } from "react"
 
 // ** Third Party Components
-import PropTypes from 'prop-types'
-import classnames from 'classnames'
-import { Eye, EyeOff } from 'react-feather'
+import PropTypes from "prop-types"
+import classnames from "classnames"
+import { Eye, EyeOff } from "react-feather"
 
 // ** Reactstrap Imports
-import { InputGroup, Input, InputGroupText, Label } from 'reactstrap'
+import { InputGroup, Input, InputGroupText, Label } from "reactstrap"
 
 const InputPasswordToggle = forwardRef((props, ref) => {
   // ** Props
@@ -42,34 +42,37 @@ const InputPasswordToggle = forwardRef((props, ref) => {
   return (
     <Fragment>
       {label ? (
-        <Label className='form-label' for={htmlFor}>
+        <Label className="form-label" for={htmlFor}>
           {label}
         </Label>
       ) : null}
       <InputGroup
         className={classnames({
           [className]: className,
-          'is-invalid': invalid
+          "is-invalid": invalid
         })}
       >
         <Input
           ref={ref}
           invalid={invalid}
-          type={inputVisibility === false ? 'password' : 'text'}
-          placeholder={placeholder ? placeholder : '············'}
+          type={inputVisibility === false ? "password" : "text"}
+          placeholder={placeholder ? placeholder : "············"}
           className={classnames({
             [inputClassName]: inputClassName
           })}
           /*eslint-disable */
           {...(label && htmlFor
             ? {
-                id: htmlFor
+                id: htmlFor,
               }
             : {})}
           {...rest}
           /*eslint-enable */
         />
-        <InputGroupText className='cursor-pointer' onClick={() => setInputVisibility(!inputVisibility)}>
+        <InputGroupText
+          className="cursor-pointer"
+          onClick={() => setInputVisibility(!inputVisibility)}
+        >
           {renderIcon()}
         </InputGroupText>
       </InputGroup>
@@ -91,14 +94,14 @@ InputPasswordToggle.propTypes = {
   inputClassName: PropTypes.string,
   label(props, propName) {
     // ** If label is defined and htmlFor is undefined throw error
-    if (props[propName] && props['htmlFor'] === 'undefined') {
-      throw new Error('htmlFor prop is required when label prop is present')
+    if (props[propName] && props["htmlFor"] === "undefined") {
+      throw new Error("htmlFor prop is required when label prop is present")
     }
   },
   htmlFor(props, propName) {
     // ** If htmlFor is defined and label is undefined throw error
-    if (props[propName] && props['label'] === 'undefined') {
-      throw new Error('label prop is required when htmlFor prop is present')
+    if (props[propName] && props["label"] === "undefined") {
+      throw new Error("label prop is required when htmlFor prop is present")
     }
   }
 }

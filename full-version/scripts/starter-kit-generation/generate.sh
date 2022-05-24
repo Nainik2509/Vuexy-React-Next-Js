@@ -6,8 +6,10 @@ node replace.js
 
 wait
 
-cd ../../../vuexy-react-starter-kit
+cd ../../../starter-kit
 
 yarn
 
 yarn format
+
+yarn lint:fix

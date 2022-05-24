@@ -1,29 +1,29 @@
 // ** Redux Imports
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit"
 
 // ** ThemeConfig Import
-import themeConfig from '@configs/themeConfig'
+import themeConfig from "@configs/themeConfig"
 
 const initialMenuCollapsed = () => {
-  const item = window.localStorage.getItem('menuCollapsed')
+  const item = window.localStorage.getItem("menuCollapsed")
   //** Parse stored json or if none return initialValue
   return item ? JSON.parse(item) : themeConfig.layout.menu.isCollapsed
 }
 
 const initialDirection = () => {
-  const item = window.localStorage.getItem('direction')
+  const item = window.localStorage.getItem("direction")
   //** Parse stored json or if none return initialValue
   return item ? JSON.parse(item) : themeConfig.layout.isRTL
 }
 
 const initialSkin = () => {
-  const item = window.localStorage.getItem('skin')
+  const item = window.localStorage.getItem("skin")
   //** Parse stored json or if none return initialValue
   return item ? JSON.parse(item) : themeConfig.layout.skin
 }
 
 export const layoutSlice = createSlice({
-  name: 'layout',
+  name: "layout",
   initialState: {
     skin: initialSkin(),
     isRTL: initialDirection(),
@@ -40,11 +40,11 @@ export const layoutSlice = createSlice({
   reducers: {
     handleRTL: (state, action) => {
       state.isRTL = action.payload
-      window.localStorage.setItem('direction', JSON.stringify(action.payload))
+      window.localStorage.setItem("direction", JSON.stringify(action.payload))
     },
     handleSkin: (state, action) => {
       state.skin = action.payload
-      window.localStorage.setItem('skin', JSON.stringify(action.payload))
+      window.localStorage.setItem("skin", JSON.stringify(action.payload))
     },
     handleLayout: (state, action) => {
       state.layout = action.payload
@@ -69,7 +69,10 @@ export const layoutSlice = createSlice({
     },
     handleMenuCollapsed: (state, action) => {
       state.menuCollapsed = action.payload
-      window.localStorage.setItem('menuCollapsed', JSON.stringify(action.payload))
+      window.localStorage.setItem(
+        "menuCollapsed",
+        JSON.stringify(action.payload)
+      )
     },
     handleRouterTransition: (state, action) => {
       state.routerTransition = action.payload

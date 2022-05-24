@@ -151,7 +151,7 @@ const dataToReplace = [
         to: '/register'
       },
       {
-        from : "<Button color='primary' block>",
+        from: "<Button color='primary' block>",
         to: "<Button tag={Link} to='/' color='primary' block>"
       }
     ]
@@ -160,8 +160,21 @@ const dataToReplace = [
     file: `${pathsConfig.starterKitPath}/src/views/NotAuthorized.js`,
     replacements: [
       {
+        from: 'getUserData, getHomeRouteForLoggedInUser',
+        to: ''
+      },
+
+      {
         from: "user ? getHomeRouteForLoggedInUser(user.role) : '/'",
         to: "'/'"
+      },
+      {
+        from: 'const user = getUserData()',
+        to: ''
+      },
+      {
+        from: new RegExp(/\/\/ \*\* Vars/),
+        to: ''
       }
     ]
   },
@@ -176,8 +189,8 @@ const dataToReplace = [
         from: '/pages/login-cover',
         to: '/login'
       },
-       {
-        from : "<Button color='primary' block>",
+      {
+        from: "<Button color='primary' block>",
         to: "<Button tag={Link} to='/' color='primary' block>"
       }
     ]
@@ -262,7 +275,7 @@ const dataToReplace = [
         to: ''
       },
       {
-        from: "<BuyNow />",
+        from: '<BuyNow />',
         to: ''
       }
     ]
@@ -275,7 +288,7 @@ const dataToReplace = [
         to: ''
       },
       {
-        from: "<BuyNow />",
+        from: '<BuyNow />',
         to: ''
       }
     ]
@@ -325,7 +338,6 @@ const cleanEmptyFoldersRecursively = folder => {
     fs.rmdirSync(folder)
   }
 }
-
 
 module.exports = {
   imagesToKeep,

@@ -2,12 +2,9 @@ const fs = require('fs')
 
 const packageFilePath = '../../package.json'
 const envFilePath = '../../.env'
-const themeConfigFilePath =
-  '../../src/configs/themeConfig.js'
-const useSkinHookFilePath =
-  '../../src/utility/hooks/useSkin.js'
-const layoutReducerFilePath =
-  '../../src/redux/reducers/layout/index.js'
+const themeConfigFilePath = '../../src/configs/themeConfig.js'
+const useSkinHookFilePath = '../../src/utility/hooks/useSkin.js'
+const layoutReducerFilePath = '../../src/redux/reducers/layout/index.js'
 const indexFile = '../../src/index.js'
 
 let demo = 'demo-1'
@@ -100,16 +97,19 @@ if (fs.existsSync(indexFile)) {
     if (err) {
       console.log(err)
     } else {
-      const result = data.replace('<BrowserRouter>', `<BrowserRouter basename='/demo/vuexy-react-admin-dashboard-template/${demo}'>`)
+      const result = data.replace(
+        '<BrowserRouter>',
+        `<BrowserRouter basename='/demo/vuexy-react-admin-dashboard-template/${demo}'>`
+      )
 
-      fs.writeFile(indexFile, '', (err) => {
+      fs.writeFile(indexFile, '', err => {
         if (err) {
           console.log(err)
         } else {
           fs.writeFile(indexFile, result, err => {
             if (err) {
-          console.log(err)
-        }
+              console.log(err)
+            }
           })
         }
       })

@@ -10,13 +10,8 @@ rm -rf node_modules
 
 cd ../
 
-# zip -r package.zip package
-
-# wait
-
-# rm -rf package
-
 wait
+
 
 cd full-version/scripts/starter-kit-generation
 
@@ -32,8 +27,28 @@ wait
 
 cd ../
 
-# wait
-
-# zip -r starter-kit.zip vuexy-react-starter-kit
-
 cp -r starter-kit package/
+
+cp -r full-version/scripts/demo-generation/demo-configs package/
+
+cd ./package/full-version
+
+yarn && yarn format && yarn lint:fix 
+
+wait
+
+rm -rf node_modules
+
+wait
+
+cd ../starter-kit
+
+yarn && yarn format && yarn lint:fix 
+
+wait
+
+rm -rf node_modules
+
+cd ../../
+
+zip -r package.zip package
