@@ -9,11 +9,11 @@ import { Direction } from '@mui/material'
 import { useKeenSlider } from 'keen-slider/react'
 
 const images = [
-  '/images/banner/banner-9.jpg',
-  '/images/banner/banner-7.jpg',
-  '/images/banner/banner-6.jpg',
-  '/images/banner/banner-10.jpg',
-  '/images/banner/banner-8.jpg'
+  '/images/banners/banner-9.jpg',
+  '/images/banners/banner-7.jpg',
+  '/images/banners/banner-6.jpg',
+  '/images/banners/banner-10.jpg',
+  '/images/banners/banner-8.jpg'
 ]
 
 const SwiperFader = ({ direction }: { direction: Direction }) => {
