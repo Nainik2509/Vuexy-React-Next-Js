@@ -1,6 +1,7 @@
 import mock from './mock'
 
 import './jwt'
+import './select'
 import './pages/faq'
 import './apps/chat'
 import './apps/todo'

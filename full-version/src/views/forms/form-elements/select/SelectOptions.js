@@ -8,7 +8,8 @@ import { Card, CardHeader, CardTitle, CardBody, Row, Col, Label } from 'reactstr
 import { selectThemeColors } from '@utils'
 
 // ** Third Party Components
-import Select, { components } from 'react-select'
+import axios from 'axios'
+import Select, { components } from 'react-select' // eslint-disable-line
 import makeAnimated from 'react-select/animated'
 import CreatableSelect from 'react-select/creatable'
 import AsyncSelect from 'react-select/async'
@@ -163,6 +164,8 @@ const formatGroupLabel = data => (
 
 const SelectOptions = () => {
   // ** State
+  const [query, setQuery] = useState('')
+  const [selectedDBVal, setSelectedDBVal] = useState(null)
   const [fixedValue, setFixedValue] = useState(orderOptions([colorOptions[0], colorOptions[1], colorOptions[3]]))
 
   const filterColors1 = inputValue => {
@@ -203,11 +206,26 @@ const SelectOptions = () => {
     return val
   }
 
+  const handleDBInputChange = newValue => {
+    setQuery(newValue)
+  }
+
+  // handle selection
+  const handleDBChange = value => {
+    setSelectedDBVal(value)
+  }
+
   const promiseOptions = inputValue => {
     return new Promise(resolve => {
       setTimeout(() => {
         resolve(filterColors2(inputValue))
       }, 2000)
+    })
+  }
+
+  const loadOptionsDB = () => {
+    return axios.get('/api/select/data', { query }).then(res => {
+      return res.data
     })
   }
 
@@ -310,6 +328,21 @@ const SelectOptions = () => {
               components={{
                 Option: OptionComponent
               }}
+            />
+          </Col>
+          <Col className='mb-1' md='6' sm='12'>
+            <Label className='form-label'>Async Select With Database</Label>
+            <AsyncSelect
+              defaultOptions
+              isClearable={false}
+              value={selectedDBVal}
+              name='db-react-select'
+              className='react-select'
+              classNamePrefix='select'
+              onChange={handleDBChange}
+              theme={selectThemeColors}
+              loadOptions={loadOptionsDB}
+              onInputChange={handleDBInputChange}
             />
           </Col>
         </Row>
