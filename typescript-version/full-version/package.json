@@ -34,7 +34,7 @@
     "@popperjs/core": "^2.11.2",
     "@reduxjs/toolkit": "^1.8.1",
     "apexcharts-clevision": "3.28.5",
-    "aws-amplify": "^4.3.20",
+    "aws-amplify": "4.3.22",
     "axios": "^0.27.2",
     "axios-mock-adapter": "^1.20.0",
     "chart.js": "^3.7.1",
