@@ -119,7 +119,7 @@ const RegisterV2 = () => {
   const { settings } = useSettings()
 
   // ** Vars
-  const { mode, skin } = settings
+  const { skin } = settings
   const hidden = useMediaQuery(theme.breakpoints.down('md'))
 
   const handleSubmit = (e: SyntheticEvent) => {
@@ -143,7 +143,10 @@ const RegisterV2 = () => {
       {!hidden ? (
         <Box sx={{ flex: 1, display: 'flex', position: 'relative', alignItems: 'center', justifyContent: 'center' }}>
           <RegisterIllustrationWrapper>
-            <RegisterIllustration alt='register-illustration' src={`/images/pages/${imageSource}-${mode}.png`} />
+            <RegisterIllustration
+              alt='register-illustration'
+              src={`/images/pages/${imageSource}-${theme.palette.mode}.png`}
+            />
           </RegisterIllustrationWrapper>
           <FooterIllustrationsV2 image={<TreeIllustration alt='tree' src='/images/pages/tree-2.png' />} />
         </Box>

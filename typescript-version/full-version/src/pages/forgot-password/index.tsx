@@ -80,7 +80,7 @@ const ForgotPassword = () => {
   const { settings } = useSettings()
 
   // ** Vars
-  const { mode, skin } = settings
+  const { skin } = settings
   const hidden = useMediaQuery(theme.breakpoints.down('md'))
 
   const handleSubmit = (e: SyntheticEvent) => {
@@ -97,7 +97,7 @@ const ForgotPassword = () => {
           <ForgotPasswordIllustrationWrapper>
             <ForgotPasswordIllustration
               alt='forgot-password-illustration'
-              src={`/images/pages/${imageSource}-${mode}.png`}
+              src={`/images/pages/${imageSource}-${theme.palette.mode}.png`}
             />
           </ForgotPasswordIllustrationWrapper>
           <FooterIllustrationsV2 />

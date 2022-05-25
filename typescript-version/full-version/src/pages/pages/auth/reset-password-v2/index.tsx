@@ -111,7 +111,7 @@ const ResetPasswordV2 = () => {
   const { settings } = useSettings()
 
   // ** Vars
-  const { mode, skin } = settings
+  const { skin } = settings
   const hidden = useMediaQuery(theme.breakpoints.down('md'))
 
   const handleSubmit = (e: SyntheticEvent) => {
@@ -150,7 +150,7 @@ const ResetPasswordV2 = () => {
           <ResetPasswordIllustrationWrapper>
             <ResetPasswordIllustration
               alt='reset-password-illustration'
-              src={`/images/pages/${imageSource}-${mode}.png`}
+              src={`/images/pages/${imageSource}-${theme.palette.mode}.png`}
             />
           </ResetPasswordIllustrationWrapper>
           <FooterIllustrationsV2 image={<TreeIllustration alt='tree' src='/images/pages/tree-3.png' />} />
