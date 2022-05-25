@@ -26,7 +26,6 @@ const LayoutWrapper = (props) => {
   const navbarStore = store.navbar
   const layoutStored = store.layout.layout
   const contentWidth = store.layout.contentWidth
-  const transition = store.layout.routerTransition
   //** Vars
   const appLayoutCondition =
     (layoutStored.layout === "horizontal" && !routeMeta) ||
@@ -78,9 +77,7 @@ const LayoutWrapper = (props) => {
         className={classnames({
           "content-wrapper": routeMeta && !routeMeta.appLayout,
           "content-area-wrapper": routeMeta && routeMeta.appLayout,
-          "container-xxl p-0": contentWidth === "boxed",
-          [`animate__animated animate__${transition}`]:
-            transition !== "none" && transition.length
+          "container-xxl p-0": contentWidth === "boxed"
         })}
       >
         <Tag {...(appLayoutCondition ? { className: "content-body" } : {})}>

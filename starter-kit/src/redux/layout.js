@@ -34,7 +34,6 @@ export const layoutSlice = createSlice({
     navbarType: themeConfig.layout.navbar.type,
     menuHidden: themeConfig.layout.menu.isHidden,
     contentWidth: themeConfig.layout.contentWidth,
-    routerTransition: themeConfig.layout.routerTransition,
     navbarColor: themeConfig.layout.navbar.backgroundColor
   },
   reducers: {
@@ -73,9 +72,6 @@ export const layoutSlice = createSlice({
         "menuCollapsed",
         JSON.stringify(action.payload)
       )
-    },
-    handleRouterTransition: (state, action) => {
-      state.routerTransition = action.payload
     }
   }
 })
@@ -90,8 +86,7 @@ export const {
   handleFooterType,
   handleNavbarColor,
   handleContentWidth,
-  handleMenuCollapsed,
-  handleRouterTransition
+  handleMenuCollapsed
 } = layoutSlice.actions
 
 export default layoutSlice.reducer

@@ -33,7 +33,7 @@ cp -r full-version/scripts/demo-generation/demo-configs package/
 
 cd ./package/full-version
 
-yarn && yarn format && yarn lint:fix 
+yarn && yarn lint:fix && yarn format 
 
 wait
 
@@ -43,7 +43,7 @@ wait
 
 cd ../starter-kit
 
-yarn && yarn format && yarn lint:fix 
+yarn && yarn lint:fix && yarn format
 
 wait
 
