@@ -123,7 +123,7 @@ const Register = () => {
   const hidden = useMediaQuery(theme.breakpoints.down('md'))
 
   // ** Vars
-  const { skin } = settings
+  const { mode, skin } = settings
   const schema = yup.object().shape({
     password: yup.string().min(5).required(),
     username: yup.string().min(3).required(),
@@ -160,15 +160,14 @@ const Register = () => {
     })
   }
 
+  const imageSource = skin === 'bordered' ? 'auth-v2-register-illustration-bordered' : 'auth-v2-register-illustration'
+
   return (
     <Box className='content-right'>
       {!hidden ? (
         <Box sx={{ flex: 1, display: 'flex', position: 'relative', alignItems: 'center', justifyContent: 'center' }}>
           <RegisterIllustrationWrapper>
-            <RegisterIllustration
-              alt='register-illustration'
-              src={`/images/pages/auth-v2-register-illustration-${theme.palette.mode}.png`}
-            />
+            <RegisterIllustration alt='register-illustration' src={`/images/pages/${imageSource}-${mode}.png`} />
           </RegisterIllustrationWrapper>
           <FooterIllustrationsV2 image={<TreeIllustration alt='tree' src='/images/pages/tree-2.png' />} />
         </Box>

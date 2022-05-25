@@ -108,6 +108,7 @@ const LoginV2 = () => {
   const { settings } = useSettings()
 
   // ** Vars
+  const { mode, skin } = settings
   const hidden = useMediaQuery(theme.breakpoints.down('md'))
 
   const handleSubmit = (e: SyntheticEvent) => {
@@ -124,22 +125,19 @@ const LoginV2 = () => {
     event.preventDefault()
   }
 
+  const imageSource = skin === 'bordered' ? 'auth-v2-login-illustration-bordered' : 'auth-v2-login-illustration'
+
   return (
     <Box className='content-right'>
       {!hidden ? (
         <Box sx={{ flex: 1, display: 'flex', position: 'relative', alignItems: 'center', justifyContent: 'center' }}>
           <LoginIllustrationWrapper>
-            <LoginIllustration
-              alt='login-illustration'
-              src={`/images/pages/auth-v2-login-illustration-${theme.palette.mode}.png`}
-            />
+            <LoginIllustration alt='login-illustration' src={`/images/pages/${imageSource}-${mode}.png`} />
           </LoginIllustrationWrapper>
           <FooterIllustrationsV2 />
         </Box>
       ) : null}
-      <RightWrapper
-        sx={settings.skin === 'bordered' && !hidden ? { borderLeft: `1px solid ${theme.palette.divider}` } : {}}
-      >
+      <RightWrapper sx={skin === 'bordered' && !hidden ? { borderLeft: `1px solid ${theme.palette.divider}` } : {}}>
         <Box
           sx={{
             p: 12,

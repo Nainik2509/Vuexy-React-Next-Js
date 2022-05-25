@@ -215,7 +215,8 @@ const Autocomplete = styled(MuiAutocomplete)(({ theme }) => ({
         padding: theme.spacing(3.75, 6, 0.75)
       }
     },
-    '& .MuiPaper-root': {
+    '& .MuiAutocomplete-paper': {
+      border: 0,
       height: '100%',
       borderRadius: 0,
       boxShadow: 'none'

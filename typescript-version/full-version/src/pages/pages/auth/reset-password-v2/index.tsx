@@ -41,7 +41,7 @@ interface State {
 }
 
 // ** Styled Components
-const ForgotPasswordIllustrationWrapper = styled(Box)<BoxProps>(({ theme }) => ({
+const ResetPasswordIllustrationWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   padding: theme.spacing(20),
   paddingRight: '0 !important',
   [theme.breakpoints.down('lg')]: {
@@ -49,7 +49,7 @@ const ForgotPasswordIllustrationWrapper = styled(Box)<BoxProps>(({ theme }) => (
   }
 }))
 
-const ForgotPasswordIllustration = styled('img')(({ theme }) => ({
+const ResetPasswordIllustration = styled('img')(({ theme }) => ({
   maxWidth: '48rem',
   [theme.breakpoints.down('lg')]: {
     maxWidth: '35rem'
@@ -111,6 +111,7 @@ const ResetPasswordV2 = () => {
   const { settings } = useSettings()
 
   // ** Vars
+  const { mode, skin } = settings
   const hidden = useMediaQuery(theme.breakpoints.down('md'))
 
   const handleSubmit = (e: SyntheticEvent) => {
@@ -139,24 +140,23 @@ const ResetPasswordV2 = () => {
     event.preventDefault()
   }
 
-  const illustrationSrc = theme.palette.mode === 'light' ? 'light.png' : 'dark.png'
+  const imageSource =
+    skin === 'bordered' ? 'auth-v2-reset-password-illustration-bordered' : 'auth-v2-reset-password-illustration'
 
   return (
     <Box className='content-right'>
       {!hidden ? (
         <Box sx={{ flex: 1, display: 'flex', position: 'relative', alignItems: 'center', justifyContent: 'center' }}>
-          <ForgotPasswordIllustrationWrapper>
-            <ForgotPasswordIllustration
+          <ResetPasswordIllustrationWrapper>
+            <ResetPasswordIllustration
               alt='reset-password-illustration'
-              src={`/images/pages/auth-v2-reset-password-illustration-${illustrationSrc}`}
+              src={`/images/pages/${imageSource}-${mode}.png`}
             />
-          </ForgotPasswordIllustrationWrapper>
+          </ResetPasswordIllustrationWrapper>
           <FooterIllustrationsV2 image={<TreeIllustration alt='tree' src='/images/pages/tree-3.png' />} />
         </Box>
       ) : null}
-      <RightWrapper
-        sx={settings.skin === 'bordered' && !hidden ? { borderLeft: `1px solid ${theme.palette.divider}` } : {}}
-      >
+      <RightWrapper sx={skin === 'bordered' && !hidden ? { borderLeft: `1px solid ${theme.palette.divider}` } : {}}>
         <Box
           sx={{
             p: 12,

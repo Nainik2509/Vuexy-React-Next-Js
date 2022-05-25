@@ -126,7 +126,7 @@ const LoginPage = () => {
   const hidden = useMediaQuery(theme.breakpoints.down('md'))
 
   // ** Vars
-  const { skin } = settings
+  const { mode, skin } = settings
 
   const {
     control,
@@ -149,15 +149,14 @@ const LoginPage = () => {
     })
   }
 
+  const imageSource = skin === 'bordered' ? 'auth-v2-login-illustration-bordered' : 'auth-v2-login-illustration'
+
   return (
     <Box className='content-right'>
       {!hidden ? (
         <Box sx={{ flex: 1, display: 'flex', position: 'relative', alignItems: 'center', justifyContent: 'center' }}>
           <LoginIllustrationWrapper>
-            <LoginIllustration
-              alt='login-illustration'
-              src={`/images/pages/auth-v2-login-illustration-${theme.palette.mode}.png`}
-            />
+            <LoginIllustration alt='login-illustration' src={`/images/pages/${imageSource}-${mode}.png`} />
           </LoginIllustrationWrapper>
           <FooterIllustrationsV2 />
         </Box>

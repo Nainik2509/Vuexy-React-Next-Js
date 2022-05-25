@@ -80,11 +80,15 @@ const ForgotPasswordV2 = () => {
   const { settings } = useSettings()
 
   // ** Vars
+  const { mode, skin } = settings
   const hidden = useMediaQuery(theme.breakpoints.down('md'))
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault()
   }
+
+  const imageSource =
+    skin === 'bordered' ? 'auth-v2-forgot-password-illustration-bordered' : 'auth-v2-forgot-password-illustration'
 
   return (
     <Box className='content-right'>
@@ -93,15 +97,13 @@ const ForgotPasswordV2 = () => {
           <ForgotPasswordIllustrationWrapper>
             <ForgotPasswordIllustration
               alt='forgot-password-illustration'
-              src={`/images/pages/auth-v2-forgot-password-illustration-${theme.palette.mode}.png`}
+              src={`/images/pages/${imageSource}-${mode}.png`}
             />
           </ForgotPasswordIllustrationWrapper>
           <FooterIllustrationsV2 />
         </Box>
       ) : null}
-      <RightWrapper
-        sx={settings.skin === 'bordered' && !hidden ? { borderLeft: `1px solid ${theme.palette.divider}` } : {}}
-      >
+      <RightWrapper sx={skin === 'bordered' && !hidden ? { borderLeft: `1px solid ${theme.palette.divider}` } : {}}>
         <Box
           sx={{
             p: 12,
