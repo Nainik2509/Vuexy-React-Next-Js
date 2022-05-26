@@ -170,8 +170,9 @@ const renderClient = (row: InvoiceType) => {
 
 const defaultColumns = [
   {
+    flex: 0.1,
     field: 'id',
-    minWidth: 100,
+    minWidth: 80,
     headerName: '#',
     renderCell: ({ row }: CellType) => (
       <Link href={`/apps/invoice/preview/${row.id}`} passHref>
@@ -180,7 +181,8 @@ const defaultColumns = [
     )
   },
   {
-    minWidth: 100,
+    flex: 0.1,
+    minWidth: 80,
     field: 'invoiceStatus',
     renderHeader: () => <TrendingUp fontSize='small' />,
     renderCell: ({ row }: CellType) => {
@@ -217,7 +219,7 @@ const defaultColumns = [
     }
   },
   {
-    flex: 0.5,
+    flex: 0.25,
     field: 'name',
     minWidth: 300,
     headerName: 'Client',
@@ -240,22 +242,22 @@ const defaultColumns = [
     }
   },
   {
-    flex: 0.2,
-    minWidth: 150,
+    flex: 0.1,
+    minWidth: 90,
     field: 'total',
     headerName: 'Total',
-    renderCell: ({ row }: CellType) => <Typography variant='body2'>${row.total || 0}</Typography>
+    renderCell: ({ row }: CellType) => <Typography variant='body2'>{`$${row.total || 0}`}</Typography>
   },
   {
-    flex: 0.3,
-    minWidth: 150,
+    flex: 0.15,
+    minWidth: 125,
     field: 'issuedDate',
     headerName: 'Issued Date',
     renderCell: ({ row }: CellType) => <Typography variant='body2'>{row.issuedDate}</Typography>
   },
   {
-    flex: 0.3,
-    minWidth: 100,
+    flex: 0.1,
+    minWidth: 90,
     field: 'balance',
     headerName: 'Balance',
     renderCell: ({ row }: CellType) => {
@@ -328,7 +330,7 @@ const InvoiceList = () => {
   const columns = [
     ...defaultColumns,
     {
-      flex: 0.2,
+      flex: 0.1,
       minWidth: 130,
       sortable: false,
       field: 'actions',

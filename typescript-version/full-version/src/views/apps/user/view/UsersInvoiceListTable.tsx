@@ -122,8 +122,9 @@ const RowOptions = ({ id }: { id: number | string }) => {
 
 const columns = [
   {
+    flex: 0.2,
     field: 'id',
-    minWidth: 120,
+    minWidth: 90,
     headerName: '# ID',
     renderCell: ({ row }: CellType) => (
       <Link href={`/apps/invoice/preview/${row.id}`} passHref>
@@ -132,7 +133,8 @@ const columns = [
     )
   },
   {
-    minWidth: 110,
+    flex: 0.15,
+    minWidth: 80,
     field: 'invoiceStatus',
     renderHeader: () => <TrendingUp fontSize='small' />,
     renderCell: ({ row }: CellType) => {
@@ -170,20 +172,20 @@ const columns = [
   },
   {
     flex: 0.25,
-    minWidth: 120,
+    minWidth: 90,
     field: 'total',
     headerName: 'Total',
     renderCell: ({ row }: CellType) => <Typography variant='body2'>${row.total || 0}</Typography>
   },
   {
     flex: 0.3,
-    minWidth: 175,
+    minWidth: 125,
     field: 'issuedDate',
     headerName: 'Issued Date',
     renderCell: ({ row }: CellType) => <Typography variant='body2'>{row.issuedDate}</Typography>
   },
   {
-    flex: 0.2,
+    flex: 0.1,
     minWidth: 130,
     sortable: false,
     field: 'actions',

@@ -185,9 +185,9 @@ const RowOptions = ({ id }: { id: number | string }) => {
   )
 }
 
-const defaultColumns = [
+const columns = [
   {
-    flex: 0.25,
+    flex: 0.2,
     minWidth: 230,
     field: 'fullName',
     headerName: 'User',
@@ -219,9 +219,9 @@ const defaultColumns = [
     }
   },
   {
-    flex: 0.25,
-    field: 'email',
+    flex: 0.2,
     minWidth: 250,
+    field: 'email',
     headerName: 'Email',
     renderCell: ({ row }: CellType) => {
       return (
@@ -232,9 +232,9 @@ const defaultColumns = [
     }
   },
   {
-    flex: 0.2,
+    flex: 0.15,
     field: 'role',
-    minWidth: 175,
+    minWidth: 150,
     headerName: 'Role',
     renderCell: ({ row }: CellType) => {
       return (
@@ -248,8 +248,8 @@ const defaultColumns = [
     }
   },
   {
-    flex: 0.2,
-    minWidth: 150,
+    flex: 0.15,
+    minWidth: 120,
     headerName: 'Plan',
     field: 'currentPlan',
     renderCell: ({ row }: CellType) => {
@@ -261,8 +261,8 @@ const defaultColumns = [
     }
   },
   {
-    flex: 0.2,
-    minWidth: 140,
+    flex: 0.1,
+    minWidth: 110,
     field: 'status',
     headerName: 'Status',
     renderCell: ({ row }: CellType) => {
@@ -278,8 +278,8 @@ const defaultColumns = [
     }
   },
   {
-    flex: 0.15,
-    minWidth: 120,
+    flex: 0.1,
+    minWidth: 90,
     sortable: false,
     field: 'actions',
     headerName: 'Actions',
@@ -406,10 +406,10 @@ const UserList = () => {
           <DataGrid
             autoHeight
             rows={store.data}
+            columns={columns}
             checkboxSelection
             pageSize={pageSize}
             disableSelectionOnClick
-            columns={defaultColumns}
             rowsPerPageOptions={[10, 25, 50]}
             onPageSizeChange={(newPageSize: number) => setPageSize(newPageSize)}
           />

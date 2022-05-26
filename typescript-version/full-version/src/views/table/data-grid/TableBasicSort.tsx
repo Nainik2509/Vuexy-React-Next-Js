@@ -66,7 +66,7 @@ const TableSort = () => {
 
   const columns: GridColDef[] = [
     {
-      flex: 0.3,
+      flex: 0.275,
       minWidth: 290,
       field: 'full_name',
       headerName: 'Name',
@@ -91,7 +91,7 @@ const TableSort = () => {
     },
     {
       flex: 0.2,
-      minWidth: 140,
+      minWidth: 120,
       headerName: 'Date',
       field: 'start_date',
       sortable: isNameSortable,
@@ -103,7 +103,7 @@ const TableSort = () => {
     },
     {
       flex: 0.2,
-      minWidth: 140,
+      minWidth: 110,
       field: 'salary',
       headerName: 'Salary',
       sortable: isNameSortable,
@@ -114,9 +114,9 @@ const TableSort = () => {
       )
     },
     {
-      flex: 0.1,
+      flex: 0.125,
       field: 'age',
-      minWidth: 110,
+      minWidth: 80,
       headerName: 'Age',
       sortable: isNameSortable,
       renderCell: (params: GridRenderCellParams) => (
@@ -127,7 +127,7 @@ const TableSort = () => {
     },
     {
       flex: 0.2,
-      minWidth: 150,
+      minWidth: 140,
       field: 'status',
       headerName: 'Status',
       sortable: isNameSortable,

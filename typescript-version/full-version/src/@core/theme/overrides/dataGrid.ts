@@ -89,7 +89,11 @@ const DataGrid = (theme: Theme) => {
           minWidth: '58px !important'
         },
         editInputCell: {
-          color: theme.palette.text.primary
+          padding: 0,
+          color: theme.palette.text.primary,
+          '& .MuiInputBase-input': {
+            padding: 0
+          }
         },
         footerContainer: {
           minHeight: '50px !important',
