@@ -8,6 +8,9 @@ import classnames from 'classnames'
 import { useSelector, useDispatch } from 'react-redux'
 import { handleContentWidth, handleMenuCollapsed, handleMenuHidden } from '@store/layout'
 
+// ** ThemeConfig
+import themeConfig from '@configs/themeConfig'
+
 // ** Styles
 import 'animate.css/animate.css'
 
@@ -31,14 +34,14 @@ const LayoutWrapper = props => {
   // ** Clean Up Function
   const cleanUp = () => {
     if (routeMeta) {
-      if (routeMeta.contentWidth) {
-        dispatch(handleContentWidth('full'))
+      if (routeMeta.contentWidth && routeMeta.contentWidth === store.layout.contentWidth) {
+        dispatch(handleContentWidth(themeConfig.layout.contentWidth))
       }
-      if (routeMeta.menuCollapsed) {
-        dispatch(handleMenuCollapsed(!routeMeta.menuCollapsed))
+      if (routeMeta.menuCollapsed && routeMeta.menuCollapsed === store.layout.menuCollapsed) {
+        dispatch(handleMenuCollapsed(!store.layout.menuCollapsed))
       }
-      if (routeMeta.menuHidden) {
-        dispatch(handleMenuHidden(!routeMeta.menuHidden))
+      if (routeMeta.menuHidden && routeMeta.menuHidden === store.layout.menuHidden) {
+        dispatch(handleMenuHidden(!store.layout.menuHidden))
       }
     }
   }

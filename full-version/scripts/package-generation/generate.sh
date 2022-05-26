@@ -52,3 +52,7 @@ rm -rf node_modules
 cd ../../
 
 zip -r package.zip package
+
+wait
+
+rm -rf package

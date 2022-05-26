@@ -32,7 +32,7 @@ const SocialLinks = ({ stepper }) => {
         if (data[key].length === 0) {
           setError(key, {
             type: 'manual',
-            message: `Please enter a valid ${key}`
+            message: `Please enter a valid ${key} url`
           })
         }
       }

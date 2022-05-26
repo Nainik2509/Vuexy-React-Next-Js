@@ -237,7 +237,7 @@ const Table = () => {
 
   return (
     <Card>
-      <div className='react-dataTable roles-table'>
+      <div className='react-dataTable react-dataTable-selectable-rows'>
         <DataTable
           noHeader
           subHeader
@@ -249,9 +249,9 @@ const Table = () => {
           onSort={handleSort}
           data={dataToRender()}
           sortIcon={<ChevronDown />}
-          className='react-dataTable'
           paginationComponent={CustomPagination}
           selectableRowsComponent={BootstrapCheckbox}
+          className='react-dataTable'
           subHeaderComponent={
             <CustomHeader
               plan={plan}

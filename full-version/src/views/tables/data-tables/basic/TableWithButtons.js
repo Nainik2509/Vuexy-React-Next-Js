@@ -218,7 +218,7 @@ const DataTableWithButtons = () => {
             />
           </Col>
         </Row>
-        <div className='react-dataTable'>
+        <div className='react-dataTable react-dataTable-selectable-rows'>
           <DataTable
             noHeader
             pagination
@@ -227,10 +227,10 @@ const DataTableWithButtons = () => {
             paginationPerPage={7}
             className='react-dataTable'
             sortIcon={<ChevronDown size={10} />}
-            paginationDefaultPage={currentPage + 1}
             paginationComponent={CustomPagination}
-            data={searchValue.length ? filteredData : data}
+            paginationDefaultPage={currentPage + 1}
             selectableRowsComponent={BootstrapCheckbox}
+            data={searchValue.length ? filteredData : data}
           />
         </div>
       </Card>

@@ -8,32 +8,32 @@ const CollapsedMenu = lazy(() => import('../../views/ui-elements/page-layouts/Co
 
 const PageLayoutRoutes = [
   {
-    element: <BoxedLayout />,
+    element: <CollapsedMenu />,
     path: '/page-layout/collapse-menu',
     meta: {
       menuCollapsed: true
     }
   },
   {
-    element: <WithoutMenu />,
+    element: <BoxedLayout />,
     path: '/page-layout/layout-boxed',
     meta: {
       contentWidth: 'boxed'
     }
   },
   {
-    element: <LayoutEmpty />,
+    element: <WithoutMenu />,
     path: '/page-layout/without-menu',
     meta: {
       menuHidden: true
     }
   },
   {
-    element: <LayoutBlank />,
+    element: <LayoutEmpty />,
     path: '/page-layout/layout-empty'
   },
   {
-    element: <CollapsedMenu />,
+    element: <LayoutBlank />,
     path: '/page-layout/layout-blank',
     meta: {
       layout: 'blank'

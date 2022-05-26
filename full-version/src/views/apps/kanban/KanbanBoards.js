@@ -83,7 +83,7 @@ const KanbanBoard = props => {
                 id='task-title'
                 onChange={onChange}
                 placeholder='Add Content'
-                error={Boolean(errors.taskTitle)}
+                invalid={errors.taskTitle && true}
                 aria-describedby='validation-add-task'
               />
             )}
