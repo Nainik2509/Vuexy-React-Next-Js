@@ -82,7 +82,7 @@ const TableColumns = () => {
 
   const columns: GridColDef[] = [
     {
-      flex: 0.3,
+      flex: 0.25,
       minWidth: 290,
       field: 'full_name',
       headerName: 'Name',
@@ -106,8 +106,8 @@ const TableColumns = () => {
       }
     },
     {
-      flex: 0.2,
-      minWidth: 140,
+      flex: 0.175,
+      minWidth: 120,
       headerName: 'Date',
       field: 'start_date',
       renderCell: (params: GridRenderCellParams) => (
@@ -117,8 +117,8 @@ const TableColumns = () => {
       )
     },
     {
-      flex: 0.2,
-      minWidth: 140,
+      flex: 0.15,
+      minWidth: 110,
       field: 'salary',
       headerName: 'Salary',
       renderCell: (params: GridRenderCellParams) => (
@@ -130,7 +130,7 @@ const TableColumns = () => {
     {
       flex: 0.1,
       field: 'age',
-      minWidth: 110,
+      minWidth: 80,
       headerName: 'Age',
       renderCell: (params: GridRenderCellParams) => (
         <Typography variant='body2' sx={{ color: 'text.primary' }}>
@@ -140,7 +140,7 @@ const TableColumns = () => {
     },
     {
       flex: 0.2,
-      minWidth: 150,
+      minWidth: 140,
       field: 'status',
       headerName: 'Status',
       renderCell: (params: GridRenderCellParams) => {
@@ -158,8 +158,8 @@ const TableColumns = () => {
       }
     },
     {
-      flex: 0.2,
-      minWidth: 150,
+      flex: 0.125,
+      minWidth: 140,
       field: 'actions',
       headerName: 'Actions',
       renderCell: (params: GridRenderCellParams) => {
@@ -189,6 +189,7 @@ const TableColumns = () => {
         rows={rows}
         columns={columns}
         pageSize={pageSize}
+        disableSelectionOnClick
         rowsPerPageOptions={[7, 10, 25, 50]}
         onPageSizeChange={newPageSize => setPageSize(newPageSize)}
       />

@@ -6,7 +6,7 @@ import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import Typography from '@mui/material/Typography'
 import CardHeader from '@mui/material/CardHeader'
-import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid'
+import { DataGrid, GridColumns, GridRenderCellParams } from '@mui/x-data-grid'
 
 // ** Custom Components
 import CustomChip from 'src/@core/components/mui/chip'
@@ -58,9 +58,9 @@ const statusObj: StatusObj = {
   5: { title: 'applied', color: 'info' }
 }
 
-const columns: GridColDef[] = [
+const columns: GridColumns = [
   {
-    flex: 0.3,
+    flex: 0.25,
     minWidth: 290,
     field: 'full_name',
     headerName: 'Name',
@@ -83,8 +83,8 @@ const columns: GridColDef[] = [
     }
   },
   {
-    flex: 0.2,
-    minWidth: 140,
+    flex: 0.175,
+    minWidth: 120,
     headerName: 'Date',
     field: 'start_date',
     renderCell: (params: GridRenderCellParams) => (
@@ -94,8 +94,8 @@ const columns: GridColDef[] = [
     )
   },
   {
-    flex: 0.2,
-    minWidth: 140,
+    flex: 0.175,
+    minWidth: 110,
     field: 'salary',
     headerName: 'Salary',
     renderCell: (params: GridRenderCellParams) => (
@@ -105,9 +105,9 @@ const columns: GridColDef[] = [
     )
   },
   {
-    flex: 0.1,
+    flex: 0.125,
     field: 'age',
-    minWidth: 110,
+    minWidth: 80,
     headerName: 'Age',
     renderCell: (params: GridRenderCellParams) => (
       <Typography variant='body2' sx={{ color: 'text.primary' }}>
@@ -116,8 +116,8 @@ const columns: GridColDef[] = [
     )
   },
   {
-    flex: 0.2,
-    minWidth: 150,
+    flex: 0.175,
+    minWidth: 140,
     field: 'status',
     headerName: 'Status',
     renderCell: (params: GridRenderCellParams) => {

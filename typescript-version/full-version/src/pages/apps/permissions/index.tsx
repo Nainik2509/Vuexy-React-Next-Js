@@ -71,7 +71,7 @@ const defaultColumns = [
   },
   {
     flex: 0.35,
-    minWidth: 275,
+    minWidth: 280,
     field: 'assignedTo',
     headerName: 'Assigned To',
     renderCell: ({ row }: CellType) => {
@@ -89,7 +89,7 @@ const defaultColumns = [
   },
   {
     flex: 0.25,
-    minWidth: 210,
+    minWidth: 215,
     field: 'createdDate',
     headerName: 'Created Date',
     renderCell: ({ row }: CellType) => <Typography>{row.createdDate}</Typography>
@@ -140,7 +140,7 @@ const PermissionsTable = () => {
     ...defaultColumns,
     {
       flex: 0.15,
-      minWidth: 130,
+      minWidth: 115,
       sortable: false,
       field: 'actions',
       headerName: 'Actions',
