@@ -167,9 +167,14 @@ mock.onPost('/apps/calendar/update-event').reply(config => {
   eventData.id = Number(eventData.id)
 
   const event = data.events.find(ev => ev.id === Number(eventData.id))
-  Object.assign(event, eventData)
 
-  return [200, { event }]
+  if (event) {
+    Object.assign(event, eventData)
+
+    return [200, { event }]
+  } else {
+    return [400, { error: `Event doesn't exist` }]
+  }
 })
 
 // ------------------------------------------------

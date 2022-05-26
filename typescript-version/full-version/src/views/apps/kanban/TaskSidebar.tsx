@@ -186,7 +186,7 @@ const TaskSidebar = (props: TaskSidebarProps) => {
 
   const renderCustomChips = (
     array: AssigneeMenuItems[],
-    getTagProps: ({ index }: { index: number }) => void,
+    getTagProps: ({ index }: { index: number }) => {},
     state: AssigneeMenuItems[],
     setState: (val: AssigneeMenuItems[]) => void
   ) => {
@@ -196,7 +196,7 @@ const TaskSidebar = (props: TaskSidebarProps) => {
         key={item.value}
         label={item.name}
         deleteIcon={<Close />}
-        {...getTagProps({ index })}
+        {...(getTagProps({ index }) as {})}
         onDelete={() => handleAssigneeDelete(item.value, state, setState)}
       />
     ))

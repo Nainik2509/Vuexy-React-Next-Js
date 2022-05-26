@@ -354,9 +354,14 @@ mock.onPost('/apps/kanban/add-board').reply(config => {
 mock.onPost('/apps/kanban/update-task').reply(config => {
   const taskData = JSON.parse(config.data).data
   const task = data.tasks.find(task => task.id === taskData.id)
-  Object.assign(task, taskData)
 
-  return [200, { task }]
+  if (task) {
+    Object.assign(task, taskData)
+
+    return [200, { task }]
+  } else {
+    return [400, { error: `Task doesn't exist` }]
+  }
 })
 
 // ------------------------------------------------

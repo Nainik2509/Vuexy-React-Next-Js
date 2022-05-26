@@ -83,7 +83,7 @@ const AutocompleteVariants = () => {
             renderInput={params => <TextField {...params} variant='filled' label='freeSolo' placeholder='Favorites' />}
             renderTags={(value: string[], getTagProps) =>
               value.map((option: string, index: number) => (
-                <Chip variant='outlined' label={option} {...getTagProps({ index })} key={index} />
+                <Chip variant='outlined' label={option} {...(getTagProps({ index }) as {})} key={index} />
               ))
             }
           />
@@ -145,7 +145,7 @@ const AutocompleteVariants = () => {
               )}
               renderTags={(value: string[], getTagProps) =>
                 value.map((option: string, index: number) => (
-                  <Chip variant='outlined' label={option} {...getTagProps({ index })} key={index} />
+                  <Chip variant='outlined' label={option} {...(getTagProps({ index }) as any)} key={index} />
                 ))
               }
             />

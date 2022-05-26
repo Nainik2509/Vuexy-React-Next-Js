@@ -36,7 +36,7 @@ const AutocompleteFixedOptions = () => {
         tagValue.map((option, index) => (
           <Chip
             label={option.title}
-            {...getTagProps({ index })}
+            {...(getTagProps({ index }) as {})}
             disabled={fixedOptions.indexOf(option) !== -1}
             key={index}
           />
