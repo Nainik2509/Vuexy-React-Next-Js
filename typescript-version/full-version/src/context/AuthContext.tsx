@@ -63,12 +63,20 @@ const AuthProvider = ({ children }: Props) => {
             localStorage.removeItem('accessToken')
             setUser(null)
             setLoading(false)
+            if (authConfig.onTokenExpiration === 'logout' && !router.pathname.includes('login')) {
+              router.replace('/login')
+            }
           })
       } else {
         setLoading(false)
       }
     }
-    initAuth()
+
+    router.events.on('routeChangeComplete', () => initAuth())
+
+    return router.events.off('routeChangeComplete', () => initAuth())
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const handleLogin = (params: LoginParams, errorCallback?: ErrCallbackType) => {

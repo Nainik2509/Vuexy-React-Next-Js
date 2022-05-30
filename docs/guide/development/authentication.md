@@ -109,6 +109,19 @@ ComingSoon.authGuard = false
 
 Setting AuthGuard to false will allow all the users to visit that page whether logged in or not.
 
+## onTokenExpiration
+
+We provide `onTokenExpiration` property in `src/configs/auth`. It decides what action should take place when issued token is expired.
+
+| Value             |Description                                          |
+| ----------------  | -----------------------------------------------     |
+| logout            | will logout and redirect the user to `/login` page. |
+| refreshToken      | will generate new token for the current user.       |
+
+::: warning Note
+Because we're storing data in localStorage when you change the `onTokenExpiration` you'll have to clear the localStorage and login again.
+:::
+
 ## How to remove Authentication
 
 Removing the authentication from the app is simple.

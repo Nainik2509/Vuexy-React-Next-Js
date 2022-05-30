@@ -4,6 +4,9 @@ import jwt from 'jsonwebtoken'
 // ** Mock Adapter
 import mock from 'src/@fake-db/mock'
 
+// ** Default AuthConfig
+import defaultAuthConfig from 'src/configs/auth'
+
 // ** Types
 import { UserDataType } from 'src/context/types'
 
@@ -28,6 +31,7 @@ const users: UserDataType[] = [
 
 // ! These two secrets should be in .env file and not in any other file
 const jwtConfig = {
+  expirationTime: '60m',
   secret: 'dd5f3089-40c3-403d-af14-d0c228b05cb4',
   refreshTokenSecret: '7c4c1c50-3230-45bf-9eae-c9b2e401c767'
 }
@@ -42,7 +46,7 @@ mock.onPost('/jwt/login').reply(request => {
   const user = users.find(u => u.email === email && u.password === password)
 
   if (user) {
-    const accessToken = jwt.sign({ id: user.id }, jwtConfig.secret)
+    const accessToken = jwt.sign({ id: user.id }, jwtConfig.secret, { expiresIn: jwtConfig.expirationTime })
 
     const response = {
       accessToken
@@ -106,19 +110,38 @@ mock.onGet('/auth/me').reply(config => {
   // @ts-ignore
   const token = config.headers.Authorization as string
 
-  // get the decoded payload and header
-  const decoded = jwt.decode(token, { complete: true })
+  let response: any = [200, {}]
 
-  if (decoded) {
-    // @ts-ignore
-    const { id: userId } = decoded.payload
+  jwt.verify(token, jwtConfig.secret, (err, decoded) => {
+    if (err) {
+      if (defaultAuthConfig.onTokenExpiration === 'logout') {
+        response = [401, { error: { error: 'Invalid User' } }]
+      } else {
+        const oldTokenDecoded = jwt.decode(token, { complete: true })
 
-    const userData = JSON.parse(JSON.stringify(users.find((u: UserDataType) => u.id === userId)))
+        // @ts-ignore
+        const { id: userId } = oldTokenDecoded.payload
 
-    delete userData.password
+        const user = users.find(u => u.id === userId)
+        const accessToken = jwt.sign({ id: userId }, jwtConfig.secret, { expiresIn: jwtConfig.expirationTime })
 
-    return [200, { userData }]
-  } else {
-    return [401, { error: { error: 'Invalid User' } }]
-  }
+        window.localStorage.setItem(defaultAuthConfig.storageTokenKeyName, accessToken)
+
+        const obj = { userData: { ...user, password: undefined } }
+
+        response = [200, obj]
+      }
+    } else {
+      // @ts-ignore
+      const userId = decoded.id
+
+      const userData = JSON.parse(JSON.stringify(users.find((u: UserDataType) => u.id === userId)))
+
+      delete userData.password
+
+      response = [200, { userData }]
+    }
+  })
+
+  return response
 })
