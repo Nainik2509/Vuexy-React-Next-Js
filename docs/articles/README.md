@@ -15,3 +15,7 @@ pageClass: page-article-list
 [How to add Amplify in starter-kit](/articles/how-to-add-amplify-in-starter-kit.md)
 
 [How to add Search in starter-kit](/articles/how-to-add-search-in-starter-kit.md)
+
+[How to add MUI localization](/articles/how-to-add-mui-localization.md)
+
+[How to add i18n Routing](/articles/how-to-add-i18n-routing.md)
