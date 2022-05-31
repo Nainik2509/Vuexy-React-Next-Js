@@ -122,6 +122,81 @@ We provide `onTokenExpiration` property in `src/configs/auth`. It decides what a
 Because we're storing data in localStorage when you change the `onTokenExpiration` you'll have to clear the localStorage and login again.
 :::
 
+## JWT Token
+
+We sign the user token in `src/@fake-db/auth/jwt.js` file.
+
+The `jwtConfig` object contains three things `expirationTime`, `secret` `refreshTokenSecret`.
+
+| Value               |Description                                     |
+| ----------------    | -----------------------------------------------|
+| expirationTime      | User token expiration time                     |
+| secret              | JWT secret to sign accessToken                 |
+| refreshTokenSecret  | JWT secret to sign refreshToken                |
+
+As shown in the above section you can either `logout` the user or `referToken` on token expiration.
+You can find the logic for that `'/auth/me'` onGet request in the same file.
+
+You can use `jwt.verify` function to check for token validity and create a function according to your needs.
+
+Here's how we have used `jwt.verify`: 
+
+```js
+mock.onGet('/auth/me').reply(config => { 
+  // Get token from header
+  const token = config.headers.Authorization
+
+  // Default response
+  let response: ResponseType = [200, {}]
+
+  // Checks if the token is valid or expired
+  jwt.verify(token, jwtConfig.secret, (err, decoded) => {
+    // If token is expired
+    if (err) {
+      // If onTokenExpiration === 'logout' then send 401 error
+      if (defaultAuthConfig.onTokenExpiration === 'logout') {
+        response = [401, { error: { error: 'Invalid User' } }]
+      } else {
+        // If onTokenExpiration === 'refreshToken' then generate the new token
+        const oldTokenDecoded = jwt.decode(token, { complete: true })
+        
+        // Get user id from old token
+        const { id: userId } = oldTokenDecoded.payload
+
+        // Get user that matches id in token
+        const user = users.find(u => u.id === userId)
+        
+        // Sign a new token
+        const accessToken = jwt.sign({ id: userId }, jwtConfig.secret, { expiresIn: jwtConfig.expirationTime })
+
+        // Set new token in localStorage
+        window.localStorage.setItem(defaultAuthConfig.storageTokenKeyName, accessToken)
+
+        const obj = { userData: { ...user, password: undefined } }
+
+        // return 200 with user data
+        response = [200, obj]
+      }
+    } else {
+      // If token is valid do nothing      
+      const userId = decoded.id
+
+      // Get user that matches id in token
+      const userData = JSON.parse(JSON.stringify(users.find((u: UserDataType) => u.id === userId)))
+
+      delete userData.password
+
+      // return 200 with user data
+      response = [200, { userData }]
+    }
+  })
+
+  // Send Response 
+  return response
+})
+
+```
+
 ## How to remove Authentication
 
 Removing the authentication from the app is simple.

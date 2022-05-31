@@ -36,6 +36,8 @@ const jwtConfig = {
   refreshTokenSecret: '7c4c1c50-3230-45bf-9eae-c9b2e401c767'
 }
 
+type ResponseType = [number, { [key: string]: any }]
+
 mock.onPost('/jwt/login').reply(request => {
   const { email, password } = JSON.parse(request.data)
 
@@ -107,38 +109,54 @@ mock.onPost('/jwt/register').reply(request => {
 })
 
 mock.onGet('/auth/me').reply(config => {
+  // ** Get token from header
   // @ts-ignore
   const token = config.headers.Authorization as string
 
-  let response: any = [200, {}]
+  // ** Default response
+  let response: ResponseType = [200, {}]
 
+  // ** Checks if the token is valid or expired
   jwt.verify(token, jwtConfig.secret, (err, decoded) => {
+    // ** If token is expired
     if (err) {
+      // ** If onTokenExpiration === 'logout' then send 401 error
       if (defaultAuthConfig.onTokenExpiration === 'logout') {
+        // ** 401 response will logout user from AuthContext file
         response = [401, { error: { error: 'Invalid User' } }]
       } else {
+        // ** If onTokenExpiration === 'refreshToken' then generate the new token
         const oldTokenDecoded = jwt.decode(token, { complete: true })
 
+        // ** Get user id from old token
         // @ts-ignore
         const { id: userId } = oldTokenDecoded.payload
 
+        // ** Get user that matches id in token
         const user = users.find(u => u.id === userId)
+
+        // ** Sign a new token
         const accessToken = jwt.sign({ id: userId }, jwtConfig.secret, { expiresIn: jwtConfig.expirationTime })
 
+        // ** Set new token in localStorage
         window.localStorage.setItem(defaultAuthConfig.storageTokenKeyName, accessToken)
 
         const obj = { userData: { ...user, password: undefined } }
 
+        // ** return 200 with user data
         response = [200, obj]
       }
     } else {
+      // ** If token is valid do nothing
       // @ts-ignore
       const userId = decoded.id
 
+      // ** Get user that matches id in token
       const userData = JSON.parse(JSON.stringify(users.find((u: UserDataType) => u.id === userId)))
 
       delete userData.password
 
+      // ** return 200 with user data
       response = [200, { userData }]
     }
   })
