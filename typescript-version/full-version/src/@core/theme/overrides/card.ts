@@ -9,13 +9,15 @@ const Card = (theme: Theme, skin: Skin) => {
     MuiCard: {
       styleOverrides: {
         root: {
-          boxShadow: skin !== 'bordered' ? theme.shadows[6] : theme.shadows[0],
           ...(skin === 'bordered' && { border: `1px solid ${theme.palette.divider}` }),
           '& .card-more-options': {
             marginTop: theme.spacing(-1),
             marginRight: theme.spacing(-3)
           }
         }
+      },
+      defaultProps: {
+        elevation: skin !== 'bordered' ? 6 : 0
       }
     },
     MuiCardHeader: {

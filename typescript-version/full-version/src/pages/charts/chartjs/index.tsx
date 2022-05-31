@@ -47,9 +47,9 @@ const ChartJS = () => {
   const areaChartBlueLight = '#84d0ff'
   const areaChartGreyLight = '#edf1f4'
   const scatterChartWarning = '#ff9f43'
+  const borderColor = theme.palette.divider
+  const gridLineColor = theme.palette.divider
   const labelColor = theme.palette.text.primary
-  const borderColor = theme.palette.action.focus
-  const gridLineColor = theme.palette.action.focus
 
   return (
     <DatePickerWrapper>

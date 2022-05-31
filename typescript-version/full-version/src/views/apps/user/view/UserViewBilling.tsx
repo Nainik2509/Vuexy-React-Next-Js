@@ -252,8 +252,7 @@ const UserViewBilling = () => {
           <DialogContent
             sx={{
               pb: 8,
-              pr: [6, 15],
-              pl: [6, 15],
+              px: [6, 15],
               display: 'flex',
               alignItems: 'center',
               flexWrap: ['wrap', 'nowrap'],

@@ -160,18 +160,16 @@ const ComposePopup = (props: MailComposeType) => {
     state: FieldMenuItems[],
     setState: (val: FieldMenuItems[]) => void
   ) => {
-    return array.map((item, index) => {
-      return (
-        <Chip
-          size='small'
-          key={item.value}
-          label={item.name}
-          deleteIcon={<Close />}
-          {...(getTagProps({ index }) as {})}
-          onDelete={() => handleMailDelete(item.value, state, setState)}
-        />
-      )
-    })
+    return array.map((item, index) => (
+      <Chip
+        size='small'
+        key={item.value}
+        label={item.name}
+        deleteIcon={<Close />}
+        {...(getTagProps({ index }) as {})}
+        onDelete={() => handleMailDelete(item.value, state, setState)}
+      />
+    ))
   }
 
   const renderListItem = (
