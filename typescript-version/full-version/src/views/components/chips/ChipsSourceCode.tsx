@@ -562,3 +562,15 @@ export default ChipsSizes
 `}</code>
   </pre>
 )
+
+export const ChipsRoundedJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{``}</code>
+  </pre>
+)
+
+export const ChipsRoundedTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{``}</code>
+  </pre>
+)
