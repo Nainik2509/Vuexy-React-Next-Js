@@ -46,9 +46,9 @@ const ButtonGroupSplit = () => {
       <ButtonGroup variant='contained' ref={anchorRef} aria-label='split button'>
         <Button onClick={handleClick}>{options[selectedIndex]}</Button>
         <Button
-          size='small'
           aria-haspopup='menu'
           onClick={handleToggle}
+          sx={{ px: '0' }}
           aria-label='select merge strategy'
           aria-expanded={open ? 'true' : undefined}
           aria-controls={open ? 'split-button-menu' : undefined}
