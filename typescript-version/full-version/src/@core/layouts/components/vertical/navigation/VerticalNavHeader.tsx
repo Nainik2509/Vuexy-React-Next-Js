@@ -197,7 +197,7 @@ const VerticalNavHeader = (props: Props) => {
         >
           <Close fontSize='small' />
         </IconButton>
-      ) : (
+      ) : userMenuLockedIcon === null && userMenuUnlockedIcon === null ? null : (
         <IconButton
           disableRipple
           disableFocusRipple
