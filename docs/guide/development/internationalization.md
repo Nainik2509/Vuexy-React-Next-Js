@@ -58,9 +58,7 @@ npm install i18next react-i18next i18next-http-backend i18next-browser-languaged
 - Add `import 'src/configs/i18n'` import statement in `src/pages/_app.tsx` file
 - Add your locale files in `public/locales` folder
 - If you want to translate the navigation menu, then copy the whole code from `src/layouts/components/Translations.tsx` file from the full version and paste it under the same directory in your project
-- If you want a language dropdown in the appBar to change the current language in the app, then:
-  - Copy `public/images/flags` folder form the full version and paste it under the same directory in your project
-  - Import `src/@core/layouts/components/shared-components/LanguageDropdown.tsx` file and render `LanguageDropdown` component in `src/layouts/components/vertical/AppBarContent.tsx` or `src/layouts/components/horizontal/AppBarContent.tsx` file
+- If you want a language dropdown in the appBar to change the current language in the app, then import `src/@core/layouts/components/shared-components/LanguageDropdown.tsx` file and render `LanguageDropdown` component in `src/layouts/components/vertical/AppBarContent.tsx` or `src/layouts/components/horizontal/AppBarContent.tsx` file
 
 ```tsx
 <LanguageDropdown settings={settings} saveSettings={saveSettings} />
@@ -118,7 +116,6 @@ export default Translations
 Suppose you want to add `de` (German) language and remove `ar` (Arabic) language. For this, you need to follow these steps:
 
 - Remove `public/locales/ar.json` file and add `public/locales/de.json` file. You need to keep the format of the file as it is in other locale files
-- Remove `ar` related SVG images and add `de` related images in `public/images/flags` folder
 - Make a new file in `src/layouts/components` folder and place the following code in this file
 
 <code-group>
@@ -129,26 +126,14 @@ Suppose you want to add `de` (German) language and remove `ar` (Arabic) language
 import { Fragment, SyntheticEvent, useState } from 'react'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
-import { styled } from '@mui/material/styles'
 import IconButton from '@mui/material/IconButton'
+import Translate from 'mdi-material-ui/Translate'
 import { useTranslation } from 'react-i18next'
 import { Settings } from 'src/@core/context/settingsContext'
 
 interface Props {
   settings: Settings
 }
-
-const CountryFlag = styled('img')({
-  marginRight: '0.5rem',
-  width: '22px !important',
-  height: '16.5px !important',
-  '&.selected-lang': {
-    marginRight: 0,
-    width: '24px !important',
-    height: '24px !important',
-    borderRadius: '50% !important'
-  }
-})
 
 const UserLanguageDropdown = ({ settings }: Props) => {
   // ** State
@@ -157,23 +142,14 @@ const UserLanguageDropdown = ({ settings }: Props) => {
   // ** Hook
   const { i18n } = useTranslation()
 
-  // ** Vars
-  const { layout, direction } = settings
+  // ** Var
+  const { layout } = settings
 
   const handleLangDropdownOpen = (event: SyntheticEvent) => {
     setAnchorEl(event.currentTarget)
   }
   const handleLangDropdownClose = () => {
     setAnchorEl(null)
-  }
-  const selectedLangCountryCode = () => {
-    if (i18n.language === 'fr') {
-      return 'fr'
-    } else if (i18n.language === 'de') {
-      return 'de'
-    } else {
-      return 'en'
-    }
   }
   const handleLangItemClick = (lang: 'en' | 'fr' | 'de') => {
     i18n.changeLanguage(lang)
@@ -189,30 +165,23 @@ const UserLanguageDropdown = ({ settings }: Props) => {
         onClick={handleLangDropdownOpen}
         sx={layout === 'vertical' ? { mr: 0.75 } : { mx: 0.75 }}
       >
-        <CountryFlag
-          className='selected-lang'
-          alt={`${selectedLangCountryCode()}-flag`}
-          src={`/images/flags/${selectedLangCountryCode()}-round.svg`}
-        />
+        <Translate />
       </IconButton>
       <Menu
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
         onClose={handleLangDropdownClose}
-        sx={{ '& .MuiMenu-paper': { mt: 4, minWidth: 160 } }}
-        anchorOrigin={{ vertical: 'bottom', horizontal: direction === 'ltr' ? 'right' : 'left' }}
-        transformOrigin={{ vertical: 'top', horizontal: direction === 'ltr' ? 'right' : 'left' }}
+        sx={{ '& .MuiMenu-paper': { mt: 4, minWidth: 130 } }}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       >
         <MenuItem sx={{ py: 2 }} selected={i18n.language === 'en'} onClick={() => handleLangItemClick('en')}>
-          <CountryFlag alt='en-flag' src='/images/flags/en.svg' />
           English
         </MenuItem>
         <MenuItem sx={{ py: 2 }} selected={i18n.language === 'fr'} onClick={() => handleLangItemClick('fr')}>
-          <CountryFlag alt='fr-flag' src='/images/flags/fr.svg' />
           French
         </MenuItem>
         <MenuItem sx={{ py: 2 }} selected={i18n.language === 'de'} onClick={() => handleLangItemClick('de')}>
-          <CountryFlag alt='de-flag' src='/images/flags/de.svg' />
           German
         </MenuItem>
       </Menu>
@@ -231,21 +200,9 @@ export default UserLanguageDropdown
 import { Fragment, useState } from 'react'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
-import { styled } from '@mui/material/styles'
 import IconButton from '@mui/material/IconButton'
+import Translate from 'mdi-material-ui/Translate'
 import { useTranslation } from 'react-i18next'
-
-const CountryFlag = styled('img')({
-  marginRight: '0.5rem',
-  width: '22px !important',
-  height: '16.5px !important',
-  '&.selected-lang': {
-    marginRight: 0,
-    width: '24px !important',
-    height: '24px !important',
-    borderRadius: '50% !important'
-  }
-})
 
 const UserLanguageDropdown = ({ settings }) => {
   // ** State
@@ -254,23 +211,14 @@ const UserLanguageDropdown = ({ settings }) => {
   // ** Hook
   const { i18n } = useTranslation()
 
-  // ** Vars
-  const { layout, direction } = settings
+  // ** Var
+  const { layout } = settings
 
   const handleLangDropdownOpen = event => {
     setAnchorEl(event.currentTarget)
   }
   const handleLangDropdownClose = () => {
     setAnchorEl(null)
-  }
-  const selectedLangCountryCode = () => {
-    if (i18n.language === 'fr') {
-      return 'fr'
-    } else if (i18n.language === 'de') {
-      return 'de'
-    } else {
-      return 'en'
-    }
   }
   const handleLangItemClick = lang => {
     i18n.changeLanguage(lang)
@@ -286,30 +234,23 @@ const UserLanguageDropdown = ({ settings }) => {
         onClick={handleLangDropdownOpen}
         sx={layout === 'vertical' ? { mr: 0.75 } : { mx: 0.75 }}
       >
-        <CountryFlag
-          className='selected-lang'
-          alt={`${selectedLangCountryCode()}-flag`}
-          src={`/images/flags/${selectedLangCountryCode()}-round.svg`}
-        />
+        <Translate />
       </IconButton>
       <Menu
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
         onClose={handleLangDropdownClose}
-        sx={{ '& .MuiMenu-paper': { mt: 4, minWidth: 160 } }}
-        anchorOrigin={{ vertical: 'bottom', horizontal: direction === 'ltr' ? 'right' : 'left' }}
-        transformOrigin={{ vertical: 'top', horizontal: direction === 'ltr' ? 'right' : 'left' }}
+        sx={{ '& .MuiMenu-paper': { mt: 4, minWidth: 130 } }}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       >
         <MenuItem sx={{ py: 2 }} selected={i18n.language === 'en'} onClick={() => handleLangItemClick('en')}>
-          <CountryFlag alt='en-flag' src='/images/flags/en.svg' />
           English
         </MenuItem>
         <MenuItem sx={{ py: 2 }} selected={i18n.language === 'fr'} onClick={() => handleLangItemClick('fr')}>
-          <CountryFlag alt='fr-flag' src='/images/flags/fr.svg' />
           French
         </MenuItem>
         <MenuItem sx={{ py: 2 }} selected={i18n.language === 'de'} onClick={() => handleLangItemClick('de')}>
-          <CountryFlag alt='de-flag' src='/images/flags/de.svg' />
           German
         </MenuItem>
       </Menu>
@@ -322,7 +263,7 @@ export default UserLanguageDropdown
 </code-block>
 </code-group>
 
-- Import the `src/layouts/components/UserLanguageDropdown.tsx` file and render it in the `src/layouts/components/vertical/AppBarContent.tsx` or `src/layouts/components/horizontal/AppBarContent.tsx` file.
+- Import the `src/layouts/components/UserLanguageDropdown.tsx` file and render it in the `src/layouts/components/vertical/AppBarContent.tsx` and/or `src/layouts/components/horizontal/AppBarContent.tsx` file.
 
 <code-group>
 <code-block title="TSX" active>
