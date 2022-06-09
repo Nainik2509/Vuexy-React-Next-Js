@@ -92,6 +92,8 @@ module.exports = {
                 '/guide/components/mui/badge',
                 '/guide/components/mui/card',
                 '/guide/components/mui/chip',
+                '/guide/components/mui/radio',
+                '/guide/components/mui/checkbox',
                 '/guide/components/mui/timeline-dot'
               ]
             },

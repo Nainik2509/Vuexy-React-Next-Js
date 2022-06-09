@@ -420,6 +420,10 @@ const navigation = (): HorizontalNavItemsType => {
               path: '/forms/form-elements/radio'
             },
             {
+              title: 'Custom Radios',
+              path: '/forms/form-elements/custom-inputs'
+            },
+            {
               title: 'Textarea',
               path: '/forms/form-elements/textarea'
             },

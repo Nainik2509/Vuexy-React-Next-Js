@@ -32,8 +32,31 @@ Result:
 
 <img alt='chips-skins' class='medium-zoom' :src="$withBase('/images/components/chips-skin.png')" />
 
+## Chip Rounded
+
+There is only one chip skin `light`.
+
+Here is an example of how to use the skin:
+
+```tsx
+// ** Custom Components Imports
+import CustomChip from 'src/@core/components/mui/chip'
+
+<CustomChip rounded label='Primary' skin='light' color='primary' />
+<CustomChip rounded label='Secondary' skin='light' color='secondary' />
+<CustomChip rounded label='Success' skin='light' color='success' />
+<CustomChip rounded label='Error' skin='light' color='error' />
+<CustomChip rounded label='Warning' skin='light' color='warning' />
+<CustomChip rounded label='Info' skin='light' color='info' />
+```
+
+Result:
+
+<img alt='chips-rounded' class='medium-zoom' :src="$withBase('/images/components/chips-rounded.png')" />
+
 ## Props
 
-| Prop | Type    | Required | Description      |
-| :--- | :------ | :------- | :--------------- |
-| skin | `light` | No       | Skin of the chip |
+| Prop    | Type      | Required | Description       |
+| :---    | :------   | :------- | :---------------  |
+| skin    | `light`   | No       | Skin of the chip  |
+| rounded | `boolean` | No       | Shape of the chip |

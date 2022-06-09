@@ -557,6 +557,13 @@ const searchData: AppBarSearchType[] = [
     icon: 'ShieldOutline',
     title: 'Access Control (ACL)',
     category: 'chartsMisc'
+  },
+  {
+    id: 80,
+    icon: 'RadioboxMarked',
+    title: 'Custom Inputs',
+    category: 'formsTables',
+    url: '/forms/form-elements/custom-inputs/'
   }
 ]
 
