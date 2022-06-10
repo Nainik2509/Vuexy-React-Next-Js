@@ -19,3 +19,5 @@ pageClass: page-article-list
 [How to add MUI localization](/articles/how-to-add-mui-localization.md)
 
 [How to add i18n Routing](/articles/how-to-add-i18n-routing.md)
+
+[How to use i18n in a page](/articles/how-to-use-i18n-in-a-page.md)
