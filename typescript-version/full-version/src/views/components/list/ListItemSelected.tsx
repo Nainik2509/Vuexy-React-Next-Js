@@ -27,7 +27,7 @@ const ListItemSelected = () => {
       <ListItem disablePadding>
         <ListItemButton selected={selectedIndex === 0} onClick={() => handleListItemClick(0)}>
           <ListItemAvatar>
-            <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
+            <Avatar src='/images/avatars/2.png' alt='Caroline Black' sx={{ height: 32, width: 32 }} />
           </ListItemAvatar>
           <ListItemText primary='Caroline Black' />
           <ListItemSecondaryAction>
@@ -40,7 +40,7 @@ const ListItemSelected = () => {
       <ListItem disablePadding>
         <ListItemButton selected={selectedIndex === 1} onClick={() => handleListItemClick(1)}>
           <ListItemAvatar>
-            <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' />
+            <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' sx={{ height: 32, width: 32 }} />
           </ListItemAvatar>
           <ListItemText primary='Alfred Copeland' />
           <ListItemSecondaryAction>
@@ -53,7 +53,7 @@ const ListItemSelected = () => {
       <ListItem disablePadding>
         <ListItemButton selected={selectedIndex === 2} onClick={() => handleListItemClick(2)}>
           <ListItemAvatar>
-            <Avatar src='/images/avatars/8.png' alt='Celia Schneider' />
+            <Avatar src='/images/avatars/8.png' alt='Celia Schneider' sx={{ height: 32, width: 32 }} />
           </ListItemAvatar>
           <ListItemText primary='Celia Schneider' />
           <ListItemSecondaryAction>

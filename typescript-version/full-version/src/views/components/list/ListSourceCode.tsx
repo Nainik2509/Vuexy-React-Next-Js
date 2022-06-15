@@ -1195,3 +1195,14 @@ export default ListWithSwitch
 `}</code>
   </pre>
 )
+
+export const ListUsersJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{}</code>
+  </pre>
+)
+export const ListUsersTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{}</code>
+  </pre>
+)

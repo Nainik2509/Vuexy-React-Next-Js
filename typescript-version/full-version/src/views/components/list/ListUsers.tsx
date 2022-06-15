@@ -1,0 +1,132 @@
+// ** MUI Imports
+import Box from '@mui/material/Box'
+import Avatar from '@mui/material/Avatar'
+import Button from '@mui/material/Button'
+import ListItem from '@mui/material/ListItem'
+import { styled } from '@mui/material/styles'
+import Typography from '@mui/material/Typography'
+import List, { ListProps } from '@mui/material/List'
+import ListItemText from '@mui/material/ListItemText'
+import ListItemAvatar from '@mui/material/ListItemAvatar'
+import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
+
+// ** Icons Imports
+import Circle from 'mdi-material-ui/Circle'
+
+const StyledList = styled(List)<ListProps>(({ theme }) => ({
+  '& .MuiListItem-container': {
+    border: `1px solid ${theme.palette.divider}`,
+    '&:first-of-type': {
+      borderTopLeftRadius: 6,
+      borderTopRightRadius: 6
+    },
+    '&:last-of-type': {
+      borderBottomLeftRadius: 6,
+      borderBottomRightRadius: 6
+    },
+    '&:not(:last-of-type)': {
+      borderBottom: 0
+    },
+    '& .MuiListItemSecondaryAction-root': {
+      top: 28
+    },
+    '& .MuiListItemText-root': {
+      marginBottom: 0,
+      '& .MuiTypography-root': {
+        fontWeight: 500,
+        fontSize: '.9375rem'
+      }
+    }
+  }
+}))
+
+const ListUsers = () => {
+  return (
+    <StyledList>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar src='/images/avatars/2.png' alt='Caroline Black' sx={{ height: 50, width: 50 }} />
+        </ListItemAvatar>
+        <Box>
+          <ListItemText primary='Caroline Black' />
+          <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+            13 minutes ago
+          </Typography>
+          <Box sx={{ mt: 1, display: 'flex', alignItems: 'center' }}>
+            <Circle sx={{ mr: 1, color: 'success.main', fontSize: '0.625rem' }} />
+            <Typography variant='caption'>Online</Typography>
+          </Box>
+        </Box>
+        <ListItemSecondaryAction>
+          <Button variant='contained' size='small'>
+            Add
+          </Button>
+        </ListItemSecondaryAction>
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' sx={{ height: 50, width: 50 }} />
+        </ListItemAvatar>
+        <Box>
+          <ListItemText primary='Alfred Copeland' />
+          <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+            11 minutes ago
+          </Typography>
+          <Box sx={{ mt: 1, display: 'flex', alignItems: 'center' }}>
+            <Circle sx={{ mr: 1, color: 'warning.main', fontSize: '0.625rem' }} />
+            <Typography variant='caption'>Away</Typography>
+          </Box>
+        </Box>
+        <ListItemSecondaryAction>
+          <Button variant='contained' size='small'>
+            Add
+          </Button>
+        </ListItemSecondaryAction>
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar src='/images/avatars/8.png' alt='Celia Schneider' sx={{ height: 50, width: 50 }} />
+        </ListItemAvatar>
+        <Box>
+          <ListItemText primary='Celia Schneider' />
+          <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+            9 minutes ago
+          </Typography>
+          <Box sx={{ mt: 1, display: 'flex', alignItems: 'center' }}>
+            <Circle sx={{ mr: 1, color: 'secondary.main', fontSize: '0.625rem' }} />
+            <Typography variant='caption'>Offline</Typography>
+          </Box>
+        </Box>
+
+        <ListItemSecondaryAction>
+          <Button variant='contained' size='small'>
+            Add
+          </Button>
+        </ListItemSecondaryAction>
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar src='/images/avatars/5.png' alt='Celia Schneider' sx={{ height: 50, width: 50 }} />
+        </ListItemAvatar>
+        <Box>
+          <ListItemText primary='Max Rogan' />
+          <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+            28 minutes ago
+          </Typography>
+          <Box sx={{ mt: 1, display: 'flex', alignItems: 'center' }}>
+            <Circle sx={{ mr: 1, color: 'error.main', fontSize: '0.625rem' }} />
+            <Typography variant='caption'>In Meeting</Typography>
+          </Box>
+        </Box>
+
+        <ListItemSecondaryAction>
+          <Button variant='contained' size='small'>
+            Add
+          </Button>
+        </ListItemSecondaryAction>
+      </ListItem>
+    </StyledList>
+  )
+}
+
+export default ListUsers
