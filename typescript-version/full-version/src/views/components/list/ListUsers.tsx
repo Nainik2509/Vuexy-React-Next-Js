@@ -31,7 +31,8 @@ const StyledList = styled(List)<ListProps>(({ theme }) => ({
       top: 28
     },
     '& .MuiListItemText-root': {
-      marginBottom: 0,
+      marginTop: 0,
+
       '& .MuiTypography-root': {
         fontWeight: 500,
         fontSize: '.9375rem'
@@ -45,16 +46,18 @@ const ListUsers = () => {
     <StyledList>
       <ListItem>
         <ListItemAvatar>
-          <Avatar src='/images/avatars/2.png' alt='Caroline Black' sx={{ height: 50, width: 50 }} />
+          <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
         </ListItemAvatar>
         <Box>
           <ListItemText primary='Caroline Black' />
-          <Typography variant='caption' sx={{ color: 'text.disabled' }}>
-            13 minutes ago
-          </Typography>
-          <Box sx={{ mt: 1, display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ mr: 1, color: 'success.main', fontSize: '0.625rem' }} />
-            <Typography variant='caption'>Online</Typography>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center' }}>
+              <Circle sx={{ mr: 1, color: 'success.main', fontSize: '0.625rem' }} />
+              <Typography variant='caption'>Online</Typography>
+            </Box>
+            <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+              13 minutes ago
+            </Typography>
           </Box>
         </Box>
         <ListItemSecondaryAction>
@@ -65,16 +68,18 @@ const ListUsers = () => {
       </ListItem>
       <ListItem>
         <ListItemAvatar>
-          <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' sx={{ height: 50, width: 50 }} />
+          <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' />
         </ListItemAvatar>
         <Box>
           <ListItemText primary='Alfred Copeland' />
-          <Typography variant='caption' sx={{ color: 'text.disabled' }}>
-            11 minutes ago
-          </Typography>
-          <Box sx={{ mt: 1, display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ mr: 1, color: 'warning.main', fontSize: '0.625rem' }} />
-            <Typography variant='caption'>Away</Typography>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center' }}>
+              <Circle sx={{ mr: 1, color: 'warning.main', fontSize: '0.625rem' }} />
+              <Typography variant='caption'>Away</Typography>
+            </Box>
+            <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+              11 minutes ago
+            </Typography>
           </Box>
         </Box>
         <ListItemSecondaryAction>
@@ -85,16 +90,18 @@ const ListUsers = () => {
       </ListItem>
       <ListItem>
         <ListItemAvatar>
-          <Avatar src='/images/avatars/8.png' alt='Celia Schneider' sx={{ height: 50, width: 50 }} />
+          <Avatar src='/images/avatars/8.png' alt='Celia Schneider' />
         </ListItemAvatar>
         <Box>
           <ListItemText primary='Celia Schneider' />
-          <Typography variant='caption' sx={{ color: 'text.disabled' }}>
-            9 minutes ago
-          </Typography>
-          <Box sx={{ mt: 1, display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ mr: 1, color: 'secondary.main', fontSize: '0.625rem' }} />
-            <Typography variant='caption'>Offline</Typography>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center' }}>
+              <Circle sx={{ mr: 1, color: 'secondary.main', fontSize: '0.625rem' }} />
+              <Typography variant='caption'>Offline</Typography>
+            </Box>
+            <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+              9 minutes ago
+            </Typography>
           </Box>
         </Box>
 
@@ -106,16 +113,18 @@ const ListUsers = () => {
       </ListItem>
       <ListItem>
         <ListItemAvatar>
-          <Avatar src='/images/avatars/5.png' alt='Celia Schneider' sx={{ height: 50, width: 50 }} />
+          <Avatar src='/images/avatars/5.png' alt='Celia Schneider' />
         </ListItemAvatar>
         <Box>
           <ListItemText primary='Max Rogan' />
-          <Typography variant='caption' sx={{ color: 'text.disabled' }}>
-            28 minutes ago
-          </Typography>
-          <Box sx={{ mt: 1, display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ mr: 1, color: 'error.main', fontSize: '0.625rem' }} />
-            <Typography variant='caption'>In Meeting</Typography>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center' }}>
+              <Circle sx={{ mr: 1, color: 'error.main', fontSize: '0.625rem' }} />
+              <Typography variant='caption'>In Meeting</Typography>
+            </Box>
+            <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+              28 minutes ago
+            </Typography>
           </Box>
         </Box>
 

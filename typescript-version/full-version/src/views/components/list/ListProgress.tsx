@@ -32,7 +32,8 @@ const StyledList = styled(List)<ListProps>(({ theme }) => ({
       borderBottom: 0
     },
     '& .MuiListItemText-root': {
-      marginBottom: theme.spacing(1.5),
+      marginTop: 0,
+      marginBottom: theme.spacing(1),
       '& .MuiTypography-root': {
         fontWeight: 500,
         fontSize: '.9375rem'
@@ -53,7 +54,7 @@ const ListProgress = () => {
     <StyledList>
       <ListItem>
         <ListItemAvatar>
-          <CustomAvatar variant='rounded' sx={{ backgroundColor: 'info.main', height: 36, width: 36 }}>
+          <CustomAvatar skin='light' variant='rounded' color='info' sx={{ height: 36, width: 36 }}>
             <React />
           </CustomAvatar>
         </ListItemAvatar>
@@ -64,7 +65,7 @@ const ListProgress = () => {
       </ListItem>
       <ListItem>
         <ListItemAvatar>
-          <CustomAvatar variant='rounded' sx={{ height: 36, width: 36 }}>
+          <CustomAvatar skin='light' variant='rounded' sx={{ height: 36, width: 36 }}>
             <Bootstrap />
           </CustomAvatar>
         </ListItemAvatar>
@@ -75,7 +76,7 @@ const ListProgress = () => {
       </ListItem>
       <ListItem>
         <ListItemAvatar>
-          <CustomAvatar variant='rounded' sx={{ backgroundColor: 'success.main', height: 36, width: 36 }}>
+          <CustomAvatar skin='light' variant='rounded' color='success' sx={{ height: 36, width: 36 }}>
             <Vuejs />
           </CustomAvatar>
         </ListItemAvatar>
@@ -86,7 +87,7 @@ const ListProgress = () => {
       </ListItem>
       <ListItem>
         <ListItemAvatar>
-          <CustomAvatar variant='rounded' sx={{ backgroundColor: 'error.main', height: 36, width: 36 }}>
+          <CustomAvatar skin='light' variant='rounded' color='error' sx={{ height: 36, width: 36 }}>
             <Angular />
           </CustomAvatar>
         </ListItemAvatar>
@@ -97,7 +98,7 @@ const ListProgress = () => {
       </ListItem>
       <ListItem>
         <ListItemAvatar>
-          <CustomAvatar variant='rounded' sx={{ backgroundColor: 'warning.main', height: 36, width: 36 }}>
+          <CustomAvatar skin='light' variant='rounded' color='warning' sx={{ height: 36, width: 36 }}>
             <LanguageJavascript />
           </CustomAvatar>
         </ListItemAvatar>
