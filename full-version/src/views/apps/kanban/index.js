@@ -127,7 +127,7 @@ const KanbanBoard = () => {
     dispatch(fetchTasks())
   }, [dispatch])
 
-  return store.boards.length ? (
+  return store.boards ? (
     <div className='app-kanban-wrapper'>
       {renderBoards()}
 
