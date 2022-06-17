@@ -15,7 +15,7 @@ import { top100Films } from 'src/@fake-db/autocomplete'
 const AutocompleteVariants = () => {
   return (
     <Card>
-      <CardHeader title='Autocomplete Variants' titleTypographyProps={{ variant: 'h6' }} />
+      <CardHeader title='Autocomplete Variants' />
       <CardContent>
         <Box className='demo-space-x' sx={{ display: 'flex', flexWrap: 'wrap' }}>
           <Autocomplete

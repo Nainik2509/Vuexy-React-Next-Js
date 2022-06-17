@@ -67,7 +67,7 @@ const SelectCustomizedAndGrouping = () => {
 
   return (
     <Card>
-      <CardHeader title='Customized' titleTypographyProps={{ variant: 'h6' }} />
+      <CardHeader title='Customized' />
       <CardContent>
         <CustomFormControl sx={{ mr: 4 }}>
           <InputLabel id='demo-customized-select-label'>Age</InputLabel>

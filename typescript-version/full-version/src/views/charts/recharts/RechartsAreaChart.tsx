@@ -184,7 +184,6 @@ const RechartsAreaChart = ({ direction }: Props) => {
     <Card>
       <CardHeader
         title='Website Data'
-        titleTypographyProps={{ variant: 'h6' }}
         sx={{
           flexDirection: ['column', 'row'],
           alignItems: ['flex-start', 'center'],

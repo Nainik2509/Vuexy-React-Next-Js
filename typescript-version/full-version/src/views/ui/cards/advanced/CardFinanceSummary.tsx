@@ -22,7 +22,6 @@ const CardFinanceSummary = () => {
       <CardHeader
         title='Finance Summary'
         subheader='Check out each Column for more details'
-        titleTypographyProps={{ sx: { lineHeight: '2rem !important', letterSpacing: '0.15px !important' } }}
         action={
           <CustomAvatar skin='light' sx={{ width: 48, height: 48 }}>
             <CurrencyUsd sx={{ fontSize: '2rem', color: 'primary.main' }} />

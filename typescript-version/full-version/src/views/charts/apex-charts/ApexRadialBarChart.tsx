@@ -75,7 +75,7 @@ const ApexRadialBarChart = () => {
 
   return (
     <Card>
-      <CardHeader title='Statistics' titleTypographyProps={{ variant: 'h6' }} />
+      <CardHeader title='Statistics' />
       <CardContent>
         <ReactApexcharts options={options} series={[80, 50, 35]} type='radialBar' height={400} />
       </CardContent>

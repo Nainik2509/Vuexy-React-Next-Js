@@ -120,7 +120,6 @@ const CardDepositWithdraw = () => {
         <CardHeader
           title='Deposit'
           sx={{ '& .MuiCardHeader-action': { mt: -0.8 } }}
-          titleTypographyProps={{ sx: { lineHeight: '2rem !important', letterSpacing: '0.15px !important' } }}
           action={
             <Typography variant='caption' sx={{ color: 'primary.main' }}>
               View All
@@ -167,7 +166,6 @@ const CardDepositWithdraw = () => {
         <CardHeader
           title='Withdraw'
           sx={{ '& .MuiCardHeader-action': { mt: -0.8 } }}
-          titleTypographyProps={{ sx: { lineHeight: '2rem !important', letterSpacing: '0.15px !important' } }}
           action={
             <Typography variant='caption' sx={{ color: 'primary.main' }}>
               View All

@@ -16,7 +16,7 @@ import MessageOutline from 'mdi-material-ui/MessageOutline'
 const FormLayoutsIcons = () => {
   return (
     <Card>
-      <CardHeader title='Basic with Icons' titleTypographyProps={{ variant: 'h6' }} />
+      <CardHeader title='Basic with Icons' />
       <CardContent>
         <form onSubmit={e => e.preventDefault()}>
           <Grid container spacing={5}>

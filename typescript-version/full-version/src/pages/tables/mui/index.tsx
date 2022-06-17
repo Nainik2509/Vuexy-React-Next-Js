@@ -32,37 +32,37 @@ const MUITable = () => {
       />
       <Grid item xs={12}>
         <Card>
-          <CardHeader title='Basic Table' titleTypographyProps={{ variant: 'h6' }} />
+          <CardHeader title='Basic Table' />
           <TableBasic />
         </Card>
       </Grid>
       <Grid item xs={12}>
         <Card>
-          <CardHeader title='Dense Table' titleTypographyProps={{ variant: 'h6' }} />
+          <CardHeader title='Dense Table' />
           <TableDense />
         </Card>
       </Grid>
       <Grid item xs={12}>
         <Card>
-          <CardHeader title='Sticky Header' titleTypographyProps={{ variant: 'h6' }} />
+          <CardHeader title='Sticky Header' />
           <TableStickyHeader />
         </Card>
       </Grid>
       <Grid item xs={12}>
         <Card>
-          <CardHeader title='Collapsible Table' titleTypographyProps={{ variant: 'h6' }} />
+          <CardHeader title='Collapsible Table' />
           <TableCollapsible />
         </Card>
       </Grid>
       <Grid item xs={12}>
         <Card>
-          <CardHeader title='Spanning Table' titleTypographyProps={{ variant: 'h6' }} />
+          <CardHeader title='Spanning Table' />
           <TableSpanning />
         </Card>
       </Grid>
       <Grid item xs={12}>
         <Card>
-          <CardHeader title='Customized Table' titleTypographyProps={{ variant: 'h6' }} />
+          <CardHeader title='Customized Table' />
           <TableCustomized />
         </Card>
       </Grid>

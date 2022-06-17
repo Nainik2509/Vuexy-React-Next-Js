@@ -18,7 +18,7 @@ import AccountCircleOutline from 'mdi-material-ui/AccountCircleOutline'
 const TextFieldIcons = () => {
   return (
     <Card>
-      <CardHeader title='Icons' titleTypographyProps={{ variant: 'h6' }} />
+      <CardHeader title='Icons' />
       <CardContent>
         <form className='demo-space-x' noValidate autoComplete='off'>
           <FormControl>

@@ -83,9 +83,7 @@ const ApexLineChart = () => {
     <Card>
       <CardHeader
         title='Balance'
-        titleTypographyProps={{ variant: 'h6' }}
         subheader='Commercial networks & enterprises'
-        subheaderTypographyProps={{ variant: 'caption' }}
         sx={{
           flexDirection: ['column', 'row'],
           alignItems: ['flex-start', 'center'],

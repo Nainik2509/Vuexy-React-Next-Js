@@ -164,7 +164,6 @@ const ChartjsScatterChart = (props: ScatterProps) => {
     <Card>
       <CardHeader
         title='New Product Data'
-        titleTypographyProps={{ variant: 'h6' }}
         sx={{
           flexDirection: ['column', 'row'],
           alignItems: ['flex-start', 'center'],

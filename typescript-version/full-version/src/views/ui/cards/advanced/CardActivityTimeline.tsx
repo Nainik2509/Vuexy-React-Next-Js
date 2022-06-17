@@ -30,10 +30,7 @@ const CardActivityTimeline = () => {
   return (
     <Card>
       <CardMedia sx={{ height: 168 }} image='/images/cards/activity-timeline.png' />
-      <CardHeader
-        title='Activity Timeline'
-        titleTypographyProps={{ sx: { lineHeight: '2rem !important', letterSpacing: '0.15px !important' } }}
-      />
+      <CardHeader title='Activity Timeline' />
       <CardContent>
         <Timeline sx={{ my: 0, py: 0 }}>
           <TimelineItem>

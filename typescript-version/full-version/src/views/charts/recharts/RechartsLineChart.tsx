@@ -56,9 +56,8 @@ const RechartsLineChart = ({ direction }: Props) => {
     <Card>
       <CardHeader
         title='Balance'
-        titleTypographyProps={{ variant: 'h6' }}
         subheader='Commercial networks & enterprises'
-        subheaderTypographyProps={{ variant: 'caption', sx: { color: 'text.disabled' } }}
+        subheaderTypographyProps={{ sx: { color: theme => `${theme.palette.text.disabled} !important` } }}
         sx={{
           flexDirection: ['column', 'row'],
           alignItems: ['flex-start', 'center'],

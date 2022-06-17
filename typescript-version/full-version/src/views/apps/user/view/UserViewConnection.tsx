@@ -27,7 +27,7 @@ const UserViewConnection = () => {
       <Card sx={{ mb: 6 }}>
         <CardHeader
           title='Connected Accounts'
-          titleTypographyProps={{ variant: 'h6', sx: { mb: 1 } }}
+          titleTypographyProps={{ sx: { mb: 1 } }}
           subheader='Display content from your connected accounts on your site'
         />
         <CardContent>
@@ -109,8 +109,8 @@ const UserViewConnection = () => {
       <Card>
         <CardHeader
           title='Social Accounts'
+          titleTypographyProps={{ sx: { mb: 1 } }}
           subheader='Display content from social accounts on your site'
-          titleTypographyProps={{ variant: 'h6', sx: { mb: 1 } }}
         />
         <CardContent>
           <Box

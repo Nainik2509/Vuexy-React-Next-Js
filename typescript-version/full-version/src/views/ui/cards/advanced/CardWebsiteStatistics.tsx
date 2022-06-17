@@ -98,7 +98,6 @@ const CardWebsiteStats = () => {
     <Card>
       <CardHeader
         title='Website Statistics'
-        titleTypographyProps={{ sx: { lineHeight: '2rem !important', letterSpacing: '0.15px !important' } }}
         action={
           <IconButton size='small' aria-label='settings' className='card-more-options' sx={{ color: 'text.secondary' }}>
             <DotsVertical sx={{ fontSize: '1.375rem' }} />

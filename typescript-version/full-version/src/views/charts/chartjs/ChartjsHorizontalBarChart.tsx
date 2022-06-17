@@ -83,12 +83,7 @@ const ChartjsHorizontalBarChart = (props: HorizontalBarProps) => {
 
   return (
     <Card>
-      <CardHeader
-        title='Balance'
-        subheader='$74,123'
-        titleTypographyProps={{ variant: 'h6' }}
-        subheaderTypographyProps={{ variant: 'caption' }}
-      />
+      <CardHeader title='Balance' subheader='$74,123' />
       <CardContent>
         <Bar data={data} options={options} height={400} />
       </CardContent>

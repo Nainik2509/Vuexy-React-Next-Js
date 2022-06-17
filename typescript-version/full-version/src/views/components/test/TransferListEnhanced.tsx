@@ -73,8 +73,8 @@ const TransferListEnhanced = () => {
       <CardHeader
         title={title}
         sx={{ px: 4, py: 2 }}
-        titleTypographyProps={{ sx: { fontSize: '1rem !important', lineHeight: '1.5 !important' } }}
         subheader={`${numberOfChecked(items)}/${items.length} selected`}
+        titleTypographyProps={{ sx: { fontSize: '1rem !important', lineHeight: '1.5 !important' } }}
         avatar={
           <Checkbox
             disabled={items.length === 0}

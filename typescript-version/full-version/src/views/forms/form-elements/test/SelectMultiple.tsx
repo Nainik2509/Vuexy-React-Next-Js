@@ -72,7 +72,7 @@ const SelectMultiple = () => {
 
   return (
     <Card>
-      <CardHeader title='Multiple Select' titleTypographyProps={{ variant: 'h6' }} />
+      <CardHeader title='Multiple Select' />
       <CardContent>
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>

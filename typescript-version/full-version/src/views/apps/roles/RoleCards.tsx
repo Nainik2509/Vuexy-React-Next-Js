@@ -165,7 +165,7 @@ const RolesCards = () => {
       <Dialog fullWidth maxWidth='md' scroll='body' onClose={handleClose} open={open}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <DialogTitle sx={{ textAlign: 'center' }}>
-            <Typography variant='h4' component='span'>
+            <Typography variant='h5' component='span'>
               {`${dialogTitle} Role`}
             </Typography>
             <Typography variant='body2'>Set Role Permissions</Typography>

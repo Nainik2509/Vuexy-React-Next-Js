@@ -11,7 +11,7 @@ import FormControl from '@mui/material/FormControl'
 const SelectVariants = () => {
   return (
     <Card>
-      <CardHeader title='Select Variants' titleTypographyProps={{ variant: 'h6' }} />
+      <CardHeader title='Select Variants' />
       <CardContent>
         <div className='demo-space-x'>
           <FormControl>

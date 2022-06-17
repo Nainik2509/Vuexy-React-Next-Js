@@ -113,12 +113,7 @@ const ChartjsLineChart = (props: LineProps) => {
 
   return (
     <Card>
-      <CardHeader
-        title='New Technologies Data'
-        titleTypographyProps={{ variant: 'h6' }}
-        subheader='Commercial networks & enterprises'
-        subheaderTypographyProps={{ variant: 'caption' }}
-      />
+      <CardHeader title='New Technologies Data' subheader='Commercial networks & enterprises' />
       <CardContent>
         <Line data={data} options={options as any} height={400} />
       </CardContent>

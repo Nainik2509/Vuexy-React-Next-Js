@@ -48,9 +48,8 @@ const RechartsPieChart = () => {
     <Card>
       <CardHeader
         title='Expense Ratio'
-        titleTypographyProps={{ variant: 'h6' }}
         subheader='Spending on various categories'
-        subheaderTypographyProps={{ variant: 'caption', sx: { color: 'text.disabled' } }}
+        subheaderTypographyProps={{ sx: { color: theme => `${theme.palette.text.disabled} !important` } }}
       />
       <CardContent>
         <Box sx={{ height: 350 }}>

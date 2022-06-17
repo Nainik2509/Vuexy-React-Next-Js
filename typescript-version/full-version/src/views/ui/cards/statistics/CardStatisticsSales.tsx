@@ -83,16 +83,8 @@ const CardStatisticsSales = () => {
       <Grid item xs={12} lg={8}>
         <Card>
           <CardHeader
-            title='Statistics Card'
             sx={{ pt: 4 }}
-            titleTypographyProps={{
-              sx: {
-                fontSize: '1rem !important',
-                fontWeight: '600 !important',
-                lineHeight: '1.31 !important',
-                letterSpacing: '0.29px !important'
-              }
-            }}
+            title='Statistics Card'
             action={
               <IconButton
                 size='small'

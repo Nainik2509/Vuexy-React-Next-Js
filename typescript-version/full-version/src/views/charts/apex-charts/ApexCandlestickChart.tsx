@@ -178,8 +178,6 @@ const ApexCandlestickChart = () => {
       <CardHeader
         title='Stocks Prices'
         subheader='$50,863.98'
-        titleTypographyProps={{ variant: 'h6' }}
-        subheaderTypographyProps={{ variant: 'caption' }}
         sx={{
           flexDirection: ['column', 'row'],
           alignItems: ['flex-start', 'center'],

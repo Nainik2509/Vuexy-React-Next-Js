@@ -94,7 +94,7 @@ const CustomTooltip = (data: TooltipProps<any, any>) => {
 const RechartsRadarChart = () => {
   return (
     <Card>
-      <CardHeader title='Mobile Comparison' titleTypographyProps={{ variant: 'h6' }} />
+      <CardHeader title='Mobile Comparison' />
       <CardContent>
         <Box sx={{ height: 350 }}>
           <ResponsiveContainer>

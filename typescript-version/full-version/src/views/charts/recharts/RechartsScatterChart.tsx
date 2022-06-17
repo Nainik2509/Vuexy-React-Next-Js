@@ -127,7 +127,6 @@ const RechartsScatterChart = ({ direction }: Props) => {
     <Card>
       <CardHeader
         title='Framework Usage'
-        titleTypographyProps={{ variant: 'h6' }}
         sx={{
           flexDirection: ['column', 'row'],
           alignItems: ['flex-start', 'center'],

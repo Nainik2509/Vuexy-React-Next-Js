@@ -175,7 +175,7 @@ const UserViewBilling = () => {
   return (
     <Fragment>
       <Card sx={{ mb: 6 }}>
-        <CardHeader title='Current plan' titleTypographyProps={{ variant: 'h6' }} />
+        <CardHeader title='Current plan' />
         <CardContent>
           <Grid container spacing={6}>
             <Grid item xs={12} md={6}>
@@ -318,7 +318,6 @@ const UserViewBilling = () => {
       <Card sx={{ mb: 6 }}>
         <CardHeader
           title='Payment Methods'
-          titleTypographyProps={{ variant: 'h6' }}
           action={
             <Button variant='contained' onClick={handleAddCardClickOpen}>
               <Plus sx={{ mr: 1, fontSize: '1.125rem' }} />
@@ -495,7 +494,6 @@ const UserViewBilling = () => {
       <Card>
         <CardHeader
           title='Billing Address'
-          titleTypographyProps={{ variant: 'h6' }}
           action={
             <Button variant='contained' onClick={() => setOpenAddressCard(true)}>
               Edit Address

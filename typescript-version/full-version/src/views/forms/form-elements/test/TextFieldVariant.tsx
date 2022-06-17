@@ -43,7 +43,7 @@ const InputBase = styled(MuiInputBase)<InputBaseProps>(({ theme }) => ({
 const TextFieldVariant = () => {
   return (
     <Card>
-      <CardHeader title='Variants' titleTypographyProps={{ variant: 'h6' }} />
+      <CardHeader title='Variants' />
       <CardContent>
         <form className='demo-space-x' noValidate autoComplete='off'>
           <TextField label='Outlined' />

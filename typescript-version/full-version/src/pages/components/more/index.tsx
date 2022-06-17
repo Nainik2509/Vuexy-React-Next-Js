@@ -20,7 +20,7 @@ const Misc = () => {
     <Grid container spacing={6} className='match-height'>
       <Grid item xs={12}>
         <Card>
-          <CardHeader title='More Components' titleTypographyProps={{ variant: 'h6' }} />
+          <CardHeader title='More Components' />
           <CardContent>
             <Alert severity='info' sx={{ mb: 4 }}>
               We have themed each of the MUI components but we have skipped the demos of the following components. User

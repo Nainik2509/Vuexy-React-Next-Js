@@ -187,7 +187,7 @@ const PermissionsTable = () => {
       </Grid>
       <Dialog maxWidth='sm' fullWidth onClose={handleDialogToggle} open={editDialogOpen}>
         <DialogTitle sx={{ mx: 'auto', textAlign: 'center' }}>
-          <Typography variant='h4' component='span' sx={{ mb: 2 }}>
+          <Typography variant='h5' component='span' sx={{ mb: 2 }}>
             Edit Permission
           </Typography>
           <Typography variant='body2'>Edit permission as per your requirements.</Typography>

@@ -167,7 +167,6 @@ const ApexHeatmapChart = () => {
     <Card>
       <CardHeader
         title='Daily Sales States'
-        titleTypographyProps={{ variant: 'h6' }}
         action={
           <IconButton size='small' aria-label='settings' className='card-more-options' sx={{ color: 'text.secondary' }}>
             <DotsVertical fontSize='small' />

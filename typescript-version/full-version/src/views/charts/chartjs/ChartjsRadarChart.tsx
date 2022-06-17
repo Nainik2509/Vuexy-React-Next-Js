@@ -98,7 +98,7 @@ const ChartjsRadarChart = (props: RadarProps) => {
 
   return (
     <Card>
-      <CardHeader title='Radar Chart' titleTypographyProps={{ variant: 'h6' }} />
+      <CardHeader title='Radar Chart' />
       <CardContent>
         <Radar ref={chartRef} data={chartData} options={options} height={350} />
       </CardContent>

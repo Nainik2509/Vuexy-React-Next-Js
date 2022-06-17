@@ -80,7 +80,7 @@ const FormLayoutsSeparator = () => {
 
   return (
     <Card>
-      <CardHeader title='Multi Column with Form Separator' titleTypographyProps={{ variant: 'h6' }} />
+      <CardHeader title='Multi Column with Form Separator' />
       <Divider sx={{ m: 0 }} />
       <form onSubmit={e => e.preventDefault()}>
         <CardContent>

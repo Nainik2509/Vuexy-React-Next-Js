@@ -69,7 +69,6 @@ const ChartjsPolarAreaChart = (props: PolarAreaProps) => {
     <Card>
       <CardHeader
         title='Average Skills'
-        titleTypographyProps={{ variant: 'h6' }}
         action={
           <IconButton size='small' aria-label='settings' className='card-more-options' sx={{ color: 'text.secondary' }}>
             <DotsVertical fontSize='small' />

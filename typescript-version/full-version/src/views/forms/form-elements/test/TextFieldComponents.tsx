@@ -22,7 +22,7 @@ const TextFieldComponents = () => {
 
   return (
     <Card>
-      <CardHeader title='Components' titleTypographyProps={{ variant: 'h6' }} />
+      <CardHeader title='Components' />
       <CardContent>
         <form className='demo-space-x' noValidate autoComplete='off'>
           <FormControl variant='standard'>

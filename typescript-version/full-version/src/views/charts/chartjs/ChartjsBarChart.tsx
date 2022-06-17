@@ -130,7 +130,6 @@ const ChartjsBarChart = (props: BarProp) => {
     <Card>
       <CardHeader
         title='Latest Statistics'
-        titleTypographyProps={{ variant: 'h6' }}
         sx={{
           flexDirection: ['column', 'row'],
           alignItems: ['flex-start', 'center'],

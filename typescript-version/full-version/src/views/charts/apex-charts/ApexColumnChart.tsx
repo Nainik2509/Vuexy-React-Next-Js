@@ -145,7 +145,6 @@ const ApexColumnChart = () => {
     <Card>
       <CardHeader
         title='Data Science'
-        titleTypographyProps={{ variant: 'h6' }}
         sx={{
           flexDirection: ['column', 'row'],
           alignItems: ['flex-start', 'center'],

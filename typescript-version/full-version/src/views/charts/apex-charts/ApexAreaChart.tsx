@@ -146,8 +146,7 @@ const ApexAreaChart = () => {
       <CardHeader
         title='Line Chart'
         subheader='Commercial networks'
-        titleTypographyProps={{ variant: 'h6' }}
-        subheaderTypographyProps={{ variant: 'caption', sx: { color: 'text.disabled' } }}
+        subheaderTypographyProps={{ sx: { color: theme => `${theme.palette.text.disabled} !important` } }}
         sx={{
           flexDirection: ['column', 'row'],
           alignItems: ['flex-start', 'center'],

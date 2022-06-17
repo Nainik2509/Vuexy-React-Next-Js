@@ -76,7 +76,7 @@ const FormValidationAsync = () => {
 
   return (
     <Card>
-      <CardHeader title='Async Submit' titleTypographyProps={{ variant: 'h6' }} />
+      <CardHeader title='Async Submit' />
       <CardContent>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Grid container spacing={5}>

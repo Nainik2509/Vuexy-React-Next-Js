@@ -138,7 +138,7 @@ const UserViewOverview = ({ invoiceData }: Props) => {
   return (
     <Fragment>
       <Card sx={{ mb: 6 }}>
-        <CardHeader title='Project List' titleTypographyProps={{ variant: 'h6' }} />
+        <CardHeader title='Project List' />
 
         <Divider sx={{ m: 0 }} />
 
@@ -188,7 +188,7 @@ const UserViewOverview = ({ invoiceData }: Props) => {
       </Card>
 
       <Card sx={{ mb: 6 }}>
-        <CardHeader title='User Activity Timeline' titleTypographyProps={{ variant: 'h6' }} />
+        <CardHeader title='User Activity Timeline' />
         <CardContent>
           <Timeline>
             <TimelineItem>

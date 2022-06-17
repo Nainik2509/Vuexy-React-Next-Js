@@ -81,7 +81,6 @@ const CardSnippet = (props: CardSnippetProps) => {
     >
       <CardHeader
         title={title}
-        titleTypographyProps={{ variant: 'h6' }}
         {...(hidden
           ? {}
           : {

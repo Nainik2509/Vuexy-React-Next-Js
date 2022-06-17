@@ -176,7 +176,6 @@ const RechartsBarChart = ({ direction }: Props) => {
     <Card>
       <CardHeader
         title='Brand Turnover'
-        titleTypographyProps={{ variant: 'h6' }}
         sx={{
           flexDirection: ['column', 'row'],
           alignItems: ['flex-start', 'center'],

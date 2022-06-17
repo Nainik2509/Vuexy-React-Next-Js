@@ -112,8 +112,6 @@ const ApexBarChart = () => {
       <CardHeader
         title='Data Science'
         subheader='$74,382.72'
-        titleTypographyProps={{ variant: 'h6' }}
-        subheaderTypographyProps={{ variant: 'caption' }}
         sx={{
           flexDirection: ['column', 'row'],
           alignItems: ['flex-start', 'center'],

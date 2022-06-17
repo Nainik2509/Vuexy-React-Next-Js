@@ -99,7 +99,6 @@ const CardSalesByCountries = () => {
     <Card>
       <CardHeader
         title='Sales by Countries'
-        titleTypographyProps={{ sx: { lineHeight: '2rem !important', letterSpacing: '0.15px !important' } }}
         action={
           <IconButton size='small' aria-label='settings' className='card-more-options' sx={{ color: 'text.secondary' }}>
             <DotsVertical />

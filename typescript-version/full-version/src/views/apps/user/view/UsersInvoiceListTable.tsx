@@ -232,10 +232,6 @@ const InvoiceListTable = ({ invoiceData }: Props) => {
       <CardHeader
         title='Invoice List'
         sx={{ '& .MuiCardHeader-action': { m: 0 } }}
-        titleTypographyProps={{
-          variant: 'h6',
-          sx: { lineHeight: '32px !important', letterSpacing: '0.15px !important' }
-        }}
         action={
           <>
             <Button

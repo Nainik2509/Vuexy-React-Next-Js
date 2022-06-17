@@ -71,7 +71,7 @@ const ApexRadarChart = () => {
 
   return (
     <Card>
-      <CardHeader title='Mobile Comparison' titleTypographyProps={{ variant: 'h6' }} />
+      <CardHeader title='Mobile Comparison' />
       <CardContent>
         <ReactApexcharts options={options} series={series} type='radar' height={400} />
       </CardContent>

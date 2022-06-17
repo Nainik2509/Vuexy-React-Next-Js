@@ -23,7 +23,7 @@ const CardVerticalRatings = () => {
         </Typography>
         <Typography variant='body2'>
           Printing is a widely use process in making printed materials that are used for advertising. It become fast,
-          easy and simple. If you want your promotional material to be an eye-catching.
+          easy and simple.
         </Typography>
       </CardContent>
       <CardActions className='card-action-dense'>

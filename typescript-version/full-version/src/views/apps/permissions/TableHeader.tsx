@@ -65,7 +65,7 @@ const TableHeader = (props: TableHeaderProps) => {
       </Box>
       <Dialog fullWidth maxWidth='sm' onClose={handleDialogToggle} open={open}>
         <DialogTitle sx={{ pt: 12, mx: 'auto', textAlign: 'center' }}>
-          <Typography variant='h4' component='span' sx={{ mb: 2 }}>
+          <Typography variant='h5' component='span' sx={{ mb: 2 }}>
             Add New Permission
           </Typography>
           <Typography variant='body2'>Permissions you may use and assign to your users.</Typography>

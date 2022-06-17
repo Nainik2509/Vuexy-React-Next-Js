@@ -47,7 +47,7 @@ const TextFieldInputAdornment = () => {
 
   return (
     <Card>
-      <CardHeader title='Input Adornment' titleTypographyProps={{ variant: 'h6' }} />
+      <CardHeader title='Input Adornment' />
       <CardContent>
         <form className='demo-space-x' noValidate autoComplete='off'>
           <TextField

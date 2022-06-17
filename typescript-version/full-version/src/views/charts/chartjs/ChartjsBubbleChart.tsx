@@ -110,9 +110,7 @@ const ChartjsBubbleChart = (props: BubbleProps) => {
     <Card>
       <CardHeader
         title='Bubble Chart'
-        titleTypographyProps={{ variant: 'h6' }}
         subheader='Spending on various categories'
-        subheaderTypographyProps={{ variant: 'caption' }}
         sx={{
           flexDirection: ['column', 'row'],
           alignItems: ['flex-start', 'center'],

@@ -93,7 +93,7 @@ const FormValidationSchema = () => {
 
   return (
     <Card>
-      <CardHeader title='Validation Schema With OnChange' titleTypographyProps={{ variant: 'h6' }} />
+      <CardHeader title='Validation Schema With OnChange' />
       <CardContent>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Grid container spacing={5}>

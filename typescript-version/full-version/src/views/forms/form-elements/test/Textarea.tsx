@@ -21,7 +21,7 @@ const TextareaBasic = () => {
 
   return (
     <Card>
-      <CardHeader title='Textarea' titleTypographyProps={{ variant: 'h6' }} />
+      <CardHeader title='Textarea' />
       <CardContent>
         <form noValidate autoComplete='off'>
           <Grid container spacing={4}>

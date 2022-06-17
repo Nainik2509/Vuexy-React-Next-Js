@@ -127,7 +127,7 @@ const UserViewSecurity = () => {
   return (
     <Fragment>
       <Card sx={{ mb: 6 }}>
-        <CardHeader title='Change Password' titleTypographyProps={{ variant: 'h6' }} />
+        <CardHeader title='Change Password' />
         <CardContent>
           <Alert icon={false} severity='warning' sx={{ mb: 6 }}>
             <AlertTitle sx={{ fontWeight: 600, mb: theme => `${theme.spacing(1)} !important` }}>
@@ -201,8 +201,8 @@ const UserViewSecurity = () => {
       <Card sx={{ mb: 6 }}>
         <CardHeader
           title='Two-step verification'
+          titleTypographyProps={{ sx: { mb: 1 } }}
           subheader='Keep your account secure with authentication step.'
-          titleTypographyProps={{ variant: 'h6', sx: { mb: 1 } }}
         />
         <CardContent>
           <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>SMS</Typography>
@@ -271,7 +271,7 @@ const UserViewSecurity = () => {
       </Card>
 
       <Card>
-        <CardHeader title='Recent devices' titleTypographyProps={{ variant: 'h6' }} />
+        <CardHeader title='Recent devices' />
 
         <Divider sx={{ m: 0 }} />
 

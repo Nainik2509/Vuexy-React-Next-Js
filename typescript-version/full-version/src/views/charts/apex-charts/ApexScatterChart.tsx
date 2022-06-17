@@ -119,7 +119,6 @@ const ApexScatterChart = () => {
     <Card>
       <CardHeader
         title='New Technologies Data'
-        titleTypographyProps={{ variant: 'h6' }}
         sx={{
           flexDirection: ['column', 'row'],
           alignItems: ['flex-start', 'center'],
