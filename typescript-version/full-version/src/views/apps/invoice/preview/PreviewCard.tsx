@@ -347,7 +347,15 @@ const PreviewCard = ({ data }: Props) => {
               </Button>
             </Link>
 
-            <ReactToPdf scale={0.845} targetRef={PreviewRef} filename={`invoice-${data.invoice.id}.pdf`}>
+            <ReactToPdf
+              scale={1}
+              targetRef={PreviewRef}
+              filename={`invoice-${data.invoice.id}.pdf`}
+              options={{
+                unit: 'in',
+                format: [9.5, 9.75]
+              }}
+            >
               {({ toPdf }: { toPdf: () => void }) => {
                 return (
                   <Button variant='contained' color='success' onClick={toPdf}>
