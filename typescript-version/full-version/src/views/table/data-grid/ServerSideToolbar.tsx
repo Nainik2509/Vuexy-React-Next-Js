@@ -52,8 +52,8 @@ const ServerSideToolbar = (props: Props) => {
             sm: 'auto'
           },
           m: theme => theme.spacing(1, 0.5, 1.5),
-          '& .MuiSvgIcon-root': {
-            mr: 0.5
+          '& .MuiInput-root > .MuiSvgIcon-root': {
+            mr: 2
           },
           '& .MuiInput-underline:before': {
             borderBottom: 1,
