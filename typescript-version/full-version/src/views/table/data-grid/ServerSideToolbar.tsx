@@ -18,14 +18,13 @@ interface Props {
   onChange: (e: ChangeEvent) => void
 }
 
-const StyledGridToolbarContainer = styled(GridToolbarContainer)({
-  p: 2,
-  pb: 0,
+const StyledGridToolbarContainer = styled(GridToolbarContainer)(({ theme }) => ({
   display: 'flex',
   flexWrap: 'wrap',
-  alignItems: 'flex-start',
-  justifyContent: 'space-between'
-})
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  padding: `${theme.spacing(2, 5, 4, 5)} !important`
+}))
 
 const ServerSideToolbar = (props: Props) => {
   return (
@@ -34,7 +33,7 @@ const ServerSideToolbar = (props: Props) => {
         <GridToolbarExport printOptions={{ disableToolbarButton: true }} />
       </Box>
       <TextField
-        variant='standard'
+        size='small'
         value={props.value}
         onChange={props.onChange}
         placeholder='Search…'
@@ -51,13 +50,8 @@ const ServerSideToolbar = (props: Props) => {
             xs: 1,
             sm: 'auto'
           },
-          m: theme => theme.spacing(1, 0.5, 1.5),
-          '& .MuiInput-root > .MuiSvgIcon-root': {
+          '& .MuiInputBase-root > .MuiSvgIcon-root': {
             mr: 2
-          },
-          '& .MuiInput-underline:before': {
-            borderBottom: 1,
-            borderColor: 'divider'
           }
         }}
       />

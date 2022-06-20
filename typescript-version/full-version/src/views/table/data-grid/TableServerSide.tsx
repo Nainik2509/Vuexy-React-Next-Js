@@ -212,6 +212,9 @@ const TableServerSide = () => {
         components={{ Toolbar: ServerSideToolbar }}
         onPageSizeChange={newPageSize => setPageSize(newPageSize)}
         componentsProps={{
+          baseButton: {
+            variant: 'outlined'
+          },
           toolbar: {
             value: searchValue,
             clearSearch: () => handleSearch(''),

@@ -177,6 +177,9 @@ const TableColumns = () => {
         rows={filteredData.length ? filteredData : data}
         onPageSizeChange={newPageSize => setPageSize(newPageSize)}
         componentsProps={{
+          baseButton: {
+            variant: 'outlined'
+          },
           toolbar: {
             value: searchText,
             clearSearch: () => handleSearch(''),
