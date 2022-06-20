@@ -47,7 +47,7 @@ const input = (theme: Theme) => {
           '&:hover:not(.Mui-focused):not(.Mui-disabled) .MuiOutlinedInput-notchedOutline': {
             borderColor: `rgba(${theme.palette.customColors.main}, 0.32)`
           },
-          '&:hover.Mui-error .MuiOutlinedInput-notchedOutline': {
+          '&:hover.Mui-error:not(.Mui-focused):not(.Mui-disabled)  .MuiOutlinedInput-notchedOutline': {
             borderColor: theme.palette.error.main
           },
           '& .MuiOutlinedInput-notchedOutline': {
