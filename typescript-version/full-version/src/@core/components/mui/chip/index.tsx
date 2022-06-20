@@ -26,9 +26,13 @@ const Chip = (props: CustomChipProps) => {
     info: { ...bgColors.infoLight }
   }
 
+  const propsToPass = { ...props }
+
+  propsToPass.rounded = undefined
+
   return (
     <MuiChip
-      {...props}
+      {...propsToPass}
       variant='filled'
       className={clsx({
         'MuiChip-rounded': rounded,
@@ -40,7 +44,3 @@ const Chip = (props: CustomChipProps) => {
 }
 
 export default Chip
-
-Chip.defaultProps = {
-  rounded: false
-}
