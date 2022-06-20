@@ -415,7 +415,7 @@ const navigation = (): VerticalNavItemsType => {
           path: '/forms/form-elements/radio'
         },
         {
-          title: 'Custom Radios',
+          title: 'Custom Inputs',
           path: '/forms/form-elements/custom-inputs'
         },
         {
