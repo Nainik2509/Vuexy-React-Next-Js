@@ -27,8 +27,8 @@ const ReactHotToast = styled(Box)<BoxProps>(({ theme }) => {
       background: theme.palette.background.paper,
       boxShadow:
         theme.palette.mode === 'light'
-          ? '0px 4px 10px -4px rgb(58 53 65 / 60%)'
-          : '0px 8px 16px -4px rgb(19 17 32 / 65%)',
+          ? '0px 4px 10px -4px rgba(58, 53, 65, 0.60)'
+          : '0px 8px 16px -4px rgba(19, 17, 32, 0.65)',
       '&>:first-of-type:not([role])>:first-of-type': {
         width: 14,
         height: 14
