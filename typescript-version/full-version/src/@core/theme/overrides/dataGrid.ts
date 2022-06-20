@@ -23,7 +23,7 @@ const DataGrid = (theme: Theme) => {
           backgroundColor: theme.palette.customColors.tableHeaderBg
         },
         columnHeader: {
-          height: '54px',
+          height: '52px',
           '&:not(.MuiDataGrid-columnHeaderCheckbox)': {
             padding: theme.spacing(4),
             '&:first-of-type': {
