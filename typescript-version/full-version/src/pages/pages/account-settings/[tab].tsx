@@ -1,5 +1,5 @@
 // ** Next Import
-import { GetStaticProps, GetStaticPropsContext, InferGetStaticPropsType } from 'next/types'
+import { GetStaticProps, GetStaticPaths, GetStaticPropsContext, InferGetStaticPropsType } from 'next/types'
 
 // ** Third Party Imports
 import axios from 'axios'
@@ -10,8 +10,15 @@ import AccountSettings from 'src/views/pages/account-settings/AccountSettings'
 // ** Types
 import { PricingDataType } from 'src/@core/components/plan-details/types'
 
-const AccountSettingsTab = ({ apiPricingData }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  return <AccountSettings tab='account' apiPricingData={apiPricingData} />
+const AccountSettingsTab = ({ tab, apiPricingData }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  return <AccountSettings tab={tab} apiPricingData={apiPricingData} />
+}
+
+export const getStaticPaths: GetStaticPaths = () => {
+  return {
+    paths: [],
+    fallback: true
+  }
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }: GetStaticPropsContext) => {

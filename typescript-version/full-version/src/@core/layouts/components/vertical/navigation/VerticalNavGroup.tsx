@@ -91,7 +91,7 @@ const VerticalNavGroup = (props: Props) => {
   // ** Hooks & Vars
   const theme = useTheme()
   const router = useRouter()
-  const currentURL = router.pathname
+  const currentURL = router.asPath
   const { skin, direction, navCollapsed, verticalNavToggleType } = settings
 
   // ** Accordion menu group open toggle

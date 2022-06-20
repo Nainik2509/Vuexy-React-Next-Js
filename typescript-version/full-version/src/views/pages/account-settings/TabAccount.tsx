@@ -1,25 +1,37 @@
 // ** React Imports
-import { useState, ElementType, ChangeEvent, SyntheticEvent } from 'react'
+import { useState, ElementType, ChangeEvent } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
-import Link from '@mui/material/Link'
+import Card from '@mui/material/Card'
 import Alert from '@mui/material/Alert'
 import Select from '@mui/material/Select'
+import Dialog from '@mui/material/Dialog'
 import { styled } from '@mui/material/styles'
+import Checkbox from '@mui/material/Checkbox'
 import MenuItem from '@mui/material/MenuItem'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import InputLabel from '@mui/material/InputLabel'
 import AlertTitle from '@mui/material/AlertTitle'
-import IconButton from '@mui/material/IconButton'
-import CardContent from '@mui/material/CardContent'
+import CardHeader from '@mui/material/CardHeader'
 import FormControl from '@mui/material/FormControl'
+import CardContent from '@mui/material/CardContent'
+import DialogContent from '@mui/material/DialogContent'
+import DialogActions from '@mui/material/DialogActions'
+import FormHelperText from '@mui/material/FormHelperText'
+import InputAdornment from '@mui/material/InputAdornment'
 import Button, { ButtonProps } from '@mui/material/Button'
+import FormControlLabel from '@mui/material/FormControlLabel'
+
+// ** Third Party Imports
+import { useForm, Controller } from 'react-hook-form'
 
 // ** Icons Imports
-import Close from 'mdi-material-ui/Close'
+import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
+import CheckCircleOutline from 'mdi-material-ui/CheckCircleOutline'
+import CloseCircleOutline from 'mdi-material-ui/CloseCircleOutline'
 
 const ImgStyled = styled('img')(({ theme }) => ({
   width: 120,
@@ -47,8 +59,17 @@ const ResetButtonStyled = styled(Button)<ButtonProps>(({ theme }) => ({
 
 const TabAccount = () => {
   // ** State
-  const [openAlert, setOpenAlert] = useState<boolean>(true)
+  const [open, setOpen] = useState<boolean>(false)
+  const [userInput, setUserInput] = useState<string>('yes')
   const [imgSrc, setImgSrc] = useState<string>('/images/avatars/1.png')
+  const [secondDialogOpen, setSecondDialogOpen] = useState<boolean>(false)
+
+  // ** Hooks
+  const {
+    control,
+    handleSubmit,
+    formState: { errors }
+  } = useForm({ defaultValues: { checkbox: false } })
 
   const onChange = (file: ChangeEvent) => {
     const reader = new FileReader()
@@ -60,105 +81,255 @@ const TabAccount = () => {
     }
   }
 
+  const handleClose = () => setOpen(false)
+
+  const handleSecondDialogClose = () => setSecondDialogOpen(false)
+
+  const onSubmit = () => {
+    setOpen(true)
+  }
+
+  const handleConfirmation = (value: string) => {
+    handleClose()
+    setUserInput(value)
+    setSecondDialogOpen(true)
+  }
+
   return (
-    <CardContent>
-      <form>
-        <Grid container spacing={7}>
-          <Grid item xs={12} sx={{ mt: 4.8, mb: 3 }}>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <ImgStyled src={imgSrc} alt='Profile Pic' />
-              <Box>
-                <ButtonStyled component='label' variant='contained' htmlFor='account-settings-upload-image'>
-                  Upload New Photo
-                  <input
-                    hidden
-                    type='file'
-                    onChange={onChange}
-                    accept='image/png, image/jpeg'
-                    id='account-settings-upload-image'
-                  />
-                </ButtonStyled>
-                <ResetButtonStyled color='error' variant='outlined' onClick={() => setImgSrc('/images/avatars/1.png')}>
+    <>
+      {/* Account Details Card */}
+      <Card sx={{ mb: 4 }}>
+        <CardHeader title='Account Details' sx={{ pb: 0 }} />
+        <CardContent>
+          <form>
+            <Grid container spacing={7}>
+              <Grid item xs={12} sx={{ mt: 4.8, mb: 3 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                  <ImgStyled src={imgSrc} alt='Profile Pic' />
+                  <Box>
+                    <ButtonStyled component='label' variant='contained' htmlFor='account-settings-upload-image'>
+                      Upload New Photo
+                      <input
+                        hidden
+                        type='file'
+                        onChange={onChange}
+                        accept='image/png, image/jpeg'
+                        id='account-settings-upload-image'
+                      />
+                    </ButtonStyled>
+                    <ResetButtonStyled
+                      color='error'
+                      variant='outlined'
+                      onClick={() => setImgSrc('/images/avatars/1.png')}
+                    >
+                      Reset
+                    </ResetButtonStyled>
+                    <Typography variant='body2' sx={{ mt: 5.5 }}>
+                      Allowed PNG or JPEG. Max size of 800K.
+                    </Typography>
+                  </Box>
+                </Box>
+              </Grid>
+
+              <Grid item xs={12} sm={6}>
+                <TextField fullWidth label='First Name' placeholder='John' defaultValue='John' />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField fullWidth label='Last Name' placeholder='Doe' defaultValue='Doe' />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  fullWidth
+                  type='email'
+                  label='Email'
+                  placeholder='john.doe@example.com'
+                  defaultValue='john.doe@example.com'
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField fullWidth label='Organization' placeholder='ThemeSelection' defaultValue='ThemeSelection' />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  fullWidth
+                  type='number'
+                  label='Phone Number'
+                  placeholder='202 555 0111'
+                  InputProps={{ startAdornment: <InputAdornment position='start'>US (+1)</InputAdornment> }}
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField fullWidth label='Address' placeholder='Address' />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField fullWidth label='State' placeholder='California' />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField fullWidth type='number' label='Zip Code' placeholder='231465' />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <FormControl fullWidth>
+                  <InputLabel>Country</InputLabel>
+                  <Select label='Country' defaultValue='australia'>
+                    <MenuItem value='australia'>Australia</MenuItem>
+                    <MenuItem value='canada'>Canada</MenuItem>
+                    <MenuItem value='france'>France</MenuItem>
+                    <MenuItem value='united-kingdom'>United Kingdom</MenuItem>
+                    <MenuItem value='united-states'>United States</MenuItem>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <FormControl fullWidth>
+                  <InputLabel>Language</InputLabel>
+                  <Select label='Language' defaultValue='arabic'>
+                    <MenuItem value='arabic'>Arabic</MenuItem>
+                    <MenuItem value='english'>English</MenuItem>
+                    <MenuItem value='french'>French</MenuItem>
+                    <MenuItem value='german'>German</MenuItem>
+                    <MenuItem value='portuguese'>Portuguese</MenuItem>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <FormControl fullWidth>
+                  <InputLabel>Timezone</InputLabel>
+                  <Select label='Timezone' defaultValue='gmt-12'>
+                    <MenuItem value='gmt-12'>(GMT-12:00) International Date Line West</MenuItem>
+                    <MenuItem value='gmt-11'>(GMT-11:00) Midway Island, Samoa</MenuItem>
+                    <MenuItem value='gmt-10'>(GMT-10:00) Hawaii</MenuItem>
+                    <MenuItem value='gmt-09'>(GMT-09:00) Alaska</MenuItem>
+                    <MenuItem value='gmt-08'>(GMT-08:00) Pacific Time (US & Canada)</MenuItem>
+                    <MenuItem value='gmt-08-baja'>(GMT-08:00) Tijuana, Baja California</MenuItem>
+                    <MenuItem value='gmt-07'>(GMT-07:00) Chihuahua, La Paz, Mazatlan</MenuItem>
+                    <MenuItem value='gmt-07-mt'>(GMT-07:00) Mountain Time (US & Canada)</MenuItem>
+                    <MenuItem value='gmt-06'>(GMT-06:00) Central America</MenuItem>
+                    <MenuItem value='gmt-06-ct'>(GMT-06:00) Central Time (US & Canada)</MenuItem>
+                    <MenuItem value='gmt-06-mc'>(GMT-06:00) Guadalajara, Mexico City, Monterrey</MenuItem>
+                    <MenuItem value='gmt-06-sk'>(GMT-06:00) Saskatchewan</MenuItem>
+                    <MenuItem value='gmt-05'>(GMT-05:00) Bogota, Lima, Quito, Rio Branco</MenuItem>
+                    <MenuItem value='gmt-05-et'>(GMT-05:00) Eastern Time (US & Canada)</MenuItem>
+                    <MenuItem value='gmt-05-ind'>(GMT-05:00) Indiana (East)</MenuItem>
+                    <MenuItem value='gmt-04'>(GMT-04:00) Atlantic Time (Canada)</MenuItem>
+                    <MenuItem value='gmt-04-clp'>(GMT-04:00) Caracas, La Paz</MenuItem>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <FormControl fullWidth>
+                  <InputLabel>Currency</InputLabel>
+                  <Select label='Currency' defaultValue='usd'>
+                    <MenuItem value='usd'>USD</MenuItem>
+                    <MenuItem value='eur'>EUR</MenuItem>
+                    <MenuItem value='pound'>Pound</MenuItem>
+                    <MenuItem value='bitcoin'>Bitcoin</MenuItem>
+                  </Select>
+                </FormControl>
+              </Grid>
+
+              <Grid item xs={12}>
+                <Button variant='contained' sx={{ mr: 3.5 }}>
+                  Save Changes
+                </Button>
+                <Button type='reset' variant='outlined' color='secondary'>
                   Reset
-                </ResetButtonStyled>
-                <Typography variant='body2' sx={{ mt: 5 }}>
-                  Allowed PNG or JPEG. Max size of 800K.
-                </Typography>
-              </Box>
-            </Box>
-          </Grid>
-
-          <Grid item xs={12} sm={6}>
-            <TextField fullWidth label='Username' placeholder='johnDoe' defaultValue='johnDoe' />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField fullWidth label='Name' placeholder='John Doe' defaultValue='John Doe' />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              fullWidth
-              type='email'
-              label='Email'
-              placeholder='johnDoe@example.com'
-              defaultValue='johnDoe@example.com'
-            />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <FormControl fullWidth>
-              <InputLabel>Role</InputLabel>
-              <Select label='Role' defaultValue='admin'>
-                <MenuItem value='admin'>Admin</MenuItem>
-                <MenuItem value='author'>Author</MenuItem>
-                <MenuItem value='editor'>Editor</MenuItem>
-                <MenuItem value='maintainer'>Maintainer</MenuItem>
-                <MenuItem value='subscriber'>Subscriber</MenuItem>
-              </Select>
-            </FormControl>
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <FormControl fullWidth>
-              <InputLabel>Status</InputLabel>
-              <Select label='Status' defaultValue='active'>
-                <MenuItem value='active'>Active</MenuItem>
-                <MenuItem value='inactive'>Inactive</MenuItem>
-                <MenuItem value='pending'>Pending</MenuItem>
-              </Select>
-            </FormControl>
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField fullWidth label='Company' placeholder='ABC Pvt. Ltd.' defaultValue='ABC Pvt. Ltd.' />
-          </Grid>
-
-          {openAlert ? (
-            <Grid item xs={12} sx={{ mb: 3 }}>
-              <Alert
-                severity='warning'
-                sx={{ '& a': { fontWeight: 400 } }}
-                action={
-                  <IconButton size='small' color='inherit' aria-label='close' onClick={() => setOpenAlert(false)}>
-                    <Close fontSize='inherit' />
-                  </IconButton>
-                }
-              >
-                <AlertTitle>Your email is not confirmed. Please check your inbox.</AlertTitle>
-                <Link href='/' onClick={(e: SyntheticEvent) => e.preventDefault()}>
-                  Resend Confirmation
-                </Link>
-              </Alert>
+                </Button>
+              </Grid>
             </Grid>
-          ) : null}
+          </form>
+        </CardContent>
+      </Card>
 
-          <Grid item xs={12}>
-            <Button variant='contained' sx={{ mr: 3.5 }}>
-              Save Changes
-            </Button>
-            <Button type='reset' variant='outlined' color='secondary'>
-              Reset
-            </Button>
-          </Grid>
-        </Grid>
-      </form>
-    </CardContent>
+      {/* Delete Account Card */}
+      <Card>
+        <CardHeader title='Delete Account' />
+        <CardContent>
+          <Alert severity='warning' icon={false} sx={{ mb: 4 }}>
+            <AlertTitle sx={{ fontWeight: 700 }}>Are you sure you want to delete your account?</AlertTitle>
+            Once you delete your account, there is no going back. Please be certain.
+          </Alert>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <Grid container spacing={4}>
+              <Grid item xs={12}>
+                <FormControl>
+                  <Controller
+                    name='checkbox'
+                    control={control}
+                    rules={{ required: true }}
+                    render={({ field }) => (
+                      <FormControlLabel
+                        label='I confirm my account deactivation'
+                        sx={errors.checkbox ? { '& .MuiTypography-root': { color: 'error.main' } } : null}
+                        control={
+                          <Checkbox
+                            {...field}
+                            size='small'
+                            name='validation-basic-checkbox'
+                            sx={errors.checkbox ? { color: 'error.main' } : null}
+                          />
+                        }
+                      />
+                    )}
+                  />
+                  {errors.checkbox && (
+                    <FormHelperText sx={{ color: 'error.main' }} id='validation-basic-checkbox'>
+                      Please confirm you want to delete account
+                    </FormHelperText>
+                  )}
+                </FormControl>
+              </Grid>
+              <Grid item xs={12}>
+                <Button variant='contained' color='error' type='submit' disabled={errors.checkbox !== undefined}>
+                  Deactivate Account
+                </Button>
+              </Grid>
+            </Grid>
+          </form>
+        </CardContent>
+      </Card>
+
+      {/* Deactivate Account Dialogs */}
+      <Dialog fullWidth maxWidth='xs' open={open} onClose={handleClose}>
+        <DialogContent>
+          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Box sx={{ maxWidth: '85%', textAlign: 'center' }}>
+              <AlertCircleOutline sx={{ mb: 4, fontSize: '5.5rem', color: 'warning.main' }} />
+              <Typography>Are you sure you would like to deactivate your account?</Typography>
+            </Box>
+          </Box>
+        </DialogContent>
+        <DialogActions sx={{ justifyContent: 'center' }}>
+          <Button variant='contained' onClick={() => handleConfirmation('yes')}>
+            Yes
+          </Button>
+          <Button variant='outlined' color='secondary' onClick={() => handleConfirmation('cancel')}>
+            Cancel
+          </Button>
+        </DialogActions>
+      </Dialog>
+      <Dialog fullWidth maxWidth='xs' open={secondDialogOpen} onClose={handleSecondDialogClose}>
+        <DialogContent>
+          <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+            {userInput === 'yes' ? (
+              <CheckCircleOutline sx={{ mb: 14, fontSize: '5.5rem', color: 'success.main' }} />
+            ) : (
+              <CloseCircleOutline sx={{ mb: 14, fontSize: '5.5rem', color: 'error.main' }} />
+            )}
+            <Typography variant='h4' sx={{ mb: 8 }}>
+              {userInput === 'yes' ? 'Deleted!' : 'Cancelled'}
+            </Typography>
+            <Typography>
+              {userInput === 'yes' ? 'Your account has been deleted.' : 'Account Deactivation Cancelled!'}
+            </Typography>
+          </Box>
+        </DialogContent>
+        <DialogActions sx={{ justifyContent: 'center' }}>
+          <Button variant='contained' color='success' onClick={handleSecondDialogClose}>
+            OK
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </>
   )
 }
 

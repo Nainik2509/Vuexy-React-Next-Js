@@ -40,3 +40,7 @@ const Chip = (props: CustomChipProps) => {
 }
 
 export default Chip
+
+Chip.defaultProps = {
+  rounded: false
+}
