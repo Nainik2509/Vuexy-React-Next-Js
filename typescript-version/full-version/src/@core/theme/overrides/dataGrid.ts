@@ -99,11 +99,16 @@ const DataGrid = (theme: Theme) => {
           minHeight: '50px !important',
           borderTop: `1px solid ${theme.palette.divider}`,
           '& .MuiTablePagination-toolbar': {
-            minHeight: '50px !important'
+            minHeight: '50px !important',
+            paddingRight: `${theme.spacing(4)} !important`
           },
           '& .MuiTablePagination-displayedRows, & .MuiTablePagination-selectLabel': {
             color: theme.palette.text.primary
           }
+        },
+        selectedRowCount: {
+          margin: 0,
+          paddingLeft: theme.spacing(4)
         }
       },
       defaultProps: {
