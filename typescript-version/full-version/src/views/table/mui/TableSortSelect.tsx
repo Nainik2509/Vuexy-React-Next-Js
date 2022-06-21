@@ -191,8 +191,7 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
   return (
     <Toolbar
       sx={{
-        pl: { sm: 5 },
-        pr: { xs: 1, sm: 1 },
+        px: theme => `${theme.spacing(5)} !important`,
         ...(numSelected > 0 && {
           bgcolor: theme => alpha(theme.palette.primary.main, theme.palette.action.activatedOpacity)
         })
