@@ -493,11 +493,13 @@ const AutocompleteComponent = ({ hidden, settings }: Props) => {
                 }
                 sx={{
                   '& + .MuiAutocomplete-popper': {
-                    ...(searchValue.length && {
-                      overflow: 'auto',
-                      maxHeight: 'calc(100vh - 69px)',
-                      height: fullScreenDialog ? 'calc(100vh - 69px)' : 481
-                    })
+                    ...(searchValue.length
+                      ? {
+                          overflow: 'auto',
+                          maxHeight: 'calc(100vh - 69px)',
+                          height: fullScreenDialog ? 'calc(100vh - 69px)' : 481
+                        }
+                      : { width: 'auto !important' })
                   }
                 }}
                 renderInput={(params: AutocompleteRenderInputParams) => {
