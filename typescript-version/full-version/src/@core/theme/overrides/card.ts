@@ -78,8 +78,7 @@ const Card = (theme: Theme, skin: Skin) => {
             }
           },
           '.MuiCard-root &:first-of-type': {
-            paddingTop: theme.spacing(5),
-            paddingBottom: theme.spacing(5),
+            paddingTop: theme.spacing(2.5),
             '& + .MuiCardHeader-root, & + .MuiCardContent-root, & + .MuiCardActions-root': {
               paddingTop: 0
             }
