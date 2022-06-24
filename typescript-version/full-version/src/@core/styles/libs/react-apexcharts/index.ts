@@ -57,7 +57,11 @@ const ApexChartWrapper = styled('div')(({ theme }) => ({
       }
     },
     '& .apexcharts-yaxis .apexcharts-yaxis-texts-g .apexcharts-yaxis-label': {
+      fill: theme.palette.text.secondary,
       textAnchor: theme.direction === 'rtl' ? 'start' : undefined
+    },
+    '& .apexcharts-xaxis .apexcharts-xaxis-texts-g .apexcharts-xaxis-label': {
+      fill: theme.palette.text.secondary
     },
     '& .apexcharts-text, & .apexcharts-tooltip-text, & .apexcharts-datalabel-label, & .apexcharts-datalabel': {
       filter: 'none',

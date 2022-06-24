@@ -12,7 +12,7 @@ const RechartsWrapper = styled('div')(({ theme }) => ({
     stroke: theme.palette.divider
   },
   '& .recharts-cartesian-axis-tick-value, & .recharts-polar-radius-axis-tick-value': {
-    fill: theme.palette.text.primary
+    fill: theme.palette.text.secondary
   },
   '& .recharts-default-tooltip': {
     border: 'none !important',
