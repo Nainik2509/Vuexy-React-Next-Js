@@ -10,7 +10,7 @@ You need to render this component as a direct child of MUI's `<Grid container>` 
 
 ## Usage
 
-```tsx
+```tsx{4,9-20}
 import Grid from '@mui/material/Grid'
 import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'

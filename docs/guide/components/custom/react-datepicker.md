@@ -35,7 +35,7 @@ If you are using datepicker component near the footer (near the bottom of any pa
 
 You just need to add the `portalId='react-datepicker-portal'` prop with your `DatePicker` component to open it in the portal.
 
-```tsx
+```tsx{6}
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 

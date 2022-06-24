@@ -18,7 +18,7 @@ Let us take an example of a line chart:
 
 <code-group>
 <code-block title="TSX" active>
-```tsx
+```tsx{2,11}
 import { ApexOptions } from 'apexcharts'
 import ReactApexcharts from 'src/@core/components/react-apexcharts'
 
@@ -37,7 +37,7 @@ export default ApexLineChart
 </code-block>
 
 <code-block title="JSX">
-```jsx
+```jsx{1,10}
 import ReactApexcharts from 'src/@core/components/react-apexcharts'
 
 const ApexLineChart = () => {

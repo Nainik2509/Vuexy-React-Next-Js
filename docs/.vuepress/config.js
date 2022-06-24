@@ -106,7 +106,8 @@ module.exports = {
                 '/guide/components/custom/page-header',
                 '/guide/components/custom/react-datepicker',
                 '/guide/components/custom/repeater',
-                '/guide/components/custom/sidebar'
+                '/guide/components/custom/sidebar',
+                '/guide/components/custom/option-menu'
               ]
             },
             '/guide/components/override-components',
