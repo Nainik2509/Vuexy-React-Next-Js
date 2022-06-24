@@ -13,6 +13,8 @@ import ChartLine from 'mdi-material-ui/ChartLine'
 import LockReset from 'mdi-material-ui/LockReset'
 import CogOutline from 'mdi-material-ui/CogOutline'
 import CardOutline from 'mdi-material-ui/CardOutline'
+import CartOutline from 'mdi-material-ui/CartOutline'
+import GiftOutline from 'mdi-material-ui/GiftOutline'
 import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
 import LockOutline from 'mdi-material-ui/LockOutline'
 import Screwdriver from 'mdi-material-ui/Screwdriver'
@@ -54,6 +56,7 @@ import ToggleSwitchOutline from 'mdi-material-ui/ToggleSwitchOutline'
 import ViewGridPlusOutline from 'mdi-material-ui/ViewGridPlusOutline'
 import AccountCircleOutline from 'mdi-material-ui/AccountCircleOutline'
 import CalendarBlankOutline from 'mdi-material-ui/CalendarBlankOutline'
+import OfficeBuildingOutline from 'mdi-material-ui/OfficeBuildingOutline'
 import ChartBellCurveCumulative from 'mdi-material-ui/ChartBellCurveCumulative'
 import FormatTextVariantOutline from 'mdi-material-ui/FormatTextVariantOutline'
 import CardAccountDetailsOutline from 'mdi-material-ui/CardAccountDetailsOutline'
@@ -78,6 +81,8 @@ export const autocompleteIconObj = {
   Screwdriver,
   StarOutline,
   TrayArrowUp,
+  CartOutline,
+  GiftOutline,
   AlertOutline,
   ClockOutline,
   EmailOutline,
@@ -114,6 +119,7 @@ export const autocompleteIconObj = {
   ViewGridPlusOutline,
   AccountCircleOutline,
   CalendarBlankOutline,
+  OfficeBuildingOutline,
   ChartBellCurveCumulative,
   FormatTextVariantOutline,
   CardAccountDetailsOutline,

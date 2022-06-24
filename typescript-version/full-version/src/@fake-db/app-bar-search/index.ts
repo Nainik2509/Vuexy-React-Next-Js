@@ -564,6 +564,27 @@ const searchData: AppBarSearchType[] = [
     title: 'Custom Inputs',
     category: 'formsTables',
     url: '/forms/form-elements/custom-inputs/'
+  },
+  {
+    id: 81,
+    icon: 'CartOutline',
+    category: 'formsTables',
+    title: 'Checkout Wizard',
+    url: '/pages/wizard-examples/checkout'
+  },
+  {
+    id: 82,
+    category: 'formsTables',
+    icon: 'OfficeBuildingOutline',
+    title: 'Property Listing Wizard',
+    url: '/pages/wizard-examples/property-listing'
+  },
+  {
+    id: 83,
+    icon: 'GiftOutline',
+    category: 'formsTables',
+    title: 'Create Deal Wizard',
+    url: '/pages/wizard-examples/create-deal'
   }
 ]
 

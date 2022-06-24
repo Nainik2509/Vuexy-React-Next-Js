@@ -52,6 +52,7 @@ const CustomRadioIcons = (props: CustomRadioIconsProps) => {
                     sx={{
                       cursor: 'pointer',
                       boxShadow: 'none',
+                      position: 'relative',
                       backgroundColor: 'transparent',
                       '&:not(:first-of-type)': { ml: 4 },
                       border: theme => `1px solid ${theme.palette.divider}`,

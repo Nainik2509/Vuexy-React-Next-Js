@@ -340,7 +340,29 @@ const navigation = (): HorizontalNavItemsType => {
         {
           icon: CogOutline,
           title: 'Account Settings',
-          path: '/pages/account-settings'
+          children: [
+            {
+              title: 'Account',
+              path: '/pages/account-settings/account'
+            },
+            {
+              title: 'Security',
+              path: '/pages/account-settings/security'
+            },
+            {
+              title: 'Billing',
+              path: '/pages/account-settings/billing'
+            },
+            {
+              title: 'Notifications',
+              path: '/pages/account-settings/notifications'
+            },
+
+            {
+              title: 'Connections',
+              path: '/pages/account-settings/connections'
+            }
+          ]
         },
         {
           title: 'Pricing',
@@ -392,6 +414,24 @@ const navigation = (): HorizontalNavItemsType => {
           icon: VectorArrangeBelow,
           title: 'Dialog Examples',
           path: '/pages/dialog-examples'
+        },
+        {
+          title: 'Wizard Examples',
+          icon: FileDocumentOutline,
+          children: [
+            {
+              title: 'Checkout',
+              path: '/pages/wizard-examples/checkout'
+            },
+            {
+              title: 'Property Listing',
+              path: '/pages/wizard-examples/property-listing'
+            },
+            {
+              title: 'Create Deal',
+              path: '/pages/wizard-examples/create-deal'
+            }
+          ]
         }
       ]
     },

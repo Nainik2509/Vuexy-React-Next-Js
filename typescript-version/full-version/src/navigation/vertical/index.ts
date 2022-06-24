@@ -256,6 +256,23 @@ const navigation = (): VerticalNavItemsType => {
               path: '/pages/misc/500-server-error'
             }
           ]
+        },
+        {
+          title: 'Wizard Examples',
+          children: [
+            {
+              title: 'Checkout',
+              path: '/pages/wizard-examples/checkout'
+            },
+            {
+              title: 'Property Listing',
+              path: '/pages/wizard-examples/property-listing'
+            },
+            {
+              title: 'Create Deal',
+              path: '/pages/wizard-examples/create-deal'
+            }
+          ]
         }
       ]
     },
