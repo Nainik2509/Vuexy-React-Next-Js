@@ -60,7 +60,7 @@ const steps = [
     )
   },
   {
-    title: 'Payment',
+    title: 'Confirmations',
     icon: (
       <svg id='wizardConfirm' width='56' height='56' viewBox='0 0 58 54' xmlns='http://www.w3.org/2000/svg'>
         <g fillRule='nonzero'>

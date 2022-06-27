@@ -585,6 +585,13 @@ const searchData: AppBarSearchType[] = [
     category: 'formsTables',
     title: 'Create Deal Wizard',
     url: '/pages/wizard-examples/create-deal'
+  },
+  {
+    id: 84,
+    url: '/pages/auth/register-multi-steps',
+    icon: 'AccountPlusOutline',
+    title: 'Register Multi-Steps',
+    category: 'appsPages'
   }
 ]
 

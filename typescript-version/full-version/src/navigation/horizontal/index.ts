@@ -302,6 +302,11 @@ const navigation = (): HorizontalNavItemsType => {
                   openInNewTab: true,
                   title: 'Register v2',
                   path: '/pages/auth/register-v2'
+                },
+                {
+                  openInNewTab: true,
+                  title: 'Register Multi-Steps',
+                  path: '/pages/auth/register-multi-steps'
                 }
               ]
             },
