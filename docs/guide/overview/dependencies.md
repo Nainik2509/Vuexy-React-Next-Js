@@ -164,7 +164,8 @@ The following dependencies are common and required to run the template. Do not t
 ## PDF Generator
 
 ```json
-"react-to-pdf"
+"html2canvas"
+"jsPDF"
 ```
 
 ## Date Time Picker

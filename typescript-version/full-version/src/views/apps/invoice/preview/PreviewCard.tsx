@@ -21,7 +21,8 @@ import TableContainer from '@mui/material/TableContainer'
 import TableCell, { TableCellBaseProps } from '@mui/material/TableCell'
 
 // ** Third Party Imports
-import ReactToPdf from 'react-to-pdf'
+import jsPDF from 'jspdf'
+import html2canvas from 'html2canvas'
 
 // ** Configs
 import themeConfig from 'src/configs/themeConfig'
@@ -54,8 +55,35 @@ const PreviewCard = ({ data }: Props) => {
   // ** Hook
   const theme = useTheme()
 
-  // ** Ref
+  // ** Vars & Ref
   const PreviewRef = useRef(null)
+
+  const handlePdfDownload = async () => {
+    const Component = PreviewRef.current
+    if (Component !== null) {
+      await html2canvas(Component).then(canvas => {
+        // @ts-ignore
+        const componentWidth = Component.offsetWidth
+
+        // @ts-ignore
+        const componentHeight = Component.offsetHeight
+
+        const orientation = componentWidth >= componentHeight ? 'l' : 'p'
+
+        const imgData = canvas.toDataURL('image/png')
+        const pdf = new jsPDF({
+          unit: 'px',
+          orientation
+        })
+
+        pdf.internal.pageSize.width = componentWidth
+        pdf.internal.pageSize.height = componentHeight
+
+        pdf.addImage(imgData, 'PNG', 0, 0, componentWidth, componentHeight)
+        pdf.save(`invoice-${data.invoice.id}.pdf`)
+      })
+    }
+  }
 
   if (data) {
     return (
@@ -346,24 +374,9 @@ const PreviewCard = ({ data }: Props) => {
                 Print
               </Button>
             </Link>
-
-            <ReactToPdf
-              scale={1}
-              targetRef={PreviewRef}
-              filename={`invoice-${data.invoice.id}.pdf`}
-              options={{
-                unit: 'in',
-                format: [9.5, 9.75]
-              }}
-            >
-              {({ toPdf }: { toPdf: () => void }) => {
-                return (
-                  <Button variant='contained' color='success' onClick={toPdf}>
-                    Download
-                  </Button>
-                )
-              }}
-            </ReactToPdf>
+            <Button variant='contained' color='success' onClick={handlePdfDownload}>
+              Download
+            </Button>
           </Box>
         </CardContent>
       </Card>
