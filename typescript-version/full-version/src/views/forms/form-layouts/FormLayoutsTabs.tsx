@@ -249,8 +249,8 @@ const FormLayoutsTabs = () => {
             <Button size='large' type='submit' sx={{ mr: 2 }} variant='contained'>
               Submit
             </Button>
-            <Button size='large' variant='outlined' color='secondary'>
-              Cancel
+            <Button type='reset' size='large' variant='outlined' color='secondary'>
+              Reset
             </Button>
           </CardActions>
         </form>

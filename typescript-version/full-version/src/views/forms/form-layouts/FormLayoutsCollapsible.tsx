@@ -328,8 +328,8 @@ const FormLayoutsCollapsible = () => {
           <Button size='large' type='submit' variant='contained' sx={{ mr: 4 }}>
             Place Order
           </Button>
-          <Button size='large' variant='outlined'>
-            Cancel
+          <Button type='reset' size='large' variant='outlined' color='secondary'>
+            Reset
           </Button>
         </AccordionDetails>
       </Accordion>

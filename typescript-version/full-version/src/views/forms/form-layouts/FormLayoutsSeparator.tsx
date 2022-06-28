@@ -216,8 +216,8 @@ const FormLayoutsSeparator = () => {
           <Button size='large' type='submit' sx={{ mr: 2 }} variant='contained'>
             Submit
           </Button>
-          <Button size='large' color='secondary' variant='outlined'>
-            Cancel
+          <Button type='reset' size='large' color='secondary' variant='outlined'>
+            Reset
           </Button>
         </CardActions>
       </form>
