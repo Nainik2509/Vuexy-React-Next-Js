@@ -592,6 +592,34 @@ const searchData: AppBarSearchType[] = [
     icon: 'AccountPlusOutline',
     title: 'Register Multi-Steps',
     category: 'appsPages'
+  },
+  {
+    id: 85,
+    icon: 'EmailOutline',
+    category: 'appsPages',
+    title: 'Verify Email V1',
+    url: '/pages/auth/verify-email-v1'
+  },
+  {
+    id: 86,
+    icon: 'EmailOutline',
+    category: 'appsPages',
+    title: 'Verify Email V2',
+    url: '/pages/auth/verify-email-v2'
+  },
+  {
+    id: 87,
+    icon: 'LockOutline',
+    category: 'appsPages',
+    title: 'Two Steps V1',
+    url: '/pages/auth/two-steps-v1'
+  },
+  {
+    id: 88,
+    icon: 'LockOutline',
+    category: 'appsPages',
+    title: 'Two Steps V2',
+    url: '/pages/auth/two-steps-v2'
   }
 ]
 

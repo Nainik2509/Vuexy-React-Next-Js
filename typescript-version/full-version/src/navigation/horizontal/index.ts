@@ -339,6 +339,36 @@ const navigation = (): HorizontalNavItemsType => {
                   path: '/pages/auth/reset-password-v2'
                 }
               ]
+            },
+            {
+              title: 'Verify Email',
+              children: [
+                {
+                  openInNewTab: true,
+                  title: 'Verify Email v1',
+                  path: '/pages/auth/verify-email-v1'
+                },
+                {
+                  openInNewTab: true,
+                  title: 'Verify Email v2',
+                  path: '/pages/auth/verify-email-v2'
+                }
+              ]
+            },
+            {
+              title: 'Two Steps',
+              children: [
+                {
+                  openInNewTab: true,
+                  title: 'Two Steps v1',
+                  path: '/pages/auth/two-steps-v1'
+                },
+                {
+                  openInNewTab: true,
+                  title: 'Two Steps v2',
+                  path: '/pages/auth/two-steps-v2'
+                }
+              ]
             }
           ]
         },
