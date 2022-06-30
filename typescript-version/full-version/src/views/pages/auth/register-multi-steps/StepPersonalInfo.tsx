@@ -109,7 +109,7 @@ const StepPersonalDetails = ({ handleNext, handlePrev }: { [key: string]: () => 
         <Grid item xs={12} md={6}>
           <TextField fullWidth type='number' label='Pincode' placeholder='689421' />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12}>
           <FormControl fullWidth>
             <Controller
               name='address'

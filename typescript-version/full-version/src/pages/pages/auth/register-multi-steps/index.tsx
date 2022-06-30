@@ -18,8 +18,10 @@ import RegisterMultiStepsWizard from 'src/views/pages/auth/register-multi-steps'
 // ** Styled Components
 const RegisterIllustrationWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   height: '100%',
-  padding: theme.spacing(18),
+  display: 'flex',
   paddingRight: '0',
+  alignItems: 'center',
+  padding: theme.spacing(18),
   backgroundColor: theme.palette.background.default
 }))
 
@@ -33,7 +35,7 @@ const RightWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   padding: theme.spacing(4),
-  [theme.breakpoints.up('md')]: {
+  [theme.breakpoints.up('sm')]: {
     flexGrow: 1,
     padding: theme.spacing(12)
   }

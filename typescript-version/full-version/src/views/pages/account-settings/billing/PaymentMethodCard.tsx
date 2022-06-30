@@ -147,7 +147,7 @@ const PaymentMethodCard = () => {
   const handleSelectedCardBlur = () => setFocus(undefined)
 
   const handleInputChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
-    if (target.name === 'number') {
+    if (target.name === 'cardNumber') {
       target.value = formatCreditCardNumber(target.value, Payment)
       setCardNumber(target.value)
     } else if (target.name === 'expiry') {
@@ -212,6 +212,7 @@ const PaymentMethodCard = () => {
                             render={({ field: { value, onChange } }) => (
                               <TextField
                                 value={value}
+                                name='cardNumber'
                                 label='Card Number'
                                 onBlur={handleBlur}
                                 placeholder='0000 0000 0000 0000'

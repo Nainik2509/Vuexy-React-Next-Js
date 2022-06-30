@@ -35,17 +35,17 @@ const steps = [
   {
     title: 'Account',
     subtitle: 'Account Details',
-    icon: <HomeOutline />
+    icon: <HomeOutline fontSize='small' />
   },
   {
     title: 'Personal',
     subtitle: 'Enter Information',
-    icon: <AccountOutline />
+    icon: <AccountOutline fontSize='small' />
   },
   {
     title: 'Billing',
     subtitle: 'Payment Details',
-    icon: <CardTextOutline />
+    icon: <CardTextOutline fontSize='small' />
   }
 ]
 
@@ -54,9 +54,14 @@ const Stepper = styled(MuiStepper)<StepperProps>(({ theme }) => ({
 
   '& .MuiStep-root': {
     cursor: 'pointer',
+    paddingLeft: 0,
     paddingBottom: theme.spacing(8),
-    '&.Mui-completed + .MuiSvgIcon-root': {
-      color: theme.palette.primary.main
+    '&.Mui-completed': {
+      cursor: 'default',
+      pointerEvents: 'none',
+      '& + .MuiSvgIcon-root': {
+        color: theme.palette.primary.main
+      }
     },
     '&:not(.Mui-completed) + .MuiSvgIcon-root': {
       color: theme.palette.text.disabled
@@ -78,15 +83,21 @@ const Stepper = styled(MuiStepper)<StepperProps>(({ theme }) => ({
     '& .MuiStepLabel-label': {
       display: 'flex',
       alignItems: 'center',
-      '&.Mui-active, &.Mui-completed': {
+      '&.Mui-active': {
         '& .MuiTypography-root': {
           color: theme.palette.primary.main
+        }
+      },
+      '&.Mui-completed': {
+        '& .MuiTypography-root': {
+          color: theme.palette.text.disabled
         }
       }
     },
 
     [theme.breakpoints.up('md')]: {
       paddingBottom: 0,
+      paddingLeft: theme.spacing(2),
       '& + .MuiSvgIcon-root': {
         display: 'block'
       }
@@ -133,7 +144,7 @@ const RegisterMultiSteps = () => {
           <Stepper activeStep={activeStep} connector={<ChevronRight />}>
             {steps.map((step, index) => {
               return (
-                <Step key={index} onClick={() => setActiveStep(index)} sx={{}}>
+                <Step key={index}>
                   <StepLabel icon={<></>}>
                     <CustomAvatar
                       variant='rounded'
@@ -150,7 +161,9 @@ const RegisterMultiSteps = () => {
                       {step.icon}
                     </CustomAvatar>
                     <Box>
-                      <Typography className='step-title'>{step.title}</Typography>
+                      <Typography className='step-title' sx={{ fontWeight: 600 }}>
+                        {step.title}
+                      </Typography>
                       <Typography className='step-subtitle'>{step.subtitle}</Typography>
                     </Box>
                   </StepLabel>

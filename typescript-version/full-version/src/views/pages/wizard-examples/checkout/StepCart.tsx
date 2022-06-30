@@ -21,7 +21,6 @@ import CardContent from '@mui/material/CardContent'
 import List, { ListProps } from '@mui/material/List'
 import ListItemText from '@mui/material/ListItemText'
 import ListItemAvatar from '@mui/material/ListItemAvatar'
-import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
 
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
@@ -169,8 +168,8 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
             </Grid>
           </ListItem>
         </StyledList>
-        <StyledList sx={{ '& .MuiListItem-root': { padding: 0 }, '& .MuiListItemText-root': { mb: 0 } }}>
-          <ListItem>
+        <StyledList>
+          <ListItem sx={{ py: theme => `${theme.spacing(2.5)} !important`, justifyContent: 'space-between' }}>
             <Link href='/' passHref>
               <Box
                 component='a'
@@ -180,9 +179,7 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
                 Add more products from wishlist
               </Box>
             </Link>
-            <ListItemSecondaryAction>
-              <ChevronRight />
-            </ListItemSecondaryAction>
+            <ChevronRight />
           </ListItem>
         </StyledList>
       </Grid>
