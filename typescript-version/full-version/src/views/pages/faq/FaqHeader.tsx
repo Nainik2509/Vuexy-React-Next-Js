@@ -35,7 +35,7 @@ const TextField = styled(MuiTextField)<TextFieldProps>(({ theme }) => ({
     backgroundColor: theme.palette.background.paper
   },
   [theme.breakpoints.up('sm')]: {
-    width: 450
+    width: '55%'
   }
 }))
 
@@ -50,15 +50,13 @@ const FaqHeader = (props: Props) => {
   return (
     <Card>
       <CardContent sx={{ pt: 23, textAlign: 'center', pb: theme => `${theme.spacing(23)} !important` }}>
-        <Typography variant='h5' sx={{ mb: 1.5, color: 'primary.main', fontSize: '1.5rem !important' }}>
+        <Typography variant='h5' sx={{ mb: 8, fontSize: '1.625rem !important' }}>
           Hello, how can we help?
         </Typography>
-        <Typography variant='body2' sx={{ mb: 7 }}>
-          or choose a category to quickly find the help you need
-        </Typography>
+
         <TextField
           value={searchTerm}
-          placeholder='Ask a question....'
+          placeholder='Search a question....'
           onChange={e => handleFaqFilter(e)}
           InputProps={{
             startAdornment: (
@@ -68,6 +66,7 @@ const FaqHeader = (props: Props) => {
             )
           }}
         />
+        <Typography sx={{ mt: 4 }}>or choose a category to quickly find the help you need</Typography>
       </CardContent>
     </Card>
   )

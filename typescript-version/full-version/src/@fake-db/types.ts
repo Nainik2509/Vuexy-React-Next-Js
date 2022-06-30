@@ -21,11 +21,13 @@ export type FaqQAndAType = {
   question: string
 }
 export type FaqType = {
-  id: string
-  icon: string
-  title: string
-  subtitle: string
-  qAndA: FaqQAndAType[]
+  [key: string]: {
+    id: string
+    icon: string
+    title: string
+    subtitle: string
+    qandA: FaqQAndAType[]
+  }
 }
 
 // Types for Knowledge Base
