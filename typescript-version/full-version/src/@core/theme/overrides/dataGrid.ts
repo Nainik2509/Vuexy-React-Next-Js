@@ -100,6 +100,7 @@ const DataGrid = (theme: Theme) => {
           borderTop: `1px solid ${theme.palette.divider}`,
           '& .MuiTablePagination-toolbar': {
             minHeight: '50px !important',
+            paddingLeft: `${theme.spacing(4)} !important`,
             paddingRight: `${theme.spacing(4)} !important`
           },
           '& .MuiTablePagination-displayedRows, & .MuiTablePagination-selectLabel': {
@@ -108,7 +109,8 @@ const DataGrid = (theme: Theme) => {
         },
         selectedRowCount: {
           margin: 0,
-          paddingLeft: theme.spacing(4)
+          paddingLeft: theme.spacing(4),
+          paddingRight: theme.spacing(4)
         }
       },
       defaultProps: {

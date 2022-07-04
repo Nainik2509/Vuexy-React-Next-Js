@@ -200,7 +200,6 @@ const Autocomplete = styled(MuiAutocomplete)(({ theme }) => ({
     border: 0
   },
   '& + .MuiAutocomplete-popper': {
-    borderTop: `1px solid ${theme.palette.divider}`,
     '& .MuiAutocomplete-listbox': {
       paddingTop: 0,
       height: '100%',
@@ -211,8 +210,7 @@ const Autocomplete = styled(MuiAutocomplete)(({ theme }) => ({
         lineHeight: '15px',
         fontSize: '0.75rem',
         letterSpacing: '1px',
-        color: theme.palette.text.disabled,
-        padding: theme.spacing(3.75, 6, 0.75)
+        color: theme.palette.text.disabled
       }
     },
     '& .MuiAutocomplete-paper': {
@@ -497,9 +495,13 @@ const AutocompleteComponent = ({ hidden, settings }: Props) => {
                       ? {
                           overflow: 'auto',
                           maxHeight: 'calc(100vh - 69px)',
-                          height: fullScreenDialog ? 'calc(100vh - 69px)' : 481
+                          borderTop: `1px solid ${theme.palette.divider}`,
+                          height: fullScreenDialog ? 'calc(100vh - 69px)' : 481,
+                          '& .MuiListSubheader-root': { p: theme.spacing(3.75, 6, 0.75) }
                         }
-                      : { width: 'auto !important' })
+                      : {
+                          '& .MuiAutocomplete-listbox': { pb: 0 }
+                        })
                   }
                 }}
                 renderInput={(params: AutocompleteRenderInputParams) => {
