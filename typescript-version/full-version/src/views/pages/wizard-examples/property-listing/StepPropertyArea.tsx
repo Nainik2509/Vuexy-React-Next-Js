@@ -14,9 +14,6 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 // ** Third Party Imports
 import DatePicker from 'react-datepicker'
 
-// ** Styled Component
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 // ** Types
 import { DateType } from 'src/types/forms/reactDatepickerTypes'
 
@@ -80,14 +77,12 @@ const StepPropertyArea = () => {
         />
       </Grid>
       <Grid item xs={12} md={6}>
-        <DatePickerWrapper>
-          <DatePicker
-            selected={date}
-            placeholderText='YYY-MM-DD'
-            onChange={(date: Date) => setDate(date)}
-            customInput={<CustomInput label='Available From' />}
-          />
-        </DatePickerWrapper>
+        <DatePicker
+          selected={date}
+          placeholderText='YYY-MM-DD'
+          onChange={(date: Date) => setDate(date)}
+          customInput={<CustomInput label='Available From' />}
+        />
       </Grid>
 
       <Grid item xs={12} md={6}>

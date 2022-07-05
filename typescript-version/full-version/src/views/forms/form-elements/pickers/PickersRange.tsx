@@ -7,6 +7,7 @@ import TextField from '@mui/material/TextField'
 
 // ** Third Party Imports
 import format from 'date-fns/format'
+import addDays from 'date-fns/addDays'
 import DatePicker from 'react-datepicker'
 
 // ** Types
@@ -20,10 +21,10 @@ interface PickerProps {
 
 const PickersRange = () => {
   // ** States
-  const [endDate, setEndDate] = useState<DateType>(null)
   const [startDate, setStartDate] = useState<DateType>(new Date())
-  const [endDateRange, setEndDateRange] = useState<DateType>(null)
+  const [endDate, setEndDate] = useState<DateType>(addDays(new Date(), 15))
   const [startDateRange, setStartDateRange] = useState<DateType>(new Date())
+  const [endDateRange, setEndDateRange] = useState<DateType>(addDays(new Date(), 45))
 
   const handleOnChange = (dates: any) => {
     const [start, end] = dates

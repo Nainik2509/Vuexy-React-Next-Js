@@ -20,9 +20,6 @@ import { fetchBoards, fetchTasks, updateTask, reorderTasks } from 'src/store/app
 // ** Kanban App Component Imports
 import KanbanBoard from 'src/views/apps/kanban/KanbanBoard'
 
-// ** Third Party Styles Imports
-import 'react-datepicker/dist/react-datepicker.css'
-
 const Kanban = () => {
   // ** Hooks
   const dispatch = useDispatch<AppDispatch>()

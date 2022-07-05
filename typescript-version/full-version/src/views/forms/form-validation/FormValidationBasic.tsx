@@ -34,9 +34,6 @@ import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 // ** Types
 import { DateType } from 'src/types/forms/reactDatepickerTypes'
 
-// ** Styled Components
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 interface State {
   password: string
   showPassword: boolean
@@ -229,24 +226,22 @@ const FormValidationBasic = () => {
                 control={control}
                 rules={{ required: true }}
                 render={({ field: { value, onChange } }) => (
-                  <DatePickerWrapper>
-                    <DatePicker
-                      selected={value}
-                      showYearDropdown
-                      showMonthDropdown
-                      onChange={e => onChange(e)}
-                      placeholderText='MM/DD/YYYY'
-                      customInput={
-                        <CustomInput
-                          value={value}
-                          onChange={onChange}
-                          label='Date of Birth'
-                          error={Boolean(errors.dob)}
-                          aria-describedby='validation-basic-dob'
-                        />
-                      }
-                    />
-                  </DatePickerWrapper>
+                  <DatePicker
+                    selected={value}
+                    showYearDropdown
+                    showMonthDropdown
+                    onChange={e => onChange(e)}
+                    placeholderText='MM/DD/YYYY'
+                    customInput={
+                      <CustomInput
+                        value={value}
+                        onChange={onChange}
+                        label='Date of Birth'
+                        error={Boolean(errors.dob)}
+                        aria-describedby='validation-basic-dob'
+                      />
+                    }
+                  />
                 )}
               />
               {errors.dob && (

@@ -21,9 +21,6 @@ import RechartsAreaChart from 'src/views/charts/recharts/RechartsAreaChart'
 import RechartsRadarChart from 'src/views/charts/recharts/RechartsRadarChart'
 import RechartsScatterChart from 'src/views/charts/recharts/RechartsScatterChart'
 
-// ** Third Party Styles Imports
-import 'react-datepicker/dist/react-datepicker.css'
-
 const Recharts = () => {
   // ** Hooks
   const { settings } = useSettings()

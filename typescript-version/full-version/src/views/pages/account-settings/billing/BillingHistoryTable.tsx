@@ -60,9 +60,6 @@ import CustomAvatar from 'src/@core/components/mui/avatar'
 // ** Icons Imports
 import Plus from 'mdi-material-ui/Plus'
 
-// ** Third Party Styles Imports
-import 'react-datepicker/dist/react-datepicker.css'
-
 interface InvoiceStatusObj {
   [key: string]: {
     color: ThemeColor

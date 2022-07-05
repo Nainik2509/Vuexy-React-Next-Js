@@ -104,7 +104,6 @@ module.exports = {
                 '/guide/components/custom/apexcharts',
                 '/guide/components/custom/react-draft-wysiwyg',
                 '/guide/components/custom/page-header',
-                '/guide/components/custom/react-datepicker',
                 '/guide/components/custom/repeater',
                 '/guide/components/custom/sidebar',
                 '/guide/components/custom/option-menu'

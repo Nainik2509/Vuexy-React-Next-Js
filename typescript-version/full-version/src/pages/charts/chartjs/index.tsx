@@ -20,9 +20,8 @@ import ChartjsScatterChart from 'src/views/charts/chartjs/ChartjsScatterChart'
 import ChartjsPolarAreaChart from 'src/views/charts/chartjs/ChartjsPolarAreaChart'
 import ChartjsHorizontalBarChart from 'src/views/charts/chartjs/ChartjsHorizontalBarChart'
 
-// ** Third Party Styles Imports
+// ** Third Party Styles Import
 import 'chart.js/auto'
-import 'react-datepicker/dist/react-datepicker.css'
 
 const ChartJS = () => {
   // ** Hook

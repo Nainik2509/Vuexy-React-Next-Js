@@ -25,9 +25,6 @@ import DatePicker from 'react-datepicker'
 // ** Types
 import { DateType } from 'src/types/forms/reactDatepickerTypes'
 
-// ** Styled Component
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 interface PickerProps {
   label?: string
   end: Date | number
@@ -121,20 +118,18 @@ const StepDealDetails = () => {
         </FormControl>
       </Grid>
       <Grid item xs={12} md={6}>
-        <DatePickerWrapper>
-          <DatePicker
-            selectsRange
-            endDate={endDate}
-            selected={startDate}
-            startDate={startDate}
-            id='date-range-picker'
-            onChange={handleDateChange}
-            shouldCloseOnSelect={false}
-            customInput={
-              <CustomInput label='Deal Duration' start={startDate as Date | number} end={endDate as Date | number} />
-            }
-          />
-        </DatePickerWrapper>
+        <DatePicker
+          selectsRange
+          endDate={endDate}
+          selected={startDate}
+          startDate={startDate}
+          id='date-range-picker'
+          onChange={handleDateChange}
+          shouldCloseOnSelect={false}
+          customInput={
+            <CustomInput label='Deal Duration' start={startDate as Date | number} end={endDate as Date | number} />
+          }
+        />
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl component='fieldset'>
