@@ -12,6 +12,7 @@ import Lastpass from 'mdi-material-ui/Lastpass'
 import ChartLine from 'mdi-material-ui/ChartLine'
 import LockReset from 'mdi-material-ui/LockReset'
 import CogOutline from 'mdi-material-ui/CogOutline'
+import BellOutline from 'mdi-material-ui/BellOutline'
 import CardOutline from 'mdi-material-ui/CardOutline'
 import CartOutline from 'mdi-material-ui/CartOutline'
 import GiftOutline from 'mdi-material-ui/GiftOutline'
@@ -20,6 +21,7 @@ import LockOutline from 'mdi-material-ui/LockOutline'
 import Screwdriver from 'mdi-material-ui/Screwdriver'
 import StarOutline from 'mdi-material-ui/StarOutline'
 import TrayArrowUp from 'mdi-material-ui/TrayArrowUp'
+import LinkVariant from 'mdi-material-ui/LinkVariant'
 import AlertOutline from 'mdi-material-ui/AlertOutline'
 import ClockOutline from 'mdi-material-ui/ClockOutline'
 import EmailOutline from 'mdi-material-ui/EmailOutline'
@@ -35,8 +37,10 @@ import MessageOutline from 'mdi-material-ui/MessageOutline'
 import RadioboxMarked from 'mdi-material-ui/RadioboxMarked'
 import TextBoxOutline from 'mdi-material-ui/TextBoxOutline'
 import CardPlusOutline from 'mdi-material-ui/CardPlusOutline'
+import LockOpenOutline from 'mdi-material-ui/LockOpenOutline'
 import CardTextOutline from 'mdi-material-ui/CardTextOutline'
 import CheckboxOutline from 'mdi-material-ui/CheckboxOutline'
+import BookmarkOutline from 'mdi-material-ui/BookmarkOutline'
 import BookOpenOutline from 'mdi-material-ui/BookOpenOutline'
 import FileTreeOutline from 'mdi-material-ui/FileTreeOutline'
 import TimelineOutline from 'mdi-material-ui/TimelineOutline'
@@ -57,6 +61,7 @@ import ViewGridPlusOutline from 'mdi-material-ui/ViewGridPlusOutline'
 import AccountCircleOutline from 'mdi-material-ui/AccountCircleOutline'
 import CalendarBlankOutline from 'mdi-material-ui/CalendarBlankOutline'
 import OfficeBuildingOutline from 'mdi-material-ui/OfficeBuildingOutline'
+import AccountMultipleOutline from 'mdi-material-ui/AccountMultipleOutline'
 import ChartBellCurveCumulative from 'mdi-material-ui/ChartBellCurveCumulative'
 import FormatTextVariantOutline from 'mdi-material-ui/FormatTextVariantOutline'
 import CardAccountDetailsOutline from 'mdi-material-ui/CardAccountDetailsOutline'
@@ -75,6 +80,8 @@ export const autocompleteIconObj = {
   ChartLine,
   LockReset,
   CogOutline,
+  BellOutline,
+  LinkVariant,
   CardOutline,
   CurrencyUsd,
   LockOutline,
@@ -98,6 +105,8 @@ export const autocompleteIconObj = {
   RadioboxMarked,
   TextBoxOutline,
   CardPlusOutline,
+  BookmarkOutline,
+  LockOpenOutline,
   CardTextOutline,
   CheckboxOutline,
   BookOpenOutline,
@@ -120,6 +129,7 @@ export const autocompleteIconObj = {
   AccountCircleOutline,
   CalendarBlankOutline,
   OfficeBuildingOutline,
+  AccountMultipleOutline,
   ChartBellCurveCumulative,
   FormatTextVariantOutline,
   CardAccountDetailsOutline,

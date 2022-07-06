@@ -160,13 +160,6 @@ const searchData: AppBarSearchType[] = [
     category: 'appsPages'
   },
   {
-    id: 23,
-    url: '/pages/account-settings',
-    icon: 'CogOutline',
-    title: 'Account Settings',
-    category: 'appsPages'
-  },
-  {
     id: 24,
     url: '/pages/pricing',
     icon: 'CurrencyUsd',
@@ -620,6 +613,69 @@ const searchData: AppBarSearchType[] = [
     category: 'appsPages',
     title: 'Two Steps V2',
     url: '/pages/auth/two-steps-v2'
+  },
+  {
+    id: 89,
+    url: '/pages/account-settings/account',
+    icon: 'AccountOutline',
+    title: 'Account - Account Settings',
+    category: 'appsPages'
+  },
+  {
+    id: 90,
+    url: '/pages/account-settings/security',
+    icon: 'LockOpenOutline',
+    title: 'Security - Account Settings',
+    category: 'appsPages'
+  },
+  {
+    id: 91,
+    url: '/pages/account-settings/billing',
+    icon: 'BookmarkOutline',
+    title: 'Billing - Account Settings',
+    category: 'appsPages'
+  },
+  {
+    id: 92,
+    url: '/pages/account-settings/notifications',
+    icon: 'BellOutline',
+    title: 'Notifications - Account Settings',
+    category: 'appsPages'
+  },
+  {
+    id: 93,
+    url: '/pages/account-settings/connections',
+    icon: 'LinkVariant',
+    title: 'Connections - Account Settings',
+    category: 'appsPages'
+  },
+  {
+    id: 94,
+    url: '/pages/user-profile/profile',
+    icon: 'AccountOutline',
+    title: 'Profile - User Profile',
+    category: 'appsPages'
+  },
+  {
+    id: 95,
+    url: '/pages/user-profile/teams',
+    icon: 'AccountOutline',
+    title: 'Teams - User Profile',
+    category: 'appsPages'
+  },
+  {
+    id: 96,
+    url: '/pages/user-profile/projects',
+    icon: 'ViewGridOutline',
+    title: 'Projects - User Profile',
+    category: 'appsPages'
+  },
+  {
+    id: 97,
+    url: '/pages/user-profile/connections',
+    icon: 'LinkVariant',
+    title: 'Connections - User Profile',
+    category: 'appsPages'
   }
 ]
 

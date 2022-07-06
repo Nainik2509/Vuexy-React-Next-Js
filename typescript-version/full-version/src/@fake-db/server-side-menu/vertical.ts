@@ -99,6 +99,27 @@ const navigation: VerticalNavItemsType = [
     icon: 'FileDocumentOutline',
     children: [
       {
+        title: 'User Profile',
+        children: [
+          {
+            title: 'Profile',
+            path: '/pages/user-profile/profile'
+          },
+          {
+            title: 'Teams',
+            path: '/pages/user-profile/teams'
+          },
+          {
+            title: 'Projects',
+            path: '/pages/user-profile/projects'
+          },
+          {
+            title: 'Connections',
+            path: '/pages/user-profile/connections'
+          }
+        ]
+      },
+      {
         title: 'Authentication',
         children: [
           {
@@ -170,7 +191,29 @@ const navigation: VerticalNavItemsType = [
       },
       {
         title: 'Account Settings',
-        path: '/pages/account-settings'
+        children: [
+          {
+            title: 'Account',
+            path: '/pages/account-settings/account'
+          },
+          {
+            title: 'Security',
+            path: '/pages/account-settings/security'
+          },
+          {
+            title: 'Billing',
+            path: '/pages/account-settings/billing'
+          },
+          {
+            title: 'Notifications',
+            path: '/pages/account-settings/notifications'
+          },
+
+          {
+            title: 'Connections',
+            path: '/pages/account-settings/connections'
+          }
+        ]
       },
       {
         title: 'Pricing',

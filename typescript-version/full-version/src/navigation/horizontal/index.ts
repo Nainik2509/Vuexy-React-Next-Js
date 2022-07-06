@@ -267,6 +267,27 @@ const navigation = (): HorizontalNavItemsType => {
       title: 'Pages',
       children: [
         {
+          title: 'User Profile',
+          children: [
+            {
+              title: 'Profile',
+              path: '/pages/user-profile/profile'
+            },
+            {
+              title: 'Teams',
+              path: '/pages/user-profile/teams'
+            },
+            {
+              title: 'Projects',
+              path: '/pages/user-profile/projects'
+            },
+            {
+              title: 'Connections',
+              path: '/pages/user-profile/connections'
+            }
+          ]
+        },
+        {
           title: 'Authentication',
           icon: LockOutline,
           children: [
