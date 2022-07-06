@@ -39,12 +39,10 @@ sidebarDepth: 0
 | date-fns | [https://github.com/date-fns/date-fns](https://github.com/date-fns/date-fns) | MIT |
 | draft-js | [https://github.com/facebook/draft-js](https://github.com/facebook/draft-js) | MIT |
 | firebase | [https://github.com/firebase/firebase-js-sdk](https://github.com/firebase/firebase-js-sdk) | Apache-2.0 |
-| html2canvas | [https://github.com/niklasvh/html2canvas](https://github.com/niklasvh/html2canvas) | MIT |
 | i18next | [https://github.com/i18next/i18next](https://github.com/i18next/i18next) | MIT |
 | i18next-browser-languagedetector | [https://github.com/i18next/i18next-browser-languageDetector](https://github.com/i18next/i18next-browser-languageDetector) | MIT |
 | i18next-http-backend | [https://github.com/i18next/i18next-http-backend](https://github.com/i18next/i18next-http-backend) | MIT |
 | jsonwebtoken | [https://github.com/auth0/node-jsonwebtoken](https://github.com/auth0/node-jsonwebtoken) | MIT |
-| jspdf | [https://github.com/parallax/jsPDF](https://github.com/parallax/jsPDF) | MIT |
 | keen-slider | [https://github.com/rcbyr/keen-slider](https://github.com/rcbyr/keen-slider) | MIT |
 | mdi-material-ui | [https://github.com/TeamWertarbyte/mdi-material-ui](https://github.com/TeamWertarbyte/mdi-material-ui) | MIT |
 | next | [https://github.com/vercel/next.js](https://github.com/vercel/next.js) | MIT |

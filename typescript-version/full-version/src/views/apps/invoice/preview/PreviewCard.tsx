@@ -1,6 +1,3 @@
-// ** React Imports
-import { useRef } from 'react'
-
 // ** Next Import
 import Link from 'next/link'
 
@@ -19,10 +16,6 @@ import CardContent from '@mui/material/CardContent'
 import { styled, useTheme } from '@mui/material/styles'
 import TableContainer from '@mui/material/TableContainer'
 import TableCell, { TableCellBaseProps } from '@mui/material/TableCell'
-
-// ** Third Party Imports
-import jsPDF from 'jspdf'
-import html2canvas from 'html2canvas'
 
 // ** Configs
 import themeConfig from 'src/configs/themeConfig'
@@ -55,40 +48,10 @@ const PreviewCard = ({ data }: Props) => {
   // ** Hook
   const theme = useTheme()
 
-  // ** Vars & Ref
-  const PreviewRef = useRef(null)
-
-  const handlePdfDownload = async () => {
-    const Component = PreviewRef.current
-    if (Component !== null) {
-      await html2canvas(Component).then(canvas => {
-        // @ts-ignore
-        const componentWidth = Component.offsetWidth
-
-        // @ts-ignore
-        const componentHeight = Component.offsetHeight
-
-        const orientation = componentWidth >= componentHeight ? 'l' : 'p'
-
-        const imgData = canvas.toDataURL('image/png')
-        const pdf = new jsPDF({
-          unit: 'px',
-          orientation
-        })
-
-        pdf.internal.pageSize.width = componentWidth
-        pdf.internal.pageSize.height = componentHeight
-
-        pdf.addImage(imgData, 'PNG', 0, 0, componentWidth, componentHeight)
-        pdf.save(`invoice-${data.invoice.id}.pdf`)
-      })
-    }
-  }
-
   if (data) {
     return (
       <Card>
-        <Box ref={PreviewRef}>
+        <Box>
           <CardContent>
             <Grid container>
               <Grid item sm={6} xs={12} sx={{ mb: { sm: 0, xs: 4 } }}>
@@ -374,7 +337,7 @@ const PreviewCard = ({ data }: Props) => {
                 Print
               </Button>
             </Link>
-            <Button variant='contained' color='success' onClick={handlePdfDownload}>
+            <Button variant='contained' color='success'>
               Download
             </Button>
           </Box>
