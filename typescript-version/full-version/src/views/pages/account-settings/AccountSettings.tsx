@@ -26,9 +26,6 @@ import TabNotifications from 'src/views/pages/account-settings/TabNotifications'
 // ** Types
 import { PricingDataType } from 'src/@core/components/plan-details/types'
 
-// ** Third Party Styles Imports
-import 'react-datepicker/dist/react-datepicker.css'
-
 type TablistType = {
   name: string
   value: string

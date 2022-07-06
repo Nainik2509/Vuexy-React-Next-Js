@@ -332,7 +332,7 @@ const UserViewLeft = ({ data }: Props) => {
                   Submit
                 </Button>
                 <Button variant='outlined' color='secondary' onClick={handleEditClose}>
-                  Discard
+                  Cancel
                 </Button>
               </DialogActions>
             </Dialog>

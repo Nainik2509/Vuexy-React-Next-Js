@@ -21,9 +21,6 @@ import Navigation from './components/horizontal/navigation'
 import ScrollToTop from 'src/@core/components/scroll-to-top'
 import AppBarContent from './components/horizontal/app-bar-content'
 
-// ** Styled Component
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const HorizontalLayoutWrapper = styled('div')({
   display: 'flex',
   minHeight: '100vh',
@@ -140,11 +137,6 @@ const HorizontalLayout = (props: LayoutProps) => {
 
       {/* Footer */}
       <Footer {...props} />
-
-      {/* Portal for React Datepicker */}
-      <DatePickerWrapper sx={{ zIndex: 11 }}>
-        <Box id='react-datepicker-portal'></Box>
-      </DatePickerWrapper>
 
       {/* Customizer */}
       {themeConfig.disableCustomizer || hidden ? null : <Customizer />}

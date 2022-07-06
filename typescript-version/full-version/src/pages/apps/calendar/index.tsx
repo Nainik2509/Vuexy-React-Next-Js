@@ -33,9 +33,6 @@ import {
   handleCalendarsUpdate
 } from 'src/store/apps/calendar'
 
-// ** Third Party Styles Imports
-import 'react-datepicker/dist/react-datepicker.css'
-
 // ** CalendarColors
 const calendarsColor: CalendarColors = {
   Personal: 'error',

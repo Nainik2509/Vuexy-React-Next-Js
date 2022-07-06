@@ -41,9 +41,6 @@ import { InvoiceClientType } from 'src/types/apps/invoiceTypes'
 // ** Custom Component Imports
 import Repeater from 'src/@core/components/repeater'
 
-// ** Styles
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 interface PickerProps {
   label?: string
 }
@@ -237,46 +234,44 @@ const EditCard = (props: Props) => {
             </Box>
           </Grid>
           <Grid item xl={6} xs={12}>
-            <DatePickerWrapper sx={{ '& .react-datepicker-wrapper': { width: 'auto' } }}>
-              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { xl: 'flex-end', xs: 'flex-start' } }}>
-                <Box sx={{ mb: 4, display: 'flex', alignItems: 'center' }}>
-                  <Typography variant='h6' sx={{ mr: 2, width: '105px' }}>
-                    Invoice
-                  </Typography>
-                  <TextField
-                    size='small'
-                    value={invoiceNumber}
-                    sx={{ width: { sm: '250px', xs: '170px' } }}
-                    InputProps={{
-                      disabled: true,
-                      startAdornment: <InputAdornment position='start'>#</InputAdornment>
-                    }}
-                  />
-                </Box>
-                <Box sx={{ mb: 4, display: 'flex', alignItems: 'center' }}>
-                  <Typography variant='body2' sx={{ mr: 3, width: '100px' }}>
-                    Date Issued:
-                  </Typography>
-                  <DatePicker
-                    id='issue-date'
-                    selected={issueDate}
-                    customInput={<CustomInput />}
-                    onChange={(date: Date) => setIssueDate(date)}
-                  />
-                </Box>
-                <Box sx={{ display: 'flex' }}>
-                  <Typography variant='body2' sx={{ mr: 3, width: '100px' }}>
-                    Date Due:
-                  </Typography>
-                  <DatePicker
-                    id='due-date'
-                    selected={dueDate}
-                    customInput={<CustomInput />}
-                    onChange={(date: Date) => setDueDate(date)}
-                  />
-                </Box>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { xl: 'flex-end', xs: 'flex-start' } }}>
+              <Box sx={{ mb: 4, display: 'flex', alignItems: 'center' }}>
+                <Typography variant='h6' sx={{ mr: 2, width: '105px' }}>
+                  Invoice
+                </Typography>
+                <TextField
+                  size='small'
+                  value={invoiceNumber}
+                  sx={{ width: { sm: '250px', xs: '170px' } }}
+                  InputProps={{
+                    disabled: true,
+                    startAdornment: <InputAdornment position='start'>#</InputAdornment>
+                  }}
+                />
               </Box>
-            </DatePickerWrapper>
+              <Box sx={{ mb: 4, display: 'flex', alignItems: 'center' }}>
+                <Typography variant='body2' sx={{ mr: 3, width: '100px' }}>
+                  Date Issued:
+                </Typography>
+                <DatePicker
+                  id='issue-date'
+                  selected={issueDate}
+                  customInput={<CustomInput />}
+                  onChange={(date: Date) => setIssueDate(date)}
+                />
+              </Box>
+              <Box sx={{ display: 'flex' }}>
+                <Typography variant='body2' sx={{ mr: 3, width: '100px' }}>
+                  Date Due:
+                </Typography>
+                <DatePicker
+                  id='due-date'
+                  selected={dueDate}
+                  customInput={<CustomInput />}
+                  onChange={(date: Date) => setDueDate(date)}
+                />
+              </Box>
+            </Box>
           </Grid>
         </Grid>
       </CardContent>

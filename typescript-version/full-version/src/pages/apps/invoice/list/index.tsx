@@ -59,9 +59,6 @@ import CustomChip from 'src/@core/components/mui/chip'
 import CustomAvatar from 'src/@core/components/mui/avatar'
 import TableHeader from 'src/views/apps/invoice/list/TableHeader'
 
-// ** Third Party Styles Imports
-import 'react-datepicker/dist/react-datepicker.css'
-
 // ** Styled Components
 import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
@@ -358,35 +355,35 @@ const InvoiceList = () => {
   ]
 
   return (
-    <Grid container spacing={6}>
-      <Grid item xs={12}>
-        <Card>
-          <CardHeader title='Filters' />
-          <CardContent>
-            <Grid container spacing={6}>
-              <Grid item xs={12} sm={6}>
-                <FormControl fullWidth>
-                  <InputLabel id='invoice-status-select'>Invoice Status</InputLabel>
+    <DatePickerWrapper>
+      <Grid container spacing={6}>
+        <Grid item xs={12}>
+          <Card>
+            <CardHeader title='Filters' />
+            <CardContent>
+              <Grid container spacing={6}>
+                <Grid item xs={12} sm={6}>
+                  <FormControl fullWidth>
+                    <InputLabel id='invoice-status-select'>Invoice Status</InputLabel>
 
-                  <Select
-                    fullWidth
-                    value={statusValue}
-                    sx={{ mr: 4, mb: 2 }}
-                    label='Invoice Status'
-                    onChange={handleStatusValue}
-                    labelId='invoice-status-select'
-                  >
-                    <MenuItem value=''>none</MenuItem>
-                    <MenuItem value='downloaded'>Downloaded</MenuItem>
-                    <MenuItem value='draft'>Draft</MenuItem>
-                    <MenuItem value='paid'>Paid</MenuItem>
-                    <MenuItem value='past due'>Past Due</MenuItem>
-                    <MenuItem value='partial payment'>Partial Payment</MenuItem>
-                  </Select>
-                </FormControl>
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <DatePickerWrapper>
+                    <Select
+                      fullWidth
+                      value={statusValue}
+                      sx={{ mr: 4, mb: 2 }}
+                      label='Invoice Status'
+                      onChange={handleStatusValue}
+                      labelId='invoice-status-select'
+                    >
+                      <MenuItem value=''>none</MenuItem>
+                      <MenuItem value='downloaded'>Downloaded</MenuItem>
+                      <MenuItem value='draft'>Draft</MenuItem>
+                      <MenuItem value='paid'>Paid</MenuItem>
+                      <MenuItem value='past due'>Past Due</MenuItem>
+                      <MenuItem value='partial payment'>Partial Payment</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={6}>
                   <DatePicker
                     isClearable
                     selectsRange
@@ -407,30 +404,30 @@ const InvoiceList = () => {
                       />
                     }
                   />
-                </DatePickerWrapper>
+                </Grid>
               </Grid>
-            </Grid>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item xs={12}>
+          <Card>
+            <TableHeader value={value} selectedRows={selectedRows} handleFilter={handleFilter} />
+            <DataGrid
+              autoHeight
+              pagination
+              rows={store.data}
+              columns={columns}
+              checkboxSelection
+              disableSelectionOnClick
+              pageSize={Number(pageSize)}
+              rowsPerPageOptions={[10, 25, 50]}
+              onSelectionModelChange={rows => setSelectedRows(rows)}
+              onPageSizeChange={newPageSize => setPageSize(newPageSize)}
+            />
+          </Card>
+        </Grid>
       </Grid>
-      <Grid item xs={12}>
-        <Card>
-          <TableHeader value={value} selectedRows={selectedRows} handleFilter={handleFilter} />
-          <DataGrid
-            autoHeight
-            pagination
-            rows={store.data}
-            columns={columns}
-            checkboxSelection
-            disableSelectionOnClick
-            pageSize={Number(pageSize)}
-            rowsPerPageOptions={[10, 25, 50]}
-            onSelectionModelChange={rows => setSelectedRows(rows)}
-            onPageSizeChange={newPageSize => setPageSize(newPageSize)}
-          />
-        </Card>
-      </Grid>
-    </Grid>
+    </DatePickerWrapper>
   )
 }
 

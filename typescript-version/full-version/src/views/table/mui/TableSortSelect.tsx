@@ -273,73 +273,71 @@ const EnhancedTable = () => {
   const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <Paper sx={{ width: '100%' }}>
-        <EnhancedTableToolbar numSelected={selected.length} />
-        <TableContainer>
-          <Table sx={{ minWidth: 750 }} aria-labelledby='tableTitle'>
-            <EnhancedTableHead
-              order={order}
-              orderBy={orderBy}
-              rowCount={rows.length}
-              numSelected={selected.length}
-              onRequestSort={handleRequestSort}
-              onSelectAllClick={handleSelectAllClick}
-            />
-            <TableBody>
-              {/* if you don't need to support IE11, you can replace the `stableSort` call with: rows.slice().sort(getComparator(order, orderBy)) */}
-              {stableSort(rows, getComparator(order, orderBy))
-                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map((row, index) => {
-                  const isItemSelected = isSelected(row.name)
-                  const labelId = `enhanced-table-checkbox-${index}`
+    <>
+      <EnhancedTableToolbar numSelected={selected.length} />
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 750 }} aria-labelledby='tableTitle'>
+          <EnhancedTableHead
+            order={order}
+            orderBy={orderBy}
+            rowCount={rows.length}
+            numSelected={selected.length}
+            onRequestSort={handleRequestSort}
+            onSelectAllClick={handleSelectAllClick}
+          />
+          <TableBody>
+            {/* if you don't need to support IE11, you can replace the `stableSort` call with: rows.slice().sort(getComparator(order, orderBy)) */}
+            {stableSort(rows, getComparator(order, orderBy))
+              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+              .map((row, index) => {
+                const isItemSelected = isSelected(row.name)
+                const labelId = `enhanced-table-checkbox-${index}`
 
-                  return (
-                    <TableRow
-                      hover
-                      tabIndex={-1}
-                      key={row.name}
-                      role='checkbox'
-                      selected={isItemSelected}
-                      aria-checked={isItemSelected}
-                      onClick={event => handleClick(event, row.name)}
-                    >
-                      <TableCell padding='checkbox'>
-                        <Checkbox checked={isItemSelected} inputProps={{ 'aria-labelledby': labelId }} />
-                      </TableCell>
-                      <TableCell component='th' id={labelId} scope='row' padding='none'>
-                        {row.name}
-                      </TableCell>
-                      <TableCell align='right'>{row.calories}</TableCell>
-                      <TableCell align='right'>{row.fat}</TableCell>
-                      <TableCell align='right'>{row.carbs}</TableCell>
-                      <TableCell align='right'>{row.protein}</TableCell>
-                    </TableRow>
-                  )
-                })}
-              {emptyRows > 0 && (
-                <TableRow
-                  sx={{
-                    height: 53 * emptyRows
-                  }}
-                >
-                  <TableCell colSpan={6} />
-                </TableRow>
-              )}
-            </TableBody>
-          </Table>
-        </TableContainer>
-        <TablePagination
-          page={page}
-          component='div'
-          count={rows.length}
-          rowsPerPage={rowsPerPage}
-          onPageChange={handleChangePage}
-          rowsPerPageOptions={[5, 10, 25]}
-          onRowsPerPageChange={handleChangeRowsPerPage}
-        />
-      </Paper>
-    </Box>
+                return (
+                  <TableRow
+                    hover
+                    tabIndex={-1}
+                    key={row.name}
+                    role='checkbox'
+                    selected={isItemSelected}
+                    aria-checked={isItemSelected}
+                    onClick={event => handleClick(event, row.name)}
+                  >
+                    <TableCell padding='checkbox'>
+                      <Checkbox checked={isItemSelected} inputProps={{ 'aria-labelledby': labelId }} />
+                    </TableCell>
+                    <TableCell component='th' id={labelId} scope='row' padding='none'>
+                      {row.name}
+                    </TableCell>
+                    <TableCell align='right'>{row.calories}</TableCell>
+                    <TableCell align='right'>{row.fat}</TableCell>
+                    <TableCell align='right'>{row.carbs}</TableCell>
+                    <TableCell align='right'>{row.protein}</TableCell>
+                  </TableRow>
+                )
+              })}
+            {emptyRows > 0 && (
+              <TableRow
+                sx={{
+                  height: 53 * emptyRows
+                }}
+              >
+                <TableCell colSpan={6} />
+              </TableRow>
+            )}
+          </TableBody>
+        </Table>
+      </TableContainer>
+      <TablePagination
+        page={page}
+        component='div'
+        count={rows.length}
+        rowsPerPage={rowsPerPage}
+        onPageChange={handleChangePage}
+        rowsPerPageOptions={[5, 10, 25]}
+        onRowsPerPageChange={handleChangeRowsPerPage}
+      />
+    </>
   )
 }
 
