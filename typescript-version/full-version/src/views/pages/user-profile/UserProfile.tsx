@@ -1,51 +1,43 @@
 // ** React Imports
-import { ReactElement, useState, useEffect } from 'react'
+import { useState, useEffect, ReactElement } from 'react'
 
 // ** Next Import
 import { useRouter } from 'next/router'
 
-// ** MUI Imports
+// ** MUI Components
 import { styled } from '@mui/material/styles'
 import Button, { ButtonProps } from '@mui/material/Button'
 import ButtonGroup, { ButtonGroupProps } from '@mui/material/ButtonGroup'
 
 // ** Icons Imports
 import LinkVariant from 'mdi-material-ui/LinkVariant'
-import BellOutline from 'mdi-material-ui/BellOutline'
 import AccountOutline from 'mdi-material-ui/AccountOutline'
-import LockOpenOutline from 'mdi-material-ui/LockOpenOutline'
-import BookmarkOutline from 'mdi-material-ui/BookmarkOutline'
+import ViewGridOutline from 'mdi-material-ui/ViewGridOutline'
+import AccountMultipleOutline from 'mdi-material-ui/AccountMultipleOutline'
 
-// ** Demo Tabs Imports
-import TabAccount from 'src/views/pages/account-settings/TabAccount'
-import TabBilling from 'src/views/pages/account-settings/TabBilling'
-import TabSecurity from 'src/views/pages/account-settings/TabSecurity'
-import TabConnections from 'src/views/pages/account-settings/TabConnections'
-import TabNotifications from 'src/views/pages/account-settings/TabNotifications'
-
-// ** Types
-import { PricingDataType } from 'src/@core/components/plan-details/types'
-
-// ** Third Party Styles Imports
-import 'react-datepicker/dist/react-datepicker.css'
-
-type TablistType = {
-  name: string
-  value: string
-  icon: ReactElement
-}
+// ** Demo Components
+import Teams from 'src/views/pages/user-profile/teams'
+import Profile from 'src/views/pages/user-profile/profile'
+import Projects from 'src/views/pages/user-profile/projects'
+import Connections from 'src/views/pages/user-profile/connections'
+import UserProfileHeader from 'src/views/pages/user-profile/UserProfileHeader'
 
 type tabContentListType = {
   [key: string]: ReactElement
 }
 
 const tabsList: TablistType[] = [
-  { name: 'Account', value: 'account', icon: <AccountOutline /> },
-  { name: 'Security', value: 'security', icon: <LockOpenOutline /> },
-  { name: 'Billing', value: 'billing', icon: <BookmarkOutline /> },
-  { name: 'Notifications', value: 'notifications', icon: <BellOutline /> },
+  { name: 'Profile', value: 'profile', icon: <AccountOutline /> },
+  { name: 'Teams', value: 'teams', icon: <AccountMultipleOutline /> },
+  { name: 'Projects', value: 'projects', icon: <ViewGridOutline /> },
   { name: 'Connections', value: 'connections', icon: <LinkVariant /> }
 ]
+
+type TablistType = {
+  name: string
+  value: string
+  icon: ReactElement
+}
 
 const DefaultButton = styled(Button)<ButtonProps>(({ theme }) => ({
   border: 'none !important',
@@ -59,7 +51,8 @@ const DefaultButton = styled(Button)<ButtonProps>(({ theme }) => ({
 
 const StyledButtonGroup = styled(ButtonGroup)<ButtonGroupProps>(({ theme }) => ({
   boxShadow: 'none',
-  marginBottom: theme.spacing(4),
+  marginTop: theme.spacing(6),
+  marginBottom: theme.spacing(6),
 
   [theme.breakpoints.down('md')]: {
     width: '100%',
@@ -70,7 +63,7 @@ const StyledButtonGroup = styled(ButtonGroup)<ButtonGroupProps>(({ theme }) => (
   }
 }))
 
-const AccountSettings = ({ tab, apiPricingData }: { tab: string; apiPricingData: PricingDataType }) => {
+const UserProfile = ({ tab, data }: any) => {
   // ** State
   const [activeTab, setActiveTab] = useState<string>(tab)
 
@@ -79,7 +72,7 @@ const AccountSettings = ({ tab, apiPricingData }: { tab: string; apiPricingData:
 
   const handleClick = (value: string) => {
     router.push({
-      pathname: `/pages/account-settings/${value.toLowerCase()}`
+      pathname: `/pages/user-profile/${value.toLowerCase()}`
     })
   }
 
@@ -87,26 +80,27 @@ const AccountSettings = ({ tab, apiPricingData }: { tab: string; apiPricingData:
     if (tab && tab !== activeTab) {
       setActiveTab(tab)
     }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tab])
 
   const tabContentList: tabContentListType = {
-    account: <TabAccount />,
-    security: <TabSecurity />,
-    connections: <TabConnections />,
-    notifications: <TabNotifications />,
-    billing: <TabBilling apiPricingData={apiPricingData} />
+    profile: <Profile data={data} />,
+    teams: <Teams data={data} />,
+    projects: <Projects data={data} />,
+    connections: <Connections data={data} />
   }
 
   return (
     <>
+      <UserProfileHeader />
       <StyledButtonGroup variant='contained'>
-        {tabsList.map(({ name, value, icon }) => {
+        {tabsList.map(({ name, value, icon }, index) => {
           const ButtonTag = activeTab !== value ? DefaultButton : Button
 
           return (
             <ButtonTag
-              key={value}
+              key={index}
               disableRipple
               startIcon={icon}
               onClick={() => handleClick(value)}
@@ -117,9 +111,9 @@ const AccountSettings = ({ tab, apiPricingData }: { tab: string; apiPricingData:
           )
         })}
       </StyledButtonGroup>
-      <>{tabContentList[activeTab]}</>
+      {data ? <>{tabContentList[activeTab]}</> : null}
     </>
   )
 }
 
-export default AccountSettings
+export default UserProfile
