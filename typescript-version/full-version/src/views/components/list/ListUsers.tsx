@@ -37,6 +37,16 @@ const StyledList = styled(List)<ListProps>(({ theme }) => ({
         fontWeight: 500,
         fontSize: '.9375rem'
       }
+    },
+
+    [theme.breakpoints.down('sm')]: {
+      '& .MuiListItemSecondaryAction-root': {
+        top: 0,
+        right: 0,
+        position: 'relative',
+        marginTop: theme.spacing(4),
+        paddingLeft: theme.spacing(4)
+      }
     }
   }
 }))
@@ -50,7 +60,7 @@ const ListUsers = () => {
         </ListItemAvatar>
         <Box>
           <ListItemText primary='Caroline Black' />
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
             <Box sx={{ mr: 3, display: 'flex', alignItems: 'center' }}>
               <Circle sx={{ mr: 1, color: 'success.main', fontSize: '0.625rem' }} />
               <Typography variant='caption'>Online</Typography>
@@ -72,7 +82,7 @@ const ListUsers = () => {
         </ListItemAvatar>
         <Box>
           <ListItemText primary='Alfred Copeland' />
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
             <Box sx={{ mr: 3, display: 'flex', alignItems: 'center' }}>
               <Circle sx={{ mr: 1, color: 'warning.main', fontSize: '0.625rem' }} />
               <Typography variant='caption'>Away</Typography>
@@ -94,7 +104,7 @@ const ListUsers = () => {
         </ListItemAvatar>
         <Box>
           <ListItemText primary='Celia Schneider' />
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
             <Box sx={{ mr: 3, display: 'flex', alignItems: 'center' }}>
               <Circle sx={{ mr: 1, color: 'secondary.main', fontSize: '0.625rem' }} />
               <Typography variant='caption'>Offline</Typography>
@@ -117,7 +127,7 @@ const ListUsers = () => {
         </ListItemAvatar>
         <Box>
           <ListItemText primary='Max Rogan' />
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
             <Box sx={{ mr: 3, display: 'flex', alignItems: 'center' }}>
               <Circle sx={{ mr: 1, color: 'error.main', fontSize: '0.625rem' }} />
               <Typography variant='caption'>In Meeting</Typography>
