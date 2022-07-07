@@ -85,35 +85,36 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
             }
           />
           <CardContent>
-            {connections.map((connection: ProfileConnectionsType, index) => {
-              return (
-                <Box
-                  key={index}
-                  sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    '&:not(:last-of-type)': { mb: 4 }
-                  }}
-                >
-                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Avatar src={connection.avatar} sx={{ mr: 4, width: 38, height: 38 }} />
-                    <Box>
-                      <Typography sx={{ lineHeight: 1.1, fontWeight: 500 }}>{connection.name}</Typography>
-                      <Typography variant='caption'>{connection.connections} Connections</Typography>
-                    </Box>
-                  </Box>
-                  <Button
-                    size='small'
-                    color='primary'
-                    sx={{ minWidth: 28, p: theme => `${theme.spacing(1.25, 1)} !important` }}
-                    variant={connection.isFriend ? 'contained' : 'text'}
+            {connections &&
+              connections.map((connection: ProfileConnectionsType, index) => {
+                return (
+                  <Box
+                    key={index}
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      '&:not(:last-of-type)': { mb: 4 }
+                    }}
                   >
-                    <AccountOutline sx={{ fontSize: 18 }} />
-                  </Button>
-                </Box>
-              )
-            })}
+                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                      <Avatar src={connection.avatar} sx={{ mr: 4, width: 38, height: 38 }} />
+                      <Box>
+                        <Typography sx={{ lineHeight: 1.1, fontWeight: 500 }}>{connection.name}</Typography>
+                        <Typography variant='caption'>{connection.connections} Connections</Typography>
+                      </Box>
+                    </Box>
+                    <Button
+                      size='small'
+                      color='primary'
+                      sx={{ minWidth: 28, p: theme => `${theme.spacing(1.25, 1)} !important` }}
+                      variant={connection.isFriend ? 'contained' : 'text'}
+                    >
+                      <AccountOutline sx={{ fontSize: 18 }} />
+                    </Button>
+                  </Box>
+                )
+              })}
           </CardContent>
         </Card>
       </Grid>
@@ -148,27 +149,28 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
             }
           />
           <CardContent>
-            {teams.map((team: ProfileTeamsTechType, index) => {
-              return (
-                <Box
-                  key={index}
-                  sx={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    '&:not(:last-of-type)': { mb: 4 }
-                  }}
-                >
-                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Avatar src={team.avatar} sx={{ mr: 4, width: 38, height: 38 }} />
-                    <Box>
-                      <Typography sx={{ lineHeight: 1.1, fontWeight: 500 }}>{team.title}</Typography>
-                      <Typography variant='caption'>{team.members} Members</Typography>
+            {teams &&
+              teams.map((team: ProfileTeamsTechType, index) => {
+                return (
+                  <Box
+                    key={index}
+                    sx={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      '&:not(:last-of-type)': { mb: 4 }
+                    }}
+                  >
+                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                      <Avatar src={team.avatar} sx={{ mr: 4, width: 38, height: 38 }} />
+                      <Box>
+                        <Typography sx={{ lineHeight: 1.1, fontWeight: 500 }}>{team.title}</Typography>
+                        <Typography variant='caption'>{team.members} Members</Typography>
+                      </Box>
                     </Box>
+                    <CustomChip rounded size='small' skin='light' color={team.ChipColor} label={team.chipText} />
                   </Box>
-                  <CustomChip rounded size='small' skin='light' color={team.ChipColor} label={team.chipText} />
-                </Box>
-              )
-            })}
+                )
+              })}
           </CardContent>
         </Card>
       </Grid>

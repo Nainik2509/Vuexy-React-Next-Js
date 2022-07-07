@@ -111,7 +111,7 @@ const UserProfile = ({ tab, data }: any) => {
           )
         })}
       </StyledButtonGroup>
-      {data ? <>{tabContentList[activeTab]}</> : null}
+      <>{tabContentList[activeTab]}</>
     </>
   )
 }

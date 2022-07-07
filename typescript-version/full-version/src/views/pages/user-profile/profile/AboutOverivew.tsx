@@ -42,7 +42,7 @@ const icons = {
 }
 
 const renderList = (arr: ProfileTabCommonType[]) => {
-  if (arr.length) {
+  if (arr && arr.length) {
     return arr.map((item, index) => {
       // @ts-ignore
       const Icon = icons[item.icon]
@@ -62,7 +62,7 @@ const renderList = (arr: ProfileTabCommonType[]) => {
 }
 
 const renderTeams = (arr: ProfileTeamsType[]) => {
-  if (arr.length) {
+  if (arr && arr.length) {
     return arr.map((item, index) => {
       // @ts-ignore
       const Icon = icons[item.icon]

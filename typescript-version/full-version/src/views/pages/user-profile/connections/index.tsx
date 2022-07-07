@@ -20,82 +20,85 @@ import CustomChip from 'src/@core/components/mui/chip'
 import { ConnectionsTabType } from 'src/@fake-db/types'
 
 const Connections = ({ data }: { data: ConnectionsTabType[] }) => {
-  return data && data.length ? (
+  return (
     <Grid container spacing={6}>
-      {data.map((item, index) => {
-        return (
-          <Grid key={index} item xs={12} md={6} lg={4}>
-            <Card>
-              <CardContent sx={{ pt: 6 }}>
-                <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                  <Avatar src={item.avatar} sx={{ mb: 4, width: 100, height: 100 }} />
-                  <Typography variant='h6' sx={{ fontWeight: 500 }}>
-                    {item.name}
-                  </Typography>
-                  <Typography variant='body2'>{item.designation}</Typography>
-                  <Box sx={{ mt: 5, mb: 1.5, display: 'flex', alignItems: 'center' }}>
-                    {item.chips.map((chip, index) => (
-                      <CustomChip
-                        rounded
-                        key={index}
-                        size='small'
-                        skin='light'
-                        color={chip.color}
-                        label={chip.title}
-                        sx={{ '&:not(:last-of-type)': { mr: 3 } }}
-                      />
-                    ))}
-                  </Box>
-                  <Box
-                    sx={{
-                      mt: 4,
-                      mb: 6,
-                      width: '100%',
-                      display: 'flex',
-                      textAlign: 'center',
-                      alignItems: 'center',
-                      justifyContent: 'space-around'
-                    }}
-                  >
-                    <Box>
-                      <Typography variant='h5'>{item.projects}</Typography>
-                      <Typography>Projects</Typography>
+      {data &&
+        Array.isArray(data) &&
+        data.map((item, index) => {
+          return (
+            <Grid key={index} item xs={12} md={6} lg={4}>
+              <Card>
+                <CardContent sx={{ pt: 6 }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                    <Avatar src={item.avatar} sx={{ mb: 4, width: 100, height: 100 }} />
+                    <Typography variant='h6' sx={{ fontWeight: 500 }}>
+                      {item.name}
+                    </Typography>
+                    <Typography variant='body2'>{item.designation}</Typography>
+                    <Box sx={{ mt: 5, mb: 1.5, display: 'flex', alignItems: 'center' }}>
+                      {item.chips &&
+                        item.chips.map((chip, index) => (
+                          <CustomChip
+                            rounded
+                            key={index}
+                            size='small'
+                            skin='light'
+                            color={chip.color}
+                            label={chip.title}
+                            sx={{ '&:not(:last-of-type)': { mr: 3 } }}
+                          />
+                        ))}
                     </Box>
-                    <Box>
-                      <Typography variant='h5'>{item.tasks}</Typography>
-                      <Typography>Tasks</Typography>
-                    </Box>
-                    <Box>
-                      <Typography variant='h5'>{item.connections}</Typography>
-                      <Typography>Connections</Typography>
-                    </Box>
-                  </Box>
-                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Button
-                      sx={{ mr: 4 }}
-                      variant={item.isConnected ? 'contained' : 'text'}
-                      startIcon={
-                        item.isConnected ? (
-                          <AccountCheckOutline fontSize='small' />
-                        ) : (
-                          <AccountPlusOutline fontSize='small' />
-                        )
-                      }
+                    <Box
+                      sx={{
+                        mt: 4,
+                        mb: 6,
+                        width: '100%',
+                        display: 'flex',
+                        textAlign: 'center',
+                        alignItems: 'center',
+                        justifyContent: 'space-around'
+                      }}
                     >
-                      {item.isConnected ? 'Connected' : 'Connect'}
-                    </Button>
-                    <IconButton color='secondary'>
-                      <EmailOutline />
-                    </IconButton>
+                      <Box>
+                        <Typography variant='h5'>{item.projects}</Typography>
+                        <Typography>Projects</Typography>
+                      </Box>
+                      <Box>
+                        <Typography variant='h5'>{item.tasks}</Typography>
+                        <Typography>Tasks</Typography>
+                      </Box>
+                      <Box>
+                        <Typography variant='h5'>{item.connections}</Typography>
+                        <Typography>Connections</Typography>
+                      </Box>
+                    </Box>
+                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                      <Button
+                        sx={{ mr: 4 }}
+                        variant={item.isConnected ? 'contained' : 'text'}
+                        startIcon={
+                          item.isConnected ? (
+                            <AccountCheckOutline fontSize='small' />
+                          ) : (
+                            <AccountPlusOutline fontSize='small' />
+                          )
+                        }
+                      >
+                        {item.isConnected ? 'Connected' : 'Connect'}
+                      </Button>
+                      <IconButton color='secondary'>
+                        <EmailOutline />
+                      </IconButton>
+                    </Box>
                   </Box>
-                </Box>
-              </CardContent>
-            </Card>
-          </Grid>
-        )
-      })}
+                </CardContent>
+              </Card>
+            </Grid>
+          )
+        })}
     </Grid>
-  ) : null
+  )
 }
 
 export default Connections
