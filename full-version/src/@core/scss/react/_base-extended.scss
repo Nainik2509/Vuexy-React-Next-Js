@@ -34,6 +34,13 @@ body,
       font-weight: 400;
       border-radius: 4px;
     }
+
+    li.nav-item {
+      .menu-item {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
   }
 }
 
