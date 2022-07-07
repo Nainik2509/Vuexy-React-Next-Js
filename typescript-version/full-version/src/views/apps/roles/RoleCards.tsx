@@ -250,7 +250,7 @@ const RolesCards = () => {
                 Submit
               </Button>
               <Button size='large' color='secondary' variant='outlined' onClick={handleClose}>
-                Discard
+                Cancel
               </Button>
             </Box>
           </DialogActions>
