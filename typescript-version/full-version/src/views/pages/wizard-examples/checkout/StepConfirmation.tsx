@@ -258,7 +258,7 @@ const StepConfirmation = () => {
               </Grid>
             </Grid>
           </CardContent>
-          <Divider sx={{ m: 0 }} />
+          <Divider sx={{ m: '0 !important' }} />
           <CardContent sx={{ p: theme => `${theme.spacing(4)} !important` }}>
             <Grid container>
               <Grid item xs={6}>

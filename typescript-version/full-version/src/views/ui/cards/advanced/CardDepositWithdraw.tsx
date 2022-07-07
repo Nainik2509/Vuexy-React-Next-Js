@@ -104,11 +104,11 @@ const withdrawData = [
 
 // Styled Divider component
 const Divider = styled(MuiDivider)<DividerProps>(({ theme }) => ({
-  margin: theme.spacing(5, 0),
+  margin: `${theme.spacing(5, 0)} !important`,
   borderRight: `1px solid ${theme.palette.divider}`,
   [theme.breakpoints.down('md')]: {
     borderRight: 'none',
-    margin: theme.spacing(0, 5),
+    margin: `${theme.spacing(0, 5)} !important`,
     borderBottom: `1px solid ${theme.palette.divider}`
   }
 }))

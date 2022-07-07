@@ -278,7 +278,7 @@ const UserViewBilling = () => {
             </Button>
           </DialogContent>
 
-          <Divider sx={{ m: 0 }} />
+          <Divider sx={{ m: '0 !important' }} />
 
           <DialogContent sx={{ pt: 8, pl: [6, 15], pr: [6, 15] }}>
             <Typography sx={{ fontWeight: 500, mb: 2, fontSize: '0.875rem' }}>

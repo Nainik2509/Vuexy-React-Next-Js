@@ -36,7 +36,7 @@ const ListSimple = () => {
           </ListItemButton>
         </ListItem>
       </List>
-      <Divider sx={{ m: 0 }} />
+      <Divider sx={{ m: '0 !important' }} />
       <List component='nav' aria-label='secondary mailbox'>
         <ListItem disablePadding>
           <ListItemButton>

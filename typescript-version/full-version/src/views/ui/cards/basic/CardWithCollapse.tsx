@@ -52,7 +52,7 @@ const CardWithCollapse = () => {
         </Box>
       </CardActions>
       <Collapse in={collapse}>
-        <Divider sx={{ m: 0 }} />
+        <Divider sx={{ m: '0 !important' }} />
         <CardContent>
           <Typography variant='body2'>
             I&prime;m a thing. But, like most politicians, he promised more than he could deliver. You won&prime;t have

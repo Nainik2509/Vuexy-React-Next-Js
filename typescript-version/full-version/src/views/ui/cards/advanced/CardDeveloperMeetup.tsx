@@ -41,7 +41,7 @@ const CardDeveloperMeetup = () => {
           </Box>
         </Box>
 
-        <Divider sx={{ my: 4 }} />
+        <Divider sx={{ my: theme => `${theme.spacing(4)} !important` }} />
 
         <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
           <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -64,7 +64,7 @@ const CardDeveloperMeetup = () => {
           </Box>
         </Box>
 
-        <Divider sx={{ my: 4 }} />
+        <Divider sx={{ my: theme => `${theme.spacing(4)} !important` }} />
 
         <Box sx={{ mb: 2, display: 'flex' }}>
           <ClockTimeThreeOutline sx={{ mr: 2.5, mt: 1, fontSize: '1.25rem', color: 'text.secondary' }} />

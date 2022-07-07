@@ -341,7 +341,7 @@ const BillingHistoryTable = () => {
   return (
     <Card>
       <CardHeader title='Billing History' />
-      <Divider sx={{ m: 0 }} />
+      <Divider sx={{ m: '0 !important' }} />
       <CardContent>
         <Box
           sx={{

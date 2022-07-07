@@ -118,7 +118,7 @@ const Projects = ({ data }: { data: ProjectsTabType[] }) => {
                   </Box>
                   <Typography>{item.description}</Typography>
                 </CardContent>
-                <Divider sx={{ my: 0 }} />
+                <Divider sx={{ my: '0 !important' }} />
                 <CardContent>
                   <Box sx={{ mb: 4, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <Box sx={{ display: 'flex' }}>

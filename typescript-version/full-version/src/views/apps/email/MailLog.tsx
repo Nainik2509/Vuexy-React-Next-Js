@@ -319,7 +319,7 @@ const MailLog = (props: MailLogType) => {
             />
           </Box>
         </Box>
-        <Divider sx={{ m: 0 }} />
+        <Divider sx={{ m: '0 !important' }} />
         <Box sx={{ py: 2, px: { xs: 2.5, sm: 5 } }}>
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -398,7 +398,7 @@ const MailLog = (props: MailLogType) => {
             </Box>
           </Box>
         </Box>
-        <Divider sx={{ m: 0 }} />
+        <Divider sx={{ m: '0 !important' }} />
         <Box sx={{ p: 0, position: 'relative', overflowX: 'hidden', height: 'calc(100% - 7.25rem)' }}>
           <ScrollWrapper hidden={hidden}>
             {store && store.mails && store.mails.length ? (
@@ -534,7 +534,7 @@ const MailLog = (props: MailLogType) => {
                         </Box>
                       </MailItem>
                       {store.mails !== null && store.mails.length - 1 > index ? (
-                        <Divider sx={{ my: 0, mx: -5 }} />
+                        <Divider sx={{ my: '0 !important', mx: theme => `${theme.spacing(-5)} !important` }} />
                       ) : null}
                     </Box>
                   )

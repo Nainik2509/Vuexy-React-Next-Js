@@ -40,7 +40,7 @@ const CardCafe = () => {
           for your.
         </Typography>
 
-        <Divider sx={{ my: 4 }} />
+        <Divider sx={{ my: theme => `${theme.spacing(4)} !important` }} />
 
         <Typography sx={{ mb: 4 }}>Tonight’s availability</Typography>
 

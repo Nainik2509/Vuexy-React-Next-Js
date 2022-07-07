@@ -97,7 +97,7 @@ const FormLayoutsCollapsible = () => {
             Delivery Address
           </Typography>
         </AccordionSummary>
-        <Divider sx={{ m: 0 }} />
+        <Divider sx={{ m: '0 !important' }} />
         <AccordionDetails>
           <Grid container spacing={5}>
             <Grid item xs={12} sm={6}>
@@ -162,7 +162,7 @@ const FormLayoutsCollapsible = () => {
             Delivery Options
           </Typography>
         </AccordionSummary>
-        <Divider sx={{ m: 0 }} />
+        <Divider sx={{ m: '0 !important' }} />
         <AccordionDetails sx={{ pt: 6, pb: 6 }}>
           <BoxWrapper
             onClick={() => setOption('standard')}
@@ -234,7 +234,7 @@ const FormLayoutsCollapsible = () => {
             Payment Method
           </Typography>
         </AccordionSummary>
-        <Divider sx={{ m: 0 }} />
+        <Divider sx={{ m: '0 !important' }} />
         <AccordionDetails>
           <Grid container spacing={5}>
             <Grid item xs={12}>
@@ -323,7 +323,7 @@ const FormLayoutsCollapsible = () => {
             </Grid>
           </Grid>
         </AccordionDetails>
-        <Divider sx={{ m: 0 }} />
+        <Divider sx={{ m: '0 !important' }} />
         <AccordionDetails>
           <Button size='large' type='submit' variant='contained' sx={{ mr: 4 }}>
             Place Order

@@ -212,7 +212,7 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
               </Link>
             </Box>
           </CardContent>
-          <Divider sx={{ my: 0 }} />
+          <Divider sx={{ my: '0 !important' }} />
           <CardContent sx={{ p: 4 }}>
             <Typography sx={{ mb: 4, fontWeight: 500 }}>Price Details</Typography>
             <Grid container>
@@ -245,7 +245,7 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
               </Grid>
             </Grid>
           </CardContent>
-          <Divider sx={{ my: 0 }} />
+          <Divider sx={{ my: '0 !important' }} />
           <CardContent sx={{ p: theme => `${theme.spacing(4)} !important` }}>
             <Grid container>
               <Grid item xs={6}>

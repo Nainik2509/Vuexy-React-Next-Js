@@ -506,13 +506,13 @@ const MailDetails = (props: MailDetailsType) => {
                               </Box>
                             </Box>
                           </Box>
-                          <Divider sx={{ m: 0 }} />
+                          <Divider sx={{ m: '0 !important' }} />
                           <Box sx={{ p: 5, pt: 0 }}>
                             <Box dangerouslySetInnerHTML={{ __html: reply.message }} />
                           </Box>
                           {reply.attachments.length ? (
                             <Fragment>
-                              <Divider sx={{ m: 0 }} />
+                              <Divider sx={{ m: '0 !important' }} />
                               <Box sx={{ p: 5 }}>
                                 <Typography variant='body2'>Attachments</Typography>
                                 <List>
@@ -587,13 +587,13 @@ const MailDetails = (props: MailDetailsType) => {
                       </Box>
                     </Box>
                   </Box>
-                  <Divider sx={{ m: 0 }} />
+                  <Divider sx={{ m: '0 !important' }} />
                   <Box sx={{ p: 5, pt: 0 }}>
                     <Box dangerouslySetInnerHTML={{ __html: mail.message }} />
                   </Box>
                   {mail.attachments.length ? (
                     <Fragment>
-                      <Divider sx={{ m: 0 }} />
+                      <Divider sx={{ m: '0 !important' }} />
                       <Box sx={{ p: 5 }}>
                         <Typography variant='body2'>Attachments</Typography>
                         <List>

@@ -181,7 +181,7 @@ const InvoicePrint = ({ id }: InvoiceLayoutProps) => {
           </Grid>
         </Grid>
 
-        <Divider sx={{ my: 6 }} />
+        <Divider sx={{ my: theme => `${theme.spacing(6)} !important` }} />
 
         <Grid container>
           <Grid item xs={7} md={8} sx={{ mb: { lg: 0, xs: 4 } }}>
@@ -235,7 +235,7 @@ const InvoicePrint = ({ id }: InvoiceLayoutProps) => {
           </Grid>
         </Grid>
 
-        <Divider sx={{ mt: 6, mb: 0 }} />
+        <Divider sx={{ mt: theme => `${theme.spacing(6)} !important`, mb: '0 !important' }} />
 
         <Table sx={{ mb: 6 }}>
           <TableHead>
@@ -319,7 +319,7 @@ const InvoicePrint = ({ id }: InvoiceLayoutProps) => {
           </Grid>
         </Grid>
 
-        <Divider sx={{ my: 6 }} />
+        <Divider sx={{ my: `${theme.spacing(6)} !important` }} />
         <Typography variant='body2'>
           <strong>Note:</strong> It was a pleasure working with you and your team. We hope you will keep us in mind for
           future freelance projects. Thank You!

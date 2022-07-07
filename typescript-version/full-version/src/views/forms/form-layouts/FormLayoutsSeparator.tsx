@@ -81,7 +81,7 @@ const FormLayoutsSeparator = () => {
   return (
     <Card>
       <CardHeader title='Multi Column with Form Separator' />
-      <Divider sx={{ m: 0 }} />
+      <Divider sx={{ m: '0 !important' }} />
       <form onSubmit={e => e.preventDefault()}>
         <CardContent>
           <Grid container spacing={5}>
@@ -145,7 +145,7 @@ const FormLayoutsSeparator = () => {
               </FormControl>
             </Grid>
             <Grid item xs={12}>
-              <Divider sx={{ mb: 0 }} />
+              <Divider sx={{ mb: '0 !important' }} />
             </Grid>
             <Grid item xs={12}>
               <Typography variant='body2' sx={{ fontWeight: 600 }}>
@@ -211,7 +211,7 @@ const FormLayoutsSeparator = () => {
             </Grid>
           </Grid>
         </CardContent>
-        <Divider sx={{ m: 0 }} />
+        <Divider sx={{ m: '0 !important' }} />
         <CardActions>
           <Button size='large' type='submit' sx={{ mr: 2 }} variant='contained'>
             Submit

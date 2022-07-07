@@ -240,7 +240,7 @@ const Customizer = () => {
             </Box>
           </CustomizerSpacing>
 
-          <Divider sx={{ m: 0 }} />
+          <Divider sx={{ m: '0 !important' }} />
 
           <CustomizerSpacing className='customizer-body'>
             <Typography
@@ -298,7 +298,7 @@ const Customizer = () => {
             </Box>
           </CustomizerSpacing>
 
-          <Divider sx={{ m: 0 }} />
+          <Divider sx={{ m: '0 !important' }} />
 
           <CustomizerSpacing className='customizer-body'>
             <Typography
@@ -372,7 +372,7 @@ const Customizer = () => {
             )}
           </CustomizerSpacing>
 
-          <Divider sx={{ m: 0 }} />
+          <Divider sx={{ m: '0 !important' }} />
 
           <CustomizerSpacing className='customizer-body'>
             <Typography

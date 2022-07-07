@@ -88,7 +88,7 @@ const data = [
           <br />
           Mobile : 1234567890 Cash / Card on delivery available
         </Typography>
-        <Divider sx={{ my: 4 }} />
+        <Divider sx={{ my: theme => `${theme.spacing(4)} !important` }} />
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Link href='/' passHref>
             <Box
@@ -124,7 +124,7 @@ const data = [
           <br />
           Mobile : 1234567890 Cash / Card on delivery available
         </Typography>
-        <Divider sx={{ my: 4 }} />
+        <Divider sx={{ my: theme => `${theme.spacing(4)} !important` }} />
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Link href='/' passHref>
             <Box
@@ -189,7 +189,7 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
               </Box>
             </Box>
           </CardContent>
-          <Divider sx={{ mt: 4, mb: 0 }} />
+          <Divider sx={{ mt: theme => `${theme.spacing(4)} !important`, mb: '0 !important' }} />
           <CardContent sx={{ p: 4 }}>
             <Typography sx={{ mb: 4, fontWeight: 500 }}>Price Details</Typography>
             <Grid container>
@@ -210,7 +210,7 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
               </Grid>
             </Grid>
           </CardContent>
-          <Divider sx={{ m: 0 }} />
+          <Divider sx={{ m: '0 !important' }} />
           <CardContent sx={{ p: theme => `${theme.spacing(4)} !important` }}>
             <Grid container>
               <Grid item xs={6}>

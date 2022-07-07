@@ -219,7 +219,7 @@ const UserViewSecurity = () => {
             </Box>
           </Box>
 
-          <Divider sx={{ mt: 0, mb: 4 }} />
+          <Divider sx={{ mt: '0 !important', mb: theme => `${theme.spacing(4)} !important` }} />
 
           <Typography variant='body2'>
             Two-factor authentication adds an additional layer of security to your account by requiring more than just a
@@ -273,7 +273,7 @@ const UserViewSecurity = () => {
       <Card>
         <CardHeader title='Recent devices' />
 
-        <Divider sx={{ m: 0 }} />
+        <Divider sx={{ m: '0 !important' }} />
 
         <TableContainer>
           <Table sx={{ minWidth: 500 }}>

@@ -133,7 +133,7 @@ const UserDropdown = (props: Props) => {
             </Box>
           </Box>
         </Box>
-        <Divider sx={{ mt: 0, mb: 1 }} />
+        <Divider sx={{ mt: '0 !important', mb: theme => `${theme.spacing(1)} !important` }} />
         <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose('/apps/user/view/12')}>
           <Box sx={styles}>
             <AccountOutline sx={{ mr: 2 }} />

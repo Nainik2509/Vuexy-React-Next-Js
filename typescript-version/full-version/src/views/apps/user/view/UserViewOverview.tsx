@@ -140,7 +140,7 @@ const UserViewOverview = ({ invoiceData }: Props) => {
       <Card sx={{ mb: 6 }}>
         <CardHeader title='Project List' />
 
-        <Divider sx={{ m: 0 }} />
+        <Divider sx={{ m: '0 !important' }} />
 
         <TableContainer>
           <Table size='small' sx={{ minWidth: 500 }}>

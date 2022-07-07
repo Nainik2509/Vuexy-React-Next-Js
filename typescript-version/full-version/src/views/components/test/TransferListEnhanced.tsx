@@ -85,7 +85,7 @@ const TransferListEnhanced = () => {
           />
         }
       />
-      <Divider sx={{ m: 0 }} />
+      <Divider sx={{ m: '0 !important' }} />
       <List role='list' component='div' sx={{ width: 200, height: 265, overflow: 'auto' }}>
         {items.map((value: number) => {
           const labelId = `transfer-list-all-item-${value}-label`

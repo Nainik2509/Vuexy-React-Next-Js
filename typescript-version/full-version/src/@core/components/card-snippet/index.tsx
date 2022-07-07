@@ -94,7 +94,7 @@ const CardSnippet = (props: CardSnippetProps) => {
       <CardContent>{children}</CardContent>
       {hidden ? null : (
         <Collapse in={showCode}>
-          <Divider sx={{ my: 0 }} />
+          <Divider sx={{ my: '0 !important' }} />
 
           <CardContent sx={{ position: 'relative', '& pre': { m: '0 !important', maxHeight: 500 } }}>
             <Box sx={{ mb: 4, display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>

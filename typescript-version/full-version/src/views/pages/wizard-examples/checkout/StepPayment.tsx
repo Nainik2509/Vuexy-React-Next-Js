@@ -169,7 +169,7 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
               </Grid>
             </Grid>
           </CardContent>
-          <Divider sx={{ my: 0 }} />
+          <Divider sx={{ my: '0 !important' }} />
           <CardContent sx={{ p: 4 }}>
             <Grid container sx={{ mb: 4 }}>
               <Grid item xs={6} sx={{ mb: 2 }}>

@@ -19,7 +19,7 @@ const UserViewNotification = () => {
     <Card>
       <CardHeader title='Notifications' />
 
-      <Divider sx={{ m: 0 }} />
+      <Divider sx={{ m: '0 !important' }} />
 
       <CardContent>
         <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>
@@ -27,7 +27,7 @@ const UserViewNotification = () => {
         </Typography>
       </CardContent>
 
-      <Divider sx={{ m: 0 }} />
+      <Divider sx={{ m: '0 !important' }} />
 
       <TableContainer>
         <Table sx={{ minWidth: 500 }}>

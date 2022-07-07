@@ -671,7 +671,7 @@ const StepperLinearWithValidation = () => {
         </StepperWrapper>
       </CardContent>
 
-      <Divider sx={{ m: 0 }} />
+      <Divider sx={{ m: '0 !important' }} />
 
       <CardContent>{renderContent()}</CardContent>
     </Card>

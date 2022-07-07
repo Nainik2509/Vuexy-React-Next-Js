@@ -36,7 +36,9 @@ const CardMembership = () => {
               fundamentally necessary, they are such that you can use them for a good laugh, at a drinks party or for
               picking up women or men.
             </Typography>
-            <Divider sx={{ mt: 6.5, mb: 6.75 }} />
+            <Divider
+              sx={{ mt: theme => `${theme.spacing(6.5)} !important`, mb: theme => `${theme.spacing(6.75)} !important` }}
+            />
             <Grid container spacing={4}>
               <Grid item xs={12} sm={5}>
                 <StyledBox>
