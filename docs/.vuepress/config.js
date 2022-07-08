@@ -101,6 +101,7 @@ module.exports = {
               title: 'Custom',
               collapsable: true,
               children: [
+                '/guide/components/custom/card-statistics',
                 '/guide/components/custom/apexcharts',
                 '/guide/components/custom/react-draft-wysiwyg',
                 '/guide/components/custom/page-header',
