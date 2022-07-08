@@ -12,6 +12,7 @@ import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 const BoxWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   position: 'relative',
   padding: theme.spacing(11.25, 36),
+  marginBottom: theme.spacing(2.5),
   backgroundColor: hexToRGBA(theme.palette.primary.main, 0.04),
   [theme.breakpoints.down('xl')]: {
     padding: theme.spacing(11.25, 20)
@@ -51,10 +52,10 @@ const PricingCTA = () => {
     <BoxWrapper>
       <Grid container spacing={5}>
         <Grid item xs={12} md={8}>
-          <Typography variant='h5' sx={{ mb: 3, color: 'primary.main' }}>
+          <Typography variant='h5' sx={{ mb: 2.5, color: 'primary.main' }}>
             Still not convinced? Start with a 14-day FREE trial!
           </Typography>
-          <Typography sx={{ mb: 9.5, color: 'text.secondary' }}>
+          <Typography sx={{ mb: 10, color: 'text.secondary' }}>
             You will get full access to with all the features for 14 days.
           </Typography>
           <Button variant='contained'>Start 14-day FREE trial</Button>

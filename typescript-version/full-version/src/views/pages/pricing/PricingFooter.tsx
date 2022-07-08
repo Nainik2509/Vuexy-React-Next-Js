@@ -73,8 +73,10 @@ const PricingFooter = (props: Props) => {
 
   return (
     <CardContent>
-      <Box sx={{ mb: 9, textAlign: 'center' }}>
-        <Typography variant='h6'>FAQs</Typography>
+      <Box sx={{ mb: 11.75, textAlign: 'center' }}>
+        <Typography variant='h5' sx={{ mb: 2.5 }}>
+          FAQ’s
+        </Typography>
         <Typography variant='body2'>Let us help answer the most common questions.</Typography>
       </Box>
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>

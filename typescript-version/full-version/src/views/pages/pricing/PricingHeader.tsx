@@ -17,9 +17,9 @@ const PricingHeader = (props: Props) => {
   const { plan, handleChange } = props
 
   return (
-    <Box sx={{ mb: 11, textAlign: 'center' }}>
+    <Box sx={{ mb: 12, textAlign: 'center' }}>
       <Typography variant='h4'>Pricing Plans</Typography>
-      <Box sx={{ my: 5.5 }}>
+      <Box sx={{ my: 2.5 }}>
         <Typography variant='body2'>
           All plans include 40+ advanced tools and features to boost your product.
         </Typography>

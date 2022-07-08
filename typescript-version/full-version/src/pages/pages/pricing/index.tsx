@@ -5,6 +5,7 @@ import { useState, ChangeEvent } from 'react'
 import { GetStaticProps, InferGetStaticPropsType } from 'next/types'
 
 // ** MUI Imports
+import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import { styled } from '@mui/material/styles'
 import MuiCardContent, { CardContentProps } from '@mui/material/CardContent'
@@ -17,13 +18,14 @@ import { PricingDataType } from 'src/@core/components/plan-details/types'
 
 // ** Demo Imports
 import PricingCTA from 'src/views/pages/pricing/PricingCTA'
+import PricingTable from 'src/views/pages/pricing/PricingTable'
 import PricingPlans from 'src/views/pages/pricing/PricingPlans'
 import PricingHeader from 'src/views/pages/pricing/PricingHeader'
 import PricingFooter from 'src/views/pages/pricing/PricingFooter'
 
 // ** Styled Components
 const CardContent = styled(MuiCardContent)<CardContentProps>(({ theme }) => ({
-  padding: theme.spacing(17.5, 36, 28.25),
+  padding: theme.spacing(17.5, 36, 20),
   [theme.breakpoints.down('xl')]: {
     padding: theme.spacing(12.5, 20, 20)
   },
@@ -50,8 +52,15 @@ const Pricing = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>) =>
         <PricingHeader plan={plan} handleChange={handleChange} />
         <PricingPlans plan={plan} data={apiData} />
       </CardContent>
-      <PricingCTA />
-      <PricingFooter data={apiData} />
+      <Box sx={{ backgroundColor: 'background.paper' }}>
+        <PricingCTA />
+      </Box>
+      <CardContent>
+        <PricingTable data={apiData} />
+      </CardContent>
+      <Box sx={{ pt: 2.25, backgroundColor: theme => (theme.palette.mode === 'dark' ? '#2E2A47' : '#FBFBFD') }}>
+        <PricingFooter data={apiData} />
+      </Box>
     </Card>
   )
 }

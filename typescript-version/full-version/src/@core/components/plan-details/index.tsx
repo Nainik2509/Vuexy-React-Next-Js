@@ -19,15 +19,16 @@ import { PricingPlanProps } from './types'
 // ** Styled Component for the wrapper of whole component
 const BoxWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   position: 'relative',
-  padding: theme.spacing(5),
+  padding: theme.spacing(6),
+  paddingTop: theme.spacing(14.75),
   borderRadius: theme.shape.borderRadius
 }))
 
 // ** Styled Component for the wrapper of all the features of a plan
 const BoxFeature = styled(Box)<BoxProps>(({ theme }) => ({
-  marginBottom: theme.spacing(5.75),
+  marginBottom: theme.spacing(5),
   '& > :not(:first-of-type)': {
-    marginTop: theme.spacing(3.5)
+    marginTop: theme.spacing(4)
   }
 }))
 
@@ -59,9 +60,9 @@ const PlanDetails = (props: PricingPlanProps) => {
           label='Popular'
           color='primary'
           sx={{
-            top: 11,
-            right: 12,
-            height: 20,
+            top: 12,
+            right: 23,
+            height: 24,
             position: 'absolute',
             '& .MuiChip-label': {
               px: 1.75,
@@ -71,18 +72,15 @@ const PlanDetails = (props: PricingPlanProps) => {
           }}
         />
       ) : null}
-      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-        <img
-          width={data?.imgWidth}
-          src={`${data?.imgSrc}`}
-          height={data?.imgHeight}
-          alt={`${data?.title.toLowerCase()}-plan-img`}
-        />
+      <Box sx={{ mb: 5, display: 'flex', justifyContent: 'center' }}>
+        <img src={`${data?.imgSrc}`} alt={`${data?.title.toLowerCase()}-plan-img`} />
       </Box>
       <Box sx={{ textAlign: 'center' }}>
-        <Typography variant='h5'>{data?.title}</Typography>
+        <Typography variant='h5' sx={{ mb: 1.5 }}>
+          {data?.title}
+        </Typography>
         <Typography variant='body2'>{data?.subtitle}</Typography>
-        <Box sx={{ mt: 4.4, mb: 9.2, position: 'relative' }}>
+        <Box sx={{ my: 5, position: 'relative' }}>
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <Typography variant='body2' sx={{ mt: 1.6, alignSelf: 'flex-start' }}>
               $

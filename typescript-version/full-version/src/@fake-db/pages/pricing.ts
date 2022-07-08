@@ -84,18 +84,83 @@ const data: PricingDataType = {
         'Chocolate sweet roll lemon drops chocolate cake candy canes halvah. Donut fruitcake sweet roll brownie carrot cake cake. Donut jujubes pudding candy macaroon. Gummies gingerbread croissant bonbon. Cookie toffee cupcake cotton candy candy canes dessert cotton candy liquorice. Jelly beans gummi bears toffee chocolate bar chocolate cake.'
     },
     {
-      id: 'personal-data',
-      question: 'Personal data',
-      answer:
-        'Liquorice pie donut tootsie roll marzipan liquorice topping pie. Muffin sweet roll soufflé croissant cookie cotton candy toffee. Tootsie roll chocolate cake wafer jelly beans soufflé danish tart. Halvah dragée chocolate bar gingerbread apple pie ice cream ice cream fruitcake. Chocolate bar pudding apple pie cheesecake dragée topping ice cream cookie.'
-    },
-    {
       id: 'advanced-settings',
       question: 'Advanced settings',
       answer:
         'Halvah liquorice pastry marshmallow sugar plum. Dessert chocolate pastry gummi bears pastry. Gingerbread bonbon pudding oat cake jujubes pie wafer tart brownie. Soufflé jujubes icing powder liquorice. Sweet donut toffee liquorice dessert dragée. Topping cake danish chupa chups chupa chups gummies. Cotton candy gummies chocolate cake oat cake.'
     }
-  ]
+  ],
+  pricingTable: {
+    header: [
+      {
+        title: 'Features',
+        subtitle: 'Native Front Features'
+      },
+      {
+        title: 'Starter',
+        subtitle: 'Free'
+      },
+      {
+        isPro: true,
+        title: 'Pro',
+        subtitle: '$7.5/month'
+      },
+      {
+        title: 'Enterprise',
+        subtitle: '$16/month'
+      }
+    ],
+    rows: [
+      {
+        pro: true,
+        starter: true,
+        enterprise: true,
+        feature: '14-days free trial'
+      },
+      {
+        pro: false,
+        starter: false,
+        enterprise: true,
+        feature: 'No user limit'
+      },
+      {
+        pro: true,
+        starter: false,
+        enterprise: true,
+        feature: 'Product Support'
+      },
+      {
+        starter: false,
+        enterprise: true,
+        pro: 'Add-On Available',
+        feature: 'Email Support'
+      },
+      {
+        pro: true,
+        starter: false,
+        enterprise: true,
+        feature: 'Integrations'
+      },
+      {
+        starter: false,
+        enterprise: true,
+        pro: 'Add-On Available',
+        feature: 'Removal of Front branding'
+      },
+      {
+        pro: false,
+        starter: false,
+        enterprise: true,
+        feature: 'Active maintenance & support'
+      },
+      {
+        pro: false,
+        starter: false,
+        enterprise: true,
+        feature: 'Data storage for 365 days'
+      }
+    ]
+  }
 }
 
 mock.onGet('/pages/pricing').reply(() => [200, data])
