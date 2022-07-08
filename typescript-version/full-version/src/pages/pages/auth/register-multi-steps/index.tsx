@@ -2,6 +2,7 @@
 import { ReactNode } from 'react'
 
 // ** MUI Components
+import Grid from '@mui/material/Grid'
 import Box, { BoxProps } from '@mui/material/Box'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { styled, useTheme } from '@mui/material/styles'
@@ -19,9 +20,11 @@ import RegisterMultiStepsWizard from 'src/views/pages/auth/register-multi-steps'
 const RegisterIllustrationWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   height: '100%',
   display: 'flex',
-  paddingRight: '0',
   alignItems: 'center',
   padding: theme.spacing(18),
+  paddingRight: 0,
+  paddingBottom: 0,
+  justifyContent: 'flex-end',
   backgroundColor: theme.palette.background.default
 }))
 
@@ -32,12 +35,14 @@ const RegisterIllustration = styled('img')(() => ({
 
 const RightWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   width: '100%',
+  height: '100%',
   display: 'flex',
   alignItems: 'center',
   padding: theme.spacing(4),
+  paddingBottom: 0,
   [theme.breakpoints.up('sm')]: {
-    flexGrow: 1,
-    padding: theme.spacing(12)
+    padding: theme.spacing(12),
+    paddingBottom: 0
   }
 }))
 
@@ -57,31 +62,27 @@ const RegisterMultiSteps = () => {
         backgroundColor: 'background.paper'
       }}
     >
-      {!hidden ? (
-        <Box sx={{ display: 'flex', position: 'relative', alignItems: 'center', justifyContent: 'center' }}>
-          <RegisterIllustrationWrapper>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <RegisterIllustration
-                alt='register-illustration'
-                src={`/images/pages/create-account-${theme.palette.mode}.png`}
-              />
+      <Grid container>
+        {!hidden ? (
+          <Grid item md={4}>
+            <RegisterIllustrationWrapper>
+              <Box sx={{ width: 400 }}>
+                <RegisterIllustration
+                  alt='register-illustration'
+                  src={`/images/pages/create-account-${theme.palette.mode}.png`}
+                />
+              </Box>
+            </RegisterIllustrationWrapper>
+          </Grid>
+        ) : null}
+        <Grid item md={8} xs={12}>
+          <RightWrapper sx={skin === 'bordered' && !hidden ? { borderLeft: `1px solid ${theme.palette.divider}` } : {}}>
+            <Box sx={{ width: 700, mx: 'auto' }}>
+              <RegisterMultiStepsWizard />
             </Box>
-          </RegisterIllustrationWrapper>
-        </Box>
-      ) : null}
-      <RightWrapper sx={skin === 'bordered' && !hidden ? { borderLeft: `1px solid ${theme.palette.divider}` } : {}}>
-        <Box
-          sx={{
-            height: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            mx: { xs: 0, md: 'auto' },
-            width: { xs: '100%', md: 700 }
-          }}
-        >
-          <RegisterMultiStepsWizard />
-        </Box>
-      </RightWrapper>
+          </RightWrapper>
+        </Grid>
+      </Grid>
     </Box>
   )
 }

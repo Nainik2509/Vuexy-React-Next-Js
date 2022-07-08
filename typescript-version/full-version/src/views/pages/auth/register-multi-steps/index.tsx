@@ -151,7 +151,7 @@ const RegisterMultiSteps = () => {
                       skin={activeStep === index ? 'filled' : 'light'}
                       color={activeStep === index || activeStep > index ? 'primary' : 'secondary'}
                       sx={{
-                        mr: 4,
+                        mr: 2.5,
                         boxShadow: theme =>
                           activeStep === index
                             ? `0 0.1875rem 0.375rem 0 ${hexToRGBA(theme.palette.primary.main, 0.4)}`
