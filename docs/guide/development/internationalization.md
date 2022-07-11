@@ -5,26 +5,7 @@
 We're using [react-i18next](https://react.i18next.com/) for Internationalization. You can find its configurations in `src/configs/i18n.ts` file and the locales in `public/locales` folder in the full version.
 
 ## Usage
-
-`react-i18next` provides `useTranslation` hook to translate and change languages.
-
-```tsx
-import { useTranslation } from 'react-i18next'
-
-const Component = () => {
-  // ** Hook
-  const { t, i18n } = useTranslation()
-
-  return (
-    <div>
-      <h1>{t('Hello World')}</h1>
-      <button onClick={() => i18n.changeLanguage('fr')}>Translate</button>
-    </div>
-  )
-}
-
-export default Component
-```
+Refer to [this article](/articles/how-to-use-i18n-in-a-page) to implement the internationalization.
 
 ## Add i18n
 
