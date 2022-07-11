@@ -7,21 +7,25 @@ import axios from 'axios'
 // ** Demo Components Imports
 import AccountSettings from 'src/views/pages/account-settings/AccountSettings'
 
-// ** Types
-import { PricingDataType } from 'src/@core/components/plan-details/types'
-
 const AccountSettingsTab = ({ apiPricingData }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return <AccountSettings tab='account' apiPricingData={apiPricingData} />
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }: GetStaticPropsContext) => {
   const res = await axios.get('/pages/pricing')
-  const apiPricingData: PricingDataType = res.data
 
-  return {
-    props: {
-      apiPricingData,
-      tab: params?.tab
+  if (params && params.tab) {
+    return {
+      props: {
+        tab: params.tab,
+        apiPricingData: res.data
+      }
+    }
+  } else {
+    return {
+      props: {
+        apiPricingData: {}
+      }
     }
   }
 }

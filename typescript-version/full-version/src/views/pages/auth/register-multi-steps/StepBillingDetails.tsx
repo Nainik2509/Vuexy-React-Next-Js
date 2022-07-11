@@ -24,7 +24,7 @@ import * as yup from 'yup'
 import Payment from 'payment'
 import Cards, { Focused } from 'react-credit-cards'
 import { useForm, Controller } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
+import { yupResolver } from '@hookform/resolvers/yup'
 
 // ** Util Import
 import { formatCVC, formatExpirationDate, formatCreditCardNumber } from 'src/@core/utils/format'

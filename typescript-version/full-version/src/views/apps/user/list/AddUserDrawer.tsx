@@ -86,9 +86,9 @@ const defaultValues = {
   email: '',
   company: '',
   country: '',
-  contact: '',
   fullName: '',
-  username: ''
+  username: '',
+  contact: Number('')
 }
 
 const SidebarAddUser = (props: SidebarAddUserType) => {
@@ -122,7 +122,7 @@ const SidebarAddUser = (props: SidebarAddUserType) => {
   const handleClose = () => {
     setPlan('basic')
     setRole('subscriber')
-    setValue('contact', '')
+    setValue('contact', Number(''))
     toggle()
     reset()
   }

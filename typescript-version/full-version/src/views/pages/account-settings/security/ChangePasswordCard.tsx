@@ -24,7 +24,7 @@ import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 import * as yup from 'yup'
 import toast from 'react-hot-toast'
 import { useForm, Controller } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
+import { yupResolver } from '@hookform/resolvers/yup'
 
 interface State {
   showNewPassword: boolean

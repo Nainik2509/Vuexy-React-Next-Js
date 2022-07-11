@@ -23,7 +23,7 @@ import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 // ** Third Party Imports
 import * as yup from 'yup'
 import { useForm, Controller } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
+import { yupResolver } from '@hookform/resolvers/yup'
 
 interface State {
   showPassword: boolean

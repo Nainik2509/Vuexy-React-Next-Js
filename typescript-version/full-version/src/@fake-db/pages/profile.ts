@@ -655,6 +655,7 @@ const projectTable: ProjectTableRowType[] = [
 mock.onGet('/pages/profile').reply(config => {
   const { tab = 'profile' } = config.params ?? 'profile'
 
+  // @ts-ignore
   return [200, data[tab]]
 })
 
