@@ -2,8 +2,8 @@
 import { styled } from '@mui/material/styles'
 import Box, { BoxProps } from '@mui/material/Box'
 
-// ** Hooks Imports
-import { useSettings } from 'src/@core/hooks/useSettings'
+// ** Hooks
+import { useSettings } from 'src/@core/hooks/useSettings' // ** Hooks Imports
 import useBgColor, { UseBgColorType } from 'src/@core/hooks/useBgColor'
 
 // ** Util Import
@@ -129,7 +129,11 @@ const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
             }
           },
         '&.react-datepicker__day--highlighted, &.react-datepicker__day--highlighted:hover': {
-          ...bgColors.successLight
+          color: theme.palette.success.main,
+          backgroundColor: hexToRGBA(theme.palette.success.main, 0.12)
+        },
+        '&.react-datepicker__day--today': {
+          fontWeight: 'normal'
         }
       },
       '& .react-datepicker__day--in-range, & .react-datepicker__day--in-selecting-range': {
