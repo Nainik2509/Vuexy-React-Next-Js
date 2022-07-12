@@ -7,24 +7,22 @@ import { StepIconProps } from '@mui/material/StepIcon'
 import Alert from 'mdi-material-ui/Alert'
 import CheckCircle from 'mdi-material-ui/CheckCircle'
 
-// ** Hooks Imports
-import useBgColor, { UseBgColorType } from 'src/@core/hooks/useBgColor'
+// ** Util Imports
+import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 
 // Styled Box component
-const Box = styled(MuiBox)<BoxProps>(() => ({
+const Box = styled(MuiBox)<BoxProps>(({ theme }) => ({
   width: 20,
   height: 20,
   borderWidth: 3,
   borderRadius: '50%',
-  borderStyle: 'solid'
+  borderStyle: 'solid',
+  borderColor: hexToRGBA(theme.palette.primary.main, 0.12)
 }))
 
 const StepperCustomDot = (props: StepIconProps) => {
   // ** Props
   const { active, completed, error } = props
-
-  // ** Hook
-  const bgColors: UseBgColorType = useBgColor()
 
   if (error) {
     return <Alert sx={{ width: 20, height: 20, color: 'error.main', transform: 'scale(1.2)' }} />
@@ -34,7 +32,6 @@ const StepperCustomDot = (props: StepIconProps) => {
     return (
       <Box
         sx={{
-          borderColor: bgColors.primaryLight.backgroundColor,
           ...(active && { borderWidth: 5, borderColor: 'primary.main', backgroundColor: 'common.white' })
         }}
       />

@@ -2,13 +2,10 @@
 import { Theme } from '@mui/material/styles'
 import { lighten, darken } from '@mui/material/styles'
 
-// ** Hooks Imports
-import useBgColor, { UseBgColorType } from 'src/@core/hooks/useBgColor'
+// ** Util Import
+import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 
 const Alert = (theme: Theme) => {
-  // ** Hook
-  const bgColors: UseBgColorType = useBgColor()
-
   const getColor = theme.palette.mode === 'light' ? darken : lighten
 
   return {
@@ -26,7 +23,7 @@ const Alert = (theme: Theme) => {
         },
         standardSuccess: {
           color: getColor(theme.palette.success.main, 0.12),
-          backgroundColor: bgColors.successLight.backgroundColor,
+          backgroundColor: hexToRGBA(theme.palette.success.main, 0.12),
           '& .MuiAlertTitle-root': {
             color: getColor(theme.palette.success.main, 0.12)
           },
@@ -36,7 +33,7 @@ const Alert = (theme: Theme) => {
         },
         standardInfo: {
           color: getColor(theme.palette.info.main, 0.12),
-          backgroundColor: bgColors.infoLight.backgroundColor,
+          backgroundColor: hexToRGBA(theme.palette.info.main, 0.12),
           '& .MuiAlertTitle-root': {
             color: getColor(theme.palette.info.main, 0.12)
           },
@@ -46,7 +43,7 @@ const Alert = (theme: Theme) => {
         },
         standardWarning: {
           color: getColor(theme.palette.warning.main, 0.12),
-          backgroundColor: bgColors.warningLight.backgroundColor,
+          backgroundColor: hexToRGBA(theme.palette.warning.main, 0.12),
           '& .MuiAlertTitle-root': {
             color: getColor(theme.palette.warning.main, 0.12)
           },
@@ -56,7 +53,7 @@ const Alert = (theme: Theme) => {
         },
         standardError: {
           color: getColor(theme.palette.error.main, 0.12),
-          backgroundColor: bgColors.errorLight.backgroundColor,
+          backgroundColor: hexToRGBA(theme.palette.error.main, 0.12),
           '& .MuiAlertTitle-root': {
             color: getColor(theme.palette.error.main, 0.12)
           },
