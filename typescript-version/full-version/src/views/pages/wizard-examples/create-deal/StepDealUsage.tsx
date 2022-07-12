@@ -14,7 +14,8 @@ const StepDealUsage = () => {
       <Grid item xs={12} md={6}>
         <FormControl fullWidth>
           <InputLabel id='select-user-type'>User Type</InputLabel>
-          <Select labelId='select-user-type' label='User Type'>
+          <Select labelId='select-user-type' label='User Type' defaultValue=''>
+            <MenuItem value=''></MenuItem>
             <MenuItem value='all'>All</MenuItem>
             <MenuItem value='registered'>Registered</MenuItem>
             <MenuItem value='unregistered'>Unregistered</MenuItem>
@@ -34,7 +35,8 @@ const StepDealUsage = () => {
       <Grid item xs={12} md={6}>
         <FormControl fullWidth>
           <InputLabel id='select-payment-method'>Payment Method</InputLabel>
-          <Select labelId='select-payment-method' label='Payment Method'>
+          <Select labelId='select-payment-method' label='Payment Method' defaultValue=''>
+            <MenuItem value=''></MenuItem>
             <MenuItem value='any'>any</MenuItem>
             <MenuItem value='credit-card'>Credit Card</MenuItem>
             <MenuItem value='net-banking'>Net Banking</MenuItem>
@@ -45,7 +47,8 @@ const StepDealUsage = () => {
       <Grid item xs={12} md={6}>
         <FormControl fullWidth>
           <InputLabel id='select-deal-status'>Deal Status</InputLabel>
-          <Select labelId='select-deal-status' label='Deal Status'>
+          <Select labelId='select-deal-status' label='Deal Status' defaultValue=''>
+            <MenuItem value=''></MenuItem>
             <MenuItem value='active'>Active</MenuItem>
             <MenuItem value='inactive'>Inactive</MenuItem>
             <MenuItem value='suspended'>Suspended</MenuItem>

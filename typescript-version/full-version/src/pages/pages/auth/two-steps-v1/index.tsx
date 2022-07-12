@@ -51,7 +51,7 @@ const CleaveInput = styled(Cleave)(({ theme }) => ({
   margin: theme.spacing(2, 1),
   '&::-webkit-outer-spin-button, &::-webkit-inner-spin-button': {
     margin: 0,
-    '-webkit-appearance': 'none'
+    WebkitAppearance: 'none'
   }
 }))
 

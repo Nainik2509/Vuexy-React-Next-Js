@@ -182,9 +182,9 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
                 <Typography sx={{ fontWeight: 700 }}>Deliver to:</Typography>
               </Grid>
               <Grid item xs={6}>
-                <Typography sx={{ textAlign: 'right' }}>
+                <Box sx={{ textAlign: 'right' }}>
                   <CustomChip rounded size='small' skin='light' color='primary' label='Home' />
-                </Typography>
+                </Box>
               </Grid>
             </Grid>
 

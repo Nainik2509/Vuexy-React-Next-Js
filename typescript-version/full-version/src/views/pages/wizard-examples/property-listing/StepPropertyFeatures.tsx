@@ -19,6 +19,7 @@ import Select, { SelectChangeEvent } from '@mui/material/Select'
 import CustomChip from 'src/@core/components/mui/chip'
 
 const furnishingArray = [
+  '',
   'AC',
   'TV',
   'RO',
@@ -57,7 +58,8 @@ const StepPropertyFeatures = () => {
       <Grid item xs={12} md={6}>
         <FormControl fullWidth>
           <InputLabel id='select-furnished-status'>Furnished Status</InputLabel>
-          <Select id='demo-simple-select' label='Furnished Status' labelId='select-furnished-status'>
+          <Select id='demo-simple-select' label='Furnished Status' labelId='select-furnished-status' defaultValue=''>
+            <MenuItem value=''></MenuItem>
             <MenuItem value='Fully Furnished'>Fully Furnished</MenuItem>
             <MenuItem value='Furnished'>Furnished</MenuItem>
             <MenuItem value='Semi Furnished'>Semi Furnished</MenuItem>

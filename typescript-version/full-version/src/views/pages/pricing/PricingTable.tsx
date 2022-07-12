@@ -118,13 +118,22 @@ const PricingTable = ({ data }: Props) => {
               ))}
               <TableRow sx={{ '& .MuiTableCell-root': { border: 0 } }}>
                 <TableCell></TableCell>
-                <TableCell sx={{ '& .MuiButton-root': { color: theme => `${theme.palette.primary.main} !important` } }}>
+                <TableCell
+                  align='center'
+                  sx={{ '& .MuiButton-root': { color: theme => `${theme.palette.primary.main} !important` } }}
+                >
                   <Button variant='outlined'>Choose Plan</Button>
                 </TableCell>
-                <TableCell sx={{ '& .MuiButton-root': { color: theme => `${theme.palette.common.white} !important` } }}>
+                <TableCell
+                  align='center'
+                  sx={{ '& .MuiButton-root': { color: theme => `${theme.palette.common.white} !important` } }}
+                >
                   <Button variant='contained'>Choose Plan</Button>
                 </TableCell>
-                <TableCell sx={{ '& .MuiButton-root': { color: theme => `${theme.palette.primary.main} !important` } }}>
+                <TableCell
+                  align='center'
+                  sx={{ '& .MuiButton-root': { color: theme => `${theme.palette.primary.main} !important` } }}
+                >
                   <Button variant='outlined'>Choose Plan</Button>
                 </TableCell>
               </TableRow>

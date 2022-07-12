@@ -32,6 +32,7 @@ interface PickerProps {
 }
 
 const offeredItemsArray = [
+  '',
   'Apple iPhone 12 Pro Max (256GB)',
   'Apple iPhone 12 Pro (512GB)',
   'Apple iPhone 12 Mini (256GB)',
@@ -111,7 +112,8 @@ const StepDealDetails = () => {
         </FormControl>
         <FormControl fullWidth>
           <InputLabel id='select-cart-condition'>Cart Condition</InputLabel>
-          <Select labelId='select-cart-condition' label='Cart Condition'>
+          <Select labelId='select-cart-condition' label='Cart Condition' defaultValue=''>
+            <MenuItem value=''></MenuItem>
             <MenuItem value='all'>Cart must contain all selected Downloads</MenuItem>
             <MenuItem value='any'>Cart needs one or more of the selected Downloads</MenuItem>
           </Select>

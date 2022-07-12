@@ -59,7 +59,7 @@ const dataIcons = [
   }
 ]
 
-const regionArray = ['Asia', 'Europe', 'Africa', 'Australia', 'North America', 'South America']
+const regionArray = ['', 'Asia', 'Europe', 'Africa', 'Australia', 'North America', 'South America']
 
 const StepDealType = () => {
   // ** State

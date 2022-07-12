@@ -124,7 +124,13 @@ const PropertyListingWizard = () => {
 
     return (
       <Box sx={{ mt: 4, display: 'flex', justifyContent: 'space-between' }}>
-        <Button variant='contained' disabled={activeStep === 0} startIcon={<ChevronLeft />} onClick={handlePrev}>
+        <Button
+          color='secondary'
+          variant='outlined'
+          onClick={handlePrev}
+          disabled={activeStep === 0}
+          startIcon={<ChevronLeft />}
+        >
           Previous
         </Button>
         <Button
