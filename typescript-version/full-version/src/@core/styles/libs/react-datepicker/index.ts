@@ -130,7 +130,7 @@ const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
           },
         '&.react-datepicker__day--highlighted, &.react-datepicker__day--highlighted:hover': {
           color: theme.palette.success.main,
-          backgroundColor: hexToRGBA(theme.palette.success.main, 0.12)
+          backgroundColor: bgColors.successLight.backgroundColor
         },
         '&.react-datepicker__day--today': {
           fontWeight: 'normal'
@@ -212,7 +212,7 @@ const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
         '& .react-datepicker__month-option.react-datepicker__month-option--selected_month': {
           backgroundColor: hexToRGBA(theme.palette.primary.main, 0.08),
           '&:hover': {
-            backgroundColor: hexToRGBA(theme.palette.primary.main, 0.12)
+            backgroundColor: bgColors.primaryLight.backgroundColor
           },
           '& .react-datepicker__month-option--selected': {
             display: 'none'
@@ -221,7 +221,7 @@ const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
         '& .react-datepicker__year-option.react-datepicker__year-option--selected_year': {
           backgroundColor: hexToRGBA(theme.palette.primary.main, 0.08),
           '&:hover': {
-            backgroundColor: hexToRGBA(theme.palette.primary.main, 0.12)
+            backgroundColor: bgColors.primaryLight.backgroundColor
           },
           '& .react-datepicker__year-option--selected': {
             display: 'none'
