@@ -44,7 +44,7 @@ const PickersBasic = () => {
           id='read-only-input'
           onChange={date => setDate(date)}
           placeholderText='Click to select a date'
-          customInput={<CustomInput label='Readonly' />}
+          customInput={<CustomInput readOnly label='Readonly' />}
         />
       </Box>
     </Box>
@@ -55,6 +55,7 @@ export default PickersBasic
 `}</code>
   </pre>
 )
+
 export const PickersCallbacksJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -119,6 +120,115 @@ export default PickersCallbacks
 `}</code>
   </pre>
 )
+
+export const PickersLocaleJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import Box from '@mui/material/Box'
+import fr from 'date-fns/locale/fr'
+import ar from 'date-fns/locale/ar-SA'
+import en from 'date-fns/locale/en-US'
+import { useTranslation } from 'react-i18next'
+import DatePicker, { registerLocale } from 'react-datepicker'
+
+// ** Custom Component Imports
+import CustomInput from './PickersCustomInput'
+
+const langObj = { fr, ar, en }
+
+const PickersLocale = () => {
+  // ** States
+  const [date, setDate] = useState(new Date())
+  const [time, setTime] = useState(new Date())
+
+  // ** Hooks
+  const { i18n } = useTranslation()
+  registerLocale(i18n.language, langObj[i18n.language])
+
+  return (
+    <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
+      <Box>
+        <DatePicker
+          selected={date}
+          id='locale-picker'
+          locale={i18n.language}
+          onChange={date => setDate(date)}
+          customInput={<CustomInput label='Locale Dates' />}
+        />
+      </Box>
+      <Box>
+        <DatePicker
+          showTimeSelect
+          selected={time}
+          id='locale-time'
+          locale={i18n.language}
+          dateFormat='MM/dd/yyyy h:mm aa'
+          onChange={date => setTime(date)}
+          customInput={<CustomInput label='Locale Time' />}
+        />
+      </Box>
+    </Box>
+  )
+}
+
+export default PickersLocale
+`}</code>
+  </pre>
+)
+
+export const PickersMinMaxJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import Box from '@mui/material/Box'
+
+// ** Third Party Imports
+import subDays from 'date-fns/subDays'
+import addDays from 'date-fns/addDays'
+import DatePicker from 'react-datepicker'
+
+// ** Custom Component Imports
+import CustomInput from './PickersCustomInput'
+
+const PickersMinMax = () => {
+  // ** States
+  const [minDate, setMinDate] = useState(new Date())
+  const [maxDate, setMaxDate] = useState(new Date())
+
+  return (
+    <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
+      <Box>
+        <DatePicker
+          id='min-date'
+          selected={minDate}
+          minDate={subDays(new Date(), 5)}
+          onChange={date => setMinDate(date)}
+          customInput={<CustomInput label='Min Date' />}
+        />
+      </Box>
+      <Box>
+        <DatePicker
+          id='max-date'
+          selected={maxDate}
+          maxDate={addDays(new Date(), 5)}
+          onChange={date => setMaxDate(date)}
+          customInput={<CustomInput label='Max Date' />}
+        />
+      </Box>
+    </Box>
+  )
+}
+
+export default PickersMinMax
+`}</code>
+  </pre>
+)
+
 export const PickersIncludeExcludeJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -140,11 +250,8 @@ import CustomInput from './PickersCustomInput'
 const PickersIncludeExclude = () => {
   // ** States
   const [date, setDate] = useState(new Date())
-
   const [dateExclude, setDateExclude] = useState(new Date())
-
   const [time, setTime] = useState(setHours(setMinutes(new Date(), 30), 16))
-
   const [timeExclude, setTimeExclude] = useState(setHours(setMinutes(new Date(), 30), 16))
 
   return (
@@ -207,240 +314,7 @@ export default PickersIncludeExclude
 `}</code>
   </pre>
 )
-export const PickersCustomizationJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
 
-// ** MUI Imports
-import Box from '@mui/material/Box'
-
-// ** Third Party Imports
-import subDays from 'date-fns/subDays'
-import addDays from 'date-fns/addDays'
-import DatePicker from 'react-datepicker'
-
-// ** Custom Component Imports
-import CustomInput from './PickersCustomInput'
-
-const PickersCustomization = () => {
-  // ** States
-  const [dateFormat, setDateFormat] = useState(new Date())
-
-  const [dateHighlight, setDateHighlight] = useState(new Date())
-
-  return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <Box>
-        <DatePicker
-          id='custom-format'
-          selected={dateFormat}
-          dateFormat='MMMM d, yyyy h:mm aa'
-          onChange={date => setDateFormat(date)}
-          customInput={<CustomInput label='Custom Date Format' />}
-        />
-      </Box>
-      <Box>
-        <DatePicker
-          id='highlight-dates'
-          selected={dateHighlight}
-          onChange={date => setDateHighlight(date)}
-          customInput={<CustomInput label='Highlight Dates' />}
-          highlightDates={[subDays(new Date(), 7), addDays(new Date(), 7)]}
-        />
-      </Box>
-    </Box>
-  )
-}
-
-export default PickersCustomization
-`}</code>
-  </pre>
-)
-export const PickersLocaleJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import Box from '@mui/material/Box'
-import fr from 'date-fns/locale/fr'
-import ar from 'date-fns/locale/ar-SA'
-import en from 'date-fns/locale/en-US'
-import { useTranslation } from 'react-i18next'
-import DatePicker, { registerLocale } from 'react-datepicker'
-
-// ** Custom Component Imports
-import CustomInput from './PickersCustomInput'
-
-const langObj = { fr, ar, en }
-
-const PickersLocale = () => {
-  // ** States
-  const [date, setDate] = useState(new Date())
-
-  const [time, setTime] = useState(new Date())
-
-
-  // ** Hooks
-  const { i18n } = useTranslation()
-
-  registerLocale(i18n.language, langObj[i18n.language])
-  return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <Box>
-        <DatePicker
-          selected={date}
-          id='locale-picker'
-          locale={i18n.language}
-          onChange={date => setDate(date)}
-          customInput={<CustomInput label='Locale Dates' />}
-        />
-      </Box>
-      <Box>
-        <DatePicker
-          showTimeSelect
-          selected={time}
-          id='locale-time'
-          locale={i18n.language}
-          dateFormat='MM/dd/yyyy h:mm aa'
-          onChange={date => setTime(date)}
-          customInput={<CustomInput label='Locale Time' />}
-        />
-      </Box>
-    </Box>
-  )
-}
-
-export default PickersLocale
-`}</code>
-  </pre>
-)
-export const PickersMonthYearDropdownsJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import Box from '@mui/material/Box'
-
-// ** Third Party Imports
-import DatePicker from 'react-datepicker'
-
-// ** Custom Component Imports
-import CustomInput from './PickersCustomInput'
-
-const PickersMonthYearDropdowns = () => {
-  // ** States
-  const [year, setYear] = useState(new Date())
-
-  const [month, setMonth] = useState(new Date())
-
-  const [monthYear, setMonthYear] = useState(new Date())
-
-  return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <Box>
-        <DatePicker
-          selected={month}
-          showMonthDropdown
-          id='month-dropdown'
-          placeholderText='MM-DD-YYYY'
-          onChange={date => setMonth(date)}
-          customInput={<CustomInput label='Month Dropdown' />}
-        />
-      </Box>
-      <Box>
-        <DatePicker
-          selected={year}
-          showYearDropdown
-          id='year-dropdown'
-          placeholderText='MM-DD-YYYY'
-          onChange={date => setYear(date)}
-          customInput={<CustomInput label='Year Dropdown' />}
-        />
-      </Box>
-      <Box>
-        <DatePicker
-          showYearDropdown
-          showMonthDropdown
-          selected={monthYear}
-          id='month-year-dropdown'
-          placeholderText='MM-DD-YYYY'
-          onChange={date => setMonthYear(date)}
-          customInput={<CustomInput label='Month & Year Dropdown' />}
-        />
-      </Box>
-    </Box>
-  )
-}
-
-export default PickersMonthYearDropdowns
-`}</code>
-  </pre>
-)
-export const PickersMonthYearQuarterJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import Box from '@mui/material/Box'
-
-// ** Third Party Imports
-import DatePicker from 'react-datepicker'
-
-// ** Custom Component Imports
-import CustomInput from './PickersCustomInput'
-
-const PickersMonthYear = () => {
-  // ** States
-  const [year, setYear] = useState(new Date())
-
-  const [month, setMonth] = useState(new Date())
-
-  const [quarter, setQuarter] = useState(new Date())
-
-  return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <Box>
-        <DatePicker
-          selected={month}
-          id='month-picker'
-          showMonthYearPicker
-          dateFormat='MM/yyyy'
-          onChange={date => setMonth(date)}
-          customInput={<CustomInput label='Month Picker' />}
-        />
-      </Box>
-      <Box>
-        <DatePicker
-          showYearPicker
-          selected={year}
-          id='year-picker'
-          dateFormat='MM/yyyy'
-          onChange={date => setYear(date)}
-          customInput={<CustomInput label='Year Picker' />}
-        />
-      </Box>
-      <Box>
-        <DatePicker
-          selected={quarter}
-          id='quarter-picker'
-          showQuarterYearPicker
-          dateFormat='yyyy, QQQ'
-          onChange={date => setQuarter(date)}
-          customInput={<CustomInput label='Quarter Picker' />}
-        />
-      </Box>
-    </Box>
-  )
-}
-
-export default PickersMonthYear
-`}</code>
-  </pre>
-)
 export const PickersOptionsJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -458,14 +332,10 @@ import CustomInput from './PickersCustomInput'
 const PickersOptions = () => {
   // ** States
   const [dateOpen, setDateOpen] = useState(null)
-
   const [dateClear, setDateClear] = useState(new Date())
-
-  const [dateTodayBtn, setDateTodayBtn] = useState(null)
-
   const [dateFilter, setDateFilter] = useState(new Date())
-
   const [dateWeekNum, setDateWeekNum] = useState(new Date())
+  const [dateTodayBtn, setDateTodayBtn] = useState(new Date())
 
   const isWeekday = date => {
     const day = new Date(date).getDay()
@@ -528,6 +398,91 @@ export default PickersOptions
 `}</code>
   </pre>
 )
+
+export const PickersCustomInputJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { forwardRef } from 'react'
+
+// ** MUI Imports
+import TextField from '@mui/material/TextField'
+
+const PickersComponent = forwardRef(({ ...props }, ref) => {
+  // ** Props
+  const { label, readOnly } = props
+
+  return (
+    <TextField inputRef={ref} {...props} label={label || ''} {...(readOnly && { inputProps: { readOnly: true } })} />
+  )
+})
+
+export default PickersComponent
+`}</code>
+  </pre>
+)
+
+export const PickersMonthYearDropdownsJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import Box from '@mui/material/Box'
+
+// ** Third Party Imports
+import DatePicker from 'react-datepicker'
+
+// ** Custom Component Imports
+import CustomInput from './PickersCustomInput'
+
+const PickersMonthYearDropdowns = () => {
+  // ** States
+  const [year, setYear] = useState(new Date())
+  const [month, setMonth] = useState(new Date())
+  const [monthYear, setMonthYear] = useState(new Date())
+
+  return (
+    <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
+      <Box>
+        <DatePicker
+          selected={month}
+          showMonthDropdown
+          id='month-dropdown'
+          placeholderText='MM-DD-YYYY'
+          onChange={date => setMonth(date)}
+          customInput={<CustomInput label='Month Dropdown' />}
+        />
+      </Box>
+      <Box>
+        <DatePicker
+          selected={year}
+          showYearDropdown
+          id='year-dropdown'
+          placeholderText='MM-DD-YYYY'
+          onChange={date => setYear(date)}
+          customInput={<CustomInput label='Year Dropdown' />}
+        />
+      </Box>
+      <Box>
+        <DatePicker
+          showYearDropdown
+          showMonthDropdown
+          selected={monthYear}
+          id='month-year-dropdown'
+          placeholderText='MM-DD-YYYY'
+          onChange={date => setMonthYear(date)}
+          customInput={<CustomInput label='Month & Year Dropdown' />}
+        />
+      </Box>
+    </Box>
+  )
+}
+
+export default PickersMonthYearDropdowns
+`}</code>
+  </pre>
+)
+
 export const PickersRangeJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -539,37 +494,31 @@ import TextField from '@mui/material/TextField'
 
 // ** Third Party Imports
 import format from 'date-fns/format'
+import addDays from 'date-fns/addDays'
 import DatePicker from 'react-datepicker'
 
 const PickersRange = () => {
   // ** States
-  const [endDate, setEndDate] = useState(null)
-
   const [startDate, setStartDate] = useState(new Date())
-
-  const [endDateRange, setEndDateRange] = useState(null)
-
+  const [endDate, setEndDate] = useState(addDays(new Date(), 15))
   const [startDateRange, setStartDateRange] = useState(new Date())
+  const [endDateRange, setEndDateRange] = useState(addDays(new Date(), 45))
 
   const handleOnChange = dates => {
     const [start, end] = dates
-
     setStartDate(start)
     setEndDate(end)
   }
 
   const handleOnChangeRange = dates => {
     const [start, end] = dates
-
     setStartDateRange(start)
     setEndDateRange(end)
   }
 
   const CustomInput = forwardRef((props, ref) => {
     const startDate = format(props.start, 'MM/dd/yyyy')
-
     const endDate = props.end !== null ?  - {format(props.end, 'MM/dd/yyyy')} : null
-
     const value = {startDate}{endDate !== null ? endDate : ''}
 
     return <TextField inputRef={ref} label={props.label || ''} {...props} value={value} />
@@ -610,6 +559,7 @@ export default PickersRange
 `}</code>
   </pre>
 )
+
 export const PickersSpecificRangeJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -630,7 +580,6 @@ import CustomInput from './PickersCustomInput'
 const PickersSpecificRange = () => {
   // ** States
   const [date, setDate] = useState(new Date())
-
   const [time, setTime] = useState(new Date())
 
   return (
@@ -665,6 +614,7 @@ export default PickersSpecificRange
 `}</code>
   </pre>
 )
+
 export const PickersTimeJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -672,7 +622,6 @@ import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
-import TextField from '@mui/material/TextField'
 
 // ** Third Party Imports
 import DatePicker from 'react-datepicker'
@@ -683,22 +632,7 @@ import CustomInput from './PickersCustomInput'
 const PickersTime = () => {
   // ** States
   const [time, setTime] = useState(new Date())
-
   const [dateTime, setDateTime] = useState(new Date())
-
-  const [customTime, setCustomTime] = useState(new Date())
-
-  const CustomTimeInput = props => {
-    return (
-      <TextField
-        {...props}
-        size='small'
-        value={props.value}
-        sx={{ maxWidth: '190px' }}
-        onChange={e => props.onChange(e.target.value)}
-      />
-    )
-  }
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
@@ -728,16 +662,6 @@ const PickersTime = () => {
           customInput={<CustomInput label='Date & Time' />}
         />
       </Box>
-      <Box>
-        <DatePicker
-          showTimeInput
-          selected={customTime}
-          id='custom-time-input'
-          customTimeInput={<CustomTimeInput />}
-          onChange={date => setCustomTime(date)}
-          customInput={<CustomInput label='Custom Time Input' />}
-        />
-      </Box>
     </Box>
   )
 }
@@ -746,7 +670,8 @@ export default PickersTime
 `}</code>
   </pre>
 )
-export const PickersMinMaxJSXCode = (
+
+export const PickersCustomizationJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
@@ -762,56 +687,162 @@ import DatePicker from 'react-datepicker'
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
 
-const PickersMinMax = () => {
+const PickersCustomization = () => {
   // ** States
-  const [minDate, setMinDate] = useState(new Date())
-
-  const [maxDate, setMaxDate] = useState(new Date())
+  const [dateFormat, setDateFormat] = useState(new Date())
+  const [dateHighlight, setDateHighlight] = useState(new Date())
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
       <Box>
         <DatePicker
-          id='min-date'
-          selected={minDate}
-          minDate={subDays(new Date(), 5)}
-          onChange={date => setMinDate(date)}
-          customInput={<CustomInput label='Min Date' />}
+          id='custom-format'
+          selected={dateFormat}
+          dateFormat='MMMM d, yyyy h:mm aa'
+          onChange={date => setDateFormat(date)}
+          customInput={<CustomInput label='Custom Date Format' />}
         />
       </Box>
       <Box>
         <DatePicker
-          id='max-date'
-          selected={maxDate}
-          maxDate={addDays(new Date(), 5)}
-          onChange={date => setMaxDate(date)}
-          customInput={<CustomInput label='Max Date' />}
+          id='highlight-dates'
+          selected={dateHighlight}
+          onChange={date => setDateHighlight(date)}
+          customInput={<CustomInput label='Highlight Dates' />}
+          highlightDates={[subDays(new Date(), 7), addDays(new Date(), 7)]}
         />
       </Box>
     </Box>
   )
 }
 
-export default PickersMinMax
+export default PickersCustomization
 `}</code>
   </pre>
 )
-export const PickersCustomInputJSXCode = (
+
+export const PickersMonthYearQuarterJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { forwardRef } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
-import TextField from '@mui/material/TextField'
+import Box from '@mui/material/Box'
 
-const PickersComponent = forwardRef(({ ...props }, ref) => {
-  return <TextField inputRef={ref} {...props} label={props.label || ''} />
-})
+// ** Third Party Imports
+import DatePicker from 'react-datepicker'
 
-export default PickersComponent
+// ** Custom Component Imports
+import CustomInput from './PickersCustomInput'
+
+const PickersMonthYear = () => {
+  // ** States
+  const [year, setYear] = useState(new Date())
+  const [month, setMonth] = useState(new Date())
+  const [quarter, setQuarter] = useState(new Date())
+
+  return (
+    <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
+      <Box>
+        <DatePicker
+          selected={month}
+          id='month-picker'
+          showMonthYearPicker
+          dateFormat='MM/yyyy'
+          onChange={date => setMonth(date)}
+          customInput={<CustomInput label='Month Picker' />}
+        />
+      </Box>
+      <Box>
+        <DatePicker
+          showYearPicker
+          selected={year}
+          id='year-picker'
+          dateFormat='MM/yyyy'
+          onChange={date => setYear(date)}
+          customInput={<CustomInput label='Year Picker' />}
+        />
+      </Box>
+      <Box>
+        <DatePicker
+          selected={quarter}
+          id='quarter-picker'
+          showQuarterYearPicker
+          dateFormat='yyyy, QQQ'
+          onChange={date => setQuarter(date)}
+          customInput={<CustomInput label='Quarter Picker' />}
+        />
+      </Box>
+    </Box>
+  )
+}
+
+export default PickersMonthYear
 `}</code>
   </pre>
 )
+
+export const PickersBasicTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import Box from '@mui/material/Box'
+
+// ** Third Party Imports
+import DatePicker from 'react-datepicker'
+
+// ** Custom Component Imports
+import CustomInput from './PickersCustomInput'
+
+// ** Types
+import { DateType } from 'src/types/forms/reactDatepickerTypes'
+
+const PickersBasic = () => {
+  // ** States
+  const [date, setDate] = useState<DateType>(new Date())
+
+  return (
+    <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
+      <Box>
+        <DatePicker
+          selected={date}
+          id='basic-input'
+          onChange={(date: Date) => setDate(date)}
+          placeholderText='Click to select a date'
+          customInput={<CustomInput label='Basic' />}
+        />
+      </Box>
+      <Box>
+        <DatePicker
+          disabled
+          selected={date}
+          id='disabled-input'
+          onChange={(date: Date) => setDate(date)}
+          placeholderText='Click to select a date'
+          customInput={<CustomInput label='Disabled' />}
+        />
+      </Box>
+      <Box>
+        <DatePicker
+          readOnly
+          selected={date}
+          id='read-only-input'
+          onChange={(date: Date) => setDate(date)}
+          placeholderText='Click to select a date'
+          customInput={<CustomInput readOnly label='Readonly' />}
+        />
+      </Box>
+    </Box>
+  )
+}
+
+export default PickersBasic
+`}</code>
+  </pre>
+)
+
 export const PickersCallbacksTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -879,26 +910,7 @@ export default PickersCallbacks
 `}</code>
   </pre>
 )
-export const PickersCustomInputTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { forwardRef } from 'react'
 
-// ** MUI Imports
-import TextField from '@mui/material/TextField'
-
-interface PickerProps {
-  label?: string
-}
-
-const PickersComponent = forwardRef(({ ...props }: PickerProps, ref) => {
-  return <TextField inputRef={ref} {...props} label={props.label || ''} />
-})
-
-export default PickersComponent
-`}</code>
-  </pre>
-)
 export const PickersIncludeExcludeTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -987,6 +999,7 @@ export default PickersIncludeExclude
 `}</code>
   </pre>
 )
+
 export const PickersLocaleTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -1051,6 +1064,34 @@ export default PickersLocale
 `}</code>
   </pre>
 )
+
+export const PickersCustomInputTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { forwardRef } from 'react'
+
+// ** MUI Imports
+import TextField from '@mui/material/TextField'
+
+interface PickerProps {
+  label?: string
+  readOnly?: boolean
+}
+
+const PickersComponent = forwardRef(({ ...props }: PickerProps, ref) => {
+  // ** Props
+  const { label, readOnly } = props
+
+  return (
+    <TextField inputRef={ref} {...props} label={label || ''} {...(readOnly && { inputProps: { readOnly: true } })} />
+  )
+})
+
+export default PickersComponent
+`}</code>
+  </pre>
+)
+
 export const PickersCustomizationTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -1103,6 +1144,7 @@ export default PickersCustomization
 `}</code>
   </pre>
 )
+
 export const PickersMonthYearDropdownsTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -1167,6 +1209,7 @@ export default PickersMonthYearDropdowns
 `}</code>
   </pre>
 )
+
 export const PickersOptionsTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -1188,9 +1231,9 @@ const PickersOptions = () => {
   // ** States
   const [dateOpen, setDateOpen] = useState<DateType>(null)
   const [dateClear, setDateClear] = useState<DateType>(new Date())
-  const [dateTodayBtn, setDateTodayBtn] = useState<DateType>(null)
   const [dateFilter, setDateFilter] = useState<DateType>(new Date())
   const [dateWeekNum, setDateWeekNum] = useState<DateType>(new Date())
+  const [dateTodayBtn, setDateTodayBtn] = useState<DateType>(new Date())
 
   const isWeekday = (date: Date) => {
     const day = new Date(date).getDay()
@@ -1253,69 +1296,7 @@ export default PickersOptions
 `}</code>
   </pre>
 )
-export const PickersMonthYearQuarterTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
 
-// ** MUI Imports
-import Box from '@mui/material/Box'
-
-// ** Third Party Imports
-import DatePicker from 'react-datepicker'
-
-// ** Types
-import { DateType } from 'src/types/forms/reactDatepickerTypes'
-
-// ** Custom Component Imports
-import CustomInput from './PickersCustomInput'
-
-const PickersMonthYear = () => {
-  // ** States
-  const [year, setYear] = useState<DateType>(new Date())
-  const [month, setMonth] = useState<DateType>(new Date())
-  const [quarter, setQuarter] = useState<DateType>(new Date())
-
-  return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <Box>
-        <DatePicker
-          selected={month}
-          id='month-picker'
-          showMonthYearPicker
-          dateFormat='MM/yyyy'
-          onChange={(date: Date) => setMonth(date)}
-          customInput={<CustomInput label='Month Picker' />}
-        />
-      </Box>
-      <Box>
-        <DatePicker
-          showYearPicker
-          selected={year}
-          id='year-picker'
-          dateFormat='MM/yyyy'
-          onChange={(date: Date) => setYear(date)}
-          customInput={<CustomInput label='Year Picker' />}
-        />
-      </Box>
-      <Box>
-        <DatePicker
-          selected={quarter}
-          id='quarter-picker'
-          showQuarterYearPicker
-          dateFormat='yyyy, QQQ'
-          onChange={(date: Date) => setQuarter(date)}
-          customInput={<CustomInput label='Quarter Picker' />}
-        />
-      </Box>
-    </Box>
-  )
-}
-
-export default PickersMonthYear
-`}</code>
-  </pre>
-)
 export const PickersRangeTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -1327,6 +1308,7 @@ import TextField from '@mui/material/TextField'
 
 // ** Third Party Imports
 import format from 'date-fns/format'
+import addDays from 'date-fns/addDays'
 import DatePicker from 'react-datepicker'
 
 // ** Types
@@ -1340,10 +1322,10 @@ interface PickerProps {
 
 const PickersRange = () => {
   // ** States
-  const [endDate, setEndDate] = useState<DateType>(null)
   const [startDate, setStartDate] = useState<DateType>(new Date())
-  const [endDateRange, setEndDateRange] = useState<DateType>(null)
+  const [endDate, setEndDate] = useState<DateType>(addDays(new Date(), 15))
   const [startDateRange, setStartDateRange] = useState<DateType>(new Date())
+  const [endDateRange, setEndDateRange] = useState<DateType>(addDays(new Date(), 45))
 
   const handleOnChange = (dates: any) => {
     const [start, end] = dates
@@ -1409,6 +1391,130 @@ export default PickersRange
 `}</code>
   </pre>
 )
+
+export const PickersMonthYearQuarterTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import Box from '@mui/material/Box'
+
+// ** Third Party Imports
+import DatePicker from 'react-datepicker'
+
+// ** Types
+import { DateType } from 'src/types/forms/reactDatepickerTypes'
+
+// ** Custom Component Imports
+import CustomInput from './PickersCustomInput'
+
+const PickersMonthYear = () => {
+  // ** States
+  const [year, setYear] = useState<DateType>(new Date())
+  const [month, setMonth] = useState<DateType>(new Date())
+  const [quarter, setQuarter] = useState<DateType>(new Date())
+
+  return (
+    <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
+      <Box>
+        <DatePicker
+          selected={month}
+          id='month-picker'
+          showMonthYearPicker
+          dateFormat='MM/yyyy'
+          onChange={(date: Date) => setMonth(date)}
+          customInput={<CustomInput label='Month Picker' />}
+        />
+      </Box>
+      <Box>
+        <DatePicker
+          showYearPicker
+          selected={year}
+          id='year-picker'
+          dateFormat='MM/yyyy'
+          onChange={(date: Date) => setYear(date)}
+          customInput={<CustomInput label='Year Picker' />}
+        />
+      </Box>
+      <Box>
+        <DatePicker
+          selected={quarter}
+          id='quarter-picker'
+          showQuarterYearPicker
+          dateFormat='yyyy, QQQ'
+          onChange={(date: Date) => setQuarter(date)}
+          customInput={<CustomInput label='Quarter Picker' />}
+        />
+      </Box>
+    </Box>
+  )
+}
+
+export default PickersMonthYear
+`}</code>
+  </pre>
+)
+
+export const PickersTimeTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import Box from '@mui/material/Box'
+
+// ** Third Party Imports
+import DatePicker from 'react-datepicker'
+
+// ** Types
+import { DateType } from 'src/types/forms/reactDatepickerTypes'
+
+// ** Custom Component Imports
+import CustomInput from './PickersCustomInput'
+
+const PickersTime = () => {
+  // ** States
+  const [time, setTime] = useState<DateType>(new Date())
+  const [dateTime, setDateTime] = useState<DateType>(new Date())
+
+  return (
+    <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
+      <Box>
+        <DatePicker
+          showTimeSelect
+          selected={time}
+          timeIntervals={15}
+          showTimeSelectOnly
+          dateFormat='h:mm aa'
+          id='time-only-picker'
+          timeCaption='Time Picker'
+          onChange={(date: Date) => setTime(date)}
+          customInput={<CustomInput label='Time Only' />}
+        />
+      </Box>
+      <Box>
+        <DatePicker
+          showTimeSelect
+          timeFormat='HH:mm'
+          timeIntervals={15}
+          selected={dateTime}
+          id='date-time-picker'
+          timeCaption='Time Picker'
+          dateFormat='MM/dd/yyyy h:mm aa'
+          onChange={(date: Date) => setDateTime(date)}
+          customInput={<CustomInput label='Date & Time' />}
+        />
+      </Box>
+    </Box>
+  )
+}
+
+export default PickersTime
+`}</code>
+  </pre>
+)
+
 export const PickersSpecificRangeTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -1466,88 +1572,7 @@ export default PickersSpecificRange
 `}</code>
   </pre>
 )
-export const PickersTimeTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
 
-// ** MUI Imports
-import Box from '@mui/material/Box'
-import TextField from '@mui/material/TextField'
-
-// ** Third Party Imports
-import DatePicker from 'react-datepicker'
-
-// ** Types
-import { DateType } from 'src/types/forms/reactDatepickerTypes'
-
-// ** Custom Component Imports
-import CustomInput from './PickersCustomInput'
-
-const PickersTime = () => {
-  // ** States
-  const [time, setTime] = useState<DateType>(new Date())
-  const [dateTime, setDateTime] = useState<DateType>(new Date())
-  const [customTime, setCustomTime] = useState<DateType>(new Date())
-
-  const CustomTimeInput = (props: any) => {
-    return (
-      <TextField
-        {...props}
-        size='small'
-        value={props.value}
-        sx={{ maxWidth: '190px' }}
-        onChange={e => props.onChange(e.target.value)}
-      />
-    )
-  }
-
-  return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <Box>
-        <DatePicker
-          showTimeSelect
-          selected={time}
-          timeIntervals={15}
-          showTimeSelectOnly
-          dateFormat='h:mm aa'
-          id='time-only-picker'
-          timeCaption='Time Picker'
-          onChange={(date: Date) => setTime(date)}
-          customInput={<CustomInput label='Time Only' />}
-        />
-      </Box>
-      <Box>
-        <DatePicker
-          showTimeSelect
-          timeFormat='HH:mm'
-          timeIntervals={15}
-          selected={dateTime}
-          id='date-time-picker'
-          timeCaption='Time Picker'
-          dateFormat='MM/dd/yyyy h:mm aa'
-          onChange={(date: Date) => setDateTime(date)}
-          customInput={<CustomInput label='Date & Time' />}
-        />
-      </Box>
-      <Box>
-        <DatePicker
-          showTimeInput
-          selected={customTime}
-          id='custom-time-input'
-          customTimeInput={<CustomTimeInput />}
-          onChange={(date: Date) => setCustomTime(date)}
-          customInput={<CustomInput label='Custom Time Input' />}
-        />
-      </Box>
-    </Box>
-  )
-}
-
-export default PickersTime
-`}</code>
-  </pre>
-)
 export const PickersMinMaxTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -1597,66 +1622,6 @@ const PickersMinMax = () => {
 }
 
 export default PickersMinMax
-`}</code>
-  </pre>
-)
-export const PickersBasicTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import Box from '@mui/material/Box'
-
-// ** Third Party Imports
-import DatePicker from 'react-datepicker'
-
-// ** Custom Component Imports
-import CustomInput from './PickersCustomInput'
-
-// ** Types
-import { DateType } from 'src/types/forms/reactDatepickerTypes'
-
-const PickersBasic = () => {
-  // ** States
-  const [date, setDate] = useState<DateType>(new Date())
-
-  return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <Box>
-        <DatePicker
-          selected={date}
-          id='basic-input'
-          onChange={(date: Date) => setDate(date)}
-          placeholderText='Click to select a date'
-          customInput={<CustomInput label='Basic' />}
-        />
-      </Box>
-      <Box>
-        <DatePicker
-          disabled
-          selected={date}
-          id='disabled-input'
-          onChange={(date: Date) => setDate(date)}
-          placeholderText='Click to select a date'
-          customInput={<CustomInput label='Disabled' />}
-        />
-      </Box>
-      <Box>
-        <DatePicker
-          readOnly
-          selected={date}
-          id='read-only-input'
-          onChange={(date: Date) => setDate(date)}
-          placeholderText='Click to select a date'
-          customInput={<CustomInput label='Readonly' />}
-        />
-      </Box>
-    </Box>
-  )
-}
-
-export default PickersBasic
 `}</code>
   </pre>
 )

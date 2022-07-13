@@ -8,16 +8,16 @@ const BadgesAlignment = () => {
   return (
     <div className='demo-space-x'>
       <Badge color='primary' variant='dot'>
-        <Avatar src='/images/avatars/4.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
       <Badge color='primary' variant='dot' anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
-        <Avatar src='/images/avatars/4.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
       <Badge color='primary' variant='dot' anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}>
-        <Avatar src='/images/avatars/4.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
       <Badge color='primary' variant='dot' anchorOrigin={{ vertical: 'top', horizontal: 'left' }}>
-        <Avatar src='/images/avatars/4.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
     </div>
   )
@@ -38,22 +38,22 @@ const BadgesBasic = () => {
   return (
     <div className='demo-space-x'>
       <Badge badgeContent={4} color='primary'>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
       <Badge badgeContent={4} color='secondary'>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
       <Badge badgeContent={4} color='success'>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
       <Badge badgeContent={4} color='error'>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
       <Badge badgeContent={4} color='warning'>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
       <Badge badgeContent={4} color='info'>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
     </div>
   )
@@ -64,37 +64,30 @@ export default BadgesBasic
   </pre>
 )
 
-export const BadgesMaxValueJSXCode = (
+export const BadgesDotJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** MUI Imports
 import Badge from '@mui/material/Badge'
 import Avatar from '@mui/material/Avatar'
-import { styled } from '@mui/material/styles'
+import Typography from '@mui/material/Typography'
 
-// Styled component for the wrapper
-const Wrapper = styled('div')(({ theme }) => ({
-  '& > *': {
-    marginRight: {theme.spacing(6)} !important
-  }
-}))
-
-const BadgesMaxValue = () => {
+const BadgesDot = () => {
   return (
-    <Wrapper className='demo-space-x'>
-      <Badge badgeContent={99} color='primary'>
-        <Avatar src='/images/avatars/5.png' alt='User Avatar' />
+    <div className='demo-space-x'>
+      <Badge variant='dot' color='primary'>
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
-      <Badge badgeContent={100} color='primary'>
-        <Avatar src='/images/avatars/5.png' alt='User Avatar' />
+      <Badge variant='dot' color='secondary'>
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
-      <Badge badgeContent={1000} max={999} color='primary'>
-        <Avatar src='/images/avatars/5.png' alt='User Avatar' />
+      <Badge variant='dot' color='error'>
+        <Typography>Typography</Typography>
       </Badge>
-    </Wrapper>
+    </div>
   )
 }
 
-export default BadgesMaxValue
+export default BadgesDot
 `}</code>
   </pre>
 )
@@ -119,22 +112,22 @@ const BadgesLight = () => {
   return (
     <Wrapper className='demo-space-x'>
       <CustomBadge skin='light' color='primary' badgeContent={4}>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </CustomBadge>
       <CustomBadge skin='light' color='secondary' badgeContent={4}>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </CustomBadge>
       <CustomBadge skin='light' color='success' badgeContent={4}>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </CustomBadge>
       <CustomBadge skin='light' color='error' badgeContent={4}>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </CustomBadge>
       <CustomBadge skin='light' color='warning' badgeContent={4}>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </CustomBadge>
       <CustomBadge skin='light' color='info' badgeContent={4}>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </CustomBadge>
     </Wrapper>
   )
@@ -185,7 +178,7 @@ const BadgesVisibility = () => {
     <Fragment>
       <Wrapper className='demo-space-x'>
         <Badge badgeContent={count} color='primary'>
-          <Avatar src='/images/avatars/8.png' alt='User Avatar' />
+          <Avatar src='/images/avatars/1.png' alt='User Avatar' />
         </Badge>
         <ButtonGroup size='small'>
           <Button aria-label='reduce' onClick={() => setCount(Math.max(count - 1, 0))}>
@@ -199,7 +192,7 @@ const BadgesVisibility = () => {
 
       <Wrapper className='demo-space-x'>
         <Badge variant='dot' color='primary' invisible={invisible}>
-          <Avatar src='/images/avatars/8.png' alt='User Avatar' />
+          <Avatar src='/images/avatars/1.png' alt='User Avatar' />
         </Badge>
         <FormControlLabel
           label='Show Badge'
@@ -233,16 +226,16 @@ const BadgesOverlap = () => {
   return (
     <Wrapper className='demo-space-x'>
       <Badge color='primary' badgeContent=' '>
-        <Avatar src='/images/avatars/7.png' alt='User Avatar' variant='square' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' variant='square' />
       </Badge>
       <Badge color='primary' variant='dot'>
-        <Avatar src='/images/avatars/7.png' alt='User Avatar' variant='square' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' variant='square' />
       </Badge>
       <Badge color='primary' overlap='circular' badgeContent=' '>
-        <Avatar src='/images/avatars/7.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
       <Badge color='primary' overlap='circular' variant='dot'>
-        <Avatar src='/images/avatars/7.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
     </Wrapper>
   )
@@ -253,30 +246,67 @@ export default BadgesOverlap
   </pre>
 )
 
-export const BadgesDotJSXCode = (
+export const BadgesMaxValueJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** MUI Imports
 import Badge from '@mui/material/Badge'
 import Avatar from '@mui/material/Avatar'
-import Typography from '@mui/material/Typography'
+import { styled } from '@mui/material/styles'
 
-const BadgesDot = () => {
+// Styled component for the wrapper
+const Wrapper = styled('div')(({ theme }) => ({
+  '& > *': {
+    marginRight: {theme.spacing(6)} !important
+  }
+}))
+
+const BadgesMaxValue = () => {
+  return (
+    <Wrapper className='demo-space-x'>
+      <Badge badgeContent={99} color='primary'>
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
+      </Badge>
+      <Badge badgeContent={100} color='primary'>
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
+      </Badge>
+      <Badge badgeContent={1000} max={999} color='primary'>
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
+      </Badge>
+    </Wrapper>
+  )
+}
+
+export default BadgesMaxValue
+`}</code>
+  </pre>
+)
+
+export const BadgesAlignmentTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Badge from '@mui/material/Badge'
+import Avatar from '@mui/material/Avatar'
+
+const BadgesAlignment = () => {
   return (
     <div className='demo-space-x'>
-      <Badge variant='dot' color='primary'>
-        <Avatar src='/images/avatars/2.png' alt='User Avatar' />
+      <Badge color='primary' variant='dot'>
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
-      <Badge variant='dot' color='secondary'>
-        <Avatar src='/images/avatars/2.png' alt='User Avatar' />
+      <Badge color='primary' variant='dot' anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
-      <Badge variant='dot' color='error'>
-        <Typography>Typography</Typography>
+      <Badge color='primary' variant='dot' anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}>
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
+      </Badge>
+      <Badge color='primary' variant='dot' anchorOrigin={{ vertical: 'top', horizontal: 'left' }}>
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
     </div>
   )
 }
 
-export default BadgesDot
+export default BadgesAlignment
 `}</code>
   </pre>
 )
@@ -291,22 +321,22 @@ const BadgesBasic = () => {
   return (
     <div className='demo-space-x'>
       <Badge badgeContent={4} color='primary'>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
       <Badge badgeContent={4} color='secondary'>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
       <Badge badgeContent={4} color='success'>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
       <Badge badgeContent={4} color='error'>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
       <Badge badgeContent={4} color='warning'>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
       <Badge badgeContent={4} color='info'>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
     </div>
   )
@@ -328,10 +358,10 @@ const BadgesDot = () => {
   return (
     <div className='demo-space-x'>
       <Badge variant='dot' color='primary'>
-        <Avatar src='/images/avatars/2.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
       <Badge variant='dot' color='secondary'>
-        <Avatar src='/images/avatars/2.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
       <Badge variant='dot' color='error'>
         <Typography>Typography</Typography>
@@ -341,36 +371,6 @@ const BadgesDot = () => {
 }
 
 export default BadgesDot
-`}</code>
-  </pre>
-)
-
-export const BadgesAlignmentTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Badge from '@mui/material/Badge'
-import Avatar from '@mui/material/Avatar'
-
-const BadgesAlignment = () => {
-  return (
-    <div className='demo-space-x'>
-      <Badge color='primary' variant='dot'>
-        <Avatar src='/images/avatars/4.png' alt='User Avatar' />
-      </Badge>
-      <Badge color='primary' variant='dot' anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
-        <Avatar src='/images/avatars/4.png' alt='User Avatar' />
-      </Badge>
-      <Badge color='primary' variant='dot' anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}>
-        <Avatar src='/images/avatars/4.png' alt='User Avatar' />
-      </Badge>
-      <Badge color='primary' variant='dot' anchorOrigin={{ vertical: 'top', horizontal: 'left' }}>
-        <Avatar src='/images/avatars/4.png' alt='User Avatar' />
-      </Badge>
-    </div>
-  )
-}
-
-export default BadgesAlignment
 `}</code>
   </pre>
 )
@@ -393,57 +393,19 @@ const BadgesMaxValue = () => {
   return (
     <Wrapper className='demo-space-x'>
       <Badge badgeContent={99} color='primary'>
-        <Avatar src='/images/avatars/5.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
       <Badge badgeContent={100} color='primary'>
-        <Avatar src='/images/avatars/5.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
       <Badge badgeContent={1000} max={999} color='primary'>
-        <Avatar src='/images/avatars/5.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>
     </Wrapper>
   )
 }
 
 export default BadgesMaxValue
-`}</code>
-  </pre>
-)
-
-export const BadgesOverlapTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Badge from '@mui/material/Badge'
-import Avatar from '@mui/material/Avatar'
-import { styled } from '@mui/material/styles'
-
-// Styled component for the wrapper
-const Wrapper = styled('div')(({ theme }) => ({
-  '& > *': {
-    marginRight: {theme.spacing(6)} !important
-  }
-}))
-
-const BadgesOverlap = () => {
-  return (
-    <Wrapper className='demo-space-x'>
-      <Badge color='primary' badgeContent=' '>
-        <Avatar src='/images/avatars/7.png' alt='User Avatar' variant='square' />
-      </Badge>
-      <Badge color='primary' variant='dot'>
-        <Avatar src='/images/avatars/7.png' alt='User Avatar' variant='square' />
-      </Badge>
-      <Badge color='primary' overlap='circular' badgeContent=' '>
-        <Avatar src='/images/avatars/7.png' alt='User Avatar' />
-      </Badge>
-      <Badge color='primary' overlap='circular' variant='dot'>
-        <Avatar src='/images/avatars/7.png' alt='User Avatar' />
-      </Badge>
-    </Wrapper>
-  )
-}
-
-export default BadgesOverlap
 `}</code>
   </pre>
 )
@@ -468,22 +430,22 @@ const BadgesLight = () => {
   return (
     <Wrapper className='demo-space-x'>
       <CustomBadge skin='light' color='primary' badgeContent={4}>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </CustomBadge>
       <CustomBadge skin='light' color='secondary' badgeContent={4}>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </CustomBadge>
       <CustomBadge skin='light' color='success' badgeContent={4}>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </CustomBadge>
       <CustomBadge skin='light' color='error' badgeContent={4}>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </CustomBadge>
       <CustomBadge skin='light' color='warning' badgeContent={4}>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </CustomBadge>
       <CustomBadge skin='light' color='info' badgeContent={4}>
-        <Avatar src='/images/avatars/3.png' alt='User Avatar' />
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </CustomBadge>
     </Wrapper>
   )
@@ -534,7 +496,7 @@ const BadgesVisibility = () => {
     <Fragment>
       <Wrapper className='demo-space-x'>
         <Badge badgeContent={count} color='primary'>
-          <Avatar src='/images/avatars/8.png' alt='User Avatar' />
+          <Avatar src='/images/avatars/1.png' alt='User Avatar' />
         </Badge>
         <ButtonGroup size='small'>
           <Button aria-label='reduce' onClick={() => setCount(Math.max(count - 1, 0))}>
@@ -548,7 +510,7 @@ const BadgesVisibility = () => {
 
       <Wrapper className='demo-space-x'>
         <Badge variant='dot' color='primary' invisible={invisible}>
-          <Avatar src='/images/avatars/8.png' alt='User Avatar' />
+          <Avatar src='/images/avatars/1.png' alt='User Avatar' />
         </Badge>
         <FormControlLabel
           label='Show Badge'
@@ -560,6 +522,44 @@ const BadgesVisibility = () => {
 }
 
 export default BadgesVisibility
+`}</code>
+  </pre>
+)
+
+export const BadgesOverlapTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Badge from '@mui/material/Badge'
+import Avatar from '@mui/material/Avatar'
+import { styled } from '@mui/material/styles'
+
+// Styled component for the wrapper
+const Wrapper = styled('div')(({ theme }) => ({
+  '& > *': {
+    marginRight: {theme.spacing(6)} !important
+  }
+}))
+
+const BadgesOverlap = () => {
+  return (
+    <Wrapper className='demo-space-x'>
+      <Badge color='primary' badgeContent=' '>
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' variant='square' />
+      </Badge>
+      <Badge color='primary' variant='dot'>
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' variant='square' />
+      </Badge>
+      <Badge color='primary' overlap='circular' badgeContent=' '>
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
+      </Badge>
+      <Badge color='primary' overlap='circular' variant='dot'>
+        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
+      </Badge>
+    </Wrapper>
+  )
+}
+
+export default BadgesOverlap
 `}</code>
   </pre>
 )

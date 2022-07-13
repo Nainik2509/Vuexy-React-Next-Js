@@ -52,75 +52,6 @@ export default ButtonsColors
   </pre>
 )
 
-export const ButtonsCustomizedJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import { brown } from '@mui/material/colors'
-import { styled } from '@mui/material/styles'
-import Button from '@mui/material/Button'
-
-// Styled component for a custom button
-const CustomButton = styled(Button)(({ theme }) => ({
-  backgroundColor: brown[500],
-  color: theme.palette.getContrastText(brown[500]),
-  '&:hover': {
-    backgroundColor: brown[700]
-  }
-}))
-
-// Styled component for a Bootstrap button
-const BootstrapButton = styled(Button)({
-  fontSize: 16,
-  lineHeight: 1.5,
-  boxShadow: 'none',
-  border: '1px solid',
-  padding: '6px 12px',
-  textTransform: 'none',
-  borderColor: '#0063cc',
-  backgroundColor: '#0063cc',
-  fontFamily: [
-    '-apple-system',
-    'BlinkMacSystemFont',
-    '"Segoe UI"',
-    'Roboto',
-    '"Helvetica Neue"',
-    'Arial',
-    'sans-serif',
-    '"Apple Color Emoji"',
-    '"Segoe UI Emoji"',
-    '"Segoe UI Symbol"'
-  ].join(','),
-  '&:hover': {
-    boxShadow: 'none',
-    borderColor: '#0062cc',
-    backgroundColor: '#0069d9'
-  },
-  '&:active': {
-    boxShadow: 'none',
-    borderColor: '#005cbf',
-    backgroundColor: '#0062cc'
-  },
-  '&:focus': {
-    boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)'
-  }
-})
-
-const ButtonsCustomized = () => {
-  return (
-    <div className='demo-space-x'>
-      <CustomButton variant='contained'>Custom Color</CustomButton>
-      <BootstrapButton variant='contained' disableRipple>
-        Bootstrap
-      </BootstrapButton>
-    </div>
-  )
-}
-
-export default ButtonsCustomized
-`}</code>
-  </pre>
-)
-
 export const ButtonsFabJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** MUI Imports
@@ -206,33 +137,6 @@ export default ButtonsFab
   </pre>
 )
 
-export const ButtonsContainedJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Button from '@mui/material/Button'
-
-const ButtonsContained = () => {
-  return (
-    <div className='demo-space-x'>
-      <Button variant='contained'>Primary</Button>
-      <Button variant='contained' color='secondary'>
-        Secondary
-      </Button>
-      <Button variant='contained' disabled>
-        Disabled
-      </Button>
-      <Button variant='contained' href='#'>
-        Link
-      </Button>
-    </div>
-  )
-}
-
-export default ButtonsContained
-`}</code>
-  </pre>
-)
-
 export const ButtonsFabSizesJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -278,6 +182,134 @@ const ButtonsFabSizes = () => {
 }
 
 export default ButtonsFabSizes
+`}</code>
+  </pre>
+)
+
+export const ButtonsCustomizedJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import { brown } from '@mui/material/colors'
+import { styled } from '@mui/material/styles'
+import Button from '@mui/material/Button'
+
+// Styled component for a custom button
+const CustomButton = styled(Button)(({ theme }) => ({
+  backgroundColor: brown[500],
+  color: theme.palette.getContrastText(brown[500]),
+  '&:hover': {
+    backgroundColor: brown[700]
+  }
+}))
+
+// Styled component for a Bootstrap button
+const BootstrapButton = styled(Button)({
+  fontSize: 16,
+  lineHeight: 1.5,
+  boxShadow: 'none',
+  border: '1px solid',
+  padding: '6px 12px',
+  textTransform: 'none',
+  borderColor: '#0063cc',
+  backgroundColor: '#0063cc',
+  fontFamily: [
+    '-apple-system',
+    'BlinkMacSystemFont',
+    '"Segoe UI"',
+    'Roboto',
+    '"Helvetica Neue"',
+    'Arial',
+    'sans-serif',
+    '"Apple Color Emoji"',
+    '"Segoe UI Emoji"',
+    '"Segoe UI Symbol"'
+  ].join(','),
+  '&:hover': {
+    boxShadow: 'none',
+    borderColor: '#0062cc',
+    backgroundColor: '#0069d9'
+  },
+  '&:active': {
+    boxShadow: 'none',
+    borderColor: '#005cbf',
+    backgroundColor: '#0062cc'
+  },
+  '&:focus': {
+    boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)'
+  }
+})
+
+const ButtonsCustomized = () => {
+  return (
+    <div className='demo-space-x'>
+      <CustomButton variant='contained'>Custom Color</CustomButton>
+      <BootstrapButton variant='contained' disableRipple>
+        Bootstrap
+      </BootstrapButton>
+    </div>
+  )
+}
+
+export default ButtonsCustomized
+`}</code>
+  </pre>
+)
+
+export const ButtonsContainedJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Button from '@mui/material/Button'
+
+const ButtonsContained = () => {
+  return (
+    <div className='demo-space-x'>
+      <Button variant='contained'>Primary</Button>
+      <Button variant='contained' color='secondary'>
+        Secondary
+      </Button>
+      <Button variant='contained' disabled>
+        Disabled
+      </Button>
+      <Button variant='contained' href='#'>
+        Link
+      </Button>
+    </div>
+  )
+}
+
+export default ButtonsContained
+`}</code>
+  </pre>
+)
+
+export const ButtonsIconsJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import IconButton from '@mui/material/IconButton'
+
+// ** Icons Imports
+import CameraIris from 'mdi-material-ui/CameraIris'
+
+const ButtonsIcons = () => {
+  return (
+    <div className='demo-space-x'>
+      <IconButton aria-label='capture screenshot'>
+        <CameraIris />
+      </IconButton>
+      <IconButton aria-label='capture screenshot' color='primary'>
+        <CameraIris />
+      </IconButton>
+      <IconButton aria-label='capture screenshot' color='secondary'>
+        <CameraIris />
+      </IconButton>
+      <IconButton aria-label='capture screenshot' disabled>
+        <CameraIris />
+      </IconButton>
+    </div>
+  )
+}
+
+export default ButtonsIcons
 `}</code>
   </pre>
 )
@@ -340,7 +372,7 @@ const ButtonsSizes = () => {
         <IconButton aria-label='capture screenshot' color='secondary'>
           <CameraIris />
         </IconButton>
-        <IconButton aria-label='capture screenshot' color='secondary'>
+        <IconButton aria-label='capture screenshot' color='secondary' size='large'>
           <CameraIris fontSize='large' />
         </IconButton>
       </div>
@@ -353,34 +385,29 @@ export default ButtonsSizes
   </pre>
 )
 
-export const ButtonsIconsJSXCode = (
+export const ButtonsWithIconAndLabelJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** MUI Imports
-import IconButton from '@mui/material/IconButton'
+import Button from '@mui/material/Button'
 
 // ** Icons Imports
-import CameraIris from 'mdi-material-ui/CameraIris'
+import Send from 'mdi-material-ui/Send'
+import DeleteOutline from 'mdi-material-ui/DeleteOutline'
 
-const ButtonsIcons = () => {
+const ButtonsWithIconAndLabel = () => {
   return (
     <div className='demo-space-x'>
-      <IconButton aria-label='capture screenshot'>
-        <CameraIris />
-      </IconButton>
-      <IconButton aria-label='capture screenshot' color='primary'>
-        <CameraIris />
-      </IconButton>
-      <IconButton aria-label='capture screenshot' color='secondary'>
-        <CameraIris />
-      </IconButton>
-      <IconButton aria-label='capture screenshot' disabled>
-        <CameraIris />
-      </IconButton>
+      <Button variant='contained' endIcon={<Send />}>
+        Send
+      </Button>
+      <Button variant='contained' color='secondary' startIcon={<DeleteOutline />}>
+        Delete
+      </Button>
     </div>
   )
 }
 
-export default ButtonsIcons
+export default ButtonsWithIconAndLabel
 `}</code>
   </pre>
 )
@@ -435,33 +462,6 @@ const ButtonsOutlined = () => {
 }
 
 export default ButtonsOutlined
-`}</code>
-  </pre>
-)
-
-export const ButtonsWithIconAndLabelJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Button from '@mui/material/Button'
-
-// ** Icons Imports
-import Send from 'mdi-material-ui/Send'
-import DeleteOutline from 'mdi-material-ui/DeleteOutline'
-
-const ButtonsWithIconAndLabel = () => {
-  return (
-    <div className='demo-space-x'>
-      <Button variant='contained' endIcon={<Send />}>
-        Send
-      </Button>
-      <Button variant='contained' color='secondary' startIcon={<DeleteOutline />}>
-        Delete
-      </Button>
-    </div>
-  )
-}
-
-export default ButtonsWithIconAndLabel
 `}</code>
   </pre>
 )
@@ -543,75 +543,6 @@ const ButtonsContained = () => {
 }
 
 export default ButtonsContained
-`}</code>
-  </pre>
-)
-
-export const ButtonsCustomizedTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import { brown } from '@mui/material/colors'
-import { styled } from '@mui/material/styles'
-import Button, { ButtonProps } from '@mui/material/Button'
-
-// Styled component for a custom button
-const CustomButton = styled(Button)<ButtonProps>(({ theme }) => ({
-  backgroundColor: brown[500],
-  color: theme.palette.getContrastText(brown[500]),
-  '&:hover': {
-    backgroundColor: brown[700]
-  }
-}))
-
-// Styled component for a Bootstrap button
-const BootstrapButton = styled(Button)({
-  fontSize: 16,
-  lineHeight: 1.5,
-  boxShadow: 'none',
-  border: '1px solid',
-  padding: '6px 12px',
-  textTransform: 'none',
-  borderColor: '#0063cc',
-  backgroundColor: '#0063cc',
-  fontFamily: [
-    '-apple-system',
-    'BlinkMacSystemFont',
-    '"Segoe UI"',
-    'Roboto',
-    '"Helvetica Neue"',
-    'Arial',
-    'sans-serif',
-    '"Apple Color Emoji"',
-    '"Segoe UI Emoji"',
-    '"Segoe UI Symbol"'
-  ].join(','),
-  '&:hover': {
-    boxShadow: 'none',
-    borderColor: '#0062cc',
-    backgroundColor: '#0069d9'
-  },
-  '&:active': {
-    boxShadow: 'none',
-    borderColor: '#005cbf',
-    backgroundColor: '#0062cc'
-  },
-  '&:focus': {
-    boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)'
-  }
-})
-
-const ButtonsCustomized = () => {
-  return (
-    <div className='demo-space-x'>
-      <CustomButton variant='contained'>Custom Color</CustomButton>
-      <BootstrapButton variant='contained' disableRipple>
-        Bootstrap
-      </BootstrapButton>
-    </div>
-  )
-}
-
-export default ButtonsCustomized
 `}</code>
   </pre>
 )
@@ -750,61 +681,71 @@ export default ButtonsFabSizes
   </pre>
 )
 
-export const ButtonsOutlinedTSXCode = (
+export const ButtonsCustomizedTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** MUI Imports
-import Button from '@mui/material/Button'
+import { brown } from '@mui/material/colors'
+import { styled } from '@mui/material/styles'
+import Button, { ButtonProps } from '@mui/material/Button'
 
-const ButtonsOutlined = () => {
+// Styled component for a custom button
+const CustomButton = styled(Button)<ButtonProps>(({ theme }) => ({
+  backgroundColor: brown[500],
+  color: theme.palette.getContrastText(brown[500]),
+  '&:hover': {
+    backgroundColor: brown[700]
+  }
+}))
+
+// Styled component for a Bootstrap button
+const BootstrapButton = styled(Button)({
+  fontSize: 16,
+  lineHeight: 1.5,
+  boxShadow: 'none',
+  border: '1px solid',
+  padding: '6px 12px',
+  textTransform: 'none',
+  borderColor: '#0063cc',
+  backgroundColor: '#0063cc',
+  fontFamily: [
+    '-apple-system',
+    'BlinkMacSystemFont',
+    '"Segoe UI"',
+    'Roboto',
+    '"Helvetica Neue"',
+    'Arial',
+    'sans-serif',
+    '"Apple Color Emoji"',
+    '"Segoe UI Emoji"',
+    '"Segoe UI Symbol"'
+  ].join(','),
+  '&:hover': {
+    boxShadow: 'none',
+    borderColor: '#0062cc',
+    backgroundColor: '#0069d9'
+  },
+  '&:active': {
+    boxShadow: 'none',
+    borderColor: '#005cbf',
+    backgroundColor: '#0062cc'
+  },
+  '&:focus': {
+    boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)'
+  }
+})
+
+const ButtonsCustomized = () => {
   return (
     <div className='demo-space-x'>
-      <Button variant='outlined'>Primary</Button>
-      <Button variant='outlined' color='secondary'>
-        Secondary
-      </Button>
-      <Button variant='outlined' disabled>
-        Disabled
-      </Button>
-      <Button variant='outlined' href='#'>
-        Link
-      </Button>
+      <CustomButton variant='contained'>Custom Color</CustomButton>
+      <BootstrapButton variant='contained' disableRipple>
+        Bootstrap
+      </BootstrapButton>
     </div>
   )
 }
 
-export default ButtonsOutlined
-`}</code>
-  </pre>
-)
-
-export const ButtonsIconsTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import IconButton from '@mui/material/IconButton'
-
-// ** Icons Imports
-import CameraIris from 'mdi-material-ui/CameraIris'
-
-const ButtonsIcons = () => {
-  return (
-    <div className='demo-space-x'>
-      <IconButton aria-label='capture screenshot'>
-        <CameraIris />
-      </IconButton>
-      <IconButton aria-label='capture screenshot' color='primary'>
-        <CameraIris />
-      </IconButton>
-      <IconButton aria-label='capture screenshot' color='secondary'>
-        <CameraIris />
-      </IconButton>
-      <IconButton aria-label='capture screenshot' disabled>
-        <CameraIris />
-      </IconButton>
-    </div>
-  )
-}
-
-export default ButtonsIcons
+export default ButtonsCustomized
 `}</code>
   </pre>
 )
@@ -867,7 +808,7 @@ const ButtonsSizes = () => {
         <IconButton aria-label='capture screenshot' color='secondary'>
           <CameraIris />
         </IconButton>
-        <IconButton aria-label='capture screenshot' color='secondary'>
+        <IconButton aria-label='capture screenshot' color='secondary' size='large'>
           <CameraIris fontSize='large' />
         </IconButton>
       </div>
@@ -880,29 +821,34 @@ export default ButtonsSizes
   </pre>
 )
 
-export const ButtonsWithIconAndLabelTSXCode = (
+export const ButtonsIconsTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** MUI Imports
-import Button from '@mui/material/Button'
+import IconButton from '@mui/material/IconButton'
 
 // ** Icons Imports
-import Send from 'mdi-material-ui/Send'
-import DeleteOutline from 'mdi-material-ui/DeleteOutline'
+import CameraIris from 'mdi-material-ui/CameraIris'
 
-const ButtonsWithIconAndLabel = () => {
+const ButtonsIcons = () => {
   return (
     <div className='demo-space-x'>
-      <Button variant='contained' endIcon={<Send />}>
-        Send
-      </Button>
-      <Button variant='contained' color='secondary' startIcon={<DeleteOutline />}>
-        Delete
-      </Button>
+      <IconButton aria-label='capture screenshot'>
+        <CameraIris />
+      </IconButton>
+      <IconButton aria-label='capture screenshot' color='primary'>
+        <CameraIris />
+      </IconButton>
+      <IconButton aria-label='capture screenshot' color='secondary'>
+        <CameraIris />
+      </IconButton>
+      <IconButton aria-label='capture screenshot' disabled>
+        <CameraIris />
+      </IconButton>
     </div>
   )
 }
 
-export default ButtonsWithIconAndLabel
+export default ButtonsIcons
 `}</code>
   </pre>
 )
@@ -930,6 +876,60 @@ const ButtonsText = () => {
 }
 
 export default ButtonsText
+`}</code>
+  </pre>
+)
+
+export const ButtonsOutlinedTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Button from '@mui/material/Button'
+
+const ButtonsOutlined = () => {
+  return (
+    <div className='demo-space-x'>
+      <Button variant='outlined'>Primary</Button>
+      <Button variant='outlined' color='secondary'>
+        Secondary
+      </Button>
+      <Button variant='outlined' disabled>
+        Disabled
+      </Button>
+      <Button variant='outlined' href='#'>
+        Link
+      </Button>
+    </div>
+  )
+}
+
+export default ButtonsOutlined
+`}</code>
+  </pre>
+)
+
+export const ButtonsWithIconAndLabelTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Button from '@mui/material/Button'
+
+// ** Icons Imports
+import Send from 'mdi-material-ui/Send'
+import DeleteOutline from 'mdi-material-ui/DeleteOutline'
+
+const ButtonsWithIconAndLabel = () => {
+  return (
+    <div className='demo-space-x'>
+      <Button variant='contained' endIcon={<Send />}>
+        Send
+      </Button>
+      <Button variant='contained' color='secondary' startIcon={<DeleteOutline />}>
+        Delete
+      </Button>
+    </div>
+  )
+}
+
+export default ButtonsWithIconAndLabel
 `}</code>
   </pre>
 )

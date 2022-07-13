@@ -39,6 +39,70 @@ export default MenuBasic
   </pre>
 )
 
+export const MenuContextJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import Box from '@mui/material/Box'
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
+import Typography from '@mui/material/Typography'
+
+const initialState = {
+  mouseX: null,
+  mouseY: null
+}
+
+const MenuContext = () => {
+  // ** State
+  const [state, setState] = useState(initialState)
+
+  const handleClick = event => {
+    event.preventDefault()
+    setState({
+      mouseX: event.clientX - 2,
+      mouseY: event.clientY - 4
+    })
+  }
+
+  const handleClose = () => {
+    setState(initialState)
+  }
+
+  return (
+    <Box onContextMenu={handleClick} sx={{ cursor: 'context-menu' }}>
+      <Typography>
+        Apple pie bonbon sweet brownie cake lemon drops carrot cake danish carrot cake. Marzipan jujubes cupcake cake
+        bear claw jujubes. Macaroon candy canes jelly-o sugar plum biscuit. Cupcake cupcake oat cake cookie donut candy
+        canes chupa chups. Jelly beans carrot cake soufflé gummies sweet cake halvah carrot cake. Candy marshmallow
+        apple pie donut toffee pudding jelly croissant jelly. Dragée cake liquorice cake gummi bears. Gummi bears
+        caramels tootsie roll caramels lemon drops caramels chocolate cake jelly oat cake. Oat cake tart biscuit cake.
+      </Typography>
+      <Menu
+        keepMounted
+        onClose={handleClose}
+        open={state.mouseY !== null}
+        anchorReference='anchorPosition'
+        anchorPosition={
+          state.mouseY !== null && state.mouseX !== null ? { top: state.mouseY, left: state.mouseX } : undefined
+        }
+      >
+        <MenuItem onClick={handleClose}>Copy</MenuItem>
+        <MenuItem onClick={handleClose}>Print</MenuItem>
+        <MenuItem onClick={handleClose}>Email</MenuItem>
+        <MenuItem onClick={handleClose}>Highlight</MenuItem>
+      </Menu>
+    </Box>
+  )
+}
+
+export default MenuContext
+`}</code>
+  </pre>
+)
+
 export const MenuCompositionJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -154,70 +218,6 @@ const MenuComposition = () => {
 }
 
 export default MenuComposition
-`}</code>
-  </pre>
-)
-
-export const MenuContextJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import Box from '@mui/material/Box'
-import Menu from '@mui/material/Menu'
-import MenuItem from '@mui/material/MenuItem'
-import Typography from '@mui/material/Typography'
-
-const initialState = {
-  mouseX: null,
-  mouseY: null
-}
-
-const MenuContext = () => {
-  // ** State
-  const [state, setState] = useState(initialState)
-
-  const handleClick = event => {
-    event.preventDefault()
-    setState({
-      mouseX: event.clientX - 2,
-      mouseY: event.clientY - 4
-    })
-  }
-
-  const handleClose = () => {
-    setState(initialState)
-  }
-
-  return (
-    <Box onContextMenu={handleClick} sx={{ cursor: 'context-menu' }}>
-      <Typography>
-        Apple pie bonbon sweet brownie cake lemon drops carrot cake danish carrot cake. Marzipan jujubes cupcake cake
-        bear claw jujubes. Macaroon candy canes jelly-o sugar plum biscuit. Cupcake cupcake oat cake cookie donut candy
-        canes chupa chups. Jelly beans carrot cake soufflé gummies sweet cake halvah carrot cake. Candy marshmallow
-        apple pie donut toffee pudding jelly croissant jelly. Dragée cake liquorice cake gummi bears. Gummi bears
-        caramels tootsie roll caramels lemon drops caramels chocolate cake jelly oat cake. Oat cake tart biscuit cake.
-      </Typography>
-      <Menu
-        keepMounted
-        onClose={handleClose}
-        open={state.mouseY !== null}
-        anchorReference='anchorPosition'
-        anchorPosition={
-          state.mouseY !== null && state.mouseX !== null ? { top: state.mouseY, left: state.mouseX } : undefined
-        }
-      >
-        <MenuItem onClick={handleClose}>Copy</MenuItem>
-        <MenuItem onClick={handleClose}>Print</MenuItem>
-        <MenuItem onClick={handleClose}>Email</MenuItem>
-        <MenuItem onClick={handleClose}>Highlight</MenuItem>
-      </Menu>
-    </Box>
-  )
-}
-
-export default MenuContext
 `}</code>
   </pre>
 )
@@ -559,6 +559,75 @@ export default MenuBasic
   </pre>
 )
 
+export const MenuContextTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { MouseEvent, useState } from 'react'
+
+// ** MUI Imports
+import Box from '@mui/material/Box'
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
+import Typography from '@mui/material/Typography'
+
+interface State {
+  mouseX: null | number
+  mouseY: null | number
+}
+
+const initialState = {
+  mouseX: null,
+  mouseY: null
+}
+
+const MenuContext = () => {
+  // ** State
+  const [state, setState] = useState<State>(initialState)
+
+  const handleClick = (event: MouseEvent<HTMLDivElement>) => {
+    event.preventDefault()
+    setState({
+      mouseX: event.clientX - 2,
+      mouseY: event.clientY - 4
+    })
+  }
+
+  const handleClose = () => {
+    setState(initialState)
+  }
+
+  return (
+    <Box onContextMenu={handleClick} sx={{ cursor: 'context-menu' }}>
+      <Typography>
+        Apple pie bonbon sweet brownie cake lemon drops carrot cake danish carrot cake. Marzipan jujubes cupcake cake
+        bear claw jujubes. Macaroon candy canes jelly-o sugar plum biscuit. Cupcake cupcake oat cake cookie donut candy
+        canes chupa chups. Jelly beans carrot cake soufflé gummies sweet cake halvah carrot cake. Candy marshmallow
+        apple pie donut toffee pudding jelly croissant jelly. Dragée cake liquorice cake gummi bears. Gummi bears
+        caramels tootsie roll caramels lemon drops caramels chocolate cake jelly oat cake. Oat cake tart biscuit cake.
+      </Typography>
+      <Menu
+        keepMounted
+        onClose={handleClose}
+        open={state.mouseY !== null}
+        anchorReference='anchorPosition'
+        anchorPosition={
+          state.mouseY !== null && state.mouseX !== null ? { top: state.mouseY, left: state.mouseX } : undefined
+        }
+      >
+        <MenuItem onClick={handleClose}>Copy</MenuItem>
+        <MenuItem onClick={handleClose}>Print</MenuItem>
+        <MenuItem onClick={handleClose}>Email</MenuItem>
+        <MenuItem onClick={handleClose}>Highlight</MenuItem>
+      </Menu>
+    </Box>
+  )
+}
+
+export default MenuContext
+`}</code>
+  </pre>
+)
+
 export const MenuCompositionTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -680,75 +749,6 @@ export default MenuComposition
   </pre>
 )
 
-export const MenuContextTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { MouseEvent, useState } from 'react'
-
-// ** MUI Imports
-import Box from '@mui/material/Box'
-import Menu from '@mui/material/Menu'
-import MenuItem from '@mui/material/MenuItem'
-import Typography from '@mui/material/Typography'
-
-interface State {
-  mouseX: null | number
-  mouseY: null | number
-}
-
-const initialState = {
-  mouseX: null,
-  mouseY: null
-}
-
-const MenuContext = () => {
-  // ** State
-  const [state, setState] = useState<State>(initialState)
-
-  const handleClick = (event: MouseEvent<HTMLDivElement>) => {
-    event.preventDefault()
-    setState({
-      mouseX: event.clientX - 2,
-      mouseY: event.clientY - 4
-    })
-  }
-
-  const handleClose = () => {
-    setState(initialState)
-  }
-
-  return (
-    <Box onContextMenu={handleClick} sx={{ cursor: 'context-menu' }}>
-      <Typography>
-        Apple pie bonbon sweet brownie cake lemon drops carrot cake danish carrot cake. Marzipan jujubes cupcake cake
-        bear claw jujubes. Macaroon candy canes jelly-o sugar plum biscuit. Cupcake cupcake oat cake cookie donut candy
-        canes chupa chups. Jelly beans carrot cake soufflé gummies sweet cake halvah carrot cake. Candy marshmallow
-        apple pie donut toffee pudding jelly croissant jelly. Dragée cake liquorice cake gummi bears. Gummi bears
-        caramels tootsie roll caramels lemon drops caramels chocolate cake jelly oat cake. Oat cake tart biscuit cake.
-      </Typography>
-      <Menu
-        keepMounted
-        onClose={handleClose}
-        open={state.mouseY !== null}
-        anchorReference='anchorPosition'
-        anchorPosition={
-          state.mouseY !== null && state.mouseX !== null ? { top: state.mouseY, left: state.mouseX } : undefined
-        }
-      >
-        <MenuItem onClick={handleClose}>Copy</MenuItem>
-        <MenuItem onClick={handleClose}>Print</MenuItem>
-        <MenuItem onClick={handleClose}>Email</MenuItem>
-        <MenuItem onClick={handleClose}>Highlight</MenuItem>
-      </Menu>
-    </Box>
-  )
-}
-
-export default MenuContext
-`}</code>
-  </pre>
-)
-
 export const MenuCustomizedTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -841,82 +841,6 @@ const MenuCustomized = () => {
 }
 
 export default MenuCustomized
-`}</code>
-  </pre>
-)
-
-export const MenuMaxHeightTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { MouseEvent, useState } from 'react'
-
-// ** MUI Imports
-import Menu from '@mui/material/Menu'
-import MenuItem from '@mui/material/MenuItem'
-import IconButton from '@mui/material/IconButton'
-
-// ** Icons Imports
-import DotsVertical from 'mdi-material-ui/DotsVertical'
-
-const options = [
-  'None',
-  'Atria',
-  'Callisto',
-  'Dione',
-  'Ganymede',
-  'Hangouts Call',
-  'Luna',
-  'Oberon',
-  'Phobos',
-  'Pyxis',
-  'Sedna',
-  'Titania',
-  'Triton',
-  'Umbriel'
-]
-
-const ITEM_HEIGHT = 48
-
-const MenuMaxHeight = () => {
-  // ** State
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-
-  const handleClick = (event: MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget)
-  }
-
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
-
-  return (
-    <div>
-      <IconButton aria-label='more' aria-controls='long-menu' aria-haspopup='true' onClick={handleClick}>
-        <DotsVertical />
-      </IconButton>
-      <Menu
-        keepMounted
-        id='long-menu'
-        anchorEl={anchorEl}
-        onClose={handleClose}
-        open={Boolean(anchorEl)}
-        PaperProps={{
-          style: {
-            maxHeight: ITEM_HEIGHT * 4.5
-          }
-        }}
-      >
-        {options.map(option => (
-          <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
-            {option}
-          </MenuItem>
-        ))}
-      </Menu>
-    </div>
-  )
-}
-
-export default MenuMaxHeight
 `}</code>
   </pre>
 )
@@ -1042,6 +966,82 @@ const MenuTransition = () => {
 }
 
 export default MenuTransition
+`}</code>
+  </pre>
+)
+
+export const MenuMaxHeightTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { MouseEvent, useState } from 'react'
+
+// ** MUI Imports
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
+import IconButton from '@mui/material/IconButton'
+
+// ** Icons Imports
+import DotsVertical from 'mdi-material-ui/DotsVertical'
+
+const options = [
+  'None',
+  'Atria',
+  'Callisto',
+  'Dione',
+  'Ganymede',
+  'Hangouts Call',
+  'Luna',
+  'Oberon',
+  'Phobos',
+  'Pyxis',
+  'Sedna',
+  'Titania',
+  'Triton',
+  'Umbriel'
+]
+
+const ITEM_HEIGHT = 48
+
+const MenuMaxHeight = () => {
+  // ** State
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+
+  const handleClick = (event: MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
+
+  return (
+    <div>
+      <IconButton aria-label='more' aria-controls='long-menu' aria-haspopup='true' onClick={handleClick}>
+        <DotsVertical />
+      </IconButton>
+      <Menu
+        keepMounted
+        id='long-menu'
+        anchorEl={anchorEl}
+        onClose={handleClose}
+        open={Boolean(anchorEl)}
+        PaperProps={{
+          style: {
+            maxHeight: ITEM_HEIGHT * 4.5
+          }
+        }}
+      >
+        {options.map(option => (
+          <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
+            {option}
+          </MenuItem>
+        ))}
+      </Menu>
+    </div>
+  )
+}
+
+export default MenuMaxHeight
 `}</code>
   </pre>
 )

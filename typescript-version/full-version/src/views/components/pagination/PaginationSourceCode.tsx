@@ -47,26 +47,6 @@ export default PaginationControlled
   </pre>
 )
 
-export const PaginationOutlinedJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Pagination from '@mui/material/Pagination'
-
-const PaginationOutlined = () => {
-  return (
-    <div className='demo-space-y'>
-      <Pagination count={10} variant='outlined' />
-      <Pagination count={10} variant='outlined' color='primary' />
-      <Pagination count={10} variant='outlined' color='secondary' />
-    </div>
-  )
-}
-
-export default PaginationOutlined
-`}</code>
-  </pre>
-)
-
 export const PaginationDisabledJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** MUI Imports
@@ -95,7 +75,7 @@ const PaginationRanges = () => {
   return (
     <div className='demo-space-y'>
       <Pagination count={11} defaultPage={6} siblingCount={0} />
-      <Pagination count={11} defaultPage={6} />
+      <Pagination count={11} defaultPage={6} /> {/* Default ranges */}
       <Pagination count={11} defaultPage={6} siblingCount={0} boundaryCount={2} />
       <Pagination count={11} defaultPage={6} boundaryCount={2} />
     </div>
@@ -103,25 +83,6 @@ const PaginationRanges = () => {
 }
 
 export default PaginationRanges
-`}</code>
-  </pre>
-)
-
-export const PaginationRoundedJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Pagination from '@mui/material/Pagination'
-
-const PaginationRounded = () => {
-  return (
-    <div className='demo-space-y'>
-      <Pagination count={10} shape='rounded' />
-      <Pagination count={10} variant='outlined' shape='rounded' />
-    </div>
-  )
-}
-
-export default PaginationRounded
 `}</code>
   </pre>
 )
@@ -146,6 +107,26 @@ export default PaginationSimple
   </pre>
 )
 
+export const PaginationOutlinedJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Pagination from '@mui/material/Pagination'
+
+const PaginationOutlined = () => {
+  return (
+    <div className='demo-space-y'>
+      <Pagination count={10} variant='outlined' />
+      <Pagination count={10} variant='outlined' color='primary' />
+      <Pagination count={10} variant='outlined' color='secondary' />
+    </div>
+  )
+}
+
+export default PaginationOutlined
+`}</code>
+  </pre>
+)
+
 export const PaginationSizesJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** MUI Imports
@@ -155,13 +136,51 @@ const PaginationSizes = () => {
   return (
     <div className='demo-space-y'>
       <Pagination count={10} size='small' />
-      <Pagination count={10} />
-      <Pagination count={10} size='large' />
+      <Pagination count={10} color='primary' />
+      <Pagination count={10} size='large' color='secondary' />
     </div>
   )
 }
 
 export default PaginationSizes
+`}</code>
+  </pre>
+)
+
+export const PaginationRoundedJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Pagination from '@mui/material/Pagination'
+
+const PaginationRounded = () => {
+  return (
+    <div className='demo-space-y'>
+      <Pagination count={10} shape='rounded' color='primary' />
+      <Pagination count={10} variant='outlined' shape='rounded' color='secondary' />
+    </div>
+  )
+}
+
+export default PaginationRounded
+`}</code>
+  </pre>
+)
+
+export const PaginationButtonsTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Pagination from '@mui/material/Pagination'
+
+const PaginationButtons = () => {
+  return (
+    <div className='demo-space-y'>
+      <Pagination count={10} showFirstButton showLastButton />
+      <Pagination count={10} hidePrevButton hideNextButton />
+    </div>
+  )
+}
+
+export default PaginationButtons
 `}</code>
   </pre>
 )
@@ -196,44 +215,6 @@ export default PaginationControlled
   </pre>
 )
 
-export const PaginationDisabledTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Pagination from '@mui/material/Pagination'
-
-const PaginationDisabled = () => {
-  return (
-    <div className='demo-space-y'>
-      <Pagination count={10} disabled />
-      <Pagination count={10} variant='outlined' disabled />
-    </div>
-  )
-}
-
-export default PaginationDisabled
-`}</code>
-  </pre>
-)
-
-export const PaginationButtonsTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Pagination from '@mui/material/Pagination'
-
-const PaginationButtons = () => {
-  return (
-    <div className='demo-space-y'>
-      <Pagination count={10} showFirstButton showLastButton />
-      <Pagination count={10} hidePrevButton hideNextButton />
-    </div>
-  )
-}
-
-export default PaginationButtons
-`}</code>
-  </pre>
-)
-
 export const PaginationOutlinedTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** MUI Imports
@@ -254,22 +235,21 @@ export default PaginationOutlined
   </pre>
 )
 
-export const PaginationSimpleTSXCode = (
+export const PaginationDisabledTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** MUI Imports
 import Pagination from '@mui/material/Pagination'
 
-const PaginationSimple = () => {
+const PaginationDisabled = () => {
   return (
     <div className='demo-space-y'>
-      <Pagination count={10} />
-      <Pagination count={10} color='primary' />
-      <Pagination count={10} color='secondary' />
+      <Pagination count={10} disabled />
+      <Pagination count={10} variant='outlined' disabled />
     </div>
   )
 }
 
-export default PaginationSimple
+export default PaginationDisabled
 `}</code>
   </pre>
 )
@@ -303,8 +283,8 @@ import Pagination from '@mui/material/Pagination'
 const PaginationRounded = () => {
   return (
     <div className='demo-space-y'>
-      <Pagination count={10} shape='rounded' />
-      <Pagination count={10} variant='outlined' shape='rounded' />
+      <Pagination count={10} shape='rounded' color='primary' />
+      <Pagination count={10} variant='outlined' shape='rounded' color='secondary' />
     </div>
   )
 }
@@ -323,13 +303,33 @@ const PaginationSizes = () => {
   return (
     <div className='demo-space-y'>
       <Pagination count={10} size='small' />
-      <Pagination count={10} />
-      <Pagination count={10} size='large' />
+      <Pagination count={10} color='primary' />
+      <Pagination count={10} size='large' color='secondary' />
     </div>
   )
 }
 
 export default PaginationSizes
+`}</code>
+  </pre>
+)
+
+export const PaginationSimpleTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Pagination from '@mui/material/Pagination'
+
+const PaginationSimple = () => {
+  return (
+    <div className='demo-space-y'>
+      <Pagination count={10} />
+      <Pagination count={10} color='primary' />
+      <Pagination count={10} color='secondary' />
+    </div>
+  )
+}
+
+export default PaginationSimple
 `}</code>
   </pre>
 )

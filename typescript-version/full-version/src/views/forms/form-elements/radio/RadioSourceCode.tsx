@@ -152,6 +152,45 @@ export default RadioCustomized
   </pre>
 )
 
+export const RadioGroupJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import Radio from '@mui/material/Radio'
+import RadioGroup from '@mui/material/RadioGroup'
+import FormControl from '@mui/material/FormControl'
+import FormControlLabel from '@mui/material/FormControlLabel'
+
+const RadioGroupComponent = () => {
+  // ** State
+  const [value, setValue] = useState('checked')
+
+  const handleChange = event => {
+    setValue(event.target.value)
+  }
+
+  return (
+    <FormControl sx={{ flexWrap: 'wrap', flexDirection: 'row' }}>
+      <RadioGroup row value={value} name='simple-radio' onChange={handleChange} aria-label='simple-radio'>
+        <FormControlLabel value='checked' control={<Radio />} label='Checked' />
+        <FormControlLabel value='unchecked' control={<Radio />} label='Unchecked' />
+      </RadioGroup>
+
+      <RadioGroup row value='disabled-checked' name='simple-disabled-radio' aria-label='simple-disabled-radio'>
+        <FormControlLabel disabled value='disabled-checked' label='Disabled Checked' control={<Radio />} />
+        <FormControlLabel disabled value='disabled-unchecked' label='Disabled Unchecked' control={<Radio />} />
+      </RadioGroup>
+    </FormControl>
+  )
+}
+
+export default RadioGroupComponent
+`}</code>
+  </pre>
+)
+
 export const RadioLabelPlacementJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** MUI Imports
@@ -168,13 +207,7 @@ const RadioLabelPlacement = () => {
         <FormControlLabel value='bottom' control={<Radio />} label='Bottom' labelPlacement='bottom' />
       </RadioGroup>
       <RadioGroup row aria-label='position' name='horizontal' defaultValue='start' sx={{ mt: 4 }}>
-        <FormControlLabel
-          value='start'
-          label='Start'
-          labelPlacement='start'
-          sx={{ mr: 4 }}
-          control={<Radio />}
-        />
+        <FormControlLabel value='start' label='Start' labelPlacement='start' sx={{ mr: 4 }} control={<Radio />} />
         <FormControlLabel value='end' control={<Radio />} label='End' />
       </RadioGroup>
     </FormControl>
@@ -248,45 +281,6 @@ export default RadioShowError
   </pre>
 )
 
-export const RadioGroupJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import Radio from '@mui/material/Radio'
-import RadioGroup from '@mui/material/RadioGroup'
-import FormControl from '@mui/material/FormControl'
-import FormControlLabel from '@mui/material/FormControlLabel'
-
-const RadioGroupComponent = () => {
-  // ** State
-  const [value, setValue] = useState('checked')
-
-  const handleChange = event => {
-    setValue(event.target.value)
-  }
-
-  return (
-    <FormControl sx={{ flexWrap: 'wrap', flexDirection: 'row' }}>
-      <RadioGroup row value={value} name='simple-radio' onChange={handleChange} aria-label='simple-radio'>
-        <FormControlLabel value='checked' control={<Radio />} label='Checked' />
-        <FormControlLabel value='unchecked' control={<Radio />} label='Unchecked' />
-      </RadioGroup>
-
-      <RadioGroup row value='disabled-checked' name='simple-disabled-radio' aria-label='simple-disabled-radio'>
-        <FormControlLabel disabled value='disabled-checked' label='Disabled Checked' control={<Radio />} />
-        <FormControlLabel disabled value='disabled-unchecked' label='Disabled Unchecked' control={<Radio />} />
-      </RadioGroup>
-    </FormControl>
-  )
-}
-
-export default RadioGroupComponent
-`}</code>
-  </pre>
-)
-
 export const RadioSizesJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** MUI Imports
@@ -297,7 +291,7 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 const RadioSizes = () => {
   return (
     <RadioGroup row aria-label='sizes' name='sizes' defaultValue='small'>
-      <FormControlLabel value='small' control={<Radio size='small' />} label='Small' />
+      <FormControlLabel value='small' control={<Radio size='small' defaultChecked />} label='Small' />
       <FormControlLabel value='default' control={<Radio />} label='Default' />
     </RadioGroup>
   )
@@ -370,90 +364,6 @@ const RadioColor = () => {
 }
 
 export default RadioColor
-`}</code>
-  </pre>
-)
-
-export const RadioCustomizedTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import { styled } from '@mui/material/styles'
-import FormLabel from '@mui/material/FormLabel'
-import RadioGroup from '@mui/material/RadioGroup'
-import FormControl from '@mui/material/FormControl'
-import Radio, { RadioProps } from '@mui/material/Radio'
-import FormControlLabel from '@mui/material/FormControlLabel'
-
-const BpIcon = styled('span')(({ theme }) => ({
-  width: 16,
-  height: 16,
-  borderRadius: '50%',
-  backgroundColor: theme.palette.mode === 'dark' ? '#394b59' : '#f5f8fa',
-  'input:hover ~ &': {
-    backgroundColor: theme.palette.mode === 'dark' ? '#30404d' : '#ebf1f5'
-  },
-  '.Mui-focusVisible &': {
-    outlineOffset: 2,
-    outline: '2px auto rgba(19,124,189,.6)'
-  },
-  'input:disabled ~ &': {
-    boxShadow: 'none',
-    background: theme.palette.mode === 'dark' ? 'rgba(57,75,89,.5)' : 'rgba(206,217,224,.5)'
-  },
-  boxShadow:
-    theme.palette.mode === 'dark'
-      ? '0 0 0 1px rgb(16 22 26 / 40%)'
-      : 'inset 0 0 0 1px rgba(16,22,26,.2), inset 0 -1px 0 rgba(16,22,26,.1)',
-  backgroundImage:
-    theme.palette.mode === 'dark'
-      ? 'linear-gradient(180deg,hsla(0,0%,100%,.05),hsla(0,0%,100%,0))'
-      : 'linear-gradient(180deg,hsla(0,0%,100%,.8),hsla(0,0%,100%,0))'
-}))
-
-const BpCheckedIcon = styled(BpIcon)({
-  backgroundColor: '#137cbd',
-  backgroundImage: 'linear-gradient(180deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,0))',
-  'input:hover ~ &': {
-    backgroundColor: '#106ba3'
-  },
-  '&:before': {
-    width: 16,
-    height: 16,
-    content: '""',
-    display: 'block',
-    backgroundImage: 'radial-gradient(#fff,#fff 28%,transparent 32%)'
-  }
-})
-
-// Inspired by blueprintjs
-const BpRadio = (props: RadioProps) => {
-  return (
-    <Radio
-      {...props}
-      disableRipple
-      color='default'
-      icon={<BpIcon />}
-      checkedIcon={<BpCheckedIcon />}
-      sx={{ '&:hover': { backgroundColor: 'transparent' } }}
-    />
-  )
-}
-
-const RadioCustomized = () => {
-  return (
-    <FormControl>
-      <FormLabel component='legend'>Gender</FormLabel>
-      <RadioGroup row defaultValue='female' aria-label='gender' name='customized-radios'>
-        <FormControlLabel value='female' control={<BpRadio />} label='Female' />
-        <FormControlLabel value='male' control={<BpRadio />} label='Male' />
-        <FormControlLabel value='other' control={<BpRadio />} label='Other' />
-        <FormControlLabel value='disabled' disabled control={<BpRadio />} label='Disabled' />
-      </RadioGroup>
-    </FormControl>
-  )
-}
-
-export default RadioCustomized
 `}</code>
   </pre>
 )
@@ -542,6 +452,118 @@ export default RadioGroupComponent
   </pre>
 )
 
+export const RadioCustomizedTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import { styled } from '@mui/material/styles'
+import FormLabel from '@mui/material/FormLabel'
+import RadioGroup from '@mui/material/RadioGroup'
+import FormControl from '@mui/material/FormControl'
+import Radio, { RadioProps } from '@mui/material/Radio'
+import FormControlLabel from '@mui/material/FormControlLabel'
+
+const BpIcon = styled('span')(({ theme }) => ({
+  width: 16,
+  height: 16,
+  borderRadius: '50%',
+  backgroundColor: theme.palette.mode === 'dark' ? '#394b59' : '#f5f8fa',
+  'input:hover ~ &': {
+    backgroundColor: theme.palette.mode === 'dark' ? '#30404d' : '#ebf1f5'
+  },
+  '.Mui-focusVisible &': {
+    outlineOffset: 2,
+    outline: '2px auto rgba(19,124,189,.6)'
+  },
+  'input:disabled ~ &': {
+    boxShadow: 'none',
+    background: theme.palette.mode === 'dark' ? 'rgba(57,75,89,.5)' : 'rgba(206,217,224,.5)'
+  },
+  boxShadow:
+    theme.palette.mode === 'dark'
+      ? '0 0 0 1px rgb(16 22 26 / 40%)'
+      : 'inset 0 0 0 1px rgba(16,22,26,.2), inset 0 -1px 0 rgba(16,22,26,.1)',
+  backgroundImage:
+    theme.palette.mode === 'dark'
+      ? 'linear-gradient(180deg,hsla(0,0%,100%,.05),hsla(0,0%,100%,0))'
+      : 'linear-gradient(180deg,hsla(0,0%,100%,.8),hsla(0,0%,100%,0))'
+}))
+
+const BpCheckedIcon = styled(BpIcon)({
+  backgroundColor: '#137cbd',
+  backgroundImage: 'linear-gradient(180deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,0))',
+  'input:hover ~ &': {
+    backgroundColor: '#106ba3'
+  },
+  '&:before': {
+    width: 16,
+    height: 16,
+    content: '""',
+    display: 'block',
+    backgroundImage: 'radial-gradient(#fff,#fff 28%,transparent 32%)'
+  }
+})
+
+// Inspired by blueprintjs
+const BpRadio = (props: RadioProps) => {
+  return (
+    <Radio
+      {...props}
+      disableRipple
+      color='default'
+      icon={<BpIcon />}
+      checkedIcon={<BpCheckedIcon />}
+      sx={{ '&:hover': { backgroundColor: 'transparent' } }}
+    />
+  )
+}
+
+const RadioCustomized = () => {
+  return (
+    <FormControl>
+      <FormLabel component='legend'>Gender</FormLabel>
+      <RadioGroup row defaultValue='female' aria-label='gender' name='customized-radios'>
+        <FormControlLabel value='female' control={<BpRadio />} label='Female' />
+        <FormControlLabel value='male' control={<BpRadio />} label='Male' />
+        <FormControlLabel value='other' control={<BpRadio />} label='Other' />
+        <FormControlLabel value='disabled' disabled control={<BpRadio />} label='Disabled' />
+      </RadioGroup>
+    </FormControl>
+  )
+}
+
+export default RadioCustomized
+`}</code>
+  </pre>
+)
+
+export const RadioLabelPlacementTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Radio from '@mui/material/Radio'
+import RadioGroup from '@mui/material/RadioGroup'
+import FormControl from '@mui/material/FormControl'
+import FormControlLabel from '@mui/material/FormControlLabel'
+
+const RadioLabelPlacement = () => {
+  return (
+    <FormControl>
+      <RadioGroup row aria-label='position' name='vertical' defaultValue='top'>
+        <FormControlLabel value='top' label='Top' labelPlacement='top' sx={{ mr: 8.8 }} control={<Radio />} />
+        <FormControlLabel value='bottom' control={<Radio />} label='Bottom' labelPlacement='bottom' />
+      </RadioGroup>
+      <RadioGroup row aria-label='position' name='horizontal' defaultValue='start' sx={{ mt: 4 }}>
+        <FormControlLabel value='start' label='Start' labelPlacement='start' sx={{ mr: 4 }} control={<Radio />} />
+        <FormControlLabel value='end' control={<Radio />} label='End' />
+      </RadioGroup>
+    </FormControl>
+  )
+}
+
+export default RadioLabelPlacement
+`}</code>
+  </pre>
+)
+
 export const RadioShowErrorTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -605,61 +627,6 @@ export default RadioShowError
   </pre>
 )
 
-export const RadioLabelPlacementTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Radio from '@mui/material/Radio'
-import RadioGroup from '@mui/material/RadioGroup'
-import FormControl from '@mui/material/FormControl'
-import FormControlLabel from '@mui/material/FormControlLabel'
-
-const RadioLabelPlacement = () => {
-  return (
-    <FormControl>
-      <RadioGroup row aria-label='position' name='vertical' defaultValue='top'>
-        <FormControlLabel value='top' label='Top' labelPlacement='top' sx={{ mr: 8.8 }} control={<Radio />} />
-        <FormControlLabel value='bottom' control={<Radio />} label='Bottom' labelPlacement='bottom' />
-      </RadioGroup>
-      <RadioGroup row aria-label='position' name='horizontal' defaultValue='start' sx={{ mt: 4 }}>
-        <FormControlLabel
-          value='start'
-          label='Start'
-          labelPlacement='start'
-          sx={{ mr: 4 }}
-          control={<Radio />}
-        />
-        <FormControlLabel value='end' control={<Radio />} label='End' />
-      </RadioGroup>
-    </FormControl>
-  )
-}
-
-export default RadioLabelPlacement
-`}</code>
-  </pre>
-)
-
-export const RadioSizesTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Radio from '@mui/material/Radio'
-import RadioGroup from '@mui/material/RadioGroup'
-import FormControlLabel from '@mui/material/FormControlLabel'
-
-const RadioSizes = () => {
-  return (
-    <RadioGroup row aria-label='sizes' name='sizes' defaultValue='small'>
-      <FormControlLabel value='small' control={<Radio size='small' />} label='Small' />
-      <FormControlLabel value='default' control={<Radio />} label='Default' />
-    </RadioGroup>
-  )
-}
-
-export default RadioSizes
-`}</code>
-  </pre>
-)
-
 export const RadioStandaloneTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -697,6 +664,27 @@ const RadioStandalone = () => {
 }
 
 export default RadioStandalone
+`}</code>
+  </pre>
+)
+
+export const RadioSizesTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Radio from '@mui/material/Radio'
+import RadioGroup from '@mui/material/RadioGroup'
+import FormControlLabel from '@mui/material/FormControlLabel'
+
+const RadioSizes = () => {
+  return (
+    <RadioGroup row aria-label='sizes' name='sizes' defaultValue='small'>
+      <FormControlLabel value='small' control={<Radio size='small' defaultChecked />} label='Small' />
+      <FormControlLabel value='default' control={<Radio />} label='Default' />
+    </RadioGroup>
+  )
+}
+
+export default RadioSizes
 `}</code>
   </pre>
 )

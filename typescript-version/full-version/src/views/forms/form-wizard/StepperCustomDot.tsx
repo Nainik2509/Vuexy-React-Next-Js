@@ -11,7 +11,7 @@ import CheckCircle from 'mdi-material-ui/CheckCircle'
 import useBgColor, { UseBgColorType } from 'src/@core/hooks/useBgColor'
 
 // Styled Box component
-const Box = styled(MuiBox)<BoxProps>(({ theme }) => ({
+const Box = styled(MuiBox)<BoxProps>(() => ({
   width: 20,
   height: 20,
   borderWidth: 3,

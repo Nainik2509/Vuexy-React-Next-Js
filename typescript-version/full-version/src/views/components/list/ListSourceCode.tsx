@@ -1,3 +1,71 @@
+export const ListDenseJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { Fragment } from 'react'
+
+// ** MUI Imports
+import List from '@mui/material/List'
+import Divider from '@mui/material/Divider'
+import ListItem from '@mui/material/ListItem'
+import ListItemIcon from '@mui/material/ListItemIcon'
+import ListItemText from '@mui/material/ListItemText'
+import ListItemButton from '@mui/material/ListItemButton'
+
+// ** Icons Imports
+import ContentCopy from 'mdi-material-ui/ContentCopy'
+import EmailOutline from 'mdi-material-ui/EmailOutline'
+import ClockOutline from 'mdi-material-ui/ClockOutline'
+import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
+
+const ListDense = () => {
+  return (
+    <Fragment>
+      <List dense>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <EmailOutline fontSize='small' />
+            </ListItemIcon>
+            <ListItemText primary='Inbox' />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <ContentCopy fontSize='small' />
+            </ListItemIcon>
+            <ListItemText primary='Draft' />
+          </ListItemButton>
+        </ListItem>
+      </List>
+      <Divider sx={{ m: '0 !important' }} />
+      <List dense>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <ClockOutline fontSize='small' />
+            </ListItemIcon>
+            <ListItemText primary='Snoozed' />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <AlertCircleOutline fontSize='small' />
+            </ListItemIcon>
+            <ListItemText primary='Spam' />
+          </ListItemButton>
+        </ListItem>
+      </List>
+    </Fragment>
+  )
+}
+
+export default ListDense
+`}</code>
+  </pre>
+)
+
 export const ListItemSelectedJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -29,7 +97,7 @@ const ListItemSelected = () => {
       <ListItem disablePadding>
         <ListItemButton selected={selectedIndex === 0} onClick={() => handleListItemClick(0)}>
           <ListItemAvatar>
-            <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
+            <Avatar src='/images/avatars/2.png' alt='Caroline Black' sx={{ height: 32, width: 32 }} />
           </ListItemAvatar>
           <ListItemText primary='Caroline Black' />
           <ListItemSecondaryAction>
@@ -42,7 +110,7 @@ const ListItemSelected = () => {
       <ListItem disablePadding>
         <ListItemButton selected={selectedIndex === 1} onClick={() => handleListItemClick(1)}>
           <ListItemAvatar>
-            <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' />
+            <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' sx={{ height: 32, width: 32 }} />
           </ListItemAvatar>
           <ListItemText primary='Alfred Copeland' />
           <ListItemSecondaryAction>
@@ -55,7 +123,7 @@ const ListItemSelected = () => {
       <ListItem disablePadding>
         <ListItemButton selected={selectedIndex === 2} onClick={() => handleListItemClick(2)}>
           <ListItemAvatar>
-            <Avatar src='/images/avatars/8.png' alt='Celia Schneider' />
+            <Avatar src='/images/avatars/8.png' alt='Celia Schneider' sx={{ height: 32, width: 32 }} />
           </ListItemAvatar>
           <ListItemText primary='Celia Schneider' />
           <ListItemSecondaryAction>
@@ -138,7 +206,7 @@ const ListNested = () => {
           </ListItemButton>
         </ListItem>
       </List>
-      <Divider sx={{ m: 0 }} />
+      <Divider sx={{ m: '0 !important' }} />
       <List component='nav' aria-label='secondary mailbox'>
         <ListItem disablePadding>
           <ListItemButton>
@@ -162,166 +230,6 @@ const ListNested = () => {
 }
 
 export default ListNested
-`}</code>
-  </pre>
-)
-
-export const ListStickySubheaderJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Box from '@mui/material/Box'
-import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
-import ListItemText from '@mui/material/ListItemText'
-import ListSubheader from '@mui/material/ListSubheader'
-
-const ListWithSwitch = () => {
-  return (
-    <List subheader={<li />} sx={{ maxHeight: 300, overflow: 'auto', position: 'relative' }}>
-      {[0, 1, 2, 3, 4].map(sectionId => (
-        <Box component='li' key={section-{sectionId}} sx={{ backgroundColor: 'background.paper' }}>
-          <Box component='ul' sx={{ p: 0, backgroundColor: 'inherit' }}>
-            <ListSubheader>{I'm sticky {sectionId}}</ListSubheader>
-            {[0, 1, 2].map(item => (
-              <ListItem key={item-{sectionId}-{item}}>
-                <ListItemText primary={Item {item}} />
-              </ListItem>
-            ))}
-          </Box>
-        </Box>
-      ))}
-    </List>
-  )
-}
-
-export default ListWithSwitch
-`}</code>
-  </pre>
-)
-
-export const ListSecondaryJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import List from '@mui/material/List'
-import Avatar from '@mui/material/Avatar'
-import ListItem from '@mui/material/ListItem'
-import IconButton from '@mui/material/IconButton'
-import ListItemText from '@mui/material/ListItemText'
-import ListItemAvatar from '@mui/material/ListItemAvatar'
-import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
-
-// ** Icons Imports
-import Plus from 'mdi-material-ui/Plus'
-
-const ListSecondary = () => {
-  return (
-    <List>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
-        </ListItemAvatar>
-        <ListItemText primary='Caroline Black' secondary='Sweet dessert brownie.' />
-        <ListItemSecondaryAction>
-          <IconButton edge='end'>
-            <Plus />
-          </IconButton>
-        </ListItemSecondaryAction>
-      </ListItem>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' />
-        </ListItemAvatar>
-        <ListItemText primary='Alfred Copeland' secondary='Pudding pie tiramisu.' />
-        <ListItemSecondaryAction>
-          <IconButton edge='end'>
-            <Plus />
-          </IconButton>
-        </ListItemSecondaryAction>
-      </ListItem>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar src='/images/avatars/8.png' alt='Celia Schneider' />
-        </ListItemAvatar>
-        <ListItemText primary='Celia Schneider' secondary='Muffin pie chupa chups.' />
-        <ListItemSecondaryAction>
-          <IconButton edge='end'>
-            <Plus />
-          </IconButton>
-        </ListItemSecondaryAction>
-      </ListItem>
-    </List>
-  )
-}
-
-export default ListSecondary
-`}</code>
-  </pre>
-)
-
-export const ListDenseJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { Fragment } from 'react'
-
-// ** MUI Imports
-import List from '@mui/material/List'
-import Divider from '@mui/material/Divider'
-import ListItem from '@mui/material/ListItem'
-import ListItemIcon from '@mui/material/ListItemIcon'
-import ListItemText from '@mui/material/ListItemText'
-import ListItemButton from '@mui/material/ListItemButton'
-
-// ** Icons Imports
-import ContentCopy from 'mdi-material-ui/ContentCopy'
-import EmailOutline from 'mdi-material-ui/EmailOutline'
-import ClockOutline from 'mdi-material-ui/ClockOutline'
-import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
-
-const ListDense = () => {
-  return (
-    <Fragment>
-      <List dense>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <EmailOutline fontSize='small' />
-            </ListItemIcon>
-            <ListItemText primary='Inbox' />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <ContentCopy fontSize='small' />
-            </ListItemIcon>
-            <ListItemText primary='Draft' />
-          </ListItemButton>
-        </ListItem>
-      </List>
-      <Divider sx={{ m: 0 }} />
-      <List dense>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <ClockOutline fontSize='small' />
-            </ListItemIcon>
-            <ListItemText primary='Snoozed' />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <AlertCircleOutline fontSize='small' />
-            </ListItemIcon>
-            <ListItemText primary='Spam' />
-          </ListItemButton>
-        </ListItem>
-      </List>
-    </Fragment>
-  )
-}
-
-export default ListDense
 `}</code>
   </pre>
 )
@@ -366,7 +274,7 @@ const ListSimple = () => {
           </ListItemButton>
         </ListItem>
       </List>
-      <Divider sx={{ m: 0 }} />
+      <Divider sx={{ m: '0 !important' }} />
       <List component='nav' aria-label='secondary mailbox'>
         <ListItem disablePadding>
           <ListItemButton>
@@ -394,97 +302,336 @@ export default ListSimple
   </pre>
 )
 
-export const ListWithCheckboxJSXCode = (
+export const ListProgressJSXCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import List from '@mui/material/List'
-import Avatar from '@mui/material/Avatar'
+    <code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
+import { styled } from '@mui/material/styles'
 import ListItem from '@mui/material/ListItem'
-import Checkbox from '@mui/material/Checkbox'
+import List from '@mui/material/List'
 import ListItemText from '@mui/material/ListItemText'
-import ListItemButton from '@mui/material/ListItemButton'
+import ListItemAvatar from '@mui/material/ListItemAvatar'
+import LinearProgress from '@mui/material/LinearProgress'
+
+// ** Custom Components Imports
+import CustomAvatar from 'src/@core/components/mui/avatar'
+
+// ** Icons Imports
+import React from 'mdi-material-ui/React'
+import Vuejs from 'mdi-material-ui/Vuejs'
+import Angular from 'mdi-material-ui/Angular'
+import Bootstrap from 'mdi-material-ui/Bootstrap'
+import LanguageJavascript from 'mdi-material-ui/LanguageJavascript'
+
+const StyledList = styled(List)(({ theme }) => ({
+  '& .MuiListItem-root': {
+    border: 1px solid {theme.palette.divider},
+    '&:first-of-type': {
+      borderTopLeftRadius: 6,
+      borderTopRightRadius: 6
+    },
+    '&:last-of-type': {
+      borderBottomLeftRadius: 6,
+      borderBottomRightRadius: 6
+    },
+    '&:not(:last-of-type)': {
+      borderBottom: 0
+    },
+    '& .MuiListItemText-root': {
+      marginTop: 0,
+      marginBottom: theme.spacing(1),
+      '& .MuiTypography-root': {
+        fontWeight: 500,
+        fontSize: '.9375rem'
+      }
+    },
+    '& .MuiLinearProgress-root': {
+      height: 5,
+      borderRadius: 8,
+      '& .MuiLinearProgress-bar': {
+        borderRadius: 8
+      }
+    }
+  }
+}))
+
+const ListProgress = () => {
+  return (
+    <StyledList>
+      <ListItem>
+        <ListItemAvatar>
+          <CustomAvatar skin='light' variant='rounded' color='info' sx={{ height: 36, width: 36 }}>
+            <React />
+          </CustomAvatar>
+        </ListItemAvatar>
+        <Box sx={{ width: '100%' }}>
+          <ListItemText primary='React is a JavaScript library for building user interfaces' />
+          <LinearProgress color='info' value={90} variant='determinate' />
+        </Box>
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar>
+          <CustomAvatar skin='light' variant='rounded' sx={{ height: 36, width: 36 }}>
+            <Bootstrap />
+          </CustomAvatar>
+        </ListItemAvatar>
+        <Box sx={{ width: '100%' }}>
+          <ListItemText primary='Bootstrap is an open source toolkit' />
+          <LinearProgress value={75} variant='determinate' />
+        </Box>
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar>
+          <CustomAvatar skin='light' variant='rounded' color='success' sx={{ height: 36, width: 36 }}>
+            <Vuejs />
+          </CustomAvatar>
+        </ListItemAvatar>
+        <Box sx={{ width: '100%' }}>
+          <ListItemText primary='Vue.js is the Progressive JavaScript Framework' />
+          <LinearProgress color='success' value={85} variant='determinate' />
+        </Box>
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar>
+          <CustomAvatar skin='light' variant='rounded' color='error' sx={{ height: 36, width: 36 }}>
+            <Angular />
+          </CustomAvatar>
+        </ListItemAvatar>
+        <Box sx={{ width: '100%' }}>
+          <ListItemText primary='Angular implements Functional Programming concepts' />
+          <LinearProgress color='error' value={60} variant='determinate' />
+        </Box>
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar>
+          <CustomAvatar skin='light' variant='rounded' color='warning' sx={{ height: 36, width: 36 }}>
+            <LanguageJavascript />
+          </CustomAvatar>
+        </ListItemAvatar>
+        <Box sx={{ width: '100%' }}>
+          <ListItemText primary='JavaScript is the programming language of the Web' />
+          <LinearProgress color='warning' value={70} variant='determinate' />
+        </Box>
+      </ListItem>
+    </StyledList>
+  )
+}
+
+export default ListProgress
+`}</code>
+  </pre>
+)
+
+export const ListUsersJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
+import Avatar from '@mui/material/Avatar'
+import Button from '@mui/material/Button'
+import ListItem from '@mui/material/ListItem'
+import { styled } from '@mui/material/styles'
+import Typography from '@mui/material/Typography'
+import List from '@mui/material/List'
+import ListItemText from '@mui/material/ListItemText'
 import ListItemAvatar from '@mui/material/ListItemAvatar'
 import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
 
-const ListWithCheckbox = () => {
-  // ** State
-  const [checked, setChecked] = useState([0])
+// ** Icons Imports
+import Circle from 'mdi-material-ui/Circle'
 
-  const handleToggle = value => () => {
-    const currentIndex = checked.indexOf(value)
-    const newChecked = [...checked]
-    if (currentIndex === -1) {
-      newChecked.push(value)
-    } else {
-      newChecked.splice(currentIndex, 1)
+const StyledList = styled(List)(({ theme }) => ({
+  '& .MuiListItem-container': {
+    border: 1px solid {theme.palette.divider},
+    '&:first-of-type': {
+      borderTopLeftRadius: 6,
+      borderTopRightRadius: 6
+    },
+    '&:last-of-type': {
+      borderBottomLeftRadius: 6,
+      borderBottomRightRadius: 6
+    },
+    '&:not(:last-of-type)': {
+      borderBottom: 0
+    },
+    '& .MuiListItemSecondaryAction-root': {
+      top: 28
+    },
+    '& .MuiListItemText-root': {
+      marginTop: 0,
+      '& .MuiTypography-root': {
+        fontWeight: 500,
+        fontSize: '.9375rem'
+      }
+    },
+    [theme.breakpoints.down('sm')]: {
+      '& .MuiListItemSecondaryAction-root': {
+        top: 0,
+        right: 0,
+        position: 'relative',
+        marginTop: theme.spacing(4),
+        paddingLeft: theme.spacing(4)
+      }
     }
-    setChecked(newChecked)
   }
+}))
 
+const ListUsers = () => {
+  return (
+    <StyledList>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
+        </ListItemAvatar>
+        <Box>
+          <ListItemText primary='Caroline Black' />
+          <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center' }}>
+              <Circle sx={{ mr: 1, color: 'success.main', fontSize: '0.625rem' }} />
+              <Typography variant='caption'>Online</Typography>
+            </Box>
+            <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+              13 minutes ago
+            </Typography>
+          </Box>
+        </Box>
+        <ListItemSecondaryAction>
+          <Button variant='contained' size='small'>
+            Add
+          </Button>
+        </ListItemSecondaryAction>
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' />
+        </ListItemAvatar>
+        <Box>
+          <ListItemText primary='Alfred Copeland' />
+          <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center' }}>
+              <Circle sx={{ mr: 1, color: 'warning.main', fontSize: '0.625rem' }} />
+              <Typography variant='caption'>Away</Typography>
+            </Box>
+            <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+              11 minutes ago
+            </Typography>
+          </Box>
+        </Box>
+        <ListItemSecondaryAction>
+          <Button variant='contained' size='small'>
+            Add
+          </Button>
+        </ListItemSecondaryAction>
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar src='/images/avatars/8.png' alt='Celia Schneider' />
+        </ListItemAvatar>
+        <Box>
+          <ListItemText primary='Celia Schneider' />
+          <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center' }}>
+              <Circle sx={{ mr: 1, color: 'secondary.main', fontSize: '0.625rem' }} />
+              <Typography variant='caption'>Offline</Typography>
+            </Box>
+            <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+              9 minutes ago
+            </Typography>
+          </Box>
+        </Box>
+
+        <ListItemSecondaryAction>
+          <Button variant='contained' size='small'>
+            Add
+          </Button>
+        </ListItemSecondaryAction>
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar src='/images/avatars/5.png' alt='Celia Schneider' />
+        </ListItemAvatar>
+        <Box>
+          <ListItemText primary='Max Rogan' />
+          <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center' }}>
+              <Circle sx={{ mr: 1, color: 'error.main', fontSize: '0.625rem' }} />
+              <Typography variant='caption'>In Meeting</Typography>
+            </Box>
+            <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+              28 minutes ago
+            </Typography>
+          </Box>
+        </Box>
+
+        <ListItemSecondaryAction>
+          <Button variant='contained' size='small'>
+            Add
+          </Button>
+        </ListItemSecondaryAction>
+      </ListItem>
+    </StyledList>
+  )
+}
+
+export default ListUsers
+`}</code>
+  </pre>
+)
+
+export const ListSecondaryJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import List from '@mui/material/List'
+import Avatar from '@mui/material/Avatar'
+import ListItem from '@mui/material/ListItem'
+import IconButton from '@mui/material/IconButton'
+import ListItemText from '@mui/material/ListItemText'
+import ListItemAvatar from '@mui/material/ListItemAvatar'
+import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
+
+// ** Icons Imports
+import Plus from 'mdi-material-ui/Plus'
+
+const ListSecondary = () => {
   return (
     <List>
-      <ListItem disablePadding>
-        <ListItemButton onClick={handleToggle(0)}>
-          <ListItemAvatar>
-            <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
-          </ListItemAvatar>
-          <ListItemText id='checkbox-list-label-0' primary='Caroline Black' />
-          <ListItemSecondaryAction>
-            <Checkbox
-              edge='end'
-              tabIndex={-1}
-              disableRipple
-              onChange={handleToggle(0)}
-              checked={checked.indexOf(0) !== -1}
-              inputProps={{ 'aria-labelledby': 'checkbox-list-label-0' }}
-            />
-          </ListItemSecondaryAction>
-        </ListItemButton>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar src='/images/avatars/2.png' alt='Caroline Black' sx={{ height: 36, width: 36 }} />
+        </ListItemAvatar>
+        <ListItemText primary='Caroline Black' secondary='Sweet dessert brownie.' />
+        <ListItemSecondaryAction>
+          <IconButton edge='end'>
+            <Plus />
+          </IconButton>
+        </ListItemSecondaryAction>
       </ListItem>
-      <ListItem disablePadding>
-        <ListItemButton onClick={handleToggle(1)}>
-          <ListItemAvatar>
-            <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' />
-          </ListItemAvatar>
-          <ListItemText id='checkbox-list-label-1' primary='Alfred Copeland' />
-          <ListItemSecondaryAction>
-            <Checkbox
-              edge='end'
-              tabIndex={-1}
-              disableRipple
-              onChange={handleToggle(1)}
-              checked={checked.indexOf(1) !== -1}
-              inputProps={{ 'aria-labelledby': 'checkbox-list-label-1' }}
-            />
-          </ListItemSecondaryAction>
-        </ListItemButton>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' sx={{ height: 36, width: 36 }} />
+        </ListItemAvatar>
+        <ListItemText primary='Alfred Copeland' secondary='Pudding pie tiramisu.' />
+        <ListItemSecondaryAction>
+          <IconButton edge='end'>
+            <Plus />
+          </IconButton>
+        </ListItemSecondaryAction>
       </ListItem>
-      <ListItem disablePadding>
-        <ListItemButton onClick={handleToggle(2)}>
-          <ListItemAvatar>
-            <Avatar src='/images/avatars/8.png' alt='Celia Schneider' />
-          </ListItemAvatar>
-          <ListItemText id='checkbox-list-label-2' primary='Celia Schneider' />
-          <ListItemSecondaryAction>
-            <Checkbox
-              edge='end'
-              tabIndex={-1}
-              disableRipple
-              onChange={handleToggle(2)}
-              checked={checked.indexOf(2) !== -1}
-              inputProps={{ 'aria-labelledby': 'checkbox-list-label-2' }}
-            />
-          </ListItemSecondaryAction>
-        </ListItemButton>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar src='/images/avatars/8.png' alt='Celia Schneider' sx={{ height: 36, width: 36 }} />
+        </ListItemAvatar>
+        <ListItemText primary='Celia Schneider' secondary='Muffin pie chupa chups.' />
+        <ListItemSecondaryAction>
+          <IconButton edge='end'>
+            <Plus />
+          </IconButton>
+        </ListItemSecondaryAction>
       </ListItem>
     </List>
   )
 }
 
-export default ListWithCheckbox
+export default ListSecondary
 `}</code>
   </pre>
 )
@@ -595,6 +742,134 @@ export default ListWithSwitch
   </pre>
 )
 
+export const ListStickySubheaderJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemText from '@mui/material/ListItemText'
+import ListSubheader from '@mui/material/ListSubheader'
+
+const ListWithSwitch = () => {
+  return (
+    <List subheader={<li />} sx={{ maxHeight: 300, overflow: 'auto', position: 'relative' }}>
+      {[0, 1, 2, 3, 4].map(sectionId => (
+        <Box component='li' key={section-{sectionId}} sx={{ backgroundColor: 'background.paper' }}>
+          <Box component='ul' sx={{ p: 0, backgroundColor: 'inherit' }}>
+            <ListSubheader>{I'm sticky {sectionId}}</ListSubheader>
+            {[0, 1, 2].map(item => (
+              <ListItem key={item-{sectionId}-{item}}>
+                <ListItemText primary={Item {item}} />
+              </ListItem>
+            ))}
+          </Box>
+        </Box>
+      ))}
+    </List>
+  )
+}
+
+export default ListWithSwitch
+`}</code>
+  </pre>
+)
+
+export const ListWithCheckboxJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import List from '@mui/material/List'
+import Avatar from '@mui/material/Avatar'
+import ListItem from '@mui/material/ListItem'
+import Checkbox from '@mui/material/Checkbox'
+import ListItemText from '@mui/material/ListItemText'
+import ListItemButton from '@mui/material/ListItemButton'
+import ListItemAvatar from '@mui/material/ListItemAvatar'
+import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
+
+const ListWithCheckbox = () => {
+  // ** State
+  const [checked, setChecked] = useState([0])
+
+  const handleToggle = value => () => {
+    const currentIndex = checked.indexOf(value)
+    const newChecked = [...checked]
+    if (currentIndex === -1) {
+      newChecked.push(value)
+    } else {
+      newChecked.splice(currentIndex, 1)
+    }
+    setChecked(newChecked)
+  }
+
+  return (
+    <List>
+      <ListItem disablePadding>
+        <ListItemButton onClick={handleToggle(0)}>
+          <ListItemAvatar>
+            <Avatar src='/images/avatars/2.png' alt='Caroline Black' sx={{ height: 32, width: 32 }} />
+          </ListItemAvatar>
+          <ListItemText id='checkbox-list-label-0' primary='Caroline Black' />
+          <ListItemSecondaryAction>
+            <Checkbox
+              edge='end'
+              tabIndex={-1}
+              disableRipple
+              onChange={handleToggle(0)}
+              checked={checked.indexOf(0) !== -1}
+              inputProps={{ 'aria-labelledby': 'checkbox-list-label-0' }}
+            />
+          </ListItemSecondaryAction>
+        </ListItemButton>
+      </ListItem>
+      <ListItem disablePadding>
+        <ListItemButton onClick={handleToggle(1)}>
+          <ListItemAvatar>
+            <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' sx={{ height: 32, width: 32 }} />
+          </ListItemAvatar>
+          <ListItemText id='checkbox-list-label-1' primary='Alfred Copeland' />
+          <ListItemSecondaryAction>
+            <Checkbox
+              edge='end'
+              tabIndex={-1}
+              disableRipple
+              onChange={handleToggle(1)}
+              checked={checked.indexOf(1) !== -1}
+              inputProps={{ 'aria-labelledby': 'checkbox-list-label-1' }}
+            />
+          </ListItemSecondaryAction>
+        </ListItemButton>
+      </ListItem>
+      <ListItem disablePadding>
+        <ListItemButton onClick={handleToggle(2)}>
+          <ListItemAvatar>
+            <Avatar src='/images/avatars/8.png' alt='Celia Schneider' sx={{ height: 32, width: 32 }} />
+          </ListItemAvatar>
+          <ListItemText id='checkbox-list-label-2' primary='Celia Schneider' />
+          <ListItemSecondaryAction>
+            <Checkbox
+              edge='end'
+              tabIndex={-1}
+              disableRipple
+              onChange={handleToggle(2)}
+              checked={checked.indexOf(2) !== -1}
+              inputProps={{ 'aria-labelledby': 'checkbox-list-label-2' }}
+            />
+          </ListItemSecondaryAction>
+        </ListItemButton>
+      </ListItem>
+    </List>
+  )
+}
+
+export default ListWithCheckbox
+`}</code>
+  </pre>
+)
+
 export const ListDenseTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -635,7 +910,7 @@ const ListDense = () => {
           </ListItemButton>
         </ListItem>
       </List>
-      <Divider sx={{ m: 0 }} />
+      <Divider sx={{ m: '0 !important' }} />
       <List dense>
         <ListItem disablePadding>
           <ListItemButton>
@@ -727,7 +1002,7 @@ const ListNested = () => {
           </ListItemButton>
         </ListItem>
       </List>
-      <Divider sx={{ m: 0 }} />
+      <Divider sx={{ m: '0 !important' }} />
       <List component='nav' aria-label='secondary mailbox'>
         <ListItem disablePadding>
           <ListItemButton>
@@ -786,7 +1061,7 @@ const ListItemSelected = () => {
       <ListItem disablePadding>
         <ListItemButton selected={selectedIndex === 0} onClick={() => handleListItemClick(0)}>
           <ListItemAvatar>
-            <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
+            <Avatar src='/images/avatars/2.png' alt='Caroline Black' sx={{ height: 32, width: 32 }} />
           </ListItemAvatar>
           <ListItemText primary='Caroline Black' />
           <ListItemSecondaryAction>
@@ -799,7 +1074,7 @@ const ListItemSelected = () => {
       <ListItem disablePadding>
         <ListItemButton selected={selectedIndex === 1} onClick={() => handleListItemClick(1)}>
           <ListItemAvatar>
-            <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' />
+            <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' sx={{ height: 32, width: 32 }} />
           </ListItemAvatar>
           <ListItemText primary='Alfred Copeland' />
           <ListItemSecondaryAction>
@@ -812,7 +1087,7 @@ const ListItemSelected = () => {
       <ListItem disablePadding>
         <ListItemButton selected={selectedIndex === 2} onClick={() => handleListItemClick(2)}>
           <ListItemAvatar>
-            <Avatar src='/images/avatars/8.png' alt='Celia Schneider' />
+            <Avatar src='/images/avatars/8.png' alt='Celia Schneider' sx={{ height: 32, width: 32 }} />
           </ListItemAvatar>
           <ListItemText primary='Celia Schneider' />
           <ListItemSecondaryAction>
@@ -827,6 +1102,159 @@ const ListItemSelected = () => {
 }
 
 export default ListItemSelected
+`}</code>
+  </pre>
+)
+
+export const ListProgressTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
+import { styled } from '@mui/material/styles'
+import ListItem from '@mui/material/ListItem'
+import List, { ListProps } from '@mui/material/List'
+import ListItemText from '@mui/material/ListItemText'
+import ListItemAvatar from '@mui/material/ListItemAvatar'
+import LinearProgress from '@mui/material/LinearProgress'
+
+// ** Custom Components Imports
+import CustomAvatar from 'src/@core/components/mui/avatar'
+
+// ** Icons Imports
+import React from 'mdi-material-ui/React'
+import Vuejs from 'mdi-material-ui/Vuejs'
+import Angular from 'mdi-material-ui/Angular'
+import Bootstrap from 'mdi-material-ui/Bootstrap'
+import LanguageJavascript from 'mdi-material-ui/LanguageJavascript'
+
+const StyledList = styled(List)<ListProps>(({ theme }) => ({
+  '& .MuiListItem-root': {
+    border: 1px solid {theme.palette.divider},
+    '&:first-of-type': {
+      borderTopLeftRadius: 6,
+      borderTopRightRadius: 6
+    },
+    '&:last-of-type': {
+      borderBottomLeftRadius: 6,
+      borderBottomRightRadius: 6
+    },
+    '&:not(:last-of-type)': {
+      borderBottom: 0
+    },
+    '& .MuiListItemText-root': {
+      marginTop: 0,
+      marginBottom: theme.spacing(1),
+      '& .MuiTypography-root': {
+        fontWeight: 500,
+        fontSize: '.9375rem'
+      }
+    },
+    '& .MuiLinearProgress-root': {
+      height: 5,
+      borderRadius: 8,
+      '& .MuiLinearProgress-bar': {
+        borderRadius: 8
+      }
+    }
+  }
+}))
+
+const ListProgress = () => {
+  return (
+    <StyledList>
+      <ListItem>
+        <ListItemAvatar>
+          <CustomAvatar skin='light' variant='rounded' color='info' sx={{ height: 36, width: 36 }}>
+            <React />
+          </CustomAvatar>
+        </ListItemAvatar>
+        <Box sx={{ width: '100%' }}>
+          <ListItemText primary='React is a JavaScript library for building user interfaces' />
+          <LinearProgress color='info' value={90} variant='determinate' />
+        </Box>
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar>
+          <CustomAvatar skin='light' variant='rounded' sx={{ height: 36, width: 36 }}>
+            <Bootstrap />
+          </CustomAvatar>
+        </ListItemAvatar>
+        <Box sx={{ width: '100%' }}>
+          <ListItemText primary='Bootstrap is an open source toolkit' />
+          <LinearProgress value={75} variant='determinate' />
+        </Box>
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar>
+          <CustomAvatar skin='light' variant='rounded' color='success' sx={{ height: 36, width: 36 }}>
+            <Vuejs />
+          </CustomAvatar>
+        </ListItemAvatar>
+        <Box sx={{ width: '100%' }}>
+          <ListItemText primary='Vue.js is the Progressive JavaScript Framework' />
+          <LinearProgress color='success' value={85} variant='determinate' />
+        </Box>
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar>
+          <CustomAvatar skin='light' variant='rounded' color='error' sx={{ height: 36, width: 36 }}>
+            <Angular />
+          </CustomAvatar>
+        </ListItemAvatar>
+        <Box sx={{ width: '100%' }}>
+          <ListItemText primary='Angular implements Functional Programming concepts' />
+          <LinearProgress color='error' value={60} variant='determinate' />
+        </Box>
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar>
+          <CustomAvatar skin='light' variant='rounded' color='warning' sx={{ height: 36, width: 36 }}>
+            <LanguageJavascript />
+          </CustomAvatar>
+        </ListItemAvatar>
+        <Box sx={{ width: '100%' }}>
+          <ListItemText primary='JavaScript is the programming language of the Web' />
+          <LinearProgress color='warning' value={70} variant='determinate' />
+        </Box>
+      </ListItem>
+    </StyledList>
+  )
+}
+
+export default ListProgress
+`}</code>
+  </pre>
+)
+
+export const ListStickySubheaderTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemText from '@mui/material/ListItemText'
+import ListSubheader from '@mui/material/ListSubheader'
+
+const ListWithSwitch = () => {
+  return (
+    <List subheader={<li />} sx={{ maxHeight: 300, overflow: 'auto', position: 'relative' }}>
+      {[0, 1, 2, 3, 4].map(sectionId => (
+        <Box component='li' key={section-{sectionId}} sx={{ backgroundColor: 'background.paper' }}>
+          <Box component='ul' sx={{ p: 0, backgroundColor: 'inherit' }}>
+            <ListSubheader>{I'm sticky {sectionId}}</ListSubheader>
+            {[0, 1, 2].map(item => (
+              <ListItem key={item-{sectionId}-{item}}>
+                <ListItemText primary={Item {item}} />
+              </ListItem>
+            ))}
+          </Box>
+        </Box>
+      ))}
+    </List>
+  )
+}
+
+export default ListWithSwitch
 `}</code>
   </pre>
 )
@@ -850,7 +1278,7 @@ const ListSecondary = () => {
     <List>
       <ListItem>
         <ListItemAvatar>
-          <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
+          <Avatar src='/images/avatars/2.png' alt='Caroline Black' sx={{ height: 36, width: 36 }} />
         </ListItemAvatar>
         <ListItemText primary='Caroline Black' secondary='Sweet dessert brownie.' />
         <ListItemSecondaryAction>
@@ -861,7 +1289,7 @@ const ListSecondary = () => {
       </ListItem>
       <ListItem>
         <ListItemAvatar>
-          <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' />
+          <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' sx={{ height: 36, width: 36 }} />
         </ListItemAvatar>
         <ListItemText primary='Alfred Copeland' secondary='Pudding pie tiramisu.' />
         <ListItemSecondaryAction>
@@ -872,7 +1300,7 @@ const ListSecondary = () => {
       </ListItem>
       <ListItem>
         <ListItemAvatar>
-          <Avatar src='/images/avatars/8.png' alt='Celia Schneider' />
+          <Avatar src='/images/avatars/8.png' alt='Celia Schneider' sx={{ height: 36, width: 36 }} />
         </ListItemAvatar>
         <ListItemText primary='Celia Schneider' secondary='Muffin pie chupa chups.' />
         <ListItemSecondaryAction>
@@ -930,7 +1358,7 @@ const ListSimple = () => {
           </ListItemButton>
         </ListItem>
       </List>
-      <Divider sx={{ m: 0 }} />
+      <Divider sx={{ m: '0 !important' }} />
       <List component='nav' aria-label='secondary mailbox'>
         <ListItem disablePadding>
           <ListItemButton>
@@ -958,99 +1386,159 @@ export default ListSimple
   </pre>
 )
 
-export const ListWithCheckboxTSXCode = (
+export const ListUsersTSXCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import List from '@mui/material/List'
+    <code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
 import Avatar from '@mui/material/Avatar'
+import Button from '@mui/material/Button'
 import ListItem from '@mui/material/ListItem'
-import Checkbox from '@mui/material/Checkbox'
+import { styled } from '@mui/material/styles'
+import Typography from '@mui/material/Typography'
+import List, { ListProps } from '@mui/material/List'
 import ListItemText from '@mui/material/ListItemText'
-import ListItemButton from '@mui/material/ListItemButton'
 import ListItemAvatar from '@mui/material/ListItemAvatar'
 import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
 
-const ListWithCheckbox = () => {
-  // ** State
-  const [checked, setChecked] = useState<number[]>([0])
+// ** Icons Imports
+import Circle from 'mdi-material-ui/Circle'
 
-  const handleToggle = (value: number) => () => {
-    const currentIndex = checked.indexOf(value)
-    const newChecked = [...checked]
+const StyledList = styled(List)<ListProps>(({ theme }) => ({
+  '& .MuiListItem-container': {
+    border: 1px solid {theme.palette.divider},
+    '&:first-of-type': {
+      borderTopLeftRadius: 6,
+      borderTopRightRadius: 6
+    },
+    '&:last-of-type': {
+      borderBottomLeftRadius: 6,
+      borderBottomRightRadius: 6
+    },
+    '&:not(:last-of-type)': {
+      borderBottom: 0
+    },
+    '& .MuiListItemSecondaryAction-root': {
+      top: 28
+    },
+    '& .MuiListItemText-root': {
+      marginTop: 0,
 
-    if (currentIndex === -1) {
-      newChecked.push(value)
-    } else {
-      newChecked.splice(currentIndex, 1)
+      '& .MuiTypography-root': {
+        fontWeight: 500,
+        fontSize: '.9375rem'
+      }
+    },
+
+    [theme.breakpoints.down('sm')]: {
+      '& .MuiListItemSecondaryAction-root': {
+        top: 0,
+        right: 0,
+        position: 'relative',
+        marginTop: theme.spacing(4),
+        paddingLeft: theme.spacing(4)
+      }
     }
-
-    setChecked(newChecked)
   }
+}))
 
+const ListUsers = () => {
   return (
-    <List>
-      <ListItem disablePadding>
-        <ListItemButton onClick={handleToggle(0)}>
-          <ListItemAvatar>
-            <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
-          </ListItemAvatar>
-          <ListItemText id='checkbox-list-label-0' primary='Caroline Black' />
-          <ListItemSecondaryAction>
-            <Checkbox
-              edge='end'
-              tabIndex={-1}
-              disableRipple
-              onChange={handleToggle(0)}
-              checked={checked.indexOf(0) !== -1}
-              inputProps={{ 'aria-labelledby': 'checkbox-list-label-0' }}
-            />
-          </ListItemSecondaryAction>
-        </ListItemButton>
+    <StyledList>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
+        </ListItemAvatar>
+        <Box>
+          <ListItemText primary='Caroline Black' />
+          <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center' }}>
+              <Circle sx={{ mr: 1, color: 'success.main', fontSize: '0.625rem' }} />
+              <Typography variant='caption'>Online</Typography>
+            </Box>
+            <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+              13 minutes ago
+            </Typography>
+          </Box>
+        </Box>
+        <ListItemSecondaryAction>
+          <Button variant='contained' size='small'>
+            Add
+          </Button>
+        </ListItemSecondaryAction>
       </ListItem>
-      <ListItem disablePadding>
-        <ListItemButton onClick={handleToggle(1)}>
-          <ListItemAvatar>
-            <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' />
-          </ListItemAvatar>
-          <ListItemText id='checkbox-list-label-1' primary='Alfred Copeland' />
-          <ListItemSecondaryAction>
-            <Checkbox
-              edge='end'
-              tabIndex={-1}
-              disableRipple
-              onChange={handleToggle(1)}
-              checked={checked.indexOf(1) !== -1}
-              inputProps={{ 'aria-labelledby': 'checkbox-list-label-1' }}
-            />
-          </ListItemSecondaryAction>
-        </ListItemButton>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' />
+        </ListItemAvatar>
+        <Box>
+          <ListItemText primary='Alfred Copeland' />
+          <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center' }}>
+              <Circle sx={{ mr: 1, color: 'warning.main', fontSize: '0.625rem' }} />
+              <Typography variant='caption'>Away</Typography>
+            </Box>
+            <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+              11 minutes ago
+            </Typography>
+          </Box>
+        </Box>
+        <ListItemSecondaryAction>
+          <Button variant='contained' size='small'>
+            Add
+          </Button>
+        </ListItemSecondaryAction>
       </ListItem>
-      <ListItem disablePadding>
-        <ListItemButton onClick={handleToggle(2)}>
-          <ListItemAvatar>
-            <Avatar src='/images/avatars/8.png' alt='Celia Schneider' />
-          </ListItemAvatar>
-          <ListItemText id='checkbox-list-label-2' primary='Celia Schneider' />
-          <ListItemSecondaryAction>
-            <Checkbox
-              edge='end'
-              tabIndex={-1}
-              disableRipple
-              onChange={handleToggle(2)}
-              checked={checked.indexOf(2) !== -1}
-              inputProps={{ 'aria-labelledby': 'checkbox-list-label-2' }}
-            />
-          </ListItemSecondaryAction>
-        </ListItemButton>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar src='/images/avatars/8.png' alt='Celia Schneider' />
+        </ListItemAvatar>
+        <Box>
+          <ListItemText primary='Celia Schneider' />
+          <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center' }}>
+              <Circle sx={{ mr: 1, color: 'secondary.main', fontSize: '0.625rem' }} />
+              <Typography variant='caption'>Offline</Typography>
+            </Box>
+            <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+              9 minutes ago
+            </Typography>
+          </Box>
+        </Box>
+
+        <ListItemSecondaryAction>
+          <Button variant='contained' size='small'>
+            Add
+          </Button>
+        </ListItemSecondaryAction>
       </ListItem>
-    </List>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar src='/images/avatars/5.png' alt='Celia Schneider' />
+        </ListItemAvatar>
+        <Box>
+          <ListItemText primary='Max Rogan' />
+          <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center' }}>
+              <Circle sx={{ mr: 1, color: 'error.main', fontSize: '0.625rem' }} />
+              <Typography variant='caption'>In Meeting</Typography>
+            </Box>
+            <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+              28 minutes ago
+            </Typography>
+          </Box>
+        </Box>
+
+        <ListItemSecondaryAction>
+          <Button variant='contained' size='small'>
+            Add
+          </Button>
+        </ListItemSecondaryAction>
+      </ListItem>
+    </StyledList>
   )
 }
 
-export default ListWithCheckbox
+export default ListUsers
 `}</code>
   </pre>
 )
@@ -1163,46 +1651,99 @@ export default ListWithSwitch
   </pre>
 )
 
-export const ListStickySubheaderTSXCode = (
+export const ListWithCheckboxTSXCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import Box from '@mui/material/Box'
-import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
-import ListItemText from '@mui/material/ListItemText'
-import ListSubheader from '@mui/material/ListSubheader'
+    <code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
 
-const ListWithSwitch = () => {
+// ** MUI Imports
+import List from '@mui/material/List'
+import Avatar from '@mui/material/Avatar'
+import ListItem from '@mui/material/ListItem'
+import Checkbox from '@mui/material/Checkbox'
+import ListItemText from '@mui/material/ListItemText'
+import ListItemButton from '@mui/material/ListItemButton'
+import ListItemAvatar from '@mui/material/ListItemAvatar'
+import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
+
+const ListWithCheckbox = () => {
+  // ** State
+  const [checked, setChecked] = useState<number[]>([0])
+
+  const handleToggle = (value: number) => () => {
+    const currentIndex = checked.indexOf(value)
+    const newChecked = [...checked]
+
+    if (currentIndex === -1) {
+      newChecked.push(value)
+    } else {
+      newChecked.splice(currentIndex, 1)
+    }
+
+    setChecked(newChecked)
+  }
+
   return (
-    <List subheader={<li />} sx={{ maxHeight: 300, overflow: 'auto', position: 'relative' }}>
-      {[0, 1, 2, 3, 4].map(sectionId => (
-        <Box component='li' key={section-{sectionId}} sx={{ backgroundColor: 'background.paper' }}>
-          <Box component='ul' sx={{ p: 0, backgroundColor: 'inherit' }}>
-            <ListSubheader>{I'm sticky {sectionId}}</ListSubheader>
-            {[0, 1, 2].map(item => (
-              <ListItem key={item-{sectionId}-{item}}>
-                <ListItemText primary={Item {item}} />
-              </ListItem>
-            ))}
-          </Box>
-        </Box>
-      ))}
+    <List>
+      <ListItem disablePadding>
+        <ListItemButton onClick={handleToggle(0)}>
+          <ListItemAvatar>
+            <Avatar src='/images/avatars/2.png' alt='Caroline Black' sx={{ height: 32, width: 32 }} />
+          </ListItemAvatar>
+          <ListItemText id='checkbox-list-label-0' primary='Caroline Black' />
+          <ListItemSecondaryAction>
+            <Checkbox
+              edge='end'
+              tabIndex={-1}
+              disableRipple
+              onChange={handleToggle(0)}
+              checked={checked.indexOf(0) !== -1}
+              inputProps={{ 'aria-labelledby': 'checkbox-list-label-0' }}
+            />
+          </ListItemSecondaryAction>
+        </ListItemButton>
+      </ListItem>
+      <ListItem disablePadding>
+        <ListItemButton onClick={handleToggle(1)}>
+          <ListItemAvatar>
+            <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' sx={{ height: 32, width: 32 }} />
+          </ListItemAvatar>
+          <ListItemText id='checkbox-list-label-1' primary='Alfred Copeland' />
+          <ListItemSecondaryAction>
+            <Checkbox
+              edge='end'
+              tabIndex={-1}
+              disableRipple
+              onChange={handleToggle(1)}
+              checked={checked.indexOf(1) !== -1}
+              inputProps={{ 'aria-labelledby': 'checkbox-list-label-1' }}
+            />
+          </ListItemSecondaryAction>
+        </ListItemButton>
+      </ListItem>
+      <ListItem disablePadding>
+        <ListItemButton onClick={handleToggle(2)}>
+          <ListItemAvatar>
+            <Avatar src='/images/avatars/8.png' alt='Celia Schneider' sx={{ height: 32, width: 32 }} />
+          </ListItemAvatar>
+          <ListItemText id='checkbox-list-label-2' primary='Celia Schneider' />
+          <ListItemSecondaryAction>
+            <Checkbox
+              edge='end'
+              tabIndex={-1}
+              disableRipple
+              onChange={handleToggle(2)}
+              checked={checked.indexOf(2) !== -1}
+              inputProps={{ 'aria-labelledby': 'checkbox-list-label-2' }}
+            />
+          </ListItemSecondaryAction>
+        </ListItemButton>
+      </ListItem>
     </List>
   )
 }
 
-export default ListWithSwitch
+export default ListWithCheckbox
 `}</code>
-  </pre>
-)
-
-export const ListUsersJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{}</code>
-  </pre>
-)
-export const ListUsersTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{}</code>
   </pre>
 )

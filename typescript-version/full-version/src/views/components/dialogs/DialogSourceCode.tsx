@@ -105,6 +105,53 @@ export default DialogConfirmation
   </pre>
 )
 
+export const DialogFormJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { Fragment, useState } from 'react'
+
+// ** MUI Imports
+import Button from '@mui/material/Button'
+import Dialog from '@mui/material/Dialog'
+import TextField from '@mui/material/TextField'
+import DialogTitle from '@mui/material/DialogTitle'
+import DialogContent from '@mui/material/DialogContent'
+import DialogActions from '@mui/material/DialogActions'
+import DialogContentText from '@mui/material/DialogContentText'
+
+const DialogForm = () => {
+  // ** State
+  const [open, setOpen] = useState(false)
+  const handleClickOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
+
+  return (
+    <Fragment>
+      <Button variant='outlined' onClick={handleClickOpen}>
+        Open form dialog
+      </Button>
+      <Dialog open={open} onClose={handleClose} aria-labelledby='form-dialog-title'>
+        <DialogTitle id='form-dialog-title'>Subscribe</DialogTitle>
+        <DialogContent>
+          <DialogContentText sx={{ mb: 3 }}>
+            To subscribe to this website, please enter your email address here. We will send updates occasionally.
+          </DialogContentText>
+          <TextField id='name' autoFocus fullWidth type='email' label='Email Address' />
+        </DialogContent>
+        <DialogActions className='dialog-actions-dense'>
+          <Button onClick={handleClose}>Disagree</Button>
+          <Button onClick={handleClose}>Agree</Button>
+        </DialogActions>
+      </Dialog>
+    </Fragment>
+  )
+}
+
+export default DialogForm
+`}</code>
+  </pre>
+)
+
 export const DialogCustomizedJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -170,75 +217,6 @@ const DialogCustomized = () => {
 }
 
 export default DialogCustomized
-`}</code>
-  </pre>
-)
-
-export const DialogFullScreenJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import Button from '@mui/material/Button'
-import Dialog from '@mui/material/Dialog'
-import IconButton from '@mui/material/IconButton'
-import Typography from '@mui/material/Typography'
-import DialogTitle from '@mui/material/DialogTitle'
-import DialogContent from '@mui/material/DialogContent'
-import DialogActions from '@mui/material/DialogActions'
-
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
-
-const DialogFullScreen = () => {
-  // ** State
-  const [open, setOpen] = useState(false)
-  const handleClickOpen = () => setOpen(true)
-  const handleClose = () => setOpen(false)
-
-  return (
-    <div>
-      <Button variant='outlined' onClick={handleClickOpen}>
-        Open dialog
-      </Button>
-      <Dialog fullScreen onClose={handleClose} aria-labelledby='full-screen-dialog-title' open={open}>
-        <DialogTitle id='full-screen-dialog-title'>
-          <Typography variant='h6' component='span'>
-            Modal title
-          </Typography>
-          <IconButton
-            aria-label='close'
-            onClick={handleClose}
-            sx={{ top: 8, right: 10, position: 'absolute', color: theme => theme.palette.grey[500] }}
-          >
-            <Close />
-          </IconButton>
-        </DialogTitle>
-        <DialogContent dividers>
-          <Typography gutterBottom>
-            Chupa chups jelly-o candy sweet roll wafer cake chocolate bar. Brownie sweet roll topping cake chocolate
-            cake cheesecake tiramisu chocolate cake. Jujubes liquorice chocolate bar pastry. Chocolate jujubes caramels
-            pastry.
-          </Typography>
-          <Typography gutterBottom>
-            Ice cream marshmallow dragée bonbon croissant. Carrot cake sweet donut ice cream bonbon oat cake danish
-            sugar plum. Gingerbread gummies marzipan gingerbread.
-          </Typography>
-          <Typography gutterBottom>
-            Soufflé toffee ice cream. Jelly-o pudding sweet roll bonbon. Marshmallow liquorice icing. Jelly beans
-            chocolate bar chocolate marzipan candy fruitcake jujubes.
-          </Typography>
-        </DialogContent>
-        <DialogActions sx={{ p: theme => {theme.spacing(3)} !important }}>
-          <Button onClick={handleClose}>Save changes</Button>
-        </DialogActions>
-      </Dialog>
-    </div>
-  )
-}
-
-export default DialogFullScreen
 `}</code>
   </pre>
 )
@@ -325,54 +303,71 @@ export default DialogSimple
   </pre>
 )
 
-export const DialogRespoFullScreenJSXCode = (
+export const DialogFullScreenJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { Fragment, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
 import Dialog from '@mui/material/Dialog'
-import { useTheme } from '@mui/material/styles'
+import IconButton from '@mui/material/IconButton'
+import Typography from '@mui/material/Typography'
 import DialogTitle from '@mui/material/DialogTitle'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import DialogActions from '@mui/material/DialogActions'
 import DialogContent from '@mui/material/DialogContent'
-import DialogContentText from '@mui/material/DialogContentText'
+import DialogActions from '@mui/material/DialogActions'
 
-const DialogRespoFullScreen = () => {
+// ** Icons Imports
+import Close from 'mdi-material-ui/Close'
+
+const DialogFullScreen = () => {
   // ** State
   const [open, setOpen] = useState(false)
-
-  // ** Hooks
-  const theme = useTheme()
-  const fullScreen = useMediaQuery(theme.breakpoints.down('sm'))
   const handleClickOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
 
   return (
-    <Fragment>
+    <div>
       <Button variant='outlined' onClick={handleClickOpen}>
-        Open responsive dialog
+        Open dialog
       </Button>
-      <Dialog fullScreen={fullScreen} open={open} onClose={handleClose} aria-labelledby='responsive-dialog-title'>
-        <DialogTitle id='responsive-dialog-title'>Use Google's location service?</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            Let Google help apps determine location. This means sending anonymous location data to Google, even when no
-            apps are running.
-          </DialogContentText>
+      <Dialog fullScreen onClose={handleClose} aria-labelledby='full-screen-dialog-title' open={open}>
+        <DialogTitle id='full-screen-dialog-title'>
+          <Typography variant='h6' component='span'>
+            Modal title
+          </Typography>
+          <IconButton
+            aria-label='close'
+            onClick={handleClose}
+            sx={{ top: 8, right: 10, position: 'absolute', color: theme => theme.palette.grey[500] }}
+          >
+            <Close />
+          </IconButton>
+        </DialogTitle>
+        <DialogContent dividers>
+          <Typography gutterBottom>
+            Chupa chups jelly-o candy sweet roll wafer cake chocolate bar. Brownie sweet roll topping cake chocolate
+            cake cheesecake tiramisu chocolate cake. Jujubes liquorice chocolate bar pastry. Chocolate jujubes caramels
+            pastry.
+          </Typography>
+          <Typography gutterBottom>
+            Ice cream marshmallow dragée bonbon croissant. Carrot cake sweet donut ice cream bonbon oat cake danish
+            sugar plum. Gingerbread gummies marzipan gingerbread.
+          </Typography>
+          <Typography gutterBottom>
+            Soufflé toffee ice cream. Jelly-o pudding sweet roll bonbon. Marshmallow liquorice icing. Jelly beans
+            chocolate bar chocolate marzipan candy fruitcake jujubes.
+          </Typography>
         </DialogContent>
-        <DialogActions className='dialog-actions-dense'>
-          <Button onClick={handleClose}>Disagree</Button>
-          <Button onClick={handleClose}>Agree</Button>
+        <DialogActions sx={{ p: theme => {theme.spacing(3)} !important }}>
+          <Button onClick={handleClose}>Save changes</Button>
         </DialogActions>
       </Dialog>
-    </Fragment>
+    </div>
   )
 }
 
-export default DialogRespoFullScreen
+export default DialogFullScreen
 `}</code>
   </pre>
 )
@@ -478,7 +473,7 @@ export default DialogSizes
   </pre>
 )
 
-export const DialogFormJSXCode = (
+export const DialogRespoFullScreenJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
 import { Fragment, useState } from 'react'
@@ -486,30 +481,35 @@ import { Fragment, useState } from 'react'
 // ** MUI Imports
 import Button from '@mui/material/Button'
 import Dialog from '@mui/material/Dialog'
-import TextField from '@mui/material/TextField'
+import { useTheme } from '@mui/material/styles'
 import DialogTitle from '@mui/material/DialogTitle'
-import DialogContent from '@mui/material/DialogContent'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import DialogActions from '@mui/material/DialogActions'
+import DialogContent from '@mui/material/DialogContent'
 import DialogContentText from '@mui/material/DialogContentText'
 
-const DialogForm = () => {
+const DialogRespoFullScreen = () => {
   // ** State
   const [open, setOpen] = useState(false)
+
+  // ** Hooks
+  const theme = useTheme()
+  const fullScreen = useMediaQuery(theme.breakpoints.down('sm'))
   const handleClickOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
 
   return (
     <Fragment>
       <Button variant='outlined' onClick={handleClickOpen}>
-        Open form dialog
+        Open responsive dialog
       </Button>
-      <Dialog open={open} onClose={handleClose} aria-labelledby='form-dialog-title'>
-        <DialogTitle id='form-dialog-title'>Subscribe</DialogTitle>
+      <Dialog fullScreen={fullScreen} open={open} onClose={handleClose} aria-labelledby='responsive-dialog-title'>
+        <DialogTitle id='responsive-dialog-title'>Use Google's location service?</DialogTitle>
         <DialogContent>
-          <DialogContentText sx={{ mb: 3 }}>
-            To subscribe to this website, please enter your email address here. We will send updates occasionally.
+          <DialogContentText>
+            Let Google help apps determine location. This means sending anonymous location data to Google, even when no
+            apps are running.
           </DialogContentText>
-          <TextField id='name' autoFocus fullWidth type='email' label='Email Address' />
         </DialogContent>
         <DialogActions className='dialog-actions-dense'>
           <Button onClick={handleClose}>Disagree</Button>
@@ -520,7 +520,7 @@ const DialogForm = () => {
   )
 }
 
-export default DialogForm
+export default DialogRespoFullScreen
 `}</code>
   </pre>
 )
@@ -653,6 +653,59 @@ const DialogTransition = () => {
 }
 
 export default DialogTransition
+`}</code>
+  </pre>
+)
+
+export const DialogAlertTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { Fragment, useState } from 'react'
+
+// ** MUI Imports
+import Button from '@mui/material/Button'
+import Dialog from '@mui/material/Dialog'
+import DialogTitle from '@mui/material/DialogTitle'
+import DialogContent from '@mui/material/DialogContent'
+import DialogActions from '@mui/material/DialogActions'
+import DialogContentText from '@mui/material/DialogContentText'
+
+const DialogAlert = () => {
+  // ** State
+  const [open, setOpen] = useState<boolean>(false)
+
+  const handleClickOpen = () => setOpen(true)
+
+  const handleClose = () => setOpen(false)
+
+  return (
+    <Fragment>
+      <Button variant='outlined' onClick={handleClickOpen}>
+        Open dialog
+      </Button>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby='alert-dialog-title'
+        aria-describedby='alert-dialog-description'
+      >
+        <DialogTitle id='alert-dialog-title'>Use Google's location service?</DialogTitle>
+        <DialogContent>
+          <DialogContentText id='alert-dialog-description'>
+            Let Google help apps determine location. This means sending anonymous location data to Google, even when no
+            apps are running.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions className='dialog-actions-dense'>
+          <Button onClick={handleClose}>Disagree</Button>
+          <Button onClick={handleClose}>Agree</Button>
+        </DialogActions>
+      </Dialog>
+    </Fragment>
+  )
+}
+
+export default DialogAlert
 `}</code>
   </pre>
 )
@@ -835,113 +888,6 @@ export default DialogForm
   </pre>
 )
 
-export const DialogAlertTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { Fragment, useState } from 'react'
-
-// ** MUI Imports
-import Button from '@mui/material/Button'
-import Dialog from '@mui/material/Dialog'
-import DialogTitle from '@mui/material/DialogTitle'
-import DialogContent from '@mui/material/DialogContent'
-import DialogActions from '@mui/material/DialogActions'
-import DialogContentText from '@mui/material/DialogContentText'
-
-const DialogAlert = () => {
-  // ** State
-  const [open, setOpen] = useState<boolean>(false)
-
-  const handleClickOpen = () => setOpen(true)
-
-  const handleClose = () => setOpen(false)
-
-  return (
-    <Fragment>
-      <Button variant='outlined' onClick={handleClickOpen}>
-        Open dialog
-      </Button>
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        aria-labelledby='alert-dialog-title'
-        aria-describedby='alert-dialog-description'
-      >
-        <DialogTitle id='alert-dialog-title'>Use Google's location service?</DialogTitle>
-        <DialogContent>
-          <DialogContentText id='alert-dialog-description'>
-            Let Google help apps determine location. This means sending anonymous location data to Google, even when no
-            apps are running.
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions className='dialog-actions-dense'>
-          <Button onClick={handleClose}>Disagree</Button>
-          <Button onClick={handleClose}>Agree</Button>
-        </DialogActions>
-      </Dialog>
-    </Fragment>
-  )
-}
-
-export default DialogAlert
-`}</code>
-  </pre>
-)
-
-export const DialogRespoFullScreenTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { Fragment, useState } from 'react'
-
-// ** MUI Imports
-import Button from '@mui/material/Button'
-import Dialog from '@mui/material/Dialog'
-import { useTheme } from '@mui/material/styles'
-import DialogTitle from '@mui/material/DialogTitle'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import DialogActions from '@mui/material/DialogActions'
-import DialogContent from '@mui/material/DialogContent'
-import DialogContentText from '@mui/material/DialogContentText'
-
-const DialogRespoFullScreen = () => {
-  // ** State
-  const [open, setOpen] = useState<boolean>(false)
-
-  // ** Hooks
-  const theme = useTheme()
-  const fullScreen = useMediaQuery(theme.breakpoints.down('sm'))
-
-  const handleClickOpen = () => setOpen(true)
-
-  const handleClose = () => setOpen(false)
-
-  return (
-    <Fragment>
-      <Button variant='outlined' onClick={handleClickOpen}>
-        Open responsive dialog
-      </Button>
-      <Dialog fullScreen={fullScreen} open={open} onClose={handleClose} aria-labelledby='responsive-dialog-title'>
-        <DialogTitle id='responsive-dialog-title'>Use Google's location service?</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            Let Google help apps determine location. This means sending anonymous location data to Google, even when no
-            apps are running.
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions className='dialog-actions-dense'>
-          <Button onClick={handleClose}>Disagree</Button>
-          <Button onClick={handleClose}>Agree</Button>
-        </DialogActions>
-      </Dialog>
-    </Fragment>
-  )
-}
-
-export default DialogRespoFullScreen
-`}</code>
-  </pre>
-)
-
 export const DialogFullScreenTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -1009,6 +955,144 @@ const DialogFullScreen = () => {
 }
 
 export default DialogFullScreen
+`}</code>
+  </pre>
+)
+
+export const DialogSimpleTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import List from '@mui/material/List'
+import Button from '@mui/material/Button'
+import Dialog from '@mui/material/Dialog'
+import MuiAvatar from '@mui/material/Avatar'
+import ListItem from '@mui/material/ListItem'
+import Typography from '@mui/material/Typography'
+import DialogTitle from '@mui/material/DialogTitle'
+import ListItemText from '@mui/material/ListItemText'
+import ListItemButton from '@mui/material/ListItemButton'
+import ListItemAvatar from '@mui/material/ListItemAvatar'
+
+// ** Icons Imports
+import Plus from 'mdi-material-ui/Plus'
+import AccountOutline from 'mdi-material-ui/AccountOutline'
+
+// ** Custom Components Imports
+import CustomAvatar from 'src/@core/components/mui/avatar'
+
+const emails = ['username@gmail.com', 'user02@gmail.com']
+
+const DialogSimple = () => {
+  // ** States
+  const [open, setOpen] = useState<boolean>(false)
+  const [selectedValue, setSelectedValue] = useState<string>(emails[1])
+
+  const handleClickOpen = () => setOpen(true)
+
+  const handleDialogClose = () => setOpen(false)
+
+  const handleClose = (value: string) => {
+    setOpen(false)
+    setSelectedValue(value)
+  }
+
+  return (
+    <div>
+      <Typography variant='subtitle1' sx={{ mb: 2 }}>
+        Selected: {selectedValue}
+      </Typography>
+      <Button variant='outlined' onClick={handleClickOpen}>
+        Open simple dialog
+      </Button>
+      <Dialog onClose={handleDialogClose} aria-labelledby='simple-dialog-title' open={open}>
+        <DialogTitle id='simple-dialog-title'>Set backup account</DialogTitle>
+        <List sx={{ pt: 0, px: '0 !important' }}>
+          {emails.map(email => (
+            <ListItem key={email} disablePadding onClick={() => handleClose(email)}>
+              <ListItemButton>
+                <ListItemAvatar>
+                  <CustomAvatar skin='light'>
+                    <AccountOutline />
+                  </CustomAvatar>
+                </ListItemAvatar>
+                <ListItemText primary={email} />
+              </ListItemButton>
+            </ListItem>
+          ))}
+          <ListItem disablePadding onClick={() => handleClose('addAccount')}>
+            <ListItemButton>
+              <ListItemAvatar>
+                <MuiAvatar>
+                  <Plus />
+                </MuiAvatar>
+              </ListItemAvatar>
+              <ListItemText primary='Add account' />
+            </ListItemButton>
+          </ListItem>
+        </List>
+      </Dialog>
+    </div>
+  )
+}
+
+export default DialogSimple
+`}</code>
+  </pre>
+)
+
+export const DialogRespoFullScreenTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { Fragment, useState } from 'react'
+
+// ** MUI Imports
+import Button from '@mui/material/Button'
+import Dialog from '@mui/material/Dialog'
+import { useTheme } from '@mui/material/styles'
+import DialogTitle from '@mui/material/DialogTitle'
+import useMediaQuery from '@mui/material/useMediaQuery'
+import DialogActions from '@mui/material/DialogActions'
+import DialogContent from '@mui/material/DialogContent'
+import DialogContentText from '@mui/material/DialogContentText'
+
+const DialogRespoFullScreen = () => {
+  // ** State
+  const [open, setOpen] = useState<boolean>(false)
+
+  // ** Hooks
+  const theme = useTheme()
+  const fullScreen = useMediaQuery(theme.breakpoints.down('sm'))
+
+  const handleClickOpen = () => setOpen(true)
+
+  const handleClose = () => setOpen(false)
+
+  return (
+    <Fragment>
+      <Button variant='outlined' onClick={handleClickOpen}>
+        Open responsive dialog
+      </Button>
+      <Dialog fullScreen={fullScreen} open={open} onClose={handleClose} aria-labelledby='responsive-dialog-title'>
+        <DialogTitle id='responsive-dialog-title'>Use Google's location service?</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Let Google help apps determine location. This means sending anonymous location data to Google, even when no
+            apps are running.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions className='dialog-actions-dense'>
+          <Button onClick={handleClose}>Disagree</Button>
+          <Button onClick={handleClose}>Agree</Button>
+        </DialogActions>
+      </Dialog>
+    </Fragment>
+  )
+}
+
+export default DialogRespoFullScreen
 `}</code>
   </pre>
 )
@@ -1116,86 +1200,65 @@ export default DialogSizes
   </pre>
 )
 
-export const DialogSimpleTSXCode = (
+export const DialogTransitionTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
+import { forwardRef, Fragment, ReactElement, Ref, useState } from 'react'
 
 // ** MUI Imports
-import List from '@mui/material/List'
 import Button from '@mui/material/Button'
 import Dialog from '@mui/material/Dialog'
-import MuiAvatar from '@mui/material/Avatar'
-import ListItem from '@mui/material/ListItem'
-import Typography from '@mui/material/Typography'
 import DialogTitle from '@mui/material/DialogTitle'
-import ListItemText from '@mui/material/ListItemText'
-import ListItemButton from '@mui/material/ListItemButton'
-import ListItemAvatar from '@mui/material/ListItemAvatar'
+import DialogContent from '@mui/material/DialogContent'
+import DialogActions from '@mui/material/DialogActions'
+import Slide, { SlideProps } from '@mui/material/Slide'
+import DialogContentText from '@mui/material/DialogContentText'
 
-// ** Icons Imports
-import Plus from 'mdi-material-ui/Plus'
-import AccountOutline from 'mdi-material-ui/AccountOutline'
+const Transition = forwardRef(function Transition(
+  props: SlideProps & { children?: ReactElement<any, any> },
+  ref: Ref<unknown>
+) {
+  return <Slide direction='up' ref={ref} {...props} />
+})
 
-// ** Custom Components Imports
-import CustomAvatar from 'src/@core/components/mui/avatar'
-
-const emails = ['username@gmail.com', 'user02@gmail.com']
-
-const DialogSimple = () => {
-  // ** States
+const DialogTransition = () => {
+  // ** State
   const [open, setOpen] = useState<boolean>(false)
-  const [selectedValue, setSelectedValue] = useState<string>(emails[1])
 
   const handleClickOpen = () => setOpen(true)
 
-  const handleDialogClose = () => setOpen(false)
-
-  const handleClose = (value: string) => {
-    setOpen(false)
-    setSelectedValue(value)
-  }
+  const handleClose = () => setOpen(false)
 
   return (
-    <div>
-      <Typography variant='subtitle1' sx={{ mb: 2 }}>
-        Selected: {selectedValue}
-      </Typography>
+    <Fragment>
       <Button variant='outlined' onClick={handleClickOpen}>
-        Open simple dialog
+        Slide in alert dialog
       </Button>
-      <Dialog onClose={handleDialogClose} aria-labelledby='simple-dialog-title' open={open}>
-        <DialogTitle id='simple-dialog-title'>Set backup account</DialogTitle>
-        <List sx={{ pt: 0, px: '0 !important' }}>
-          {emails.map(email => (
-            <ListItem key={email} disablePadding onClick={() => handleClose(email)}>
-              <ListItemButton>
-                <ListItemAvatar>
-                  <CustomAvatar skin='light'>
-                    <AccountOutline />
-                  </CustomAvatar>
-                </ListItemAvatar>
-                <ListItemText primary={email} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-          <ListItem disablePadding onClick={() => handleClose('addAccount')}>
-            <ListItemButton>
-              <ListItemAvatar>
-                <MuiAvatar>
-                  <Plus />
-                </MuiAvatar>
-              </ListItemAvatar>
-              <ListItemText primary='Add account' />
-            </ListItemButton>
-          </ListItem>
-        </List>
+      <Dialog
+        open={open}
+        keepMounted
+        onClose={handleClose}
+        TransitionComponent={Transition}
+        aria-labelledby='alert-dialog-slide-title'
+        aria-describedby='alert-dialog-slide-description'
+      >
+        <DialogTitle id='alert-dialog-slide-title'>Use Google's location service?</DialogTitle>
+        <DialogContent>
+          <DialogContentText id='alert-dialog-slide-description'>
+            Let Google help apps determine location. This means sending anonymous location data to Google, even when no
+            apps are running.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions className='dialog-actions-dense'>
+          <Button onClick={handleClose}>Disagree</Button>
+          <Button onClick={handleClose}>Agree</Button>
+        </DialogActions>
       </Dialog>
-    </div>
+    </Fragment>
   )
 }
 
-export default DialogSimple
+export default DialogTransition
 `}</code>
   </pre>
 )
@@ -1273,69 +1336,6 @@ const DialogsScroll = () => {
 }
 
 export default DialogsScroll
-`}</code>
-  </pre>
-)
-
-export const DialogTransitionTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { forwardRef, Fragment, ReactElement, Ref, useState } from 'react'
-
-// ** MUI Imports
-import Button from '@mui/material/Button'
-import Dialog from '@mui/material/Dialog'
-import DialogTitle from '@mui/material/DialogTitle'
-import DialogContent from '@mui/material/DialogContent'
-import DialogActions from '@mui/material/DialogActions'
-import Slide, { SlideProps } from '@mui/material/Slide'
-import DialogContentText from '@mui/material/DialogContentText'
-
-const Transition = forwardRef(function Transition(
-  props: SlideProps & { children?: ReactElement<any, any> },
-  ref: Ref<unknown>
-) {
-  return <Slide direction='up' ref={ref} {...props} />
-})
-
-const DialogTransition = () => {
-  // ** State
-  const [open, setOpen] = useState<boolean>(false)
-
-  const handleClickOpen = () => setOpen(true)
-
-  const handleClose = () => setOpen(false)
-
-  return (
-    <Fragment>
-      <Button variant='outlined' onClick={handleClickOpen}>
-        Slide in alert dialog
-      </Button>
-      <Dialog
-        open={open}
-        keepMounted
-        onClose={handleClose}
-        TransitionComponent={Transition}
-        aria-labelledby='alert-dialog-slide-title'
-        aria-describedby='alert-dialog-slide-description'
-      >
-        <DialogTitle id='alert-dialog-slide-title'>Use Google's location service?</DialogTitle>
-        <DialogContent>
-          <DialogContentText id='alert-dialog-slide-description'>
-            Let Google help apps determine location. This means sending anonymous location data to Google, even when no
-            apps are running.
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions className='dialog-actions-dense'>
-          <Button onClick={handleClose}>Disagree</Button>
-          <Button onClick={handleClose}>Agree</Button>
-        </DialogActions>
-      </Dialog>
-    </Fragment>
-  )
-}
-
-export default DialogTransition
 `}</code>
   </pre>
 )

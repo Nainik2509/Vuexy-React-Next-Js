@@ -118,6 +118,64 @@ export default SnackbarConsecutive
   </pre>
 )
 
+export const SnackbarSimpleJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { Fragment, useState } from 'react'
+
+// ** MUI Imports
+import Button from '@mui/material/Button'
+import Snackbar from '@mui/material/Snackbar'
+import IconButton from '@mui/material/IconButton'
+
+// ** Icons Imports
+import Close from 'mdi-material-ui/Close'
+
+const SnackbarSimple = () => {
+  // ** State
+  const [open, setOpen] = useState(false)
+
+  const handleClick = () => {
+    setOpen(true)
+  }
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return
+    }
+    setOpen(false)
+  }
+
+  return (
+    <Fragment>
+      <Button variant='outlined' onClick={handleClick}>
+        Open simple snackbar
+      </Button>
+      <Snackbar
+        open={open}
+        onClose={handleClose}
+        message='Note archived'
+        autoHideDuration={3000}
+        action={
+          <Fragment>
+            <Button size='small' onClick={handleClose}>
+              UNDO
+            </Button>
+            <IconButton size='small' aria-label='close' color='inherit' onClick={handleClose}>
+              <Close fontSize='small' />
+            </IconButton>
+          </Fragment>
+        }
+      />
+    </Fragment>
+  )
+}
+
+export default SnackbarSimple
+`}</code>
+  </pre>
+)
+
 export const SnackbarControlSlideDirectionJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -191,7 +249,7 @@ export default SnackbarControlSlideDirection
   </pre>
 )
 
-export const SnackbarSimpleJSXCode = (
+export const SnackbarPositionedJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
 import { Fragment, useState } from 'react'
@@ -199,52 +257,59 @@ import { Fragment, useState } from 'react'
 // ** MUI Imports
 import Button from '@mui/material/Button'
 import Snackbar from '@mui/material/Snackbar'
-import IconButton from '@mui/material/IconButton'
 
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
+const SnackbarPositioned = () => {
+  // ** States
+  const [state, setState] = useState({
+    open: false,
+    vertical: 'top',
+    horizontal: 'center'
+  })
+  const { vertical, horizontal, open } = state
 
-const SnackbarSimple = () => {
-  // ** State
-  const [open, setOpen] = useState(false)
-
-  const handleClick = () => {
-    setOpen(true)
+  const handleClick = newState => () => {
+    setState({ open: true, ...newState })
   }
 
-  const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
-      return
-    }
-    setOpen(false)
+  const handleClose = () => {
+    setState({ ...state, open: false })
   }
 
   return (
     <Fragment>
-      <Button variant='outlined' onClick={handleClick}>
-        Open simple snackbar
-      </Button>
+      <div className='demo-space-x'>
+        <Button variant='outlined' onClick={handleClick({ vertical: 'top', horizontal: 'center' })}>
+          Top Center
+        </Button>
+        <Button variant='outlined' onClick={handleClick({ vertical: 'top', horizontal: 'right' })}>
+          Top Right
+        </Button>
+        <Button variant='outlined' onClick={handleClick({ vertical: 'bottom', horizontal: 'right' })}>
+          Bottom Right
+        </Button>
+        <Button variant='outlined' onClick={handleClick({ vertical: 'bottom', horizontal: 'center' })}>
+          Bottom Center
+        </Button>
+        <Button variant='outlined' onClick={handleClick({ vertical: 'bottom', horizontal: 'left' })}>
+          Bottom Left
+        </Button>
+        <Button variant='outlined' onClick={handleClick({ vertical: 'top', horizontal: 'left' })}>
+          Top Left
+        </Button>
+      </div>
       <Snackbar
         open={open}
         onClose={handleClose}
-        message='Note archived'
+        message='I love snacks'
         autoHideDuration={3000}
-        action={
-          <Fragment>
-            <Button size='small' onClick={handleClose}>
-              UNDO
-            </Button>
-            <IconButton size='small' aria-label='close' color='inherit' onClick={handleClose}>
-              <Close fontSize='small' />
-            </IconButton>
-          </Fragment>
-        }
+        key={vertical + horizontal}
+        anchorOrigin={{ vertical, horizontal }}
       />
     </Fragment>
   )
 }
 
-export default SnackbarSimple
+export default SnackbarPositioned
 `}</code>
   </pre>
 )
@@ -320,52 +385,106 @@ export default SnackbarTransition
   </pre>
 )
 
-export const SnackbarPositionedJSXCode = (
+export const SnackbarAlertTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { Fragment, useState } from 'react'
+import { Fragment, SyntheticEvent, useState } from 'react'
+
+// ** MUI Imports
+import Alert from '@mui/material/Alert'
+import Button from '@mui/material/Button'
+import Snackbar from '@mui/material/Snackbar'
+
+const SnackbarAlert = () => {
+  // ** State
+  const [open, setOpen] = useState<boolean>(false)
+
+  const handleClick = () => {
+    setOpen(true)
+  }
+
+  const handleClose = (event?: Event | SyntheticEvent, reason?: string) => {
+    if (reason === 'clickaway') {
+      return
+    }
+    setOpen(false)
+  }
+
+  return (
+    <Fragment>
+      <Button variant='outlined' onClick={handleClick}>
+        Open alert snackbar
+      </Button>
+      <Snackbar open={open} onClose={handleClose} autoHideDuration={3000}>
+        <Alert variant='filled' elevation={3} onClose={handleClose} severity='success'>
+          This is a success message!
+        </Alert>
+      </Snackbar>
+    </Fragment>
+  )
+}
+
+export default SnackbarAlert
+`}</code>
+  </pre>
+)
+
+export const SnackbarControlSlideDirectionTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { ComponentType, Fragment, useState } from 'react'
 
 // ** MUI Imports
 import Button from '@mui/material/Button'
 import Snackbar from '@mui/material/Snackbar'
+import Slide, { SlideProps } from '@mui/material/Slide'
 
-const SnackbarPositioned = () => {
+type TransitionProps = Omit<SlideProps, 'direction'>
+
+const TransitionLeft = (props: TransitionProps) => {
+  return <Slide {...props} direction='left' />
+}
+
+const TransitionUp = (props: TransitionProps) => {
+  return <Slide {...props} direction='up' />
+}
+
+const TransitionRight = (props: TransitionProps) => {
+  return <Slide {...props} direction='right' />
+}
+
+const TransitionDown = (props: TransitionProps) => {
+  return <Slide {...props} direction='down' />
+}
+
+const SnackbarControlSlideDirection = () => {
   // ** States
-  const [state, setState] = useState({
-    open: false,
-    vertical: 'top',
-    horizontal: 'center'
-  })
-  const { vertical, horizontal, open } = state
+  const [open, setOpen] = useState<boolean>(false)
+  const [transition, setTransition] = useState<ComponentType<TransitionProps> | undefined>(undefined)
 
-  const handleClick = newState => () => {
-    setState({ open: true, ...newState })
+  const handleClick = (Transition: ComponentType<TransitionProps>) => () => {
+    setTransition(() => Transition)
+    setOpen(true)
   }
 
   const handleClose = () => {
-    setState({ ...state, open: false })
+    setOpen(false)
   }
 
   return (
     <Fragment>
       <div className='demo-space-x'>
-        <Button variant='outlined' onClick={handleClick({ vertical: 'top', horizontal: 'center' })}>
-          Top Center
+        <Button variant='outlined' onClick={handleClick(TransitionLeft)}>
+          Right
         </Button>
-        <Button variant='outlined' onClick={handleClick({ vertical: 'top', horizontal: 'right' })}>
-          Top Right
+        <Button variant='outlined' onClick={handleClick(TransitionUp)}>
+          Up
         </Button>
-        <Button variant='outlined' onClick={handleClick({ vertical: 'bottom', horizontal: 'right' })}>
-          Bottom Right
+        <Button variant='outlined' onClick={handleClick(TransitionRight)}>
+          Left
         </Button>
-        <Button variant='outlined' onClick={handleClick({ vertical: 'bottom', horizontal: 'center' })}>
-          Bottom Center
-        </Button>
-        <Button variant='outlined' onClick={handleClick({ vertical: 'bottom', horizontal: 'left' })}>
-          Bottom Left
-        </Button>
-        <Button variant='outlined' onClick={handleClick({ vertical: 'top', horizontal: 'left' })}>
-          Top Left
+        <Button variant='outlined' onClick={handleClick(TransitionDown)}>
+          Down
         </Button>
       </div>
       <Snackbar
@@ -373,14 +492,14 @@ const SnackbarPositioned = () => {
         onClose={handleClose}
         message='I love snacks'
         autoHideDuration={3000}
-        key={vertical + horizontal}
-        anchorOrigin={{ vertical, horizontal }}
+        TransitionComponent={transition}
+        key={transition ? transition.name : ''}
       />
     </Fragment>
   )
 }
 
-export default SnackbarPositioned
+export default SnackbarControlSlideDirection
 `}</code>
   </pre>
 )
@@ -463,125 +582,6 @@ const SnackbarConsecutive = () => {
 }
 
 export default SnackbarConsecutive
-`}</code>
-  </pre>
-)
-
-export const SnackbarControlSlideDirectionTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { ComponentType, Fragment, useState } from 'react'
-
-// ** MUI Imports
-import Button from '@mui/material/Button'
-import Snackbar from '@mui/material/Snackbar'
-import Slide, { SlideProps } from '@mui/material/Slide'
-
-type TransitionProps = Omit<SlideProps, 'direction'>
-
-const TransitionLeft = (props: TransitionProps) => {
-  return <Slide {...props} direction='left' />
-}
-
-const TransitionUp = (props: TransitionProps) => {
-  return <Slide {...props} direction='up' />
-}
-
-const TransitionRight = (props: TransitionProps) => {
-  return <Slide {...props} direction='right' />
-}
-
-const TransitionDown = (props: TransitionProps) => {
-  return <Slide {...props} direction='down' />
-}
-
-const SnackbarControlSlideDirection = () => {
-  // ** States
-  const [open, setOpen] = useState<boolean>(false)
-  const [transition, setTransition] = useState<ComponentType<TransitionProps> | undefined>(undefined)
-
-  const handleClick = (Transition: ComponentType<TransitionProps>) => () => {
-    setTransition(() => Transition)
-    setOpen(true)
-  }
-
-  const handleClose = () => {
-    setOpen(false)
-  }
-
-  return (
-    <Fragment>
-      <div className='demo-space-x'>
-        <Button variant='outlined' onClick={handleClick(TransitionLeft)}>
-          Right
-        </Button>
-        <Button variant='outlined' onClick={handleClick(TransitionUp)}>
-          Up
-        </Button>
-        <Button variant='outlined' onClick={handleClick(TransitionRight)}>
-          Left
-        </Button>
-        <Button variant='outlined' onClick={handleClick(TransitionDown)}>
-          Down
-        </Button>
-      </div>
-      <Snackbar
-        open={open}
-        onClose={handleClose}
-        message='I love snacks'
-        autoHideDuration={3000}
-        TransitionComponent={transition}
-        key={transition ? transition.name : ''}
-      />
-    </Fragment>
-  )
-}
-
-export default SnackbarControlSlideDirection
-`}</code>
-  </pre>
-)
-
-export const SnackbarAlertTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { Fragment, SyntheticEvent, useState } from 'react'
-
-// ** MUI Imports
-import Alert from '@mui/material/Alert'
-import Button from '@mui/material/Button'
-import Snackbar from '@mui/material/Snackbar'
-
-const SnackbarAlert = () => {
-  // ** State
-  const [open, setOpen] = useState<boolean>(false)
-
-  const handleClick = () => {
-    setOpen(true)
-  }
-
-  const handleClose = (event?: Event | SyntheticEvent, reason?: string) => {
-    if (reason === 'clickaway') {
-      return
-    }
-    setOpen(false)
-  }
-
-  return (
-    <Fragment>
-      <Button variant='outlined' onClick={handleClick}>
-        Open alert snackbar
-      </Button>
-      <Snackbar open={open} onClose={handleClose} autoHideDuration={3000}>
-        <Alert variant='filled' elevation={3} onClose={handleClose} severity='success'>
-          This is a success message!
-        </Alert>
-      </Snackbar>
-    </Fragment>
-  )
-}
-
-export default SnackbarAlert
 `}</code>
   </pre>
 )
