@@ -3,6 +3,7 @@ import Drawer from '@mui/material/Drawer'
 import Button from '@mui/material/Button'
 import { styled } from '@mui/material/styles'
 import TextField from '@mui/material/TextField'
+import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import Box, { BoxProps } from '@mui/material/Box'
 import FormControl from '@mui/material/FormControl'
@@ -39,7 +40,9 @@ const SendInvoiceDrawer = ({ open, toggle }: Props) => {
     >
       <Header>
         <Typography variant='h6'>Send Invoice</Typography>
-        <Close fontSize='small' onClick={toggle} sx={{ cursor: 'pointer' }} />
+        <IconButton size='small' onClick={toggle} sx={{ color: 'text.primary' }}>
+          <Close fontSize='small' />
+        </IconButton>
       </Header>
       <Box sx={{ p: 5 }}>
         <FormControl fullWidth sx={{ mb: 6 }}>

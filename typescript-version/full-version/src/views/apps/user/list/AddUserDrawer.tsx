@@ -8,6 +8,7 @@ import Button from '@mui/material/Button'
 import MenuItem from '@mui/material/MenuItem'
 import { styled } from '@mui/material/styles'
 import TextField from '@mui/material/TextField'
+import IconButton from '@mui/material/IconButton'
 import InputLabel from '@mui/material/InputLabel'
 import Typography from '@mui/material/Typography'
 import Box, { BoxProps } from '@mui/material/Box'
@@ -138,7 +139,9 @@ const SidebarAddUser = (props: SidebarAddUserType) => {
     >
       <Header>
         <Typography variant='h6'>Add User</Typography>
-        <Close fontSize='small' onClick={handleClose} sx={{ cursor: 'pointer' }} />
+        <IconButton size='small' onClick={handleClose} sx={{ color: 'text.primary' }}>
+          <Close fontSize='small' />
+        </IconButton>
       </Header>
       <Box sx={{ p: 5 }}>
         <form onSubmit={handleSubmit(onSubmit)}>

@@ -6,6 +6,7 @@ import MenuItem from '@mui/material/MenuItem'
 import { styled } from '@mui/material/styles'
 import TextField from '@mui/material/TextField'
 import InputLabel from '@mui/material/InputLabel'
+import IconButton from '@mui/material/IconButton'
 import Box, { BoxProps } from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import FormControl from '@mui/material/FormControl'
@@ -101,7 +102,9 @@ const AddNewCustomer = ({ open, toggle, setSelectedClient, clients, setClients }
     >
       <Header>
         <Typography variant='h6'>Add New Customer</Typography>
-        <Close fontSize='small' onClick={toggle} sx={{ cursor: 'pointer' }} />
+        <IconButton size='small' onClick={toggle} sx={{ color: 'text.primary' }}>
+          <Close fontSize='small' />
+        </IconButton>
       </Header>
       <Box component='form' sx={{ p: 5 }} onSubmit={handleSubmit(onSubmit)}>
         <FormControl fullWidth sx={{ mb: 6 }}>

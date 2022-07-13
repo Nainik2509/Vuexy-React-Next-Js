@@ -8,6 +8,7 @@ import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
 import { styled } from '@mui/material/styles'
 import TextField from '@mui/material/TextField'
+import IconButton from '@mui/material/IconButton'
 import InputLabel from '@mui/material/InputLabel'
 import Typography from '@mui/material/Typography'
 import Box, { BoxProps } from '@mui/material/Box'
@@ -59,7 +60,9 @@ const EditInvoiceDrawer = ({ open, toggle }: Props) => {
     >
       <Header>
         <Typography variant='h6'>Add Payment</Typography>
-        <Close fontSize='small' onClick={toggle} sx={{ cursor: 'pointer' }} />
+        <IconButton size='small' onClick={toggle} sx={{ color: 'text.primary' }}>
+          <Close fontSize='small' />
+        </IconButton>
       </Header>
       <Box sx={{ p: 5 }}>
         <Box sx={{ mb: 6 }}>

@@ -15,6 +15,7 @@ import Divider from '@mui/material/Divider'
 import ListItem from '@mui/material/ListItem'
 import { styled } from '@mui/material/styles'
 import TextField from '@mui/material/TextField'
+import IconButton from '@mui/material/IconButton'
 import AlertTitle from '@mui/material/AlertTitle'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
@@ -54,8 +55,8 @@ const StyledList = styled(List)<ListProps>(({ theme }) => ({
       }
     },
     '& .remove-item': {
-      top: '1rem',
-      right: '1rem',
+      top: '0.5rem',
+      right: '0.5rem',
       position: 'absolute',
       color: theme.palette.text.secondary
     }
@@ -83,7 +84,9 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
             <ListItemAvatar>
               <img width={100} src='/images/products/google-home.png' alt='Google Home' />
             </ListItemAvatar>
-            <Close fontSize='small' className='remove-item' />
+            <IconButton size='small' className='remove-item' sx={{ color: 'text.primary' }}>
+              <Close fontSize='small' />
+            </IconButton>
             <Grid container>
               <Grid item xs={12} md={8}>
                 <ListItemText primary='Google - Google Home - White' />
@@ -145,7 +148,9 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
                 </Box>
               </Grid>
               <Grid item xs={12} md={4}>
-                <Close fontSize='small' className='remove-item' />
+                <IconButton size='small' className='remove-item' sx={{ color: 'text.primary' }}>
+                  <Close fontSize='small' />
+                </IconButton>
                 <Box
                   sx={{
                     mt: 4,

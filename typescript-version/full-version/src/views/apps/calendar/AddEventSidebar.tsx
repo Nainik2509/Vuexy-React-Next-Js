@@ -9,6 +9,7 @@ import Switch from '@mui/material/Switch'
 import Button from '@mui/material/Button'
 import MenuItem from '@mui/material/MenuItem'
 import TextField from '@mui/material/TextField'
+import IconButton from '@mui/material/IconButton'
 import InputLabel from '@mui/material/InputLabel'
 import Typography from '@mui/material/Typography'
 import FormControl from '@mui/material/FormControl'
@@ -221,13 +222,17 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
         </Typography>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           {store.selectedEvent !== null && store.selectedEvent.title.length ? (
-            <DeleteOutline
-              fontSize='small'
-              sx={{ cursor: 'pointer', mr: store.selectedEvent !== null ? 2 : 0 }}
+            <IconButton
+              size='small'
               onClick={handleDeleteEvent}
-            />
+              sx={{ color: 'text.primary', mr: store.selectedEvent !== null ? 1 : 0 }}
+            >
+              <DeleteOutline fontSize='small' />
+            </IconButton>
           ) : null}
-          <Close fontSize='small' onClick={handleSidebarClose} sx={{ cursor: 'pointer' }} />
+          <IconButton size='small' onClick={handleSidebarClose} sx={{ color: 'text.primary' }}>
+            <Close fontSize='small' />
+          </IconButton>
         </Box>
       </Box>
       <Box className='sidebar-body' sx={{ p: theme => theme.spacing(5, 6) }}>
