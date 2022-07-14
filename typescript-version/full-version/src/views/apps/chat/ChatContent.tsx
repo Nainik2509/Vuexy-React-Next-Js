@@ -1,11 +1,9 @@
 // ** React Imports
-import { useState, SyntheticEvent, Fragment } from 'react'
+import { Fragment } from 'react'
 
 // ** MUI Imports
-import Menu from '@mui/material/Menu'
 import Badge from '@mui/material/Badge'
 import MuiAvatar from '@mui/material/Avatar'
-import MenuItem from '@mui/material/MenuItem'
 import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
@@ -23,6 +21,7 @@ import MessageOutline from 'mdi-material-ui/MessageOutline'
 import ChatLog from './ChatLog'
 import SendMsgForm from 'src/views/apps/chat/SendMsgForm'
 import CustomAvatar from 'src/@core/components/mui/avatar'
+import OptionsMenu from 'src/@core/components/option-menu'
 import UserProfileRight from 'src/views/apps/chat/UserProfileRight'
 
 // ** Types
@@ -55,18 +54,6 @@ const ChatContent = (props: ChatContentType) => {
     handleLeftSidebarToggle,
     handleUserProfileRightSidebarToggle
   } = props
-
-  // ** State
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-
-  const open = Boolean(anchorEl)
-
-  const handleClick = (event: SyntheticEvent) => {
-    setAnchorEl(event.currentTarget as HTMLElement)
-  }
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
 
   const handleStartConversation = () => {
     if (!mdAbove) {
@@ -207,29 +194,13 @@ const ChatContent = (props: ChatContentType) => {
                     </IconButton>
                   </Fragment>
                 ) : null}
-                <IconButton size='small' onClick={handleClick} sx={{ color: 'text.secondary' }}>
-                  <DotsVertical sx={{ fontSize: '1.25rem' }} />
-                </IconButton>
-                <Menu
-                  open={open}
-                  sx={{ mt: 2 }}
-                  anchorEl={anchorEl}
-                  onClose={handleClose}
-                  anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'right'
-                  }}
-                  transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right'
-                  }}
-                >
-                  <MenuItem onClick={handleClose}>View Contact</MenuItem>
-                  <MenuItem onClick={handleClose}>Mute Notifications</MenuItem>
-                  <MenuItem onClick={handleClose}>Block Contact</MenuItem>
-                  <MenuItem onClick={handleClose}>Clear Chat</MenuItem>
-                  <MenuItem onClick={handleClose}>Report</MenuItem>
-                </Menu>
+
+                <OptionsMenu
+                  menuProps={{ sx: { mt: 2 } }}
+                  icon={<DotsVertical sx={{ fontSize: '1.25rem' }} />}
+                  iconButtonProps={{ size: 'small', sx: { color: 'text.secondary' } }}
+                  options={['View Contact', 'Mute Notifications', 'Block Contact', 'Clear Chat', 'Report']}
+                />
               </Box>
             </Box>
 

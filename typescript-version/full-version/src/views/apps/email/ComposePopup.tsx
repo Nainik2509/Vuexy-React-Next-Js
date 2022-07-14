@@ -1,5 +1,5 @@
 // ** React Imports
-import { useState, useRef, MouseEvent, HTMLAttributes } from 'react'
+import { useState, useRef, HTMLAttributes } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -23,13 +23,13 @@ import Minus from 'mdi-material-ui/Minus'
 import Close from 'mdi-material-ui/Close'
 import ChevronUp from 'mdi-material-ui/ChevronUp'
 import Attachment from 'mdi-material-ui/Attachment'
-import DotsVertical from 'mdi-material-ui/DotsVertical'
 import DeleteOutline from 'mdi-material-ui/DeleteOutline'
 
 // ** Third Party Components
 import { EditorState } from 'draft-js'
 
 // ** Custom Components Imports
+import OptionsMenu from 'src/@core/components/option-menu'
 import CustomAvatar from 'src/@core/components/mui/avatar'
 import ReactDraftWysiwyg from 'src/@core/components/react-draft-wysiwyg'
 
@@ -95,7 +95,6 @@ const ComposePopup = (props: MailComposeType) => {
   const [subjectValue, setSubjectValue] = useState<string>('')
   const [bccValue, setbccValue] = useState<FieldMenuItems[]>([])
   const [sendBtnOpen, setSendBtnOpen] = useState<boolean>(false)
-  const [moreBtnOpen, setMoreBtnOpen] = useState<null | HTMLElement>(null)
   const [messageValue, setMessageValue] = useState(EditorState.createEmpty())
   const [visibility, setVisibility] = useState<MailFields>({
     cc: false,
@@ -105,9 +104,6 @@ const ComposePopup = (props: MailComposeType) => {
   // ** Ref
   const anchorRefSendBtn = useRef<HTMLDivElement>(null)
 
-  // ** vars
-  const moreBtnOpenRef = Boolean(moreBtnOpen)
-
   const toggleVisibility = (value: 'cc' | 'bcc') => setVisibility({ ...visibility, [value]: !visibility[value] })
 
   const handleSendMenuItemClick = () => {
@@ -116,12 +112,6 @@ const ComposePopup = (props: MailComposeType) => {
 
   const handleSendBtnToggle = () => {
     setSendBtnOpen(prevOpen => !prevOpen)
-  }
-  const handleMoreBtnClick = (event: MouseEvent<HTMLElement>) => {
-    setMoreBtnOpen(event.currentTarget)
-  }
-  const handleMoreBtnClose = () => {
-    setMoreBtnOpen(null)
   }
 
   const handleMailDelete = (value: string, state: FieldMenuItems[], setState: (val: FieldMenuItems[]) => void) => {
@@ -448,33 +438,15 @@ const ComposePopup = (props: MailComposeType) => {
           </IconButton>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <IconButton
-            size='small'
-            aria-label='more'
-            aria-haspopup='true'
-            onClick={handleMoreBtnClick}
-            aria-expanded={moreBtnOpen ? 'true' : undefined}
-          >
-            <DotsVertical sx={{ fontSize: '1.375rem' }} />
-          </IconButton>
-
-          <Menu
-            open={moreBtnOpenRef}
-            anchorEl={moreBtnOpen}
-            onClose={handleMoreBtnClose}
-            anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'right'
+          <OptionsMenu
+            iconButtonProps={{ size: 'small' }}
+            iconProps={{ sx: { fontSize: '1.375rem' } }}
+            options={['Print', 'Check spelling', 'Plain text mode']}
+            menuProps={{
+              anchorOrigin: { vertical: 'top', horizontal: 'right' },
+              transformOrigin: { vertical: 'bottom', horizontal: 'right' }
             }}
-            transformOrigin={{
-              vertical: 'bottom',
-              horizontal: 'right'
-            }}
-          >
-            <MenuItem onClick={handleMoreBtnClose}>Print</MenuItem>
-            <MenuItem onClick={handleMoreBtnClose}>Check spelling</MenuItem>
-            <MenuItem onClick={handleMoreBtnClose}>Plain text mode</MenuItem>
-          </Menu>
+          />
           <IconButton size='small' onClick={handlePopupClose}>
             <DeleteOutline sx={{ fontSize: '1.375rem' }} />
           </IconButton>

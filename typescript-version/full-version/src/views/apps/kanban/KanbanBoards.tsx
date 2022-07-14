@@ -1,20 +1,15 @@
 // ** React Imports
-import { useState, useEffect, SyntheticEvent } from 'react'
+import { useState, useEffect } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
-import Menu from '@mui/material/Menu'
 import Button from '@mui/material/Button'
-import MenuItem from '@mui/material/MenuItem'
 import TextField from '@mui/material/TextField'
-import Typography from '@mui/material/Typography'
-import IconButton from '@mui/material/IconButton'
 import FormControl from '@mui/material/FormControl'
 import FormHelperText from '@mui/material/FormHelperText'
 
 // ** Icons Imports
 import Plus from 'mdi-material-ui/Plus'
-import DotsVertical from 'mdi-material-ui/DotsVertical'
 
 // ** Third Party Imports
 import { Droppable } from 'react-beautiful-dnd'
@@ -33,6 +28,9 @@ import { KanbanTaskType, KanbanBoardProps, AddNewTaskType } from 'src/types/apps
 // ** Kanban Component
 import KanbanTasks from './KanbanTasks'
 
+// ** Custom Components Imports
+import OptionsMenu from 'src/@core/components/option-menu'
+
 const defaultValues = {
   taskTitle: ''
 }
@@ -44,10 +42,6 @@ const KanbanBoard = (props: KanbanBoardProps) => {
   // ** States
   const [title, setTitle] = useState<string>('')
   const [showAddTask, setShowAddTask] = useState<string | null>(null)
-  const [optionsAnchorEl, setOptionsAnchorEl] = useState<null | HTMLElement>(null)
-
-  // ** Vars
-  const openOptionsMenu = Boolean(optionsAnchorEl)
 
   // ** Hooks
   const dispatch = useDispatch<AppDispatch>()
@@ -62,14 +56,6 @@ const KanbanBoard = (props: KanbanBoardProps) => {
     setTitle(board.title)
   }, [board.title])
 
-  const handleOptionsMenuClick = (event: SyntheticEvent) => {
-    setOptionsAnchorEl(event.currentTarget as HTMLElement)
-  }
-
-  const handleOptionsMenuClose = () => {
-    setOptionsAnchorEl(null)
-  }
-
   const handleAddTaskReset = () => {
     reset()
     setShowAddTask(null)
@@ -82,12 +68,10 @@ const KanbanBoard = (props: KanbanBoardProps) => {
 
   const handleClearTasks = () => {
     dispatch(clearTasks(board.id))
-    handleOptionsMenuClose()
   }
 
   const handleDeleteBoard = () => {
     dispatch(deleteBoard(board.id))
-    handleOptionsMenuClose()
   }
 
   const handleAddTaskFormSubmit = (data: AddNewTaskType) => {
@@ -149,30 +133,18 @@ const KanbanBoard = (props: KanbanBoardProps) => {
               }}
             />
           </Box>
-          <IconButton size='small' onClick={handleOptionsMenuClick}>
-            <DotsVertical fontSize='small' />
-          </IconButton>
-          <Menu
-            open={openOptionsMenu}
-            anchorEl={optionsAnchorEl}
-            onClose={handleOptionsMenuClose}
-            PaperProps={{ style: { minWidth: '9rem' } }}
-            anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: 'left'
-            }}
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'left'
-            }}
-          >
-            <MenuItem onClick={handleClearTasks}>
-              <Typography>Clear Tasks</Typography>
-            </MenuItem>
-            <MenuItem onClick={handleDeleteBoard}>
-              <Typography>Delete Board</Typography>
-            </MenuItem>
-          </Menu>
+          <OptionsMenu
+            iconProps={{ fontSize: 'small' }}
+            iconButtonProps={{ size: 'small' }}
+            menuProps={{ PaperProps: { style: { minWidth: '9rem' } } }}
+            options={[
+              {
+                text: 'Clear Tasks',
+                menuItemProps: { onClick: () => handleClearTasks() }
+              },
+              { text: 'Delete Board', menuItemProps: { onClick: () => handleDeleteBoard() } }
+            ]}
+          />
         </Box>
         <Box>
           <Droppable droppableId={board.id.toString()}>

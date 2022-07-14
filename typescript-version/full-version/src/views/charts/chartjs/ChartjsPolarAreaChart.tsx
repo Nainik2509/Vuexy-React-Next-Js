@@ -10,6 +10,9 @@ import DotsVertical from 'mdi-material-ui/DotsVertical'
 // ** Third Party Imports
 import { PolarArea } from 'react-chartjs-2'
 
+// ** Custom Components Imports
+import OptionsMenu from 'src/@core/components/option-menu'
+
 interface PolarAreaProps {
   info: string
   grey: string
@@ -70,9 +73,11 @@ const ChartjsPolarAreaChart = (props: PolarAreaProps) => {
       <CardHeader
         title='Average Skills'
         action={
-          <IconButton size='small' aria-label='settings' className='card-more-options' sx={{ color: 'text.secondary' }}>
-            <DotsVertical fontSize='small' />
-          </IconButton>
+          <OptionsMenu
+            iconProps={{ fontSize: 'small' }}
+            options={['Refresh', 'Edit', 'Share']}
+            iconButtonProps={{ size: 'small', className: 'card-more-options', sx: { color: 'text.secondary' } }}
+          />
         }
       />
       <CardContent>

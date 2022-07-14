@@ -5,20 +5,19 @@ import { ReactNode } from 'react'
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import Typography from '@mui/material/Typography'
-import IconButton from '@mui/material/IconButton'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
 // ** Icons Imports
 import ChevronUp from 'mdi-material-ui/ChevronUp'
 import ChevronDown from 'mdi-material-ui/ChevronDown'
-import DotsVertical from 'mdi-material-ui/DotsVertical'
 
 // ** Types
 import { ThemeColor } from 'src/@core/layouts/types'
 
 // ** Custom Components Imports
 import CustomAvatar from 'src/@core/components/mui/avatar'
+import OptionsMenu from 'src/@core/components/option-menu'
 
 interface DataType {
   sales: string
@@ -100,9 +99,10 @@ const CardSalesByCountries = () => {
       <CardHeader
         title='Sales by Countries'
         action={
-          <IconButton size='small' aria-label='settings' className='card-more-options' sx={{ color: 'text.secondary' }}>
-            <DotsVertical />
-          </IconButton>
+          <OptionsMenu
+            options={['Last 28 Days', 'Last Month', 'Last Year']}
+            iconButtonProps={{ size: 'small', sx: { color: 'text.primary' } }}
+          />
         }
       />
       <CardContent>

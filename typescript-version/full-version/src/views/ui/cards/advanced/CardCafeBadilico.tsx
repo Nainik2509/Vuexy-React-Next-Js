@@ -6,13 +6,12 @@ import Button from '@mui/material/Button'
 import Rating from '@mui/material/Rating'
 import Divider from '@mui/material/Divider'
 import CardMedia from '@mui/material/CardMedia'
-import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 import CardActions from '@mui/material/CardActions'
 
-// ** Icons Imports
-import DotsVertical from 'mdi-material-ui/DotsVertical'
+// ** Custom Components Imports
+import OptionsMenu from 'src/@core/components/option-menu'
 
 const CardCafe = () => {
   return (
@@ -21,9 +20,10 @@ const CardCafe = () => {
       <CardContent>
         <Box sx={{ mb: 1.5, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Typography variant='h6'>Cafe Badilico</Typography>
-          <IconButton size='small' aria-label='settings' className='card-more-options' sx={{ color: 'text.secondary' }}>
-            <DotsVertical />
-          </IconButton>
+          <OptionsMenu
+            options={['Edit Title', 'Edit Timings', 'Edit Description']}
+            iconButtonProps={{ size: 'small', sx: { color: 'text.primary' } }}
+          />
         </Box>
 
         <Box sx={{ mb: 5, display: 'flex', alignItems: 'center' }}>

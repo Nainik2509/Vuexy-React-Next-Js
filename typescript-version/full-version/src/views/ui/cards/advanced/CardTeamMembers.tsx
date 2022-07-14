@@ -8,19 +8,16 @@ import TableBody from '@mui/material/TableBody'
 import TableHead from '@mui/material/TableHead'
 import TableCell from '@mui/material/TableCell'
 import Typography from '@mui/material/Typography'
-import IconButton from '@mui/material/IconButton'
 import CardHeader from '@mui/material/CardHeader'
 import TableContainer from '@mui/material/TableContainer'
 import CircularProgress from '@mui/material/CircularProgress'
 
-// ** Icons Imports
-import DotsVertical from 'mdi-material-ui/DotsVertical'
-
 // ** Types
 import { ThemeColor } from 'src/@core/layouts/types'
 
-// ** Custom Components
+// ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
+import OptionsMenu from 'src/@core/components/option-menu'
 
 interface DataType {
   src: string
@@ -92,9 +89,10 @@ const CardTeamMembers = () => {
       <CardHeader
         title='Team Members'
         action={
-          <IconButton size='small' aria-label='settings' className='card-more-options' sx={{ color: 'text.secondary' }}>
-            <DotsVertical />
-          </IconButton>
+          <OptionsMenu
+            options={['Refresh', 'Share', 'Update']}
+            iconButtonProps={{ size: 'small', sx: { color: 'text.primary' } }}
+          />
         }
       />
       <TableContainer>

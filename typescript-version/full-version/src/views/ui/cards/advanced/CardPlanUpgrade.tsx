@@ -8,7 +8,6 @@ import Link from '@mui/material/Link'
 import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
-import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import CardHeader from '@mui/material/CardHeader'
 import FormControl from '@mui/material/FormControl'
@@ -16,7 +15,9 @@ import CardContent from '@mui/material/CardContent'
 
 // ** Icons Imports
 import ArrowRight from 'mdi-material-ui/ArrowRight'
-import DotsVertical from 'mdi-material-ui/DotsVertical'
+
+// ** Custom Components Imports
+import OptionsMenu from 'src/@core/components/option-menu'
 
 // ** Hooks Imports
 import useBgColor from 'src/@core/hooks/useBgColor'
@@ -34,9 +35,10 @@ const CardPlanUpgrade = () => {
       <CardHeader
         title='Upgrade Your Plan'
         action={
-          <IconButton size='small' aria-label='settings' className='card-more-options' sx={{ color: 'text.secondary' }}>
-            <DotsVertical />
-          </IconButton>
+          <OptionsMenu
+            options={['Add Cards', 'Edit Cards', 'Delete Year']}
+            iconButtonProps={{ size: 'small', sx: { color: 'text.primary' } }}
+          />
         }
       />
       <CardContent>

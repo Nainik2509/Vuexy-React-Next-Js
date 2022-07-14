@@ -1,12 +1,10 @@
 // ** React Imports
-import { Fragment, useState, SyntheticEvent, ReactNode } from 'react'
+import { Fragment, useState, ReactNode } from 'react'
 
 // ** MUI Imports
 import List from '@mui/material/List'
-import Menu from '@mui/material/Menu'
 import Avatar from '@mui/material/Avatar'
 import Divider from '@mui/material/Divider'
-import MenuItem from '@mui/material/MenuItem'
 import ListItem from '@mui/material/ListItem'
 import { styled } from '@mui/material/styles'
 import IconButton from '@mui/material/IconButton'
@@ -39,9 +37,11 @@ import { useSettings } from 'src/@core/hooks/useSettings'
 // ** Custom Components Imports
 import Sidebar from 'src/@core/components/sidebar'
 import CustomChip from 'src/@core/components/mui/chip'
+import OptionsMenu from 'src/@core/components/option-menu'
 
 // ** Types
 import { ThemeColor } from 'src/@core/layouts/types'
+import { OptionType } from 'src/@core/components/option-menu/types'
 import {
   MailType,
   MailLabelType,
@@ -82,48 +82,6 @@ const HiddenReplyFront = styled(Box)<BoxProps>(({ theme }) => ({
   borderColor: `rgba(${theme.palette.customColors.main}, 0.12)`
 }))
 
-const MailCardMenu = () => {
-  const [mailMenuAnchorEl, setMailMenuAnchorEl] = useState<null | HTMLElement>(null)
-  const openMailMenu = Boolean(mailMenuAnchorEl)
-
-  const handleMailMenuClick = (event: SyntheticEvent) => {
-    setMailMenuAnchorEl(event.currentTarget as HTMLElement)
-  }
-  const handleMailMenuClose = () => {
-    setMailMenuAnchorEl(null)
-  }
-
-  return (
-    <>
-      <IconButton size='small' onClick={handleMailMenuClick}>
-        <DotsVertical sx={{ fontSize: '1.375rem' }} />
-      </IconButton>
-      <Menu
-        anchorEl={mailMenuAnchorEl}
-        open={openMailMenu}
-        onClose={handleMailMenuClose}
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'right'
-        }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right'
-        }}
-      >
-        <MenuItem>
-          <ShareOutline fontSize='small' sx={{ mr: 2 }} />
-          Reply
-        </MenuItem>
-        <MenuItem>
-          <ReplyOutline fontSize='small' sx={{ mr: 2 }} />
-          Forward
-        </MenuItem>
-      </Menu>
-    </>
-  )
-}
-
 const MailDetails = (props: MailDetailsType) => {
   // ** Props
   const {
@@ -146,33 +104,12 @@ const MailDetails = (props: MailDetailsType) => {
 
   // ** State
   const [showReplies, setShowReplies] = useState<boolean>(false)
-  const [labelAnchorEl, setLabelAnchorEl] = useState<null | HTMLElement>(null)
-  const [folderAnchorEl, setFolderAnchorEl] = useState<null | HTMLElement>(null)
 
   // ** Hook
   const { settings } = useSettings()
 
-  // ** Vars
-  const openLabelMenu = Boolean(labelAnchorEl)
-  const openFolderMenu = Boolean(folderAnchorEl)
-
   const handleMoveToTrash = () => {
     dispatch(updateMail({ emailIds: [mail.id], dataToUpdate: { folder: 'trash' } }))
-    setMailDetailsOpen(false)
-  }
-
-  const handleLabelMenuClick = (event: SyntheticEvent) => {
-    setLabelAnchorEl(event.currentTarget as HTMLElement)
-  }
-  const handleLabelMenuClose = () => {
-    setLabelAnchorEl(null)
-  }
-
-  const handleFolderMenuClick = (event: SyntheticEvent) => {
-    setFolderAnchorEl(event.currentTarget as HTMLElement)
-  }
-  const handleFolderMenuClose = () => {
-    setFolderAnchorEl(null)
     setMailDetailsOpen(false)
   }
 
@@ -180,74 +117,72 @@ const MailDetails = (props: MailDetailsType) => {
     dispatch(updateMail({ emailIds: [mail.id], dataToUpdate: { isRead: false } }))
     setMailDetailsOpen(false)
   }
-  const renderLabelsMenu = () => {
-    return Object.entries(labelColors).map(([key, value]: string[]) => {
-      return (
-        <MenuItem
-          key={key}
-          sx={{ display: 'flex', alignItems: 'center' }}
-          onClick={() => {
+  const handleLabelsMenu = () => {
+    const array: OptionType[] = []
+    Object.entries(labelColors).map(([key, value]: string[]) => {
+      array.push({
+        text: <Typography sx={{ textTransform: 'capitalize' }}>{key}</Typography>,
+        icon: <Circle sx={{ mr: 2, fontSize: '0.75rem', color: `${value}.main` }} />,
+        menuItemProps: {
+          onClick: () => {
             handleLabelUpdate([mail.id], key as MailLabelType)
-            handleLabelMenuClose()
-          }}
-        >
-          <Circle sx={{ mr: 2, fontSize: '0.75rem', color: `${value}.main` }} />
-          <Typography sx={{ textTransform: 'capitalize' }}>{key}</Typography>
-        </MenuItem>
-      )
+            setMailDetailsOpen(false)
+          }
+        }
+      })
     })
+
+    return array
   }
 
-  const renderFoldersMenu = () => {
+  const handleFoldersMenu = () => {
+    const array: OptionType[] = []
+
     if (routeParams && routeParams.folder && !routeParams.label && foldersObj[routeParams.folder]) {
-      return foldersObj[routeParams.folder].map((folder: MailFoldersArrType) => {
-        return (
-          <MenuItem
-            key={folder.name}
-            sx={{ display: 'flex', alignItems: 'center' }}
-            onClick={() => {
+      foldersObj[routeParams.folder].map((folder: MailFoldersArrType) => {
+        array.length = 0
+        array.push({
+          icon: folder.icon,
+          text: <Typography sx={{ textTransform: 'capitalize' }}>{folder.name}</Typography>,
+          menuItemProps: {
+            onClick: () => {
               handleFolderUpdate(mail.id, folder.name)
-              handleFolderMenuClose()
-            }}
-          >
-            {folder.icon}
-            <Typography sx={{ textTransform: 'capitalize' }}>{folder.name}</Typography>
-          </MenuItem>
-        )
+              setMailDetailsOpen(false)
+            }
+          }
+        })
       })
     } else if (routeParams && routeParams.label) {
-      return folders.map((folder: MailFoldersArrType) => {
-        return (
-          <MenuItem
-            key={folder.name}
-            sx={{ display: 'flex', alignItems: 'center' }}
-            onClick={() => {
+      folders.map((folder: MailFoldersArrType) => {
+        array.length = 0
+        array.push({
+          icon: folder.icon,
+          text: <Typography sx={{ textTransform: 'capitalize' }}>{folder.name}</Typography>,
+          menuItemProps: {
+            onClick: () => {
               handleFolderUpdate(mail.id, folder.name)
-              handleFolderMenuClose()
-            }}
-          >
-            {folder.icon}
-            <Typography sx={{ textTransform: 'capitalize' }}>{folder.name}</Typography>
-          </MenuItem>
-        )
+              setMailDetailsOpen(false)
+            }
+          }
+        })
       })
     } else {
-      return foldersObj['inbox'].map((folder: MailFoldersArrType) => {
-        return (
-          <MenuItem
-            key={folder.name}
-            sx={{ display: 'flex', alignItems: 'center' }}
-            onClick={() => {
+      foldersObj['inbox'].map((folder: MailFoldersArrType) => {
+        array.length = 0
+        array.push({
+          icon: folder.icon,
+          text: <Typography sx={{ textTransform: 'capitalize' }}>{folder.name}</Typography>,
+          menuItemProps: {
+            onClick: () => {
               handleFolderUpdate(mail.id, folder.name)
-              handleFolderMenuClose()
-            }}
-          >
-            {folder.icon}
-            <Typography sx={{ textTransform: 'capitalize' }}>{folder.name}</Typography>
-          </MenuItem>
-        )
+              setMailDetailsOpen(false)
+            }
+          }
+        })
       })
     }
+
+    return array
   }
 
   const PrevMailIcon = direction === 'rtl' ? ChevronRight : ChevronLeft
@@ -371,44 +306,18 @@ const MailDetails = (props: MailDetailsType) => {
                 <IconButton size='small' onClick={handleReadMail}>
                   <EmailOutline sx={{ fontSize: '1.375rem' }} />
                 </IconButton>
-                <IconButton size='small' onClick={handleFolderMenuClick}>
-                  <FolderOutline sx={{ fontSize: '1.375rem' }} />
-                </IconButton>
-                <Menu
-                  open={openLabelMenu}
-                  anchorEl={labelAnchorEl}
-                  onClose={handleLabelMenuClose}
-                  PaperProps={{ style: { minWidth: '9rem' } }}
-                  anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'left'
-                  }}
-                  transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'left'
-                  }}
-                >
-                  {renderLabelsMenu()}
-                </Menu>
-                <IconButton size='small' onClick={handleLabelMenuClick}>
-                  <LabelOutline sx={{ fontSize: '1.375rem' }} />
-                </IconButton>
-                <Menu
-                  open={openFolderMenu}
-                  anchorEl={folderAnchorEl}
-                  onClose={() => setFolderAnchorEl(null)}
-                  PaperProps={{ style: { minWidth: '9rem' } }}
-                  anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'left'
-                  }}
-                  transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'left'
-                  }}
-                >
-                  {renderFoldersMenu()}
-                </Menu>
+                <OptionsMenu
+                  leftAlignMenu
+                  options={handleFoldersMenu()}
+                  iconButtonProps={{ size: 'small' }}
+                  icon={<FolderOutline sx={{ fontSize: '1.375rem' }} />}
+                />
+                <OptionsMenu
+                  leftAlignMenu
+                  options={handleLabelsMenu()}
+                  iconButtonProps={{ size: 'small' }}
+                  icon={<LabelOutline sx={{ fontSize: '1.375rem' }} />}
+                />
               </Box>
               <Box>
                 <IconButton
@@ -583,7 +492,19 @@ const MailDetails = (props: MailDetailsType) => {
                             <Attachment sx={{ fontSize: '1.375rem' }} />
                           </IconButton>
                         ) : null}
-                        <MailCardMenu />
+                        <OptionsMenu
+                          iconButtonProps={{ size: 'small' }}
+                          options={[
+                            {
+                              text: 'Reply',
+                              icon: <ShareOutline fontSize='small' sx={{ mr: 2 }} />
+                            },
+                            {
+                              text: 'Forward',
+                              icon: <ReplyOutline fontSize='small' sx={{ mr: 2 }} />
+                            }
+                          ]}
+                        />
                       </Box>
                     </Box>
                   </Box>

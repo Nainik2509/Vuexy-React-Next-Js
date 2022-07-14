@@ -3,17 +3,18 @@ import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import Avatar from '@mui/material/Avatar'
 import Typography from '@mui/material/Typography'
-import IconButton from '@mui/material/IconButton'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 import LinearProgress from '@mui/material/LinearProgress'
 
 // ** Icons Imports
 import MenuUp from 'mdi-material-ui/MenuUp'
-import DotsVertical from 'mdi-material-ui/DotsVertical'
 
 // ** Types
 import { ThemeColor } from 'src/@core/layouts/types'
+
+// ** Custom Components Imports
+import OptionsMenu from 'src/@core/components/option-menu'
 
 interface DataType {
   title: string
@@ -65,9 +66,10 @@ const CardTotalEarnings = () => {
       <CardHeader
         title='Total Earning'
         action={
-          <IconButton size='small' aria-label='settings' className='card-more-options' sx={{ color: 'text.secondary' }}>
-            <DotsVertical />
-          </IconButton>
+          <OptionsMenu
+            options={['Last 28 Days', 'Last Month', 'Last Year']}
+            iconButtonProps={{ size: 'small', sx: { color: 'text.primary' } }}
+          />
         }
       />
       <CardContent sx={{ pt: theme => `${theme.spacing(2.5)} !important` }}>

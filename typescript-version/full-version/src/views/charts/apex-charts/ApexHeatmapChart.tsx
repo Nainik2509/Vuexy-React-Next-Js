@@ -1,17 +1,16 @@
 // ** MUI Imports
 import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
-import IconButton from '@mui/material/IconButton'
 import CardContent from '@mui/material/CardContent'
-
-// ** Icons Imports
-import DotsVertical from 'mdi-material-ui/DotsVertical'
 
 // ** Third Party Imports
 import { ApexOptions } from 'apexcharts'
 
 // ** Component Import
 import ReactApexcharts from 'src/@core/components/react-apexcharts'
+
+// ** Custom Components Imports
+import OptionsMenu from 'src/@core/components/option-menu'
 
 interface YRange {
   min: number
@@ -168,9 +167,11 @@ const ApexHeatmapChart = () => {
       <CardHeader
         title='Daily Sales States'
         action={
-          <IconButton size='small' aria-label='settings' className='card-more-options' sx={{ color: 'text.secondary' }}>
-            <DotsVertical fontSize='small' />
-          </IconButton>
+          <OptionsMenu
+            iconProps={{ fontSize: 'small' }}
+            options={['Last 28 Days', 'Last Month', 'Last Year']}
+            iconButtonProps={{ size: 'small', className: 'card-more-options', sx: { color: 'text.secondary' } }}
+          />
         }
       />
       <CardContent>

@@ -3,12 +3,10 @@ import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import Avatar from '@mui/material/Avatar'
 import Typography from '@mui/material/Typography'
-import IconButton from '@mui/material/IconButton'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
 // ** Icons Imports
-import DotsVertical from 'mdi-material-ui/DotsVertical'
 import CalendarBlankOutline from 'mdi-material-ui/CalendarBlankOutline'
 
 // ** Types
@@ -16,6 +14,7 @@ import { ThemeColor } from 'src/@core/layouts/types'
 
 // ** Custom Components
 import CustomChip from 'src/@core/components/mui/chip'
+import OptionsMenu from 'src/@core/components/option-menu'
 
 interface DataType {
   src: string
@@ -76,9 +75,10 @@ const CardMeetingSchedule = () => {
       <CardHeader
         title='Meeting Schedule'
         action={
-          <IconButton size='small' aria-label='settings' className='card-more-options' sx={{ color: 'text.secondary' }}>
-            <DotsVertical />
-          </IconButton>
+          <OptionsMenu
+            options={['Refresh', 'Share', 'Reschedule']}
+            iconButtonProps={{ size: 'small', sx: { color: 'text.primary' } }}
+          />
         }
       />
       <CardContent>

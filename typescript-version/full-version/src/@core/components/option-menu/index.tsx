@@ -17,7 +17,7 @@ import { useSettings } from 'src/@core/hooks/useSettings'
 
 const OptionMenu = (props: PropType) => {
   // ** Props
-  const { icon, options, menuProps, rightAlignMenu, iconButtonProps } = props
+  const { icon, options, menuProps, iconProps, leftAlignMenu, iconButtonProps } = props
 
   // ** State
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
@@ -37,14 +37,14 @@ const OptionMenu = (props: PropType) => {
   return (
     <>
       <IconButton aria-haspopup='true' onClick={handleClick} {...iconButtonProps}>
-        {icon ? icon : <DotsVertical />}
+        {icon ? icon : <DotsVertical {...iconProps} />}
       </IconButton>
       <Menu
         keepMounted
         anchorEl={anchorEl}
         onClose={handleClose}
         open={Boolean(anchorEl)}
-        {...(rightAlignMenu && {
+        {...(!leftAlignMenu && {
           anchorOrigin: { vertical: 'bottom', horizontal: direction === 'ltr' ? 'right' : 'left' },
           transformOrigin: { vertical: 'top', horizontal: direction === 'ltr' ? 'right' : 'left' }
         })}
@@ -56,7 +56,14 @@ const OptionMenu = (props: PropType) => {
               {option}
             </MenuItem>
           ) : (
-            <MenuItem key={index} onClick={handleClose} {...option.menuItemProps}>
+            <MenuItem
+              key={index}
+              {...option.menuItemProps}
+              onClick={e => {
+                handleClose()
+                option.menuItemProps && option.menuItemProps.onClick ? option.menuItemProps.onClick(e) : null
+              }}
+            >
               {option.icon ? option.icon : null}
               {option.text}
             </MenuItem>

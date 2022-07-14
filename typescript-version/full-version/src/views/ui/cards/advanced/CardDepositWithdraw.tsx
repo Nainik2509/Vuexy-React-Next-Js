@@ -1,3 +1,9 @@
+// ** React Imports
+import { SyntheticEvent } from 'react'
+
+// ** Next Imports
+import Link from 'next/link'
+
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -121,9 +127,15 @@ const CardDepositWithdraw = () => {
           title='Deposit'
           sx={{ '& .MuiCardHeader-action': { mt: -0.8 } }}
           action={
-            <Typography variant='caption' sx={{ color: 'primary.main' }}>
-              View All
-            </Typography>
+            <Link passHref href='/'>
+              <Box
+                component='a'
+                onClick={(e: SyntheticEvent) => e.preventDefault()}
+                sx={{ fontSize: '.75rem', color: 'primary.main', textDecoration: 'none' }}
+              >
+                View All
+              </Box>
+            </Link>
           }
         />
         <CardContent>
@@ -167,9 +179,15 @@ const CardDepositWithdraw = () => {
           title='Withdraw'
           sx={{ '& .MuiCardHeader-action': { mt: -0.8 } }}
           action={
-            <Typography variant='caption' sx={{ color: 'primary.main' }}>
-              View All
-            </Typography>
+            <Link passHref href='/'>
+              <Box
+                component='a'
+                onClick={(e: SyntheticEvent) => e.preventDefault()}
+                sx={{ fontSize: '.75rem', color: 'primary.main', textDecoration: 'none' }}
+              >
+                View All
+              </Box>
+            </Link>
           }
         />
         <CardContent>
