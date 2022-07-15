@@ -1560,3 +1560,91 @@ export default UserLayout
 Result:
 
 <img alt='override-scroll-to-top' class='medium-zoom' :src="$withBase('/images/layouts/user-override-scroll-to-top.png')" />
+
+## Customizer
+
+If you want to override the customizer or make a custom customizer, then follow these steps:
+
+- Hide the customizer from the `src/configs/themeConfig.ts` file
+
+<code-group>
+<code-block title="TS" active>
+```ts{5}
+// src/configs/themeConfig.ts
+
+const themeConfig: ThemeConfig = {
+  ...,
+  disableCustomizer: true,
+  ...
+}
+```
+</code-block>
+
+<code-block title="JS">
+```js{5}
+// src/configs/themeConfig.js
+
+const themeConfig = {
+  ...,
+  disableCustomizer: true,
+  ...
+}
+```
+</code-block>
+</code-group>
+
+- Make a new file (let us say `Customizer.tsx` file name) in the `src/layouts/components` folder
+- Copy the whole code from the `src/@core/components/customizer/index.tsx` file and paste it into the `src/layouts/components/Customizer.tsx` file
+- Edit the `src/layouts/components/Customizer.tsx` file as per your requirements
+- Render this customizer in the `src/layouts/UserLayout.tsx` file:
+
+<code-group>
+<code-block title="TSX" active>
+```tsx{5,17}
+// src/layouts/UserLayout.tsx
+
+import { ReactNode } from 'react'
+import Layout from 'src/@core/layouts/Layout'
+import Customizer from 'src/layouts/components/Customizer'
+
+interface Props {
+  children: ReactNode
+}
+
+const UserLayout = ({ children }: Props) => {
+  return (
+    <Layout
+      {...} // all the props
+    >
+      {children}
+      <Customizer />
+    </Layout>
+  )
+}
+
+export default UserLayout
+```
+</code-block>
+
+<code-block title="JSX">
+```jsx{4,12}
+// src/layouts/UserLayout.js
+
+import Layout from 'src/@core/layouts/Layout'
+import Customizer from 'src/layouts/components/Customizer'
+
+const UserLayout = ({ children }) => {
+  return (
+    <Layout
+      {...} // all the props
+    >
+      {children}
+      <Customizer />
+    </Layout>
+  )
+}
+
+export default UserLayout
+```
+</code-block>
+</code-group>
