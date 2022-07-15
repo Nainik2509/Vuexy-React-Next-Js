@@ -47,36 +47,37 @@ const UserLayout = ({ children }: Props) => {
       hidden={hidden}
       settings={settings}
       saveSettings={saveSettings}
-      {...(settings.layout === 'horizontal'
-        ? {
-            // ** Navigation Items
-            horizontalNavItems: HorizontalNavItems(),
+      verticalLayoutProps={{
+        navMenu: {
+          navItems: VerticalNavItems()
+
+          // Uncomment the below line when using server-side menu in vertical layout and comment the above line
+          // navItems: ServerSideVerticalNavItems()
+        },
+        appBar: {
+          content: props => (
+            <VerticalAppBarContent
+              hidden={hidden}
+              settings={settings}
+              saveSettings={saveSettings}
+              toggleNavVisibility={props.toggleNavVisibility}
+            />
+          )
+        }
+      }}
+      {...(settings.layout === 'horizontal' && {
+        horizontalLayoutProps: {
+          navMenu: {
+            navItems: HorizontalNavItems()
 
             // Uncomment the below line when using server-side menu in horizontal layout and comment the above line
-            // horizontalNavItems: ServerSideHorizontalNavItems(),
-
-            // ** AppBar Content
-            horizontalAppBarContent: () => (
-              <HorizontalAppBarContent hidden={hidden} settings={settings} saveSettings={saveSettings} />
-            )
+            // navItems: ServerSideHorizontalNavItems()
+          },
+          appBar: {
+            content: () => <HorizontalAppBarContent hidden={hidden} settings={settings} saveSettings={saveSettings} />
           }
-        : {
-            // ** Navigation Items
-            verticalNavItems: VerticalNavItems(),
-
-            // Uncomment the below line when using server-side menu in vertical layout and comment the above line
-            // verticalNavItems: ServerSideVerticalNavItems(),
-
-            // ** AppBar Content
-            verticalAppBarContent: props => (
-              <VerticalAppBarContent
-                hidden={hidden}
-                settings={settings}
-                saveSettings={saveSettings}
-                toggleNavVisibility={props.toggleNavVisibility}
-              />
-            )
-          })}
+        }
+      })}
     >
       {children}
       <BuyNowButton />

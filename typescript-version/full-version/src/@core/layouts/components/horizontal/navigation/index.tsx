@@ -2,7 +2,7 @@
 import Box from '@mui/material/Box'
 
 // ** Type Import
-import { HorizontalNavItemsType } from 'src/@core/layouts/types'
+import { LayoutProps } from 'src/@core/layouts/types'
 
 // ** Config Import
 import themeConfig from 'src/configs/themeConfig'
@@ -15,7 +15,7 @@ import HorizontalNavItems from './HorizontalNavItems'
 
 // ** Types
 interface Props {
-  horizontalNavItems?: HorizontalNavItemsType
+  horizontalNavItems: NonNullable<LayoutProps['horizontalLayoutProps']>['navMenu']['navItems']
 }
 
 const Navigation = (props: Props) => {

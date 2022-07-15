@@ -10,11 +10,11 @@ To use the server side navigation menu in the Vertical layout, follow these step
 
 - You need to write all of your navigation section titles, navigation groups and navigation links in [this](/guide/layout/navigation-menu-structure.html#vertical-navigation-structure) structure either on your sever / API or in the `src/@fake-db/server-side-menu/vertical.ts` file
 - Make an API call from your server in `src/layouts/components/vertical/ServerSideNavItems.tsx` file
-- And then import `src/layouts/components/vertical/ServerSideNavItems.tsx` file in `src/layouts/UserLayout.tsx` file and pass it in `verticalNavItems` prop.
+- And then import `src/layouts/components/vertical/ServerSideNavItems.tsx` file in `src/layouts/UserLayout.tsx` file and pass it as shown below:
 
 <code-group>
 <code-block title="TSX" active>
-```tsx{5,15}
+```tsx{5,15-19}
 // src/layouts/UserLayout.tsx
 
 import { ReactNode } from 'react'
@@ -29,7 +29,11 @@ const UserLayout = ({ children }: Props) => {
   return (
     <Layout
       {...} // other props
-      verticalNavItems={ServerSideVerticalNavItems()}
+      verticalLayoutProps={{
+        navMenu: {
+          navItems: ServerSideVerticalNavItems()
+        }
+      }}
     >
       {children}
     </Layout>
@@ -40,7 +44,7 @@ export default UserLayout
 </code-block>
 
 <code-block title="JSX">
-```jsx{4,10}
+```jsx{4,10-14}
 // src/layouts/UserLayout.js
 
 import Layout from 'src/@core/layouts/Layout'
@@ -50,7 +54,11 @@ const UserLayout = ({ children }) => {
   return (
     <Layout
       {...} // other props
-      verticalNavItems={ServerSideVerticalNavItems()}
+      verticalLayoutProps={{
+        navMenu: {
+          navItems: ServerSideVerticalNavItems()
+        }
+      }}
     >
       {children}
     </Layout>
@@ -71,11 +79,11 @@ To use the server side navigation menu in the Horizontal layout, follow these st
 
 - You need to write all of your navigation groups and navigation links in [this](/guide/layout/navigation-menu-structure.html#horizontal-navigation-structure) structure either on your sever / API or in the `src/@fake-db/server-side-menu/horizontal.ts` file
 - Make an API call from your server in `src/layouts/components/horizontal/ServerSideNavItems.tsx` file
-- And then import `src/layouts/components/horizontal/ServerSideNavItems.tsx` file in `src/layouts/UserLayout.tsx` file and pass it in `horizontalNavItems` prop.
+- And then import `src/layouts/components/horizontal/ServerSideNavItems.tsx` file in `src/layouts/UserLayout.tsx` file and pass it as shown below:
 
 <code-group>
 <code-block title="TSX" active>
-```tsx{5-6,16-18}
+```tsx{5-6,16-27}
 // src/layouts/UserLayout.tsx
 
 import { ReactNode } from 'react'
@@ -91,9 +99,18 @@ const UserLayout = ({ children }: Props) => {
   return (
     <Layout
       {...} // other props
-      {...(settings.layout === 'horizontal'
-        ? { horizontalNavItems: ServerSideHorizontalNavItems() }
-        : { verticalNavItems: ServerSideVerticalNavItems() })}
+      verticalLayoutProps={{
+        navMenu: {
+          navItems: ServerSideVerticalNavItems()
+        }
+      }}
+      {...(settings.layout === 'horizontal' && {
+        horizontalLayoutProps: {
+          navMenu: {
+            navItems: ServerSideHorizontalNavItems()
+          }
+        }
+      })}
     >
       {children}
     </Layout>
@@ -104,7 +121,7 @@ export default UserLayout
 </code-block>
 
 <code-block title="JSX">
-```jsx{4-5,11-13}
+```jsx{4-5,11-22}
 // src/layouts/UserLayout.js
 
 import Layout from 'src/@core/layouts/Layout'
@@ -115,9 +132,18 @@ const UserLayout = ({ children }) => {
   return (
     <Layout
       {...} // other props
-      {...(settings.layout === 'horizontal'
-        ? { horizontalNavItems: ServerSideHorizontalNavItems() }
-        : { verticalNavItems: ServerSideVerticalNavItems() })}
+      verticalLayoutProps={{
+        navMenu: {
+          navItems: ServerSideVerticalNavItems()
+        }
+      }}
+      {...(settings.layout === 'horizontal' && {
+        horizontalLayoutProps: {
+          navMenu: {
+            navItems: ServerSideHorizontalNavItems()
+          }
+        }
+      })}
     >
       {children}
     </Layout>

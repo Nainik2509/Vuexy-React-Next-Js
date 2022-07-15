@@ -27,9 +27,8 @@ import themeConfig from 'src/configs/themeConfig'
 // ** Utils
 import { hasActiveChild, removeChildren } from 'src/@core/layouts/utils'
 
-// ** Types
-import { NavGroup } from 'src/@core/layouts/types'
-import { Settings } from 'src/@core/context/settingsContext'
+// ** Type Import
+import { NavGroup, LayoutProps } from 'src/@core/layouts/types'
 
 // ** Custom Components Imports
 import VerticalNavItems from './VerticalNavItems'
@@ -41,14 +40,14 @@ interface Props {
   item: NavGroup
   navHover: boolean
   parent?: NavGroup
-  settings: Settings
   navVisible?: boolean
   groupActive: string[]
   collapsedNavWidth: number
   currentActiveGroup: string[]
   navigationBorderWidth: number
+  settings: LayoutProps['settings']
   isSubToSub?: NavGroup | undefined
-  saveSettings: (values: Settings) => void
+  saveSettings: LayoutProps['saveSettings']
   setGroupActive: (values: string[]) => void
   setCurrentActiveGroup: (items: string[]) => void
 }

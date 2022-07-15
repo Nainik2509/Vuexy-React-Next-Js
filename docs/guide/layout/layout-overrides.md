@@ -10,34 +10,82 @@ The `src/layouts` folder in the root of the `src` folder is for users to overrid
 
 Most of the layout components explained on this page are overridden in the `src/layouts/UserLayout.tsx` file.
 
+## Layout PropTypes
+
+Following is the PropTypes for Vertical and Horizontal Layouts only.
+
+```ts
+export type LayoutProps = {
+  hidden: boolean
+  settings: Settings
+  children: ReactNode
+  scrollToTop?: (props?: any) => ReactNode
+  saveSettings: (values: Settings) => void
+  footerProps?: {
+    sx?: SxProps<Theme>
+    content?: (props?: any) => ReactNode
+  }
+  horizontalLayoutProps?: {
+    appBar?: {
+      componentProps?: AppBarProps
+      content?: (props?: any) => ReactNode
+      branding?: (props?: any) => ReactNode
+    }
+    navMenu: {
+      sx?: SxProps<Theme>
+      navItems: HorizontalNavItemsType
+      content?: (props?: any) => ReactNode
+    }
+  }
+  verticalLayoutProps: {
+    appBar?: {
+      componentProps?: AppBarProps
+      content?: (props?: any) => ReactNode
+    }
+    navMenu: {
+      lockedIcon?: ReactNode
+      unlockedIcon?: ReactNode
+      navItems: VerticalNavItemsType
+      content?: (props?: any) => ReactNode
+      branding?: (props?: any) => ReactNode
+      afterContent?: (props?: any) => ReactNode
+      beforeContent?: (props?: any) => ReactNode
+      componentProps?: Omit<SwipeableDrawerProps, 'open' | 'onOpen' | 'onClose'>
+    }
+  }
+}
+```
+
 ## Vertical Layout
 
 You can override the following layout components:
 
 - [App Logo](#_1-app-logo)
 - [Menu collapse icons](#_2-menu-collapse-icons)
-- [Vertical menu items](#_3-vertical-menu-items)
+- [Menu content](#_3-menu-content)
 - [Add content before menu items](#_4-add-content-before-menu-items)
 - [Add content after menu items](#_5-add-content-after-menu-items)
 - [Hide menu based on screen size](#_6-hide-menu-based-on-screen-size)
 - [Navbar (or AppBar) Content](#_7-navbar-or-appbar-content)
-- [Footer](#_8-footer)
+- [Footer content](#_8-footer-content)
 
 ### 1. App Logo
 
-If you want to change the app logo, you need to use the `verticalNavMenuBranding` prop with the `Layout` component.
+If you want to change the app logo, you need to use the `verticalLayoutProps` prop with the `Layout` component and the type accepted by this prop is:
 
-The value accepted by this prop is:
-
-```tsx
-verticalNavMenuBranding?: (props?: any) => ReactNode
+```ts
+verticalLayoutProps: {
+  navMenu: {
+    branding?: (props?: any) => ReactNode
+  }
+}
 ```
 
 Here is the code to change the app logo:
 
 <code-group>
 <code-block title="TSX" active>
-```tsx{25}
+```tsx{25-29}
 import { ReactNode } from 'react'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
@@ -62,7 +110,11 @@ const UserLayout = ({ children }: Props) => {
   return (
     <Layout
       {...} // other props
-      verticalNavMenuBranding={() => <AppBrand />}
+      verticalLayoutProps={{
+        navMenu: {
+          branding: () => <AppBrand />
+        }
+      }}
     >
       {children}
     </Layout>
@@ -74,7 +126,7 @@ export default UserLayout
 </code-block>
 
 <code-block title="JSX">
-```JSX{20}
+```JSX{20-24}
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Layout from 'src/@core/layouts/Layout'
@@ -94,7 +146,11 @@ const UserLayout = ({ children }) => {
   return (
     <Layout
       {...} // other props
-      verticalNavMenuBranding={() => <AppBrand />}
+      verticalLayoutProps={{
+        navMenu: {
+          branding: () => <AppBrand />
+        }
+      }}
     >
       {children}
     </Layout>
@@ -116,20 +172,22 @@ When you override the app logo and when the menu is collapsed, `padding-left` of
 
 ### 2. Menu collapse icons
 
-If you want to change the icons for collapsing the vertical menu, you need to use the `menuLockedIcon` prop (when the menu is not collapsed) and `menuUnlockedIcon` prop (when the menu is collapsed) with the `Layout` component.
+If you want to change the icons for collapsing the vertical menu, you need to use the `verticalLayoutProps` prop with the `Layout` component and the type accepted by this prop is:
 
-The values accepted by these props are:
-
-```tsx
-menuLockedIcon?: ReactNode
-menuUnlockedIcon?: ReactNode
+```ts
+verticalLayoutProps: {
+  navMenu: {
+    lockedIcon?: ReactNode
+    unlockedIcon?: ReactNode
+  }
+}
 ```
 
 Here is the code to change the icons for collapsing the vertical menu:
 
 <code-group>
 <code-block title="TSX" active>
-```tsx{14-15}
+```tsx{14-19}
 import { ReactNode } from 'react'
 import ArrowLeftBoldCircleOutline from 'mdi-material-ui/ArrowLeftBoldCircleOutline'
 import ArrowRightBoldCircleOutline from 'mdi-material-ui/ArrowRightBoldCircleOutline'
@@ -143,8 +201,12 @@ const UserLayout = ({ children }: Props) => {
   return (
     <Layout
       {...} // other props
-      menuLockedIcon={<ArrowLeftBoldCircleOutline />}
-      menuUnlockedIcon={<ArrowRightBoldCircleOutline />}
+      verticalLayoutProps={{
+        navMenu: {
+          lockedIcon: <ArrowLeftBoldCircleOutline />
+          unlockedIcon: <ArrowRightBoldCircleOutline />
+        }
+      }}
     >
       {children}
     </Layout>
@@ -156,7 +218,7 @@ export default UserLayout
 </code-block>
 
 <code-block title="JSX">
-```jsx{9-10}
+```jsx{9-14}
 import ArrowLeftBoldCircleOutline from 'mdi-material-ui/ArrowLeftBoldCircleOutline'
 import ArrowRightBoldCircleOutline from 'mdi-material-ui/ArrowRightBoldCircleOutline'
 import Layout from 'src/@core/layouts/Layout'
@@ -165,8 +227,12 @@ const UserLayout = ({ children }) => {
   return (
     <Layout
       {...} // other props
-      menuLockedIcon={<ArrowLeftBoldCircleOutline />}
-      menuUnlockedIcon={<ArrowRightBoldCircleOutline />}
+      verticalLayoutProps={{
+        navMenu: {
+          lockedIcon: <ArrowLeftBoldCircleOutline />
+          unlockedIcon: <ArrowRightBoldCircleOutline />
+        }
+      }}
     >
       {children}
     </Layout>
@@ -178,29 +244,31 @@ export default UserLayout
 </code-block>
 </code-group>
 
-Result of `menuLockedIcon`:
+Result of `lockedIcon`:
 
 <img height='400' class='medium-zoom' alt='override-menu-locked' :src="$withBase('/images/layouts/user-override-menu-locked.png')" />
 
-Result of `menuUnlockedIcon`:
+Result of `unlockedIcon`:
 
 <img height='400' class='medium-zoom' alt='override-menu-unlocked' :src="$withBase('/images/layouts/user-override-menu-unlocked.png')" />
 
-### 3. Vertical menu items
+### 3. Menu content
 
-If you want to change the menu, you need to use the `verticalNavMenuContent` prop with the `Layout` component.
-
-The value accepted by this prop is:
+If you want to change the menu content, you need to use the `verticalLayoutProps` prop with the `Layout` component and the type accepted by this prop is:
 
 ```tsx
-verticalNavMenuContent?: (props?: any) => ReactNode
+verticalLayoutProps: {
+  navMenu: {
+    content?: (props?: any) => ReactNode
+  }
+}
 ```
 
-Here is the code to change the menu:
+Here is the code to change the menu content:
 
 <code-group>
 <code-block title="TSX" active>
-```tsx{24}
+```tsx{24-28}
 import { ReactNode } from 'react'
 import Layout from 'src/@core/layouts/Layout'
 
@@ -224,7 +292,11 @@ const UserLayout = ({ children }: Props) => {
   return (
     <Layout
       {...} // other props
-      verticalNavMenuContent={() => <Menu />}
+      verticalLayoutProps={{
+        navMenu: {
+          content: () => <Menu />
+        }
+      }}
     >
       {children}
     </Layout>
@@ -236,7 +308,7 @@ export default UserLayout
 </code-block>
 
 <code-block title="JSX">
-```jsx{19}
+```jsx{19-23}
 import Layout from 'src/@core/layouts/Layout'
 
 const Menu = () => {
@@ -255,7 +327,11 @@ const UserLayout = ({ children }) => {
   return (
     <Layout
       {...} // other props
-      verticalNavMenuContent={() => <Menu />}
+      verticalLayoutProps={{
+        navMenu: {
+          content: () => <Menu />
+        }
+      }}
     >
       {children}
     </Layout>
@@ -273,19 +349,21 @@ Result:
 
 ### 4. Add content before menu items
 
-If you want to add something before the menu items, you need to use the `beforeVerticalNavMenuContent` prop with the `Layout` component.
-
-The value accepted by this prop is:
+If you want to add something before the menu items, you need to use the `verticalLayoutProps` prop with the `Layout` component and the type accepted by this prop is:
 
 ```tsx
-beforeVerticalNavMenuContent?: (props?: any) => ReactNode
+verticalLayoutProps: {
+  navMenu: {
+    beforeContent?: (props?: any) => ReactNode
+  }
+}
 ```
 
 Here is the code to add user info before the menu items:
 
 <code-group>
 <code-block title="TSX" active>
-```tsx{50}
+```tsx{50-54}
 import { ReactNode } from 'react'
 import Box from '@mui/material/Box'
 import Badge from '@mui/material/Badge'
@@ -335,7 +413,11 @@ const UserLayout = ({ children }: Props) => {
   return (
     <Layout
       {...} // other props
-      beforeVerticalNavMenuContent={() => <User />}
+      verticalLayoutProps={{
+        navMenu: {
+          beforeContent: () => <User />
+        }
+      }}
     >
       {children}
     </Layout>
@@ -347,7 +429,7 @@ export default UserLayout
 </code-block>
 
 <code-block title="JSX">
-```jsx{45}
+```jsx{45-49}
 import Box from '@mui/material/Box'
 import Badge from '@mui/material/Badge'
 import Avatar from '@mui/material/Avatar'
@@ -392,7 +474,11 @@ const UserLayout = ({ children }) => {
   return (
     <Layout
       {...} // other props
-      beforeVerticalNavMenuContent={() => <User />}
+      verticalLayoutProps={{
+        navMenu: {
+          beforeContent: () => <User />
+        }
+      }}
     >
       {children}
     </Layout>
@@ -410,19 +496,21 @@ Result:
 
 ### 5. Add content after menu items
 
-If you want to add something after the menu items, you need to use the `afterVerticalNavMenuContent` prop with the `Layout` component.
-
-The value accepted by this prop is:
+If you want to add something after the menu items, you need to use the `verticalLayoutProps` prop with the `Layout` component and the type accepted by this prop is:
 
 ```tsx
-afterVerticalNavMenuContent?: (props?: any) => ReactNode
+verticalLayoutProps: {
+  navMenu: {
+    afterContent?: (props?: any) => ReactNode
+  }
+}
 ```
 
-Here is the code to menu footer info after the menu items:
+Here is the code to add menu footer info after the menu items:
 
 <code-group>
 <code-block title="TSX" active>
-```tsx{28}
+```tsx{28-32}
 import { ReactNode } from 'react'
 import Box from '@mui/material/Box'
 import Layout from 'src/@core/layouts/Layout'
@@ -450,7 +538,11 @@ const UserLayout = ({ children }: Props) => {
   return (
     <Layout
       {...} // other props
-      afterVerticalNavMenuContent={() => <MenuFooter />}
+      verticalLayoutProps={{
+        navMenu: {
+          afterContent: () => <MenuFooter />
+        }
+      }}
     >
       {children}
     </Layout>
@@ -462,7 +554,7 @@ export default UserLayout
 </code-block>
 
 <code-block title="JSX">
-```jsx{23}
+```jsx{23-27}
 import Box from '@mui/material/Box'
 import Layout from 'src/@core/layouts/Layout'
 
@@ -485,7 +577,11 @@ const UserLayout = ({ children }) => {
   return (
     <Layout
       {...} // other props
-      afterVerticalNavMenuContent={() => <MenuFooter />}
+      verticalLayoutProps={{
+        navMenu: {
+          afterContent: () => <MenuFooter />
+        }
+      }}
     >
       {children}
     </Layout>
@@ -503,7 +599,7 @@ Result:
 
 ### 6. Hide menu based on screen size
 
-The `hidden` prop is used to hide the vertical menu at a given screen size. The menu will be accessible from the Hamburger menu icon only which is known as the Vertical Overlay Menu. You can change the screen size from which you want to hide the vertical menu.
+The `hidden` prop is used to hide the vertical menu at a given screen size. The menu will only be accessible from the Hamburger menu icon which is known as the Vertical Overlay Menu. You can change the screen size from which you want to hide the vertical menu.
 
 In the example below, the vertical menu is visible above the `lg` breakpoint and on screen size below the `lg` breakpoint, it will change to the vertical overlay menu which can be accessed from the Hamburger menu icon.
 
@@ -519,12 +615,14 @@ const hidden = useMediaQuery('(max-width:1365px)')
 
 ### 7. Navbar (or AppBar) Content
 
-The content in the appBar comes from the user side itself and thus, it would be very easy and convenient for you to change anything in the appBar. You just have to change the code in the `src/layouts/components/vertical/AppBarContent.tsx` file as per your requirements. The appBar component is then passed in the `verticalAppBarContent` prop with the `Layout` component.
-
-The value accepted by this prop is:
+The content in the appBar comes from the user side itself and thus, it would be very easy and convenient for you to change anything in the appBar. You just have to change the code in the `src/layouts/components/vertical/AppBarContent.tsx` file as per your requirements. The appBar component is then passed in the `verticalLayoutProps` prop with the `Layout` component and the type accepted by this prop is:
 
 ```tsx
-verticalAppBarContent?: (props?: any) => ReactNode
+verticalLayoutProps: {
+  appBar?: {
+    content?: (props?: any) => ReactNode
+  }
+}
 ```
 
 Here is the code to change the appBar:
@@ -605,7 +703,7 @@ export default AppBarContent
 
 <code-group>
 <code-block title="TSX" active>
-```tsx{8,21-28}
+```tsx{8,21-32}
 // src/layouts/UserLayout.tsx
 
 import { ReactNode } from 'react'
@@ -626,14 +724,18 @@ const UserLayout = ({ children }: Props) => {
   return (
     <Layout
       {...} // other props
-      verticalAppBarContent={props => (
-        <VerticalAppBarContent
-          hidden={hidden}
-          settings={settings}
-          saveSettings={saveSettings}
-          toggleNavVisibility={props.toggleNavVisibility}
-        />
-      )}
+      verticalLayoutProps={{
+        appBar: {
+          content: props => (
+            <VerticalAppBarContent
+              hidden={hidden}
+              settings={settings}
+              saveSettings={saveSettings}
+              toggleNavVisibility={props.toggleNavVisibility}
+            />
+          )
+        }
+      }}
     >
       {children}
     </Layout>
@@ -645,7 +747,7 @@ export default UserLayout
 </code-block>
 
 <code-block title="JSX">
-```jsx{6,15-22}
+```jsx{6,15-26}
 // src/layouts/UserLayout.js
 
 import useMediaQuery from '@mui/material/useMediaQuery'
@@ -660,14 +762,18 @@ const UserLayout = ({ children }) => {
   return (
     <Layout
       {...} // other props
-      verticalAppBarContent={props => (
-        <VerticalAppBarContent
-          hidden={hidden}
-          settings={settings}
-          saveSettings={saveSettings}
-          toggleNavVisibility={props.toggleNavVisibility}
-        />
-      )}
+      verticalLayoutProps={{
+        appBar: {
+          content: props => (
+            <VerticalAppBarContent
+              hidden={hidden}
+              settings={settings}
+              saveSettings={saveSettings}
+              toggleNavVisibility={props.toggleNavVisibility}
+            />
+          )
+        }
+      }}
     >
       {children}
     </Layout>
@@ -683,21 +789,21 @@ Result:
 
 <img alt='override-appBar' class='medium-zoom' :src="$withBase('/images/layouts/user-override-vertical-appBar.png')" />
 
-### 8. Footer
+### 8. Footer content
 
-If you want to change the footer, you need to use the `footerContent` prop with the `Layout` component.
-
-The value accepted by this prop is:
+If you want to change the footer content, you need to use the `footerProps` prop with the `Layout` component and the type accepted by this prop is:
 
 ```tsx
-footerContent?: (props?: any) => ReactNode
+footerProps?: {
+  content?: (props?: any) => ReactNode
+}
 ```
 
-Here is the code to change the footer:
+Here is the code to change the footer content:
 
 <code-group>
 <code-block title="TSX" active>
-```tsx{12}
+```tsx{12-14}
 import { ReactNode } from 'react'
 import Layout from 'src/@core/layouts/Layout'
 
@@ -709,7 +815,9 @@ const UserLayout = ({ children }: Props) => {
   return (
     <Layout
       {...} // other props
-      footerContent={() => 'I am footer which is overridden by the user'}
+      footerProps={{
+        content: () => 'I am footer which is overridden by the user'
+      }}
     >
       {children}
     </Layout>
@@ -721,14 +829,16 @@ export default UserLayout
 </code-block>
 
 <code-block title="JSX">
-```jsx{7}
+```jsx{7-9}
 import Layout from 'src/@core/layouts/Layout'
 
 const UserLayout = ({ children }) => {
   return (
     <Layout
       {...} // other props
-      footerContent={() => 'I am footer which is overridden by the user'}
+      footerProps={{
+        content: () => 'I am footer which is overridden by the user'
+      }}
     >
       {children}
     </Layout>
@@ -753,27 +863,33 @@ As mentioned [here](/guide/layout/navigation-menu-structure.html#horizontal-navi
 You can override the following layout components:
 
 - [App Logo](#_1-app-logo-2)
-- [Horizontal menu items](#_2-horizontal-menu-items)
+- [Menu content](#_2-menu-content)
 - [Hide menu based on screen size](#_3-hide-menu-based-on-screen-size)
 - [AppBar Content](#_4-appbar-content)
-- [Footer](#_5-footer)
+- [Footer content](#_5-footer-content)
 
 ### 1. App Logo
 
-If you want to change the app logo, you need to use the `verticalNavMenuBranding` and `horizontalAppBarBranding` props with the `Layout` component.
-
-The value accepted by these props is:
+If you want to change the app logo, you need to use the `verticalLayoutProps` and `horizontalLayoutProps` props with the `Layout` component and the type accepted by these props is:
 
 ```tsx
-verticalNavMenuBranding?: (props?: any) => ReactNode
-horizontalAppBarBranding?: (props?: any) => ReactNode
+verticalLayoutProps: {
+  navMenu: {
+    branding?: (props?: any) => ReactNode
+  }
+}
+horizontalLayoutProps?: {
+  appBar?: {
+    branding?: (props?: any) => ReactNode
+  }
+}
 ```
 
 Here is the code to change the app logo:
 
 <code-group>
 <code-block title="TSX" active>
-```tsx{25-27}
+```tsx{25-36}
 import { ReactNode } from 'react'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
@@ -798,9 +914,18 @@ const UserLayout = ({ children }: Props) => {
   return (
     <Layout
       {...} // other props
-      {...(settings.layout === 'horizontal'
-        ? { horizontalAppBarBranding: () => <AppBrand /> }
-        : { verticalNavMenuBranding: () => <AppBrand /> })}
+      verticalLayoutProps={{
+        navMenu: {
+          branding: () => <AppBrand />
+        }
+      }}
+      {...(settings.layout === 'horizontal' && {
+        horizontalLayoutProps: {
+          appBar: {
+            branding: () => <AppBrand />
+          }
+        }
+      })}
     >
       {children}
     </Layout>
@@ -812,7 +937,7 @@ export default UserLayout
 </code-block>
 
 <code-block title="JSX">
-```jsx{20-22}
+```jsx{20-31}
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Layout from 'src/@core/layouts/Layout'
@@ -832,9 +957,18 @@ const UserLayout = ({ children }) => {
   return (
     <Layout
       {...} // other props
-      {...(settings.layout === 'horizontal'
-        ? { horizontalAppBarBranding: () => <AppBrand /> }
-        : { verticalNavMenuBranding: () => <AppBrand /> })}
+      verticalLayoutProps={{
+        navMenu: {
+          branding: () => <AppBrand />
+        }
+      }}
+      {...(settings.layout === 'horizontal' && {
+        horizontalLayoutProps: {
+          appBar: {
+            branding: () => <AppBrand />
+          }
+        }
+      })}
     >
       {children}
     </Layout>
@@ -850,22 +984,28 @@ Result:
 
 <img alt='override-app-brand' class='medium-zoom' :src="$withBase('/images/layouts/user-override-horizontal-app-brand.png')" />
 
-### 2. Horizontal menu items
+### 2. Menu content
 
-If you want to change the menu, you need to use the `verticalNavMenuContent` and `horizontalNavMenuContent` props with the `Layout` component.
-
-The value accepted by these props is:
+If you want to change the menu content, you need to use the `verticalLayoutProps` and `horizontalLayoutProps` props with the `Layout` component and the type accepted by these props is:
 
 ```tsx
-verticalNavMenuContent?: (props?: any) => ReactNode
-horizontalNavMenuContent?: (props?: any) => ReactNode
+verticalLayoutProps: {
+  navMenu: {
+    content?: (props?: any) => ReactNode
+  }
+}
+horizontalLayoutProps?: {
+  navMenu: {
+    content?: (props?: any) => ReactNode
+  }
+}
 ```
 
-Here is the code to change the menu:
+Here is the code to change the menu content:
 
 <code-group>
 <code-block title="TSX" active>
-```tsx{24-26}
+```tsx{24-35}
 import { ReactNode } from 'react'
 import Layout from 'src/@core/layouts/Layout'
 
@@ -889,9 +1029,18 @@ const UserLayout = ({ children }: Props) => {
   return (
     <Layout
       {...} // other props
-      {...(settings.layout === 'horizontal'
-        ? { horizontalNavMenuContent: () => 'I am menu which is overridden by the user' }
-        : { verticalNavMenuContent: () => <Menu /> })}
+      verticalLayoutProps={{
+        navMenu: {
+          content: () => <Menu />
+        }
+      }}
+      {...(settings.layout === 'horizontal' && {
+        horizontalLayoutProps: {
+          navMenu: {
+            content: () => 'I am menu which is overridden by the user'
+          }
+        }
+      })}
     >
       {children}
     </Layout>
@@ -903,7 +1052,7 @@ export default UserLayout
 </code-block>
 
 <code-block title="JSX">
-```tsx{19-21}
+```tsx{19-30}
 import Layout from 'src/@core/layouts/Layout'
 
 const Menu = () => {
@@ -922,9 +1071,18 @@ const UserLayout = ({ children }) => {
   return (
     <Layout
       {...} // other props
-      {...(settings.layout === 'horizontal'
-        ? { horizontalNavMenuContent: () => 'I am menu which is overridden by the user' }
-        : { verticalNavMenuContent: () => <Menu /> })}
+      verticalLayoutProps={{
+        navMenu: {
+          content: () => <Menu />
+        }
+      }}
+      {...(settings.layout === 'horizontal' && {
+        horizontalLayoutProps: {
+          navMenu: {
+            content: () => 'I am menu which is overridden by the user'
+          }
+        }
+      })}
     >
       {children}
     </Layout>
@@ -942,7 +1100,7 @@ Result:
 
 ### 3. Hide menu based on screen size
 
-The `hidden` prop is used to hide the horizontal menu at a given screen size. The menu will be accessible from the Hamburger menu icon only which is known as the Vertical Overlay Menu. You can change the screen size from which you want to hide the horizontal menu.
+The `hidden` prop is used to hide the horizontal menu at a given screen size. The menu will only be accessible from the Hamburger menu icon which is known as the Vertical Overlay Menu. You can change the screen size from which you want to hide the horizontal menu.
 
 In the example below, the horizontal menu is visible above the `lg` breakpoint and on screen size below the `lg` breakpoint, it will change to the vertical overlay menu which can be accessed from the Hamburger menu icon.
 
@@ -958,13 +1116,21 @@ const hidden = useMediaQuery('(max-width:1365px)')
 
 ### 4. AppBar Content
 
-The content in the appBar which is on the right side comes from the user side itself and thus, it would be very easy and convenient for you to change anything in the appBar. You just have to change the code in the `src/layouts/components/horizontal/AppBarContent.tsx` file. The appBar component is then passed in the `horizontalAppBarContent` prop with the `Layout` component. The appBar component for the Vertical Layout (which comes from the `src/layouts/components/vertical/AppBarContent.tsx` file) is passed in the `verticalAppBarContent` prop with the `Layout` component.
+The content in the appBar which is on the right side comes from the user side itself and thus, it would be very easy and convenient for you to change anything in the appBar. You just have to change the code in the `src/layouts/components/horizontal/AppBarContent.tsx` file. The appBar component is then passed in the `horizontalLayoutProps` prop with the `Layout` component. The appBar component for the Vertical Layout (which comes from the `src/layouts/components/vertical/AppBarContent.tsx` file) is passed in the `verticalLayoutProps` prop with the `Layout` component.
 
-The value accepted by these props is:
+The type accepted by these props is:
 
 ```tsx
-verticalAppBarContent?: (props?: any) => ReactNode
-horizontalAppBarContent?: (props?: any) => ReactNode
+verticalLayoutProps: {
+  appBar?: {
+    content?: (props?: any) => ReactNode
+  }
+}
+horizontalLayoutProps?: {
+  appBar?: {
+    content?: (props?: any) => ReactNode
+  }
+}
 ```
 
 Suppose you need the app logo, navigation menu as well as some actions in one line, then you need to follow the steps given below.
@@ -1054,11 +1220,11 @@ export default AppBarContent
 </code-block>
 </code-group>
 
-Then you need to pass that component in the `horizontalAppBarContent` prop with the `Layout` component:
+Then you need to pass that component in the `horizontalLayoutProps` prop with the `Layout` component:
 
 <code-group>
 <code-block title="TSX" active>
-```tsx{6-8,19-34}
+```tsx{6-8,19-39}
 // src/layouts/UserLayout.tsx
 
 import { ReactNode } from 'react'
@@ -1077,22 +1243,27 @@ const UserLayout = ({ children }: Props) => {
   return (
     <Layout
       {...} // other props
-      {...(settings.layout === 'horizontal'
-        ? {
-            horizontalAppBarContent: () => (
+      verticalLayoutProps={{
+        appBar: {
+          content: props => (
+            <VerticalAppBarContent
+              hidden={hidden}
+              settings={settings}
+              saveSettings={saveSettings}
+              toggleNavVisibility={props.toggleNavVisibility}
+            />
+          )
+        }
+      }}
+      {...(settings.layout === 'horizontal' && {
+        horizontalLayoutProps: {
+          appBar: {
+            content: () => (
               <HorizontalAppBarContent settings={settings} horizontalNavItems={HorizontalNavItems()} />
             )
           }
-        : {
-            verticalAppBarContent: props => (
-              <VerticalAppBarContent
-                hidden={hidden}
-                settings={settings}
-                saveSettings={saveSettings}
-                toggleNavVisibility={props.toggleNavVisibility}
-              />
-            )
-          })}
+        }
+      })}
     >
       {children}
     </Layout>
@@ -1104,7 +1275,7 @@ export default UserLayout
 </code-block>
 
 <code-block title="JSX">
-```jsx{5-7,14-29}
+```jsx{5-7,14-34}
 // src/layouts/UserLayout.js
 
 import Layout from 'src/@core/layouts/Layout'
@@ -1118,22 +1289,27 @@ const UserLayout = ({ children }) => {
   return (
     <Layout
       {...} // other props
-      {...(settings.layout === 'horizontal'
-        ? {
-            horizontalAppBarContent: () => (
+      verticalLayoutProps={{
+        appBar: {
+          content: props => (
+            <VerticalAppBarContent
+              hidden={hidden}
+              settings={settings}
+              saveSettings={saveSettings}
+              toggleNavVisibility={props.toggleNavVisibility}
+            />
+          )
+        }
+      }}
+      {...(settings.layout === 'horizontal' && {
+        horizontalLayoutProps: {
+          appBar: {
+            content: () => (
               <HorizontalAppBarContent settings={settings} horizontalNavItems={HorizontalNavItems()} />
             )
           }
-        : {
-            verticalAppBarContent: props => (
-              <VerticalAppBarContent
-                hidden={hidden}
-                settings={settings}
-                saveSettings={saveSettings}
-                toggleNavVisibility={props.toggleNavVisibility}
-              />
-            )
-          })}
+        }
+      })}
     >
       {children}
     </Layout>
@@ -1149,21 +1325,21 @@ Result:
 
 <img alt='override-appBar' class='medium-zoom' :src="$withBase('/images/layouts/user-override-horizontal-appBar.png')" />
 
-### 5. Footer
+### 5. Footer content
 
-If you want to change the footer, you need to use the `footerContent` prop with the `Layout` component.
-
-The value accepted by this prop is:
+If you want to change the footer content, you need to use the `footerProps` prop with the `Layout` component and the type accepted by this prop is:
 
 ```tsx
-footerContent?: (props?: any) => ReactNode
+footerProps?: {
+  content?: (props?: any) => ReactNode
+}
 ```
 
-Here is the code to change the footer:
+Here is the code to change the footer content:
 
 <code-group>
 <code-block title="TSX" active>
-```tsx{12}
+```tsx{12-14}
 import { ReactNode } from 'react'
 import Layout from 'src/@core/layouts/Layout'
 
@@ -1175,7 +1351,9 @@ const UserLayout = ({ children }: Props) => {
   return (
     <Layout
       {...} // other props
-      footerContent={() => 'I am footer which is overridden by the user'}
+      footerProps={{
+        content: () => 'I am footer which is overridden by the user'
+      }}
     >
       {children}
     </Layout>
@@ -1187,14 +1365,16 @@ export default UserLayout
 </code-block>
 
 <code-block title="JSX">
-```jsx{7}
+```jsx{7-9}
 import Layout from 'src/@core/layouts/Layout'
 
 const UserLayout = ({ children }) => {
   return (
     <Layout
       {...} // other props
-      footerContent={() => 'I am footer which is overridden by the user'}
+      footerProps={{
+        content: () => 'I am footer which is overridden by the user'
+      }}
     >
       {children}
     </Layout>
@@ -1225,15 +1405,15 @@ If you want to change the Blank Layout, you need to follow these steps:
 import { ReactNode } from 'react'
 import UserBlankLayout from 'src/layouts/UserBlankLayout'
 
-const Login = () => {
+const Component = () => {
   return (
     // Your content
   )
 }
 
-Login.getLayout = (page: ReactNode) => <UserBlankLayout>{page}</UserBlankLayout>
+Component.getLayout = (page: ReactNode) => <UserBlankLayout>{page}</UserBlankLayout>
 
-export default Login
+export default Component
 ```
 </code-block>
 
@@ -1241,15 +1421,15 @@ export default Login
 ```jsx{1,9}
 import UserBlankLayout from 'src/layouts/UserBlankLayout'
 
-const Login = () => {
+const Component = () => {
   return (
     // Your content
   )
 }
 
-Login.getLayout = page => <UserBlankLayout>{page}</UserBlankLayout>
+Component.getLayout = page => <UserBlankLayout>{page}</UserBlankLayout>
 
-export default Login
+export default Component
 ```
 </code-block>
 </code-group>
@@ -1260,7 +1440,7 @@ If you want to change the navbar, you need to follow these steps:
 
 - Make a new file (let us say `UserBlankLayoutWithAppBar.tsx` file name) in the `src/layouts` folder
 - Copy the whole code from the `src/@core/layouts/BlankLayoutWithAppBar.tsx` file and paste it into the `src/layouts/UserBlankLayoutWithAppBar.tsx` file
-- Remove the `AppBar` component and its import statement from the `src/layouts/UserBlankLayoutWithAppBar.tsx` file and make your own `AppBar` component
+- Edit the `src/layouts/UserBlankLayoutWithAppBar.tsx` file as per your requirements
 - Now, to use this layout in any of your pages, you need to do this:
 
 <code-group>
@@ -1269,15 +1449,15 @@ If you want to change the navbar, you need to follow these steps:
 import { ReactNode } from 'react'
 import UserBlankLayoutWithAppBar from 'src/layouts/UserBlankLayoutWithAppBar'
 
-const LoginWithAppBar = () => {
+const Component = () => {
   return (
     // Your content
   )
 }
 
-LoginWithAppBar.getLayout = (page: ReactNode) => <UserBlankLayoutWithAppBar>{page}</UserBlankLayoutWithAppBar>
+Component.getLayout = (page: ReactNode) => <UserBlankLayoutWithAppBar>{page}</UserBlankLayoutWithAppBar>
 
-export default LoginWithAppBar
+export default Component
 ```
 </code-block>
 
@@ -1285,24 +1465,22 @@ export default LoginWithAppBar
 ```jsx{1,9}
 import UserBlankLayoutWithAppBar from 'src/layouts/UserBlankLayoutWithAppBar'
 
-const LoginWithAppBar = () => {
+const Component = () => {
   return (
     // Your content
   )
 }
 
-LoginWithAppBar.getLayout = page => <UserBlankLayoutWithAppBar>{page}</UserBlankLayoutWithAppBar>
+Component.getLayout = page => <UserBlankLayoutWithAppBar>{page}</UserBlankLayoutWithAppBar>
 
-export default LoginWithAppBar
+export default Component
 ```
 </code-block>
 </code-group>
 
 ## Scroll to Top
 
-If you want to change the scroll to top component, you need to use the `scrollToTop` prop with the `Layout` component in the `src/layouts/UserLayout.tsx` file.
-
-The value accepted by this prop is:
+If you want to change the scroll to top component, you need to use the `scrollToTop` prop with the `Layout` component in the `src/layouts/UserLayout.tsx` file and the type accepted by this prop is:
 
 ```tsx
 scrollToTop?: (props?: any) => ReactNode

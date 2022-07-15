@@ -48,7 +48,7 @@ const ContentWrapper = styled('main')(({ theme }) => ({
 
 const VerticalLayout = (props: LayoutProps) => {
   // ** Props
-  const { hidden, settings, children, scrollToTop } = props
+  const { hidden, settings, children, scrollToTop, footerProps, verticalLayoutProps } = props
 
   // ** Vars
   const navigationBorderWidth = 1
@@ -80,12 +80,25 @@ const VerticalLayout = (props: LayoutProps) => {
             collapsedNavWidth={collapsedNavWidth}
             toggleNavVisibility={toggleNavVisibility}
             navigationBorderWidth={navigationBorderWidth}
+            navMenuContent={verticalLayoutProps.navMenu.content}
+            navMenuBranding={verticalLayoutProps.navMenu.branding}
+            menuLockedIcon={verticalLayoutProps.navMenu.lockedIcon}
+            verticalNavItems={verticalLayoutProps.navMenu.navItems}
+            navMenuProps={verticalLayoutProps.navMenu.componentProps}
+            menuUnlockedIcon={verticalLayoutProps.navMenu.unlockedIcon}
+            afterNavMenuContent={verticalLayoutProps.navMenu.afterContent}
+            beforeNavMenuContent={verticalLayoutProps.navMenu.beforeContent}
             {...props}
           />
         )}
         <MainContentWrapper className='layout-content-wrapper'>
           {/* AppBar Component */}
-          <AppBar toggleNavVisibility={toggleNavVisibility} {...props} />
+          <AppBar
+            toggleNavVisibility={toggleNavVisibility}
+            appBarContent={verticalLayoutProps.appBar?.content}
+            appBarProps={verticalLayoutProps.appBar?.componentProps}
+            {...props}
+          />
 
           {/* Content */}
           <ContentWrapper
@@ -102,7 +115,7 @@ const VerticalLayout = (props: LayoutProps) => {
           </ContentWrapper>
 
           {/* Footer Component */}
-          <Footer {...props} />
+          <Footer footerStyles={footerProps?.sx} footerContent={footerProps?.content} {...props} />
         </MainContentWrapper>
       </VerticalLayoutWrapper>
 

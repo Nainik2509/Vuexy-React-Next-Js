@@ -1,6 +1,3 @@
-// ** React Import
-import { ReactNode } from 'react'
-
 // ** Next Import
 import Link from 'next/link'
 
@@ -16,22 +13,22 @@ import CircleOutline from 'mdi-material-ui/CircleOutline'
 import RecordCircleOutline from 'mdi-material-ui/RecordCircleOutline'
 
 // ** Type Import
-import { Settings } from 'src/@core/context/settingsContext'
+import { LayoutProps } from 'src/@core/layouts/types'
 
 // ** Configs
 import themeConfig from 'src/configs/themeConfig'
 
 interface Props {
-  hidden: boolean
   navHover: boolean
-  settings: Settings
   collapsedNavWidth: number
-  menuLockedIcon?: ReactNode
-  menuUnlockedIcon?: ReactNode
+  hidden: LayoutProps['hidden']
   navigationBorderWidth: number
   toggleNavVisibility: () => void
-  saveSettings: (values: Settings) => void
-  verticalNavMenuBranding?: (props?: any) => ReactNode
+  settings: LayoutProps['settings']
+  saveSettings: LayoutProps['saveSettings']
+  navMenuBranding?: LayoutProps['verticalLayoutProps']['navMenu']['branding']
+  menuLockedIcon?: LayoutProps['verticalLayoutProps']['navMenu']['lockedIcon']
+  menuUnlockedIcon?: LayoutProps['verticalLayoutProps']['navMenu']['unlockedIcon']
 }
 
 // ** Styled Components
@@ -69,8 +66,8 @@ const VerticalNavHeader = (props: Props) => {
     toggleNavVisibility,
     navigationBorderWidth,
     menuLockedIcon: userMenuLockedIcon,
-    menuUnlockedIcon: userMenuUnlockedIcon,
-    verticalNavMenuBranding: userVerticalNavMenuBranding
+    navMenuBranding: userNavMenuBranding,
+    menuUnlockedIcon: userMenuUnlockedIcon
   } = props
 
   // ** Hooks & Vars
@@ -81,7 +78,7 @@ const VerticalNavHeader = (props: Props) => {
 
   const menuHeaderPaddingLeft = () => {
     if (navCollapsed && !navHover) {
-      if (userVerticalNavMenuBranding) {
+      if (userNavMenuBranding) {
         return 0
       } else {
         return (collapsedNavWidth - navigationBorderWidth - 30) / 8
@@ -117,8 +114,8 @@ const VerticalNavHeader = (props: Props) => {
 
   return (
     <MenuHeaderWrapper className='nav-header' sx={{ pl: menuHeaderPaddingLeft() }}>
-      {userVerticalNavMenuBranding ? (
-        userVerticalNavMenuBranding(props)
+      {userNavMenuBranding ? (
+        userNavMenuBranding(props)
       ) : (
         <Link href='/' passHref>
           <StyledLink>

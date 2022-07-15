@@ -1,6 +1,3 @@
-// ** React Imports
-import { ReactNode } from 'react'
-
 // ** Next Import
 import Link from 'next/link'
 
@@ -10,17 +7,17 @@ import Typography from '@mui/material/Typography'
 import { styled, useTheme } from '@mui/material/styles'
 
 // ** Type Import
-import { Settings } from 'src/@core/context/settingsContext'
+import { LayoutProps } from 'src/@core/layouts/types'
 
 // ** Theme Config Import
 import themeConfig from 'src/configs/themeConfig'
 
 interface Props {
-  hidden: boolean
-  settings: Settings
-  saveSettings: (values: Settings) => void
-  horizontalAppBarContent?: (props?: any) => ReactNode
-  horizontalAppBarBranding?: (props?: any) => ReactNode
+  hidden: LayoutProps['hidden']
+  settings: LayoutProps['settings']
+  saveSettings: LayoutProps['saveSettings']
+  appBarContent: NonNullable<NonNullable<LayoutProps['horizontalLayoutProps']>['appBar']>['content']
+  appBarBranding: NonNullable<NonNullable<LayoutProps['horizontalLayoutProps']>['appBar']>['branding']
 }
 
 const StyledLink = styled('a')(({ theme }) => ({
@@ -32,18 +29,15 @@ const StyledLink = styled('a')(({ theme }) => ({
 
 const AppBarContent = (props: Props) => {
   // ** Props
-  const {
-    horizontalAppBarContent: userHorizontalAppBarContent,
-    horizontalAppBarBranding: userHorizontalAppBarBranding
-  } = props
+  const { appBarContent: userAppBarContent, appBarBranding: userAppBarBranding } = props
 
   // ** Hooks
   const theme = useTheme()
 
   return (
     <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-      {userHorizontalAppBarBranding ? (
-        userHorizontalAppBarBranding(props)
+      {userAppBarBranding ? (
+        userAppBarBranding(props)
       ) : (
         <Link href='/' passHref>
           <StyledLink>
@@ -120,7 +114,7 @@ const AppBarContent = (props: Props) => {
           </StyledLink>
         </Link>
       )}
-      {userHorizontalAppBarContent ? userHorizontalAppBarContent(props) : null}
+      {userAppBarContent ? userAppBarContent(props) : null}
     </Box>
   )
 }

@@ -1,20 +1,18 @@
-// ** React Imports
-import { ReactNode } from 'react'
-
 // ** MUI Imports
 import { styled } from '@mui/material/styles'
 import MuiAppBar, { AppBarProps } from '@mui/material/AppBar'
 import MuiToolbar, { ToolbarProps } from '@mui/material/Toolbar'
 
-// ** Type Import
-import { Settings } from 'src/@core/context/settingsContext'
+// ** Type Imports
+import { LayoutProps } from 'src/@core/layouts/types'
 
 interface Props {
-  hidden: boolean
-  settings: Settings
+  hidden: LayoutProps['hidden']
   toggleNavVisibility: () => void
-  saveSettings: (values: Settings) => void
-  verticalAppBarContent?: (props?: any) => ReactNode
+  settings: LayoutProps['settings']
+  saveSettings: LayoutProps['saveSettings']
+  appBarContent: NonNullable<LayoutProps['verticalLayoutProps']['appBar']>['content']
+  appBarProps: NonNullable<LayoutProps['verticalLayoutProps']['appBar']>['componentProps']
 }
 
 const AppBar = styled(MuiAppBar)<AppBarProps>(({ theme }) => ({
@@ -35,7 +33,7 @@ const Toolbar = styled(MuiToolbar)<ToolbarProps>(({ theme }) => ({
 
 const LayoutAppBar = (props: Props) => {
   // ** Props
-  const { settings, verticalAppBarContent: userVerticalAppBarContent } = props
+  const { settings, appBarProps, appBarContent: userAppBarContent } = props
 
   // ** Vars
   const { skin, appBar, contentWidth } = settings
@@ -43,6 +41,13 @@ const LayoutAppBar = (props: Props) => {
   if (appBar === 'hidden') {
     return null
   }
+
+  let userAppBarStyle = {}
+  if (appBarProps && appBarProps.sx) {
+    userAppBarStyle = appBarProps.sx
+  }
+  const userAppBarProps = Object.assign({}, appBarProps)
+  delete userAppBarProps.sx
 
   return (
     <AppBar
@@ -53,8 +58,10 @@ const LayoutAppBar = (props: Props) => {
       sx={{
         ...(appBar === 'static' && { boxShadow: 'none', backgroundColor: 'transparent' }),
         ...(appBar === 'fixed' && { backgroundColor: theme => theme.palette.background.paper }),
-        ...(skin === 'bordered' && { borderBottom: theme => `1px solid ${theme.palette.divider}` })
+        ...(skin === 'bordered' && { borderBottom: theme => `1px solid ${theme.palette.divider}` }),
+        ...userAppBarStyle
       }}
+      {...userAppBarProps}
     >
       <Toolbar
         className='navbar-content-container'
@@ -64,7 +71,7 @@ const LayoutAppBar = (props: Props) => {
             `${(theme.mixins.toolbar.minHeight as number) - (skin === 'bordered' ? 1 : 0)}px !important`
         }}
       >
-        {(userVerticalAppBarContent && userVerticalAppBarContent(props)) || null}
+        {(userAppBarContent && userAppBarContent(props)) || null}
       </Toolbar>
     </AppBar>
   )

@@ -9,11 +9,11 @@ On this page, you will understand how to use a static navigation menu in Vertica
 To use the static navigation menu in the Vertical layout, follow these steps:
 
 - You need to write all of your navigation section titles, navigation groups and navigation links in [this](/guide/layout/navigation-menu-structure.html#vertical-navigation-structure) structure in the `src/navigation/vertical/index.ts` file
-- And then import `src/navigation/vertical/index.ts` file in `src/layouts/UserLayout.tsx` file and pass it in `verticalNavItems` prop.
+- And then import `src/navigation/vertical/index.ts` file in `src/layouts/UserLayout.tsx` file and pass it as shown below:
 
 <code-group>
 <code-block title="TSX" active>
-```tsx{5,15}
+```tsx{5,15-19}
 // src/layouts/UserLayout.tsx
 
 import { ReactNode } from 'react'
@@ -28,7 +28,11 @@ const UserLayout = ({ children }: Props) => {
   return (
     <Layout
       {...} // other props
-      verticalNavItems={VerticalNavItems()}
+      verticalLayoutProps={{
+        navMenu: {
+          navItems: VerticalNavItems()
+        }
+      }}
     >
       {children}
     </Layout>
@@ -39,7 +43,7 @@ export default UserLayout
 </code-block>
 
 <code-block title="JSX">
-```jsx{4,10}
+```jsx{4,10-14}
 // src/layouts/UserLayout.js
 
 import Layout from 'src/@core/layouts/Layout'
@@ -49,7 +53,11 @@ const UserLayout = ({ children }) => {
   return (
     <Layout
       {...} // other props
-      verticalNavItems={VerticalNavItems()}
+      verticalLayoutProps={{
+        navMenu: {
+          navItems: VerticalNavItems()
+        }
+      }}
     >
       {children}
     </Layout>
@@ -69,11 +77,11 @@ As mentioned [here](/guide/layout/navigation-menu-structure.html#horizontal-navi
 To use the static navigation menu in the Horizontal layout, follow these steps:
 
 - You need to write all of your navigation groups and navigation links in [this](/guide/layout/navigation-menu-structure.html#horizontal-navigation-structure) structure in the `src/navigation/horizontal/index.ts` file
-- And then import `src/navigation/horizontal/index.ts` file in `src/layouts/UserLayout.tsx` file and pass it in `horizontalNavItems` prop.
+- And then import `src/navigation/horizontal/index.ts` file in `src/layouts/UserLayout.tsx` file and pass it as shown below:
 
 <code-group>
 <code-block title="TSX" active>
-```tsx{5-6,16-18}
+```tsx{5-6,16-27}
 // src/layouts/UserLayout.tsx
 
 import { ReactNode } from 'react'
@@ -89,9 +97,18 @@ const UserLayout = ({ children }: Props) => {
   return (
     <Layout
       {...} // other props
-      {...(settings.layout === 'horizontal'
-        ? { horizontalNavItems: HorizontalNavItems() }
-        : { verticalNavItems: VerticalNavItems() })}
+      verticalLayoutProps={{
+        navMenu: {
+          navItems: VerticalNavItems()
+        }
+      }}
+      {...(settings.layout === 'horizontal' && {
+        horizontalLayoutProps: {
+          navMenu: {
+            navItems: HorizontalNavItems()
+          }
+        }
+      })}
     >
       {children}
     </Layout>
@@ -102,7 +119,7 @@ export default UserLayout
 </code-block>
 
 <code-block title="JSX">
-```jsx{4-5,11-13}
+```jsx{4-5,11-22}
 // src/layouts/UserLayout.tsx
 
 import Layout from 'src/@core/layouts/Layout'
@@ -113,9 +130,18 @@ const UserLayout = ({ children }) => {
   return (
     <Layout
       {...} // other props
-      {...(settings.layout === 'horizontal'
-        ? { horizontalNavItems: HorizontalNavItems() }
-        : { verticalNavItems: VerticalNavItems() })}
+      verticalLayoutProps={{
+        navMenu: {
+          navItems: VerticalNavItems()
+        }
+      }}
+      {...(settings.layout === 'horizontal' && {
+        horizontalLayoutProps: {
+          navMenu: {
+            navItems: HorizontalNavItems()
+          }
+        }
+      })}
     >
       {children}
     </Layout>

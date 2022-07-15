@@ -1,24 +1,22 @@
-// ** React Imports
-import { ReactNode } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 
 // ** Type Import
-import { Settings } from 'src/@core/context/settingsContext'
+import { LayoutProps } from 'src/@core/layouts/types'
 
 // ** Footer Content Component
 import FooterContent from './FooterContent'
 
 interface Props {
-  settings: Settings
-  saveSettings: (values: Settings) => void
-  footerContent?: (props?: any) => ReactNode
+  settings: LayoutProps['settings']
+  saveSettings: LayoutProps['saveSettings']
+  footerStyles?: NonNullable<LayoutProps['footerProps']>['sx']
+  footerContent?: NonNullable<LayoutProps['footerProps']>['content']
 }
 
 const Footer = (props: Props) => {
   // ** Props
-  const { settings, footerContent: userFooterContent } = props
+  const { settings, footerStyles, footerContent: userFooterContent } = props
 
   // ** Vars
   const { skin, footer, contentWidth } = settings
@@ -44,7 +42,8 @@ const Footer = (props: Props) => {
           backgroundColor: theme => theme.palette.background.paper,
           boxShadow: theme => theme.shadows[skin === 'bordered' ? 0 : 4],
           ...(skin === 'bordered' && { borderTop: theme => `1px solid ${theme.palette.divider}` })
-        })
+        }),
+        ...footerStyles
       }}
     >
       <Box

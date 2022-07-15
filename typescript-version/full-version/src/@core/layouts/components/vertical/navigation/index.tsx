@@ -1,5 +1,5 @@
 // ** React Import
-import { ReactNode, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 
 // ** MUI Import
 import List from '@mui/material/List'
@@ -10,8 +10,7 @@ import { styled, useTheme } from '@mui/material/styles'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
 // ** Type Import
-import { Settings } from 'src/@core/context/settingsContext'
-import { VerticalNavItemsType } from 'src/@core/layouts/types'
+import { LayoutProps } from 'src/@core/layouts/types'
 
 import themeConfig from 'src/configs/themeConfig'
 
@@ -24,22 +23,26 @@ import VerticalNavHeader from './VerticalNavHeader'
 import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 
 interface Props {
-  hidden: boolean
   navWidth: number
   navHover: boolean
-  settings: Settings
-  children: ReactNode
   navVisible: boolean
   collapsedNavWidth: number
+  hidden: LayoutProps['hidden']
   navigationBorderWidth: number
   toggleNavVisibility: () => void
+  settings: LayoutProps['settings']
+  children: LayoutProps['children']
   setNavHover: (values: boolean) => void
   setNavVisible: (value: boolean) => void
-  verticalNavItems?: VerticalNavItemsType
-  saveSettings: (values: Settings) => void
-  verticalNavMenuContent?: (props?: any) => ReactNode
-  afterVerticalNavMenuContent?: (props?: any) => ReactNode
-  beforeVerticalNavMenuContent?: (props?: any) => ReactNode
+  saveSettings: LayoutProps['saveSettings']
+  navMenuContent: LayoutProps['verticalLayoutProps']['navMenu']['content']
+  navMenuBranding: LayoutProps['verticalLayoutProps']['navMenu']['branding']
+  menuLockedIcon: LayoutProps['verticalLayoutProps']['navMenu']['lockedIcon']
+  verticalNavItems: LayoutProps['verticalLayoutProps']['navMenu']['navItems']
+  navMenuProps: LayoutProps['verticalLayoutProps']['navMenu']['componentProps']
+  menuUnlockedIcon: LayoutProps['verticalLayoutProps']['navMenu']['unlockedIcon']
+  afterNavMenuContent: LayoutProps['verticalLayoutProps']['navMenu']['afterContent']
+  beforeNavMenuContent: LayoutProps['verticalLayoutProps']['navMenu']['beforeContent']
 }
 
 const StyledBoxForShadow = styled(Box)<BoxProps>(({ theme }) => ({
@@ -58,13 +61,7 @@ const StyledBoxForShadow = styled(Box)<BoxProps>(({ theme }) => ({
 
 const Navigation = (props: Props) => {
   // ** Props
-  const {
-    hidden,
-    settings,
-    afterVerticalNavMenuContent,
-    beforeVerticalNavMenuContent,
-    verticalNavMenuContent: userVerticalNavMenuContent
-  } = props
+  const { hidden, settings, afterNavMenuContent, beforeNavMenuContent, navMenuContent: userNavMenuContent } = props
 
   // ** States
   const [groupActive, setGroupActive] = useState<string[]>([])
@@ -97,7 +94,7 @@ const Navigation = (props: Props) => {
 
   // ** Scroll Menu
   const scrollMenu = (container: any) => {
-    if (beforeVerticalNavMenuContentPosition === 'static' || !beforeVerticalNavMenuContent) {
+    if (beforeVerticalNavMenuContentPosition === 'static' || !beforeNavMenuContent) {
       container = hidden ? container.target : container
       if (shadowRef && container.scrollTop > 0) {
         // @ts-ignore
@@ -145,10 +142,8 @@ const Navigation = (props: Props) => {
   return (
     <Drawer {...props}>
       <VerticalNavHeader {...props} />
-      {beforeVerticalNavMenuContent && beforeVerticalNavMenuContentPosition === 'fixed'
-        ? beforeVerticalNavMenuContent(props)
-        : null}
-      {(beforeVerticalNavMenuContentPosition === 'static' || !beforeVerticalNavMenuContent) && (
+      {beforeNavMenuContent && beforeVerticalNavMenuContentPosition === 'fixed' ? beforeNavMenuContent(props) : null}
+      {(beforeVerticalNavMenuContentPosition === 'static' || !beforeNavMenuContent) && (
         <StyledBoxForShadow ref={shadowRef} sx={{ background: shadowBgColor() }} />
       )}
       <Box sx={{ position: 'relative', overflow: 'hidden' }}>
@@ -165,11 +160,11 @@ const Navigation = (props: Props) => {
                 onScrollY: (container: any) => scrollMenu(container)
               })}
         >
-          {beforeVerticalNavMenuContent && beforeVerticalNavMenuContentPosition === 'static'
-            ? beforeVerticalNavMenuContent(props)
+          {beforeNavMenuContent && beforeVerticalNavMenuContentPosition === 'static'
+            ? beforeNavMenuContent(props)
             : null}
-          {userVerticalNavMenuContent ? (
-            userVerticalNavMenuContent(props)
+          {userNavMenuContent ? (
+            userNavMenuContent(props)
           ) : (
             <List className='nav-items' sx={{ pt: 0, '& > :first-child': { mt: '0' } }}>
               <VerticalNavItems
@@ -181,14 +176,10 @@ const Navigation = (props: Props) => {
               />
             </List>
           )}
-          {afterVerticalNavMenuContent && afterVerticalNavMenuContentPosition === 'static'
-            ? afterVerticalNavMenuContent(props)
-            : null}
+          {afterNavMenuContent && afterVerticalNavMenuContentPosition === 'static' ? afterNavMenuContent(props) : null}
         </ScrollWrapper>
       </Box>
-      {afterVerticalNavMenuContent && afterVerticalNavMenuContentPosition === 'fixed'
-        ? afterVerticalNavMenuContent(props)
-        : null}
+      {afterNavMenuContent && afterVerticalNavMenuContentPosition === 'fixed' ? afterNavMenuContent(props) : null}
     </Drawer>
   )
 }

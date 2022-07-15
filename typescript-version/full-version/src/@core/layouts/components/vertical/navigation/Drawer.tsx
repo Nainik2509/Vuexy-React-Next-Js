@@ -1,23 +1,21 @@
-// ** React Imports
-import { ReactNode } from 'react'
-
 // ** MUI Imports
 import { styled, useTheme } from '@mui/material/styles'
 import MuiSwipeableDrawer, { SwipeableDrawerProps } from '@mui/material/SwipeableDrawer'
 
 // ** Type Import
-import { Settings } from 'src/@core/context/settingsContext'
+import { LayoutProps } from 'src/@core/layouts/types'
 
 interface Props {
-  hidden: boolean
   navWidth: number
   navHover: boolean
-  settings: Settings
   navVisible: boolean
-  children: ReactNode
   collapsedNavWidth: number
+  hidden: LayoutProps['hidden']
+  settings: LayoutProps['settings']
+  children: LayoutProps['children']
   setNavHover: (values: boolean) => void
   setNavVisible: (value: boolean) => void
+  navMenuProps: LayoutProps['verticalLayoutProps']['navMenu']['componentProps']
 }
 
 const SwipeableDrawer = styled(MuiSwipeableDrawer)<SwipeableDrawerProps>({
@@ -40,8 +38,18 @@ const SwipeableDrawer = styled(MuiSwipeableDrawer)<SwipeableDrawerProps>({
 
 const Drawer = (props: Props) => {
   // ** Props
-  const { hidden, children, navHover, navWidth, settings, navVisible, setNavHover, setNavVisible, collapsedNavWidth } =
-    props
+  const {
+    hidden,
+    children,
+    navHover,
+    navWidth,
+    settings,
+    navVisible,
+    setNavHover,
+    navMenuProps,
+    setNavVisible,
+    collapsedNavWidth
+  } = props
 
   // ** Hook
   const theme = useTheme()
@@ -104,16 +112,37 @@ const Drawer = (props: Props) => {
     }
   }
 
+  let userNavMenuStyle = {}
+  let userNavMenuPaperStyle = {}
+  if (navMenuProps && navMenuProps.sx) {
+    userNavMenuStyle = navMenuProps.sx
+  }
+  if (navMenuProps && navMenuProps.PaperProps && navMenuProps.PaperProps.sx) {
+    userNavMenuPaperStyle = navMenuProps.PaperProps.sx
+  }
+  const userNavMenuProps = Object.assign({}, navMenuProps)
+  delete userNavMenuProps.sx
+  delete userNavMenuProps.PaperProps
+
   return (
     <SwipeableDrawer
       className='layout-vertical-nav'
       variant={hidden ? 'temporary' : 'permanent'}
       {...(hidden ? { ...MobileDrawerProps } : { ...DesktopDrawerProps })}
-      PaperProps={{ sx: { width: navCollapsed && !navHover ? collapsedNavWidth : navWidth } }}
+      PaperProps={{
+        sx: {
+          ...drawerColor(),
+          ...drawerBgColor(),
+          width: navCollapsed && !navHover ? collapsedNavWidth : navWidth,
+          ...userNavMenuPaperStyle
+        },
+        ...navMenuProps?.PaperProps
+      }}
       sx={{
         width: navCollapsed ? collapsedNavWidth : navWidth,
-        '& .MuiDrawer-paper': { ...drawerColor(), ...drawerBgColor() }
+        ...userNavMenuStyle
       }}
+      {...userNavMenuProps}
     >
       {children}
     </SwipeableDrawer>
