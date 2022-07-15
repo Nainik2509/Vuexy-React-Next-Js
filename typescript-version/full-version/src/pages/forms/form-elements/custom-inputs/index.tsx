@@ -22,8 +22,8 @@ const CustomInputs = () => {
         <CardSnippet
           title='Custom Radios'
           code={{
-            tsx: source.CustomRadioTSXCode,
-            jsx: source.CustomRadioJSXCode
+            tsx: source.CustomRadiosTSXCode,
+            jsx: source.CustomRadiosJSXCode
           }}
         >
           <CustomRadios />
@@ -33,8 +33,8 @@ const CustomInputs = () => {
         <CardSnippet
           title='Custom Checkboxes'
           code={{
-            tsx: source.CustomRadioTSXCode,
-            jsx: source.CustomRadioJSXCode
+            tsx: source.CustomCheckboxTSXCode,
+            jsx: source.CustomCheckboxJSXCode
           }}
         >
           <CustomCheckbox />
@@ -44,8 +44,8 @@ const CustomInputs = () => {
         <CardSnippet
           title='Custom Radio Icons'
           code={{
-            tsx: source.CustomRadioTSXCode,
-            jsx: source.CustomRadioJSXCode
+            tsx: source.CustomRadioIconsTSXCode,
+            jsx: source.CustomRadioIconsJSXCode
           }}
         >
           <CustomRadioIcons />
@@ -55,8 +55,8 @@ const CustomInputs = () => {
         <CardSnippet
           title='Custom Checkbox Icons'
           code={{
-            tsx: source.CustomRadioTSXCode,
-            jsx: source.CustomRadioJSXCode
+            tsx: source.CustomCheckboxIconsTSXCode,
+            jsx: source.CustomCheckboxIconsJSXCode
           }}
         >
           <CustomCheckboxIcons />
@@ -66,8 +66,8 @@ const CustomInputs = () => {
         <CardSnippet
           title='Custom Radio Images'
           code={{
-            tsx: source.CustomRadioTSXCode,
-            jsx: source.CustomRadioJSXCode
+            tsx: source.CustomRadioImgTSXCode,
+            jsx: source.CustomRadioImgJSXCode
           }}
         >
           <CustomRadioImg />
@@ -77,8 +77,8 @@ const CustomInputs = () => {
         <CardSnippet
           title='Custom Checkbox Images'
           code={{
-            tsx: source.CustomRadioTSXCode,
-            jsx: source.CustomRadioJSXCode
+            tsx: source.CustomCheckboxImgTSXCode,
+            jsx: source.CustomCheckboxImgJSXCode
           }}
         >
           <CustomCheckboxImg />

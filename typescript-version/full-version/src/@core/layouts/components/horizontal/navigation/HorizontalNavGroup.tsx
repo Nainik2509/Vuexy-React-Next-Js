@@ -114,6 +114,13 @@ const HorizontalNavGroup = (props: Props) => {
         options: {
           offset: hasParent ? [-8, 15] : [popperOffsetHorizontal, 5]
         }
+      },
+      {
+        enabled: true,
+        name: 'flip',
+        options: {
+          boundary: document.body
+        }
       }
     ]
   })
