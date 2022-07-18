@@ -1,5 +1,5 @@
 // ** React Imports
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -49,7 +49,7 @@ const cardData: CardDataType[] = [
   { totalUsers: 2, title: 'Restricted User', avatars: ['4.png', '5.png'] }
 ]
 
-const rolesArr = [
+const rolesArr: string[] = [
   'User Management',
   'Content Management',
   'Disputes Management',
@@ -65,6 +65,8 @@ const RolesCards = () => {
   // ** States
   const [open, setOpen] = useState<boolean>(false)
   const [dialogTitle, setDialogTitle] = useState<'Add' | 'Edit'>('Add')
+  const [selectedCheckbox, setSelectedCheckbox] = useState<string[]>([])
+  const [isIndeterminateCheckbox, setIsIndeterminateCheckbox] = useState<boolean>(false)
 
   // ** Hooks
   const {
@@ -79,7 +81,41 @@ const RolesCards = () => {
   const handleClose = () => {
     setOpen(false)
     setValue('name', '')
+    setSelectedCheckbox([])
+    setIsIndeterminateCheckbox(false)
   }
+
+  const togglePermission = (id: string) => {
+    const arr = selectedCheckbox
+    if (selectedCheckbox.includes(id)) {
+      arr.splice(arr.indexOf(id), 1)
+      setSelectedCheckbox([...arr])
+    } else {
+      arr.push(id)
+      setSelectedCheckbox([...arr])
+    }
+  }
+
+  const handleSelectAllCheckbox = () => {
+    if (isIndeterminateCheckbox) {
+      setSelectedCheckbox([])
+    } else {
+      rolesArr.forEach(row => {
+        const id = row.toLowerCase().split(' ').join('-')
+        togglePermission(`${id}-read`)
+        togglePermission(`${id}-write`)
+        togglePermission(`${id}-create`)
+      })
+    }
+  }
+
+  useEffect(() => {
+    if (selectedCheckbox.length > 0 && selectedCheckbox.length < rolesArr.length * 3) {
+      setIsIndeterminateCheckbox(true)
+    } else {
+      setIsIndeterminateCheckbox(false)
+    }
+  }, [selectedCheckbox])
 
   const renderCards = () =>
     cardData.map((item, index: number) => (
@@ -202,40 +238,86 @@ const RolesCards = () => {
                         sx={{
                           display: 'flex',
                           fontSize: '0.875rem',
+                          whiteSpace: 'nowrap',
                           alignItems: 'center',
                           textTransform: 'capitalize'
                         }}
                       >
                         Administrator Access
                         <Tooltip placement='top' title='Allows a full access to the system'>
-                          <InformationOutline sx={{ ml: 1, fontSize: '1rem' }} />
+                          <InformationOutline sx={{ ml: 1, fontSize: '1rem', cursor: 'pointer' }} />
                         </Tooltip>
                       </Box>
                     </TableCell>
                     <TableCell colSpan={3}>
                       <FormControlLabel
                         label='Select All'
-                        control={<Checkbox size='small' />}
                         sx={{ '& .MuiTypography-root': { textTransform: 'capitalize' } }}
+                        control={
+                          <Checkbox
+                            size='small'
+                            onChange={handleSelectAllCheckbox}
+                            indeterminate={isIndeterminateCheckbox}
+                            checked={selectedCheckbox.length === rolesArr.length * 3}
+                          />
+                        }
                       />
                     </TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {rolesArr.map((i, index: number) => {
+                  {rolesArr.map((i: string, index: number) => {
+                    const id = i.toLowerCase().split(' ').join('-')
+
                     return (
-                      <TableRow key={index} sx={{ '& .MuiTableCell-root:first-of-type': { pl: 0 } }}>
-                        <TableCell sx={{ fontWeight: 600, color: theme => `${theme.palette.text.primary} !important` }}>
+                      <TableRow key={index} sx={{ '& .MuiTableCell-root:first-of-type': { pl: '0 !important' } }}>
+                        <TableCell
+                          sx={{
+                            fontWeight: 600,
+                            whiteSpace: 'nowrap',
+                            color: theme => `${theme.palette.text.primary} !important`
+                          }}
+                        >
                           {i}
                         </TableCell>
                         <TableCell>
-                          <FormControlLabel control={<Checkbox size='small' />} label='Read' />
+                          <FormControlLabel
+                            label='Read'
+                            control={
+                              <Checkbox
+                                size='small'
+                                id={`${id}-read`}
+                                onChange={() => togglePermission(`${id}-read`)}
+                                checked={selectedCheckbox.includes(`${id}-read`)}
+                              />
+                            }
+                          />
                         </TableCell>
                         <TableCell>
-                          <FormControlLabel control={<Checkbox size='small' />} label='Write' />
+                          <FormControlLabel
+                            label='Write'
+                            control={
+                              <Checkbox
+                                size='small'
+                                id={`${id}-write`}
+                                onChange={() => togglePermission(`${id}-write`)}
+                                checked={selectedCheckbox.includes(`${id}-write`)}
+                              />
+                            }
+                          />
                         </TableCell>
                         <TableCell>
-                          <FormControlLabel control={<Checkbox size='small' />} label='Create' />
+                          <FormControlLabel
+                            label='Create'
+                            control={
+                              <Checkbox
+                                size='small'
+                                id={`${id}-create`}
+                                onChange={() => togglePermission(`${id}-create`)}
+                                checked={selectedCheckbox.includes(`${id}-create`)}
+                              />
+                            }
+                          />
                         </TableCell>
                       </TableRow>
                     )
