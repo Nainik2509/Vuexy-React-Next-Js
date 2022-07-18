@@ -178,7 +178,7 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Box sx={{ mb: 4 }}>
         <Typography variant='h5'>Select Plan</Typography>
-        <Typography>Select plan as per your requirement</Typography>
+        <Typography sx={{ color: 'text.secondary' }}>Select plan as per your requirement</Typography>
       </Box>
 
       <Grid container spacing={6}>
@@ -189,7 +189,7 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
         <Grid item xs={12}>
           <Box>
             <Typography variant='h5'>Payment Information</Typography>
-            <Typography>Enter your card information</Typography>
+            <Typography sx={{ color: 'text.secondary' }}>Enter your card information</Typography>
           </Box>
         </Grid>
         <Grid item xs={12}>

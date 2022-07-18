@@ -64,7 +64,7 @@ const StepPersonalDetails = ({ handleNext, handlePrev }: { [key: string]: () => 
     <form onSubmit={handleSubmit(onSubmit)}>
       <Box sx={{ mb: 4 }}>
         <Typography variant='h5'>Personal Information</Typography>
-        <Typography>Enter Your Personal Information</Typography>
+        <Typography sx={{ color: 'text.secondary' }}>Enter Your Personal Information</Typography>
       </Box>
 
       <Grid container spacing={6}>

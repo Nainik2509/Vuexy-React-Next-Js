@@ -105,7 +105,7 @@ const StepAccountDetails = ({ handleNext }: { handleNext: () => void }) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Box sx={{ mb: 4 }}>
         <Typography variant='h5'>Account Information</Typography>
-        <Typography>Enter Your Account Details</Typography>
+        <Typography sx={{ color: 'text.secondary' }}>Enter Your Account Details</Typography>
       </Box>
 
       <Grid container spacing={6}>

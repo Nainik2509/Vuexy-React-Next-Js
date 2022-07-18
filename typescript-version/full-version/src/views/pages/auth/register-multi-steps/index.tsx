@@ -35,17 +35,17 @@ const steps = [
   {
     title: 'Account',
     subtitle: 'Account Details',
-    icon: <HomeOutline fontSize='small' />
+    icon: <HomeOutline sx={{ fontSize: 18 }} />
   },
   {
     title: 'Personal',
     subtitle: 'Enter Information',
-    icon: <AccountOutline fontSize='small' />
+    icon: <AccountOutline sx={{ fontSize: 18 }} />
   },
   {
     title: 'Billing',
     subtitle: 'Payment Details',
-    icon: <CardTextOutline fontSize='small' />
+    icon: <CardTextOutline sx={{ fontSize: 18 }} />
   }
 ]
 
@@ -83,14 +83,29 @@ const Stepper = styled(MuiStepper)<StepperProps>(({ theme }) => ({
     '& .MuiStepLabel-label': {
       display: 'flex',
       alignItems: 'center',
+      '& .step-title': {
+        color: theme.palette.text.secondary
+      },
+      '& .step-subtitle': {
+        color: theme.palette.text.disabled
+      },
+      '& .MuiAvatar-root .MuiSvgIcon-root': {
+        color: theme.palette.text.disabled
+      },
       '&.Mui-active': {
-        '& .MuiTypography-root': {
+        '& .step-title': {
           color: theme.palette.primary.main
+        },
+        '& .MuiAvatar-root .MuiSvgIcon-root': {
+          color: theme.palette.common.white
         }
       },
       '&.Mui-completed': {
         '& .MuiTypography-root': {
           color: theme.palette.text.disabled
+        },
+        '& .MuiAvatar-root .MuiSvgIcon-root': {
+          color: theme.palette.primary.main
         }
       }
     },
@@ -152,6 +167,7 @@ const RegisterMultiSteps = () => {
                       color={activeStep === index || activeStep > index ? 'primary' : 'secondary'}
                       sx={{
                         mr: 2.5,
+                        borderRadius: '6px',
                         boxShadow: theme =>
                           activeStep === index
                             ? `0 0.1875rem 0.375rem 0 ${hexToRGBA(theme.palette.primary.main, 0.4)}`
