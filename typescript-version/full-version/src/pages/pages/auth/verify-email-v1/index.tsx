@@ -117,7 +117,7 @@ const VerifyEmailV1 = () => {
             <Typography variant='h5' sx={{ mb: 2 }}>
               Verify your email ✉️
             </Typography>
-            <Typography variant='body2'>
+            <Typography sx={{ color: 'text.secondary' }}>
               Account activation link sent to your email address: <strong>john.doe@email.com</strong> Please follow the
               link inside to continue.
             </Typography>
@@ -128,7 +128,7 @@ const VerifyEmailV1 = () => {
             </Button>
           </Link>
           <Box sx={{ mt: 4, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Typography>Didn't get the mail?</Typography>
+            <Typography sx={{ color: 'text.secondary' }}>Didn't get the mail?</Typography>
             <LinkStyled href='/' onClick={e => e.preventDefault()}>
               Resend
             </LinkStyled>

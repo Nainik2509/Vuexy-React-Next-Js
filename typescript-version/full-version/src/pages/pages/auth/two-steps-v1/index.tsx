@@ -193,12 +193,12 @@ const TwoStepsV1 = () => {
             <Typography variant='h5' sx={{ mb: 2 }}>
               Two Step Verification 💬
             </Typography>
-            <Typography variant='body2'>
+            <Typography sx={{ color: 'text.secondary' }}>
               We sent a verification code to your mobile. Enter the code from the mobile in the field below.
             </Typography>
             <Typography sx={{ mt: 2, fontWeight: 700 }}>******1234</Typography>
           </Box>
-          <Typography sx={{ fontWeight: 600 }}>Type your 6 digit security code</Typography>
+          <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>Type your 6 digit security code</Typography>
           <form onSubmit={handleSubmit(onSubmit)}>
             <CleaveWrapper sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               {renderInputs()}
@@ -211,7 +211,7 @@ const TwoStepsV1 = () => {
             </Button>
           </form>
           <Box sx={{ mt: 4, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Typography>Didn't get the mail?</Typography>
+            <Typography sx={{ color: 'text.secondary' }}>Didn't get the mail?</Typography>
             <LinkStyled href='/' onClick={e => e.preventDefault()}>
               Resend
             </LinkStyled>
