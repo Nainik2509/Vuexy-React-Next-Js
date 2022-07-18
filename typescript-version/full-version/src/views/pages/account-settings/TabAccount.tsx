@@ -8,6 +8,7 @@ import Card from '@mui/material/Card'
 import Alert from '@mui/material/Alert'
 import Select from '@mui/material/Select'
 import Dialog from '@mui/material/Dialog'
+import Divider from '@mui/material/Divider'
 import { styled } from '@mui/material/styles'
 import Checkbox from '@mui/material/Checkbox'
 import MenuItem from '@mui/material/MenuItem'
@@ -34,8 +35,8 @@ import CheckCircleOutline from 'mdi-material-ui/CheckCircleOutline'
 import CloseCircleOutline from 'mdi-material-ui/CloseCircleOutline'
 
 const ImgStyled = styled('img')(({ theme }) => ({
-  width: 120,
-  height: 120,
+  width: 100,
+  height: 100,
   marginRight: theme.spacing(6.25),
   borderRadius: theme.shape.borderRadius
 }))
@@ -48,7 +49,7 @@ const ButtonStyled = styled(Button)<ButtonProps & { component?: ElementType; htm
 }))
 
 const ResetButtonStyled = styled(Button)<ButtonProps>(({ theme }) => ({
-  marginLeft: theme.spacing(4.5),
+  marginLeft: theme.spacing(3),
   [theme.breakpoints.down('sm')]: {
     width: '100%',
     marginLeft: 0,
@@ -98,12 +99,12 @@ const TabAccount = () => {
   return (
     <>
       {/* Account Details Card */}
-      <Card sx={{ mb: 4 }}>
+      <Card sx={{ mb: 6 }}>
         <CardHeader title='Account Details' sx={{ pb: 0 }} />
-        <CardContent>
-          <form>
-            <Grid container spacing={7}>
-              <Grid item xs={12} sx={{ mt: 4.8, mb: 3 }}>
+        <form>
+          <Grid container spacing={6}>
+            <Grid item xs={12} sx={{ mt: 4.8, mb: 3 }}>
+              <CardContent sx={{ pt: 0, pb: theme => `${theme.spacing(1)} !important` }}>
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
                   <ImgStyled src={imgSrc} alt='Profile Pic' />
                   <Box>
@@ -118,19 +119,23 @@ const TabAccount = () => {
                       />
                     </ButtonStyled>
                     <ResetButtonStyled
-                      color='error'
+                      color='secondary'
                       variant='outlined'
                       onClick={() => setImgSrc('/images/avatars/1.png')}
                     >
                       Reset
                     </ResetButtonStyled>
-                    <Typography variant='body2' sx={{ mt: 5.5 }}>
+                    <Typography sx={{ mt: 6, color: 'text.disabled' }}>
                       Allowed PNG or JPEG. Max size of 800K.
                     </Typography>
                   </Box>
                 </Box>
-              </Grid>
-
+              </CardContent>
+            </Grid>
+          </Grid>
+          <Divider sx={{ mb: theme => `${theme.spacing(4)} !important` }} />
+          <CardContent>
+            <Grid container spacing={6}>
               <Grid item xs={12} sm={6}>
                 <TextField fullWidth label='First Name' placeholder='John' defaultValue='John' />
               </Grid>
@@ -228,7 +233,7 @@ const TabAccount = () => {
               </Grid>
 
               <Grid item xs={12}>
-                <Button variant='contained' sx={{ mr: 3.5 }}>
+                <Button variant='contained' sx={{ mr: 3 }}>
                   Save Changes
                 </Button>
                 <Button type='reset' variant='outlined' color='secondary'>
@@ -236,8 +241,8 @@ const TabAccount = () => {
                 </Button>
               </Grid>
             </Grid>
-          </form>
-        </CardContent>
+          </CardContent>
+        </form>
       </Card>
 
       {/* Delete Account Card */}

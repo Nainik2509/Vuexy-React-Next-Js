@@ -97,7 +97,7 @@ const ChangePasswordCard = () => {
   }
 
   return (
-    <Card sx={{ mb: 4 }}>
+    <Card sx={{ mb: 6 }}>
       <CardHeader title='Change Password' />
       <CardContent>
         <form onSubmit={handleSubmit(onPasswordFormSubmit)}>
@@ -176,7 +176,7 @@ const ChangePasswordCard = () => {
                 )}
               </FormControl>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} sx={{ mb: 1.5 }}>
               <FormControl fullWidth>
                 <InputLabel htmlFor='input-confirm-new-password' error={Boolean(errors.confirmNewPassword)}>
                   Password
@@ -213,8 +213,8 @@ const ChangePasswordCard = () => {
               </FormControl>
             </Grid>
             <Grid item xs={12}>
-              <Typography sx={{ fontWeight: 600 }}>Password Requirements:</Typography>
-              <Box component='ul' sx={{ pl: 4, '& li': { color: 'text.secondary' } }}>
+              <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>Password Requirements:</Typography>
+              <Box component='ul' sx={{ pl: 4, '& li': { mb: 1, color: 'text.secondary' } }}>
                 <li>Minimum 8 characters long - the more, the better</li>
                 <li>At least one lowercase & one uppercase character</li>
                 <li>At least one number, symbol, or whitespace character</li>
@@ -222,8 +222,8 @@ const ChangePasswordCard = () => {
             </Grid>
           </Grid>
 
-          <Box sx={{ mt: 4 }}>
-            <Button variant='contained' type='submit' sx={{ mr: 3.5 }}>
+          <Box sx={{ mt: 3 }}>
+            <Button variant='contained' type='submit' sx={{ mr: 3 }}>
               Save Changes
             </Button>
             <Button type='reset' variant='outlined' color='secondary' onClick={() => reset()}>

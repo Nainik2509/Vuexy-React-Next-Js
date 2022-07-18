@@ -50,11 +50,13 @@ const TwoFactorAuthenticationCard = () => {
 
   return (
     <>
-      <Card sx={{ mb: 4 }}>
+      <Card sx={{ mb: 6 }}>
         <CardHeader title='Two-steps verification' />
         <CardContent>
-          <Typography sx={{ mb: 4, fontWeight: 600 }}>Two factor authentication is not enabled yet.</Typography>
-          <Typography sx={{ mb: 6, width: '75%' }}>
+          <Typography sx={{ mb: 4, fontWeight: 600, color: 'text.secondary' }}>
+            Two factor authentication is not enabled yet.
+          </Typography>
+          <Typography sx={{ mb: 6, width: '75%', color: 'text.secondary' }}>
             Two-factor authentication adds an additional layer of security to your account by requiring more than just a
             password to log in.{' '}
             <Box

@@ -177,9 +177,9 @@ const PaymentMethodCard = () => {
         <CardHeader title='Payment Method' />
         <CardContent>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <Grid container spacing={7}>
+            <Grid container spacing={6}>
               <Grid item xs={12} md={6}>
-                <Grid container spacing={7}>
+                <Grid container spacing={6}>
                   <Grid item xs={12}>
                     <FormControl>
                       <RadioGroup
@@ -189,8 +189,18 @@ const PaymentMethodCard = () => {
                         name='account-settings-billing-radio'
                         onChange={e => setPaymentMethod(e.target.value)}
                       >
-                        <FormControlLabel value='card' label='Credit/Debit/ATM Card' control={<Radio />} />
-                        <FormControlLabel value='cod' label='COD/Cheque' control={<Radio />} />
+                        <FormControlLabel
+                          value='card'
+                          control={<Radio />}
+                          label='Credit/Debit/ATM Card'
+                          sx={{ '& .MuiTypography-root': { color: 'text.secondary' } }}
+                        />
+                        <FormControlLabel
+                          value='cod'
+                          label='COD/Cheque'
+                          control={<Radio />}
+                          sx={{ '& .MuiTypography-root': { color: 'text.secondary' } }}
+                        />
                       </RadioGroup>
                     </FormControl>
                   </Grid>
@@ -283,7 +293,7 @@ const PaymentMethodCard = () => {
               </Grid>
 
               <Grid item xs={12} md={6}>
-                <Typography sx={{ mb: 4, fontWeight: 500, color: 'text.secondary' }}>My Cards</Typography>
+                <Typography sx={{ mb: 4, fontWeight: 500 }}>My Cards</Typography>
                 {data.map((item: DataType, index: number) => (
                   <Box
                     key={index}
@@ -300,7 +310,7 @@ const PaymentMethodCard = () => {
                   >
                     <div>
                       <img height='25' alt={item.imgAlt} src={item.imgSrc} />
-                      <Box sx={{ mt: 0.5, display: 'flex', alignItems: 'center' }}>
+                      <Box sx={{ mt: 3, display: 'flex', alignItems: 'center' }}>
                         <Typography sx={{ fontWeight: 500 }}>{item.name}</Typography>
                         {item.cardStatus ? (
                           <CustomChip
@@ -312,7 +322,7 @@ const PaymentMethodCard = () => {
                           />
                         ) : null}
                       </Box>
-                      <Typography variant='body2'>
+                      <Typography sx={{ color: 'text.secondary' }}>
                         **** **** **** {item.cardNumber.substring(item.cardNumber.length - 4)}
                       </Typography>
                     </div>
@@ -324,7 +334,7 @@ const PaymentMethodCard = () => {
                       <Button variant='outlined' color='secondary'>
                         Delete
                       </Button>
-                      <Typography variant='body2' sx={{ mt: 5 }}>
+                      <Typography variant='caption' sx={{ mt: 8, display: 'block', color: 'text.secondary' }}>
                         Card expires at {item.expiryDate}
                       </Typography>
                     </Box>
@@ -333,7 +343,7 @@ const PaymentMethodCard = () => {
               </Grid>
 
               <Grid item xs={12}>
-                <Button type='submit' variant='contained' sx={{ mr: 3.5 }}>
+                <Button type='submit' variant='contained' sx={{ mr: 5 }}>
                   Save Changes
                 </Button>
                 <Button type='reset' variant='outlined' color='secondary' onClick={handleResetForm}>

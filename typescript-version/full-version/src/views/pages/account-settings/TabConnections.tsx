@@ -97,7 +97,9 @@ const TabConnections = () => {
         <Card>
           <CardHeader title='Connected Accounts' />
           <CardContent>
-            <Typography sx={{ mb: 4 }}>Display content from your connected accounts on your site</Typography>
+            <Typography sx={{ mb: 4, color: 'text.secondary' }}>
+              Display content from your connected accounts on your site
+            </Typography>
 
             {connectedAccountsArr.map(account => {
               return (
@@ -111,7 +113,9 @@ const TabConnections = () => {
                     </Box>
                     <Box>
                       <Typography sx={{ fontWeight: 500 }}>{account.title}</Typography>
-                      <Typography variant='caption'>{account.subtitle}</Typography>
+                      <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+                        {account.subtitle}
+                      </Typography>
                     </Box>
                   </Box>
                   <Switch defaultChecked={account.checked} />
@@ -126,7 +130,9 @@ const TabConnections = () => {
         <Card>
           <CardHeader title='Social Accounts' />
           <CardContent>
-            <Typography sx={{ mb: 4 }}>Display content from social accounts on your site</Typography>
+            <Typography sx={{ mb: 4, color: 'text.secondary' }}>
+              Display content from social accounts on your site
+            </Typography>
 
             {socialAccountsArr.map(account => {
               return (
@@ -142,13 +148,13 @@ const TabConnections = () => {
                       <Typography sx={{ fontWeight: 500 }}>{account.title}</Typography>
                       <Typography
                         variant={account.isConnected ? 'body1' : 'caption'}
-                        sx={{ ...(account.isConnected ? { color: 'primary.main' } : {}) }}
+                        sx={{ ...(account.isConnected ? { color: 'primary.main' } : { color: 'text.disabled' }) }}
                       >
                         {account.isConnected ? account.username : 'Not Connected'}
                       </Typography>
                     </Box>
                   </Box>
-                  <IconButton color={account.isConnected ? 'error' : 'secondary'}>
+                  <IconButton sx={{ borderRadius: '6px' }} color={account.isConnected ? 'error' : 'secondary'}>
                     {account.isConnected ? <DeleteOutline /> : <LinkVariant />}
                   </IconButton>
                 </Box>

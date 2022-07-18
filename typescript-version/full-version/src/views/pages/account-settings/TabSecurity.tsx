@@ -119,7 +119,7 @@ const TabSecurity = () => {
       <Card sx={{ mb: 4 }}>
         <CardHeader title='API Key List & Access' />
         <CardContent>
-          <Typography sx={{ mb: 4 }}>
+          <Typography sx={{ mb: 4, color: 'text.secondary' }}>
             An API key is a simple encrypted string that identifies an application without any principal. They are
             useful for accessing public data anonymously, and are used to associate API requests with your project for
             quota and billing.

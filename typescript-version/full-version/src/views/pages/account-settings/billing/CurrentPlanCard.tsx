@@ -70,25 +70,27 @@ const CurrentPlanCard = ({ data }: { data: PricingDataType }) => {
 
   return (
     <>
-      <Card sx={{ mb: 4 }}>
+      <Card sx={{ mb: 6 }}>
         <CardHeader title='Current Plan' />
         <CardContent>
           <Grid container spacing={6}>
             <Grid item xs={12} lg={6}>
-              <Box sx={{ mb: 4 }}>
+              <Box sx={{ mb: 6 }}>
                 <Typography sx={{ mb: 2, fontWeight: 500 }}>Your Current Plan is Basic</Typography>
-                <Typography variant='body2'>A simple start for everyone</Typography>
+                <Typography sx={{ color: 'text.secondary' }}>A simple start for everyone</Typography>
               </Box>
-              <Box sx={{ mb: 4 }}>
+              <Box sx={{ mb: 6 }}>
                 <Typography sx={{ mb: 2, fontWeight: 500 }}>Active until Dec 09, 2021</Typography>
-                <Typography variant='body2'>We will send you a notification upon Subscription expiration</Typography>
+                <Typography sx={{ color: 'text.secondary' }}>
+                  We will send you a notification upon Subscription expiration
+                </Typography>
               </Box>
               <Box>
                 <Box sx={{ mb: 2, display: 'flex', alignItems: 'center' }}>
                   <Typography sx={{ mr: 2, fontWeight: 500 }}>$199 Per Month</Typography>
                   <CustomChip label='Popular' size='small' color='primary' skin='light' rounded={true} />
                 </Box>
-                <Typography variant='body2'>Standard plan for small to medium businesses</Typography>
+                <Typography sx={{ color: 'text.secondary' }}>Standard plan for small to medium businesses</Typography>
               </Box>
             </Grid>
             <Grid item xs={12} lg={6}>
@@ -99,28 +101,28 @@ const CurrentPlanCard = ({ data }: { data: PricingDataType }) => {
 
               <Box>
                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <Typography variant='body2' sx={{ fontWeight: 600 }}>
-                    Days
-                  </Typography>
-                  <Typography variant='body2' sx={{ fontWeight: 600 }}>
-                    24 of 30 Days
-                  </Typography>
+                  <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>Days</Typography>
+                  <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>24 of 30 Days</Typography>
                 </Box>
                 <LinearProgress
                   value={75}
                   variant='determinate'
                   sx={{ my: 1, height: 12, borderRadius: 6, '& .MuiLinearProgress-bar': { borderRadius: 6 } }}
                 />
-                <Typography variant='body2'>6 days remaining until your plan requires update</Typography>
+                <Typography sx={{ color: 'text.secondary' }}>
+                  6 days remaining until your plan requires update
+                </Typography>
               </Box>
             </Grid>
             <Grid item xs={12}>
-              <Button variant='contained' sx={{ mr: 4 }} onClick={() => setOpenPricingDialog(true)}>
-                Upgrade Plan
-              </Button>
-              <Button variant='outlined' color='secondary' onClick={() => setOpen(true)}>
-                Cancel Subscription
-              </Button>
+              <Box sx={{ mt: 3 }}>
+                <Button variant='contained' sx={{ mr: 3 }} onClick={() => setOpenPricingDialog(true)}>
+                  Upgrade Plan
+                </Button>
+                <Button variant='outlined' color='secondary' onClick={() => setOpen(true)}>
+                  Cancel Subscription
+                </Button>
+              </Box>
             </Grid>
           </Grid>
         </CardContent>

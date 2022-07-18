@@ -3,6 +3,7 @@ import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
 import Table from '@mui/material/Table'
 import Select from '@mui/material/Select'
+import Button from '@mui/material/Button'
 import MenuItem from '@mui/material/MenuItem'
 import Checkbox from '@mui/material/Checkbox'
 import TableRow from '@mui/material/TableRow'
@@ -52,9 +53,8 @@ const TabNotifications = () => {
     <Card>
       <CardHeader title='Recent Devices' />
       <CardContent>
-        <Typography>
-          We need permission from your browser to show notifications. Request Permission
-          <strong>Request Permission</strong>
+        <Typography sx={{ color: 'text.secondary' }}>
+          We need permission from your browser to show notifications. <strong>Request Permission</strong>
         </Typography>
       </CardContent>
 
@@ -92,6 +92,14 @@ const TabNotifications = () => {
               <MenuItem value='online'>Only when I'm online</MenuItem>
               <MenuItem value='anytime'>Anytime</MenuItem>
             </Select>
+          </Grid>
+          <Grid item xs={12}>
+            <Button variant='contained' sx={{ mr: 3 }}>
+              Save Changes
+            </Button>
+            <Button variant='outlined' color='secondary'>
+              Discard
+            </Button>
           </Grid>
         </Grid>
       </CardContent>
