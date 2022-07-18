@@ -21,22 +21,21 @@ const StyledList = styled(List)<ListProps>(({ theme }) => ({
   '& .MuiListItem-root': {
     border: `1px solid ${theme.palette.divider}`,
     '&:first-of-type': {
-      borderTopLeftRadius: 6,
-      borderTopRightRadius: 6
+      borderTopLeftRadius: theme.shape.borderRadius,
+      borderTopRightRadius: theme.shape.borderRadius
     },
-    '&:last-of-type': {
-      borderBottomLeftRadius: 6,
-      borderBottomRightRadius: 6
+    '&:last-child': {
+      borderBottomLeftRadius: theme.shape.borderRadius,
+      borderBottomRightRadius: theme.shape.borderRadius
     },
-    '&:not(:last-of-type)': {
+    '&:not(:last-child)': {
       borderBottom: 0
     },
     '& .MuiListItemText-root': {
       marginTop: 0,
-      marginBottom: theme.spacing(1),
+      marginBottom: theme.spacing(2),
       '& .MuiTypography-root': {
-        fontWeight: 500,
-        fontSize: '.9375rem'
+        fontWeight: 500
       }
     },
     '& .MuiLinearProgress-root': {
@@ -51,7 +50,7 @@ const StyledList = styled(List)<ListProps>(({ theme }) => ({
 
 const ListProgress = () => {
   return (
-    <StyledList>
+    <StyledList disablePadding>
       <ListItem>
         <ListItemAvatar>
           <CustomAvatar skin='light' variant='rounded' color='info' sx={{ height: 36, width: 36 }}>

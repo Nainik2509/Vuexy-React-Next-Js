@@ -17,35 +17,23 @@ const StyledList = styled(List)<ListProps>(({ theme }) => ({
   '& .MuiListItem-container': {
     border: `1px solid ${theme.palette.divider}`,
     '&:first-of-type': {
-      borderTopLeftRadius: 6,
-      borderTopRightRadius: 6
+      borderTopLeftRadius: theme.shape.borderRadius,
+      borderTopRightRadius: theme.shape.borderRadius
     },
-    '&:last-of-type': {
-      borderBottomLeftRadius: 6,
-      borderBottomRightRadius: 6
+    '&:last-child': {
+      borderBottomLeftRadius: theme.shape.borderRadius,
+      borderBottomRightRadius: theme.shape.borderRadius
     },
-    '&:not(:last-of-type)': {
+    '&:not(:last-child)': {
       borderBottom: 0
     },
-    '& .MuiListItemSecondaryAction-root': {
-      top: 28
+    '& .MuiListItem-root': {
+      paddingRight: theme.spacing(24)
     },
     '& .MuiListItemText-root': {
       marginTop: 0,
-
       '& .MuiTypography-root': {
-        fontWeight: 500,
-        fontSize: '.9375rem'
-      }
-    },
-
-    [theme.breakpoints.down('sm')]: {
-      '& .MuiListItemSecondaryAction-root': {
-        top: 0,
-        right: 0,
-        position: 'relative',
-        marginTop: theme.spacing(4),
-        paddingLeft: theme.spacing(4)
+        fontWeight: 500
       }
     }
   }
@@ -53,7 +41,7 @@ const StyledList = styled(List)<ListProps>(({ theme }) => ({
 
 const ListUsers = () => {
   return (
-    <StyledList>
+    <StyledList disablePadding>
       <ListItem>
         <ListItemAvatar>
           <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
