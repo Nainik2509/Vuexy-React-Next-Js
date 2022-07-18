@@ -66,7 +66,9 @@ const FaqHeader = (props: Props) => {
             )
           }}
         />
-        <Typography sx={{ mt: 4 }}>or choose a category to quickly find the help you need</Typography>
+        <Typography sx={{ mt: 4, color: 'text.secondary' }}>
+          or choose a category to quickly find the help you need
+        </Typography>
       </CardContent>
     </Card>
   )

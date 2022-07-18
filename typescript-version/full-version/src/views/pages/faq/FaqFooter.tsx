@@ -1,3 +1,9 @@
+// ** React Imports
+import { SyntheticEvent } from 'react'
+
+// ** Next Imports
+import Link from 'next/link'
+
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
 import { styled } from '@mui/material/styles'
@@ -47,10 +53,10 @@ const FaqFooter = () => {
     <Box sx={{ mt: 13 }}>
       <Box sx={{ textAlign: 'center' }}>
         <CustomChip rounded size='small' skin='light' color='primary' label='Question' />
-        <Typography variant='h6' sx={{ my: 2 }}>
+        <Typography variant='h6' sx={{ mt: 1.5, mb: 2 }}>
           You still have a question?
         </Typography>
-        <Typography variant='body2' sx={{ mb: 11 }}>
+        <Typography sx={{ mb: 11, color: 'text.secondary' }}>
           If you cannot find a question in our FAQ, you can always contact us. We will answer to you shortly!
         </Typography>
       </Box>
@@ -61,9 +67,16 @@ const FaqFooter = () => {
             <CustomAvatar skin='light' variant='rounded' sx={{ mt: 1.5, height: 38, width: 38 }}>
               <PhoneOutline />
             </CustomAvatar>
-            <Typography variant='h6' sx={{ mt: 4 }}>
-              + (810) 2548 2568
-            </Typography>
+            <Link href='/' passHref>
+              <Typography
+                variant='h6'
+                component='a'
+                onClick={(e: SyntheticEvent) => e.preventDefault()}
+                sx={{ mt: 4, textDecoration: 'none', '&:hover': { color: 'primary.main' } }}
+              >
+                + (810) 2548 2568
+              </Typography>
+            </Link>
             <Typography sx={{ mt: 2, color: 'text.secondary' }}>We are always happy to help!</Typography>
           </StyledBox1>
         </Grid>
@@ -73,9 +86,16 @@ const FaqFooter = () => {
             <CustomAvatar skin='light' variant='rounded' sx={{ mt: 1.5, height: 38, width: 38 }}>
               <EmailOutline />
             </CustomAvatar>
-            <Typography variant='h6' sx={{ mt: 4 }}>
-              hello@help.com
-            </Typography>
+            <Link href='/' passHref>
+              <Typography
+                variant='h6'
+                component='a'
+                onClick={(e: SyntheticEvent) => e.preventDefault()}
+                sx={{ mt: 4, textDecoration: 'none', '&:hover': { color: 'primary.main' } }}
+              >
+                hello@help.com
+              </Typography>
+            </Link>
             <Typography sx={{ mt: 2, color: 'text.secondary' }}>Best way to get answer faster!</Typography>
           </StyledBox2>
         </Grid>

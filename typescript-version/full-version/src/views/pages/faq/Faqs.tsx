@@ -63,7 +63,7 @@ const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
     borderRadius: theme.shape.borderRadius,
     '& .MuiSvgIcon-root': {
       marginBottom: 0,
-      marginRight: theme.spacing(4)
+      marginRight: theme.spacing(1)
     },
     [theme.breakpoints.down('md')]: {
       maxWidth: '100%'
