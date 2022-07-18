@@ -42,7 +42,7 @@ const RowOptions = () => {
   return (
     <>
       <IconButton size='small' onClick={e => handleRowOptionsClick(e)}>
-        <DotsVertical sx={{ fontSize: 20, color: 'text.primary' }} />
+        <DotsVertical sx={{ fontSize: 18 }} />
       </IconButton>
       <Menu
         keepMounted
@@ -78,19 +78,24 @@ const Projects = ({ data }: { data: ProjectsTabType[] }) => {
             <Grid key={index} item xs={12} md={6} lg={4}>
               <Card>
                 <CardContent>
-                  <Box sx={{ mb: 7, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <Box sx={{ mb: 7, display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
                       <Avatar src={item.avatar} sx={{ mr: 4, height: 38, width: 38 }} />
                       <Box>
                         <Typography
                           href='/'
                           component='a'
-                          sx={{ fontSize: '1.125rem', color: 'primary.main', textDecoration: 'none' }}
+                          sx={{
+                            fontSize: '1.125rem',
+                            color: 'text.primary',
+                            textDecoration: 'none',
+                            '&:hover': { color: 'primary.main' }
+                          }}
                           onClick={(e: SyntheticEvent) => e.preventDefault()}
                         >
                           {item.title}
                         </Typography>
-                        <Typography variant='body2' sx={{ mt: 1, fontSize: '.9375rem' }}>
+                        <Typography variant='body2' sx={{ mt: 1, fontSize: '1rem' }}>
                           <strong>Client:</strong> {item.client}
                         </Typography>
                       </Box>
@@ -116,7 +121,7 @@ const Projects = ({ data }: { data: ProjectsTabType[] }) => {
                       </Box>
                     </Box>
                   </Box>
-                  <Typography>{item.description}</Typography>
+                  <Typography sx={{ color: 'text.secondary' }}>{item.description}</Typography>
                 </CardContent>
                 <Divider sx={{ my: '0 !important' }} />
                 <CardContent>
@@ -134,8 +139,12 @@ const Projects = ({ data }: { data: ProjectsTabType[] }) => {
                     />
                   </Box>
                   <Box sx={{ mb: 1, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <Typography variant='body2'>Tasks: {item.tasks}</Typography>
-                    <Typography variant='body2'>{item.completed}% Completed</Typography>
+                    <Typography variant='caption' sx={{ color: 'text.secondary' }}>
+                      Tasks: {item.tasks}
+                    </Typography>
+                    <Typography variant='caption' sx={{ color: 'text.secondary' }}>
+                      {item.completed}% Completed
+                    </Typography>
                   </Box>
                   <Box
                     sx={{
@@ -164,13 +173,13 @@ const Projects = ({ data }: { data: ProjectsTabType[] }) => {
                             )
                           })}
                       </AvatarGroup>
-                      <Typography variant='body2' sx={{ ml: 1 }}>
+                      <Typography variant='caption' sx={{ ml: 1.5, color: 'text.disabled' }}>
                         {item.members}
                       </Typography>
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      <MessageOutline fontSize='small' sx={{ mt: 1, mr: 1, color: 'text.secondary' }} />
-                      <Typography variant='body2'>{item.comments}</Typography>
+                      <MessageOutline sx={{ mr: 1, fontSize: 18, color: 'text.secondary' }} />
+                      <Typography sx={{ color: 'text.secondary' }}>{item.comments}</Typography>
                     </Box>
                   </Box>
                 </CardContent>

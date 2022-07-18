@@ -89,19 +89,19 @@ const AboutOverivew = (props: Props) => {
       <Card sx={{ mb: 6 }}>
         <CardContent>
           <Box sx={{ mb: 7 }}>
-            <Typography variant='body2' sx={{ mb: 5 }}>
+            <Typography variant='caption' sx={{ mb: 5, display: 'block', color: 'text.disabled' }}>
               ABOUT
             </Typography>
             {renderList(about)}
           </Box>
           <Box sx={{ mb: 7 }}>
-            <Typography variant='body2' sx={{ mb: 5 }}>
+            <Typography variant='caption' sx={{ mb: 5, display: 'block', color: 'text.disabled' }}>
               CONTACTS
             </Typography>
             {renderList(contacts)}
           </Box>
           <Box>
-            <Typography variant='body2' sx={{ mb: 5 }}>
+            <Typography variant='caption' sx={{ mb: 5, display: 'block', color: 'text.disabled' }}>
               Teams
             </Typography>
             {renderTeams(teams)}
@@ -111,7 +111,7 @@ const AboutOverivew = (props: Props) => {
       <Card>
         <CardContent>
           <Box>
-            <Typography variant='body2' sx={{ mb: 5 }}>
+            <Typography variant='caption' sx={{ mb: 5, display: 'block', color: 'text.disabled' }}>
               OVERVIEW
             </Typography>
             {renderList(overview)}

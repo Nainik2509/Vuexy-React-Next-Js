@@ -14,7 +14,7 @@ import Typography from '@mui/material/Typography'
 import axios from 'axios'
 
 // ** Icons Imports
-import BriefcaseOutline from 'mdi-material-ui/BriefcaseOutline'
+import FountainPenTip from 'mdi-material-ui/FountainPenTip'
 import MapMarkerOutline from 'mdi-material-ui/MapMarkerOutline'
 import AccountCheckOutline from 'mdi-material-ui/AccountCheckOutline'
 import CalendarBlankOutline from 'mdi-material-ui/CalendarBlankOutline'
@@ -82,7 +82,7 @@ const UserProfileHeader = () => {
               <Box>
                 <Typography
                   variant='h5'
-                  sx={{ mb: 4, fontSize: '1.375rem', mt: { xs: 0, md: 5 }, textAlign: { xs: 'center', md: 'left' } }}
+                  sx={{ mb: 4, fontSize: '1.375rem', mt: { xs: 0, md: 3.5 }, textAlign: { xs: 'center', md: 'left' } }}
                 >
                   {data.fullName}
                 </Typography>
@@ -95,7 +95,7 @@ const UserProfileHeader = () => {
                   }}
                 >
                   <Box sx={{ mr: 4, display: 'flex', alignItems: 'center' }}>
-                    <BriefcaseOutline sx={{ mr: 1, fontSize: 18, color: 'text.secondary' }} />
+                    <FountainPenTip sx={{ mr: 1, fontSize: 18, color: 'text.secondary' }} />
                     <Typography sx={{ color: 'text.secondary', fontWeight: 600 }}>{data.designation}</Typography>
                   </Box>
                   <Box sx={{ mr: 4, display: 'flex', alignItems: 'center' }}>

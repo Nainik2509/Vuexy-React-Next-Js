@@ -41,7 +41,7 @@ const RowOptions = () => {
   return (
     <>
       <IconButton size='small' onClick={e => handleRowOptionsClick(e)}>
-        <DotsVertical sx={{ fontSize: 20, color: 'text.primary' }} />
+        <DotsVertical sx={{ fontSize: 18 }} />
       </IconButton>
       <Menu
         keepMounted
@@ -79,17 +79,17 @@ const Teams = ({ data }: { data: TeamsTabType[] }) => {
                 <CardContent>
                   <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      <Avatar src={item.avatar} sx={{ mr: 4, height: 32, width: 32 }} />
-                      <Typography variant='h6' sx={{ fontSize: '1.125rem' }}>
+                      <Avatar src={item.avatar} sx={{ mr: 2, height: 32, width: 32 }} />
+                      <Typography variant='h6' sx={{ fontSize: '1.125rem', color: 'text.secondary' }}>
                         {item.title}
                       </Typography>
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      <StarOutline sx={{ mr: 0.5, fontSize: 20, cursor: 'pointer' }} />
+                      <StarOutline sx={{ fontSize: 18, cursor: 'pointer', color: 'text.secondary' }} />
                       <RowOptions />
                     </Box>
                   </Box>
-                  <Typography sx={{ my: 4 }}>{item.description}</Typography>
+                  <Typography sx={{ my: 4, color: 'text.secondary' }}>{item.description}</Typography>
                   <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
                       <AvatarGroup className='pull-up'>
@@ -101,7 +101,7 @@ const Teams = ({ data }: { data: TeamsTabType[] }) => {
                           )
                         })}
                       </AvatarGroup>
-                      <Typography variant='body2' sx={{ ml: 1 }}>
+                      <Typography variant='caption' sx={{ ml: 0.5, color: 'text.disabled' }}>
                         +{item.extraMembers}
                       </Typography>
                     </Box>

@@ -109,7 +109,7 @@ const columns = [
             <Typography noWrap sx={{ color: 'text.primary', fontWeight: 700 }}>
               {name}
             </Typography>
-            <Typography noWrap variant='caption'>
+            <Typography noWrap variant='caption' sx={{ color: 'text.disabled' }}>
               {date}
             </Typography>
           </Box>

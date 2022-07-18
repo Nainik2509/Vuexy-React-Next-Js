@@ -60,8 +60,8 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
             title='Connections'
             action={
               <>
-                <IconButton onClick={handleConnectionsClick}>
-                  <DotsVertical />
+                <IconButton size='small' onClick={handleConnectionsClick}>
+                  <DotsVertical sx={{ fontSize: 18 }} />
                 </IconButton>
                 <Menu
                   open={openConnections}
@@ -101,7 +101,9 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
                       <Avatar src={connection.avatar} sx={{ mr: 4, width: 38, height: 38 }} />
                       <Box>
                         <Typography sx={{ lineHeight: 1.1, fontWeight: 500 }}>{connection.name}</Typography>
-                        <Typography variant='caption'>{connection.connections} Connections</Typography>
+                        <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+                          {connection.connections} Connections
+                        </Typography>
                       </Box>
                     </Box>
                     <Button
@@ -124,8 +126,8 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
             title='Connections'
             action={
               <>
-                <IconButton onClick={handleTeamsClick}>
-                  <DotsVertical />
+                <IconButton size='small' onClick={handleTeamsClick}>
+                  <DotsVertical sx={{ fontSize: 18 }} />
                 </IconButton>
                 <Menu
                   open={openTeams}
@@ -164,7 +166,9 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
                       <Avatar src={team.avatar} sx={{ mr: 4, width: 38, height: 38 }} />
                       <Box>
                         <Typography sx={{ lineHeight: 1.1, fontWeight: 500 }}>{team.title}</Typography>
-                        <Typography variant='caption'>{team.members} Members</Typography>
+                        <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+                          {team.members} Members
+                        </Typography>
                       </Box>
                     </Box>
                     <CustomChip rounded size='small' skin='light' color={team.ChipColor} label={team.chipText} />
