@@ -5,7 +5,6 @@ import { ReactElement } from 'react'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
-import IconButton from '@mui/material/IconButton'
 import CardHeader from '@mui/material/CardHeader'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
@@ -13,7 +12,6 @@ import CardContent from '@mui/material/CardContent'
 // ** Icons Imports
 import TrendingUp from 'mdi-material-ui/TrendingUp'
 import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
-import DotsVertical from 'mdi-material-ui/DotsVertical'
 import AccountOutline from 'mdi-material-ui/AccountOutline'
 import LabelVariantOutline from 'mdi-material-ui/LabelVariantOutline'
 
@@ -22,6 +20,7 @@ import { ThemeColor } from 'src/@core/layouts/types'
 
 // ** Custom Components Imports
 import CustomAvatar from 'src/@core/components/mui/avatar'
+import OptionsMenu from 'src/@core/components/option-menu'
 
 interface SaleDataType {
   stats: string
@@ -86,14 +85,10 @@ const CardStatisticsSales = () => {
             sx={{ pt: 4 }}
             title='Statistics Card'
             action={
-              <IconButton
-                size='small'
-                aria-label='settings'
-                className='card-more-options'
-                sx={{ color: 'text.secondary' }}
-              >
-                <DotsVertical />
-              </IconButton>
+              <OptionsMenu
+                options={['Refresh', 'Share', 'Update']}
+                iconButtonProps={{ size: 'small', className: 'card-more-options', sx: { color: 'text.secondary' } }}
+              />
             }
           />
           <CardContent>
