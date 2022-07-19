@@ -16,42 +16,44 @@ const ReviewComplete = () => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12} lg={6}>
-        <Grid container spacing={4}>
+        <Grid container spacing={2}>
           <Grid item xs={12}>
             <Typography variant='h5' sx={{ mb: 4 }}>
               Almost done! 🚀
             </Typography>
-            <Typography>Confirm your deal details information and submit to create it.</Typography>
+            <Typography sx={{ color: 'text.secondary' }}>
+              Confirm your deal details information and submit to create it.
+            </Typography>
           </Grid>
           <Grid item xs={5} sm={3}>
-            <Typography sx={{ fontWeight: 700 }}>Deal Type</Typography>
+            <Typography sx={{ fontWeight: 700, color: 'text.secondary' }}>Deal Type</Typography>
           </Grid>
           <Grid item xs={7} sm={9}>
-            <Typography>Percentage</Typography>
+            <Typography sx={{ color: 'text.secondary' }}>Percentage</Typography>
           </Grid>
           <Grid item xs={5} sm={3}>
-            <Typography sx={{ fontWeight: 700 }}>Amount</Typography>
+            <Typography sx={{ fontWeight: 700, color: 'text.secondary' }}>Amount</Typography>
           </Grid>
           <Grid item xs={7} sm={9}>
-            <Typography>25%</Typography>
+            <Typography sx={{ color: 'text.secondary' }}>25%</Typography>
           </Grid>
           <Grid item xs={5} sm={3}>
-            <Typography sx={{ fontWeight: 700 }}>Deal Code</Typography>
+            <Typography sx={{ fontWeight: 700, color: 'text.secondary' }}>Deal Code</Typography>
           </Grid>
           <Grid item xs={7} sm={9}>
             <CustomChip rounded size='small' skin='light' color='warning' label='25PEROFF' />
           </Grid>
           <Grid item xs={5} sm={3}>
-            <Typography sx={{ fontWeight: 700 }}>Deal Title</Typography>
+            <Typography sx={{ fontWeight: 700, color: 'text.secondary' }}>Deal Title</Typography>
           </Grid>
           <Grid item xs={7} sm={9}>
-            <Typography>Black friday sale, 25% OFF</Typography>
+            <Typography sx={{ color: 'text.secondary' }}>Black friday sale, 25% OFF</Typography>
           </Grid>
           <Grid item xs={5} sm={3}>
-            <Typography sx={{ fontWeight: 700 }}>Deal Duration</Typography>
+            <Typography sx={{ fontWeight: 700, color: 'text.secondary' }}>Deal Duration</Typography>
           </Grid>
           <Grid item xs={7} sm={9}>
-            <Typography>2021-07-14 to 2021-07-30</Typography>
+            <Typography sx={{ color: 'text.secondary' }}>2021-07-14 to 2021-07-30</Typography>
           </Grid>
           <Grid item xs={12}>
             <FormControlLabel

@@ -82,19 +82,27 @@ const Stepper = styled(MuiStepper)<StepperProps>(({ theme }) => ({
     cursor: 'pointer',
     textAlign: 'center',
     paddingBottom: theme.spacing(8),
+    '& .step-title': {
+      fontSize: '1rem'
+    },
     '&.Mui-completed + .MuiSvgIcon-root': {
-      color: 'primary.main'
+      color: theme.palette.primary.main
     },
     '& + .MuiSvgIcon-root': {
-      display: 'none'
+      display: 'none',
+      color: theme.palette.text.secondary
     },
 
     '& .MuiStepLabel-label': {
       display: 'flex',
+      cursor: 'pointer',
       alignItems: 'center',
+      '& .MuiTypography-root': {
+        color: theme.palette.text.secondary
+      },
       svg: {
         marginRight: theme.spacing(1.5),
-        fill: theme.palette.text.primary
+        fill: theme.palette.text.secondary
       },
       '&.Mui-active, &.Mui-completed': {
         '& .MuiTypography-root': {

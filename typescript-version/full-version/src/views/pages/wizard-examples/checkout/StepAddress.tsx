@@ -28,7 +28,7 @@ const dataIcons = [
     value: 'standard',
     title: 'Standard',
     gridProps: { sm: 4, xs: 12 },
-    icon: <AccountOutline fontSize='large' />,
+    icon: <AccountOutline sx={{ fontSize: '2rem', color: 'text.secondary' }} />,
     content: (
       <Box>
         <CustomChip
@@ -39,7 +39,7 @@ const dataIcons = [
           color='success'
           sx={{ position: 'absolute', top: 8, right: 8 }}
         />
-        <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5 }}>
+        <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
           Get your product in 1 Week.
         </Typography>
       </Box>
@@ -49,11 +49,11 @@ const dataIcons = [
     value: 'express',
     title: 'Express',
     gridProps: { sm: 4, xs: 12 },
-    icon: <CrownOutline fontSize='large' />,
+    icon: <CrownOutline sx={{ fontSize: '2rem', color: 'text.secondary' }} />,
     content: (
       <Box>
         <CustomChip rounded size='small' skin='light' label='$10' sx={{ position: 'absolute', top: 8, right: 8 }} />
-        <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5 }}>
+        <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
           Get your product in 3-4 days.
         </Typography>
       </Box>
@@ -63,11 +63,11 @@ const dataIcons = [
     value: 'overnight',
     title: 'Overnight',
     gridProps: { sm: 4, xs: 12 },
-    icon: <RocketLaunchOutline fontSize='large' />,
+    icon: <RocketLaunchOutline sx={{ fontSize: '2rem', color: 'text.secondary' }} />,
     content: (
       <Box>
         <CustomChip rounded size='small' skin='light' label='$15' sx={{ position: 'absolute', top: 8, right: 8 }} />
-        <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5 }}>
+        <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
           Get your product in 1 day.
         </Typography>
       </Box>
@@ -78,12 +78,12 @@ const dataIcons = [
 const data = [
   {
     value: 'home',
-    title: 'John Doe (Default)',
+    title: <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>John Doe (Default)</Typography>,
     gridProps: { sm: 6, xs: 12 },
     meta: <CustomChip rounded size='small' skin='light' label='Home' color='primary' />,
     content: (
       <Box>
-        <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5 }}>
+        <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
           4135 Parkway Street, Los Angeles, CA, 90017.
           <br />
           Mobile : 1234567890 Cash / Card on delivery available
@@ -114,12 +114,12 @@ const data = [
   },
   {
     value: 'office',
-    title: 'ACME Inc.',
+    title: <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>ACME Inc.</Typography>,
     gridProps: { sm: 6, xs: 12 },
     meta: <CustomChip rounded size='small' skin='light' label='Office' color='success' />,
     content: (
       <Box>
-        <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5 }}>
+        <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
           87 Hoffman Avenue, New York, NY, 10016.
           <br />
           Mobile : 1234567890 Cash / Card on delivery available
@@ -154,12 +154,12 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12} lg={8} xl={9}>
-        <Typography sx={{ mt: 1, mb: 4 }}>Select your preferable address</Typography>
+        <Typography sx={{ mt: 1, mb: 4, color: 'text.secondary' }}>Select your preferable address</Typography>
         <CustomRadioBasic value='home' name='custom-radios-address' data={data} />
         <Button variant='outlined' sx={{ mt: 4.5 }}>
           Add new address
         </Button>
-        <Typography sx={{ mt: 8, mb: 4 }}>Choose Delivery Speed</Typography>
+        <Typography sx={{ mt: 8, mb: 4, color: 'text.secondary' }}>Choose Delivery Speed</Typography>
         <CustomRadioIcons value='standard' name='custom-radios-delivery' data={dataIcons} />
       </Grid>
       <Grid item xs={12} lg={4} xl={3}>
@@ -171,10 +171,8 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
                 <img width={50} src='/images/products/google-home.png' alt='Google Home' />
               </Box>
               <Box>
-                <Typography variant='body2'>Google - Google Home - White</Typography>
-                <Typography variant='body2' sx={{ color: 'text.primary', fontWeight: 600 }}>
-                  18th Nov 2021
-                </Typography>
+                <Typography sx={{ color: 'text.secondary' }}>Google - Google Home - White</Typography>
+                <Typography sx={{ color: 'text.secondary', fontWeight: 600 }}>18th Nov 2021</Typography>
               </Box>
             </Box>
             <Box sx={{ display: 'flex' }}>
@@ -182,10 +180,8 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
                 <img width={50} src='/images/products/iphone-11.png' alt='iphone 11' />
               </Box>
               <Box>
-                <Typography variant='body2'>Apple iPhone 11 (64GB, Black)</Typography>
-                <Typography variant='body2' sx={{ color: 'text.primary', fontWeight: 600 }}>
-                  20th Nov 2021
-                </Typography>
+                <Typography sx={{ color: 'text.secondary' }}>Apple iPhone 11 (64GB, Black)</Typography>
+                <Typography sx={{ color: 'text.secondary', fontWeight: 600 }}>20th Nov 2021</Typography>
               </Box>
             </Box>
           </CardContent>
@@ -194,17 +190,17 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
             <Typography sx={{ mb: 4, fontWeight: 500 }}>Price Details</Typography>
             <Grid container>
               <Grid item xs={6} sx={{ mb: 2 }}>
-                <Typography>Order Total</Typography>
+                <Typography sx={{ color: 'text.secondary' }}>Order Total</Typography>
               </Grid>
               <Grid item xs={6} sx={{ mb: 2 }}>
-                <Typography sx={{ textAlign: 'right' }}>$1100.00</Typography>
+                <Typography sx={{ textAlign: 'right', color: 'text.secondary' }}>$1100.00</Typography>
               </Grid>
               <Grid item xs={6}>
-                <Typography>Delivery Charges</Typography>
+                <Typography sx={{ color: 'text.secondary' }}>Delivery Charges</Typography>
               </Grid>
               <Grid item xs={6}>
                 <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-                  <Typography sx={{ mr: 2, textDecoration: 'line-through' }}>$5.00</Typography>
+                  <Typography sx={{ mr: 2, textDecoration: 'line-through', color: 'text.secondary' }}>$5.00</Typography>
                   <CustomChip rounded size='small' skin='light' color='success' label='Free' />
                 </Box>
               </Grid>
@@ -214,10 +210,10 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
           <CardContent sx={{ p: theme => `${theme.spacing(4)} !important` }}>
             <Grid container>
               <Grid item xs={6}>
-                <Typography sx={{ fontWeight: 700 }}>Total</Typography>
+                <Typography sx={{ fontWeight: 700, color: 'text.secondary' }}>Total</Typography>
               </Grid>
               <Grid item xs={6}>
-                <Typography sx={{ textAlign: 'right' }}>$1100.00</Typography>
+                <Typography sx={{ textAlign: 'right', color: 'text.secondary' }}>$1100.00</Typography>
               </Grid>
             </Grid>
           </CardContent>

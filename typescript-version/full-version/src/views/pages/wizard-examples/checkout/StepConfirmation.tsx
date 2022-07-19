@@ -91,7 +91,7 @@ const StepConfirmation = () => {
           }}
         >
           <Typography variant='h6'>Thank You! 😇</Typography>
-          <Typography sx={{ my: 4 }}>
+          <Typography sx={{ my: 4, color: 'text.secondary' }}>
             Your order{' '}
             <Box
               href='/'
@@ -103,7 +103,7 @@ const StepConfirmation = () => {
             </Box>{' '}
             has been placed!
           </Typography>
-          <Typography>
+          <Typography sx={{ color: 'text.secondary' }}>
             We sent an email to{' '}
             <Box
               href='/'
@@ -116,7 +116,7 @@ const StepConfirmation = () => {
             with your order confirmation and receipt. If the email hasn't arrived within two minutes, please check your
             spam folder to see if the email was routed there.
           </Typography>
-          <Typography sx={{ mt: 4 }}>
+          <Typography sx={{ mt: 4, color: 'text.secondary' }}>
             <ClockTimeFiveOutline fontSize='small' sx={{ mr: 2, verticalAlign: 'middle' }} />
             <Box component='span' sx={{ fontWeight: 600 }}>
               Time placed:
@@ -132,7 +132,7 @@ const StepConfirmation = () => {
               <MapMarkerOutline fontSize='small' sx={{ mr: 1 }} />
               <Typography sx={{ fontWeight: 500 }}>Shipping</Typography>
             </Box>
-            <Box component='address' sx={{ mt: 4, fontStyle: 'normal' }}>
+            <Box component='address' sx={{ mt: 4, fontStyle: 'normal', color: 'text.secondary' }}>
               John Doe <br />
               4135 Parkway Street,
               <br />
@@ -147,7 +147,7 @@ const StepConfirmation = () => {
               <CreditCardOutline fontSize='small' sx={{ mr: 1 }} />
               <Typography sx={{ fontWeight: 500 }}>Billing Address</Typography>
             </Box>
-            <Box component='address' sx={{ mt: 4, fontStyle: 'normal' }}>
+            <Box component='address' sx={{ mt: 4, fontStyle: 'normal', color: 'text.secondary' }}>
               John Doe <br />
               4135 Parkway Street,
               <br />
@@ -162,9 +162,9 @@ const StepConfirmation = () => {
               <ArchiveOutline fontSize='small' sx={{ mr: 1 }} />
               <Typography sx={{ fontWeight: 500 }}>Shipping Method</Typography>
             </Box>
-            <Typography sx={{ mt: 4, fontWeight: 600 }}>Preferred Method:</Typography>
-            <Typography>Standard Delivery</Typography>
-            <Typography>(Normally 3-4 business days)</Typography>
+            <Typography sx={{ mt: 4, fontWeight: 600, color: 'text.secondary' }}>Preferred Method:</Typography>
+            <Typography sx={{ color: 'text.secondary' }}>Standard Delivery</Typography>
+            <Typography sx={{ color: 'text.secondary' }}>(Normally 3-4 business days)</Typography>
           </ListItem>
         </HorizontalList>
       </Grid>
@@ -177,11 +177,9 @@ const StepConfirmation = () => {
             <Grid container>
               <Grid item xs={12} md={8}>
                 <ListItemText primary='Google - Google Home - White' />
-                <Box sx={{ mt: 4, display: 'flex' }}>
-                  <Typography variant='body2'>Sold By:</Typography>
-                  <Typography variant='body2' sx={{ mx: 2, color: 'primary.main', cursor: 'pointer' }}>
-                    Google
-                  </Typography>
+                <Box sx={{ mt: 4, display: 'flex', alignItems: 'center' }}>
+                  <Typography sx={{ color: 'text.disabled' }}>Sold By:</Typography>
+                  <Typography sx={{ mx: 1, color: 'primary.main', cursor: 'pointer' }}>Google</Typography>
                   <CustomChip rounded size='small' skin='light' color='success' label='In Stock' />
                 </Box>
               </Grid>
@@ -196,7 +194,7 @@ const StepConfirmation = () => {
                   }}
                 >
                   <Typography sx={{ color: 'primary.main' }}>$299</Typography>
-                  <Typography sx={{ color: 'secondary.main', textDecoration: 'line-through' }}>/$359</Typography>
+                  <Typography sx={{ textDecoration: 'line-through', color: 'text.disabled' }}>/$359</Typography>
                 </Box>
               </Grid>
             </Grid>
@@ -208,11 +206,9 @@ const StepConfirmation = () => {
             <Grid container>
               <Grid item xs={12} md={8}>
                 <ListItemText primary='Apple iPhone 11 (64GB, Black)' />
-                <Box sx={{ mt: 4, display: 'flex' }}>
-                  <Typography variant='body2'>Sold By:</Typography>
-                  <Typography variant='body2' sx={{ mx: 2, color: 'primary.main', cursor: 'pointer' }}>
-                    Apple
-                  </Typography>
+                <Box sx={{ mt: 4, display: 'flex', alignItems: 'center' }}>
+                  <Typography sx={{ color: 'text.disabled' }}>Sold By:</Typography>
+                  <Typography sx={{ mx: 1, color: 'primary.main', cursor: 'pointer' }}>Apple</Typography>
                   <CustomChip rounded size='small' skin='light' color='success' label='In Stock' />
                 </Box>
               </Grid>
@@ -227,7 +223,7 @@ const StepConfirmation = () => {
                   }}
                 >
                   <Typography sx={{ color: 'primary.main' }}>$299</Typography>
-                  <Typography sx={{ color: 'secondary.main', textDecoration: 'line-through' }}>/$359</Typography>
+                  <Typography sx={{ textDecoration: 'line-through', color: 'text.disabled' }}>/$359</Typography>
                 </Box>
               </Grid>
             </Grid>
@@ -242,17 +238,17 @@ const StepConfirmation = () => {
             <Typography sx={{ mb: 4, fontWeight: 500 }}>Price Details</Typography>
             <Grid container>
               <Grid item xs={6} sx={{ mb: 2 }}>
-                <Typography>Order Total</Typography>
+                <Typography sx={{ color: 'text.secondary' }}> Order Total</Typography>
               </Grid>
               <Grid item xs={6} sx={{ mb: 2 }}>
-                <Typography sx={{ textAlign: 'right' }}>$1100.00</Typography>
+                <Typography sx={{ textAlign: 'right', color: 'text.secondary' }}>$1100.00</Typography>
               </Grid>
               <Grid item xs={6}>
-                <Typography>Delivery Charges</Typography>
+                <Typography sx={{ color: 'text.secondary' }}> Delivery Charges</Typography>
               </Grid>
               <Grid item xs={6}>
                 <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-                  <Typography sx={{ mr: 2, textDecoration: 'line-through' }}>$5.00</Typography>
+                  <Typography sx={{ mr: 2, textDecoration: 'line-through', color: 'text.secondary' }}>$5.00</Typography>
                   <CustomChip rounded size='small' skin='light' color='success' label='Free' />
                 </Box>
               </Grid>
@@ -262,10 +258,10 @@ const StepConfirmation = () => {
           <CardContent sx={{ p: theme => `${theme.spacing(4)} !important` }}>
             <Grid container>
               <Grid item xs={6}>
-                <Typography sx={{ fontWeight: 700 }}>Total</Typography>
+                <Typography sx={{ fontWeight: 700, color: 'text.secondary' }}>Total</Typography>
               </Grid>
               <Grid item xs={6}>
-                <Typography sx={{ textAlign: 'right' }}>$1100.00</Typography>
+                <Typography sx={{ textAlign: 'right', color: 'text.secondary' }}>$1100.00</Typography>
               </Grid>
             </Grid>
           </CardContent>

@@ -35,7 +35,7 @@ const furnishingArray = [
 
 const StepPropertyFeatures = () => {
   // ** State
-  const [furnishingDetails, setFurnishingDetails] = useState<string[]>([])
+  const [furnishingDetails, setFurnishingDetails] = useState<string[]>(['Fridge', 'AC', 'TV', 'Wifi'])
 
   const handleChange = (event: SelectChangeEvent<typeof furnishingDetails>) => {
     const {

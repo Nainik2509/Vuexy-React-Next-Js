@@ -19,9 +19,9 @@ const dataIcons = [
     value: 'sale',
     title: 'Sell the property',
     gridProps: { sm: 6, xs: 12 },
-    icon: <HomeOutline fontSize='large' />,
+    icon: <HomeOutline sx={{ fontSize: '2rem', color: 'text.secondary' }} />,
     content: (
-      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5 }}>
+      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
         Post your property for sale.
         <br />
         Unlimited free listing.
@@ -32,9 +32,9 @@ const dataIcons = [
     value: 'rent',
     title: 'Rent the property',
     gridProps: { sm: 6, xs: 12 },
-    icon: <WalletOutline fontSize='large' />,
+    icon: <WalletOutline sx={{ fontSize: '2rem', color: 'text.secondary' }} />,
     content: (
-      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5 }}>
+      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
         Post your property for rent.
         <br />
         Unlimited free listing.

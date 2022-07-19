@@ -153,17 +153,17 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
             <Typography sx={{ mb: 4, fontWeight: 500 }}>Price Details</Typography>
             <Grid container>
               <Grid item xs={6} sx={{ mb: 2 }}>
-                <Typography>Order Total</Typography>
+                <Typography sx={{ color: 'text.secondary' }}>Order Total</Typography>
               </Grid>
               <Grid item xs={6} sx={{ mb: 2 }}>
-                <Typography sx={{ textAlign: 'right' }}>$1100.00</Typography>
+                <Typography sx={{ textAlign: 'right', color: 'text.secondary' }}>$1100.00</Typography>
               </Grid>
               <Grid item xs={6}>
-                <Typography>Delivery Charges</Typography>
+                <Typography sx={{ color: 'text.secondary' }}>Delivery Charges</Typography>
               </Grid>
               <Grid item xs={6}>
                 <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-                  <Typography sx={{ mr: 2, textDecoration: 'line-through' }}>$5.00</Typography>
+                  <Typography sx={{ mr: 2, textDecoration: 'line-through', color: 'text.secondary' }}>$5.00</Typography>
                   <CustomChip rounded size='small' skin='light' color='success' label='Free' />
                 </Box>
               </Grid>
@@ -173,13 +173,13 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
           <CardContent sx={{ p: 4 }}>
             <Grid container sx={{ mb: 4 }}>
               <Grid item xs={6} sx={{ mb: 2 }}>
-                <Typography sx={{ fontWeight: 700 }}>Total</Typography>
+                <Typography sx={{ fontWeight: 700, color: 'text.secondary' }}>Total</Typography>
               </Grid>
               <Grid item xs={6} sx={{ mb: 2 }}>
-                <Typography sx={{ textAlign: 'right' }}>$1100.00</Typography>
+                <Typography sx={{ textAlign: 'right', color: 'text.secondary' }}>$1100.00</Typography>
               </Grid>
               <Grid item xs={6}>
-                <Typography sx={{ fontWeight: 700 }}>Deliver to:</Typography>
+                <Typography sx={{ fontWeight: 700, color: 'text.secondary' }}>Deliver to:</Typography>
               </Grid>
               <Grid item xs={6}>
                 <Box sx={{ textAlign: 'right' }}>
@@ -188,7 +188,7 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
               </Grid>
             </Grid>
 
-            <Box component='address' sx={{ mb: 4.5, fontStyle: 'normal' }}>
+            <Box component='address' sx={{ mb: 4.5, fontStyle: 'normal', color: 'text.secondary' }}>
               <Box component='span' sx={{ fontWeight: 600 }}>
                 {' '}
                 John Doe (Default),

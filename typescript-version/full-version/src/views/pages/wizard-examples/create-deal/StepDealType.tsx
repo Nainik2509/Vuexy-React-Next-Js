@@ -28,9 +28,9 @@ const dataIcons = [
     value: 'percentage',
     title: 'Percentage',
     gridProps: { sm: 4, xs: 12 },
-    icon: <TagOutline fontSize='large' />,
+    icon: <TagOutline sx={{ fontSize: '2rem', color: 'text.secondary' }} />,
     content: (
-      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5 }}>
+      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
         Create a deal which offer uses some % off (i.e 5% OFF) on total.
       </Typography>
     )
@@ -39,9 +39,9 @@ const dataIcons = [
     value: 'flat-amount',
     title: 'Flat Amount',
     gridProps: { sm: 4, xs: 12 },
-    icon: <CurrencyUsd fontSize='large' />,
+    icon: <CurrencyUsd sx={{ fontSize: '2rem', color: 'text.secondary' }} />,
     content: (
-      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5 }}>
+      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
         Create a deal which offer uses flat $ off (i.e $5 OFF) on the total.
       </Typography>
     )
@@ -50,9 +50,9 @@ const dataIcons = [
     value: 'prime-member',
     title: 'Prime Member',
     gridProps: { sm: 4, xs: 12 },
-    icon: <AccountOutline fontSize='large' />,
+    icon: <AccountOutline sx={{ fontSize: '2rem', color: 'text.secondary' }} />,
     content: (
-      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5 }}>
+      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
         Create prime member only deal to encourage the prime members.
       </Typography>
     )

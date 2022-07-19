@@ -7,9 +7,9 @@ import Card from '@mui/material/Card'
 import Step from '@mui/material/Step'
 import Button from '@mui/material/Button'
 import { styled } from '@mui/material/styles'
-import StepLabel from '@mui/material/StepLabel'
 import Typography from '@mui/material/Typography'
 import MuiStepper, { StepperProps } from '@mui/material/Stepper'
+import MuiStepLabel, { StepLabelProps } from '@mui/material/StepLabel'
 import CardContent, { CardContentProps } from '@mui/material/CardContent'
 
 // ** Icons Imports
@@ -66,6 +66,29 @@ const Stepper = styled(MuiStepper)<StepperProps>(({ theme }) => ({
   },
   [theme.breakpoints.down('lg')]: {
     minWidth: 0
+  }
+}))
+
+const StepLabel = styled(MuiStepLabel)<StepLabelProps>(({ theme }) => ({
+  '& .MuiStepLabel-label': {
+    display: 'flex',
+    '& .step-title, & .step-subtitle, & .MuiAvatar-root .MuiSvgIcon-root': {
+      color: theme.palette.text.secondary
+    },
+    '&.Mui-active': {
+      '& .step-title': {
+        color: theme.palette.primary.main
+      },
+      '& .MuiAvatar-root .MuiSvgIcon-root': {
+        color: theme.palette.common.white
+      }
+    },
+    '&.Mui-completed': {
+      opacity: 0.65,
+      '& .MuiAvatar-root .MuiSvgIcon-root': {
+        color: theme.palette.primary.main
+      }
+    }
   }
 }))
 
@@ -151,20 +174,7 @@ const CreateDealWizard = () => {
                     '&.Mui-completed + .MuiSvgIcon-root': { color: 'primary.main' }
                   }}
                 >
-                  <StepLabel
-                    icon={<></>}
-                    sx={{
-                      '& .MuiStepLabel-label': {
-                        display: 'flex',
-                        '&.Mui-active': {
-                          '& .step-title': { color: 'primary.main' }
-                        },
-                        '&.Mui-completed': {
-                          '& .step-title, & .step-subtitle': { color: 'text.disabled' }
-                        }
-                      }
-                    }}
-                  >
+                  <StepLabel icon={<></>}>
                     <CustomAvatar
                       variant='rounded'
                       skin={activeStep === index ? 'filled' : 'light'}

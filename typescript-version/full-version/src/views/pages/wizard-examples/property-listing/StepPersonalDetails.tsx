@@ -24,9 +24,9 @@ const dataIcons = [
     value: 'builder',
     title: 'I am the Builder',
     gridProps: { sm: 4, xs: 12 },
-    icon: <OfficeBuildingOutline fontSize='large' />,
+    icon: <OfficeBuildingOutline sx={{ fontSize: '2rem', color: 'text.secondary' }} />,
     content: (
-      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5 }}>
+      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
         List property as Builder, list your project and get highest reach.
       </Typography>
     )
@@ -35,9 +35,9 @@ const dataIcons = [
     value: 'owner',
     title: 'I am the Owner',
     gridProps: { sm: 4, xs: 12 },
-    icon: <CrownOutline fontSize='large' />,
+    icon: <CrownOutline sx={{ fontSize: '2rem', color: 'text.secondary' }} />,
     content: (
-      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5 }}>
+      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
         Submit property as an Individual. Lease, Rent or Sell at the best price.
       </Typography>
     )
@@ -46,9 +46,9 @@ const dataIcons = [
     value: 'broker',
     title: 'I am the Broker',
     gridProps: { sm: 4, xs: 12 },
-    icon: <BriefcaseOutline fontSize='large' />,
+    icon: <BriefcaseOutline sx={{ fontSize: '2rem', color: 'text.secondary' }} />,
     content: (
-      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5 }}>
+      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
         Earn highest commission by listing your clients properties at the best price.
       </Typography>
     )
