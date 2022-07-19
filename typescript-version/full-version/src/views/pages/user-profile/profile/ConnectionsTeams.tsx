@@ -61,7 +61,7 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
             action={
               <>
                 <IconButton size='small' onClick={handleConnectionsClick}>
-                  <DotsVertical sx={{ fontSize: 18 }} />
+                  <DotsVertical sx={{ fontSize: '1.125rem' }} />
                 </IconButton>
                 <Menu
                   open={openConnections}
@@ -112,7 +112,7 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
                       sx={{ minWidth: 28, p: theme => `${theme.spacing(1.25, 1)} !important` }}
                       variant={connection.isFriend ? 'contained' : 'text'}
                     >
-                      <AccountOutline sx={{ fontSize: 18 }} />
+                      <AccountOutline sx={{ fontSize: '1.125rem' }} />
                     </Button>
                   </Box>
                 )
@@ -127,7 +127,7 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
             action={
               <>
                 <IconButton size='small' onClick={handleTeamsClick}>
-                  <DotsVertical sx={{ fontSize: 18 }} />
+                  <DotsVertical sx={{ fontSize: '1.125rem' }} />
                 </IconButton>
                 <Menu
                   open={openTeams}

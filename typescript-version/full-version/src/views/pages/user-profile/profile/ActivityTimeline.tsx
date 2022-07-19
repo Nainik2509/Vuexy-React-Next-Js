@@ -54,12 +54,12 @@ const ActivityTimeline = () => {
       <CardHeader
         title='Activity Timeline'
         sx={{ '& .MuiCardHeader-avatar': { mr: 2.5 } }}
-        avatar={<FormatListBulleted sx={{ fontSize: 18 }} />}
+        avatar={<FormatListBulleted sx={{ fontSize: '1.125rem' }} />}
         titleTypographyProps={{ sx: { color: 'text.primary' } }}
         action={
           <>
             <IconButton size='small' onClick={handleTimelineMenuClick}>
-              <DotsVertical sx={{ fontSize: 18 }} />
+              <DotsVertical sx={{ fontSize: '1.125rem' }} />
             </IconButton>
             <Menu
               open={openTimelineMenu}

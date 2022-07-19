@@ -42,7 +42,7 @@ const RowOptions = () => {
   return (
     <>
       <IconButton size='small' onClick={e => handleRowOptionsClick(e)}>
-        <DotsVertical sx={{ fontSize: 18 }} />
+        <DotsVertical sx={{ fontSize: '1.125rem' }} />
       </IconButton>
       <Menu
         keepMounted
@@ -178,7 +178,7 @@ const Projects = ({ data }: { data: ProjectsTabType[] }) => {
                       </Typography>
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      <MessageOutline sx={{ mr: 1, fontSize: 18, color: 'text.secondary' }} />
+                      <MessageOutline sx={{ mr: 1, fontSize: '1.125rem', color: 'text.secondary' }} />
                       <Typography sx={{ color: 'text.secondary' }}>{item.comments}</Typography>
                     </Box>
                   </Box>

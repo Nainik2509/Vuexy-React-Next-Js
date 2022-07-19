@@ -49,7 +49,7 @@ const renderList = (arr: ProfileTabCommonType[]) => {
 
       return (
         <Box key={index} sx={{ display: 'flex', alignItems: 'center', '&:not(:last-of-type)': { mb: 4 } }}>
-          <Icon sx={{ fontSize: 18 }} />
+          <Icon sx={{ fontSize: '1.125rem'18 }} />
 
           <Typography sx={{ mx: 2, fontWeight: 600 }}>{item.property}:</Typography>
           <Typography>{item.value}</Typography>
@@ -69,7 +69,7 @@ const renderTeams = (arr: ProfileTeamsType[]) => {
 
       return (
         <Box key={index} sx={{ display: 'flex', alignItems: 'center', '&:not(:last-of-type)': { mb: 4 } }}>
-          <Icon sx={{ fontSize: 18, color: `${item.color}.main` }} />
+          <Icon sx={{ fontSize: '1.125rem', color: `${item.color}.main` }} />
 
           <Typography sx={{ mx: 2, fontWeight: 600 }}>{item.property}</Typography>
           <Typography>{item.value}</Typography>

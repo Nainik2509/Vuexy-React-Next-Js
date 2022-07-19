@@ -42,7 +42,7 @@ const RowOptions = () => {
   return (
     <>
       <IconButton size='small' onClick={e => handleRowOptionsClick(e)}>
-        <DotsVertical sx={{ fontSize: 18 }} />
+        <DotsVertical sx={{ fontSize: '1.125rem' }} />
       </IconButton>
       <Menu
         keepMounted

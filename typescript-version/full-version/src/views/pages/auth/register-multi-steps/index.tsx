@@ -35,17 +35,17 @@ const steps = [
   {
     title: 'Account',
     subtitle: 'Account Details',
-    icon: <HomeOutline sx={{ fontSize: 18 }} />
+    icon: <HomeOutline sx={{ fontSize: '1.125rem' }} />
   },
   {
     title: 'Personal',
     subtitle: 'Enter Information',
-    icon: <AccountOutline sx={{ fontSize: 18 }} />
+    icon: <AccountOutline sx={{ fontSize: '1.125rem' }} />
   },
   {
     title: 'Billing',
     subtitle: 'Payment Details',
-    icon: <CardTextOutline sx={{ fontSize: 18 }} />
+    icon: <CardTextOutline sx={{ fontSize: '1.125rem' }} />
   }
 ]
 
