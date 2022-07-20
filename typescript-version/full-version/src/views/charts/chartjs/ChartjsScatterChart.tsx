@@ -9,7 +9,7 @@ import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 
 // ** Third Party Imports
-import { Scatter } from 'react-chartjs-2'
+import { Scatter, ChartProps } from 'react-chartjs-2'
 
 interface ScatterProps {
   green: string
@@ -17,12 +17,12 @@ interface ScatterProps {
   primary: string
   labelColor: string
   borderColor: string
-  gridLineColor: string
+  legendColor: string
 }
 
 const ChartjsScatterChart = (props: ScatterProps) => {
   // ** Props
-  const { green, warning, primary, labelColor, borderColor, gridLineColor } = props
+  const { green, warning, primary, labelColor, borderColor, legendColor } = props
 
   // ** State
   const [active, setActive] = useState<string | null>('daily')
@@ -31,7 +31,7 @@ const ChartjsScatterChart = (props: ScatterProps) => {
     setActive(newActive)
   }
 
-  const options: any = {
+  const options: ChartProps['options'] = {
     responsive: true,
     maintainAspectRatio: false,
     animation: { duration: 800 },
@@ -45,7 +45,8 @@ const ChartjsScatterChart = (props: ScatterProps) => {
         grid: {
           borderColor,
           drawTicks: false,
-          color: gridLineColor
+          drawBorder: false,
+          color: borderColor
         },
         ticks: {
           stepSize: 10,
@@ -58,7 +59,8 @@ const ChartjsScatterChart = (props: ScatterProps) => {
         grid: {
           borderColor,
           drawTicks: false,
-          color: gridLineColor
+          drawBorder: false,
+          color: borderColor
         },
         ticks: {
           stepSize: 100,
@@ -73,7 +75,7 @@ const ChartjsScatterChart = (props: ScatterProps) => {
         labels: {
           padding: 25,
           boxWidth: 9,
-          color: labelColor,
+          color: legendColor,
           usePointStyle: true
         }
       }
@@ -179,7 +181,7 @@ const ChartjsScatterChart = (props: ScatterProps) => {
         }
       />
       <CardContent>
-        <Scatter data={data} options={options} height={400} />
+        <Scatter data={data} height={400} options={options as any} />
       </CardContent>
     </Card>
   )

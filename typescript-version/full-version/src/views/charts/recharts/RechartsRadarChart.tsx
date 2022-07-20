@@ -78,9 +78,7 @@ const CustomTooltip = (data: TooltipProps<any, any>) => {
             return (
               <Box sx={{ display: 'flex', alignItems: 'center' }} key={i.dataKey}>
                 <Circle sx={{ color: i.fill, mr: 2.5, fontSize: '0.6rem' }} />
-                <span>
-                  {i.dataKey}: {i.payload[i.dataKey]}
-                </span>
+                <Typography variant='body2'>{`${i.dataKey} : ${i.payload[i.dataKey]}`}</Typography>
               </Box>
             )
           })}
@@ -111,11 +109,11 @@ const RechartsRadarChart = () => {
         <Box sx={{ display: 'flex', mb: 4, justifyContent: 'center' }}>
           <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
             <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#fde802' }} />
-            <Typography>iPhone 11</Typography>
+            <Typography variant='body2'>iPhone 11</Typography>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#9b88fa' }} />
-            <Typography>Samsung s20</Typography>
+            <Typography variant='body2'>Samsung s20</Typography>
           </Box>
         </Box>
       </CardContent>

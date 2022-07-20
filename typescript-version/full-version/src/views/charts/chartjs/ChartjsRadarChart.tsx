@@ -7,16 +7,17 @@ import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
 // ** Third Party Imports
-import { Radar } from 'react-chartjs-2'
+import { Radar, ChartProps } from 'react-chartjs-2'
 
 interface RadarProps {
   labelColor: string
-  gridLineColor: string
+  borderColor: string
+  legendColor: string
 }
 
 const ChartjsRadarChart = (props: RadarProps) => {
   // ** Props
-  const { labelColor, gridLineColor } = props
+  const { labelColor, legendColor, borderColor } = props
 
   // ** States
   const [chartData, setChartData] = useState<any>({
@@ -26,7 +27,7 @@ const ChartjsRadarChart = (props: RadarProps) => {
   // ** Hooks
   const chartRef = useRef<any>(null)
 
-  const options: any = {
+  const options: ChartProps['options'] = {
     responsive: true,
     maintainAspectRatio: false,
     animation: { duration: 500 },
@@ -40,9 +41,9 @@ const ChartjsRadarChart = (props: RadarProps) => {
           maxTicksLimit: 1,
           color: labelColor
         },
-        grid: { color: gridLineColor },
+        grid: { color: borderColor },
         pointLabels: { color: labelColor },
-        angleLines: { color: gridLineColor }
+        angleLines: { color: borderColor }
       }
     },
     plugins: {
@@ -50,7 +51,7 @@ const ChartjsRadarChart = (props: RadarProps) => {
         position: 'top',
         labels: {
           padding: 25,
-          color: labelColor
+          color: legendColor
         }
       }
     }
@@ -100,7 +101,7 @@ const ChartjsRadarChart = (props: RadarProps) => {
     <Card>
       <CardHeader title='Radar Chart' />
       <CardContent>
-        <Radar ref={chartRef} data={chartData} options={options} height={350} />
+        <Radar height={350} ref={chartRef} data={chartData} options={options as any} />
       </CardContent>
     </Card>
   )

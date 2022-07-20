@@ -4,6 +4,7 @@ import { forwardRef, useState } from 'react'
 // ** MUI Imports
 import Card from '@mui/material/Card'
 import TextField from '@mui/material/TextField'
+import { useTheme } from '@mui/material/styles'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 import InputAdornment from '@mui/material/InputAdornment'
@@ -34,7 +35,21 @@ interface PickerProps {
   end: Date | number
 }
 
+const series = [
+  {
+    name: 'Apple',
+    data: [90, 120, 55, 100, 80, 125, 175, 70, 88]
+  },
+  {
+    name: 'Samsung',
+    data: [85, 100, 30, 40, 95, 90, 30, 110, 62]
+  }
+]
+
 const ApexColumnChart = () => {
+  // ** Hook
+  const theme = useTheme()
+
   // ** States
   const [endDate, setEndDate] = useState<DateType>(null)
   const [startDate, setStartDate] = useState<DateType>(new Date())
@@ -44,9 +59,27 @@ const ApexColumnChart = () => {
       offsetX: -10,
       stacked: true,
       parentHeightOffset: 0,
-      toolbar: {
-        show: false
+      toolbar: { show: false }
+    },
+    fill: { opacity: 1 },
+    dataLabels: { enabled: false },
+    colors: [columnColors.series1, columnColors.series2],
+    legend: {
+      position: 'top',
+      horizontalAlign: 'left',
+      labels: { colors: theme.palette.text.secondary },
+      markers: {
+        offsetY: 1,
+        offsetX: -3
+      },
+      itemMargin: {
+        vertical: 3,
+        horizontal: 10
       }
+    },
+    stroke: {
+      show: true,
+      colors: ['transparent']
     },
     plotOptions: {
       bar: {
@@ -55,6 +88,28 @@ const ApexColumnChart = () => {
           backgroundBarRadius: 10,
           backgroundBarColors: [columnColors.bg, columnColors.bg, columnColors.bg, columnColors.bg, columnColors.bg]
         }
+      }
+    },
+    grid: {
+      borderColor: theme.palette.divider,
+      xaxis: {
+        lines: { show: true }
+      }
+    },
+    yaxis: {
+      labels: {
+        style: { colors: theme.palette.text.disabled }
+      }
+    },
+    xaxis: {
+      axisBorder: { show: false },
+      axisTicks: { color: theme.palette.divider },
+      categories: ['7/12', '8/12', '9/12', '10/12', '11/12', '12/12', '13/12', '14/12', '15/12'],
+      crosshairs: {
+        stroke: { color: theme.palette.divider }
+      },
+      labels: {
+        style: { colors: theme.palette.text.disabled }
       }
     },
     responsive: [
@@ -68,44 +123,8 @@ const ApexColumnChart = () => {
           }
         }
       }
-    ],
-    dataLabels: {
-      enabled: false
-    },
-    legend: {
-      position: 'top',
-      horizontalAlign: 'left'
-    },
-    colors: [columnColors.series1, columnColors.series2],
-    stroke: {
-      show: true,
-      colors: ['transparent']
-    },
-    grid: {
-      xaxis: {
-        lines: {
-          show: true
-        }
-      }
-    },
-    xaxis: {
-      categories: ['7/12', '8/12', '9/12', '10/12', '11/12', '12/12', '13/12', '14/12', '15/12']
-    },
-    fill: {
-      opacity: 1
-    }
+    ]
   }
-
-  const series = [
-    {
-      name: 'Apple',
-      data: [90, 120, 55, 100, 80, 125, 175, 70, 88]
-    },
-    {
-      name: 'Samsung',
-      data: [85, 100, 30, 40, 95, 90, 30, 110, 62]
-    }
-  ]
 
   const CustomInput = forwardRef((props: PickerProps, ref) => {
     const startDate = format(props.start, 'MM/dd/yyyy')
@@ -165,7 +184,7 @@ const ApexColumnChart = () => {
         }
       />
       <CardContent>
-        <ReactApexcharts options={options} series={series} type='bar' height={400} />
+        <ReactApexcharts type='bar' height={400} options={options} series={series} />
       </CardContent>
     </Card>
   )

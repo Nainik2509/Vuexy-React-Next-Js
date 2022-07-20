@@ -150,15 +150,15 @@ const RechartsScatterChart = ({ direction }: Props) => {
         <Box sx={{ display: 'flex', mb: 4 }}>
           <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
             <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: 'primary.main' }} />
-            <Typography>React</Typography>
+            <Typography variant='body2'>React</Typography>
           </Box>
           <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
             <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: 'success.main' }} />
-            <Typography>Vue</Typography>
+            <Typography variant='body2'>Vue</Typography>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: 'error.main' }} />
-            <Typography>Angular</Typography>
+            <Typography variant='body2'>Angular</Typography>
           </Box>
         </Box>
         <Box sx={{ height: 350 }}>

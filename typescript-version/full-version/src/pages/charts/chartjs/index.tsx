@@ -47,8 +47,8 @@ const ChartJS = () => {
   const areaChartGreyLight = '#edf1f4'
   const scatterChartWarning = '#ff9f43'
   const borderColor = theme.palette.divider
-  const gridLineColor = theme.palette.divider
-  const labelColor = theme.palette.text.primary
+  const labelColor = theme.palette.text.disabled
+  const legendColor = theme.palette.text.secondary
 
   return (
     <DatePickerWrapper>
@@ -69,13 +69,13 @@ const ChartJS = () => {
             labelColor={labelColor}
             success={lineChartYellow}
             borderColor={borderColor}
+            legendColor={legendColor}
             primary={lineChartPrimary}
             warning={lineChartWarning}
-            gridLineColor={gridLineColor}
           />
         </Grid>
         <Grid item xs={12} md={6}>
-          <ChartjsRadarChart labelColor={labelColor} gridLineColor={gridLineColor} />
+          <ChartjsRadarChart labelColor={labelColor} legendColor={legendColor} borderColor={borderColor} />
         </Grid>
         <Grid item xs={12} md={6}>
           <ChartjsPolarAreaChart
@@ -84,7 +84,7 @@ const ChartJS = () => {
             grey={polarChartGrey}
             primary={primaryColor}
             green={polarChartGreen}
-            labelColor={labelColor}
+            legendColor={legendColor}
             warning={polarChartWarning}
           />
         </Grid>
@@ -94,7 +94,6 @@ const ChartJS = () => {
             primary={primaryColor}
             labelColor={labelColor}
             borderColor={borderColor}
-            gridLineColor={gridLineColor}
           />
         </Grid>
         <Grid item xs={12}>
@@ -103,8 +102,8 @@ const ChartJS = () => {
             labelColor={labelColor}
             green={scatterChartGreen}
             borderColor={borderColor}
+            legendColor={legendColor}
             warning={scatterChartWarning}
-            gridLineColor={gridLineColor}
           />
         </Grid>
         <Grid item xs={12}>
@@ -113,25 +112,21 @@ const ChartJS = () => {
             blue={areaChartBlue}
             labelColor={labelColor}
             borderColor={borderColor}
+            legendColor={legendColor}
             blueLight={areaChartBlueLight}
             greyLight={areaChartGreyLight}
           />
         </Grid>
         <Grid item xs={12} md={6}>
-          <ChartjsBarChart
-            yellow={barChartYellow}
-            labelColor={labelColor}
-            borderColor={borderColor}
-            gridLineColor={gridLineColor}
-          />
+          <ChartjsBarChart yellow={barChartYellow} labelColor={labelColor} borderColor={borderColor} />
         </Grid>
         <Grid item xs={12} md={6}>
           <ChartjsHorizontalBarChart
             labelColor={labelColor}
             info={horizontalBarInfo}
             borderColor={borderColor}
+            legendColor={legendColor}
             warning={warningColorShade}
-            gridLineColor={gridLineColor}
           />
         </Grid>
       </Grid>

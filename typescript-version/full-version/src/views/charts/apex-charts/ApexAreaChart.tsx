@@ -4,6 +4,7 @@ import { forwardRef, useState } from 'react'
 // ** MUI Imports
 import Card from '@mui/material/Card'
 import TextField from '@mui/material/TextField'
+import { useTheme } from '@mui/material/styles'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 import InputAdornment from '@mui/material/InputAdornment'
@@ -34,39 +35,79 @@ interface PickerProps {
   end: Date | number
 }
 
+const series = [
+  {
+    name: 'Visits',
+    data: [100, 120, 90, 170, 130, 160, 140, 240, 220, 180, 270, 280, 375]
+  },
+  {
+    name: 'Clicks',
+    data: [60, 80, 70, 110, 80, 100, 90, 180, 160, 140, 200, 220, 275]
+  },
+  {
+    name: 'Sales',
+    data: [20, 40, 30, 70, 40, 60, 50, 140, 120, 100, 140, 180, 220]
+  }
+]
+
 const ApexAreaChart = () => {
   // ** States
   const [endDate, setEndDate] = useState<DateType>(null)
   const [startDate, setStartDate] = useState<DateType>(new Date())
 
+  // ** Hook
+  const theme = useTheme()
+
   const options: ApexOptions = {
     chart: {
       parentHeightOffset: 0,
-      toolbar: {
-        show: false
-      }
+      toolbar: { show: false }
     },
-    dataLabels: {
-      enabled: false
-    },
+    tooltip: { shared: false },
+    dataLabels: { enabled: false },
     stroke: {
       show: false,
       curve: 'straight'
     },
     legend: {
       position: 'top',
-      horizontalAlign: 'left'
-    },
-    grid: {
-      show: true,
-      xaxis: {
-        lines: {
-          show: true
-        }
+      horizontalAlign: 'left',
+      labels: { colors: theme.palette.text.secondary },
+      markers: {
+        offsetY: 1,
+        offsetX: -3
+      },
+      itemMargin: {
+        vertical: 3,
+        horizontal: 10
       }
     },
     colors: [areaColors.series3, areaColors.series2, areaColors.series1],
+    fill: {
+      opacity: 1,
+      type: 'solid'
+    },
+    grid: {
+      show: true,
+      borderColor: theme.palette.divider,
+      xaxis: {
+        lines: { show: true }
+      }
+    },
+    yaxis: {
+      labels: {
+        style: { colors: theme.palette.text.disabled }
+      }
+    },
     xaxis: {
+      axisBorder: { show: false },
+      axisTicks: { color: theme.palette.divider },
+      crosshairs: {
+        stroke: { color: theme.palette.divider }
+      },
+      labels: {
+        style: { colors: theme.palette.text.disabled }
+      },
       categories: [
         '7/12',
         '8/12',
@@ -82,30 +123,8 @@ const ApexAreaChart = () => {
         '18/12',
         '19/12'
       ]
-    },
-    fill: {
-      opacity: 1,
-      type: 'solid'
-    },
-    tooltip: {
-      shared: false
     }
   }
-
-  const series = [
-    {
-      name: 'Visits',
-      data: [100, 120, 90, 170, 130, 160, 140, 240, 220, 180, 270, 280, 375]
-    },
-    {
-      name: 'Clicks',
-      data: [60, 80, 70, 110, 80, 100, 90, 180, 160, 140, 200, 220, 275]
-    },
-    {
-      name: 'Sales',
-      data: [20, 40, 30, 70, 40, 60, 50, 140, 120, 100, 140, 180, 220]
-    }
-  ]
 
   const CustomInput = forwardRef((props: PickerProps, ref) => {
     const startDate = format(props.start, 'MM/dd/yyyy')
@@ -167,7 +186,7 @@ const ApexAreaChart = () => {
         }
       />
       <CardContent>
-        <ReactApexcharts options={options} series={series} type='area' height={400} />
+        <ReactApexcharts type='area' height={400} options={options} series={series} />
       </CardContent>
     </Card>
   )

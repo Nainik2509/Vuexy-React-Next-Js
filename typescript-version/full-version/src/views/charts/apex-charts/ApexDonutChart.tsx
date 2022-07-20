@@ -1,5 +1,6 @@
 // ** MUI Imports
 import Card from '@mui/material/Card'
+import { useTheme } from '@mui/material/styles'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
@@ -18,18 +19,24 @@ const donutColors = {
 }
 
 const ApexDonutChart = () => {
+  // ** Hook
+  const theme = useTheme()
+
   const options: ApexOptions = {
-    legend: {
-      show: true,
-      position: 'bottom'
-    },
     stroke: { width: 0 },
     labels: ['Operational', 'Networking', 'Hiring', 'R&D'],
     colors: [donutColors.series1, donutColors.series5, donutColors.series3, donutColors.series2],
     dataLabels: {
       enabled: true,
-      formatter(val: string) {
-        return `${parseInt(val, 10)}%`
+      formatter: (val: string) => `${parseInt(val, 10)}%`
+    },
+    legend: {
+      position: 'bottom',
+      markers: { offsetX: -3 },
+      labels: { colors: theme.palette.text.secondary },
+      itemMargin: {
+        vertical: 3,
+        horizontal: 10
       }
     },
     plotOptions: {
@@ -38,23 +45,19 @@ const ApexDonutChart = () => {
           labels: {
             show: true,
             name: {
-              fontSize: '2rem',
-              fontFamily: 'Montserrat'
+              fontSize: '1.5rem'
             },
             value: {
-              fontSize: '1rem',
-              fontFamily: 'Montserrat',
-              formatter(val: string) {
-                return `${parseInt(val, 10)}`
-              }
+              fontSize: '1.5rem',
+              color: theme.palette.text.secondary,
+              formatter: (val: string) => `${parseInt(val, 10)}`
             },
             total: {
               show: true,
               fontSize: '1.5rem',
               label: 'Operational',
-              formatter() {
-                return '31%'
-              }
+              formatter: () => '31%',
+              color: theme.palette.text.primary
             }
           }
         }
@@ -84,13 +87,13 @@ const ApexDonutChart = () => {
                 labels: {
                   show: true,
                   name: {
-                    fontSize: '1.5rem'
+                    fontSize: '1rem'
                   },
                   value: {
                     fontSize: '1rem'
                   },
                   total: {
-                    fontSize: '1.5rem'
+                    fontSize: '1rem'
                   }
                 }
               }
@@ -100,8 +103,6 @@ const ApexDonutChart = () => {
       }
     ]
   }
-
-  const series = [85, 16, 50, 50]
 
   return (
     <Card>
@@ -116,7 +117,7 @@ const ApexDonutChart = () => {
             { fontSize: '1.2rem' }
         }}
       >
-        <ReactApexcharts options={options} series={series} type='donut' height={400} />
+        <ReactApexcharts type='donut' height={400} options={options} series={[85, 16, 50, 50]} />
       </CardContent>
     </Card>
   )

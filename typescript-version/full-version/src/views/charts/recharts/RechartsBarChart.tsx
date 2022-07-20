@@ -120,9 +120,7 @@ const CustomTooltip = (data: TooltipProps<any, any>) => {
             return (
               <Box sx={{ display: 'flex', alignItems: 'center' }} key={i.dataKey}>
                 <Circle sx={{ color: i.fill, mr: 2.5, fontSize: '0.6rem' }} />
-                <span>
-                  {i.dataKey} : {i.payload[i.dataKey]}
-                </span>
+                <Typography variant='body2'>{`${i.dataKey} : ${i.payload[i.dataKey]}`}</Typography>
               </Box>
             )
           })}
@@ -199,19 +197,19 @@ const RechartsBarChart = ({ direction }: Props) => {
         <Box sx={{ mb: 4, display: 'flex', flexWrap: 'wrap' }}>
           <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
             <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#826af9' }} />
-            <Typography>Apple</Typography>
+            <Typography variant='body2'>Apple</Typography>
           </Box>
           <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
             <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#9f87ff' }} />
-            <Typography>Samsung</Typography>
+            <Typography variant='body2'>Samsung</Typography>
           </Box>
           <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
             <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#d2b0ff' }} />
-            <Typography>Oneplus</Typography>
+            <Typography variant='body2'>Oneplus</Typography>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#f8d3ff' }} />
-            <Typography>Motorola</Typography>
+            <Typography variant='body2'>Motorola</Typography>
           </Box>
         </Box>
         <Box sx={{ height: 350 }}>

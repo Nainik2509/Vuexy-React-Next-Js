@@ -9,7 +9,7 @@ import CardContent from '@mui/material/CardContent'
 import ArrowUp from 'mdi-material-ui/ArrowUp'
 
 // ** Third Party Imports
-import { Bubble } from 'react-chartjs-2'
+import { Bubble, ChartProps } from 'react-chartjs-2'
 
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
@@ -19,14 +19,13 @@ interface BubbleProps {
   primary: string
   labelColor: string
   borderColor: string
-  gridLineColor: string
 }
 
 const ChartjsBubbleChart = (props: BubbleProps) => {
   // ** Props
-  const { yellow, primary, labelColor, borderColor, gridLineColor } = props
+  const { yellow, primary, labelColor, borderColor } = props
 
-  const options = {
+  const options: ChartProps['options'] = {
     responsive: true,
     maintainAspectRatio: false,
     scales: {
@@ -35,7 +34,8 @@ const ChartjsBubbleChart = (props: BubbleProps) => {
         max: 140,
         grid: {
           borderColor,
-          color: gridLineColor
+          drawBorder: false,
+          color: borderColor
         },
         ticks: {
           stepSize: 10,
@@ -47,7 +47,8 @@ const ChartjsBubbleChart = (props: BubbleProps) => {
         max: 400,
         grid: {
           borderColor,
-          color: gridLineColor
+          drawBorder: false,
+          color: borderColor
         },
         ticks: {
           stepSize: 100,
@@ -137,7 +138,7 @@ const ChartjsBubbleChart = (props: BubbleProps) => {
         }
       />
       <CardContent>
-        <Bubble data={data} options={options} height={450} />
+        <Bubble data={data} height={450} options={options as any} />
       </CardContent>
     </Card>
   )

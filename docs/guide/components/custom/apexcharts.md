@@ -22,14 +22,14 @@ Let us take an example of a line chart:
 import { ApexOptions } from 'apexcharts'
 import ReactApexcharts from 'src/@core/components/react-apexcharts'
 
+const series = [...]
+
 const ApexLineChart = () => {
   const options: ApexOptions = {
     ...
   }
 
-  const series = [...]
-
-  return <ReactApexcharts options={options} series={series} type='line' height={400} />
+  return <ReactApexcharts type='line' height={400} options={options} series={series} />
 }
 
 export default ApexLineChart
@@ -40,14 +40,14 @@ export default ApexLineChart
 ```jsx{1,10}
 import ReactApexcharts from 'src/@core/components/react-apexcharts'
 
+const series = [...]
+
 const ApexLineChart = () => {
   const options = {
     ...
   }
 
-  const series = [...]
-
-  return <ReactApexcharts options={options} series={series} type='line' height={400} />
+  return <ReactApexcharts type='line' height={400} options={options} series={series} />
 }
 
 export default ApexLineChart

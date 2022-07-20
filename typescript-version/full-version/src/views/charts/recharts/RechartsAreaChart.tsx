@@ -128,9 +128,7 @@ const CustomTooltip = (data: TooltipProps<any, any>) => {
             return (
               <Box sx={{ display: 'flex', alignItems: 'center' }} key={i.dataKey}>
                 <Circle sx={{ color: i.fill, mr: 2.5, fontSize: '0.6rem' }} />
-                <span>
-                  {i.dataKey} : {i.payload[i.dataKey]}
-                </span>
+                <Typography variant='body2'>{`${i.dataKey} : ${i.payload[i.dataKey]}`}</Typography>
               </Box>
             )
           })}
@@ -207,15 +205,15 @@ const RechartsAreaChart = ({ direction }: Props) => {
         <Box sx={{ display: 'flex', mb: 4 }}>
           <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
             <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: 'rgb(115, 103, 240)' }} />
-            <Typography>Click</Typography>
+            <Typography variant='body2'>Click</Typography>
           </Box>
           <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
             <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: 'rgba(115, 103, 240, .5)' }} />
-            <Typography>Sales</Typography>
+            <Typography variant='body2'>Sales</Typography>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: 'rgba(115, 103, 240, .2)' }} />
-            <Typography>Visits</Typography>
+            <Typography variant='body2'>Visits</Typography>
           </Box>
         </Box>
         <Box sx={{ height: 350 }}>

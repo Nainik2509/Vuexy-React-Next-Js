@@ -4,21 +4,21 @@ import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
 // ** Third Party Imports
-import { Bar } from 'react-chartjs-2'
+import { Bar, ChartProps } from 'react-chartjs-2'
 
 interface HorizontalBarProps {
   info: string
   warning: string
   labelColor: string
   borderColor: string
-  gridLineColor: string
+  legendColor: string
 }
 
 const ChartjsHorizontalBarChart = (props: HorizontalBarProps) => {
   // ** Props
-  const { info, warning, labelColor, borderColor, gridLineColor } = props
+  const { info, warning, labelColor, borderColor, legendColor } = props
 
-  const options: any = {
+  const options: ChartProps['options'] = {
     indexAxis: 'y',
     responsive: true,
     maintainAspectRatio: false,
@@ -39,15 +39,16 @@ const ChartjsHorizontalBarChart = (props: HorizontalBarProps) => {
         min: 0,
         grid: {
           drawTicks: false,
-          color: gridLineColor,
-          borderColor: 'transparent'
+          drawBorder: false,
+          color: borderColor
         },
         ticks: { color: labelColor }
       },
       y: {
         grid: {
           borderColor,
-          display: false
+          display: false,
+          drawBorder: false
         },
         ticks: { color: labelColor }
       }
@@ -56,7 +57,7 @@ const ChartjsHorizontalBarChart = (props: HorizontalBarProps) => {
       legend: {
         align: 'end',
         position: 'top',
-        labels: { color: labelColor }
+        labels: { color: legendColor }
       }
     }
   }
@@ -85,7 +86,7 @@ const ChartjsHorizontalBarChart = (props: HorizontalBarProps) => {
     <Card>
       <CardHeader title='Balance' subheader='$74,123' />
       <CardContent>
-        <Bar data={data} options={options} height={400} />
+        <Bar data={data} height={400} options={options as any} />
       </CardContent>
     </Card>
   )

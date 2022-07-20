@@ -67,19 +67,19 @@ const RechartsPieChart = () => {
         <Box sx={{ display: 'flex', flexWrap: 'wrap', mb: 4, justifyContent: 'center' }}>
           <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
             <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#00d4bd' }} />
-            <Typography>R&D</Typography>
+            <Typography variant='body2'>R&D</Typography>
           </Box>
           <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
             <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#ffe700' }} />
-            <Typography>Operational</Typography>
+            <Typography variant='body2'>Operational</Typography>
           </Box>
           <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
             <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#FFA1A1' }} />
-            <Typography>Networking</Typography>
+            <Typography variant='body2'>Networking</Typography>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#826bf8' }} />
-            <Typography>Hiring</Typography>
+            <Typography variant='body2'>Hiring</Typography>
           </Box>
         </Box>
       </CardContent>

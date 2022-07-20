@@ -10,8 +10,8 @@ import InputAdornment from '@mui/material/InputAdornment'
 
 // ** Third Party Imports
 import format from 'date-fns/format'
-import { Line } from 'react-chartjs-2'
 import DatePicker from 'react-datepicker'
+import { Line, ChartProps } from 'react-chartjs-2'
 
 // ** Icons Imports
 import ChevronDown from 'mdi-material-ui/ChevronDown'
@@ -27,6 +27,7 @@ interface AreaProps {
   greyLight: string
   labelColor: string
   borderColor: string
+  legendColor: string
 }
 
 interface PickerProps {
@@ -36,13 +37,13 @@ interface PickerProps {
 
 const ChartjsAreaChart = (props: AreaProps) => {
   // ** Props
-  const { blue, white, blueLight, greyLight, labelColor, borderColor } = props
+  const { blue, white, blueLight, greyLight, labelColor, borderColor, legendColor } = props
 
   // ** States
   const [endDate, setEndDate] = useState<DateType>(null)
   const [startDate, setStartDate] = useState<DateType>(new Date())
 
-  const options: any = {
+  const options: ChartProps['options'] = {
     responsive: true,
     maintainAspectRatio: false,
     layout: {
@@ -76,7 +77,7 @@ const ChartjsAreaChart = (props: AreaProps) => {
         labels: {
           padding: 25,
           boxWidth: 9,
-          color: labelColor,
+          color: legendColor,
           usePointStyle: true
         }
       }
@@ -208,7 +209,7 @@ const ChartjsAreaChart = (props: AreaProps) => {
         }
       />
       <CardContent>
-        <Line data={data} options={options} height={450} />
+        <Line data={data} height={450} options={options as any} />
       </CardContent>
     </Card>
   )

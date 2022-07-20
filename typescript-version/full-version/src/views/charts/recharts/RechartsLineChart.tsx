@@ -43,7 +43,7 @@ const CustomTooltip = (props: TooltipProps<any, any>) => {
   if (active && payload) {
     return (
       <div className='recharts-custom-tooltip'>
-        <span>{`${payload[0].value}%`}</span>
+        <Typography sx={{ fontSize: '0.875rem' }}>{`${payload[0].value}%`}</Typography>
       </div>
     )
   }

@@ -10,8 +10,8 @@ import InputAdornment from '@mui/material/InputAdornment'
 
 // ** Third Party Imports
 import format from 'date-fns/format'
-import { Bar } from 'react-chartjs-2'
 import DatePicker from 'react-datepicker'
+import { Bar, ChartProps } from 'react-chartjs-2'
 
 // ** Icons Imports
 import ChevronDown from 'mdi-material-ui/ChevronDown'
@@ -24,18 +24,17 @@ interface BarProp {
   yellow: string
   labelColor: string
   borderColor: string
-  gridLineColor: string
 }
 
 const ChartjsBarChart = (props: BarProp) => {
   // ** Props
-  const { yellow, labelColor, borderColor, gridLineColor } = props
+  const { yellow, labelColor, borderColor } = props
 
   // ** States
   const [endDate, setEndDate] = useState<DateType>(null)
   const [startDate, setStartDate] = useState<DateType>(new Date())
 
-  const options = {
+  const options: ChartProps['options'] = {
     responsive: true,
     maintainAspectRatio: false,
     animation: { duration: 500 },
@@ -43,7 +42,8 @@ const ChartjsBarChart = (props: BarProp) => {
       x: {
         grid: {
           borderColor,
-          color: gridLineColor
+          drawBorder: false,
+          color: borderColor
         },
         ticks: { color: labelColor }
       },
@@ -52,7 +52,8 @@ const ChartjsBarChart = (props: BarProp) => {
         max: 400,
         grid: {
           borderColor,
-          color: gridLineColor
+          drawBorder: false,
+          color: borderColor
         },
         ticks: {
           stepSize: 100,
@@ -150,7 +151,7 @@ const ChartjsBarChart = (props: BarProp) => {
         }
       />
       <CardContent>
-        <Bar data={data} options={options} height={400} />
+        <Bar data={data} height={400} options={options as any} />
       </CardContent>
     </Card>
   )

@@ -1,14 +1,10 @@
 // ** MUI Imports
 import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
-import IconButton from '@mui/material/IconButton'
 import CardContent from '@mui/material/CardContent'
 
-// ** Icons Imports
-import DotsVertical from 'mdi-material-ui/DotsVertical'
-
 // ** Third Party Imports
-import { PolarArea } from 'react-chartjs-2'
+import { PolarArea, ChartProps } from 'react-chartjs-2'
 
 // ** Custom Components Imports
 import OptionsMenu from 'src/@core/components/option-menu'
@@ -20,14 +16,14 @@ interface PolarAreaProps {
   yellow: string
   primary: string
   warning: string
-  labelColor: string
+  legendColor: string
 }
 
 const ChartjsPolarAreaChart = (props: PolarAreaProps) => {
   // ** Props
-  const { info, grey, green, yellow, primary, warning, labelColor } = props
+  const { info, grey, green, yellow, primary, warning, legendColor } = props
 
-  const options: any = {
+  const options: ChartProps['options'] = {
     responsive: true,
     maintainAspectRatio: false,
     animation: { duration: 500 },
@@ -49,7 +45,7 @@ const ChartjsPolarAreaChart = (props: PolarAreaProps) => {
         labels: {
           padding: 25,
           boxWidth: 9,
-          color: labelColor,
+          color: legendColor,
           usePointStyle: true
         }
       }
@@ -81,7 +77,7 @@ const ChartjsPolarAreaChart = (props: PolarAreaProps) => {
         }
       />
       <CardContent>
-        <PolarArea data={data} options={options} height={350} />
+        <PolarArea data={data} height={350} options={options as any} />
       </CardContent>
     </Card>
   )

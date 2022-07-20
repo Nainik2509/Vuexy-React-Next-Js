@@ -26,6 +26,7 @@ const DefaultPalette = (mode: PaletteMode, skin: Skin) => {
       darkBg: '#28243D',
       lightBg: '#F4F5FA',
       bodyBg: mode === 'light' ? '#F4F5FA' : '#28243D', // Same as palette.background.default but doesn't consider bordered skin
+      trackBg: mode === 'light' ? '#F4F5FA' : '#28243D',
       tableHeaderBg: mode === 'light' ? '#F9FAFC' : '#3D3759'
     },
     common: {

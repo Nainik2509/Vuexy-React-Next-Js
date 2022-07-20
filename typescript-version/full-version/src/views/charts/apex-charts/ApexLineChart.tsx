@@ -1,6 +1,7 @@
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
+import { useTheme } from '@mui/material/styles'
 import CardHeader from '@mui/material/CardHeader'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
@@ -15,34 +16,36 @@ import { ApexOptions } from 'apexcharts'
 import CustomChip from 'src/@core/components/mui/chip'
 import ReactApexcharts from 'src/@core/components/react-apexcharts'
 
+const series = [
+  {
+    data: [280, 200, 220, 180, 270, 250, 70, 90, 200, 150, 160, 100, 150, 100, 50]
+  }
+]
+
 const ApexLineChart = () => {
+  // ** Hook
+  const theme = useTheme()
+
   const options: ApexOptions = {
     chart: {
       parentHeightOffset: 0,
       zoom: { enabled: false },
       toolbar: { show: false }
     },
+    colors: ['#ff9f43'],
+    stroke: { curve: 'straight' },
+    dataLabels: { enabled: false },
     markers: {
       strokeWidth: 7,
       strokeOpacity: 1,
       colors: ['#ff9f43'],
       strokeColors: ['#fff']
     },
-    dataLabels: {
-      enabled: false
-    },
-    stroke: {
-      curve: 'straight'
-    },
-    colors: ['#ff9f43'],
     grid: {
+      padding: { top: -10 },
+      borderColor: theme.palette.divider,
       xaxis: {
-        lines: {
-          show: true
-        }
-      },
-      padding: {
-        top: -10
+        lines: { show: true }
       }
     },
     tooltip: {
@@ -52,7 +55,20 @@ const ApexLineChart = () => {
         </div>`
       }
     },
+    yaxis: {
+      labels: {
+        style: { colors: theme.palette.text.disabled }
+      }
+    },
     xaxis: {
+      axisBorder: { show: false },
+      axisTicks: { color: theme.palette.divider },
+      crosshairs: {
+        stroke: { color: theme.palette.divider }
+      },
+      labels: {
+        style: { colors: theme.palette.text.disabled }
+      },
       categories: [
         '7/12',
         '8/12',
@@ -72,12 +88,6 @@ const ApexLineChart = () => {
       ]
     }
   }
-
-  const series = [
-    {
-      data: [280, 200, 220, 180, 270, 250, 70, 90, 200, 150, 160, 100, 150, 100, 50]
-    }
-  ]
 
   return (
     <Card>
@@ -110,7 +120,7 @@ const ApexLineChart = () => {
         }
       />
       <CardContent>
-        <ReactApexcharts options={options} series={series} type='line' height={400} />
+        <ReactApexcharts type='line' height={400} options={options} series={series} />
       </CardContent>
     </Card>
   )
