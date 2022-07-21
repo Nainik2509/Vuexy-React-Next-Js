@@ -26,9 +26,10 @@ import { useSettings } from 'src/@core/hooks/useSettings'
 
 interface Props {
   children: ReactNode
+  contentHeightFixed: boolean
 }
 
-const UserLayout = ({ children }: Props) => {
+const UserLayout = ({ children, contentHeightFixed }: Props) => {
   // ** Hooks
   const { settings, saveSettings } = useSettings()
 
@@ -47,6 +48,7 @@ const UserLayout = ({ children }: Props) => {
       hidden={hidden}
       settings={settings}
       saveSettings={saveSettings}
+      contentHeightFixed={contentHeightFixed}
       verticalLayoutProps={{
         navMenu: {
           navItems: VerticalNavItems()

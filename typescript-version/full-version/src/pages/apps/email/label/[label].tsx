@@ -36,4 +36,6 @@ export const getStaticProps: GetStaticProps = ({ params }: GetStaticPropsContext
   }
 }
 
+EmailApp.contentHeightFixed = true
+
 export default EmailApp

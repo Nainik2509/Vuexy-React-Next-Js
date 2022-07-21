@@ -6,7 +6,7 @@ sidebarDepth: 0
 
 ## Common
 
-:::danger Heads Up!
+::: danger Heads Up!
 The following dependencies are common and required to run the template. Do not try to remove any of these dependencies. You may add / update / remove any other dependencies according to your requirements.
 :::
 

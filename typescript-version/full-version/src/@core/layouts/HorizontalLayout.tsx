@@ -54,7 +54,16 @@ const ContentWrapper = styled('main')(({ theme }) => ({
 
 const HorizontalLayout = (props: LayoutProps) => {
   // ** Props
-  const { hidden, children, settings, scrollToTop, footerProps, saveSettings, horizontalLayoutProps } = props
+  const {
+    hidden,
+    children,
+    settings,
+    scrollToTop,
+    footerProps,
+    saveSettings,
+    contentHeightFixed,
+    horizontalLayoutProps
+  } = props
 
   // ** Vars
   const { skin, appBar, navHidden, contentWidth } = settings
@@ -69,7 +78,7 @@ const HorizontalLayout = (props: LayoutProps) => {
   delete userAppBarProps.sx
 
   return (
-    <HorizontalLayoutWrapper className='layout-wrapper'>
+    <HorizontalLayoutWrapper className='layout-wrapper' sx={{ ...(contentHeightFixed && { maxHeight: '100vh' }) }}>
       {/* Navbar (or AppBar) and Navigation Menu Wrapper */}
       <AppBar
         color='default'
@@ -144,6 +153,7 @@ const HorizontalLayout = (props: LayoutProps) => {
       <ContentWrapper
         className='layout-page-content'
         sx={{
+          ...(contentHeightFixed && { display: 'flex', overflow: 'hidden' }),
           ...(contentWidth === 'boxed' && {
             mx: 'auto',
             '@media (min-width:1440px)': { maxWidth: 1440 },

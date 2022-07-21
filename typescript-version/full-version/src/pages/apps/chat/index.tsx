@@ -40,10 +40,10 @@ const AppChat = () => {
   const store = useSelector((state: RootState) => state.chat)
 
   // ** Vars
+  const { skin } = settings
   const smAbove = useMediaQuery(theme.breakpoints.up('sm'))
   const sidebarWidth = smAbove ? 370 : 300
   const mdAbove = useMediaQuery(theme.breakpoints.up('md'))
-  const { skin, appBar, footer, layout, navHidden } = settings
   const statusObj: StatusObjType = {
     busy: 'error',
     away: 'warning',
@@ -60,14 +60,6 @@ const AppChat = () => {
   const handleUserProfileLeftSidebarToggle = () => setUserProfileLeftOpen(!userProfileLeftOpen)
   const handleUserProfileRightSidebarToggle = () => setUserProfileRightOpen(!userProfileRightOpen)
 
-  const calculateAppHeight = () => {
-    return `(${
-      (appBar === 'hidden' ? 0 : (theme.mixins.toolbar.minHeight as number)) *
-        (layout === 'horizontal' && !navHidden ? 2 : 1) +
-      (footer === 'hidden' ? 0 : 56)
-    }px + ${theme.spacing(6)} * 2)`
-  }
-
   return (
     <Box
       className='app-chat'
@@ -79,7 +71,6 @@ const AppChat = () => {
         position: 'relative',
         backgroundColor: 'background.paper',
         boxShadow: skin === 'bordered' ? 0 : 6,
-        height: `calc(100vh - ${calculateAppHeight()})`,
         ...(skin === 'bordered' && { border: `1px solid ${theme.palette.divider}` })
       }}
     >
@@ -117,5 +108,7 @@ const AppChat = () => {
     </Box>
   )
 }
+
+AppChat.contentHeightFixed = true
 
 export default AppChat

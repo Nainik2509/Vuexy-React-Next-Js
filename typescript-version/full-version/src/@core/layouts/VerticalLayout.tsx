@@ -48,7 +48,7 @@ const ContentWrapper = styled('main')(({ theme }) => ({
 
 const VerticalLayout = (props: LayoutProps) => {
   // ** Props
-  const { hidden, settings, children, scrollToTop, footerProps, verticalLayoutProps } = props
+  const { hidden, settings, children, scrollToTop, footerProps, contentHeightFixed, verticalLayoutProps } = props
 
   // ** Vars
   const navigationBorderWidth = 1
@@ -91,7 +91,10 @@ const VerticalLayout = (props: LayoutProps) => {
             {...props}
           />
         )}
-        <MainContentWrapper className='layout-content-wrapper'>
+        <MainContentWrapper
+          className='layout-content-wrapper'
+          sx={{ ...(contentHeightFixed && { maxHeight: '100vh' }) }}
+        >
           {/* AppBar Component */}
           <AppBar
             toggleNavVisibility={toggleNavVisibility}
@@ -104,6 +107,10 @@ const VerticalLayout = (props: LayoutProps) => {
           <ContentWrapper
             className='layout-page-content'
             sx={{
+              ...(contentHeightFixed && {
+                overflow: 'hidden',
+                '& > :first-of-type': { height: '100%' }
+              }),
               ...(contentWidth === 'boxed' && {
                 mx: 'auto',
                 '@media (min-width:1440px)': { maxWidth: 1440 },

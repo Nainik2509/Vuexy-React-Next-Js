@@ -101,6 +101,7 @@ export type LayoutProps = {
   settings: Settings
   children: ReactNode
   footerProps?: FooterProps
+  contentHeightFixed?: boolean
   scrollToTop?: (props?: any) => ReactNode
   saveSettings: (values: Settings) => void
   verticalLayoutProps: VerticalLayoutProps

@@ -57,6 +57,7 @@ module.exports = {
               children: ['/guide/layout/navigation-menu-static', '/guide/layout/navigation-menu-server-side']
             },
             '/guide/layout/layout-overrides',
+            ['/guide/layout/layout-content-height-fixed', 'Layout Content Height Fixed'],
             '/guide/layout/icons'
           ]
         },
