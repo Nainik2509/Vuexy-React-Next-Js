@@ -2,7 +2,7 @@
 
 ## Routing Synced With I18n
 
-1. Open `next.config.js` and add `i18` property with the languages you need.
+1. Open the `next.config.js` file and add the `i18` property with the languages you need
 
 ```js
 i18n: {
@@ -11,9 +11,10 @@ i18n: {
 },
 ```
 
-2. import locale from `useRouter` hook and add `locale` prop to every next link used in your app.
+2. Import locale from the `useRouter` hook and add the `locale` prop to every NextJS link that is used in your app
 
 ```jsx
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 const Component = () => {
@@ -26,13 +27,16 @@ const Component = () => {
 export default Component
 ```
 
-3. Create a `useEffect` in file where you switch your language that watches changes i18n language to preserve language in case user reloads the page
+3. Create a `useEffect` in the file where you switch your language that watches changes of i18n language to preserve language in case the user reloads the page
 
 ```jsx
+import { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { useTranslation } from 'react-i18next'
 
 const Component = () => {
   const router = useRouter()
+  const { i18n } = useTranslation()
   const { locale } = router
 
   useEffect(() => {
@@ -45,10 +49,9 @@ const Component = () => {
 }
 
 export default Component
-
 ```
 
-4. To switch langauage, push the `locale` parameter with `router.push`
+4. To switch language, push the `locale` parameter with `router.push`
 
 ```jsx
 import { useRouter } from 'next/router'
@@ -65,12 +68,11 @@ const Component = () => {
     }
   }, [locale])
 
-    
   const handleLangChange = (lang) => {
     i18n.changeLanguage(lang)
     router.push(router.asPath, undefined, { locale: lang })
   }
-  
+
   return (
     <div>
       <button onClick={() => handleLangChange('en')}>EN</button>

@@ -1,14 +1,12 @@
 # How to use i18n in a page
 
-Master admin provides i18n for the navigation only.
-There might be a time when you might want to translate a text in page.
-Here's how you can achieve that:
+Master admin provides i18n for navigation only. There might be a time when you might want to translate any text in a page. Here's how you can achieve that:
 
-1. Make sure your have `react-i18next` `i18next-http-backend` `i18next-browser-languagedetector` installed.
-2. Copy `src/configs/i18n.ts` file from the full version and paste it under the same directory in your project
-3. Add import 'src/configs/i18n' import statement in src/pages/_app.tsx file
-4. Create a `locales` folder in public folder.
-5. Create json files with language as their file-names in `locales` depending on the languages you need. For the example we're using three languages english, french & arabic.
+1. Make sure your have `i18next`, `react-i18next`, `i18next-http-backend` and `i18next-browser-languagedetector` packages installed
+2. Copy the `src/configs/i18n.ts` file from the full version and paste it under the same directory in your project
+3. Add `import 'src/configs/i18n'` import statement in the `src/pages/_app.tsx` file
+4. Create a `locales` folder in the `public` folder
+5. Create JSON files with language as their file names in `locales` depending on the languages you need. For example, we're using three languages English, French & Arabic
 
 ```json
 // en.json
@@ -16,12 +14,14 @@ Here's how you can achieve that:
   "Hello World": "Hello World"
 }
 ```
+
 ```json
 // fr.json
 {
   "Hello World": "Bonjour le monde"
 }
 ```
+
 ```json
 // ar.json
 {
@@ -29,19 +29,18 @@ Here's how you can achieve that:
 }
 ```
 
-6. Import `useTranslation` in the page where you want to translate the content.
+6. Import `useTranslation` in the page where you want to translate the content
 
 ```tsx
 import { useTranslation } from 'react-i18next'
 ```
 
-7. You can now initialize the `useTranslation` and use the `changeLanguage` function to change the language.
+7. You can now initialize the `useTranslation` and use the `changeLanguage` function to change the language
 
 ```tsx
 import { useTranslation } from 'react-i18next'
 
 const Component = () => {
-  // ** Hook
   const { t, i18n } = useTranslation()
 
   return (
