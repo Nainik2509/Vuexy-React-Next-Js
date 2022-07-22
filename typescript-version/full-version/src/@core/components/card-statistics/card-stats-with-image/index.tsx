@@ -25,7 +25,7 @@ const Img = styled('img')({
 
 const CardStatsCharacter = ({ data }: Props) => {
   // ** Vars
-  const { title, chipColor, chipText, src, stats, trend, trendNumber } = data
+  const { title, chipText, src, stats, trendNumber, trend = 'positive', chipColor = 'primary' } = data
 
   return (
     <Card sx={{ overflow: 'visible', position: 'relative' }}>
@@ -56,8 +56,3 @@ const CardStatsCharacter = ({ data }: Props) => {
 }
 
 export default CardStatsCharacter
-
-CardStatsCharacter.defaultProps = {
-  trend: 'positive',
-  chipColor: 'primary'
-}

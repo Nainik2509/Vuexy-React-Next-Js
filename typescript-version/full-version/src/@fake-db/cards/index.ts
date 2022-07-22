@@ -43,7 +43,7 @@ const cardStatsData: CardStatsType = {
       trendNumber: '-18%',
       title: 'New Project',
       subtitle: 'Yearly Project',
-      icon: 'LabelVariantOutline'
+      icon: 'BriefcaseVariantOutline'
     },
     {
       icon: 'Poll',
@@ -64,10 +64,10 @@ const cardStatsData: CardStatsType = {
     {
       color: 'error',
       stats: '44.10k',
-      icon: 'ChartPie',
       trend: 'negative',
       title: 'Logistics',
       trendNumber: '-25%',
+      icon: 'TruckOutline',
       subtitle: 'Regional Logistics'
     },
     {
@@ -93,8 +93,8 @@ const cardStatsData: CardStatsType = {
       stats: '13.7k',
       title: 'Ratings',
       trendNumber: '+38%',
-      chipText: 'Year of 2021',
-      src: '/images/cards/pose_f9.png'
+      src: '/images/cards/pose_f9.png',
+      chipText: `Year of ${new Date().getFullYear()}`
     },
     {
       stats: '24.5k',

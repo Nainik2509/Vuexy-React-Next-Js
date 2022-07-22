@@ -10,12 +10,12 @@ import IconButton from '@mui/material/IconButton'
 import DotsVertical from 'mdi-material-ui/DotsVertical'
 
 // ** Type Imports
-import { PropType, OptionType } from './types'
+import { OptionsMenuType, OptionType } from './types'
 
 // ** Hook Import
 import { useSettings } from 'src/@core/hooks/useSettings'
 
-const OptionMenu = (props: PropType) => {
+const OptionMenu = (props: OptionsMenuType) => {
   // ** Props
   const { icon, options, menuProps, iconProps, leftAlignMenu, iconButtonProps } = props
 

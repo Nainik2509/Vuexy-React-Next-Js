@@ -13,7 +13,7 @@ import { CardStatsVerticalProps } from 'src/@core/components/card-statistics/typ
 
 const CardStatsVertical = (props: CardStatsVerticalProps) => {
   // ** Props
-  const { title, subtitle, color, icon, stats, trend, trendNumber, optionsMenuProps } = props
+  const { title, subtitle, icon, stats, trendNumber, optionsMenuProps, color = 'primary', trend = 'positive' } = props
 
   return (
     <Card>
@@ -50,8 +50,3 @@ const CardStatsVertical = (props: CardStatsVerticalProps) => {
 }
 
 export default CardStatsVertical
-
-CardStatsVertical.defaultProps = {
-  color: 'primary',
-  trend: 'positive'
-}

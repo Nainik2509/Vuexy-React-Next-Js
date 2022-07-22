@@ -8,10 +8,10 @@ import Grid from '@mui/material/Grid'
  * */
 import Poll from 'mdi-material-ui/Poll'
 import Check from 'mdi-material-ui/Check'
-import ChartPie from 'mdi-material-ui/ChartPie'
 import TrendingUp from 'mdi-material-ui/TrendingUp'
 import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
-import LabelVariantOutline from 'mdi-material-ui/LabelVariantOutline'
+import TruckOutline from 'mdi-material-ui/TruckOutline'
+import BriefcaseVariantOutline from 'mdi-material-ui/BriefcaseVariantOutline'
 
 // ** Types Imports
 import { CardStatsVerticalProps } from 'src/@core/components/card-statistics/types'
@@ -26,10 +26,10 @@ interface Props {
 const icons = {
   Poll,
   Check,
-  ChartPie,
   TrendingUp,
   CurrencyUsd,
-  LabelVariantOutline
+  TruckOutline,
+  BriefcaseVariantOutline
 }
 
 const CardStatsVertical = ({ data }: Props) => {

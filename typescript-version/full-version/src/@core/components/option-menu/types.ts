@@ -15,11 +15,11 @@ export type OptionType =
       menuItemProps?: MenuItemProps
     }
 
-export type PropType = {
+export type OptionsMenuType = {
   icon?: ReactNode
   options: OptionType[]
-  iconProps?: SvgIconProps
   leftAlignMenu?: boolean
-  menuProps?: Omit<MenuProps, 'open'>
+  iconProps?: SvgIconProps
   iconButtonProps?: IconButtonProps
+  menuProps?: Omit<MenuProps, 'open'>
 }
