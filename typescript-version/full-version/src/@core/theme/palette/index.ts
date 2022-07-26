@@ -29,11 +29,11 @@ const DefaultPalette = (mode: PaletteMode, skin: Skin) => {
       trackBg: mode === 'light' ? '#F4F5FA' : '#28243D',
       tableHeaderBg: mode === 'light' ? '#F9FAFC' : '#3D3759'
     },
+    mode: mode,
     common: {
       black: '#000',
       white: '#FFF'
     },
-    mode: mode,
     primary: {
       light: '#9E69FD',
       main: '#9155FD',
@@ -44,12 +44,6 @@ const DefaultPalette = (mode: PaletteMode, skin: Skin) => {
       light: '#9C9FA4',
       main: '#8A8D93',
       dark: '#777B82',
-      contrastText: '#FFF'
-    },
-    success: {
-      light: '#6AD01F',
-      main: '#56CA00',
-      dark: '#4CB200',
       contrastText: '#FFF'
     },
     error: {
@@ -70,6 +64,12 @@ const DefaultPalette = (mode: PaletteMode, skin: Skin) => {
       dark: '#139CE0',
       contrastText: '#FFF'
     },
+    success: {
+      light: '#6AD01F',
+      main: '#56CA00',
+      dark: '#4CB200',
+      contrastText: '#FFF'
+    },
     grey: {
       50: '#FAFAFA',
       100: '#F5F5F5',
@@ -81,14 +81,14 @@ const DefaultPalette = (mode: PaletteMode, skin: Skin) => {
       700: '#616161',
       800: '#424242',
       900: '#212121',
-      A100: '#D5D5D5',
-      A200: '#AAAAAA',
-      A400: '#616161',
-      A700: '#303030'
+      A100: '#F5F5F5',
+      A200: '#EEEEEE',
+      A400: '#BDBDBD',
+      A700: '#616161'
     },
     text: {
       primary: `rgba(${mainColor}, 0.87)`,
-      secondary: `rgba(${mainColor}, 0.68)`,
+      secondary: `rgba(${mainColor}, 0.6)`,
       disabled: `rgba(${mainColor}, 0.38)`
     },
     divider: `rgba(${mainColor}, 0.12)`,
@@ -100,8 +100,8 @@ const DefaultPalette = (mode: PaletteMode, skin: Skin) => {
       active: `rgba(${mainColor}, 0.54)`,
       hover: `rgba(${mainColor}, 0.04)`,
       selected: `rgba(${mainColor}, 0.08)`,
-      disabled: `rgba(${mainColor}, 0.3)`,
-      disabledBackground: `rgba(${mainColor}, 0.18)`,
+      disabled: `rgba(${mainColor}, 0.26)`,
+      disabledBackground: `rgba(${mainColor}, 0.12)`,
       focus: `rgba(${mainColor}, 0.12)`
     }
   }
