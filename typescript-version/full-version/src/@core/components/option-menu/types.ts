@@ -10,8 +10,8 @@ import { IconButtonProps } from '@mui/material/IconButton'
 export type OptionType =
   | string
   | {
+      text: ReactNode
       icon?: ReactNode
-      text: string | ReactNode
       menuItemProps?: MenuItemProps
     }
 

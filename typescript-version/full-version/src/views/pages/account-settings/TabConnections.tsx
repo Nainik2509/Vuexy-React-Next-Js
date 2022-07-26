@@ -138,7 +138,12 @@ const TabConnections = () => {
               return (
                 <Box
                   key={account.title}
-                  sx={{ display: 'flex', justifyContent: 'space-between', '&:not(:last-of-type)': { mb: 4 } }}
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    '&:not(:last-of-type)': { mb: 4 }
+                  }}
                 >
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
                     <Box sx={{ mr: 4, minWidth: 40 }}>
@@ -154,7 +159,7 @@ const TabConnections = () => {
                       </Typography>
                     </Box>
                   </Box>
-                  <IconButton sx={{ borderRadius: '6px' }} color={account.isConnected ? 'error' : 'secondary'}>
+                  <IconButton sx={{ borderRadius: 1 }} color={account.isConnected ? 'error' : 'secondary'}>
                     {account.isConnected ? <DeleteOutline /> : <LinkVariant />}
                   </IconButton>
                 </Box>

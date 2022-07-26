@@ -103,7 +103,7 @@ const Projects = ({ data }: { data: ProjectsTabType[] }) => {
                     <RowOptions />
                   </Box>
                   <Box sx={{ mb: 4, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <Box sx={{ p: 2, borderRadius: '6px', backgroundColor: 'action.hover' }}>
+                    <Box sx={{ p: 2, borderRadius: 1, backgroundColor: 'action.hover' }}>
                       <Box sx={{ display: 'flex' }}>
                         <Typography sx={{ fontWeight: 500 }}>{item.budgetSpent}</Typography> /{' '}
                         <Typography sx={{ fontWeight: 500, color: 'text.secondary' }}>{item.budget}</Typography>

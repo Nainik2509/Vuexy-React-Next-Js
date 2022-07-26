@@ -196,7 +196,7 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
                 <Button variant='outlined'>Apply</Button>
               </Grid>
             </Grid>
-            <Box sx={{ p: 4, borderRadius: '6px', backgroundColor: 'action.hover' }}>
+            <Box sx={{ p: 4, borderRadius: 1, backgroundColor: 'action.hover' }}>
               <Typography sx={{ mb: 4, fontWeight: 600, color: 'text.secondary' }}>
                 Buying gift for a loved one?
               </Typography>

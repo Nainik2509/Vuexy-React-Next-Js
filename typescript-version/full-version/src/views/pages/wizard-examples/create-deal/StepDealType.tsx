@@ -5,12 +5,12 @@ import { useState } from 'react'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import MenuItem from '@mui/material/MenuItem'
-import { useTheme } from '@mui/material/styles'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import InputLabel from '@mui/material/InputLabel'
 import FormControl from '@mui/material/FormControl'
 import OutlinedInput from '@mui/material/OutlinedInput'
+import { styled, useTheme } from '@mui/material/styles'
 import FormHelperText from '@mui/material/FormHelperText'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 
@@ -59,7 +59,13 @@ const dataIcons = [
   }
 ]
 
-const regionArray = ['', 'Asia', 'Europe', 'Africa', 'Australia', 'North America', 'South America']
+const regionArray = ['Asia', 'Europe', 'Africa', 'Australia', 'North America', 'South America']
+
+const Img = styled('img')({
+  width: '100%',
+  height: 'auto',
+  maxWidth: '100%'
+})
 
 const StepDealType = () => {
   // ** State
@@ -78,8 +84,8 @@ const StepDealType = () => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12}>
-        <Box sx={{ border: '1px solid', borderColor: 'divider', borderRadius: '6px' }}>
-          <img src={`/images/pages/shopping-girl-${theme.palette.mode}.png`} alt='illustration' />
+        <Box sx={{ borderRadius: 1, display: 'flex', border: theme => `1px solid ${theme.palette.divider}` }}>
+          <Img alt='illustration' src={`/images/pages/shopping-girl-${theme.palette.mode}.png`} />
         </Box>
       </Grid>
       <Grid item xs={12}>

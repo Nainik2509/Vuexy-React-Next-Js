@@ -300,7 +300,7 @@ const PaymentMethodCard = () => {
                     sx={{
                       p: 5,
                       display: 'flex',
-                      borderRadius: '6px',
+                      borderRadius: 1,
                       flexDirection: ['column', 'row'],
                       justifyContent: ['space-between'],
                       backgroundColor: 'action.hover',

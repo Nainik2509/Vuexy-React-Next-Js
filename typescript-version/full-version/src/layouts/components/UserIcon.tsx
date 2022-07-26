@@ -5,8 +5,8 @@ import { ReactNode } from 'react'
 import { SvgIconProps } from '@mui/material'
 
 interface UserIconProps {
+  icon: ReactNode
   iconProps?: SvgIconProps
-  icon: string | ReactNode
   componentType: 'search' | 'vertical-menu' | 'horizontal-menu'
 }
 
