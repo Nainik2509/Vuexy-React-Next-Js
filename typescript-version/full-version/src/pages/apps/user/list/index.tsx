@@ -3,12 +3,14 @@ import { useState, useEffect, MouseEvent, useCallback, ReactElement } from 'reac
 
 // ** Next Import
 import Link from 'next/link'
+import { GetStaticProps, InferGetStaticPropsType } from 'next/types'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import Menu from '@mui/material/Menu'
 import Grid from '@mui/material/Grid'
+import Divider from '@mui/material/Divider'
 import { DataGrid } from '@mui/x-data-grid'
 import MenuItem from '@mui/material/MenuItem'
 import { styled } from '@mui/material/styles'
@@ -21,10 +23,13 @@ import CardContent from '@mui/material/CardContent'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 
 // ** Icons Imports
+import Poll from 'mdi-material-ui/Poll'
 import Laptop from 'mdi-material-ui/Laptop'
 import ChartDonut from 'mdi-material-ui/ChartDonut'
 import CogOutline from 'mdi-material-ui/CogOutline'
 import EyeOutline from 'mdi-material-ui/EyeOutline'
+import TrendingUp from 'mdi-material-ui/TrendingUp'
+import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
 import DotsVertical from 'mdi-material-ui/DotsVertical'
 import PencilOutline from 'mdi-material-ui/PencilOutline'
 import DeleteOutline from 'mdi-material-ui/DeleteOutline'
@@ -36,6 +41,7 @@ import { useDispatch, useSelector } from 'react-redux'
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
 import CustomAvatar from 'src/@core/components/mui/avatar'
+import CardStatisticsHorizontal from 'src/@core/components/card-statistics/card-stats-horizontal'
 
 // ** Utils Import
 import { getInitials } from 'src/@core/utils/get-initials'
@@ -43,12 +49,17 @@ import { getInitials } from 'src/@core/utils/get-initials'
 // ** Actions Imports
 import { fetchData, deleteUser } from 'src/store/apps/user'
 
+// ** Third Party Components
+import axios from 'axios'
+
 // ** Types Imports
 import { RootState, AppDispatch } from 'src/store'
+import { CardStatsType } from 'src/@fake-db/types'
 import { ThemeColor } from 'src/@core/layouts/types'
 import { UsersType } from 'src/types/apps/userTypes'
+import { CardStatsHorizontalProps } from 'src/@core/components/card-statistics/types'
 
-// ** Custom Components Imports
+// ** Custom Table Components Imports
 import TableHeader from 'src/views/apps/user/list/TableHeader'
 import AddUserDrawer from 'src/views/apps/user/list/AddUserDrawer'
 
@@ -287,7 +298,14 @@ const columns = [
   }
 ]
 
-const UserList = () => {
+const icons = {
+  Poll,
+  TrendingUp,
+  CurrencyUsd,
+  AccountOutline
+}
+
+const UserList = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // ** State
   const [role, setRole] = useState<string>('')
   const [plan, setPlan] = useState<string>('')
@@ -331,6 +349,21 @@ const UserList = () => {
 
   return (
     <Grid container spacing={6}>
+      <Grid item xs={12}>
+        {apiData && (
+          <Grid container spacing={6}>
+            {apiData.statsHorizontal.map((item: CardStatsHorizontalProps, index: number) => {
+              const IconTag = icons[item.icon as keyof typeof icons]
+
+              return (
+                <Grid item xs={12} md={3} sm={6} key={index}>
+                  <CardStatisticsHorizontal {...item} icon={<IconTag />} />
+                </Grid>
+              )
+            })}
+          </Grid>
+        )}
+      </Grid>
       <Grid item xs={12}>
         <Card>
           <CardHeader title='Search Filters' />
@@ -398,10 +431,7 @@ const UserList = () => {
               </Grid>
             </Grid>
           </CardContent>
-        </Card>
-      </Grid>
-      <Grid item xs={12}>
-        <Card>
+          <Divider />
           <TableHeader value={value} handleFilter={handleFilter} toggle={toggleAddUserDrawer} />
           <DataGrid
             autoHeight
@@ -419,6 +449,17 @@ const UserList = () => {
       <AddUserDrawer open={addUserOpen} toggle={toggleAddUserDrawer} />
     </Grid>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const res = await axios.get('/cards/statistics')
+  const apiData: CardStatsType = res.data
+
+  return {
+    props: {
+      apiData
+    }
+  }
 }
 
 export default UserList
