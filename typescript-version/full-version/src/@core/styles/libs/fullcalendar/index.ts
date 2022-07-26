@@ -394,7 +394,7 @@ const CalendarWrapper = styled(Box)<BoxProps>(({ theme }) => {
           }
         },
         '& .fc-popover-body': {
-          '& *:not(:last-of-type)': {
+          '& *:not(.fc-event-main):not(:last-of-type)': {
             marginBottom: theme.spacing(1.2)
           }
         }

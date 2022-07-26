@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
 // ** Types
+import { ThemeColor } from 'src/@core/layouts/types'
 import { SidebarLeftType, CalendarFiltersType } from 'src/types/apps/calendarTypes'
 
 const SidebarLeft = (props: SidebarLeftType) => {
@@ -33,9 +34,9 @@ const SidebarLeft = (props: SidebarLeftType) => {
             label={key}
             control={
               <Checkbox
+                color={value as ThemeColor}
                 checked={store.selectedCalendars.includes(key as CalendarFiltersType)}
                 onChange={() => dispatch(handleCalendarsUpdate(key as CalendarFiltersType))}
-                sx={{ color: `${value}.main`, '&.Mui-checked': { color: `${value}.main` } }}
               />
             }
           />
