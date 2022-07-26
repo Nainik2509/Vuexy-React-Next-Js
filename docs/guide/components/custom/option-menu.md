@@ -39,20 +39,18 @@ Result:
 
 ## Props
 
-| Props           | Type              | Required | Description                                   |
-| :-------------- | :---------------- | :------- | :-------------------------------------------- |
-| options         | `OptionType[]`    | Yes      | Add all the menu items                        |
-| icon            | `ReactNode`       | No       | Change the icon in the `IconButton` component |
-| menuProps       | `MenuProps`       | No       | Add props of the `Menu` component             |
-| rightAlignMenu  | `boolean`         | No       | If `true`, menu will align to right side      |
-| iconButtonProps | `IconButtonProps` | No       | Add props of the `IconButtonProps` component  |
+| Props           | Type              | Required | Description                                         |
+| :-------------- | :---------------- | :------- | :-------------------------------------------------- |
+| options         | `OptionType[]`    | Yes      | Add all the menu items                              |
+| icon            | `ReactNode`       | No       | Change the icon in the MUI's `IconButton` component |
+| menuProps       | `MenuProps`       | No       | Add props of the MUI's `Menu` component             |
+| rightAlignMenu  | `boolean`         | No       | If `true`, menu will align to right side            |
+| iconButtonProps | `IconButtonProps` | No       | Add props of the MUI's `IconButton` component       |
 
-```ts
-export type OptionType =
-  | string
-  | {
-      icon?: ReactNode
-      text: string | ReactNode
-      menuItemProps?: MenuItemProps
-    }
-```
+The type of `OptionType` is either `string` or below type:
+
+| Props           | Type              | Required | Description                                 |
+| :-------------- | :---------------- | :------- | :------------------------------------------ |
+| text            | `ReactNode`       | Yes      | The text inside a menu item                 |
+| icon            | `ReactNode`       | No       | To add an icon in a menu item               |
+| menuItemProps   | `MenuItemProps`   | No       | Add props of the MUI's `MenuItem` component |

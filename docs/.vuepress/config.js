@@ -93,8 +93,6 @@ module.exports = {
                 '/guide/components/mui/badge',
                 '/guide/components/mui/card',
                 '/guide/components/mui/chip',
-                '/guide/components/mui/radio',
-                '/guide/components/mui/checkbox',
                 '/guide/components/mui/timeline-dot'
               ]
             },
@@ -108,7 +106,9 @@ module.exports = {
                 '/guide/components/custom/page-header',
                 '/guide/components/custom/repeater',
                 '/guide/components/custom/sidebar',
-                '/guide/components/custom/option-menu'
+                '/guide/components/custom/option-menu',
+                '/guide/components/custom/radio',
+                '/guide/components/custom/checkbox'
               ]
             },
             '/guide/components/override-components',
