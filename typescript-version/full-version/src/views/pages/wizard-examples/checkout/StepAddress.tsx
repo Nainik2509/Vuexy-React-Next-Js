@@ -13,64 +13,78 @@ import Divider from '@mui/material/Divider'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 
-// ** Custom Components Imports
-import CustomChip from 'src/@core/components/mui/chip'
-import CustomRadioBasic from 'src/@core/components/mui/radio/CustomRadioBasic'
-import CustomRadioIcons from 'src/@core/components/mui/radio/CustomRadioIcons'
-
 // ** Icons Imports
 import CrownOutline from 'mdi-material-ui/CrownOutline'
 import AccountOutline from 'mdi-material-ui/AccountOutline'
 import RocketLaunchOutline from 'mdi-material-ui/RocketLaunchOutline'
+
+// ** Custom Components Imports
+import CustomChip from 'src/@core/components/mui/chip'
+import CustomRadioBasic from 'src/@core/components/custom-radio/basic'
+import CustomRadioIcons from 'src/@core/components/custom-radio/icons'
 
 const dataIcons = [
   {
     value: 'standard',
     title: 'Standard',
     gridProps: { sm: 4, xs: 12 },
-    icon: <AccountOutline sx={{ fontSize: '2rem', color: 'text.secondary' }} />,
+    icon: <AccountOutline sx={{ mb: 2, fontSize: '2rem', color: 'text.secondary' }} />,
     content: (
-      <Box>
+      <>
         <CustomChip
           rounded
           size='small'
           skin='light'
           label='Free'
           color='success'
-          sx={{ position: 'absolute', top: 8, right: 8 }}
+          sx={{ top: 12, right: 12, position: 'absolute' }}
         />
-        <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
+        <Typography variant='body2' sx={{ my: 'auto', textAlign: 'center' }}>
           Get your product in 1 Week.
         </Typography>
-      </Box>
+      </>
     )
   },
   {
     value: 'express',
     title: 'Express',
     gridProps: { sm: 4, xs: 12 },
-    icon: <CrownOutline sx={{ fontSize: '2rem', color: 'text.secondary' }} />,
+    icon: <CrownOutline sx={{ mb: 2, fontSize: '2rem', color: 'text.secondary' }} />,
     content: (
-      <Box>
-        <CustomChip rounded size='small' skin='light' label='$10' sx={{ position: 'absolute', top: 8, right: 8 }} />
-        <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
+      <>
+        <CustomChip
+          rounded
+          label='$10'
+          size='small'
+          skin='light'
+          color='secondary'
+          sx={{ top: 12, right: 12, position: 'absolute' }}
+        />
+        <Typography variant='body2' sx={{ my: 'auto', textAlign: 'center' }}>
           Get your product in 3-4 days.
         </Typography>
-      </Box>
+      </>
     )
   },
   {
     value: 'overnight',
     title: 'Overnight',
     gridProps: { sm: 4, xs: 12 },
-    icon: <RocketLaunchOutline sx={{ fontSize: '2rem', color: 'text.secondary' }} />,
+    icon: <RocketLaunchOutline sx={{ mb: 2, fontSize: '2rem', color: 'text.secondary' }} />,
     content: (
-      <Box>
-        <CustomChip rounded size='small' skin='light' label='$15' sx={{ position: 'absolute', top: 8, right: 8 }} />
-        <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
+      <>
+        <CustomChip
+          rounded
+          label='$15'
+          size='small'
+          skin='light'
+          color='secondary'
+          sx={{ top: 12, right: 12, position: 'absolute' }}
+        />
+        <Typography variant='body2' sx={{ my: 'auto', textAlign: 'center' }}>
           Get your product in 1 day.
         </Typography>
-      </Box>
+      </>
     )
   }
 ]
@@ -82,8 +96,8 @@ const data = [
     gridProps: { sm: 6, xs: 12 },
     meta: <CustomChip rounded size='small' skin='light' label='Home' color='primary' />,
     content: (
-      <Box>
-        <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
+      <Box sx={{ mt: 1, height: '100%', display: 'flex', flexDirection: 'column' }}>
+        <Typography variant='body2' sx={{ mb: 'auto' }}>
           4135 Parkway Street, Los Angeles, CA, 90017.
           <br />
           Mobile : 1234567890 Cash / Card on delivery available
@@ -93,8 +107,11 @@ const data = [
           <Link href='/' passHref>
             <Box
               component='a'
-              onClick={(e: SyntheticEvent) => e.preventDefault()}
-              sx={{ mr: 2, color: 'primary.main', textDecoration: 'none' }}
+              sx={{ mr: 3, color: 'primary.main', textDecoration: 'none' }}
+              onClick={(e: SyntheticEvent) => {
+                e.preventDefault()
+                e.stopPropagation()
+              }}
             >
               Edit
             </Box>
@@ -102,8 +119,11 @@ const data = [
           <Link href='/' passHref>
             <Box
               component='a'
-              onClick={(e: SyntheticEvent) => e.preventDefault()}
               sx={{ color: 'primary.main', textDecoration: 'none' }}
+              onClick={(e: SyntheticEvent) => {
+                e.preventDefault()
+                e.stopPropagation()
+              }}
             >
               Remove
             </Box>
@@ -118,8 +138,8 @@ const data = [
     gridProps: { sm: 6, xs: 12 },
     meta: <CustomChip rounded size='small' skin='light' label='Office' color='success' />,
     content: (
-      <Box>
-        <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
+      <Box sx={{ mt: 1, height: '100%', display: 'flex', flexDirection: 'column' }}>
+        <Typography variant='body2' sx={{ mb: 'auto' }}>
           87 Hoffman Avenue, New York, NY, 10016.
           <br />
           Mobile : 1234567890 Cash / Card on delivery available
@@ -129,8 +149,11 @@ const data = [
           <Link href='/' passHref>
             <Box
               component='a'
-              onClick={(e: SyntheticEvent) => e.preventDefault()}
-              sx={{ mr: 2, color: 'primary.main', textDecoration: 'none' }}
+              sx={{ mr: 3, color: 'primary.main', textDecoration: 'none' }}
+              onClick={(e: SyntheticEvent) => {
+                e.preventDefault()
+                e.stopPropagation()
+              }}
             >
               Edit
             </Box>
@@ -138,8 +161,11 @@ const data = [
           <Link href='/' passHref>
             <Box
               component='a'
-              onClick={(e: SyntheticEvent) => e.preventDefault()}
               sx={{ color: 'primary.main', textDecoration: 'none' }}
+              onClick={(e: SyntheticEvent) => {
+                e.preventDefault()
+                e.stopPropagation()
+              }}
             >
               Remove
             </Box>
@@ -155,12 +181,12 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
     <Grid container spacing={6}>
       <Grid item xs={12} lg={8} xl={9}>
         <Typography sx={{ mt: 1, mb: 4, color: 'text.secondary' }}>Select your preferable address</Typography>
-        <CustomRadioBasic value='home' name='custom-radios-address' data={data} />
+        <CustomRadioBasic data={data} value='home' name='custom-radios-address' />
         <Button variant='outlined' sx={{ mt: 4.5 }}>
           Add new address
         </Button>
         <Typography sx={{ mt: 8, mb: 4, color: 'text.secondary' }}>Choose Delivery Speed</Typography>
-        <CustomRadioIcons value='standard' name='custom-radios-delivery' data={dataIcons} />
+        <CustomRadioIcons data={dataIcons} value='standard' name='custom-radios-delivery' />
       </Grid>
       <Grid item xs={12} lg={4} xl={3}>
         <Card sx={{ mb: 4, background: 'transparent', boxShadow: 'none', border: '1px solid', borderColor: 'divider' }}>

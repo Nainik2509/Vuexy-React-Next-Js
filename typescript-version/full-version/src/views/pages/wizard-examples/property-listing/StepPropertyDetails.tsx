@@ -7,21 +7,21 @@ import InputLabel from '@mui/material/InputLabel'
 import Typography from '@mui/material/Typography'
 import FormControl from '@mui/material/FormControl'
 
-// ** Custom Components Imports
-import CustomRadioIcons from 'src/@core/components/mui/radio/CustomRadioIcons'
-
 // ** Icons Imports
 import HomeOutline from 'mdi-material-ui/HomeOutline'
 import WalletOutline from 'mdi-material-ui/WalletOutline'
 
-const dataIcons = [
+// ** Custom Components Imports
+import CustomRadioIcons from 'src/@core/components/custom-radio/icons'
+
+const data = [
   {
     value: 'sale',
     title: 'Sell the property',
     gridProps: { sm: 6, xs: 12 },
-    icon: <HomeOutline sx={{ fontSize: '2rem', color: 'text.secondary' }} />,
+    icon: <HomeOutline sx={{ mb: 2, fontSize: '2rem', color: 'text.secondary' }} />,
     content: (
-      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
+      <Typography variant='caption' sx={{ my: 'auto', textAlign: 'center' }}>
         Post your property for sale.
         <br />
         Unlimited free listing.
@@ -32,9 +32,9 @@ const dataIcons = [
     value: 'rent',
     title: 'Rent the property',
     gridProps: { sm: 6, xs: 12 },
-    icon: <WalletOutline sx={{ fontSize: '2rem', color: 'text.secondary' }} />,
+    icon: <WalletOutline sx={{ mb: 2, fontSize: '2rem', color: 'text.secondary' }} />,
     content: (
-      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
+      <Typography variant='caption' sx={{ my: 'auto', textAlign: 'center' }}>
         Post your property for rent.
         <br />
         Unlimited free listing.
@@ -47,7 +47,7 @@ const StepPropertyDetails = () => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12}>
-        <CustomRadioIcons value='sale' name='custom-radios-property' data={dataIcons} />
+        <CustomRadioIcons data={data} value='sale' name='custom-radios-property' />
       </Grid>
       <Grid item xs={12}>
         <Grid container spacing={6}>

@@ -5,11 +5,11 @@ import Grid from '@mui/material/Grid'
 import CardSnippet from 'src/@core/components/card-snippet'
 
 // ** Demo Components Imports
-import CustomRadios from 'src/views/forms/form-elements/custom-inputs/CustomRadios'
 import CustomRadioImg from 'src/views/forms/form-elements/custom-inputs/CustomRadioImg'
-import CustomCheckbox from 'src/views/forms/form-elements/custom-inputs/CustomCheckbox'
+import CustomRadioBasic from 'src/views/forms/form-elements/custom-inputs/CustomRadioBasic'
 import CustomRadioIcons from 'src/views/forms/form-elements/custom-inputs/CustomRadioIcons'
 import CustomCheckboxImg from 'src/views/forms/form-elements/custom-inputs/CustomCheckboxImg'
+import CustomCheckboxBasic from 'src/views/forms/form-elements/custom-inputs/CustomCheckboxBasic'
 import CustomCheckboxIcons from 'src/views/forms/form-elements/custom-inputs/CustomCheckboxIcons'
 
 // ** Source code imports
@@ -26,7 +26,7 @@ const CustomInputs = () => {
             jsx: source.CustomRadiosJSXCode
           }}
         >
-          <CustomRadios />
+          <CustomRadioBasic />
         </CardSnippet>
       </Grid>
       <Grid item xs={12} lg={6}>
@@ -37,7 +37,7 @@ const CustomInputs = () => {
             jsx: source.CustomCheckboxJSXCode
           }}
         >
-          <CustomCheckbox />
+          <CustomCheckboxBasic />
         </CardSnippet>
       </Grid>
       <Grid item xs={12} lg={6}>

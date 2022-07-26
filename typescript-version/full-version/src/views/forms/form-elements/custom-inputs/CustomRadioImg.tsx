@@ -1,7 +1,10 @@
-// ** Demo Components Imports
-import CustomRadioImg from 'src/@core/components/mui/radio/CustomRadioImg'
+// ** Type Import
+import { CustomRadioImgData } from 'src/@core/components/custom-radio/types'
 
-const dataIcons = [
+// ** Demo Components Imports
+import CustomRadioImg from 'src/@core/components/custom-radio/image'
+
+const data: CustomRadioImgData[] = [
   {
     value: 'starter',
     gridProps: { sm: 4, xs: 12 },
@@ -19,8 +22,8 @@ const dataIcons = [
   }
 ]
 
-const CustomRadiosImgExample = () => {
-  return <CustomRadioImg value='starter' name='custom-radios-img' data={dataIcons} />
+const CustomRadioWithImages = () => {
+  return <CustomRadioImg data={data} value='starter' name='custom-radios-img' />
 }
 
-export default CustomRadiosImgExample
+export default CustomRadioWithImages

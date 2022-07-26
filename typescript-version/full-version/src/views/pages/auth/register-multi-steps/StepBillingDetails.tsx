@@ -12,9 +12,6 @@ import FormControl from '@mui/material/FormControl'
 import FormHelperText from '@mui/material/FormHelperText'
 import InputAdornment from '@mui/material/InputAdornment'
 
-// ** Custom Components Imports
-import CustomRadioIcons from 'src/@core/components/mui/radio/CustomRadioIcons'
-
 // ** Icons Imports
 import ChevronLeft from 'mdi-material-ui/ChevronLeft'
 import HelpCircleOutline from 'mdi-material-ui/HelpCircleOutline'
@@ -25,6 +22,9 @@ import Payment from 'payment'
 import Cards, { Focused } from 'react-credit-cards'
 import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
+
+// ** Custom Components Imports
+import CustomRadioIcons from 'src/@core/components/custom-radio/icons'
 
 // ** Util Import
 import { formatCVC, formatExpirationDate, formatCreditCardNumber } from 'src/@core/utils/format'
@@ -39,7 +39,7 @@ const defaultValues = {
   cardNumber: ''
 }
 
-const planData = [
+const data = [
   {
     icon: null,
     value: 'basic',
@@ -51,15 +51,15 @@ const planData = [
     ),
     content: (
       <>
-        <Typography>A simple start for start ups & Students</Typography>
-        <Box sx={{ mt: 2 }}>
-          <Typography component='sup' sx={{ color: 'primary.main' }}>
+        <Typography variant='body2'>A simple start for start ups & Students</Typography>
+        <Box sx={{ mt: 2, display: 'flex' }}>
+          <Typography component='sup' sx={{ mt: 1.5, color: 'primary.main', alignSelf: 'flex-start' }}>
             $
           </Typography>
           <Typography component='span' sx={{ fontSize: '2rem', color: 'primary.main' }}>
             0
           </Typography>
-          <Typography component='sub' sx={{ color: 'text.disabled' }}>
+          <Typography component='sub' sx={{ mb: 1.5, alignSelf: 'flex-end', color: 'text.disabled' }}>
             /month
           </Typography>
         </Box>
@@ -77,15 +77,15 @@ const planData = [
     ),
     content: (
       <>
-        <Typography>For small to medium businesses</Typography>
-        <Box sx={{ mt: 2 }}>
-          <Typography component='sup' sx={{ color: 'primary.main' }}>
+        <Typography variant='body2'>For small to medium businesses</Typography>
+        <Box sx={{ mt: 2, display: 'flex' }}>
+          <Typography component='sup' sx={{ mt: 1.5, color: 'primary.main', alignSelf: 'flex-start' }}>
             $
           </Typography>
           <Typography component='span' sx={{ fontSize: '2rem', fontWeight: 500, color: 'primary.main' }}>
             99
           </Typography>
-          <Typography component='sub' sx={{ color: 'text.disabled' }}>
+          <Typography component='sub' sx={{ mb: 1.5, alignSelf: 'flex-end', color: 'text.disabled' }}>
             /month
           </Typography>
         </Box>
@@ -103,15 +103,15 @@ const planData = [
     ),
     content: (
       <>
-        <Typography>Solution for enterprise & organizations</Typography>
-        <Box sx={{ mt: 2 }}>
-          <Typography component='sup' sx={{ color: 'primary.main' }}>
+        <Typography variant='body2'>Solution for enterprise & organizations</Typography>
+        <Box sx={{ mt: 2, display: 'flex' }}>
+          <Typography component='sup' sx={{ mt: 1.5, color: 'primary.main', alignSelf: 'flex-start' }}>
             $
           </Typography>
           <Typography component='span' sx={{ fontSize: '2rem', color: 'primary.main' }}>
             499
           </Typography>
-          <Typography component='sub' sx={{ color: 'text.disabled' }}>
+          <Typography component='sub' sx={{ mb: 1.5, alignSelf: 'flex-end', color: 'text.disabled' }}>
             /month
           </Typography>
         </Box>
@@ -183,7 +183,7 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
 
       <Grid container spacing={6}>
         <Grid item xs={12}>
-          <CustomRadioIcons value='basic' name='custom-radios-plan' data={planData} />
+          <CustomRadioIcons data={data} value='basic' name='custom-radios-plan' />
         </Grid>
 
         <Grid item xs={12}>

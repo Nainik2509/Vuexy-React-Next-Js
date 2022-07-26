@@ -6,7 +6,6 @@ import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import MenuItem from '@mui/material/MenuItem'
 import TextField from '@mui/material/TextField'
-import Typography from '@mui/material/Typography'
 import InputLabel from '@mui/material/InputLabel'
 import FormControl from '@mui/material/FormControl'
 import OutlinedInput from '@mui/material/OutlinedInput'
@@ -14,48 +13,36 @@ import { styled, useTheme } from '@mui/material/styles'
 import FormHelperText from '@mui/material/FormHelperText'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 
-// ** Custom Components Imports
-import CustomChip from 'src/@core/components/mui/chip'
-import CustomRadioIcons from 'src/@core/components/mui/radio/CustomRadioIcons'
-
 // ** Icons Imports
 import TagOutline from 'mdi-material-ui/TagOutline'
 import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
 import AccountOutline from 'mdi-material-ui/AccountOutline'
 
-const dataIcons = [
+// ** Custom Components Imports
+import CustomChip from 'src/@core/components/mui/chip'
+import CustomRadioIcons from 'src/@core/components/custom-radio/icons'
+
+const data = [
   {
     value: 'percentage',
     title: 'Percentage',
     gridProps: { sm: 4, xs: 12 },
-    icon: <TagOutline sx={{ fontSize: '2rem', color: 'text.secondary' }} />,
-    content: (
-      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
-        Create a deal which offer uses some % off (i.e 5% OFF) on total.
-      </Typography>
-    )
+    content: 'Create a deal which offer uses some % off (i.e 5% OFF) on total.',
+    icon: <TagOutline sx={{ mb: 2, fontSize: '2rem', color: 'text.secondary' }} />
   },
   {
     value: 'flat-amount',
     title: 'Flat Amount',
     gridProps: { sm: 4, xs: 12 },
-    icon: <CurrencyUsd sx={{ fontSize: '2rem', color: 'text.secondary' }} />,
-    content: (
-      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
-        Create a deal which offer uses flat $ off (i.e $5 OFF) on the total.
-      </Typography>
-    )
+    content: 'Create a deal which offer uses flat $ off (i.e $5 OFF) on the total.',
+    icon: <CurrencyUsd sx={{ mb: 2, fontSize: '2rem', color: 'text.secondary' }} />
   },
   {
     value: 'prime-member',
     title: 'Prime Member',
     gridProps: { sm: 4, xs: 12 },
-    icon: <AccountOutline sx={{ fontSize: '2rem', color: 'text.secondary' }} />,
-    content: (
-      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
-        Create prime member only deal to encourage the prime members.
-      </Typography>
-    )
+    content: 'Create prime member only deal to encourage the prime members.',
+    icon: <AccountOutline sx={{ mb: 2, fontSize: '2rem', color: 'text.secondary' }} />
   }
 ]
 
@@ -89,7 +76,7 @@ const StepDealType = () => {
         </Box>
       </Grid>
       <Grid item xs={12}>
-        <CustomRadioIcons value='percentage' name='custom-radios-deal' data={dataIcons} />
+        <CustomRadioIcons data={data} value='percentage' name='custom-radios-deal' />
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl fullWidth>

@@ -1,52 +1,40 @@
-// ** MUI Imports
-import Typography from '@mui/material/Typography'
+// ** Icons Import
+import Server from 'mdi-material-ui/Server'
+import LockOutline from 'mdi-material-ui/LockOutline'
+import ShieldOutline from 'mdi-material-ui/ShieldOutline'
+
+// ** Type Import
+import { CustomCheckboxIconsData } from 'src/@core/components/custom-checkbox/types'
 
 // ** Demo Components Imports
-import CustomCheckboxIcons from 'src/@core/components/mui/checkbox/CustomCheckboxIcons'
+import CustomCheckboxIcons from 'src/@core/components/custom-checkbox/icons'
 
-// ** Icons Import
-import CrownOutline from 'mdi-material-ui/CrownOutline'
-import AccountOutline from 'mdi-material-ui/AccountOutline'
-import RocketLaunchOutline from 'mdi-material-ui/RocketLaunchOutline'
-
-const dataIcons = [
+const data: CustomCheckboxIconsData[] = [
   {
-    value: 'starter',
-    title: 'Starter',
+    value: 'backup',
+    title: 'Backup',
     gridProps: { sm: 4, xs: 12 },
-    icon: <RocketLaunchOutline fontSize='large' />,
-    content: (
-      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5 }}>
-        A simple start for everyone.
-      </Typography>
-    )
+    content: 'Backup every file from your project.',
+    icon: <Server sx={{ mb: 2, fontSize: '2rem' }} />
   },
   {
-    value: 'standard',
-    title: 'Standard',
+    value: 'encrypt',
+    title: 'Encrypt',
     gridProps: { sm: 4, xs: 12 },
-    icon: <AccountOutline fontSize='large' />,
-    content: (
-      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5 }}>
-        For small to medium businesses.
-      </Typography>
-    )
+    content: 'Translate your data to encrypted text.',
+    icon: <ShieldOutline sx={{ mb: 2, fontSize: '2rem' }} />
   },
   {
-    value: 'enterprise',
-    title: 'Enterprise',
+    value: 'site-lock',
+    title: 'Site Lock',
     gridProps: { sm: 4, xs: 12 },
-    icon: <CrownOutline fontSize='large' />,
-    content: (
-      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5 }}>
-        Solution for big organizations.
-      </Typography>
-    )
+    content: 'Security tool to protect your website.',
+    icon: <LockOutline sx={{ mb: 2, fontSize: '2rem' }} />
   }
 ]
 
-const CustomCheckboxIconsExample = () => {
-  return <CustomCheckboxIcons name='custom-checkbox-icons' data={dataIcons} />
+const CustomCheckboxWithIcons = () => {
+  return <CustomCheckboxIcons data={data} value={['backup']} name='custom-checkbox-icons' />
 }
 
-export default CustomCheckboxIconsExample
+export default CustomCheckboxWithIcons

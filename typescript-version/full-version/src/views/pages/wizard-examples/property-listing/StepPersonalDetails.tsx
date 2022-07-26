@@ -4,13 +4,9 @@ import { useState, MouseEvent } from 'react'
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
 import TextField from '@mui/material/TextField'
-import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 import FormControl from '@mui/material/FormControl'
 import InputAdornment from '@mui/material/InputAdornment'
-
-// ** Custom Components Imports
-import CustomRadioIcons from 'src/@core/components/mui/radio/CustomRadioIcons'
 
 // ** Icons Imports
 import EyeOutline from 'mdi-material-ui/EyeOutline'
@@ -19,39 +15,30 @@ import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 import BriefcaseOutline from 'mdi-material-ui/BriefcaseOutline'
 import OfficeBuildingOutline from 'mdi-material-ui/OfficeBuildingOutline'
 
-const dataIcons = [
+// ** Custom Components Imports
+import CustomRadioIcons from 'src/@core/components/custom-radio/icons'
+
+const data = [
   {
     value: 'builder',
     title: 'I am the Builder',
     gridProps: { sm: 4, xs: 12 },
-    icon: <OfficeBuildingOutline sx={{ fontSize: '2rem', color: 'text.secondary' }} />,
-    content: (
-      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
-        List property as Builder, list your project and get highest reach.
-      </Typography>
-    )
+    content: 'List property as Builder, list your project and get highest reach.',
+    icon: <OfficeBuildingOutline sx={{ mb: 2, fontSize: '2rem', color: 'text.secondary' }} />
   },
   {
     value: 'owner',
     title: 'I am the Owner',
     gridProps: { sm: 4, xs: 12 },
-    icon: <CrownOutline sx={{ fontSize: '2rem', color: 'text.secondary' }} />,
-    content: (
-      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
-        Submit property as an Individual. Lease, Rent or Sell at the best price.
-      </Typography>
-    )
+    icon: <CrownOutline sx={{ mb: 2, fontSize: '2rem', color: 'text.secondary' }} />,
+    content: 'Submit property as an Individual. Lease, Rent or Sell at the best price.'
   },
   {
     value: 'broker',
     title: 'I am the Broker',
     gridProps: { sm: 4, xs: 12 },
-    icon: <BriefcaseOutline sx={{ fontSize: '2rem', color: 'text.secondary' }} />,
-    content: (
-      <Typography variant='caption' sx={{ display: 'inline-block', lineHeight: 1.5, color: 'text.secondary' }}>
-        Earn highest commission by listing your clients properties at the best price.
-      </Typography>
-    )
+    icon: <BriefcaseOutline sx={{ mb: 2, fontSize: '2rem', color: 'text.secondary' }} />,
+    content: 'Earn highest commission by listing your clients properties at the best price.'
   }
 ]
 
@@ -69,7 +56,7 @@ const StepPersonalDetails = () => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12}>
-        <CustomRadioIcons value='builder' name='custom-radios' data={dataIcons} />
+        <CustomRadioIcons data={data} value='builder' name='custom-radios' />
       </Grid>
       <Grid item xs={12}>
         <Grid container spacing={6}>
