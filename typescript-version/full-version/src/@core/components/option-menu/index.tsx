@@ -3,6 +3,7 @@ import { MouseEvent, useState } from 'react'
 
 // ** MUI Imports
 import Menu from '@mui/material/Menu'
+import Divider from '@mui/material/Divider'
 import MenuItem from '@mui/material/MenuItem'
 import IconButton from '@mui/material/IconButton'
 
@@ -10,12 +11,12 @@ import IconButton from '@mui/material/IconButton'
 import DotsVertical from 'mdi-material-ui/DotsVertical'
 
 // ** Type Imports
-import { OptionsMenuType, OptionType } from './types'
+import { OptionType, OptionsMenuType } from './types'
 
 // ** Hook Import
 import { useSettings } from 'src/@core/hooks/useSettings'
 
-const OptionMenu = (props: OptionsMenuType) => {
+const OptionsMenu = (props: OptionsMenuType) => {
   // ** Props
   const { icon, options, menuProps, iconProps, leftAlignMenu, iconButtonProps } = props
 
@@ -51,27 +52,33 @@ const OptionMenu = (props: OptionsMenuType) => {
         {...menuProps}
       >
         {options.map((option: OptionType, index: number) => {
-          return typeof option === 'string' ? (
-            <MenuItem key={index} onClick={handleClose}>
-              {option}
-            </MenuItem>
-          ) : (
-            <MenuItem
-              key={index}
-              {...option.menuItemProps}
-              onClick={e => {
-                handleClose()
-                option.menuItemProps && option.menuItemProps.onClick ? option.menuItemProps.onClick(e) : null
-              }}
-            >
-              {option.icon ? option.icon : null}
-              {option.text}
-            </MenuItem>
-          )
+          if (typeof option === 'string') {
+            return (
+              <MenuItem key={index} onClick={handleClose}>
+                {option}
+              </MenuItem>
+            )
+          } else if ('divider' in option) {
+            return option.divider && <Divider key={index} {...option.dividerProps} />
+          } else {
+            return (
+              <MenuItem
+                key={index}
+                {...option.menuItemProps}
+                onClick={e => {
+                  handleClose()
+                  option.menuItemProps && option.menuItemProps.onClick ? option.menuItemProps.onClick(e) : null
+                }}
+              >
+                {option.icon ? option.icon : null}
+                {option.text}
+              </MenuItem>
+            )
+          }
         })}
       </Menu>
     </>
   )
 }
 
-export default OptionMenu
+export default OptionsMenu
