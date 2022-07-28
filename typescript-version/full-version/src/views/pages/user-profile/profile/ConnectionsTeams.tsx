@@ -1,3 +1,9 @@
+// ** React Imports
+import { SyntheticEvent } from 'react'
+
+// ** Next Imports
+import Link from 'next/link'
+
 // ** MUI Components
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
@@ -70,6 +76,17 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
                   </Box>
                 )
               })}
+            <Box sx={{ width: '100%', textAlign: 'center' }}>
+              <Link href='/' passHref>
+                <Typography
+                  component='a'
+                  onClick={(e: SyntheticEvent) => e.preventDefault()}
+                  sx={{ color: 'primary.main', textDecoration: 'none' }}
+                >
+                  View all connections
+                </Typography>
+              </Link>
+            </Box>
           </CardContent>
         </Card>
       </Grid>
@@ -105,10 +122,29 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
                         </Typography>
                       </Box>
                     </Box>
-                    <CustomChip rounded size='small' skin='light' color={team.ChipColor} label={team.chipText} />
+                    <Link href='/' passHref>
+                      <Box
+                        component='a'
+                        onClick={(e: SyntheticEvent) => e.preventDefault()}
+                        sx={{ height: 0, textDecoration: 'none', '& .MuiChip-root': { cursor: 'pointer' } }}
+                      >
+                        <CustomChip rounded size='small' skin='light' color={team.ChipColor} label={team.chipText} />
+                      </Box>
+                    </Link>
                   </Box>
                 )
               })}
+            <Box sx={{ width: '100%', textAlign: 'center' }}>
+              <Link href='/' passHref>
+                <Typography
+                  component='a'
+                  onClick={(e: SyntheticEvent) => e.preventDefault()}
+                  sx={{ color: 'primary.main', textDecoration: 'none' }}
+                >
+                  View all teams
+                </Typography>
+              </Link>
+            </Box>
           </CardContent>
         </Card>
       </Grid>

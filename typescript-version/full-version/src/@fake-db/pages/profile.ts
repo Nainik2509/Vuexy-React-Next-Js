@@ -31,11 +31,11 @@ const data: DataType = {
   },
   profile: {
     about: [
+      { property: 'Full Name', value: 'John Doe', icon: 'AccountOutline' },
       { property: 'Status', value: 'active', icon: 'Check' },
-      { property: 'Country', value: 'USA', icon: 'FlagOutline' },
-      { property: 'Language', value: 'English', icon: 'Translate' },
       { property: 'Role', value: 'Developer', icon: 'StarOutline' },
-      { property: 'Full Name', value: 'John Doe', icon: 'AccountOutline' }
+      { property: 'Country', value: 'USA', icon: 'FlagOutline' },
+      { property: 'Language', value: 'English', icon: 'Translate' }
     ],
     contacts: [
       { property: 'Contact', value: '(123) 456-7890', icon: 'PhoneOutline' },
@@ -123,7 +123,7 @@ const data: DataType = {
   },
   teams: [
     {
-      extraMembers: 254,
+      extraMembers: 25,
       title: 'React Developers',
       avatar: '/images/icons/project-icons/react-label.png',
       avatarGroup: [
@@ -146,7 +146,7 @@ const data: DataType = {
       ]
     },
     {
-      extraMembers: 153,
+      extraMembers: 15,
       title: 'Vue.js Dev Team',
       avatar: '/images/icons/project-icons/vue-label.png',
       avatarGroup: [
@@ -192,7 +192,7 @@ const data: DataType = {
       ]
     },
     {
-      extraMembers: 350,
+      extraMembers: 35,
       title: 'Support Team',
       avatar: '/images/icons/project-icons/support-label.png',
       avatarGroup: [
@@ -211,7 +211,7 @@ const data: DataType = {
       ]
     },
     {
-      extraMembers: 195,
+      extraMembers: 19,
       title: 'Digital Marketing',
       avatar: '/images/icons/project-icons/social-label.png',
       avatarGroup: [
@@ -235,7 +235,7 @@ const data: DataType = {
     },
     {
       title: 'Event',
-      extraMembers: 550,
+      extraMembers: 55,
       avatar: '/images/icons/project-icons/event-label.png',
       avatarGroup: [
         { avatar: '/images/avatars/5.png', name: 'Vinnie Mostowy' },
@@ -276,7 +276,7 @@ const data: DataType = {
       ]
     },
     {
-      extraMembers: 550,
+      extraMembers: 50,
       title: 'Only Beginners',
       avatar: '/images/icons/project-icons/html-label.png',
       avatarGroup: [

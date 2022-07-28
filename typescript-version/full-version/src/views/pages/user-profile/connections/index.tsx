@@ -1,3 +1,9 @@
+// ** React Imports
+import { SyntheticEvent } from 'react'
+
+// ** Next Imports
+import Link from 'next/link'
+
 // ** MUI Components
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
@@ -48,15 +54,19 @@ const Connections = ({ data }: { data: ConnectionsTabType[] }) => {
                     <Box sx={{ mb: 8, display: 'flex', alignItems: 'center' }}>
                       {item.chips &&
                         item.chips.map((chip, index) => (
-                          <CustomChip
-                            rounded
-                            key={index}
-                            size='small'
-                            skin='light'
-                            color={chip.color}
-                            label={chip.title}
-                            sx={{ '&:not(:last-of-type)': { mr: 3 } }}
-                          />
+                          <Link key={index} href='/' passHref>
+                            <Box
+                              component='a'
+                              onClick={(e: SyntheticEvent) => e.preventDefault()}
+                              sx={{
+                                textDecoration: 'none',
+                                '&:not(:last-of-type)': { mr: 3 },
+                                '& .MuiChip-root': { cursor: 'pointer' }
+                              }}
+                            >
+                              <CustomChip rounded size='small' skin='light' color={chip.color} label={chip.title} />
+                            </Box>
+                          </Link>
                         ))}
                     </Box>
                     <Box

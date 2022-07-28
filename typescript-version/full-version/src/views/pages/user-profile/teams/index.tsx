@@ -1,3 +1,9 @@
+// ** React Imports
+import { SyntheticEvent } from 'react'
+
+// ** Next Imports
+import Link from 'next/link'
+
 // ** MUI Components
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
@@ -55,7 +61,7 @@ const Teams = ({ data }: { data: TeamsTabType[] }) => {
                   <Typography sx={{ my: 4, color: 'text.secondary' }}>{item.description}</Typography>
                   <Box sx={{ gap: 2, display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      <AvatarGroup className='pull-up'>
+                      <AvatarGroup className='pull-up' sx={{ alignItems: 'center' }}>
                         {item.avatarGroup.map((person, index) => {
                           return (
                             <Tooltip key={index} title={person.name}>
@@ -63,23 +69,27 @@ const Teams = ({ data }: { data: TeamsTabType[] }) => {
                             </Tooltip>
                           )
                         })}
+                        <Typography variant='body2' sx={{ ml: 0.5, color: 'text.disabled' }}>
+                          +{item.extraMembers}
+                        </Typography>
                       </AvatarGroup>
-                      <Typography variant='caption' sx={{ ml: 0.5, color: 'text.disabled' }}>
-                        +{item.extraMembers}
-                      </Typography>
                     </Box>
                     <Box sx={{ ml: 'auto', display: 'flex', alignItems: 'center' }}>
                       {item.chips &&
                         item.chips.map((chip, index) => (
-                          <CustomChip
-                            rounded
-                            key={index}
-                            size='small'
-                            skin='light'
-                            color={chip.color}
-                            label={chip.title}
-                            sx={{ '&:not(:last-of-type)': { mr: 3 } }}
-                          />
+                          <Link key={index} href='/' passHref>
+                            <Box
+                              component='a'
+                              onClick={(e: SyntheticEvent) => e.preventDefault()}
+                              sx={{
+                                textDecoration: 'none',
+                                '&:not(:last-of-type)': { mr: 3 },
+                                '& .MuiChip-root': { cursor: 'pointer' }
+                              }}
+                            >
+                              <CustomChip rounded size='small' skin='light' color={chip.color} label={chip.title} />
+                            </Box>
+                          </Link>
                         ))}
                     </Box>
                   </Box>

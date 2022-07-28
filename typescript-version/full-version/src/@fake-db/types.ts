@@ -166,6 +166,7 @@ export type ProjectsTabType = {
   description: string
   chipColor: ThemeColor
   completedTask: number
+  avatarColor?: ThemeColor
   avatarGroup: ProfileAvatarGroupType[]
 }
 export type ConnectionsTabType = {

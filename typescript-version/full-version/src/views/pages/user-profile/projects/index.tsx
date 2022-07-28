@@ -1,12 +1,13 @@
 // ** React Imports
 import { SyntheticEvent } from 'react'
 
+// ** Next Imports
+import Link from 'next/link'
+
 // ** MUI Components
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
-import Link from '@mui/material/Link'
-import Avatar from '@mui/material/Avatar'
 import Divider from '@mui/material/Divider'
 import Tooltip from '@mui/material/Tooltip'
 import CardHeader from '@mui/material/CardHeader'
@@ -19,11 +20,32 @@ import LinearProgress from '@mui/material/LinearProgress'
 import MessageOutline from 'mdi-material-ui/MessageOutline'
 
 // ** Types
+import { ThemeColor } from 'src/@core/layouts/types'
 import { ProjectsTabType } from 'src/@fake-db/types'
+
+// ** Utils Import
+import { getInitials } from 'src/@core/utils/get-initials'
 
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
+import CustomAvatar from 'src/@core/components/mui/avatar'
 import OptionsMenu from 'src/@core/components/option-menu'
+
+const ProjectAvatar = ({ project }: { project: ProjectsTabType }) => {
+  if (project.avatar.length) {
+    return <CustomAvatar src={project.avatar} sx={{ width: 38, height: 38 }} />
+  } else {
+    return (
+      <CustomAvatar
+        skin='light'
+        sx={{ width: 38, height: 38 }}
+        color={(project.avatarColor as ThemeColor) || ('primary' as ThemeColor)}
+      >
+        {getInitials(project.title || 'John Doe')}
+      </CustomAvatar>
+    )
+  }
+}
 
 const Projects = ({ data }: { data: ProjectsTabType[] }) => {
   return (
@@ -35,7 +57,7 @@ const Projects = ({ data }: { data: ProjectsTabType[] }) => {
             <Grid key={index} item xs={12} md={6} lg={4}>
               <Card>
                 <CardHeader
-                  avatar={<Avatar src={item.avatar} sx={{ height: 38, width: 38 }} />}
+                  avatar={<ProjectAvatar project={item} />}
                   sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}
                   subheader={
                     <Typography sx={{ color: 'text.secondary' }}>
@@ -55,18 +77,20 @@ const Projects = ({ data }: { data: ProjectsTabType[] }) => {
                     />
                   }
                   title={
-                    <Typography
-                      href='/'
-                      variant='h6'
-                      component={Link}
-                      onClick={(e: SyntheticEvent) => e.preventDefault()}
-                      sx={{
-                        color: 'text.primary',
-                        '&:hover': { color: 'primary.main' }
-                      }}
-                    >
-                      {item.title}
-                    </Typography>
+                    <Link href='/' passHref>
+                      <Typography
+                        variant='h6'
+                        component='a'
+                        onClick={(e: SyntheticEvent) => e.preventDefault()}
+                        sx={{
+                          color: 'text.primary',
+                          textDecoration: 'none',
+                          '&:hover': { color: 'primary.main' }
+                        }}
+                      >
+                        {item.title}
+                      </Typography>
+                    </Link>
                   }
                 />
                 <CardContent>
@@ -80,13 +104,21 @@ const Projects = ({ data }: { data: ProjectsTabType[] }) => {
                       justifyContent: 'space-between'
                     }}
                   >
-                    <Box sx={{ p: 2, borderRadius: 1, backgroundColor: 'action.hover' }}>
-                      <Box sx={{ display: 'flex' }}>
-                        <Typography sx={{ fontWeight: 500 }}>{item.budgetSpent}</Typography>
-                        <Typography sx={{ color: 'text.secondary' }}>{`/${item.budget}`}</Typography>
-                      </Box>
-                      <Typography sx={{ color: 'text.secondary' }}>Total Budget</Typography>
-                    </Box>
+                    <CustomChip
+                      rounded
+                      size='small'
+                      skin='light'
+                      sx={{ height: 60 }}
+                      label={
+                        <>
+                          <Box sx={{ display: 'flex' }}>
+                            <Typography sx={{ fontWeight: 500 }}>{item.budgetSpent}</Typography>
+                            <Typography sx={{ color: 'text.secondary' }}>{`/${item.budget}`}</Typography>
+                          </Box>
+                          <Typography sx={{ color: 'text.secondary' }}>Total Budget</Typography>
+                        </>
+                      }
+                    />
                     <Box sx={{ display: 'flex', alignItems: 'flex-end', flexDirection: 'column' }}>
                       <Box sx={{ display: 'flex' }}>
                         <Typography sx={{ mr: 1, fontWeight: 500 }}>Start Date:</Typography>
@@ -139,7 +171,7 @@ const Projects = ({ data }: { data: ProjectsTabType[] }) => {
                           item.avatarGroup.map((person, index) => {
                             return (
                               <Tooltip key={index} title={person.name}>
-                                <Avatar src={person.avatar} alt={person.name} sx={{ height: 32, width: 32 }} />
+                                <CustomAvatar src={person.avatar} alt={person.name} sx={{ height: 32, width: 32 }} />
                               </Tooltip>
                             )
                           })}
@@ -148,10 +180,20 @@ const Projects = ({ data }: { data: ProjectsTabType[] }) => {
                         {item.members}
                       </Typography>
                     </Box>
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      <MessageOutline sx={{ mr: 1, fontSize: '1.125rem', color: 'text.secondary' }} />
-                      <Typography sx={{ color: 'text.secondary' }}>{item.comments}</Typography>
-                    </Box>
+                    <Link href='/' passHref>
+                      <Box
+                        component='a'
+                        onClick={(e: SyntheticEvent) => e.preventDefault()}
+                        sx={{
+                          textDecoration: 'none',
+                          display: 'flex',
+                          alignItems: 'center'
+                        }}
+                      >
+                        <MessageOutline sx={{ mr: 1, fontSize: '1.125rem', color: 'text.secondary' }} />
+                        <Typography sx={{ color: 'text.secondary' }}>{item.comments}</Typography>
+                      </Box>
+                    </Link>
                   </Box>
                 </CardContent>
               </Card>

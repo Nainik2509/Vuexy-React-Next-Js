@@ -152,7 +152,7 @@ const ProfileTable = () => {
     setValue(val)
   }
 
-  return data.length ? (
+  return data ? (
     <Card>
       <CardHeader
         title='Projects'
