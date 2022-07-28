@@ -1,15 +1,9 @@
-// ** React Imports
-import { useState, MouseEvent } from 'react'
-
 // ** MUI Components
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
-import Menu from '@mui/material/Menu'
 import Avatar from '@mui/material/Avatar'
-import Divider from '@mui/material/Divider'
 import Tooltip from '@mui/material/Tooltip'
-import MenuItem from '@mui/material/MenuItem'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import AvatarGroup from '@mui/material/AvatarGroup'
@@ -17,55 +11,13 @@ import CardContent from '@mui/material/CardContent'
 
 // ** Icons Imports
 import StarOutline from 'mdi-material-ui/StarOutline'
-import DotsVertical from 'mdi-material-ui/DotsVertical'
-
-// ** Custom Components Imports
-import CustomChip from 'src/@core/components/mui/chip'
 
 // ** Types
 import { TeamsTabType } from 'src/@fake-db/types'
 
-const RowOptions = () => {
-  // ** State
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-
-  const rowOptionsOpen = Boolean(anchorEl)
-
-  const handleRowOptionsClick = (event: MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget)
-  }
-  const handleRowOptionsClose = () => {
-    setAnchorEl(null)
-  }
-
-  return (
-    <>
-      <IconButton size='small' onClick={e => handleRowOptionsClick(e)}>
-        <DotsVertical sx={{ fontSize: '1.125rem' }} />
-      </IconButton>
-      <Menu
-        keepMounted
-        anchorEl={anchorEl}
-        open={rowOptionsOpen}
-        onClose={handleRowOptionsClose}
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'right'
-        }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right'
-        }}
-      >
-        <MenuItem>Rename Team</MenuItem>
-        <MenuItem>View Details</MenuItem>
-        <MenuItem>Add to Favorites</MenuItem>
-        <Divider />
-        <MenuItem sx={{ color: 'error.main' }}>Delete Team</MenuItem>
-      </Menu>
-    </>
-  )
-}
+// ** Custom Components Imports
+import CustomChip from 'src/@core/components/mui/chip'
+import OptionsMenu from 'src/@core/components/option-menu'
 
 const Teams = ({ data }: { data: TeamsTabType[] }) => {
   return (
@@ -85,12 +37,23 @@ const Teams = ({ data }: { data: TeamsTabType[] }) => {
                       </Typography>
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      <StarOutline sx={{ fontSize: '1.125rem', cursor: 'pointer', color: 'text.secondary' }} />
-                      <RowOptions />
+                      <IconButton size='small' sx={{ color: 'text.secondary' }}>
+                        <StarOutline />
+                      </IconButton>
+                      <OptionsMenu
+                        iconButtonProps={{ size: 'small' }}
+                        options={[
+                          'Rename Team',
+                          'View Details',
+                          'Add to Favorites',
+                          { divider: true },
+                          { text: 'Delete Team', menuItemProps: { sx: { color: 'error.main' } } }
+                        ]}
+                      />
                     </Box>
                   </Box>
                   <Typography sx={{ my: 4, color: 'text.secondary' }}>{item.description}</Typography>
-                  <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <Box sx={{ gap: 2, display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
                       <AvatarGroup className='pull-up'>
                         {item.avatarGroup.map((person, index) => {
@@ -105,7 +68,7 @@ const Teams = ({ data }: { data: TeamsTabType[] }) => {
                         +{item.extraMembers}
                       </Typography>
                     </Box>
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Box sx={{ ml: 'auto', display: 'flex', alignItems: 'center' }}>
                       {item.chips &&
                         item.chips.map((chip, index) => (
                           <CustomChip

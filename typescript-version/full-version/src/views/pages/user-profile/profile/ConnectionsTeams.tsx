@@ -1,26 +1,19 @@
-// ** React Imports
-import { useState } from 'react'
-
 // ** MUI Components
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
-import Menu from '@mui/material/Menu'
 import Button from '@mui/material/Button'
 import Avatar from '@mui/material/Avatar'
-import Divider from '@mui/material/Divider'
-import MenuItem from '@mui/material/MenuItem'
-import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
 // ** Icons Imports
-import DotsVertical from 'mdi-material-ui/DotsVertical'
 import AccountOutline from 'mdi-material-ui/AccountOutline'
 
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
+import OptionsMenu from 'src/@core/components/option-menu'
 
 // ** Types
 import { ProfileTeamsTechType, ProfileConnectionsType } from 'src/@fake-db/types'
@@ -31,27 +24,6 @@ interface Props {
 }
 
 const ConnectionsTeams = ({ connections, teams }: Props) => {
-  // ** State
-  const [anchorElTeams, setAnchorElTeams] = useState<null | HTMLElement>(null)
-  const [anchorElConnections, setAnchorElConnections] = useState<null | HTMLElement>(null)
-
-  const openTeams = Boolean(anchorElTeams)
-  const openConnections = Boolean(anchorElConnections)
-
-  const handleConnectionsClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElConnections(event.currentTarget)
-  }
-  const handleConnectionsClose = () => {
-    setAnchorElConnections(null)
-  }
-
-  const handleTeamsClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElTeams(event.currentTarget)
-  }
-  const handleTeamsClose = () => {
-    setAnchorElTeams(null)
-  }
-
   return (
     <Grid container spacing={6} sx={{ mb: 6 }}>
       <Grid item md={6} xs={12}>
@@ -59,29 +31,10 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
           <CardHeader
             title='Connections'
             action={
-              <>
-                <IconButton size='small' onClick={handleConnectionsClick}>
-                  <DotsVertical sx={{ fontSize: '1.125rem' }} />
-                </IconButton>
-                <Menu
-                  open={openConnections}
-                  anchorEl={anchorElConnections}
-                  onClose={handleConnectionsClose}
-                  anchorOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right'
-                  }}
-                  transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right'
-                  }}
-                >
-                  <MenuItem onClick={handleConnectionsClose}>Share connections</MenuItem>
-                  <MenuItem onClick={handleConnectionsClose}>Suggest edits</MenuItem>
-                  <Divider />
-                  <MenuItem onClick={handleConnectionsClose}>Report Bug</MenuItem>
-                </Menu>
-              </>
+              <OptionsMenu
+                iconButtonProps={{ size: 'small' }}
+                options={['Share connections', 'Suggest edits', { divider: true }, 'Report bug']}
+              />
             }
           />
           <CardContent>
@@ -123,31 +76,12 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
       <Grid item md={6} xs={12}>
         <Card>
           <CardHeader
-            title='Connections'
+            title='Teams'
             action={
-              <>
-                <IconButton size='small' onClick={handleTeamsClick}>
-                  <DotsVertical sx={{ fontSize: '1.125rem' }} />
-                </IconButton>
-                <Menu
-                  open={openTeams}
-                  anchorEl={anchorElTeams}
-                  onClose={handleTeamsClose}
-                  anchorOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right'
-                  }}
-                  transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right'
-                  }}
-                >
-                  <MenuItem onClick={handleTeamsClose}>Share connections</MenuItem>
-                  <MenuItem onClick={handleTeamsClose}>Suggest edits</MenuItem>
-                  <Divider />
-                  <MenuItem onClick={handleTeamsClose}>Report Bug</MenuItem>
-                </Menu>
-              </>
+              <OptionsMenu
+                iconButtonProps={{ size: 'small' }}
+                options={['Share teams', 'Suggest edits', { divider: true }, 'Report bug']}
+              />
             }
           />
           <CardContent>

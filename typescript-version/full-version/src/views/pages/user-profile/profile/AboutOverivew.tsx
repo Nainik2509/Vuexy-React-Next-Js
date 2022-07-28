@@ -6,7 +6,7 @@ import CardContent from '@mui/material/CardContent'
 
 // ** Icons Imports
 import Check from 'mdi-material-ui/Check'
-import Vuejs from 'mdi-material-ui/Vuejs'
+import React from 'mdi-material-ui/React'
 import Github from 'mdi-material-ui/Github'
 import Translate from 'mdi-material-ui/Translate'
 import FlagOutline from 'mdi-material-ui/FlagOutline'
@@ -29,8 +29,8 @@ interface Props {
 
 const icons = {
   Check,
+  React,
   Github,
-  Vuejs,
   Translate,
   FlagOutline,
   StarOutline,
@@ -49,10 +49,14 @@ const renderList = (arr: ProfileTabCommonType[]) => {
 
       return (
         <Box key={index} sx={{ display: 'flex', alignItems: 'center', '&:not(:last-of-type)': { mb: 4 } }}>
-          <Icon sx={{ fontSize: '1.125rem' }} />
+          <Icon sx={{ fontSize: '1.125rem', color: 'text.secondary' }} />
 
-          <Typography sx={{ mx: 2, fontWeight: 600 }}>{item.property}:</Typography>
-          <Typography>{item.value}</Typography>
+          <Typography sx={{ mx: 2, fontWeight: 600, color: 'text.secondary' }}>
+            {`${item.property.charAt(0).toUpperCase() + item.property.slice(1)}:`}
+          </Typography>
+          <Typography sx={{ color: 'text.secondary' }}>
+            {item.value.charAt(0).toUpperCase() + item.value.slice(1)}
+          </Typography>
         </Box>
       )
     })
@@ -71,8 +75,12 @@ const renderTeams = (arr: ProfileTeamsType[]) => {
         <Box key={index} sx={{ display: 'flex', alignItems: 'center', '&:not(:last-of-type)': { mb: 4 } }}>
           <Icon sx={{ fontSize: '1.125rem', color: `${item.color}.main` }} />
 
-          <Typography sx={{ mx: 2, fontWeight: 600 }}>{item.property}</Typography>
-          <Typography>{item.value}</Typography>
+          <Typography sx={{ mx: 2, fontWeight: 600, color: 'text.secondary' }}>
+            {item.property.charAt(0).toUpperCase() + item.property.slice(1)}
+          </Typography>
+          <Typography sx={{ color: 'text.secondary' }}>
+            {item.value.charAt(0).toUpperCase() + item.value.slice(1)}
+          </Typography>
         </Box>
       )
     })
@@ -89,19 +97,19 @@ const AboutOverivew = (props: Props) => {
       <Card sx={{ mb: 6 }}>
         <CardContent>
           <Box sx={{ mb: 7 }}>
-            <Typography variant='caption' sx={{ mb: 5, display: 'block', color: 'text.disabled' }}>
-              ABOUT
+            <Typography variant='body2' sx={{ mb: 4, color: 'text.disabled', textTransform: 'uppercase' }}>
+              About
             </Typography>
             {renderList(about)}
           </Box>
           <Box sx={{ mb: 7 }}>
-            <Typography variant='caption' sx={{ mb: 5, display: 'block', color: 'text.disabled' }}>
-              CONTACTS
+            <Typography variant='body2' sx={{ mb: 4, color: 'text.disabled', textTransform: 'uppercase' }}>
+              Contacts
             </Typography>
             {renderList(contacts)}
           </Box>
           <Box>
-            <Typography variant='caption' sx={{ mb: 5, display: 'block', color: 'text.disabled' }}>
+            <Typography variant='body2' sx={{ mb: 4, color: 'text.disabled', textTransform: 'uppercase' }}>
               Teams
             </Typography>
             {renderTeams(teams)}
@@ -111,8 +119,8 @@ const AboutOverivew = (props: Props) => {
       <Card>
         <CardContent>
           <Box>
-            <Typography variant='caption' sx={{ mb: 5, display: 'block', color: 'text.disabled' }}>
-              OVERVIEW
+            <Typography variant='body2' sx={{ mb: 4, color: 'text.disabled', textTransform: 'uppercase' }}>
+              Overview
             </Typography>
             {renderList(overview)}
           </Box>

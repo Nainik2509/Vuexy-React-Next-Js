@@ -2,6 +2,8 @@
 import { ThemeColor } from 'src/@core/layouts/types'
 import { OptionsMenuType } from 'src/@core/components/option-menu/types'
 
+// Template Search
+//----------------
 export type AppBarSearchType = {
   id: number
   url: string
@@ -9,13 +11,13 @@ export type AppBarSearchType = {
   title: string
   category: string
 }
-
 export type AutocompleteType = {
   year: number
   title: string
 }
 
-// Types for Faq Page
+// Faq Page
+//-------------------
 export type FaqQAndAType = {
   id: string
   answer: string
@@ -31,7 +33,8 @@ export type FaqType = {
   }
 }
 
-// Types for Knowledge Base
+// Knowledge Base
+//-------------------------
 export type KnowledgeBaseData = {
   desc: string
   title: string
@@ -55,7 +58,8 @@ export type KnowledgeBaseType = {
   knowledgeBaseCategory: KnowledgeBaseCategoryData[]
 }
 
-// Types for Card Statistics Page
+// Card Statistics Page
+//-------------------------------
 export type CardStatsHorizontalType = {
   icon: string
   title: string
@@ -89,6 +93,102 @@ export type CardStatsType = {
   statsHorizontal: CardStatsHorizontalType[]
 }
 
+// User Profile pages
+//-------------------
+export type ProjectTableRowType = {
+  id: number
+  name: string
+  date: string
+  status: number
+  leader: string
+  avatar?: string
+  avatarGroup: string[]
+  avatarColor?: ThemeColor
+}
+export type ProfileHeaderType = {
+  fullName: string
+  location: string
+  coverImg: string
+  profileImg: string
+  joiningDate: string
+  designation: string
+  designationIcon?: string
+}
+export type ProfileAvatarGroupType = {
+  name: string
+  avatar: string
+}
+export type ProfileChipType = {
+  title: string
+  color: ThemeColor
+}
+export type ProfileTabCommonType = {
+  icon: string
+  value: string
+  property: string
+}
+export type ProfileTeamsType = ProfileTabCommonType & { color: ThemeColor }
+export type ProfileConnectionsType = {
+  name: string
+  avatar: string
+  isFriend: boolean
+  connections: string
+}
+export type ProfileTeamsTechType = {
+  title: string
+  avatar: string
+  members: number
+  chipText: string
+  ChipColor: ThemeColor
+}
+export type TeamsTabType = {
+  extraMembers: number
+  title: string
+  avatar: string
+  description: string
+  chips: ProfileChipType[]
+  avatarGroup: ProfileAvatarGroupType[]
+}
+export type ProjectsTabType = {
+  hours: string
+  tasks: string
+  budget: string
+  title: string
+  client: string
+  avatar: string
+  members: string
+  daysLeft: number
+  comments: number
+  deadline: string
+  startDate: string
+  totalTask: number
+  budgetSpent: string
+  description: string
+  chipColor: ThemeColor
+  completedTask: number
+  avatarGroup: ProfileAvatarGroupType[]
+}
+export type ConnectionsTabType = {
+  name: string
+  tasks: string
+  avatar: string
+  projects: string
+  connections: string
+  designation: string
+  isConnected: boolean
+  chips: ProfileChipType[]
+}
+export type ProfileTabType = {
+  about: ProfileTabCommonType[]
+  contacts: ProfileTabCommonType[]
+  teams: ProfileTeamsType[]
+  overview: ProfileTabCommonType[]
+  teamsTech: ProfileTeamsTechType[]
+  connections: ProfileConnectionsType[]
+}
+
+// Data Grid page
+//---------------
 export type DataGridRowType = {
   id: number
   age: string
@@ -101,104 +201,4 @@ export type DataGridRowType = {
   full_name: string
   start_date: string
   experience: string
-}
-
-export type ProjectTableRowType = {
-  id: number
-  name: string
-  date: string
-  status: number
-  avatar: string
-  leader: string
-  avatarGroup: string[]
-  avatarColor?: ThemeColor
-}
-
-export type ProfileHeaderType = {
-  fullName: string
-  location: string
-  coverImg: string
-  joiningDate: string
-  designation: string
-  profileImg: string
-}
-export type ProfileAvatarGroupType = {
-  name: string
-  avatar: string
-}
-
-export type ProfileChipType = {
-  title: string
-  color: ThemeColor
-}
-
-export type ProfileTabCommonType = {
-  icon: string
-  value: string
-  property: string
-}
-
-export type ProfileTeamsType = ProfileTabCommonType & { color: ThemeColor }
-
-export type ProfileConnectionsType = {
-  name: string
-  avatar: string
-  isFriend: boolean
-  connections: string
-}
-
-export type ProfileTeamsTechType = {
-  title: string
-  avatar: string
-  members: number
-  chipText: string
-  ChipColor: ThemeColor
-}
-
-export type TeamsTabType = {
-  extraMembers: number
-  title: string
-  avatar: string
-  description: string
-  chips: ProfileChipType[]
-  avatarGroup: ProfileAvatarGroupType[]
-}
-
-export type ProjectsTabType = {
-  hours: string
-  tasks: string
-  budget: string
-  title: string
-  client: string
-  avatar: string
-  members: string
-  daysLeft: number
-  comments: number
-  deadline: string
-  completed: string
-  startDate: string
-  budgetSpent: string
-  description: string
-  chipColor: ThemeColor
-  avatarGroup: ProfileAvatarGroupType[]
-}
-
-export type ConnectionsTabType = {
-  name: string
-  tasks: string
-  avatar: string
-  projects: string
-  connections: string
-  designation: string
-  isConnected: boolean
-  chips: ProfileChipType[]
-}
-
-export type ProfileTabType = {
-  about: ProfileTabCommonType[]
-  contacts: ProfileTabCommonType[]
-  teams: ProfileTeamsType[]
-  overview: ProfileTabCommonType[]
-  teamsTech: ProfileTeamsTechType[]
-  connections: ProfileConnectionsType[]
 }

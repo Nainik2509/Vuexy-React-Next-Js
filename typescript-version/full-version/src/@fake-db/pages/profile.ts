@@ -25,6 +25,7 @@ const data: DataType = {
     location: 'Vatican City',
     joiningDate: 'April 2021',
     designation: 'UX Designer',
+    designationIcon: 'FountainPenTip',
     profileImg: '/images/avatars/1.png',
     coverImg: '/images/pages/profile-banner.png'
   },
@@ -43,7 +44,7 @@ const data: DataType = {
     ],
     teams: [
       { property: 'Backend Developer', value: '(126 Members)', icon: 'Github', color: 'primary' },
-      { property: 'Vue Developer', value: '(98 Members)', icon: 'Vuejs', color: 'success' }
+      { property: 'React Developer', value: '(98 Members)', icon: 'React', color: 'info' }
     ],
     overview: [
       { property: 'Task Compiled', value: '13.5k', icon: 'Check' },
@@ -246,7 +247,7 @@ const data: DataType = {
         'Event is defined as a particular contest which is part of a program of contests. An example of an event is the long…',
       chips: [
         {
-          title: 'HUBILO',
+          title: 'Hubilo',
           color: 'success'
         }
       ]
@@ -302,10 +303,11 @@ const data: DataType = {
     {
       daysLeft: 28,
       comments: 15,
+      totalTask: 344,
       hours: '380/244',
       tasks: '290/344',
-      completed: '95',
       budget: '$18.2k',
+      completedTask: 328,
       deadline: '28/2/22',
       chipColor: 'success',
       startDate: '14/2/21',
@@ -324,10 +326,11 @@ const data: DataType = {
     {
       daysLeft: 15,
       comments: 236,
+      totalTask: 90,
       tasks: '12/90',
       hours: '98/135',
       budget: '$1.8k',
-      completed: '42',
+      completedTask: 38,
       deadline: '21/6/22',
       budgetSpent: '$2.4k',
       chipColor: 'warning',
@@ -347,9 +350,10 @@ const data: DataType = {
       daysLeft: 45,
       comments: 98,
       budget: '$420',
+      totalTask: 140,
       tasks: '22/140',
       hours: '880/421',
-      completed: '68',
+      completedTask: 95,
       chipColor: 'error',
       budgetSpent: '$980',
       deadline: '8/10/21',
@@ -368,10 +372,11 @@ const data: DataType = {
     {
       comments: 120,
       daysLeft: 126,
+      totalTask: 420,
       budget: '2.43k',
       tasks: '237/420',
-      completed: '72',
       hours: '1.2k/820',
+      completedTask: 302,
       deadline: '12/9/22',
       budgetSpent: '$8.5k',
       chipColor: 'warning',
@@ -390,11 +395,12 @@ const data: DataType = {
     {
       daysLeft: 5,
       comments: 20,
+      totalTask: 285,
       tasks: '29/285',
       budget: '28.4k',
-      completed: '35',
       hours: '142/420',
       chipColor: 'error',
+      completedTask: 100,
       deadline: '25/12/21',
       startDate: '12/12/20',
       members: '82 members',
@@ -413,9 +419,10 @@ const data: DataType = {
       daysLeft: 4,
       comments: 16,
       budget: '$655',
+      totalTask: 290,
       tasks: '29/290',
       hours: '580/445',
-      completed: '100',
+      completedTask: 290,
       budgetSpent: '$1.3k',
       chipColor: 'success',
       deadline: '02/11/21',
@@ -562,11 +569,10 @@ const projectTable: ProjectTableRowType[] = [
   {
     id: 1,
     status: 38,
-    avatar: '',
     leader: 'Eileen',
     name: 'Website SEO',
     date: '10 may 2021',
-    avatarColor: 'secondary',
+    avatarColor: 'success',
     avatarGroup: ['/images/avatars/1.png', '/images/avatars/2.png', '/images/avatars/3.png', '/images/avatars/4.png']
   },
   {

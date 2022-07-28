@@ -5,6 +5,7 @@ import { useState, useEffect, ReactElement } from 'react'
 import { useRouter } from 'next/router'
 
 // ** MUI Components
+import Grid from '@mui/material/Grid'
 import { styled } from '@mui/material/styles'
 import Button, { ButtonProps } from '@mui/material/Button'
 import ButtonGroup, { ButtonGroupProps } from '@mui/material/ButtonGroup'
@@ -51,9 +52,6 @@ const DefaultButton = styled(Button)<ButtonProps>(({ theme }) => ({
 
 const StyledButtonGroup = styled(ButtonGroup)<ButtonGroupProps>(({ theme }) => ({
   boxShadow: 'none',
-  marginTop: theme.spacing(6),
-  marginBottom: theme.spacing(6),
-
   [theme.breakpoints.down('md')]: {
     width: '100%',
     flexDirection: 'column',
@@ -92,27 +90,33 @@ const UserProfile = ({ tab, data }: any) => {
   }
 
   return (
-    <>
-      <UserProfileHeader />
-      <StyledButtonGroup variant='contained'>
-        {tabsList.map(({ name, value, icon }, index) => {
-          const ButtonTag = activeTab !== value ? DefaultButton : Button
+    <Grid container spacing={6}>
+      <Grid item xs={12}>
+        <UserProfileHeader />
+      </Grid>
+      <Grid item xs={12}>
+        <StyledButtonGroup variant='contained'>
+          {tabsList.map(({ name, value, icon }, index) => {
+            const ButtonTag = activeTab !== value ? DefaultButton : Button
 
-          return (
-            <ButtonTag
-              key={index}
-              disableRipple
-              startIcon={icon}
-              onClick={() => handleClick(value)}
-              sx={{ borderRadius: '6px !important' }}
-            >
-              {name}
-            </ButtonTag>
-          )
-        })}
-      </StyledButtonGroup>
-      <>{tabContentList[activeTab]}</>
-    </>
+            return (
+              <ButtonTag
+                key={index}
+                disableRipple
+                startIcon={icon}
+                onClick={() => handleClick(value)}
+                sx={{ borderRadius: '6px !important' }}
+              >
+                {name}
+              </ButtonTag>
+            )
+          })}
+        </StyledButtonGroup>
+      </Grid>
+      <Grid item xs={12}>
+        {tabContentList[activeTab]}
+      </Grid>
+    </Grid>
   )
 }
 
