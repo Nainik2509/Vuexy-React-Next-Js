@@ -10,7 +10,6 @@ import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
 import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
-import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 
@@ -96,7 +95,7 @@ const Connections = ({ data }: { data: ConnectionsTabType[] }) => {
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
                       <Button
                         sx={{ mr: 4 }}
-                        variant={item.isConnected ? 'contained' : 'text'}
+                        variant={item.isConnected ? 'contained' : 'outlined'}
                         startIcon={
                           item.isConnected ? (
                             <AccountCheckOutline fontSize='small' />
@@ -107,9 +106,9 @@ const Connections = ({ data }: { data: ConnectionsTabType[] }) => {
                       >
                         {item.isConnected ? 'Connected' : 'Connect'}
                       </Button>
-                      <IconButton color='secondary'>
+                      <Button variant='outlined' color='secondary' sx={{ px: 0, minWidth: 38 }}>
                         <EmailOutline />
-                      </IconButton>
+                      </Button>
                     </Box>
                   </Box>
                 </CardContent>

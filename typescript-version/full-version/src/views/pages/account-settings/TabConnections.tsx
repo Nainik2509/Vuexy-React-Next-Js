@@ -3,7 +3,7 @@ import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
 import Switch from '@mui/material/Switch'
-import IconButton from '@mui/material/IconButton'
+import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
@@ -159,9 +159,13 @@ const TabConnections = () => {
                       </Typography>
                     </Box>
                   </Box>
-                  <IconButton sx={{ borderRadius: 1 }} color={account.isConnected ? 'error' : 'secondary'}>
+                  <Button
+                    variant='outlined'
+                    sx={{ px: 0, minWidth: 38, borderRadius: 1 }}
+                    color={account.isConnected ? 'error' : 'secondary'}
+                  >
                     {account.isConnected ? <DeleteOutline /> : <LinkVariant />}
-                  </IconButton>
+                  </Button>
                 </Box>
               )
             })}

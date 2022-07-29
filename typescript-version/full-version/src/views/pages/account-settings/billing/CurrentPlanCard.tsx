@@ -70,7 +70,7 @@ const CurrentPlanCard = ({ data }: { data: PricingDataType }) => {
 
   return (
     <>
-      <Card sx={{ mb: 6 }}>
+      <Card>
         <CardHeader title='Current Plan' />
         <CardContent>
           <Grid container spacing={6}>

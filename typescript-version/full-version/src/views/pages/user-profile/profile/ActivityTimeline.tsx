@@ -33,11 +33,11 @@ const Timeline = styled(MuiTimeline)<TimelineProps>({
 
 const ActivityTimeline = () => {
   return (
-    <Card sx={{ mb: 6 }}>
+    <Card>
       <CardHeader
         title='Activity Timeline'
         sx={{ '& .MuiCardHeader-avatar': { mr: 2.5 } }}
-        avatar={<FormatListBulleted sx={{ fontSize: '1.125rem' }} />}
+        avatar={<FormatListBulleted sx={{}} />}
         titleTypographyProps={{ sx: { color: 'text.primary' } }}
         action={
           <OptionsMenu

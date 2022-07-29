@@ -4,6 +4,7 @@ import { ReactNode } from 'react'
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
+import Grid from '@mui/material/Grid'
 import Table from '@mui/material/Table'
 import TableRow from '@mui/material/TableRow'
 import TableBody from '@mui/material/TableBody'
@@ -111,75 +112,87 @@ const recentDeviceData: RecentDeviceDataType[] = [
 
 const TabSecurity = () => {
   return (
-    <>
-      <ChangePasswordCard />
-      <TwoFactorAuthentication />
-      <CreateApiKey />
+    <Grid container spacing={6}>
+      <Grid item xs={12}>
+        <ChangePasswordCard />
+      </Grid>
+      <Grid item xs={12}>
+        <TwoFactorAuthentication />
+      </Grid>
+      <Grid item xs={12}>
+        <CreateApiKey />
+      </Grid>
+
       {/* API Key List & Access Card*/}
-      <Card sx={{ mb: 4 }}>
-        <CardHeader title='API Key List & Access' />
-        <CardContent>
-          <Typography sx={{ mb: 4, color: 'text.secondary' }}>
-            An API key is a simple encrypted string that identifies an application without any principal. They are
-            useful for accessing public data anonymously, and are used to associate API requests with your project for
-            quota and billing.
-          </Typography>
-          {apiKeyList.map(item => {
-            return (
-              <Box key={item.key} sx={{ p: 4, backgroundColor: 'action.hover', '&:not(:last-child)': { mb: 4 } }}>
-                <Box sx={{ mb: 3, display: 'flex', alignItems: 'center' }}>
-                  <Typography variant='h6' sx={{ mr: 4 }}>
-                    {item.title}
-                  </Typography>
-                  <CustomChip
-                    size='small'
-                    skin='light'
-                    rounded={true}
-                    color='primary'
-                    label={item.access}
-                    sx={{ textTransform: 'uppercase' }}
-                  />
-                </Box>
-                <Box sx={{ mb: 2, display: 'flex', alignItems: 'center' }}>
-                  <Typography sx={{ mr: 3, color: 'text.secondary', fontWeight: 600 }}>{item.key}</Typography>
-                  <ContentCopy sx={{ fontSize: '1rem', cursor: 'pointer', color: 'text.secondary' }} />
-                </Box>
-                <Typography sx={{ color: 'text.secondary' }}>Created on {item.date}</Typography>
-              </Box>
-            )
-          })}
-        </CardContent>
-      </Card>
-      {/* Recent Devices Card*/}
-      <Card>
-        <CardHeader title='Recent Devices' />
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Browser</TableCell>
-              <TableCell>Device</TableCell>
-              <TableCell>Location</TableCell>
-              <TableCell>Recent Activities</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {recentDeviceData.map((row, index) => (
-              <TableRow key={index}>
-                <TableCell>
-                  <Box sx={{ display: 'flex', alignItems: 'center', fontWeight: 600 }}>
-                    {row.browserIcon}
-                    {row.browserName}
+      <Grid item xs={12}>
+        <Card>
+          <CardHeader title='API Key List & Access' />
+          <CardContent>
+            <Typography sx={{ mb: 4, color: 'text.secondary' }}>
+              An API key is a simple encrypted string that identifies an application without any principal. They are
+              useful for accessing public data anonymously, and are used to associate API requests with your project for
+              quota and billing.
+            </Typography>
+            {apiKeyList.map(item => {
+              return (
+                <Box key={item.key} sx={{ p: 4, backgroundColor: 'action.hover', '&:not(:last-child)': { mb: 4 } }}>
+                  <Box sx={{ mb: 3, display: 'flex', alignItems: 'center' }}>
+                    <Typography variant='h6' sx={{ mr: 4 }}>
+                      {item.title}
+                    </Typography>
+                    <CustomChip
+                      size='small'
+                      skin='light'
+                      rounded={true}
+                      color='primary'
+                      label={item.access}
+                      sx={{ textTransform: 'uppercase' }}
+                    />
                   </Box>
-                </TableCell>
-                <TableCell>{row.device}</TableCell>
-                <TableCell>{row.location}</TableCell>
-                <TableCell>{row.date}</TableCell>
+                  <Box sx={{ mb: 2, display: 'flex', alignItems: 'center' }}>
+                    <Typography sx={{ mr: 3, color: 'text.secondary', fontWeight: 600 }}>{item.key}</Typography>
+                    <ContentCopy sx={{ fontSize: '1rem', cursor: 'pointer', color: 'text.secondary' }} />
+                  </Box>
+                  <Typography sx={{ color: 'text.secondary' }}>Created on {item.date}</Typography>
+                </Box>
+              )
+            })}
+          </CardContent>
+        </Card>
+      </Grid>
+
+      {/* Recent Devices Card*/}
+      <Grid item xs={12}>
+        <Card>
+          <CardHeader title='Recent Devices' />
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Browser</TableCell>
+                <TableCell>Device</TableCell>
+                <TableCell>Location</TableCell>
+                <TableCell>Recent Activities</TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </Card>
-    </>
+            </TableHead>
+            <TableBody>
+              {recentDeviceData.map((row, index) => (
+                <TableRow key={index}>
+                  <TableCell>
+                    <Box sx={{ display: 'flex', alignItems: 'center', fontWeight: 600 }}>
+                      {row.browserIcon}
+                      {row.browserName}
+                    </Box>
+                  </TableCell>
+                  <TableCell>{row.device}</TableCell>
+                  <TableCell>{row.location}</TableCell>
+                  <TableCell>{row.date}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </Card>
+      </Grid>
+    </Grid>
   )
 }
 export default TabSecurity

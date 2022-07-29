@@ -50,7 +50,7 @@ const TwoFactorAuthenticationCard = () => {
 
   return (
     <>
-      <Card sx={{ mb: 6 }}>
+      <Card>
         <CardHeader title='Two-steps verification' />
         <CardContent>
           <Typography sx={{ mb: 4, fontWeight: 600, color: 'text.secondary' }}>

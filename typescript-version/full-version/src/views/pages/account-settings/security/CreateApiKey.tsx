@@ -27,7 +27,7 @@ const CreateApiKeyCard = () => {
   }
 
   return (
-    <Card sx={{ mb: 4 }}>
+    <Card>
       <CardHeader title='Create an API key' />
       <CardContent sx={{ pb: '0 !important' }}>
         <Grid container spacing={5}>

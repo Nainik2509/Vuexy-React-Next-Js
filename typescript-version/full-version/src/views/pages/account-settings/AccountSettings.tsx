@@ -37,11 +37,11 @@ type tabContentListType = {
 }
 
 const tabsList: TablistType[] = [
-  { name: 'Account', value: 'account', icon: <AccountOutline sx={{ fontSize: '1.125rem !important' }} /> },
-  { name: 'Security', value: 'security', icon: <LockOpenOutline sx={{ fontSize: '1.125rem !important' }} /> },
-  { name: 'Billing', value: 'billing', icon: <BookmarkOutline sx={{ fontSize: '1.125rem !important' }} /> },
-  { name: 'Notifications', value: 'notifications', icon: <BellOutline sx={{ fontSize: '1.125rem !important' }} /> },
-  { name: 'Connections', value: 'connections', icon: <LinkVariant sx={{ fontSize: '1.125rem !important' }} /> }
+  { name: 'Account', value: 'account', icon: <AccountOutline /> },
+  { name: 'Security', value: 'security', icon: <LockOpenOutline /> },
+  { name: 'Billing', value: 'billing', icon: <BookmarkOutline /> },
+  { name: 'Notifications', value: 'notifications', icon: <BellOutline /> },
+  { name: 'Connections', value: 'connections', icon: <LinkVariant /> }
 ]
 
 const DefaultButton = styled(Button)<ButtonProps>(({ theme }) => ({

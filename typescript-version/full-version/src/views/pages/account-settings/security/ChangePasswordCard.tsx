@@ -97,7 +97,7 @@ const ChangePasswordCard = () => {
   }
 
   return (
-    <Card sx={{ mb: 6 }}>
+    <Card>
       <CardHeader title='Change Password' />
       <CardContent>
         <form onSubmit={handleSubmit(onPasswordFormSubmit)}>

@@ -92,15 +92,15 @@ const UserProfileHeader = () => {
               }}
             >
               <Box sx={{ mr: 4, display: 'flex', alignItems: 'center' }}>
-                <IconTag sx={{ mr: 1, fontSize: '1.125rem', color: 'text.secondary' }} />
+                <IconTag sx={{ mr: 1, color: 'text.secondary' }} />
                 <Typography sx={{ color: 'text.secondary', fontWeight: 600 }}>{data.designation}</Typography>
               </Box>
               <Box sx={{ mr: 4, display: 'flex', alignItems: 'center' }}>
-                <MapMarkerOutline sx={{ mr: 1, fontSize: '1.125rem', color: 'text.secondary' }} />
+                <MapMarkerOutline sx={{ mr: 1, color: 'text.secondary' }} />
                 <Typography sx={{ color: 'text.secondary', fontWeight: 600 }}>{data.location}</Typography>
               </Box>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <CalendarBlankOutline sx={{ mr: 1, fontSize: '1.125rem', color: 'text.secondary' }} />
+                <CalendarBlankOutline sx={{ mr: 1, color: 'text.secondary' }} />
                 <Typography sx={{ color: 'text.secondary', fontWeight: 600 }}>Joined {data.joiningDate}</Typography>
               </Box>
             </Box>

@@ -42,8 +42,7 @@ const StyledList = styled(List)<ListProps>(({ theme }) => ({
       marginTop: 0,
 
       '& .MuiTypography-root': {
-        fontWeight: 500,
-        fontSize: '.9375rem'
+        fontWeight: 500
       }
     },
     '& .remove-item': {

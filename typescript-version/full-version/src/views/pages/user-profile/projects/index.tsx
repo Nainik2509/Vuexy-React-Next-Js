@@ -185,12 +185,12 @@ const Projects = ({ data }: { data: ProjectsTabType[] }) => {
                         component='a'
                         onClick={(e: SyntheticEvent) => e.preventDefault()}
                         sx={{
-                          textDecoration: 'none',
                           display: 'flex',
-                          alignItems: 'center'
+                          alignItems: 'center',
+                          textDecoration: 'none'
                         }}
                       >
-                        <MessageOutline sx={{ mr: 1, fontSize: '1.125rem', color: 'text.secondary' }} />
+                        <MessageOutline sx={{ mr: 1, color: 'text.secondary' }} />
                         <Typography sx={{ color: 'text.secondary' }}>{item.comments}</Typography>
                       </Box>
                     </Link>

@@ -151,9 +151,13 @@ const DialogAuthentication = () => {
                   <Box>
                     <Typography
                       variant='h6'
-                      sx={{ fontWeight: 600, ...(authType === 'sms' ? { color: 'primary.main' } : {}) }}
+                      sx={{
+                        fontWeight: 600,
+                        textTransform: 'uppercase',
+                        ...(authType === 'sms' ? { color: 'primary.main' } : {})
+                      }}
                     >
-                      SMS
+                      sms
                     </Typography>
                     <Typography sx={{ ...(authType === 'sms' ? { color: 'primary.main' } : {}) }}>
                       We will send a code via SMS if you need to use your backup login method.

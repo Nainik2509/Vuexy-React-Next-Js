@@ -31,7 +31,7 @@ interface Props {
 
 const ConnectionsTeams = ({ connections, teams }: Props) => {
   return (
-    <Grid container spacing={6} sx={{ mb: 6 }}>
+    <Grid container spacing={6}>
       <Grid item md={6} xs={12}>
         <Card>
           <CardHeader
@@ -69,9 +69,9 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
                       size='small'
                       color='primary'
                       sx={{ minWidth: 28, p: theme => `${theme.spacing(1.25, 1)} !important` }}
-                      variant={connection.isFriend ? 'contained' : 'text'}
+                      variant={connection.isFriend ? 'contained' : 'outlined'}
                     >
-                      <AccountOutline sx={{ fontSize: '1.125rem' }} />
+                      <AccountOutline />
                     </Button>
                   </Box>
                 )

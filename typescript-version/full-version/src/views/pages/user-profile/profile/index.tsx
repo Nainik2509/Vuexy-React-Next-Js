@@ -17,9 +17,17 @@ const ProfileTab = ({ data }: { data: ProfileTabType }) => {
         <AboutOverivew about={data.about} contacts={data.contacts} teams={data.teams} overview={data.overview} />
       </Grid>
       <Grid item xl={8} md={7} xs={12}>
-        <ActivityTimeline />
-        <ConnectionsTeams connections={data.connections} teams={data.teamsTech} />
-        <ProjectsTable />
+        <Grid container spacing={6}>
+          <Grid item xs={12}>
+            <ActivityTimeline />
+          </Grid>
+          <Grid item xs={12}>
+            <ConnectionsTeams connections={data.connections} teams={data.teamsTech} />
+          </Grid>
+          <Grid item xs={12}>
+            <ProjectsTable />
+          </Grid>
+        </Grid>
       </Grid>
     </Grid>
   ) : null

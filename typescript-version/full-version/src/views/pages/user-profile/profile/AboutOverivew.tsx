@@ -49,7 +49,7 @@ const renderList = (arr: ProfileTabCommonType[]) => {
 
       return (
         <Box key={index} sx={{ display: 'flex', alignItems: 'center', '&:not(:last-of-type)': { mb: 4 } }}>
-          <Icon sx={{ fontSize: '1.125rem', color: 'text.secondary' }} />
+          <Icon sx={{ color: 'text.secondary' }} />
 
           <Typography sx={{ mx: 2, fontWeight: 600, color: 'text.secondary' }}>
             {`${item.property.charAt(0).toUpperCase() + item.property.slice(1)}:`}
@@ -73,7 +73,7 @@ const renderTeams = (arr: ProfileTeamsType[]) => {
 
       return (
         <Box key={index} sx={{ display: 'flex', alignItems: 'center', '&:not(:last-of-type)': { mb: 4 } }}>
-          <Icon sx={{ fontSize: '1.125rem', color: `${item.color}.main` }} />
+          <Icon sx={{ color: `${item.color}.main` }} />
 
           <Typography sx={{ mx: 2, fontWeight: 600, color: 'text.secondary' }}>
             {item.property.charAt(0).toUpperCase() + item.property.slice(1)}
@@ -94,7 +94,7 @@ const AboutOverivew = (props: Props) => {
 
   return (
     <>
-      <Card sx={{ mb: 6 }}>
+      <Card>
         <CardContent>
           <Box sx={{ mb: 7 }}>
             <Typography variant='body2' sx={{ mb: 4, color: 'text.disabled', textTransform: 'uppercase' }}>

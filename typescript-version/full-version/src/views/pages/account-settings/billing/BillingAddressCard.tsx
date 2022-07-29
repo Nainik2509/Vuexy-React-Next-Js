@@ -36,7 +36,7 @@ const BillingAddressCard = () => {
   }
 
   return (
-    <Card sx={{ mb: 4 }}>
+    <Card>
       <CardHeader title='Billing Address' />
       <CardContent>
         <form onSubmit={handleSubmit(onSubmit)}>
