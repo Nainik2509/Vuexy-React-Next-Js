@@ -27,7 +27,6 @@ import EyeOutline from 'mdi-material-ui/EyeOutline'
 import TrendingUp from 'mdi-material-ui/TrendingUp'
 import ChevronDown from 'mdi-material-ui/ChevronDown'
 import ContentCopy from 'mdi-material-ui/ContentCopy'
-import DotsVertical from 'mdi-material-ui/DotsVertical'
 import DeleteOutline from 'mdi-material-ui/DeleteOutline'
 import PencilOutline from 'mdi-material-ui/PencilOutline'
 import ContentSaveOutline from 'mdi-material-ui/ContentSaveOutline'
@@ -39,6 +38,7 @@ import { InvoiceType } from 'src/types/apps/invoiceTypes'
 
 // ** Custom Component Imports
 import CustomAvatar from 'src/@core/components/mui/avatar'
+import OptionsMenu from 'src/@core/components/option-menu'
 
 interface Props {
   invoiceData: InvoiceType[]
@@ -67,57 +67,6 @@ const invoiceStatusObj: InvoiceStatusObj = {
   'Partial Payment': { color: 'warning', icon: <ChartPie sx={{ fontSize: '1rem' }} /> },
   'Past Due': { color: 'error', icon: <InformationOutline sx={{ fontSize: '1rem' }} /> },
   Downloaded: { color: 'info', icon: <ArrowDown sx={{ fontSize: '1rem' }} /> }
-}
-
-const RowOptions = ({ id }: { id: number | string }) => {
-  // ** State
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-
-  const rowOptionsOpen = Boolean(anchorEl)
-
-  const handleRowOptionsClick = (event: MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget)
-  }
-  const handleRowOptionsClose = () => {
-    setAnchorEl(null)
-  }
-
-  return (
-    <>
-      <IconButton size='small' onClick={handleRowOptionsClick}>
-        <DotsVertical fontSize='small' />
-      </IconButton>
-      <Menu
-        keepMounted
-        anchorEl={anchorEl}
-        open={rowOptionsOpen}
-        onClose={handleRowOptionsClose}
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'right'
-        }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right'
-        }}
-      >
-        <MenuItem>
-          <Download fontSize='small' sx={{ mr: 2 }} />
-          Download
-        </MenuItem>
-        <Link href={`/apps/invoice/edit/${id}`} passHref>
-          <MenuItem>
-            <PencilOutline fontSize='small' sx={{ mr: 2 }} />
-            Edit
-          </MenuItem>
-        </Link>
-        <MenuItem>
-          <ContentCopy fontSize='small' sx={{ mr: 2 }} />
-          Duplicate
-        </MenuItem>
-      </Menu>
-    </>
-  )
 }
 
 const columns = [
@@ -206,7 +155,25 @@ const columns = [
             </Link>
           </Box>
         </Tooltip>
-        <RowOptions id={row.id} />
+        <OptionsMenu
+          iconProps={{ fontSize: 'small' }}
+          iconButtonProps={{ size: 'small' }}
+          options={[
+            {
+              text: 'Download',
+              icon: <Download fontSize='small' sx={{ mr: 2 }} />
+            },
+            {
+              text: 'Edit',
+              href: `/apps/invoice/edit/${row.id}`,
+              icon: <PencilOutline fontSize='small' sx={{ mr: 2 }} />
+            },
+            {
+              text: 'Duplicate',
+              icon: <ContentCopy fontSize='small' sx={{ mr: 2 }} />
+            }
+          ]}
+        />
       </Box>
     )
   }

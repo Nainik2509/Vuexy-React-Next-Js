@@ -1,5 +1,5 @@
 // ** React Imports
-import { Fragment, useState, useEffect, MouseEvent, ReactElement, forwardRef } from 'react'
+import { useState, useEffect, ReactElement, forwardRef } from 'react'
 
 // ** Next Import
 import Link from 'next/link'
@@ -7,7 +7,6 @@ import Link from 'next/link'
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
-import Menu from '@mui/material/Menu'
 import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
 import { DataGrid } from '@mui/x-data-grid'
@@ -32,7 +31,6 @@ import ArrowDown from 'mdi-material-ui/ArrowDown'
 import EyeOutline from 'mdi-material-ui/EyeOutline'
 import TrendingUp from 'mdi-material-ui/TrendingUp'
 import ContentCopy from 'mdi-material-ui/ContentCopy'
-import DotsVertical from 'mdi-material-ui/DotsVertical'
 import PencilOutline from 'mdi-material-ui/PencilOutline'
 import DeleteOutline from 'mdi-material-ui/DeleteOutline'
 import InformationOutline from 'mdi-material-ui/InformationOutline'
@@ -56,6 +54,7 @@ import { getInitials } from 'src/@core/utils/get-initials'
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
 import CustomAvatar from 'src/@core/components/mui/avatar'
+import OptionsMenu from 'src/@core/components/option-menu'
 
 // ** Icons Imports
 import Plus from 'mdi-material-ui/Plus'
@@ -84,57 +83,6 @@ const StyledLink = styled('a')(({ theme }) => ({
   textDecoration: 'none',
   color: theme.palette.primary.main
 }))
-
-const RowOptions = ({ id }: { id: number | string }) => {
-  // ** State
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-
-  const rowOptionsOpen = Boolean(anchorEl)
-
-  const handleRowOptionsClick = (event: MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget)
-  }
-  const handleRowOptionsClose = () => {
-    setAnchorEl(null)
-  }
-
-  return (
-    <Fragment>
-      <IconButton size='small' onClick={handleRowOptionsClick}>
-        <DotsVertical fontSize='small' />
-      </IconButton>
-      <Menu
-        keepMounted
-        anchorEl={anchorEl}
-        open={rowOptionsOpen}
-        onClose={handleRowOptionsClose}
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'right'
-        }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right'
-        }}
-      >
-        <MenuItem>
-          <Download fontSize='small' sx={{ mr: 2 }} />
-          Download
-        </MenuItem>
-        <Link href={`/apps/invoice/edit/${id}`} passHref>
-          <MenuItem>
-            <PencilOutline fontSize='small' sx={{ mr: 2 }} />
-            Edit
-          </MenuItem>
-        </Link>
-        <MenuItem>
-          <ContentCopy fontSize='small' sx={{ mr: 2 }} />
-          Duplicate
-        </MenuItem>
-      </Menu>
-    </Fragment>
-  )
-}
 
 // ** Vars
 const invoiceStatusObj: InvoiceStatusObj = {
@@ -332,7 +280,25 @@ const BillingHistoryTable = () => {
               </Link>
             </Box>
           </Tooltip>
-          <RowOptions id={row.id} />
+          <OptionsMenu
+            iconProps={{ fontSize: 'small' }}
+            iconButtonProps={{ size: 'small' }}
+            options={[
+              {
+                text: 'Download',
+                icon: <Download fontSize='small' sx={{ mr: 2 }} />
+              },
+              {
+                text: 'Edit',
+                href: `/apps/invoice/edit/${row.id}`,
+                icon: <PencilOutline fontSize='small' sx={{ mr: 2 }} />
+              },
+              {
+                text: 'Duplicate',
+                icon: <ContentCopy fontSize='small' sx={{ mr: 2 }} />
+              }
+            ]}
+          />
         </Box>
       )
     }

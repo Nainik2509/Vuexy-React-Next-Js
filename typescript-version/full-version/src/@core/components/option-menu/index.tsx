@@ -1,5 +1,8 @@
 // ** React Imports
-import { MouseEvent, useState } from 'react'
+import { MouseEvent, useState, ReactNode } from 'react'
+
+// ** Next Import
+import Link from 'next/link'
 
 // ** MUI Imports
 import Menu from '@mui/material/Menu'
@@ -11,10 +14,22 @@ import IconButton from '@mui/material/IconButton'
 import DotsVertical from 'mdi-material-ui/DotsVertical'
 
 // ** Type Imports
-import { OptionType, OptionsMenuType } from './types'
+import { OptionType, OptionsMenuType, OptionMenuItemType } from './types'
 
 // ** Hook Import
 import { useSettings } from 'src/@core/hooks/useSettings'
+
+const MenuItemWrapper = ({ children, option }: { children: ReactNode; option: OptionMenuItemType }) => {
+  if (option.href) {
+    return (
+      <Link href={option.href} passHref {...option.linkProps}>
+        {children}
+      </Link>
+    )
+  } else {
+    return <>{children}</>
+  }
+}
 
 const OptionsMenu = (props: OptionsMenuType) => {
   // ** Props
@@ -62,17 +77,18 @@ const OptionsMenu = (props: OptionsMenuType) => {
             return option.divider && <Divider key={index} {...option.dividerProps} />
           } else {
             return (
-              <MenuItem
-                key={index}
-                {...option.menuItemProps}
-                onClick={e => {
-                  handleClose()
-                  option.menuItemProps && option.menuItemProps.onClick ? option.menuItemProps.onClick(e) : null
-                }}
-              >
-                {option.icon ? option.icon : null}
-                {option.text}
-              </MenuItem>
+              <MenuItemWrapper key={index} option={option}>
+                <MenuItem
+                  {...option.menuItemProps}
+                  onClick={e => {
+                    handleClose()
+                    option.menuItemProps && option.menuItemProps.onClick ? option.menuItemProps.onClick(e) : null
+                  }}
+                >
+                  {option.icon ? option.icon : null}
+                  {option.text}
+                </MenuItem>
+              </MenuItemWrapper>
             )
           }
         })}

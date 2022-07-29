@@ -8,9 +8,13 @@ import { DividerProps } from '@mui/material/Divider'
 import { MenuItemProps } from '@mui/material/MenuItem'
 import { IconButtonProps } from '@mui/material/IconButton'
 
+// ** Types
+import { LinkProps } from 'next/link'
+
 export type OptionDividerType = {
   divider: boolean
   dividerProps?: DividerProps
+  url?: never
   text?: never
   icon?: never
   menuItemProps?: never
@@ -21,6 +25,8 @@ export type OptionMenuItemType = {
   menuItemProps?: MenuItemProps
   divider?: never
   dividerProps?: never
+  linkProps?: LinkProps
+  href?: LinkProps['href']
 }
 
 export type OptionType = string | OptionDividerType | OptionMenuItemType
