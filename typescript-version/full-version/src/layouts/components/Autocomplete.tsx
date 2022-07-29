@@ -129,7 +129,7 @@ const defaultSuggestionsData: DefaultSuggestionsType[] = [
       },
       {
         suggestion: 'Account Settings',
-        link: '/pages/account-settings/',
+        link: '/pages/account-settings/account',
         icon: <AccountCogOutline fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
       }
     ]
@@ -323,7 +323,7 @@ const NoResult = ({ value, setOpenDialog }: NoResultProps) => {
           </Link>
         </ListItem>
         <ListItem sx={{ py: 2 }} disablePadding onClick={() => setOpenDialog(false)}>
-          <Link passHref href='/pages/account-settings/'>
+          <Link passHref href='/pages/account-settings/account'>
             <Box
               component='a'
               sx={{
