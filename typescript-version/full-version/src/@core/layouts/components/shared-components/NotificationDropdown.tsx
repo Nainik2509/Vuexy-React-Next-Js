@@ -111,6 +111,14 @@ const MenuItemSubtitle = styled(Typography)<TypographyProps>({
   textOverflow: 'ellipsis'
 })
 
+const ScrollWrapper = ({ children, hidden }: { children: ReactNode; hidden: boolean }) => {
+  if (hidden) {
+    return <Box sx={{ maxHeight: 349, overflowY: 'auto', overflowX: 'hidden' }}>{children}</Box>
+  } else {
+    return <PerfectScrollbar options={{ wheelPropagation: false, suppressScrollX: true }}>{children}</PerfectScrollbar>
+  }
+}
+
 const NotificationDropdown = (props: Props) => {
   // ** Props
   const { settings, notifications } = props
@@ -130,16 +138,6 @@ const NotificationDropdown = (props: Props) => {
 
   const handleDropdownClose = () => {
     setAnchorEl(null)
-  }
-
-  const ScrollWrapper = ({ children }: { children: ReactNode }) => {
-    if (hidden) {
-      return <Box sx={{ maxHeight: 349, overflowY: 'auto', overflowX: 'hidden' }}>{children}</Box>
-    } else {
-      return (
-        <PerfectScrollbar options={{ wheelPropagation: false, suppressScrollX: true }}>{children}</PerfectScrollbar>
-      )
-    }
   }
 
   const RenderAvatar = ({ notification }: { notification: NotificationsType }) => {
@@ -192,7 +190,7 @@ const NotificationDropdown = (props: Props) => {
             />
           </Box>
         </MenuItem>
-        <ScrollWrapper>
+        <ScrollWrapper hidden={hidden}>
           {notifications.map((notification: NotificationsType, index: number) => (
             <MenuItem key={index} onClick={handleDropdownClose}>
               <Box sx={{ width: '100%', display: 'flex', alignItems: 'center' }}>
