@@ -18,7 +18,7 @@ type ThemeConfig = {
   skin: Skin
   appBar: AppBar
   footer: Footer
-  mode: PaletteMode
+  mode: PaletteMode & 'semi-dark'
   navHidden: boolean
   navSubItemIcon: any
   direction: Direction
