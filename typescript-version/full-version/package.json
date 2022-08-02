@@ -8,7 +8,8 @@
     "start": "next start",
     "export": "next export",
     "lint": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\""
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
+    "build:icons": "tsc -b src/iconify-bundle && node src/iconify-bundle/bundle-icons-react.js"
   },
   "dependencies": {
     "@auth0/auth0-react": "^1.10.1",
@@ -28,6 +29,7 @@
     "@fullcalendar/react": "^5.10.1",
     "@fullcalendar/timegrid": "^5.10.1",
     "@hookform/resolvers": "^2.9.5",
+    "@iconify/react": "^3.2.2",
     "@mui/lab": "^5.0.0-alpha.89",
     "@mui/material": "^5.8.7",
     "@mui/x-data-grid": "^5.13.0",
@@ -75,6 +77,11 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@iconify/iconify": "^2.2.1",
+    "@iconify/json": "^2.1.84",
+    "@iconify/tools": "^2.0.18",
+    "@iconify/types": "^1.1.0",
+    "@iconify/utils": "^1.0.33",
     "@types/cleave.js": "^1.4.6",
     "@types/draft-js": "^0.11.8",
     "@types/jsonwebtoken": "^8.5.8",
@@ -99,5 +106,8 @@
     "next-transpile-modules": "^9.0.0",
     "prettier": "^2.6.2",
     "typescript": "^4.6.4"
+  },
+  "resolutions": {
+    "minipass": "~3.3.5"
   }
 }

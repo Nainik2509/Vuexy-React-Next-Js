@@ -59,6 +59,8 @@ import 'prismjs/components/prism-tsx'
 // ** React Perfect Scrollbar Style
 import 'react-perfect-scrollbar/dist/css/styles.css'
 
+import 'src/iconify-bundle/icons-bundle-react'
+
 // ** Global css styles
 import '../../styles/globals.css'
 

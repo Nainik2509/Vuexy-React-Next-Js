@@ -24,6 +24,7 @@ sidebarDepth: 0
 | @fullcalendar/timegrid | [https://github.com/fullcalendar/fullcalendar](https://github.com/fullcalendar/fullcalendar) | MIT |
 | @fullcalendar/timeline | [https://github.com/fullcalendar/fullcalendar](https://github.com/fullcalendar/fullcalendar) | MIT |
 | @hookform/resolvers | [https://github.com/react-hook-form/resolvers](https://github.com/react-hook-form/resolvers) | MIT |
+| @iconify/react | [https://github.com/iconify/iconify](https://github.com/iconify/iconify) | MIT |
 | @mui/lab | [https://github.com/mui-org/material-ui](https://github.com/mui-org/material-ui) | MIT |
 | @mui/material | [https://github.com/mui-org/material-ui](https://github.com/mui-org/material-ui) | MIT |
 | @mui/x-data-grid | [https://github.com/mui-org/material-ui-x](https://github.com/mui-org/material-ui-x) | MIT |
@@ -44,7 +45,6 @@ sidebarDepth: 0
 | i18next-http-backend | [https://github.com/i18next/i18next-http-backend](https://github.com/i18next/i18next-http-backend) | MIT |
 | jsonwebtoken | [https://github.com/auth0/node-jsonwebtoken](https://github.com/auth0/node-jsonwebtoken) | MIT |
 | keen-slider | [https://github.com/rcbyr/keen-slider](https://github.com/rcbyr/keen-slider) | MIT |
-| mdi-material-ui | [https://github.com/TeamWertarbyte/mdi-material-ui](https://github.com/TeamWertarbyte/mdi-material-ui) | MIT |
 | next | [https://github.com/vercel/next.js](https://github.com/vercel/next.js) | MIT |
 | nprogress | [https://github.com/rstacruz/nprogress](https://github.com/rstacruz/nprogress) | MIT |
 | payment | [https://github.com/jessepollak/payment](https://github.com/jessepollak/payment) | MIT |
