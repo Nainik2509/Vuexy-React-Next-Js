@@ -7,7 +7,7 @@ import { SwipeableDrawerProps } from '@mui/material/SwipeableDrawer'
 
 export type Layout = 'vertical' | 'horizontal' | 'blank' | 'blankWithAppBar'
 
-export type Skin = 'default' | 'bordered' | 'semi-dark'
+export type Skin = 'default' | 'bordered'
 
 export type ContentWidth = 'full' | 'boxed'
 

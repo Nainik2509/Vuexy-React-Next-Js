@@ -10,7 +10,6 @@ import Switch from '@mui/material/Switch'
 import Divider from '@mui/material/Divider'
 import { styled } from '@mui/material/styles'
 import IconButton from '@mui/material/IconButton'
-import InputLabel from '@mui/material/InputLabel'
 import RadioGroup from '@mui/material/RadioGroup'
 import Typography from '@mui/material/Typography'
 import Box, { BoxProps } from '@mui/material/Box'
@@ -149,35 +148,24 @@ const Customizer = () => {
               >
                 <FormControlLabel value='default' label='Default' control={<Radio />} />
                 <FormControlLabel value='bordered' label='Bordered' control={<Radio />} />
-                {layout === 'horizontal' ? null : (
-                  <FormControlLabel value='semi-dark' label='Semi Dark' control={<Radio />} />
-                )}
               </RadioGroup>
             </Box>
 
             {/* Mode */}
             <Box sx={{ mb: 5 }}>
               <Typography>Mode</Typography>
-              <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <InputLabel
-                  htmlFor='change-mode'
-                  sx={{ cursor: 'pointer', fontSize: '0.875rem', color: 'text.secondary' }}
-                >
-                  Light
-                </InputLabel>
-                <Switch
-                  id='change-mode'
-                  name='change-mode'
-                  checked={mode === 'dark'}
-                  onChange={e => handleChange('mode', e.target.checked ? 'dark' : 'light')}
-                />
-                <InputLabel
-                  htmlFor='change-mode'
-                  sx={{ cursor: 'pointer', fontSize: '0.875rem', color: 'text.secondary' }}
-                >
-                  Dark
-                </InputLabel>
-              </Box>
+              <RadioGroup
+                row
+                value={mode}
+                onChange={e => handleChange('mode', e.target.value as any)}
+                sx={{ '& .MuiFormControlLabel-label': { fontSize: '.875rem', color: 'text.secondary' } }}
+              >
+                <FormControlLabel value='light' label='light' control={<Radio />} />
+                <FormControlLabel value='dark' label='dark' control={<Radio />} />
+                {layout === 'horizontal' ? null : (
+                  <FormControlLabel value='semi-dark' label='Semi Dark' control={<Radio />} />
+                )}
+              </RadioGroup>
             </Box>
 
             {/* Color Picker */}

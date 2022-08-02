@@ -14,7 +14,7 @@ export type Settings = {
   skin: Skin
   appBar?: AppBar
   footer?: Footer
-  mode: PaletteMode
+  mode: PaletteMode & 'semi-dark'
   navHidden?: boolean // navigation menu
   direction: Direction
   navCollapsed: boolean
@@ -30,7 +30,7 @@ export type PageSpecificSettings = {
   skin?: Skin
   appBar?: AppBar
   footer?: Footer
-  mode?: PaletteMode
+  mode?: PaletteMode & 'semi-dark'
   navHidden?: boolean // navigation menu
   direction?: Direction
   navCollapsed?: boolean
@@ -54,6 +54,7 @@ interface SettingsProviderProps {
 const initialSettings: Settings = {
   themeColor: 'primary',
   mode: themeConfig.mode,
+  skin: themeConfig.skin,
   footer: themeConfig.footer,
   layout: themeConfig.layout,
   lastLayout: themeConfig.layout,
@@ -63,7 +64,6 @@ const initialSettings: Settings = {
   contentWidth: themeConfig.contentWidth,
   toastPosition: themeConfig.toastPosition,
   verticalNavToggleType: themeConfig.verticalNavToggleType,
-  skin: themeConfig.layout === 'horizontal' && themeConfig.skin === 'semi-dark' ? 'default' : themeConfig.skin,
   appBar: themeConfig.layout === 'horizontal' && themeConfig.appBar === 'hidden' ? 'fixed' : themeConfig.appBar
 }
 
@@ -131,9 +131,6 @@ export const SettingsProvider = ({ children, pageSettings }: SettingsProviderPro
   }, [pageSettings])
 
   useEffect(() => {
-    if (settings.layout === 'horizontal' && settings.skin === 'semi-dark') {
-      saveSettings({ ...settings, skin: 'default' })
-    }
     if (settings.layout === 'horizontal' && settings.appBar === 'hidden') {
       saveSettings({ ...settings, appBar: 'fixed' })
     }
