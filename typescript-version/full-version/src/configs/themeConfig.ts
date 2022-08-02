@@ -18,7 +18,6 @@ type ThemeConfig = {
   skin: Skin
   appBar: AppBar
   footer: Footer
-  mode: PaletteMode & 'semi-dark'
   navHidden: boolean
   navSubItemIcon: any
   direction: Direction
@@ -31,6 +30,7 @@ type ThemeConfig = {
   contentWidth: ContentWidth
   disableCustomizer: boolean
   responsiveFontSizes: boolean
+  mode: PaletteMode & 'semi-dark'
   collapsedNavigationSize: number
   horizontalMenuAnimation: boolean
   layout: 'vertical' | 'horizontal'
@@ -45,9 +45,10 @@ const themeConfig: ThemeConfig = {
   // ** Layout Configs
   templateName: 'Master' /* App Name */,
   layout: 'vertical' /* vertical | horizontal */,
-  mode: 'light' /* light | dark */,
+  mode: 'light' as PaletteMode &
+    'semi-dark' /* light | dark | semi-dark /*! Note: semi-dark value will only work for Vertical Layout */,
   direction: 'ltr' /* ltr | rtl */,
-  skin: 'default' /* default | bordered | semi-dark /*! Note: semi-dark value will only work for Vertical Layout */,
+  skin: 'default' /* default | bordered */,
   contentWidth: 'boxed' /* full | boxed */,
   footer: 'static' /* fixed | static | hidden */,
 

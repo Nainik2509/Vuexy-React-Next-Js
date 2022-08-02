@@ -1,19 +1,9 @@
 // ** MUI Imports
 import { Theme } from '@mui/material/styles'
 
-// ** Type Imports
-import { Settings } from 'src/@core/context/settingsContext'
-
-const GlobalStyles = (theme: Theme, settings: Settings) => {
-  // ** Vars
-  const { skin } = settings
-
+const GlobalStyles = (theme: Theme) => {
   const perfectScrollbarThumbBgColor = () => {
-    if (skin === 'semi-dark' && theme.palette.mode === 'light') {
-      return '#504B6D !important'
-    } else if (skin === 'semi-dark' && theme.palette.mode === 'dark') {
-      return '#C2C4D1 !important'
-    } else if (theme.palette.mode === 'light') {
+    if (theme.palette.mode === 'light') {
       return '#C2C4D1 !important'
     } else {
       return '#504B6D !important'
