@@ -29,11 +29,8 @@ import DialogContent from '@mui/material/DialogContent'
 import InputAdornment from '@mui/material/InputAdornment'
 import TableContainer from '@mui/material/TableContainer'
 
-// ** Icons Imports
-import EyeOutline from 'mdi-material-ui/EyeOutline'
-import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
-import DeleteOutline from 'mdi-material-ui/DeleteOutline'
-import SquareEditOutline from 'mdi-material-ui/SquareEditOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 interface State {
   newPassword: string
@@ -155,7 +152,11 @@ const UserViewSecurity = () => {
                           aria-label='toggle password visibility'
                           onMouseDown={handleMouseDownNewPassword}
                         >
-                          {values.showNewPassword ? <EyeOutline /> : <EyeOffOutline />}
+                          {values.showNewPassword ? (
+                            <Icon icon='mdi:eye-outline' />
+                          ) : (
+                            <Icon icon='mdi:eye-off-outline' />
+                          )}
                         </IconButton>
                       </InputAdornment>
                     }
@@ -180,7 +181,11 @@ const UserViewSecurity = () => {
                           onClick={handleClickShowConfirmNewPassword}
                           onMouseDown={handleMouseDownConfirmNewPassword}
                         >
-                          {values.showConfirmNewPassword ? <EyeOutline /> : <EyeOffOutline />}
+                          {values.showConfirmNewPassword ? (
+                            <Icon icon='mdi:eye-outline' />
+                          ) : (
+                            <Icon icon='mdi:eye-off-outline' />
+                          )}
                         </IconButton>
                       </InputAdornment>
                     }
@@ -211,10 +216,10 @@ const UserViewSecurity = () => {
             <Typography variant='body2'>{mobileNumber}</Typography>
             <Box>
               <IconButton aria-label='edit' sx={{ color: 'text.secondary' }} onClick={handleEditMobileNumberClickOpen}>
-                <SquareEditOutline sx={{ fontSize: '1.25rem' }} />
+                <Icon icon='mdi:square-edit-outline' fontSize='1.25rem' />
               </IconButton>
               <IconButton aria-label='delete' sx={{ color: 'text.secondary' }}>
-                <DeleteOutline sx={{ fontSize: '1.25rem' }} />
+                <Icon icon='mdi:delete-outline' fontSize='1.25rem' />
               </IconButton>
             </Box>
           </Box>

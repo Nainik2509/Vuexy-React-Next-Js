@@ -17,8 +17,8 @@ import OutlinedInput from '@mui/material/OutlinedInput'
 import InputAdornment from '@mui/material/InputAdornment'
 import FormHelperText from '@mui/material/FormHelperText'
 
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
 import { useForm, Controller } from 'react-hook-form'
@@ -83,7 +83,7 @@ const TwoFactorAuthenticationCard = () => {
           </Box>
 
           <IconButton size='small' onClick={close2FADialog} sx={{ position: 'absolute', right: '1rem', top: '1rem' }}>
-            <Close />
+            <Icon icon='mdi:close' />
           </IconButton>
 
           <Typography sx={{ color: 'text.secondary', fontWeight: 500 }}>Verify Your Mobile Number for SMS</Typography>

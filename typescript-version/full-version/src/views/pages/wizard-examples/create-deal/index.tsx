@@ -12,13 +12,8 @@ import MuiStepper, { StepperProps } from '@mui/material/Stepper'
 import MuiStepLabel, { StepLabelProps } from '@mui/material/StepLabel'
 import CardContent, { CardContentProps } from '@mui/material/CardContent'
 
-// ** Icons Imports
-import TagOutline from 'mdi-material-ui/TagOutline'
-import ChevronLeft from 'mdi-material-ui/ChevronLeft'
-import ChevronRight from 'mdi-material-ui/ChevronRight'
-import CreditCardOutline from 'mdi-material-ui/CreditCardOutline'
-import RocketLaunchOutline from 'mdi-material-ui/RocketLaunchOutline'
-import ClipboardTextOutline from 'mdi-material-ui/ClipboardTextOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Imports
 import CustomAvatar from 'src/@core/components/mui/avatar'
@@ -38,23 +33,23 @@ import StepperWrapper from 'src/@core/styles/mui/stepper'
 const steps = [
   {
     title: 'Deal Type',
-    icon: <TagOutline />,
+    icon: 'mdi:tag-outline',
     subtitle: 'Choose type of deal'
   },
   {
     title: 'Deal Details',
-    icon: <ClipboardTextOutline />,
-    subtitle: 'Provide deal details'
+    subtitle: 'Provide deal details',
+    icon: 'mdi:clipboard-text-outline'
   },
   {
     title: 'Deal Usage',
-    icon: <CreditCardOutline />,
+    icon: 'mdi:credit-card-outline',
     subtitle: 'Limitations & Offers'
   },
   {
     subtitle: 'Launch a deal',
     title: 'Review & Complete',
-    icon: <RocketLaunchOutline />
+    icon: 'mdi:rocket-launch-outline'
   }
 ]
 
@@ -72,20 +67,20 @@ const Stepper = styled(MuiStepper)<StepperProps>(({ theme }) => ({
 const StepLabel = styled(MuiStepLabel)<StepLabelProps>(({ theme }) => ({
   '& .MuiStepLabel-label': {
     display: 'flex',
-    '& .step-title, & .step-subtitle, & .MuiAvatar-root .MuiSvgIcon-root': {
+    '& .step-title, & .step-subtitle, & .MuiAvatar-root svg': {
       color: theme.palette.text.secondary
     },
     '&.Mui-active': {
       '& .step-title': {
         color: theme.palette.primary.main
       },
-      '& .MuiAvatar-root .MuiSvgIcon-root': {
+      '& .MuiAvatar-root svg': {
         color: theme.palette.common.white
       }
     },
     '&.Mui-completed': {
       opacity: 0.65,
-      '& .MuiAvatar-root .MuiSvgIcon-root': {
+      '& .MuiAvatar-root svg': {
         color: theme.palette.primary.main
       }
     }
@@ -143,14 +138,14 @@ const CreateDealWizard = () => {
           variant='outlined'
           onClick={handlePrev}
           disabled={activeStep === 0}
-          startIcon={<ChevronLeft />}
+          startIcon={<Icon icon='mdi:chevron-left' />}
         >
           Previous
         </Button>
         <Button
           variant='contained'
           color={stepCondition ? 'success' : 'primary'}
-          {...(!stepCondition ? { endIcon: <ChevronRight /> } : {})}
+          {...(!stepCondition ? { endIcon: <Icon icon='mdi:chevron-right' /> } : {})}
           onClick={() => (stepCondition ? alert('Submitted..!!') : handleNext())}
         >
           {stepCondition ? 'Submit' : 'Next'}
@@ -171,7 +166,7 @@ const CreateDealWizard = () => {
                   onClick={() => setActiveStep(index)}
                   sx={{
                     cursor: 'pointer',
-                    '&.Mui-completed + .MuiSvgIcon-root': { color: 'primary.main' }
+                    '&.Mui-completed + svg': { color: 'primary.main' }
                   }}
                 >
                   <StepLabel icon={<></>}>
@@ -187,7 +182,7 @@ const CreateDealWizard = () => {
                             : 'none'
                       }}
                     >
-                      {step.icon}
+                      <Icon icon={step.icon} />
                     </CustomAvatar>
                     <Box>
                       <Typography className='step-title'>{step.title}</Typography>

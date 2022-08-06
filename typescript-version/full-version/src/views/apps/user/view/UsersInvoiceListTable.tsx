@@ -1,5 +1,5 @@
 // ** React Imports
-import { MouseEvent, ReactElement, useState } from 'react'
+import { MouseEvent, useState } from 'react'
 
 // ** Next Import
 import Link from 'next/link'
@@ -17,20 +17,8 @@ import CardHeader from '@mui/material/CardHeader'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 
-// ** Icons Imports
-import Send from 'mdi-material-ui/Send'
-import Check from 'mdi-material-ui/Check'
-import ChartPie from 'mdi-material-ui/ChartPie'
-import Download from 'mdi-material-ui/Download'
-import ArrowDown from 'mdi-material-ui/ArrowDown'
-import EyeOutline from 'mdi-material-ui/EyeOutline'
-import TrendingUp from 'mdi-material-ui/TrendingUp'
-import ChevronDown from 'mdi-material-ui/ChevronDown'
-import ContentCopy from 'mdi-material-ui/ContentCopy'
-import DeleteOutline from 'mdi-material-ui/DeleteOutline'
-import PencilOutline from 'mdi-material-ui/PencilOutline'
-import ContentSaveOutline from 'mdi-material-ui/ContentSaveOutline'
-import InformationOutline from 'mdi-material-ui/InformationOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Type Imports
 import { ThemeColor } from 'src/@core/layouts/types'
@@ -46,8 +34,8 @@ interface Props {
 
 interface InvoiceStatusObj {
   [key: string]: {
+    icon: string
     color: ThemeColor
-    icon: ReactElement
   }
 }
 interface CellType {
@@ -61,12 +49,12 @@ const StyledLink = styled('a')(({ theme }) => ({
 
 // ** Vars
 const invoiceStatusObj: InvoiceStatusObj = {
-  Sent: { color: 'secondary', icon: <Send sx={{ fontSize: '1rem' }} /> },
-  Paid: { color: 'success', icon: <Check sx={{ fontSize: '1rem' }} /> },
-  Draft: { color: 'primary', icon: <ContentSaveOutline sx={{ fontSize: '1rem' }} /> },
-  'Partial Payment': { color: 'warning', icon: <ChartPie sx={{ fontSize: '1rem' }} /> },
-  'Past Due': { color: 'error', icon: <InformationOutline sx={{ fontSize: '1rem' }} /> },
-  Downloaded: { color: 'info', icon: <ArrowDown sx={{ fontSize: '1rem' }} /> }
+  Sent: { color: 'secondary', icon: 'mdi:send' },
+  Paid: { color: 'success', icon: 'mdi:check' },
+  Draft: { color: 'primary', icon: 'mdi:content-save-outline' },
+  'Partial Payment': { color: 'warning', icon: 'mdi:chart-pie' },
+  'Past Due': { color: 'error', icon: 'mdi:information-outline' },
+  Downloaded: { color: 'info', icon: 'mdi:arrow-down' }
 }
 
 const columns = [
@@ -85,12 +73,11 @@ const columns = [
     flex: 0.15,
     minWidth: 80,
     field: 'invoiceStatus',
-    renderHeader: () => <TrendingUp fontSize='small' />,
+    renderHeader: () => <Icon icon='mdi:trending-up' fontSize={20} />,
     renderCell: ({ row }: CellType) => {
       const { dueDate, balance, invoiceStatus } = row
 
       const color = invoiceStatusObj[invoiceStatus] ? invoiceStatusObj[invoiceStatus].color : 'primary'
-      const Icon = invoiceStatusObj[invoiceStatus] ? invoiceStatusObj[invoiceStatus].icon : null
 
       return (
         <Tooltip
@@ -113,7 +100,7 @@ const columns = [
           }
         >
           <CustomAvatar skin='light' color={color} sx={{ width: '1.875rem', height: '1.875rem' }}>
-            {Icon}
+            <Icon icon={invoiceStatusObj[invoiceStatus].icon} fontSize='1rem' />
           </CustomAvatar>
         </Tooltip>
       )
@@ -143,34 +130,35 @@ const columns = [
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <Tooltip title='Delete Invoice'>
           <IconButton size='small'>
-            <DeleteOutline fontSize='small' />
+            <Icon icon='mdi:delete-outline' fontSize={20} />
           </IconButton>
         </Tooltip>
         <Tooltip title='View'>
           <Box>
             <Link href={`/apps/invoice/preview/${row.id}`} passHref>
               <IconButton size='small' component='a' sx={{ textDecoration: 'none' }}>
-                <EyeOutline fontSize='small' />
+                <Icon icon='mdi:eye-outline' fontSize={20} />
               </IconButton>
             </Link>
           </Box>
         </Tooltip>
         <OptionsMenu
-          iconProps={{ fontSize: 'small' }}
+          iconProps={{ fontSize: 20 }}
           iconButtonProps={{ size: 'small' }}
+          menuProps={{ sx: { '& .MuiMenuItem-root svg': { mr: 2 } } }}
           options={[
             {
               text: 'Download',
-              icon: <Download fontSize='small' sx={{ mr: 2 }} />
+              icon: <Icon icon='mdi:download' fontSize={20} />
             },
             {
               text: 'Edit',
               href: `/apps/invoice/edit/${row.id}`,
-              icon: <PencilOutline fontSize='small' sx={{ mr: 2 }} />
+              icon: <Icon icon='mdi:pencil-outline' fontSize={20} />
             },
             {
               text: 'Duplicate',
-              icon: <ContentCopy fontSize='small' sx={{ mr: 2 }} />
+              icon: <Icon icon='mdi:content-copy' fontSize={20} />
             }
           ]}
         />
@@ -205,8 +193,8 @@ const InvoiceListTable = ({ invoiceData }: Props) => {
               variant='contained'
               aria-haspopup='true'
               onClick={handleClick}
-              endIcon={<ChevronDown />}
               aria-expanded={open ? 'true' : undefined}
+              endIcon={<Icon icon='mdi:chevron-down' />}
               aria-controls={open ? 'user-view-overview-export' : undefined}
             >
               Export

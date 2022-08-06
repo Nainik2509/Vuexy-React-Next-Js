@@ -13,13 +13,8 @@ import MuiTabList, { TabListProps } from '@mui/lab/TabList'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
 
-// ** Icons Imports
-import ChevronDown from 'mdi-material-ui/ChevronDown'
-import CartOutline from 'mdi-material-ui/CartOutline'
-import RotateRight from 'mdi-material-ui/RotateRight'
-import CameraOutline from 'mdi-material-ui/CameraOutline'
-import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
-import CreditCardOutline from 'mdi-material-ui/CreditCardOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Imports
 import CustomAvatar from 'src/@core/components/mui/avatar'
@@ -61,7 +56,7 @@ const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     borderRadius: theme.shape.borderRadius,
-    '& .MuiSvgIcon-root': {
+    '& svg': {
       marginBottom: 0,
       marginRight: theme.spacing(1)
     },
@@ -71,25 +66,15 @@ const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
   }
 }))
 
-const icons = {
-  CartOutline,
-  RotateRight,
-  CameraOutline,
-  ArchiveOutline,
-  CreditCardOutline
-}
-
 const Faqs = ({ data, activeTab, handleChange }: Props) => {
   const renderTabContent = () => {
     return Object.values(data.faqData).map(tab => {
-      const IconTag = icons[tab.icon as keyof typeof icons]
-
       return (
         <TabPanel key={tab.id} value={tab.id} sx={{ pt: 0, pl: { xs: 3, md: 12 }, width: '100%' }}>
           <Box key={tab.id}>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
               <CustomAvatar skin='light' variant='rounded' sx={{ height: 50, width: 50 }}>
-                <IconTag fontSize='large' />
+                <Icon icon={tab.icon} fontSize={35} />
               </CustomAvatar>
               <Box sx={{ ml: 4 }}>
                 <Typography sx={{ fontWeight: 500, fontSize: '1.375rem', lineHeight: 1.1 }}>{tab.title}</Typography>
@@ -100,7 +85,7 @@ const Faqs = ({ data, activeTab, handleChange }: Props) => {
               {tab.qandA.map((item, index) => {
                 return (
                   <Accordion key={item.id}>
-                    <AccordionSummary expandIcon={<ChevronDown />}>
+                    <AccordionSummary expandIcon={<Icon icon='mdi:chevron-down' />}>
                       <Typography sx={{ fontWeight: '500' }}>
                         Q{index + 1}: {item.question}
                       </Typography>
@@ -122,9 +107,7 @@ const Faqs = ({ data, activeTab, handleChange }: Props) => {
     if (data !== null) {
       return Object.values(data.faqData).map(tab => {
         if (tab.qandA.length) {
-          const IconTag = icons[tab.icon as keyof typeof icons]
-
-          return <Tab key={tab.id} value={tab.id} label={tab.title} icon={<IconTag fontSize='small' />} />
+          return <Tab key={tab.id} value={tab.id} label={tab.title} icon={<Icon icon={tab.icon} fontSize={20} />} />
         } else {
           return null
         }

@@ -10,9 +10,8 @@ import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import Box, { BoxProps } from '@mui/material/Box'
 
-// ** Icons Imports
-import PhoneOutline from 'mdi-material-ui/PhoneOutline'
-import EmailOutline from 'mdi-material-ui/EmailOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
@@ -65,7 +64,7 @@ const FaqFooter = () => {
         <Grid item xs={12} md={6}>
           <StyledBox1>
             <CustomAvatar skin='light' variant='rounded' sx={{ mt: 1.5, height: 38, width: 38 }}>
-              <PhoneOutline />
+              <Icon icon='mdi:phone-outline' />
             </CustomAvatar>
             <Link href='/' passHref>
               <Typography
@@ -84,7 +83,7 @@ const FaqFooter = () => {
         <Grid item xs={12} md={6}>
           <StyledBox2>
             <CustomAvatar skin='light' variant='rounded' sx={{ mt: 1.5, height: 38, width: 38 }}>
-              <EmailOutline />
+              <Icon icon='mdi:email-outline' />
             </CustomAvatar>
             <Link href='/' passHref>
               <Typography

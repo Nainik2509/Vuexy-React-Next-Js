@@ -10,9 +10,8 @@ import { styled } from '@mui/material/styles'
 import IconButton from '@mui/material/IconButton'
 import Typography, { TypographyProps } from '@mui/material/Typography'
 
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
-import FileDocumentOutline from 'mdi-material-ui/FileDocumentOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Components
 import toast from 'react-hot-toast'
@@ -70,7 +69,7 @@ const FileUploaderRestrictions = () => {
     if (file.type.startsWith('image')) {
       return <img width={38} height={38} alt={file.name} src={URL.createObjectURL(file as any)} />
     } else {
-      return <FileDocumentOutline />
+      return <Icon icon='mdi:file-document-outline' />
     }
   }
 
@@ -94,7 +93,7 @@ const FileUploaderRestrictions = () => {
         </div>
       </div>
       <IconButton onClick={() => handleRemoveFile(file)}>
-        <Close fontSize='small' />
+        <Icon icon='close' fontSize={20} />
       </IconButton>
     </ListItem>
   ))

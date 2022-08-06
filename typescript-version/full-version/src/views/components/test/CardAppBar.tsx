@@ -7,8 +7,8 @@ import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 
-// ** Icons Imports
-import Menu from 'mdi-material-ui/Menu'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 const CardAppBar = () => {
   return (
@@ -17,7 +17,7 @@ const CardAppBar = () => {
         <AppBar position='static'>
           <Toolbar>
             <IconButton size='large' sx={{ mr: 2.5 }} color='inherit' aria-label='menu'>
-              <Menu />
+              <Icon icon='mdi:menu' />
             </IconButton>
             <Typography variant='h6' sx={{ flexGrow: 1, color: 'common.white' }}>
               News

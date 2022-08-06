@@ -29,10 +29,8 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 // ** Third Party Imports
 import { useForm, Controller } from 'react-hook-form'
 
-// ** Icons Imports
-import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
-import CheckCircleOutline from 'mdi-material-ui/CheckCircleOutline'
-import CloseCircleOutline from 'mdi-material-ui/CloseCircleOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 const ImgStyled = styled('img')(({ theme }) => ({
   width: 100,
@@ -306,8 +304,8 @@ const TabAccount = () => {
       <Dialog fullWidth maxWidth='xs' open={open} onClose={handleClose}>
         <DialogContent>
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Box sx={{ maxWidth: '85%', textAlign: 'center' }}>
-              <AlertCircleOutline sx={{ mb: 4, fontSize: '5.5rem', color: 'warning.main' }} />
+            <Box sx={{ maxWidth: '85%', textAlign: 'center', '& svg': { mb: 4, color: 'warning.main' } }}>
+              <Icon icon='mdi:alert-circle-outline' fontSize='5.5rem' />
               <Typography>Are you sure you would like to deactivate your account?</Typography>
             </Box>
           </Box>
@@ -323,12 +321,21 @@ const TabAccount = () => {
       </Dialog>
       <Dialog fullWidth maxWidth='xs' open={secondDialogOpen} onClose={handleSecondDialogClose}>
         <DialogContent>
-          <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-            {userInput === 'yes' ? (
-              <CheckCircleOutline sx={{ mb: 14, fontSize: '5.5rem', color: 'success.main' }} />
-            ) : (
-              <CloseCircleOutline sx={{ mb: 14, fontSize: '5.5rem', color: 'error.main' }} />
-            )}
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              flexDirection: 'column',
+              '& svg': {
+                mb: 14,
+                color: userInput === 'yes' ? 'success.main' : 'error.main'
+              }
+            }}
+          >
+            <Icon
+              fontSize='5.5rem'
+              icon={userInput === 'yes' ? 'mdi:check-circle-outline' : 'mdi:close-circle-outline'}
+            />
             <Typography variant='h4' sx={{ mb: 8 }}>
               {userInput === 'yes' ? 'Deleted!' : 'Cancelled'}
             </Typography>

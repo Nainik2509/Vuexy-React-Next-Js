@@ -16,10 +16,8 @@ import format from 'date-fns/format'
 import DatePicker from 'react-datepicker'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, TooltipProps } from 'recharts'
 
-// ** Icons Imports
-import Circle from 'mdi-material-ui/Circle'
-import BellOutline from 'mdi-material-ui/BellOutline'
-import ChevronDown from 'mdi-material-ui/ChevronDown'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Types
 import { DateType } from 'src/types/forms/reactDatepickerTypes'
@@ -118,8 +116,8 @@ const CustomTooltip = (data: TooltipProps<any, any>) => {
           data.payload &&
           data.payload.map((i: any) => {
             return (
-              <Box sx={{ display: 'flex', alignItems: 'center' }} key={i.dataKey}>
-                <Circle sx={{ color: i.fill, mr: 2.5, fontSize: '0.6rem' }} />
+              <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { color: i.fill, mr: 2.5 } }} key={i.dataKey}>
+                <Icon icon='mdi:circle' fontSize='0.6rem' />
                 <Typography variant='body2'>{`${i.dataKey} : ${i.payload[i.dataKey]}`}</Typography>
               </Box>
             )
@@ -151,12 +149,12 @@ const RechartsBarChart = ({ direction }: Props) => {
         InputProps={{
           startAdornment: (
             <InputAdornment position='start'>
-              <BellOutline />
+              <Icon icon='mdi:bell-outline' />
             </InputAdornment>
           ),
           endAdornment: (
             <InputAdornment position='end'>
-              <ChevronDown />
+              <Icon icon='mdi:chevron-down' />
             </InputAdornment>
           )
         }}
@@ -195,20 +193,20 @@ const RechartsBarChart = ({ direction }: Props) => {
       />
       <CardContent>
         <Box sx={{ mb: 4, display: 'flex', flexWrap: 'wrap' }}>
-          <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#826af9' }} />
+          <Box sx={{ mr: 6, display: 'flex', alignItems: 'center', '& svg': { mr: 1.5, color: '#826af9' } }}>
+            <Icon icon='mdi:circle' fontSize='0.75rem' />
             <Typography variant='body2'>Apple</Typography>
           </Box>
-          <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#9f87ff' }} />
+          <Box sx={{ mr: 6, display: 'flex', alignItems: 'center', '& svg': { mr: 1.5, color: '#9f87ff' } }}>
+            <Icon icon='mdi:circle' fontSize='0.75rem' />
             <Typography variant='body2'>Samsung</Typography>
           </Box>
-          <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#d2b0ff' }} />
+          <Box sx={{ mr: 6, display: 'flex', alignItems: 'center', '& svg': { mr: 1.5, color: '#d2b0ff' } }}>
+            <Icon icon='mdi:circle' fontSize='0.75rem' />
             <Typography variant='body2'>Oneplus</Typography>
           </Box>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#f8d3ff' }} />
+          <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 1.5, color: '#f8d3ff' } }}>
+            <Icon icon='mdi:circle' fontSize='0.75rem' />
             <Typography variant='body2'>Motorola</Typography>
           </Box>
         </Box>

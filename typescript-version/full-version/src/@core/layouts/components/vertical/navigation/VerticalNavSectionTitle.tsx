@@ -3,8 +3,8 @@ import { styled, useTheme } from '@mui/material/styles'
 import Typography, { TypographyProps } from '@mui/material/Typography'
 import MuiListSubheader, { ListSubheaderProps } from '@mui/material/ListSubheader'
 
-// ** Icons Imports
-import DotsHorizontal from 'mdi-material-ui/DotsHorizontal'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Types
 import { NavSectionTitle } from 'src/@core/layouts/types'
@@ -84,7 +84,7 @@ const VerticalNavSectionTitle = (props: Props) => {
         }}
       >
         {navCollapsed && !navHover ? (
-          <DotsHorizontal />
+          <Icon icon='mdi:dots-horizontal' />
         ) : (
           <TypographyHeaderText noWrap>
             <Translations text={item.sectionTitle} />

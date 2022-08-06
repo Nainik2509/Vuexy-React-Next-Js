@@ -5,17 +5,18 @@ import Avatar from '@mui/material/Avatar'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 
-// ** Icons Imports
-import Heart from 'mdi-material-ui/Heart'
-import Facebook from 'mdi-material-ui/Facebook'
-import ShareVariant from 'mdi-material-ui/ShareVariant'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 const CardFacebook = () => {
   return (
     <Card sx={{ border: 0, boxShadow: 0, color: 'common.white', backgroundColor: 'primary.main' }}>
       <CardContent sx={{ p: theme => `${theme.spacing(3.25, 5, 4.5)} !important` }}>
-        <Typography variant='h6' sx={{ display: 'flex', mb: 2.75, alignItems: 'center', color: 'common.white' }}>
-          <Facebook sx={{ mr: 2.5 }} />
+        <Typography
+          variant='h6'
+          sx={{ display: 'flex', mb: 2.75, alignItems: 'center', color: 'common.white', '& svg': { mr: 2.5 } }}
+        >
+          <Icon icon='mdi:facebook' />
           Facebook Card
         </Typography>
         <Typography variant='body2' sx={{ mb: 3, color: 'common.white' }}>
@@ -30,14 +31,14 @@ const CardFacebook = () => {
             </Typography>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Box sx={{ display: 'flex', alignItems: 'center', mr: 3.5 }}>
-              <Heart sx={{ mr: 1.25 }} />
+            <Box sx={{ display: 'flex', alignItems: 'center', mr: 3.5, '& svg': { mr: 1.25 } }}>
+              <Icon icon='mdi:heart' />
               <Typography variant='body2' sx={{ color: 'common.white' }}>
                 3.2k
               </Typography>
             </Box>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <ShareVariant sx={{ mr: 1.25 }} />
+            <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 1.25 } }}>
+              <Icon icon='mdi:share-variant' />
               <Typography variant='body2' sx={{ color: 'common.white' }}>
                 49
               </Typography>

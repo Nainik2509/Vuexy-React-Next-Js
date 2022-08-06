@@ -17,10 +17,8 @@ import { styled, useTheme } from '@mui/material/styles'
 import MuiCard, { CardProps } from '@mui/material/Card'
 import InputAdornment from '@mui/material/InputAdornment'
 
-// ** Icons Imports
-import EyeOutline from 'mdi-material-ui/EyeOutline'
-import ChevronLeft from 'mdi-material-ui/ChevronLeft'
-import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Configs
 import themeConfig from 'src/configs/themeConfig'
@@ -190,7 +188,7 @@ const ResetPasswordV1 = () => {
                       aria-label='toggle password visibility'
                       onMouseDown={handleMouseDownNewPassword}
                     >
-                      {values.showNewPassword ? <EyeOutline /> : <EyeOffOutline />}
+                      <Icon icon={values.showNewPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
                     </IconButton>
                   </InputAdornment>
                 }
@@ -212,7 +210,7 @@ const ResetPasswordV1 = () => {
                       onClick={handleClickShowConfirmNewPassword}
                       onMouseDown={handleMouseDownConfirmNewPassword}
                     >
-                      {values.showConfirmNewPassword ? <EyeOutline /> : <EyeOffOutline />}
+                      <Icon icon={values.showConfirmNewPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
                     </IconButton>
                   </InputAdornment>
                 }
@@ -224,7 +222,7 @@ const ResetPasswordV1 = () => {
             <Typography variant='body2' sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Link passHref href='/pages/auth/login-v1'>
                 <LinkStyled>
-                  <ChevronLeft />
+                  <Icon icon='mdi:chevron-left' />
                   <span>Back to login</span>
                 </LinkStyled>
               </Link>

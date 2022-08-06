@@ -1,6 +1,3 @@
-// ** React Imports
-import { ReactNode } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -8,9 +5,8 @@ import Typography from '@mui/material/Typography'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
-// ** Icons Imports
-import ChevronUp from 'mdi-material-ui/ChevronUp'
-import ChevronDown from 'mdi-material-ui/ChevronDown'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Types
 import { ThemeColor } from 'src/@core/layouts/types'
@@ -22,7 +18,6 @@ import OptionsMenu from 'src/@core/components/option-menu'
 interface DataType {
   sales: string
   title: string
-  trend: ReactNode
   subtitle: string
   trendDir: string
   avatarText: string
@@ -38,8 +33,7 @@ const data: DataType[] = [
     avatarText: 'US',
     trendNumber: '25.8%',
     avatarColor: 'success',
-    subtitle: 'United states of america',
-    trend: <ChevronUp sx={{ mr: 0.5, color: 'success.main' }} />
+    subtitle: 'United states of america'
   },
   {
     sales: '645k',
@@ -48,8 +42,7 @@ const data: DataType[] = [
     avatarText: 'UK',
     trendNumber: '-6.2%',
     avatarColor: 'error',
-    subtitle: 'United Kingdom',
-    trend: <ChevronDown sx={{ mr: 0.5, color: 'error.main' }} />
+    subtitle: 'United Kingdom'
   },
   {
     sales: '148k',
@@ -58,8 +51,7 @@ const data: DataType[] = [
     avatarText: 'IN',
     subtitle: 'India',
     trendNumber: '12.4%',
-    avatarColor: 'warning',
-    trend: <ChevronUp sx={{ mr: 0.5, color: 'success.main' }} />
+    avatarColor: 'warning'
   },
   {
     sales: '86k',
@@ -68,8 +60,7 @@ const data: DataType[] = [
     avatarText: 'JA',
     subtitle: 'Japan',
     trendNumber: '-11.9%',
-    avatarColor: 'secondary',
-    trend: <ChevronDown sx={{ mr: 0.5, color: 'error.main' }} />
+    avatarColor: 'secondary'
   },
   {
     sales: '42k',
@@ -78,8 +69,7 @@ const data: DataType[] = [
     avatarText: 'KO',
     subtitle: 'Korea',
     trendNumber: '16.2%',
-    avatarColor: 'error',
-    trend: <ChevronUp sx={{ mr: 0.5, color: 'success.main' }} />
+    avatarColor: 'error'
   },
   {
     sales: '8k',
@@ -88,8 +78,7 @@ const data: DataType[] = [
     avatarText: 'CH',
     subtitle: 'China',
     trendNumber: '14.8%',
-    avatarColor: 'primary',
-    trend: <ChevronUp sx={{ mr: 0.5, color: 'success.main' }} />
+    avatarColor: 'primary'
   }
 ]
 
@@ -133,7 +122,16 @@ const CardSalesByCountries = () => {
                   <Box sx={{ mb: 0.5, display: 'flex', alignItems: 'center' }}>
                     <Typography sx={{ mr: 0.5, fontWeight: 600, fontSize: '0.875rem' }}>{item.title}</Typography>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      {item.trend}
+                      <Box
+                        component='span'
+                        sx={{
+                          mr: 0.5,
+                          color: item.trendDir === 'down' ? 'error.main' : 'success.main',
+                          '& svg': { verticalAlign: 'bottom' }
+                        }}
+                      >
+                        <Icon icon={item.trendDir === 'down' ? 'mdi:chevron-down' : 'mdi:chevron-up'} />
+                      </Box>
                       <Typography
                         variant='caption'
                         sx={{ color: item.trendDir === 'down' ? 'error.main' : 'success.main' }}

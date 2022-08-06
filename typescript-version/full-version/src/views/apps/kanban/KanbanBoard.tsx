@@ -8,8 +8,8 @@ import TextField from '@mui/material/TextField'
 import FormControl from '@mui/material/FormControl'
 import FormHelperText from '@mui/material/FormHelperText'
 
-// ** Icons Imports
-import Plus from 'mdi-material-ui/Plus'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
 import { useForm, Controller } from 'react-hook-form'
@@ -137,7 +137,7 @@ const KanbanBoard = (props: KanbanBoardLayoutProps) => {
 
       <Box sx={{ minWidth: 150, ml: 4 }}>
         {!showAddBoard ? (
-          <Button startIcon={<Plus fontSize='small' />} onClick={handleOpenAddBoard}>
+          <Button startIcon={<Icon icon='mdi:plus' fontSize={20} />} onClick={handleOpenAddBoard}>
             Add Board
           </Button>
         ) : (

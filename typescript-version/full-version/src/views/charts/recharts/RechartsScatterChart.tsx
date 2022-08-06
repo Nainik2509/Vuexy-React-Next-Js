@@ -16,10 +16,8 @@ import format from 'date-fns/format'
 import DatePicker from 'react-datepicker'
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts'
 
-// ** Icons Imports
-import Circle from 'mdi-material-ui/Circle'
-import BellOutline from 'mdi-material-ui/BellOutline'
-import ChevronDown from 'mdi-material-ui/ChevronDown'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Types
 import { DateType } from 'src/types/forms/reactDatepickerTypes'
@@ -104,12 +102,12 @@ const RechartsScatterChart = ({ direction }: Props) => {
         InputProps={{
           startAdornment: (
             <InputAdornment position='start'>
-              <BellOutline />
+              <Icon icon='mdi:bell-outline' />
             </InputAdornment>
           ),
           endAdornment: (
             <InputAdornment position='end'>
-              <ChevronDown />
+              <Icon icon='mdi:chevron-down' />
             </InputAdornment>
           )
         }}
@@ -148,16 +146,16 @@ const RechartsScatterChart = ({ direction }: Props) => {
       />
       <CardContent>
         <Box sx={{ display: 'flex', mb: 4 }}>
-          <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: 'primary.main' }} />
+          <Box sx={{ mr: 6, display: 'flex', alignItems: 'center', '& svg': { mr: 1.5, color: 'primary.main' } }}>
+            <Icon icon='mdi:circle' fontSize='0.75rem' />
             <Typography variant='body2'>React</Typography>
           </Box>
-          <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: 'success.main' }} />
+          <Box sx={{ mr: 6, display: 'flex', alignItems: 'center', '& svg': { mr: 1.5, color: 'success.main' } }}>
+            <Icon icon='mdi:circle' fontSize='0.75rem' />
             <Typography variant='body2'>Vue</Typography>
           </Box>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: 'error.main' }} />
+          <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 1.5, color: 'error.main' } }}>
+            <Icon icon='mdi:circle' fontSize='0.75rem' />
             <Typography variant='body2'>Angular</Typography>
           </Box>
         </Box>

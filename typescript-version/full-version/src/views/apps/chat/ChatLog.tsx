@@ -6,9 +6,8 @@ import Box from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 
-// ** Icons Imports
-import Check from 'mdi-material-ui/Check'
-import CheckAll from 'mdi-material-ui/CheckAll'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Components
 import PerfectScrollbarComponent, { ScrollBarProps } from 'react-perfect-scrollbar'
@@ -98,9 +97,23 @@ const ChatLog = (props: ChatLogType) => {
   const renderMsgFeedback = (isSender: boolean, feedback: MsgFeedbackType) => {
     if (isSender) {
       if (feedback.isSent && !feedback.isDelivered) {
-        return <Check sx={{ mr: 2, fontSize: '1rem', color: 'text.secondary' }} />
+        return (
+          <Box component='span' sx={{ display: 'inline-flex', '& svg': { mr: 2, color: 'text.secondary' } }}>
+            <Icon icon='mdi:check' fontSize='1rem' />
+          </Box>
+        )
       } else if (feedback.isSent && feedback.isDelivered) {
-        return <CheckAll sx={{ mr: 2, fontSize: '1rem', color: feedback.isSeen ? 'success.main' : 'text.secondary' }} />
+        return (
+          <Box
+            component='span'
+            sx={{
+              display: 'inline-flex',
+              '& svg': { mr: 2, color: feedback.isSeen ? 'success.main' : 'text.secondary' }
+            }}
+          >
+            <Icon icon='mdi:check-all' fontSize='1rem' />
+          </Box>
+        )
       } else {
         return null
       }

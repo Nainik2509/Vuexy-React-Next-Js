@@ -14,11 +14,8 @@ import OutlinedInput from '@mui/material/OutlinedInput'
 import FormHelperText from '@mui/material/FormHelperText'
 import InputAdornment from '@mui/material/InputAdornment'
 
-// ** Icons Imports
-import EyeOutline from 'mdi-material-ui/EyeOutline'
-import ChevronLeft from 'mdi-material-ui/ChevronLeft'
-import ChevronRight from 'mdi-material-ui/ChevronRight'
-import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
 import * as yup from 'yup'
@@ -178,7 +175,7 @@ const StepAccountDetails = ({ handleNext }: { handleNext: () => void }) => {
                   endAdornment={
                     <InputAdornment position='end'>
                       <IconButton edge='end' onClick={handleClickShowPassword} onMouseDown={handleMouseDownPassword}>
-                        {values.showPassword ? <EyeOutline /> : <EyeOffOutline />}
+                        {values.showPassword ? <Icon icon='mdi:eye-outline' /> : <Icon icon='mdi:eye-off-outline' />}
                       </IconButton>
                     </InputAdornment>
                   }
@@ -212,7 +209,11 @@ const StepAccountDetails = ({ handleNext }: { handleNext: () => void }) => {
                         onClick={handleClickShowConfirmPassword}
                         onMouseDown={handleMouseDownConfirmPassword}
                       >
-                        {values.showConfirmPassword ? <EyeOutline /> : <EyeOffOutline />}
+                        {values.showConfirmPassword ? (
+                          <Icon icon='mdi:eye-outline' />
+                        ) : (
+                          <Icon icon='mdi:eye-off-outline' />
+                        )}
                       </IconButton>
                     </InputAdornment>
                   }
@@ -229,10 +230,10 @@ const StepAccountDetails = ({ handleNext }: { handleNext: () => void }) => {
         </Grid>
         <Grid item xs={12}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Button disabled variant='contained' startIcon={<ChevronLeft fontSize='small' />}>
+            <Button disabled variant='contained' startIcon={<Icon icon='mdi:chevron-left' fontSize={20} />}>
               Previous
             </Button>
-            <Button type='submit' variant='contained' endIcon={<ChevronRight fontSize='small' />}>
+            <Button type='submit' variant='contained' endIcon={<Icon icon='mdi:chevron-right' fontSize={20} />}>
               Next
             </Button>
           </Box>

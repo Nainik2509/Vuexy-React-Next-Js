@@ -10,8 +10,8 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import MuiAccordion, { AccordionProps } from '@mui/material/Accordion'
 import MuiCardContent, { CardContentProps } from '@mui/material/CardContent'
 
-// ** Icons Imports
-import ChevronDown from 'mdi-material-ui/ChevronDown'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Types
 import { PricingDataType, PricingFaqType } from 'src/@core/components/plan-details/types'
@@ -57,8 +57,8 @@ const PricingFooter = (props: Props) => {
       return (
         <Accordion key={item.id} elevation={0} expanded={expanded === item.id} onChange={handleChange(item.id)}>
           <AccordionSummary
-            expandIcon={<ChevronDown />}
             id={`pricing-accordion-${item.id}-header`}
+            expandIcon={<Icon icon='mdi:chevron-down' />}
             aria-controls={`pricing-accordion-${item.id}-content`}
           >
             <Typography>{item.question}</Typography>

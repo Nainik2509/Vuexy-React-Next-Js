@@ -11,11 +11,8 @@ import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 import MuiStepper, { StepperProps } from '@mui/material/Stepper'
 
-// ** Icons Imports
-import HomeOutline from 'mdi-material-ui/HomeOutline'
-import ChevronRight from 'mdi-material-ui/ChevronRight'
-import AccountOutline from 'mdi-material-ui/AccountOutline'
-import CardTextOutline from 'mdi-material-ui/CardTextOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Imports
 import CustomAvatar from 'src/@core/components/mui/avatar'
@@ -34,18 +31,18 @@ import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 const steps = [
   {
     title: 'Account',
-    subtitle: 'Account Details',
-    icon: <HomeOutline />
+    icon: 'mdi:home-outline',
+    subtitle: 'Account Details'
   },
   {
     title: 'Personal',
-    subtitle: 'Enter Information',
-    icon: <AccountOutline />
+    icon: 'mdi:account-outline',
+    subtitle: 'Enter Information'
   },
   {
     title: 'Billing',
     subtitle: 'Payment Details',
-    icon: <CardTextOutline />
+    icon: 'mdi:card-text-outline'
   }
 ]
 
@@ -59,14 +56,14 @@ const Stepper = styled(MuiStepper)<StepperProps>(({ theme }) => ({
     '&.Mui-completed': {
       cursor: 'default',
       pointerEvents: 'none',
-      '& + .MuiSvgIcon-root': {
+      '& + svg': {
         color: theme.palette.primary.main
       }
     },
-    '&:not(.Mui-completed) + .MuiSvgIcon-root': {
+    '&:not(.Mui-completed) + svg': {
       color: theme.palette.text.disabled
     },
-    '& + .MuiSvgIcon-root': {
+    '& + svg': {
       display: 'none',
       marginLeft: theme.spacing(4),
       marginRight: theme.spacing(4)
@@ -89,14 +86,14 @@ const Stepper = styled(MuiStepper)<StepperProps>(({ theme }) => ({
       '& .step-subtitle': {
         color: theme.palette.text.disabled
       },
-      '& .MuiAvatar-root .MuiSvgIcon-root': {
+      '& .MuiAvatar-root svg': {
         color: theme.palette.text.disabled
       },
       '&.Mui-active': {
         '& .step-title': {
           color: theme.palette.primary.main
         },
-        '& .MuiAvatar-root .MuiSvgIcon-root': {
+        '& .MuiAvatar-root svg': {
           color: theme.palette.common.white
         }
       },
@@ -104,7 +101,7 @@ const Stepper = styled(MuiStepper)<StepperProps>(({ theme }) => ({
         '& .MuiTypography-root': {
           color: theme.palette.text.disabled
         },
-        '& .MuiAvatar-root .MuiSvgIcon-root': {
+        '& .MuiAvatar-root svg': {
           color: theme.palette.primary.main
         }
       }
@@ -113,7 +110,7 @@ const Stepper = styled(MuiStepper)<StepperProps>(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
       paddingBottom: 0,
       paddingLeft: theme.spacing(2),
-      '& + .MuiSvgIcon-root': {
+      '& + svg': {
         display: 'block'
       }
     }
@@ -156,7 +153,7 @@ const RegisterMultiSteps = () => {
     <Card sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
       <CardContent sx={{ py: 5.5 }}>
         <StepperWrapper>
-          <Stepper activeStep={activeStep} connector={<ChevronRight />}>
+          <Stepper activeStep={activeStep} connector={<Icon icon='mdi:chevron-right' />}>
             {steps.map((step, index) => {
               return (
                 <Step key={index}>
@@ -174,7 +171,7 @@ const RegisterMultiSteps = () => {
                             : 'none'
                       }}
                     >
-                      {step.icon}
+                      <Icon icon={step.icon} />
                     </CustomAvatar>
                     <Box>
                       <Typography className='step-title' sx={{ fontWeight: 600 }}>

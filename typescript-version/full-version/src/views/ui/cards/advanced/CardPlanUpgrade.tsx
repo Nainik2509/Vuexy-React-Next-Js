@@ -13,8 +13,8 @@ import CardHeader from '@mui/material/CardHeader'
 import FormControl from '@mui/material/FormControl'
 import CardContent from '@mui/material/CardContent'
 
-// ** Icons Imports
-import ArrowRight from 'mdi-material-ui/ArrowRight'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Imports
 import OptionsMenu from 'src/@core/components/option-menu'
@@ -181,7 +181,7 @@ const CardPlanUpgrade = () => {
         <FormControl fullWidth sx={{ mt: 4.5, mb: 3.5 }}>
           <TextField label='Email Address' placeholder='john.doe@email.com' size='small' />
         </FormControl>
-        <Button fullWidth variant='contained' endIcon={<ArrowRight />}>
+        <Button fullWidth variant='contained' endIcon={<Icon icon='mdi:arrow-right' />}>
           Proceed to payment
         </Button>
       </CardContent>

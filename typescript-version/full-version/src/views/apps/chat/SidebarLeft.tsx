@@ -24,9 +24,8 @@ import InputAdornment from '@mui/material/InputAdornment'
 // ** Third Party Components
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
-import Magnify from 'mdi-material-ui/Magnify'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Types
 import { ContactType, ChatSidebarLeftType, ChatsArrType } from 'src/types/apps/chatTypes'
@@ -421,14 +420,14 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
             InputProps={{
               startAdornment: (
                 <InputAdornment position='start' sx={{ color: 'text.secondary' }}>
-                  <Magnify fontSize='small' />
+                  <Icon icon='mdi:magnify' fontSize={20} />
                 </InputAdornment>
               )
             }}
           />
           {!mdAbove ? (
             <IconButton sx={{ p: 1, ml: 1 }} onClick={handleLeftSidebarToggle}>
-              <Close sx={{ fontSize: '1.375rem' }} />
+              <Icon icon='mdi:close' fontSize='1.375rem' />
             </IconButton>
           ) : null}
         </Box>

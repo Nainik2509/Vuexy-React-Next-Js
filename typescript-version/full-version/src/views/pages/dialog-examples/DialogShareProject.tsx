@@ -25,12 +25,8 @@ import DialogContent from '@mui/material/DialogContent'
 import ListItemAvatar from '@mui/material/ListItemAvatar'
 import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
 
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
-import ChevronDown from 'mdi-material-ui/ChevronDown'
-import LinkVariant from 'mdi-material-ui/LinkVariant'
-import FileDocumentOutline from 'mdi-material-ui/FileDocumentOutline'
-import AccountMultipleOutline from 'mdi-material-ui/AccountMultipleOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Configs Imports
 import themeConfig from 'src/configs/themeConfig'
@@ -156,8 +152,8 @@ const DialogShareProject = () => {
 
   return (
     <Card>
-      <CardContent sx={{ textAlign: 'center' }}>
-        <FileDocumentOutline sx={{ mb: 2, fontSize: '2rem' }} />
+      <CardContent sx={{ textAlign: 'center', '& svg': { mb: 2 } }}>
+        <Icon icon='mdi:file-document-outline' fontSize='2rem' />
         <Typography variant='h6' sx={{ mb: 4 }}>
           Share Project
         </Typography>
@@ -183,7 +179,7 @@ const DialogShareProject = () => {
             onClick={() => setShow(false)}
             sx={{ position: 'absolute', right: '1rem', top: '1rem' }}
           >
-            <Close />
+            <Icon icon='mdi:close' />
           </IconButton>
           <Box sx={{ mb: 4, textAlign: 'center' }}>
             <Typography variant='h5' sx={{ mb: 3 }}>
@@ -231,7 +227,7 @@ const DialogShareProject = () => {
                         onClick={handleClick}
                         aria-controls='modal-share-examples'
                       >
-                        <ChevronDown fontSize='small' />
+                        <Icon icon='mdi:chevron-down' fontSize={20} />
                       </IconButton>
                     ) : (
                       <Fragment>
@@ -241,7 +237,7 @@ const DialogShareProject = () => {
                           onClick={handleClick}
                           sx={{ textTransform: 'capitalize' }}
                           aria-controls='modal-share-examples'
-                          endIcon={<ChevronDown fontSize='small' />}
+                          endIcon={<Icon icon='mdi:chevron-down' fontSize={20} />}
                         >
                           {member.value}
                         </Button>
@@ -253,14 +249,14 @@ const DialogShareProject = () => {
             })}
           </List>
           <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <AccountMultipleOutline sx={{ mr: 2 }} />
+            <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
+              <Icon icon='mdi:account-multiple-outline' />
               <Typography sx={{ fontWeight: 600, fontSize: '0.875rem' }}>
                 {`Public to ${themeConfig.templateName} - ThemeSelection`}
               </Typography>
             </Box>
-            <Button>
-              <LinkVariant sx={{ mr: 2 }} fontSize='small' />
+            <Button sx={{ '& svg': { mr: 2 } }}>
+              <Icon icon='mdi:link-variant' fontSize={20} />
               Copy Project Link
             </Button>
           </Box>

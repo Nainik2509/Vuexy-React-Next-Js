@@ -10,12 +10,8 @@ import LinearProgress from '@mui/material/LinearProgress'
 // ** Custom Components Imports
 import CustomAvatar from 'src/@core/components/mui/avatar'
 
-// ** Icons Imports
-import React from 'mdi-material-ui/React'
-import Vuejs from 'mdi-material-ui/Vuejs'
-import Angular from 'mdi-material-ui/Angular'
-import Bootstrap from 'mdi-material-ui/Bootstrap'
-import LanguageJavascript from 'mdi-material-ui/LanguageJavascript'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 const StyledList = styled(List)<ListProps>(({ theme }) => ({
   '& .MuiListItem-root': {
@@ -54,7 +50,7 @@ const ListProgress = () => {
       <ListItem>
         <ListItemAvatar>
           <CustomAvatar skin='light' variant='rounded' color='info' sx={{ height: 36, width: 36 }}>
-            <React />
+            <Icon icon='mdi:react' />
           </CustomAvatar>
         </ListItemAvatar>
         <Box sx={{ width: '100%' }}>
@@ -65,7 +61,7 @@ const ListProgress = () => {
       <ListItem>
         <ListItemAvatar>
           <CustomAvatar skin='light' variant='rounded' sx={{ height: 36, width: 36 }}>
-            <Bootstrap />
+            <Icon icon='mdi:bootstrap' />
           </CustomAvatar>
         </ListItemAvatar>
         <Box sx={{ width: '100%' }}>
@@ -76,7 +72,7 @@ const ListProgress = () => {
       <ListItem>
         <ListItemAvatar>
           <CustomAvatar skin='light' variant='rounded' color='success' sx={{ height: 36, width: 36 }}>
-            <Vuejs />
+            <Icon icon='mdi:vuejs' />
           </CustomAvatar>
         </ListItemAvatar>
         <Box sx={{ width: '100%' }}>
@@ -87,7 +83,7 @@ const ListProgress = () => {
       <ListItem>
         <ListItemAvatar>
           <CustomAvatar skin='light' variant='rounded' color='error' sx={{ height: 36, width: 36 }}>
-            <Angular />
+            <Icon icon='mdi:angular' />
           </CustomAvatar>
         </ListItemAvatar>
         <Box sx={{ width: '100%' }}>
@@ -98,7 +94,7 @@ const ListProgress = () => {
       <ListItem>
         <ListItemAvatar>
           <CustomAvatar skin='light' variant='rounded' color='warning' sx={{ height: 36, width: 36 }}>
-            <LanguageJavascript />
+            <Icon icon='mdi:language-javascript' />
           </CustomAvatar>
         </ListItemAvatar>
         <Box sx={{ width: '100%' }}>

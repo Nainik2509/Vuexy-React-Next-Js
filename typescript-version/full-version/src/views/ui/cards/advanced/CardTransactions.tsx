@@ -8,9 +8,8 @@ import Typography from '@mui/material/Typography'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
-// ** Icons Imports
-import ChevronUp from 'mdi-material-ui/ChevronUp'
-import ChevronDown from 'mdi-material-ui/ChevronDown'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Types
 import { ThemeColor } from 'src/@core/layouts/types'
@@ -41,7 +40,11 @@ const data: DataType[] = [
     avatarColor: 'error',
     subtitle: 'Received Money',
     imgSrc: '/images/cards/paypal.png',
-    trend: <ChevronUp sx={{ color: 'success.main' }} />
+    trend: (
+      <Box component='span' sx={{ color: 'success.main', '& svg': { verticalAlign: 'bottom' } }}>
+        <Icon icon='mdi:chevron-up' />
+      </Box>
+    )
   },
   {
     imgWidth: 20,
@@ -52,7 +55,11 @@ const data: DataType[] = [
     avatarColor: 'success',
     subtitle: 'Digital Ocean',
     imgSrc: '/images/cards/credit-card.png',
-    trend: <ChevronDown sx={{ color: 'error.main' }} />
+    trend: (
+      <Box component='span' sx={{ color: 'error.main', '& svg': { verticalAlign: 'bottom' } }}>
+        <Icon icon='mdi:chevron-down' />
+      </Box>
+    )
   },
   {
     imgWidth: 20,
@@ -63,7 +70,11 @@ const data: DataType[] = [
     subtitle: 'Netflix',
     avatarColor: 'warning',
     imgSrc: '/images/cards/atm-card.png',
-    trend: <ChevronDown sx={{ color: 'error.main' }} />
+    trend: (
+      <Box component='span' sx={{ color: 'error.main', '& svg': { verticalAlign: 'bottom' } }}>
+        <Icon icon='mdi:chevron-down' />
+      </Box>
+    )
   },
   {
     imgWidth: 20,
@@ -74,7 +85,11 @@ const data: DataType[] = [
     subtitle: "Mac'D",
     avatarColor: 'primary',
     imgSrc: '/images/cards/wallet.png',
-    trend: <ChevronDown sx={{ color: 'error.main' }} />
+    trend: (
+      <Box component='span' sx={{ color: 'error.main', '& svg': { verticalAlign: 'bottom' } }}>
+        <Icon icon='mdi:chevron-down' />
+      </Box>
+    )
   },
   {
     imgWidth: 20,
@@ -85,7 +100,11 @@ const data: DataType[] = [
     avatarColor: 'info',
     imgAlt: 'arrow-growth',
     imgSrc: '/images/cards/arrow-growth.png',
-    trend: <ChevronUp sx={{ color: 'success.main' }} />
+    trend: (
+      <Box component='span' sx={{ color: 'success.main', '& svg': { verticalAlign: 'bottom' } }}>
+        <Icon icon='mdi:chevron-up' />
+      </Box>
+    )
   },
   {
     imgWidth: 20,
@@ -96,7 +115,11 @@ const data: DataType[] = [
     subtitle: 'Buy Watch',
     avatarColor: 'primary',
     imgSrc: '/images/cards/wallet.png',
-    trend: <ChevronDown sx={{ color: 'error.main' }} />
+    trend: (
+      <Box component='span' sx={{ color: 'error.main', '& svg': { verticalAlign: 'bottom' } }}>
+        <Icon icon='mdi:chevron-down' />
+      </Box>
+    )
   }
 ]
 

@@ -17,9 +17,8 @@ import ListItemButton from '@mui/material/ListItemButton'
 // ** Third Party Imports
 import clsx from 'clsx'
 
-// ** Icons Imports
-import ChevronLeft from 'mdi-material-ui/ChevronLeft'
-import ChevronRight from 'mdi-material-ui/ChevronRight'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Configs Import
 import themeConfig from 'src/configs/themeConfig'
@@ -60,12 +59,7 @@ const MenuItemTextWrapper = styled(Box)<BoxProps>(() => ({
   ...(themeConfig.menuTextTruncate && { overflow: 'hidden' })
 }))
 
-const MenuGroupToggleRightIcon = styled(ChevronRight)(({ theme }) => ({
-  color: theme.palette.text.primary,
-  transition: 'transform .25s ease-in-out'
-}))
-
-const MenuGroupToggleLeftIcon = styled(ChevronLeft)(({ theme }) => ({
+const MenuGroupToggleIcon = styled(Icon)(({ theme }) => ({
   color: theme.palette.text.primary,
   transition: 'transform .25s ease-in-out'
 }))
@@ -304,21 +298,15 @@ const VerticalNavGroup = (props: Props) => {
                     }}
                   />
                 ) : null}
-                {direction === 'ltr' ? (
-                  <MenuGroupToggleRightIcon
-                    sx={{
-                      ...conditionalColor(),
-                      ...(groupActive.includes(item.title) ? { transform: 'rotate(90deg)' } : {})
-                    }}
-                  />
-                ) : (
-                  <MenuGroupToggleLeftIcon
-                    sx={{
-                      ...conditionalColor(),
-                      ...(groupActive.includes(item.title) ? { transform: 'rotate(-90deg)' } : {})
-                    }}
-                  />
-                )}
+                <MenuGroupToggleIcon
+                  icon={direction === 'ltr' ? 'mdi:chevron-right' : 'mdi:chevron-left'}
+                  sx={{
+                    ...conditionalColor(),
+                    ...(groupActive.includes(item.title)
+                      ? { transform: direction === 'ltr' ? 'rotate(90deg)' : 'rotate(-90deg)' }
+                      : {})
+                  }}
+                />
               </Box>
             </MenuItemTextWrapper>
           </ListItemButton>

@@ -14,10 +14,8 @@ import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 import TableContainer from '@mui/material/TableContainer'
 
-// ** Icons Imports
-import Circle from 'mdi-material-ui/Circle'
-import ChevronUp from 'mdi-material-ui/ChevronUp'
-import ChevronDown from 'mdi-material-ui/ChevronDown'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Component Imports
 import { BarChart, Bar, ResponsiveContainer } from 'recharts'
@@ -42,42 +40,66 @@ const data: DataType[] = [
     title: 'Direct',
     color: 'success',
     trendNumber: '15%',
-    trend: <ChevronDown sx={{ color: 'error.main' }} />
+    trend: (
+      <Box component='span' sx={{ color: 'error.main', '& svg': { verticalAlign: 'bottom' } }}>
+        <Icon icon='mdi:chevron-down' />
+      </Box>
+    )
   },
   {
     sales: '57,484',
     title: 'Organic',
     color: 'primary',
     trendNumber: '85%',
-    trend: <ChevronUp sx={{ color: 'success.main' }} />
+    trend: (
+      <Box component='span' sx={{ color: 'success.main', '& svg': { verticalAlign: 'bottom' } }}>
+        <Icon icon='mdi:chevron-up' />
+      </Box>
+    )
   },
   {
     sales: '2,534',
     color: 'warning',
     title: 'Referral',
     trendNumber: '48%',
-    trend: <ChevronUp sx={{ color: 'success.main' }} />
+    trend: (
+      <Box component='span' sx={{ color: 'success.main', '& svg': { verticalAlign: 'bottom' } }}>
+        <Icon icon='mdi:chevron-up' />
+      </Box>
+    )
   },
   {
     sales: '977',
     title: 'Mail',
     color: 'error',
     trendNumber: '36%',
-    trend: <ChevronDown sx={{ color: 'error.main' }} />
+    trend: (
+      <Box component='span' sx={{ color: 'error.main', '& svg': { verticalAlign: 'bottom' } }}>
+        <Icon icon='mdi:chevron-down' />
+      </Box>
+    )
   },
   {
     sales: '92',
     color: 'info',
     title: 'Social',
     trendNumber: '55%',
-    trend: <ChevronUp sx={{ color: 'success.main' }} />
+    trend: (
+      <Box component='span' sx={{ color: 'success.main', '& svg': { verticalAlign: 'bottom' } }}>
+        <Icon icon='mdi:chevron-up' />
+      </Box>
+    )
   },
   {
     sales: '28',
     title: 'Other',
     color: 'secondary',
     trendNumber: '12%',
-    trend: <ChevronUp sx={{ color: 'success.main' }} />
+    trend: (
+      <Box component='span' sx={{ color: 'success.main', '& svg': { verticalAlign: 'bottom' } }}>
+        <Icon icon='mdi:chevron-up' />
+      </Box>
+    )
   }
 ]
 
@@ -140,8 +162,10 @@ const CardWebsiteStats = () => {
                     }}
                   >
                     <TableCell>
-                      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                        <Circle sx={{ mr: 1.8, fontSize: '1rem', color: `${row.color}.main` }} />
+                      <Box
+                        sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 1.8, color: `${row.color}.main` } }}
+                      >
+                        <Icon icon='mdi:circle' fontSize='1rem' />
                         <Typography sx={{ fontSize: '0.875rem' }}>{row.title}</Typography>
                       </Box>
                     </TableCell>

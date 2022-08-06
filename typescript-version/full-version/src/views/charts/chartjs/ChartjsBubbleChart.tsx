@@ -5,8 +5,8 @@ import CardHeader from '@mui/material/CardHeader'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 
-// ** Icons Imports
-import ArrowUp from 'mdi-material-ui/ArrowUp'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
 import { Bubble, ChartProps } from 'react-chartjs-2'
@@ -128,8 +128,8 @@ const ChartjsBubbleChart = (props: BubbleProps) => {
               color='success'
               sx={{ fontWeight: 500, borderRadius: 1, fontSize: '0.875rem' }}
               label={
-                <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                  <ArrowUp sx={{ fontSize: '1rem', mr: 1 }} />
+                <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 1 } }}>
+                  <Icon icon='mdi:arrow-up' fontSize='1rem' />
                   <span>22%</span>
                 </Box>
               }

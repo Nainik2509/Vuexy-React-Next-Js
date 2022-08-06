@@ -9,8 +9,8 @@ import MuiCard, { CardProps } from '@mui/material/Card'
 import InputAdornment from '@mui/material/InputAdornment'
 import MuiTextField, { TextFieldProps } from '@mui/material/TextField'
 
-// ** Icons Imports
-import Magnify from 'mdi-material-ui/Magnify'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 interface Props {
   searchTerm: string
@@ -61,7 +61,7 @@ const FaqHeader = (props: Props) => {
           InputProps={{
             startAdornment: (
               <InputAdornment position='start'>
-                <Magnify />
+                <Icon icon='mdi:magnify' />
               </InputAdornment>
             )
           }}

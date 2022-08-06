@@ -8,9 +8,8 @@ import TextField from '@mui/material/TextField'
 import IconButton from '@mui/material/IconButton'
 import Box, { BoxProps } from '@mui/material/Box'
 
-// ** Icons Imports
-import Microphone from 'mdi-material-ui/Microphone'
-import Attachment from 'mdi-material-ui/Attachment'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Types
 import { SendMsgComponentType } from 'src/types/apps/chatTypes'
@@ -60,10 +59,10 @@ const SendMsgForm = (props: SendMsgComponentType) => {
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <IconButton size='small' sx={{ color: 'text.primary' }}>
-            <Microphone sx={{ fontSize: '1.375rem' }} />
+            <Icon icon='mdi:microphone' fontSize='1.375rem' />
           </IconButton>
           <IconButton size='small' component='label' htmlFor='upload-img' sx={{ mr: 4, color: 'text.primary' }}>
-            <Attachment sx={{ fontSize: '1.375rem' }} />
+            <Icon icon='mdi:attachment' fontSize='1.375rem' />
             <input hidden type='file' id='upload-img' />
           </IconButton>
           <Button type='submit' variant='contained'>

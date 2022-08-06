@@ -13,10 +13,8 @@ import Divider from '@mui/material/Divider'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 
-// ** Icons Imports
-import CrownOutline from 'mdi-material-ui/CrownOutline'
-import AccountOutline from 'mdi-material-ui/AccountOutline'
-import RocketLaunchOutline from 'mdi-material-ui/RocketLaunchOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
@@ -28,7 +26,11 @@ const dataIcons = [
     value: 'standard',
     title: 'Standard',
     gridProps: { sm: 4, xs: 12 },
-    icon: <AccountOutline sx={{ mb: 2, fontSize: '2rem', color: 'text.secondary' }} />,
+    icon: (
+      <Box sx={{ mb: 2, color: 'text.secondary' }}>
+        <Icon fontSize='2rem' icon='mdi:account-outline' />
+      </Box>
+    ),
     content: (
       <>
         <CustomChip
@@ -49,7 +51,11 @@ const dataIcons = [
     value: 'express',
     title: 'Express',
     gridProps: { sm: 4, xs: 12 },
-    icon: <CrownOutline sx={{ mb: 2, fontSize: '2rem', color: 'text.secondary' }} />,
+    icon: (
+      <Box sx={{ mb: 2, color: 'text.secondary' }}>
+        <Icon fontSize='2rem' icon='mdi:crown-outline' />
+      </Box>
+    ),
     content: (
       <>
         <CustomChip
@@ -70,7 +76,11 @@ const dataIcons = [
     value: 'overnight',
     title: 'Overnight',
     gridProps: { sm: 4, xs: 12 },
-    icon: <RocketLaunchOutline sx={{ mb: 2, fontSize: '2rem', color: 'text.secondary' }} />,
+    icon: (
+      <Box sx={{ mb: 2, color: 'text.secondary' }}>
+        <Icon fontSize='2rem' icon='mdi:rocket-launch-outline' />
+      </Box>
+    ),
     content: (
       <>
         <CustomChip

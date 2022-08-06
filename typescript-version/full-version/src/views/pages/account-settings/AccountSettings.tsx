@@ -9,12 +9,8 @@ import { styled } from '@mui/material/styles'
 import Button, { ButtonProps } from '@mui/material/Button'
 import ButtonGroup, { ButtonGroupProps } from '@mui/material/ButtonGroup'
 
-// ** Icons Imports
-import LinkVariant from 'mdi-material-ui/LinkVariant'
-import BellOutline from 'mdi-material-ui/BellOutline'
-import AccountOutline from 'mdi-material-ui/AccountOutline'
-import LockOpenOutline from 'mdi-material-ui/LockOpenOutline'
-import BookmarkOutline from 'mdi-material-ui/BookmarkOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Demo Tabs Imports
 import TabAccount from 'src/views/pages/account-settings/TabAccount'
@@ -28,8 +24,8 @@ import { PricingDataType } from 'src/@core/components/plan-details/types'
 
 type TablistType = {
   name: string
+  icon: string
   value: string
-  icon: ReactElement
 }
 
 type tabContentListType = {
@@ -37,11 +33,11 @@ type tabContentListType = {
 }
 
 const tabsList: TablistType[] = [
-  { name: 'Account', value: 'account', icon: <AccountOutline /> },
-  { name: 'Security', value: 'security', icon: <LockOpenOutline /> },
-  { name: 'Billing', value: 'billing', icon: <BookmarkOutline /> },
-  { name: 'Notifications', value: 'notifications', icon: <BellOutline /> },
-  { name: 'Connections', value: 'connections', icon: <LinkVariant /> }
+  { name: 'Account', value: 'account', icon: 'mdi:account-outline' },
+  { name: 'Security', value: 'security', icon: 'mdi:lock-open-outline' },
+  { name: 'Billing', value: 'billing', icon: 'mdi:bookmark-outline' },
+  { name: 'Notifications', value: 'notifications', icon: 'mdi:bell-outline' },
+  { name: 'Connections', value: 'connections', icon: 'mdi:link-variant' }
 ]
 
 const DefaultButton = styled(Button)<ButtonProps>(({ theme }) => ({
@@ -105,7 +101,7 @@ const AccountSettings = ({ tab, apiPricingData }: { tab: string; apiPricingData:
             <ButtonTag
               key={value}
               disableRipple
-              startIcon={icon}
+              startIcon={<Icon icon={icon} />}
               onClick={() => handleClick(value)}
               sx={{ borderRadius: '6px !important' }}
             >

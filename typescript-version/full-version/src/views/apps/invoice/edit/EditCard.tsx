@@ -25,8 +25,7 @@ import TableCell, { TableCellBaseProps } from '@mui/material/TableCell'
 import CardContent, { CardContentProps } from '@mui/material/CardContent'
 
 // ** Icon Imports
-import Plus from 'mdi-material-ui/Plus'
-import Close from 'mdi-material-ui/Close'
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
 import axios from 'axios'
@@ -439,7 +438,7 @@ const EditCard = ({ data }: Props) => {
                       </Grid>
                       <InvoiceAction>
                         <IconButton size='small' onClick={deleteForm}>
-                          <Close fontSize='small' />
+                          <Icon icon='mdi:close' fontSize={20} />
                         </IconButton>
                       </InvoiceAction>
                     </RepeatingContent>
@@ -454,8 +453,8 @@ const EditCard = ({ data }: Props) => {
               <Button
                 size='small'
                 variant='contained'
-                startIcon={<Plus fontSize='small' />}
                 onClick={() => setCount(count + 1)}
+                startIcon={<Icon icon='mdi:plus' fontSize={20} />}
               >
                 Add Item
               </Button>

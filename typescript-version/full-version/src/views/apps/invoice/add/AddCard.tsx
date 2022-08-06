@@ -25,8 +25,7 @@ import TableCell, { TableCellBaseProps } from '@mui/material/TableCell'
 import CardContent, { CardContentProps } from '@mui/material/CardContent'
 
 // ** Icon Imports
-import Plus from 'mdi-material-ui/Plus'
-import Close from 'mdi-material-ui/Close'
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
 import DatePicker from 'react-datepicker'
@@ -291,7 +290,7 @@ const EditCard = (props: Props) => {
                   size='small'
                   color='success'
                   onClick={handleAddNewCustomer}
-                  startIcon={<Plus fontSize='small' />}
+                  startIcon={<Icon icon='mdi:plus' fontSize={20} />}
                   sx={{ '&:hover': { backgroundColor: 'transparent' } }}
                 >
                   Add New Customer
@@ -455,7 +454,7 @@ const EditCard = (props: Props) => {
                     </Grid>
                     <InvoiceAction>
                       <IconButton size='small' onClick={deleteForm}>
-                        <Close fontSize='small' />
+                        <Icon icon='mdi:close' fontSize={20} />
                       </IconButton>
                     </InvoiceAction>
                   </RepeatingContent>
@@ -470,7 +469,7 @@ const EditCard = (props: Props) => {
             <Button
               size='small'
               variant='contained'
-              startIcon={<Plus fontSize='small' />}
+              startIcon={<Icon icon='mdi:plus' fontSize={20} />}
               onClick={() => setCount(count + 1)}
             >
               Add Item

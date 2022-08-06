@@ -12,11 +12,8 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import ListItemButton from '@mui/material/ListItemButton'
 
-// ** Icons Imports
-import StarOutline from 'mdi-material-ui/StarOutline'
-import DeleteOutline from 'mdi-material-ui/DeleteOutline'
-import InboxArrowDown from 'mdi-material-ui/InboxArrowDown'
-import InformationOutline from 'mdi-material-ui/InformationOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 const DrawerComponent = () => {
   // ** State
@@ -44,7 +41,7 @@ const DrawerComponent = () => {
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <InboxArrowDown />
+                  <Icon icon='mdi:inbox-arrow-down' />
                 </ListItemIcon>
                 <ListItemText primary='Index' />
               </ListItemButton>
@@ -52,7 +49,7 @@ const DrawerComponent = () => {
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <StarOutline />
+                  <Icon icon='mdi:star-outline' />
                 </ListItemIcon>
                 <ListItemText primary='Starred' />
               </ListItemButton>
@@ -63,7 +60,7 @@ const DrawerComponent = () => {
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <DeleteOutline />
+                  <Icon icon='mdi:delete-outline' />
                 </ListItemIcon>
                 <ListItemText primary='Trash' />
               </ListItemButton>
@@ -71,7 +68,7 @@ const DrawerComponent = () => {
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <InformationOutline />
+                  <Icon icon='mdi:information-outline' />
                 </ListItemIcon>
                 <ListItemText primary='Spam' />
               </ListItemButton>

@@ -3,22 +3,33 @@ import Checkbox from '@mui/material/Checkbox'
 import FormGroup from '@mui/material/FormGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
-// ** Icons Imports
-import Star from 'mdi-material-ui/Star'
-import Heart from 'mdi-material-ui/Heart'
-import StarOutline from 'mdi-material-ui/StarOutline'
-import HeartOutline from 'mdi-material-ui/HeartOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 const CheckboxesCustomIcons = () => {
   return (
     <FormGroup row>
       <FormControlLabel
         label='Heart'
-        control={<Checkbox defaultChecked name='size-small' icon={<HeartOutline />} checkedIcon={<Heart />} />}
+        control={
+          <Checkbox
+            defaultChecked
+            name='size-small'
+            checkedIcon={<Icon icon='mdi:heart' />}
+            icon={<Icon icon='mdi:heart-outline' />}
+          />
+        }
       />
       <FormControlLabel
         label='Star'
-        control={<Checkbox defaultChecked name='size-small' icon={<StarOutline />} checkedIcon={<Star />} />}
+        control={
+          <Checkbox
+            defaultChecked
+            name='size-small'
+            checkedIcon={<Icon icon='mdi:star' />}
+            icon={<Icon icon='mdi:star-outline' />}
+          />
+        }
       />
     </FormGroup>
   )

@@ -9,8 +9,8 @@ import AvatarGroup from '@mui/material/AvatarGroup'
 import CardContent from '@mui/material/CardContent'
 import LinearProgress from '@mui/material/LinearProgress'
 
-// ** Icons Imports
-import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
@@ -23,8 +23,8 @@ const CardFinanceSummary = () => {
         title='Finance Summary'
         subheader='Check out each Column for more details'
         action={
-          <CustomAvatar skin='light' sx={{ width: 48, height: 48 }}>
-            <CurrencyUsd sx={{ fontSize: '2rem', color: 'primary.main' }} />
+          <CustomAvatar skin='light' sx={{ width: 48, height: 48, color: 'primary.main' }}>
+            <Icon icon='mdi:currency-usd' fontSize='2rem' />
           </CustomAvatar>
         }
       />

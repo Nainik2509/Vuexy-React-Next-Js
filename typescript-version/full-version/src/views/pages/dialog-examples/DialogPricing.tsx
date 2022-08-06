@@ -15,9 +15,8 @@ import CardContent from '@mui/material/CardContent'
 import Fade, { FadeProps } from '@mui/material/Fade'
 import DialogContent from '@mui/material/DialogContent'
 
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
-import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Imports
 import PlanDetails from 'src/@core/components/plan-details'
@@ -61,8 +60,8 @@ const DialogPricing = ({ data }: Props) => {
 
   return (
     <Card>
-      <CardContent sx={{ textAlign: 'center' }}>
-        <CurrencyUsd sx={{ mb: 2, fontSize: '2rem' }} />
+      <CardContent sx={{ textAlign: 'center', '& svg': { mb: 2 } }}>
+        <Icon icon='mdi:currency-usd' fontSize='2rem' />
         <Typography variant='h6' sx={{ mb: 4 }}>
           Pricing
         </Typography>
@@ -86,7 +85,7 @@ const DialogPricing = ({ data }: Props) => {
             onClick={() => setShow(false)}
             sx={{ position: 'absolute', right: '1rem', top: '1rem' }}
           >
-            <Close />
+            <Icon icon='mdi:close' />
           </IconButton>
           <Box sx={{ mb: 4, textAlign: 'center' }}>
             <Typography variant='h5' sx={{ mb: 3 }}>

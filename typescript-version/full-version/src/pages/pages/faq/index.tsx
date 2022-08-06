@@ -8,8 +8,8 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next/types'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 
-// ** Icons Imports
-import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
 import axios from 'axios'
@@ -50,8 +50,8 @@ const FAQ = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>) => {
   }
 
   const renderNoResult = (
-    <Box sx={{ mt: 8, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-      <AlertCircleOutline sx={{ mr: 2 }} />
+    <Box sx={{ mt: 8, display: 'flex', justifyContent: 'center', alignItems: 'center', '& svg': { mr: 2 } }}>
+      <Icon icon='mdi:alert-circle-outline' />
       <Typography variant='h6'>No Results Found!!</Typography>
     </Box>
   )

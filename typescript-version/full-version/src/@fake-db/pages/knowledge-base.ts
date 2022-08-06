@@ -57,8 +57,8 @@ const data: KnowledgeBaseType = {
   ],
   knowledgeBaseCategory: [
     {
-      icon: 'CogOutline',
       iconColor: 'primary',
+      icon: 'mdi:cog-outline',
       title: 'Account Settings',
       questions: [
         {
@@ -84,7 +84,7 @@ const data: KnowledgeBaseType = {
       ]
     },
     {
-      icon: 'Link',
+      icon: 'mdi:link',
       iconColor: 'success',
       title: 'API Questions',
       questions: [
@@ -113,7 +113,7 @@ const data: KnowledgeBaseType = {
     {
       title: 'Billing',
       iconColor: 'error',
-      icon: 'CurrencyUsd',
+      icon: 'mdi:currency-usd',
       questions: [
         {
           slug: 'can-i-contact-a-salés-rep',
@@ -139,8 +139,8 @@ const data: KnowledgeBaseType = {
     },
     {
       iconColor: 'warning',
-      icon: 'LockOpenOutline',
       title: 'Copyright & Legal',
+      icon: 'mdi:lock-open-outline',
       questions: [
         {
           slug: 'how-do-i-contact-legal',
@@ -165,9 +165,9 @@ const data: KnowledgeBaseType = {
       ]
     },
     {
-      icon: 'Cellphone',
       iconColor: 'info',
       title: 'Mobile Apps',
+      icon: 'mdi:cellphone',
       questions: [
         {
           slug: 'how-do-i-download-the-android-app',
@@ -193,7 +193,7 @@ const data: KnowledgeBaseType = {
     },
     {
       title: 'Using KnowHow',
-      icon: 'InformationOutline',
+      icon: 'mdi:information-outline',
       questions: [
         {
           slug: 'customization',

@@ -1,5 +1,5 @@
 // ** React Imports
-import { useEffect, useCallback, useRef, useState, ChangeEvent, ReactNode } from 'react'
+import { useEffect, useCallback, useRef, useState, ChangeEvent } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
@@ -20,29 +20,8 @@ import ListItemButton from '@mui/material/ListItemButton'
 import InputAdornment from '@mui/material/InputAdornment'
 import MuiAutocomplete, { AutocompleteRenderInputParams } from '@mui/material/Autocomplete'
 
-// ** Icons Imports
-import Tab from 'mdi-material-ui/Tab'
-import Poll from 'mdi-material-ui/Poll'
-import Close from 'mdi-material-ui/Close'
-import Magnify from 'mdi-material-ui/Magnify'
-import Lastpass from 'mdi-material-ui/Lastpass'
-import CartOutline from 'mdi-material-ui/CartOutline'
-import ChartBubble from 'mdi-material-ui/ChartBubble'
-import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
-import AccountGroup from 'mdi-material-ui/AccountGroup'
-import CalendarBlank from 'mdi-material-ui/CalendarBlank'
-import CalendarRange from 'mdi-material-ui/CalendarRange'
-import AccountOutline from 'mdi-material-ui/AccountOutline'
-import MessageOutline from 'mdi-material-ui/MessageOutline'
-import ViewGridOutline from 'mdi-material-ui/ViewGridOutline'
-import GestureTapButton from 'mdi-material-ui/GestureTapButton'
-import AccountCogOutline from 'mdi-material-ui/AccountCogOutline'
-import FileRemoveOutline from 'mdi-material-ui/FileRemoveOutline'
-import FormatListCheckbox from 'mdi-material-ui/FormatListCheckbox'
-import FormatListNumbered from 'mdi-material-ui/FormatListNumbered'
-import SubdirectoryArrowLeft from 'mdi-material-ui/SubdirectoryArrowLeft'
-import FormatTextVariantOutline from 'mdi-material-ui/FormatTextVariantOutline'
-import CardBulletedSettingsOutline from 'mdi-material-ui/CardBulletedSettingsOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
 import axios from 'axios'
@@ -78,7 +57,7 @@ interface DefaultSuggestionsType {
   category: string
   suggestions: {
     link: string
-    icon: ReactNode
+    icon: string
     suggestion: string
   }[]
 }
@@ -88,24 +67,24 @@ const defaultSuggestionsData: DefaultSuggestionsType[] = [
     category: 'Popular Searches',
     suggestions: [
       {
+        icon: 'mdi:poll',
         suggestion: 'Analytics',
-        link: '/dashboards/analytics/',
-        icon: <Poll fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/dashboards/analytics/'
       },
       {
+        icon: 'mdi:chart-bubble',
         suggestion: 'eCommerce',
-        link: '/dashboards/ecommerce/',
-        icon: <ChartBubble fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/dashboards/ecommerce/'
       },
       {
+        icon: 'mdi:account-group',
         suggestion: 'User List',
-        link: '/apps/user/list/',
-        icon: <AccountGroup fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/apps/user/list/'
       },
       {
+        icon: 'mdi:message-outline',
         suggestion: 'Chat',
-        link: '/apps/chat/',
-        icon: <MessageOutline fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/apps/chat/'
       }
     ]
   },
@@ -113,24 +92,24 @@ const defaultSuggestionsData: DefaultSuggestionsType[] = [
     category: 'Apps & Pages',
     suggestions: [
       {
+        icon: 'mdi:calendar-blank',
         suggestion: 'Calendar',
-        link: '/apps/calendar/',
-        icon: <CalendarBlank fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/apps/calendar/'
       },
       {
+        icon: 'mdi:format-list-numbered',
         suggestion: 'Invoice List',
-        link: '/apps/invoice/list/',
-        icon: <FormatListNumbered fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/apps/invoice/list/'
       },
       {
+        icon: 'mdi:currency-usd',
         suggestion: 'Pricing',
-        link: '/pages/pricing/',
-        icon: <CurrencyUsd fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/pages/pricing/'
       },
       {
+        icon: 'mdi:account-cog-outline',
         suggestion: 'Account Settings',
-        link: '/pages/account-settings/account',
-        icon: <AccountCogOutline fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/pages/account-settings/account'
       }
     ]
   },
@@ -138,24 +117,24 @@ const defaultSuggestionsData: DefaultSuggestionsType[] = [
     category: 'User Interface',
     suggestions: [
       {
+        icon: 'mdi:format-text-variant-outline',
         suggestion: 'Typography',
-        link: '/ui/typography/',
-        icon: <FormatTextVariantOutline fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/ui/typography/'
       },
       {
+        icon: 'mdi:tab',
         suggestion: 'Tabs',
-        link: '/components/tabs/',
-        icon: <Tab fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/components/tabs/'
       },
       {
+        icon: 'mdi:gesture-tap-button',
         suggestion: 'Buttons',
-        link: '/components/buttons/',
-        icon: <GestureTapButton fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/components/buttons/'
       },
       {
+        icon: 'mdi:card-bulleted-settings-outline',
         suggestion: 'Advanced Cards',
-        link: '/ui/cards/advanced/',
-        icon: <CardBulletedSettingsOutline fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/ui/cards/advanced/'
       }
     ]
   },
@@ -163,24 +142,24 @@ const defaultSuggestionsData: DefaultSuggestionsType[] = [
     category: 'Forms & Tables',
     suggestions: [
       {
+        icon: 'mdi:format-list-checkbox',
         suggestion: 'Select',
-        link: '/forms/form-elements/select/',
-        icon: <FormatListCheckbox fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/forms/form-elements/select/'
       },
       {
+        icon: 'mdi:lastpass',
         suggestion: 'Autocomplete',
-        link: '/forms/form-elements/autocomplete/',
-        icon: <Lastpass fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/forms/form-elements/autocomplete/'
       },
       {
+        icon: 'mdi:view-grid-outline',
         suggestion: 'Table',
-        link: '/tables/mui/',
-        icon: <ViewGridOutline fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/tables/mui/'
       },
       {
+        icon: 'mdi:calendar-range',
         suggestion: 'Date Pickers',
-        link: '/forms/form-elements/pickers/',
-        icon: <CalendarRange fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/forms/form-elements/pickers/'
       }
     ]
   }
@@ -363,11 +342,13 @@ const DefaultSuggestions = ({ setOpenDialog }: DefaultSuggestionsProps) => {
                     sx={{
                       display: 'flex',
                       alignItems: 'center',
+                      '& svg': { mr: 2.5 },
+                      color: 'text.primary',
                       textDecoration: 'none',
                       '&:hover > *': { color: 'primary.main' }
                     }}
                   >
-                    {suggestionItem.icon}
+                    <Icon icon={suggestionItem.icon} fontSize={20} />
                     <Typography variant='body2' sx={{ color: 'text.primary' }}>
                       {suggestionItem.suggestion}
                     </Typography>
@@ -468,7 +449,7 @@ const AutocompleteComponent = ({ hidden, settings }: Props) => {
         sx={{ display: 'flex', cursor: 'pointer', alignItems: 'center' }}
       >
         <IconButton color='inherit' sx={!hidden && layout === 'vertical' ? { mr: 1, ml: -2.75 } : {}}>
-          <Magnify />
+          <Icon icon='mdi:magnify' />
         </IconButton>
         {!hidden && layout === 'vertical' ? (
           <Typography sx={{ color: 'text.disabled' }}>Search (Ctrl+/)</Typography>
@@ -524,7 +505,7 @@ const AutocompleteComponent = ({ hidden, settings }: Props) => {
                         sx: { p: `${theme.spacing(3.75, 6)} !important` },
                         startAdornment: (
                           <InputAdornment position='start' sx={{ color: 'text.primary' }}>
-                            <Magnify />
+                            <Icon icon='mdi:magnify' />
                           </InputAdornment>
                         ),
                         endAdornment: (
@@ -535,7 +516,7 @@ const AutocompleteComponent = ({ hidden, settings }: Props) => {
                           >
                             {!hidden ? <Typography sx={{ mr: 2.5, color: 'text.disabled' }}>[esc]</Typography> : null}
                             <IconButton size='small' sx={{ p: 1 }}>
-                              <Close fontSize='small' />
+                              <Icon icon='mdi:close' fontSize={20} />
                             </IconButton>
                           </InputAdornment>
                         )
@@ -554,9 +535,15 @@ const AutocompleteComponent = ({ hidden, settings }: Props) => {
                       key={(option as AppBarSearchType).title}
                       className={`suggestion ${props.className}`}
                       onClick={() => handleOptionClick(option as AppBarSearchType)}
-                      secondaryAction={
-                        <SubdirectoryArrowLeft fontSize='small' sx={{ cursor: 'pointer', color: 'text.disabled' }} />
-                      }
+                      secondaryAction={<Icon icon='mdi:subdirectory-arrow-left' fontSize={20} />}
+                      sx={{
+                        '& .MuiListItemSecondaryAction-root': {
+                          '& svg': {
+                            cursor: 'pointer',
+                            color: 'text.disabled'
+                          }
+                        }
+                      }}
                     >
                       <ListItemButton sx={{ py: 2.5, px: ` ${theme.spacing(6)} !important` }}>
                         <UserIcon

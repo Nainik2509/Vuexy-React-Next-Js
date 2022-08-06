@@ -5,9 +5,8 @@ import Avatar from '@mui/material/Avatar'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
-import PencilOutline from 'mdi-material-ui/PencilOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Components
 import toast from 'react-hot-toast'
@@ -25,7 +24,7 @@ const ToastCustom = () => {
             </Box>
           </Box>
           <IconButton onClick={() => toast.dismiss(t.id)}>
-            <Close fontSize='small' />
+            <Icon icon='mdi:close' fontSize={20} />
           </IconButton>
         </Box>
       ),
@@ -38,8 +37,10 @@ const ToastCustom = () => {
   }
 
   return (
-    <Box sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column' }}>
-      <PencilOutline sx={{ mb: 2, fontSize: '2rem' }} />
+    <Box
+      sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column', '& svg': { mb: 2 } }}
+    >
+      <Icon icon='mdi:pencil-outline' fontSize='2rem' />
       <Typography sx={{ mb: 4, fontWeight: 600 }}>Custom</Typography>
       <Typography sx={{ mb: 3 }}>Make a toast using any custom content</Typography>
       <Button sx={{ mb: 8 }} variant='contained' onClick={handleClick}>

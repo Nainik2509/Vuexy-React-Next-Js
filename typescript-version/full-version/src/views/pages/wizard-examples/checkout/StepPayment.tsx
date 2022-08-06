@@ -28,9 +28,8 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
 
-// ** Icons Imports
-import TagOutline from 'mdi-material-ui/TagOutline'
-import HelpCircleOutline from 'mdi-material-ui/HelpCircleOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
   '& .MuiTabs-indicator': {
@@ -58,7 +57,7 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12} lg={8} xl={9}>
-        <Alert severity='success' icon={<TagOutline />} sx={{ mb: 4 }}>
+        <Alert severity='success' icon={<Icon icon='mdi:tag-outline' />} sx={{ mb: 4 }}>
           <AlertTitle>Bank Offers</AlertTitle>
           <Box>
             <Typography sx={{ color: 'success.main' }}>
@@ -94,7 +93,9 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
                         endAdornment: (
                           <InputAdornment position='start'>
                             <Tooltip title='Card Verification Value'>
-                              <HelpCircleOutline fontSize='small' sx={{ cursor: 'pointer' }} />
+                              <Box component='span' sx={{ display: 'inline-flex', '& svg': { cursor: 'pointer' } }}>
+                                <Icon icon='mdi:help-circle-outline' fontSize={20} />
+                              </Box>
                             </Tooltip>
                           </InputAdornment>
                         )

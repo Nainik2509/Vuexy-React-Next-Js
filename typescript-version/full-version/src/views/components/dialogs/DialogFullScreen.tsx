@@ -10,8 +10,8 @@ import DialogTitle from '@mui/material/DialogTitle'
 import DialogContent from '@mui/material/DialogContent'
 import DialogActions from '@mui/material/DialogActions'
 
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 const DialogFullScreen = () => {
   // ** State
@@ -36,7 +36,7 @@ const DialogFullScreen = () => {
             onClick={handleClose}
             sx={{ top: 8, right: 10, position: 'absolute', color: theme => theme.palette.grey[500] }}
           >
-            <Close />
+            <Icon icon='mdi:close' />
           </IconButton>
         </DialogTitle>
         <DialogContent dividers>

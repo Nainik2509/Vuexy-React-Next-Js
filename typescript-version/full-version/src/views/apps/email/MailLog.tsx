@@ -17,21 +17,8 @@ import InputAdornment from '@mui/material/InputAdornment'
 import CircularProgress from '@mui/material/CircularProgress'
 import ListItem, { ListItemProps } from '@mui/material/ListItem'
 
-// ** Icons Import
-import MenuIcon from 'mdi-material-ui/Menu'
-import Circle from 'mdi-material-ui/Circle'
-import Reload from 'mdi-material-ui/Reload'
-import Magnify from 'mdi-material-ui/Magnify'
-import StarOutline from 'mdi-material-ui/StarOutline'
-import EmailOutline from 'mdi-material-ui/EmailOutline'
-import DotsVertical from 'mdi-material-ui/DotsVertical'
-import LabelOutline from 'mdi-material-ui/LabelOutline'
-import FolderOutline from 'mdi-material-ui/FolderOutline'
-import PencilOutline from 'mdi-material-ui/PencilOutline'
-import DeleteOutline from 'mdi-material-ui/DeleteOutline'
-import EmailOpenOutline from 'mdi-material-ui/EmailOpenOutline'
-import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
-import AlertOctagonOutline from 'mdi-material-ui/AlertOctagonOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
 import PerfectScrollbar from 'react-perfect-scrollbar'
@@ -108,38 +95,70 @@ const MailLog = (props: MailLogType) => {
   const folders: MailFoldersArrType[] = [
     {
       name: 'draft',
-      icon: <PencilOutline fontSize='small' sx={{ mr: 2 }} />
+      icon: (
+        <Box component='span' sx={{ mr: 2 }}>
+          <Icon icon='mdi:pencil-outline' fontSize={20} />
+        </Box>
+      )
     },
     {
       name: 'spam',
-      icon: <AlertOctagonOutline fontSize='small' sx={{ mr: 2 }} />
+      icon: (
+        <Box component='span' sx={{ mr: 2 }}>
+          <Icon icon='mdi:alert-octagon-outline' fontSize={20} />
+        </Box>
+      )
     },
     {
       name: 'trash',
-      icon: <DeleteOutline fontSize='small' sx={{ mr: 2 }} />
+      icon: (
+        <Box component='span' sx={{ mr: 2 }}>
+          <Icon icon='mdi:delete-outline' fontSize={20} />
+        </Box>
+      )
     },
     {
       name: 'inbox',
-      icon: <EmailOutline fontSize='small' sx={{ mr: 2 }} />
+      icon: (
+        <Box component='span' sx={{ mr: 2 }}>
+          <Icon icon='mdi:email-outline' fontSize={20} />
+        </Box>
+      )
     }
   ]
 
   const foldersConfig = {
     draft: {
       name: 'draft',
-      icon: <PencilOutline fontSize='small' sx={{ mr: 2 }} />
+      icon: (
+        <Box component='span' sx={{ mr: 2 }}>
+          <Icon icon='mdi:pencil-outline' fontSize={20} />
+        </Box>
+      )
     },
     spam: {
       name: 'spam',
-      icon: <AlertOctagonOutline fontSize='small' sx={{ mr: 2 }} />
+      icon: (
+        <Box component='span' sx={{ mr: 2 }}>
+          <Icon icon='mdi:alert-octagon-outline' fontSize={20} />
+        </Box>
+      )
     },
     trash: {
       name: 'trash',
-      icon: <DeleteOutline fontSize='small' sx={{ mr: 2 }} />
+      icon: (
+        <Box component='span' sx={{ mr: 2 }}>
+          <Icon icon='mdi:delete-outline' fontSize={20} />
+        </Box>
+      )
     },
     inbox: {
       name: 'inbox',
-      icon: <EmailOutline fontSize='small' sx={{ mr: 2 }} />
+      icon: (
+        <Box component='span' sx={{ mr: 2 }}>
+          <Icon icon='mdi:email-outline' fontSize={20} />
+        </Box>
+      )
     }
   }
 
@@ -187,7 +206,11 @@ const MailLog = (props: MailLogType) => {
     Object.entries(labelColors).map(([key, value]: string[]) => {
       array.push({
         text: <Typography sx={{ textTransform: 'capitalize' }}>{key}</Typography>,
-        icon: <Circle sx={{ mr: 2, fontSize: '0.75rem', color: `${value}.main` }} />,
+        icon: (
+          <Box component='span' sx={{ mr: 2, color: `${value}.main` }}>
+            <Icon icon='mdi:circle' fontSize='0.75rem' />
+          </Box>
+        ),
         menuItemProps: {
           onClick: () => {
             handleLabelUpdate(store.selectedMails, key as MailLabelType)
@@ -252,7 +275,11 @@ const MailLog = (props: MailLogType) => {
 
   const renderMailLabels = (arr: MailLabelType[]) => {
     return arr.map((label: MailLabelType, index: number) => {
-      return <Circle key={index} sx={{ mr: 3, fontSize: '0.625rem', color: `${labelColors[label]}.main` }} />
+      return (
+        <Box key={index} component='span' sx={{ mr: 3, color: `${labelColors[label]}.main` }}>
+          <Icon icon='mdi:circle' fontSize='0.625rem' />
+        </Box>
+      )
     })
   }
 
@@ -281,7 +308,7 @@ const MailLog = (props: MailLogType) => {
           <Box sx={{ display: 'flex', alignItems: 'center', width: '100%' }}>
             {lgAbove ? null : (
               <IconButton onClick={handleLeftSidebarToggle} sx={{ mr: 1, ml: -2 }}>
-                <MenuIcon fontSize='small' />
+                <Icon icon='mdi:menu' fontSize={20} />
               </IconButton>
             )}
             <Input
@@ -291,7 +318,7 @@ const MailLog = (props: MailLogType) => {
               sx={{ width: '100%', '&:before, &:after': { display: 'none' } }}
               startAdornment={
                 <InputAdornment position='start' sx={{ color: 'text.disabled' }}>
-                  <Magnify sx={{ fontSize: '1.375rem' }} />
+                  <Icon icon='mdi:magnify' fontSize='1.375rem' />
                 </InputAdornment>
               }
             />
@@ -319,33 +346,23 @@ const MailLog = (props: MailLogType) => {
                 <Fragment>
                   {routeParams && routeParams.folder !== 'trash' ? (
                     <IconButton onClick={handleMoveToTrash}>
-                      <DeleteOutline />
+                      <Icon icon='mdi:delete-outline' />
                     </IconButton>
                   ) : null}
                   <IconButton onClick={() => handleReadMail(store.selectedMails, false)}>
-                    <EmailOutline />
+                    <Icon icon='mdi:email-outline' />
                   </IconButton>
-                  <OptionsMenu
-                    leftAlignMenu
-                    icon={<FolderOutline />}
-                    options={handleFoldersMenu()}
-                    iconButtonProps={{ size: 'small' }}
-                  />
-                  <OptionsMenu
-                    leftAlignMenu
-                    icon={<LabelOutline />}
-                    options={handleLabelsMenu()}
-                    iconButtonProps={{ size: 'small' }}
-                  />
+                  <OptionsMenu leftAlignMenu options={handleFoldersMenu()} icon={<Icon icon='mdi:folder-outline' />} />
+                  <OptionsMenu leftAlignMenu options={handleLabelsMenu()} icon={<Icon icon='mdi:label-outline' />} />
                 </Fragment>
               ) : null}
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
               <IconButton size='small' onClick={handleRefreshMailsClick}>
-                <Reload sx={{ fontSize: '1.375rem' }} />
+                <Icon icon='mdi:reload' fontSize='1.375rem' />
               </IconButton>
               <IconButton size='small'>
-                <DotsVertical sx={{ fontSize: '1.375rem' }} />
+                <Icon icon='mdi:dots-vertical' fontSize='1.375rem' />
               </IconButton>
             </Box>
           </Box>
@@ -356,7 +373,7 @@ const MailLog = (props: MailLogType) => {
             {store && store.mails && store.mails.length ? (
               <List sx={{ p: 0 }}>
                 {store.mails.map((mail: MailType, index: number) => {
-                  const MailReadToggleIcon = mail.isRead ? EmailOutline : EmailOpenOutline
+                  const mailReadToggleIcon = mail.isRead ? 'mdi:email-outline' : 'mdi:email-open-outline'
 
                   return (
                     <Box
@@ -396,9 +413,15 @@ const MailLog = (props: MailLogType) => {
                           <IconButton
                             size='small'
                             onClick={e => handleStarMail(e, mail.id, !mail.isStarred)}
-                            sx={{ mr: { xs: 0, sm: 3 }, color: mail.isStarred ? 'warning.main' : 'text.secondary' }}
+                            sx={{
+                              mr: { xs: 0, sm: 3 },
+                              color: mail.isStarred ? 'warning.main' : 'text.secondary',
+                              '& svg': {
+                                display: { xs: 'none', sm: 'block' }
+                              }
+                            }}
                           >
-                            <StarOutline sx={{ display: { xs: 'none', sm: 'block' } }} />
+                            <Icon icon='mdi:star-outline' />
                           </IconButton>
                           <Avatar
                             alt={mail.from.name}
@@ -442,7 +465,7 @@ const MailLog = (props: MailLogType) => {
                                   dispatch(updateMail({ emailIds: [mail.id], dataToUpdate: { folder: 'trash' } }))
                                 }}
                               >
-                                <DeleteOutline />
+                                <Icon icon='mdi:delete-outline' />
                               </IconButton>
                             </Tooltip>
                           ) : null}
@@ -454,7 +477,7 @@ const MailLog = (props: MailLogType) => {
                                 handleReadMail([mail.id], !mail.isRead)
                               }}
                             >
-                              <MailReadToggleIcon />
+                              <Icon icon={mailReadToggleIcon} />
                             </IconButton>
                           </Tooltip>
                           <Tooltip placement='top' title='Move to Spam'>
@@ -464,7 +487,7 @@ const MailLog = (props: MailLogType) => {
                                 handleFolderUpdate([mail.id], 'spam')
                               }}
                             >
-                              <AlertOctagonOutline />
+                              <Icon icon='mdi:alert-octagon-outline' />
                             </IconButton>
                           </Tooltip>
                         </Box>
@@ -493,8 +516,8 @@ const MailLog = (props: MailLogType) => {
                 })}
               </List>
             ) : (
-              <Box sx={{ mt: 6, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <AlertCircleOutline fontSize='small' sx={{ mr: 2 }} />
+              <Box sx={{ mt: 6, display: 'flex', justifyContent: 'center', alignItems: 'center', '& svg': { mr: 2 } }}>
+                <Icon icon='mdi:alert-circle-outline' fontSize={20} />
                 <Typography>No Mails Found</Typography>
               </Box>
             )}

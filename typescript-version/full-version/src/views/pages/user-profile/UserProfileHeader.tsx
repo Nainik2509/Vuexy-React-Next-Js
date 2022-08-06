@@ -13,19 +13,11 @@ import CardContent from '@mui/material/CardContent'
 // ** Third Party Imports
 import axios from 'axios'
 
-// ** Icons Imports
-import FountainPenTip from 'mdi-material-ui/FountainPenTip'
-import MapMarkerOutline from 'mdi-material-ui/MapMarkerOutline'
-import BriefcaseOutline from 'mdi-material-ui/BriefcaseOutline'
-import AccountCheckOutline from 'mdi-material-ui/AccountCheckOutline'
-import CalendarBlankOutline from 'mdi-material-ui/CalendarBlankOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Types
 import { ProfileHeaderType } from 'src/@fake-db/types'
-
-const designationIconObj = {
-  FountainPenTip
-}
 
 const ProfilePicture = styled('img')(({ theme }) => ({
   width: 120,
@@ -47,7 +39,7 @@ const UserProfileHeader = () => {
     })
   }, [])
 
-  const IconTag = designationIconObj[data?.designationIcon as keyof typeof designationIconObj] || BriefcaseOutline
+  const designationIcon = data?.designationIcon || 'mdi:briefcase-outline'
 
   return data !== null ? (
     <Card>
@@ -91,21 +83,21 @@ const UserProfileHeader = () => {
                 justifyContent: ['center', 'flex-start']
               }}
             >
-              <Box sx={{ mr: 4, display: 'flex', alignItems: 'center' }}>
-                <IconTag sx={{ mr: 1, color: 'text.secondary' }} />
+              <Box sx={{ mr: 4, display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'text.secondary' } }}>
+                <Icon icon={designationIcon} />
                 <Typography sx={{ color: 'text.secondary', fontWeight: 600 }}>{data.designation}</Typography>
               </Box>
-              <Box sx={{ mr: 4, display: 'flex', alignItems: 'center' }}>
-                <MapMarkerOutline sx={{ mr: 1, color: 'text.secondary' }} />
+              <Box sx={{ mr: 4, display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'text.secondary' } }}>
+                <Icon icon='mdi:map-marker-outline' />
                 <Typography sx={{ color: 'text.secondary', fontWeight: 600 }}>{data.location}</Typography>
               </Box>
-              <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <CalendarBlankOutline sx={{ mr: 1, color: 'text.secondary' }} />
+              <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'text.secondary' } }}>
+                <Icon icon='mdi:calendar-blank-outline' />
                 <Typography sx={{ color: 'text.secondary', fontWeight: 600 }}>Joined {data.joiningDate}</Typography>
               </Box>
             </Box>
           </Box>
-          <Button variant='contained' startIcon={<AccountCheckOutline fontSize='small' />}>
+          <Button variant='contained' startIcon={<Icon icon='mdi:account-check-outline' fontSize={20} />}>
             Connected
           </Button>
         </Box>

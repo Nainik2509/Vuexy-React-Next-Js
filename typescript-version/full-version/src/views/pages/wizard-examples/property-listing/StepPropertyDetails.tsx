@@ -1,4 +1,5 @@
 // ** MUI Imports
+import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
@@ -7,9 +8,8 @@ import InputLabel from '@mui/material/InputLabel'
 import Typography from '@mui/material/Typography'
 import FormControl from '@mui/material/FormControl'
 
-// ** Icons Imports
-import HomeOutline from 'mdi-material-ui/HomeOutline'
-import WalletOutline from 'mdi-material-ui/WalletOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Imports
 import CustomRadioIcons from 'src/@core/components/custom-radio/icons'
@@ -19,7 +19,12 @@ const data = [
     value: 'sale',
     title: 'Sell the property',
     gridProps: { sm: 6, xs: 12 },
-    icon: <HomeOutline sx={{ mb: 2, fontSize: '2rem', color: 'text.secondary' }} />,
+    icon: (
+      <Box component='span' sx={{ mb: 2, color: 'text.secondary' }}>
+        {' '}
+        <Icon icon='mdi:home-outline' fontSize='2rem' />
+      </Box>
+    ),
     content: (
       <Typography variant='caption' sx={{ my: 'auto', textAlign: 'center' }}>
         Post your property for sale.
@@ -32,7 +37,12 @@ const data = [
     value: 'rent',
     title: 'Rent the property',
     gridProps: { sm: 6, xs: 12 },
-    icon: <WalletOutline sx={{ mb: 2, fontSize: '2rem', color: 'text.secondary' }} />,
+    icon: (
+      <Box component='span' sx={{ mb: 2, color: 'text.secondary' }}>
+        {' '}
+        <Icon icon='mdi:wallet-outline' fontSize='2rem' />
+      </Box>
+    ),
     content: (
       <Typography variant='caption' sx={{ my: 'auto', textAlign: 'center' }}>
         Post your property for rent.

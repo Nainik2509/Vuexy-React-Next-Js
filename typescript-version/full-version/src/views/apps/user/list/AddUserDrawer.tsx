@@ -20,8 +20,8 @@ import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm, Controller } from 'react-hook-form'
 
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Store Imports
 import { useDispatch } from 'react-redux'
@@ -140,7 +140,7 @@ const SidebarAddUser = (props: SidebarAddUserType) => {
       <Header>
         <Typography variant='h6'>Add User</Typography>
         <IconButton size='small' onClick={handleClose} sx={{ color: 'text.primary' }}>
-          <Close fontSize='small' />
+          <Icon icon='mdi:close' fontSize={20} />
         </IconButton>
       </Header>
       <Box sx={{ p: 5 }}>

@@ -10,11 +10,8 @@ import { styled } from '@mui/material/styles'
 import Button, { ButtonProps } from '@mui/material/Button'
 import ButtonGroup, { ButtonGroupProps } from '@mui/material/ButtonGroup'
 
-// ** Icons Imports
-import LinkVariant from 'mdi-material-ui/LinkVariant'
-import AccountOutline from 'mdi-material-ui/AccountOutline'
-import ViewGridOutline from 'mdi-material-ui/ViewGridOutline'
-import AccountMultipleOutline from 'mdi-material-ui/AccountMultipleOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Demo Components
 import Teams from 'src/views/pages/user-profile/teams'
@@ -27,18 +24,18 @@ type tabContentListType = {
   [key: string]: ReactElement
 }
 
-const tabsList: TablistType[] = [
-  { name: 'Profile', value: 'profile', icon: <AccountOutline /> },
-  { name: 'Teams', value: 'teams', icon: <AccountMultipleOutline /> },
-  { name: 'Projects', value: 'projects', icon: <ViewGridOutline /> },
-  { name: 'Connections', value: 'connections', icon: <LinkVariant /> }
-]
-
 type TablistType = {
   name: string
+  icon: string
   value: string
-  icon: ReactElement
 }
+
+const tabsList: TablistType[] = [
+  { name: 'Profile', value: 'profile', icon: 'mdi:account-outline' },
+  { name: 'Teams', value: 'teams', icon: 'mdi:account-multiple-outline' },
+  { name: 'Projects', value: 'projects', icon: 'mdi:view-grid-outline' },
+  { name: 'Connections', value: 'connections', icon: 'mdi:link-variant' }
+]
 
 const DefaultButton = styled(Button)<ButtonProps>(({ theme }) => ({
   border: 'none !important',
@@ -103,7 +100,7 @@ const UserProfile = ({ tab, data }: any) => {
               <ButtonTag
                 key={index}
                 disableRipple
-                startIcon={icon}
+                startIcon={<Icon icon={icon} />}
                 onClick={() => handleClick(value)}
                 sx={{ borderRadius: '6px !important' }}
               >

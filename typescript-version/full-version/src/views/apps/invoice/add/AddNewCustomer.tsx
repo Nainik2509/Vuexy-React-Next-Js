@@ -17,8 +17,8 @@ import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm, Controller } from 'react-hook-form'
 
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Types
 import { InvoiceClientType } from 'src/types/apps/invoiceTypes'
@@ -103,7 +103,7 @@ const AddNewCustomer = ({ open, toggle, setSelectedClient, clients, setClients }
       <Header>
         <Typography variant='h6'>Add New Customer</Typography>
         <IconButton size='small' onClick={toggle} sx={{ color: 'text.primary' }}>
-          <Close fontSize='small' />
+          <Icon icon='mdi:close' fontSize={20} />
         </IconButton>
       </Header>
       <Box component='form' sx={{ p: 5 }} onSubmit={handleSubmit(onSubmit)}>

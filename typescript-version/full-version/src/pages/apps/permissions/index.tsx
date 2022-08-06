@@ -20,9 +20,8 @@ import DialogContent from '@mui/material/DialogContent'
 import FormHelperText from '@mui/material/FormHelperText'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
-// ** Icons Imports
-import PencilOutline from 'mdi-material-ui/PencilOutline'
-import DeleteOutline from 'mdi-material-ui/DeleteOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
 import { useForm, Controller } from 'react-hook-form'
@@ -147,10 +146,10 @@ const PermissionsTable = () => {
       renderCell: ({ row }: CellType) => (
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <IconButton onClick={() => handleEditPermission(row.name)}>
-            <PencilOutline fontSize='small' />
+            <Icon icon='mdi:pencil-outline' fontSize={20} />
           </IconButton>
           <IconButton>
-            <DeleteOutline fontSize='small' />
+            <Icon icon='mdi:delete-outline' fontSize={20} />
           </IconButton>
         </Box>
       )

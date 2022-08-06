@@ -9,13 +9,8 @@ import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 import Box, { BoxProps } from '@mui/material/Box'
 
-// ** Icons Imports
-import MenuIcon from 'mdi-material-ui/Menu'
-import Magnify from 'mdi-material-ui/Magnify'
-import PhoneOutline from 'mdi-material-ui/PhoneOutline'
-import VideoOutline from 'mdi-material-ui/VideoOutline'
-import DotsVertical from 'mdi-material-ui/DotsVertical'
-import MessageOutline from 'mdi-material-ui/MessageOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Import
 import ChatLog from './ChatLog'
@@ -83,7 +78,7 @@ const ChatContent = (props: ChatContentType) => {
                 boxShadow: theme => theme.shadows[3]
               }}
             >
-              <MessageOutline sx={{ fontSize: '3.125rem' }} />
+              <Icon icon='mdi:message-outline' fontSize='3.125rem' />
             </MuiAvatar>
             <Box
               onClick={handleStartConversation}
@@ -125,7 +120,7 @@ const ChatContent = (props: ChatContentType) => {
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 {mdAbove ? null : (
                   <IconButton onClick={handleLeftSidebarToggle} sx={{ mr: 2 }}>
-                    <MenuIcon />
+                    <Icon icon='mdi:menu' />
                   </IconButton>
                 )}
                 <Box
@@ -184,20 +179,20 @@ const ChatContent = (props: ChatContentType) => {
                 {mdAbove ? (
                   <Fragment>
                     <IconButton size='small' sx={{ color: 'text.secondary' }}>
-                      <PhoneOutline sx={{ fontSize: '1.25rem' }} />
+                      <Icon icon='mdi:phone-outline' fontSize='1.25rem' />
                     </IconButton>
                     <IconButton size='small' sx={{ color: 'text.secondary' }}>
-                      <VideoOutline sx={{ fontSize: '1.5rem' }} />
+                      <Icon icon='mdi:video-outline' fontSize='1.5rem' />
                     </IconButton>
                     <IconButton size='small' sx={{ color: 'text.secondary' }}>
-                      <Magnify sx={{ fontSize: '1.25rem' }} />
+                      <Icon icon='mdi:magnify' fontSize='1.25rem' />
                     </IconButton>
                   </Fragment>
                 ) : null}
 
                 <OptionsMenu
                   menuProps={{ sx: { mt: 2 } }}
-                  icon={<DotsVertical sx={{ fontSize: '1.25rem' }} />}
+                  icon={<Icon icon='mdi:dots-vertical' fontSize='1.25rem' />}
                   iconButtonProps={{ size: 'small', sx: { color: 'text.secondary' } }}
                   options={['View Contact', 'Mute Notifications', 'Block Contact', 'Clear Chat', 'Report']}
                 />

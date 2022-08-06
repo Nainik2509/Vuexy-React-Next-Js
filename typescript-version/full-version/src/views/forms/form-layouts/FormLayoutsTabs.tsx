@@ -24,9 +24,8 @@ import Select, { SelectChangeEvent } from '@mui/material/Select'
 // ** Third Party Imports
 import DatePicker from 'react-datepicker'
 
-// ** Icons Imports
-import EyeOutline from 'mdi-material-ui/EyeOutline'
-import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Types
 import { DateType } from 'src/types/forms/reactDatepickerTypes'
@@ -187,7 +186,11 @@ const FormLayoutsTabs = () => {
                             onMouseDown={handleMouseDownPassword}
                             aria-label='toggle password visibility'
                           >
-                            {values.showPassword ? <EyeOutline /> : <EyeOffOutline />}
+                            {values.showPassword ? (
+                              <Icon icon='mdi:eye-outline' />
+                            ) : (
+                              <Icon icon='mdi:eye-off-outline' />
+                            )}
                           </IconButton>
                         </InputAdornment>
                       }
@@ -211,7 +214,11 @@ const FormLayoutsTabs = () => {
                             onClick={handleClickShowConfirmPassword}
                             onMouseDown={handleMouseDownConfirmPassword}
                           >
-                            {values.showPassword2 ? <EyeOutline /> : <EyeOffOutline />}
+                            {values.showPassword2 ? (
+                              <Icon icon='mdi:eye-outline' />
+                            ) : (
+                              <Icon icon='mdi:eye-off-outline' />
+                            )}
                           </IconButton>
                         </InputAdornment>
                       }

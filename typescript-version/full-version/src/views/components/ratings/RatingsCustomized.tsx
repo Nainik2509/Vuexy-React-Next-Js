@@ -1,46 +1,42 @@
-// ** React Imports
-import { ReactElement } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Rating, { IconContainerProps } from '@mui/material/Rating'
 
-// ** Icons Imports
-import Star from 'mdi-material-ui/Star'
-import Heart from 'mdi-material-ui/Heart'
-import EmoticonOutline from 'mdi-material-ui/EmoticonOutline'
-import EmoticonSadOutline from 'mdi-material-ui/EmoticonSadOutline'
-import EmoticonHappyOutline from 'mdi-material-ui/EmoticonHappyOutline'
-import EmoticonNeutralOutline from 'mdi-material-ui/EmoticonNeutralOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 interface CustomIcons {
-  [index: string]: { icon: ReactElement; label: string }
+  [index: string]: { icon: string; label: string }
 }
 
 const customIcons: CustomIcons = {
   1: {
     label: 'Very Dissatisfied',
-    icon: <EmoticonSadOutline />
+    icon: 'mdi:emoticon-sad-outline'
   },
   2: {
     label: 'Neutral',
-    icon: <EmoticonNeutralOutline />
+    icon: 'mdi:emoticon-neutral-outline'
   },
   3: {
     label: 'Satisfied',
-    icon: <EmoticonHappyOutline />
+    icon: 'mdi:emoticon-happy-outline'
   },
   4: {
     label: 'Very Satisfied',
-    icon: <EmoticonOutline />
+    icon: 'mdi:emoticon-outline'
   }
 }
 
 const IconContainer = (props: IconContainerProps) => {
   const { value } = props
 
-  return <span {...props}>{customIcons[value].icon}</span>
+  return (
+    <span {...props}>
+      <Icon icon={customIcons[value].icon} />
+    </span>
+  )
 }
 
 const RatingsCustomized = () => {
@@ -48,17 +44,17 @@ const RatingsCustomized = () => {
     <div>
       <Box sx={{ mb: 3 }}>
         <Typography sx={{ fontWeight: 500 }}>Custom empty icon</Typography>
-        <Rating name='customized-empty' defaultValue={2} precision={0.5} emptyIcon={<Star />} />
+        <Rating name='customized-empty' defaultValue={2} precision={0.5} emptyIcon={<Icon icon='mdi:star' />} />
       </Box>
       <Box sx={{ mb: 3 }}>
         <Typography sx={{ fontWeight: 500 }}>Custom icon and color</Typography>
         <Rating
           precision={0.5}
-          icon={<Heart />}
           emptyIcon={null}
           defaultValue={3}
           name='customized-color'
           sx={{ color: 'error.main' }}
+          icon={<Icon icon='mdi:heart' />}
         />
       </Box>
       <Box sx={{ mb: 3 }}>

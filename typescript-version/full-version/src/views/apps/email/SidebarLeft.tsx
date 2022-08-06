@@ -15,14 +15,8 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import ListItem, { ListItemProps } from '@mui/material/ListItem'
 
-// ** Icons Imports
-import Circle from 'mdi-material-ui/Circle'
-import SendOutline from 'mdi-material-ui/SendOutline'
-import StarOutline from 'mdi-material-ui/StarOutline'
-import EmailOutline from 'mdi-material-ui/EmailOutline'
-import PencilOutline from 'mdi-material-ui/PencilOutline'
-import DeleteOutline from 'mdi-material-ui/DeleteOutline'
-import AlertOctagonOutline from 'mdi-material-ui/AlertOctagonOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
 import PerfectScrollbar from 'react-perfect-scrollbar'
@@ -143,8 +137,10 @@ const SidebarLeft = (props: MailSidebarType) => {
                   borderLeftColor: theme => (activeInboxCondition ? theme.palette.primary.main : 'transparent')
                 }}
               >
-                <ListItemIcon sx={{ color: activeInboxCondition ? 'primary.main' : 'text.secondary' }}>
-                  <EmailOutline sx={{ mr: 2 }} />
+                <ListItemIcon
+                  sx={{ color: activeInboxCondition ? 'primary.main' : 'text.secondary', '& svg': { mr: 2 } }}
+                >
+                  <Icon icon='mdi:email-outline' />
                 </ListItemIcon>
                 <ListItemText
                   primary='Inbox'
@@ -168,8 +164,13 @@ const SidebarLeft = (props: MailSidebarType) => {
                     handleActiveItem('folder', 'sent') ? theme.palette.primary.main : 'transparent'
                 }}
               >
-                <ListItemIcon sx={{ color: handleActiveItem('folder', 'sent') ? 'primary.main' : 'text.secondary' }}>
-                  <SendOutline sx={{ mr: 2 }} />
+                <ListItemIcon
+                  sx={{
+                    color: handleActiveItem('folder', 'sent') ? 'primary.main' : 'text.secondary',
+                    '& svg': { mr: 2 }
+                  }}
+                >
+                  <Icon icon='mdi:send-outline' />
                 </ListItemIcon>
                 <ListItemText
                   primary='Sent'
@@ -192,8 +193,13 @@ const SidebarLeft = (props: MailSidebarType) => {
                     handleActiveItem('folder', 'draft') ? theme.palette.primary.main : 'transparent'
                 }}
               >
-                <ListItemIcon sx={{ color: handleActiveItem('folder', 'draft') ? 'primary.main' : 'text.secondary' }}>
-                  <PencilOutline sx={{ mr: 2 }} />
+                <ListItemIcon
+                  sx={{
+                    color: handleActiveItem('folder', 'draft') ? 'primary.main' : 'text.secondary',
+                    '& svg': { mr: 2 }
+                  }}
+                >
+                  <Icon icon='mdi:pencil-outline' />
                 </ListItemIcon>
                 <ListItemText
                   primary='Draft'
@@ -217,8 +223,13 @@ const SidebarLeft = (props: MailSidebarType) => {
                     handleActiveItem('folder', 'starred') ? theme.palette.primary.main : 'transparent'
                 }}
               >
-                <ListItemIcon sx={{ color: handleActiveItem('folder', 'starred') ? 'primary.main' : 'text.secondary' }}>
-                  <StarOutline sx={{ mr: 2 }} />
+                <ListItemIcon
+                  sx={{
+                    color: handleActiveItem('folder', 'starred') ? 'primary.main' : 'text.secondary',
+                    '& svg': { mr: 2 }
+                  }}
+                >
+                  <Icon icon='mdi:star-outline' />
                 </ListItemIcon>
                 <ListItemText
                   primary='Starred'
@@ -241,8 +252,13 @@ const SidebarLeft = (props: MailSidebarType) => {
                     handleActiveItem('folder', 'spam') ? theme.palette.primary.main : 'transparent'
                 }}
               >
-                <ListItemIcon sx={{ color: handleActiveItem('folder', 'spam') ? 'primary.main' : 'text.secondary' }}>
-                  <AlertOctagonOutline sx={{ mr: 2 }} />
+                <ListItemIcon
+                  sx={{
+                    color: handleActiveItem('folder', 'spam') ? 'primary.main' : 'text.secondary',
+                    '& svg': { mr: 2 }
+                  }}
+                >
+                  <Icon icon='mdi:alert-octagon-outline' />
                 </ListItemIcon>
                 <ListItemText
                   primary='Spam'
@@ -266,8 +282,13 @@ const SidebarLeft = (props: MailSidebarType) => {
                     handleActiveItem('folder', 'trash') ? theme.palette.primary.main : 'transparent'
                 }}
               >
-                <ListItemIcon sx={{ color: handleActiveItem('folder', 'trash') ? 'primary.main' : 'text.secondary' }}>
-                  <DeleteOutline sx={{ mr: 2 }} />
+                <ListItemIcon
+                  sx={{
+                    color: handleActiveItem('folder', 'trash') ? 'primary.main' : 'text.secondary',
+                    '& svg': { mr: 2 }
+                  }}
+                >
+                  <Icon icon='mdi:delete-outline' />
                 </ListItemIcon>
                 <ListItemText
                   primary='Trash'
@@ -299,8 +320,8 @@ const SidebarLeft = (props: MailSidebarType) => {
                     handleActiveItem('label', 'personal') ? theme.palette.primary.main : 'transparent'
                 }}
               >
-                <ListItemIcon sx={{ mr: 3.5 }}>
-                  <Circle sx={{ fontSize: '0.75rem', color: 'success.main' }} />
+                <ListItemIcon sx={{ mr: 3.5, '& svg': { color: 'success.main' } }}>
+                  <Icon icon='mdi:circle' fontSize='0.75rem' />
                 </ListItemIcon>
                 <ListItemText
                   primary='Personal'
@@ -323,8 +344,8 @@ const SidebarLeft = (props: MailSidebarType) => {
                     handleActiveItem('label', 'company') ? theme.palette.primary.main : 'transparent'
                 }}
               >
-                <ListItemIcon sx={{ mr: 3.5 }}>
-                  <Circle sx={{ fontSize: '0.75rem', color: 'primary.main' }} />
+                <ListItemIcon sx={{ mr: 3.5, '& svg': { color: 'primary.main' } }}>
+                  <Icon icon='mdi:circle' fontSize='0.75rem' />
                 </ListItemIcon>
                 <ListItemText
                   primary='Company'
@@ -347,8 +368,8 @@ const SidebarLeft = (props: MailSidebarType) => {
                     handleActiveItem('label', 'important') ? theme.palette.primary.main : 'transparent'
                 }}
               >
-                <ListItemIcon sx={{ mr: 3.5 }}>
-                  <Circle sx={{ fontSize: '0.75rem', color: 'warning.main' }} />
+                <ListItemIcon sx={{ mr: 3.5, '& svg': { color: 'warning.main' } }}>
+                  <Icon icon='mdi:circle' fontSize='0.75rem' />
                 </ListItemIcon>
                 <ListItemText
                   primary='Important'
@@ -371,8 +392,8 @@ const SidebarLeft = (props: MailSidebarType) => {
                     handleActiveItem('label', 'private') ? theme.palette.primary.main : 'transparent'
                 }}
               >
-                <ListItemIcon sx={{ mr: 3.5 }}>
-                  <Circle sx={{ fontSize: '0.75rem', color: 'error.main' }} />
+                <ListItemIcon sx={{ mr: 3.5, '& svg': { color: 'error.main' } }}>
+                  <Icon icon='mdi:circle' fontSize='0.75rem' />
                 </ListItemIcon>
                 <ListItemText
                   primary='Private'

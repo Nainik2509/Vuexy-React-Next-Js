@@ -60,7 +60,7 @@ const Drawer = (props: Props) => {
   const drawerColor = () => {
     if (mode === 'semi-dark') {
       return {
-        '& .MuiTypography-root, & .MuiSvgIcon-root': {
+        '& .MuiTypography-root, & svg': {
           color: `rgba(${theme.palette.customColors.dark}, 0.87)`
         }
       }

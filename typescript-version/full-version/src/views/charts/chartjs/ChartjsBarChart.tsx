@@ -13,9 +13,8 @@ import format from 'date-fns/format'
 import DatePicker from 'react-datepicker'
 import { Bar, ChartProps } from 'react-chartjs-2'
 
-// ** Icons Imports
-import ChevronDown from 'mdi-material-ui/ChevronDown'
-import CalendarOutline from 'mdi-material-ui/CalendarOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Types
 import { DateType } from 'src/types/forms/reactDatepickerTypes'
@@ -108,12 +107,12 @@ const ChartjsBarChart = (props: BarProp) => {
         InputProps={{
           startAdornment: (
             <InputAdornment position='start'>
-              <CalendarOutline />
+              <Icon icon='mdi:calendar-outline' />
             </InputAdornment>
           ),
           endAdornment: (
             <InputAdornment position='end'>
-              <ChevronDown />
+              <Icon icon='mdi:chevron-down' />
             </InputAdornment>
           )
         }}

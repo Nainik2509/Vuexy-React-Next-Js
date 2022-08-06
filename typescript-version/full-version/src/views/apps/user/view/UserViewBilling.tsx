@@ -32,8 +32,8 @@ import TableContainer from '@mui/material/TableContainer'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import DialogContentText from '@mui/material/DialogContentText'
 
-// ** Icons Imports
-import Plus from 'mdi-material-ui/Plus'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
 import Payment from 'payment'
@@ -319,8 +319,8 @@ const UserViewBilling = () => {
         <CardHeader
           title='Payment Methods'
           action={
-            <Button variant='contained' onClick={handleAddCardClickOpen}>
-              <Plus sx={{ mr: 1, fontSize: '1.125rem' }} />
+            <Button variant='contained' onClick={handleAddCardClickOpen} sx={{ '& svg': { mr: 1 } }}>
+              <Icon icon='mdi:plus' fontSize='1.125rem' />
               Add Card
             </Button>
           }

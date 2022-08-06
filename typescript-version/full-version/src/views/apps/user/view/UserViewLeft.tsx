@@ -26,10 +26,8 @@ import LinearProgress from '@mui/material/LinearProgress'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import DialogContentText from '@mui/material/DialogContentText'
 
-// ** Icons Imports
-import Check from 'mdi-material-ui/Check'
-import Circle from 'mdi-material-ui/Circle'
-import BriefcaseVariantOutline from 'mdi-material-ui/BriefcaseVariantOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Custom Components
 import CustomChip from 'src/@core/components/mui/chip'
@@ -145,7 +143,7 @@ const UserViewLeft = ({ data }: Props) => {
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Box sx={{ mr: 8, display: 'flex', alignItems: 'center' }}>
                   <CustomAvatar skin='light' variant='rounded' sx={{ mr: 3 }}>
-                    <Check />
+                    <Icon icon='mdi:check' />
                   </CustomAvatar>
                   <Box>
                     <Typography variant='h6' sx={{ lineHeight: 1.3 }}>
@@ -156,7 +154,7 @@ const UserViewLeft = ({ data }: Props) => {
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
                   <CustomAvatar skin='light' variant='rounded' sx={{ mr: 3 }}>
-                    <BriefcaseVariantOutline />
+                    <Icon icon='mdi:briefcase-variant-outline' />
                   </CustomAvatar>
                   <Box>
                     <Typography variant='h6' sx={{ lineHeight: 1.3 }}>
@@ -371,20 +369,38 @@ const UserViewLeft = ({ data }: Props) => {
 
             <CardContent>
               <Box sx={{ mt: 4, mb: 5 }}>
-                <Box sx={{ display: 'flex', mb: 2.5, alignItems: 'center' }}>
-                  <Circle sx={{ mr: 2, fontSize: '0.625rem', color: 'text.secondary' }} />
+                <Box
+                  sx={{ display: 'flex', mb: 2.5, alignItems: 'center', '& svg': { mr: 2, color: 'text.secondary' } }}
+                >
+                  <Icon icon='mdi:circle' fontSize='0.625rem' />
                   <Typography component='span' sx={{ fontSize: '0.875rem' }}>
                     10 Users
                   </Typography>
                 </Box>
-                <Box sx={{ mt: 2.5, display: 'flex', mb: 2.5, alignItems: 'center' }}>
-                  <Circle sx={{ mr: 2, fontSize: '0.625rem', color: 'text.secondary' }} />
+                <Box
+                  sx={{
+                    mt: 2.5,
+                    display: 'flex',
+                    mb: 2.5,
+                    alignItems: 'center',
+                    '& svg': { mr: 2, color: 'text.secondary' }
+                  }}
+                >
+                  <Icon icon='mdi:circle' fontSize='0.625rem' />
                   <Typography component='span' sx={{ fontSize: '0.875rem' }}>
                     Up to 10GB storage
                   </Typography>
                 </Box>
-                <Box sx={{ mt: 2.5, display: 'flex', mb: 2.5, alignItems: 'center' }}>
-                  <Circle sx={{ mr: 2, fontSize: '0.625rem', color: 'text.secondary' }} />
+                <Box
+                  sx={{
+                    mt: 2.5,
+                    display: 'flex',
+                    mb: 2.5,
+                    alignItems: 'center',
+                    '& svg': { mr: 2, color: 'text.secondary' }
+                  }}
+                >
+                  <Icon icon='mdi:circle' fontSize='0.625rem' />
                   <Typography component='span' sx={{ fontSize: '0.875rem' }}>
                     Basic Support
                   </Typography>

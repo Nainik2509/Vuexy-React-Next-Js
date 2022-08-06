@@ -14,9 +14,8 @@ import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 import TableContainer from '@mui/material/TableContainer'
 
-// ** Icons Imports
-import ChevronUp from 'mdi-material-ui/ChevronUp'
-import ChevronDown from 'mdi-material-ui/ChevronDown'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 const createData = (name: string, calories: number, fat: number, carbs: number, protein: number, price: number) => {
   return {
@@ -53,7 +52,7 @@ const Row = (props: { row: ReturnType<typeof createData> }) => {
       <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
         <TableCell>
           <IconButton aria-label='expand row' size='small' onClick={() => setOpen(!open)}>
-            {open ? <ChevronUp /> : <ChevronDown />}
+            {open ? <Icon icon='mdi:chevron-up' /> : <Icon icon='mdi:chevron-down' />}
           </IconButton>
         </TableCell>
         <TableCell component='th' scope='row'>

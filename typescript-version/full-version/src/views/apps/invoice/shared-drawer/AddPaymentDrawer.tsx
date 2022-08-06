@@ -18,8 +18,8 @@ import FormControl from '@mui/material/FormControl'
 import Cleave from 'cleave.js/react'
 import DatePicker from 'react-datepicker'
 
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Styled Component
 import CleaveWrapper from 'src/@core/styles/libs/react-cleave'
@@ -61,7 +61,7 @@ const EditInvoiceDrawer = ({ open, toggle }: Props) => {
       <Header>
         <Typography variant='h6'>Add Payment</Typography>
         <IconButton size='small' onClick={toggle} sx={{ color: 'text.primary' }}>
-          <Close fontSize='small' />
+          <Icon icon='mdi:close' fontSize={20} />
         </IconButton>
       </Header>
       <Box sx={{ p: 5 }}>

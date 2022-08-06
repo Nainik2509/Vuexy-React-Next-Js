@@ -2,10 +2,8 @@
 import TreeView from '@mui/lab/TreeView'
 import TreeItem from '@mui/lab/TreeItem'
 
-// ** Icons Imports
-import ChevronDown from 'mdi-material-ui/ChevronDown'
-import ChevronLeft from 'mdi-material-ui/ChevronLeft'
-import ChevronRight from 'mdi-material-ui/ChevronRight'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 interface Props {
   direction: 'ltr' | 'rtl'
@@ -45,14 +43,14 @@ const TreeViewRichObject = ({ direction }: Props) => {
     </TreeItem>
   )
 
-  const ExpandIcon = direction === 'rtl' ? <ChevronLeft /> : <ChevronRight />
+  const ExpandIcon = direction === 'rtl' ? 'mdi:chevron-left' : 'mdi:chevron-right'
 
   return (
     <TreeView
       sx={{ minHeight: 240 }}
       defaultExpanded={['root']}
-      defaultExpandIcon={ExpandIcon}
-      defaultCollapseIcon={<ChevronDown />}
+      defaultExpandIcon={<Icon icon={ExpandIcon} />}
+      defaultCollapseIcon={<Icon icon='mdi:chevron-down' />}
     >
       {renderTree(data)}
     </TreeView>

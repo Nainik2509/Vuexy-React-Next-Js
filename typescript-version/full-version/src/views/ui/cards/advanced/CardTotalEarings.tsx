@@ -7,8 +7,8 @@ import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 import LinearProgress from '@mui/material/LinearProgress'
 
-// ** Icons Imports
-import MenuUp from 'mdi-material-ui/MenuUp'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Types
 import { ThemeColor } from 'src/@core/layouts/types'
@@ -78,7 +78,7 @@ const CardTotalEarnings = () => {
             $24,895
           </Typography>
           <Box sx={{ display: 'flex', alignItems: 'center', color: 'success.main' }}>
-            <MenuUp sx={{ fontSize: '1.875rem', verticalAlign: 'middle' }} />
+            <Icon icon='mdi:menu-up' fontSize='1.875rem' />
             <Typography variant='body2' sx={{ fontWeight: 600, color: 'success.main' }}>
               10%
             </Typography>

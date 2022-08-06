@@ -2,6 +2,7 @@
 import { useState } from 'react'
 
 // ** MUI Imports
+import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import Backdrop from '@mui/material/Backdrop'
 import IconButton from '@mui/material/IconButton'
@@ -11,7 +12,7 @@ import CardContent from '@mui/material/CardContent'
 import CircularProgress from '@mui/material/CircularProgress'
 
 // ** Icon Imports
-import Refresh from 'mdi-material-ui/Refresh'
+import Icon from 'src/@core/components/icon'
 
 const CardActionRefresh = () => {
   // ** State
@@ -36,14 +37,17 @@ const CardActionRefresh = () => {
             sx={{ color: 'text.secondary' }}
             onClick={() => handleBackDrop()}
           >
-            <Refresh fontSize='small' />
+            <Icon icon='mdi:refresh' fontSize={20} />
           </IconButton>
         }
       />
       <CardContent>
         <Typography variant='body2'>
           You can specifically add refresh action using <code>actionRefresh</code> prop Click on{' '}
-          <Refresh fontSize='small' sx={{ verticalAlign: 'bottom' }} /> icon to see it in action
+          <Box component='span' sx={{ verticalAlign: 'top' }}>
+            <Icon icon='mdi:refresh' fontSize={20} />
+          </Box>{' '}
+          icon to see it in action
         </Typography>
       </CardContent>
 

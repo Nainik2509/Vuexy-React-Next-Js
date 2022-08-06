@@ -13,10 +13,8 @@ import { styled, useTheme } from '@mui/material/styles'
 import FormHelperText from '@mui/material/FormHelperText'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 
-// ** Icons Imports
-import TagOutline from 'mdi-material-ui/TagOutline'
-import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
-import AccountOutline from 'mdi-material-ui/AccountOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
@@ -28,21 +26,33 @@ const data = [
     title: 'Percentage',
     gridProps: { sm: 4, xs: 12 },
     content: 'Create a deal which offer uses some % off (i.e 5% OFF) on total.',
-    icon: <TagOutline sx={{ mb: 2, fontSize: '2rem', color: 'text.secondary' }} />
+    icon: (
+      <Box component='span' sx={{ mb: 2, color: 'text.secondary' }}>
+        <Icon fontSize='2rem' icon='mdi:tag-outline' />
+      </Box>
+    )
   },
   {
     value: 'flat-amount',
     title: 'Flat Amount',
     gridProps: { sm: 4, xs: 12 },
     content: 'Create a deal which offer uses flat $ off (i.e $5 OFF) on the total.',
-    icon: <CurrencyUsd sx={{ mb: 2, fontSize: '2rem', color: 'text.secondary' }} />
+    icon: (
+      <Box component='span' sx={{ mb: 2, color: 'text.secondary' }}>
+        <Icon fontSize='2rem' icon='mdi:currency-usd' />
+      </Box>
+    )
   },
   {
     value: 'prime-member',
     title: 'Prime Member',
     gridProps: { sm: 4, xs: 12 },
     content: 'Create prime member only deal to encourage the prime members.',
-    icon: <AccountOutline sx={{ mb: 2, fontSize: '2rem', color: 'text.secondary' }} />
+    icon: (
+      <Box component='span' sx={{ mb: 2, color: 'text.secondary' }}>
+        <Icon fontSize='2rem' icon='mdi:account-outline' />
+      </Box>
+    )
   }
 ]
 

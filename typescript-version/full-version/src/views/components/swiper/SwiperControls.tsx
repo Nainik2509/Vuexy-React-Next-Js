@@ -6,9 +6,8 @@ import Box from '@mui/material/Box'
 import Badge from '@mui/material/Badge'
 import { Direction } from '@mui/material'
 
-// ** Icons Imports
-import ChevronLeft from 'mdi-material-ui/ChevronLeft'
-import ChevronRight from 'mdi-material-ui/ChevronRight'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Components
 import clsx from 'clsx'
@@ -52,14 +51,16 @@ const SwiperControls = ({ direction }: { direction: Direction }) => {
         </Box>
         {loaded && instanceRef.current && (
           <>
-            <ChevronLeft
+            <Icon
+              icon='mdi:chevron-left'
               className={clsx('arrow arrow-left', {
                 'arrow-disabled': currentSlide === 0
               })}
               onClick={(e: any) => e.stopPropagation() || instanceRef.current?.prev()}
             />
 
-            <ChevronRight
+            <Icon
+              icon='mdi:chevron-right'
               className={clsx('arrow arrow-right', {
                 'arrow-disabled': currentSlide === instanceRef.current.track.details.slides.length - 1
               })}

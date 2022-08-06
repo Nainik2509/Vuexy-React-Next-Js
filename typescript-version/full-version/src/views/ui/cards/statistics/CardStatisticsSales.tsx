@@ -9,11 +9,8 @@ import CardHeader from '@mui/material/CardHeader'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 
-// ** Icons Imports
-import TrendingUp from 'mdi-material-ui/TrendingUp'
-import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
-import AccountOutline from 'mdi-material-ui/AccountOutline'
-import LabelVariantOutline from 'mdi-material-ui/LabelVariantOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Types
 import { ThemeColor } from 'src/@core/layouts/types'
@@ -23,10 +20,10 @@ import CustomAvatar from 'src/@core/components/mui/avatar'
 import OptionsMenu from 'src/@core/components/option-menu'
 
 interface SaleDataType {
+  icon: string
   stats: string
   title: string
   color: ThemeColor
-  icon: ReactElement
 }
 
 const salesData: SaleDataType[] = [
@@ -34,25 +31,25 @@ const salesData: SaleDataType[] = [
     stats: '245k',
     title: 'Sales',
     color: 'primary',
-    icon: <TrendingUp sx={{ fontSize: '1.75rem' }} />
+    icon: 'mdi:trending-up'
   },
   {
     stats: '12.5k',
     title: 'Customers',
     color: 'success',
-    icon: <AccountOutline sx={{ fontSize: '1.75rem' }} />
+    icon: 'mdi:account-outline'
   },
   {
     stats: '1.54k',
     color: 'warning',
     title: 'Products',
-    icon: <LabelVariantOutline sx={{ fontSize: '1.75rem' }} />
+    icon: 'mdi:label-variant-outline'
   },
   {
     stats: '$88k',
     color: 'info',
     title: 'Revenue',
-    icon: <CurrencyUsd sx={{ fontSize: '1.75rem' }} />
+    icon: 'mdi:currency-usd'
   }
 ]
 
@@ -61,7 +58,7 @@ const renderStats = () => {
     <Grid item xs={6} md={3} key={index}>
       <Box key={index} sx={{ display: 'flex', alignItems: 'center' }}>
         <CustomAvatar variant='rounded' color={sale.color} sx={{ boxShadow: 3, mr: 4, width: 44, height: 44 }}>
-          {sale.icon}
+          <Icon icon={sale.icon} fontSize='1.75rem' />
         </CustomAvatar>
         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
           <Typography variant='caption' sx={{ mb: 0.5 }}>

@@ -12,9 +12,8 @@ import FormControl from '@mui/material/FormControl'
 import FormHelperText from '@mui/material/FormHelperText'
 import InputAdornment from '@mui/material/InputAdornment'
 
-// ** Icons Imports
-import ChevronLeft from 'mdi-material-ui/ChevronLeft'
-import HelpCircleOutline from 'mdi-material-ui/HelpCircleOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
 import * as yup from 'yup'
@@ -266,9 +265,9 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
             onFocus={e => setFocus(e.target.name as Focused)}
             InputProps={{
               endAdornment: (
-                <InputAdornment position='start'>
+                <InputAdornment position='start' sx={{ '& svg': { cursor: 'pointer' } }}>
                   <Tooltip title='Card Verification Value'>
-                    <HelpCircleOutline fontSize='small' sx={{ cursor: 'pointer' }} />
+                    <Icon icon='mdi:help-circle-outline' fontSize={20} />
                   </Tooltip>
                 </InputAdornment>
               )
@@ -277,7 +276,7 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
         </Grid>
         <Grid item xs={12}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Button variant='contained' startIcon={<ChevronLeft fontSize='small' />} onClick={handlePrev}>
+            <Button variant='contained' startIcon={<Icon icon='mdi:chevron-left' fontSize={20} />} onClick={handlePrev}>
               Previous
             </Button>
             <Button type='submit' color='success' variant='contained'>

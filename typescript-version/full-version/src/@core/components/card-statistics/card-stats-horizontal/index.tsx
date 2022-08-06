@@ -6,9 +6,8 @@ import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 import MuiAvatar, { AvatarProps } from '@mui/material/Avatar'
 
-// ** Icons Imports
-import ChevronUp from 'mdi-material-ui/ChevronUp'
-import ChevronDown from 'mdi-material-ui/ChevronDown'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Types Imports
 import { CardStatsHorizontalProps } from 'src/@core/components/card-statistics/types'
@@ -29,8 +28,6 @@ const CardStatsHorizontal = (props: CardStatsHorizontalProps) => {
   // ** Props
   const { title, icon, stats, trendNumber, color = 'primary', trend = 'positive' } = props
 
-  const TrendIcon = trend === 'positive' ? ChevronUp : ChevronDown
-
   return (
     <Card>
       <CardContent>
@@ -44,8 +41,18 @@ const CardStatsHorizontal = (props: CardStatsHorizontalProps) => {
               <Typography variant='h6' sx={{ mr: 1, fontWeight: 600, lineHeight: 1.05 }}>
                 {stats}
               </Typography>
-              <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <TrendIcon sx={{ color: trend === 'positive' ? 'success.main' : 'error.main' }} />
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center'
+                }}
+              >
+                <Box
+                  component='span'
+                  sx={{ display: 'inline-flex', color: trend === 'positive' ? 'success.main' : 'error.main' }}
+                >
+                  <Icon icon={trend === 'positive' ? 'mdi:chevron-up' : 'mdi:chevron-down'} />
+                </Box>
                 <Typography
                   variant='caption'
                   sx={{ fontWeight: 600, color: trend === 'positive' ? 'success.main' : 'error.main' }}

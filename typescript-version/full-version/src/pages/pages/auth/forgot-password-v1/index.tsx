@@ -13,8 +13,8 @@ import CardContent from '@mui/material/CardContent'
 import { styled, useTheme } from '@mui/material/styles'
 import MuiCard, { CardProps } from '@mui/material/Card'
 
-// ** Icons Imports
-import ChevronLeft from 'mdi-material-ui/ChevronLeft'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Configs
 import themeConfig from 'src/configs/themeConfig'
@@ -140,7 +140,7 @@ const ForgotPasswordV1 = () => {
             <Typography variant='body2' sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Link passHref href='/pages/auth/login-v1'>
                 <LinkStyled>
-                  <ChevronLeft />
+                  <Icon icon='mdi:chevron-left' />
                   <span>Back to login</span>
                 </LinkStyled>
               </Link>

@@ -20,9 +20,8 @@ import OutlinedInput from '@mui/material/OutlinedInput'
 import InputAdornment from '@mui/material/InputAdornment'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 
-// ** Icons Imports
-import EyeOutline from 'mdi-material-ui/EyeOutline'
-import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Imports
 import StepperCustomDot from './StepperCustomDot'
@@ -168,7 +167,7 @@ const StepperAlternativeLabel = () => {
                         onMouseDown={handleMouseDownPassword}
                         aria-label='toggle password visibility'
                       >
-                        {state.showPassword ? <EyeOutline /> : <EyeOffOutline />}
+                        {state.showPassword ? <Icon icon='mdi:eye-outline' /> : <Icon icon='mdi:eye-off-outline' />}
                       </IconButton>
                     </InputAdornment>
                   }
@@ -192,7 +191,7 @@ const StepperAlternativeLabel = () => {
                         onClick={handleClickShowConfirmPassword}
                         onMouseDown={handleMouseDownConfirmPassword}
                       >
-                        {state.showPassword2 ? <EyeOutline /> : <EyeOffOutline />}
+                        {state.showPassword2 ? <Icon icon='mdi:eye-outline' /> : <Icon icon='mdi:eye-off-outline' />}
                       </IconButton>
                     </InputAdornment>
                   }

@@ -15,8 +15,8 @@ import Typography from '@mui/material/Typography'
 import AvatarGroup from '@mui/material/AvatarGroup'
 import CardContent from '@mui/material/CardContent'
 
-// ** Icons Imports
-import StarOutline from 'mdi-material-ui/StarOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Types
 import { TeamsTabType } from 'src/@fake-db/types'
@@ -44,7 +44,7 @@ const Teams = ({ data }: { data: TeamsTabType[] }) => {
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
                       <IconButton size='small' sx={{ color: 'text.secondary' }}>
-                        <StarOutline />
+                        <Icon icon='mdi:star-outline' />
                       </IconButton>
                       <OptionsMenu
                         iconButtonProps={{ size: 'small' }}

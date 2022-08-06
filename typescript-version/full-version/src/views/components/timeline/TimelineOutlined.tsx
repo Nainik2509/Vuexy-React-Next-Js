@@ -12,10 +12,8 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator'
 import TimelineConnector from '@mui/lab/TimelineConnector'
 import MuiTimeline, { TimelineProps } from '@mui/lab/Timeline'
 
-// ** Icons Imports
-import ArrowRight from 'mdi-material-ui/ArrowRight'
-import MessageOutline from 'mdi-material-ui/MessageOutline'
-import PhoneDialOutline from 'mdi-material-ui/PhoneDialOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // Styled Timeline component
 const Timeline = styled(MuiTimeline)<TimelineProps>({
@@ -42,7 +40,7 @@ const TimelineRight = () => {
           <TimelineDot color='error' variant='outlined' />
           <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent>
+        <TimelineContent sx={{ '& svg': { verticalAlign: 'bottom', mx: 4 } }}>
           <Box sx={{ mb: 2, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
             <Typography variant='body2' sx={{ mr: 2, fontWeight: 600, color: 'text.primary' }}>
               Get on the flight
@@ -50,8 +48,7 @@ const TimelineRight = () => {
             <Typography variant='caption'>Wednesday</Typography>
           </Box>
           <Typography variant='body2' sx={{ color: 'text.primary' }}>
-            <span>Charles de Gaulle Airport, Paris</span>{' '}
-            <ArrowRight fontSize='small' sx={{ verticalAlign: 'bottom', mx: 4 }} />{' '}
+            <span>Charles de Gaulle Airport, Paris</span> <Icon icon='mdi:arrow-right' fontSize={20} />{' '}
             <span>Heathrow Airport, London</span>
           </Typography>
           <Typography variant='caption'>6:30 AM</Typography>
@@ -92,10 +89,10 @@ const TimelineRight = () => {
             </Box>
             <div>
               <IconButton sx={{ color: 'text.secondary' }}>
-                <MessageOutline fontSize='small' />
+                <Icon icon='mdi:message-outline' fontSize={20} />
               </IconButton>
               <IconButton sx={{ color: 'text.secondary' }}>
-                <PhoneDialOutline fontSize='small' />
+                <Icon icon='mdi:phone-dial-outline' fontSize={20} />
               </IconButton>
             </div>
           </Box>

@@ -12,14 +12,8 @@ import MuiStepper, { StepperProps } from '@mui/material/Stepper'
 import MuiStepLabel, { StepLabelProps } from '@mui/material/StepLabel'
 import CardContent, { CardContentProps } from '@mui/material/CardContent'
 
-// ** Icons Imports
-import HomeOutline from 'mdi-material-ui/HomeOutline'
-import StarOutline from 'mdi-material-ui/StarOutline'
-import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
-import ChevronLeft from 'mdi-material-ui/ChevronLeft'
-import ChevronRight from 'mdi-material-ui/ChevronRight'
-import AccountOutline from 'mdi-material-ui/AccountOutline'
-import MapMarkerOutline from 'mdi-material-ui/MapMarkerOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Imports
 import CustomAvatar from 'src/@core/components/mui/avatar'
@@ -39,28 +33,28 @@ import StepperWrapper from 'src/@core/styles/mui/stepper'
 
 const steps = [
   {
-    icon: <AccountOutline />,
     title: 'Personal Details',
-    subtitle: 'Your Name/Email'
+    subtitle: 'Your Name/Email',
+    icon: 'mdi:account-outline'
   },
   {
-    icon: <HomeOutline />,
+    icon: 'mdi:home-outline',
     title: 'Property Details',
     subtitle: 'Property Type'
   },
   {
-    icon: <StarOutline />,
+    icon: 'mdi:star-outline',
     title: 'Property Features',
     subtitle: 'Bedrooms/Floor No'
   },
   {
     title: 'Property Area',
     subtitle: 'Covered Area',
-    icon: <MapMarkerOutline />
+    icon: 'mdi:map-marker-outline'
   },
   {
     title: 'Price Details',
-    icon: <CurrencyUsd />,
+    icon: 'mdi:currency-usd',
     subtitle: 'Expected Price'
   }
 ]
@@ -79,20 +73,20 @@ const Stepper = styled(MuiStepper)<StepperProps>(({ theme }) => ({
 const StepLabel = styled(MuiStepLabel)<StepLabelProps>(({ theme }) => ({
   '& .MuiStepLabel-label': {
     display: 'flex',
-    '& .step-title, & .step-subtitle, & .MuiAvatar-root .MuiSvgIcon-root': {
+    '& .step-title, & .step-subtitle, & .MuiAvatar-root svg': {
       color: theme.palette.text.secondary
     },
     '&.Mui-active': {
       '& .step-title': {
         color: theme.palette.primary.main
       },
-      '& .MuiAvatar-root .MuiSvgIcon-root': {
+      '& .MuiAvatar-root svg': {
         color: theme.palette.common.white
       }
     },
     '&.Mui-completed': {
       opacity: 0.65,
-      '& .MuiAvatar-root .MuiSvgIcon-root': {
+      '& .MuiAvatar-root svg': {
         color: theme.palette.primary.main
       }
     }
@@ -152,14 +146,14 @@ const PropertyListingWizard = () => {
           variant='outlined'
           onClick={handlePrev}
           disabled={activeStep === 0}
-          startIcon={<ChevronLeft />}
+          startIcon={<Icon icon='mdi:chevron-left' />}
         >
           Previous
         </Button>
         <Button
           variant='contained'
           color={stepCondition ? 'success' : 'primary'}
-          {...(!stepCondition ? { endIcon: <ChevronRight /> } : {})}
+          {...(!stepCondition ? { endIcon: <Icon icon='mdi:chevron-right' /> } : {})}
           onClick={() => (stepCondition ? alert('Submitted..!!') : handleNext())}
         >
           {stepCondition ? 'Submit' : 'Next'}
@@ -180,7 +174,7 @@ const PropertyListingWizard = () => {
                   onClick={() => setActiveStep(index)}
                   sx={{
                     cursor: 'pointer',
-                    '&.Mui-completed + .MuiSvgIcon-root': { color: 'primary.main' }
+                    '&.Mui-completed + svg': { color: 'primary.main' }
                   }}
                 >
                   <StepLabel icon={<></>} sx={{}}>
@@ -196,7 +190,7 @@ const PropertyListingWizard = () => {
                             : 'none'
                       }}
                     >
-                      {step.icon}
+                      <Icon icon={step.icon} />
                     </CustomAvatar>
                     <Box>
                       <Typography className='step-title'>{step.title}</Typography>

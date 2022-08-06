@@ -10,8 +10,8 @@ import Divider from '@mui/material/Divider'
 import MenuItem from '@mui/material/MenuItem'
 import IconButton from '@mui/material/IconButton'
 
-// ** Icons Imports
-import DotsVertical from 'mdi-material-ui/DotsVertical'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Type Imports
 import { OptionType, OptionsMenuType, OptionMenuItemType } from './types'
@@ -53,7 +53,7 @@ const OptionsMenu = (props: OptionsMenuType) => {
   return (
     <>
       <IconButton aria-haspopup='true' onClick={handleClick} {...iconButtonProps}>
-        {icon ? icon : <DotsVertical {...iconProps} />}
+        {icon ? icon : <Icon icon='mdi:dots-vertical' {...iconProps} />}
       </IconButton>
       <Menu
         keepMounted
