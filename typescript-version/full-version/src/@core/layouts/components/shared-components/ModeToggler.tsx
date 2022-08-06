@@ -18,7 +18,7 @@ const ModeToggler = (props: Props) => {
   const { settings, saveSettings } = props
 
   const handleModeChange = (mode: PaletteMode) => {
-    saveSettings({ ...settings, mode })
+    saveSettings({ ...settings, mode: mode as PaletteMode & 'semi-dark' })
   }
 
   const handleModeToggle = () => {

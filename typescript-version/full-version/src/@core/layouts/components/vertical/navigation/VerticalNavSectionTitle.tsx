@@ -1,5 +1,5 @@
 // ** MUI Imports
-import { styled, useTheme } from '@mui/material/styles'
+import { styled } from '@mui/material/styles'
 import Typography, { TypographyProps } from '@mui/material/Typography'
 import MuiListSubheader, { ListSubheaderProps } from '@mui/material/ListSubheader'
 
@@ -50,34 +50,34 @@ const VerticalNavSectionTitle = (props: Props) => {
   // ** Props
   const { item, navHover, settings, collapsedNavWidth, navigationBorderWidth } = props
 
-  // ** Hook
-  const theme = useTheme()
-
   // ** Vars
-  const { skin, navCollapsed } = settings
+  const { navCollapsed } = settings
 
-  const conditionalStyling = () => {
-    if (skin === 'semi-dark' && theme.palette.mode === 'light') {
-      return {
-        color: `rgba(${theme.palette.customColors.dark}, 0.38)`
-      }
-    } else if (skin === 'semi-dark' && theme.palette.mode === 'dark') {
-      return {
-        color: `rgba(${theme.palette.customColors.light}, 0.38)`
-      }
-    } else {
-      return {
-        color: theme.palette.text.disabled
-      }
-    }
-  }
+  // const conditionalStyling = () => {
+  //   if (skin === 'semi-dark' && theme.palette.mode === 'light') {
+  //     return {
+  //       color: `rgba(${theme.palette.customColors.dark}, 0.38)`
+  //     }
+  //   } else if (skin === 'semi-dark' && theme.palette.mode === 'dark') {
+  //     return {
+  //       color: `rgba(${theme.palette.customColors.light}, 0.38)`
+  //     }
+  //   } else {
+  //     return {
+  //       color: theme.palette.text.disabled
+  //     }
+  //   }
+  // }
 
   return (
     <CanViewNavSectionTitle navTitle={item}>
       <ListSubheader
         className='nav-section-title'
         sx={{
-          ...conditionalStyling(),
+          // ...conditionalStyling(),
+
+          color: 'text.disabled',
+
           ...(navCollapsed && !navHover
             ? { pt: 3.375, pb: 2.875, pl: (collapsedNavWidth - navigationBorderWidth - 24) / 8 }
             : { pl: 6 })

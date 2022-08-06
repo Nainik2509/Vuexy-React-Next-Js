@@ -109,7 +109,7 @@ const Navigation = (props: Props) => {
   }
 
   const shadowBgColor = () => {
-    if (theme.palette.mode === 'light') {
+    if (theme.palette.mode === 'dark') {
       return `linear-gradient(${theme.palette.customColors.darkBg} 5%,${hexToRGBA(
         theme.palette.customColors.darkBg,
         0.85

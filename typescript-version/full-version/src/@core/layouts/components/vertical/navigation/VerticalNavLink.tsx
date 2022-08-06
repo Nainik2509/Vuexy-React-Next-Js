@@ -7,11 +7,11 @@ import { useRouter } from 'next/router'
 
 // ** MUI Imports
 import Chip from '@mui/material/Chip'
+import { styled } from '@mui/material/styles'
 import ListItem from '@mui/material/ListItem'
 import Typography from '@mui/material/Typography'
 import Box, { BoxProps } from '@mui/material/Box'
 import ListItemIcon from '@mui/material/ListItemIcon'
-import { styled, useTheme } from '@mui/material/styles'
 import ListItemButton, { ListItemButtonProps } from '@mui/material/ListItemButton'
 
 // ** Configs Import
@@ -79,31 +79,31 @@ const VerticalNavLink = ({
   navigationBorderWidth
 }: Props) => {
   // ** Hooks
-  const theme = useTheme()
+  // const theme = useTheme()
   const router = useRouter()
 
   // ** Vars
-  const { skin, navCollapsed } = settings
+  const { navCollapsed } = settings
 
   const IconTag: ReactNode = parent && !item.icon ? themeConfig.navSubItemIcon : item.icon
 
-  const conditionalBgColor = () => {
-    if (skin === 'semi-dark' && theme.palette.mode === 'light') {
-      return {
-        color: `rgba(${theme.palette.customColors.dark}, 0.87)`,
-        '&:hover': {
-          backgroundColor: `rgba(${theme.palette.customColors.dark}, 0.04)`
-        }
-      }
-    } else if (skin === 'semi-dark' && theme.palette.mode === 'dark') {
-      return {
-        color: `rgba(${theme.palette.customColors.light}, 0.87)`,
-        '&:hover': {
-          backgroundColor: `rgba(${theme.palette.customColors.light}, 0.04)`
-        }
-      }
-    } else return {}
-  }
+  // const conditionalBgColor = () => {
+  //   if (skin === 'semi-dark' && theme.palette.mode === 'light') {
+  //     return {
+  //       color: `rgba(${theme.palette.customColors.dark}, 0.87)`,
+  //       '&:hover': {
+  //         backgroundColor: `rgba(${theme.palette.customColors.dark}, 0.04)`
+  //       }
+  //     }
+  //   } else if (skin === 'semi-dark' && theme.palette.mode === 'dark') {
+  //     return {
+  //       color: `rgba(${theme.palette.customColors.light}, 0.87)`,
+  //       '&:hover': {
+  //         backgroundColor: `rgba(${theme.palette.customColors.light}, 0.04)`
+  //       }
+  //     }
+  //   } else return {}
+  // }
 
   const isNavLinkActive = () => {
     if (router.pathname === item.path || handleURLQueries(router, item.path)) {
@@ -137,7 +137,8 @@ const VerticalNavLink = ({
             }}
             sx={{
               py: 2.5,
-              ...conditionalBgColor(),
+
+              // ...conditionalBgColor(),
               ...(item.disabled ? { pointerEvents: 'none' } : { cursor: 'pointer' }),
               pr: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 4.5,
               pl: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 5.5

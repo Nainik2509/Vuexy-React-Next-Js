@@ -85,7 +85,7 @@ const VerticalNavGroup = (props: Props) => {
   const theme = useTheme()
   const router = useRouter()
   const currentURL = router.asPath
-  const { skin, direction, navCollapsed, verticalNavToggleType } = settings
+  const { direction, navCollapsed, verticalNavToggleType } = settings
 
   // ** Accordion menu group open toggle
   const toggleActiveGroup = (item: NavGroup, parent: NavGroup | undefined) => {
@@ -183,60 +183,60 @@ const VerticalNavGroup = (props: Props) => {
 
   const menuGroupCollapsedStyles = navCollapsed && !navHover ? { opacity: 0 } : { opacity: 1 }
 
-  const conditionalColor = () => {
-    if (skin === 'semi-dark' && theme.palette.mode === 'light') {
-      return {
-        color: `rgba(${theme.palette.customColors.dark}, 0.68) !important`
-      }
-    } else if (skin === 'semi-dark' && theme.palette.mode === 'dark') {
-      return {
-        color: `rgba(${theme.palette.customColors.light}, 0.68) !important`
-      }
-    } else {
-      return {
-        color: `${theme.palette.text.secondary} !important`
-      }
-    }
-  }
+  // const conditionalColor = () => {
+  //   if (skin === 'semi-dark' && theme.palette.mode === 'light') {
+  //     return {
+  //       color: `rgba(${theme.palette.customColors.dark}, 0.68) !important`
+  //     }
+  //   } else if (skin === 'semi-dark' && theme.palette.mode === 'dark') {
+  //     return {
+  //       color: `rgba(${theme.palette.customColors.light}, 0.68) !important`
+  //     }
+  //   } else {
+  //     return {
+  //       color: `${theme.palette.text.secondary} !important`
+  //     }
+  //   }
+  // }
 
-  const conditionalBgColor = () => {
-    if (skin === 'semi-dark' && theme.palette.mode === 'light') {
-      return {
-        color: `rgba(${theme.palette.customColors.dark}, 0.87)`,
-        '&:hover': {
-          backgroundColor: `rgba(${theme.palette.customColors.dark}, 0.04)`
-        },
-        '&.Mui-selected': {
-          backgroundColor: `rgba(${theme.palette.customColors.dark}, 0.08)`,
-          '&:hover': {
-            backgroundColor: `rgba(${theme.palette.customColors.dark}, 0.12)`
-          }
-        }
-      }
-    } else if (skin === 'semi-dark' && theme.palette.mode === 'dark') {
-      return {
-        color: `rgba(${theme.palette.customColors.light}, 0.87)`,
-        '&:hover': {
-          backgroundColor: `rgba(${theme.palette.customColors.light}, 0.04)`
-        },
-        '&.Mui-selected': {
-          backgroundColor: `rgba(${theme.palette.customColors.light}, 0.08)`,
-          '&:hover': {
-            backgroundColor: `rgba(${theme.palette.customColors.light}, 0.12)`
-          }
-        }
-      }
-    } else {
-      return {
-        '&.Mui-selected': {
-          backgroundColor: theme.palette.action.hover,
-          '&:hover': {
-            backgroundColor: theme.palette.action.hover
-          }
-        }
-      }
-    }
-  }
+  // const conditionalBgColor = () => {
+  //   if (skin === 'semi-dark' && theme.palette.mode === 'light') {
+  //     return {
+  //       color: `rgba(${theme.palette.customColors.dark}, 0.87)`,
+  //       '&:hover': {
+  //         backgroundColor: `rgba(${theme.palette.customColors.dark}, 0.04)`
+  //       },
+  //       '&.Mui-selected': {
+  //         backgroundColor: `rgba(${theme.palette.customColors.dark}, 0.08)`,
+  //         '&:hover': {
+  //           backgroundColor: `rgba(${theme.palette.customColors.dark}, 0.12)`
+  //         }
+  //       }
+  //     }
+  //   } else if (skin === 'semi-dark' && theme.palette.mode === 'dark') {
+  //     return {
+  //       color: `rgba(${theme.palette.customColors.light}, 0.87)`,
+  //       '&:hover': {
+  //         backgroundColor: `rgba(${theme.palette.customColors.light}, 0.04)`
+  //       },
+  //       '&.Mui-selected': {
+  //         backgroundColor: `rgba(${theme.palette.customColors.light}, 0.08)`,
+  //         '&:hover': {
+  //           backgroundColor: `rgba(${theme.palette.customColors.light}, 0.12)`
+  //         }
+  //       }
+  //     }
+  //   } else {
+  //     return {
+  //       '&.Mui-selected': {
+  //         backgroundColor: theme.palette.action.hover,
+  //         '&:hover': {
+  //           backgroundColor: theme.palette.action.hover
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 
   return (
     <CanViewNavGroup navGroup={item}>
@@ -254,10 +254,17 @@ const VerticalNavGroup = (props: Props) => {
             sx={{
               py: 2.5,
               width: '100%',
-              ...conditionalBgColor(),
+
+              // ...conditionalBgColor(),
               transition: 'padding-left .25s ease-in-out',
               pr: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 4.5,
-              pl: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 5.5
+              pl: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 5.5,
+              '&.Mui-selected': {
+                backgroundColor: theme.palette.action.hover,
+                '&:hover': {
+                  backgroundColor: theme.palette.action.hover
+                }
+              }
             }}
           >
             {isSubToSub ? null : (
@@ -301,7 +308,6 @@ const VerticalNavGroup = (props: Props) => {
                 <MenuGroupToggleIcon
                   icon={direction === 'ltr' ? 'mdi:chevron-right' : 'mdi:chevron-left'}
                   sx={{
-                    ...conditionalColor(),
                     ...(groupActive.includes(item.title)
                       ? { transform: direction === 'ltr' ? 'rotate(90deg)' : 'rotate(-90deg)' }
                       : {})
