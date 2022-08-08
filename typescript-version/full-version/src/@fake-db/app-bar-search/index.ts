@@ -7,15 +7,15 @@ import { AppBarSearchType } from 'src/@fake-db/types'
 const searchData: AppBarSearchType[] = [
   {
     id: 1,
-    url: '/',
-    icon: 'HomeVariantOutline',
+    url: '/dashboards/analytics',
+    icon: 'ChartTimelineVariant',
     title: 'Analytics Dashboard',
     category: 'dashboards'
   },
   {
     id: 2,
     url: '/dashboards/ecommerce',
-    icon: 'HomeVariantOutline',
+    icon: 'CartOutline',
     title: 'eCommerce Dashboard',
     category: 'dashboards'
   },
@@ -42,142 +42,149 @@ const searchData: AppBarSearchType[] = [
   },
   {
     id: 6,
+    url: '/apps/kanban',
+    icon: 'ViewGridOutline',
+    title: 'Kanban',
+    category: 'appsPages'
+  },
+  {
+    id: 7,
     url: '/apps/invoice/list',
     icon: 'FormatListNumbered',
     title: 'Invoice List',
     category: 'appsPages'
   },
   {
-    id: 7,
+    id: 8,
     url: '/apps/invoice/preview',
     icon: 'FileDocumentOutline',
     title: 'Invoice Preview',
     category: 'appsPages'
   },
   {
-    id: 8,
+    id: 9,
     url: '/apps/invoice/edit',
-    icon: 'PencilOutline',
+    icon: 'FileDocumentEditOutline',
     title: 'Invoice Edit',
     category: 'appsPages'
   },
   {
-    id: 9,
+    id: 10,
     url: '/apps/invoice/add',
-    icon: 'Plus',
+    icon: 'FilePlusOutline',
     title: 'Invoice Add',
     category: 'appsPages'
   },
   {
-    id: 10,
+    id: 11,
     url: '/apps/user/list',
-    icon: 'FormatListNumbered',
+    icon: 'AccountGroup',
     title: 'User List',
     category: 'appsPages'
   },
   {
-    id: 11,
+    id: 12,
     url: '/apps/user/view',
     icon: 'AccountOutline',
     title: 'User View',
     category: 'appsPages'
   },
   {
-    id: 12,
+    id: 13,
     url: '/apps/roles',
     icon: 'ShieldOutline',
     title: 'Roles',
     category: 'appsPages'
   },
   {
-    id: 13,
+    id: 14,
     url: '/apps/permissions',
     icon: 'LockOutline',
     title: 'Permissions',
     category: 'appsPages'
   },
   {
-    id: 14,
-    url: '/pages/auth/login-v1',
-    icon: 'Login',
-    title: 'Login V1',
-    category: 'appsPages'
-  },
-  {
     id: 15,
-    url: '/pages/auth/login-v2',
-    icon: 'Login',
-    title: 'Login V2',
+    url: '/pages/user-profile/profile',
+    icon: 'CardAccountDetailsOutline',
+    title: 'User Profile',
     category: 'appsPages'
   },
   {
     id: 16,
-    url: '/pages/auth/login-with-appbar',
-    icon: 'Login',
-    title: 'Login With AppBar',
+    url: '/pages/user-profile/teams',
+    icon: 'AccountGroup',
+    title: 'User Profile - Teams',
     category: 'appsPages'
   },
   {
     id: 17,
-    url: '/pages/auth/register-v1',
-    icon: 'AccountPlusOutline',
-    title: 'Register V1',
+    url: '/pages/user-profile/projects',
+    icon: 'ViewGridOutline',
+    title: 'User Profile - Projects',
     category: 'appsPages'
   },
   {
     id: 18,
-    url: '/pages/auth/register-v2',
-    icon: 'AccountPlusOutline',
-    title: 'Register V2',
+    url: '/pages/user-profile/connections',
+    icon: 'LinkVariant',
+    title: 'User Profile - Connections',
     category: 'appsPages'
   },
   {
     id: 19,
-    url: '/pages/auth/forgot-password-v1',
-    icon: 'LockOutline',
-    title: 'Forgot Password V1',
+    url: '/pages/account-settings/account',
+    icon: 'AccountCogOutline',
+    title: 'Account Settings',
     category: 'appsPages'
   },
   {
     id: 20,
-    url: '/pages/auth/forgot-password-v2',
-    icon: 'LockOutline',
-    title: 'Forgot Password V2',
+    url: '/pages/account-settings/security',
+    icon: 'LockOpenOutline',
+    title: 'Account Settings - Security',
     category: 'appsPages'
   },
   {
     id: 21,
-    url: '/pages/auth/reset-password-v1',
-    icon: 'LockReset',
-    title: 'Reset Password V1',
+    url: '/pages/account-settings/billing',
+    icon: 'CurrencyUsd',
+    title: 'Account Settings - Billing',
     category: 'appsPages'
   },
   {
     id: 22,
-    url: '/pages/auth/reset-password-v2',
-    icon: 'LockReset',
-    title: 'Reset Password V2',
+    url: '/pages/account-settings/notifications',
+    icon: 'BellOutline',
+    title: 'Account Settings - Notifications',
+    category: 'appsPages'
+  },
+  {
+    id: 23,
+    url: '/pages/account-settings/connections',
+    icon: 'LinkVariant',
+    title: 'Account Settings - Connections',
     category: 'appsPages'
   },
   {
     id: 24,
-    url: '/pages/pricing',
-    icon: 'CurrencyUsd',
-    title: 'Pricing',
-    category: 'appsPages'
-  },
-  {
-    id: 25,
     url: '/pages/faq',
     icon: 'HelpCircleOutline',
     title: 'FAQ',
     category: 'appsPages'
   },
   {
-    id: 26,
+    id: 25,
     url: '/pages/knowledge-base',
     icon: 'BookOpenOutline',
     title: 'Knowledge Base',
+    category: 'appsPages'
+  },
+  {
+    id: 26,
+    url: '/pages/pricing',
+    icon: 'CurrencyUsd',
+    title: 'Pricing',
     category: 'appsPages'
   },
   {
@@ -190,7 +197,7 @@ const searchData: AppBarSearchType[] = [
   {
     id: 28,
     url: '/pages/misc/under-maintenance',
-    icon: 'Screwdriver',
+    icon: 'CogOutline',
     title: 'Under Maintenance',
     category: 'appsPages'
   },
@@ -211,471 +218,471 @@ const searchData: AppBarSearchType[] = [
   {
     id: 31,
     url: '/pages/misc/500-server-error',
-    icon: 'AccountMultipleRemoveOutline',
+    icon: 'ServerOff',
     title: 'Server Error - 500',
     category: 'appsPages'
   },
   {
     id: 32,
-    url: '/pages/dialog-examples',
-    icon: 'VectorArrangeBelow',
-    title: 'Dialog Examples',
+    url: '/pages/auth/login-v1',
+    icon: 'Login',
+    title: 'Login V1',
     category: 'appsPages'
   },
   {
     id: 33,
-    url: '/ui/typography',
-    icon: 'FormatTextVariantOutline',
-    title: 'Typography',
-    category: 'userInterface'
+    url: '/pages/auth/login-v2',
+    icon: 'Login',
+    title: 'Login V2',
+    category: 'appsPages'
   },
   {
     id: 34,
-    url: '/ui/icons',
-    icon: 'StarOutline',
-    title: 'Icons',
-    category: 'userInterface'
+    url: '/pages/auth/login-with-appbar',
+    icon: 'Login',
+    title: 'Login With AppBar',
+    category: 'appsPages'
   },
   {
     id: 35,
-    url: '/ui/cards/basic',
-    icon: 'CardOutline',
-    title: 'Card Basic',
-    category: 'userInterface'
+    url: '/pages/auth/register-v1',
+    icon: 'AccountPlusOutline',
+    title: 'Register V1',
+    category: 'appsPages'
   },
   {
     id: 36,
-    url: '/ui/cards/statistics',
-    icon: 'CardTextOutline',
-    title: 'Card Statistics',
-    category: 'userInterface'
+    url: '/pages/auth/register-v2',
+    icon: 'AccountPlusOutline',
+    title: 'Register V2',
+    category: 'appsPages'
   },
   {
     id: 37,
-    url: '/ui/cards/advanced',
-    icon: 'CardBulletedSettingsOutline',
-    title: 'Card Advanced',
-    category: 'userInterface'
-  },
-  {
-    id: 38,
-    url: '/ui/cards/gamification',
-    icon: 'CardAccountDetailsOutline',
-    title: 'Card Gamification',
-    category: 'userInterface'
-  },
-  {
-    id: 39,
-    url: '/ui/cards/actions',
-    icon: 'CardPlusOutline',
-    title: 'Card Actions',
-    category: 'userInterface'
-  },
-  {
-    id: 40,
-    url: '/components/accordion',
-    icon: 'FullscreenExit',
-    title: 'Accordion',
-    category: 'userInterface'
-  },
-  {
-    id: 41,
-    url: '/components/alerts',
-    icon: 'AlertOutline',
-    title: 'Alerts',
-    category: 'userInterface'
-  },
-  {
-    id: 42,
-    url: '/components/avatars',
-    icon: 'AccountCircleOutline',
-    title: 'Avatars',
-    category: 'userInterface'
-  },
-  {
-    id: 43,
-    url: '/components/badges',
-    icon: 'CircleOutline',
-    title: 'Badges',
-    category: 'userInterface'
-  },
-  {
-    id: 44,
-    url: '/components/buttons',
-    icon: 'GestureTapButton',
-    title: 'Buttons',
-    category: 'userInterface'
-  },
-  {
-    id: 45,
-    url: '/components/button-group',
-    icon: 'CheckboxMultipleBlankOutline',
-    title: 'Button Group',
-    category: 'userInterface'
-  },
-  {
-    id: 46,
-    url: '/components/chips',
-    icon: 'CardOutline',
-    title: 'Chips',
-    category: 'userInterface'
-  },
-  {
-    id: 47,
-    url: '/components/dialogs',
-    icon: 'TextBoxOutline',
-    title: 'Dialogs',
-    category: 'userInterface'
-  },
-  {
-    id: 48,
-    url: '/components/list',
-    icon: 'FormatListBulleted',
-    title: 'List',
-    category: 'userInterface'
-  },
-  {
-    id: 49,
-    url: '/components/menu',
-    icon: 'Menu',
-    title: 'Menu',
-    category: 'userInterface'
-  },
-  {
-    id: 50,
-    url: '/components/pagination',
-    icon: 'DotsHorizontal',
-    title: 'Pagination',
-    category: 'userInterface'
-  },
-  {
-    id: 51,
-    url: '/components/ratings',
-    icon: 'StarOutline',
-    title: 'Ratings',
-    category: 'userInterface'
-  },
-  {
-    id: 52,
-    url: '/components/snackbar',
-    icon: 'AlertCircleOutline',
-    title: 'Snackbar',
-    category: 'userInterface'
-  },
-  {
-    id: 53,
-    url: '/components/swiper/',
-    icon: 'CardOutline',
-    title: 'Swiper',
-    category: 'userInterface'
-  },
-  {
-    id: 54,
-    url: '/components/tabs',
-    icon: 'Tab',
-    title: 'Tabs',
-    category: 'userInterface'
-  },
-  {
-    id: 55,
-    url: '/components/toast',
-    icon: 'RectangleOutline',
-    title: 'Toast',
-    category: 'userInterface'
-  },
-  {
-    id: 56,
-    url: '/components/timeline',
-    icon: 'TimelineOutline',
-    title: 'Timeline',
-    category: 'userInterface'
-  },
-  {
-    id: 57,
-    url: '/components/tree-view',
-    icon: 'FileTreeOutline',
-    title: 'Tree View',
-    category: 'userInterface'
-  },
-  {
-    id: 58,
-    url: '/components/more',
-    icon: 'ViewGridPlusOutline',
-    title: 'More Components',
-    category: 'userInterface'
-  },
-  {
-    id: 59,
-    url: '/forms/form-elements/text-field',
-    icon: 'Lastpass',
-    title: 'TextField',
-    category: 'formsTables'
-  },
-  {
-    id: 60,
-    url: '/forms/form-elements/select',
-    icon: 'FormatListCheckbox',
-    title: 'Select',
-    category: 'formsTables'
-  },
-  {
-    id: 61,
-    url: '/forms/form-elements/checkbox',
-    icon: 'CheckboxOutline',
-    title: 'Checkbox',
-    category: 'formsTables'
-  },
-  {
-    id: 62,
-    url: '/forms/form-elements/radio',
-    icon: 'RadioboxMarked',
-    title: 'Radio',
-    category: 'formsTables'
-  },
-  {
-    id: 63,
-    url: '/forms/form-elements/textarea',
-    icon: 'CardTextOutline',
-    title: 'Textarea',
-    category: 'formsTables'
-  },
-  {
-    id: 64,
-    url: '/forms/form-elements/autocomplete',
-    icon: 'Lastpass',
-    title: 'Autocomplete',
-    category: 'formsTables'
-  },
-  {
-    id: 65,
-    url: '/forms/form-elements/pickers',
-    icon: 'CalendarRange',
-    title: 'Date Pickers',
-    category: 'formsTables'
-  },
-  {
-    id: 66,
-    url: '/forms/form-elements/switch',
-    icon: 'ToggleSwitchOutline',
-    title: 'Switch',
-    category: 'formsTables'
-  },
-  {
-    id: 67,
-    url: '/forms/form-elements/file-uploader',
-    icon: 'TrayArrowUp',
-    title: 'File Uploader',
-    category: 'formsTables'
-  },
-  {
-    id: 68,
-    url: '/forms/form-elements/editor',
-    icon: 'SquareEditOutline',
-    title: 'Editor',
-    category: 'formsTables'
-  },
-  {
-    id: 69,
-    url: '/forms/form-elements/slider',
-    icon: 'TransitConnectionHorizontal',
-    title: 'Slider',
-    category: 'formsTables'
-  },
-  {
-    id: 70,
-    url: '/forms/form-elements/input-mask',
-    icon: 'Lastpass',
-    title: 'Input Mask',
-    category: 'formsTables'
-  },
-  {
-    id: 71,
-    url: '/forms/form-layouts',
-    icon: 'ViewGridOutline',
-    title: 'Form Layouts',
-    category: 'formsTables'
-  },
-  {
-    id: 72,
-    url: '/forms/form-validation',
-    icon: 'AlertOutline',
-    title: 'Form Validation',
-    category: 'formsTables'
-  },
-  {
-    id: 73,
-    url: '/forms/form-wizard',
-    icon: 'TransitConnectionHorizontal',
-    title: 'Form Wizard',
-    category: 'formsTables'
-  },
-  {
-    id: 74,
-    url: '/tables/mui',
-    icon: 'Table',
-    title: 'Table',
-    category: 'formsTables'
-  },
-  {
-    id: 75,
-    url: '/tables/data-grid',
-    icon: 'Table',
-    title: 'Mui DataGrid',
-    category: 'formsTables'
-  },
-  {
-    id: 76,
-    url: '/charts/apex-charts',
-    icon: 'ChartLine',
-    title: 'Apex Charts',
-    category: 'chartsMisc'
-  },
-  {
-    id: 77,
-    url: '/charts/recharts',
-    icon: 'ChartBellCurveCumulative',
-    title: 'Recharts',
-    category: 'chartsMisc'
-  },
-  {
-    id: 78,
-    url: '/charts/chartjs',
-    icon: 'ChartBellCurve',
-    title: 'ChartJS',
-    category: 'chartsMisc'
-  },
-  {
-    id: 79,
-    url: '/acl',
-    icon: 'ShieldOutline',
-    title: 'Access Control (ACL)',
-    category: 'chartsMisc'
-  },
-  {
-    id: 80,
-    icon: 'RadioboxMarked',
-    title: 'Custom Inputs',
-    category: 'formsTables',
-    url: '/forms/form-elements/custom-inputs/'
-  },
-  {
-    id: 81,
-    icon: 'CartOutline',
-    category: 'formsTables',
-    title: 'Checkout Wizard',
-    url: '/pages/wizard-examples/checkout'
-  },
-  {
-    id: 82,
-    category: 'formsTables',
-    icon: 'OfficeBuildingOutline',
-    title: 'Property Listing Wizard',
-    url: '/pages/wizard-examples/property-listing'
-  },
-  {
-    id: 83,
-    icon: 'GiftOutline',
-    category: 'formsTables',
-    title: 'Create Deal Wizard',
-    url: '/pages/wizard-examples/create-deal'
-  },
-  {
-    id: 84,
     url: '/pages/auth/register-multi-steps',
     icon: 'AccountPlusOutline',
     title: 'Register Multi-Steps',
     category: 'appsPages'
   },
   {
-    id: 85,
-    icon: 'EmailOutline',
+    id: 38,
+    icon: 'EmailCheckOutline',
     category: 'appsPages',
     title: 'Verify Email V1',
     url: '/pages/auth/verify-email-v1'
   },
   {
-    id: 86,
-    icon: 'EmailOutline',
+    id: 39,
+    icon: 'EmailCheckOutline',
     category: 'appsPages',
     title: 'Verify Email V2',
     url: '/pages/auth/verify-email-v2'
   },
   {
-    id: 87,
-    icon: 'LockOutline',
+    id: 40,
+    url: '/pages/auth/forgot-password-v1',
+    icon: 'LockAlertOutline',
+    title: 'Forgot Password V1',
+    category: 'appsPages'
+  },
+  {
+    id: 41,
+    url: '/pages/auth/forgot-password-v2',
+    icon: 'LockAlertOutline',
+    title: 'Forgot Password V2',
+    category: 'appsPages'
+  },
+  {
+    id: 42,
+    url: '/pages/auth/reset-password-v1',
+    icon: 'LockReset',
+    title: 'Reset Password V1',
+    category: 'appsPages'
+  },
+  {
+    id: 43,
+    url: '/pages/auth/reset-password-v2',
+    icon: 'LockReset',
+    title: 'Reset Password V2',
+    category: 'appsPages'
+  },
+  {
+    id: 44,
+    icon: 'CellphoneLink',
     category: 'appsPages',
     title: 'Two Steps V1',
     url: '/pages/auth/two-steps-v1'
   },
   {
-    id: 88,
-    icon: 'LockOutline',
+    id: 45,
+    icon: 'CellphoneLink',
     category: 'appsPages',
     title: 'Two Steps V2',
     url: '/pages/auth/two-steps-v2'
   },
   {
-    id: 89,
-    url: '/pages/account-settings/account',
-    icon: 'AccountOutline',
-    title: 'Account - Account Settings',
+    id: 46,
+    icon: 'CartOutline',
+    category: 'appsPages',
+    title: 'Wizard - Checkout',
+    url: '/pages/wizard-examples/checkout'
+  },
+  {
+    id: 47,
+    category: 'appsPages',
+    icon: 'OfficeBuildingOutline',
+    title: 'Wizard - Property Listing',
+    url: '/pages/wizard-examples/property-listing'
+  },
+  {
+    id: 48,
+    icon: 'GiftOutline',
+    category: 'appsPages',
+    title: 'Wizard - Create Deal',
+    url: '/pages/wizard-examples/create-deal'
+  },
+  {
+    id: 49,
+    url: '/pages/dialog-examples',
+    icon: 'VectorArrangeBelow',
+    title: 'Dialog Examples',
     category: 'appsPages'
+  },
+  {
+    id: 50,
+    url: '/ui/typography',
+    icon: 'FormatLetterCase',
+    title: 'Typography',
+    category: 'userInterface'
+  },
+  {
+    id: 51,
+    url: '/ui/icons',
+    icon: 'GoogleCirclesExtended',
+    title: 'Icons',
+    category: 'userInterface'
+  },
+  {
+    id: 52,
+    url: '/ui/cards/basic',
+    icon: 'CardOutline',
+    title: 'Card Basic',
+    category: 'userInterface'
+  },
+  {
+    id: 53,
+    url: '/ui/cards/advanced',
+    icon: 'CardBulletedSettingsOutline',
+    title: 'Card Advanced',
+    category: 'userInterface'
+  },
+  {
+    id: 54,
+    url: '/ui/cards/statistics',
+    icon: 'ChartBoxOutline',
+    title: 'Card Statistics',
+    category: 'userInterface'
+  },
+  {
+    id: 55,
+    url: '/ui/cards/gamification',
+    icon: 'CardAccountDetailsOutline',
+    title: 'Card Gamification',
+    category: 'userInterface'
+  },
+  {
+    id: 56,
+    url: '/ui/cards/actions',
+    icon: 'CardPlusOutline',
+    title: 'Card Actions',
+    category: 'userInterface'
+  },
+  {
+    id: 57,
+    url: '/components/accordion',
+    icon: 'FullscreenExit',
+    title: 'Accordion',
+    category: 'userInterface'
+  },
+  {
+    id: 58,
+    url: '/components/alerts',
+    icon: 'AlertOutline',
+    title: 'Alerts',
+    category: 'userInterface'
+  },
+  {
+    id: 59,
+    url: '/components/avatars',
+    icon: 'AccountCircleOutline',
+    title: 'Avatars',
+    category: 'userInterface'
+  },
+  {
+    id: 60,
+    url: '/components/badges',
+    icon: 'BellBadgeOutline',
+    title: 'Badges',
+    category: 'userInterface'
+  },
+  {
+    id: 61,
+    url: '/components/buttons',
+    icon: 'GestureTapButton',
+    title: 'Buttons',
+    category: 'userInterface'
+  },
+  {
+    id: 62,
+    url: '/components/button-group',
+    icon: 'CheckboxMultipleBlankOutline',
+    title: 'Button Group',
+    category: 'userInterface'
+  },
+  {
+    id: 63,
+    url: '/components/chips',
+    icon: 'NewBox',
+    title: 'Chips',
+    category: 'userInterface'
+  },
+  {
+    id: 64,
+    url: '/components/dialogs',
+    icon: 'CardBulletedOutline',
+    title: 'Dialogs',
+    category: 'userInterface'
+  },
+  {
+    id: 65,
+    url: '/components/list',
+    icon: 'FormatListBulleted',
+    title: 'List',
+    category: 'userInterface'
+  },
+  {
+    id: 66,
+    url: '/components/menu',
+    icon: 'Menu',
+    title: 'Menu',
+    category: 'userInterface'
+  },
+  {
+    id: 67,
+    url: '/components/pagination',
+    icon: 'PageLast',
+    title: 'Pagination',
+    category: 'userInterface'
+  },
+  {
+    id: 68,
+    url: '/components/ratings',
+    icon: 'StarOutline',
+    title: 'Ratings',
+    category: 'userInterface'
+  },
+  {
+    id: 69,
+    url: '/components/snackbar',
+    icon: 'MessageProcessingOutline',
+    title: 'Snackbar',
+    category: 'userInterface'
+  },
+  {
+    id: 70,
+    url: '/components/swiper',
+    icon: 'ViewCarouselOutline',
+    title: 'Swiper',
+    category: 'userInterface'
+  },
+  {
+    id: 71,
+    url: '/components/tabs',
+    icon: 'Tab',
+    title: 'Tabs',
+    category: 'userInterface'
+  },
+  {
+    id: 72,
+    url: '/components/timeline',
+    icon: 'TimelineOutline',
+    title: 'Timeline',
+    category: 'userInterface'
+  },
+  {
+    id: 73,
+    url: '/components/toast',
+    icon: 'BellOutline',
+    title: 'Toast',
+    category: 'userInterface'
+  },
+  {
+    id: 74,
+    url: '/components/tree-view',
+    icon: 'FileTreeOutline',
+    title: 'Tree View',
+    category: 'userInterface'
+  },
+  {
+    id: 75,
+    url: '/components/more',
+    icon: 'ViewGridPlusOutline',
+    title: 'More Components',
+    category: 'userInterface'
+  },
+  {
+    id: 76,
+    url: '/forms/form-elements/text-field',
+    icon: 'Lastpass',
+    title: 'TextField',
+    category: 'formsTables'
+  },
+  {
+    id: 77,
+    url: '/forms/form-elements/select',
+    icon: 'FormatListCheckbox',
+    title: 'Select',
+    category: 'formsTables'
+  },
+  {
+    id: 78,
+    url: '/forms/form-elements/checkbox',
+    icon: 'CheckboxOutline',
+    title: 'Checkbox',
+    category: 'formsTables'
+  },
+  {
+    id: 79,
+    url: '/forms/form-elements/radio',
+    icon: 'RadioboxMarked',
+    title: 'Radio',
+    category: 'formsTables'
+  },
+  {
+    id: 80,
+    icon: 'OrderBoolAscendingVariant',
+    title: 'Custom Inputs',
+    category: 'formsTables',
+    url: '/forms/form-elements/custom-inputs'
+  },
+  {
+    id: 81,
+    url: '/forms/form-elements/textarea',
+    icon: 'CardTextOutline',
+    title: 'Textarea',
+    category: 'formsTables'
+  },
+  {
+    id: 82,
+    url: '/forms/form-elements/autocomplete',
+    icon: 'Lastpass',
+    title: 'Autocomplete',
+    category: 'formsTables'
+  },
+  {
+    id: 83,
+    url: '/forms/form-elements/pickers',
+    icon: 'CalendarMonth',
+    title: 'Date Pickers',
+    category: 'formsTables'
+  },
+  {
+    id: 84,
+    url: '/forms/form-elements/switch',
+    icon: 'ToggleSwitchOutline',
+    title: 'Switch',
+    category: 'formsTables'
+  },
+  {
+    id: 85,
+    url: '/forms/form-elements/file-uploader',
+    icon: 'TrayArrowUp',
+    title: 'File Uploader',
+    category: 'formsTables'
+  },
+  {
+    id: 86,
+    url: '/forms/form-elements/editor',
+    icon: 'SquareEditOutline',
+    title: 'Editor',
+    category: 'formsTables'
+  },
+  {
+    id: 87,
+    url: '/forms/form-elements/slider',
+    icon: 'GestureSwipeHorizontal',
+    title: 'Slider',
+    category: 'formsTables'
+  },
+  {
+    id: 88,
+    url: '/forms/form-elements/input-mask',
+    icon: 'Lastpass',
+    title: 'Input Mask',
+    category: 'formsTables'
+  },
+  {
+    id: 89,
+    url: '/forms/form-layouts',
+    icon: 'CubeOutline',
+    title: 'Form Layouts',
+    category: 'formsTables'
   },
   {
     id: 90,
-    url: '/pages/account-settings/security',
-    icon: 'LockOpenOutline',
-    title: 'Security - Account Settings',
-    category: 'appsPages'
+    url: '/forms/form-validation',
+    icon: 'CheckboxMarkedCircleOutline',
+    title: 'Form Validation',
+    category: 'formsTables'
   },
   {
     id: 91,
-    url: '/pages/account-settings/billing',
-    icon: 'BookmarkOutline',
-    title: 'Billing - Account Settings',
-    category: 'appsPages'
+    url: '/forms/form-wizard',
+    icon: 'TransitConnectionHorizontal',
+    title: 'Form Wizard',
+    category: 'formsTables'
   },
   {
     id: 92,
-    url: '/pages/account-settings/notifications',
-    icon: 'BellOutline',
-    title: 'Notifications - Account Settings',
-    category: 'appsPages'
+    url: '/tables/mui',
+    icon: 'GridLarge',
+    title: 'Table',
+    category: 'formsTables'
   },
   {
     id: 93,
-    url: '/pages/account-settings/connections',
-    icon: 'LinkVariant',
-    title: 'Connections - Account Settings',
-    category: 'appsPages'
+    url: '/tables/data-grid',
+    icon: 'Grid',
+    title: 'Mui DataGrid',
+    category: 'formsTables'
   },
   {
     id: 94,
-    url: '/pages/user-profile/profile',
-    icon: 'AccountOutline',
-    title: 'Profile - User Profile',
-    category: 'appsPages'
+    url: '/charts/apex-charts',
+    icon: 'ChartLine',
+    title: 'Apex Charts',
+    category: 'chartsMisc'
   },
   {
     id: 95,
-    url: '/pages/user-profile/teams',
-    icon: 'AccountOutline',
-    title: 'Teams - User Profile',
-    category: 'appsPages'
+    url: '/charts/recharts',
+    icon: 'ChartBellCurveCumulative',
+    title: 'Recharts',
+    category: 'chartsMisc'
   },
   {
     id: 96,
-    url: '/pages/user-profile/projects',
-    icon: 'ViewGridOutline',
-    title: 'Projects - User Profile',
-    category: 'appsPages'
+    url: '/charts/chartjs',
+    icon: 'ChartBellCurve',
+    title: 'ChartJS',
+    category: 'chartsMisc'
   },
   {
     id: 97,
-    url: '/pages/user-profile/connections',
-    icon: 'LinkVariant',
-    title: 'Connections - User Profile',
-    category: 'appsPages'
+    url: '/acl',
+    icon: 'ShieldOutline',
+    title: 'Access Control (ACL)',
+    category: 'chartsMisc'
   }
 ]
 
@@ -722,6 +729,13 @@ mock.onGet('/app-bar/search').reply(config => {
       categoriesCheck.push(category)
     }
   })
+  if (categoriesCheck.length === 0) {
+    Object.keys(includeData).forEach(category => {
+      if (includeData[category].length > 0) {
+        categoriesCheck.push(category)
+      }
+    })
+  }
 
   const resultsLength = categoriesCheck.length === 1 ? 5 : 3
 

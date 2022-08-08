@@ -41,7 +41,7 @@ const navigation: VerticalNavItemsType = [
   },
   {
     title: 'Kanban',
-    icon: 'CheckboxOutline',
+    icon: 'ViewGridOutline',
     path: '/apps/kanban'
   },
   {
@@ -82,7 +82,7 @@ const navigation: VerticalNavItemsType = [
   },
   {
     title: 'Roles & Permissions',
-    icon: 'LockOutline',
+    icon: 'ShieldOutline',
     children: [
       {
         title: 'Roles',
@@ -120,76 +120,6 @@ const navigation: VerticalNavItemsType = [
         ]
       },
       {
-        title: 'Authentication',
-        children: [
-          {
-            title: 'Login',
-            children: [
-              {
-                openInNewTab: true,
-                title: 'Login v1',
-                path: '/pages/auth/login-v1'
-              },
-              {
-                openInNewTab: true,
-                title: 'Login v2',
-                path: '/pages/auth/login-v2'
-              },
-              {
-                openInNewTab: true,
-                title: 'Login With AppBar',
-                path: '/pages/auth/login-with-appbar'
-              }
-            ]
-          },
-          {
-            title: 'Register',
-            children: [
-              {
-                openInNewTab: true,
-                title: 'Register v1',
-                path: '/pages/auth/register-v1'
-              },
-              {
-                openInNewTab: true,
-                title: 'Register v2',
-                path: '/pages/auth/register-v2'
-              }
-            ]
-          },
-          {
-            title: 'Forgot Password',
-            children: [
-              {
-                openInNewTab: true,
-                title: 'Forgot Password v1',
-                path: '/pages/auth/forgot-password-v1'
-              },
-              {
-                openInNewTab: true,
-                title: 'Forgot Password v2',
-                path: '/pages/auth/forgot-password-v2'
-              }
-            ]
-          },
-          {
-            title: 'Reset Password',
-            children: [
-              {
-                openInNewTab: true,
-                title: 'Reset Password v1',
-                path: '/pages/auth/reset-password-v1'
-              },
-              {
-                openInNewTab: true,
-                title: 'Reset Password v2',
-                path: '/pages/auth/reset-password-v2'
-              }
-            ]
-          }
-        ]
-      },
-      {
         title: 'Account Settings',
         children: [
           {
@@ -216,16 +146,16 @@ const navigation: VerticalNavItemsType = [
         ]
       },
       {
-        title: 'Pricing',
-        path: '/pages/pricing'
-      },
-      {
         title: 'FAQ',
         path: '/pages/faq'
       },
       {
         title: 'Knowledge Base',
         path: '/pages/knowledge-base'
+      },
+      {
+        title: 'Pricing',
+        path: '/pages/pricing'
       },
       {
         title: 'Miscellaneous',
@@ -260,6 +190,130 @@ const navigation: VerticalNavItemsType = [
     ]
   },
   {
+    title: 'Auth Pages',
+    icon: 'LockOutline',
+    children: [
+      {
+        title: 'Login',
+        children: [
+          {
+            openInNewTab: true,
+            title: 'Login v1',
+            path: '/pages/auth/login-v1'
+          },
+          {
+            openInNewTab: true,
+            title: 'Login v2',
+            path: '/pages/auth/login-v2'
+          },
+          {
+            openInNewTab: true,
+            title: 'Login With AppBar',
+            path: '/pages/auth/login-with-appbar'
+          }
+        ]
+      },
+      {
+        title: 'Register',
+        children: [
+          {
+            openInNewTab: true,
+            title: 'Register v1',
+            path: '/pages/auth/register-v1'
+          },
+          {
+            openInNewTab: true,
+            title: 'Register v2',
+            path: '/pages/auth/register-v2'
+          },
+          {
+            openInNewTab: true,
+            title: 'Register Multi-Steps',
+            path: '/pages/auth/register-multi-steps'
+          }
+        ]
+      },
+      {
+        title: 'Verify Email',
+        children: [
+          {
+            openInNewTab: true,
+            title: 'Verify Email v1',
+            path: '/pages/auth/verify-email-v1'
+          },
+          {
+            openInNewTab: true,
+            title: 'Verify Email v2',
+            path: '/pages/auth/verify-email-v2'
+          }
+        ]
+      },
+      {
+        title: 'Forgot Password',
+        children: [
+          {
+            openInNewTab: true,
+            title: 'Forgot Password v1',
+            path: '/pages/auth/forgot-password-v1'
+          },
+          {
+            openInNewTab: true,
+            title: 'Forgot Password v2',
+            path: '/pages/auth/forgot-password-v2'
+          }
+        ]
+      },
+      {
+        title: 'Reset Password',
+        children: [
+          {
+            openInNewTab: true,
+            title: 'Reset Password v1',
+            path: '/pages/auth/reset-password-v1'
+          },
+          {
+            openInNewTab: true,
+            title: 'Reset Password v2',
+            path: '/pages/auth/reset-password-v2'
+          }
+        ]
+      },
+      {
+        title: 'Two Steps',
+        children: [
+          {
+            openInNewTab: true,
+            title: 'Two Steps v1',
+            path: '/pages/auth/two-steps-v1'
+          },
+          {
+            openInNewTab: true,
+            title: 'Two Steps v2',
+            path: '/pages/auth/two-steps-v2'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: 'Wizard Examples',
+    icon: 'TransitConnectionHorizontal',
+    children: [
+      {
+        title: 'Checkout',
+        path: '/pages/wizard-examples/checkout'
+      },
+      {
+        title: 'Property Listing',
+        path: '/pages/wizard-examples/property-listing'
+      },
+      {
+        title: 'Create Deal',
+        path: '/pages/wizard-examples/create-deal'
+      }
+    ]
+  },
+  {
     icon: 'VectorArrangeBelow',
     title: 'Dialog Examples',
     path: '/pages/dialog-examples'
@@ -286,12 +340,12 @@ const navigation: VerticalNavItemsType = [
         path: '/ui/cards/basic'
       },
       {
-        title: 'Statistics',
-        path: '/ui/cards/statistics'
-      },
-      {
         title: 'Advanced',
         path: '/ui/cards/advanced'
+      },
+      {
+        title: 'Statistics',
+        path: '/ui/cards/statistics'
       },
       {
         title: 'Gamification',
@@ -304,7 +358,7 @@ const navigation: VerticalNavItemsType = [
     ]
   },
   {
-    badgeContent: '17',
+    badgeContent: '18',
     title: 'Components',
     icon: 'ArchiveOutline',
     badgeColor: 'primary',
@@ -362,6 +416,10 @@ const navigation: VerticalNavItemsType = [
         path: '/components/snackbar'
       },
       {
+        title: 'Swiper',
+        path: '/components/swiper'
+      },
+      {
         title: 'Tabs',
         path: '/components/tabs'
       },
@@ -409,6 +467,10 @@ const navigation: VerticalNavItemsType = [
       {
         title: 'Radio',
         path: '/forms/form-elements/radio'
+      },
+      {
+        title: 'Custom Inputs',
+        path: '/forms/form-elements/custom-inputs'
       },
       {
         title: 'Textarea',
@@ -461,16 +523,16 @@ const navigation: VerticalNavItemsType = [
   {
     title: 'Form Wizard',
     path: '/forms/form-wizard',
-    icon: 'PackageVariantClosed'
+    icon: 'TransitConnectionHorizontal'
   },
   {
     title: 'Table',
-    icon: 'Table',
+    icon: 'GridLarge',
     path: '/tables/mui'
   },
   {
     title: 'Mui DataGrid',
-    icon: 'Table',
+    icon: 'Grid',
     path: '/tables/data-grid'
   },
   {

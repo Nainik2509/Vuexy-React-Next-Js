@@ -1,10 +1,10 @@
 // ** Icon imports
 import Apps from 'mdi-material-ui/Apps'
+import Grid from 'mdi-material-ui/Grid'
 import Menu from 'mdi-material-ui/Menu'
-import Table from 'mdi-material-ui/Table'
 import Lifebuoy from 'mdi-material-ui/Lifebuoy'
 import ChartLine from 'mdi-material-ui/ChartLine'
-import CogOutline from 'mdi-material-ui/CogOutline'
+import GridLarge from 'mdi-material-ui/GridLarge'
 import ChartDonut from 'mdi-material-ui/ChartDonut'
 import FormSelect from 'mdi-material-ui/FormSelect'
 import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
@@ -21,21 +21,23 @@ import AccountOutline from 'mdi-material-ui/AccountOutline'
 import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
 import ChartBellCurve from 'mdi-material-ui/ChartBellCurve'
 import MessageOutline from 'mdi-material-ui/MessageOutline'
-import CheckboxOutline from 'mdi-material-ui/CheckboxOutline'
+import ViewGridOutline from 'mdi-material-ui/ViewGridOutline'
 import BookOpenOutline from 'mdi-material-ui/BookOpenOutline'
 import FormatLetterCase from 'mdi-material-ui/FormatLetterCase'
+import AccountCogOutline from 'mdi-material-ui/AccountCogOutline'
 import HelpCircleOutline from 'mdi-material-ui/HelpCircleOutline'
 import CreditCardOutline from 'mdi-material-ui/CreditCardOutline'
 import VectorArrangeBelow from 'mdi-material-ui/VectorArrangeBelow'
 import FileDocumentOutline from 'mdi-material-ui/FileDocumentOutline'
 import CalendarBlankOutline from 'mdi-material-ui/CalendarBlankOutline'
 import ChartTimelineVariant from 'mdi-material-ui/ChartTimelineVariant'
-import PackageVariantClosed from 'mdi-material-ui/PackageVariantClosed'
 import PaletteSwatchOutline from 'mdi-material-ui/PaletteSwatchOutline'
 import CheckboxMarkedOutline from 'mdi-material-ui/CheckboxMarkedOutline'
 import GoogleCirclesExtended from 'mdi-material-ui/GoogleCirclesExtended'
 import ChartBellCurveCumulative from 'mdi-material-ui/ChartBellCurveCumulative'
+import CardAccountDetailsOutline from 'mdi-material-ui/CardAccountDetailsOutline'
 import CheckboxMarkedCircleOutline from 'mdi-material-ui/CheckboxMarkedCircleOutline'
+import TransitConnectionHorizontal from 'mdi-material-ui/TransitConnectionHorizontal'
 
 // ** Type import
 import { HorizontalNavItemsType } from 'src/@core/layouts/types'
@@ -79,7 +81,7 @@ const navigation = (): HorizontalNavItemsType => {
         },
         {
           title: 'Kanban',
-          icon: CheckboxOutline,
+          icon: ViewGridOutline,
           path: '/apps/kanban'
         },
         {
@@ -120,7 +122,7 @@ const navigation = (): HorizontalNavItemsType => {
         },
         {
           title: 'Roles & Permissions',
-          icon: LockOutline,
+          icon: ShieldOutline,
           children: [
             {
               title: 'Roles',
@@ -157,12 +159,12 @@ const navigation = (): HorizontalNavItemsType => {
               path: '/ui/cards/basic'
             },
             {
-              title: 'Statistics',
-              path: '/ui/cards/statistics'
-            },
-            {
               title: 'Advanced',
               path: '/ui/cards/advanced'
+            },
+            {
+              title: 'Statistics',
+              path: '/ui/cards/statistics'
             },
             {
               title: 'Gamification',
@@ -263,11 +265,12 @@ const navigation = (): HorizontalNavItemsType => {
       ]
     },
     {
-      icon: FileOutline,
+      icon: FileDocumentOutline,
       title: 'Pages',
       children: [
         {
           title: 'User Profile',
+          icon: CardAccountDetailsOutline,
           children: [
             {
               title: 'Profile',
@@ -288,7 +291,80 @@ const navigation = (): HorizontalNavItemsType => {
           ]
         },
         {
-          title: 'Authentication',
+          icon: AccountCogOutline,
+          title: 'Account Settings',
+          children: [
+            {
+              title: 'Account',
+              path: '/pages/account-settings/account'
+            },
+            {
+              title: 'Security',
+              path: '/pages/account-settings/security'
+            },
+            {
+              title: 'Billing',
+              path: '/pages/account-settings/billing'
+            },
+            {
+              title: 'Notifications',
+              path: '/pages/account-settings/notifications'
+            },
+
+            {
+              title: 'Connections',
+              path: '/pages/account-settings/connections'
+            }
+          ]
+        },
+        {
+          title: 'FAQ',
+          path: '/pages/faq',
+          icon: HelpCircleOutline
+        },
+        {
+          icon: BookOpenOutline,
+          title: 'Knowledge Base',
+          path: '/pages/knowledge-base'
+        },
+        {
+          title: 'Pricing',
+          icon: CurrencyUsd,
+          path: '/pages/pricing'
+        },
+        {
+          title: 'Miscellaneous',
+          icon: FileOutline,
+          children: [
+            {
+              openInNewTab: true,
+              title: 'Coming Soon',
+              path: '/pages/misc/coming-soon'
+            },
+            {
+              openInNewTab: true,
+              title: 'Under Maintenance',
+              path: '/pages/misc/under-maintenance'
+            },
+            {
+              openInNewTab: true,
+              title: 'Page Not Found - 404',
+              path: '/pages/misc/404-not-found'
+            },
+            {
+              openInNewTab: true,
+              title: 'Not Authorized - 401',
+              path: '/pages/misc/401-not-authorized'
+            },
+            {
+              openInNewTab: true,
+              title: 'Server Error - 500',
+              path: '/pages/misc/500-server-error'
+            }
+          ]
+        },
+        {
+          title: 'Auth Pages',
           icon: LockOutline,
           children: [
             {
@@ -332,6 +408,21 @@ const navigation = (): HorizontalNavItemsType => {
               ]
             },
             {
+              title: 'Verify Email',
+              children: [
+                {
+                  openInNewTab: true,
+                  title: 'Verify Email v1',
+                  path: '/pages/auth/verify-email-v1'
+                },
+                {
+                  openInNewTab: true,
+                  title: 'Verify Email v2',
+                  path: '/pages/auth/verify-email-v2'
+                }
+              ]
+            },
+            {
               title: 'Forgot Password',
               children: [
                 {
@@ -362,21 +453,6 @@ const navigation = (): HorizontalNavItemsType => {
               ]
             },
             {
-              title: 'Verify Email',
-              children: [
-                {
-                  openInNewTab: true,
-                  title: 'Verify Email v1',
-                  path: '/pages/auth/verify-email-v1'
-                },
-                {
-                  openInNewTab: true,
-                  title: 'Verify Email v2',
-                  path: '/pages/auth/verify-email-v2'
-                }
-              ]
-            },
-            {
               title: 'Two Steps',
               children: [
                 {
@@ -394,86 +470,8 @@ const navigation = (): HorizontalNavItemsType => {
           ]
         },
         {
-          icon: CogOutline,
-          title: 'Account Settings',
-          children: [
-            {
-              title: 'Account',
-              path: '/pages/account-settings/account'
-            },
-            {
-              title: 'Security',
-              path: '/pages/account-settings/security'
-            },
-            {
-              title: 'Billing',
-              path: '/pages/account-settings/billing'
-            },
-            {
-              title: 'Notifications',
-              path: '/pages/account-settings/notifications'
-            },
-
-            {
-              title: 'Connections',
-              path: '/pages/account-settings/connections'
-            }
-          ]
-        },
-        {
-          title: 'Pricing',
-          icon: CurrencyUsd,
-          path: '/pages/pricing'
-        },
-        {
-          title: 'FAQ',
-          path: '/pages/faq',
-          icon: HelpCircleOutline
-        },
-        {
-          icon: BookOpenOutline,
-          title: 'Knowledge Base',
-          path: '/pages/knowledge-base'
-        },
-        {
-          title: 'Miscellaneous',
-          icon: FileOutline,
-          children: [
-            {
-              openInNewTab: true,
-              title: 'Coming Soon',
-              path: '/pages/misc/coming-soon'
-            },
-            {
-              openInNewTab: true,
-              title: 'Under Maintenance',
-              path: '/pages/misc/under-maintenance'
-            },
-            {
-              openInNewTab: true,
-              title: 'Page Not Found - 404',
-              path: '/pages/misc/404-not-found'
-            },
-            {
-              openInNewTab: true,
-              title: 'Not Authorized - 401',
-              path: '/pages/misc/401-not-authorized'
-            },
-            {
-              openInNewTab: true,
-              title: 'Server Error - 500',
-              path: '/pages/misc/500-server-error'
-            }
-          ]
-        },
-        {
-          icon: VectorArrangeBelow,
-          title: 'Dialog Examples',
-          path: '/pages/dialog-examples'
-        },
-        {
           title: 'Wizard Examples',
-          icon: FileDocumentOutline,
+          icon: TransitConnectionHorizontal,
           children: [
             {
               title: 'Checkout',
@@ -488,6 +486,11 @@ const navigation = (): HorizontalNavItemsType => {
               path: '/pages/wizard-examples/create-deal'
             }
           ]
+        },
+        {
+          icon: VectorArrangeBelow,
+          title: 'Dialog Examples',
+          path: '/pages/dialog-examples'
         }
       ]
     },
@@ -570,16 +573,16 @@ const navigation = (): HorizontalNavItemsType => {
         {
           title: 'Form Wizard',
           path: '/forms/form-wizard',
-          icon: PackageVariantClosed
+          icon: TransitConnectionHorizontal
         },
         {
           title: 'Table',
-          icon: Table,
+          icon: GridLarge,
           path: '/tables/mui'
         },
         {
           title: 'Mui DataGrid',
-          icon: Table,
+          icon: Grid,
           path: '/tables/data-grid'
         }
       ]
@@ -595,13 +598,13 @@ const navigation = (): HorizontalNavItemsType => {
         },
         {
           title: 'Recharts',
-          icon: ChartBellCurve,
+          icon: ChartBellCurveCumulative,
           path: '/charts/recharts'
         },
         {
           title: 'ChartJS',
           path: '/charts/chartjs',
-          icon: ChartBellCurveCumulative
+          icon: ChartBellCurve
         }
       ]
     },

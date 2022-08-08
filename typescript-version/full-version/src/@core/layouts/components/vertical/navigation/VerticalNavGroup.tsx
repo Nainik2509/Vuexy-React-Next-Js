@@ -270,6 +270,12 @@ const VerticalNavGroup = (props: Props) => {
                 '&:hover': {
                   backgroundColor: theme.palette.action.hover
                 }
+              },
+              '&.Mui-selected.Mui-focusVisible': {
+                backgroundColor: theme.palette.action.focus,
+                '&:hover': {
+                  backgroundColor: theme.palette.action.focus
+                }
               }
             }}
           >
