@@ -20,7 +20,6 @@ import LinearProgress from '@mui/material/LinearProgress'
 import MessageOutline from 'mdi-material-ui/MessageOutline'
 
 // ** Types
-import { ThemeColor } from 'src/@core/layouts/types'
 import { ProjectsTabType } from 'src/@fake-db/types'
 
 // ** Utils Import
@@ -32,16 +31,14 @@ import CustomAvatar from 'src/@core/components/mui/avatar'
 import OptionsMenu from 'src/@core/components/option-menu'
 
 const ProjectAvatar = ({ project }: { project: ProjectsTabType }) => {
-  if (project.avatar.length) {
-    return <CustomAvatar src={project.avatar} sx={{ width: 38, height: 38 }} />
+  const { title, avatar, avatarColor = 'primary' } = project
+
+  if (avatar.length) {
+    return <CustomAvatar src={avatar} sx={{ width: 38, height: 38 }} />
   } else {
     return (
-      <CustomAvatar
-        skin='light'
-        sx={{ width: 38, height: 38 }}
-        color={(project.avatarColor as ThemeColor) || ('primary' as ThemeColor)}
-      >
-        {getInitials(project.title || 'John Doe')}
+      <CustomAvatar skin='light' color={avatarColor} sx={{ width: 38, height: 38 }}>
+        {getInitials(title)}
       </CustomAvatar>
     )
   }

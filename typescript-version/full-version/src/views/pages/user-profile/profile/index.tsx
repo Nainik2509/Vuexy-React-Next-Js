@@ -21,9 +21,7 @@ const ProfileTab = ({ data }: { data: ProfileTabType }) => {
           <Grid item xs={12}>
             <ActivityTimeline />
           </Grid>
-          <Grid item xs={12}>
-            <ConnectionsTeams connections={data.connections} teams={data.teamsTech} />
-          </Grid>
+          <ConnectionsTeams connections={data.connections} teams={data.teamsTech} />
           <Grid item xs={12}>
             <ProjectsTable />
           </Grid>

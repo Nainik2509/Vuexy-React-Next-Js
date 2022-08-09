@@ -97,18 +97,18 @@ export type CardStatsType = {
 //-------------------
 export type ProjectTableRowType = {
   id: number
-  name: string
   date: string
-  status: number
+  name: string
   leader: string
+  status: number
   avatar?: string
   avatarGroup: string[]
   avatarColor?: ThemeColor
 }
 export type ProfileHeaderType = {
   fullName: string
-  location: string
   coverImg: string
+  location: string
   profileImg: string
   joiningDate: string
   designation: string
@@ -142,18 +142,18 @@ export type ProfileTeamsTechType = {
   ChipColor: ThemeColor
 }
 export type TeamsTabType = {
-  extraMembers: number
   title: string
   avatar: string
   description: string
+  extraMembers: number
   chips: ProfileChipType[]
   avatarGroup: ProfileAvatarGroupType[]
 }
 export type ProjectsTabType = {
   hours: string
   tasks: string
-  budget: string
   title: string
+  budget: string
   client: string
   avatar: string
   members: string
@@ -180,13 +180,14 @@ export type ConnectionsTabType = {
   chips: ProfileChipType[]
 }
 export type ProfileTabType = {
+  teams: ProfileTeamsType[]
   about: ProfileTabCommonType[]
   contacts: ProfileTabCommonType[]
-  teams: ProfileTeamsType[]
   overview: ProfileTabCommonType[]
   teamsTech: ProfileTeamsTechType[]
   connections: ProfileConnectionsType[]
 }
+export type UserProfileActiveTab = ProfileTabType | TeamsTabType[] | ProjectsTabType[] | ConnectionsTabType[]
 
 // Data Grid page
 //---------------

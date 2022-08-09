@@ -8,7 +8,7 @@ import axios from 'axios'
 import UserProfile from 'src/views/pages/user-profile/UserProfile'
 
 // ** Types
-// import { PricingDataType } from 'src/@core/components/plan-details/types'
+import { UserProfileActiveTab } from 'src/@fake-db/types'
 
 const UserProfileTab = ({ tab, data }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return <UserProfile tab={tab} data={data} />
@@ -16,14 +16,19 @@ const UserProfileTab = ({ tab, data }: InferGetStaticPropsType<typeof getStaticP
 
 export const getStaticPaths: GetStaticPaths = () => {
   return {
-    paths: [],
+    paths: [
+      { params: { tab: 'profile' } },
+      { params: { tab: 'teams' } },
+      { params: { tab: 'projects' } },
+      { params: { tab: 'connections' } }
+    ],
     fallback: true
   }
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }: GetStaticPropsContext) => {
   const res = await axios.get('/pages/profile', { params: { tab: params?.tab } })
-  const data = res.data
+  const data: UserProfileActiveTab = res.data
 
   return {
     props: {

@@ -1,5 +1,6 @@
 // ** MUI Components
 import Box from '@mui/material/Box'
+import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
@@ -93,40 +94,44 @@ const AboutOverivew = (props: Props) => {
   const { teams, about, contacts, overview } = props
 
   return (
-    <>
-      <Card>
-        <CardContent>
-          <Box sx={{ mb: 7 }}>
-            <Typography variant='body2' sx={{ mb: 4, color: 'text.disabled', textTransform: 'uppercase' }}>
-              About
-            </Typography>
-            {renderList(about)}
-          </Box>
-          <Box sx={{ mb: 7 }}>
-            <Typography variant='body2' sx={{ mb: 4, color: 'text.disabled', textTransform: 'uppercase' }}>
-              Contacts
-            </Typography>
-            {renderList(contacts)}
-          </Box>
-          <Box>
-            <Typography variant='body2' sx={{ mb: 4, color: 'text.disabled', textTransform: 'uppercase' }}>
-              Teams
-            </Typography>
-            {renderTeams(teams)}
-          </Box>
-        </CardContent>
-      </Card>
-      <Card>
-        <CardContent>
-          <Box>
-            <Typography variant='body2' sx={{ mb: 4, color: 'text.disabled', textTransform: 'uppercase' }}>
-              Overview
-            </Typography>
-            {renderList(overview)}
-          </Box>
-        </CardContent>
-      </Card>
-    </>
+    <Grid container spacing={6}>
+      <Grid item xs={12}>
+        <Card>
+          <CardContent>
+            <Box sx={{ mb: 7 }}>
+              <Typography variant='body2' sx={{ mb: 4, color: 'text.disabled', textTransform: 'uppercase' }}>
+                About
+              </Typography>
+              {renderList(about)}
+            </Box>
+            <Box sx={{ mb: 7 }}>
+              <Typography variant='body2' sx={{ mb: 4, color: 'text.disabled', textTransform: 'uppercase' }}>
+                Contacts
+              </Typography>
+              {renderList(contacts)}
+            </Box>
+            <Box>
+              <Typography variant='body2' sx={{ mb: 4, color: 'text.disabled', textTransform: 'uppercase' }}>
+                Teams
+              </Typography>
+              {renderTeams(teams)}
+            </Box>
+          </CardContent>
+        </Card>
+      </Grid>
+      <Grid item xs={12}>
+        <Card>
+          <CardContent>
+            <Box>
+              <Typography variant='body2' sx={{ mb: 4, color: 'text.disabled', textTransform: 'uppercase' }}>
+                Overview
+              </Typography>
+              {renderList(overview)}
+            </Box>
+          </CardContent>
+        </Card>
+      </Grid>
+    </Grid>
   )
 }
 

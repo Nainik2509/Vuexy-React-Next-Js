@@ -31,7 +31,7 @@ interface Props {
 
 const ConnectionsTeams = ({ connections, teams }: Props) => {
   return (
-    <Grid container spacing={6}>
+    <>
       <Grid item md={6} xs={12}>
         <Card>
           <CardHeader
@@ -148,7 +148,7 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
           </CardContent>
         </Card>
       </Grid>
-    </Grid>
+    </>
   )
 }
 
