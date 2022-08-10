@@ -1,8 +1,7 @@
 // ** Type Imports
-import { PaletteMode } from '@mui/material'
-import { Skin } from 'src/@core/layouts/types'
+import { Skin, Mode } from 'src/@core/layouts/types'
 
-const DefaultPalette = (mode: PaletteMode, skin: Skin) => {
+const DefaultPalette = (mode: Mode, skin: Skin) => {
   // ** Vars
   const lightColor = '58, 53, 65'
   const darkColor = '231, 227, 252'

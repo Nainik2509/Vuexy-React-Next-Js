@@ -85,7 +85,7 @@ const VerticalNavGroup = (props: Props) => {
   const theme = useTheme()
   const router = useRouter()
   const currentURL = router.asPath
-  const { direction, navCollapsed, verticalNavToggleType } = settings
+  const { direction, mode, navCollapsed, verticalNavToggleType } = settings
 
   // ** Accordion menu group open toggle
   const toggleActiveGroup = (item: NavGroup, parent: NavGroup | undefined) => {
@@ -199,44 +199,31 @@ const VerticalNavGroup = (props: Props) => {
   //   }
   // }
 
-  // const conditionalBgColor = () => {
-  //   if (skin === 'semi-dark' && theme.palette.mode === 'light') {
-  //     return {
-  //       color: `rgba(${theme.palette.customColors.dark}, 0.87)`,
-  //       '&:hover': {
-  //         backgroundColor: `rgba(${theme.palette.customColors.dark}, 0.04)`
-  //       },
-  //       '&.Mui-selected': {
-  //         backgroundColor: `rgba(${theme.palette.customColors.dark}, 0.08)`,
-  //         '&:hover': {
-  //           backgroundColor: `rgba(${theme.palette.customColors.dark}, 0.12)`
-  //         }
-  //       }
-  //     }
-  //   } else if (skin === 'semi-dark' && theme.palette.mode === 'dark') {
-  //     return {
-  //       color: `rgba(${theme.palette.customColors.light}, 0.87)`,
-  //       '&:hover': {
-  //         backgroundColor: `rgba(${theme.palette.customColors.light}, 0.04)`
-  //       },
-  //       '&.Mui-selected': {
-  //         backgroundColor: `rgba(${theme.palette.customColors.light}, 0.08)`,
-  //         '&:hover': {
-  //           backgroundColor: `rgba(${theme.palette.customColors.light}, 0.12)`
-  //         }
-  //       }
-  //     }
-  //   } else {
-  //     return {
-  //       '&.Mui-selected': {
-  //         backgroundColor: theme.palette.action.hover,
-  //         '&:hover': {
-  //           backgroundColor: theme.palette.action.hover
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
+  const conditionalBgColor = () => {
+    if (mode === 'semi-dark') {
+      return {
+        color: `rgba(${theme.palette.customColors.dark}, 0.87)`,
+        '&:hover': {
+          backgroundColor: `rgba(${theme.palette.customColors.dark}, 0.04)`
+        },
+        '&.Mui-selected': {
+          backgroundColor: `rgba(${theme.palette.customColors.dark}, 0.08)`,
+          '&:hover': {
+            backgroundColor: `rgba(${theme.palette.customColors.dark}, 0.12)`
+          }
+        }
+      }
+    } else {
+      return {
+        '&.Mui-selected': {
+          backgroundColor: theme.palette.action.hover,
+          '&:hover': {
+            backgroundColor: theme.palette.action.hover
+          }
+        }
+      }
+    }
+  }
 
   return (
     <CanViewNavGroup navGroup={item}>
@@ -254,17 +241,10 @@ const VerticalNavGroup = (props: Props) => {
             sx={{
               py: 2.5,
               width: '100%',
-
-              // ...conditionalBgColor(),
+              ...conditionalBgColor(),
               transition: 'padding-left .25s ease-in-out',
               pr: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 4.5,
-              pl: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 5.5,
-              '&.Mui-selected': {
-                backgroundColor: theme.palette.action.hover,
-                '&:hover': {
-                  backgroundColor: theme.palette.action.hover
-                }
-              }
+              pl: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 5.5
             }}
           >
             {isSubToSub ? null : (

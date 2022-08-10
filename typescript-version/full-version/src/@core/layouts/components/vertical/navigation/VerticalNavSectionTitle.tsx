@@ -53,29 +53,11 @@ const VerticalNavSectionTitle = (props: Props) => {
   // ** Vars
   const { navCollapsed } = settings
 
-  // const conditionalStyling = () => {
-  //   if (skin === 'semi-dark' && theme.palette.mode === 'light') {
-  //     return {
-  //       color: `rgba(${theme.palette.customColors.dark}, 0.38)`
-  //     }
-  //   } else if (skin === 'semi-dark' && theme.palette.mode === 'dark') {
-  //     return {
-  //       color: `rgba(${theme.palette.customColors.light}, 0.38)`
-  //     }
-  //   } else {
-  //     return {
-  //       color: theme.palette.text.disabled
-  //     }
-  //   }
-  // }
-
   return (
     <CanViewNavSectionTitle navTitle={item}>
       <ListSubheader
         className='nav-section-title'
         sx={{
-          // ...conditionalStyling(),
-
           color: 'text.disabled',
 
           ...(navCollapsed && !navHover

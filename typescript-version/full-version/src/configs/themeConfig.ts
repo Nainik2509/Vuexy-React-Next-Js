@@ -6,16 +6,25 @@
  */
 
 // ** MUI Imports
-import { PaletteMode, Direction } from '@mui/material'
+import { Direction } from '@mui/material'
 
 // ** Icon Import
 import CircleOutline from 'mdi-material-ui/CircleOutline'
 
 // ** Types
-import { Skin, AppBar, Footer, ContentWidth, VerticalNavToggle, HorizontalMenuToggle } from 'src/@core/layouts/types'
+import {
+  Skin,
+  Mode,
+  AppBar,
+  Footer,
+  ContentWidth,
+  VerticalNavToggle,
+  HorizontalMenuToggle
+} from 'src/@core/layouts/types'
 
 type ThemeConfig = {
   skin: Skin
+  mode: Mode
   appBar: AppBar
   footer: Footer
   navHidden: boolean
@@ -30,7 +39,6 @@ type ThemeConfig = {
   contentWidth: ContentWidth
   disableCustomizer: boolean
   responsiveFontSizes: boolean
-  mode: PaletteMode & 'semi-dark'
   collapsedNavigationSize: number
   horizontalMenuAnimation: boolean
   layout: 'vertical' | 'horizontal'
@@ -45,8 +53,7 @@ const themeConfig: ThemeConfig = {
   // ** Layout Configs
   templateName: 'Master' /* App Name */,
   layout: 'vertical' /* vertical | horizontal */,
-  mode: 'light' as PaletteMode &
-    'semi-dark' /* light | dark | semi-dark /*! Note: semi-dark value will only work for Vertical Layout */,
+  mode: 'light' as Mode /* light | dark | semi-dark /*! Note: semi-dark value will only work for Vertical Layout */,
   direction: 'ltr' /* ltr | rtl */,
   skin: 'default' /* default | bordered */,
   contentWidth: 'boxed' /* full | boxed */,

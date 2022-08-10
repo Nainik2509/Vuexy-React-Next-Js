@@ -61,7 +61,7 @@ const StyledBoxForShadow = styled(Box)<BoxProps>(({ theme }) => ({
 
 const Navigation = (props: Props) => {
   // ** Props
-  const { hidden, afterNavMenuContent, beforeNavMenuContent, navMenuContent: userNavMenuContent } = props
+  const { hidden, settings, afterNavMenuContent, beforeNavMenuContent, navMenuContent: userNavMenuContent } = props
 
   // ** States
   const [groupActive, setGroupActive] = useState<string[]>([])
@@ -72,6 +72,7 @@ const Navigation = (props: Props) => {
 
   // ** Hooks
   const theme = useTheme()
+  const { mode } = settings
 
   // ** Var
   const { afterVerticalNavMenuContentPosition, beforeVerticalNavMenuContentPosition } = themeConfig
@@ -109,20 +110,20 @@ const Navigation = (props: Props) => {
   }
 
   const shadowBgColor = () => {
-    if (theme.palette.mode === 'dark') {
-      return `linear-gradient(${theme.palette.customColors.darkBg} 5%,${hexToRGBA(
-        theme.palette.customColors.darkBg,
-        0.85
-      )} 30%,${hexToRGBA(theme.palette.customColors.darkBg, 0.5)} 65%,${hexToRGBA(
-        theme.palette.customColors.darkBg,
-        0.3
-      )} 75%,transparent)`
-    } else {
+    if (mode === 'light') {
       return `linear-gradient(${theme.palette.customColors.lightBg} 5%,${hexToRGBA(
         theme.palette.customColors.lightBg,
         0.85
       )} 30%,${hexToRGBA(theme.palette.customColors.lightBg, 0.5)} 65%,${hexToRGBA(
         theme.palette.customColors.lightBg,
+        0.3
+      )} 75%,transparent)`
+    } else {
+      return `linear-gradient(${theme.palette.customColors.darkBg} 5%,${hexToRGBA(
+        theme.palette.customColors.darkBg,
+        0.85
+      )} 30%,${hexToRGBA(theme.palette.customColors.darkBg, 0.5)} 65%,${hexToRGBA(
+        theme.palette.customColors.darkBg,
         0.3
       )} 75%,transparent)`
     }

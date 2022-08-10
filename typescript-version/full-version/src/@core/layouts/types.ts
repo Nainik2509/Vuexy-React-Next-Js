@@ -1,13 +1,15 @@
 // ** Type Imports
 import { ReactNode } from 'react'
 import { AppBarProps } from '@mui/material/AppBar'
-import { Theme, SxProps } from '@mui/material/styles'
+import { Theme, SxProps, PaletteMode } from '@mui/material'
 import { Settings } from 'src/@core/context/settingsContext'
 import { SwipeableDrawerProps } from '@mui/material/SwipeableDrawer'
 
 export type Layout = 'vertical' | 'horizontal' | 'blank' | 'blankWithAppBar'
 
 export type Skin = 'default' | 'bordered'
+
+export type Mode = PaletteMode & 'semi-dark'
 
 export type ContentWidth = 'full' | 'boxed'
 
