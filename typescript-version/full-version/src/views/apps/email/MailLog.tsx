@@ -372,7 +372,7 @@ const MailLog = (props: MailLogType) => {
           <ScrollWrapper hidden={hidden}>
             {store && store.mails && store.mails.length ? (
               <List sx={{ p: 0 }}>
-                {store.mails.map((mail: MailType, index: number) => {
+                {store.mails.map((mail: MailType) => {
                   const mailReadToggleIcon = mail.isRead ? 'mdi:email-outline' : 'mdi:email-open-outline'
 
                   return (
@@ -380,6 +380,7 @@ const MailLog = (props: MailLogType) => {
                       key={mail.id}
                       sx={{
                         transition: 'all 0.15s ease-in-out',
+                        '&:not(:first-of-type)': { borderTop: '1px solid', borderColor: 'divider' },
                         '&:hover': {
                           zIndex: 2,
                           boxShadow: '3',
@@ -508,9 +509,6 @@ const MailLog = (props: MailLogType) => {
                           </Typography>
                         </Box>
                       </MailItem>
-                      {store.mails !== null && store.mails.length - 1 > index ? (
-                        <Divider sx={{ my: '0 !important', mx: theme => `${theme.spacing(-5)} !important` }} />
-                      ) : null}
                     </Box>
                   )
                 })}
