@@ -107,6 +107,7 @@ const data: DataType[] = [
     imgSrc: '/images/logos/visa.png'
   }
 ]
+
 const PaymentMethodCard = () => {
   // ** States
   const [name, setName] = useState<string>('')

@@ -1,7 +1,11 @@
+// ** React Import
+import { SyntheticEvent } from 'react'
+
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
+import Link from '@mui/material/Link'
 import Switch from '@mui/material/Switch'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
@@ -111,12 +115,12 @@ const TabConnections = () => {
                     <Box sx={{ mr: 4 }}>
                       <img src={account.logo} alt={account.title} height='30' width='30' />
                     </Box>
-                    <Box>
+                    <div>
                       <Typography sx={{ fontWeight: 500 }}>{account.title}</Typography>
-                      <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+                      <Typography variant='body2' sx={{ color: 'text.disabled' }}>
                         {account.subtitle}
                       </Typography>
-                    </Box>
+                    </div>
                   </Box>
                   <Switch defaultChecked={account.checked} />
                 </Box>
@@ -149,19 +153,27 @@ const TabConnections = () => {
                     <Box sx={{ mr: 4, minWidth: 40 }}>
                       <img src={account.logo} alt={account.title} height='30' />
                     </Box>
-                    <Box>
+                    <div>
                       <Typography sx={{ fontWeight: 500 }}>{account.title}</Typography>
-                      <Typography
-                        variant={account.isConnected ? 'body1' : 'caption'}
-                        sx={{ ...(account.isConnected ? { color: 'primary.main' } : { color: 'text.disabled' }) }}
-                      >
-                        {account.isConnected ? account.username : 'Not Connected'}
-                      </Typography>
-                    </Box>
+                      {account.isConnected ? (
+                        <Typography
+                          href='/'
+                          component={Link}
+                          sx={{ color: 'primary.main' }}
+                          onClick={(e: SyntheticEvent) => e.preventDefault()}
+                        >
+                          {account.username}
+                        </Typography>
+                      ) : (
+                        <Typography variant='body2' sx={{ color: 'text.disabled' }}>
+                          Not Connected
+                        </Typography>
+                      )}
+                    </div>
                   </Box>
                   <Button
                     variant='outlined'
-                    sx={{ px: 0, minWidth: 38, borderRadius: 1 }}
+                    sx={{ p: 1.5, minWidth: 0 }}
                     color={account.isConnected ? 'error' : 'secondary'}
                   >
                     {account.isConnected ? <DeleteOutline /> : <LinkVariant />}

@@ -311,6 +311,7 @@ const BillingHistoryTable = () => {
       <CardContent>
         <Box
           sx={{
+            gap: 4,
             display: 'flex',
             flexWrap: 'wrap',
             alignItems: 'center',
@@ -322,17 +323,22 @@ const BillingHistoryTable = () => {
               Create Invoice
             </Button>
           </Link>
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', '@media(max-width: 670px)': { mt: 4 } }}>
+          <Box
+            sx={{
+              gap: 4,
+              display: 'flex',
+              flexWrap: 'wrap',
+              alignItems: 'center'
+            }}
+          >
             <TextField
               size='small'
               value={value}
               placeholder='Search Invoice'
               onChange={e => handleFilter(e.target.value)}
-              sx={{ mr: 4, '@media(max-width: 494px)': { mb: 4 } }}
             />
             <FormControl size='small'>
               <InputLabel id='invoice-status-select'>Invoice Status</InputLabel>
-
               <Select
                 value={statusValue}
                 label='Invoice Status'
@@ -355,6 +361,7 @@ const BillingHistoryTable = () => {
         pagination
         rows={store.data}
         columns={columns}
+        disableSelectionOnClick
         pageSize={Number(pageSize)}
         rowsPerPageOptions={[10, 25, 50]}
         onPageSizeChange={newPageSize => setPageSize(newPageSize)}

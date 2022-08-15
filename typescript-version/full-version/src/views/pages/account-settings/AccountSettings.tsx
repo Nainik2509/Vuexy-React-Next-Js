@@ -1,13 +1,19 @@
 // ** React Imports
-import { ReactElement, useState, useEffect } from 'react'
+import { ReactElement, useState, useEffect, SyntheticEvent } from 'react'
 
 // ** Next Import
 import { useRouter } from 'next/router'
 
 // ** MUI Imports
+import Tab from '@mui/material/Tab'
+import Box from '@mui/material/Box'
+import Grid from '@mui/material/Grid'
+import TabPanel from '@mui/lab/TabPanel'
+import TabContext from '@mui/lab/TabContext'
 import { styled } from '@mui/material/styles'
-import Button, { ButtonProps } from '@mui/material/Button'
-import ButtonGroup, { ButtonGroupProps } from '@mui/material/ButtonGroup'
+import Typography from '@mui/material/Typography'
+import MuiTabList, { TabListProps } from '@mui/lab/TabList'
+import CircularProgress from '@mui/material/CircularProgress'
 
 // ** Icons Imports
 import LinkVariant from 'mdi-material-ui/LinkVariant'
@@ -16,6 +22,9 @@ import AccountOutline from 'mdi-material-ui/AccountOutline'
 import LockOpenOutline from 'mdi-material-ui/LockOpenOutline'
 import BookmarkOutline from 'mdi-material-ui/BookmarkOutline'
 
+// ** Types
+import { PricingPlanType } from 'src/@core/components/plan-details/types'
+
 // ** Demo Tabs Imports
 import TabAccount from 'src/views/pages/account-settings/TabAccount'
 import TabBilling from 'src/views/pages/account-settings/TabBilling'
@@ -23,61 +32,39 @@ import TabSecurity from 'src/views/pages/account-settings/TabSecurity'
 import TabConnections from 'src/views/pages/account-settings/TabConnections'
 import TabNotifications from 'src/views/pages/account-settings/TabNotifications'
 
-// ** Types
-import { PricingDataType } from 'src/@core/components/plan-details/types'
-
-type TablistType = {
-  name: string
-  value: string
-  icon: ReactElement
-}
-
-type tabContentListType = {
-  [key: string]: ReactElement
-}
-
-const tabsList: TablistType[] = [
-  { name: 'Account', value: 'account', icon: <AccountOutline /> },
-  { name: 'Security', value: 'security', icon: <LockOpenOutline /> },
-  { name: 'Billing', value: 'billing', icon: <BookmarkOutline /> },
-  { name: 'Notifications', value: 'notifications', icon: <BellOutline /> },
-  { name: 'Connections', value: 'connections', icon: <LinkVariant /> }
-]
-
-const DefaultButton = styled(Button)<ButtonProps>(({ theme }) => ({
-  border: 'none !important',
-  boxShadow: 'none !important',
-  color: theme.palette.text.primary,
-  backgroundColor: 'transparent !important',
-  '&:hover': {
-    color: theme.palette.primary.main
+const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
+  '& .MuiTabs-indicator': {
+    backgroundColor: 'transparent'
+  },
+  '& .Mui-selected': {
+    backgroundColor: theme.palette.primary.main,
+    color: `${theme.palette.common.white} !important`
+  },
+  '& .MuiTab-root': {
+    minHeight: 38,
+    minWidth: 130,
+    borderRadius: theme.shape.borderRadius
   }
 }))
 
-const StyledButtonGroup = styled(ButtonGroup)<ButtonGroupProps>(({ theme }) => ({
-  boxShadow: 'none',
-  marginBottom: theme.spacing(4),
-
-  [theme.breakpoints.down('md')]: {
-    width: '100%',
-    flexDirection: 'column',
-    '& .MuiButton-root': {
-      justifyContent: 'flex-start'
-    }
-  }
-}))
-
-const AccountSettings = ({ tab, apiPricingData }: { tab: string; apiPricingData: PricingDataType }) => {
+const AccountSettings = ({ tab, apiPricingPlanData }: { tab: string; apiPricingPlanData: PricingPlanType[] }) => {
   // ** State
   const [activeTab, setActiveTab] = useState<string>(tab)
+  const [isLoading, setIsLoading] = useState<boolean>(false)
 
   // ** Hooks
   const router = useRouter()
 
-  const handleClick = (value: string) => {
-    router.push({
-      pathname: `/pages/account-settings/${value.toLowerCase()}`
-    })
+  const handleChange = (event: SyntheticEvent, value: string) => {
+    setIsLoading(true)
+    router
+      .push({
+        pathname: `/pages/account-settings/${value.toLowerCase()}`
+      })
+      .then(() => {
+        setActiveTab(value)
+        setIsLoading(false)
+      })
   }
 
   useEffect(() => {
@@ -87,35 +74,84 @@ const AccountSettings = ({ tab, apiPricingData }: { tab: string; apiPricingData:
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tab])
 
-  const tabContentList: tabContentListType = {
+  const tabContentList: { [key: string]: ReactElement } = {
     account: <TabAccount />,
     security: <TabSecurity />,
     connections: <TabConnections />,
     notifications: <TabNotifications />,
-    billing: <TabBilling apiPricingData={apiPricingData} />
+    billing: <TabBilling apiPricingPlanData={apiPricingPlanData} />
   }
 
   return (
-    <>
-      <StyledButtonGroup variant='contained'>
-        {tabsList.map(({ name, value, icon }) => {
-          const ButtonTag = activeTab !== value ? DefaultButton : Button
-
-          return (
-            <ButtonTag
-              key={value}
-              disableRipple
-              startIcon={icon}
-              onClick={() => handleClick(value)}
-              sx={{ borderRadius: '6px !important' }}
-            >
-              {name}
-            </ButtonTag>
-          )
-        })}
-      </StyledButtonGroup>
-      <>{tabContentList[activeTab]}</>
-    </>
+    <Grid container spacing={6}>
+      <Grid item xs={12}>
+        <TabContext value={activeTab}>
+          <Grid container spacing={6}>
+            <Grid item xs={12}>
+              <TabList onChange={handleChange} aria-label='customized tabs example'>
+                <Tab
+                  value='account'
+                  label={
+                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                      <AccountOutline sx={{ mr: 2 }} />
+                      Account
+                    </Box>
+                  }
+                />
+                <Tab
+                  value='security'
+                  label={
+                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                      <LockOpenOutline sx={{ mr: 2 }} />
+                      Security
+                    </Box>
+                  }
+                />
+                <Tab
+                  value='billing'
+                  label={
+                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                      <BookmarkOutline sx={{ mr: 2 }} />
+                      Billing
+                    </Box>
+                  }
+                />
+                <Tab
+                  value='notifications'
+                  label={
+                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                      <BellOutline sx={{ mr: 2 }} />
+                      Notifications
+                    </Box>
+                  }
+                />
+                <Tab
+                  value='connections'
+                  label={
+                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                      <LinkVariant sx={{ mr: 2 }} />
+                      Connections
+                    </Box>
+                  }
+                />
+              </TabList>
+            </Grid>
+            <Grid item xs={12}>
+              {isLoading ? (
+                <Box sx={{ mt: 6, display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                  <CircularProgress sx={{ mb: 4 }} />
+                  <Typography>Loading...</Typography>
+                </Box>
+              ) : (
+                <TabPanel sx={{ p: 0 }} value={activeTab}>
+                  {tabContentList[activeTab]}
+                </TabPanel>
+              )}
+            </Grid>
+          </Grid>
+        </TabContext>
+      </Grid>
+    </Grid>
   )
 }
 

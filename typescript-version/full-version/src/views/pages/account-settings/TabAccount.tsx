@@ -5,7 +5,6 @@ import { useState, ElementType, ChangeEvent } from 'react'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
-import Alert from '@mui/material/Alert'
 import Select from '@mui/material/Select'
 import Dialog from '@mui/material/Dialog'
 import Divider from '@mui/material/Divider'
@@ -15,7 +14,6 @@ import MenuItem from '@mui/material/MenuItem'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import InputLabel from '@mui/material/InputLabel'
-import AlertTitle from '@mui/material/AlertTitle'
 import CardHeader from '@mui/material/CardHeader'
 import FormControl from '@mui/material/FormControl'
 import CardContent from '@mui/material/CardContent'
@@ -35,8 +33,8 @@ import CheckCircleOutline from 'mdi-material-ui/CheckCircleOutline'
 import CloseCircleOutline from 'mdi-material-ui/CloseCircleOutline'
 
 const ImgStyled = styled('img')(({ theme }) => ({
-  width: 100,
-  height: 100,
+  width: 120,
+  height: 120,
   marginRight: theme.spacing(6.25),
   borderRadius: theme.shape.borderRadius
 }))
@@ -49,7 +47,7 @@ const ButtonStyled = styled(Button)<ButtonProps & { component?: ElementType; htm
 }))
 
 const ResetButtonStyled = styled(Button)<ButtonProps>(({ theme }) => ({
-  marginLeft: theme.spacing(3),
+  marginLeft: theme.spacing(4.5),
   [theme.breakpoints.down('sm')]: {
     width: '100%',
     marginLeft: 0,
@@ -61,6 +59,7 @@ const ResetButtonStyled = styled(Button)<ButtonProps>(({ theme }) => ({
 const TabAccount = () => {
   // ** State
   const [open, setOpen] = useState<boolean>(false)
+  const [inputValue, setInputValue] = useState<string>('')
   const [userInput, setUserInput] = useState<string>('yes')
   const [imgSrc, setImgSrc] = useState<string>('/images/avatars/1.png')
   const [secondDialogOpen, setSecondDialogOpen] = useState<boolean>(false)
@@ -72,28 +71,30 @@ const TabAccount = () => {
     formState: { errors }
   } = useForm({ defaultValues: { checkbox: false } })
 
-  const onChange = (file: ChangeEvent) => {
-    const reader = new FileReader()
-    const { files } = file.target as HTMLInputElement
-    if (files && files.length !== 0) {
-      reader.onload = () => setImgSrc(reader.result as string)
-
-      reader.readAsDataURL(files[0])
-    }
-  }
-
   const handleClose = () => setOpen(false)
 
   const handleSecondDialogClose = () => setSecondDialogOpen(false)
 
-  const onSubmit = () => {
-    setOpen(true)
-  }
+  const onSubmit = () => setOpen(true)
 
   const handleConfirmation = (value: string) => {
     handleClose()
     setUserInput(value)
     setSecondDialogOpen(true)
+  }
+
+  const handleInputImageChange = (file: ChangeEvent) => {
+    const reader = new FileReader()
+    const { files } = file.target as HTMLInputElement
+    if (files && files.length !== 0) {
+      reader.onload = () => setImgSrc(reader.result as string)
+      reader.readAsDataURL(files[0])
+      setInputValue(reader.result as string)
+    }
+  }
+  const handleInputImageReset = () => {
+    setInputValue('')
+    setImgSrc('/images/avatars/1.png')
   }
 
   return (
@@ -103,38 +104,29 @@ const TabAccount = () => {
         <Card>
           <CardHeader title='Account Details' sx={{ pb: 0 }} />
           <form>
-            <Grid container spacing={6}>
-              <Grid item xs={12} sx={{ mt: 4.8, mb: 3 }}>
-                <CardContent sx={{ pt: 0, pb: theme => `${theme.spacing(1)} !important` }}>
-                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <ImgStyled src={imgSrc} alt='Profile Pic' />
-                    <Box>
-                      <ButtonStyled component='label' variant='contained' htmlFor='account-settings-upload-image'>
-                        Upload New Photo
-                        <input
-                          hidden
-                          type='file'
-                          onChange={onChange}
-                          accept='image/png, image/jpeg'
-                          id='account-settings-upload-image'
-                        />
-                      </ButtonStyled>
-                      <ResetButtonStyled
-                        color='secondary'
-                        variant='outlined'
-                        onClick={() => setImgSrc('/images/avatars/1.png')}
-                      >
-                        Reset
-                      </ResetButtonStyled>
-                      <Typography sx={{ mt: 6, color: 'text.disabled' }}>
-                        Allowed PNG or JPEG. Max size of 800K.
-                      </Typography>
-                    </Box>
-                  </Box>
-                </CardContent>
-              </Grid>
-            </Grid>
-            <Divider sx={{ mb: theme => `${theme.spacing(4)} !important` }} />
+            <CardContent>
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <ImgStyled src={imgSrc} alt='Profile Pic' />
+                <div>
+                  <ButtonStyled component='label' variant='contained' htmlFor='account-settings-upload-image'>
+                    Upload New Photo
+                    <input
+                      hidden
+                      type='file'
+                      value={inputValue}
+                      accept='image/png, image/jpeg'
+                      onChange={handleInputImageChange}
+                      id='account-settings-upload-image'
+                    />
+                  </ButtonStyled>
+                  <ResetButtonStyled color='secondary' variant='outlined' onClick={handleInputImageReset}>
+                    Reset
+                  </ResetButtonStyled>
+                  <Typography sx={{ mt: 5, color: 'text.disabled' }}>Allowed PNG or JPEG. Max size of 800K.</Typography>
+                </div>
+              </Box>
+            </CardContent>
+            <Divider />
             <CardContent>
               <Grid container spacing={6}>
                 <Grid item xs={12} sm={6}>
@@ -257,46 +249,38 @@ const TabAccount = () => {
         <Card>
           <CardHeader title='Delete Account' />
           <CardContent>
-            <Alert severity='warning' icon={false} sx={{ mb: 4 }}>
-              <AlertTitle sx={{ fontWeight: 700 }}>Are you sure you want to delete your account?</AlertTitle>
-              Once you delete your account, there is no going back. Please be certain.
-            </Alert>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <Grid container spacing={4}>
-                <Grid item xs={12}>
-                  <FormControl>
-                    <Controller
-                      name='checkbox'
-                      control={control}
-                      rules={{ required: true }}
-                      render={({ field }) => (
-                        <FormControlLabel
-                          label='I confirm my account deactivation'
-                          sx={errors.checkbox ? { '& .MuiTypography-root': { color: 'error.main' } } : null}
-                          control={
-                            <Checkbox
-                              {...field}
-                              size='small'
-                              name='validation-basic-checkbox'
-                              sx={errors.checkbox ? { color: 'error.main' } : null}
-                            />
-                          }
-                        />
-                      )}
-                    />
-                    {errors.checkbox && (
-                      <FormHelperText sx={{ color: 'error.main' }} id='validation-basic-checkbox'>
-                        Please confirm you want to delete account
-                      </FormHelperText>
+              <Box sx={{ mb: 4 }}>
+                <FormControl>
+                  <Controller
+                    name='checkbox'
+                    control={control}
+                    rules={{ required: true }}
+                    render={({ field }) => (
+                      <FormControlLabel
+                        label='I confirm my account deactivation'
+                        sx={errors.checkbox ? { '& .MuiTypography-root': { color: 'error.main' } } : null}
+                        control={
+                          <Checkbox
+                            {...field}
+                            size='small'
+                            name='validation-basic-checkbox'
+                            sx={errors.checkbox ? { color: 'error.main' } : null}
+                          />
+                        }
+                      />
                     )}
-                  </FormControl>
-                </Grid>
-                <Grid item xs={12}>
-                  <Button variant='contained' color='error' type='submit' disabled={errors.checkbox !== undefined}>
-                    Deactivate Account
-                  </Button>
-                </Grid>
-              </Grid>
+                  />
+                  {errors.checkbox && (
+                    <FormHelperText sx={{ color: 'error.main' }} id='validation-basic-checkbox'>
+                      Please confirm you want to delete account
+                    </FormHelperText>
+                  )}
+                </FormControl>
+              </Box>
+              <Button variant='contained' color='error' type='submit' disabled={errors.checkbox !== undefined}>
+                Deactivate Account
+              </Button>
             </form>
           </CardContent>
         </Card>

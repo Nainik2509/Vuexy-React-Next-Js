@@ -13,6 +13,7 @@ import TableHead from '@mui/material/TableHead'
 import Typography from '@mui/material/Typography'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
+import TableContainer from '@mui/material/TableContainer'
 
 // ** Icons Imports
 import Apple from 'mdi-material-ui/Apple'
@@ -135,7 +136,10 @@ const TabSecurity = () => {
             </Typography>
             {apiKeyList.map(item => {
               return (
-                <Box key={item.key} sx={{ p: 4, backgroundColor: 'action.hover', '&:not(:last-child)': { mb: 4 } }}>
+                <Box
+                  key={item.key}
+                  sx={{ p: 4, borderRadius: 1, backgroundColor: 'action.hover', '&:not(:last-child)': { mb: 4 } }}
+                >
                   <Box sx={{ mb: 3, display: 'flex', alignItems: 'center' }}>
                     <Typography variant='h6' sx={{ mr: 4 }}>
                       {item.title}
@@ -165,31 +169,41 @@ const TabSecurity = () => {
       <Grid item xs={12}>
         <Card>
           <CardHeader title='Recent Devices' />
-          <Table>
-            <TableHead>
-              <TableRow>
-                <TableCell>Browser</TableCell>
-                <TableCell>Device</TableCell>
-                <TableCell>Location</TableCell>
-                <TableCell>Recent Activities</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {recentDeviceData.map((row, index) => (
-                <TableRow key={index}>
-                  <TableCell>
-                    <Box sx={{ display: 'flex', alignItems: 'center', fontWeight: 600 }}>
-                      {row.browserIcon}
-                      {row.browserName}
-                    </Box>
-                  </TableCell>
-                  <TableCell>{row.device}</TableCell>
-                  <TableCell>{row.location}</TableCell>
-                  <TableCell>{row.date}</TableCell>
+          <TableContainer>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell sx={{ whiteSpace: 'nowrap' }}>Browser</TableCell>
+                  <TableCell sx={{ whiteSpace: 'nowrap' }}>Device</TableCell>
+                  <TableCell sx={{ whiteSpace: 'nowrap' }}>Location</TableCell>
+                  <TableCell sx={{ whiteSpace: 'nowrap' }}>Recent Activities</TableCell>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+              </TableHead>
+              <TableBody>
+                {recentDeviceData.map((row, index) => (
+                  <TableRow key={index}>
+                    <TableCell>
+                      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                        {row.browserIcon}
+                        <Typography sx={{ fontWeight: 600, whiteSpace: 'nowrap', color: 'text.secondary' }}>
+                          {row.browserName}
+                        </Typography>
+                      </Box>
+                    </TableCell>
+                    <TableCell>
+                      <Typography sx={{ whiteSpace: 'nowrap', color: 'text.secondary' }}>{row.device}</Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Typography sx={{ whiteSpace: 'nowrap', color: 'text.secondary' }}>{row.location}</Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Typography sx={{ whiteSpace: 'nowrap', color: 'text.secondary' }}>{row.date}</Typography>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
         </Card>
       </Grid>
     </Grid>

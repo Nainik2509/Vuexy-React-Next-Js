@@ -31,7 +31,7 @@ const CreateApiKeyCard = () => {
       <CardHeader title='Create an API key' />
       <CardContent sx={{ pb: '0 !important' }}>
         <Grid container spacing={5}>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} md={6}>
             <form onSubmit={handleSubmit(onSubmit)}>
               <FormControl fullWidth>
                 <InputLabel>Choose The Api Key Type You Want To Create</InputLabel>
@@ -70,7 +70,7 @@ const CreateApiKeyCard = () => {
 
           <Grid
             item
-            sm={6}
+            md={6}
             xs={12}
             sx={{ display: 'flex', mt: [7.5, 2.5], alignItems: 'center', justifyContent: 'center' }}
           >

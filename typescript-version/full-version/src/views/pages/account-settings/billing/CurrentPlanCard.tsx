@@ -30,9 +30,9 @@ import CheckCircleOutline from 'mdi-material-ui/CheckCircleOutline'
 import CloseCircleOutline from 'mdi-material-ui/CloseCircleOutline'
 
 // ** Types
-import { PricingDataType, PricingPlanType } from 'src/@core/components/plan-details/types'
+import { PricingPlanType } from 'src/@core/components/plan-details/types'
 
-const CurrentPlanCard = ({ data }: { data: PricingDataType }) => {
+const CurrentPlanCard = ({ data }: { data: PricingPlanType[] }) => {
   // ** State
   const [open, setOpen] = useState<boolean>(false)
   const [userInput, setUserInput] = useState<string>('yes')
@@ -59,7 +59,7 @@ const CurrentPlanCard = ({ data }: { data: PricingDataType }) => {
   }
 
   const renderPlan = () => {
-    return data?.pricingPlans.map((item: PricingPlanType) => {
+    return data?.map((item: PricingPlanType) => {
       return (
         <Grid item xs={12} md={4} key={item.title.toLowerCase()}>
           <PlanDetails plan={plan} data={item} />
@@ -115,8 +115,8 @@ const CurrentPlanCard = ({ data }: { data: PricingDataType }) => {
               </Box>
             </Grid>
             <Grid item xs={12}>
-              <Box sx={{ mt: 3 }}>
-                <Button variant='contained' sx={{ mr: 3 }} onClick={() => setOpenPricingDialog(true)}>
+              <Box sx={{ mt: 3, gap: 3, display: 'flex', flexWrap: 'wrap' }}>
+                <Button variant='contained' onClick={() => setOpenPricingDialog(true)}>
                   Upgrade Plan
                 </Button>
                 <Button variant='outlined' color='secondary' onClick={() => setOpen(true)}>

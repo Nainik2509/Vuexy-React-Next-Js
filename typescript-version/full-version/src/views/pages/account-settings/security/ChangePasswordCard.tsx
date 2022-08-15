@@ -105,7 +105,7 @@ const ChangePasswordCard = () => {
             <Grid item xs={12} md={6}>
               <FormControl fullWidth>
                 <InputLabel htmlFor='input-current-password' error={Boolean(errors.currentPassword)}>
-                  Password
+                  Current Password
                 </InputLabel>
                 <Controller
                   name='currentPassword'
@@ -114,7 +114,7 @@ const ChangePasswordCard = () => {
                   render={({ field: { value, onChange } }) => (
                     <OutlinedInput
                       value={value}
-                      label='Password'
+                      label='Current Password'
                       onChange={onChange}
                       id='input-current-password'
                       error={Boolean(errors.currentPassword)}
@@ -143,7 +143,7 @@ const ChangePasswordCard = () => {
             <Grid item xs={12} md={6}>
               <FormControl fullWidth>
                 <InputLabel htmlFor='input-new-password' error={Boolean(errors.newPassword)}>
-                  Password
+                  New Password
                 </InputLabel>
                 <Controller
                   name='newPassword'
@@ -152,7 +152,7 @@ const ChangePasswordCard = () => {
                   render={({ field: { value, onChange } }) => (
                     <OutlinedInput
                       value={value}
-                      label='Password'
+                      label='New Password'
                       onChange={onChange}
                       id='input-new-password'
                       error={Boolean(errors.newPassword)}
@@ -176,10 +176,10 @@ const ChangePasswordCard = () => {
                 )}
               </FormControl>
             </Grid>
-            <Grid item xs={12} md={6} sx={{ mb: 1.5 }}>
+            <Grid item xs={12} md={6}>
               <FormControl fullWidth>
                 <InputLabel htmlFor='input-confirm-new-password' error={Boolean(errors.confirmNewPassword)}>
-                  Password
+                  Confirm New Password
                 </InputLabel>
                 <Controller
                   name='confirmNewPassword'
@@ -188,7 +188,7 @@ const ChangePasswordCard = () => {
                   render={({ field: { value, onChange } }) => (
                     <OutlinedInput
                       value={value}
-                      label='Password'
+                      label='Confirm New Password'
                       onChange={onChange}
                       id='input-confirm-new-password'
                       error={Boolean(errors.confirmNewPassword)}
@@ -214,22 +214,21 @@ const ChangePasswordCard = () => {
             </Grid>
             <Grid item xs={12}>
               <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>Password Requirements:</Typography>
-              <Box component='ul' sx={{ pl: 4, '& li': { mb: 1, color: 'text.secondary' } }}>
+              <Box component='ul' sx={{ pl: 4, mb: 0, '& li': { mb: 1, color: 'text.secondary' } }}>
                 <li>Minimum 8 characters long - the more, the better</li>
                 <li>At least one lowercase & one uppercase character</li>
                 <li>At least one number, symbol, or whitespace character</li>
               </Box>
             </Grid>
+            <Grid item xs={12}>
+              <Button variant='contained' type='submit' sx={{ mr: 3 }}>
+                Save Changes
+              </Button>
+              <Button type='reset' variant='outlined' color='secondary' onClick={() => reset()}>
+                Reset
+              </Button>
+            </Grid>
           </Grid>
-
-          <Box sx={{ mt: 3 }}>
-            <Button variant='contained' type='submit' sx={{ mr: 3 }}>
-              Save Changes
-            </Button>
-            <Button type='reset' variant='outlined' color='secondary' onClick={() => reset()}>
-              Reset
-            </Button>
-          </Box>
         </form>
       </CardContent>
     </Card>
