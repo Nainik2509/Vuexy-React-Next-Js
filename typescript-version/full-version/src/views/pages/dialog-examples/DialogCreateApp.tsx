@@ -47,7 +47,7 @@ const TabLabel = (props: TabLabelProps) => {
   const { icon, title, subtitle, active } = props
 
   return (
-    <Box>
+    <div>
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <Avatar
           variant='rounded'
@@ -62,7 +62,7 @@ const TabLabel = (props: TabLabelProps) => {
           </Typography>
         </Box>
       </Box>
-    </Box>
+    </div>
   )
 }
 

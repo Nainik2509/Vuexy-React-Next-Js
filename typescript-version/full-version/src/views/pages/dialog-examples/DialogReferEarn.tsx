@@ -164,7 +164,7 @@ const DialogReferEarn = () => {
               </Button>
             </Box>
           </Box>
-          <Box>
+          <div>
             <Typography variant='h6' sx={{ mb: 4 }}>
               Share the referral link
             </Typography>
@@ -203,7 +203,7 @@ const DialogReferEarn = () => {
                 </LinkedInBtn>
               </Box>
             </Box>
-          </Box>
+          </div>
         </DialogContent>
       </Dialog>
     </Card>

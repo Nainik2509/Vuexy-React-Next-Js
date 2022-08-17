@@ -29,7 +29,7 @@ const OptionsWrapper = styled(Box)<BoxProps>(() => ({
 
 const EditActions = ({ id, toggleSendInvoiceDrawer, toggleAddPaymentDrawer }: Props) => {
   return (
-    <Box>
+    <div>
       <Card sx={{ mb: 4 }}>
         <CardContent>
           <Button
@@ -95,7 +95,7 @@ const EditActions = ({ id, toggleSendInvoiceDrawer, toggleAddPaymentDrawer }: Pr
         </InputLabel>
         <Switch id='invoice-edit-payment-stub' />
       </OptionsWrapper>
-    </Box>
+    </div>
   )
 }
 

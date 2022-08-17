@@ -51,7 +51,7 @@ const PreviewCard = ({ data }: Props) => {
   if (data) {
     return (
       <Card>
-        <Box>
+        <div>
           <CardContent>
             <Grid container>
               <Grid item sm={6} xs={12} sx={{ mb: { sm: 0, xs: 4 } }}>
@@ -123,7 +123,7 @@ const PreviewCard = ({ data }: Props) => {
                       {themeConfig.templateName}
                     </Typography>
                   </Box>
-                  <Box>
+                  <div>
                     <Typography variant='body2' sx={{ mb: 1 }}>
                       Office 149, 450 South Brand Brooklyn
                     </Typography>
@@ -131,7 +131,7 @@ const PreviewCard = ({ data }: Props) => {
                       San Diego County, CA 91905, USA
                     </Typography>
                     <Typography variant='body2'>+1 (123) 456 7891, +44 (876) 543 2198</Typography>
-                  </Box>
+                  </div>
                 </Box>
               </Grid>
               <Grid item sm={6} xs={12}>
@@ -329,7 +329,7 @@ const PreviewCard = ({ data }: Props) => {
               for future freelance projects. Thank You!
             </Typography>
           </CardContent>
-        </Box>
+        </div>
         <CardContent>
           <Box sx={{ mt: 4, width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
             <Link href={`/apps/invoice/print/${data.invoice.id}`} passHref>

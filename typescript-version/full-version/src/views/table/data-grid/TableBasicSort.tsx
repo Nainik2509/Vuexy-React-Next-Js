@@ -152,11 +152,11 @@ const TableSort = () => {
       <CardHeader
         title='Sorting'
         action={
-          <Box>
+          <div>
             <Button size='small' variant='contained' onClick={() => setIsNameSortable(!isNameSortable)}>
               {`Disable Sorting: ${!isNameSortable}`}
             </Button>
-          </Box>
+          </div>
         }
       />
       <DataGrid

@@ -59,11 +59,11 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
       <Grid item xs={12} lg={8} xl={9}>
         <Alert severity='success' icon={<Icon icon='mdi:tag-outline' />} sx={{ mb: 4 }}>
           <AlertTitle>Bank Offers</AlertTitle>
-          <Box>
+          <div>
             <Typography sx={{ color: 'success.main' }}>
               - 10% Instant Discount on Bank of America Corp Bank Debit and Credit cards
             </Typography>
-          </Box>
+          </div>
         </Alert>
         <TabContext value={value}>
           <TabList onChange={handleChange} aria-label='customized tabs example'>

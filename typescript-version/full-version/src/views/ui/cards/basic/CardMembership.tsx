@@ -88,7 +88,7 @@ const CardMembership = () => {
               p: theme => `${theme.spacing(18, 5, 16)} !important`
             }}
           >
-            <Box>
+            <div>
               <Box sx={{ mb: 3.5, display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }}>
                 <Typography variant='h6'>$</Typography>
                 <Typography variant='h6' sx={{ lineHeight: 1, fontWeight: 600, fontSize: '3.75rem !important' }}>
@@ -101,7 +101,7 @@ const CardMembership = () => {
                 <span>Software Development</span>
               </Typography>
               <Button variant='contained'>Contact Now</Button>
-            </Box>
+            </div>
           </CardContent>
         </Grid>
       </Grid>

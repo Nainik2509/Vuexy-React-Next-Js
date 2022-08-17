@@ -177,11 +177,11 @@ const TableColumns = () => {
       <CardHeader
         title='Column'
         action={
-          <Box>
+          <div>
             <Button size='small' variant='contained' onClick={() => setHideNameColumn(!hideNameColumn)}>
               Toggle Name Column
             </Button>
-          </Box>
+          </div>
         }
       />
       <DataGrid

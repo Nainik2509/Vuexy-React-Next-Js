@@ -80,7 +80,7 @@ const PricingFooter = (props: Props) => {
         <Typography variant='body2'>Let us help answer the most common questions.</Typography>
       </Box>
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-        <Box>{renderAccordion()}</Box>
+        <div>{renderAccordion()}</div>
       </Box>
     </CardContent>
   )

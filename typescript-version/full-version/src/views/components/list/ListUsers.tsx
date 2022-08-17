@@ -46,7 +46,7 @@ const ListUsers = () => {
         <ListItemAvatar>
           <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
         </ListItemAvatar>
-        <Box>
+        <div>
           <ListItemText primary='Caroline Black' />
           <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
             <Box sx={{ mr: 3, display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'success.main' } }}>
@@ -57,7 +57,7 @@ const ListUsers = () => {
               13 minutes ago
             </Typography>
           </Box>
-        </Box>
+        </div>
         <ListItemSecondaryAction>
           <Button variant='contained' size='small'>
             Add
@@ -68,7 +68,7 @@ const ListUsers = () => {
         <ListItemAvatar>
           <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' />
         </ListItemAvatar>
-        <Box>
+        <div>
           <ListItemText primary='Alfred Copeland' />
           <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
             <Box sx={{ mr: 3, display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'warning.main' } }}>
@@ -79,7 +79,7 @@ const ListUsers = () => {
               11 minutes ago
             </Typography>
           </Box>
-        </Box>
+        </div>
         <ListItemSecondaryAction>
           <Button variant='contained' size='small'>
             Add
@@ -90,7 +90,7 @@ const ListUsers = () => {
         <ListItemAvatar>
           <Avatar src='/images/avatars/8.png' alt='Celia Schneider' />
         </ListItemAvatar>
-        <Box>
+        <div>
           <ListItemText primary='Celia Schneider' />
           <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
             <Box sx={{ mr: 3, display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'secondary.main' } }}>
@@ -101,7 +101,7 @@ const ListUsers = () => {
               9 minutes ago
             </Typography>
           </Box>
-        </Box>
+        </div>
 
         <ListItemSecondaryAction>
           <Button variant='contained' size='small'>
@@ -113,7 +113,7 @@ const ListUsers = () => {
         <ListItemAvatar>
           <Avatar src='/images/avatars/5.png' alt='Celia Schneider' />
         </ListItemAvatar>
-        <Box>
+        <div>
           <ListItemText primary='Max Rogan' />
           <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
             <Box sx={{ mr: 3, display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'error.main' } }}>
@@ -124,7 +124,7 @@ const ListUsers = () => {
               28 minutes ago
             </Typography>
           </Box>
-        </Box>
+        </div>
 
         <ListItemSecondaryAction>
           <Button variant='contained' size='small'>

@@ -135,9 +135,9 @@ const RolesCards = () => {
                 ))}
               </AvatarGroup>
             </Box>
-            <Box>
+            <div>
               <Typography variant='h6'>{item.title}</Typography>
-            </Box>
+            </div>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <Typography
                 variant='body2'

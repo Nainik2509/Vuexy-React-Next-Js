@@ -2,7 +2,6 @@
 import { useState } from 'react'
 
 // ** MUI Imports
-import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import Step from '@mui/material/Step'
 import { styled } from '@mui/material/styles'
@@ -173,12 +172,12 @@ const RegisterMultiSteps = () => {
                     >
                       <Icon icon={step.icon} />
                     </CustomAvatar>
-                    <Box>
+                    <div>
                       <Typography className='step-title' sx={{ fontWeight: 600 }}>
                         {step.title}
                       </Typography>
                       <Typography className='step-subtitle'>{step.subtitle}</Typography>
-                    </Box>
+                    </div>
                   </StepLabel>
                 </Step>
               )

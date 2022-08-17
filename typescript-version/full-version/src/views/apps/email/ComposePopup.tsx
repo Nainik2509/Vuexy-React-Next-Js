@@ -249,11 +249,11 @@ const ComposePopup = (props: MailComposeType) => {
         }}
       >
         <Box sx={{ width: '100%', display: 'flex', alignItems: 'center' }}>
-          <Box>
+          <div>
             <InputLabel sx={{ mr: 3, fontSize: '0.875rem' }} htmlFor='email-to-select'>
               To:
             </InputLabel>
-          </Box>
+          </div>
           <Autocomplete
             multiple
             freeSolo
@@ -309,11 +309,11 @@ const ComposePopup = (props: MailComposeType) => {
             borderBottom: theme => `1px solid ${theme.palette.divider}`
           }}
         >
-          <Box>
+          <div>
             <InputLabel sx={{ mr: 3, fontSize: '0.875rem' }} htmlFor='email-cc-select'>
               Cc:
             </InputLabel>
-          </Box>
+          </div>
           <TextField
             fullWidth
             size='small'
@@ -335,11 +335,11 @@ const ComposePopup = (props: MailComposeType) => {
             borderBottom: theme => `1px solid ${theme.palette.divider}`
           }}
         >
-          <Box>
+          <div>
             <InputLabel sx={{ mr: 3, fontSize: '0.875rem' }} htmlFor='email-bcc-select'>
               Bcc:
             </InputLabel>
-          </Box>
+          </div>
           <TextField
             fullWidth
             size='small'
@@ -360,11 +360,11 @@ const ComposePopup = (props: MailComposeType) => {
           borderBottom: theme => `1px solid ${theme.palette.divider}`
         }}
       >
-        <Box>
+        <div>
           <InputLabel sx={{ mr: 3, fontSize: '0.875rem' }} htmlFor='email-subject-input'>
             Subject:
           </InputLabel>
-        </Box>
+        </div>
         <Input
           fullWidth
           value={subjectValue}

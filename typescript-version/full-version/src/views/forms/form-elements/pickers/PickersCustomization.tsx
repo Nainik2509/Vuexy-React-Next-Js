@@ -22,7 +22,7 @@ const PickersCustomization = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <Box>
+      <div>
         <DatePicker
           id='custom-format'
           selected={dateFormat}
@@ -30,8 +30,8 @@ const PickersCustomization = () => {
           onChange={(date: Date) => setDateFormat(date)}
           customInput={<CustomInput label='Custom Date Format' />}
         />
-      </Box>
-      <Box>
+      </div>
+      <div>
         <DatePicker
           id='highlight-dates'
           selected={dateHighlight}
@@ -39,7 +39,7 @@ const PickersCustomization = () => {
           customInput={<CustomInput label='Highlight Dates' />}
           highlightDates={[subDays(new Date(), 7), addDays(new Date(), 7)]}
         />
-      </Box>
+      </div>
     </Box>
   )
 }

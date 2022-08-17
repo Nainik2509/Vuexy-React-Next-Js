@@ -21,7 +21,7 @@ const TabDetails = () => {
   }
 
   return (
-    <Box>
+    <div>
       <TextField fullWidth sx={{ mb: 4 }} label='Application Name' placeholder='Master Admin' />
       <Typography variant='h6' sx={{ mb: 4 }}>
         Category
@@ -35,10 +35,10 @@ const TabDetails = () => {
             <CustomAvatar skin='light' color='info' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
               <Icon icon='mdi:briefcase-outline' />
             </CustomAvatar>
-            <Box>
+            <div>
               <Typography>CRM Application</Typography>
               <Typography variant='caption'>Scales with any business</Typography>
-            </Box>
+            </div>
           </Box>
           <Radio value='crm' onChange={handleChange} checked={value === 'crm'} />
         </Box>
@@ -50,10 +50,10 @@ const TabDetails = () => {
             <CustomAvatar skin='light' color='success' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
               <Icon icon='mdi:cart-outline' />
             </CustomAvatar>
-            <Box>
+            <div>
               <Typography>Ecommerce Platforms</Typography>
               <Typography variant='caption'>Grow Your Business With App</Typography>
-            </Box>
+            </div>
           </Box>
           <Radio value='ecommerce' onChange={handleChange} checked={value === 'ecommerce'} />
         </Box>
@@ -65,15 +65,15 @@ const TabDetails = () => {
             <CustomAvatar skin='light' color='error' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
               <Icon icon='mdi:license' />
             </CustomAvatar>
-            <Box>
+            <div>
               <Typography>Online Learning platform</Typography>
               <Typography variant='caption'>Start learning today</Typography>
-            </Box>
+            </div>
           </Box>
           <Radio value='learning' onChange={handleChange} checked={value === 'learning'} />
         </Box>
       </Box>
-    </Box>
+    </div>
   )
 }
 

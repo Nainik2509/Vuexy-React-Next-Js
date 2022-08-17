@@ -114,7 +114,7 @@ const DialogAuthentication = () => {
               >
                 <Box sx={{ mb: 2, display: 'flex', alignItems: 'center', '& svg': { mr: 3 } }}>
                   <Icon icon='mdi:cog-outline' fontSize={35} />
-                  <Box>
+                  <div>
                     <Typography
                       variant='h6'
                       sx={{ fontWeight: 600, ...(authType === 'app' ? { color: 'primary.main' } : {}) }}
@@ -124,7 +124,7 @@ const DialogAuthentication = () => {
                     <Typography sx={{ ...(authType === 'app' ? { color: 'primary.main' } : {}) }}>
                       Get code from an app like Google Authenticator or Microsoft Authenticator.
                     </Typography>
-                  </Box>
+                  </div>
                 </Box>
               </Box>
             </Grid>
@@ -143,7 +143,7 @@ const DialogAuthentication = () => {
               >
                 <Box sx={{ mb: 2, display: 'flex', alignItems: 'center', '& svg': { mr: 3 } }}>
                   <Icon icon='mdi:message-outline' fontSize={35} />
-                  <Box>
+                  <div>
                     <Typography
                       variant='h6'
                       sx={{
@@ -157,7 +157,7 @@ const DialogAuthentication = () => {
                     <Typography sx={{ ...(authType === 'sms' ? { color: 'primary.main' } : {}) }}>
                       We will send a code via SMS if you need to use your backup login method.
                     </Typography>
-                  </Box>
+                  </div>
                 </Box>
               </Box>
             </Grid>
@@ -198,7 +198,7 @@ const DialogAuthentication = () => {
           <Grid container spacing={6}>
             <Grid item xs={12}>
               {authType === 'sms' ? (
-                <Box>
+                <div>
                   <Typography variant='h6'>Verify Your Mobile Number for SMS</Typography>
                   <Typography variant='body2'>
                     Enter your mobile phone number with country code and we will send you a verification code.
@@ -214,9 +214,9 @@ const DialogAuthentication = () => {
                       </Button>
                     </Grid>
                   </Grid>
-                </Box>
+                </div>
               ) : (
-                <Box>
+                <div>
                   <Typography variant='h5' sx={{ mb: 4, textAlign: 'center' }}>
                     Add Authenticator App
                   </Typography>
@@ -253,7 +253,7 @@ const DialogAuthentication = () => {
                       </Button>
                     </Grid>
                   </Grid>
-                </Box>
+                </div>
               )}
             </Grid>
           </Grid>

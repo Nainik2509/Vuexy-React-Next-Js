@@ -58,12 +58,12 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
                   >
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
                       <Avatar src={connection.avatar} sx={{ mr: 4, width: 38, height: 38 }} />
-                      <Box>
+                      <div>
                         <Typography sx={{ lineHeight: 1.1, fontWeight: 500 }}>{connection.name}</Typography>
                         <Typography variant='caption' sx={{ color: 'text.disabled' }}>
                           {connection.connections} Connections
                         </Typography>
-                      </Box>
+                      </div>
                     </Box>
                     <Button
                       size='small'
@@ -115,12 +115,12 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
                   >
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
                       <Avatar src={team.avatar} sx={{ mr: 4, width: 38, height: 38 }} />
-                      <Box>
+                      <div>
                         <Typography sx={{ lineHeight: 1.1, fontWeight: 500 }}>{team.title}</Typography>
                         <Typography variant='caption' sx={{ color: 'text.disabled' }}>
                           {team.members} Members
                         </Typography>
-                      </Box>
+                      </div>
                     </Box>
                     <Link href='/' passHref>
                       <Box

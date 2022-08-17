@@ -22,7 +22,7 @@ const PickersMinMax = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <Box>
+      <div>
         <DatePicker
           id='min-date'
           selected={minDate}
@@ -30,8 +30,8 @@ const PickersMinMax = () => {
           onChange={(date: Date) => setMinDate(date)}
           customInput={<CustomInput label='Min Date' />}
         />
-      </Box>
-      <Box>
+      </div>
+      <div>
         <DatePicker
           id='max-date'
           selected={maxDate}
@@ -39,7 +39,7 @@ const PickersMinMax = () => {
           onChange={(date: Date) => setMaxDate(date)}
           customInput={<CustomInput label='Max Date' />}
         />
-      </Box>
+      </div>
     </Box>
   )
 }

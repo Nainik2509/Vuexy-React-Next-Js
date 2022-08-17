@@ -128,7 +128,7 @@ const SomeComponent = () => {
         </RadioGroup>
       </Box>
 
-      <Box>
+      <div>
         <Typography>Menu Layout</Typography>
         <RadioGroup
           row
@@ -138,7 +138,7 @@ const SomeComponent = () => {
           <FormControlLabel value='vertical' label='Vertical' control={<Radio />} />
           <FormControlLabel value='horizontal' label='Horizontal' control={<Radio />} />
         </RadioGroup>
-      </Box>
+      </div>
     </>
   )
 }
@@ -177,7 +177,7 @@ const SomeComponent = () => {
         </RadioGroup>
       </Box>
 
-      <Box>
+      <div>
         <Typography>Menu Layout</Typography>
         <RadioGroup
           row
@@ -187,7 +187,7 @@ const SomeComponent = () => {
           <FormControlLabel value='vertical' label='Vertical' control={<Radio />} />
           <FormControlLabel value='horizontal' label='Horizontal' control={<Radio />} />
         </RadioGroup>
-      </Box>
+      </div>
     </>
   )
 }

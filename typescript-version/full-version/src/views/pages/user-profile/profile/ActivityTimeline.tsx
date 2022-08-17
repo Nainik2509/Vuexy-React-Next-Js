@@ -70,10 +70,10 @@ const ActivityTimeline = () => {
               <Typography sx={{ mb: 2, color: 'text.secondary' }}>Project meeting with john @10:15am</Typography>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <Avatar src='/images/avatars/2.png' sx={{ mr: 4, width: 38, height: 38 }} />
-                <Box>
+                <div>
                   <Typography sx={{ fontWeight: 500 }}>Lester McCarthy (Client)</Typography>
                   <Typography sx={{ color: 'text.secondary' }}>CEO of Infibeam</Typography>
-                </Box>
+                </div>
               </Box>
             </TimelineContent>
           </TimelineItem>

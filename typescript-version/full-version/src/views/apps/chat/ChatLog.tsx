@@ -141,7 +141,7 @@ const ChatLog = (props: ChatLogType) => {
             mb: index !== formattedChatData().length - 1 ? 4 : undefined
           }}
         >
-          <Box>
+          <div>
             <CustomAvatar
               skin='light'
               color={data.contact.avatarColor ? data.contact.avatarColor : undefined}
@@ -167,7 +167,7 @@ const ChatLog = (props: ChatLogType) => {
             >
               {data.contact.avatarColor ? getInitials(data.contact.fullName) : null}
             </CustomAvatar>
-          </Box>
+          </div>
 
           <Box className='chat-body' sx={{ maxWidth: ['calc(100% - 5.75rem)', '75%', '65%'] }}>
             {item.messages.map((chat: ChatLogChatType, index: number, { length }: { length: number }) => {
@@ -175,7 +175,7 @@ const ChatLog = (props: ChatLogType) => {
 
               return (
                 <Box key={index} sx={{ '&:not(:last-of-type)': { mb: 3.5 } }}>
-                  <Box>
+                  <div>
                     <Typography
                       sx={{
                         boxShadow: 1,
@@ -192,7 +192,7 @@ const ChatLog = (props: ChatLogType) => {
                     >
                       {chat.msg}
                     </Typography>
-                  </Box>
+                  </div>
                   {index + 1 === length ? (
                     <Box
                       sx={{

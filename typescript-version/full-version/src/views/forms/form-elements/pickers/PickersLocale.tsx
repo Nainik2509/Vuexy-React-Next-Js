@@ -32,7 +32,7 @@ const PickersLocale = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <Box>
+      <div>
         <DatePicker
           selected={date}
           id='locale-picker'
@@ -40,8 +40,8 @@ const PickersLocale = () => {
           onChange={(date: Date) => setDate(date)}
           customInput={<CustomInput label='Locale Dates' />}
         />
-      </Box>
-      <Box>
+      </div>
+      <div>
         <DatePicker
           showTimeSelect
           selected={time}
@@ -51,7 +51,7 @@ const PickersLocale = () => {
           onChange={(date: Date) => setTime(date)}
           customInput={<CustomInput label='Locale Time' />}
         />
-      </Box>
+      </div>
     </Box>
   )
 }

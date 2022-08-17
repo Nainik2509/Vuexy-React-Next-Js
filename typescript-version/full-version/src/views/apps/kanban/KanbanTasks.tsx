@@ -102,7 +102,7 @@ const KanbanTasks = (props: KanbanTasksProps) => {
       >
         {renderAttachmentsComments()}
         {task.assignedTo.length ? (
-          <Box>
+          <div>
             {task.assignedTo.length ? (
               <AvatarGroup
                 max={3}
@@ -116,7 +116,7 @@ const KanbanTasks = (props: KanbanTasksProps) => {
                 })}
               </AvatarGroup>
             ) : null}
-          </Box>
+          </div>
         ) : null}
       </Box>
     ) : null

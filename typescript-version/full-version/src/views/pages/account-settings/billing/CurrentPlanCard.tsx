@@ -82,13 +82,13 @@ const CurrentPlanCard = ({ data }: { data: PricingPlanType[] }) => {
                   We will send you a notification upon Subscription expiration
                 </Typography>
               </Box>
-              <Box>
+              <div>
                 <Box sx={{ mb: 2, display: 'flex', alignItems: 'center' }}>
                   <Typography sx={{ mr: 2, fontWeight: 500 }}>$199 Per Month</Typography>
                   <CustomChip label='Popular' size='small' color='primary' skin='light' rounded={true} />
                 </Box>
                 <Typography sx={{ color: 'text.secondary' }}>Standard plan for small to medium businesses</Typography>
-              </Box>
+              </div>
             </Grid>
             <Grid item xs={12} lg={6}>
               <Alert severity='warning' icon={false} sx={{ mb: 6 }}>
@@ -96,7 +96,7 @@ const CurrentPlanCard = ({ data }: { data: PricingPlanType[] }) => {
                 Your plan requires update
               </Alert>
 
-              <Box>
+              <div>
                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                   <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>Days</Typography>
                   <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>24 of 30 Days</Typography>
@@ -109,7 +109,7 @@ const CurrentPlanCard = ({ data }: { data: PricingPlanType[] }) => {
                 <Typography sx={{ color: 'text.secondary' }}>
                   6 days remaining until your plan requires update
                 </Typography>
-              </Box>
+              </div>
             </Grid>
             <Grid item xs={12}>
               <Box sx={{ mt: 3, gap: 3, display: 'flex', flexWrap: 'wrap' }}>

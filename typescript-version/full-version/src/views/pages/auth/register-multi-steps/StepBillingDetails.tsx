@@ -195,10 +195,10 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
         ))}
 
         <Grid item xs={12}>
-          <Box>
+          <div>
             <Typography variant='h5'>Payment Information</Typography>
             <Typography sx={{ color: 'text.secondary' }}>Enter your card information</Typography>
-          </Box>
+          </div>
         </Grid>
         <Grid item xs={12}>
           <CardWrapper sx={{ '& .rccs': { m: '0 auto' } }}>

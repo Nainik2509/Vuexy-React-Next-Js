@@ -49,7 +49,7 @@ const PickersRange = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <Box>
+      <div>
         <DatePicker
           selectsRange
           endDate={endDate}
@@ -62,8 +62,8 @@ const PickersRange = () => {
             <CustomInput label='Date Range' start={startDate as Date | number} end={endDate as Date | number} />
           }
         />
-      </Box>
-      <Box>
+      </div>
+      <div>
         <DatePicker
           selectsRange
           monthsShown={2}
@@ -81,7 +81,7 @@ const PickersRange = () => {
             />
           }
         />
-      </Box>
+      </div>
     </Box>
   )
 }

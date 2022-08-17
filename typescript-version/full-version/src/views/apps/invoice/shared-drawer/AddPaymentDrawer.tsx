@@ -116,14 +116,14 @@ const EditInvoiceDrawer = ({ open, toggle }: Props) => {
           />
         </Box>
 
-        <Box>
+        <div>
           <Button size='large' variant='contained' onClick={toggle} sx={{ mr: 4 }}>
             Send
           </Button>
           <Button size='large' variant='outlined' color='secondary' onClick={toggle}>
             Cancel
           </Button>
-        </Box>
+        </div>
       </Box>
     </Drawer>
   )

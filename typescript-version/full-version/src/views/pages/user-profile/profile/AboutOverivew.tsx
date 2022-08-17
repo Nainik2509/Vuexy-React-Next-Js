@@ -96,24 +96,24 @@ const AboutOverivew = (props: Props) => {
               </Typography>
               {renderList(contacts)}
             </Box>
-            <Box>
+            <div>
               <Typography variant='body2' sx={{ mb: 4, color: 'text.disabled', textTransform: 'uppercase' }}>
                 Teams
               </Typography>
               {renderTeams(teams)}
-            </Box>
+            </div>
           </CardContent>
         </Card>
       </Grid>
       <Grid item xs={12}>
         <Card>
           <CardContent>
-            <Box>
+            <div>
               <Typography variant='body2' sx={{ mb: 4, color: 'text.disabled', textTransform: 'uppercase' }}>
                 Overview
               </Typography>
               {renderList(overview)}
-            </Box>
+            </div>
           </CardContent>
         </Card>
       </Grid>

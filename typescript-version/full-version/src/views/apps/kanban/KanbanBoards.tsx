@@ -146,7 +146,7 @@ const KanbanBoard = (props: KanbanBoardProps) => {
             ]}
           />
         </Box>
-        <Box>
+        <div>
           <Droppable droppableId={board.id.toString()}>
             {(provided: any, snapshot: any) => (
               <Box ref={provided.innerRef} isDraggingOver={snapshot.isDraggingOver} {...provided.droppableProps}>
@@ -175,7 +175,7 @@ const KanbanBoard = (props: KanbanBoardProps) => {
           ) : (
             renderAddTaskForm()
           )}
-        </Box>
+        </div>
       </Box>
     </>
   )

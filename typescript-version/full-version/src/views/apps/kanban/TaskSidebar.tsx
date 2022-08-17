@@ -415,14 +415,14 @@ const TaskSidebar = (props: TaskSidebarProps) => {
               onChange={e => setDesc(e.target.value)}
             />
           </FormControl>
-          <Box>
+          <div>
             <Button type='submit' variant='contained' sx={{ mr: 3 }}>
               Update
             </Button>
             <Button color='secondary' variant='outlined'>
               Cancel
             </Button>
-          </Box>
+          </div>
         </form>
       </Box>
     </Drawer>

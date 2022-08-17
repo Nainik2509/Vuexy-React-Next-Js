@@ -117,14 +117,14 @@ const TwoFactorAuthenticationCard = () => {
                 <FormHelperText sx={{ color: 'error.main' }}>Please enter a valid phone number</FormHelperText>
               )}
             </FormControl>
-            <Box>
+            <div>
               <Button variant='contained' type='submit' sx={{ mr: 3.5 }}>
                 Submit
               </Button>
               <Button type='reset' variant='outlined' color='secondary' onClick={close2FADialog}>
                 Cancel
               </Button>
-            </Box>
+            </div>
           </form>
         </DialogContent>
       </Dialog>
