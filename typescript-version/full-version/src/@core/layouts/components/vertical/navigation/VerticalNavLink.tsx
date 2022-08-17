@@ -1,5 +1,5 @@
 // ** React Imports
-import { ElementType, ReactNode } from 'react'
+import { ElementType } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
@@ -85,7 +85,7 @@ const VerticalNavLink = ({
   // ** Vars
   const { mode, navCollapsed } = settings
 
-  const IconTag: ReactNode = parent && !item.icon ? themeConfig.navSubItemIcon : item.icon
+  const icon = parent && !item.icon ? themeConfig.navSubItemIcon : item.icon
 
   const conditionalBgColor = () => {
     if (mode === 'semi-dark') {
@@ -142,20 +142,15 @@ const VerticalNavLink = ({
                   color: 'text.primary',
                   transition: 'margin .25s ease-in-out',
                   ...(navCollapsed && !navHover ? { mr: 0 } : { mr: 3.25 }),
-                  ...(parent ? { ml: 1.25, mr: 4.75 } : {}) // This line should be after (navCollapsed && !navHover) condition for proper styling
+                  ...(parent ? { ml: 1.25, mr: 4.75 } : {}), // This line should be after (navCollapsed && !navHover) condition for proper styling
+                  '& svg': {
+                    fontSize: '0.75rem',
+                    ...(!parent ? { fontSize: '1.5rem' } : {}),
+                    ...(parent && item.icon ? { fontSize: '0.875rem' } : {})
+                  }
                 }}
               >
-                <UserIcon
-                  icon={IconTag}
-                  componentType='vertical-menu'
-                  iconProps={{
-                    sx: {
-                      fontSize: '0.75rem',
-                      ...(!parent ? { fontSize: '1.5rem' } : {}),
-                      ...(parent && item.icon ? { fontSize: '0.875rem' } : {})
-                    }
-                  }}
-                />
+                <UserIcon icon={icon as string} />
               </ListItemIcon>
             )}
 

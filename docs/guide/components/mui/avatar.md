@@ -19,29 +19,26 @@ Use the MUI colors `primary` | `secondary` | `success` | `error` | `warning` | `
 Here is the example of how to use the colors mentioned above:
 
 ```tsx
-// ** Custom Components Imports
+import Icon from 'src/@core/components/icon'
 import CustomAvatar from 'src/@core/components/mui/avatar'
 
-// ** Icon Import
-import BellOutline from 'mdi-material-ui/BellOutline'
-
 <CustomAvatar color='primary'>
-  <BellOutline />
+  <Icon icon='mdi:bell-outline' />
 </CustomAvatar>
 <CustomAvatar color='secondary'>
-  <BellOutline />
+  <Icon icon='mdi:bell-outline' />
 </CustomAvatar>
 <CustomAvatar color='success'>
-  <BellOutline />
+  <Icon icon='mdi:bell-outline' />
 </CustomAvatar>
 <CustomAvatar color='error'>
-  <BellOutline />
+  <Icon icon='mdi:bell-outline' />
 </CustomAvatar>
 <CustomAvatar color='warning'>
-  <BellOutline />
+  <Icon icon='mdi:bell-outline' />
 </CustomAvatar>
 <CustomAvatar color='info'>
-  <BellOutline />
+  <Icon icon='mdi:bell-outline' />
 </CustomAvatar>
 ```
 
@@ -58,7 +55,6 @@ There are three skins avatar skins `filled` | `light` | `light-static`.
 Here is the example of how to use the skins mentioned above:
 
 ```tsx
-// ** Custom Components Imports
 import CustomAvatar from 'src/@core/components/mui/avatar'
 
 <CustomAvatar skin='filled'>N</CustomAvatar> // OR <CustomAvatar>N</CustomAvatar>

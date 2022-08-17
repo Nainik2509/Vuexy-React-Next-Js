@@ -147,7 +147,7 @@ const HorizontalNavGroup = (props: Props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.asPath])
 
-  const IconTag = item.icon ? item.icon : navSubItemIcon
+  const icon = item.icon ? item.icon : navSubItemIcon
   const toggleIcon = direction === 'rtl' ? 'mdi:chevron-left' : 'mdi:chevron-right'
 
   const WrapperCondition = horizontalMenuToggle === 'click'
@@ -220,11 +220,7 @@ const HorizontalNavGroup = (props: Props) => {
                   }}
                 >
                   <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
-                    <UserIcon
-                      icon={IconTag}
-                      componentType='horizontal-menu'
-                      iconProps={{ sx: IconTag === navSubItemIcon ? { fontSize: '1rem' } : { fontSize: '1.125rem' } }}
-                    />
+                    <UserIcon icon={icon} fontSize={icon === navSubItemIcon ? '1rem' : '1.125rem'} />
                   </ListItemIcon>
                   <Typography {...(menuTextTruncate && { noWrap: true })}>
                     <Translations text={item.title} />

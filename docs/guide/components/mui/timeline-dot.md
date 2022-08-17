@@ -17,26 +17,20 @@ There is only one skin type of timeline dot: `light`.
 Here is an example of how to use the skin:
 
 ```tsx
-// ** Icons Imports
-import Airplane from 'mdi-material-ui/Airplane'
-import CartOutline from 'mdi-material-ui/CartOutline'
-import ClockOutline from 'mdi-material-ui/ClockOutline'
-import FileEditOutline from 'mdi-material-ui/FileEditOutline'
-
-// ** Custom Components Imports
+import Icon from 'src/@core/components/icon'
 import CustomTimelineDot from 'src/@core/components/mui/timeline-dot'
 
 <CustomTimelineDot skin='light' color='error'>
-  <Airplane fontSize='small' />
+  <Icon icon='mdi:airplane' fontSize={20} />
 </CustomTimelineDot>
 <CustomTimelineDot skin='light' color='primary'>
-  <ClockOutline fontSize='small' />
+  <Icon icon='mdi:clock-outline' fontSize={20} />
 </CustomTimelineDot>
 <CustomTimelineDot skin='light' color='warning'>
-  <CartOutline fontSize='small' />
+  <Icon icon='mdi:cart-outline' fontSize={20} />
 </CustomTimelineDot>
 <CustomTimelineDot skin='light' color='success'>
-  <FileEditOutline fontSize='small' />
+  <Icon icon='mdi:file-edit-outline' fontSize={20} />
 </CustomTimelineDot>
 ```
 

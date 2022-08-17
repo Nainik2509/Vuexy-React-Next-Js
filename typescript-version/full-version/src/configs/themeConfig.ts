@@ -8,9 +8,6 @@
 // ** MUI Imports
 import { Direction } from '@mui/material'
 
-// ** Icon Import
-import CircleOutline from 'mdi-material-ui/CircleOutline'
-
 // ** Types
 import {
   Skin,
@@ -28,13 +25,13 @@ type ThemeConfig = {
   appBar: AppBar
   footer: Footer
   navHidden: boolean
-  navSubItemIcon: any
   direction: Direction
   templateName: string
   navCollapsed: boolean
   routingLoader: boolean
   disableRipple: boolean
   navigationSize: number
+  navSubItemIcon: string
   menuTextTruncate: boolean
   contentWidth: ContentWidth
   disableCustomizer: boolean
@@ -65,7 +62,7 @@ const themeConfig: ThemeConfig = {
   // ** Navigation (Menu) Configs
   navHidden: false /* true | false */,
   menuTextTruncate: true /* true | false */,
-  navSubItemIcon: CircleOutline /* Icon Element */,
+  navSubItemIcon: 'mdi:circle-outline' /* Icon */,
   verticalNavToggleType: 'accordion' /* accordion | collapse /*! Note: This is for Vertical navigation menu only */,
   navCollapsed: false /* true | false /*! Note: This is for Vertical navigation menu only */,
   navigationSize: 260 /* Number in PX(Pixels) /*! Note: This is for Vertical navigation menu only */,

@@ -175,7 +175,7 @@ const StepAccountDetails = ({ handleNext }: { handleNext: () => void }) => {
                   endAdornment={
                     <InputAdornment position='end'>
                       <IconButton edge='end' onClick={handleClickShowPassword} onMouseDown={handleMouseDownPassword}>
-                        {values.showPassword ? <Icon icon='mdi:eye-outline' /> : <Icon icon='mdi:eye-off-outline' />}
+                        <Icon icon={values.showPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
                       </IconButton>
                     </InputAdornment>
                   }

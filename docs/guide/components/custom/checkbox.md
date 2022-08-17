@@ -16,28 +16,54 @@ Usage:
 <code-group>
 <code-block title="TSX" active>
 ```tsx
+import { useState } from 'react'
+import Grid from '@mui/material/Grid'
 import { CustomCheckboxBasicData } from 'src/@core/components/custom-checkbox/types'
 import CustomCheckboxBasic from 'src/@core/components/custom-checkbox/basic'
 
 const data: CustomCheckboxBasicData[] = [
   {
     meta: '20%',
+    isSelected: true,
     value: 'discount',
     title: 'Discount',
-    gridProps: { sm: 6, xs: 12 },
     content: 'Wow! Get 20% off on your next purchase!'
   },
   {
     meta: 'Free',
     value: 'updates',
     title: 'Updates',
-    gridProps: { sm: 6, xs: 12 },
     content: 'Get Updates regarding related products.'
   }
 ]
 
 const Component = () => {
-  return <CustomCheckboxBasic data={data} value={['discount']} name='custom-checkbox-basic' />
+  const initialSelected: string[] = data.filter(item => item.isSelected).map(item => item.value)
+  const [selected, setSelected] = useState<string[]>(initialSelected)
+
+  const handleChange = (value: string) => {
+    if (selected.includes(value)) {
+      const updatedArr = selected.filter(item => item !== value)
+      setSelected(updatedArr)
+    } else {
+      setSelected([...selected, value])
+    }
+  }
+
+  return (
+    <Grid container spacing={4}>
+      {data.map((item, index) => (
+        <CustomCheckboxBasic
+          key={index}
+          data={data[index]}
+          selected={selected}
+          handleChange={handleChange}
+          name='custom-checkbox-basic'
+          gridProps={{ sm: 6, xs: 12 }}
+        />
+      ))}
+    </Grid>
+  )
 }
 
 export default Component
@@ -46,27 +72,53 @@ export default Component
 
 <code-block title="JSX">
 ```jsx
+import { useState } from 'react'
+import Grid from '@mui/material/Grid'
 import CustomCheckboxBasic from 'src/@core/components/custom-checkbox/basic'
 
 const data = [
   {
     meta: '20%',
+    isSelected: true,
     value: 'discount',
     title: 'Discount',
-    gridProps: { sm: 6, xs: 12 },
     content: 'Wow! Get 20% off on your next purchase!'
   },
   {
     meta: 'Free',
     value: 'updates',
     title: 'Updates',
-    gridProps: { sm: 6, xs: 12 },
     content: 'Get Updates regarding related products.'
   }
 ]
 
 const Component = () => {
-  return <CustomCheckboxBasic data={data} value={['discount']} name='custom-checkbox-basic' />
+  const initialSelected = data.filter(item => item.isSelected).map(item => item.value)
+  const [selected, setSelected] = useState(initialSelected)
+
+  const handleChange = value => {
+    if (selected.includes(value)) {
+      const updatedArr = selected.filter(item => item !== value)
+      setSelected(updatedArr)
+    } else {
+      setSelected([...selected, value])
+    }
+  }
+
+  return (
+    <Grid container spacing={4}>
+      {data.map((item, index) => (
+        <CustomCheckboxBasic
+          key={index}
+          data={data[index]}
+          selected={selected}
+          handleChange={handleChange}
+          name='custom-checkbox-basic'
+          gridProps={{ sm: 6, xs: 12 }}
+        />
+      ))}
+    </Grid>
+  )
 }
 
 export default Component
@@ -76,24 +128,24 @@ export default Component
 
 ### Props
 
-| Prop       | Type                                                          | Required | Description                              |
-| :--------- | :------------------------------------------------------------ | :------- | :--------------------------------------- |
-| name       | `string`                                                      | Yes      | Name attribute of the checkbox group     |
-| data       | `CustomCheckboxBasicData[]`                                   | Yes      | Array of object to create checkboxes     |
-| value      | `string[]`                                                    | No       | To select the default checkboxes         |
-| color      | `primary`, `secondary`, `error`, `warning`, `info`, `success` | No       | Color of the selected checkboxes         |
-| onChange   | `(value: string | null) => void`                              | No       | Run a function when an option is changed |
+| Prop         | Type                                                          | Required | Description                              |
+| :----------- | :------------------------------------------------------------ | :------- | :--------------------------------------- |
+| name         | `string`                                                      | Yes      | Name attribute of the checkbox           |
+| selected     | `string[]`                                                    | Yes      | Array of selected checkboxes             |
+| data         | `CustomCheckboxBasicData`                                     | Yes      | Object to create checkbox                |
+| handleChange | `(value: string) => void`                                     | Yes      | Run a function when an option is changed |
+| gridProps    | `GridProps`                                                   | Yes      | Add props of the MUI's `Grid` component  |
+| color        | `primary`, `secondary`, `error`, `warning`, `info`, `success` | No       | Color of the selected checkboxes         |
 
 #### The type of `CustomCheckboxBasicData` is as follows:
 
-| Property   | Type                                                          | Required | Description                                |
-| :--------- | :------------------------------------------------------------ | :------- | :----------------------------------------- |
-| value      | `string`                                                      | Yes      | Value to identify a particular checkbox    |
-| title      | `ReactNode`                                                   | Yes      | Title for the checkbox component           |
-| gridProps  | `GridProps`                                                   | Yes      | Add props of the MUI's `Grid` component    |
-| meta       | `ReactNode`                                                   | No       | Add content to the right side of the title |
-| content    | `ReactNode`                                                   | No       | Add content below the title                |
-| name       | `string`                                                      | No       | Name attribute for a particular checkbox   |
+| Property   | Type        | Required | Description                                            |
+| :--------- | :---------- | :------- | :----------------------------------------------------- |
+| value      | `string`    | Yes      | Identify a particular checkbox                         |
+| title      | `ReactNode` | No       | Title for the checkbox component                       |
+| meta       | `ReactNode` | No       | Add content to the right side of the title. **(To add meta in your checkbox, you need to add the `title` property as well)** |
+| content    | `ReactNode` | No       | Add content below the title                            |
+| isSelected | `boolean`   | No       | If `true`, checkbox will be selected at initial render |
 
 ## Custom Checkbox with Icons
 
@@ -105,38 +157,70 @@ Usage:
 <code-group>
 <code-block title="TSX" active>
 ```tsx
-import Server from 'mdi-material-ui/Server'
-import LockOutline from 'mdi-material-ui/LockOutline'
-import ShieldOutline from 'mdi-material-ui/ShieldOutline'
-import { CustomCheckboxIconsData } from 'src/@core/components/custom-checkbox/types'
+import { useState } from 'react'
+import Grid from '@mui/material/Grid'
+import { CustomCheckboxIconsData, CustomCheckboxIconsProps } from 'src/@core/components/custom-checkbox/types'
 import CustomCheckboxIcons from 'src/@core/components/custom-checkbox/icons'
+
+interface IconType {
+  icon: CustomCheckboxIconsProps['icon']
+  iconProps: CustomCheckboxIconsProps['iconProps']
+}
 
 const data: CustomCheckboxIconsData[] = [
   {
     value: 'backup',
     title: 'Backup',
-    gridProps: { sm: 4, xs: 12 },
-    content: 'Backup every file from your project.',
-    icon: <Server sx={{ mb: 2, fontSize: '2rem' }} />
+    isSelected: true,
+    content: 'Backup every file from your project.'
   },
   {
     value: 'encrypt',
     title: 'Encrypt',
-    gridProps: { sm: 4, xs: 12 },
-    content: 'Translate your data to encrypted text.',
-    icon: <ShieldOutline sx={{ mb: 2, fontSize: '2rem' }} />
+    content: 'Translate your data to encrypted text.'
   },
   {
     value: 'site-lock',
     title: 'Site Lock',
-    gridProps: { sm: 4, xs: 12 },
-    content: 'Security tool to protect your website.',
-    icon: <LockOutline sx={{ mb: 2, fontSize: '2rem' }} />
+    content: 'Security tool to protect your website.'
   }
 ]
 
+const icons: IconType[] = [
+  { icon: 'mdi:server', iconProps: { fontSize: '2rem', style: { marginBottom: 8 } } },
+  { icon: 'mdi:shield-outline', iconProps: { fontSize: '2rem', style: { marginBottom: 8 } } },
+  { icon: 'mdi:lock-outline', iconProps: { fontSize: '2rem', style: { marginBottom: 8 } } }
+]
+
 const Component = () => {
-  return <CustomCheckboxIcons data={data} value={['backup']} name='custom-checkbox-icons' />
+  const initialSelected: string[] = data.filter(item => item.isSelected).map(item => item.value)
+  const [selected, setSelected] = useState<string[]>(initialSelected)
+
+  const handleChange = (value: string) => {
+    if (selected.includes(value)) {
+      const updatedArr = selected.filter(item => item !== value)
+      setSelected(updatedArr)
+    } else {
+      setSelected([...selected, value])
+    }
+  }
+
+  return (
+    <Grid container spacing={4}>
+      {data.map((item, index) => (
+        <CustomCheckboxIcons
+          key={index}
+          data={data[index]}
+          selected={selected}
+          icon={icons[index].icon}
+          handleChange={handleChange}
+          name='custom-checkbox-icons'
+          gridProps={{ sm: 4, xs: 12 }}
+          iconProps={icons[index].iconProps}
+        />
+      ))}
+    </Grid>
+  )
 }
 
 export default Component
@@ -145,37 +229,64 @@ export default Component
 
 <code-block title="JSX">
 ```jsx
-import Server from 'mdi-material-ui/Server'
-import LockOutline from 'mdi-material-ui/LockOutline'
-import ShieldOutline from 'mdi-material-ui/ShieldOutline'
+import { useState } from 'react'
+import Grid from '@mui/material/Grid'
 import CustomCheckboxIcons from 'src/@core/components/custom-checkbox/icons'
 
 const data = [
   {
     value: 'backup',
     title: 'Backup',
-    gridProps: { sm: 4, xs: 12 },
-    content: 'Backup every file from your project.',
-    icon: <Server sx={{ mb: 2, fontSize: '2rem' }} />
+    isSelected: true,
+    content: 'Backup every file from your project.'
   },
   {
     value: 'encrypt',
     title: 'Encrypt',
-    gridProps: { sm: 4, xs: 12 },
-    content: 'Translate your data to encrypted text.',
-    icon: <ShieldOutline sx={{ mb: 2, fontSize: '2rem' }} />
+    content: 'Translate your data to encrypted text.'
   },
   {
     value: 'site-lock',
     title: 'Site Lock',
-    gridProps: { sm: 4, xs: 12 },
-    content: 'Security tool to protect your website.',
-    icon: <LockOutline sx={{ mb: 2, fontSize: '2rem' }} />
+    content: 'Security tool to protect your website.'
   }
 ]
 
+const icons = [
+  { icon: 'mdi:server', iconProps: { fontSize: '2rem', style: { marginBottom: 8 } } },
+  { icon: 'mdi:shield-outline', iconProps: { fontSize: '2rem', style: { marginBottom: 8 } } },
+  { icon: 'mdi:lock-outline', iconProps: { fontSize: '2rem', style: { marginBottom: 8 } } }
+]
+
 const Component = () => {
-  return <CustomCheckboxIcons data={data} value={['backup']} name='custom-checkbox-icons' />
+  const initialSelected = data.filter(item => item.isSelected).map(item => item.value)
+  const [selected, setSelected] = useState(initialSelected)
+
+  const handleChange = value => {
+    if (selected.includes(value)) {
+      const updatedArr = selected.filter(item => item !== value)
+      setSelected(updatedArr)
+    } else {
+      setSelected([...selected, value])
+    }
+  }
+
+  return (
+    <Grid container spacing={4}>
+      {data.map((item, index) => (
+        <CustomCheckboxIcons
+          key={index}
+          data={data[index]}
+          selected={selected}
+          icon={icons[index].icon}
+          handleChange={handleChange}
+          name='custom-checkbox-icons'
+          gridProps={{ sm: 4, xs: 12 }}
+          iconProps={icons[index].iconProps}
+        />
+      ))}
+    </Grid>
+  )
 }
 
 export default Component
@@ -185,24 +296,25 @@ export default Component
 
 ### Props
 
-| Prop       | Type                                                          | Required | Description                              |
-| :--------- | :------------------------------------------------------------ | :------- | :--------------------------------------- |
-| name       | `string`                                                      | Yes      | Name attribute of the checkbox group     |
-| data       | `CustomCheckboxIconsData[]`                                   | Yes      | Array of object to create checkboxes     |
-| value      | `string[]`                                                    | No       | To select the default checkboxes         |
-| color      | `primary`, `secondary`, `error`, `warning`, `info`, `success` | No       | Color of the selected checkboxes         |
-| onChange   | `(value: string | null) => void`                              | No       | Run a function when an option is changed |
+| Prop         | Type                                                          | Required | Description                              |
+| :----------- | :------------------------------------------------------------ | :------- | :--------------------------------------- |
+| name         | `string`                                                      | Yes      | Name attribute of the checkbox           |
+| selected     | `string[]`                                                    | Yes      | Array of selected checkboxes             |
+| data         | `CustomCheckboxIconsData`                                     | Yes      | Object to create checkbox                |
+| handleChange | `(value: string) => void`                                     | Yes      | Run a function when an option is changed |
+| gridProps    | `GridProps`                                                   | Yes      | Add props of the MUI's `Grid` component  |
+| icon         | `string`                                                      | No       | Icon for the checkbox component          |
+| iconProps    | `Omit<IconProps, 'icon'>`                                     | No       | Add props of Iconify's `Icon` component  |
+| color        | `primary`, `secondary`, `error`, `warning`, `info`, `success` | No       | Color of the selected checkboxes         |
 
 #### The type of `CustomCheckboxIconsData` is as follows:
 
-| Property   | Type                                                          | Required | Description                                |
-| :--------- | :------------------------------------------------------------ | :------- | :----------------------------------------- |
-| value      | `string`                                                      | Yes      | Value to identify a particular checkbox    |
-| title      | `ReactNode`                                                   | Yes      | Title for the checkbox component           |
-| icon       | `ReactNode`                                                   | Yes      | Icon for the checkbox component            |
-| gridProps  | `GridProps`                                                   | Yes      | Add props of the MUI's `Grid` component    |
-| content    | `ReactNode`                                                   | No       | Add content below the title                |
-| name       | `string`                                                      | No       | Name attribute for a particular checkbox   |
+| Property   | Type        | Required | Description                                            |
+| :--------- | :---------- | :------- | :----------------------------------------------------- |
+| value      | `string`    | Yes      | Identify a particular checkbox                         |
+| title      | `ReactNode` | No       | Title for the checkbox component                       |
+| content    | `ReactNode` | No       | Add content below the title                            |
+| isSelected | `boolean`   | No       | If `true`, checkbox will be selected at initial render |
 
 ## Custom Checkbox with Images
 
@@ -214,29 +326,54 @@ Usage:
 <code-group>
 <code-block title="TSX" active>
 ```tsx
+import { useState } from 'react'
+import Grid from '@mui/material/Grid'
 import { CustomCheckboxImgData } from 'src/@core/components/custom-checkbox/types'
 import CustomCheckboxImg from 'src/@core/components/custom-checkbox/image'
 
 const data: CustomCheckboxImgData[] = [
   {
-    img: '...',
     value: 'clock',
-    gridProps: { sm: 4, xs: 12 }
+    isSelected: true,
+    img: '/images/pages/background-3.jpg'
   },
   {
-    img: '...',
-    value: 'donut',
-    gridProps: { sm: 4, xs: 12 }
+    value: 'donuts',
+    img: '/images/pages/background-8.jpg'
   },
   {
-    img: '...',
-    value: 'flower-vase',
-    gridProps: { sm: 4, xs: 12 }
+    value: 'flowers',
+    img: '/images/pages/background-5.jpg'
   }
 ]
 
 const Component = () => {
-  return <CustomCheckboxImg data={data} value={['starter']} name='custom-checkbox-img' />
+  const initialSelected: string[] = data.filter(item => item.isSelected).map(item => item.value)
+  const [selected, setSelected] = useState<string[]>(initialSelected)
+
+  const handleChange = (value: string) => {
+    if (selected.includes(value)) {
+      const updatedArr = selected.filter(item => item !== value)
+      setSelected(updatedArr)
+    } else {
+      setSelected([...selected, value])
+    }
+  }
+
+  return (
+    <Grid container spacing={4}>
+      {data.map((item, index) => (
+        <CustomCheckboxImg
+          key={index}
+          data={data[index]}
+          selected={selected}
+          name='custom-checkbox-img'
+          handleChange={handleChange}
+          gridProps={{ sm: 4, xs: 12 }}
+        />
+      ))}
+    </Grid>
+  )
 }
 
 export default Component
@@ -245,28 +382,53 @@ export default Component
 
 <code-block title="JSX">
 ```jsx
+import { useState } from 'react'
+import Grid from '@mui/material/Grid'
 import CustomCheckboxImg from 'src/@core/components/custom-checkbox/image'
 
 const data = [
   {
-    img: '...',
     value: 'clock',
-    gridProps: { sm: 4, xs: 12 }
+    isSelected: true,
+    img: '/images/pages/background-3.jpg'
   },
   {
-    img: '...',
-    value: 'donut',
-    gridProps: { sm: 4, xs: 12 }
+    value: 'donuts',
+    img: '/images/pages/background-8.jpg'
   },
   {
-    img: '...',
-    value: 'flower-vase',
-    gridProps: { sm: 4, xs: 12 }
+    value: 'flowers',
+    img: '/images/pages/background-5.jpg'
   }
 ]
 
 const Component = () => {
-  return <CustomCheckboxImg data={data} value={['starter']} name='custom-checkbox-img' />
+  const initialSelected = data.filter(item => item.isSelected).map(item => item.value)
+  const [selected, setSelected] = useState(initialSelected)
+
+  const handleChange = value => {
+    if (selected.includes(value)) {
+      const updatedArr = selected.filter(item => item !== value)
+      setSelected(updatedArr)
+    } else {
+      setSelected([...selected, value])
+    }
+  }
+
+  return (
+    <Grid container spacing={4}>
+      {data.map((item, index) => (
+        <CustomCheckboxImg
+          key={index}
+          data={data[index]}
+          selected={selected}
+          name='custom-checkbox-img'
+          handleChange={handleChange}
+          gridProps={{ sm: 4, xs: 12 }}
+        />
+      ))}
+    </Grid>
+  )
 }
 
 export default Component
@@ -276,20 +438,20 @@ export default Component
 
 ### Props
 
-| Prop       | Type                                                          | Required | Description                              |
-| :--------- | :------------------------------------------------------------ | :------- | :--------------------------------------- |
-| name       | `string`                                                      | Yes      | Name attribute of the checkbox group     |
-| data       | `CustomCheckboxImgData[]`                                     | Yes      | Array of object to create checkboxes     |
-| value      | `string[]`                                                    | No       | To select the default checkboxes         |
-| color      | `primary`, `secondary`, `error`, `warning`, `info`, `success` | No       | Color of the selected checkboxes         |
-| onChange   | `(value: string | null) => void`                              | No       | Run a function when an option is changed |
+| Prop         | Type                                                          | Required | Description                              |
+| :----------- | :------------------------------------------------------------ | :------- | :--------------------------------------- |
+| name         | `string`                                                      | Yes      | Name attribute of the checkbox           |
+| selected     | `string[]`                                                    | Yes      | Array of selected checkboxes             |
+| data         | `CustomCheckboxImgData`                                       | Yes      | Object to create checkbox                |
+| handleChange | `(value: string) => void`                                     | Yes      | Run a function when an option is changed |
+| gridProps    | `GridProps`                                                   | Yes      | Add props of the MUI's `Grid` component  |
+| color        | `primary`, `secondary`, `error`, `warning`, `info`, `success` | No       | Color of the selected checkboxes         |
 
 #### The type of `CustomCheckboxImgData` is as follows:
 
-| Property   | Type                                                          | Required | Description                                |
-| :--------- | :------------------------------------------------------------ | :------- | :----------------------------------------- |
-| value      | `string`                                                      | Yes      | Value to identify a particular checkbox    |
-| img        | `ReactNode`                                                   | Yes      | Image for the checkbox component           |
-| gridProps  | `GridProps`                                                   | Yes      | Add props of the MUI's `Grid` component    |
-| alt        | `string`                                                      | No       | Alternate text for the image               |
-| name       | `string`                                                      | No       | Name attribute for a particular checkbox   |
+| Property   | Type        | Required | Description                                            |
+| :--------- | :---------- | :------- | :----------------------------------------------------- |
+| value      | `string`    | Yes      | Identify a particular checkbox                         |
+| img        | `ReactNode` | Yes      | Image for the checkbox                                 |
+| alt        | `string`    | No       | Alternate text for the image                           |
+| isSelected | `boolean`   | No       | If `true`, checkbox will be selected at initial render |

@@ -179,7 +179,7 @@ const VerticalNavGroup = (props: Props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [navHover])
 
-  const IconTag = parent && !item.icon ? themeConfig.navSubItemIcon : item.icon
+  const icon = parent && !item.icon ? themeConfig.navSubItemIcon : item.icon
 
   const menuGroupCollapsedStyles = navCollapsed && !navHover ? { opacity: 0 } : { opacity: 1 }
 
@@ -257,11 +257,7 @@ const VerticalNavGroup = (props: Props) => {
                   ...(parent && item.children ? { ml: 1.25, mr: 4.75 } : {})
                 }}
               >
-                <UserIcon
-                  icon={IconTag}
-                  componentType='vertical-menu'
-                  iconProps={{ sx: { ...(parent ? { fontSize: '0.75rem' } : {}) } }}
-                />
+                <UserIcon icon={icon as string} {...(parent && { fontSize: '0.75rem' })} />
               </ListItemIcon>
             )}
             <MenuItemTextWrapper sx={{ ...menuGroupCollapsedStyles, ...(isSubToSub ? { ml: 9 } : {}) }}>

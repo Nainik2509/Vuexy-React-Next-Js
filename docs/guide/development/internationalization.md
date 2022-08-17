@@ -108,8 +108,8 @@ import { Fragment, SyntheticEvent, useState } from 'react'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import IconButton from '@mui/material/IconButton'
-import Translate from 'mdi-material-ui/Translate'
 import { useTranslation } from 'react-i18next'
+import Icon from 'src/@core/components/icon'
 import { Settings } from 'src/@core/context/settingsContext'
 
 interface Props {
@@ -146,7 +146,7 @@ const UserLanguageDropdown = ({ settings }: Props) => {
         onClick={handleLangDropdownOpen}
         sx={layout === 'vertical' ? { mr: 0.75 } : { mx: 0.75 }}
       >
-        <Translate />
+        <Icon icon='mdi:translate' />
       </IconButton>
       <Menu
         anchorEl={anchorEl}
@@ -182,8 +182,8 @@ import { Fragment, useState } from 'react'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import IconButton from '@mui/material/IconButton'
-import Translate from 'mdi-material-ui/Translate'
 import { useTranslation } from 'react-i18next'
+import Icon from 'src/@core/components/icon'
 
 const UserLanguageDropdown = ({ settings }) => {
   // ** State
@@ -215,7 +215,7 @@ const UserLanguageDropdown = ({ settings }) => {
         onClick={handleLangDropdownOpen}
         sx={layout === 'vertical' ? { mr: 0.75 } : { mx: 0.75 }}
       >
-        <Translate />
+        <Icon icon='mdi:translate' />
       </IconButton>
       <Menu
         anchorEl={anchorEl}

@@ -1,26 +1,3 @@
-// ** Icon imports
-import Table from 'mdi-material-ui/Table'
-import ChartDonut from 'mdi-material-ui/ChartDonut'
-import FormSelect from 'mdi-material-ui/FormSelect'
-import CubeOutline from 'mdi-material-ui/CubeOutline'
-import LockOutline from 'mdi-material-ui/LockOutline'
-import HomeOutline from 'mdi-material-ui/HomeOutline'
-import EmailOutline from 'mdi-material-ui/EmailOutline'
-import ShieldOutline from 'mdi-material-ui/ShieldOutline'
-import AccountOutline from 'mdi-material-ui/AccountOutline'
-import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
-import DotsHorizontal from 'mdi-material-ui/DotsHorizontal'
-import MessageOutline from 'mdi-material-ui/MessageOutline'
-import CheckboxOutline from 'mdi-material-ui/CheckboxOutline'
-import FormatLetterCase from 'mdi-material-ui/FormatLetterCase'
-import CreditCardOutline from 'mdi-material-ui/CreditCardOutline'
-import VectorArrangeBelow from 'mdi-material-ui/VectorArrangeBelow'
-import FileDocumentOutline from 'mdi-material-ui/FileDocumentOutline'
-import CalendarBlankOutline from 'mdi-material-ui/CalendarBlankOutline'
-import PackageVariantClosed from 'mdi-material-ui/PackageVariantClosed'
-import GoogleCirclesExtended from 'mdi-material-ui/GoogleCirclesExtended'
-import CheckboxMarkedCircleOutline from 'mdi-material-ui/CheckboxMarkedCircleOutline'
-
 // ** Type import
 import { VerticalNavItemsType } from 'src/@core/layouts/types'
 
@@ -28,7 +5,7 @@ const navigation = (): VerticalNavItemsType => {
   return [
     {
       title: 'Dashboards',
-      icon: HomeOutline,
+      icon: 'mdi:home-outline',
       badgeContent: 'new',
       badgeColor: 'error',
       children: [
@@ -47,27 +24,27 @@ const navigation = (): VerticalNavItemsType => {
     },
     {
       title: 'Email',
-      icon: EmailOutline,
+      icon: 'mdi:email-outline',
       path: '/apps/email'
     },
     {
       title: 'Chat',
-      icon: MessageOutline,
+      icon: 'mdi:message-outline',
       path: '/apps/chat'
     },
     {
       title: 'Calendar',
-      icon: CalendarBlankOutline,
+      icon: 'mdi:calendar-blank-outline',
       path: '/apps/calendar'
     },
     {
       title: 'Kanban',
-      icon: CheckboxOutline,
+      icon: 'mdi:view-grid-outline',
       path: '/apps/kanban'
     },
     {
       title: 'Invoice',
-      icon: FileDocumentOutline,
+      icon: 'mdi:file-document-outline',
       children: [
         {
           title: 'List',
@@ -89,7 +66,7 @@ const navigation = (): VerticalNavItemsType => {
     },
     {
       title: 'User',
-      icon: AccountOutline,
+      icon: 'mdi:account-outline',
       children: [
         {
           title: 'List',
@@ -103,7 +80,7 @@ const navigation = (): VerticalNavItemsType => {
     },
     {
       title: 'Roles & Permissions',
-      icon: LockOutline,
+      icon: 'mdi:shield-outline',
       children: [
         {
           title: 'Roles',
@@ -117,7 +94,7 @@ const navigation = (): VerticalNavItemsType => {
     },
     {
       title: 'Pages',
-      icon: FileDocumentOutline,
+      icon: 'mdi:file-document-outline',
       children: [
         {
           title: 'User Profile',
@@ -137,111 +114,6 @@ const navigation = (): VerticalNavItemsType => {
             {
               title: 'Connections',
               path: '/pages/user-profile/connections'
-            }
-          ]
-        },
-        {
-          title: 'Authentication',
-          children: [
-            {
-              title: 'Login',
-              children: [
-                {
-                  openInNewTab: true,
-                  title: 'Login v1',
-                  path: '/pages/auth/login-v1'
-                },
-                {
-                  openInNewTab: true,
-                  title: 'Login v2',
-                  path: '/pages/auth/login-v2'
-                },
-                {
-                  openInNewTab: true,
-                  title: 'Login With AppBar',
-                  path: '/pages/auth/login-with-appbar'
-                }
-              ]
-            },
-            {
-              title: 'Register',
-              children: [
-                {
-                  openInNewTab: true,
-                  title: 'Register v1',
-                  path: '/pages/auth/register-v1'
-                },
-                {
-                  openInNewTab: true,
-                  title: 'Register v2',
-                  path: '/pages/auth/register-v2'
-                },
-                {
-                  openInNewTab: true,
-                  title: 'Register Multi-Steps',
-                  path: '/pages/auth/register-multi-steps'
-                }
-              ]
-            },
-            {
-              title: 'Forgot Password',
-              children: [
-                {
-                  openInNewTab: true,
-                  title: 'Forgot Password v1',
-                  path: '/pages/auth/forgot-password-v1'
-                },
-                {
-                  openInNewTab: true,
-                  title: 'Forgot Password v2',
-                  path: '/pages/auth/forgot-password-v2'
-                }
-              ]
-            },
-            {
-              title: 'Reset Password',
-              children: [
-                {
-                  openInNewTab: true,
-                  title: 'Reset Password v1',
-                  path: '/pages/auth/reset-password-v1'
-                },
-                {
-                  openInNewTab: true,
-                  title: 'Reset Password v2',
-                  path: '/pages/auth/reset-password-v2'
-                }
-              ]
-            },
-            {
-              title: 'Verify Email',
-              children: [
-                {
-                  openInNewTab: true,
-                  title: 'Verify Email v1',
-                  path: '/pages/auth/verify-email-v1'
-                },
-                {
-                  openInNewTab: true,
-                  title: 'Verify Email v2',
-                  path: '/pages/auth/verify-email-v2'
-                }
-              ]
-            },
-            {
-              title: 'Two Steps',
-              children: [
-                {
-                  openInNewTab: true,
-                  title: 'Two Steps v1',
-                  path: '/pages/auth/two-steps-v1'
-                },
-                {
-                  openInNewTab: true,
-                  title: 'Two Steps v2',
-                  path: '/pages/auth/two-steps-v2'
-                }
-              ]
             }
           ]
         },
@@ -272,16 +144,16 @@ const navigation = (): VerticalNavItemsType => {
           ]
         },
         {
-          title: 'Pricing',
-          path: '/pages/pricing'
-        },
-        {
           title: 'FAQ',
           path: '/pages/faq'
         },
         {
           title: 'Knowledge Base',
           path: '/pages/knowledge-base'
+        },
+        {
+          title: 'Pricing',
+          path: '/pages/pricing'
         },
         {
           title: 'Miscellaneous',
@@ -312,28 +184,135 @@ const navigation = (): VerticalNavItemsType => {
               path: '/pages/misc/500-server-error'
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      title: 'Auth Pages',
+      icon: 'mdi:lock-outline',
+      children: [
         {
-          title: 'Wizard Examples',
+          title: 'Login',
           children: [
             {
-              title: 'Checkout',
-              path: '/pages/wizard-examples/checkout'
+              openInNewTab: true,
+              title: 'Login v1',
+              path: '/pages/auth/login-v1'
             },
             {
-              title: 'Property Listing',
-              path: '/pages/wizard-examples/property-listing'
+              openInNewTab: true,
+              title: 'Login v2',
+              path: '/pages/auth/login-v2'
             },
             {
-              title: 'Create Deal',
-              path: '/pages/wizard-examples/create-deal'
+              openInNewTab: true,
+              title: 'Login With AppBar',
+              path: '/pages/auth/login-with-appbar'
+            }
+          ]
+        },
+        {
+          title: 'Register',
+          children: [
+            {
+              openInNewTab: true,
+              title: 'Register v1',
+              path: '/pages/auth/register-v1'
+            },
+            {
+              openInNewTab: true,
+              title: 'Register v2',
+              path: '/pages/auth/register-v2'
+            },
+            {
+              openInNewTab: true,
+              title: 'Register Multi-Steps',
+              path: '/pages/auth/register-multi-steps'
+            }
+          ]
+        },
+        {
+          title: 'Verify Email',
+          children: [
+            {
+              openInNewTab: true,
+              title: 'Verify Email v1',
+              path: '/pages/auth/verify-email-v1'
+            },
+            {
+              openInNewTab: true,
+              title: 'Verify Email v2',
+              path: '/pages/auth/verify-email-v2'
+            }
+          ]
+        },
+        {
+          title: 'Forgot Password',
+          children: [
+            {
+              openInNewTab: true,
+              title: 'Forgot Password v1',
+              path: '/pages/auth/forgot-password-v1'
+            },
+            {
+              openInNewTab: true,
+              title: 'Forgot Password v2',
+              path: '/pages/auth/forgot-password-v2'
+            }
+          ]
+        },
+        {
+          title: 'Reset Password',
+          children: [
+            {
+              openInNewTab: true,
+              title: 'Reset Password v1',
+              path: '/pages/auth/reset-password-v1'
+            },
+            {
+              openInNewTab: true,
+              title: 'Reset Password v2',
+              path: '/pages/auth/reset-password-v2'
+            }
+          ]
+        },
+        {
+          title: 'Two Steps',
+          children: [
+            {
+              openInNewTab: true,
+              title: 'Two Steps v1',
+              path: '/pages/auth/two-steps-v1'
+            },
+            {
+              openInNewTab: true,
+              title: 'Two Steps v2',
+              path: '/pages/auth/two-steps-v2'
             }
           ]
         }
       ]
     },
     {
-      icon: VectorArrangeBelow,
+      title: 'Wizard Examples',
+      icon: 'mdi:transit-connection-horizontal',
+      children: [
+        {
+          title: 'Checkout',
+          path: '/pages/wizard-examples/checkout'
+        },
+        {
+          title: 'Property Listing',
+          path: '/pages/wizard-examples/property-listing'
+        },
+        {
+          title: 'Create Deal',
+          path: '/pages/wizard-examples/create-deal'
+        }
+      ]
+    },
+    {
+      icon: 'mdi:vector-arrange-below',
       title: 'Dialog Examples',
       path: '/pages/dialog-examples'
     },
@@ -342,29 +321,29 @@ const navigation = (): VerticalNavItemsType => {
     },
     {
       title: 'Typography',
-      icon: FormatLetterCase,
+      icon: 'mdi:format-letter-case',
       path: '/ui/typography'
     },
     {
       title: 'Icons',
       path: '/ui/icons',
-      icon: GoogleCirclesExtended
+      icon: 'mdi:google-circles-extended'
     },
     {
       title: 'Cards',
-      icon: CreditCardOutline,
+      icon: 'mdi:credit-card-outline',
       children: [
         {
           title: 'Basic',
           path: '/ui/cards/basic'
         },
         {
-          title: 'Statistics',
-          path: '/ui/cards/statistics'
-        },
-        {
           title: 'Advanced',
           path: '/ui/cards/advanced'
+        },
+        {
+          title: 'Statistics',
+          path: '/ui/cards/statistics'
         },
         {
           title: 'Gamification',
@@ -379,7 +358,7 @@ const navigation = (): VerticalNavItemsType => {
     {
       badgeContent: '18',
       title: 'Components',
-      icon: ArchiveOutline,
+      icon: 'mdi:archive-outline',
       badgeColor: 'primary',
       children: [
         {
@@ -469,7 +448,7 @@ const navigation = (): VerticalNavItemsType => {
     },
     {
       title: 'Form Elements',
-      icon: FormSelect,
+      icon: 'mdi:form-select',
       children: [
         {
           title: 'Text Field',
@@ -530,28 +509,28 @@ const navigation = (): VerticalNavItemsType => {
       ]
     },
     {
-      icon: CubeOutline,
+      icon: 'mdi:cube-outline',
       title: 'Form Layouts',
       path: '/forms/form-layouts'
     },
     {
       title: 'Form Validation',
       path: '/forms/form-validation',
-      icon: CheckboxMarkedCircleOutline
+      icon: 'mdi:checkbox-marked-circle-outline'
     },
     {
       title: 'Form Wizard',
       path: '/forms/form-wizard',
-      icon: PackageVariantClosed
+      icon: 'mdi:transit-connection-horizontal'
     },
     {
       title: 'Table',
-      icon: Table,
+      icon: 'mdi:grid-large',
       path: '/tables/mui'
     },
     {
       title: 'Mui DataGrid',
-      icon: Table,
+      icon: 'mdi:grid',
       path: '/tables/data-grid'
     },
     {
@@ -559,7 +538,7 @@ const navigation = (): VerticalNavItemsType => {
     },
     {
       title: 'Charts',
-      icon: ChartDonut,
+      icon: 'mdi:chart-donut',
       children: [
         {
           title: 'Apex',
@@ -579,12 +558,12 @@ const navigation = (): VerticalNavItemsType => {
       path: '/acl',
       action: 'read',
       subject: 'acl-page',
-      icon: ShieldOutline,
+      icon: 'mdi:shield-outline',
       title: 'Access Control'
     },
     {
       title: 'Others',
-      icon: DotsHorizontal,
+      icon: 'mdi:dots-horizontal',
       children: [
         {
           title: 'Menu Levels',

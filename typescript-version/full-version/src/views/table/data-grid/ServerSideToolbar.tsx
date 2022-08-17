@@ -3,10 +3,9 @@ import { ChangeEvent } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
-import { styled } from '@mui/material/styles'
 import TextField from '@mui/material/TextField'
 import IconButton from '@mui/material/IconButton'
-import { GridToolbarContainer, GridToolbarExport } from '@mui/x-data-grid'
+import { GridToolbarExport } from '@mui/x-data-grid'
 
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
@@ -17,27 +16,30 @@ interface Props {
   onChange: (e: ChangeEvent) => void
 }
 
-const StyledGridToolbarContainer = styled(GridToolbarContainer)(({ theme }) => ({
-  display: 'flex',
-  flexWrap: 'wrap',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  padding: `${theme.spacing(2, 5, 4, 5)} !important`
-}))
-
 const ServerSideToolbar = (props: Props) => {
   return (
-    <StyledGridToolbarContainer>
-      <Box>
-        <GridToolbarExport printOptions={{ disableToolbarButton: true }} />
-      </Box>
+    <Box
+      sx={{
+        gap: 2,
+        display: 'flex',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        p: theme => theme.spacing(2, 5, 4, 5)
+      }}
+    >
+      <GridToolbarExport printOptions={{ disableToolbarButton: true }} />
       <TextField
         size='small'
         value={props.value}
         onChange={props.onChange}
         placeholder='Search…'
         InputProps={{
-          startAdornment: <Icon icon='mdi:magnify' fontSize={20} />,
+          startAdornment: (
+            <Box sx={{ mr: 2, display: 'flex' }}>
+              <Icon icon='mdi:magnify' fontSize={20} />
+            </Box>
+          ),
           endAdornment: (
             <IconButton size='small' title='Clear' aria-label='Clear' onClick={props.clearSearch}>
               <Icon icon='mdi:close' fontSize={20} />
@@ -54,7 +56,7 @@ const ServerSideToolbar = (props: Props) => {
           }
         }}
       />
-    </StyledGridToolbarContainer>
+    </Box>
   )
 }
 

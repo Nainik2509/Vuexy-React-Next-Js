@@ -4,55 +4,68 @@ import { ReactNode } from 'react'
 // ** MUI Imports
 import { GridProps } from '@mui/material/Grid'
 
-// ** Type Import
+// ** Type Imports
+import { IconProps } from '@iconify/react'
 import { ThemeColor } from 'src/@core/layouts/types'
 
+// ** Types of Basic Custom Checkboxes
 export type CustomCheckboxBasicData = {
-  name?: string
   value: string
-  meta?: ReactNode
-  title: ReactNode
   content?: ReactNode
-  gridProps: GridProps
-}
-
-export type CustomCheckboxIconsData = {
-  name?: string
-  value: string
-  icon: ReactNode
-  title: ReactNode
-  content?: ReactNode
-  gridProps: GridProps
-}
-
-export type CustomCheckboxImgData = {
-  alt?: string
-  name?: string
-  value: string
-  img: ReactNode
-  gridProps: GridProps
-}
-
+  isSelected?: boolean
+} & (
+  | {
+      meta: ReactNode
+      title: ReactNode
+    }
+  | {
+      meta?: never
+      title?: never
+    }
+  | {
+      title: ReactNode
+      meta?: never
+    }
+)
 export type CustomCheckboxBasicProps = {
   name: string
-  value?: string[]
   color?: ThemeColor
-  data: CustomCheckboxBasicData[]
-  onChange?: (value: string[]) => void
+  selected: string[]
+  gridProps: GridProps
+  data: CustomCheckboxBasicData
+  handleChange: (value: string) => void
 }
 
+// ** Types of Custom Checkboxes with Icons
+export type CustomCheckboxIconsData = {
+  value: string
+  title?: ReactNode
+  content?: ReactNode
+  isSelected?: boolean
+}
 export type CustomCheckboxIconsProps = {
   name: string
-  value?: string[]
+  icon?: string
   color?: ThemeColor
-  data: CustomCheckboxIconsData[]
-  onChange?: (value: string[]) => void
+  selected: string[]
+  gridProps: GridProps
+  data: CustomCheckboxIconsData
+  iconProps?: Omit<IconProps, 'icon'>
+  handleChange: (value: string) => void
 }
 
+// ** Types of Custom Checkboxes with Images
+export type CustomCheckboxImgData = {
+  alt?: string
+  value: string
+  img: ReactNode
+  isSelected?: boolean
+}
 export type CustomCheckboxImgProps = {
   name: string
-  value?: string[]
   color?: ThemeColor
-  data: CustomCheckboxImgData[]
-  onChange?: (value: string[]) => void
+  selected: string[]
+  gridProps: GridProps
+  data: CustomCheckboxImgData
+  handleChange: (value: string) => void
 }

@@ -6,48 +6,48 @@ import { HorizontalNavItemsType } from 'src/@core/layouts/types'
 
 const navigation: HorizontalNavItemsType = [
   {
-    icon: 'HomeOutline',
+    icon: 'mdi:home-outline',
     title: 'Dashboards',
     children: [
       {
-        icon: 'ChartTimelineVariant',
+        icon: 'mdi:chart-timeline-variant',
         title: 'Analytics',
         path: '/dashboards/analytics'
       },
       {
-        icon: 'CartOutline',
+        icon: 'mdi:cart-outline',
         title: 'eCommerce',
         path: '/dashboards/ecommerce'
       }
     ]
   },
   {
-    icon: 'Apps',
+    icon: 'mdi:apps',
     title: 'Apps',
     children: [
       {
         title: 'Email',
-        icon: 'EmailOutline',
+        icon: 'mdi:email-outline',
         path: '/apps/email'
       },
       {
         title: 'Chat',
-        icon: 'MessageOutline',
+        icon: 'mdi:message-outline',
         path: '/apps/chat'
       },
       {
         title: 'Calendar',
-        icon: 'CalendarBlankOutline',
+        icon: 'mdi:calendar-blank-outline',
         path: '/apps/calendar'
       },
       {
         title: 'Kanban',
-        icon: 'CheckboxOutline',
+        icon: 'mdi:view-grid-outline',
         path: '/apps/kanban'
       },
       {
         title: 'Invoice',
-        icon: 'FileDocumentOutline',
+        icon: 'mdi:file-document-outline',
         children: [
           {
             title: 'List',
@@ -69,7 +69,7 @@ const navigation: HorizontalNavItemsType = [
       },
       {
         title: 'User',
-        icon: 'AccountOutline',
+        icon: 'mdi:account-outline',
         children: [
           {
             title: 'List',
@@ -83,7 +83,7 @@ const navigation: HorizontalNavItemsType = [
       },
       {
         title: 'Roles & Permissions',
-        icon: 'LockOutline',
+        icon: 'mdi:shield-outline',
         children: [
           {
             title: 'Roles',
@@ -98,34 +98,34 @@ const navigation: HorizontalNavItemsType = [
     ]
   },
   {
-    icon: 'PaletteSwatchOutline',
+    icon: 'mdi:palette-swatch-outline',
     title: 'UI',
     children: [
       {
         title: 'Typography',
-        icon: 'FormatLetterCase',
+        icon: 'mdi:format-letter-case',
         path: '/ui/typography'
       },
       {
         title: 'Icons',
         path: '/ui/icons',
-        icon: 'GoogleCirclesExtended'
+        icon: 'mdi:google-circles-extended'
       },
       {
         title: 'Cards',
-        icon: 'CreditCardOutline',
+        icon: 'mdi:credit-card-outline',
         children: [
           {
             title: 'Basic',
             path: '/ui/cards/basic'
           },
           {
-            title: 'Statistics',
-            path: '/ui/cards/statistics'
-          },
-          {
             title: 'Advanced',
             path: '/ui/cards/advanced'
+          },
+          {
+            title: 'Statistics',
+            path: '/ui/cards/statistics'
           },
           {
             title: 'Gamification',
@@ -139,7 +139,7 @@ const navigation: HorizontalNavItemsType = [
       },
       {
         title: 'Components',
-        icon: 'ArchiveOutline',
+        icon: 'mdi:archive-outline',
         children: [
           {
             title: 'Accordion',
@@ -194,6 +194,10 @@ const navigation: HorizontalNavItemsType = [
             path: '/components/snackbar'
           },
           {
+            title: 'Swiper',
+            path: '/components/swiper'
+          },
+          {
             title: 'Tabs',
             path: '/components/tabs'
           },
@@ -222,34 +226,108 @@ const navigation: HorizontalNavItemsType = [
     ]
   },
   {
-    icon: 'FileOutline',
+    icon: 'mdi:file-document-outline',
     title: 'Pages',
     children: [
       {
-        title: 'Authentication',
-        icon: 'LockOutline',
+        title: 'User Profile',
+        icon: 'mdi:card-account-details-outline',
         children: [
           {
-            title: 'User Profile',
-            children: [
-              {
-                title: 'Profile',
-                path: '/pages/user-profile/profile'
-              },
-              {
-                title: 'Teams',
-                path: '/pages/user-profile/teams'
-              },
-              {
-                title: 'Projects',
-                path: '/pages/user-profile/projects'
-              },
-              {
-                title: 'Connections',
-                path: '/pages/user-profile/connections'
-              }
-            ]
+            title: 'Profile',
+            path: '/pages/user-profile/profile'
           },
+          {
+            title: 'Teams',
+            path: '/pages/user-profile/teams'
+          },
+          {
+            title: 'Projects',
+            path: '/pages/user-profile/projects'
+          },
+          {
+            title: 'Connections',
+            path: '/pages/user-profile/connections'
+          }
+        ]
+      },
+      {
+        icon: 'mdi:account-cog-outline',
+        title: 'Account Settings',
+        children: [
+          {
+            title: 'Account',
+            path: '/pages/account-settings/account'
+          },
+          {
+            title: 'Security',
+            path: '/pages/account-settings/security'
+          },
+          {
+            title: 'Billing',
+            path: '/pages/account-settings/billing'
+          },
+          {
+            title: 'Notifications',
+            path: '/pages/account-settings/notifications'
+          },
+
+          {
+            title: 'Connections',
+            path: '/pages/account-settings/connections'
+          }
+        ]
+      },
+      {
+        title: 'FAQ',
+        path: '/pages/faq',
+        icon: 'mdi:help-circle-outline'
+      },
+      {
+        icon: 'mdi:book-open-outline',
+        title: 'Knowledge Base',
+        path: '/pages/knowledge-base'
+      },
+      {
+        title: 'Pricing',
+        icon: 'mdi:currency-usd',
+        path: '/pages/pricing'
+      },
+      {
+        title: 'Miscellaneous',
+        icon: 'mdi:file-outline',
+        children: [
+          {
+            openInNewTab: true,
+            title: 'Coming Soon',
+            path: '/pages/misc/coming-soon'
+          },
+          {
+            openInNewTab: true,
+            title: 'Under Maintenance',
+            path: '/pages/misc/under-maintenance'
+          },
+          {
+            openInNewTab: true,
+            title: 'Page Not Found - 404',
+            path: '/pages/misc/404-not-found'
+          },
+          {
+            openInNewTab: true,
+            title: 'Not Authorized - 401',
+            path: '/pages/misc/401-not-authorized'
+          },
+          {
+            openInNewTab: true,
+            title: 'Server Error - 500',
+            path: '/pages/misc/500-server-error'
+          }
+        ]
+      },
+      {
+        title: 'Auth Pages',
+        icon: 'mdi:lock-outline',
+        children: [
           {
             title: 'Login',
             children: [
@@ -282,6 +360,26 @@ const navigation: HorizontalNavItemsType = [
                 openInNewTab: true,
                 title: 'Register v2',
                 path: '/pages/auth/register-v2'
+              },
+              {
+                openInNewTab: true,
+                title: 'Register Multi-Steps',
+                path: '/pages/auth/register-multi-steps'
+              }
+            ]
+          },
+          {
+            title: 'Verify Email',
+            children: [
+              {
+                openInNewTab: true,
+                title: 'Verify Email v1',
+                path: '/pages/auth/verify-email-v1'
+              },
+              {
+                openInNewTab: true,
+                title: 'Verify Email v2',
+                path: '/pages/auth/verify-email-v2'
               }
             ]
           },
@@ -314,83 +412,44 @@ const navigation: HorizontalNavItemsType = [
                 path: '/pages/auth/reset-password-v2'
               }
             ]
+          },
+          {
+            title: 'Two Steps',
+            children: [
+              {
+                openInNewTab: true,
+                title: 'Two Steps v1',
+                path: '/pages/auth/two-steps-v1'
+              },
+              {
+                openInNewTab: true,
+                title: 'Two Steps v2',
+                path: '/pages/auth/two-steps-v2'
+              }
+            ]
           }
         ]
       },
       {
-        title: 'Account Settings',
+        title: 'Wizard Examples',
+        icon: 'mdi:transit-connection-horizontal',
         children: [
           {
-            title: 'Account',
-            path: '/pages/account-settings/account'
+            title: 'Checkout',
+            path: '/pages/wizard-examples/checkout'
           },
           {
-            title: 'Security',
-            path: '/pages/account-settings/security'
+            title: 'Property Listing',
+            path: '/pages/wizard-examples/property-listing'
           },
           {
-            title: 'Billing',
-            path: '/pages/account-settings/billing'
-          },
-          {
-            title: 'Notifications',
-            path: '/pages/account-settings/notifications'
-          },
-
-          {
-            title: 'Connections',
-            path: '/pages/account-settings/connections'
+            title: 'Create Deal',
+            path: '/pages/wizard-examples/create-deal'
           }
         ]
       },
       {
-        title: 'Pricing',
-        icon: 'CurrencyUsd',
-        path: '/pages/pricing'
-      },
-      {
-        title: 'FAQ',
-        path: '/pages/faq',
-        icon: 'HelpCircleOutline'
-      },
-      {
-        icon: 'BookOpenOutline',
-        title: 'Knowledge Base',
-        path: '/pages/knowledge-base'
-      },
-      {
-        title: 'Miscellaneous',
-        icon: 'FileOutline',
-        children: [
-          {
-            openInNewTab: true,
-            title: 'Coming Soon',
-            path: '/pages/misc/coming-soon'
-          },
-          {
-            openInNewTab: true,
-            title: 'Under Maintenance',
-            path: '/pages/misc/under-maintenance'
-          },
-          {
-            openInNewTab: true,
-            title: 'Page Not Found - 404',
-            path: '/pages/misc/404-not-found'
-          },
-          {
-            openInNewTab: true,
-            title: 'Not Authorized - 401',
-            path: '/pages/misc/401-not-authorized'
-          },
-          {
-            openInNewTab: true,
-            title: 'Server Error - 500',
-            path: '/pages/misc/500-server-error'
-          }
-        ]
-      },
-      {
-        icon: 'VectorArrangeBelow',
+        icon: 'mdi:vector-arrange-below',
         title: 'Dialog Examples',
         path: '/pages/dialog-examples'
       }
@@ -398,11 +457,11 @@ const navigation: HorizontalNavItemsType = [
   },
   {
     title: 'Forms & Tables',
-    icon: 'CheckboxMarkedOutline',
+    icon: 'mdi:checkbox-marked-outline',
     children: [
       {
         title: 'Form Elements',
-        icon: 'FormSelect',
+        icon: 'mdi:form-select',
         children: [
           {
             title: 'Text Field',
@@ -419,6 +478,10 @@ const navigation: HorizontalNavItemsType = [
           {
             title: 'Radio',
             path: '/forms/form-elements/radio'
+          },
+          {
+            title: 'Custom Inputs',
+            path: '/forms/form-elements/custom-inputs'
           },
           {
             title: 'Textarea',
@@ -459,67 +522,67 @@ const navigation: HorizontalNavItemsType = [
         ]
       },
       {
-        icon: 'CubeOutline',
+        icon: 'mdi:cube-outline',
         title: 'Form Layouts',
         path: '/forms/form-layouts'
       },
       {
         title: 'Form Validation',
         path: '/forms/form-validation',
-        icon: 'CheckboxMarkedCircleOutline'
+        icon: 'mdi:checkbox-marked-circle-outline'
       },
       {
         title: 'Form Wizard',
         path: '/forms/form-wizard',
-        icon: 'PackageVariantClosed'
+        icon: 'mdi:transit-connection-horizontal'
       },
       {
         title: 'Table',
-        icon: 'Table',
+        icon: 'mdi:grid-large',
         path: '/tables/mui'
       },
       {
         title: 'Mui DataGrid',
-        icon: 'Table',
+        icon: 'mdi:grid',
         path: '/tables/data-grid'
       }
     ]
   },
   {
     title: 'Charts',
-    icon: 'ChartDonut',
+    icon: 'mdi:chart-donut',
     children: [
       {
         title: 'Apex',
-        icon: 'ChartLine',
+        icon: 'mdi:chart-line',
         path: '/charts/apex-charts'
       },
       {
         title: 'Recharts',
-        icon: 'ChartBellCurve',
+        icon: 'mdi:chart-bell-curve-cumulative',
         path: '/charts/recharts'
       },
       {
         title: 'ChartJS',
         path: '/charts/chartjs',
-        icon: 'ChartBellCurveCumulative'
+        icon: 'mdi:chart-bell-curve'
       }
     ]
   },
   {
     title: 'Others',
-    icon: 'DotsHorizontal',
+    icon: 'mdi:dots-horizontal',
     children: [
       {
         path: '/acl',
         action: 'read',
         subject: 'acl-page',
-        icon: 'ShieldOutline',
+        icon: 'mdi:shield-outline',
         title: 'Access Control'
       },
       {
         title: 'Menu Levels',
-        icon: 'Menu',
+        icon: 'mdi:menu',
         children: [
           {
             title: 'Menu Level 2.1'
@@ -539,19 +602,19 @@ const navigation: HorizontalNavItemsType = [
       },
       {
         title: 'Disabled Menu',
-        icon: 'EyeOffOutline',
+        icon: 'mdi:eye-off-outline',
         disabled: true
       },
       {
         title: 'Raise Support',
-        icon: 'Lifebuoy',
+        icon: 'mdi:lifebuoy',
         externalLink: true,
         openInNewTab: true,
         path: 'https://themeselection.com/support'
       },
       {
         title: 'Documentation',
-        icon: 'FileDocumentOutline',
+        icon: 'mdi:file-document-outline',
         externalLink: true,
         openInNewTab: true,
         path: 'https://themeselection.com/docs/'

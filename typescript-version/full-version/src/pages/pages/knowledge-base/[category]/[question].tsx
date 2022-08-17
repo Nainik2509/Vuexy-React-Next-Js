@@ -90,7 +90,14 @@ const KnowledgeBaseCategoryQuestion = () => {
             <Icon icon='mdi:cog-outline' />
             <Typography variant='h6'>{`Account Settings (${questions.length})`}</Typography>
           </StyledCardContent>
-          <CardContent sx={{ p: theme => `${theme.spacing(6.75, 5.5, 7.5)} !important` }}>
+          <CardContent
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              p: theme => `${theme.spacing(6.75, 5.5, 7.5)} !important`
+            }}
+          >
             {renderQuestions()}
           </CardContent>
         </Card>
@@ -123,22 +130,35 @@ const KnowledgeBaseCategoryQuestion = () => {
               find a reasonably good area.
             </Typography>
             <Box sx={{ ml: 6.25, '& > :not(:last-of-type)': { mb: 3.5 } }}>
-              <Box sx={{ display: 'flex', color: 'text.secondary', '& svg': { mt: 0.75, mr: 2.25 } }}>
-                <Icon icon='mdi:circle-outline' fontSize='0.875rem' />
+              <Box
+                sx={{
+                  display: 'flex',
+                  color: 'text.secondary',
+                  alignItems: 'flex-start',
+                  '& svg': { mt: 0.75, mr: 2.25 }
+                }}
+              >
+                <Box sx={{ display: 'flex' }}>
+                  <Icon icon='mdi:circle-outline' fontSize='0.875rem' />
+                </Box>
                 <Typography variant='body2'>
                   I am a stranger. I come in peace. Take me to your leader and there will be a massive reward for you in
                   eternity.
                 </Typography>
               </Box>
               <Box sx={{ display: 'flex', color: 'text.secondary', '& svg': { mt: 0.75, mr: 2.25 } }}>
-                <Icon icon='mdi:circle-outline' fontSize='0.875rem' />
+                <Box sx={{ display: 'flex' }}>
+                  <Icon icon='mdi:circle-outline' fontSize='0.875rem' />
+                </Box>
                 <Typography variant='body2'>
                   It’s just mind-blowingly awesome. I apologize, and I wish I was more articulate, but it’s hard to be
                   articulate when your mind’s blown — but in a very good way.
                 </Typography>
               </Box>
               <Box sx={{ display: 'flex', color: 'text.secondary', '& svg': { mt: 0.75, mr: 2.25 } }}>
-                <Icon icon='mdi:circle-outline' fontSize='0.875rem' />
+                <Box sx={{ display: 'flex' }}>
+                  <Icon icon='mdi:circle-outline' fontSize='0.875rem' />
+                </Box>
                 <Typography variant='body2'>A good rule for rocket experimenters to follow is this</Typography>
               </Box>
             </Box>

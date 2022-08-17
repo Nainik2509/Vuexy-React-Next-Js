@@ -9,7 +9,7 @@ export type Layout = 'vertical' | 'horizontal' | 'blank' | 'blankWithAppBar'
 
 export type Skin = 'default' | 'bordered'
 
-export type Mode = PaletteMode & 'semi-dark'
+export type Mode = PaletteMode | 'semi-dark'
 
 export type ContentWidth = 'full' | 'boxed'
 
@@ -38,7 +38,7 @@ export type NavSectionTitle = {
 }
 
 export type NavGroup = {
-  icon?: any
+  icon?: string
   title: string
   action?: string
   subject?: string
@@ -48,7 +48,7 @@ export type NavGroup = {
 }
 
 export type NavLink = {
-  icon?: any
+  icon?: string
   path?: string
   title: string
   action?: string

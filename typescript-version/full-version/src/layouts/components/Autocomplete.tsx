@@ -20,9 +20,6 @@ import ListItemButton from '@mui/material/ListItemButton'
 import InputAdornment from '@mui/material/InputAdornment'
 import MuiAutocomplete, { AutocompleteRenderInputParams } from '@mui/material/Autocomplete'
 
-// ** Icon Imports
-import Icon from 'src/@core/components/icon'
-
 // ** Third Party Imports
 import axios from 'axios'
 
@@ -30,14 +27,11 @@ import axios from 'axios'
 import { AppBarSearchType } from 'src/@fake-db/types'
 import { Settings } from 'src/@core/context/settingsContext'
 
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
+
 // ** Configs Imports
 import themeConfig from 'src/configs/themeConfig'
-
-// ** Custom Components Imports
-import UserIcon from 'src/layouts/components/UserIcon'
-
-// ** API Icon Import with object
-import { autocompleteIconObj } from './autocompleteIconObj'
 
 interface Props {
   hidden: boolean
@@ -253,7 +247,9 @@ const Dialog = styled(MuiDialog)({
 const NoResult = ({ value, setOpenDialog }: NoResultProps) => {
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'center' }}>
-      <FileRemoveOutline sx={{ mb: 2.5, fontSize: '5rem', color: 'text.primary' }} />
+      <Box sx={{ mb: 2.5, color: 'text.primary' }}>
+        <Icon icon='mdi:file-remove-outline' fontSize='5rem' />
+      </Box>
       <Typography variant='h6' sx={{ mb: 11.5, wordWrap: 'break-word' }}>
         No results for{' '}
         <Typography variant='h6' component='span' sx={{ wordWrap: 'break-word' }}>
@@ -276,7 +272,9 @@ const NoResult = ({ value, setOpenDialog }: NoResultProps) => {
                 '&:hover > *': { color: 'primary.main' }
               }}
             >
-              <CartOutline fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+              <Box sx={{ mr: 2.5, display: 'flex', color: 'text.primary' }}>
+                <Icon icon='mdi:cart-outline' fontSize={20} />
+              </Box>
               <Typography variant='body2' sx={{ color: 'text.primary' }}>
                 eCommerce Dashboard
               </Typography>
@@ -294,7 +292,9 @@ const NoResult = ({ value, setOpenDialog }: NoResultProps) => {
                 '&:hover > *': { color: 'primary.main' }
               }}
             >
-              <AccountOutline fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+              <Box sx={{ mr: 2.5, display: 'flex', color: 'text.primary' }}>
+                <Icon icon='mdi:account-outline' fontSize={20} />
+              </Box>
               <Typography variant='body2' sx={{ color: 'text.primary' }}>
                 User View
               </Typography>
@@ -312,7 +312,9 @@ const NoResult = ({ value, setOpenDialog }: NoResultProps) => {
                 '&:hover > *': { color: 'primary.main' }
               }}
             >
-              <AccountCogOutline fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+              <Box sx={{ mr: 2.5, display: 'flex', color: 'text.primary' }}>
+                <Icon icon='mdi:account-cog-outline' fontSize={20} />
+              </Box>
               <Typography variant='body2' sx={{ color: 'text.primary' }}>
                 Account Settings
               </Typography>
@@ -525,10 +527,6 @@ const AutocompleteComponent = ({ hidden, settings }: Props) => {
                   )
                 }}
                 renderOption={(props, option: AppBarSearchType | unknown) => {
-                  const IconTag =
-                    autocompleteIconObj[(option as AppBarSearchType).icon as keyof typeof autocompleteIconObj] ||
-                    themeConfig.navSubItemIcon
-
                   return searchValue.length ? (
                     <ListItem
                       {...props}
@@ -545,12 +543,14 @@ const AutocompleteComponent = ({ hidden, settings }: Props) => {
                         }
                       }}
                     >
-                      <ListItemButton sx={{ py: 2.5, px: ` ${theme.spacing(6)} !important` }}>
-                        <UserIcon
-                          icon={IconTag as any}
-                          componentType='search'
-                          iconProps={{ fontSize: 'small', sx: { mr: 2.5, color: 'text.primary' } }}
-                        />
+                      <ListItemButton
+                        sx={{
+                          py: 2.5,
+                          px: ` ${theme.spacing(6)} !important`,
+                          '& svg': { mr: 2.5, color: 'text.primary' }
+                        }}
+                      >
+                        <Icon fontSize={20} icon={(option as AppBarSearchType).icon || themeConfig.navSubItemIcon} />
                         <Typography variant='body2' sx={{ color: 'text.primary' }}>
                           {(option as AppBarSearchType).title}
                         </Typography>

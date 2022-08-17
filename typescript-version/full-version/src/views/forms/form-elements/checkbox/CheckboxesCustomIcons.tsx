@@ -15,8 +15,8 @@ const CheckboxesCustomIcons = () => {
           <Checkbox
             defaultChecked
             name='size-small'
-            checkedIcon={<Icon icon='mdi:heart' />}
-            icon={<Icon icon='mdi:heart-outline' />}
+            checkedIcon={<Icon icon='mdi:heart' fontSize={24} />}
+            icon={<Icon icon='mdi:heart-outline' fontSize={24} />}
           />
         }
       />
@@ -26,8 +26,8 @@ const CheckboxesCustomIcons = () => {
           <Checkbox
             defaultChecked
             name='size-small'
-            checkedIcon={<Icon icon='mdi:star' />}
-            icon={<Icon icon='mdi:star-outline' />}
+            checkedIcon={<Icon icon='mdi:star' fontSize={24} />}
+            icon={<Icon icon='mdi:star-outline' fontSize={24} />}
           />
         }
       />

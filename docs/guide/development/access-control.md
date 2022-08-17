@@ -60,7 +60,7 @@ Refer to the example below:
   path: '/acl',
   action: 'read',
   subject: 'acl-page',
-  icon: ShieldOutline,
+  icon: 'mdi:shield-outline',
   title: 'Access Control'
 }
 ```
@@ -154,7 +154,7 @@ It is quite easy to remove access control from the template.
       path: '/acl',
       action: 'read',
       subject: 'acl-page',
-      icon: ShieldOutline,
+      icon: 'mdi:shield-outline',
       title: 'Access Control'
     }
     ```
@@ -164,7 +164,7 @@ It is quite easy to remove access control from the template.
     ```ts
     {
       path: '/acl',
-      icon: ShieldOutline,
+      icon: 'mdi:shield-outline',
       title: 'Access Control'
     }
     ```

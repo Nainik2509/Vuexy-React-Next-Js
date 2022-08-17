@@ -28,16 +28,15 @@ Below is the example of how to change template mode, i.e. Light or Dark mode. Yo
 <code-group>
 <code-block title="TSX" active>
 ```tsx
-import { PaletteMode } from '@mui/material'
 import IconButton from '@mui/material/IconButton'
-import WeatherNight from 'mdi-material-ui/WeatherNight'
-import WeatherSunny from 'mdi-material-ui/WeatherSunny'
+import { Mode } from 'src/@core/layouts/types'
+import Icon from 'src/@core/components/icon'
 import { useSettings } from 'src/@core/hooks/useSettings'
 
 const ModeToggler = () => {
   const { settings, saveSettings } = useSettings()
 
-  const handleModeChange = (mode: PaletteMode) => {
+  const handleModeChange = (mode: Mode) => {
     saveSettings({ ...settings, mode })
   }
 
@@ -51,7 +50,7 @@ const ModeToggler = () => {
 
   return (
     <IconButton color='inherit' aria-haspopup='true' onClick={handleModeToggle}>
-      {settings.mode === 'dark' ? <WeatherSunny /> : <WeatherNight />}
+      <Icon icon={settings.mode === 'dark' ? 'mdi:weather-sunny' : 'mdi:weather-night'} />
     </IconButton>
   )
 }
@@ -63,8 +62,7 @@ export default ModeToggler
 <code-block title="JSX">
 ```jsx
 import IconButton from '@mui/material/IconButton'
-import WeatherNight from 'mdi-material-ui/WeatherNight'
-import WeatherSunny from 'mdi-material-ui/WeatherSunny'
+import Icon from 'src/@core/components/icon'
 import { useSettings } from 'src/@core/hooks/useSettings'
 
 const ModeToggler = () => {
@@ -84,7 +82,7 @@ const ModeToggler = () => {
 
   return (
     <IconButton color='inherit' aria-haspopup='true' onClick={handleModeToggle}>
-      {settings.mode === 'dark' ? <WeatherSunny /> : <WeatherNight />}
+      <Icon icon={settings.mode === 'dark' ? 'mdi:weather-sunny' : 'mdi:weather-night'} />
     </IconButton>
   )
 }

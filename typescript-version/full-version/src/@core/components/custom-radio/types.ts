@@ -1,55 +1,71 @@
 // ** React Imports
-import { ReactNode } from 'react'
+import { ChangeEvent, ReactNode } from 'react'
 
 // ** MUI Imports
 import { GridProps } from '@mui/material/Grid'
 
-// ** Type Import
+// ** Type Imports
+import { IconProps } from '@iconify/react'
 import { ThemeColor } from 'src/@core/layouts/types'
 
+// ** Types of Basic Custom Radios
 export type CustomRadioBasicData = {
   value: string
-  meta?: ReactNode
-  title: ReactNode
   content?: ReactNode
+  isSelected?: boolean
+} & (
+  | {
+      meta: ReactNode
+      title: ReactNode
+    }
+  | {
+      meta?: never
+      title?: never
+    }
+  | {
+      title: ReactNode
+      meta?: never
+    }
+)
+export type CustomRadioBasicProps = {
+  name: string
+  selected: string
+  color?: ThemeColor
   gridProps: GridProps
+  data: CustomRadioBasicData
+  handleChange: (prop: string | ChangeEvent<HTMLInputElement>) => void
 }
 
+// ** Types of Custom Radios with Icons
 export type CustomRadioIconsData = {
   value: string
-  icon: ReactNode
-  title: ReactNode
+  title?: ReactNode
   content?: ReactNode
+  isSelected?: boolean
+}
+export type CustomRadioIconsProps = {
+  name: string
+  icon?: string
+  selected: string
+  color?: ThemeColor
   gridProps: GridProps
+  data: CustomRadioIconsData
+  iconProps?: Omit<IconProps, 'icon'>
+  handleChange: (prop: string | ChangeEvent<HTMLInputElement>) => void
 }
 
+// ** Types of Custom Radios with Images
 export type CustomRadioImgData = {
   alt?: string
   value: string
   img: ReactNode
-  gridProps: GridProps
+  isSelected?: boolean
 }
-
-export type CustomRadioBasicProps = {
-  name: string
-  value?: string
-  color?: ThemeColor
-  data: CustomRadioBasicData[]
-  onChange?: (value: string | null) => void
-}
-
-export type CustomRadioIconsProps = {
-  name: string
-  value?: string
-  color?: ThemeColor
-  data: CustomRadioIconsData[]
-  onChange?: (value: string | null) => void
-}
-
 export type CustomRadioImgProps = {
   name: string
-  value?: string
+  selected: string
   color?: ThemeColor
-  data: CustomRadioImgData[]
-  onChange?: (value: string | null) => void
+  gridProps: GridProps
+  data: CustomRadioImgData
+  handleChange: (prop: string | ChangeEvent<HTMLInputElement>) => void
 }
