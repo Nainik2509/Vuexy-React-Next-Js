@@ -110,6 +110,11 @@ const navigation = (): HorizontalNavItemsType => {
           icon: 'mdi:google-circles-extended'
         },
         {
+          title: 'Icons Test',
+          path: '/ui/icons-test',
+          icon: 'mdi:google-circles-extended'
+        },
+        {
           title: 'Cards',
           icon: 'mdi:credit-card-outline',
           children: [
