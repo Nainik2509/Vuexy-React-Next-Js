@@ -18,10 +18,10 @@ const ToastCustom = () => {
         <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <Avatar alt='Victor Anderson' src='/images/avatars/3.png' sx={{ mr: 3, width: 40, height: 40 }} />
-            <Box>
+            <div>
               <Typography>John Doe</Typography>
               <Typography variant='caption'>Sure! 8:30pm works great!</Typography>
-            </Box>
+            </div>
           </Box>
           <IconButton onClick={() => toast.dismiss(t.id)}>
             <Icon icon='mdi:close' fontSize={20} />

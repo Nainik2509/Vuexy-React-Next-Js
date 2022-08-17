@@ -145,23 +145,23 @@ const UserViewLeft = ({ data }: Props) => {
                   <CustomAvatar skin='light' variant='rounded' sx={{ mr: 3 }}>
                     <Icon icon='mdi:check' />
                   </CustomAvatar>
-                  <Box>
+                  <div>
                     <Typography variant='h6' sx={{ lineHeight: 1.3 }}>
                       1.23k
                     </Typography>
                     <Typography variant='body2'>Task Done</Typography>
-                  </Box>
+                  </div>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
                   <CustomAvatar skin='light' variant='rounded' sx={{ mr: 3 }}>
                     <Icon icon='mdi:briefcase-variant-outline' />
                   </CustomAvatar>
-                  <Box>
+                  <div>
                     <Typography variant='h6' sx={{ lineHeight: 1.3 }}>
                       568
                     </Typography>
                     <Typography variant='body2'>Project Done</Typography>
-                  </Box>
+                  </div>
                 </Box>
               </Box>
             </CardContent>

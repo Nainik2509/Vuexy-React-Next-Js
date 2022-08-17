@@ -145,7 +145,7 @@ const InvoicePrint = ({ id }: InvoiceLayoutProps) => {
                   {themeConfig.templateName}
                 </Typography>
               </Box>
-              <Box>
+              <div>
                 <Typography variant='body2' sx={{ mb: 1 }}>
                   Office 149, 450 South Brand Brooklyn
                 </Typography>
@@ -153,7 +153,7 @@ const InvoicePrint = ({ id }: InvoiceLayoutProps) => {
                   San Diego County, CA 91905, USA
                 </Typography>
                 <Typography variant='body2'>+1 (123) 456 7891, +44 (876) 543 2198</Typography>
-              </Box>
+              </div>
             </Box>
           </Grid>
           <Grid item xs={4}>

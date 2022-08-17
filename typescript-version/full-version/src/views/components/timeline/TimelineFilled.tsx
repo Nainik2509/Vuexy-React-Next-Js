@@ -148,12 +148,12 @@ const TimelineLeft = () => {
               </Typography>
               <Typography variant='caption'>$375.00</Typography>
             </Box>
-            <Box>
+            <div>
               <Typography variant='subtitle2' sx={{ fontWeight: 600 }}>
                 Quantity
               </Typography>
               <Typography variant='caption'>1</Typography>
-            </Box>
+            </div>
           </Box>
         </TimelineContent>
       </TimelineItem>

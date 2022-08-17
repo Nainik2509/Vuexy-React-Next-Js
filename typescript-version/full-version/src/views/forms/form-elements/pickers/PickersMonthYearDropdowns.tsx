@@ -21,7 +21,7 @@ const PickersMonthYearDropdowns = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <Box>
+      <div>
         <DatePicker
           selected={month}
           showMonthDropdown
@@ -30,8 +30,8 @@ const PickersMonthYearDropdowns = () => {
           onChange={(date: Date) => setMonth(date)}
           customInput={<CustomInput label='Month Dropdown' />}
         />
-      </Box>
-      <Box>
+      </div>
+      <div>
         <DatePicker
           selected={year}
           showYearDropdown
@@ -40,8 +40,8 @@ const PickersMonthYearDropdowns = () => {
           onChange={(date: Date) => setYear(date)}
           customInput={<CustomInput label='Year Dropdown' />}
         />
-      </Box>
-      <Box>
+      </div>
+      <div>
         <DatePicker
           showYearDropdown
           showMonthDropdown
@@ -51,7 +51,7 @@ const PickersMonthYearDropdowns = () => {
           onChange={(date: Date) => setMonthYear(date)}
           customInput={<CustomInput label='Month & Year Dropdown' />}
         />
-      </Box>
+      </div>
     </Box>
   )
 }

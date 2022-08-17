@@ -23,7 +23,7 @@ const PickersSpecificRange = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <Box>
+      <div>
         <DatePicker
           selected={date}
           id='specific-date'
@@ -32,8 +32,8 @@ const PickersSpecificRange = () => {
           onChange={(date: Date) => setDate(date)}
           customInput={<CustomInput label='Specific Date Range' />}
         />
-      </Box>
-      <Box>
+      </div>
+      <div>
         <DatePicker
           showTimeSelect
           selected={time}
@@ -44,7 +44,7 @@ const PickersSpecificRange = () => {
           maxTime={setHours(setMinutes(new Date(), 30), 20)}
           customInput={<CustomInput label='Specific Time' />}
         />
-      </Box>
+      </div>
     </Box>
   )
 }

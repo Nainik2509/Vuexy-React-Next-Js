@@ -184,12 +184,12 @@ const CreateDealWizard = () => {
                     >
                       <Icon icon={step.icon} />
                     </CustomAvatar>
-                    <Box>
+                    <div>
                       <Typography className='step-title'>{step.title}</Typography>
                       <Typography variant='caption' className='step-subtitle'>
                         {step.subtitle}
                       </Typography>
-                    </Box>
+                    </div>
                   </StepLabel>
                 </Step>
               )
@@ -197,12 +197,12 @@ const CreateDealWizard = () => {
           </Stepper>
         </StepperWrapper>
       </StepperHeaderContainer>
-      <Box>
+      <div>
         <CardContent>
           {renderContent()}
           {renderFooter()}
         </CardContent>
-      </Box>
+      </div>
     </Card>
   )
 }

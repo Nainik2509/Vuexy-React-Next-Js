@@ -19,7 +19,7 @@ const PickersBasic = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <Box>
+      <div>
         <DatePicker
           selected={date}
           id='basic-input'
@@ -27,8 +27,8 @@ const PickersBasic = () => {
           placeholderText='Click to select a date'
           customInput={<CustomInput label='Basic' />}
         />
-      </Box>
-      <Box>
+      </div>
+      <div>
         <DatePicker
           disabled
           selected={date}
@@ -37,8 +37,8 @@ const PickersBasic = () => {
           placeholderText='Click to select a date'
           customInput={<CustomInput label='Disabled' />}
         />
-      </Box>
-      <Box>
+      </div>
+      <div>
         <DatePicker
           readOnly
           selected={date}
@@ -47,7 +47,7 @@ const PickersBasic = () => {
           placeholderText='Click to select a date'
           customInput={<CustomInput readOnly label='Readonly' />}
         />
-      </Box>
+      </div>
     </Box>
   )
 }

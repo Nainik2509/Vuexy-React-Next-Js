@@ -214,14 +214,14 @@ const UserViewSecurity = () => {
 
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <Typography variant='body2'>{mobileNumber}</Typography>
-            <Box>
+            <div>
               <IconButton aria-label='edit' sx={{ color: 'text.secondary' }} onClick={handleEditMobileNumberClickOpen}>
                 <Icon icon='mdi:square-edit-outline' fontSize='1.25rem' />
               </IconButton>
               <IconButton aria-label='delete' sx={{ color: 'text.secondary' }}>
                 <Icon icon='mdi:delete-outline' fontSize='1.25rem' />
               </IconButton>
-            </Box>
+            </div>
           </Box>
 
           <Divider sx={{ mt: '0 !important', mb: theme => `${theme.spacing(4)} !important` }} />

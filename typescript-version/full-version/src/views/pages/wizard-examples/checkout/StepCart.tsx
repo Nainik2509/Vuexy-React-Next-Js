@@ -67,14 +67,14 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
       <Grid item lg={8} xs={12}>
         <Alert severity='success' icon={<Icon icon='mdi:tag-outline' />} sx={{ mb: 6 }}>
           <AlertTitle>Available Offers</AlertTitle>
-          <Box>
+          <div>
             <Typography sx={{ color: 'success.main' }}>
               - 10% Instant Discount on Bank of America Corp Bank Debit and Credit cards
             </Typography>
             <Typography sx={{ color: 'success.main' }}>
               - 25% Cashback Voucher of up to $60 on first ever PayPal transaction. TCA
             </Typography>
-          </Box>
+          </div>
         </Alert>
         <Typography sx={{ mb: 2, fontSize: '1.125rem', fontWeight: 600 }}>My Shopping Bag (2 Items)</Typography>
         <StyledList>
@@ -88,17 +88,17 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
             <Grid container>
               <Grid item xs={12} md={8}>
                 <ListItemText primary='Google - Google Home - White' />
-                <Box>
+                <div>
                   <Box sx={{ mt: 4, display: 'flex' }}>
                     <Typography sx={{ color: 'text.disabled' }}>Sold By:</Typography>
                     <Typography sx={{ mx: 2, color: 'primary.main', cursor: 'pointer' }}>Google</Typography>
                     <CustomChip rounded size='small' skin='light' color='success' label='In Stock' />
                   </Box>
                   <Rating name='google-nest-rating' value={4} readOnly />
-                  <Box>
+                  <div>
                     <TextField size='small' type='number' defaultValue='1' sx={{ maxWidth: 75 }} />
-                  </Box>
-                </Box>
+                  </div>
+                </div>
               </Grid>
               <Grid item xs={12} md={4}>
                 <Box
@@ -113,11 +113,11 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
                     <Typography sx={{ color: 'primary.main' }}>$299</Typography>
                     <Typography sx={{ color: 'text.disabled', textDecoration: 'line-through' }}>/$359</Typography>
                   </Box>
-                  <Box>
+                  <div>
                     <Button variant='outlined' size='small' color='secondary'>
                       Move to wishlist
                     </Button>
-                  </Box>
+                  </div>
                 </Box>
               </Grid>
             </Grid>
@@ -129,17 +129,17 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
             <Grid container>
               <Grid item xs={12} md={8}>
                 <ListItemText primary='Apple iPhone 11 (64GB, Black)' />
-                <Box>
+                <div>
                   <Box sx={{ mt: 4, display: 'flex' }}>
                     <Typography sx={{ color: 'text.disabled' }}>Sold By:</Typography>
                     <Typography sx={{ mx: 2, color: 'primary.main', cursor: 'pointer' }}>Apple</Typography>
                     <CustomChip rounded size='small' skin='light' color='success' label='In Stock' />
                   </Box>
                   <Rating name='iphone-11-rating' value={4} readOnly />
-                  <Box>
+                  <div>
                     <TextField size='small' type='number' defaultValue='1' sx={{ maxWidth: 75 }} />
-                  </Box>
-                </Box>
+                  </div>
+                </div>
               </Grid>
               <Grid item xs={12} md={4}>
                 <IconButton size='small' className='remove-item' sx={{ color: 'text.primary' }}>
@@ -157,11 +157,11 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
                     <Typography sx={{ color: 'primary.main' }}>$299</Typography>
                     <Typography sx={{ color: 'text.disabled', textDecoration: 'line-through' }}>/$359</Typography>
                   </Box>
-                  <Box>
+                  <div>
                     <Button variant='outlined' size='small' color='secondary'>
                       Move to wishlist
                     </Button>
-                  </Box>
+                  </div>
                 </Box>
               </Grid>
             </Grid>

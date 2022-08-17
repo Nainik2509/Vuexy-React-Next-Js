@@ -20,7 +20,7 @@ const TabFramework = () => {
   }
 
   return (
-    <Box>
+    <div>
       <Typography variant='h6' sx={{ mb: 4 }}>
         Select Framework
       </Typography>
@@ -33,10 +33,10 @@ const TabFramework = () => {
             <CustomAvatar skin='light' color='info' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
               <Icon icon='mdi:react' />
             </CustomAvatar>
-            <Box>
+            <div>
               <Typography>React Native</Typography>
               <Typography variant='caption'>Create truly native apps</Typography>
-            </Box>
+            </div>
           </Box>
           <Radio value='react' onChange={handleChange} checked={value === 'react'} />
         </Box>
@@ -49,10 +49,10 @@ const TabFramework = () => {
             <CustomAvatar skin='light' color='error' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
               <Icon icon='mdi:angular' />
             </CustomAvatar>
-            <Box>
+            <div>
               <Typography>Angular</Typography>
               <Typography variant='caption'>Most suited for your application</Typography>
-            </Box>
+            </div>
           </Box>
           <Radio value='angular' onChange={handleChange} checked={value === 'angular'} />
         </Box>
@@ -64,10 +64,10 @@ const TabFramework = () => {
             <CustomAvatar skin='light' color='success' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
               <Icon icon='mdi:vuejs' />
             </CustomAvatar>
-            <Box>
+            <div>
               <Typography>Vue</Typography>
               <Typography variant='caption'>Progressive Framework</Typography>
-            </Box>
+            </div>
           </Box>
           <Radio value='vuejs' onChange={handleChange} checked={value === 'vuejs'} />
         </Box>
@@ -79,15 +79,15 @@ const TabFramework = () => {
             <CustomAvatar skin='light' color='warning' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
               <Icon icon='mdi:laravel' />
             </CustomAvatar>
-            <Box>
+            <div>
               <Typography>Laravel</Typography>
               <Typography variant='caption'>PHP web frameworks</Typography>
-            </Box>
+            </div>
           </Box>
           <Radio value='laravel' onChange={handleChange} checked={value === 'laravel'} />
         </Box>
       </Box>
-    </Box>
+    </div>
   )
 }
 

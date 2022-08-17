@@ -343,7 +343,7 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
   }
 
   return (
-    <Box>
+    <div>
       <Drawer
         open={leftSidebarOpen}
         onClose={handleLeftSidebarToggle}
@@ -458,7 +458,7 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
         userProfileLeftOpen={userProfileLeftOpen}
         handleUserProfileLeftSidebarToggle={handleUserProfileLeftSidebarToggle}
       />
-    </Box>
+    </div>
   )
 }
 

@@ -206,19 +206,19 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
               <Box sx={{ mr: 4 }}>
                 <img width={50} src='/images/products/google-home.png' alt='Google Home' />
               </Box>
-              <Box>
+              <div>
                 <Typography sx={{ color: 'text.secondary' }}>Google - Google Home - White</Typography>
                 <Typography sx={{ color: 'text.secondary', fontWeight: 600 }}>18th Nov 2021</Typography>
-              </Box>
+              </div>
             </Box>
             <Box sx={{ display: 'flex' }}>
               <Box sx={{ mr: 4 }}>
                 <img width={50} src='/images/products/iphone-11.png' alt='iphone 11' />
               </Box>
-              <Box>
+              <div>
                 <Typography sx={{ color: 'text.secondary' }}>Apple iPhone 11 (64GB, Black)</Typography>
                 <Typography sx={{ color: 'text.secondary', fontWeight: 600 }}>20th Nov 2021</Typography>
-              </Box>
+              </div>
             </Box>
           </CardContent>
           <Divider sx={{ mt: theme => `${theme.spacing(4)} !important`, mb: '0 !important' }} />

@@ -26,7 +26,7 @@ const PickersIncludeExclude = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <Box>
+      <div>
         <DatePicker
           selected={date}
           id='include-dates'
@@ -34,8 +34,8 @@ const PickersIncludeExclude = () => {
           customInput={<CustomInput label='Include Dates' />}
           includeDates={[new Date(), addDays(new Date(), 1)]}
         />
-      </Box>
-      <Box>
+      </div>
+      <div>
         <DatePicker
           id='exclude-dates'
           selected={dateExclude}
@@ -43,8 +43,8 @@ const PickersIncludeExclude = () => {
           customInput={<CustomInput label='Exclude Dates' />}
           excludeDates={[subDays(new Date(), 1), subDays(new Date(), 2)]}
         />
-      </Box>
-      <Box>
+      </div>
+      <div>
         <DatePicker
           showTimeSelect
           selected={time}
@@ -59,8 +59,8 @@ const PickersIncludeExclude = () => {
             setHours(setMinutes(new Date(), 30), 17)
           ]}
         />
-      </Box>
-      <Box>
+      </div>
+      <div>
         <DatePicker
           showTimeSelect
           id='exclude-time'
@@ -75,7 +75,7 @@ const PickersIncludeExclude = () => {
             setHours(setMinutes(new Date(), 30), 17)
           ]}
         />
-      </Box>
+      </div>
     </Box>
   )
 }

@@ -20,7 +20,7 @@ const PickersTime = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <Box>
+      <div>
         <DatePicker
           showTimeSelect
           selected={time}
@@ -32,8 +32,8 @@ const PickersTime = () => {
           onChange={(date: Date) => setTime(date)}
           customInput={<CustomInput label='Time Only' />}
         />
-      </Box>
-      <Box>
+      </div>
+      <div>
         <DatePicker
           showTimeSelect
           timeFormat='HH:mm'
@@ -45,7 +45,7 @@ const PickersTime = () => {
           onChange={(date: Date) => setDateTime(date)}
           customInput={<CustomInput label='Date & Time' />}
         />
-      </Box>
+      </div>
     </Box>
   )
 }

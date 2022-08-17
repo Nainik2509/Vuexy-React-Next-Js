@@ -29,7 +29,7 @@ const PickersOptions = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <Box>
+      <div>
         <DatePicker
           isClearable
           id='picker-clear'
@@ -37,8 +37,8 @@ const PickersOptions = () => {
           customInput={<CustomInput label='Clear' />}
           onChange={(date: Date) => setDateClear(date)}
         />
-      </Box>
-      <Box>
+      </div>
+      <div>
         <DatePicker
           showWeekNumbers
           id='picker-week-num'
@@ -46,8 +46,8 @@ const PickersOptions = () => {
           onChange={(date: Date) => setDateWeekNum(date)}
           customInput={<CustomInput label='Week Numbers' />}
         />
-      </Box>
-      <Box>
+      </div>
+      <div>
         <DatePicker
           id='picker-filter'
           selected={dateFilter}
@@ -55,8 +55,8 @@ const PickersOptions = () => {
           onChange={(date: Date) => setDateFilter(date)}
           customInput={<CustomInput label='Filter Dates' />}
         />
-      </Box>
-      <Box>
+      </div>
+      <div>
         <DatePicker
           selected={dateOpen}
           id='picker-open-date'
@@ -64,8 +64,8 @@ const PickersOptions = () => {
           onChange={(date: Date) => setDateOpen(date)}
           customInput={<CustomInput label='Open To Date' />}
         />
-      </Box>
-      <Box>
+      </div>
+      <div>
         <DatePicker
           todayButton='Today'
           selected={dateTodayBtn}
@@ -73,7 +73,7 @@ const PickersOptions = () => {
           onChange={(date: Date) => setDateTodayBtn(date)}
           customInput={<CustomInput label='Date Today Button' />}
         />
-      </Box>
+      </div>
     </Box>
   )
 }

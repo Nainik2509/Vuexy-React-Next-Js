@@ -46,7 +46,7 @@ const PricingTable = ({ data }: Props) => {
   }
 
   return data && data.pricingTable ? (
-    <Box>
+    <div>
       <Box sx={{ mb: 12, textAlign: 'center' }}>
         <Typography variant='h5' sx={{ mb: 2.5 }}>
           Pick a plan that works best for you
@@ -141,7 +141,7 @@ const PricingTable = ({ data }: Props) => {
           </Table>
         </TableContainer>
       </Box>
-    </Box>
+    </div>
   ) : null
 }
 

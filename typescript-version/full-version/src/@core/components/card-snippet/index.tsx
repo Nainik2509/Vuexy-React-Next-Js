@@ -127,7 +127,7 @@ const CardSnippet = (props: CardSnippetProps) => {
                 <Icon icon='mdi:content-copy' fontSize={20} />
               </IconButton>
             </Tooltip>
-            <Box>{renderCode()}</Box>
+            <div>{renderCode()}</div>
           </CardContent>
         </Collapse>
       )}

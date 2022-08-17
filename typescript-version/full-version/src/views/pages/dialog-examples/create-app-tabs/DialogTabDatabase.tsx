@@ -21,7 +21,7 @@ const TabDatabase = () => {
   }
 
   return (
-    <Box>
+    <div>
       <TextField fullWidth sx={{ mb: 4 }} label='Database Name' placeholder='master_database' />
       <Typography variant='h6' sx={{ mb: 4 }}>
         Select Database Engine
@@ -35,10 +35,10 @@ const TabDatabase = () => {
             <CustomAvatar skin='light' color='error' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
               <Icon icon='mdi:firebase' />
             </CustomAvatar>
-            <Box>
+            <div>
               <Typography>Firebase</Typography>
               <Typography variant='caption'>Cloud Firestore</Typography>
-            </Box>
+            </div>
           </Box>
           <Radio value='firebase' onChange={handleChange} checked={value === 'firebase'} />
         </Box>
@@ -50,10 +50,10 @@ const TabDatabase = () => {
             <CustomAvatar skin='light' color='warning' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
               <Icon icon='mdi:aws' />
             </CustomAvatar>
-            <Box>
+            <div>
               <Typography>AWS</Typography>
               <Typography variant='caption'>Amazon Fast NoSQL Database</Typography>
-            </Box>
+            </div>
           </Box>
           <Radio value='aws' onChange={handleChange} checked={value === 'aws'} />
         </Box>
@@ -65,15 +65,15 @@ const TabDatabase = () => {
             <CustomAvatar skin='light' color='info' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
               <Icon icon='mdi:database-outline' />
             </CustomAvatar>
-            <Box>
+            <div>
               <Typography>MySQL</Typography>
               <Typography variant='caption'>Basic MySQL database</Typography>
-            </Box>
+            </div>
           </Box>
           <Radio value='sql' onChange={handleChange} checked={value === 'sql'} />
         </Box>
       </Box>
-    </Box>
+    </div>
   )
 }
 

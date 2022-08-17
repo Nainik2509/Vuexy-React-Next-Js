@@ -169,7 +169,7 @@ const Customizer = () => {
             </Box>
 
             {/* Color Picker */}
-            <Box>
+            <div>
               <Typography>Primary Color</Typography>
               <Box sx={{ display: 'flex' }}>
                 <ColorBox
@@ -225,7 +225,7 @@ const Customizer = () => {
                   }}
                 />
               </Box>
-            </Box>
+            </div>
           </CustomizerSpacing>
 
           <Divider sx={{ m: '0 !important' }} />
@@ -271,7 +271,7 @@ const Customizer = () => {
             </Box>
 
             {/* Footer */}
-            <Box>
+            <div>
               <Typography>Footer Type</Typography>
               <RadioGroup
                 row
@@ -283,7 +283,7 @@ const Customizer = () => {
                 <FormControlLabel value='static' label='Static' control={<Radio />} />
                 <FormControlLabel value='hidden' label='Hidden' control={<Radio />} />
               </RadioGroup>
-            </Box>
+            </div>
           </CustomizerSpacing>
 
           <Divider sx={{ m: '0 !important' }} />

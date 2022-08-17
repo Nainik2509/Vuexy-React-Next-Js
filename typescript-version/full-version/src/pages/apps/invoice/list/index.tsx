@@ -276,13 +276,13 @@ const InvoiceList = () => {
             </IconButton>
           </Tooltip>
           <Tooltip title='View'>
-            <Box>
+            <div>
               <Link href={`/apps/invoice/preview/${row.id}`} passHref>
                 <IconButton size='small' component='a' sx={{ textDecoration: 'none' }}>
                   <Icon icon='mdi:eye-outline' fontSize={20} />
                 </IconButton>
               </Link>
-            </Box>
+            </div>
           </Tooltip>
           <OptionsMenu
             iconProps={{ fontSize: 20 }}

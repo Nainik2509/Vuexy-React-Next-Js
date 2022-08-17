@@ -160,7 +160,7 @@ const UserProfileRight = (props: UserProfileRightType) => {
                   </List>
                 </Box>
 
-                <Box>
+                <div>
                   <Typography variant='body2' sx={{ mb: 3.5, textTransform: 'uppercase' }}>
                     Options
                   </Typography>
@@ -206,7 +206,7 @@ const UserProfileRight = (props: UserProfileRightType) => {
                       </ListItemButton>
                     </ListItem>
                   </List>
-                </Box>
+                </div>
               </Box>
             </ScrollWrapper>
           </Box>

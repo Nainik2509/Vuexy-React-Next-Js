@@ -74,7 +74,7 @@ const AlertsDismissible = () => {
         </Button>
       </Box>
 
-      <Box>
+      <div>
         <Slide in={open4} direction='left' {...(open4 ? { timeout: 500 } : {})}>
           <Alert
             action={
@@ -89,7 +89,7 @@ const AlertsDismissible = () => {
         <Button disabled={open4} variant='outlined' sx={{ mt: 2 }} onClick={() => setOpen4(true)}>
           Open Slide
         </Button>
-      </Box>
+      </div>
     </>
   )
 }

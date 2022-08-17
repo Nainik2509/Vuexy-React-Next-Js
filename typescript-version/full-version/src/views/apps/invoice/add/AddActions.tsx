@@ -23,7 +23,7 @@ const OptionsWrapper = styled(Box)<BoxProps>(() => ({
 
 const AddActions = () => {
   return (
-    <Box>
+    <div>
       <Card sx={{ mb: 4 }}>
         <CardContent>
           <Button fullWidth sx={{ mb: 3.5 }} variant='contained' startIcon={<Icon icon='mdi:send-outline' />}>
@@ -73,7 +73,7 @@ const AddActions = () => {
         </InputLabel>
         <Switch id='invoice-add-payment-stub' />
       </OptionsWrapper>
-    </Box>
+    </div>
   )
 }
 

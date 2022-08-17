@@ -61,10 +61,10 @@ const RatingsCustomized = () => {
         <Typography sx={{ fontWeight: 500 }}>10 stars</Typography>
         <Rating name='customized-10' defaultValue={7} max={10} />
       </Box>
-      <Box>
+      <div>
         <Typography sx={{ fontWeight: 500 }}>Custom icon set</Typography>
         <Rating name='customized-icons' defaultValue={2} max={4} IconContainerComponent={IconContainer} />
-      </Box>
+      </div>
     </div>
   )
 }

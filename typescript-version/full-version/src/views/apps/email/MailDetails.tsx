@@ -309,7 +309,7 @@ const MailDetails = (props: MailDetailsType) => {
                   icon={<Icon icon='mdi:label-outline' fontSize='1.375rem' />}
                 />
               </Box>
-              <Box>
+              <div>
                 <IconButton
                   size='small'
                   onClick={e => handleStarMail(e, mail.id, !mail.isStarred)}
@@ -329,7 +329,7 @@ const MailDetails = (props: MailDetailsType) => {
                 <IconButton size='small'>
                   <Icon icon='mdi:dots-vertical' fontSize='1.375rem' />
                 </IconButton>
-              </Box>
+              </div>
             </Box>
           </Box>
           <Box sx={{ height: 'calc(100% - 7.75rem)', backgroundColor: theme => theme.palette.action.hover }}>

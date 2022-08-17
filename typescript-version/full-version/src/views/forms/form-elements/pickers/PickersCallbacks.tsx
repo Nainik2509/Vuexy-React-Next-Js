@@ -24,7 +24,7 @@ const PickersCallbacks = () => {
 
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='demo-space-x'>
-      <Box>
+      <div>
         <DatePicker
           selected={date}
           id='callback-open'
@@ -34,8 +34,8 @@ const PickersCallbacks = () => {
           onCalendarOpen={() => handlePickerCallback(`Selected Date: ${new Date(date || '').toLocaleDateString()}`)}
           onCalendarClose={() => handlePickerCallback(`Selected Date: ${new Date(date || '').toLocaleDateString()}`)}
         />
-      </Box>
-      <Box>
+      </div>
+      <div>
         <DatePicker
           selected={date}
           id='callback-blur'
@@ -43,8 +43,8 @@ const PickersCallbacks = () => {
           customInput={<CustomInput label='Blur' />}
           onBlur={() => handlePickerCallback('Picker Closed')}
         />
-      </Box>
-      <Box>
+      </div>
+      <div>
         <DatePicker
           selected={date}
           id='callback-change'
@@ -54,7 +54,7 @@ const PickersCallbacks = () => {
             handlePickerCallback(`Selected Date: ${new Date(date || '').toLocaleDateString()}`)
           }}
         />
-      </Box>
+      </div>
     </Box>
   )
 }

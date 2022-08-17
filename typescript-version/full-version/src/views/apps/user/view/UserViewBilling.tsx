@@ -189,7 +189,7 @@ const UserViewBilling = () => {
                 <Typography sx={{ fontWeight: 500, mb: 1, fontSize: '0.875rem' }}>Active until Dec 09, 2021</Typography>
                 <Typography variant='body2'>We will send you a notification upon Subscription expiration</Typography>
               </Box>
-              <Box>
+              <div>
                 <Box sx={{ display: 'flex', mb: 1, alignItems: 'center' }}>
                   <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>$99 Per Month</Typography>
                   <CustomChip
@@ -201,7 +201,7 @@ const UserViewBilling = () => {
                   />
                 </Box>
                 <Typography variant='body2'>Standard plan for small to medium businesses</Typography>
-              </Box>
+              </div>
             </Grid>
 
             <Grid item xs={12} md={6} sx={{ mt: [4, 4, 0] }}>

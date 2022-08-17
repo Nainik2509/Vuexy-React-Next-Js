@@ -221,7 +221,7 @@ const EditCard = (props: Props) => {
                   {themeConfig.templateName}
                 </Typography>
               </Box>
-              <Box>
+              <div>
                 <Typography variant='body2' sx={{ mb: 1 }}>
                   Office 149, 450 South Brand Brooklyn
                 </Typography>
@@ -229,7 +229,7 @@ const EditCard = (props: Props) => {
                   San Diego County, CA 91905, USA
                 </Typography>
                 <Typography variant='body2'>+1 (123) 456 7891, +44 (876) 543 2198</Typography>
-              </Box>
+              </div>
             </Box>
           </Grid>
           <Grid item xl={6} xs={12}>
@@ -304,7 +304,7 @@ const EditCard = (props: Props) => {
                 ))}
             </Select>
             {selectedClient !== null && selectedClient !== undefined ? (
-              <Box>
+              <div>
                 <Typography variant='body2' sx={{ mb: 1 }}>
                   {selectedClient.company}
                 </Typography>
@@ -317,7 +317,7 @@ const EditCard = (props: Props) => {
                 <Typography variant='body2' sx={{ mb: 1 }}>
                   {selectedClient.companyEmail}
                 </Typography>
-              </Box>
+              </div>
             ) : null}
           </Grid>
           <Grid item xs={12} sm={6} sx={{ display: 'flex', justifyContent: ['flex-start', 'flex-end'] }}>
