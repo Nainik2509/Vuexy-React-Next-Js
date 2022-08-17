@@ -16,13 +16,8 @@ import CardContent from '@mui/material/CardContent'
 import Fade, { FadeProps } from '@mui/material/Fade'
 import DialogContent from '@mui/material/DialogContent'
 
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
-import CogOutline from 'mdi-material-ui/CogOutline'
-import LockOutline from 'mdi-material-ui/LockOutline'
-import ChevronLeft from 'mdi-material-ui/ChevronLeft'
-import ChevronRight from 'mdi-material-ui/ChevronRight'
-import MessageOutline from 'mdi-material-ui/MessageOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Hooks
 import useBgColor from 'src/@core/hooks/useBgColor'
@@ -65,12 +60,12 @@ const DialogAuthentication = () => {
     }
   }
 
-  const Arrow = direction === 'ltr' ? ChevronRight : ChevronLeft
+  const arrowIcon = direction === 'ltr' ? 'mdi:chevron-right' : 'mdi:chevron-left'
 
   return (
     <Card>
-      <CardContent sx={{ textAlign: 'center' }}>
-        <LockOutline sx={{ mb: 2, fontSize: '2rem' }} />
+      <CardContent sx={{ textAlign: 'center', '& svg': { mb: 2 } }}>
+        <Icon icon='mdi:lock-outline' fontSize='2rem' />
         <Typography variant='h6' sx={{ mb: 4 }}>
           Two Factor Auth
         </Typography>
@@ -90,7 +85,7 @@ const DialogAuthentication = () => {
       >
         <DialogContent sx={{ px: { xs: 8, sm: 15 }, py: { xs: 8, sm: 12.5 }, position: 'relative' }}>
           <IconButton size='small' onClick={handleClose} sx={{ position: 'absolute', right: '1rem', top: '1rem' }}>
-            <Close />
+            <Icon icon='mdi:close' />
           </IconButton>
 
           <Grid container spacing={6}>
@@ -117,8 +112,8 @@ const DialogAuthentication = () => {
                   ...(authType === 'app' ? { ...bgClasses.primaryLight } : { backgroundColor: 'action.hover' })
                 }}
               >
-                <Box sx={{ mb: 2, display: 'flex', alignItems: 'center' }}>
-                  <CogOutline fontSize='large' sx={{ mr: 3 }} />
+                <Box sx={{ mb: 2, display: 'flex', alignItems: 'center', '& svg': { mr: 3 } }}>
+                  <Icon icon='mdi:cog-outline' fontSize={35} />
                   <Box>
                     <Typography
                       variant='h6'
@@ -146,8 +141,8 @@ const DialogAuthentication = () => {
                   ...(authType === 'sms' ? { ...bgClasses.primaryLight } : { backgroundColor: 'action.hover' })
                 }}
               >
-                <Box sx={{ mb: 2, display: 'flex', alignItems: 'center' }}>
-                  <MessageOutline fontSize='large' sx={{ mr: 3 }} />
+                <Box sx={{ mb: 2, display: 'flex', alignItems: 'center', '& svg': { mr: 3 } }}>
+                  <Icon icon='mdi:message-outline' fontSize={35} />
                   <Box>
                     <Typography
                       variant='h6'
@@ -169,7 +164,7 @@ const DialogAuthentication = () => {
             <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
               <Button
                 variant='contained'
-                endIcon={<Arrow />}
+                endIcon={<Icon icon={arrowIcon} />}
                 onClick={() => {
                   setShow(false)
                   setShowAuthDialog(true)
@@ -197,7 +192,7 @@ const DialogAuthentication = () => {
             onClick={handleAuthDialogClose}
             sx={{ position: 'absolute', right: '1rem', top: '1rem' }}
           >
-            <Close />
+            <Icon icon='mdi:close' />
           </IconButton>
 
           <Grid container spacing={6}>
@@ -214,7 +209,7 @@ const DialogAuthentication = () => {
                       <Button variant='outlined' color='secondary' onClick={handleAuthDialogClose} sx={{ mr: 4 }}>
                         Cancel
                       </Button>
-                      <Button variant='contained' endIcon={<Arrow />} onClick={handleAuthDialogClose}>
+                      <Button variant='contained' endIcon={<Icon icon={arrowIcon} />} onClick={handleAuthDialogClose}>
                         Continue
                       </Button>
                     </Grid>
@@ -253,7 +248,7 @@ const DialogAuthentication = () => {
                       <Button variant='outlined' color='secondary' onClick={handleAuthDialogClose} sx={{ mr: 4 }}>
                         Cancel
                       </Button>
-                      <Button variant='contained' endIcon={<Arrow />} onClick={handleAuthDialogClose}>
+                      <Button variant='contained' endIcon={<Icon icon={arrowIcon} />} onClick={handleAuthDialogClose}>
                         Continue
                       </Button>
                     </Grid>

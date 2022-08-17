@@ -20,8 +20,8 @@ import TableContainer from '@mui/material/TableContainer'
 import TableSortLabel from '@mui/material/TableSortLabel'
 import TablePagination from '@mui/material/TablePagination'
 
-// ** Icons Imports
-import Delete from 'mdi-material-ui/Delete'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 type Order = 'asc' | 'desc'
 
@@ -209,7 +209,7 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
       {numSelected > 0 ? (
         <Tooltip title='Delete'>
           <IconButton sx={{ color: 'text.secondary' }}>
-            <Delete />
+            <Icon icon='mdi:delete-outline' />
           </IconButton>
         </Tooltip>
       ) : null}

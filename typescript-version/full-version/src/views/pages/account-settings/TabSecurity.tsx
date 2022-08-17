@@ -15,12 +15,8 @@ import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 import TableContainer from '@mui/material/TableContainer'
 
-// ** Icons Imports
-import Apple from 'mdi-material-ui/Apple'
-import Android from 'mdi-material-ui/Android'
-import Cellphone from 'mdi-material-ui/Cellphone'
-import ContentCopy from 'mdi-material-ui/ContentCopy'
-import MicrosoftWindows from 'mdi-material-ui/MicrosoftWindows'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
@@ -72,42 +68,66 @@ const recentDeviceData: RecentDeviceDataType[] = [
     device: 'HP Spectre 360',
     date: '10, July 2021 20:07',
     browserName: 'Chrome on Windows',
-    browserIcon: <MicrosoftWindows fontSize='small' sx={{ mr: 4, color: 'info.main' }} />
+    browserIcon: (
+      <Box component='span' sx={{ mr: 4, '& svg': { color: 'info.main' } }}>
+        <Icon icon='mdi:microsoft-windows' fontSize={20} />
+      </Box>
+    )
   },
   {
     location: 'Australia',
     device: 'iPhone 12x',
     date: '13, July 2021 10:10',
     browserName: 'Chrome on iPhone',
-    browserIcon: <Cellphone fontSize='small' sx={{ mr: 4, color: 'error.main' }} />
+    browserIcon: (
+      <Box component='span' sx={{ mr: 4, '& svg': { color: 'error.main' } }}>
+        <Icon icon='mdi:cellphone' fontSize={20} />
+      </Box>
+    )
   },
   {
     location: 'Dubai',
     device: 'Oneplus 9 Pro',
     date: '14, July 2021 15:15',
     browserName: 'Chrome on Android',
-    browserIcon: <Android fontSize='small' sx={{ mr: 4, color: 'success.main' }} />
+    browserIcon: (
+      <Box component='span' sx={{ mr: 4, '& svg': { color: 'success.main' } }}>
+        <Icon icon='mdi:android' fontSize={20} />
+      </Box>
+    )
   },
   {
     location: 'India',
     device: 'Apple iMac',
     date: '16, July 2021 16:17',
     browserName: 'Chrome on MacOS',
-    browserIcon: <Apple fontSize='small' sx={{ mr: 4, color: 'secondary.main' }} />
+    browserIcon: (
+      <Box component='span' sx={{ mr: 4, '& svg': { color: 'secondary.main' } }}>
+        <Icon icon='mdi:apple' fontSize={20} />
+      </Box>
+    )
   },
   {
     location: 'Switzerland',
     device: 'HP Spectre 360',
     date: '20, July 2021 21:01',
     browserName: 'Chrome on Windows',
-    browserIcon: <MicrosoftWindows fontSize='small' sx={{ mr: 4, color: 'info.main' }} />
+    browserIcon: (
+      <Box component='span' sx={{ mr: 4, '& svg': { color: 'info.main' } }}>
+        <Icon icon='mdi:microsoft-windows' fontSize={20} />
+      </Box>
+    )
   },
   {
     location: 'Dubai',
     device: 'Oneplus 9 Pro',
     date: '21, July 2021 12:22',
     browserName: 'Chrome on Android',
-    browserIcon: <Android fontSize='small' sx={{ mr: 4, color: 'success.main' }} />
+    browserIcon: (
+      <Box component='span' sx={{ mr: 4, '& svg': { color: 'success.main' } }}>
+        <Icon icon='mdi:android' fontSize={20} />
+      </Box>
+    )
   }
 ]
 
@@ -155,7 +175,9 @@ const TabSecurity = () => {
                   </Box>
                   <Box sx={{ mb: 2, display: 'flex', alignItems: 'center' }}>
                     <Typography sx={{ mr: 3, color: 'text.secondary', fontWeight: 600 }}>{item.key}</Typography>
-                    <ContentCopy sx={{ fontSize: '1rem', cursor: 'pointer', color: 'text.secondary' }} />
+                    <Box component='span' sx={{ cursor: 'pointer', color: 'text.secondary' }}>
+                      <Icon icon='mdi:content-copy' fontSize='1rem' />
+                    </Box>
                   </Box>
                   <Typography sx={{ color: 'text.secondary' }}>Created on {item.date}</Typography>
                 </Box>

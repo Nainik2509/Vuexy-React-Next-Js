@@ -10,7 +10,7 @@ const data: { faqData: FaqType } = {
     payment: {
       id: 'payment',
       title: 'Payment',
-      icon: 'CreditCardOutline',
+      icon: 'mdi:credit-card-outline',
       subtitle: 'Get help with payment',
       qandA: [
         {
@@ -50,7 +50,7 @@ const data: { faqData: FaqType } = {
     delivery: {
       id: 'delivery',
       title: 'Delivery',
-      icon: 'CartOutline',
+      icon: 'mdi:cart-outline',
       subtitle: 'Get help with delivery',
       qandA: [
         {
@@ -76,7 +76,7 @@ const data: { faqData: FaqType } = {
 
     // cancellation and return
     cancellationReturn: {
-      icon: 'RotateRight',
+      icon: 'mdi:rotate-right',
       id: 'cancellation-return',
       title: 'Cancellation & Return',
       subtitle: 'Get help with cancellation & return',
@@ -105,7 +105,7 @@ const data: { faqData: FaqType } = {
     myOrders: {
       id: 'my-orders',
       title: 'My Orders',
-      icon: 'ArchiveOutline',
+      icon: 'mdi:archive-outline',
       subtitle: 'Order details',
       qandA: [
         {
@@ -130,7 +130,7 @@ const data: { faqData: FaqType } = {
 
     // product and services
     productServices: {
-      icon: 'CameraOutline',
+      icon: 'mdi:camera-outline',
       id: 'product-services',
       title: 'Product & Services',
       subtitle: 'Get help with product & services',

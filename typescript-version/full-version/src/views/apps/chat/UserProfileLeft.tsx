@@ -18,12 +18,8 @@ import ListItemText from '@mui/material/ListItemText'
 import ListItemButton from '@mui/material/ListItemButton'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
-import BellOutline from 'mdi-material-ui/BellOutline'
-import DeleteOutline from 'mdi-material-ui/DeleteOutline'
-import AccountOutline from 'mdi-material-ui/AccountOutline'
-import CheckCircleOutline from 'mdi-material-ui/CheckCircleOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Components
 import PerfectScrollbar from 'react-perfect-scrollbar'
@@ -81,7 +77,7 @@ const UserProfileLeft = (props: UserProfileLeftType) => {
             onClick={handleUserProfileLeftSidebarToggle}
             sx={{ top: '0.5rem', right: '0.5rem', position: 'absolute', color: 'text.secondary' }}
           >
-            <Close sx={{ fontSize: '1.375rem' }} />
+            <Icon icon='mdi:close' fontSize='1.375rem' />
           </IconButton>
 
           <Box sx={{ p: 5, display: 'flex', flexDirection: 'column' }}>
@@ -162,7 +158,7 @@ const UserProfileLeft = (props: UserProfileLeftType) => {
                   <ListItem disablePadding>
                     <ListItemButton sx={{ px: 2 }}>
                       <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
-                        <CheckCircleOutline sx={{ fontSize: '1.375rem' }} />
+                        <Icon icon='mdi:check-circle-outline' fontSize='1.375rem' />
                       </ListItemIcon>
                       <ListItemText primary='Two-step Verification' />
                     </ListItemButton>
@@ -170,7 +166,7 @@ const UserProfileLeft = (props: UserProfileLeftType) => {
                   <ListItem disablePadding>
                     <ListItemButton sx={{ px: 2 }}>
                       <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
-                        <BellOutline sx={{ fontSize: '1.375rem' }} />
+                        <Icon icon='mdi:bell-outline' fontSize='1.375rem' />
                       </ListItemIcon>
                       <ListItemText primary='Notification' />
                     </ListItemButton>
@@ -178,7 +174,7 @@ const UserProfileLeft = (props: UserProfileLeftType) => {
                   <ListItem disablePadding>
                     <ListItemButton sx={{ px: 2 }}>
                       <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
-                        <AccountOutline sx={{ fontSize: '1.375rem' }} />
+                        <Icon icon='mdi:account-outline' fontSize='1.375rem' />
                       </ListItemIcon>
                       <ListItemText primary='Invite Friends' />
                     </ListItemButton>
@@ -186,7 +182,7 @@ const UserProfileLeft = (props: UserProfileLeftType) => {
                   <ListItem disablePadding>
                     <ListItemButton sx={{ px: 2 }}>
                       <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
-                        <DeleteOutline sx={{ fontSize: '1.375rem' }} />
+                        <Icon icon='mdi:delete-outline' fontSize='1.375rem' />
                       </ListItemIcon>
                       <ListItemText primary='Delete Account' />
                     </ListItemButton>

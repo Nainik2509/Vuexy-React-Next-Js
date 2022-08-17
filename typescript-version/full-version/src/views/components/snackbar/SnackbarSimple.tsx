@@ -6,8 +6,8 @@ import Button from '@mui/material/Button'
 import Snackbar from '@mui/material/Snackbar'
 import IconButton from '@mui/material/IconButton'
 
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 const SnackbarSimple = () => {
   // ** State
@@ -40,7 +40,7 @@ const SnackbarSimple = () => {
               UNDO
             </Button>
             <IconButton size='small' aria-label='close' color='inherit' onClick={handleClose}>
-              <Close fontSize='small' />
+              <Icon icon='mdi:close' fontSize={20} />
             </IconButton>
           </Fragment>
         }

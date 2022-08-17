@@ -7,13 +7,11 @@ import Box, { BoxProps } from '@mui/material/Box'
 import { styled, useTheme } from '@mui/material/styles'
 import Typography, { TypographyProps } from '@mui/material/Typography'
 
-// ** Icons
-import Close from 'mdi-material-ui/Close'
-import CircleOutline from 'mdi-material-ui/CircleOutline'
-import RecordCircleOutline from 'mdi-material-ui/RecordCircleOutline'
-
 // ** Type Import
 import { LayoutProps } from 'src/@core/layouts/types'
+
+// ** Custom Icon Import
+import Icon from 'src/@core/components/icon'
 
 // ** Configs
 import themeConfig from 'src/configs/themeConfig'
@@ -88,29 +86,9 @@ const VerticalNavHeader = (props: Props) => {
     }
   }
 
-  const MenuLockedIcon = () =>
-    userMenuLockedIcon || (
-      <RecordCircleOutline
-        sx={{
-          fontSize: '1.25rem',
-          pointerEvents: 'none',
-          ...menuCollapsedStyles,
-          transition: 'opacity .25s ease-in-out'
-        }}
-      />
-    )
+  const MenuLockedIcon = () => userMenuLockedIcon || <Icon icon='mdi:record-circle-outline' />
 
-  const MenuUnlockedIcon = () =>
-    userMenuUnlockedIcon || (
-      <CircleOutline
-        sx={{
-          fontSize: '1.25rem',
-          pointerEvents: 'none',
-          ...menuCollapsedStyles,
-          transition: 'opacity .25s ease-in-out'
-        }}
-      />
-    )
+  const MenuUnlockedIcon = () => userMenuUnlockedIcon || <Icon icon='mdi:circle-outline' />
 
   return (
     <MenuHeaderWrapper className='nav-header' sx={{ pl: menuHeaderPaddingLeft() }}>
@@ -192,14 +170,23 @@ const VerticalNavHeader = (props: Props) => {
           onClick={toggleNavVisibility}
           sx={{ p: 0, backgroundColor: 'transparent !important' }}
         >
-          <Close fontSize='small' />
+          <Icon icon='mdi:close' fontSize={20} />
         </IconButton>
       ) : userMenuLockedIcon === null && userMenuUnlockedIcon === null ? null : (
         <IconButton
           disableRipple
           disableFocusRipple
           onClick={() => saveSettings({ ...settings, navCollapsed: !navCollapsed })}
-          sx={{ p: 0, color: 'text.primary', backgroundColor: 'transparent !important' }}
+          sx={{
+            p: 0,
+            color: 'text.primary',
+            backgroundColor: 'transparent !important',
+            '& svg': {
+              fontSize: '1.25rem',
+              ...menuCollapsedStyles,
+              transition: 'opacity .25s ease-in-out'
+            }
+          }}
         >
           {navCollapsed ? MenuUnlockedIcon() : MenuLockedIcon()}
         </IconButton>

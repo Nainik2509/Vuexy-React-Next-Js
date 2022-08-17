@@ -13,10 +13,8 @@ import Typography from '@mui/material/Typography'
 import Grid, { GridProps } from '@mui/material/Grid'
 import CardContent, { CardContentProps } from '@mui/material/CardContent'
 
-// ** Icons Imports
-import Cellphone from 'mdi-material-ui/Cellphone'
-import CogOutline from 'mdi-material-ui/CogOutline'
-import CircleOutline from 'mdi-material-ui/CircleOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
 import axios from 'axios'
@@ -29,7 +27,11 @@ const StyledCardContent = styled(CardContent)<CardContentProps>(({ theme }) => (
   display: 'flex',
   alignItems: 'center',
   padding: theme.spacing(3.75, 5.5),
-  backgroundColor: `rgba(${theme.palette.customColors.main}, 0.08)`
+  backgroundColor: `rgba(${theme.palette.customColors.main}, 0.08)`,
+  '& svg': {
+    marginRight: theme.spacing(3),
+    color: theme.palette.primary.main
+  }
 }))
 
 // Styled Link component
@@ -70,8 +72,8 @@ const KnowledgeBaseCategoryQuestion = () => {
       return (
         <Link href='/' passHref key={index}>
           <StyledLink onClick={(e: SyntheticEvent) => e.preventDefault()}>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <CircleOutline sx={{ fontSize: '0.875rem', mr: 2.25, color: 'text.secondary' }} />
+            <Box sx={{ display: 'flex', alignItems: 'center', color: 'text.secondary', '& svg': { mr: 2.25 } }}>
+              <Icon icon='mdi:circle-outline' fontSize='0.875rem' />
               <Typography variant='body2'>{question}</Typography>
             </Box>
           </StyledLink>
@@ -85,10 +87,17 @@ const KnowledgeBaseCategoryQuestion = () => {
       <Grid item xs={12} md={4}>
         <Card>
           <StyledCardContent>
-            <CogOutline sx={{ mr: 3, color: 'primary.main' }} />
+            <Icon icon='mdi:cog-outline' />
             <Typography variant='h6'>{`Account Settings (${questions.length})`}</Typography>
           </StyledCardContent>
-          <CardContent sx={{ p: theme => `${theme.spacing(6.75, 5.5, 7.5)} !important` }}>
+          <CardContent
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              p: theme => `${theme.spacing(6.75, 5.5, 7.5)} !important`
+            }}
+          >
             {renderQuestions()}
           </CardContent>
         </Card>
@@ -96,8 +105,8 @@ const KnowledgeBaseCategoryQuestion = () => {
       <StyledGrid item xs={12} md={8}>
         <Card>
           <CardContent>
-            <Box sx={{ mb: 3, display: 'flex' }}>
-              <Cellphone sx={{ mr: 3.25, fontSize: '1.375rem', mt: 1.25 }} />
+            <Box sx={{ mb: 3, display: 'flex', '& svg': { mr: 3.25, fontSize: '1.375rem', mt: 1.25 } }}>
+              <Icon icon='mdi:cellphone' />
               <Typography variant='h6'>Why Was My Developer Application Rejected?</Typography>
             </Box>
             <Typography variant='body2' sx={{ mb: 7 }}>
@@ -121,22 +130,35 @@ const KnowledgeBaseCategoryQuestion = () => {
               find a reasonably good area.
             </Typography>
             <Box sx={{ ml: 6.25, '& > :not(:last-of-type)': { mb: 3.5 } }}>
-              <Box sx={{ display: 'flex' }}>
-                <CircleOutline sx={{ fontSize: '0.875rem', mt: 0.75, mr: 2.25, color: 'text.secondary' }} />
+              <Box
+                sx={{
+                  display: 'flex',
+                  color: 'text.secondary',
+                  alignItems: 'flex-start',
+                  '& svg': { mt: 0.75, mr: 2.25 }
+                }}
+              >
+                <Box sx={{ display: 'flex' }}>
+                  <Icon icon='mdi:circle-outline' fontSize='0.875rem' />
+                </Box>
                 <Typography variant='body2'>
                   I am a stranger. I come in peace. Take me to your leader and there will be a massive reward for you in
                   eternity.
                 </Typography>
               </Box>
-              <Box sx={{ display: 'flex' }}>
-                <CircleOutline sx={{ fontSize: '0.875rem', mt: 0.75, mr: 2.25, color: 'text.secondary' }} />
+              <Box sx={{ display: 'flex', color: 'text.secondary', '& svg': { mt: 0.75, mr: 2.25 } }}>
+                <Box sx={{ display: 'flex' }}>
+                  <Icon icon='mdi:circle-outline' fontSize='0.875rem' />
+                </Box>
                 <Typography variant='body2'>
                   It’s just mind-blowingly awesome. I apologize, and I wish I was more articulate, but it’s hard to be
                   articulate when your mind’s blown — but in a very good way.
                 </Typography>
               </Box>
-              <Box sx={{ display: 'flex' }}>
-                <CircleOutline sx={{ fontSize: '0.875rem', mt: 0.75, mr: 2.25, color: 'text.secondary' }} />
+              <Box sx={{ display: 'flex', color: 'text.secondary', '& svg': { mt: 0.75, mr: 2.25 } }}>
+                <Box sx={{ display: 'flex' }}>
+                  <Icon icon='mdi:circle-outline' fontSize='0.875rem' />
+                </Box>
                 <Typography variant='body2'>A good rule for rocket experimenters to follow is this</Typography>
               </Box>
             </Box>

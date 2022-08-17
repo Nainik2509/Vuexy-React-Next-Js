@@ -5,18 +5,8 @@ import Card from '@mui/material/Card'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 
-// ** Icons Imports
-import Check from 'mdi-material-ui/Check'
-import React from 'mdi-material-ui/React'
-import Github from 'mdi-material-ui/Github'
-import Translate from 'mdi-material-ui/Translate'
-import FlagOutline from 'mdi-material-ui/FlagOutline'
-import StarOutline from 'mdi-material-ui/StarOutline'
-import PhoneOutline from 'mdi-material-ui/PhoneOutline'
-import EmailOutline from 'mdi-material-ui/EmailOutline'
-import MessageOutline from 'mdi-material-ui/MessageOutline'
-import AccountOutline from 'mdi-material-ui/AccountOutline'
-import ViewGridPlusOutline from 'mdi-material-ui/ViewGridPlusOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Types
 import { ProfileTeamsType, ProfileTabCommonType } from 'src/@fake-db/types'
@@ -28,29 +18,20 @@ interface Props {
   overview: ProfileTabCommonType[]
 }
 
-const icons = {
-  Check,
-  React,
-  Github,
-  Translate,
-  FlagOutline,
-  StarOutline,
-  PhoneOutline,
-  EmailOutline,
-  MessageOutline,
-  AccountOutline,
-  ViewGridPlusOutline
-}
-
 const renderList = (arr: ProfileTabCommonType[]) => {
   if (arr && arr.length) {
     return arr.map((item, index) => {
-      // @ts-ignore
-      const Icon = icons[item.icon]
-
       return (
-        <Box key={index} sx={{ display: 'flex', alignItems: 'center', '&:not(:last-of-type)': { mb: 4 } }}>
-          <Icon sx={{ color: 'text.secondary' }} />
+        <Box
+          key={index}
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            '&:not(:last-of-type)': { mb: 4 },
+            '& svg': { color: 'text.secondary' }
+          }}
+        >
+          <Icon icon={item.icon} />
 
           <Typography sx={{ mx: 2, fontWeight: 600, color: 'text.secondary' }}>
             {`${item.property.charAt(0).toUpperCase() + item.property.slice(1)}:`}
@@ -69,12 +50,17 @@ const renderList = (arr: ProfileTabCommonType[]) => {
 const renderTeams = (arr: ProfileTeamsType[]) => {
   if (arr && arr.length) {
     return arr.map((item, index) => {
-      // @ts-ignore
-      const Icon = icons[item.icon]
-
       return (
-        <Box key={index} sx={{ display: 'flex', alignItems: 'center', '&:not(:last-of-type)': { mb: 4 } }}>
-          <Icon sx={{ color: `${item.color}.main` }} />
+        <Box
+          key={index}
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            '&:not(:last-of-type)': { mb: 4 },
+            '& svg': { color: `${item.color}.main` }
+          }}
+        >
+          <Icon icon='item.icon' />
 
           <Typography sx={{ mx: 2, fontWeight: 600, color: 'text.secondary' }}>
             {item.property.charAt(0).toUpperCase() + item.property.slice(1)}

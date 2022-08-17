@@ -18,8 +18,8 @@ import {
   ResponsiveContainer
 } from 'recharts'
 
-// ** Icons Imports
-import Circle from 'mdi-material-ui/Circle'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 const data = [
   {
@@ -76,8 +76,8 @@ const CustomTooltip = (data: TooltipProps<any, any>) => {
           data.payload &&
           data.payload.map((i: any) => {
             return (
-              <Box sx={{ display: 'flex', alignItems: 'center' }} key={i.dataKey}>
-                <Circle sx={{ color: i.fill, mr: 2.5, fontSize: '0.6rem' }} />
+              <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { color: i.fill, mr: 2.5 } }} key={i.dataKey}>
+                <Icon icon='mdi:circle' fontSize='0.6rem' />
                 <Typography variant='body2'>{`${i.dataKey} : ${i.payload[i.dataKey]}`}</Typography>
               </Box>
             )
@@ -107,12 +107,12 @@ const RechartsRadarChart = () => {
           </ResponsiveContainer>
         </Box>
         <Box sx={{ display: 'flex', mb: 4, justifyContent: 'center' }}>
-          <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#fde802' }} />
+          <Box sx={{ mr: 6, display: 'flex', alignItems: 'center', '& svg': { mr: 1.5, color: '#fde802' } }}>
+            <Icon icon='mdi:circle' fontSize='0.75rem' />
             <Typography variant='body2'>iPhone 11</Typography>
           </Box>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Circle sx={{ mr: 1.5, fontSize: '0.75rem', color: '#9b88fa' }} />
+          <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 1.5, color: '#9b88fa' } }}>
+            <Icon icon='mdi:circle' fontSize='0.75rem' />
             <Typography variant='body2'>Samsung s20</Typography>
           </Box>
         </Box>

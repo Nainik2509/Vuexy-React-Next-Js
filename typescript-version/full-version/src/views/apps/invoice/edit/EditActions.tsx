@@ -12,9 +12,8 @@ import InputLabel from '@mui/material/InputLabel'
 import Box, { BoxProps } from '@mui/material/Box'
 import CardContent from '@mui/material/CardContent'
 
-// ** Icons Imports
-import SendOutline from 'mdi-material-ui/SendOutline'
-import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 interface Props {
   id: string | undefined
@@ -37,8 +36,8 @@ const EditActions = ({ id, toggleSendInvoiceDrawer, toggleAddPaymentDrawer }: Pr
             fullWidth
             sx={{ mb: 3.5 }}
             variant='contained'
-            startIcon={<SendOutline />}
             onClick={toggleSendInvoiceDrawer}
+            startIcon={<Icon icon='mdi:send-outline' />}
           >
             Send Invoice
           </Button>
@@ -54,8 +53,8 @@ const EditActions = ({ id, toggleSendInvoiceDrawer, toggleAddPaymentDrawer }: Pr
             fullWidth
             color='success'
             variant='contained'
-            startIcon={<CurrencyUsd />}
             onClick={toggleAddPaymentDrawer}
+            startIcon={<Icon icon='mdi:currency-usd' />}
           >
             Add Payment
           </Button>

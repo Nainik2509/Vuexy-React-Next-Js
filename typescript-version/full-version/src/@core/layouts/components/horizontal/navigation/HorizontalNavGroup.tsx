@@ -20,10 +20,8 @@ import MuiListItem, { ListItemProps } from '@mui/material/ListItem'
 import clsx from 'clsx'
 import { usePopper } from 'react-popper'
 
-// ** Icons Imports
-import ChevronDown from 'mdi-material-ui/ChevronDown'
-import ChevronLeft from 'mdi-material-ui/ChevronLeft'
-import ChevronRight from 'mdi-material-ui/ChevronRight'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Theme Config Import
 import themeConfig from 'src/configs/themeConfig'
@@ -149,8 +147,8 @@ const HorizontalNavGroup = (props: Props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.asPath])
 
-  const IconTag = item.icon ? item.icon : navSubItemIcon
-  const ToggleIcon = direction === 'rtl' ? ChevronLeft : ChevronRight
+  const icon = item.icon ? item.icon : navSubItemIcon
+  const toggleIcon = direction === 'rtl' ? 'mdi:chevron-left' : 'mdi:chevron-right'
 
   const WrapperCondition = horizontalMenuToggle === 'click'
   const MainWrapper = WrapperCondition ? ClickAwayListener : 'div'
@@ -195,7 +193,7 @@ const HorizontalNavGroup = (props: Props) => {
                       borderRadius: 1,
                       '&.Mui-selected': {
                         backgroundColor: theme.palette.primary.main,
-                        '& .MuiTypography-root, & .MuiListItemIcon-root, & .MuiSvgIcon-root': {
+                        '& .MuiTypography-root, & .MuiListItemIcon-root, & svg': {
                           color: 'common.white'
                         }
                       }
@@ -222,17 +220,13 @@ const HorizontalNavGroup = (props: Props) => {
                   }}
                 >
                   <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
-                    <UserIcon
-                      icon={IconTag}
-                      componentType='horizontal-menu'
-                      iconProps={{ sx: IconTag === navSubItemIcon ? { fontSize: '1rem' } : { fontSize: '1.125rem' } }}
-                    />
+                    <UserIcon icon={icon} fontSize={icon === navSubItemIcon ? '1rem' : '1.125rem'} />
                   </ListItemIcon>
                   <Typography {...(menuTextTruncate && { noWrap: true })}>
                     <Translations text={item.title} />
                   </Typography>
                 </Box>
-                <Box sx={{ ml: 1.6, display: 'flex', alignItems: 'center' }}>
+                <Box sx={{ ml: 1.6, display: 'flex', alignItems: 'center', color: 'text.secondary' }}>
                   {item.badgeContent ? (
                     <Chip
                       label={item.badgeContent}
@@ -245,11 +239,7 @@ const HorizontalNavGroup = (props: Props) => {
                       }}
                     />
                   ) : null}
-                  {hasParent ? (
-                    <ToggleIcon sx={{ fontSize: '1.125rem', color: 'text.secondary' }} />
-                  ) : (
-                    <ChevronDown sx={{ fontSize: '1.125rem', color: 'text.secondary' }} />
-                  )}
+                  <Icon icon={hasParent ? toggleIcon : 'mdi:chevron-down'} fontSize='1.125rem' />
                 </Box>
               </Box>
             </ListItem>

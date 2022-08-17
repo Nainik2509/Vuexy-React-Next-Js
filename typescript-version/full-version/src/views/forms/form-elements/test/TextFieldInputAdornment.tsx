@@ -15,9 +15,8 @@ import OutlinedInput from '@mui/material/OutlinedInput'
 import FormHelperText from '@mui/material/FormHelperText'
 import InputAdornment from '@mui/material/InputAdornment'
 
-// ** Icons Imports
-import EyeOutline from 'mdi-material-ui/EyeOutline'
-import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 interface State {
   weight: string
@@ -82,7 +81,11 @@ const TextFieldInputAdornment = () => {
                     onMouseDown={handleMouseDownPassword}
                     aria-label='toggle password visibility'
                   >
-                    {values.showPassword ? <EyeOutline fontSize='small' /> : <EyeOffOutline fontSize='small' />}
+                    {values.showPassword ? (
+                      <Icon icon='mdi:eye-outline' fontSize={20} />
+                    ) : (
+                      <Icon icon='mdi:eye-off-outline' fontSize={20} />
+                    )}
                   </IconButton>
                 </InputAdornment>
               }
@@ -123,7 +126,11 @@ const TextFieldInputAdornment = () => {
                     onMouseDown={handleMouseDownPassword}
                     aria-label='toggle password visibility'
                   >
-                    {values.showPassword ? <EyeOutline fontSize='small' /> : <EyeOffOutline fontSize='small' />}
+                    {values.showPassword ? (
+                      <Icon icon='mdi:eye-outline' fontSize={20} />
+                    ) : (
+                      <Icon icon='mdi:eye-off-outline' fontSize={20} />
+                    )}
                   </IconButton>
                 </InputAdornment>
               }
@@ -164,7 +171,11 @@ const TextFieldInputAdornment = () => {
                     onMouseDown={handleMouseDownPassword}
                     aria-label='toggle password visibility'
                   >
-                    {values.showPassword ? <EyeOutline fontSize='small' /> : <EyeOffOutline fontSize='small' />}
+                    {values.showPassword ? (
+                      <Icon icon='mdi:eye-outline' fontSize={20} />
+                    ) : (
+                      <Icon icon='mdi:eye-off-outline' fontSize={20} />
+                    )}
                   </IconButton>
                 </InputAdornment>
               }

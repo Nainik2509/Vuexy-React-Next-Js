@@ -18,12 +18,8 @@ import InputLabel from '@mui/material/InputLabel'
 import ButtonGroup from '@mui/material/ButtonGroup'
 import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete'
 
-// ** Icons Imports
-import Minus from 'mdi-material-ui/Minus'
-import Close from 'mdi-material-ui/Close'
-import ChevronUp from 'mdi-material-ui/ChevronUp'
-import Attachment from 'mdi-material-ui/Attachment'
-import DeleteOutline from 'mdi-material-ui/DeleteOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Components
 import { EditorState } from 'draft-js'
@@ -155,7 +151,7 @@ const ComposePopup = (props: MailComposeType) => {
         size='small'
         key={item.value}
         label={item.name}
-        deleteIcon={<Close />}
+        deleteIcon={<Icon icon='mdi:close' />}
         {...(getTagProps({ index }) as {})}
         onDelete={() => handleMailDelete(item.value, state, setState)}
       />
@@ -235,10 +231,10 @@ const ComposePopup = (props: MailComposeType) => {
         <Typography sx={{ fontWeight: 500 }}>Compose Mail</Typography>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <IconButton sx={{ p: 1, mr: 2 }} onClick={handleMinimize}>
-            <Minus fontSize='small' />
+            <Icon icon='mdi:minus' fontSize={20} />
           </IconButton>
           <IconButton sx={{ p: 1 }} onClick={handlePopupClose}>
-            <Close fontSize='small' />
+            <Icon icon='mdi:close' fontSize={20} />
           </IconButton>
         </Box>
       </Box>
@@ -412,7 +408,7 @@ const ComposePopup = (props: MailComposeType) => {
               aria-expanded={sendBtnOpen ? 'true' : undefined}
               aria-controls={sendBtnOpen ? 'email-send-menu' : undefined}
             >
-              <ChevronUp sx={{ fontSize: '1.25rem' }} />
+              <Icon icon='mdi:chevron-up' fontSize='1.25rem' />
             </Button>
           </ButtonGroup>
           <Menu
@@ -434,13 +430,13 @@ const ComposePopup = (props: MailComposeType) => {
             <MenuItem onClick={handleSendMenuItemClick}>Save as Draft</MenuItem>
           </Menu>
           <IconButton size='small' sx={{ ml: 3, color: 'text.secondary' }}>
-            <Attachment sx={{ fontSize: '1.375rem' }} />
+            <Icon icon='mdi:attachment' fontSize='1.375rem' />
           </IconButton>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <OptionsMenu
             iconButtonProps={{ size: 'small' }}
-            iconProps={{ sx: { fontSize: '1.375rem' } }}
+            iconProps={{ fontSize: '1.375rem' }}
             options={['Print', 'Check spelling', 'Plain text mode']}
             menuProps={{
               anchorOrigin: { vertical: 'top', horizontal: 'right' },
@@ -448,7 +444,7 @@ const ComposePopup = (props: MailComposeType) => {
             }}
           />
           <IconButton size='small' onClick={handlePopupClose}>
-            <DeleteOutline sx={{ fontSize: '1.375rem' }} />
+            <Icon icon='mdi:delete-outline' fontSize='1.375rem' />
           </IconButton>
         </Box>
       </Box>

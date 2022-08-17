@@ -10,13 +10,8 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import ListSubheader from '@mui/material/ListSubheader'
 import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
 
-// ** Icons Imports
-import Wifi from 'mdi-material-ui/Wifi'
-import Airplane from 'mdi-material-ui/Airplane'
-import Broadcast from 'mdi-material-ui/Broadcast'
-import Bluetooth from 'mdi-material-ui/Bluetooth'
-import MapMarkerOutline from 'mdi-material-ui/MapMarkerOutline'
-import MinusCircleOutline from 'mdi-material-ui/MinusCircleOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 const ListWithSwitch = () => {
   // ** State
@@ -39,7 +34,7 @@ const ListWithSwitch = () => {
     <List subheader={<ListSubheader>Settings</ListSubheader>}>
       <ListItem>
         <ListItemIcon>
-          <Wifi fontSize='small' />
+          <Icon icon='mdi:wifi' fontSize={20} />
         </ListItemIcon>
         <ListItemText primary='Wi-Fi' />
         <ListItemSecondaryAction>
@@ -48,7 +43,7 @@ const ListWithSwitch = () => {
       </ListItem>
       <ListItem>
         <ListItemIcon>
-          <Bluetooth fontSize='small' />
+          <Icon icon='mdi:bluetooth' fontSize={20} />
         </ListItemIcon>
         <ListItemText primary='Bluetooth' />
         <ListItemSecondaryAction>
@@ -57,7 +52,7 @@ const ListWithSwitch = () => {
       </ListItem>
       <ListItem>
         <ListItemIcon>
-          <MapMarkerOutline fontSize='small' />
+          <Icon icon='mdi:map-marker-outline' fontSize={20} />
         </ListItemIcon>
         <ListItemText primary='Location' />
         <ListItemSecondaryAction>
@@ -66,7 +61,7 @@ const ListWithSwitch = () => {
       </ListItem>
       <ListItem>
         <ListItemIcon>
-          <Airplane fontSize='small' />
+          <Icon icon='mdi:airplane' fontSize={20} />
         </ListItemIcon>
         <ListItemText primary='Airplane Mode' />
         <ListItemSecondaryAction>
@@ -75,7 +70,7 @@ const ListWithSwitch = () => {
       </ListItem>
       <ListItem>
         <ListItemIcon>
-          <Broadcast fontSize='small' />
+          <Icon icon='mdi:broadcast' fontSize={20} />
         </ListItemIcon>
         <ListItemText primary='Hotspot' />
         <ListItemSecondaryAction>
@@ -84,7 +79,7 @@ const ListWithSwitch = () => {
       </ListItem>
       <ListItem>
         <ListItemIcon>
-          <MinusCircleOutline fontSize='small' />
+          <Icon icon='mdi:minus-circle-outline' fontSize={20} />
         </ListItemIcon>
         <ListItemText primary='Do not disturb' />
         <ListItemSecondaryAction>

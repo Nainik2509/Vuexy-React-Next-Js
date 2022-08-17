@@ -130,7 +130,7 @@ const ApexHeatmapChart = () => {
         title='Daily Sales States'
         action={
           <OptionsMenu
-            iconProps={{ fontSize: 'small' }}
+            iconProps={{ fontSize: 20 }}
             options={['Last 28 Days', 'Last Month', 'Last Year']}
             iconButtonProps={{ size: 'small', className: 'card-more-options', sx: { color: 'text.secondary' } }}
           />

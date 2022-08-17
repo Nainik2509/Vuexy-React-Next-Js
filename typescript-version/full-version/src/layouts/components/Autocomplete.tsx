@@ -1,5 +1,5 @@
 // ** React Imports
-import { useEffect, useCallback, useRef, useState, ChangeEvent, ReactNode } from 'react'
+import { useEffect, useCallback, useRef, useState, ChangeEvent } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
@@ -20,29 +20,6 @@ import ListItemButton from '@mui/material/ListItemButton'
 import InputAdornment from '@mui/material/InputAdornment'
 import MuiAutocomplete, { AutocompleteRenderInputParams } from '@mui/material/Autocomplete'
 
-// ** Icons Imports
-import Tab from 'mdi-material-ui/Tab'
-import Close from 'mdi-material-ui/Close'
-import Magnify from 'mdi-material-ui/Magnify'
-import Lastpass from 'mdi-material-ui/Lastpass'
-import CartOutline from 'mdi-material-ui/CartOutline'
-import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
-import AccountGroup from 'mdi-material-ui/AccountGroup'
-import CalendarBlank from 'mdi-material-ui/CalendarBlank'
-import CalendarMonth from 'mdi-material-ui/CalendarMonth'
-import AccountOutline from 'mdi-material-ui/AccountOutline'
-import MessageOutline from 'mdi-material-ui/MessageOutline'
-import ViewGridOutline from 'mdi-material-ui/ViewGridOutline'
-import FormatLetterCase from 'mdi-material-ui/FormatLetterCase'
-import GestureTapButton from 'mdi-material-ui/GestureTapButton'
-import AccountCogOutline from 'mdi-material-ui/AccountCogOutline'
-import FileRemoveOutline from 'mdi-material-ui/FileRemoveOutline'
-import FormatListCheckbox from 'mdi-material-ui/FormatListCheckbox'
-import FormatListNumbered from 'mdi-material-ui/FormatListNumbered'
-import ChartTimelineVariant from 'mdi-material-ui/ChartTimelineVariant'
-import SubdirectoryArrowLeft from 'mdi-material-ui/SubdirectoryArrowLeft'
-import CardBulletedSettingsOutline from 'mdi-material-ui/CardBulletedSettingsOutline'
-
 // ** Third Party Imports
 import axios from 'axios'
 
@@ -50,14 +27,11 @@ import axios from 'axios'
 import { AppBarSearchType } from 'src/@fake-db/types'
 import { Settings } from 'src/@core/context/settingsContext'
 
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
+
 // ** Configs Imports
 import themeConfig from 'src/configs/themeConfig'
-
-// ** Custom Components Imports
-import UserIcon from 'src/layouts/components/UserIcon'
-
-// ** API Icon Import with object
-import { autocompleteIconObj } from './autocompleteIconObj'
 
 interface Props {
   hidden: boolean
@@ -77,7 +51,7 @@ interface DefaultSuggestionsType {
   category: string
   suggestions: {
     link: string
-    icon: ReactNode
+    icon: string
     suggestion: string
   }[]
 }
@@ -87,24 +61,24 @@ const defaultSuggestionsData: DefaultSuggestionsType[] = [
     category: 'Popular Searches',
     suggestions: [
       {
+        icon: 'mdi:poll',
         suggestion: 'Analytics',
-        link: '/dashboards/analytics/',
-        icon: <ChartTimelineVariant fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/dashboards/analytics/'
       },
       {
+        icon: 'mdi:chart-bubble',
         suggestion: 'eCommerce',
-        link: '/dashboards/ecommerce/',
-        icon: <CartOutline fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/dashboards/ecommerce/'
       },
       {
+        icon: 'mdi:account-group',
         suggestion: 'User List',
-        link: '/apps/user/list/',
-        icon: <AccountGroup fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/apps/user/list/'
       },
       {
+        icon: 'mdi:message-outline',
         suggestion: 'Chat',
-        link: '/apps/chat/',
-        icon: <MessageOutline fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/apps/chat/'
       }
     ]
   },
@@ -112,24 +86,24 @@ const defaultSuggestionsData: DefaultSuggestionsType[] = [
     category: 'Apps & Pages',
     suggestions: [
       {
+        icon: 'mdi:calendar-blank',
         suggestion: 'Calendar',
-        link: '/apps/calendar/',
-        icon: <CalendarBlank fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/apps/calendar/'
       },
       {
+        icon: 'mdi:format-list-numbered',
         suggestion: 'Invoice List',
-        link: '/apps/invoice/list/',
-        icon: <FormatListNumbered fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/apps/invoice/list/'
       },
       {
+        icon: 'mdi:currency-usd',
         suggestion: 'Pricing',
-        link: '/pages/pricing/',
-        icon: <CurrencyUsd fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/pages/pricing/'
       },
       {
+        icon: 'mdi:account-cog-outline',
         suggestion: 'Account Settings',
-        link: '/pages/account-settings/account',
-        icon: <AccountCogOutline fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/pages/account-settings/account'
       }
     ]
   },
@@ -137,24 +111,24 @@ const defaultSuggestionsData: DefaultSuggestionsType[] = [
     category: 'User Interface',
     suggestions: [
       {
+        icon: 'mdi:format-text-variant-outline',
         suggestion: 'Typography',
-        link: '/ui/typography/',
-        icon: <FormatLetterCase fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/ui/typography/'
       },
       {
+        icon: 'mdi:tab',
         suggestion: 'Tabs',
-        link: '/components/tabs/',
-        icon: <Tab fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/components/tabs/'
       },
       {
+        icon: 'mdi:gesture-tap-button',
         suggestion: 'Buttons',
-        link: '/components/buttons/',
-        icon: <GestureTapButton fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/components/buttons/'
       },
       {
+        icon: 'mdi:card-bulleted-settings-outline',
         suggestion: 'Advanced Cards',
-        link: '/ui/cards/advanced/',
-        icon: <CardBulletedSettingsOutline fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/ui/cards/advanced/'
       }
     ]
   },
@@ -162,24 +136,24 @@ const defaultSuggestionsData: DefaultSuggestionsType[] = [
     category: 'Forms & Tables',
     suggestions: [
       {
+        icon: 'mdi:format-list-checkbox',
         suggestion: 'Select',
-        link: '/forms/form-elements/select/',
-        icon: <FormatListCheckbox fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/forms/form-elements/select/'
       },
       {
+        icon: 'mdi:lastpass',
         suggestion: 'Autocomplete',
-        link: '/forms/form-elements/autocomplete/',
-        icon: <Lastpass fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/forms/form-elements/autocomplete/'
       },
       {
+        icon: 'mdi:view-grid-outline',
         suggestion: 'Table',
-        link: '/tables/mui/',
-        icon: <ViewGridOutline fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/tables/mui/'
       },
       {
+        icon: 'mdi:calendar-range',
         suggestion: 'Date Pickers',
-        link: '/forms/form-elements/pickers/',
-        icon: <CalendarMonth fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+        link: '/forms/form-elements/pickers/'
       }
     ]
   }
@@ -273,7 +247,9 @@ const Dialog = styled(MuiDialog)({
 const NoResult = ({ value, setOpenDialog }: NoResultProps) => {
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'center' }}>
-      <FileRemoveOutline sx={{ mb: 2.5, fontSize: '5rem', color: 'text.primary' }} />
+      <Box sx={{ mb: 2.5, color: 'text.primary' }}>
+        <Icon icon='mdi:file-remove-outline' fontSize='5rem' />
+      </Box>
       <Typography variant='h6' sx={{ mb: 11.5, wordWrap: 'break-word' }}>
         No results for{' '}
         <Typography variant='h6' component='span' sx={{ wordWrap: 'break-word' }}>
@@ -296,7 +272,9 @@ const NoResult = ({ value, setOpenDialog }: NoResultProps) => {
                 '&:hover > *': { color: 'primary.main' }
               }}
             >
-              <CartOutline fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+              <Box sx={{ mr: 2.5, display: 'flex', color: 'text.primary' }}>
+                <Icon icon='mdi:cart-outline' fontSize={20} />
+              </Box>
               <Typography variant='body2' sx={{ color: 'text.primary' }}>
                 eCommerce Dashboard
               </Typography>
@@ -314,7 +292,9 @@ const NoResult = ({ value, setOpenDialog }: NoResultProps) => {
                 '&:hover > *': { color: 'primary.main' }
               }}
             >
-              <AccountOutline fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+              <Box sx={{ mr: 2.5, display: 'flex', color: 'text.primary' }}>
+                <Icon icon='mdi:account-outline' fontSize={20} />
+              </Box>
               <Typography variant='body2' sx={{ color: 'text.primary' }}>
                 User View
               </Typography>
@@ -332,7 +312,9 @@ const NoResult = ({ value, setOpenDialog }: NoResultProps) => {
                 '&:hover > *': { color: 'primary.main' }
               }}
             >
-              <AccountCogOutline fontSize='small' sx={{ mr: 2.5, color: 'text.primary' }} />
+              <Box sx={{ mr: 2.5, display: 'flex', color: 'text.primary' }}>
+                <Icon icon='mdi:account-cog-outline' fontSize={20} />
+              </Box>
               <Typography variant='body2' sx={{ color: 'text.primary' }}>
                 Account Settings
               </Typography>
@@ -362,11 +344,13 @@ const DefaultSuggestions = ({ setOpenDialog }: DefaultSuggestionsProps) => {
                     sx={{
                       display: 'flex',
                       alignItems: 'center',
+                      '& svg': { mr: 2.5 },
+                      color: 'text.primary',
                       textDecoration: 'none',
                       '&:hover > *': { color: 'primary.main' }
                     }}
                   >
-                    {suggestionItem.icon}
+                    <Icon icon={suggestionItem.icon} fontSize={20} />
                     <Typography variant='body2' sx={{ color: 'text.primary' }}>
                       {suggestionItem.suggestion}
                     </Typography>
@@ -473,7 +457,7 @@ const AutocompleteComponent = ({ hidden, settings }: Props) => {
         sx={{ display: 'flex', cursor: 'pointer', alignItems: 'center' }}
       >
         <IconButton color='inherit' sx={!hidden && layout === 'vertical' ? { mr: 1, ml: -2.75 } : {}}>
-          <Magnify />
+          <Icon icon='mdi:magnify' />
         </IconButton>
         {!hidden && layout === 'vertical' ? (
           <Typography sx={{ userSelect: 'none', color: 'text.disabled' }}>Search (Ctrl+/)</Typography>
@@ -529,7 +513,7 @@ const AutocompleteComponent = ({ hidden, settings }: Props) => {
                         sx: { p: `${theme.spacing(3.75, 6)} !important` },
                         startAdornment: (
                           <InputAdornment position='start' sx={{ color: 'text.primary' }}>
-                            <Magnify />
+                            <Icon icon='mdi:magnify' />
                           </InputAdornment>
                         ),
                         endAdornment: (
@@ -540,7 +524,7 @@ const AutocompleteComponent = ({ hidden, settings }: Props) => {
                           >
                             {!hidden ? <Typography sx={{ mr: 2.5, color: 'text.disabled' }}>[esc]</Typography> : null}
                             <IconButton size='small' sx={{ p: 1 }}>
-                              <Close fontSize='small' />
+                              <Icon icon='mdi:close' fontSize={20} />
                             </IconButton>
                           </InputAdornment>
                         )
@@ -549,26 +533,30 @@ const AutocompleteComponent = ({ hidden, settings }: Props) => {
                   )
                 }}
                 renderOption={(props, option: AppBarSearchType | unknown) => {
-                  const IconTag =
-                    autocompleteIconObj[(option as AppBarSearchType).icon as keyof typeof autocompleteIconObj] ||
-                    themeConfig.navSubItemIcon
-
                   return searchValue.length ? (
                     <ListItem
                       {...props}
                       key={(option as AppBarSearchType).title}
                       className={`suggestion ${props.className}`}
                       onClick={() => handleOptionClick(option as AppBarSearchType)}
-                      secondaryAction={
-                        <SubdirectoryArrowLeft fontSize='small' sx={{ cursor: 'pointer', color: 'text.disabled' }} />
-                      }
+                      secondaryAction={<Icon icon='mdi:subdirectory-arrow-left' fontSize={20} />}
+                      sx={{
+                        '& .MuiListItemSecondaryAction-root': {
+                          '& svg': {
+                            cursor: 'pointer',
+                            color: 'text.disabled'
+                          }
+                        }
+                      }}
                     >
-                      <ListItemButton sx={{ py: 2.5, px: ` ${theme.spacing(6)} !important` }}>
-                        <UserIcon
-                          icon={IconTag as any}
-                          componentType='search'
-                          iconProps={{ fontSize: 'small', sx: { mr: 2.5, color: 'text.primary' } }}
-                        />
+                      <ListItemButton
+                        sx={{
+                          py: 2.5,
+                          px: ` ${theme.spacing(6)} !important`,
+                          '& svg': { mr: 2.5, color: 'text.primary' }
+                        }}
+                      >
+                        <Icon fontSize={20} icon={(option as AppBarSearchType).icon || themeConfig.navSubItemIcon} />
                         <Typography variant='body2' sx={{ color: 'text.primary' }}>
                           {(option as AppBarSearchType).title}
                         </Typography>

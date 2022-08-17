@@ -23,11 +23,8 @@ import LinearProgress from '@mui/material/LinearProgress'
 import CustomChip from 'src/@core/components/mui/chip'
 import PlanDetails from 'src/@core/components/plan-details'
 
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
-import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
-import CheckCircleOutline from 'mdi-material-ui/CheckCircleOutline'
-import CloseCircleOutline from 'mdi-material-ui/CloseCircleOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Types
 import { PricingPlanType } from 'src/@core/components/plan-details/types'
@@ -131,8 +128,8 @@ const CurrentPlanCard = ({ data }: { data: PricingPlanType[] }) => {
       <Dialog fullWidth maxWidth='xs' open={open} onClose={handleClose}>
         <DialogContent>
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Box sx={{ maxWidth: '85%', textAlign: 'center' }}>
-              <AlertCircleOutline sx={{ mb: 4, fontSize: '5.5rem', color: 'warning.main' }} />
+            <Box sx={{ maxWidth: '85%', textAlign: 'center', '& svg': { mb: 4, color: 'warning.main' } }}>
+              <Icon icon='mdi:alert-circle-outline' fontSize='5.5rem' />
               <Typography>Are you sure you would like to cancel your subscription?</Typography>
             </Box>
           </Box>
@@ -148,12 +145,21 @@ const CurrentPlanCard = ({ data }: { data: PricingPlanType[] }) => {
       </Dialog>
       <Dialog fullWidth maxWidth='xs' open={secondDialogOpen} onClose={handleSecondDialogClose}>
         <DialogContent>
-          <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-            {userInput === 'yes' ? (
-              <CheckCircleOutline sx={{ mb: 14, fontSize: '5.5rem', color: 'success.main' }} />
-            ) : (
-              <CloseCircleOutline sx={{ mb: 14, fontSize: '5.5rem', color: 'error.main' }} />
-            )}
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              flexDirection: 'column',
+              '& svg': {
+                mb: 14,
+                color: userInput === 'yes' ? 'success.main' : 'error.main'
+              }
+            }}
+          >
+            <Icon
+              fontSize='5.5rem'
+              icon={userInput === 'yes' ? 'mdi:check-circle-outline' : 'mdi:close-circle-outline'}
+            />
             <Typography variant='h4' sx={{ mb: 8 }}>
               {userInput === 'yes' ? 'Unsubscribed!' : 'Cancelled'}
             </Typography>
@@ -182,7 +188,7 @@ const CurrentPlanCard = ({ data }: { data: PricingPlanType[] }) => {
             onClick={() => setOpenPricingDialog(false)}
             sx={{ position: 'absolute', right: '1rem', top: '1rem' }}
           >
-            <Close />
+            <Icon icon='mdi:close' />
           </IconButton>
           <Box sx={{ mb: 4, textAlign: 'center' }}>
             <Typography variant='h5' sx={{ mb: 3 }}>

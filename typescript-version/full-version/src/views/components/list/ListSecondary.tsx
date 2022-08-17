@@ -7,8 +7,8 @@ import ListItemText from '@mui/material/ListItemText'
 import ListItemAvatar from '@mui/material/ListItemAvatar'
 import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
 
-// ** Icons Imports
-import Plus from 'mdi-material-ui/Plus'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 const ListSecondary = () => {
   return (
@@ -20,7 +20,7 @@ const ListSecondary = () => {
         <ListItemText primary='Caroline Black' secondary='Sweet dessert brownie.' />
         <ListItemSecondaryAction>
           <IconButton edge='end'>
-            <Plus />
+            <Icon icon='mdi:plus' />
           </IconButton>
         </ListItemSecondaryAction>
       </ListItem>
@@ -31,7 +31,7 @@ const ListSecondary = () => {
         <ListItemText primary='Alfred Copeland' secondary='Pudding pie tiramisu.' />
         <ListItemSecondaryAction>
           <IconButton edge='end'>
-            <Plus />
+            <Icon icon='mdi:plus' />
           </IconButton>
         </ListItemSecondaryAction>
       </ListItem>
@@ -42,7 +42,7 @@ const ListSecondary = () => {
         <ListItemText primary='Celia Schneider' secondary='Muffin pie chupa chups.' />
         <ListItemSecondaryAction>
           <IconButton edge='end'>
-            <Plus />
+            <Icon icon='mdi:plus' />
           </IconButton>
         </ListItemSecondaryAction>
       </ListItem>

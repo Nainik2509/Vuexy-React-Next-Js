@@ -13,10 +13,8 @@ import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 
-// ** Icons Imports
-import EmailOutline from 'mdi-material-ui/EmailOutline'
-import AccountPlusOutline from 'mdi-material-ui/AccountPlusOutline'
-import AccountCheckOutline from 'mdi-material-ui/AccountCheckOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Types
 import { ConnectionsTabType } from 'src/@fake-db/types'
@@ -97,17 +95,16 @@ const Connections = ({ data }: { data: ConnectionsTabType[] }) => {
                         sx={{ mr: 4 }}
                         variant={item.isConnected ? 'contained' : 'outlined'}
                         startIcon={
-                          item.isConnected ? (
-                            <AccountCheckOutline fontSize='small' />
-                          ) : (
-                            <AccountPlusOutline fontSize='small' />
-                          )
+                          <Icon
+                            fontSize={20}
+                            icon={item.isConnected ? 'mdi:account-check-outline' : 'mdi:account-plus-outline'}
+                          />
                         }
                       >
                         {item.isConnected ? 'Connected' : 'Connect'}
                       </Button>
                       <Button variant='outlined' color='secondary' sx={{ px: 0, minWidth: 38 }}>
-                        <EmailOutline />
+                        <Icon icon='mdi:email-outline' />
                       </Button>
                     </Box>
                   </Box>

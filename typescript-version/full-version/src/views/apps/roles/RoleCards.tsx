@@ -31,9 +31,8 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 // ** Third Party Imports
 import { useForm, Controller } from 'react-hook-form'
 
-// ** Icons Imports
-import ContentCopy from 'mdi-material-ui/ContentCopy'
-import InformationOutline from 'mdi-material-ui/InformationOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 interface CardDataType {
   title: string
@@ -151,7 +150,7 @@ const RolesCards = () => {
                 Edit Role
               </Typography>
               <IconButton size='small' sx={{ color: 'text.primary' }}>
-                <ContentCopy fontSize='small' />
+                <Icon icon='mdi:content-copy' fontSize={20} />
               </IconButton>
             </Box>
           </CardContent>
@@ -240,12 +239,13 @@ const RolesCards = () => {
                           fontSize: '0.875rem',
                           whiteSpace: 'nowrap',
                           alignItems: 'center',
-                          textTransform: 'capitalize'
+                          textTransform: 'capitalize',
+                          '& svg': { ml: 1, cursor: 'pointer' }
                         }}
                       >
                         Administrator Access
                         <Tooltip placement='top' title='Allows a full access to the system'>
-                          <InformationOutline sx={{ ml: 1, fontSize: '1rem', cursor: 'pointer' }} />
+                          <Icon icon='mdi:information-outline' fontSize='1rem' />
                         </Tooltip>
                       </Box>
                     </TableCell>

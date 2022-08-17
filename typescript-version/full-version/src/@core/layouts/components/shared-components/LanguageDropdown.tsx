@@ -1,8 +1,8 @@
 // ** React Imports
 import { useEffect } from 'react'
 
-// ** Icons Imports
-import Translate from 'mdi-material-ui/Translate'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Import
 import { useTranslation } from 'react-i18next'
@@ -42,7 +42,7 @@ const LanguageDropdown = ({ settings, saveSettings }: Props) => {
 
   return (
     <OptionsMenu
-      icon={<Translate />}
+      icon={<Icon icon='mdi:translate' />}
       menuProps={{ sx: { '& .MuiMenu-paper': { mt: 4, minWidth: 130 } } }}
       iconButtonProps={{ color: 'inherit', sx: { ...(layout === 'vertical' ? { mr: 0.75 } : { mx: 0.75 }) } }}
       options={[

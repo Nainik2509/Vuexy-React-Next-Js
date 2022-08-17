@@ -189,8 +189,7 @@ Here is the code to change the icons for collapsing the vertical menu:
 <code-block title="TSX" active>
 ```tsx{14-19}
 import { ReactNode } from 'react'
-import ArrowLeftBoldCircleOutline from 'mdi-material-ui/ArrowLeftBoldCircleOutline'
-import ArrowRightBoldCircleOutline from 'mdi-material-ui/ArrowRightBoldCircleOutline'
+import Icon from 'src/@core/components/icon'
 import Layout from 'src/@core/layouts/Layout'
 
 interface Props {
@@ -203,8 +202,8 @@ const UserLayout = ({ children }: Props) => {
       {...} // other props
       verticalLayoutProps={{
         navMenu: {
-          lockedIcon: <ArrowLeftBoldCircleOutline />
-          unlockedIcon: <ArrowRightBoldCircleOutline />
+          lockedIcon: <Icon icon='mdi:arrow-left-bold-circle-outline' />
+          unlockedIcon: <Icon icon='mdi:arrow-right-bold-circle-outline' />
         }
       }}
     >
@@ -219,8 +218,7 @@ export default UserLayout
 
 <code-block title="JSX">
 ```jsx{9-14}
-import ArrowLeftBoldCircleOutline from 'mdi-material-ui/ArrowLeftBoldCircleOutline'
-import ArrowRightBoldCircleOutline from 'mdi-material-ui/ArrowRightBoldCircleOutline'
+import Icon from 'src/@core/components/icon'
 import Layout from 'src/@core/layouts/Layout'
 
 const UserLayout = ({ children }) => {
@@ -229,8 +227,8 @@ const UserLayout = ({ children }) => {
       {...} // other props
       verticalLayoutProps={{
         navMenu: {
-          lockedIcon: <ArrowLeftBoldCircleOutline />
-          unlockedIcon: <ArrowRightBoldCircleOutline />
+          lockedIcon: <Icon icon='mdi:arrow-left-bold-circle-outline' />
+          unlockedIcon: <Icon icon='mdi:arrow-right-bold-circle-outline' />
         }
       }}
     >
@@ -634,8 +632,8 @@ Here is the code to change the appBar:
 
 import Box from '@mui/material/Box'
 import IconButton from '@mui/material/IconButton'
-import MenuIcon from 'mdi-material-ui/Menu'
 import { Settings } from 'src/@core/context/settingsContext'
+import Icon from 'src/@core/components/icon'
 import ModeToggler from 'src/@core/layouts/components/shared-components/ModeToggler'
 import UserDropdown from 'src/@core/layouts/components/shared-components/UserDropdown'
 
@@ -654,7 +652,7 @@ const AppBarContent = (props: Props) => {
       <Box className='actions-left' sx={{ mr: 2, display: 'flex', alignItems: 'center' }}>
         {hidden ? (
           <IconButton color='inherit' sx={{ ml: -2.75 }} onClick={toggleNavVisibility}>
-            <MenuIcon />
+            <Icon icon='mdi:menu' />
           </IconButton>
         ) : null}
         <ModeToggler settings={settings} saveSettings={saveSettings} />
@@ -674,7 +672,7 @@ export default AppBarContent
 
 import Box from '@mui/material/Box'
 import IconButton from '@mui/material/IconButton'
-import MenuIcon from 'mdi-material-ui/Menu'
+import Icon from 'src/@core/components/icon'
 import ModeToggler from 'src/@core/layouts/components/shared-components/ModeToggler'
 import UserDropdown from 'src/@core/layouts/components/shared-components/UserDropdown'
 
@@ -686,7 +684,7 @@ const AppBarContent = props => {
       <Box className='actions-left' sx={{ mr: 2, display: 'flex', alignItems: 'center' }}>
         {hidden ? (
           <IconButton color='inherit' sx={{ ml: -2.75 }} onClick={toggleNavVisibility}>
-            <MenuIcon />
+            <Icon icon='mdi:menu' />
           </IconButton>
         ) : null}
         <ModeToggler settings={settings} saveSettings={saveSettings} />

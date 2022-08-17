@@ -6,31 +6,36 @@
  */
 
 // ** MUI Imports
-import { PaletteMode, Direction } from '@mui/material'
-
-// ** Icon Import
-import CircleOutline from 'mdi-material-ui/CircleOutline'
+import { Direction } from '@mui/material'
 
 // ** Types
-import { Skin, AppBar, Footer, ContentWidth, VerticalNavToggle, HorizontalMenuToggle } from 'src/@core/layouts/types'
+import {
+  Skin,
+  Mode,
+  AppBar,
+  Footer,
+  ContentWidth,
+  VerticalNavToggle,
+  HorizontalMenuToggle
+} from 'src/@core/layouts/types'
 
 type ThemeConfig = {
   skin: Skin
+  mode: Mode
   appBar: AppBar
   footer: Footer
   navHidden: boolean
-  navSubItemIcon: any
   direction: Direction
   templateName: string
   navCollapsed: boolean
   routingLoader: boolean
   disableRipple: boolean
   navigationSize: number
+  navSubItemIcon: string
   menuTextTruncate: boolean
   contentWidth: ContentWidth
   disableCustomizer: boolean
   responsiveFontSizes: boolean
-  mode: PaletteMode & 'semi-dark'
   collapsedNavigationSize: number
   horizontalMenuAnimation: boolean
   layout: 'vertical' | 'horizontal'
@@ -45,8 +50,7 @@ const themeConfig: ThemeConfig = {
   // ** Layout Configs
   templateName: 'Master' /* App Name */,
   layout: 'vertical' /* vertical | horizontal */,
-  mode: 'light' as PaletteMode &
-    'semi-dark' /* light | dark | semi-dark /*! Note: semi-dark value will only work for Vertical Layout */,
+  mode: 'light' as Mode /* light | dark | semi-dark /*! Note: semi-dark value will only work for Vertical Layout */,
   direction: 'ltr' /* ltr | rtl */,
   skin: 'default' /* default | bordered */,
   contentWidth: 'boxed' /* full | boxed */,
@@ -58,7 +62,7 @@ const themeConfig: ThemeConfig = {
   // ** Navigation (Menu) Configs
   navHidden: false /* true | false */,
   menuTextTruncate: true /* true | false */,
-  navSubItemIcon: CircleOutline /* Icon Element */,
+  navSubItemIcon: 'mdi:circle-outline' /* Icon */,
   verticalNavToggleType: 'accordion' /* accordion | collapse /*! Note: This is for Vertical navigation menu only */,
   navCollapsed: false /* true | false /*! Note: This is for Vertical navigation menu only */,
   navigationSize: 260 /* Number in PX(Pixels) /*! Note: This is for Vertical navigation menu only */,

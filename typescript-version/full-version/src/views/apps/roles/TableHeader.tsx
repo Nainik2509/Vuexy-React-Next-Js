@@ -7,8 +7,8 @@ import InputLabel from '@mui/material/InputLabel'
 import FormControl from '@mui/material/FormControl'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 
-// ** Icons Imports
-import ExportVariant from 'mdi-material-ui/ExportVariant'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 interface TableHeaderProps {
   plan: string
@@ -23,7 +23,7 @@ const TableHeader = (props: TableHeaderProps) => {
 
   return (
     <Box sx={{ p: 5, pb: 3, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
-      <Button sx={{ mr: 4, mb: 2 }} color='secondary' variant='outlined' startIcon={<ExportVariant />}>
+      <Button sx={{ mr: 4, mb: 2 }} color='secondary' variant='outlined' startIcon={<Icon icon='mdi:export-variant' />}>
         Export
       </Button>
       <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>

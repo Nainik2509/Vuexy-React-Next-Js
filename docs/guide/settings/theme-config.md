@@ -28,7 +28,7 @@ const themeConfig: ThemeConfig = {
   routingLoader: true,
   navHidden: false,
   menuTextTruncate: true,
-  navSubItemIcon: CircleOutline,
+  navSubItemIcon: 'mdi:circle-outline',
   verticalNavToggleType: 'accordion',
   navCollapsed: false,
   navigationSize: 260,
@@ -59,7 +59,7 @@ const themeConfig = {
   routingLoader: true,
   navHidden: false,
   menuTextTruncate: true,
-  navSubItemIcon: CircleOutline,
+  navSubItemIcon: 'mdi:circle-outline',
   verticalNavToggleType: 'accordion',
   navCollapsed: false,
   navigationSize: 260,
@@ -122,7 +122,7 @@ Following is the table of all the properties and their possible values that are 
 | routingLoader                        | `true`, `false`                    | Loader on top of the app on route change                                    |
 | navHidden                            | `true`, `false`                    | If `true`, the navigation menu is hidden                                    |
 | menuTextTruncate                     | `true`, `false`                    | If `true`, text truncate in the navigation menu is enabled                  |
-| navSubItemIcon                       | `ReactNode`                        | Change icon element for the sub menus in the navigation menu                |
+| navSubItemIcon                       | `string`                           | Change icon for the sub menus in the navigation menu                        |
 | verticalNavToggleType                | `accordion`, `collapse`            | Set behavior of menu group in the vertical navigation menu                  |
 | navCollapsed                         | `true`, `false`                    | If `true`, the vertical navigation menu is collapsed                        |
 | navigationSize                       | `number`                           | Width of navigation menu when menu is not collapsed                         |

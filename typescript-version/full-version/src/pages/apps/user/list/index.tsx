@@ -1,5 +1,5 @@
 // ** React Imports
-import { useState, useEffect, MouseEvent, useCallback, ReactElement } from 'react'
+import { useState, useEffect, MouseEvent, useCallback } from 'react'
 
 // ** Next Import
 import Link from 'next/link'
@@ -22,18 +22,8 @@ import FormControl from '@mui/material/FormControl'
 import CardContent from '@mui/material/CardContent'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 
-// ** Icons Imports
-import Poll from 'mdi-material-ui/Poll'
-import Laptop from 'mdi-material-ui/Laptop'
-import ChartDonut from 'mdi-material-ui/ChartDonut'
-import CogOutline from 'mdi-material-ui/CogOutline'
-import EyeOutline from 'mdi-material-ui/EyeOutline'
-import TrendingUp from 'mdi-material-ui/TrendingUp'
-import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
-import DotsVertical from 'mdi-material-ui/DotsVertical'
-import PencilOutline from 'mdi-material-ui/PencilOutline'
-import DeleteOutline from 'mdi-material-ui/DeleteOutline'
-import AccountOutline from 'mdi-material-ui/AccountOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Store Imports
 import { useDispatch, useSelector } from 'react-redux'
@@ -64,7 +54,7 @@ import TableHeader from 'src/views/apps/user/list/TableHeader'
 import AddUserDrawer from 'src/views/apps/user/list/AddUserDrawer'
 
 interface UserRoleType {
-  [key: string]: ReactElement
+  [key: string]: { icon: string; color: string }
 }
 
 interface UserStatusType {
@@ -73,11 +63,11 @@ interface UserStatusType {
 
 // ** Vars
 const userRoleObj: UserRoleType = {
-  admin: <Laptop fontSize='small' sx={{ mr: 3, color: 'error.main' }} />,
-  author: <CogOutline fontSize='small' sx={{ mr: 3, color: 'warning.main' }} />,
-  editor: <PencilOutline fontSize='small' sx={{ mr: 3, color: 'info.main' }} />,
-  maintainer: <ChartDonut fontSize='small' sx={{ mr: 3, color: 'success.main' }} />,
-  subscriber: <AccountOutline fontSize='small' sx={{ mr: 3, color: 'primary.main' }} />
+  admin: { icon: 'mdi:laptop', color: 'error.main' },
+  author: { icon: 'mdi:cog-outline', color: 'warning.main' },
+  editor: { icon: 'mdi:pencil-outline', color: 'info.main' },
+  maintainer: { icon: 'mdi:chart-donut', color: 'success.main' },
+  subscriber: { icon: 'mdi:account-outline', color: 'primary.main' }
 }
 
 interface CellType {
@@ -158,7 +148,7 @@ const RowOptions = ({ id }: { id: number | string }) => {
   return (
     <>
       <IconButton size='small' onClick={handleRowOptionsClick}>
-        <DotsVertical />
+        <Icon icon='mdi:dots-vertical' />
       </IconButton>
       <Menu
         keepMounted
@@ -177,18 +167,18 @@ const RowOptions = ({ id }: { id: number | string }) => {
       >
         <MenuItem sx={{ p: 0 }}>
           <Link href={`/apps/user/view/${id}`} passHref>
-            <MenuItemLink>
-              <EyeOutline fontSize='small' sx={{ mr: 2 }} />
+            <MenuItemLink sx={{ '& svg': { mr: 2 } }}>
+              <Icon icon='mdi:eye-outline' fontSize={20} />
               View
             </MenuItemLink>
           </Link>
         </MenuItem>
-        <MenuItem onClick={handleRowOptionsClose}>
-          <PencilOutline fontSize='small' sx={{ mr: 2 }} />
+        <MenuItem onClick={handleRowOptionsClose} sx={{ '& svg': { mr: 2 } }}>
+          <Icon icon='mdi:pencil-outline' fontSize={20} />
           Edit
         </MenuItem>
-        <MenuItem onClick={handleDelete}>
-          <DeleteOutline fontSize='small' sx={{ mr: 2 }} />
+        <MenuItem onClick={handleDelete} sx={{ '& svg': { mr: 2 } }}>
+          <Icon icon='mdi:delete-outline' fontSize={20} />
           Delete
         </MenuItem>
       </Menu>
@@ -249,8 +239,8 @@ const columns = [
     headerName: 'Role',
     renderCell: ({ row }: CellType) => {
       return (
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          {userRoleObj[row.role]}
+        <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 3, color: userRoleObj[row.role].color } }}>
+          <Icon icon={userRoleObj[row.role].icon} fontSize={20} />
           <Typography noWrap sx={{ color: 'text.secondary', textTransform: 'capitalize' }}>
             {row.role}
           </Typography>
@@ -297,13 +287,6 @@ const columns = [
     renderCell: ({ row }: CellType) => <RowOptions id={row.id} />
   }
 ]
-
-const icons = {
-  Poll,
-  TrendingUp,
-  CurrencyUsd,
-  AccountOutline
-}
 
 const UserList = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // ** State
@@ -353,11 +336,9 @@ const UserList = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>) =
         {apiData && (
           <Grid container spacing={6}>
             {apiData.statsHorizontal.map((item: CardStatsHorizontalProps, index: number) => {
-              const IconTag = icons[item.icon as keyof typeof icons]
-
               return (
                 <Grid item xs={12} md={3} sm={6} key={index}>
-                  <CardStatisticsHorizontal {...item} icon={<IconTag />} />
+                  <CardStatisticsHorizontal {...item} icon={<Icon icon={item.icon as string} />} />
                 </Grid>
               )
             })}

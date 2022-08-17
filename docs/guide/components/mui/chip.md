@@ -17,7 +17,6 @@ There is only one chip skin `light`.
 Here is an example of how to use the skin:
 
 ```tsx
-// ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
 
 <CustomChip label='Primary' skin='light' color='primary' />
@@ -39,7 +38,6 @@ There is only one chip skin `light`.
 Here is an example of how to use the skin:
 
 ```tsx
-// ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
 
 <CustomChip rounded label='Primary' skin='light' color='primary' />

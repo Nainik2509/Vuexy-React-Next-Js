@@ -11,8 +11,8 @@ import ListItemButton from '@mui/material/ListItemButton'
 import ListItemAvatar from '@mui/material/ListItemAvatar'
 import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
 
-// ** Icons Imports
-import MessageTextOutline from 'mdi-material-ui/MessageTextOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 const ListItemSelected = () => {
   // ** State
@@ -32,7 +32,7 @@ const ListItemSelected = () => {
           <ListItemText primary='Caroline Black' />
           <ListItemSecondaryAction>
             <IconButton edge='end'>
-              <MessageTextOutline fontSize='small' />
+              <Icon icon='mdi:message-text-outline' fontSize={20} />
             </IconButton>
           </ListItemSecondaryAction>
         </ListItemButton>
@@ -45,7 +45,7 @@ const ListItemSelected = () => {
           <ListItemText primary='Alfred Copeland' />
           <ListItemSecondaryAction>
             <IconButton edge='end'>
-              <MessageTextOutline fontSize='small' />
+              <Icon icon='mdi:message-text-outline' fontSize={20} />
             </IconButton>
           </ListItemSecondaryAction>
         </ListItemButton>
@@ -58,7 +58,7 @@ const ListItemSelected = () => {
           <ListItemText primary='Celia Schneider' />
           <ListItemSecondaryAction>
             <IconButton edge='end'>
-              <MessageTextOutline fontSize='small' />
+              <Icon icon='mdi:message-text-outline' fontSize={20} />
             </IconButton>
           </ListItemSecondaryAction>
         </ListItemButton>

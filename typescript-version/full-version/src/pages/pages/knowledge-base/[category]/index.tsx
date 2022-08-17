@@ -14,19 +14,8 @@ import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import CardContent, { CardContentProps } from '@mui/material/CardContent'
 
-/**
- * ! Icons Imports:
- * ! You need to import all the icons which come from the API or from your server and then add these icons in 'icons' variable.
- * ! If you need all the icons from the library, use "import * as Icon from 'mdi-material-ui'"
- * */
-import Link from 'mdi-material-ui/Link'
-import Cellphone from 'mdi-material-ui/Cellphone'
-import CogOutline from 'mdi-material-ui/CogOutline'
-import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
-import CircleOutline from 'mdi-material-ui/CircleOutline'
-import LockOpenOutline from 'mdi-material-ui/LockOpenOutline'
-import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
-import InformationOutline from 'mdi-material-ui/InformationOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
 import axios from 'axios'
@@ -54,17 +43,11 @@ const StyledCardContent = styled(CardContent)<CardContentProps>(({ theme }) => (
   display: 'flex',
   alignItems: 'center',
   padding: theme.spacing(3.75, 5.5),
-  backgroundColor: `rgba(${theme.palette.customColors.main}, 0.08)`
+  backgroundColor: `rgba(${theme.palette.customColors.main}, 0.08)`,
+  '& svg': {
+    marginRight: theme.spacing(3)
+  }
 }))
-
-const icons = {
-  Link,
-  Cellphone,
-  CogOutline,
-  CurrencyUsd,
-  LockOpenOutline,
-  InformationOutline
-}
 
 const KnowledgeBaseCategory = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // ** States
@@ -93,8 +76,8 @@ const KnowledgeBaseCategory = ({ apiData }: InferGetStaticPropsType<typeof getSt
       return (
         <Anchor passHref key={index} href={`/pages/knowledge-base/${category}/${obj.slug}`}>
           <StyledLink>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <CircleOutline sx={{ mr: 2.25, fontSize: '0.875rem', color: 'text.secondary' }} />
+            <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 2.25, color: 'text.secondary' } }}>
+              <Icon icon='mdi:circle-outline' fontSize='0.875rem' />
               <Typography variant='body2'>{obj.question}</Typography>
             </Box>
           </StyledLink>
@@ -107,18 +90,21 @@ const KnowledgeBaseCategory = ({ apiData }: InferGetStaticPropsType<typeof getSt
     if (data !== null && Array.isArray(data)) {
       return data.map((item: KnowledgeBaseCategoryData, index: number) => {
         if (item) {
-          const IconTag = icons[item.icon as keyof typeof icons]
-
           return (
             <Grid item xs={12} sm={6} md={4} key={index}>
               <Card>
-                <StyledCardContent>
-                  <IconTag
-                    sx={{ mr: 3, fontSize: '1.5rem', ...(item.iconColor ? { color: `${item.iconColor}.main` } : {}) }}
-                  />
+                <StyledCardContent sx={{ '& svg': { ...(item.iconColor ? { color: `${item.iconColor}.main` } : {}) } }}>
+                  <Icon icon={item.icon} />
                   <Typography variant='h6'>{`${item.title} (${item.questions.length})`}</Typography>
                 </StyledCardContent>
-                <CardContent sx={{ p: theme => `${theme.spacing(6.75, 5.5, 7.5)} !important` }}>
+                <CardContent
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'flex-start',
+                    p: theme => `${theme.spacing(6.75, 5.5, 7.5)} !important`
+                  }}
+                >
                   {renderQuestions(item)}
                 </CardContent>
               </Card>
@@ -131,8 +117,8 @@ const KnowledgeBaseCategory = ({ apiData }: InferGetStaticPropsType<typeof getSt
     } else {
       return (
         <Grid item xs={12}>
-          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <InformationOutline sx={{ mr: 2 }} />
+          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', '& svg': { mr: 2 } }}>
+            <Icon icon='mdi:information-outline' />
             <Typography variant='h6'>Data is not an array!</Typography>
           </Box>
         </Grid>
@@ -141,8 +127,8 @@ const KnowledgeBaseCategory = ({ apiData }: InferGetStaticPropsType<typeof getSt
   }
 
   const renderNoResult = (
-    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <AlertCircleOutline sx={{ mr: 2 }} />
+    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', '& svg': { mr: 2 } }}>
+      <Icon icon='mdi:alert-circle-outline' />
       <Typography variant='h6'>No Results Found!</Typography>
     </Box>
   )

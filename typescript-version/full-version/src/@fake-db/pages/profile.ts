@@ -25,31 +25,31 @@ const data: DataType = {
     location: 'Vatican City',
     joiningDate: 'April 2021',
     designation: 'UX Designer',
-    designationIcon: 'FountainPenTip',
     profileImg: '/images/avatars/1.png',
+    designationIcon: 'mdi:fountain-pen-tip',
     coverImg: '/images/pages/profile-banner.png'
   },
   profile: {
     about: [
-      { property: 'Full Name', value: 'John Doe', icon: 'AccountOutline' },
-      { property: 'Status', value: 'active', icon: 'Check' },
-      { property: 'Role', value: 'Developer', icon: 'StarOutline' },
-      { property: 'Country', value: 'USA', icon: 'FlagOutline' },
-      { property: 'Language', value: 'English', icon: 'Translate' }
+      { property: 'Full Name', value: 'John Doe', icon: 'mdi:account-outline' },
+      { property: 'Status', value: 'active', icon: 'mdi:check' },
+      { property: 'Role', value: 'Developer', icon: 'mdi:star-outline' },
+      { property: 'Country', value: 'USA', icon: 'mdi:flag-outline' },
+      { property: 'Language', value: 'English', icon: 'mdi:translate' }
     ],
     contacts: [
-      { property: 'Contact', value: '(123) 456-7890', icon: 'PhoneOutline' },
-      { property: 'Skype', value: 'john.doe', icon: 'MessageOutline' },
-      { property: 'Email', value: 'john.doe@example.com', icon: 'EmailOutline' }
+      { property: 'Contact', value: '(123) 456-7890', icon: 'mdi:phone-outline' },
+      { property: 'Skype', value: 'john.doe', icon: 'mdi:message-outline' },
+      { property: 'Email', value: 'john.doe@example.com', icon: 'mdi:email-outline' }
     ],
     teams: [
-      { property: 'Backend Developer', value: '(126 Members)', icon: 'Github', color: 'primary' },
-      { property: 'React Developer', value: '(98 Members)', icon: 'React', color: 'info' }
+      { property: 'Backend Developer', value: '(126 Members)', icon: 'mdi:github', color: 'primary' },
+      { property: 'React Developer', value: '(98 Members)', icon: 'mdi:react', color: 'info' }
     ],
     overview: [
-      { property: 'Task Compiled', value: '13.5k', icon: 'Check' },
-      { property: 'Connections', value: '897', icon: 'AccountOutline' },
-      { property: 'Projects Compiled', value: '146', icon: 'ViewGridPlusOutline' }
+      { property: 'Task Compiled', value: '13.5k', icon: 'mdi:check' },
+      { property: 'Connections', value: '897', icon: 'mdi:account-outline' },
+      { property: 'Projects Compiled', value: '146', icon: 'mdi:view-grid-plus-outline' }
     ],
     connections: [
       {

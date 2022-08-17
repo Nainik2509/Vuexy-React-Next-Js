@@ -16,9 +16,8 @@ import OutlinedInput from '@mui/material/OutlinedInput'
 import InputAdornment from '@mui/material/InputAdornment'
 import FormHelperText from '@mui/material/FormHelperText'
 
-// ** Icons Imports
-import EyeOutline from 'mdi-material-ui/EyeOutline'
-import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
 import * as yup from 'yup'
@@ -126,7 +125,11 @@ const ChangePasswordCard = () => {
                             onClick={handleClickShowCurrentPassword}
                             onMouseDown={handleMouseDownCurrentPassword}
                           >
-                            {values.showCurrentPassword ? <EyeOutline /> : <EyeOffOutline />}
+                            {values.showCurrentPassword ? (
+                              <Icon icon='mdi:eye-outline' />
+                            ) : (
+                              <Icon icon='mdi:eye-off-outline' />
+                            )}
                           </IconButton>
                         </InputAdornment>
                       }
@@ -164,7 +167,11 @@ const ChangePasswordCard = () => {
                             onClick={handleClickShowNewPassword}
                             onMouseDown={handleMouseDownNewPassword}
                           >
-                            {values.showNewPassword ? <EyeOutline /> : <EyeOffOutline />}
+                            {values.showNewPassword ? (
+                              <Icon icon='mdi:eye-outline' />
+                            ) : (
+                              <Icon icon='mdi:eye-off-outline' />
+                            )}
                           </IconButton>
                         </InputAdornment>
                       }
@@ -200,7 +207,11 @@ const ChangePasswordCard = () => {
                             onClick={handleClickShowConfirmNewPassword}
                             onMouseDown={handleMouseDownConfirmNewPassword}
                           >
-                            {values.showConfirmNewPassword ? <EyeOutline /> : <EyeOffOutline />}
+                            {values.showConfirmNewPassword ? (
+                              <Icon icon='mdi:eye-outline' />
+                            ) : (
+                              <Icon icon='mdi:eye-off-outline' />
+                            )}
                           </IconButton>
                         </InputAdornment>
                       }

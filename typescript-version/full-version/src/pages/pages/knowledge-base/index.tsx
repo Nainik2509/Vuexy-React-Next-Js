@@ -14,8 +14,7 @@ import Box, { BoxProps } from '@mui/material/Box'
 import CardContent from '@mui/material/CardContent'
 
 // ** Icon Imports
-import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
-import InformationOutline from 'mdi-material-ui/InformationOutline'
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
 import axios from 'axios'
@@ -87,8 +86,8 @@ const KnowledgeBase = ({ apiData }: InferGetStaticPropsType<typeof getStaticProp
     } else {
       return (
         <Grid item xs={12}>
-          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <InformationOutline sx={{ mr: 2 }} />
+          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', '& svg': { mr: 2 } }}>
+            <Icon icon='mdi:information-outline' />
             <Typography variant='h6'>Data is not an array!</Typography>
           </Box>
         </Grid>
@@ -97,8 +96,8 @@ const KnowledgeBase = ({ apiData }: InferGetStaticPropsType<typeof getStaticProp
   }
 
   const renderNoResult = (
-    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <AlertCircleOutline sx={{ mr: 2 }} />
+    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', '& svg': { mr: 2 } }}>
+      <Icon icon='mdi:alert-circle-outline' />
       <Typography variant='h6'>No Results Found!</Typography>
     </Box>
   )

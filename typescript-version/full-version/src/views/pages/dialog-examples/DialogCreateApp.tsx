@@ -17,15 +17,8 @@ import CardContent from '@mui/material/CardContent'
 import Fade, { FadeProps } from '@mui/material/Fade'
 import DialogContent from '@mui/material/DialogContent'
 
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
-import Check from 'mdi-material-ui/Check'
-import ArrowLeft from 'mdi-material-ui/ArrowLeft'
-import ArrowRight from 'mdi-material-ui/ArrowRight'
-import CubeOutline from 'mdi-material-ui/CubeOutline'
-import DatabaseOutline from 'mdi-material-ui/DatabaseOutline'
-import CreditCardOutline from 'mdi-material-ui/CreditCardOutline'
-import FileDocumentOutline from 'mdi-material-ui/FileDocumentOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Hook Imports
 import { useSettings } from 'src/@core/hooks/useSettings'
@@ -91,8 +84,8 @@ const DialogCreateApp = () => {
     setActiveTab('detailsTab')
   }
 
-  const NextArrow = direction === 'ltr' ? ArrowRight : ArrowLeft
-  const PreviousArrow = direction === 'ltr' ? ArrowLeft : ArrowRight
+  const nextArrow = direction === 'ltr' ? 'mdi:arrow-right' : 'mdi:arrow-left'
+  const previousArrow = direction === 'ltr' ? 'mdi:arrow-left' : 'mdi:arrow-right'
 
   const renderTabFooter = () => {
     const prevTab = tabsArr[tabsArr.indexOf(activeTab) - 1]
@@ -103,15 +96,15 @@ const DialogCreateApp = () => {
         <Button
           variant='outlined'
           color='secondary'
-          startIcon={<PreviousArrow />}
           disabled={activeTab === 'detailsTab'}
           onClick={() => setActiveTab(prevTab)}
+          startIcon={<Icon icon={previousArrow} />}
         >
           Previous
         </Button>
         <Button
           variant='contained'
-          endIcon={activeTab === 'submitTab' ? <Check /> : <NextArrow />}
+          endIcon={activeTab === 'submitTab' ? <Icon icon='mdi:check' /> : <Icon icon={nextArrow} />}
           color={activeTab === 'submitTab' ? 'success' : 'primary'}
           onClick={() => {
             if (activeTab !== 'submitTab') {
@@ -129,8 +122,8 @@ const DialogCreateApp = () => {
 
   return (
     <Card>
-      <CardContent sx={{ textAlign: 'center' }}>
-        <CubeOutline sx={{ mb: 2, fontSize: '2rem' }} />
+      <CardContent sx={{ textAlign: 'center', '& svg': { mb: 2 } }}>
+        <Icon icon='mdi:cube-outline' fontSize='2rem' />
         <Typography variant='h6' sx={{ mb: 4 }}>
           Create App
         </Typography>
@@ -160,7 +153,7 @@ const DialogCreateApp = () => {
           }}
         >
           <IconButton size='small' onClick={handleClose} sx={{ position: 'absolute', right: '1rem', top: '1rem' }}>
-            <Close />
+            <Icon icon='mdi:close' />
           </IconButton>
           <Box sx={{ mb: 8, textAlign: 'center' }}>
             <Typography variant='h5' sx={{ mb: 3 }}>
@@ -194,7 +187,7 @@ const DialogCreateApp = () => {
                       title='Details'
                       subtitle='Enter Details'
                       active={activeTab === 'detailsTab'}
-                      icon={<FileDocumentOutline />}
+                      icon={<Icon icon='mdi:file-document-outline' />}
                     />
                   }
                 />
@@ -204,7 +197,7 @@ const DialogCreateApp = () => {
                   label={
                     <TabLabel
                       title='Frameworks'
-                      icon={<CubeOutline />}
+                      icon={<Icon icon='mdi:cube-outline' />}
                       subtitle='Select Framework'
                       active={activeTab === 'frameworkTab'}
                     />
@@ -218,7 +211,7 @@ const DialogCreateApp = () => {
                       title='Database'
                       active={activeTab === 'DatabaseTab'}
                       subtitle='Select Database'
-                      icon={<DatabaseOutline />}
+                      icon={<Icon icon='mdi:database-outline' />}
                     />
                   }
                 />
@@ -230,7 +223,7 @@ const DialogCreateApp = () => {
                       title='Billing'
                       active={activeTab === 'paymentTab'}
                       subtitle='Payment details'
-                      icon={<CreditCardOutline />}
+                      icon={<Icon icon='mdi:credit-card-outline' />}
                     />
                   }
                 />
@@ -238,7 +231,12 @@ const DialogCreateApp = () => {
                   disableRipple
                   value='submitTab'
                   label={
-                    <TabLabel title='Submit' subtitle='Submit' active={activeTab === 'submitTab'} icon={<Check />} />
+                    <TabLabel
+                      title='Submit'
+                      subtitle='Submit'
+                      icon={<Icon icon='mdi:check' />}
+                      active={activeTab === 'submitTab'}
+                    />
                   }
                 />
               </TabList>

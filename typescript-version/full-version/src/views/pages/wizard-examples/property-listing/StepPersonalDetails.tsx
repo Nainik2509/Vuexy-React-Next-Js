@@ -2,18 +2,15 @@
 import { useState, MouseEvent } from 'react'
 
 // ** MUI Imports
+import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import TextField from '@mui/material/TextField'
 import IconButton from '@mui/material/IconButton'
 import FormControl from '@mui/material/FormControl'
 import InputAdornment from '@mui/material/InputAdornment'
 
-// ** Icons Imports
-import EyeOutline from 'mdi-material-ui/EyeOutline'
-import CrownOutline from 'mdi-material-ui/CrownOutline'
-import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
-import BriefcaseOutline from 'mdi-material-ui/BriefcaseOutline'
-import OfficeBuildingOutline from 'mdi-material-ui/OfficeBuildingOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Imports
 import CustomRadioIcons from 'src/@core/components/custom-radio/icons'
@@ -24,20 +21,32 @@ const data = [
     title: 'I am the Builder',
     gridProps: { sm: 4, xs: 12 },
     content: 'List property as Builder, list your project and get highest reach.',
-    icon: <OfficeBuildingOutline sx={{ mb: 2, fontSize: '2rem', color: 'text.secondary' }} />
+    icon: (
+      <Box component='span' sx={{ mb: 2, color: 'text.secondary' }}>
+        <Icon icon='mdi:office-building-outline' fontSize='2rem' />
+      </Box>
+    )
   },
   {
     value: 'owner',
     title: 'I am the Owner',
     gridProps: { sm: 4, xs: 12 },
-    icon: <CrownOutline sx={{ mb: 2, fontSize: '2rem', color: 'text.secondary' }} />,
+    icon: (
+      <Box component='span' sx={{ mb: 2, color: 'text.secondary' }}>
+        <Icon icon='mdi:crown-outline' fontSize='2rem' />
+      </Box>
+    ),
     content: 'Submit property as an Individual. Lease, Rent or Sell at the best price.'
   },
   {
     value: 'broker',
     title: 'I am the Broker',
     gridProps: { sm: 4, xs: 12 },
-    icon: <BriefcaseOutline sx={{ mb: 2, fontSize: '2rem', color: 'text.secondary' }} />,
+    icon: (
+      <Box component='span' sx={{ mb: 2, color: 'text.secondary' }}>
+        <Icon icon='mdi:briefcase-outline' fontSize='2rem' />
+      </Box>
+    ),
     content: 'Earn highest commission by listing your clients properties at the best price.'
   }
 ]
@@ -87,7 +96,7 @@ const StepPersonalDetails = () => {
                       aria-label='toggle password visibility'
                       onMouseDown={handleMousePasswordView}
                     >
-                      {showValues ? <EyeOutline /> : <EyeOffOutline />}
+                      {showValues ? <Icon icon='mdi:eye-outline' /> : <Icon icon='mdi:eye-off-outline' />}
                     </IconButton>
                   </InputAdornment>
                 )

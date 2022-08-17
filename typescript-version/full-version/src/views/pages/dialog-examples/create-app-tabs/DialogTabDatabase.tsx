@@ -7,10 +7,8 @@ import Radio from '@mui/material/Radio'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 
-// ** Icons Imports
-import Aws from 'mdi-material-ui/Aws'
-import Firebase from 'mdi-material-ui/Firebase'
-import Database from 'mdi-material-ui/DatabaseOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Custom Avatar Component
 import CustomAvatar from 'src/@core/components/mui/avatar'
@@ -35,7 +33,7 @@ const TabDatabase = () => {
         >
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <CustomAvatar skin='light' color='error' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
-              <Firebase />
+              <Icon icon='mdi:firebase' />
             </CustomAvatar>
             <Box>
               <Typography>Firebase</Typography>
@@ -50,7 +48,7 @@ const TabDatabase = () => {
         >
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <CustomAvatar skin='light' color='warning' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
-              <Aws />
+              <Icon icon='mdi:aws' />
             </CustomAvatar>
             <Box>
               <Typography>AWS</Typography>
@@ -65,7 +63,7 @@ const TabDatabase = () => {
         >
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <CustomAvatar skin='light' color='info' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
-              <Database />
+              <Icon icon='mdi:database-outline' />
             </CustomAvatar>
             <Box>
               <Typography>MySQL</Typography>

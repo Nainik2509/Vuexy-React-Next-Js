@@ -6,11 +6,8 @@ import Box from '@mui/material/Box'
 import Radio from '@mui/material/Radio'
 import Typography from '@mui/material/Typography'
 
-// ** Icons Imports
-import React from 'mdi-material-ui/React'
-import Vuejs from 'mdi-material-ui/Vuejs'
-import Angular from 'mdi-material-ui/Angular'
-import Laravel from 'mdi-material-ui/Laravel'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Custom Avatar Component
 import CustomAvatar from 'src/@core/components/mui/avatar'
@@ -34,7 +31,7 @@ const TabFramework = () => {
         >
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <CustomAvatar skin='light' color='info' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
-              <React />
+              <Icon icon='mdi:react' />
             </CustomAvatar>
             <Box>
               <Typography>React Native</Typography>
@@ -50,7 +47,7 @@ const TabFramework = () => {
         >
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <CustomAvatar skin='light' color='error' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
-              <Angular />
+              <Icon icon='mdi:angular' />
             </CustomAvatar>
             <Box>
               <Typography>Angular</Typography>
@@ -65,7 +62,7 @@ const TabFramework = () => {
         >
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <CustomAvatar skin='light' color='success' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
-              <Vuejs />
+              <Icon icon='mdi:vuejs' />
             </CustomAvatar>
             <Box>
               <Typography>Vue</Typography>
@@ -80,7 +77,7 @@ const TabFramework = () => {
         >
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <CustomAvatar skin='light' color='warning' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
-              <Laravel />
+              <Icon icon='mdi:laravel' />
             </CustomAvatar>
             <Box>
               <Typography>Laravel</Typography>

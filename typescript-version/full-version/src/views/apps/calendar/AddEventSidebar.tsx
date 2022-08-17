@@ -20,9 +20,8 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import DatePicker from 'react-datepicker'
 import { useForm, Controller } from 'react-hook-form'
 
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
-import DeleteOutline from 'mdi-material-ui/DeleteOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Styled Components
 import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
@@ -227,11 +226,11 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
               onClick={handleDeleteEvent}
               sx={{ color: 'text.primary', mr: store.selectedEvent !== null ? 1 : 0 }}
             >
-              <DeleteOutline fontSize='small' />
+              <Icon icon='mdi:delete-outline' fontSize={20} />
             </IconButton>
           ) : null}
           <IconButton size='small' onClick={handleSidebarClose} sx={{ color: 'text.primary' }}>
-            <Close fontSize='small' />
+            <Icon icon='mdi:close' fontSize={20} />
           </IconButton>
         </Box>
       </Box>

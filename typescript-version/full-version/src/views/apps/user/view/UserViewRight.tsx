@@ -9,12 +9,8 @@ import TabContext from '@mui/lab/TabContext'
 import { styled } from '@mui/material/styles'
 import MuiTab, { TabProps } from '@mui/material/Tab'
 
-// ** Icons Imports
-import LockOutline from 'mdi-material-ui/LockOutline'
-import BellOutline from 'mdi-material-ui/BellOutline'
-import LinkVariant from 'mdi-material-ui/LinkVariant'
-import AccountOutline from 'mdi-material-ui/AccountOutline'
-import BookmarkOutline from 'mdi-material-ui/BookmarkOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Demo Components Imports
 import UserViewBilling from 'src/views/apps/user/view/UserViewBilling'
@@ -57,11 +53,11 @@ const UserViewRight = ({ invoiceData }: Props) => {
         aria-label='forced scroll tabs example'
         sx={{ borderBottom: theme => `1px solid ${theme.palette.divider}` }}
       >
-        <Tab value='overview' label='Overview' icon={<AccountOutline />} />
-        <Tab value='security' label='Security' icon={<LockOutline />} />
-        <Tab value='billing-plan' label='Billing & Plan' icon={<BookmarkOutline />} />
-        <Tab value='notification' label='Notification' icon={<BellOutline />} />
-        <Tab value='connection' label='Connection' icon={<LinkVariant />} />
+        <Tab value='overview' label='Overview' icon={<Icon icon='mdi:account-outline' />} />
+        <Tab value='security' label='Security' icon={<Icon icon='mdi:lock-outline' />} />
+        <Tab value='billing-plan' label='Billing & Plan' icon={<Icon icon='mdi:bookmark-outline' />} />
+        <Tab value='notification' label='Notification' icon={<Icon icon='mdi:bell-outline' />} />
+        <Tab value='connection' label='Connection' icon={<Icon icon='mdi:link-variant' />} />
       </TabList>
       <Box sx={{ mt: 6 }}>
         <TabPanel sx={{ p: 0 }} value='overview'>

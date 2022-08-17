@@ -9,10 +9,8 @@ import TableCell from '@mui/material/TableCell'
 import Typography from '@mui/material/Typography'
 import TableContainer from '@mui/material/TableContainer'
 
-// ** Icons Imports
-import StarCircle from 'mdi-material-ui/StarCircle'
-import CheckCircle from 'mdi-material-ui/CheckCircle'
-import CloseCircle from 'mdi-material-ui/CloseCircle'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
@@ -27,11 +25,7 @@ interface Props {
 const PricingTable = ({ data }: Props) => {
   const renderTableCell = (row: PricingTableRowType) => {
     if (typeof row.pro === 'boolean') {
-      if (row.pro) {
-        return <CheckCircle fontSize='small' sx={{ verticalAlign: 'middle', color: 'primary.main' }} />
-      } else {
-        return <CloseCircle fontSize='small' sx={{ verticalAlign: 'middle', color: 'text.disabled' }} />
-      }
+      return <Icon fontSize={20} icon={row.pro ? 'mdi:check-circle' : 'mdi:close-circle'} />
     } else {
       return (
         <CustomChip
@@ -80,13 +74,14 @@ const PricingTable = ({ data }: Props) => {
                         display: 'flex',
                         position: 'relative',
                         alignItems: 'center',
-                        justifyContent: index === 0 ? 'left' : 'center'
+                        justifyContent: index === 0 ? 'left' : 'center',
+                        '& svg': { mt: -2, color: 'primary.main' }
                       }}
                     >
                       <Typography sx={{ mr: 1, fontSize: '.75rem', fontWeight: 600, letterSpacing: '.17px' }}>
                         {head.title}
                       </Typography>
-                      {head.isPro ? <StarCircle sx={{ mt: -2, color: 'primary.main' }} /> : null}
+                      {head.isPro ? <Icon icon='mdi:star-circle' /> : null}
                     </Box>
                     <Typography sx={{ fontSize: '.75rem', letterSpacing: '.4px', textTransform: 'capitalize' }}>
                       {head.subtitle}
@@ -99,20 +94,25 @@ const PricingTable = ({ data }: Props) => {
               {data.pricingTable.rows.map((row, index) => (
                 <TableRow key={index}>
                   <TableCell>{row.feature}</TableCell>
-                  <TableCell align='center'>
-                    {row.starter ? (
-                      <CheckCircle fontSize='small' sx={{ verticalAlign: 'middle', color: 'primary.main' }} />
-                    ) : (
-                      <CloseCircle fontSize='small' sx={{ verticalAlign: 'middle', color: 'text.disabled' }} />
-                    )}
+                  <TableCell
+                    align='center'
+                    sx={{ '& svg': { verticalAlign: 'middle', color: row.starter ? 'primary.main' : 'text.disabled' } }}
+                  >
+                    <Icon fontSize={20} icon={row.starter ? 'mdi:check-circle' : 'mdi:close-circle'} />
                   </TableCell>
-                  <TableCell align='center'>{renderTableCell(row)}</TableCell>
-                  <TableCell align='center'>
-                    {row.starter ? (
-                      <CheckCircle fontSize='small' sx={{ verticalAlign: 'middle', color: 'primary.main' }} />
-                    ) : (
-                      <CloseCircle fontSize='small' sx={{ verticalAlign: 'middle', color: 'text.disabled' }} />
-                    )}
+                  <TableCell
+                    align='center'
+                    sx={{ '& svg': { verticalAlign: 'middle', color: row.pro ? 'primary.main' : 'text.disabled' } }}
+                  >
+                    {renderTableCell(row)}
+                  </TableCell>
+                  <TableCell
+                    align='center'
+                    sx={{
+                      '& svg': { verticalAlign: 'middle', color: row.enterprise ? 'primary.main' : 'text.disabled' }
+                    }}
+                  >
+                    <Icon fontSize={20} icon={row.enterprise ? 'mdi:check-circle' : 'mdi:close-circle'} />
                   </TableCell>
                 </TableRow>
               ))}

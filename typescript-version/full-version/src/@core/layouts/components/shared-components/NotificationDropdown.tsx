@@ -12,8 +12,8 @@ import MuiMenu, { MenuProps } from '@mui/material/Menu'
 import MuiMenuItem, { MenuItemProps } from '@mui/material/MenuItem'
 import Typography, { TypographyProps } from '@mui/material/Typography'
 
-// ** Icons Imports
-import BellOutline from 'mdi-material-ui/BellOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Components
 import PerfectScrollbarComponent from 'react-perfect-scrollbar'
@@ -164,7 +164,7 @@ const NotificationDropdown = (props: Props) => {
     <Fragment>
       <IconButton color='inherit' aria-haspopup='true' onClick={handleDropdownOpen} aria-controls='customized-menu'>
         <Badge color='error' badgeContent={notifications.length}>
-          <BellOutline />
+          <Icon icon='mdi:bell-outline' />
         </Badge>
       </IconButton>
       <Menu

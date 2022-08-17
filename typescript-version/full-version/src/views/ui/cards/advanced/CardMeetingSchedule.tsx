@@ -6,8 +6,8 @@ import Typography from '@mui/material/Typography'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
-// ** Icons Imports
-import CalendarBlankOutline from 'mdi-material-ui/CalendarBlankOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Types
 import { ThemeColor } from 'src/@core/layouts/types'
@@ -106,15 +106,14 @@ const CardMeetingSchedule = () => {
                   <Typography variant='body2' sx={{ mb: 0.5, fontWeight: 600, color: 'text.primary' }}>
                     {item.title}
                   </Typography>
-                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <CalendarBlankOutline
-                      sx={{
-                        mr: 1.5,
-                        fontSize: '1rem',
-                        color: 'text.secondary',
-                        verticalAlign: 'middle'
-                      }}
-                    />
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      '& svg': { mr: 1.5, color: 'text.secondary', verticalAlign: 'middle' }
+                    }}
+                  >
+                    <Icon fontSize='1rem' icon='mdi:calendar-blank-outline' />
                     <Typography variant='caption'>{item.subtitle}</Typography>
                   </Box>
                 </Box>

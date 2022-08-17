@@ -16,9 +16,8 @@ import Box, { BoxProps } from '@mui/material/Box'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import MuiDrawer, { DrawerProps } from '@mui/material/Drawer'
 
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
-import CogOutline from 'mdi-material-ui/CogOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Type Import
 import { Settings } from 'src/@core/context/settingsContext'
@@ -35,6 +34,7 @@ const Toggler = styled(Box)<BoxProps>(({ theme }) => ({
   padding: theme.spacing(2),
   zIndex: theme.zIndex.modal,
   transform: 'translateY(-50%)',
+  color: theme.palette.common.white,
   backgroundColor: theme.palette.primary.main,
   borderTopLeftRadius: theme.shape.borderRadius,
   borderBottomLeftRadius: theme.shape.borderRadius
@@ -99,7 +99,7 @@ const Customizer = () => {
   return (
     <div className='customizer'>
       <Toggler className='customizer-toggler' onClick={() => setOpen(true)}>
-        <CogOutline sx={{ height: 20, width: 20, color: 'common.white' }} />
+        <Icon icon='mdi:cog-outline' fontSize={20} />
       </Toggler>
       <Drawer open={open} hideBackdrop anchor='right' variant='persistent'>
         <Box
@@ -124,7 +124,7 @@ const Customizer = () => {
               transform: 'translateY(-50%)'
             }}
           >
-            <Close fontSize='small' />
+            <Icon icon='mdi:close' fontSize={20} />
           </IconButton>
         </Box>
         <PerfectScrollbar options={{ wheelPropagation: false }}>

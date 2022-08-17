@@ -8,9 +8,8 @@ import MuiAccordion, { AccordionProps } from '@mui/material/Accordion'
 import MuiAccordionSummary, { AccordionSummaryProps } from '@mui/material/AccordionSummary'
 import MuiAccordionDetails, { AccordionDetailsProps } from '@mui/material/AccordionDetails'
 
-// ** Icons Imports
-import Plus from 'mdi-material-ui/Plus'
-import Minus from 'mdi-material-ui/Minus'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // Styled component for Accordion component
 const Accordion = styled(MuiAccordion)<AccordionProps>(({ theme }) => ({
@@ -69,7 +68,7 @@ const AccordionCustomized = () => {
     setExpanded(isExpanded ? panel : false)
   }
 
-  const expandIcon = (value: string) => (expanded === value ? <Minus /> : <Plus />)
+  const expandIcon = (value: string) => (expanded === value ? <Icon icon='mdi:minus' /> : <Icon icon='mdi:plus' />)
 
   return (
     <div>

@@ -8,8 +8,8 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 
-// ** Icons Imports
-import Menu from 'mdi-material-ui/Menu'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Types
 import { CalendarType } from 'src/types/apps/calendarTypes'
@@ -117,7 +117,7 @@ const Calendar = (props: CalendarType) => {
 
       customButtons: {
         sidebarToggle: {
-          text: <Menu />,
+          text: <Icon icon='mdi:menu' />,
           click() {
             handleLeftSidebarToggle()
           }

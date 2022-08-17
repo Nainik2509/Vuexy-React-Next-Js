@@ -8,8 +8,8 @@ import TextField from '@mui/material/TextField'
 import FormControl from '@mui/material/FormControl'
 import FormHelperText from '@mui/material/FormHelperText'
 
-// ** Icons Imports
-import Plus from 'mdi-material-ui/Plus'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
 import { Droppable } from 'react-beautiful-dnd'
@@ -134,7 +134,7 @@ const KanbanBoard = (props: KanbanBoardProps) => {
             />
           </Box>
           <OptionsMenu
-            iconProps={{ fontSize: 'small' }}
+            iconProps={{ fontSize: 20 }}
             iconButtonProps={{ size: 'small' }}
             menuProps={{ PaperProps: { style: { minWidth: '9rem' } } }}
             options={[
@@ -169,7 +169,7 @@ const KanbanBoard = (props: KanbanBoardProps) => {
           </Droppable>
 
           {showAddTask === null || (showAddTask !== null && showAddTask !== board.id) ? (
-            <Button startIcon={<Plus fontSize='small' />} onClick={handleOpenAddTask}>
+            <Button startIcon={<Icon icon='mdi:plus' fontSize={20} />} onClick={handleOpenAddTask}>
               Add New Task
             </Button>
           ) : (

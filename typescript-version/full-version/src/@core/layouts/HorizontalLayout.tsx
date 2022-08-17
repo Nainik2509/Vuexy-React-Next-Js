@@ -5,8 +5,8 @@ import AppBar from '@mui/material/AppBar'
 import { styled } from '@mui/material/styles'
 import MuiToolbar, { ToolbarProps } from '@mui/material/Toolbar'
 
-// ** Icons Imports
-import ArrowUp from 'mdi-material-ui/ArrowUp'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Theme Config Import
 import themeConfig from 'src/configs/themeConfig'
@@ -176,7 +176,7 @@ const HorizontalLayout = (props: LayoutProps) => {
       ) : (
         <ScrollToTop className='mui-fixed'>
           <Fab color='primary' size='small' aria-label='scroll back to top'>
-            <ArrowUp />
+            <Icon icon='mdi:arrow-up' />
           </Fab>
         </ScrollToTop>
       )}

@@ -42,7 +42,7 @@ const CustomInputs = () => {
       </Grid>
       <Grid item xs={12} lg={6}>
         <CardSnippet
-          title='Custom Radio Icons'
+          title='Custom Radios with Icons'
           code={{
             tsx: source.CustomRadioIconsTSXCode,
             jsx: source.CustomRadioIconsJSXCode
@@ -53,7 +53,7 @@ const CustomInputs = () => {
       </Grid>
       <Grid item xs={12} lg={6}>
         <CardSnippet
-          title='Custom Checkbox Icons'
+          title='Custom Checkboxes with Icons'
           code={{
             tsx: source.CustomCheckboxIconsTSXCode,
             jsx: source.CustomCheckboxIconsJSXCode
@@ -64,7 +64,7 @@ const CustomInputs = () => {
       </Grid>
       <Grid item xs={12} lg={6}>
         <CardSnippet
-          title='Custom Radio Images'
+          title='Custom Radios with Images'
           code={{
             tsx: source.CustomRadioImgTSXCode,
             jsx: source.CustomRadioImgJSXCode
@@ -75,7 +75,7 @@ const CustomInputs = () => {
       </Grid>
       <Grid item xs={12} lg={6}>
         <CardSnippet
-          title='Custom Checkbox Images'
+          title='Custom Checkboxes with Images'
           code={{
             tsx: source.CustomCheckboxImgTSXCode,
             jsx: source.CustomCheckboxImgJSXCode

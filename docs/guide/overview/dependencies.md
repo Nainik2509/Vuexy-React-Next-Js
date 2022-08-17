@@ -15,6 +15,7 @@ The following dependencies are common and required to run the template. Do not t
 "@emotion/react"
 "@emotion/server"
 "@emotion/styled"
+"@iconify/react"
 "@mui/lab"
 "@mui/material"
 "clsx"
@@ -24,7 +25,6 @@ The following dependencies are common and required to run the template. Do not t
 "@types/react" // Typescript version only
 "react-dom"
 "react-perfect-scrollbar"
-"mdi-material-ui"
 "@types/node" // Typescript version only
 "prettier"
 "typescript" // Typescript version only

@@ -11,8 +11,8 @@ import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 import MuiStepper, { StepperProps } from '@mui/material/Stepper'
 
-// ** Icons Imports
-import ChevronRight from 'mdi-material-ui/ChevronRight'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Step Components
 import StepCart from 'src/views/pages/wizard-examples/checkout/StepCart'
@@ -85,10 +85,10 @@ const Stepper = styled(MuiStepper)<StepperProps>(({ theme }) => ({
     '& .step-title': {
       fontSize: '1rem'
     },
-    '&.Mui-completed + .MuiSvgIcon-root': {
+    '&.Mui-completed + svg': {
       color: theme.palette.primary.main
     },
-    '& + .MuiSvgIcon-root': {
+    '& + svg': {
       display: 'none',
       color: theme.palette.text.secondary
     },
@@ -116,7 +116,7 @@ const Stepper = styled(MuiStepper)<StepperProps>(({ theme }) => ({
 
     [theme.breakpoints.up('md')]: {
       paddingBottom: 0,
-      '& + .MuiSvgIcon-root': {
+      '& + svg': {
         display: 'block'
       },
       '& .MuiStepLabel-label': {
@@ -158,7 +158,7 @@ const CheckoutWizard = () => {
     <Card>
       <CardContent sx={{ py: 5.375 }}>
         <StepperWrapper>
-          <Stepper activeStep={activeStep} connector={<ChevronRight />}>
+          <Stepper activeStep={activeStep} connector={<Icon icon='mdi:chevron-right' />}>
             {steps.map((step, index) => {
               return (
                 <Step key={index} onClick={() => setActiveStep(index)} sx={{}}>

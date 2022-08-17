@@ -1,11 +1,10 @@
 // ** MUI Imports
-import { styled } from '@mui/material/styles'
 import MuiBox, { BoxProps } from '@mui/material/Box'
 import { StepIconProps } from '@mui/material/StepIcon'
+import { styled, useTheme } from '@mui/material/styles'
 
-// ** Icons Imports
-import Alert from 'mdi-material-ui/Alert'
-import CheckCircle from 'mdi-material-ui/CheckCircle'
+// ** Custom Icon Import
+import Icon from 'src/@core/components/icon'
 
 // ** Hooks Imports
 import useBgColor, { UseBgColorType } from 'src/@core/hooks/useBgColor'
@@ -23,13 +22,14 @@ const StepperCustomDot = (props: StepIconProps) => {
   // ** Props
   const { active, completed, error } = props
 
-  // ** Hook
+  // ** Hooks
+  const theme = useTheme()
   const bgColors: UseBgColorType = useBgColor()
 
   if (error) {
-    return <Alert sx={{ width: 20, height: 20, color: 'error.main', transform: 'scale(1.2)' }} />
+    return <Icon icon='mdi:alert' fontSize={20} color={theme.palette.error.main} transform='scale(1.2)' />
   } else if (completed) {
-    return <CheckCircle sx={{ width: 20, height: 20, color: 'primary.main', transform: 'scale(1.2)' }} />
+    return <Icon icon='mdi:check-circle' fontSize={20} color={theme.palette.primary.main} transform='scale(1.2)' />
   } else {
     return (
       <Box

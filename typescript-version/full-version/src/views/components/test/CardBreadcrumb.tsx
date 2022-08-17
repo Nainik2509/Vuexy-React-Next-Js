@@ -8,11 +8,8 @@ import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 import Breadcrumbs from '@mui/material/Breadcrumbs'
 
-// ** Icons Imports
-import HomeOutline from 'mdi-material-ui/HomeOutline'
-import FileOutline from 'mdi-material-ui/FileOutline'
-import ChevronRight from 'mdi-material-ui/ChevronRight'
-import BookmarkOutline from 'mdi-material-ui/BookmarkOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 const CardBreadcrumb = () => {
   const handleClick = (event: MouseEvent<HTMLElement>) => {
@@ -43,7 +40,7 @@ const CardBreadcrumb = () => {
           <Typography color='textPrimary'>Breadcrumb</Typography>
         </Breadcrumbs>
 
-        <Breadcrumbs aria-label='breadcrumb' separator={<ChevronRight fontSize='small' />}>
+        <Breadcrumbs aria-label='breadcrumb' separator={<Icon icon='mdi:chevron-right' fontSize={20} />}>
           <Link color='inherit' href='/' onClick={handleClick}>
             MUI
           </Link>
@@ -55,15 +52,15 @@ const CardBreadcrumb = () => {
 
         <Breadcrumbs aria-label='breadcrumb' sx={{ mt: 2 }}>
           <Link color='inherit' href='/' onClick={handleClick} sx={{ display: 'flex', alignItems: 'center' }}>
-            <HomeOutline fontSize='small' />
+            <Icon icon='mdi:home-outline' fontSize={20} />
             MUI
           </Link>
           <Link color='inherit' href='/' onClick={handleClick} sx={{ display: 'flex', alignItems: 'center' }}>
-            <BookmarkOutline fontSize='small' />
+            <Icon icon='mdi:bookmark-outline' fontSize={20} />
             Core
           </Link>
           <Typography color='textPrimary' sx={{ display: 'flex', alignItems: 'center' }}>
-            <FileOutline fontSize='small' />
+            <Icon icon='mdi:file-outline' fontSize={20} />
             Breadcrumb
           </Typography>
         </Breadcrumbs>

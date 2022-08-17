@@ -8,9 +8,8 @@ import Typography from '@mui/material/Typography'
 import Box, { BoxProps } from '@mui/material/Box'
 import FormControl from '@mui/material/FormControl'
 
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
-import Attachment from 'mdi-material-ui/Attachment'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
@@ -41,7 +40,7 @@ const SendInvoiceDrawer = ({ open, toggle }: Props) => {
       <Header>
         <Typography variant='h6'>Send Invoice</Typography>
         <IconButton size='small' onClick={toggle} sx={{ color: 'text.primary' }}>
-          <Close fontSize='small' />
+          <Icon icon='mdi:close' fontSize={20} />
         </IconButton>
       </Header>
       <Box sx={{ p: 5 }}>
@@ -77,7 +76,7 @@ We would appreciate payment of this invoice by 05/11/2019`}
             color='primary'
             label='Invoice Attached'
             sx={{ borderRadius: '5px' }}
-            icon={<Attachment fontSize='small' />}
+            icon={<Icon icon='mdi:attachment' fontSize={20} />}
           />
         </Box>
         <Box>

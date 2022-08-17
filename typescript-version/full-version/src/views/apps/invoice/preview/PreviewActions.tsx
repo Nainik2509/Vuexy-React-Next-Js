@@ -6,9 +6,8 @@ import Card from '@mui/material/Card'
 import Button from '@mui/material/Button'
 import CardContent from '@mui/material/CardContent'
 
-// ** Icons Imports
-import SendOutline from 'mdi-material-ui/SendOutline'
-import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 interface Props {
   id: string | undefined
@@ -24,8 +23,8 @@ const PreviewActions = ({ id, toggleSendInvoiceDrawer, toggleAddPaymentDrawer }:
           fullWidth
           sx={{ mb: 3.5 }}
           variant='contained'
-          startIcon={<SendOutline />}
           onClick={toggleSendInvoiceDrawer}
+          startIcon={<Icon icon='mdi:send-outline' />}
         >
           Send Invoice
         </Button>
@@ -38,8 +37,8 @@ const PreviewActions = ({ id, toggleSendInvoiceDrawer, toggleAddPaymentDrawer }:
           fullWidth
           color='success'
           variant='contained'
-          startIcon={<CurrencyUsd />}
           onClick={toggleAddPaymentDrawer}
+          startIcon={<Icon icon='mdi:currency-usd' />}
         >
           Add Payment
         </Button>

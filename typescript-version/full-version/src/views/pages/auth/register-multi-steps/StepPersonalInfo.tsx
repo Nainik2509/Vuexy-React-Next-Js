@@ -11,9 +11,8 @@ import FormControl from '@mui/material/FormControl'
 import FormHelperText from '@mui/material/FormHelperText'
 import InputAdornment from '@mui/material/InputAdornment'
 
-// ** Icons Imports
-import ChevronLeft from 'mdi-material-ui/ChevronLeft'
-import ChevronRight from 'mdi-material-ui/ChevronRight'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
 import * as yup from 'yup'
@@ -153,10 +152,10 @@ const StepPersonalDetails = ({ handleNext, handlePrev }: { [key: string]: () => 
         </Grid>
         <Grid item xs={12}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Button variant='contained' startIcon={<ChevronLeft fontSize='small' />} onClick={handlePrev}>
+            <Button variant='contained' startIcon={<Icon icon='mdi:chevron-left' fontSize={20} />} onClick={handlePrev}>
               Previous
             </Button>
-            <Button type='submit' variant='contained' endIcon={<ChevronRight fontSize='small' />}>
+            <Button type='submit' variant='contained' endIcon={<Icon icon='mdi:chevron-right' fontSize={20} />}>
               Next
             </Button>
           </Box>

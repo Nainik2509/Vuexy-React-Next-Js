@@ -12,8 +12,8 @@ import FormControl from '@mui/material/FormControl'
 import OutlinedInput from '@mui/material/OutlinedInput'
 import InputAdornment from '@mui/material/InputAdornment'
 
-// ** Icons Imports
-import AccountCircleOutline from 'mdi-material-ui/AccountCircleOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 const TextFieldIcons = () => {
   return (
@@ -27,7 +27,7 @@ const TextFieldIcons = () => {
               label='With a start adornment'
               startAdornment={
                 <InputAdornment position='start'>
-                  <AccountCircleOutline />
+                  <Icon icon='mdi:account-circle-outline' />
                 </InputAdornment>
               }
             />
@@ -37,15 +37,15 @@ const TextFieldIcons = () => {
             InputProps={{
               startAdornment: (
                 <InputAdornment position='start'>
-                  <AccountCircleOutline />
+                  <Icon icon='mdi:account-circle-outline' />
                 </InputAdornment>
               )
             }}
           />
           <Box sx={{ display: 'inline-flex' }}>
             <Grid container spacing={2} alignItems='flex-end'>
-              <Grid item>
-                <AccountCircleOutline sx={{ color: theme => theme.palette.action.active }} />
+              <Grid item sx={{ '& svg': { color: theme => theme.palette.action.active } }}>
+                <Icon icon='account-circle-outline' />
               </Grid>
               <Grid item>
                 <TextField label='With a grid' />
@@ -60,7 +60,7 @@ const TextFieldIcons = () => {
             <FilledInput
               startAdornment={
                 <InputAdornment position='start'>
-                  <AccountCircleOutline />
+                  <Icon icon='mdi:account-circle-outline' />
                 </InputAdornment>
               }
             />
@@ -71,15 +71,15 @@ const TextFieldIcons = () => {
             InputProps={{
               startAdornment: (
                 <InputAdornment position='start'>
-                  <AccountCircleOutline />
+                  <Icon icon='mdi:account-circle-outline' />
                 </InputAdornment>
               )
             }}
           />
           <Box sx={{ display: 'inline-flex' }}>
             <Grid container spacing={2} alignItems='flex-end'>
-              <Grid item>
-                <AccountCircleOutline sx={{ color: theme => theme.palette.action.active }} />
+              <Grid item sx={{ '& svg': { color: theme => theme.palette.action.active } }}>
+                <Icon icon='account-circle-outline' />
               </Grid>
               <Grid item>
                 <TextField variant='filled' label='With a grid' />
@@ -94,7 +94,7 @@ const TextFieldIcons = () => {
             <Input
               startAdornment={
                 <InputAdornment position='start'>
-                  <AccountCircleOutline />
+                  <Icon icon='mdi:account-circle-outline' />
                 </InputAdornment>
               }
             />
@@ -105,15 +105,15 @@ const TextFieldIcons = () => {
             InputProps={{
               startAdornment: (
                 <InputAdornment position='start'>
-                  <AccountCircleOutline />
+                  <Icon icon='mdi:account-circle-outline' />
                 </InputAdornment>
               )
             }}
           />
           <Box sx={{ display: 'inline-flex' }}>
             <Grid container spacing={2} alignItems='flex-end'>
-              <Grid item>
-                <AccountCircleOutline sx={{ color: theme => theme.palette.action.active }} />
+              <Grid item sx={{ '& svg': { color: theme => theme.palette.action.active } }}>
+                <Icon icon='account-circle-outline' />
               </Grid>
               <Grid item>
                 <TextField variant='standard' label='With a grid' />

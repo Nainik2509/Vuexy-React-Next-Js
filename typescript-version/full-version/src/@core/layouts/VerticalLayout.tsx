@@ -6,8 +6,8 @@ import Fab from '@mui/material/Fab'
 import { styled } from '@mui/material/styles'
 import Box, { BoxProps } from '@mui/material/Box'
 
-// ** Icons Imports
-import ArrowUp from 'mdi-material-ui/ArrowUp'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Theme Config Import
 import themeConfig from 'src/configs/themeConfig'
@@ -135,7 +135,7 @@ const VerticalLayout = (props: LayoutProps) => {
       ) : (
         <ScrollToTop className='mui-fixed'>
           <Fab color='primary' size='small' aria-label='scroll back to top'>
-            <ArrowUp />
+            <Icon icon='mdi:arrow-up' />
           </Fab>
         </ScrollToTop>
       )}

@@ -3,10 +3,8 @@ import TreeItem from '@mui/lab/TreeItem'
 import { alpha, styled } from '@mui/material/styles'
 import MuiTreeView, { TreeViewProps } from '@mui/lab/TreeView'
 
-// ** Icons Imports
-import PlusBoxOutline from 'mdi-material-ui/PlusBoxOutline'
-import CloseBoxOutline from 'mdi-material-ui/CloseBoxOutline'
-import MinusBoxOutline from 'mdi-material-ui/MinusBoxOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // Styled TreeView component
 const TreeView = styled(MuiTreeView)<TreeViewProps>(({ theme }) => ({
@@ -25,9 +23,9 @@ const TreeViewCustomized = () => {
   return (
     <TreeView
       defaultExpanded={['1']}
-      defaultExpandIcon={<PlusBoxOutline />}
-      defaultCollapseIcon={<MinusBoxOutline />}
-      defaultEndIcon={<CloseBoxOutline className='close' />}
+      defaultExpandIcon={<Icon icon='mdi:plus-box-outline' />}
+      defaultCollapseIcon={<Icon icon='mdi:minus-box-outline' />}
+      defaultEndIcon={<Icon icon='mdi:close-box-outline' className='close' />}
     >
       <TreeItem nodeId='1' label='Main'>
         <TreeItem nodeId='2' label='Hello' />

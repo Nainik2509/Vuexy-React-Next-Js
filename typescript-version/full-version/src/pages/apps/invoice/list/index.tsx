@@ -1,5 +1,5 @@
 // ** React Imports
-import { useState, useEffect, ReactElement, forwardRef } from 'react'
+import { useState, useEffect, forwardRef } from 'react'
 
 // ** Next Import
 import Link from 'next/link'
@@ -21,19 +21,8 @@ import CardContent from '@mui/material/CardContent'
 import { DataGrid, GridRowId } from '@mui/x-data-grid'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 
-// ** Icons Imports
-import Send from 'mdi-material-ui/Send'
-import Check from 'mdi-material-ui/Check'
-import ChartPie from 'mdi-material-ui/ChartPie'
-import Download from 'mdi-material-ui/Download'
-import ArrowDown from 'mdi-material-ui/ArrowDown'
-import EyeOutline from 'mdi-material-ui/EyeOutline'
-import TrendingUp from 'mdi-material-ui/TrendingUp'
-import ContentCopy from 'mdi-material-ui/ContentCopy'
-import PencilOutline from 'mdi-material-ui/PencilOutline'
-import DeleteOutline from 'mdi-material-ui/DeleteOutline'
-import InformationOutline from 'mdi-material-ui/InformationOutline'
-import ContentSaveOutline from 'mdi-material-ui/ContentSaveOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
 import format from 'date-fns/format'
@@ -63,8 +52,8 @@ import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 interface InvoiceStatusObj {
   [key: string]: {
+    icon: string
     color: ThemeColor
-    icon: ReactElement
   }
 }
 
@@ -88,12 +77,12 @@ const StyledLink = styled('a')(({ theme }) => ({
 
 // ** Vars
 const invoiceStatusObj: InvoiceStatusObj = {
-  Sent: { color: 'secondary', icon: <Send sx={{ fontSize: '1rem' }} /> },
-  Paid: { color: 'success', icon: <Check sx={{ fontSize: '1rem' }} /> },
-  Draft: { color: 'primary', icon: <ContentSaveOutline sx={{ fontSize: '1rem' }} /> },
-  'Partial Payment': { color: 'warning', icon: <ChartPie sx={{ fontSize: '1rem' }} /> },
-  'Past Due': { color: 'error', icon: <InformationOutline sx={{ fontSize: '1rem' }} /> },
-  Downloaded: { color: 'info', icon: <ArrowDown sx={{ fontSize: '1rem' }} /> }
+  Sent: { color: 'secondary', icon: 'mdi:send' },
+  Paid: { color: 'success', icon: 'mdi:check' },
+  Draft: { color: 'primary', icon: 'mdi:content-save-outline' },
+  'Partial Payment': { color: 'warning', icon: 'mdi:chart-pie' },
+  'Past Due': { color: 'error', icon: 'mdi:information-outline' },
+  Downloaded: { color: 'info', icon: 'mdi:arrow-down' }
 }
 
 // ** renders client column
@@ -129,12 +118,11 @@ const defaultColumns = [
     flex: 0.1,
     minWidth: 80,
     field: 'invoiceStatus',
-    renderHeader: () => <TrendingUp fontSize='small' />,
+    renderHeader: () => <Icon icon='mdi:trending-up' fontSize={20} />,
     renderCell: ({ row }: CellType) => {
       const { dueDate, balance, invoiceStatus } = row
 
       const color = invoiceStatusObj[invoiceStatus] ? invoiceStatusObj[invoiceStatus].color : 'primary'
-      const Icon = invoiceStatusObj[invoiceStatus] ? invoiceStatusObj[invoiceStatus].icon : null
 
       return (
         <Tooltip
@@ -157,7 +145,7 @@ const defaultColumns = [
           }
         >
           <CustomAvatar skin='light' color={color} sx={{ width: '1.875rem', height: '1.875rem' }}>
-            {Icon}
+            <Icon icon={invoiceStatusObj[invoiceStatus].icon} fontSize='1rem' />
           </CustomAvatar>
         </Tooltip>
       )
@@ -284,34 +272,35 @@ const InvoiceList = () => {
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Tooltip title='Delete Invoice'>
             <IconButton size='small' onClick={() => dispatch(deleteInvoice(row.id))}>
-              <DeleteOutline fontSize='small' />
+              <Icon icon='mdi:delete-outline' fontSize={20} />
             </IconButton>
           </Tooltip>
           <Tooltip title='View'>
             <Box>
               <Link href={`/apps/invoice/preview/${row.id}`} passHref>
                 <IconButton size='small' component='a' sx={{ textDecoration: 'none' }}>
-                  <EyeOutline fontSize='small' />
+                  <Icon icon='mdi:eye-outline' fontSize={20} />
                 </IconButton>
               </Link>
             </Box>
           </Tooltip>
           <OptionsMenu
-            iconProps={{ fontSize: 'small' }}
+            iconProps={{ fontSize: 20 }}
             iconButtonProps={{ size: 'small' }}
+            menuProps={{ sx: { '& .MuiMenuItem-root svg': { mr: 2 } } }}
             options={[
               {
                 text: 'Download',
-                icon: <Download fontSize='small' sx={{ mr: 2 }} />
+                icon: <Icon icon='mdi:download' fontSize={20} />
               },
               {
                 text: 'Edit',
                 href: `/apps/invoice/edit/${row.id}`,
-                icon: <PencilOutline fontSize='small' sx={{ mr: 2 }} />
+                icon: <Icon icon='mdi:pencil-outline' fontSize={20} />
               },
               {
                 text: 'Duplicate',
-                icon: <ContentCopy fontSize='small' sx={{ mr: 2 }} />
+                icon: <Icon icon='mdi:content-copy' fontSize={20} />
               }
             ]}
           />

@@ -7,12 +7,7 @@ import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 
 // ** Icon Imports
-import StarOutline from 'mdi-material-ui/StarOutline'
-import AccountOutline from 'mdi-material-ui/AccountOutline'
-import DotsHorizontal from 'mdi-material-ui/DotsHorizontal'
-import MapMarkerOutline from 'mdi-material-ui/MapMarkerOutline'
-import CheckCircleOutline from 'mdi-material-ui/CheckCircleOutline'
-import ClockTimeThreeOutline from 'mdi-material-ui/ClockTimeThreeOutline'
+import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Imports
 import CustomAvatar from 'src/@core/components/mui/avatar'
@@ -44,38 +39,46 @@ const CardDeveloperMeetup = () => {
         <Divider sx={{ my: theme => `${theme.spacing(4)} !important` }} />
 
         <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <StarOutline sx={{ mb: 0.5 }} />
+          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', '& svg': { mb: 0.5 } }}>
+            <Icon icon='mdi:star-outline' />
             <Typography variant='caption'>Interested</Typography>
           </Box>
-          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <CheckCircleOutline sx={{ mb: 0.5 }} />
+          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', '& svg': { mb: 0.5 } }}>
+            <Icon icon='mdi:check-circle-outline' />
             <Typography variant='caption'>Joined</Typography>
           </Box>
-          <Box sx={{ color: 'primary.main', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <AccountOutline sx={{ mb: 0.5 }} />
+          <Box
+            sx={{
+              color: 'primary.main',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              '& svg': { mb: 0.5 }
+            }}
+          >
+            <Icon icon='mdi:account-outline' />
             <Typography variant='caption' sx={{ color: 'primary.main' }}>
               Invited
             </Typography>
           </Box>
-          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <DotsHorizontal sx={{ mb: 0.5 }} />
+          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', '& svg': { mb: 0.5 } }}>
+            <Icon icon='mdi:dots-horizontal' />
             <Typography variant='caption'>More</Typography>
           </Box>
         </Box>
 
         <Divider sx={{ my: theme => `${theme.spacing(4)} !important` }} />
 
-        <Box sx={{ mb: 2, display: 'flex' }}>
-          <ClockTimeThreeOutline sx={{ mr: 2.5, mt: 1, fontSize: '1.25rem', color: 'text.secondary' }} />
+        <Box sx={{ mb: 2, display: 'flex', '& svg': { mr: 2.5, mt: 1, color: 'text.secondary' } }}>
+          <Icon icon='mdi:clock-time-three-outline' fontSize='1.25rem' />
           <Box sx={{ display: 'flex', flexDirection: 'column' }}>
             <Typography variant='caption'>Tuesday, 24 january, 10:20 - 12:30</Typography>
             <Typography variant='caption'>After 1 Week</Typography>
           </Box>
         </Box>
 
-        <Box sx={{ display: 'flex' }}>
-          <MapMarkerOutline sx={{ mr: 2.5, mt: 1, fontSize: '1.25rem', color: 'text.secondary' }} />
+        <Box sx={{ display: 'flex', '& svg': { mr: 2.5, mt: 1, color: 'text.secondary' } }}>
+          <Icon icon='mdi:map-marker-outline' fontSize='1.25rem' />
           <Box sx={{ display: 'flex', flexDirection: 'column' }}>
             <Typography variant='caption'>The Rochard NYC</Typography>
             <Typography variant='caption'>1305 Lexington Ave, New York</Typography>

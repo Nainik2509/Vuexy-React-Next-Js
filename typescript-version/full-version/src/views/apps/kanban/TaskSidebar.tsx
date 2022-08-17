@@ -18,8 +18,8 @@ import FormHelperText from '@mui/material/FormHelperText'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete'
 
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
 import DatePicker from 'react-datepicker'
@@ -195,8 +195,8 @@ const TaskSidebar = (props: TaskSidebarProps) => {
         size='small'
         key={item.value}
         label={item.name}
-        deleteIcon={<Close />}
         {...(getTagProps({ index }) as {})}
+        deleteIcon={<Icon icon='mdi:close' />}
         onDelete={() => handleAssigneeDelete(item.value, state, setState)}
       />
     ))
@@ -307,8 +307,8 @@ const TaskSidebar = (props: TaskSidebarProps) => {
         }}
       >
         <Typography variant='h6'>Update Task</Typography>
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Close fontSize='small' onClick={handleTaskSidebarToggle} sx={{ cursor: 'pointer' }} />
+        <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { cursor: 'pointer' } }}>
+          <Icon icon='mdi:close' fontSize={20} onClick={handleTaskSidebarToggle} />
         </Box>
       </Box>
       <Box className='sidebar-body' sx={{ p: theme => theme.spacing(5, 6) }}>

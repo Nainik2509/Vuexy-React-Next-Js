@@ -12,8 +12,8 @@ import FormControl from '@mui/material/FormControl'
 import InputAdornment from '@mui/material/InputAdornment'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
-// ** Icons Imports
-import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 const StepPriceDetails = () => {
   return (
@@ -27,7 +27,7 @@ const StepPriceDetails = () => {
           InputProps={{
             endAdornment: (
               <InputAdornment position='end'>
-                <CurrencyUsd />
+                <Icon icon='mdi:currency-usd' />
               </InputAdornment>
             )
           }}
@@ -42,7 +42,7 @@ const StepPriceDetails = () => {
           InputProps={{
             endAdornment: (
               <InputAdornment position='end'>
-                <CurrencyUsd />
+                <Icon icon='mdi:currency-usd' />
               </InputAdornment>
             )
           }}
@@ -57,7 +57,7 @@ const StepPriceDetails = () => {
           InputProps={{
             endAdornment: (
               <InputAdornment position='end'>
-                <CurrencyUsd />
+                <Icon icon='mdi:currency-usd' />
               </InputAdornment>
             )
           }}
@@ -86,7 +86,7 @@ const StepPriceDetails = () => {
           InputProps={{
             endAdornment: (
               <InputAdornment position='end'>
-                <CurrencyUsd />
+                <Icon icon='mdi:currency-usd' />
               </InputAdornment>
             )
           }}
@@ -101,7 +101,7 @@ const StepPriceDetails = () => {
           InputProps={{
             endAdornment: (
               <InputAdornment position='end'>
-                <CurrencyUsd />
+                <Icon icon='mdi:currency-usd' />
               </InputAdornment>
             )
           }}

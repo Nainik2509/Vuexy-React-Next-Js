@@ -9,11 +9,8 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import ListItemButton from '@mui/material/ListItemButton'
 
-// ** Icons Imports
-import ContentCopy from 'mdi-material-ui/ContentCopy'
-import EmailOutline from 'mdi-material-ui/EmailOutline'
-import ClockOutline from 'mdi-material-ui/ClockOutline'
-import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 const ListSimple = () => {
   return (
@@ -22,7 +19,7 @@ const ListSimple = () => {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <EmailOutline fontSize='small' />
+              <Icon icon='mdi:email-outline' fontSize={20} />
             </ListItemIcon>
             <ListItemText primary='Inbox' />
           </ListItemButton>
@@ -30,7 +27,7 @@ const ListSimple = () => {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <ContentCopy fontSize='small' />
+              <Icon icon='mdi:content-copy' fontSize={20} />
             </ListItemIcon>
             <ListItemText primary='Draft' />
           </ListItemButton>
@@ -41,7 +38,7 @@ const ListSimple = () => {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <ClockOutline fontSize='small' />
+              <Icon icon='mdi:clock-outline' fontSize={20} />
             </ListItemIcon>
             <ListItemText primary='Snoozed' />
           </ListItemButton>
@@ -49,7 +46,7 @@ const ListSimple = () => {
         <ListItem disablePadding>
           <ListItemButton component='a' href='#simple-list'>
             <ListItemIcon>
-              <AlertCircleOutline fontSize='small' />
+              <Icon icon='mdi:alert-circle-outline' fontSize={20} />
             </ListItemIcon>
             <ListItemText primary='Spam' />
           </ListItemButton>

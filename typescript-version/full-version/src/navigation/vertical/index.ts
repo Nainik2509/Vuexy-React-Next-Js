@@ -1,27 +1,3 @@
-// ** Icon imports
-import Grid from 'mdi-material-ui/Grid'
-import GridLarge from 'mdi-material-ui/GridLarge'
-import ChartDonut from 'mdi-material-ui/ChartDonut'
-import FormSelect from 'mdi-material-ui/FormSelect'
-import CubeOutline from 'mdi-material-ui/CubeOutline'
-import LockOutline from 'mdi-material-ui/LockOutline'
-import HomeOutline from 'mdi-material-ui/HomeOutline'
-import EmailOutline from 'mdi-material-ui/EmailOutline'
-import ShieldOutline from 'mdi-material-ui/ShieldOutline'
-import AccountOutline from 'mdi-material-ui/AccountOutline'
-import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
-import DotsHorizontal from 'mdi-material-ui/DotsHorizontal'
-import MessageOutline from 'mdi-material-ui/MessageOutline'
-import ViewGridOutline from 'mdi-material-ui/ViewGridOutline'
-import FormatLetterCase from 'mdi-material-ui/FormatLetterCase'
-import CreditCardOutline from 'mdi-material-ui/CreditCardOutline'
-import VectorArrangeBelow from 'mdi-material-ui/VectorArrangeBelow'
-import FileDocumentOutline from 'mdi-material-ui/FileDocumentOutline'
-import CalendarBlankOutline from 'mdi-material-ui/CalendarBlankOutline'
-import GoogleCirclesExtended from 'mdi-material-ui/GoogleCirclesExtended'
-import CheckboxMarkedCircleOutline from 'mdi-material-ui/CheckboxMarkedCircleOutline'
-import TransitConnectionHorizontal from 'mdi-material-ui/TransitConnectionHorizontal'
-
 // ** Type import
 import { VerticalNavItemsType } from 'src/@core/layouts/types'
 
@@ -29,7 +5,7 @@ const navigation = (): VerticalNavItemsType => {
   return [
     {
       title: 'Dashboards',
-      icon: HomeOutline,
+      icon: 'mdi:home-outline',
       badgeContent: 'new',
       badgeColor: 'error',
       children: [
@@ -48,27 +24,27 @@ const navigation = (): VerticalNavItemsType => {
     },
     {
       title: 'Email',
-      icon: EmailOutline,
+      icon: 'mdi:email-outline',
       path: '/apps/email'
     },
     {
       title: 'Chat',
-      icon: MessageOutline,
+      icon: 'mdi:message-outline',
       path: '/apps/chat'
     },
     {
       title: 'Calendar',
-      icon: CalendarBlankOutline,
+      icon: 'mdi:calendar-blank-outline',
       path: '/apps/calendar'
     },
     {
       title: 'Kanban',
-      icon: ViewGridOutline,
+      icon: 'mdi:view-grid-outline',
       path: '/apps/kanban'
     },
     {
       title: 'Invoice',
-      icon: FileDocumentOutline,
+      icon: 'mdi:file-document-outline',
       children: [
         {
           title: 'List',
@@ -90,7 +66,7 @@ const navigation = (): VerticalNavItemsType => {
     },
     {
       title: 'User',
-      icon: AccountOutline,
+      icon: 'mdi:account-outline',
       children: [
         {
           title: 'List',
@@ -104,7 +80,7 @@ const navigation = (): VerticalNavItemsType => {
     },
     {
       title: 'Roles & Permissions',
-      icon: ShieldOutline,
+      icon: 'mdi:shield-outline',
       children: [
         {
           title: 'Roles',
@@ -118,7 +94,7 @@ const navigation = (): VerticalNavItemsType => {
     },
     {
       title: 'Pages',
-      icon: FileDocumentOutline,
+      icon: 'mdi:file-document-outline',
       children: [
         {
           title: 'User Profile',
@@ -213,7 +189,7 @@ const navigation = (): VerticalNavItemsType => {
     },
     {
       title: 'Auth Pages',
-      icon: LockOutline,
+      icon: 'mdi:lock-outline',
       children: [
         {
           title: 'Login',
@@ -319,7 +295,7 @@ const navigation = (): VerticalNavItemsType => {
     },
     {
       title: 'Wizard Examples',
-      icon: TransitConnectionHorizontal,
+      icon: 'mdi:transit-connection-horizontal',
       children: [
         {
           title: 'Checkout',
@@ -336,7 +312,7 @@ const navigation = (): VerticalNavItemsType => {
       ]
     },
     {
-      icon: VectorArrangeBelow,
+      icon: 'mdi:vector-arrange-below',
       title: 'Dialog Examples',
       path: '/pages/dialog-examples'
     },
@@ -345,17 +321,17 @@ const navigation = (): VerticalNavItemsType => {
     },
     {
       title: 'Typography',
-      icon: FormatLetterCase,
+      icon: 'mdi:format-letter-case',
       path: '/ui/typography'
     },
     {
       title: 'Icons',
       path: '/ui/icons',
-      icon: GoogleCirclesExtended
+      icon: 'mdi:google-circles-extended'
     },
     {
       title: 'Cards',
-      icon: CreditCardOutline,
+      icon: 'mdi:credit-card-outline',
       children: [
         {
           title: 'Basic',
@@ -382,7 +358,7 @@ const navigation = (): VerticalNavItemsType => {
     {
       badgeContent: '18',
       title: 'Components',
-      icon: ArchiveOutline,
+      icon: 'mdi:archive-outline',
       badgeColor: 'primary',
       children: [
         {
@@ -472,7 +448,7 @@ const navigation = (): VerticalNavItemsType => {
     },
     {
       title: 'Form Elements',
-      icon: FormSelect,
+      icon: 'mdi:form-select',
       children: [
         {
           title: 'Text Field',
@@ -533,28 +509,28 @@ const navigation = (): VerticalNavItemsType => {
       ]
     },
     {
-      icon: CubeOutline,
+      icon: 'mdi:cube-outline',
       title: 'Form Layouts',
       path: '/forms/form-layouts'
     },
     {
       title: 'Form Validation',
       path: '/forms/form-validation',
-      icon: CheckboxMarkedCircleOutline
+      icon: 'mdi:checkbox-marked-circle-outline'
     },
     {
       title: 'Form Wizard',
       path: '/forms/form-wizard',
-      icon: TransitConnectionHorizontal
+      icon: 'mdi:transit-connection-horizontal'
     },
     {
       title: 'Table',
-      icon: GridLarge,
+      icon: 'mdi:grid-large',
       path: '/tables/mui'
     },
     {
       title: 'Mui DataGrid',
-      icon: Grid,
+      icon: 'mdi:grid',
       path: '/tables/data-grid'
     },
     {
@@ -562,7 +538,7 @@ const navigation = (): VerticalNavItemsType => {
     },
     {
       title: 'Charts',
-      icon: ChartDonut,
+      icon: 'mdi:chart-donut',
       children: [
         {
           title: 'Apex',
@@ -582,12 +558,12 @@ const navigation = (): VerticalNavItemsType => {
       path: '/acl',
       action: 'read',
       subject: 'acl-page',
-      icon: ShieldOutline,
+      icon: 'mdi:shield-outline',
       title: 'Access Control'
     },
     {
       title: 'Others',
-      icon: DotsHorizontal,
+      icon: 'mdi:dots-horizontal',
       children: [
         {
           title: 'Menu Levels',

@@ -2,19 +2,19 @@
 import { createContext, useState, ReactNode, useEffect } from 'react'
 
 // ** MUI Imports
-import { PaletteMode, Direction } from '@mui/material'
+import { Direction } from '@mui/material'
 
 // ** ThemeConfig Import
 import themeConfig from 'src/configs/themeConfig'
 
 // ** Types Import
-import { Skin, AppBar, Footer, ThemeColor, ContentWidth, VerticalNavToggle } from 'src/@core/layouts/types'
+import { Skin, Mode, AppBar, Footer, ThemeColor, ContentWidth, VerticalNavToggle } from 'src/@core/layouts/types'
 
 export type Settings = {
   skin: Skin
+  mode: Mode
   appBar?: AppBar
   footer?: Footer
-  mode: PaletteMode & 'semi-dark'
   navHidden?: boolean // navigation menu
   direction: Direction
   navCollapsed: boolean
@@ -28,9 +28,9 @@ export type Settings = {
 
 export type PageSpecificSettings = {
   skin?: Skin
+  mode?: Mode
   appBar?: AppBar
   footer?: Footer
-  mode?: PaletteMode & 'semi-dark'
   navHidden?: boolean // navigation menu
   direction?: Direction
   navCollapsed?: boolean

@@ -20,9 +20,8 @@ import CircularProgress from '@mui/material/CircularProgress'
 import toast from 'react-hot-toast'
 import { useForm, Controller } from 'react-hook-form'
 
-// ** Icons Imports
-import EyeOutline from 'mdi-material-ui/EyeOutline'
-import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 interface State {
   password: string
@@ -181,7 +180,7 @@ const FormValidationAsync = () => {
                             onMouseDown={handleMouseDownPassword}
                             aria-label='toggle password visibility'
                           >
-                            {state.showPassword ? <EyeOutline /> : <EyeOffOutline />}
+                            {state.showPassword ? <Icon icon='mdi:eye-outline' /> : <Icon icon='mdi:eye-off-outline' />}
                           </IconButton>
                         </InputAdornment>
                       }

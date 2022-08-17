@@ -25,8 +25,8 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import Payment from 'payment'
 import Cards, { Focused } from 'react-credit-cards'
 
-// ** Icons Imports
-import ChevronDown from 'mdi-material-ui/ChevronDown'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Styled Component Imports
 import CardWrapper from 'src/@core/styles/libs/react-credit-cards'
@@ -89,7 +89,7 @@ const FormLayoutsCollapsible = () => {
     <form onSubmit={e => e.preventDefault()}>
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary
-          expandIcon={<ChevronDown />}
+          expandIcon={<Icon icon='mdi:chevron-down' />}
           id='form-layouts-collapsible-header-1'
           aria-controls='form-layouts-collapsible-content-1'
         >
@@ -154,7 +154,7 @@ const FormLayoutsCollapsible = () => {
 
       <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
         <AccordionSummary
-          expandIcon={<ChevronDown />}
+          expandIcon={<Icon icon='mdi:chevron-down' />}
           id='form-layouts-collapsible-header-2'
           aria-controls='form-layouts-collapsible-content-2'
         >
@@ -226,7 +226,7 @@ const FormLayoutsCollapsible = () => {
 
       <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
         <AccordionSummary
-          expandIcon={<ChevronDown />}
+          expandIcon={<Icon icon='mdi:chevron-down' />}
           id='form-layouts-collapsible-header-3'
           aria-controls='form-layouts-collapsible-content-3'
         >

@@ -4,8 +4,8 @@ import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import Box, { BoxProps } from '@mui/material/Box'
 
-// ** Icons Imports
-import CircleOutline from 'mdi-material-ui/CircleOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Util Import
 import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
@@ -39,7 +39,9 @@ const PlanDetails = (props: PricingPlanProps) => {
   const renderFeatures = () => {
     return data?.planBenefits.map((item: string, index: number) => (
       <Box key={index} sx={{ display: 'flex', alignItems: 'center' }}>
-        <CircleOutline sx={{ fontSize: '0.75rem', mr: 2, color: 'text.secondary' }} />
+        <Box component='span' sx={{ display: 'inline-flex', color: 'text.secondary', mr: 2 }}>
+          <Icon icon='mdi:circle-outline' fontSize='0.75rem' />
+        </Box>
         <Typography variant='body2'>{item}</Typography>
       </Box>
     ))

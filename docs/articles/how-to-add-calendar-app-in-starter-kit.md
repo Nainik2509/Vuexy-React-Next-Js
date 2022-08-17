@@ -64,12 +64,18 @@ import 'src/@fake-db'
 
 11. Copy `full-version/src/views/apps/calendar` folder to `starter-kit/src/views/apps/calendar`
 12. Copy `full-version/src/pages/apps/calendar` folder to `starter-kit/src/pages/apps/calendar`
-13. Finally add the calendar in `src/navigation/vertical`:
+13. Finally add the calendar in `src/navigation/vertical/index.ts` and `src/navigation/horizontal/index.ts`:
 
 ```jsx
-import CalendarBlankOutline from 'mdi-material-ui/CalendarBlankOutline'
-
-const navigation = (): VerticalNavItemsType => {
-    return [ { title: 'Calendar', icon: CalendarBlankOutline, path: '/apps/calendar' }, ...]
+const navigation = () => {
+  return [
+    ...
+    {
+      title: 'Calendar',
+      path: '/apps/calendar',
+      icon: 'mdi:calendar-blank-outline'
+    },
+    ...
+  ]
 }
 ```

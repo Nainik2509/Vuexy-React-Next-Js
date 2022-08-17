@@ -16,8 +16,8 @@ import AvatarGroup from '@mui/material/AvatarGroup'
 import CardContent from '@mui/material/CardContent'
 import LinearProgress from '@mui/material/LinearProgress'
 
-// ** Icons Imports
-import MessageOutline from 'mdi-material-ui/MessageOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Types
 import { ProjectsTabType } from 'src/@fake-db/types'
@@ -184,10 +184,11 @@ const Projects = ({ data }: { data: ProjectsTabType[] }) => {
                         sx={{
                           display: 'flex',
                           alignItems: 'center',
-                          textDecoration: 'none'
+                          textDecoration: 'none',
+                          '& svg': { mr: 1, color: 'text.secondary' }
                         }}
                       >
-                        <MessageOutline sx={{ mr: 1, color: 'text.secondary' }} />
+                        <Icon icon='mdi:message-outline' />
                         <Typography sx={{ color: 'text.secondary' }}>{item.comments}</Typography>
                       </Box>
                     </Link>

@@ -17,11 +17,8 @@ import ListItemAvatar from '@mui/material/ListItemAvatar'
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
 
-// ** Icons Imports
-import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
-import MapMarkerOutline from 'mdi-material-ui/MapMarkerOutline'
-import CreditCardOutline from 'mdi-material-ui/CreditCardOutline'
-import ClockTimeFiveOutline from 'mdi-material-ui/ClockTimeFiveOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 const StyledList = styled(List)<ListProps>(({ theme }) => ({
   '& .MuiListItem-root': {
@@ -116,7 +113,9 @@ const StepConfirmation = () => {
             spam folder to see if the email was routed there.
           </Typography>
           <Typography sx={{ mt: 4, color: 'text.secondary' }}>
-            <ClockTimeFiveOutline fontSize='small' sx={{ mr: 2, verticalAlign: 'middle' }} />
+            <Box component='span' sx={{ display: 'inline-flex', mr: 2, verticalAlign: 'middle' }}>
+              <Icon icon='mdi:clock-time-five-outline' fontSize={20} />
+            </Box>
             <Box component='span' sx={{ fontWeight: 600 }}>
               Time placed:
             </Box>{' '}
@@ -128,7 +127,9 @@ const StepConfirmation = () => {
         <HorizontalList>
           <ListItem sx={{ flexDirection: 'column', alignItems: 'flex-start' }}>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <MapMarkerOutline fontSize='small' sx={{ mr: 1 }} />
+              <Box component='span' sx={{ display: 'inline-flex', mr: 1 }}>
+                <Icon icon='mdi:map-marker-outline' fontSize={20} />
+              </Box>
               <Typography sx={{ fontWeight: 500 }}>Shipping</Typography>
             </Box>
             <Box component='address' sx={{ mt: 4, fontStyle: 'normal', color: 'text.secondary' }}>
@@ -143,7 +144,9 @@ const StepConfirmation = () => {
           </ListItem>
           <ListItem sx={{ flexDirection: 'column', alignItems: 'flex-start' }}>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <CreditCardOutline fontSize='small' sx={{ mr: 1 }} />
+              <Box component='span' sx={{ display: 'inline-flex', mr: 1 }}>
+                <Icon icon='mdi:credit-card-outline' fontSize={20} />
+              </Box>
               <Typography sx={{ fontWeight: 500 }}>Billing Address</Typography>
             </Box>
             <Box component='address' sx={{ mt: 4, fontStyle: 'normal', color: 'text.secondary' }}>
@@ -158,7 +161,9 @@ const StepConfirmation = () => {
           </ListItem>
           <ListItem sx={{ flexDirection: 'column', alignItems: 'flex-start' }}>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <ArchiveOutline fontSize='small' sx={{ mr: 1 }} />
+              <Box component='span' sx={{ display: 'inline-flex', mr: 1 }}>
+                <Icon icon='mdi:archive-outline' fontSize={20} />
+              </Box>
               <Typography sx={{ fontWeight: 500 }}>Shipping Method</Typography>
             </Box>
             <Typography sx={{ mt: 4, fontWeight: 600, color: 'text.secondary' }}>Preferred Method:</Typography>

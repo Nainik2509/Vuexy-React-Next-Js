@@ -26,10 +26,8 @@ import ListItemAvatar from '@mui/material/ListItemAvatar'
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
 
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
-import TagOutline from 'mdi-material-ui/TagOutline'
-import ChevronRight from 'mdi-material-ui/ChevronRight'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 const StyledList = styled(List)<ListProps>(({ theme }) => ({
   '& .MuiListItem-root': {
@@ -67,7 +65,7 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
   return (
     <Grid container spacing={6}>
       <Grid item lg={8} xs={12}>
-        <Alert severity='success' icon={<TagOutline />} sx={{ mb: 6 }}>
+        <Alert severity='success' icon={<Icon icon='mdi:tag-outline' />} sx={{ mb: 6 }}>
           <AlertTitle>Available Offers</AlertTitle>
           <Box>
             <Typography sx={{ color: 'success.main' }}>
@@ -85,7 +83,7 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
               <img width={100} src='/images/products/google-home.png' alt='Google Home' />
             </ListItemAvatar>
             <IconButton size='small' className='remove-item' sx={{ color: 'text.primary' }}>
-              <Close fontSize='small' />
+              <Icon icon='mdi:close' fontSize={20} />
             </IconButton>
             <Grid container>
               <Grid item xs={12} md={8}>
@@ -145,7 +143,7 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
               </Grid>
               <Grid item xs={12} md={4}>
                 <IconButton size='small' className='remove-item' sx={{ color: 'text.primary' }}>
-                  <Close fontSize='small' />
+                  <Icon icon='mdi:close' fontSize={20} />
                 </IconButton>
                 <Box
                   sx={{
@@ -180,7 +178,7 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
                 Add more products from wishlist
               </Box>
             </Link>
-            <ChevronRight />
+            <Icon icon='mdi:chevron-right' />
           </ListItem>
         </StyledList>
       </Grid>

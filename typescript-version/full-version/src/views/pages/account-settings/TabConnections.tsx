@@ -12,9 +12,8 @@ import Typography from '@mui/material/Typography'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
-// ** Icons Imports
-import LinkVariant from 'mdi-material-ui/LinkVariant'
-import DeleteOutline from 'mdi-material-ui/DeleteOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 interface ConnectedAccountsType {
   title: string
@@ -176,7 +175,7 @@ const TabConnections = () => {
                     sx={{ p: 1.5, minWidth: 0 }}
                     color={account.isConnected ? 'error' : 'secondary'}
                   >
-                    {account.isConnected ? <DeleteOutline /> : <LinkVariant />}
+                    <Icon icon={account.isConnected ? 'mdi:delete-outline' : 'mdi:link-variant'} />
                   </Button>
                 </Box>
               )

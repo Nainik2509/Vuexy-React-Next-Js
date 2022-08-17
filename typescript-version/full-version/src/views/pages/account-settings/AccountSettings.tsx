@@ -15,12 +15,8 @@ import Typography from '@mui/material/Typography'
 import MuiTabList, { TabListProps } from '@mui/lab/TabList'
 import CircularProgress from '@mui/material/CircularProgress'
 
-// ** Icons Imports
-import LinkVariant from 'mdi-material-ui/LinkVariant'
-import BellOutline from 'mdi-material-ui/BellOutline'
-import AccountOutline from 'mdi-material-ui/AccountOutline'
-import LockOpenOutline from 'mdi-material-ui/LockOpenOutline'
-import BookmarkOutline from 'mdi-material-ui/BookmarkOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Types
 import { PricingPlanType } from 'src/@core/components/plan-details/types'
@@ -92,8 +88,8 @@ const AccountSettings = ({ tab, apiPricingPlanData }: { tab: string; apiPricingP
                 <Tab
                   value='account'
                   label={
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      <AccountOutline sx={{ mr: 2 }} />
+                    <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
+                      <Icon icon='mdi:account-outline' />
                       Account
                     </Box>
                   }
@@ -101,8 +97,8 @@ const AccountSettings = ({ tab, apiPricingPlanData }: { tab: string; apiPricingP
                 <Tab
                   value='security'
                   label={
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      <LockOpenOutline sx={{ mr: 2 }} />
+                    <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
+                      <Icon icon='mdi:lock-open-outline' />
                       Security
                     </Box>
                   }
@@ -110,8 +106,8 @@ const AccountSettings = ({ tab, apiPricingPlanData }: { tab: string; apiPricingP
                 <Tab
                   value='billing'
                   label={
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      <BookmarkOutline sx={{ mr: 2 }} />
+                    <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
+                      <Icon icon='mdi:bookmark-outline' />
                       Billing
                     </Box>
                   }
@@ -119,8 +115,8 @@ const AccountSettings = ({ tab, apiPricingPlanData }: { tab: string; apiPricingP
                 <Tab
                   value='notifications'
                   label={
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      <BellOutline sx={{ mr: 2 }} />
+                    <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
+                      <Icon icon='mdi:bell-outline' />
                       Notifications
                     </Box>
                   }
@@ -128,8 +124,8 @@ const AccountSettings = ({ tab, apiPricingPlanData }: { tab: string; apiPricingP
                 <Tab
                   value='connections'
                   label={
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      <LinkVariant sx={{ mr: 2 }} />
+                    <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
+                      <Icon icon='mdi:link-variant' />
                       Connections
                     </Box>
                   }

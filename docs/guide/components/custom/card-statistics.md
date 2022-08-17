@@ -7,7 +7,7 @@ We have create different version of card components to make it easier for you to
 ## Card Statistics Horizontal
 
 ```jsx
-import AccountOutline from 'mdi-material-ui/AccountOutline'
+import Icon from 'src/@core/components/icon'
 import CardStatisticsHorizontal from 'src/@core/components/card-statistics/card-stats-horizontal'
 
 const Component = () => (
@@ -16,7 +16,7 @@ const Component = () => (
     trend='negative'
     trendNumber='10.2%'
     title='New Customers'
-    icon={<AccountOutline />}
+    icon={<Icon icon='mdi:account-outline' />}
   />
 )
 
@@ -41,7 +41,7 @@ Result:
 ## Card Statistics Vertical
 
 ```jsx
-import BriefcaseVariantOutline from 'mdi-material-ui/BriefcaseVariantOutline'
+import Icon from 'src/@core/components/icon'
 import CardStatisticsVertical from 'src/@core/components/card-statistics/card-stats-vertical'
 
 const Component = () => (
@@ -51,7 +51,7 @@ const Component = () => (
     trendNumber='-18%'
     title='New Project'
     subtitle='Yearly Project'
-    icon={<BriefcaseVariantOutline />}
+    icon={<Icon icon='mdi:briefcase-variant-outline' />}
     optionsMenuProps={{ options: ['Refresh', 'Share', 'Update'] }}
   />
 )

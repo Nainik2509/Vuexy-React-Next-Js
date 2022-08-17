@@ -15,12 +15,6 @@ import Typography from '@mui/material/Typography'
 import MuiTabList, { TabListProps } from '@mui/lab/TabList'
 import CircularProgress from '@mui/material/CircularProgress'
 
-// ** Icons Imports
-import LinkVariant from 'mdi-material-ui/LinkVariant'
-import AccountOutline from 'mdi-material-ui/AccountOutline'
-import ViewGridOutline from 'mdi-material-ui/ViewGridOutline'
-import AccountMultipleOutline from 'mdi-material-ui/AccountMultipleOutline'
-
 // ** Type Import
 import {
   TeamsTabType,
@@ -29,6 +23,9 @@ import {
   ConnectionsTabType,
   UserProfileActiveTab
 } from 'src/@fake-db/types'
+
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Demo Components
 import Teams from 'src/views/pages/user-profile/teams'
@@ -103,8 +100,8 @@ const UserProfile = ({ tab, data }: { tab: string; data: UserProfileActiveTab })
                     value='profile'
                     onClick={() => setIsLoading(true)}
                     label={
-                      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                        <AccountOutline sx={{ mr: 2 }} />
+                      <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
+                        <Icon icon='mdi:account-outline' />
                         Profile
                       </Box>
                     }
@@ -113,8 +110,8 @@ const UserProfile = ({ tab, data }: { tab: string; data: UserProfileActiveTab })
                     value='teams'
                     onClick={() => setIsLoading(true)}
                     label={
-                      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                        <AccountMultipleOutline sx={{ mr: 2 }} />
+                      <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
+                        <Icon icon='mdi:account-multiple-outline' />
                         Teams
                       </Box>
                     }
@@ -123,8 +120,8 @@ const UserProfile = ({ tab, data }: { tab: string; data: UserProfileActiveTab })
                     value='projects'
                     onClick={() => setIsLoading(true)}
                     label={
-                      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                        <ViewGridOutline sx={{ mr: 2 }} />
+                      <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
+                        <Icon icon='mdi:view-grid-outline' />
                         Projects
                       </Box>
                     }
@@ -133,8 +130,8 @@ const UserProfile = ({ tab, data }: { tab: string; data: UserProfileActiveTab })
                     value='connections'
                     onClick={() => setIsLoading(true)}
                     label={
-                      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                        <LinkVariant sx={{ mr: 2 }} />
+                      <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
+                        <Icon icon='mdi:link-variant' />
                         Connections
                       </Box>
                     }

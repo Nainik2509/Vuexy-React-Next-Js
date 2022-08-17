@@ -11,27 +11,27 @@ const cardStatsData: CardStatsType = {
       trend: 'negative',
       trendNumber: '10.2%',
       title: 'New Customers',
-      icon: 'AccountOutline'
+      icon: 'mdi:account-outline'
     },
     {
       stats: '28.6K',
       color: 'success',
-      icon: 'CurrencyUsd',
       trendNumber: '25.8%',
-      title: 'Total Revenue'
+      title: 'Total Revenue',
+      icon: 'mdi:currency-usd'
     },
     {
       color: 'info',
       stats: '16.6K',
       trend: 'negative',
-      icon: 'TrendingUp',
       trendNumber: '12.1%',
-      title: 'New Transactions'
+      title: 'New Transactions',
+      icon: 'mdi:trending-up'
     },
     {
-      icon: 'Poll',
       stats: '2,856',
       color: 'warning',
+      icon: 'mdi:poll',
       trendNumber: '54.6%',
       title: 'Total Profit'
     }
@@ -43,10 +43,10 @@ const cardStatsData: CardStatsType = {
       trendNumber: '-18%',
       title: 'New Project',
       subtitle: 'Yearly Project',
-      icon: 'BriefcaseVariantOutline'
+      icon: 'mdi:briefcase-variant-outline'
     },
     {
-      icon: 'Poll',
+      icon: 'mdi:poll',
       stats: '$25.6k',
       color: 'secondary',
       trendNumber: '+42%',
@@ -58,7 +58,7 @@ const cardStatsData: CardStatsType = {
       title: 'Revenue',
       color: 'success',
       trendNumber: '+12%',
-      icon: 'CurrencyUsd',
+      icon: 'mdi:currency-usd',
       subtitle: 'Revenue Increase'
     },
     {
@@ -67,24 +67,24 @@ const cardStatsData: CardStatsType = {
       trend: 'negative',
       title: 'Logistics',
       trendNumber: '-25%',
-      icon: 'TruckOutline',
+      icon: 'mdi:truck-outline',
       subtitle: 'Regional Logistics'
     },
     {
       stats: '268',
-      icon: 'Check',
       title: 'Reports',
       color: 'warning',
       trend: 'negative',
       trendNumber: '-8%',
+      icon: 'mdi:check',
       subtitle: 'System Bugs'
     },
     {
       stats: '1.2k',
       color: 'info',
-      icon: 'TrendingUp',
       trendNumber: '+12%',
       title: 'Transactions',
+      icon: 'mdi:trending-up',
       subtitle: 'Daily Transactions'
     }
   ],

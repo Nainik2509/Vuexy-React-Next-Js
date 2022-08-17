@@ -70,7 +70,7 @@ const ChartjsPolarAreaChart = (props: PolarAreaProps) => {
         title='Average Skills'
         action={
           <OptionsMenu
-            iconProps={{ fontSize: 'small' }}
+            iconProps={{ fontSize: 20 }}
             options={['Refresh', 'Edit', 'Share']}
             iconButtonProps={{ size: 'small', className: 'card-more-options', sx: { color: 'text.secondary' } }}
           />

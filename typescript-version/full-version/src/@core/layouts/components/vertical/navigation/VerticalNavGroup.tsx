@@ -17,9 +17,8 @@ import ListItemButton from '@mui/material/ListItemButton'
 // ** Third Party Imports
 import clsx from 'clsx'
 
-// ** Icons Imports
-import ChevronLeft from 'mdi-material-ui/ChevronLeft'
-import ChevronRight from 'mdi-material-ui/ChevronRight'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Configs Import
 import themeConfig from 'src/configs/themeConfig'
@@ -60,12 +59,7 @@ const MenuItemTextWrapper = styled(Box)<BoxProps>(() => ({
   ...(themeConfig.menuTextTruncate && { overflow: 'hidden' })
 }))
 
-const MenuGroupToggleRightIcon = styled(ChevronRight)(({ theme }) => ({
-  color: theme.palette.text.primary,
-  transition: 'transform .25s ease-in-out'
-}))
-
-const MenuGroupToggleLeftIcon = styled(ChevronLeft)(({ theme }) => ({
+const MenuGroupToggleIcon = styled(Icon)(({ theme }) => ({
   color: theme.palette.text.primary,
   transition: 'transform .25s ease-in-out'
 }))
@@ -91,7 +85,7 @@ const VerticalNavGroup = (props: Props) => {
   const theme = useTheme()
   const router = useRouter()
   const currentURL = router.asPath
-  const { direction, navCollapsed, verticalNavToggleType } = settings
+  const { direction, mode, navCollapsed, verticalNavToggleType } = settings
 
   // ** Accordion menu group open toggle
   const toggleActiveGroup = (item: NavGroup, parent: NavGroup | undefined) => {
@@ -185,7 +179,7 @@ const VerticalNavGroup = (props: Props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [navHover])
 
-  const IconTag = parent && !item.icon ? themeConfig.navSubItemIcon : item.icon
+  const icon = parent && !item.icon ? themeConfig.navSubItemIcon : item.icon
 
   const menuGroupCollapsedStyles = navCollapsed && !navHover ? { opacity: 0 } : { opacity: 1 }
 
@@ -205,44 +199,31 @@ const VerticalNavGroup = (props: Props) => {
   //   }
   // }
 
-  // const conditionalBgColor = () => {
-  //   if (skin === 'semi-dark' && theme.palette.mode === 'light') {
-  //     return {
-  //       color: `rgba(${theme.palette.customColors.dark}, 0.87)`,
-  //       '&:hover': {
-  //         backgroundColor: `rgba(${theme.palette.customColors.dark}, 0.04)`
-  //       },
-  //       '&.Mui-selected': {
-  //         backgroundColor: `rgba(${theme.palette.customColors.dark}, 0.08)`,
-  //         '&:hover': {
-  //           backgroundColor: `rgba(${theme.palette.customColors.dark}, 0.12)`
-  //         }
-  //       }
-  //     }
-  //   } else if (skin === 'semi-dark' && theme.palette.mode === 'dark') {
-  //     return {
-  //       color: `rgba(${theme.palette.customColors.light}, 0.87)`,
-  //       '&:hover': {
-  //         backgroundColor: `rgba(${theme.palette.customColors.light}, 0.04)`
-  //       },
-  //       '&.Mui-selected': {
-  //         backgroundColor: `rgba(${theme.palette.customColors.light}, 0.08)`,
-  //         '&:hover': {
-  //           backgroundColor: `rgba(${theme.palette.customColors.light}, 0.12)`
-  //         }
-  //       }
-  //     }
-  //   } else {
-  //     return {
-  //       '&.Mui-selected': {
-  //         backgroundColor: theme.palette.action.hover,
-  //         '&:hover': {
-  //           backgroundColor: theme.palette.action.hover
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
+  const conditionalBgColor = () => {
+    if (mode === 'semi-dark') {
+      return {
+        color: `rgba(${theme.palette.customColors.dark}, 0.87)`,
+        '&:hover': {
+          backgroundColor: `rgba(${theme.palette.customColors.dark}, 0.04)`
+        },
+        '&.Mui-selected': {
+          backgroundColor: `rgba(${theme.palette.customColors.dark}, 0.08)`,
+          '&:hover': {
+            backgroundColor: `rgba(${theme.palette.customColors.dark}, 0.12)`
+          }
+        }
+      }
+    } else {
+      return {
+        '&.Mui-selected': {
+          backgroundColor: theme.palette.action.hover,
+          '&:hover': {
+            backgroundColor: theme.palette.action.hover
+          }
+        }
+      }
+    }
+  }
 
   return (
     <CanViewNavGroup navGroup={item}>
@@ -260,17 +241,10 @@ const VerticalNavGroup = (props: Props) => {
             sx={{
               py: 2.5,
               width: '100%',
-
-              // ...conditionalBgColor(),
+              ...conditionalBgColor(),
               transition: 'padding-left .25s ease-in-out',
               pr: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 4.5,
               pl: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 5.5,
-              '&.Mui-selected': {
-                backgroundColor: theme.palette.action.hover,
-                '&:hover': {
-                  backgroundColor: theme.palette.action.hover
-                }
-              },
               '&.Mui-selected.Mui-focusVisible': {
                 backgroundColor: theme.palette.action.focus,
                 '&:hover': {
@@ -289,11 +263,7 @@ const VerticalNavGroup = (props: Props) => {
                   ...(parent && item.children ? { ml: 1.25, mr: 4.75 } : {})
                 }}
               >
-                <UserIcon
-                  icon={IconTag}
-                  componentType='vertical-menu'
-                  iconProps={{ sx: { ...(parent ? { fontSize: '0.75rem' } : {}) } }}
-                />
+                <UserIcon icon={icon as string} {...(parent && { fontSize: '0.75rem' })} />
               </ListItemIcon>
             )}
             <MenuItemTextWrapper sx={{ ...menuGroupCollapsedStyles, ...(isSubToSub ? { ml: 9 } : {}) }}>
@@ -317,24 +287,14 @@ const VerticalNavGroup = (props: Props) => {
                     }}
                   />
                 ) : null}
-                {direction === 'ltr' ? (
-                  <MenuGroupToggleRightIcon
-                    sx={{
-                      // ...conditionalColor(),
-                      color: 'text.secondary',
-                      ...(groupActive.includes(item.title) ? { transform: 'rotate(90deg)' } : {})
-                    }}
-                  />
-                ) : (
-                  <MenuGroupToggleLeftIcon
-                    sx={{
-                      // ...conditionalColor(),
-
-                      color: 'text.secondary',
-                      ...(groupActive.includes(item.title) ? { transform: 'rotate(-90deg)' } : {})
-                    }}
-                  />
-                )}
+                <MenuGroupToggleIcon
+                  icon={direction === 'ltr' ? 'mdi:chevron-right' : 'mdi:chevron-left'}
+                  sx={{
+                    ...(groupActive.includes(item.title)
+                      ? { transform: direction === 'ltr' ? 'rotate(90deg)' : 'rotate(-90deg)' }
+                      : {})
+                  }}
+                />
               </Box>
             </MenuItemTextWrapper>
           </ListItemButton>

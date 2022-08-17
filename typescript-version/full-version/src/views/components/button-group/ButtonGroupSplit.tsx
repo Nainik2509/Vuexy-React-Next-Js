@@ -11,8 +11,8 @@ import MenuList from '@mui/material/MenuList'
 import ButtonGroup from '@mui/material/ButtonGroup'
 import ClickAwayListener from '@mui/material/ClickAwayListener'
 
-// ** Icons Imports
-import MenuDown from 'mdi-material-ui/MenuDown'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 const options = ['Create a merge commit', 'Squash and merge', 'Rebase and merge']
 
@@ -53,7 +53,7 @@ const ButtonGroupSplit = () => {
           aria-expanded={open ? 'true' : undefined}
           aria-controls={open ? 'split-button-menu' : undefined}
         >
-          <MenuDown />
+          <Icon icon='mdi:menu-down' />
         </Button>
       </ButtonGroup>
       <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>

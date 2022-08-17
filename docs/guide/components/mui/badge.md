@@ -17,10 +17,7 @@ There is only one badge skin `light`.
 Here is an example of how to use the skin:
 
 ```tsx
-// ** MUI Imports
 import Avatar from '@mui/material/Avatar'
-
-// ** Custom Components Imports
 import CustomBadge from 'src/@core/components/mui/badge'
 
 <CustomBadge skin='light' color='primary' badgeContent={4}>

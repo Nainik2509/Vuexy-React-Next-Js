@@ -19,15 +19,8 @@ import DialogContent from '@mui/material/DialogContent'
 import InputAdornment from '@mui/material/InputAdornment'
 import IconButton, { IconButtonProps } from '@mui/material/IconButton'
 
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
-import Twitter from 'mdi-material-ui/Twitter'
-import Facebook from 'mdi-material-ui/Facebook'
-import Linkedin from 'mdi-material-ui/Linkedin'
-import GiftOutline from 'mdi-material-ui/GiftOutline'
-import LicenseIcon from 'mdi-material-ui/LicenseIcon'
-import MessageOutline from 'mdi-material-ui/MessageOutline'
-import ClipboardOutline from 'mdi-material-ui/ClipboardOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Imports
 import CustomAvatar from 'src/@core/components/mui/avatar'
@@ -70,8 +63,8 @@ const DialogReferEarn = () => {
 
   return (
     <Card>
-      <CardContent sx={{ textAlign: 'center' }}>
-        <GiftOutline sx={{ mb: 2, fontSize: '2rem' }} />
+      <CardContent sx={{ textAlign: 'center', '& svg': { mb: 2 } }}>
+        <Icon icon='mdi:gift-outline' fontSize='2rem' />
         <Typography variant='h6' sx={{ mb: 4 }}>
           Refer & Earn
         </Typography>
@@ -97,7 +90,7 @@ const DialogReferEarn = () => {
             onClick={() => setShow(false)}
             sx={{ position: 'absolute', right: '1rem', top: '1rem' }}
           >
-            <Close />
+            <Icon icon='mdi:close' />
           </IconButton>
           <Box sx={{ mb: 4, textAlign: 'center' }}>
             <Typography variant='h5' sx={{ mb: 3 }}>
@@ -110,8 +103,12 @@ const DialogReferEarn = () => {
           <Grid container spacing={6} sx={{ mt: 4, textAlign: 'center' }}>
             <Grid item md={4} xs={12}>
               <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                <CustomAvatar skin='light' color='primary' sx={{ mb: 3, width: [70, 100], height: [70, 100] }}>
-                  <MessageOutline sx={{ fontSize: ['2.2rem', '2.5rem'] }} />
+                <CustomAvatar
+                  skin='light'
+                  color='primary'
+                  sx={{ mb: 3, width: [70, 100], height: [70, 100], '& svg': { fontSize: ['2.2rem', '2.5rem'] } }}
+                >
+                  <Icon icon='mdi:message-outline' />
                 </CustomAvatar>
                 <Typography sx={{ mb: 3, fontWeight: '600' }}>Send Invitation 🤟🏻</Typography>
                 <Typography>Send your referral link to your friend</Typography>
@@ -119,8 +116,12 @@ const DialogReferEarn = () => {
             </Grid>
             <Grid item md={4} xs={12}>
               <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                <CustomAvatar skin='light' color='primary' sx={{ mb: 3, width: [70, 100], height: [70, 100] }}>
-                  <ClipboardOutline sx={{ fontSize: ['2.2rem', '2.5rem'] }} />
+                <CustomAvatar
+                  skin='light'
+                  color='primary'
+                  sx={{ mb: 3, width: [70, 100], height: [70, 100], '& svg': { fontSize: ['2.2rem', '2.5rem'] } }}
+                >
+                  <Icon icon='mdi:clipboard-outline' />
                 </CustomAvatar>
                 <Typography sx={{ mb: 3, fontWeight: '600' }}>Registration 👩🏻‍💻</Typography>
                 <Typography>Let them register to our services</Typography>
@@ -128,8 +129,12 @@ const DialogReferEarn = () => {
             </Grid>
             <Grid item md={4} xs={12}>
               <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                <CustomAvatar skin='light' color='primary' sx={{ mb: 3, width: [70, 100], height: [70, 100] }}>
-                  <LicenseIcon sx={{ fontSize: ['2.2rem', '2.5rem'] }} />
+                <CustomAvatar
+                  skin='light'
+                  color='primary'
+                  sx={{ mb: 3, width: [70, 100], height: [70, 100], '& svg': { fontSize: ['2.2rem', '2.5rem'] } }}
+                >
+                  <Icon icon='mdi:license' />
                 </CustomAvatar>
                 <Typography sx={{ mb: 3, fontWeight: '600' }}>Free Trial 🎉</Typography>
                 <Typography>Your friend will get 30 days free trial</Typography>
@@ -188,13 +193,13 @@ const DialogReferEarn = () => {
               />
               <Box sx={{ mt: [2, 0], display: 'flex', alignItems: 'center' }}>
                 <FacebookBtn>
-                  <Facebook />
+                  <Icon icon='mdi:facebook' />
                 </FacebookBtn>
                 <TwitterBtn>
-                  <Twitter />
+                  <Icon icon='mdi:twitter' />
                 </TwitterBtn>
                 <LinkedInBtn>
-                  <Linkedin />
+                  <Icon icon='mdi:linkedin' />
                 </LinkedInBtn>
               </Box>
             </Box>

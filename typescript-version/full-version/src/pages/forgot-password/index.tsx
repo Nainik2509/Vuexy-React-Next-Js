@@ -12,8 +12,8 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import { styled, useTheme } from '@mui/material/styles'
 import Typography, { TypographyProps } from '@mui/material/Typography'
 
-// ** Icons Imports
-import ChevronLeft from 'mdi-material-ui/ChevronLeft'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Configs
 import themeConfig from 'src/configs/themeConfig'
@@ -211,7 +211,7 @@ const ForgotPassword = () => {
               <Typography variant='body2' sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Link passHref href='/login'>
                   <LinkStyled>
-                    <ChevronLeft />
+                    <Icon icon='mdi:chevron-left' />
                     <span>Back to login</span>
                   </LinkStyled>
                 </Link>

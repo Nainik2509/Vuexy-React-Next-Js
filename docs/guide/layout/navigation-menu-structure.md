@@ -73,7 +73,6 @@ Here is the example code:
 <code-group>
 <code-block title="TS" active>
 ```ts
-import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
 import { VerticalNavItemsType } from 'src/@core/layouts/types'
 
 const navigation = (): VerticalNavItemsType => {
@@ -81,7 +80,7 @@ const navigation = (): VerticalNavItemsType => {
     {
       badgeContent: '3',
       title: 'Components',
-      icon: ArchiveOutline,
+      icon: 'mdi:archive-outline',
       badgeColor: 'success',
       children: [
         {
@@ -116,14 +115,12 @@ export default navigation
 
 <code-block title="JS">
 ```js
-import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
-
 const navigation = () => {
   return [
     {
       badgeContent: '3',
       title: 'Components',
-      icon: ArchiveOutline,
+      icon: 'mdi:archive-outline',
       badgeColor: 'success',
       children: [
         {
@@ -200,9 +197,6 @@ Here is the example code:
 <code-group>
 <code-block title="TS" active>
 ```ts
-import MaterialUi from 'mdi-material-ui/MaterialUi'
-import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
-import CheckboxMarkedCircleOutline from 'mdi-material-ui/CheckboxMarkedCircleOutline'
 import { VerticalNavItemsType } from 'src/@core/layouts/types'
 
 const navigation = (): VerticalNavItemsType => {
@@ -212,15 +206,15 @@ const navigation = (): VerticalNavItemsType => {
       badgeContent: 'New',
       title: 'Form Validation',
       path: '/forms/form-validation',
-      icon: CheckboxMarkedCircleOutline
+      icon: 'mdi:checkbox-marked-circle-outline'
     },
     {
       disabled: true,
-      icon: EyeOffOutline,
+      icon: 'mdi:eye-off-outline',
       title: 'Disabled Menu'
     },
     {
-      icon: MaterialUi,
+      icon: 'mdi:material-ui',
       title: 'MUI Docs',
       externalLink: true,
       openInNewTab: true,
@@ -235,10 +229,6 @@ export default navigation
 
 <code-block title="JS">
 ```js
-import MaterialUi from 'mdi-material-ui/MaterialUi'
-import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
-import CheckboxMarkedCircleOutline from 'mdi-material-ui/CheckboxMarkedCircleOutline'
-
 const navigation = () => {
   return [
     {
@@ -246,15 +236,15 @@ const navigation = () => {
       badgeContent: 'New',
       title: 'Form Validation',
       path: '/forms/form-validation',
-      icon: CheckboxMarkedCircleOutline
+      icon: 'mdi:checkbox-marked-circle-outline'
     },
     {
       disabled: true,
-      icon: EyeOffOutline,
+      icon: 'mdi:eye-off-outline',
       title: 'Disabled Menu'
     },
     {
-      icon: MaterialUi,
+      icon: 'mdi:material-ui',
       title: 'MUI Docs',
       externalLink: true,
       openInNewTab: true,
@@ -318,10 +308,6 @@ Here is the example code:
 <code-group>
 <code-block title="TS" active>
 ```ts
-import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
-import FormatLetterCase from 'mdi-material-ui/FormatLetterCase'
-import PaletteSwatchOutline from 'mdi-material-ui/PaletteSwatchOutline'
-import GoogleCirclesExtended from 'mdi-material-ui/GoogleCirclesExtended'
 import { HorizontalNavItemsType } from 'src/@core/layouts/types'
 
 const navigation = (): HorizontalNavItemsType => {
@@ -330,16 +316,16 @@ const navigation = (): HorizontalNavItemsType => {
       title: 'UI',
       badgeContent: '3',
       badgeColor: 'warning',
-      icon: PaletteSwatchOutline,
+      icon: 'mdi:palette-swatch-outline',
       children: [
         {
           title: 'Typography',
-          icon: FormatLetterCase,
+          icon: 'mdi:format-letter-case',
           path: '/ui/typography'
         },
         {
           title: 'Components',
-          icon: ArchiveOutline,
+          icon: 'mdi:archive-outline',
           children: [
             {
               title: 'Accordion',
@@ -354,7 +340,7 @@ const navigation = (): HorizontalNavItemsType => {
         {
           title: 'Icons',
           path: '/ui/icons',
-          icon: GoogleCirclesExtended
+          icon: 'mdi:google-circles-extended'
         }
       ]
     }
@@ -367,27 +353,22 @@ export default navigation
 
 <code-block title="JS">
 ```js
-import ArchiveOutline from 'mdi-material-ui/ArchiveOutline'
-import FormatLetterCase from 'mdi-material-ui/FormatLetterCase'
-import PaletteSwatchOutline from 'mdi-material-ui/PaletteSwatchOutline'
-import GoogleCirclesExtended from 'mdi-material-ui/GoogleCirclesExtended'
-
 const navigation = () => {
   return [
     {
       title: 'UI',
       badgeContent: '3',
       badgeColor: 'warning',
-      icon: PaletteSwatchOutline,
+      icon: 'mdi:palette-swatch-outline',
       children: [
         {
           title: 'Typography',
-          icon: FormatLetterCase,
+          icon: 'mdi:format-letter-case',
           path: '/ui/typography'
         },
         {
           title: 'Components',
-          icon: ArchiveOutline,
+          icon: 'mdi:archive-outline',
           children: [
             {
               title: 'Accordion',
@@ -402,7 +383,7 @@ const navigation = () => {
         {
           title: 'Icons',
           path: '/ui/icons',
-          icon: GoogleCirclesExtended
+          icon: 'mdi:google-circles-extended'
         }
       ]
     }
@@ -457,9 +438,6 @@ Here is the example code:
 <code-group>
 <code-block title="TS" active>
 ```ts
-import MaterialUi from 'mdi-material-ui/MaterialUi'
-import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
-import CheckboxMarkedCircleOutline from 'mdi-material-ui/CheckboxMarkedCircleOutline'
 import { HorizontalNavItemsType } from 'src/@core/layouts/types'
 
 const navigation = (): HorizontalNavItemsType => {
@@ -469,15 +447,15 @@ const navigation = (): HorizontalNavItemsType => {
       badgeContent: 'New',
       title: 'Form Validation',
       path: '/forms/form-validation',
-      icon: CheckboxMarkedCircleOutline
+      icon: 'mdi:checkbox-marked-circle-outline'
     },
     {
       disabled: true,
-      icon: EyeOffOutline,
+      icon: 'mdi:eye-off-outline',
       title: 'Disabled Menu'
     },
     {
-      icon: MaterialUi,
+      icon: 'mdi:material-ui',
       title: 'MUI Docs',
       externalLink: true,
       openInNewTab: true,
@@ -492,10 +470,6 @@ export default navigation
 
 <code-block title="JS">
 ```js
-import MaterialUi from 'mdi-material-ui/MaterialUi'
-import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
-import CheckboxMarkedCircleOutline from 'mdi-material-ui/CheckboxMarkedCircleOutline'
-
 const navigation = () => {
   return [
     {
@@ -503,15 +477,15 @@ const navigation = () => {
       badgeContent: 'New',
       title: 'Form Validation',
       path: '/forms/form-validation',
-      icon: CheckboxMarkedCircleOutline
+      icon: 'mdi:checkbox-marked-circle-outline'
     },
     {
       disabled: true,
-      icon: EyeOffOutline,
+      icon: 'mdi:eye-off-outline',
       title: 'Disabled Menu'
     },
     {
-      icon: MaterialUi,
+      icon: 'mdi:material-ui',
       title: 'MUI Docs',
       externalLink: true,
       openInNewTab: true,

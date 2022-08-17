@@ -14,10 +14,7 @@ import CardContent from '@mui/material/CardContent'
 import CircularProgress from '@mui/material/CircularProgress'
 
 // ** Icon Imports
-import Close from 'mdi-material-ui/Close'
-import Refresh from 'mdi-material-ui/Refresh'
-import ChevronUp from 'mdi-material-ui/ChevronUp'
-import ChevronDown from 'mdi-material-ui/ChevronDown'
+import Icon from 'src/@core/components/icon'
 
 const CardActionAll = () => {
   // ** States
@@ -46,7 +43,7 @@ const CardActionAll = () => {
                 sx={{ mr: 2, color: 'text.secondary' }}
                 onClick={() => setCollapsed(!collapsed)}
               >
-                {!collapsed ? <ChevronDown fontSize='small' /> : <ChevronUp fontSize='small' />}
+                <Icon fontSize={20} icon={!collapsed ? 'mdi:chevron-down' : 'mdi:chevron-up'} />
               </IconButton>
               <IconButton
                 size='small'
@@ -54,7 +51,7 @@ const CardActionAll = () => {
                 onClick={() => handleBackDrop()}
                 sx={{ mr: 2, color: 'text.secondary' }}
               >
-                <Refresh fontSize='small' />
+                <Icon icon='mdi:refresh' fontSize={20} />
               </IconButton>
               <IconButton
                 size='small'
@@ -62,7 +59,7 @@ const CardActionAll = () => {
                 sx={{ color: 'text.secondary' }}
                 onClick={() => setVisibility(false)}
               >
-                <Close fontSize='small' />
+                <Icon icon='mdi:close' fontSize={20} />
               </IconButton>
             </Box>
           }
@@ -71,7 +68,10 @@ const CardActionAll = () => {
           <CardContent>
             <Typography variant='body2'>
               You can specifically add remove action using <code>actionRemove</code> prop Click on{' '}
-              <Close fontSize='small' sx={{ verticalAlign: 'bottom' }} /> icon to see it in action
+              <Box component='span' sx={{ verticalAlign: 'top' }}>
+                <Icon icon='mdi:close' fontSize={20} />{' '}
+              </Box>
+              icon to see it in action
             </Typography>
           </CardContent>
 

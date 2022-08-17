@@ -21,3 +21,5 @@ pageClass: page-article-list
 [How to add i18n Routing](/articles/how-to-add-i18n-routing.md)
 
 [How to use i18n in a page](/articles/how-to-use-i18n-in-a-page.md)
+
+[How to replace API endpoints](/articles/how-to-replace-api-endpoints.md)

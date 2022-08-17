@@ -7,10 +7,8 @@ import Radio from '@mui/material/Radio'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 
-// ** Icons Imports
-import LicenseIcon from 'mdi-material-ui/LicenseIcon'
-import CartOutline from 'mdi-material-ui/CartOutline'
-import BriefcaseOutline from 'mdi-material-ui/BriefcaseOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Custom Avatar Component
 import CustomAvatar from 'src/@core/components/mui/avatar'
@@ -35,7 +33,7 @@ const TabDetails = () => {
         >
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <CustomAvatar skin='light' color='info' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
-              <BriefcaseOutline />
+              <Icon icon='mdi:briefcase-outline' />
             </CustomAvatar>
             <Box>
               <Typography>CRM Application</Typography>
@@ -50,7 +48,7 @@ const TabDetails = () => {
         >
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <CustomAvatar skin='light' color='success' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
-              <CartOutline />
+              <Icon icon='mdi:cart-outline' />
             </CustomAvatar>
             <Box>
               <Typography>Ecommerce Platforms</Typography>
@@ -65,7 +63,7 @@ const TabDetails = () => {
         >
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <CustomAvatar skin='light' color='error' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
-              <LicenseIcon />
+              <Icon icon='mdi:license' />
             </CustomAvatar>
             <Box>
               <Typography>Online Learning platform</Typography>

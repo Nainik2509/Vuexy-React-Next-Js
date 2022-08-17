@@ -11,9 +11,8 @@ import CardHeader from '@mui/material/CardHeader'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 
-// ** Icons Imports
-import Close from 'mdi-material-ui/Close'
-import LinkVariant from 'mdi-material-ui/LinkVariant'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Styled component for the Facebook image
 const Img = styled('img')(({ theme }) => ({
@@ -132,7 +131,7 @@ const UserViewConnection = () => {
               </Box>
             </Box>
             <Button color='secondary' variant='outlined' sx={{ p: 2, minWidth: 38 }}>
-              <LinkVariant sx={{ fontSize: '1.25rem' }} />
+              <Icon icon='mdi:link-variant' fontSize='1.25rem' />
             </Button>
           </Box>
 
@@ -147,7 +146,7 @@ const UserViewConnection = () => {
               </Box>
             </Box>
             <Button color='secondary' variant='outlined' sx={{ p: 2, minWidth: 38 }}>
-              <Close sx={{ fontSize: '1.25rem' }} />
+              <Icon icon='mdi:close' fontSize='1.25rem' />
             </Button>
           </Box>
 
@@ -162,7 +161,7 @@ const UserViewConnection = () => {
               </Box>
             </Box>
             <Button color='secondary' variant='outlined' sx={{ p: 2, minWidth: 38 }}>
-              <Close sx={{ fontSize: '1.25rem' }} />
+              <Icon icon='mdi:close' fontSize='1.25rem' />
             </Button>
           </Box>
 
@@ -177,7 +176,7 @@ const UserViewConnection = () => {
               </Box>
             </Box>
             <Button color='secondary' variant='outlined' sx={{ p: 2, minWidth: 38 }}>
-              <LinkVariant sx={{ fontSize: '1.25rem' }} />
+              <Icon icon='mdi:link-variant' fontSize='1.25rem' />
             </Button>
           </Box>
 
@@ -192,7 +191,7 @@ const UserViewConnection = () => {
               </Box>
             </Box>
             <Button color='secondary' variant='outlined' sx={{ p: 2, minWidth: 38 }}>
-              <LinkVariant sx={{ fontSize: '1.25rem' }} />
+              <Icon icon='mdi:link-variant' fontSize='1.25rem' />
             </Button>
           </Box>
         </CardContent>

@@ -14,8 +14,8 @@ import Typography from '@mui/material/Typography'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
-// ** Icons Imports
-import AccountOutline from 'mdi-material-ui/AccountOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
@@ -71,7 +71,7 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
                       sx={{ minWidth: 28, p: theme => `${theme.spacing(1.25, 1)} !important` }}
                       variant={connection.isFriend ? 'contained' : 'outlined'}
                     >
-                      <AccountOutline />
+                      <Icon icon='mdi:account-outline' />
                     </Button>
                   </Box>
                 )

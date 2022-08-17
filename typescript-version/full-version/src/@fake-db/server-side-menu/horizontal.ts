@@ -6,48 +6,48 @@ import { HorizontalNavItemsType } from 'src/@core/layouts/types'
 
 const navigation: HorizontalNavItemsType = [
   {
-    icon: 'HomeOutline',
+    icon: 'mdi:home-outline',
     title: 'Dashboards',
     children: [
       {
-        icon: 'ChartTimelineVariant',
+        icon: 'mdi:chart-timeline-variant',
         title: 'Analytics',
         path: '/dashboards/analytics'
       },
       {
-        icon: 'CartOutline',
+        icon: 'mdi:cart-outline',
         title: 'eCommerce',
         path: '/dashboards/ecommerce'
       }
     ]
   },
   {
-    icon: 'Apps',
+    icon: 'mdi:apps',
     title: 'Apps',
     children: [
       {
         title: 'Email',
-        icon: 'EmailOutline',
+        icon: 'mdi:email-outline',
         path: '/apps/email'
       },
       {
         title: 'Chat',
-        icon: 'MessageOutline',
+        icon: 'mdi:message-outline',
         path: '/apps/chat'
       },
       {
         title: 'Calendar',
-        icon: 'CalendarBlankOutline',
+        icon: 'mdi:calendar-blank-outline',
         path: '/apps/calendar'
       },
       {
         title: 'Kanban',
-        icon: 'ViewGridOutline',
+        icon: 'mdi:view-grid-outline',
         path: '/apps/kanban'
       },
       {
         title: 'Invoice',
-        icon: 'FileDocumentOutline',
+        icon: 'mdi:file-document-outline',
         children: [
           {
             title: 'List',
@@ -69,7 +69,7 @@ const navigation: HorizontalNavItemsType = [
       },
       {
         title: 'User',
-        icon: 'AccountOutline',
+        icon: 'mdi:account-outline',
         children: [
           {
             title: 'List',
@@ -83,7 +83,7 @@ const navigation: HorizontalNavItemsType = [
       },
       {
         title: 'Roles & Permissions',
-        icon: 'ShieldOutline',
+        icon: 'mdi:shield-outline',
         children: [
           {
             title: 'Roles',
@@ -98,22 +98,22 @@ const navigation: HorizontalNavItemsType = [
     ]
   },
   {
-    icon: 'PaletteSwatchOutline',
+    icon: 'mdi:palette-swatch-outline',
     title: 'UI',
     children: [
       {
         title: 'Typography',
-        icon: 'FormatLetterCase',
+        icon: 'mdi:format-letter-case',
         path: '/ui/typography'
       },
       {
         title: 'Icons',
         path: '/ui/icons',
-        icon: 'GoogleCirclesExtended'
+        icon: 'mdi:google-circles-extended'
       },
       {
         title: 'Cards',
-        icon: 'CreditCardOutline',
+        icon: 'mdi:credit-card-outline',
         children: [
           {
             title: 'Basic',
@@ -139,7 +139,7 @@ const navigation: HorizontalNavItemsType = [
       },
       {
         title: 'Components',
-        icon: 'ArchiveOutline',
+        icon: 'mdi:archive-outline',
         children: [
           {
             title: 'Accordion',
@@ -226,12 +226,12 @@ const navigation: HorizontalNavItemsType = [
     ]
   },
   {
-    icon: 'FileDocumentOutline',
+    icon: 'mdi:file-document-outline',
     title: 'Pages',
     children: [
       {
         title: 'User Profile',
-        icon: 'CardAccountDetailsOutline',
+        icon: 'mdi:card-account-details-outline',
         children: [
           {
             title: 'Profile',
@@ -252,7 +252,7 @@ const navigation: HorizontalNavItemsType = [
         ]
       },
       {
-        icon: 'AccountCogOutline',
+        icon: 'mdi:account-cog-outline',
         title: 'Account Settings',
         children: [
           {
@@ -281,21 +281,21 @@ const navigation: HorizontalNavItemsType = [
       {
         title: 'FAQ',
         path: '/pages/faq',
-        icon: 'HelpCircleOutline'
+        icon: 'mdi:help-circle-outline'
       },
       {
-        icon: 'BookOpenOutline',
+        icon: 'mdi:book-open-outline',
         title: 'Knowledge Base',
         path: '/pages/knowledge-base'
       },
       {
         title: 'Pricing',
-        icon: 'CurrencyUsd',
+        icon: 'mdi:currency-usd',
         path: '/pages/pricing'
       },
       {
         title: 'Miscellaneous',
-        icon: 'FileOutline',
+        icon: 'mdi:file-outline',
         children: [
           {
             openInNewTab: true,
@@ -326,7 +326,7 @@ const navigation: HorizontalNavItemsType = [
       },
       {
         title: 'Auth Pages',
-        icon: 'LockOutline',
+        icon: 'mdi:lock-outline',
         children: [
           {
             title: 'Login',
@@ -432,7 +432,7 @@ const navigation: HorizontalNavItemsType = [
       },
       {
         title: 'Wizard Examples',
-        icon: 'TransitConnectionHorizontal',
+        icon: 'mdi:transit-connection-horizontal',
         children: [
           {
             title: 'Checkout',
@@ -449,7 +449,7 @@ const navigation: HorizontalNavItemsType = [
         ]
       },
       {
-        icon: 'VectorArrangeBelow',
+        icon: 'mdi:vector-arrange-below',
         title: 'Dialog Examples',
         path: '/pages/dialog-examples'
       }
@@ -457,11 +457,11 @@ const navigation: HorizontalNavItemsType = [
   },
   {
     title: 'Forms & Tables',
-    icon: 'CheckboxMarkedOutline',
+    icon: 'mdi:checkbox-marked-outline',
     children: [
       {
         title: 'Form Elements',
-        icon: 'FormSelect',
+        icon: 'mdi:form-select',
         children: [
           {
             title: 'Text Field',
@@ -522,67 +522,67 @@ const navigation: HorizontalNavItemsType = [
         ]
       },
       {
-        icon: 'CubeOutline',
+        icon: 'mdi:cube-outline',
         title: 'Form Layouts',
         path: '/forms/form-layouts'
       },
       {
         title: 'Form Validation',
         path: '/forms/form-validation',
-        icon: 'CheckboxMarkedCircleOutline'
+        icon: 'mdi:checkbox-marked-circle-outline'
       },
       {
         title: 'Form Wizard',
         path: '/forms/form-wizard',
-        icon: 'TransitConnectionHorizontal'
+        icon: 'mdi:transit-connection-horizontal'
       },
       {
         title: 'Table',
-        icon: 'GridLarge',
+        icon: 'mdi:grid-large',
         path: '/tables/mui'
       },
       {
         title: 'Mui DataGrid',
-        icon: 'Grid',
+        icon: 'mdi:grid',
         path: '/tables/data-grid'
       }
     ]
   },
   {
     title: 'Charts',
-    icon: 'ChartDonut',
+    icon: 'mdi:chart-donut',
     children: [
       {
         title: 'Apex',
-        icon: 'ChartLine',
+        icon: 'mdi:chart-line',
         path: '/charts/apex-charts'
       },
       {
         title: 'Recharts',
-        icon: 'ChartBellCurveCumulative',
+        icon: 'mdi:chart-bell-curve-cumulative',
         path: '/charts/recharts'
       },
       {
         title: 'ChartJS',
         path: '/charts/chartjs',
-        icon: 'ChartBellCurve'
+        icon: 'mdi:chart-bell-curve'
       }
     ]
   },
   {
     title: 'Others',
-    icon: 'DotsHorizontal',
+    icon: 'mdi:dots-horizontal',
     children: [
       {
         path: '/acl',
         action: 'read',
         subject: 'acl-page',
-        icon: 'ShieldOutline',
+        icon: 'mdi:shield-outline',
         title: 'Access Control'
       },
       {
         title: 'Menu Levels',
-        icon: 'Menu',
+        icon: 'mdi:menu',
         children: [
           {
             title: 'Menu Level 2.1'
@@ -602,19 +602,19 @@ const navigation: HorizontalNavItemsType = [
       },
       {
         title: 'Disabled Menu',
-        icon: 'EyeOffOutline',
+        icon: 'mdi:eye-off-outline',
         disabled: true
       },
       {
         title: 'Raise Support',
-        icon: 'Lifebuoy',
+        icon: 'mdi:lifebuoy',
         externalLink: true,
         openInNewTab: true,
         path: 'https://themeselection.com/support'
       },
       {
         title: 'Documentation',
-        icon: 'FileDocumentOutline',
+        icon: 'mdi:file-document-outline',
         externalLink: true,
         openInNewTab: true,
         path: 'https://themeselection.com/docs/'

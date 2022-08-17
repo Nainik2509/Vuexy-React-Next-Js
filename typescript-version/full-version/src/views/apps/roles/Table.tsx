@@ -1,5 +1,5 @@
 // ** React Imports
-import { useEffect, useCallback, useState, ReactElement } from 'react'
+import { useEffect, useCallback, useState } from 'react'
 
 // ** Next Images
 import Link from 'next/link'
@@ -14,13 +14,8 @@ import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import { SelectChangeEvent } from '@mui/material/Select'
 
-// ** Icons Imports
-import Laptop from 'mdi-material-ui/Laptop'
-import ChartDonut from 'mdi-material-ui/ChartDonut'
-import CogOutline from 'mdi-material-ui/CogOutline'
-import EyeOutline from 'mdi-material-ui/EyeOutline'
-import PencilOutline from 'mdi-material-ui/PencilOutline'
-import AccountOutline from 'mdi-material-ui/AccountOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Store Imports
 import { useDispatch, useSelector } from 'react-redux'
@@ -44,7 +39,7 @@ import { ThemeColor } from 'src/@core/layouts/types'
 import TableHeader from 'src/views/apps/roles/TableHeader'
 
 interface UserRoleType {
-  [key: string]: ReactElement
+  [key: string]: { icon: string; color: string }
 }
 
 interface UserStatusType {
@@ -57,11 +52,11 @@ interface CellType {
 
 // ** Vars
 const userRoleObj: UserRoleType = {
-  admin: <Laptop fontSize='small' sx={{ mr: 3, color: 'error.main' }} />,
-  author: <CogOutline fontSize='small' sx={{ mr: 3, color: 'warning.main' }} />,
-  editor: <PencilOutline fontSize='small' sx={{ mr: 3, color: 'info.main' }} />,
-  maintainer: <ChartDonut fontSize='small' sx={{ mr: 3, color: 'success.main' }} />,
-  subscriber: <AccountOutline fontSize='small' sx={{ mr: 3, color: 'primary.main' }} />
+  admin: { icon: 'mdi:laptop', color: 'error.main' },
+  author: { icon: 'mdi:cog-outline', color: 'warning.main' },
+  editor: { icon: 'mdi:pencil-outline', color: 'info.main' },
+  maintainer: { icon: 'mdi:chart-donut', color: 'success.main' },
+  subscriber: { icon: 'mdi:account-outline', color: 'primary.main' }
 }
 
 const userStatusObj: UserStatusType = {
@@ -153,8 +148,8 @@ const columns = [
     headerName: 'Role',
     renderCell: ({ row }: CellType) => {
       return (
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          {userRoleObj[row.role]}
+        <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 3, color: userRoleObj[row.role].color } }}>
+          <Icon icon={userRoleObj[row.role].icon} fontSize={20} />
           <Typography noWrap sx={{ color: 'text.secondary', textTransform: 'capitalize' }}>
             {row.role}
           </Typography>
@@ -201,7 +196,7 @@ const columns = [
     renderCell: ({ row }: CellType) => (
       <Link href={`/apps/user/view/${row.id}`} passHref>
         <IconButton>
-          <EyeOutline />
+          <Icon icon='mdi:eye-outline' />
         </IconButton>
       </Link>
     )

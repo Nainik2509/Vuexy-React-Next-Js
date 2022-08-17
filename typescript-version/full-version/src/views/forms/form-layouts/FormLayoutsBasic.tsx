@@ -18,9 +18,8 @@ import OutlinedInput from '@mui/material/OutlinedInput'
 import InputAdornment from '@mui/material/InputAdornment'
 import FormHelperText from '@mui/material/FormHelperText'
 
-// ** Icons Imports
-import EyeOutline from 'mdi-material-ui/EyeOutline'
-import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 interface State {
   password: string
@@ -93,7 +92,7 @@ const FormLayoutsBasic = () => {
                         onMouseDown={handleMouseDownPassword}
                         aria-label='toggle password visibility'
                       >
-                        {values.showPassword ? <EyeOutline /> : <EyeOffOutline />}
+                        <Icon icon={values.showPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
                       </IconButton>
                     </InputAdornment>
                   }
@@ -121,7 +120,11 @@ const FormLayoutsBasic = () => {
                         onMouseDown={handleMouseDownPassword}
                         aria-label='toggle password visibility'
                       >
-                        {confirmPassValues.showPassword ? <EyeOutline /> : <EyeOffOutline />}
+                        {confirmPassValues.showPassword ? (
+                          <Icon icon='mdi:eye-outline' />
+                        ) : (
+                          <Icon icon='mdi:eye-off-outline' />
+                        )}
                       </IconButton>
                     </InputAdornment>
                   }

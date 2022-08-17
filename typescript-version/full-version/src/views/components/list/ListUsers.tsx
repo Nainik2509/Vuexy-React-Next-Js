@@ -10,8 +10,8 @@ import ListItemText from '@mui/material/ListItemText'
 import ListItemAvatar from '@mui/material/ListItemAvatar'
 import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
 
-// ** Icons Imports
-import Circle from 'mdi-material-ui/Circle'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 const StyledList = styled(List)<ListProps>(({ theme }) => ({
   '& .MuiListItem-container': {
@@ -49,8 +49,8 @@ const ListUsers = () => {
         <Box>
           <ListItemText primary='Caroline Black' />
           <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center' }}>
-              <Circle sx={{ mr: 1, color: 'success.main', fontSize: '0.625rem' }} />
+            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'success.main' } }}>
+              <Icon icon='mdi:circle' fontSize='0.625rem' />
               <Typography variant='caption'>Online</Typography>
             </Box>
             <Typography variant='caption' sx={{ color: 'text.disabled' }}>
@@ -71,8 +71,8 @@ const ListUsers = () => {
         <Box>
           <ListItemText primary='Alfred Copeland' />
           <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center' }}>
-              <Circle sx={{ mr: 1, color: 'warning.main', fontSize: '0.625rem' }} />
+            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'warning.main' } }}>
+              <Icon icon='mdi:circle' fontSize='0.625rem' />
               <Typography variant='caption'>Away</Typography>
             </Box>
             <Typography variant='caption' sx={{ color: 'text.disabled' }}>
@@ -93,8 +93,8 @@ const ListUsers = () => {
         <Box>
           <ListItemText primary='Celia Schneider' />
           <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center' }}>
-              <Circle sx={{ mr: 1, color: 'secondary.main', fontSize: '0.625rem' }} />
+            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'secondary.main' } }}>
+              <Icon icon='mdi:circle' fontSize='0.625rem' />
               <Typography variant='caption'>Offline</Typography>
             </Box>
             <Typography variant='caption' sx={{ color: 'text.disabled' }}>
@@ -116,8 +116,8 @@ const ListUsers = () => {
         <Box>
           <ListItemText primary='Max Rogan' />
           <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center' }}>
-              <Circle sx={{ mr: 1, color: 'error.main', fontSize: '0.625rem' }} />
+            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'error.main' } }}>
+              <Icon icon='mdi:circle' fontSize='0.625rem' />
               <Typography variant='caption'>In Meeting</Typography>
             </Box>
             <Typography variant='caption' sx={{ color: 'text.disabled' }}>

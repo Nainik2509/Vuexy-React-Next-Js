@@ -12,21 +12,8 @@ import Box, { BoxProps } from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import ListItemIcon from '@mui/material/ListItemIcon'
 
-// ** Icons Import
-import Circle from 'mdi-material-ui/Circle'
-import Attachment from 'mdi-material-ui/Attachment'
-import StarOutline from 'mdi-material-ui/StarOutline'
-import ChevronLeft from 'mdi-material-ui/ChevronLeft'
-import ChevronRight from 'mdi-material-ui/ChevronRight'
-import ShareOutline from 'mdi-material-ui/ShareOutline'
-import LabelOutline from 'mdi-material-ui/LabelOutline'
-import DotsVertical from 'mdi-material-ui/DotsVertical'
-import ReplyOutline from 'mdi-material-ui/ReplyOutline'
-import EmailOutline from 'mdi-material-ui/EmailOutline'
-import DeleteOutline from 'mdi-material-ui/DeleteOutline'
-import FolderOutline from 'mdi-material-ui/FolderOutline'
-import ArrowExpandVertical from 'mdi-material-ui/ArrowExpandVertical'
-import ArrowCollapseVertical from 'mdi-material-ui/ArrowCollapseVertical'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
 import PerfectScrollbar from 'react-perfect-scrollbar'
@@ -122,7 +109,11 @@ const MailDetails = (props: MailDetailsType) => {
     Object.entries(labelColors).map(([key, value]: string[]) => {
       array.push({
         text: <Typography sx={{ textTransform: 'capitalize' }}>{key}</Typography>,
-        icon: <Circle sx={{ mr: 2, fontSize: '0.75rem', color: `${value}.main` }} />,
+        icon: (
+          <Box component='span' sx={{ mr: 2, color: `${value}.main` }}>
+            <Icon icon='mdi:circle' fontSize='0.75rem' />
+          </Box>
+        ),
         menuItemProps: {
           onClick: () => {
             handleLabelUpdate([mail.id], key as MailLabelType)
@@ -185,10 +176,9 @@ const MailDetails = (props: MailDetailsType) => {
     return array
   }
 
-  const PrevMailIcon = direction === 'rtl' ? ChevronRight : ChevronLeft
-  const NextMailIcon = direction === 'rtl' ? ChevronLeft : ChevronRight
-  const GoBackIcon = PrevMailIcon
-
+  const prevMailIcon = direction === 'rtl' ? 'mdi:chevron-right' : 'mdi:chevron-left'
+  const nextMailIcon = direction === 'rtl' ? 'mdi:chevron-left' : 'mdi:chevron-right'
+  const goBackIcon = prevMailIcon
   const ScrollWrapper = ({ children }: { children: ReactNode }) => {
     if (hidden) {
       return <Box sx={{ height: '100%', overflowY: 'auto', overflowX: 'hidden' }}>{children}</Box>
@@ -236,7 +226,7 @@ const MailDetails = (props: MailDetailsType) => {
                     setShowReplies(false)
                   }}
                 >
-                  <GoBackIcon sx={{ fontSize: '2rem' }} />
+                  <Icon icon={goBackIcon} fontSize='2rem' />
                 </IconButton>
                 <Box
                   sx={{
@@ -275,7 +265,7 @@ const MailDetails = (props: MailDetailsType) => {
                   sx={{ color: mail.hasPreviousMail ? 'text.primary' : 'text.secondary' }}
                   onClick={() => dispatch(paginateMail({ dir: 'previous', emailId: mail.id }))}
                 >
-                  <PrevMailIcon />
+                  <Icon icon={prevMailIcon} />
                 </IconButton>
                 <IconButton
                   size='small'
@@ -283,7 +273,7 @@ const MailDetails = (props: MailDetailsType) => {
                   sx={{ color: mail.hasNextMail ? 'text.primary' : 'text.secondary' }}
                   onClick={() => dispatch(paginateMail({ dir: 'next', emailId: mail.id }))}
                 >
-                  <NextMailIcon />
+                  <Icon icon={nextMailIcon} />
                 </IconButton>
               </Box>
             </Box>
@@ -299,24 +289,24 @@ const MailDetails = (props: MailDetailsType) => {
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 {routeParams && routeParams.folder !== 'trash' ? (
                   <IconButton size='small' onClick={handleMoveToTrash}>
-                    <DeleteOutline sx={{ fontSize: '1.375rem' }} />
+                    <Icon icon='mdi:delete-outline' fontSize='1.375rem' />
                   </IconButton>
                 ) : null}
 
                 <IconButton size='small' onClick={handleReadMail}>
-                  <EmailOutline sx={{ fontSize: '1.375rem' }} />
+                  <Icon icon='mdi:email-outline' fontSize='1.375rem' />
                 </IconButton>
                 <OptionsMenu
                   leftAlignMenu
                   options={handleFoldersMenu()}
                   iconButtonProps={{ size: 'small' }}
-                  icon={<FolderOutline sx={{ fontSize: '1.375rem' }} />}
+                  icon={<Icon icon='mdi:folder-outline' fontSize='1.375rem' />}
                 />
                 <OptionsMenu
                   leftAlignMenu
                   options={handleLabelsMenu()}
                   iconButtonProps={{ size: 'small' }}
-                  icon={<LabelOutline sx={{ fontSize: '1.375rem' }} />}
+                  icon={<Icon icon='mdi:label-outline' fontSize='1.375rem' />}
                 />
               </Box>
               <Box>
@@ -325,19 +315,19 @@ const MailDetails = (props: MailDetailsType) => {
                   onClick={e => handleStarMail(e, mail.id, !mail.isStarred)}
                   sx={{ ...(mail.isStarred ? { color: 'warning.main' } : {}) }}
                 >
-                  <StarOutline sx={{ fontSize: '1.375rem' }} />
+                  <Icon icon='mdi:star-outline' fontSize='1.375rem' />
                 </IconButton>
                 {mail.replies.length ? (
                   <IconButton size='small' onClick={() => (showReplies ? setShowReplies(false) : setShowReplies(true))}>
                     {showReplies ? (
-                      <ArrowCollapseVertical sx={{ fontSize: '1.375rem' }} />
+                      <Icon icon='mdi:arrow-collapse-vertical' fontSize='1.375rem' />
                     ) : (
-                      <ArrowExpandVertical sx={{ fontSize: '1.375rem' }} />
+                      <Icon icon='mdi:arrow-expand-vertical' fontSize='1.375rem' />
                     )}
                   </IconButton>
                 ) : null}
                 <IconButton size='small'>
-                  <DotsVertical sx={{ fontSize: '1.375rem' }} />
+                  <Icon icon='mdi:dots-vertical' fontSize='1.375rem' />
                 </IconButton>
               </Box>
             </Box>
@@ -406,11 +396,11 @@ const MailDetails = (props: MailDetailsType) => {
                                 </Typography>
                                 {mail.attachments.length ? (
                                   <IconButton size='small'>
-                                    <Attachment sx={{ fontSize: '1.375rem' }} />
+                                    <Icon icon='mdi:attachment' fontSize='1.375rem' />
                                   </IconButton>
                                 ) : null}
                                 <IconButton size='small'>
-                                  <DotsVertical sx={{ fontSize: '1.375rem' }} />
+                                  <Icon icon='mdi:dots-vertical' fontSize='1.375rem' />
                                 </IconButton>
                               </Box>
                             </Box>
@@ -489,19 +479,22 @@ const MailDetails = (props: MailDetailsType) => {
                         </Typography>
                         {mail.attachments.length ? (
                           <IconButton size='small'>
-                            <Attachment sx={{ fontSize: '1.375rem' }} />
+                            <Icon icon='mdi:attachment' fontSize='1.375rem' />
                           </IconButton>
                         ) : null}
                         <OptionsMenu
                           iconButtonProps={{ size: 'small' }}
+                          iconProps={{ fontSize: '1.375rem' }}
                           options={[
                             {
                               text: 'Reply',
-                              icon: <ShareOutline fontSize='small' sx={{ mr: 2 }} />
+                              menuItemProps: { sx: { '& svg': { mr: 2 } } },
+                              icon: <Icon icon='mdi:share-outline' fontSize={20} />
                             },
                             {
                               text: 'Forward',
-                              icon: <ReplyOutline fontSize='small' sx={{ mr: 2 }} />
+                              menuItemProps: { sx: { '& svg': { mr: 2 } } },
+                              icon: <Icon icon='mdi:reply-outline' fontSize={20} />
                             }
                           ]}
                         />

@@ -6,9 +6,8 @@ import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 import AvatarGroup from '@mui/material/AvatarGroup'
 
-// ** Icons Imports
-import Paperclip from 'mdi-material-ui/Paperclip'
-import MessageOutline from 'mdi-material-ui/MessageOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
 import { Draggable } from 'react-beautiful-dnd'
@@ -69,14 +68,14 @@ const KanbanTasks = (props: KanbanTasksProps) => {
       return (
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           {task.attachments && task.attachments.length ? (
-            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
-              <Paperclip fontSize='small' sx={{ mr: 1 }} />
+            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center', cursor: 'pointer', '& svg': { mr: 1 } }}>
+              <Icon icon='mdi:paperclip' fontSize={20} />
               <Typography>{task.attachments.length}</Typography>
             </Box>
           ) : null}
           {task.comments && task.comments.length && (
-            <Box sx={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
-              <MessageOutline fontSize='small' sx={{ mr: 2 }} />
+            <Box sx={{ display: 'flex', alignItems: 'center', cursor: 'pointer', '& svg': { mr: 2 } }}>
+              <Icon icon='mdi:message-outline' fontSize={20} />
               <Typography>{task.comments.length}</Typography>
             </Box>
           )}

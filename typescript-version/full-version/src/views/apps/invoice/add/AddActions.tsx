@@ -12,8 +12,8 @@ import InputLabel from '@mui/material/InputLabel'
 import Box, { BoxProps } from '@mui/material/Box'
 import CardContent from '@mui/material/CardContent'
 
-// ** Icons Imports
-import SendOutline from 'mdi-material-ui/SendOutline'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 const OptionsWrapper = styled(Box)<BoxProps>(() => ({
   display: 'flex',
@@ -26,7 +26,7 @@ const AddActions = () => {
     <Box>
       <Card sx={{ mb: 4 }}>
         <CardContent>
-          <Button fullWidth sx={{ mb: 3.5 }} variant='contained' startIcon={<SendOutline />}>
+          <Button fullWidth sx={{ mb: 3.5 }} variant='contained' startIcon={<Icon icon='mdi:send-outline' />}>
             Send Invoice
           </Button>
           <Link href='/apps/invoice/preview/4987' passHref>
