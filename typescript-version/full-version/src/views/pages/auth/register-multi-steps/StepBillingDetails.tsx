@@ -12,9 +12,6 @@ import FormControl from '@mui/material/FormControl'
 import FormHelperText from '@mui/material/FormHelperText'
 import InputAdornment from '@mui/material/InputAdornment'
 
-// ** Icon Imports
-import Icon from 'src/@core/components/icon'
-
 // ** Third Party Imports
 import * as yup from 'yup'
 import Payment from 'payment'
@@ -22,14 +19,20 @@ import Cards, { Focused } from 'react-credit-cards'
 import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 
+// ** Type Import
+import { CustomRadioIconsData } from 'src/@core/components/custom-radio/types'
+
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
+
 // ** Custom Components Imports
 import CustomRadioIcons from 'src/@core/components/custom-radio/icons'
 
-// ** Util Import
-import { formatCVC, formatExpirationDate, formatCreditCardNumber } from 'src/@core/utils/format'
-
 // ** Styled Component Imports
 import CardWrapper from 'src/@core/styles/libs/react-credit-cards'
+
+// ** Util Import
+import { formatCVC, formatExpirationDate, formatCreditCardNumber } from 'src/@core/utils/format'
 
 // ** Styles Import
 import 'react-credit-cards/es/styles-compiled.css'
@@ -38,19 +41,15 @@ const defaultValues = {
   cardNumber: ''
 }
 
-const data = [
+const data: CustomRadioIconsData[] = [
   {
-    icon: null,
     value: 'basic',
-    gridProps: { sm: 4, xs: 12 },
-    title: (
-      <Typography variant='h6' sx={{ fontWeight: 500 }}>
-        Basic
-      </Typography>
-    ),
+    title: <Typography variant='h5'>Basic</Typography>,
     content: (
-      <>
-        <Typography variant='body2'>A simple start for start ups & Students</Typography>
+      <Box sx={{ my: 'auto', display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+        <Typography sx={{ textAlign: 'center', color: 'text.secondary' }}>
+          A simple start for start ups & Students
+        </Typography>
         <Box sx={{ mt: 2, display: 'flex' }}>
           <Typography component='sup' sx={{ mt: 1.5, color: 'primary.main', alignSelf: 'flex-start' }}>
             $
@@ -62,21 +61,16 @@ const data = [
             /month
           </Typography>
         </Box>
-      </>
+      </Box>
     )
   },
   {
-    icon: null,
+    isSelected: true,
     value: 'standard',
-    gridProps: { sm: 4, xs: 12 },
-    title: (
-      <Typography variant='h6' sx={{ fontWeight: 500 }}>
-        Standard
-      </Typography>
-    ),
+    title: <Typography variant='h5'>Standard</Typography>,
     content: (
-      <>
-        <Typography variant='body2'>For small to medium businesses</Typography>
+      <Box sx={{ my: 'auto', display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+        <Typography sx={{ textAlign: 'center', color: 'text.secondary' }}>For small to medium businesses</Typography>
         <Box sx={{ mt: 2, display: 'flex' }}>
           <Typography component='sup' sx={{ mt: 1.5, color: 'primary.main', alignSelf: 'flex-start' }}>
             $
@@ -88,21 +82,17 @@ const data = [
             /month
           </Typography>
         </Box>
-      </>
+      </Box>
     )
   },
   {
-    icon: null,
     value: 'enterprise',
-    gridProps: { sm: 4, xs: 12 },
-    title: (
-      <Typography variant='h6' sx={{ fontWeight: 500 }}>
-        Enterprise
-      </Typography>
-    ),
+    title: <Typography variant='h5'>Enterprise</Typography>,
     content: (
-      <>
-        <Typography variant='body2'>Solution for enterprise & organizations</Typography>
+      <Box sx={{ my: 'auto', display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+        <Typography sx={{ textAlign: 'center', color: 'text.secondary' }}>
+          Solution for enterprise & organizations
+        </Typography>
         <Box sx={{ mt: 2, display: 'flex' }}>
           <Typography component='sup' sx={{ mt: 1.5, color: 'primary.main', alignSelf: 'flex-start' }}>
             $
@@ -114,7 +104,7 @@ const data = [
             /month
           </Typography>
         </Box>
-      </>
+      </Box>
     )
   }
 ]
@@ -137,11 +127,15 @@ const schema = yup.object().shape({
 })
 
 const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
+  const initialSelected: string = data.filter(item => item.isSelected)[data.filter(item => item.isSelected).length - 1]
+    .value
+
   // ** State
   const [cvc, setCvc] = useState<string>('')
   const [name, setName] = useState<string>('')
   const [focus, setFocus] = useState<Focused>()
   const [expiry, setExpiry] = useState<string>('')
+  const [selectedRadio, setSelectedRadio] = useState<string>(initialSelected)
 
   // ** Hook
   const {
@@ -173,6 +167,14 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
 
   const onSubmit = () => alert('Submitted..!!')
 
+  const handleRadioChange = (prop: string | ChangeEvent<HTMLInputElement>) => {
+    if (typeof prop === 'string') {
+      setSelectedRadio(prop)
+    } else {
+      setSelectedRadio((prop.target as HTMLInputElement).value)
+    }
+  }
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Box sx={{ mb: 4 }}>
@@ -181,9 +183,16 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
       </Box>
 
       <Grid container spacing={6}>
-        <Grid item xs={12}>
-          <CustomRadioIcons data={data} value='basic' name='custom-radios-plan' />
-        </Grid>
+        {data.map((item, index) => (
+          <CustomRadioIcons
+            key={index}
+            data={data[index]}
+            selected={selectedRadio}
+            name='custom-radios-plan'
+            gridProps={{ sm: 4, xs: 12 }}
+            handleChange={handleRadioChange}
+          />
+        ))}
 
         <Grid item xs={12}>
           <Box>
@@ -276,7 +285,7 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
         </Grid>
         <Grid item xs={12}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Button variant='contained' startIcon={<Icon icon='mdi:chevron-left' fontSize={20} />} onClick={handlePrev}>
+            <Button variant='contained' onClick={handlePrev} startIcon={<Icon icon='mdi:chevron-left' fontSize={20} />}>
               Previous
             </Button>
             <Button type='submit' color='success' variant='contained'>

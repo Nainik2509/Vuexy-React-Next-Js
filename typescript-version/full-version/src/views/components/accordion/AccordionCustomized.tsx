@@ -68,7 +68,7 @@ const AccordionCustomized = () => {
     setExpanded(isExpanded ? panel : false)
   }
 
-  const expandIcon = (value: string) => (expanded === value ? <Icon icon='mdi:minus' /> : <Icon icon='mdi:plus' />)
+  const expandIcon = (value: string) => <Icon icon={expanded === value ? 'mdi:minus' : 'mdi:plus'} />
 
   return (
     <div>

@@ -44,7 +44,7 @@ const schema = yup.object().shape({
     .min(8)
     .matches(
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
-      'Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character'
+      'Must contain 8 characters, 1 uppercase, 1 lowercase, 1 number and 1 special case character'
     )
     .required(),
   confirmNewPassword: yup
@@ -125,11 +125,7 @@ const ChangePasswordCard = () => {
                             onClick={handleClickShowCurrentPassword}
                             onMouseDown={handleMouseDownCurrentPassword}
                           >
-                            {values.showCurrentPassword ? (
-                              <Icon icon='mdi:eye-outline' />
-                            ) : (
-                              <Icon icon='mdi:eye-off-outline' />
-                            )}
+                            <Icon icon={values.showCurrentPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
                           </IconButton>
                         </InputAdornment>
                       }
@@ -167,11 +163,7 @@ const ChangePasswordCard = () => {
                             onClick={handleClickShowNewPassword}
                             onMouseDown={handleMouseDownNewPassword}
                           >
-                            {values.showNewPassword ? (
-                              <Icon icon='mdi:eye-outline' />
-                            ) : (
-                              <Icon icon='mdi:eye-off-outline' />
-                            )}
+                            <Icon icon={values.showNewPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
                           </IconButton>
                         </InputAdornment>
                       }
@@ -207,11 +199,7 @@ const ChangePasswordCard = () => {
                             onClick={handleClickShowConfirmNewPassword}
                             onMouseDown={handleMouseDownConfirmNewPassword}
                           >
-                            {values.showConfirmNewPassword ? (
-                              <Icon icon='mdi:eye-outline' />
-                            ) : (
-                              <Icon icon='mdi:eye-off-outline' />
-                            )}
+                            <Icon icon={values.showConfirmNewPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
                           </IconButton>
                         </InputAdornment>
                       }

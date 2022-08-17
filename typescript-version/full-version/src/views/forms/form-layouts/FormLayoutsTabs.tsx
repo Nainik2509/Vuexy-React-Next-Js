@@ -186,11 +186,7 @@ const FormLayoutsTabs = () => {
                             onMouseDown={handleMouseDownPassword}
                             aria-label='toggle password visibility'
                           >
-                            {values.showPassword ? (
-                              <Icon icon='mdi:eye-outline' />
-                            ) : (
-                              <Icon icon='mdi:eye-off-outline' />
-                            )}
+                            <Icon icon={values.showPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
                           </IconButton>
                         </InputAdornment>
                       }
@@ -214,11 +210,7 @@ const FormLayoutsTabs = () => {
                             onClick={handleClickShowConfirmPassword}
                             onMouseDown={handleMouseDownConfirmPassword}
                           >
-                            {values.showPassword2 ? (
-                              <Icon icon='mdi:eye-outline' />
-                            ) : (
-                              <Icon icon='mdi:eye-off-outline' />
-                            )}
+                            <Icon icon={values.showPassword2 ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
                           </IconButton>
                         </InputAdornment>
                       }

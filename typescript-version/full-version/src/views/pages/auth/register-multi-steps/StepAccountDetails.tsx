@@ -45,7 +45,7 @@ const showErrors = (field: string, valueLen: number, min: number) => {
 }
 
 const schema = yup.object().shape({
-  email: yup.string().required(),
+  email: yup.string().email().required(),
   username: yup
     .string()
     .min(6, obj => showErrors('username', obj.value.length, obj.min))
@@ -55,7 +55,7 @@ const schema = yup.object().shape({
     .min(8, obj => showErrors('password', obj.value.length, obj.min))
     .matches(
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
-      'Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character'
+      'Must contain 8 characters, 1 uppercase, 1 lowercase, 1 number and 1 special case character'
     )
     .required(),
   confirmPassword: yup
@@ -209,11 +209,7 @@ const StepAccountDetails = ({ handleNext }: { handleNext: () => void }) => {
                         onClick={handleClickShowConfirmPassword}
                         onMouseDown={handleMouseDownConfirmPassword}
                       >
-                        {values.showConfirmPassword ? (
-                          <Icon icon='mdi:eye-outline' />
-                        ) : (
-                          <Icon icon='mdi:eye-off-outline' />
-                        )}
+                        <Icon icon={values.showConfirmPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
                       </IconButton>
                     </InputAdornment>
                   }

@@ -197,7 +197,7 @@ const FormValidationSchema = () => {
                             onMouseDown={handleMouseDownPassword}
                             aria-label='toggle password visibility'
                           >
-                            {state.showPassword ? <Icon icon='mdi:eye-outline' /> : <Icon icon='mdi:eye-off-outline' />}
+                            <Icon icon={state.showPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
                           </IconButton>
                         </InputAdornment>
                       }

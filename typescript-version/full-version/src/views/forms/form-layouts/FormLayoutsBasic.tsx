@@ -120,11 +120,7 @@ const FormLayoutsBasic = () => {
                         onMouseDown={handleMouseDownPassword}
                         aria-label='toggle password visibility'
                       >
-                        {confirmPassValues.showPassword ? (
-                          <Icon icon='mdi:eye-outline' />
-                        ) : (
-                          <Icon icon='mdi:eye-off-outline' />
-                        )}
+                        <Icon icon={confirmPassValues.showPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
                       </IconButton>
                     </InputAdornment>
                   }

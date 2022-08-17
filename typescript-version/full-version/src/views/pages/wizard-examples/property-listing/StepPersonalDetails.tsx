@@ -1,13 +1,16 @@
 // ** React Imports
-import { useState, MouseEvent } from 'react'
+import { useState, MouseEvent, ChangeEvent } from 'react'
 
 // ** MUI Imports
-import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import TextField from '@mui/material/TextField'
+import { useTheme } from '@mui/material/styles'
 import IconButton from '@mui/material/IconButton'
 import FormControl from '@mui/material/FormControl'
 import InputAdornment from '@mui/material/InputAdornment'
+
+// ** Type Imports
+import { CustomRadioIconsData, CustomRadioIconsProps } from 'src/@core/components/custom-radio/types'
 
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
@@ -15,45 +18,56 @@ import Icon from 'src/@core/components/icon'
 // ** Custom Components Imports
 import CustomRadioIcons from 'src/@core/components/custom-radio/icons'
 
-const data = [
+interface IconType {
+  icon: CustomRadioIconsProps['icon']
+  iconProps: CustomRadioIconsProps['iconProps']
+}
+
+const data: CustomRadioIconsData[] = [
   {
     value: 'builder',
+    isSelected: true,
     title: 'I am the Builder',
-    gridProps: { sm: 4, xs: 12 },
-    content: 'List property as Builder, list your project and get highest reach.',
-    icon: (
-      <Box component='span' sx={{ mb: 2, color: 'text.secondary' }}>
-        <Icon icon='mdi:office-building-outline' fontSize='2rem' />
-      </Box>
-    )
+    content: 'List property as Builder, list your project and get highest reach.'
   },
   {
     value: 'owner',
     title: 'I am the Owner',
-    gridProps: { sm: 4, xs: 12 },
-    icon: (
-      <Box component='span' sx={{ mb: 2, color: 'text.secondary' }}>
-        <Icon icon='mdi:crown-outline' fontSize='2rem' />
-      </Box>
-    ),
     content: 'Submit property as an Individual. Lease, Rent or Sell at the best price.'
   },
   {
     value: 'broker',
     title: 'I am the Broker',
-    gridProps: { sm: 4, xs: 12 },
-    icon: (
-      <Box component='span' sx={{ mb: 2, color: 'text.secondary' }}>
-        <Icon icon='mdi:briefcase-outline' fontSize='2rem' />
-      </Box>
-    ),
     content: 'Earn highest commission by listing your clients properties at the best price.'
   }
 ]
 
 const StepPersonalDetails = () => {
-  // ** State
+  const initialIconSelected: string = data.filter(item => item.isSelected)[
+    data.filter(item => item.isSelected).length - 1
+  ].value
+
+  // ** States
   const [showValues, setShowValues] = useState<boolean>(false)
+  const [selectedRadio, setSelectedRadio] = useState<string>(initialIconSelected)
+
+  // ** Hook
+  const theme = useTheme()
+
+  const icons: IconType[] = [
+    {
+      icon: 'mdi:office-building-outline',
+      iconProps: { fontSize: '2rem', style: { marginBottom: 4 }, color: theme.palette.text.secondary }
+    },
+    {
+      icon: 'mdi:crown-outline',
+      iconProps: { fontSize: '2rem', style: { marginBottom: 4 }, color: theme.palette.text.secondary }
+    },
+    {
+      icon: 'mdi:briefcase-outline',
+      iconProps: { fontSize: '2rem', style: { marginBottom: 4 }, color: theme.palette.text.secondary }
+    }
+  ]
 
   const handleTogglePasswordView = () => {
     setShowValues(!showValues)
@@ -62,11 +76,28 @@ const StepPersonalDetails = () => {
     event.preventDefault()
   }
 
+  const handleRadioChange = (prop: string | ChangeEvent<HTMLInputElement>) => {
+    if (typeof prop === 'string') {
+      setSelectedRadio(prop)
+    } else {
+      setSelectedRadio((prop.target as HTMLInputElement).value)
+    }
+  }
+
   return (
     <Grid container spacing={6}>
-      <Grid item xs={12}>
-        <CustomRadioIcons data={data} value='builder' name='custom-radios' />
-      </Grid>
+      {data.map((item, index) => (
+        <CustomRadioIcons
+          key={index}
+          data={data[index]}
+          name='custom-radios'
+          icon={icons[index].icon}
+          selected={selectedRadio}
+          gridProps={{ sm: 4, xs: 12 }}
+          handleChange={handleRadioChange}
+          iconProps={icons[index].iconProps}
+        />
+      ))}
       <Grid item xs={12}>
         <Grid container spacing={6}>
           <Grid item xs={12} md={6}>
@@ -96,7 +127,7 @@ const StepPersonalDetails = () => {
                       aria-label='toggle password visibility'
                       onMouseDown={handleMousePasswordView}
                     >
-                      {showValues ? <Icon icon='mdi:eye-outline' /> : <Icon icon='mdi:eye-off-outline' />}
+                      <Icon icon={showValues ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
                     </IconButton>
                   </InputAdornment>
                 )

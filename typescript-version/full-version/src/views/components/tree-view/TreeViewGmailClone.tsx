@@ -67,7 +67,7 @@ const StyledTreeItem = (props: StyledTreeItemProps) => {
 }
 
 const TreeViewGmailClone = ({ direction }: Props) => {
-  const ExpandIcon = direction === 'rtl' ? <Icon icon='mdi:chevron-left' /> : <Icon icon='mdi:chevron-right' />
+  const ExpandIcon = <Icon icon={direction === 'rtl' ? 'mdi:chevron-left' : 'mdi:chevron-right'} />
 
   return (
     <TreeView

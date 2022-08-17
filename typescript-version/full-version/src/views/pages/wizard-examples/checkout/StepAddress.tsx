@@ -1,5 +1,5 @@
 // ** React Imports
-import { SyntheticEvent } from 'react'
+import { ChangeEvent, SyntheticEvent, useState } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
@@ -10,100 +10,32 @@ import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
 import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
+import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 
-// ** Icon Imports
-import Icon from 'src/@core/components/icon'
+// ** Type Imports
+import {
+  CustomRadioBasicData,
+  CustomRadioIconsData,
+  CustomRadioIconsProps
+} from 'src/@core/components/custom-radio/types'
 
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
 import CustomRadioBasic from 'src/@core/components/custom-radio/basic'
 import CustomRadioIcons from 'src/@core/components/custom-radio/icons'
 
-const dataIcons = [
-  {
-    value: 'standard',
-    title: 'Standard',
-    gridProps: { sm: 4, xs: 12 },
-    icon: (
-      <Box sx={{ mb: 2, color: 'text.secondary' }}>
-        <Icon fontSize='2rem' icon='mdi:account-outline' />
-      </Box>
-    ),
-    content: (
-      <>
-        <CustomChip
-          rounded
-          size='small'
-          skin='light'
-          label='Free'
-          color='success'
-          sx={{ top: 12, right: 12, position: 'absolute' }}
-        />
-        <Typography variant='body2' sx={{ my: 'auto', textAlign: 'center' }}>
-          Get your product in 1 Week.
-        </Typography>
-      </>
-    )
-  },
-  {
-    value: 'express',
-    title: 'Express',
-    gridProps: { sm: 4, xs: 12 },
-    icon: (
-      <Box sx={{ mb: 2, color: 'text.secondary' }}>
-        <Icon fontSize='2rem' icon='mdi:crown-outline' />
-      </Box>
-    ),
-    content: (
-      <>
-        <CustomChip
-          rounded
-          label='$10'
-          size='small'
-          skin='light'
-          color='secondary'
-          sx={{ top: 12, right: 12, position: 'absolute' }}
-        />
-        <Typography variant='body2' sx={{ my: 'auto', textAlign: 'center' }}>
-          Get your product in 3-4 days.
-        </Typography>
-      </>
-    )
-  },
-  {
-    value: 'overnight',
-    title: 'Overnight',
-    gridProps: { sm: 4, xs: 12 },
-    icon: (
-      <Box sx={{ mb: 2, color: 'text.secondary' }}>
-        <Icon fontSize='2rem' icon='mdi:rocket-launch-outline' />
-      </Box>
-    ),
-    content: (
-      <>
-        <CustomChip
-          rounded
-          label='$15'
-          size='small'
-          skin='light'
-          color='secondary'
-          sx={{ top: 12, right: 12, position: 'absolute' }}
-        />
-        <Typography variant='body2' sx={{ my: 'auto', textAlign: 'center' }}>
-          Get your product in 1 day.
-        </Typography>
-      </>
-    )
-  }
-]
+interface IconType {
+  icon: CustomRadioIconsProps['icon']
+  iconProps: CustomRadioIconsProps['iconProps']
+}
 
-const data = [
+const data: CustomRadioBasicData[] = [
   {
     value: 'home',
+    isSelected: true,
     title: <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>John Doe (Default)</Typography>,
-    gridProps: { sm: 6, xs: 12 },
     meta: <CustomChip rounded size='small' skin='light' label='Home' color='primary' />,
     content: (
       <Box sx={{ mt: 1, height: '100%', display: 'flex', flexDirection: 'column' }}>
@@ -145,7 +77,6 @@ const data = [
   {
     value: 'office',
     title: <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>ACME Inc.</Typography>,
-    gridProps: { sm: 6, xs: 12 },
     meta: <CustomChip rounded size='small' skin='light' label='Office' color='success' />,
     content: (
       <Box sx={{ mt: 1, height: '100%', display: 'flex', flexDirection: 'column' }}>
@@ -186,17 +117,146 @@ const data = [
   }
 ]
 
+const dataIcons: CustomRadioIconsData[] = [
+  {
+    isSelected: true,
+    value: 'standard',
+    title: 'Standard',
+    content: (
+      <>
+        <CustomChip
+          rounded
+          size='small'
+          skin='light'
+          label='Free'
+          color='success'
+          sx={{ top: 12, right: 12, position: 'absolute' }}
+        />
+        <Typography variant='body2' sx={{ my: 'auto', textAlign: 'center' }}>
+          Get your product in 1 Week.
+        </Typography>
+      </>
+    )
+  },
+  {
+    value: 'express',
+    title: 'Express',
+    content: (
+      <>
+        <CustomChip
+          rounded
+          label='$10'
+          size='small'
+          skin='light'
+          color='secondary'
+          sx={{ top: 12, right: 12, position: 'absolute' }}
+        />
+        <Typography variant='body2' sx={{ my: 'auto', textAlign: 'center' }}>
+          Get your product in 3-4 days.
+        </Typography>
+      </>
+    )
+  },
+  {
+    value: 'overnight',
+    title: 'Overnight',
+    content: (
+      <>
+        <CustomChip
+          rounded
+          label='$15'
+          size='small'
+          skin='light'
+          color='secondary'
+          sx={{ top: 12, right: 12, position: 'absolute' }}
+        />
+        <Typography variant='body2' sx={{ my: 'auto', textAlign: 'center' }}>
+          Get your product in 1 day.
+        </Typography>
+      </>
+    )
+  }
+]
+
 const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
+  const initialBasicSelected: string = data.filter(item => item.isSelected)[
+    data.filter(item => item.isSelected).length - 1
+  ].value
+  const initialIconSelected: string = dataIcons.filter(item => item.isSelected)[
+    dataIcons.filter(item => item.isSelected).length - 1
+  ].value
+
+  // ** States
+  const [selectedIconRadio, setSelectedIconRadio] = useState<string>(initialIconSelected)
+  const [selectedBasicRadio, setSelectedBasicRadio] = useState<string>(initialBasicSelected)
+
+  // ** Hook
+  const theme = useTheme()
+
+  const icons: IconType[] = [
+    {
+      icon: 'mdi:account-outline',
+      iconProps: { fontSize: '2rem', style: { marginBottom: 4 }, color: theme.palette.text.secondary }
+    },
+    {
+      icon: 'mdi:crown-outline',
+      iconProps: { fontSize: '2rem', style: { marginBottom: 4 }, color: theme.palette.text.secondary }
+    },
+    {
+      icon: 'mdi:rocket-launch-outline',
+      iconProps: { fontSize: '2rem', style: { marginBottom: 4 }, color: theme.palette.text.secondary }
+    }
+  ]
+
+  const handleBasicRadioChange = (prop: string | ChangeEvent<HTMLInputElement>) => {
+    if (typeof prop === 'string') {
+      setSelectedBasicRadio(prop)
+    } else {
+      setSelectedBasicRadio((prop.target as HTMLInputElement).value)
+    }
+  }
+  const handleIconRadioChange = (prop: string | ChangeEvent<HTMLInputElement>) => {
+    if (typeof prop === 'string') {
+      setSelectedIconRadio(prop)
+    } else {
+      setSelectedIconRadio((prop.target as HTMLInputElement).value)
+    }
+  }
+
   return (
     <Grid container spacing={6}>
       <Grid item xs={12} lg={8} xl={9}>
         <Typography sx={{ mt: 1, mb: 4, color: 'text.secondary' }}>Select your preferable address</Typography>
-        <CustomRadioBasic data={data} value='home' name='custom-radios-address' />
+        <Grid container spacing={4}>
+          {data.map((item, index) => (
+            <CustomRadioBasic
+              key={index}
+              data={data[index]}
+              name='custom-radios-address'
+              selected={selectedBasicRadio}
+              gridProps={{ sm: 6, xs: 12 }}
+              handleChange={handleBasicRadioChange}
+            />
+          ))}
+        </Grid>
         <Button variant='outlined' sx={{ mt: 4.5 }}>
           Add new address
         </Button>
         <Typography sx={{ mt: 8, mb: 4, color: 'text.secondary' }}>Choose Delivery Speed</Typography>
-        <CustomRadioIcons data={dataIcons} value='standard' name='custom-radios-delivery' />
+        <Grid container spacing={4}>
+          {dataIcons.map((item, index) => (
+            <CustomRadioIcons
+              key={index}
+              data={dataIcons[index]}
+              icon={icons[index].icon}
+              selected={selectedIconRadio}
+              name='custom-radios-delivery'
+              gridProps={{ sm: 4, xs: 12 }}
+              iconProps={icons[index].iconProps}
+              handleChange={handleIconRadioChange}
+            />
+          ))}
+        </Grid>
       </Grid>
       <Grid item xs={12} lg={4} xl={3}>
         <Card sx={{ mb: 4, background: 'transparent', boxShadow: 'none', border: '1px solid', borderColor: 'divider' }}>

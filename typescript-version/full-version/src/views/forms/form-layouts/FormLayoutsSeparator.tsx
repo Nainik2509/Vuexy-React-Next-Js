@@ -136,7 +136,7 @@ const FormLayoutsSeparator = () => {
                         onClick={handleClickShowConfirmPassword}
                         onMouseDown={handleMouseDownConfirmPassword}
                       >
-                        {values.showPassword2 ? <Icon icon='mdi:eye-outline' /> : <Icon icon='mdi:eye-off-outline' />}
+                        <Icon icon={values.showPassword2 ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
                       </IconButton>
                     </InputAdornment>
                   }

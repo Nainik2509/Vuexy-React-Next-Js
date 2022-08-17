@@ -1,32 +1,34 @@
+// ** React Imports
+import { ChangeEvent, useState } from 'react'
+
 // ** MUI Imports
-import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
 import TextField from '@mui/material/TextField'
+import { useTheme } from '@mui/material/styles'
 import InputLabel from '@mui/material/InputLabel'
 import Typography from '@mui/material/Typography'
 import FormControl from '@mui/material/FormControl'
 
-// ** Icon Imports
-import Icon from 'src/@core/components/icon'
+// ** Type Imports
+import { CustomRadioIconsData, CustomRadioIconsProps } from 'src/@core/components/custom-radio/types'
 
 // ** Custom Components Imports
 import CustomRadioIcons from 'src/@core/components/custom-radio/icons'
 
-const data = [
+interface IconType {
+  icon: CustomRadioIconsProps['icon']
+  iconProps: CustomRadioIconsProps['iconProps']
+}
+
+const data: CustomRadioIconsData[] = [
   {
     value: 'sale',
+    isSelected: true,
     title: 'Sell the property',
-    gridProps: { sm: 6, xs: 12 },
-    icon: (
-      <Box component='span' sx={{ mb: 2, color: 'text.secondary' }}>
-        {' '}
-        <Icon icon='mdi:home-outline' fontSize='2rem' />
-      </Box>
-    ),
     content: (
-      <Typography variant='caption' sx={{ my: 'auto', textAlign: 'center' }}>
+      <Typography variant='body2' sx={{ my: 'auto', textAlign: 'center' }}>
         Post your property for sale.
         <br />
         Unlimited free listing.
@@ -36,15 +38,8 @@ const data = [
   {
     value: 'rent',
     title: 'Rent the property',
-    gridProps: { sm: 6, xs: 12 },
-    icon: (
-      <Box component='span' sx={{ mb: 2, color: 'text.secondary' }}>
-        {' '}
-        <Icon icon='mdi:wallet-outline' fontSize='2rem' />
-      </Box>
-    ),
     content: (
-      <Typography variant='caption' sx={{ my: 'auto', textAlign: 'center' }}>
+      <Typography variant='body2' sx={{ my: 'auto', textAlign: 'center' }}>
         Post your property for rent.
         <br />
         Unlimited free listing.
@@ -54,11 +49,49 @@ const data = [
 ]
 
 const StepPropertyDetails = () => {
+  const initialIconSelected: string = data.filter(item => item.isSelected)[
+    data.filter(item => item.isSelected).length - 1
+  ].value
+
+  // ** State
+  const [selectedRadio, setSelectedRadio] = useState<string>(initialIconSelected)
+
+  // ** Hook
+  const theme = useTheme()
+
+  const icons: IconType[] = [
+    {
+      icon: 'mdi:home-outline',
+      iconProps: { fontSize: '2rem', style: { marginBottom: 4 }, color: theme.palette.text.secondary }
+    },
+    {
+      icon: 'mdi:wallet-outline',
+      iconProps: { fontSize: '2rem', style: { marginBottom: 4 }, color: theme.palette.text.secondary }
+    }
+  ]
+
+  const handleRadioChange = (prop: string | ChangeEvent<HTMLInputElement>) => {
+    if (typeof prop === 'string') {
+      setSelectedRadio(prop)
+    } else {
+      setSelectedRadio((prop.target as HTMLInputElement).value)
+    }
+  }
+
   return (
     <Grid container spacing={6}>
-      <Grid item xs={12}>
-        <CustomRadioIcons data={data} value='sale' name='custom-radios-property' />
-      </Grid>
+      {data.map((item, index) => (
+        <CustomRadioIcons
+          key={index}
+          data={data[index]}
+          icon={icons[index].icon}
+          selected={selectedRadio}
+          name='custom-radios-property'
+          gridProps={{ sm: 6, xs: 12 }}
+          handleChange={handleRadioChange}
+          iconProps={icons[index].iconProps}
+        />
+      ))}
       <Grid item xs={12}>
         <Grid container spacing={6}>
           <Grid item xs={12} md={6}>

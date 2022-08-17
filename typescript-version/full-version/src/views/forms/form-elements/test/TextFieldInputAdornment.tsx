@@ -81,11 +81,7 @@ const TextFieldInputAdornment = () => {
                     onMouseDown={handleMouseDownPassword}
                     aria-label='toggle password visibility'
                   >
-                    {values.showPassword ? (
-                      <Icon icon='mdi:eye-outline' fontSize={20} />
-                    ) : (
-                      <Icon icon='mdi:eye-off-outline' fontSize={20} />
-                    )}
+                    <Icon fontSize={20} icon={values.showPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
                   </IconButton>
                 </InputAdornment>
               }
@@ -126,11 +122,7 @@ const TextFieldInputAdornment = () => {
                     onMouseDown={handleMouseDownPassword}
                     aria-label='toggle password visibility'
                   >
-                    {values.showPassword ? (
-                      <Icon icon='mdi:eye-outline' fontSize={20} />
-                    ) : (
-                      <Icon icon='mdi:eye-off-outline' fontSize={20} />
-                    )}
+                    <Icon fontSize={20} icon={values.showPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
                   </IconButton>
                 </InputAdornment>
               }
@@ -171,11 +163,7 @@ const TextFieldInputAdornment = () => {
                     onMouseDown={handleMouseDownPassword}
                     aria-label='toggle password visibility'
                   >
-                    {values.showPassword ? (
-                      <Icon icon='mdi:eye-outline' fontSize={20} />
-                    ) : (
-                      <Icon icon='mdi:eye-off-outline' fontSize={20} />
-                    )}
+                    <Icon fontSize={20} icon={values.showPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
                   </IconButton>
                 </InputAdornment>
               }

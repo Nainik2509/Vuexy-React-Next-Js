@@ -30,7 +30,7 @@ const ListNested = () => {
               <Icon icon='mdi:email-outline' fontSize={20} />
             </ListItemIcon>
             <ListItemText primary='Inbox' />
-            {open ? <Icon icon='mdi:chevron-up' /> : <Icon icon='mdi:chevron-down' />}
+            <Icon icon={open ? 'mdi:chevron-up' : 'mdi:chevron-down'} />
           </ListItemButton>
         </ListItem>
         <Collapse in={open} timeout='auto' unmountOnExit>

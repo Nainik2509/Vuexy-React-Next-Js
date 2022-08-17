@@ -1,5 +1,5 @@
 // ** React Imports
-import { useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -13,46 +13,34 @@ import { styled, useTheme } from '@mui/material/styles'
 import FormHelperText from '@mui/material/FormHelperText'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 
-// ** Icon Imports
-import Icon from 'src/@core/components/icon'
+// ** Type Imports
+import { CustomRadioIconsData, CustomRadioIconsProps } from 'src/@core/components/custom-radio/types'
 
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
 import CustomRadioIcons from 'src/@core/components/custom-radio/icons'
 
-const data = [
+interface IconType {
+  icon: CustomRadioIconsProps['icon']
+  iconProps: CustomRadioIconsProps['iconProps']
+}
+
+const data: CustomRadioIconsData[] = [
   {
+    isSelected: true,
     value: 'percentage',
     title: 'Percentage',
-    gridProps: { sm: 4, xs: 12 },
-    content: 'Create a deal which offer uses some % off (i.e 5% OFF) on total.',
-    icon: (
-      <Box component='span' sx={{ mb: 2, color: 'text.secondary' }}>
-        <Icon fontSize='2rem' icon='mdi:tag-outline' />
-      </Box>
-    )
+    content: 'Create a deal which offer uses some % off (i.e 5% OFF) on total.'
   },
   {
     value: 'flat-amount',
     title: 'Flat Amount',
-    gridProps: { sm: 4, xs: 12 },
-    content: 'Create a deal which offer uses flat $ off (i.e $5 OFF) on the total.',
-    icon: (
-      <Box component='span' sx={{ mb: 2, color: 'text.secondary' }}>
-        <Icon fontSize='2rem' icon='mdi:currency-usd' />
-      </Box>
-    )
+    content: 'Create a deal which offer uses flat $ off (i.e $5 OFF) on the total.'
   },
   {
     value: 'prime-member',
     title: 'Prime Member',
-    gridProps: { sm: 4, xs: 12 },
-    content: 'Create prime member only deal to encourage the prime members.',
-    icon: (
-      <Box component='span' sx={{ mb: 2, color: 'text.secondary' }}>
-        <Icon fontSize='2rem' icon='mdi:account-outline' />
-      </Box>
-    )
+    content: 'Create prime member only deal to encourage the prime members.'
   }
 ]
 
@@ -65,17 +53,45 @@ const Img = styled('img')({
 })
 
 const StepDealType = () => {
-  // ** State
-  const [region, setRegion] = useState<string[]>([])
+  const initialIconSelected: string = data.filter(item => item.isSelected)[
+    data.filter(item => item.isSelected).length - 1
+  ].value
 
-  // ** Hooks
+  // ** States
+  const [region, setRegion] = useState<string[]>([])
+  const [selectedRadio, setSelectedRadio] = useState<string>(initialIconSelected)
+
+  // ** Hook
   const theme = useTheme()
+
+  const icons: IconType[] = [
+    {
+      icon: 'mdi:tag-outline',
+      iconProps: { fontSize: '2rem', style: { marginBottom: 4 }, color: theme.palette.text.secondary }
+    },
+    {
+      icon: 'mdi:currency-usd',
+      iconProps: { fontSize: '2rem', style: { marginBottom: 4 }, color: theme.palette.text.secondary }
+    },
+    {
+      icon: 'mdi:account-outline',
+      iconProps: { fontSize: '2rem', style: { marginBottom: 4 }, color: theme.palette.text.secondary }
+    }
+  ]
 
   const handleChange = (event: SelectChangeEvent<typeof region>) => {
     const {
       target: { value }
     } = event
     setRegion(typeof value === 'string' ? value.split(',') : value)
+  }
+
+  const handleRadioChange = (prop: string | ChangeEvent<HTMLInputElement>) => {
+    if (typeof prop === 'string') {
+      setSelectedRadio(prop)
+    } else {
+      setSelectedRadio((prop.target as HTMLInputElement).value)
+    }
   }
 
   return (
@@ -85,9 +101,18 @@ const StepDealType = () => {
           <Img alt='illustration' src={`/images/pages/shopping-girl-${theme.palette.mode}.png`} />
         </Box>
       </Grid>
-      <Grid item xs={12}>
-        <CustomRadioIcons data={data} value='percentage' name='custom-radios-deal' />
-      </Grid>
+      {data.map((item, index) => (
+        <CustomRadioIcons
+          key={index}
+          data={data[index]}
+          icon={icons[index].icon}
+          selected={selectedRadio}
+          name='custom-radios-deal'
+          gridProps={{ sm: 4, xs: 12 }}
+          handleChange={handleRadioChange}
+          iconProps={icons[index].iconProps}
+        />
+      ))}
       <Grid item xs={12} md={6}>
         <FormControl fullWidth>
           <TextField type='number' label='Discount' placeholder='25' />

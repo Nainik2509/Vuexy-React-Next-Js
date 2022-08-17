@@ -165,17 +165,14 @@ const PropertyListingWizard = () => {
   return (
     <Card sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' } }}>
       <StepperHeaderContainer>
-        <StepperWrapper sx={{ height: '100%' }}>
+        <StepperWrapper sx={{ height: '100%', '& .MuiStepLabel-label': { cursor: 'pointer' } }}>
           <Stepper connector={<></>} activeStep={activeStep} orientation='vertical'>
             {steps.map((step, index) => {
               return (
                 <Step
                   key={index}
                   onClick={() => setActiveStep(index)}
-                  sx={{
-                    cursor: 'pointer',
-                    '&.Mui-completed + svg': { color: 'primary.main' }
-                  }}
+                  sx={{ '&.Mui-completed + svg': { color: 'primary.main' } }}
                 >
                   <StepLabel icon={<></>} sx={{}}>
                     <CustomAvatar

@@ -152,11 +152,7 @@ const UserViewSecurity = () => {
                           aria-label='toggle password visibility'
                           onMouseDown={handleMouseDownNewPassword}
                         >
-                          {values.showNewPassword ? (
-                            <Icon icon='mdi:eye-outline' />
-                          ) : (
-                            <Icon icon='mdi:eye-off-outline' />
-                          )}
+                          <Icon icon={values.showNewPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
                         </IconButton>
                       </InputAdornment>
                     }
@@ -181,11 +177,7 @@ const UserViewSecurity = () => {
                           onClick={handleClickShowConfirmNewPassword}
                           onMouseDown={handleMouseDownConfirmNewPassword}
                         >
-                          {values.showConfirmNewPassword ? (
-                            <Icon icon='mdi:eye-outline' />
-                          ) : (
-                            <Icon icon='mdi:eye-off-outline' />
-                          )}
+                          <Icon icon={values.showConfirmNewPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
                         </IconButton>
                       </InputAdornment>
                     }

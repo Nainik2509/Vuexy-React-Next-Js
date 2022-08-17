@@ -104,8 +104,8 @@ const DialogCreateApp = () => {
         </Button>
         <Button
           variant='contained'
-          endIcon={activeTab === 'submitTab' ? <Icon icon='mdi:check' /> : <Icon icon={nextArrow} />}
           color={activeTab === 'submitTab' ? 'success' : 'primary'}
+          endIcon={<Icon icon={activeTab === 'submitTab' ? 'mdi:check' : nextArrow} />}
           onClick={() => {
             if (activeTab !== 'submitTab') {
               setActiveTab(nextTab)
