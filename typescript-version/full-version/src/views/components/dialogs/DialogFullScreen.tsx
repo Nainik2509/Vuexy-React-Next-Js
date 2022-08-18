@@ -34,7 +34,7 @@ const DialogFullScreen = () => {
           <IconButton
             aria-label='close'
             onClick={handleClose}
-            sx={{ top: 8, right: 10, position: 'absolute', color: theme => theme.palette.grey[500] }}
+            sx={{ top: 8, right: 10, position: 'absolute', color: 'grey.500' }}
           >
             <Icon icon='mdi:close' />
           </IconButton>

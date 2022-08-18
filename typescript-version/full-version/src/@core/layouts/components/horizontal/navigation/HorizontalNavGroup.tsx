@@ -187,12 +187,12 @@ const HorizontalNavGroup = (props: Props) => {
               className={clsx('menu-group', { 'Mui-selected': hasActiveChild(item, currentURL) })}
               {...(horizontalMenuToggle === 'click' ? { onClick: handleMenuToggleOnClick } : {})}
               sx={{
-                ...(menuOpen ? { backgroundColor: theme.palette.action.hover } : {}),
+                ...(menuOpen ? { backgroundColor: 'action.hover' } : {}),
                 ...(!hasParent
                   ? {
                       borderRadius: 1,
                       '&.Mui-selected': {
-                        backgroundColor: theme.palette.primary.main,
+                        backgroundColor: 'primary.main',
                         '& .MuiTypography-root, & .MuiListItemIcon-root, & svg': {
                           color: 'common.white'
                         }
@@ -260,8 +260,8 @@ const HorizontalNavGroup = (props: Props) => {
                   sx={{
                     ...(hasParent ? { overflowY: 'auto', overflowX: 'visible', maxHeight: 'calc(100vh - 21rem)' } : {}),
                     ...(skin === 'bordered'
-                      ? { boxShadow: theme.shadows[0], border: `1px solid ${theme.palette.divider}` }
-                      : { boxShadow: theme.shadows[4] })
+                      ? { boxShadow: 0, border: `1px solid ${theme.palette.divider}` }
+                      : { boxShadow: 4 })
                   }}
                 >
                   <HorizontalNavItems {...props} hasParent horizontalNavItems={item.children} />

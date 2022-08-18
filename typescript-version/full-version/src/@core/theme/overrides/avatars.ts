@@ -20,7 +20,7 @@ const Avatar = (theme: Theme) => {
           '&.pull-up': {
             '& .MuiAvatar-root': {
               cursor: 'pointer',
-              transition: 'all .2s ease',
+              transition: 'all 0.2s ease',
               '&:hover': {
                 zIndex: 30,
                 boxShadow: theme.shadows[3],

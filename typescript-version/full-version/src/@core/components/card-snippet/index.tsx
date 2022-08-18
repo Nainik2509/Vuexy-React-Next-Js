@@ -119,9 +119,9 @@ const CardSnippet = (props: CardSnippetProps) => {
                 onClick={handleClick}
                 sx={{
                   top: '5rem',
+                  color: 'grey.100',
                   right: '2.5625rem',
-                  position: 'absolute',
-                  color: theme => theme.palette.grey[100]
+                  position: 'absolute'
                 }}
               >
                 <Icon icon='mdi:content-copy' fontSize={20} />

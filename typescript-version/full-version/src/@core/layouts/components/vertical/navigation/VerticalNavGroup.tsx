@@ -216,9 +216,9 @@ const VerticalNavGroup = (props: Props) => {
     } else {
       return {
         '&.Mui-selected': {
-          backgroundColor: theme.palette.action.hover,
+          backgroundColor: 'action.hover',
           '&:hover': {
-            backgroundColor: theme.palette.action.hover
+            backgroundColor: 'action.hover'
           }
         }
       }
@@ -246,9 +246,9 @@ const VerticalNavGroup = (props: Props) => {
               pr: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 4.5,
               pl: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 5.5,
               '&.Mui-selected.Mui-focusVisible': {
-                backgroundColor: theme.palette.action.focus,
+                backgroundColor: 'action.focus',
                 '&:hover': {
-                  backgroundColor: theme.palette.action.focus
+                  backgroundColor: 'action.focus'
                 }
               }
             }}
@@ -306,7 +306,7 @@ const VerticalNavGroup = (props: Props) => {
               pl: 0,
               width: '100%',
               ...menuGroupCollapsedStyles,
-              transition: 'all .25s ease-in-out'
+              transition: 'all 0.25s ease-in-out'
             }}
           >
             <VerticalNavItems

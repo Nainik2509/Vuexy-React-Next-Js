@@ -319,7 +319,7 @@ const RegisterV2 = () => {
                   <IconButton
                     component='a'
                     onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}
-                    sx={{ color: theme => (theme.palette.mode === 'light' ? '#272727' : theme.palette.grey[300]) }}
+                    sx={{ color: theme => (theme.palette.mode === 'light' ? '#272727' : 'grey.300') }}
                   >
                     <Icon icon='mdi:github' />
                   </IconButton>

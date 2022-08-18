@@ -107,9 +107,9 @@ const DialogAuthentication = () => {
                   px: 7.2,
                   borderRadius: 1,
                   cursor: 'pointer',
+                  ...(authType === 'app' ? { ...bgClasses.primaryLight } : { backgroundColor: 'action.hover' }),
                   border: theme =>
-                    `1px solid ${authType === 'app' ? theme.palette.primary.main : theme.palette.divider}`,
-                  ...(authType === 'app' ? { ...bgClasses.primaryLight } : { backgroundColor: 'action.hover' })
+                    `1px solid ${authType === 'app' ? theme.palette.primary.main : theme.palette.divider}`
                 }}
               >
                 <Box sx={{ mb: 2, display: 'flex', alignItems: 'center', '& svg': { mr: 3 } }}>
@@ -136,9 +136,9 @@ const DialogAuthentication = () => {
                   px: 7.2,
                   borderRadius: 1,
                   cursor: 'pointer',
+                  ...(authType === 'sms' ? { ...bgClasses.primaryLight } : { backgroundColor: 'action.hover' }),
                   border: theme =>
-                    `1px solid ${authType === 'sms' ? theme.palette.primary.main : theme.palette.divider}`,
-                  ...(authType === 'sms' ? { ...bgClasses.primaryLight } : { backgroundColor: 'action.hover' })
+                    `1px solid ${authType === 'sms' ? theme.palette.primary.main : theme.palette.divider}`
                 }}
               >
                 <Box sx={{ mb: 2, display: 'flex', alignItems: 'center', '& svg': { mr: 3 } }}>

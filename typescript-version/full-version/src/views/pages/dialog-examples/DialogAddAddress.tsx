@@ -88,9 +88,9 @@ const DialogAddAddress = () => {
                   px: 4,
                   borderRadius: 1,
                   cursor: 'pointer',
+                  ...(addressType === 'home' ? { ...bgClasses.primaryLight } : { backgroundColor: 'action.hover' }),
                   border: theme =>
-                    `1px solid ${addressType === 'home' ? theme.palette.primary.main : theme.palette.divider}`,
-                  ...(addressType === 'home' ? { ...bgClasses.primaryLight } : { backgroundColor: 'action.hover' })
+                    `1px solid ${addressType === 'home' ? theme.palette.primary.main : theme.palette.divider}`
                 }}
               >
                 <Box sx={{ mb: 1, display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
@@ -112,9 +112,9 @@ const DialogAddAddress = () => {
                   px: 4,
                   borderRadius: 1,
                   cursor: 'pointer',
+                  ...(addressType === 'office' ? { ...bgClasses.primaryLight } : { backgroundColor: 'action.hover' }),
                   border: theme =>
-                    `1px solid ${addressType === 'office' ? theme.palette.primary.main : theme.palette.divider}`,
-                  ...(addressType === 'office' ? { ...bgClasses.primaryLight } : { backgroundColor: 'action.hover' })
+                    `1px solid ${addressType === 'office' ? theme.palette.primary.main : theme.palette.divider}`
                 }}
               >
                 <Box sx={{ mb: 1, display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>

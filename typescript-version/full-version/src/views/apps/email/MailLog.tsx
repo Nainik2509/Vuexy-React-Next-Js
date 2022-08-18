@@ -42,11 +42,22 @@ import {
 import { OptionType } from 'src/@core/components/option-menu/types'
 
 const MailItem = styled(ListItem)<ListItemProps>(({ theme }) => ({
-  zIndex: 1,
   cursor: 'pointer',
   paddingTop: theme.spacing(3),
   paddingBottom: theme.spacing(3),
   justifyContent: 'space-between',
+  transition: 'all 0.15s ease-in-out',
+  '&:not(:first-child)': {
+    borderTop: `1px solid ${theme.palette.divider}`
+  },
+  '&:hover': {
+    zIndex: 2,
+    boxShadow: theme.shadows[3],
+    transform: 'translateY(-2px)',
+    '& .mail-actions': { display: 'flex' },
+    '& .mail-info-right': { display: 'none' },
+    '& + .MuiListItem-root': { borderColor: 'transparent' }
+  },
   [theme.breakpoints.up('xs')]: {
     paddingLeft: theme.spacing(2.5),
     paddingRight: theme.spacing(2.5)
@@ -376,140 +387,122 @@ const MailLog = (props: MailLogType) => {
                   const mailReadToggleIcon = mail.isRead ? 'mdi:email-outline' : 'mdi:email-open-outline'
 
                   return (
-                    <Box
+                    <MailItem
                       key={mail.id}
-                      sx={{
-                        transition: 'all 0.15s ease-in-out',
-                        '&:not(:first-of-type)': { borderTop: '1px solid', borderColor: 'divider' },
-                        '&:hover': {
-                          zIndex: 2,
-                          boxShadow: '3',
-                          transform: 'translateY(-2px)',
-                          '& .mail-info-right': {
-                            display: 'none'
-                          },
-                          '& .mail-actions': {
-                            display: 'flex'
-                          }
-                        }
+                      sx={{ backgroundColor: mail.isRead ? 'action.hover' : 'background.paper' }}
+                      onClick={() => {
+                        setMailDetailsOpen(true)
+                        dispatch(getCurrentMail(mail.id))
+                        dispatch(updateMail({ emailIds: [mail.id], dataToUpdate: { isRead: true } }))
+                        setTimeout(() => {
+                          dispatch(handleSelectAllMail(false))
+                        }, 600)
                       }}
                     >
-                      <MailItem
-                        sx={{ backgroundColor: mail.isRead ? 'action.hover' : 'background.paper' }}
-                        onClick={() => {
-                          setMailDetailsOpen(true)
-                          dispatch(getCurrentMail(mail.id))
-                          dispatch(updateMail({ emailIds: [mail.id], dataToUpdate: { isRead: true } }))
-                          setTimeout(() => {
-                            dispatch(handleSelectAllMail(false))
-                          }, 600)
-                        }}
-                      >
-                        <Box sx={{ mr: 4, display: 'flex', overflow: 'hidden', alignItems: 'center' }}>
-                          <Checkbox
-                            onClick={e => e.stopPropagation()}
-                            onChange={() => dispatch(handleSelectMail(mail.id))}
-                            checked={store.selectedMails.includes(mail.id) || false}
-                          />
-                          <IconButton
-                            size='small'
-                            onClick={e => handleStarMail(e, mail.id, !mail.isStarred)}
-                            sx={{
-                              mr: { xs: 0, sm: 3 },
-                              color: mail.isStarred ? 'warning.main' : 'text.secondary',
-                              '& svg': {
-                                display: { xs: 'none', sm: 'block' }
-                              }
-                            }}
-                          >
-                            <Icon icon='mdi:star-outline' />
-                          </IconButton>
-                          <Avatar
-                            alt={mail.from.name}
-                            src={mail.from.avatar}
-                            sx={{ mr: 3, width: '2rem', height: '2rem' }}
-                          />
-                          <Box
-                            sx={{
-                              display: 'flex',
-                              overflow: 'hidden',
-                              flexDirection: { xs: 'column', sm: 'row' },
-                              alignItems: { xs: 'flex-start', sm: 'center' }
-                            }}
-                          >
-                            <Typography
-                              sx={{
-                                mr: 4,
-                                fontWeight: 500,
-                                whiteSpace: 'nowrap',
-                                width: ['100%', 'auto'],
-                                overflow: ['hidden', 'unset'],
-                                textOverflow: ['ellipsis', 'unset']
-                              }}
-                            >
-                              {mail.from.name}
-                            </Typography>
-                            <Typography noWrap variant='body2' sx={{ width: '100%' }}>
-                              {mail.subject}
-                            </Typography>
-                          </Box>
-                        </Box>
-                        <Box
-                          className='mail-actions'
-                          sx={{ display: 'none', alignItems: 'center', justifyContent: 'flex-end' }}
+                      <Box sx={{ mr: 4, display: 'flex', overflow: 'hidden', alignItems: 'center' }}>
+                        <Checkbox
+                          onClick={e => e.stopPropagation()}
+                          onChange={() => dispatch(handleSelectMail(mail.id))}
+                          checked={store.selectedMails.includes(mail.id) || false}
+                        />
+                        <IconButton
+                          size='small'
+                          onClick={e => handleStarMail(e, mail.id, !mail.isStarred)}
+                          sx={{
+                            mr: { xs: 0, sm: 3 },
+                            color: mail.isStarred ? 'warning.main' : 'text.secondary',
+                            '& svg': {
+                              display: { xs: 'none', sm: 'block' }
+                            }
+                          }}
                         >
-                          {routeParams && routeParams.folder !== 'trash' ? (
-                            <Tooltip placement='top' title='Delete Mail'>
-                              <IconButton
-                                onClick={e => {
-                                  e.stopPropagation()
-                                  dispatch(updateMail({ emailIds: [mail.id], dataToUpdate: { folder: 'trash' } }))
-                                }}
-                              >
-                                <Icon icon='mdi:delete-outline' />
-                              </IconButton>
-                            </Tooltip>
-                          ) : null}
-
-                          <Tooltip placement='top' title={mail.isRead ? 'Unread Mail' : 'Read Mail'}>
-                            <IconButton
-                              onClick={e => {
-                                e.stopPropagation()
-                                handleReadMail([mail.id], !mail.isRead)
-                              }}
-                            >
-                              <Icon icon={mailReadToggleIcon} />
-                            </IconButton>
-                          </Tooltip>
-                          <Tooltip placement='top' title='Move to Spam'>
-                            <IconButton
-                              onClick={e => {
-                                e.stopPropagation()
-                                handleFolderUpdate([mail.id], 'spam')
-                              }}
-                            >
-                              <Icon icon='mdi:alert-octagon-outline' />
-                            </IconButton>
-                          </Tooltip>
-                        </Box>
+                          <Icon icon='mdi:star-outline' />
+                        </IconButton>
+                        <Avatar
+                          alt={mail.from.name}
+                          src={mail.from.avatar}
+                          sx={{ mr: 3, width: '2rem', height: '2rem' }}
+                        />
                         <Box
-                          className='mail-info-right'
-                          sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}
+                          sx={{
+                            display: 'flex',
+                            overflow: 'hidden',
+                            flexDirection: { xs: 'column', sm: 'row' },
+                            alignItems: { xs: 'flex-start', sm: 'center' }
+                          }}
                         >
-                          <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>{renderMailLabels(mail.labels)}</Box>
                           <Typography
-                            variant='caption'
-                            sx={{ minWidth: '50px', textAlign: 'right', whiteSpace: 'nowrap', color: 'text.disabled' }}
+                            sx={{
+                              mr: 4,
+                              fontWeight: 500,
+                              whiteSpace: 'nowrap',
+                              width: ['100%', 'auto'],
+                              overflow: ['hidden', 'unset'],
+                              textOverflow: ['ellipsis', 'unset']
+                            }}
                           >
-                            {new Date(mail.time).toLocaleTimeString('en-US', {
-                              hour: '2-digit',
-                              minute: '2-digit',
-                              hour12: true
-                            })}
+                            {mail.from.name}
+                          </Typography>
+                          <Typography noWrap variant='body2' sx={{ width: '100%' }}>
+                            {mail.subject}
                           </Typography>
                         </Box>
-                      </MailItem>
-                    </Box>
+                      </Box>
+                      <Box
+                        className='mail-actions'
+                        sx={{ display: 'none', alignItems: 'center', justifyContent: 'flex-end' }}
+                      >
+                        {routeParams && routeParams.folder !== 'trash' ? (
+                          <Tooltip placement='top' title='Delete Mail'>
+                            <IconButton
+                              onClick={e => {
+                                e.stopPropagation()
+                                dispatch(updateMail({ emailIds: [mail.id], dataToUpdate: { folder: 'trash' } }))
+                              }}
+                            >
+                              <Icon icon='mdi:delete-outline' />
+                            </IconButton>
+                          </Tooltip>
+                        ) : null}
+
+                        <Tooltip placement='top' title={mail.isRead ? 'Unread Mail' : 'Read Mail'}>
+                          <IconButton
+                            onClick={e => {
+                              e.stopPropagation()
+                              handleReadMail([mail.id], !mail.isRead)
+                            }}
+                          >
+                            <Icon icon={mailReadToggleIcon} />
+                          </IconButton>
+                        </Tooltip>
+                        <Tooltip placement='top' title='Move to Spam'>
+                          <IconButton
+                            onClick={e => {
+                              e.stopPropagation()
+                              handleFolderUpdate([mail.id], 'spam')
+                            }}
+                          >
+                            <Icon icon='mdi:alert-octagon-outline' />
+                          </IconButton>
+                        </Tooltip>
+                      </Box>
+                      <Box
+                        className='mail-info-right'
+                        sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}
+                      >
+                        <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>{renderMailLabels(mail.labels)}</Box>
+                        <Typography
+                          variant='caption'
+                          sx={{ minWidth: '50px', textAlign: 'right', whiteSpace: 'nowrap', color: 'text.disabled' }}
+                        >
+                          {new Date(mail.time).toLocaleTimeString('en-US', {
+                            hour: '2-digit',
+                            minute: '2-digit',
+                            hour12: true
+                          })}
+                        </Typography>
+                      </Box>
+                    </MailItem>
                   )
                 })}
               </List>

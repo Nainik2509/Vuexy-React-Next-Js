@@ -70,11 +70,11 @@ const Drawer = (props: Props) => {
   const drawerBgColor = () => {
     if (mode === 'semi-dark') {
       return {
-        backgroundColor: theme.palette.customColors.darkBg
+        backgroundColor: 'customColors.darkBg'
       }
     } else {
       return {
-        backgroundColor: theme.palette.background.default
+        backgroundColor: 'background.default'
       }
     }
   }
