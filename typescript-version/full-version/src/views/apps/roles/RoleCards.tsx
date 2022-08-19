@@ -245,7 +245,9 @@ const RolesCards = () => {
                       >
                         Administrator Access
                         <Tooltip placement='top' title='Allows a full access to the system'>
-                          <Icon icon='mdi:information-outline' fontSize='1rem' />
+                          <Box sx={{ display: 'flex' }}>
+                            <Icon icon='mdi:information-outline' fontSize='1rem' />
+                          </Box>
                         </Tooltip>
                       </Box>
                     </TableCell>

@@ -148,8 +148,8 @@ const KanbanBoard = (props: KanbanBoardProps) => {
         </Box>
         <div>
           <Droppable droppableId={board.id.toString()}>
-            {(provided: any, snapshot: any) => (
-              <Box ref={provided.innerRef} isDraggingOver={snapshot.isDraggingOver} {...provided.droppableProps}>
+            {(provided: any) => (
+              <Box ref={provided.innerRef} {...provided.droppableProps}>
                 {store.tasks.map((task: KanbanTaskType, index: number) => {
                   if (task.boardId === board.id) {
                     return (
