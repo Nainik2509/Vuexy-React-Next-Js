@@ -70,6 +70,7 @@ const SidebarLeft = (props: SidebarLeftType) => {
             boxShadow: 'none',
             width: leftSidebarWidth,
             borderTopRightRadius: 0,
+            alignItems: 'flex-start',
             borderBottomRightRadius: 0,
             p: theme => theme.spacing(5),
             zIndex: mdAbove ? '2' : 'drawer',
