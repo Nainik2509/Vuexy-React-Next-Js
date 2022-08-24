@@ -11,6 +11,7 @@ import { styled } from '@mui/material/styles'
 import InputLabel from '@mui/material/InputLabel'
 import Box, { BoxProps } from '@mui/material/Box'
 import CardContent from '@mui/material/CardContent'
+import FormControl from '@mui/material/FormControl'
 
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
@@ -30,7 +31,7 @@ const OptionsWrapper = styled(Box)<BoxProps>(() => ({
 const EditActions = ({ id, toggleSendInvoiceDrawer, toggleAddPaymentDrawer }: Props) => {
   return (
     <div>
-      <Card sx={{ mb: 4 }}>
+      <Card sx={{ mb: 6 }}>
         <CardContent>
           <Button
             fullWidth
@@ -61,13 +62,22 @@ const EditActions = ({ id, toggleSendInvoiceDrawer, toggleAddPaymentDrawer }: Pr
         </CardContent>
       </Card>
 
-      <Select fullWidth defaultValue='Internet Banking' sx={{ mb: 4 }}>
-        <MenuItem value='Internet Banking'>Internet Banking</MenuItem>
-        <MenuItem value='Debit Card'>Debit Card</MenuItem>
-        <MenuItem value='Credit Card'>Credit Card</MenuItem>
-        <MenuItem value='Paypal'>Paypal</MenuItem>
-        <MenuItem value='UPI Transfer'>UPI Transfer</MenuItem>
-      </Select>
+      <FormControl fullWidth>
+        <InputLabel id='payment-select'>Accept payments via</InputLabel>
+        <Select
+          fullWidth
+          defaultValue='Internet Banking'
+          label='Accept payments via'
+          labelId='payment-select'
+          sx={{ mb: 4 }}
+        >
+          <MenuItem value='Internet Banking'>Internet Banking</MenuItem>
+          <MenuItem value='Debit Card'>Debit Card</MenuItem>
+          <MenuItem value='Credit Card'>Credit Card</MenuItem>
+          <MenuItem value='Paypal'>Paypal</MenuItem>
+          <MenuItem value='UPI Transfer'>UPI Transfer</MenuItem>
+        </Select>
+      </FormControl>
       <OptionsWrapper sx={{ mb: 1 }}>
         <InputLabel
           htmlFor='invoice-edit-payment-terms'
