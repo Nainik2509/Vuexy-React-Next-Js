@@ -82,7 +82,7 @@ const SidebarLeft = (props: SidebarLeftType) => {
           }
         }}
       >
-        <Button variant='contained' onClick={handleSidebarToggleSidebar}>
+        <Button fullWidth variant='contained' onClick={handleSidebarToggleSidebar}>
           Add Event
         </Button>
 

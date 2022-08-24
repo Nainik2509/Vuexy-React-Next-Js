@@ -321,6 +321,12 @@ const CalendarWrapper = styled(Box)<BoxProps>(({ theme }) => {
           '& .fc-timegrid-slot': {
             height: '3rem',
             borderColor: theme.palette.divider,
+            '&.fc-timegrid-slot-label': {
+              borderRight: 0
+            },
+            '&.fc-timegrid-slot-lane': {
+              borderLeft: 0
+            },
             '& .fc-timegrid-slot-label-frame': {
               textAlign: 'center',
               '& .fc-timegrid-slot-label-cushion': {
@@ -383,6 +389,7 @@ const CalendarWrapper = styled(Box)<BoxProps>(({ theme }) => {
 
       // ** Popover
       '& .fc-popover': {
+        zIndex: 20,
         boxShadow: 1,
         borderColor: theme.palette.divider,
         background: theme.palette.background.paper,
