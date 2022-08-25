@@ -22,7 +22,7 @@ const Avatar = (theme: Theme) => {
               cursor: 'pointer',
               transition: 'all 0.2s ease',
               '&:hover': {
-                zIndex: 30,
+                zIndex: 2,
                 boxShadow: theme.shadows[3],
                 transform: 'translateY(-4px)'
               }

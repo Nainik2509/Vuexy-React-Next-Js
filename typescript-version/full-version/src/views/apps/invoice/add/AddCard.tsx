@@ -115,7 +115,7 @@ const CustomSelectItem = styled(MenuItem)<MenuItemProps>(({ theme }) => ({
 const now = new Date()
 const tomorrowDate = now.setDate(now.getDate() + 7)
 
-const EditCard = (props: Props) => {
+const AddCard = (props: Props) => {
   // ** Props
   const { clients, invoiceNumber, selectedClient, setSelectedClient, toggleAddCustomerDrawer } = props
 
@@ -538,4 +538,4 @@ const EditCard = (props: Props) => {
   )
 }
 
-export default EditCard
+export default AddCard

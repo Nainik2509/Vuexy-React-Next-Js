@@ -5,7 +5,7 @@ import { useState } from 'react'
 import Box from '@mui/material/Box'
 
 // ** Third Party Imports
-import DatePicker from 'react-datepicker'
+import DatePicker, { ReactDatePickerProps } from 'react-datepicker'
 
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
@@ -13,7 +13,7 @@ import CustomInput from './PickersCustomInput'
 // ** Types
 import { DateType } from 'src/types/forms/reactDatepickerTypes'
 
-const PickersBasic = () => {
+const PickersBasic = ({ popperPlacement }: { popperPlacement: ReactDatePickerProps['popperPlacement'] }) => {
   // ** States
   const [date, setDate] = useState<DateType>(new Date())
 
@@ -23,6 +23,7 @@ const PickersBasic = () => {
         <DatePicker
           selected={date}
           id='basic-input'
+          popperPlacement={popperPlacement}
           onChange={(date: Date) => setDate(date)}
           placeholderText='Click to select a date'
           customInput={<CustomInput label='Basic' />}
@@ -33,6 +34,7 @@ const PickersBasic = () => {
           disabled
           selected={date}
           id='disabled-input'
+          popperPlacement={popperPlacement}
           onChange={(date: Date) => setDate(date)}
           placeholderText='Click to select a date'
           customInput={<CustomInput label='Disabled' />}
@@ -43,6 +45,7 @@ const PickersBasic = () => {
           readOnly
           selected={date}
           id='read-only-input'
+          popperPlacement={popperPlacement}
           onChange={(date: Date) => setDate(date)}
           placeholderText='Click to select a date'
           customInput={<CustomInput readOnly label='Readonly' />}

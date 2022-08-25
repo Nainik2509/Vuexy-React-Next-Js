@@ -5,7 +5,7 @@ import { useState } from 'react'
 import Box from '@mui/material/Box'
 
 // ** Third Party Imports
-import DatePicker from 'react-datepicker'
+import DatePicker, { ReactDatePickerProps } from 'react-datepicker'
 
 // ** Types
 import { DateType } from 'src/types/forms/reactDatepickerTypes'
@@ -13,7 +13,11 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
 
-const PickersMonthYearDropdowns = () => {
+const PickersMonthYearDropdowns = ({
+  popperPlacement
+}: {
+  popperPlacement: ReactDatePickerProps['popperPlacement']
+}) => {
   // ** States
   const [year, setYear] = useState<DateType>(new Date())
   const [month, setMonth] = useState<DateType>(new Date())
@@ -27,6 +31,7 @@ const PickersMonthYearDropdowns = () => {
           showMonthDropdown
           id='month-dropdown'
           placeholderText='MM-DD-YYYY'
+          popperPlacement={popperPlacement}
           onChange={(date: Date) => setMonth(date)}
           customInput={<CustomInput label='Month Dropdown' />}
         />
@@ -37,6 +42,7 @@ const PickersMonthYearDropdowns = () => {
           showYearDropdown
           id='year-dropdown'
           placeholderText='MM-DD-YYYY'
+          popperPlacement={popperPlacement}
           onChange={(date: Date) => setYear(date)}
           customInput={<CustomInput label='Year Dropdown' />}
         />
@@ -48,6 +54,7 @@ const PickersMonthYearDropdowns = () => {
           selected={monthYear}
           id='month-year-dropdown'
           placeholderText='MM-DD-YYYY'
+          popperPlacement={popperPlacement}
           onChange={(date: Date) => setMonthYear(date)}
           customInput={<CustomInput label='Month & Year Dropdown' />}
         />

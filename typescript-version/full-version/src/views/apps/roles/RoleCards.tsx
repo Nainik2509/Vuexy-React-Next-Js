@@ -1,10 +1,11 @@
 // ** React Imports
-import { useEffect, useState } from 'react'
+import { SyntheticEvent, useEffect, useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
+import Link from '@mui/material/Link'
 import Table from '@mui/material/Table'
 import Button from '@mui/material/Button'
 import Avatar from '@mui/material/Avatar'
@@ -135,14 +136,15 @@ const RolesCards = () => {
                 ))}
               </AvatarGroup>
             </Box>
-            <div>
-              <Typography variant='h6'>{item.title}</Typography>
-            </div>
+            <Typography variant='h6'>{item.title}</Typography>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <Typography
+                href='/'
                 variant='body2'
-                sx={{ color: 'primary.main', cursor: 'pointer' }}
-                onClick={() => {
+                component={Link}
+                sx={{ color: 'primary.main' }}
+                onClick={(e: SyntheticEvent) => {
+                  e.preventDefault()
                   handleClickOpen()
                   setDialogTitle('Edit')
                 }}

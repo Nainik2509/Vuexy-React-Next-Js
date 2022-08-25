@@ -73,7 +73,7 @@ const SidebarLeft = (props: SidebarLeftType) => {
             alignItems: 'flex-start',
             borderBottomRightRadius: 0,
             p: theme => theme.spacing(5),
-            zIndex: mdAbove ? '2' : 'drawer',
+            zIndex: mdAbove ? 2 : 'drawer',
             position: mdAbove ? 'static' : 'absolute'
           },
           '& .MuiBackdrop-root': {

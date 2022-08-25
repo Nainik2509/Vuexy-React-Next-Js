@@ -1,7 +1,11 @@
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
 import Link from '@mui/material/Link'
+import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
+
+// ** Third Party Imports
+import { ReactDatePickerProps } from 'react-datepicker'
 
 // ** Custom Components Imports
 import PageHeader from 'src/@core/components/page-header'
@@ -28,6 +32,11 @@ import PickersMonthYearDropdowns from 'src/views/forms/form-elements/pickers/Pic
 import * as source from 'src/views/forms/form-elements/pickers/PickersSourceCode'
 
 const ReactDatePicker = () => {
+  // ** Hook
+  const theme = useTheme()
+  const { direction } = theme
+  const popperPlacement: ReactDatePickerProps['popperPlacement'] = direction === 'ltr' ? 'bottom-start' : 'bottom-end'
+
   return (
     <DatePickerWrapper>
       <Grid container spacing={6}>
@@ -43,12 +52,12 @@ const ReactDatePicker = () => {
         />
         <Grid item xs={12}>
           <CardSnippet title='Date Pickers' code={{ tsx: source.PickersBasicTSXCode, jsx: source.PickersBasicJSXCode }}>
-            <PickersBasic />
+            <PickersBasic popperPlacement={popperPlacement} />
           </CardSnippet>
         </Grid>
         <Grid item xs={12}>
           <CardSnippet title='Time Pickers' code={{ tsx: source.PickersTimeTSXCode, jsx: source.PickersTimeJSXCode }}>
-            <PickersTime />
+            <PickersTime popperPlacement={popperPlacement} />
           </CardSnippet>
         </Grid>
         <Grid item xs={12}>
@@ -56,7 +65,7 @@ const ReactDatePicker = () => {
             title='Min & Max Pickers'
             code={{ tsx: source.PickersMinMaxTSXCode, jsx: source.PickersMinMaxJSXCode }}
           >
-            <PickersMinMax />
+            <PickersMinMax popperPlacement={popperPlacement} />
           </CardSnippet>
         </Grid>
         <Grid item xs={12}>
@@ -64,7 +73,7 @@ const ReactDatePicker = () => {
             title='Date Range Pickers'
             code={{ tsx: source.PickersRangeTSXCode, jsx: source.PickersRangeJSXCode }}
           >
-            <PickersRange />
+            <PickersRange popperPlacement={popperPlacement} />
           </CardSnippet>
         </Grid>
         <Grid item xs={12}>
@@ -72,7 +81,7 @@ const ReactDatePicker = () => {
             title='Specific Range'
             code={{ tsx: source.PickersSpecificRangeTSXCode, jsx: source.PickersSpecificRangeJSXCode }}
           >
-            <PickersSpecificRange />
+            <PickersSpecificRange popperPlacement={popperPlacement} />
           </CardSnippet>
         </Grid>
         <Grid item xs={12}>
@@ -80,7 +89,7 @@ const ReactDatePicker = () => {
             title='Callbacks'
             code={{ tsx: source.PickersCallbacksTSXCode, jsx: source.PickersCallbacksJSXCode }}
           >
-            <PickersCallbacks />
+            <PickersCallbacks popperPlacement={popperPlacement} />
           </CardSnippet>
         </Grid>
         <Grid item xs={12}>
@@ -88,7 +97,7 @@ const ReactDatePicker = () => {
             title='Customization'
             code={{ tsx: source.PickersCustomizationTSXCode, jsx: source.PickersCustomizationJSXCode }}
           >
-            <PickersCustomization />
+            <PickersCustomization popperPlacement={popperPlacement} />
           </CardSnippet>
         </Grid>
         <Grid item xs={12}>
@@ -96,12 +105,12 @@ const ReactDatePicker = () => {
             title='Include Exclude'
             code={{ tsx: source.PickersIncludeExcludeTSXCode, jsx: source.PickersIncludeExcludeJSXCode }}
           >
-            <PickersIncludeExclude />
+            <PickersIncludeExclude popperPlacement={popperPlacement} />
           </CardSnippet>
         </Grid>
         <Grid item xs={12}>
           <CardSnippet title='Locale' code={{ tsx: source.PickersLocaleTSXCode, jsx: source.PickersLocaleJSXCode }}>
-            <PickersLocale />
+            <PickersLocale popperPlacement={popperPlacement} />
           </CardSnippet>
         </Grid>
         <Grid item xs={12}>
@@ -109,7 +118,7 @@ const ReactDatePicker = () => {
             title='Month & Year Dropdowns'
             code={{ tsx: source.PickersMonthYearDropdownsTSXCode, jsx: source.PickersMonthYearDropdownsJSXCode }}
           >
-            <PickersMonthYearDropdowns />
+            <PickersMonthYearDropdowns popperPlacement={popperPlacement} />
           </CardSnippet>
         </Grid>
         <Grid item xs={12}>
@@ -117,12 +126,12 @@ const ReactDatePicker = () => {
             title='Month, Year & Quarter'
             code={{ tsx: source.PickersMonthYearQuarterTSXCode, jsx: source.PickersMonthYearQuarterJSXCode }}
           >
-            <PickersMonthYearQuarter />
+            <PickersMonthYearQuarter popperPlacement={popperPlacement} />
           </CardSnippet>
         </Grid>
         <Grid item xs={12}>
           <CardSnippet title='Options' code={{ tsx: source.PickersOptionsTSXCode, jsx: source.PickersOptionsJSXCode }}>
-            <PickersOptions />
+            <PickersOptions popperPlacement={popperPlacement} />
           </CardSnippet>
         </Grid>
       </Grid>

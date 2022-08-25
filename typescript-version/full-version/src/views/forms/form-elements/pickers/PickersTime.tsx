@@ -5,7 +5,7 @@ import { useState } from 'react'
 import Box from '@mui/material/Box'
 
 // ** Third Party Imports
-import DatePicker from 'react-datepicker'
+import DatePicker, { ReactDatePickerProps } from 'react-datepicker'
 
 // ** Types
 import { DateType } from 'src/types/forms/reactDatepickerTypes'
@@ -13,7 +13,7 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
 
-const PickersTime = () => {
+const PickersTime = ({ popperPlacement }: { popperPlacement: ReactDatePickerProps['popperPlacement'] }) => {
   // ** States
   const [time, setTime] = useState<DateType>(new Date())
   const [dateTime, setDateTime] = useState<DateType>(new Date())
@@ -29,6 +29,7 @@ const PickersTime = () => {
           dateFormat='h:mm aa'
           id='time-only-picker'
           timeCaption='Time Picker'
+          popperPlacement={popperPlacement}
           onChange={(date: Date) => setTime(date)}
           customInput={<CustomInput label='Time Only' />}
         />
@@ -42,6 +43,7 @@ const PickersTime = () => {
           id='date-time-picker'
           timeCaption='Time Picker'
           dateFormat='MM/dd/yyyy h:mm aa'
+          popperPlacement={popperPlacement}
           onChange={(date: Date) => setDateTime(date)}
           customInput={<CustomInput label='Date & Time' />}
         />

@@ -8,7 +8,7 @@ import TextField from '@mui/material/TextField'
 // ** Third Party Imports
 import format from 'date-fns/format'
 import addDays from 'date-fns/addDays'
-import DatePicker from 'react-datepicker'
+import DatePicker, { ReactDatePickerProps } from 'react-datepicker'
 
 // ** Types
 import { DateType } from 'src/types/forms/reactDatepickerTypes'
@@ -19,7 +19,7 @@ interface PickerProps {
   start: Date | number
 }
 
-const PickersRange = () => {
+const PickersRange = ({ popperPlacement }: { popperPlacement: ReactDatePickerProps['popperPlacement'] }) => {
   // ** States
   const [startDate, setStartDate] = useState<DateType>(new Date())
   const [endDate, setEndDate] = useState<DateType>(addDays(new Date(), 15))
@@ -58,6 +58,7 @@ const PickersRange = () => {
           id='date-range-picker'
           onChange={handleOnChange}
           shouldCloseOnSelect={false}
+          popperPlacement={popperPlacement}
           customInput={
             <CustomInput label='Date Range' start={startDate as Date | number} end={endDate as Date | number} />
           }
@@ -73,6 +74,7 @@ const PickersRange = () => {
           shouldCloseOnSelect={false}
           id='date-range-picker-months'
           onChange={handleOnChangeRange}
+          popperPlacement={popperPlacement}
           customInput={
             <CustomInput
               label='Multiple Months'

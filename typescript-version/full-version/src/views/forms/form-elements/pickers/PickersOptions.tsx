@@ -5,7 +5,7 @@ import { useState } from 'react'
 import Box from '@mui/material/Box'
 
 // ** Third Party Imports
-import DatePicker from 'react-datepicker'
+import DatePicker, { ReactDatePickerProps } from 'react-datepicker'
 
 // ** Types
 import { DateType } from 'src/types/forms/reactDatepickerTypes'
@@ -13,7 +13,7 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
 
-const PickersOptions = () => {
+const PickersOptions = ({ popperPlacement }: { popperPlacement: ReactDatePickerProps['popperPlacement'] }) => {
   // ** States
   const [dateOpen, setDateOpen] = useState<DateType>(null)
   const [dateClear, setDateClear] = useState<DateType>(new Date())
@@ -34,6 +34,7 @@ const PickersOptions = () => {
           isClearable
           id='picker-clear'
           selected={dateClear}
+          popperPlacement={popperPlacement}
           customInput={<CustomInput label='Clear' />}
           onChange={(date: Date) => setDateClear(date)}
         />
@@ -43,6 +44,7 @@ const PickersOptions = () => {
           showWeekNumbers
           id='picker-week-num'
           selected={dateWeekNum}
+          popperPlacement={popperPlacement}
           onChange={(date: Date) => setDateWeekNum(date)}
           customInput={<CustomInput label='Week Numbers' />}
         />
@@ -52,6 +54,7 @@ const PickersOptions = () => {
           id='picker-filter'
           selected={dateFilter}
           filterDate={isWeekday}
+          popperPlacement={popperPlacement}
           onChange={(date: Date) => setDateFilter(date)}
           customInput={<CustomInput label='Filter Dates' />}
         />
@@ -60,6 +63,7 @@ const PickersOptions = () => {
         <DatePicker
           selected={dateOpen}
           id='picker-open-date'
+          popperPlacement={popperPlacement}
           openToDate={new Date('1993/09/28')}
           onChange={(date: Date) => setDateOpen(date)}
           customInput={<CustomInput label='Open To Date' />}
@@ -70,6 +74,7 @@ const PickersOptions = () => {
           todayButton='Today'
           selected={dateTodayBtn}
           id='picker-date-today-btn'
+          popperPlacement={popperPlacement}
           onChange={(date: Date) => setDateTodayBtn(date)}
           customInput={<CustomInput label='Date Today Button' />}
         />

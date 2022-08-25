@@ -6,7 +6,7 @@ import Box from '@mui/material/Box'
 
 // ** Third Party Imports
 import toast from 'react-hot-toast'
-import DatePicker from 'react-datepicker'
+import DatePicker, { ReactDatePickerProps } from 'react-datepicker'
 
 // ** Types
 import { DateType } from 'src/types/forms/reactDatepickerTypes'
@@ -14,7 +14,7 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
 
-const PickersCallbacks = () => {
+const PickersCallbacks = ({ popperPlacement }: { popperPlacement: ReactDatePickerProps['popperPlacement'] }) => {
   // ** States
   const [date, setDate] = useState<DateType>(new Date())
 
@@ -29,6 +29,7 @@ const PickersCallbacks = () => {
           selected={date}
           id='callback-open'
           dateFormat='MM/dd/yyyy'
+          popperPlacement={popperPlacement}
           onChange={(date: Date) => setDate(date)}
           customInput={<CustomInput label='Open & Closed' />}
           onCalendarOpen={() => handlePickerCallback(`Selected Date: ${new Date(date || '').toLocaleDateString()}`)}
@@ -39,6 +40,7 @@ const PickersCallbacks = () => {
         <DatePicker
           selected={date}
           id='callback-blur'
+          popperPlacement={popperPlacement}
           onChange={(date: Date) => setDate(date)}
           customInput={<CustomInput label='Blur' />}
           onBlur={() => handlePickerCallback('Picker Closed')}
@@ -48,6 +50,7 @@ const PickersCallbacks = () => {
         <DatePicker
           selected={date}
           id='callback-change'
+          popperPlacement={popperPlacement}
           customInput={<CustomInput label='onChange' />}
           onChange={(date: Date) => {
             setDate(date)

@@ -5,7 +5,7 @@ import { useState } from 'react'
 import Box from '@mui/material/Box'
 
 // ** Third Party Imports
-import DatePicker from 'react-datepicker'
+import DatePicker, { ReactDatePickerProps } from 'react-datepicker'
 
 // ** Types
 import { DateType } from 'src/types/forms/reactDatepickerTypes'
@@ -13,7 +13,7 @@ import { DateType } from 'src/types/forms/reactDatepickerTypes'
 // ** Custom Component Imports
 import CustomInput from './PickersCustomInput'
 
-const PickersMonthYear = () => {
+const PickersMonthYear = ({ popperPlacement }: { popperPlacement: ReactDatePickerProps['popperPlacement'] }) => {
   // ** States
   const [year, setYear] = useState<DateType>(new Date())
   const [month, setMonth] = useState<DateType>(new Date())
@@ -27,6 +27,7 @@ const PickersMonthYear = () => {
           id='month-picker'
           showMonthYearPicker
           dateFormat='MM/yyyy'
+          popperPlacement={popperPlacement}
           onChange={(date: Date) => setMonth(date)}
           customInput={<CustomInput label='Month Picker' />}
         />
@@ -37,6 +38,7 @@ const PickersMonthYear = () => {
           selected={year}
           id='year-picker'
           dateFormat='MM/yyyy'
+          popperPlacement={popperPlacement}
           onChange={(date: Date) => setYear(date)}
           customInput={<CustomInput label='Year Picker' />}
         />
@@ -47,6 +49,7 @@ const PickersMonthYear = () => {
           id='quarter-picker'
           showQuarterYearPicker
           dateFormat='yyyy, QQQ'
+          popperPlacement={popperPlacement}
           onChange={(date: Date) => setQuarter(date)}
           customInput={<CustomInput label='Quarter Picker' />}
         />
