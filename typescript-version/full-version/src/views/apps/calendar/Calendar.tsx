@@ -63,6 +63,11 @@ const Calendar = (props: CalendarType) => {
         start: 'sidebarToggle, prev, next, title',
         end: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
       },
+      views: {
+        week: {
+          titleFormat: { year: 'numeric', month: 'long', day: 'numeric' }
+        }
+      },
 
       /*
       Enable dragging and resizing event
