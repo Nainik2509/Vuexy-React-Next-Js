@@ -8,59 +8,14 @@ import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import InputLabel from '@mui/material/InputLabel'
 import FormControl from '@mui/material/FormControl'
-import FormHelperText from '@mui/material/FormHelperText'
 import InputAdornment from '@mui/material/InputAdornment'
 
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
 
-// ** Third Party Imports
-import * as yup from 'yup'
-import { useForm, Controller } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers/yup'
-
-const defaultValues = {
-  address: '',
-  firstName: ''
-}
-
-const showErrors = (field: string, valueLen: number, min: number) => {
-  if (valueLen === 0) {
-    return `${field} field is required`
-  } else if (valueLen > 0 && valueLen < min) {
-    return `${field} must be at least ${min} characters`
-  } else {
-    return ''
-  }
-}
-
-const schema = yup.object().shape({
-  firstName: yup
-    .string()
-    .min(3, obj => showErrors('firstName', obj.value.length, obj.min))
-    .required(),
-  address: yup
-    .string()
-    .min(10, obj => showErrors('firstName', obj.value.length, obj.min))
-    .required()
-})
-
 const StepPersonalDetails = ({ handleNext, handlePrev }: { [key: string]: () => void }) => {
-  // ** Hook
-  const {
-    control,
-    handleSubmit,
-    formState: { errors }
-  } = useForm({
-    defaultValues,
-    mode: 'onChange',
-    resolver: yupResolver(schema)
-  })
-
-  const onSubmit = () => handleNext()
-
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <>
       <Box sx={{ mb: 4 }}>
         <Typography variant='h5'>Personal Information</Typography>
         <Typography sx={{ color: 'text.secondary' }}>Enter Your Personal Information</Typography>
@@ -68,28 +23,7 @@ const StepPersonalDetails = ({ handleNext, handlePrev }: { [key: string]: () => 
 
       <Grid container spacing={6}>
         <Grid item xs={12} md={6}>
-          <FormControl fullWidth>
-            <Controller
-              name='firstName'
-              control={control}
-              rules={{ required: true }}
-              render={({ field: { value, onChange } }) => (
-                <TextField
-                  value={value}
-                  placeholder='john'
-                  label='First Name'
-                  onChange={onChange}
-                  error={Boolean(errors.firstName)}
-                  aria-describedby='validation-firstName'
-                />
-              )}
-            />
-            {errors.firstName && (
-              <FormHelperText sx={{ color: 'error.main' }} id='validation-firstName'>
-                {errors.firstName.message}
-              </FormHelperText>
-            )}
-          </FormControl>
+          <TextField fullWidth placeholder='john' label='First Name' />
         </Grid>
 
         <Grid item xs={12} md={6}>
@@ -110,26 +44,7 @@ const StepPersonalDetails = ({ handleNext, handlePrev }: { [key: string]: () => 
         </Grid>
         <Grid item xs={12}>
           <FormControl fullWidth>
-            <Controller
-              name='address'
-              control={control}
-              rules={{ required: true }}
-              render={({ field: { value, onChange } }) => (
-                <TextField
-                  value={value}
-                  label='Address'
-                  onChange={onChange}
-                  error={Boolean(errors.address)}
-                  aria-describedby='validation-address'
-                  placeholder='7777, Mendez Plains, Florida'
-                />
-              )}
-            />
-            {errors.address && (
-              <FormHelperText sx={{ color: 'error.main' }} id='validation-address'>
-                {errors.address.message}
-              </FormHelperText>
-            )}
+            <TextField label='Address' placeholder='7777, Mendez Plains, Florida' />
           </FormControl>
         </Grid>
         <Grid item xs={12}>
@@ -141,7 +56,7 @@ const StepPersonalDetails = ({ handleNext, handlePrev }: { [key: string]: () => 
         <Grid item xs={12} md={6}>
           <FormControl fullWidth>
             <InputLabel id='state-select'>State</InputLabel>
-            <Select labelId='state-select' label='State'>
+            <Select labelId='state-select' label='State' defaultValue='New York'>
               <MenuItem value='New York'>New York</MenuItem>
               <MenuItem value='California'>California</MenuItem>
               <MenuItem value='Florida'>Florida</MenuItem>
@@ -155,13 +70,13 @@ const StepPersonalDetails = ({ handleNext, handlePrev }: { [key: string]: () => 
             <Button variant='contained' startIcon={<Icon icon='mdi:chevron-left' fontSize={20} />} onClick={handlePrev}>
               Previous
             </Button>
-            <Button type='submit' variant='contained' endIcon={<Icon icon='mdi:chevron-right' fontSize={20} />}>
+            <Button variant='contained' onClick={handleNext} endIcon={<Icon icon='mdi:chevron-right' fontSize={20} />}>
               Next
             </Button>
           </Box>
         </Grid>
       </Grid>
-    </form>
+    </>
   )
 }
 
