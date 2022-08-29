@@ -133,7 +133,6 @@ const CalendarWrapper = styled(Box)<BoxProps>(({ theme }) => {
       '& tbody td, & thead th': {
         borderColor: theme.palette.divider,
         '&.fc-col-header-cell': {
-          borderRight: 0,
           borderLeft: 0
         }
       },
@@ -291,8 +290,7 @@ const CalendarWrapper = styled(Box)<BoxProps>(({ theme }) => {
         textDecoration: 'none !important',
         color: `${theme.palette.text.primary} !important`
       },
-      '& .fc-day-today': {
-        background: `rgba(${theme.palette.customColors.main}, 0.04) !important`,
+      '& .fc-day-today:not(.fc-popover)': {
         backgroundColor: `rgba(${theme.palette.customColors.main}, 0.04) !important`
       },
 
