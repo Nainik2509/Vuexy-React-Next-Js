@@ -155,7 +155,7 @@ const RegisterMultiSteps = () => {
           <Stepper activeStep={activeStep} connector={<Icon icon='mdi:chevron-right' />}>
             {steps.map((step, index) => {
               return (
-                <Step key={index}>
+                <Step key={index} onClick={() => setActiveStep(index)}>
                   <StepLabel icon={<></>}>
                     <CustomAvatar
                       variant='rounded'

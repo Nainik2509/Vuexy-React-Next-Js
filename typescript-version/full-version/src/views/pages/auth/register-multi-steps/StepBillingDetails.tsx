@@ -9,15 +9,11 @@ import Tooltip from '@mui/material/Tooltip'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import FormControl from '@mui/material/FormControl'
-import FormHelperText from '@mui/material/FormHelperText'
 import InputAdornment from '@mui/material/InputAdornment'
 
 // ** Third Party Imports
-import * as yup from 'yup'
 import Payment from 'payment'
 import Cards, { Focused } from 'react-credit-cards'
-import { useForm, Controller } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers/yup'
 
 // ** Type Import
 import { CustomRadioIconsData } from 'src/@core/components/custom-radio/types'
@@ -36,10 +32,6 @@ import { formatCVC, formatExpirationDate, formatCreditCardNumber } from 'src/@co
 
 // ** Styles Import
 import 'react-credit-cards/es/styles-compiled.css'
-
-const defaultValues = {
-  cardNumber: ''
-}
 
 const data: CustomRadioIconsData[] = [
   {
@@ -109,23 +101,6 @@ const data: CustomRadioIconsData[] = [
   }
 ]
 
-const showErrors = (field: string, valueLen: number, min: number) => {
-  if (valueLen === 0) {
-    return `${field} field is required`
-  } else if (valueLen > 0 && valueLen < min) {
-    return `${field} must be at least ${min} characters`
-  } else {
-    return ''
-  }
-}
-
-const schema = yup.object().shape({
-  cardNumber: yup
-    .string()
-    .min(16, obj => showErrors('cardNumber', obj.value.length, obj.min))
-    .required()
-})
-
 const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
   const initialSelected: string = data.filter(item => item.isSelected)[data.filter(item => item.isSelected).length - 1]
     .value
@@ -135,37 +110,23 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
   const [name, setName] = useState<string>('')
   const [focus, setFocus] = useState<Focused>()
   const [expiry, setExpiry] = useState<string>('')
+  const [cardNumber, setCardNumber] = useState<string>('')
   const [selectedRadio, setSelectedRadio] = useState<string>(initialSelected)
-
-  // ** Hook
-  const {
-    control,
-    setValue,
-    getValues,
-    handleSubmit,
-    formState: { errors }
-  } = useForm({
-    defaultValues,
-    mode: 'onChange',
-    resolver: yupResolver(schema)
-  })
 
   const handleBlur = () => setFocus(undefined)
 
-  const handleInputChange = ({ target }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
     if (target.name === 'cardNumber') {
       target.value = formatCreditCardNumber(target.value, Payment)
-      setValue('cardNumber', target.value)
+      setCardNumber(target.value)
     } else if (target.name === 'expiry') {
       target.value = formatExpirationDate(target.value)
       setExpiry(target.value)
     } else if (target.name === 'cvc') {
-      target.value = formatCVC(target.value, getValues('cardNumber'), Payment)
+      target.value = formatCVC(target.value, cardNumber, Payment)
       setCvc(target.value)
     }
   }
-
-  const onSubmit = () => alert('Submitted..!!')
 
   const handleRadioChange = (prop: string | ChangeEvent<HTMLInputElement>) => {
     if (typeof prop === 'string') {
@@ -176,7 +137,7 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <>
       <Box sx={{ mb: 4 }}>
         <Typography variant='h5'>Select Plan</Typography>
         <Typography sx={{ color: 'text.secondary' }}>Select plan as per your requirement</Typography>
@@ -202,38 +163,22 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
         </Grid>
         <Grid item xs={12}>
           <CardWrapper sx={{ '& .rccs': { m: '0 auto' } }}>
-            <Cards cvc={cvc} focused={focus} expiry={expiry} name={name} number={getValues('cardNumber')} />
+            <Cards cvc={cvc} focused={focus} expiry={expiry} name={name} number={cardNumber} />
           </CardWrapper>
         </Grid>
         <Grid item xs={12}>
           <FormControl fullWidth>
-            <Controller
+            <TextField
+              fullWidth
               name='cardNumber'
-              control={control}
-              rules={{ required: true }}
-              render={({ field: { value, onChange } }) => (
-                <TextField
-                  fullWidth
-                  value={value}
-                  autoComplete='off'
-                  label='Card Number'
-                  onBlur={handleBlur}
-                  placeholder='1356 3215 6548 7898'
-                  error={Boolean(errors.cardNumber)}
-                  aria-describedby='validation-cardNumber'
-                  onFocus={e => setFocus(e.target.name as Focused)}
-                  onChange={e => {
-                    handleInputChange(e)
-                    onChange(e)
-                  }}
-                />
-              )}
+              value={cardNumber}
+              autoComplete='off'
+              label='Card Number'
+              onBlur={handleBlur}
+              onChange={handleInputChange}
+              placeholder='0000 0000 0000 0000'
+              onFocus={e => setFocus(e.target.name as Focused)}
             />
-            {errors.cardNumber && (
-              <FormHelperText sx={{ color: 'error.main' }} id='validation-cardNumber'>
-                {errors.cardNumber.message}
-              </FormHelperText>
-            )}
           </FormControl>
         </Grid>
         <Grid item xs={12} md={6}>
@@ -276,7 +221,9 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
               endAdornment: (
                 <InputAdornment position='start' sx={{ '& svg': { cursor: 'pointer' } }}>
                   <Tooltip title='Card Verification Value'>
-                    <Icon icon='mdi:help-circle-outline' fontSize={20} />
+                    <Box sx={{ display: 'flex' }}>
+                      <Icon icon='mdi:help-circle-outline' fontSize={20} />
+                    </Box>
                   </Tooltip>
                 </InputAdornment>
               )
@@ -288,13 +235,13 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
             <Button variant='contained' onClick={handlePrev} startIcon={<Icon icon='mdi:chevron-left' fontSize={20} />}>
               Previous
             </Button>
-            <Button type='submit' color='success' variant='contained'>
+            <Button color='success' variant='contained' onClick={() => alert('Submitted..!!')}>
               Submit
             </Button>
           </Box>
         </Grid>
       </Grid>
-    </form>
+    </>
   )
 }
 
