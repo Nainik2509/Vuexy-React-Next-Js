@@ -146,7 +146,7 @@ const UserViewConnection = () => {
               </Box>
             </Box>
             <Button color='secondary' variant='outlined' sx={{ p: 2, minWidth: 38 }}>
-              <Icon icon='mdi:close' fontSize='1.25rem' />
+              <Icon icon='mdi:close' fontSize={20} />
             </Button>
           </Box>
 
@@ -161,7 +161,7 @@ const UserViewConnection = () => {
               </Box>
             </Box>
             <Button color='secondary' variant='outlined' sx={{ p: 2, minWidth: 38 }}>
-              <Icon icon='mdi:close' fontSize='1.25rem' />
+              <Icon icon='mdi:close' fontSize={20} />
             </Button>
           </Box>
 

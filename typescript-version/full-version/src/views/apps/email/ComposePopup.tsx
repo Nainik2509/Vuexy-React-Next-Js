@@ -151,8 +151,8 @@ const ComposePopup = (props: MailComposeType) => {
         size='small'
         key={item.value}
         label={item.name}
-        deleteIcon={<Icon icon='mdi:close' />}
         {...(getTagProps({ index }) as {})}
+        deleteIcon={<Icon icon='mdi:close' />}
         onDelete={() => handleMailDelete(item.value, state, setState)}
       />
     ))

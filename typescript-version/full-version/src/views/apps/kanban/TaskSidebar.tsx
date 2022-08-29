@@ -10,6 +10,7 @@ import Button from '@mui/material/Button'
 import MenuItem from '@mui/material/MenuItem'
 import ListItem from '@mui/material/ListItem'
 import TextField from '@mui/material/TextField'
+import IconButton from '@mui/material/IconButton'
 import InputLabel from '@mui/material/InputLabel'
 import Typography from '@mui/material/Typography'
 import FormControl from '@mui/material/FormControl'
@@ -301,15 +302,16 @@ const TaskSidebar = (props: TaskSidebarProps) => {
         className='sidebar-header'
         sx={{
           display: 'flex',
+          alignItems: 'center',
           justifyContent: 'space-between',
           backgroundColor: 'background.default',
           p: theme => theme.spacing(3, 3.255, 3, 5.255)
         }}
       >
         <Typography variant='h6'>Update Task</Typography>
-        <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { cursor: 'pointer' } }}>
-          <Icon icon='mdi:close' fontSize={20} onClick={handleTaskSidebarToggle} />
-        </Box>
+        <IconButton onClick={handleTaskSidebarToggle}>
+          <Icon icon='mdi:close' fontSize={20} />
+        </IconButton>
       </Box>
       <Box className='sidebar-body' sx={{ p: theme => theme.spacing(5, 6) }}>
         <form onSubmit={handleSubmit(onSubmit)}>
