@@ -130,7 +130,7 @@ module.exports = {
             ['installation-errors', 'Installation errors'],
             ['installation-warnings', 'Installation warnings'],
             ['first-child-console-error', ':first-child console error'],
-            ['cra-support', 'CRA Support'],
+            ['remove-nextjs', 'Can I remove Next.js'],
             ['how-to-change-branding', 'How to change Logo / Branding'],
             ['how-to-change-colors', 'How to change colors'],
             ['how-to-change-direction', 'How to change Direction'],

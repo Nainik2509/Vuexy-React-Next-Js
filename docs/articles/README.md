@@ -23,3 +23,5 @@ pageClass: page-article-list
 [How to use i18n in a page](/articles/how-to-use-i18n-in-a-page.md)
 
 [How to replace API endpoints](/articles/how-to-replace-api-endpoints.md)
+
+[Why have we not used `getServerSideProps` method](/articles/why-getServerSideProps-not-used.md)

@@ -162,3 +162,28 @@ export default BlogLayout
 Result:
 
 <img alt='blog-layout' class='medium-zoom' :src="$withBase('/images/layouts/blog-layout.png')" />
+
+## Change the default page layout
+
+Suppose, you want to change the default page layout for all the pages in your project, then follow the below steps:
+
+- Make a layout as per your requirements in the `src/layouts` folder (let us assume that you named the file as `UserDefaultLayout.tsx`)
+- Import the newly created file in the `src/pages/_app.tsx` file as:
+
+```tsx
+import UserDefaultLayout from 'src/layouts/UserDefaultLayout'
+```
+
+- Change the `getLayout` variable
+
+**from**
+
+```tsx
+const getLayout = Component.getLayout ?? (page => <UserLayout contentHeightFixed={contentHeightFixed}>{page}</UserLayout>)
+```
+
+**to**
+
+```tsx
+const getLayout = Component.getLayout ?? (page => <UserDefaultLayout>{page}</UserDefaultLayout>)
+```
