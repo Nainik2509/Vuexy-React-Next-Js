@@ -133,7 +133,7 @@ const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
           },
         '&.react-datepicker__day--highlighted, &.react-datepicker__day--highlighted:hover': {
           color: theme.palette.success.main,
-          backgroundColor: bgColors.successLight.backgroundColor
+          backgroundColor: `${bgColors.successLight.backgroundColor} !important`
         }
       },
       '& .react-datepicker__day--in-range, & .react-datepicker__day--in-selecting-range': {
@@ -374,9 +374,12 @@ const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
       '& .react-datepicker__time-container': {
         padding: theme.spacing(1.2, 0),
         '& .react-datepicker-time__header': {
+          fontSize: '1rem',
+          lineHeight: 1.31,
+          fontWeight: 'normal',
+          letterSpacing: '0.15px',
           marginBottom: theme.spacing(3),
-          color: theme.palette.text.primary,
-          fontSize: theme.typography.body2.fontSize
+          color: theme.palette.text.primary
         },
 
         '& .react-datepicker__time': {

@@ -123,35 +123,31 @@ const RolesCards = () => {
         <Card>
           <CardContent>
             <Box sx={{ mb: 3, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <Typography variant='body2'>Total {item.totalUsers} users</Typography>
-              <AvatarGroup
-                max={4}
-                sx={{
-                  '& .MuiAvatarGroup-avatar': { fontSize: '.875rem' },
-                  '& .MuiAvatar-root, & .MuiAvatarGroup-avatar': { width: 32, height: 32 }
-                }}
-              >
+              <Typography variant='body2'>{`Total ${item.totalUsers} users`}</Typography>
+              <AvatarGroup max={4} sx={{ '& .MuiAvatar-root': { width: 32, height: 32, fontSize: '0.875rem' } }}>
                 {item.avatars.map((img, index: number) => (
                   <Avatar key={index} alt={item.title} src={`/images/avatars/${img}`} />
                 ))}
               </AvatarGroup>
             </Box>
-            <Typography variant='h6'>{item.title}</Typography>
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <Typography
-                href='/'
-                variant='body2'
-                component={Link}
-                sx={{ color: 'primary.main' }}
-                onClick={(e: SyntheticEvent) => {
-                  e.preventDefault()
-                  handleClickOpen()
-                  setDialogTitle('Edit')
-                }}
-              >
-                Edit Role
-              </Typography>
-              <IconButton size='small' sx={{ color: 'text.primary' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+              <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                <Typography variant='h6'>{item.title}</Typography>
+                <Typography
+                  href='/'
+                  variant='body2'
+                  component={Link}
+                  sx={{ color: 'primary.main' }}
+                  onClick={(e: SyntheticEvent) => {
+                    e.preventDefault()
+                    handleClickOpen()
+                    setDialogTitle('Edit')
+                  }}
+                >
+                  Edit Role
+                </Typography>
+              </Box>
+              <IconButton sx={{ color: 'text.secondary' }}>
                 <Icon icon='mdi:content-copy' fontSize={20} />
               </IconButton>
             </Box>

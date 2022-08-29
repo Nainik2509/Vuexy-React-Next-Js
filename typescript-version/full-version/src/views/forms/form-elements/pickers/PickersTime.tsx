@@ -28,7 +28,6 @@ const PickersTime = ({ popperPlacement }: { popperPlacement: ReactDatePickerProp
           showTimeSelectOnly
           dateFormat='h:mm aa'
           id='time-only-picker'
-          timeCaption='Time Picker'
           popperPlacement={popperPlacement}
           onChange={(date: Date) => setTime(date)}
           customInput={<CustomInput label='Time Only' />}
@@ -41,7 +40,6 @@ const PickersTime = ({ popperPlacement }: { popperPlacement: ReactDatePickerProp
           timeIntervals={15}
           selected={dateTime}
           id='date-time-picker'
-          timeCaption='Time Picker'
           dateFormat='MM/dd/yyyy h:mm aa'
           popperPlacement={popperPlacement}
           onChange={(date: Date) => setDateTime(date)}
