@@ -133,7 +133,10 @@ const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
           },
         '&.react-datepicker__day--highlighted, &.react-datepicker__day--highlighted:hover': {
           color: theme.palette.success.main,
-          backgroundColor: `${bgColors.successLight.backgroundColor} !important`
+          backgroundColor: `${bgColors.successLight.backgroundColor} !important`,
+          '&.react-datepicker__day--selected': {
+            backgroundColor: `${theme.palette.primary.main} !important`
+          }
         }
       },
       '& .react-datepicker__day--in-range, & .react-datepicker__day--in-selecting-range': {
@@ -143,7 +146,7 @@ const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
       },
       '& .react-datepicker__day--today': {
         fontWeight: 'normal',
-        '&:not(.react-datepicker__day--selected)': {
+        '&:not(.react-datepicker__day--selected):not(:empty)': {
           lineHeight: '2.125rem',
           color: theme.palette.primary.main,
           border: `1px solid ${theme.palette.primary.main}`,
@@ -357,8 +360,13 @@ const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
       // ** Time Picker
       '&:not(.react-datepicker--time-only)': {
         '& .react-datepicker__time-container': {
-          width: '7rem',
-          borderLeftColor: theme.palette.divider
+          borderLeftColor: theme.palette.divider,
+          [theme.breakpoints.down('sm')]: {
+            width: '5.5rem'
+          },
+          [theme.breakpoints.up('sm')]: {
+            width: '7rem'
+          }
         },
         '.react-datepicker-time__header': {
           paddingTop: theme.spacing(3.2)
