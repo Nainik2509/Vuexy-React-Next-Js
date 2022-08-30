@@ -126,8 +126,10 @@ const PaymentMethodCard = () => {
   }
 
   const handleEditCardClose = () => {
-    setSelectedCard(null)
     setOpenEditCard(false)
+    setTimeout(() => {
+      setSelectedCard(null)
+    }, 200)
   }
 
   const handleBlur = () => setFocus(undefined)

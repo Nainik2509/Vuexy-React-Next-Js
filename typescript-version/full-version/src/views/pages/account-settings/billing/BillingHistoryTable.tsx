@@ -326,6 +326,7 @@ const BillingHistoryTable = () => {
             <FormControl size='small'>
               <InputLabel id='invoice-status-select'>Invoice Status</InputLabel>
               <Select
+                sx={{ pr: 4 }}
                 value={statusValue}
                 label='Invoice Status'
                 onChange={handleStatusValue}
