@@ -1,9 +1,7 @@
-// ** React Imports
-import { Fragment } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
+import Grid from '@mui/material/Grid'
 import Switch from '@mui/material/Switch'
 import Button from '@mui/material/Button'
 import { styled } from '@mui/material/styles'
@@ -22,181 +20,185 @@ const Img = styled('img')(({ theme }) => ({
 
 const UserViewConnection = () => {
   return (
-    <Fragment>
-      <Card sx={{ mb: 6 }}>
-        <CardHeader
-          title='Connected Accounts'
-          titleTypographyProps={{ sx: { mb: 1 } }}
-          subheader='Display content from your connected accounts on your site'
-        />
-        <CardContent>
-          <Box
-            sx={{
-              mb: 7,
-              mt: 2.5,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between'
-            }}
-          >
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <img width='35' height='35' alt='Google' src='/images/logos/google.png' />
-              <Box sx={{ ml: 3 }}>
-                <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Google</Typography>
-                <Typography variant='body2' sx={{ fontWeight: 500, fontSize: '0.8125rem' }}>
-                  Calendar and contacts
-                </Typography>
+    <Grid container spacing={6}>
+      <Grid item xs={12}>
+        <Card>
+          <CardHeader
+            title='Connected Accounts'
+            titleTypographyProps={{ sx: { mb: 1 } }}
+            subheader='Display content from your connected accounts on your site'
+          />
+          <CardContent>
+            <Box
+              sx={{
+                mb: 7,
+                mt: 2.5,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between'
+              }}
+            >
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <img width='35' height='35' alt='Google' src='/images/logos/google.png' />
+                <Box sx={{ ml: 3 }}>
+                  <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Google</Typography>
+                  <Typography variant='body2' sx={{ fontWeight: 500, fontSize: '0.8125rem' }}>
+                    Calendar and contacts
+                  </Typography>
+                </Box>
               </Box>
+              <Switch defaultChecked />
             </Box>
-            <Switch defaultChecked />
-          </Box>
 
-          <Box sx={{ display: 'flex', mb: 7, alignItems: 'center', justifyContent: 'space-between' }}>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <img width='35' height='35' alt='Slack' src='/images/logos/slack.png' />
-              <Box sx={{ ml: 3 }}>
-                <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Slack</Typography>
-                <Typography variant='body2' sx={{ fontWeight: 500, fontSize: '0.8125rem' }}>
-                  Communication
-                </Typography>
+            <Box sx={{ display: 'flex', mb: 7, alignItems: 'center', justifyContent: 'space-between' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <img width='35' height='35' alt='Slack' src='/images/logos/slack.png' />
+                <Box sx={{ ml: 3 }}>
+                  <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Slack</Typography>
+                  <Typography variant='body2' sx={{ fontWeight: 500, fontSize: '0.8125rem' }}>
+                    Communication
+                  </Typography>
+                </Box>
               </Box>
+              <Switch />
             </Box>
-            <Switch />
-          </Box>
 
-          <Box sx={{ display: 'flex', mb: 7, alignItems: 'center', justifyContent: 'space-between' }}>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <img width='35' height='35' alt='Github' src='/images/logos/github.png' />
-              <Box sx={{ ml: 3 }}>
-                <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Github</Typography>
-                <Typography variant='body2' sx={{ fontWeight: 500, fontSize: '0.8125rem' }}>
-                  Manage your Git repositories
-                </Typography>
+            <Box sx={{ display: 'flex', mb: 7, alignItems: 'center', justifyContent: 'space-between' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <img width='35' height='35' alt='Github' src='/images/logos/github.png' />
+                <Box sx={{ ml: 3 }}>
+                  <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Github</Typography>
+                  <Typography variant='body2' sx={{ fontWeight: 500, fontSize: '0.8125rem' }}>
+                    Manage your Git repositories
+                  </Typography>
+                </Box>
               </Box>
+              <Switch defaultChecked />
             </Box>
-            <Switch defaultChecked />
-          </Box>
 
-          <Box sx={{ display: 'flex', mb: 7, alignItems: 'center', justifyContent: 'space-between' }}>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <img width='35' height='35' alt='Mailchimp' src='/images/logos/mail-chimp.png' />
-              <Box sx={{ ml: 3 }}>
-                <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Mailchimp</Typography>
-                <Typography variant='body2' sx={{ fontWeight: 500, fontSize: '0.8125rem' }}>
-                  Email marketing service
-                </Typography>
+            <Box sx={{ display: 'flex', mb: 7, alignItems: 'center', justifyContent: 'space-between' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <img width='35' height='35' alt='Mailchimp' src='/images/logos/mail-chimp.png' />
+                <Box sx={{ ml: 3 }}>
+                  <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Mailchimp</Typography>
+                  <Typography variant='body2' sx={{ fontWeight: 500, fontSize: '0.8125rem' }}>
+                    Email marketing service
+                  </Typography>
+                </Box>
               </Box>
+              <Switch />
             </Box>
-            <Switch />
-          </Box>
 
-          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <img width='35' height='35' alt='Asana' src='/images/logos/asana.png' />
-              <Box sx={{ ml: 3 }}>
-                <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Asana</Typography>
-                <Typography variant='body2' sx={{ fontWeight: 500, fontSize: '0.8125rem' }}>
-                  Communication
-                </Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <img width='35' height='35' alt='Asana' src='/images/logos/asana.png' />
+                <Box sx={{ ml: 3 }}>
+                  <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Asana</Typography>
+                  <Typography variant='body2' sx={{ fontWeight: 500, fontSize: '0.8125rem' }}>
+                    Communication
+                  </Typography>
+                </Box>
               </Box>
+              <Switch />
             </Box>
-            <Switch />
-          </Box>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      </Grid>
 
-      <Card>
-        <CardHeader
-          title='Social Accounts'
-          titleTypographyProps={{ sx: { mb: 1 } }}
-          subheader='Display content from social accounts on your site'
-        />
-        <CardContent>
-          <Box
-            sx={{
-              mb: 6,
-              mt: 2.5,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between'
-            }}
-          >
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <Img height='35' alt='Facebook' src='/images/logos/facebook.png' />
-              <Box sx={{ ml: 3 }}>
-                <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Facebook</Typography>
-                <Typography variant='body2' sx={{ fontWeight: 500, fontSize: '0.8125rem' }}>
-                  Not connected
-                </Typography>
+      <Grid item xs={12}>
+        <Card>
+          <CardHeader
+            title='Social Accounts'
+            titleTypographyProps={{ sx: { mb: 1 } }}
+            subheader='Display content from social accounts on your site'
+          />
+          <CardContent>
+            <Box
+              sx={{
+                mb: 6,
+                mt: 2.5,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between'
+              }}
+            >
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <Img height='35' alt='Facebook' src='/images/logos/facebook.png' />
+                <Box sx={{ ml: 3 }}>
+                  <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Facebook</Typography>
+                  <Typography variant='body2' sx={{ fontWeight: 500, fontSize: '0.8125rem' }}>
+                    Not connected
+                  </Typography>
+                </Box>
               </Box>
+              <Button color='secondary' variant='outlined' sx={{ p: 2, minWidth: 38 }}>
+                <Icon icon='mdi:link-variant' fontSize='1.25rem' />
+              </Button>
             </Box>
-            <Button color='secondary' variant='outlined' sx={{ p: 2, minWidth: 38 }}>
-              <Icon icon='mdi:link-variant' fontSize='1.25rem' />
-            </Button>
-          </Box>
 
-          <Box sx={{ display: 'flex', mb: 6, alignItems: 'center', justifyContent: 'space-between' }}>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <Img width='35' height='35' alt='Twitter' src='/images/logos/twitter.png' />
-              <Box sx={{ ml: 3 }}>
-                <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Twitter</Typography>
-                <Typography variant='body2' sx={{ fontWeight: 500, color: 'primary.main', fontSize: '0.8125rem' }}>
-                  @theme_selection
-                </Typography>
+            <Box sx={{ display: 'flex', mb: 6, alignItems: 'center', justifyContent: 'space-between' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <Img width='35' height='35' alt='Twitter' src='/images/logos/twitter.png' />
+                <Box sx={{ ml: 3 }}>
+                  <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Twitter</Typography>
+                  <Typography variant='body2' sx={{ fontWeight: 500, color: 'primary.main', fontSize: '0.8125rem' }}>
+                    @theme_selection
+                  </Typography>
+                </Box>
               </Box>
+              <Button color='secondary' variant='outlined' sx={{ p: 2, minWidth: 38 }}>
+                <Icon icon='mdi:close' fontSize={20} />
+              </Button>
             </Box>
-            <Button color='secondary' variant='outlined' sx={{ p: 2, minWidth: 38 }}>
-              <Icon icon='mdi:close' fontSize={20} />
-            </Button>
-          </Box>
 
-          <Box sx={{ display: 'flex', mb: 6, alignItems: 'center', justifyContent: 'space-between' }}>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <Img width='35' height='35' alt='LinkedIn' src='/images/logos/linkedin.png' />
-              <Box sx={{ ml: 3 }}>
-                <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>LinkedIn</Typography>
-                <Typography variant='body2' sx={{ fontWeight: 500, color: 'primary.main', fontSize: '0.8125rem' }}>
-                  @theme_selection
-                </Typography>
+            <Box sx={{ display: 'flex', mb: 6, alignItems: 'center', justifyContent: 'space-between' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <Img width='35' height='35' alt='LinkedIn' src='/images/logos/linkedin.png' />
+                <Box sx={{ ml: 3 }}>
+                  <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>LinkedIn</Typography>
+                  <Typography variant='body2' sx={{ fontWeight: 500, color: 'primary.main', fontSize: '0.8125rem' }}>
+                    @theme_selection
+                  </Typography>
+                </Box>
               </Box>
+              <Button color='secondary' variant='outlined' sx={{ p: 2, minWidth: 38 }}>
+                <Icon icon='mdi:close' fontSize={20} />
+              </Button>
             </Box>
-            <Button color='secondary' variant='outlined' sx={{ p: 2, minWidth: 38 }}>
-              <Icon icon='mdi:close' fontSize={20} />
-            </Button>
-          </Box>
 
-          <Box sx={{ display: 'flex', mb: 6, alignItems: 'center', justifyContent: 'space-between' }}>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <Img width='35' height='35' alt='Dribbble' src='/images/logos/dribbble.png' />
-              <Box sx={{ ml: 3 }}>
-                <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Dribbble</Typography>
-                <Typography variant='body2' sx={{ fontWeight: 500, fontSize: '0.8125rem' }}>
-                  Not connected
-                </Typography>
+            <Box sx={{ display: 'flex', mb: 6, alignItems: 'center', justifyContent: 'space-between' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <Img width='35' height='35' alt='Dribbble' src='/images/logos/dribbble.png' />
+                <Box sx={{ ml: 3 }}>
+                  <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Dribbble</Typography>
+                  <Typography variant='body2' sx={{ fontWeight: 500, fontSize: '0.8125rem' }}>
+                    Not connected
+                  </Typography>
+                </Box>
               </Box>
+              <Button color='secondary' variant='outlined' sx={{ p: 2, minWidth: 38 }}>
+                <Icon icon='mdi:link-variant' fontSize='1.25rem' />
+              </Button>
             </Box>
-            <Button color='secondary' variant='outlined' sx={{ p: 2, minWidth: 38 }}>
-              <Icon icon='mdi:link-variant' fontSize='1.25rem' />
-            </Button>
-          </Box>
 
-          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <Img width='35' height='35' alt='Behance' src='/images/logos/behance.png' />
-              <Box sx={{ ml: 3 }}>
-                <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Behance</Typography>
-                <Typography variant='body2' sx={{ fontWeight: 500, fontSize: '0.8125rem' }}>
-                  Not connected
-                </Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <Img width='35' height='35' alt='Behance' src='/images/logos/behance.png' />
+                <Box sx={{ ml: 3 }}>
+                  <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>Behance</Typography>
+                  <Typography variant='body2' sx={{ fontWeight: 500, fontSize: '0.8125rem' }}>
+                    Not connected
+                  </Typography>
+                </Box>
               </Box>
+              <Button color='secondary' variant='outlined' sx={{ p: 2, minWidth: 38 }}>
+                <Icon icon='mdi:link-variant' fontSize='1.25rem' />
+              </Button>
             </Box>
-            <Button color='secondary' variant='outlined' sx={{ p: 2, minWidth: 38 }}>
-              <Icon icon='mdi:link-variant' fontSize='1.25rem' />
-            </Button>
-          </Box>
-        </CardContent>
-      </Card>
-    </Fragment>
+          </CardContent>
+        </Card>
+      </Grid>
+    </Grid>
   )
 }
 

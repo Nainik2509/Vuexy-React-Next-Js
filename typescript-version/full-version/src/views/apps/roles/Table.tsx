@@ -1,15 +1,11 @@
 // ** React Imports
 import { useEffect, useCallback, useState } from 'react'
 
-// ** Next Images
-import Link from 'next/link'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import Grid from '@mui/material/Grid'
 import { DataGrid } from '@mui/x-data-grid'
-import { styled } from '@mui/material/styles'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import { SelectChangeEvent } from '@mui/material/Select'
@@ -65,32 +61,15 @@ const userStatusObj: UserStatusType = {
   inactive: 'secondary'
 }
 
-// ** Styled component for the link for the avatar with image
-const AvatarWithImageLink = styled(Link)(({ theme }) => ({
-  marginRight: theme.spacing(3)
-}))
-
-// ** Styled component for the link for the avatar without image
-const AvatarWithoutImageLink = styled(Link)(({ theme }) => ({
-  textDecoration: 'none',
-  marginRight: theme.spacing(3)
-}))
-
 // ** renders client column
 const renderClient = (row: UsersType) => {
   if (row.avatar.length) {
-    return (
-      <AvatarWithImageLink href={`/apps/user/view/${row.id}`}>
-        <CustomAvatar src={row.avatar} sx={{ mr: 3, width: 30, height: 30 }} />
-      </AvatarWithImageLink>
-    )
+    return <CustomAvatar src={row.avatar} sx={{ mr: 3, width: 30, height: 30 }} />
   } else {
     return (
-      <AvatarWithoutImageLink href={`/apps/user/view/${row.id}`}>
-        <CustomAvatar skin='light' color={row.avatarColor} sx={{ mr: 3, width: 30, height: 30, fontSize: '.875rem' }}>
-          {getInitials(row.fullName ? row.fullName : 'John Doe')}
-        </CustomAvatar>
-      </AvatarWithoutImageLink>
+      <CustomAvatar skin='light' color={row.avatarColor} sx={{ mr: 3, width: 30, height: 30, fontSize: '.875rem' }}>
+        {getInitials(row.fullName ? row.fullName : 'John Doe')}
+      </CustomAvatar>
     )
   }
 }
@@ -102,27 +81,23 @@ const columns = [
     field: 'fullName',
     headerName: 'User',
     renderCell: ({ row }: CellType) => {
-      const { id, fullName, username } = row
+      const { fullName, username } = row
 
       return (
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           {renderClient(row)}
           <Box sx={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
-            <Link href={`/apps/user/view/${id}`} passHref>
-              <Typography
-                noWrap
-                component='a'
-                variant='body2'
-                sx={{ fontWeight: 600, color: 'text.primary', textDecoration: 'none' }}
-              >
-                {fullName}
-              </Typography>
-            </Link>
-            <Link href={`/apps/user/view/${id}`} passHref>
-              <Typography noWrap component='a' variant='caption' sx={{ textDecoration: 'none' }}>
-                @{username}
-              </Typography>
-            </Link>
+            <Typography
+              noWrap
+              component='a'
+              variant='body2'
+              sx={{ fontWeight: 600, color: 'text.primary', textDecoration: 'none' }}
+            >
+              {fullName}
+            </Typography>
+            <Typography noWrap component='a' variant='caption' sx={{ textDecoration: 'none' }}>
+              @{username}
+            </Typography>
           </Box>
         </Box>
       )
@@ -193,12 +168,10 @@ const columns = [
     sortable: false,
     field: 'actions',
     headerName: 'Actions',
-    renderCell: ({ row }: CellType) => (
-      <Link href={`/apps/user/view/${row.id}`} passHref>
-        <IconButton>
-          <Icon icon='mdi:eye-outline' />
-        </IconButton>
-      </Link>
+    renderCell: () => (
+      <IconButton>
+        <Icon icon='mdi:eye-outline' />
+      </IconButton>
     )
   }
 ]

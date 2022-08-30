@@ -32,6 +32,8 @@ import Icon from 'src/@core/components/icon'
 // ** Custom Components
 import CustomChip from 'src/@core/components/mui/chip'
 import CustomAvatar from 'src/@core/components/mui/avatar'
+import UserSuspendDialog from 'src/views/apps/user/view/UserSuspendDialog'
+import UserSubscriptionDialog from 'src/views/apps/user/view/UserSubscriptionDialog'
 
 // ** Types
 import { ThemeColor } from 'src/@core/layouts/types'
@@ -40,12 +42,23 @@ import { UsersType } from 'src/types/apps/userTypes'
 // ** Utils Import
 import { getInitials } from 'src/@core/utils/get-initials'
 
-interface Props {
-  data: UsersType
-}
-
 interface ColorsType {
   [key: string]: ThemeColor
+}
+
+const data: UsersType = {
+  id: 1,
+  fullName: 'Galen Slixby',
+  company: 'Yotz PVT LTD',
+  role: 'editor',
+  username: 'gslixby0',
+  country: 'El Salvador',
+  contact: '(479) 232-9151',
+  email: 'gslixby0@abc.net.au',
+  currentPlan: 'enterprise',
+  status: 'inactive',
+  avatar: '',
+  avatarColor: 'primary'
 }
 
 // ** Styled <sup> component
@@ -77,10 +90,12 @@ const statusColors: ColorsType = {
   inactive: 'secondary'
 }
 
-const UserViewLeft = ({ data }: Props) => {
+const UserViewLeft = () => {
   // ** States
   const [openEdit, setOpenEdit] = useState<boolean>(false)
   const [openPlans, setOpenPlans] = useState<boolean>(false)
+  const [suspendDialogOpen, setSuspendDialogOpen] = useState<boolean>(false)
+  const [subscriptionDialogOpen, setSubscriptionDialogOpen] = useState<boolean>(false)
 
   // Handle Edit dialog
   const handleEditClickOpen = () => setOpenEdit(true)
@@ -90,36 +105,20 @@ const UserViewLeft = ({ data }: Props) => {
   const handlePlansClickOpen = () => setOpenPlans(true)
   const handlePlansClose = () => setOpenPlans(false)
 
-  const renderUserAvatar = () => {
-    if (data) {
-      if (data.avatar.length) {
-        return (
-          <CustomAvatar alt='User Image' src={data.avatar} variant='rounded' sx={{ width: 120, height: 120, mb: 4 }} />
-        )
-      } else {
-        return (
-          <CustomAvatar
-            skin='light'
-            variant='rounded'
-            color={data.avatarColor as ThemeColor}
-            sx={{ width: 120, height: 120, fontWeight: 600, mb: 4, fontSize: '3rem' }}
-          >
-            {getInitials(data.fullName)}
-          </CustomAvatar>
-        )
-      }
-    } else {
-      return null
-    }
-  }
-
   if (data) {
     return (
       <Grid container spacing={6}>
         <Grid item xs={12}>
           <Card>
             <CardContent sx={{ pt: 15, display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-              {renderUserAvatar()}
+              <CustomAvatar
+                skin='light'
+                variant='rounded'
+                color={data.avatarColor as ThemeColor}
+                sx={{ width: 120, height: 120, fontWeight: 600, mb: 4, fontSize: '3rem' }}
+              >
+                {getInitials(data.fullName)}
+              </CustomAvatar>
               <Typography variant='h6' sx={{ mb: 2 }}>
                 {data.fullName}
               </Typography>
@@ -223,7 +222,7 @@ const UserViewLeft = ({ data }: Props) => {
               <Button variant='contained' sx={{ mr: 3 }} onClick={handleEditClickOpen}>
                 Edit
               </Button>
-              <Button color='error' variant='outlined'>
+              <Button color='error' variant='outlined' onClick={() => setSuspendDialogOpen(true)}>
                 Suspend
               </Button>
             </CardActions>
@@ -334,6 +333,9 @@ const UserViewLeft = ({ data }: Props) => {
                 </Button>
               </DialogActions>
             </Dialog>
+
+            <UserSuspendDialog open={suspendDialogOpen} setOpen={setSuspendDialogOpen} />
+            <UserSubscriptionDialog open={subscriptionDialogOpen} setOpen={setSubscriptionDialogOpen} />
           </Card>
         </Grid>
 
@@ -495,7 +497,12 @@ const UserViewLeft = ({ data }: Props) => {
                     </Typography>
                     <Sub>/ month</Sub>
                   </Box>
-                  <Button color='error' variant='outlined' sx={{ mt: 2 }}>
+                  <Button
+                    color='error'
+                    sx={{ mt: 2 }}
+                    variant='outlined'
+                    onClick={() => setSubscriptionDialogOpen(true)}
+                  >
                     Cancel Subscription
                   </Button>
                 </Box>

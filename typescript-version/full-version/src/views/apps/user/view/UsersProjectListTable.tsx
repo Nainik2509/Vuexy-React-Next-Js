@@ -96,7 +96,7 @@ const InvoiceListTable = () => {
   }, [value])
 
   return (
-    <Card sx={{ mb: 6 }}>
+    <Card>
       <CardHeader title="User's Projects List" />
       <CardContent>
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>

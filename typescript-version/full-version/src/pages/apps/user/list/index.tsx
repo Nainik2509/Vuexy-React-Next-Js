@@ -2,7 +2,6 @@
 import { useState, useEffect, MouseEvent, useCallback } from 'react'
 
 // ** Next Import
-import Link from 'next/link'
 import { GetStaticProps, InferGetStaticPropsType } from 'next/types'
 
 // ** MUI Imports
@@ -13,7 +12,6 @@ import Grid from '@mui/material/Grid'
 import Divider from '@mui/material/Divider'
 import { DataGrid } from '@mui/x-data-grid'
 import MenuItem from '@mui/material/MenuItem'
-import { styled } from '@mui/material/styles'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import CardHeader from '@mui/material/CardHeader'
@@ -80,49 +78,22 @@ const userStatusObj: UserStatusType = {
   inactive: 'secondary'
 }
 
-// ** Styled component for the link for the avatar with image
-const AvatarWithImageLink = styled(Link)(({ theme }) => ({
-  marginRight: theme.spacing(3)
-}))
-
-// ** Styled component for the link for the avatar without image
-const AvatarWithoutImageLink = styled(Link)(({ theme }) => ({
-  textDecoration: 'none',
-  marginRight: theme.spacing(3)
-}))
-
 // ** renders client column
 const renderClient = (row: UsersType) => {
   if (row.avatar.length) {
-    return (
-      <AvatarWithImageLink href={`/apps/user/view/${row.id}`}>
-        <CustomAvatar src={row.avatar} sx={{ mr: 3, width: 30, height: 30 }} />
-      </AvatarWithImageLink>
-    )
+    return <CustomAvatar src={row.avatar} sx={{ mr: 3, width: 30, height: 30 }} />
   } else {
     return (
-      <AvatarWithoutImageLink href={`/apps/user/view/${row.id}`}>
-        <CustomAvatar
-          skin='light'
-          color={row.avatarColor || 'primary'}
-          sx={{ mr: 3, width: 30, height: 30, fontSize: '.875rem' }}
-        >
-          {getInitials(row.fullName ? row.fullName : 'John Doe')}
-        </CustomAvatar>
-      </AvatarWithoutImageLink>
+      <CustomAvatar
+        skin='light'
+        color={row.avatarColor || 'primary'}
+        sx={{ mr: 3, width: 30, height: 30, fontSize: '.875rem' }}
+      >
+        {getInitials(row.fullName ? row.fullName : 'John Doe')}
+      </CustomAvatar>
     )
   }
 }
-
-// ** Styled component for the link inside menu
-const MenuItemLink = styled('a')(({ theme }) => ({
-  width: '100%',
-  display: 'flex',
-  alignItems: 'center',
-  textDecoration: 'none',
-  padding: theme.spacing(1.5, 4),
-  color: theme.palette.text.primary
-}))
 
 const RowOptions = ({ id }: { id: number | string }) => {
   // ** Hooks
@@ -165,13 +136,9 @@ const RowOptions = ({ id }: { id: number | string }) => {
         }}
         PaperProps={{ style: { minWidth: '8rem' } }}
       >
-        <MenuItem sx={{ p: 0 }}>
-          <Link href={`/apps/user/view/${id}`} passHref>
-            <MenuItemLink sx={{ '& svg': { mr: 2 } }}>
-              <Icon icon='mdi:eye-outline' fontSize={20} />
-              View
-            </MenuItemLink>
-          </Link>
+        <MenuItem sx={{ '& svg': { mr: 2 } }}>
+          <Icon icon='mdi:eye-outline' fontSize={20} />
+          View
         </MenuItem>
         <MenuItem onClick={handleRowOptionsClose} sx={{ '& svg': { mr: 2 } }}>
           <Icon icon='mdi:pencil-outline' fontSize={20} />
@@ -193,27 +160,23 @@ const columns = [
     field: 'fullName',
     headerName: 'User',
     renderCell: ({ row }: CellType) => {
-      const { id, fullName, username } = row
+      const { fullName, username } = row
 
       return (
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           {renderClient(row)}
           <Box sx={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
-            <Link href={`/apps/user/view/${id}`} passHref>
-              <Typography
-                noWrap
-                component='a'
-                variant='body2'
-                sx={{ fontWeight: 600, color: 'text.primary', textDecoration: 'none' }}
-              >
-                {fullName}
-              </Typography>
-            </Link>
-            <Link href={`/apps/user/view/${id}`} passHref>
-              <Typography noWrap component='a' variant='caption' sx={{ textDecoration: 'none' }}>
-                @{username}
-              </Typography>
-            </Link>
+            <Typography
+              noWrap
+              component='a'
+              variant='body2'
+              sx={{ fontWeight: 600, color: 'text.primary', textDecoration: 'none' }}
+            >
+              {fullName}
+            </Typography>
+            <Typography noWrap component='a' variant='caption' sx={{ textDecoration: 'none' }}>
+              @{username}
+            </Typography>
           </Box>
         </Box>
       )
