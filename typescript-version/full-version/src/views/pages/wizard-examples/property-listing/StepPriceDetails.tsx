@@ -109,7 +109,7 @@ const StepPriceDetails = () => {
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl>
-          <FormLabel id='price-radio'>Show Price AS</FormLabel>
+          <FormLabel id='price-radio'>Show Price As</FormLabel>
           <RadioGroup name='price-group' defaultValue='negotiable' aria-labelledby='price-radio'>
             <FormControlLabel value='negotiable' control={<Radio />} label='Negotiable' />
             <FormControlLabel value='call-for-price' control={<Radio />} label='Call For Price' />
