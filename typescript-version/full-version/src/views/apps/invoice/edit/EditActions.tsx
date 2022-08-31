@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 // ** MUI Imports
 import Card from '@mui/material/Card'
+import Grid from '@mui/material/Grid'
 import Select from '@mui/material/Select'
 import Button from '@mui/material/Button'
 import Switch from '@mui/material/Switch'
@@ -30,82 +31,86 @@ const OptionsWrapper = styled(Box)<BoxProps>(() => ({
 
 const EditActions = ({ id, toggleSendInvoiceDrawer, toggleAddPaymentDrawer }: Props) => {
   return (
-    <div>
-      <Card sx={{ mb: 6 }}>
-        <CardContent>
-          <Button
-            fullWidth
-            sx={{ mb: 3.5 }}
-            variant='contained'
-            onClick={toggleSendInvoiceDrawer}
-            startIcon={<Icon icon='mdi:send-outline' />}
-          >
-            Send Invoice
-          </Button>
-          <Link href={`/apps/invoice/preview/${id}`} passHref>
-            <Button fullWidth component='a' sx={{ mb: 3.5 }} color='secondary' variant='outlined'>
-              Preview
+    <Grid container spacing={6}>
+      <Grid item xs={12}>
+        <Card>
+          <CardContent>
+            <Button
+              fullWidth
+              sx={{ mb: 3.5 }}
+              variant='contained'
+              onClick={toggleSendInvoiceDrawer}
+              startIcon={<Icon icon='mdi:send-outline' />}
+            >
+              Send Invoice
             </Button>
-          </Link>
-          <Button fullWidth color='secondary' variant='outlined' sx={{ mb: 3.5 }}>
-            Save
-          </Button>
-          <Button
-            fullWidth
-            color='success'
-            variant='contained'
-            onClick={toggleAddPaymentDrawer}
-            startIcon={<Icon icon='mdi:currency-usd' />}
-          >
-            Add Payment
-          </Button>
-        </CardContent>
-      </Card>
+            <Link href={`/apps/invoice/preview/${id}`} passHref>
+              <Button fullWidth component='a' sx={{ mb: 3.5 }} color='secondary' variant='outlined'>
+                Preview
+              </Button>
+            </Link>
+            <Button fullWidth color='secondary' variant='outlined' sx={{ mb: 3.5 }}>
+              Save
+            </Button>
+            <Button
+              fullWidth
+              color='success'
+              variant='contained'
+              onClick={toggleAddPaymentDrawer}
+              startIcon={<Icon icon='mdi:currency-usd' />}
+            >
+              Add Payment
+            </Button>
+          </CardContent>
+        </Card>
+      </Grid>
 
-      <FormControl fullWidth>
-        <InputLabel id='payment-select'>Accept payments via</InputLabel>
-        <Select
-          fullWidth
-          defaultValue='Internet Banking'
-          label='Accept payments via'
-          labelId='payment-select'
-          sx={{ mb: 4 }}
-        >
-          <MenuItem value='Internet Banking'>Internet Banking</MenuItem>
-          <MenuItem value='Debit Card'>Debit Card</MenuItem>
-          <MenuItem value='Credit Card'>Credit Card</MenuItem>
-          <MenuItem value='Paypal'>Paypal</MenuItem>
-          <MenuItem value='UPI Transfer'>UPI Transfer</MenuItem>
-        </Select>
-      </FormControl>
-      <OptionsWrapper sx={{ mb: 1 }}>
-        <InputLabel
-          htmlFor='invoice-edit-payment-terms'
-          sx={{ cursor: 'pointer', fontSize: '0.875rem', color: 'text.secondary' }}
-        >
-          Payment Terms
-        </InputLabel>
-        <Switch defaultChecked id='invoice-edit-payment-terms' />
-      </OptionsWrapper>
-      <OptionsWrapper sx={{ mb: 1 }}>
-        <InputLabel
-          htmlFor='invoice-edit-client-notes'
-          sx={{ cursor: 'pointer', fontSize: '0.875rem', color: 'text.secondary' }}
-        >
-          Client Notes
-        </InputLabel>
-        <Switch id='invoice-edit-client-notes' />
-      </OptionsWrapper>
-      <OptionsWrapper>
-        <InputLabel
-          htmlFor='invoice-edit-payment-stub'
-          sx={{ cursor: 'pointer', fontSize: '0.875rem', color: 'text.secondary' }}
-        >
-          Payment Stub
-        </InputLabel>
-        <Switch id='invoice-edit-payment-stub' />
-      </OptionsWrapper>
-    </div>
+      <Grid item xs={12}>
+        <FormControl fullWidth>
+          <InputLabel id='payment-select'>Accept payments via</InputLabel>
+          <Select
+            fullWidth
+            defaultValue='Internet Banking'
+            label='Accept payments via'
+            labelId='payment-select'
+            sx={{ mb: 4 }}
+          >
+            <MenuItem value='Internet Banking'>Internet Banking</MenuItem>
+            <MenuItem value='Debit Card'>Debit Card</MenuItem>
+            <MenuItem value='Credit Card'>Credit Card</MenuItem>
+            <MenuItem value='Paypal'>Paypal</MenuItem>
+            <MenuItem value='UPI Transfer'>UPI Transfer</MenuItem>
+          </Select>
+        </FormControl>
+        <OptionsWrapper sx={{ mb: 1 }}>
+          <InputLabel
+            htmlFor='invoice-edit-payment-terms'
+            sx={{ cursor: 'pointer', fontSize: '0.875rem', color: 'text.secondary' }}
+          >
+            Payment Terms
+          </InputLabel>
+          <Switch defaultChecked id='invoice-edit-payment-terms' />
+        </OptionsWrapper>
+        <OptionsWrapper sx={{ mb: 1 }}>
+          <InputLabel
+            htmlFor='invoice-edit-client-notes'
+            sx={{ cursor: 'pointer', fontSize: '0.875rem', color: 'text.secondary' }}
+          >
+            Client Notes
+          </InputLabel>
+          <Switch id='invoice-edit-client-notes' />
+        </OptionsWrapper>
+        <OptionsWrapper>
+          <InputLabel
+            htmlFor='invoice-edit-payment-stub'
+            sx={{ cursor: 'pointer', fontSize: '0.875rem', color: 'text.secondary' }}
+          >
+            Payment Stub
+          </InputLabel>
+          <Switch id='invoice-edit-payment-stub' />
+        </OptionsWrapper>
+      </Grid>
+    </Grid>
   )
 }
 
