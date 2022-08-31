@@ -84,8 +84,8 @@ const navigation = (): VerticalNavItemsType => {
               path: '/apps/user/view/security'
             },
             {
-              title: 'Billing',
-              path: '/apps/user/view/billing'
+              title: 'Billing & Plans',
+              path: '/apps/user/view/billing-plan'
             },
             {
               title: 'Notifications',

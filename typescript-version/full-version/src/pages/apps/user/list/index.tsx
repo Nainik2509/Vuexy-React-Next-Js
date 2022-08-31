@@ -136,7 +136,7 @@ const RowOptions = ({ id }: { id: number | string }) => {
         }}
         PaperProps={{ style: { minWidth: '8rem' } }}
       >
-        <MenuItem sx={{ '& svg': { mr: 2 } }}>
+        <MenuItem sx={{ '& svg': { mr: 2 } }} onClick={handleRowOptionsClose}>
           <Icon icon='mdi:eye-outline' fontSize={20} />
           View
         </MenuItem>
