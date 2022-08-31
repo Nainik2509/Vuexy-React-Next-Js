@@ -30,7 +30,7 @@ import TabNotifications from 'src/views/pages/account-settings/TabNotifications'
 
 const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
   '& .MuiTabs-indicator': {
-    backgroundColor: 'transparent'
+    display: 'none'
   },
   '& .Mui-selected': {
     backgroundColor: theme.palette.primary.main,

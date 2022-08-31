@@ -12,7 +12,7 @@ import MuiTabList, { TabListProps } from '@mui/lab/TabList'
 // Styled TabList component
 const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
   '& .MuiTabs-indicator': {
-    backgroundColor: 'transparent'
+    display: 'none'
   },
   '& .Mui-selected': {
     backgroundColor: theme.palette.primary.main,

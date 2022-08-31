@@ -43,7 +43,7 @@ const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
     flexDirection: 'column'
   },
   '& .MuiTabs-indicator': {
-    backgroundColor: 'transparent'
+    display: 'none'
   },
   '& .Mui-selected': {
     backgroundColor: theme.palette.primary.main,
