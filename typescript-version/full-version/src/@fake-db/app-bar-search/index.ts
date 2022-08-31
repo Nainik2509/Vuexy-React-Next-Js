@@ -6,7 +6,7 @@ import { AppBarSearchType } from 'src/@fake-db/types'
 
 const searchData: AppBarSearchType[] = [
   {
-    id: 11,
+    id: 1,
     url: '/dashboards/analytics',
     icon: 'mdi:chart-timeline-variant',
     title: 'Analytics Dashboard',
@@ -76,7 +76,7 @@ const searchData: AppBarSearchType[] = [
     category: 'appsPages'
   },
   {
-    id: 1,
+    id: 11,
     url: '/apps/user/list',
     icon: 'mdi:account-group',
     title: 'User List',
@@ -92,7 +92,7 @@ const searchData: AppBarSearchType[] = [
   {
     id: 13,
     url: '/apps/user/view/security',
-    icon: 'mdi:lock-open-outline',
+    icon: 'mdi:lock-outline',
     title: 'User View - Security',
     category: 'appsPages'
   },

@@ -42,19 +42,37 @@ import { UsersType } from 'src/types/apps/userTypes'
 // ** Utils Import
 import { getInitials } from 'src/@core/utils/get-initials'
 
+interface ColorsType {
+  [key: string]: ThemeColor
+}
+
 const data: UsersType = {
   id: 1,
-  avatar: '',
-  role: 'Admin',
-  status: 'Active',
+  role: 'admin',
+  status: 'active',
   username: 'gslixby0',
   avatarColor: 'primary',
   country: 'El Salvador',
-  fullName: 'Galen Slixby',
   company: 'Yotz PVT LTD',
   contact: '(479) 232-9151',
+  currentPlan: 'enterprise',
+  fullName: 'Daisy Patterson',
   email: 'gslixby0@abc.net.au',
-  currentPlan: 'enterprise'
+  avatar: '/images/avatars/4.png'
+}
+
+const roleColors: ColorsType = {
+  admin: 'error',
+  editor: 'info',
+  author: 'warning',
+  maintainer: 'success',
+  subscriber: 'primary'
+}
+
+const statusColors: ColorsType = {
+  active: 'success',
+  pending: 'warning',
+  inactive: 'secondary'
 }
 
 // ** Styled <sup> component
@@ -93,27 +111,36 @@ const UserViewLeft = () => {
         <Grid item xs={12}>
           <Card>
             <CardContent sx={{ pt: 15, display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-              <CustomAvatar
-                skin='light'
-                variant='rounded'
-                color={data.avatarColor as ThemeColor}
-                sx={{ width: 120, height: 120, fontWeight: 600, mb: 4, fontSize: '3rem' }}
-              >
-                {getInitials(data.fullName)}
-              </CustomAvatar>
+              {data.avatar.length ? (
+                <CustomAvatar
+                  src={data.avatar}
+                  variant='rounded'
+                  alt={data.fullName}
+                  sx={{ width: 120, height: 120, fontWeight: 600, mb: 4, fontSize: '3rem' }}
+                />
+              ) : (
+                <CustomAvatar
+                  skin='light'
+                  variant='rounded'
+                  color={data.avatarColor as ThemeColor}
+                  sx={{ width: 120, height: 120, fontWeight: 600, mb: 4, fontSize: '3rem' }}
+                >
+                  {getInitials(data.fullName)}
+                </CustomAvatar>
+              )}
               <Typography variant='h6' sx={{ mb: 2 }}>
                 {data.fullName}
               </Typography>
               <CustomChip
                 skin='light'
                 size='small'
-                color='error'
                 label={data.role}
+                color={roleColors[data.role]}
                 sx={{
                   height: 20,
-                  fontSize: '0.875rem',
                   fontWeight: 600,
                   borderRadius: '5px',
+                  fontSize: '0.875rem',
                   textTransform: 'capitalize',
                   '& .MuiChip-label': { mt: -0.25 }
                 }}
@@ -164,12 +191,12 @@ const UserViewLeft = () => {
                   <CustomChip
                     skin='light'
                     size='small'
-                    color='success'
                     label={data.status}
+                    color={statusColors[data.status]}
                     sx={{
                       height: 20,
-                      fontSize: '0.75rem',
                       fontWeight: 500,
+                      fontSize: '0.75rem',
                       borderRadius: '5px',
                       textTransform: 'capitalize'
                     }}
