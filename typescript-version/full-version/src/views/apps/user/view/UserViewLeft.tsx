@@ -42,23 +42,19 @@ import { UsersType } from 'src/types/apps/userTypes'
 // ** Utils Import
 import { getInitials } from 'src/@core/utils/get-initials'
 
-interface ColorsType {
-  [key: string]: ThemeColor
-}
-
 const data: UsersType = {
   id: 1,
+  avatar: '',
+  role: 'Admin',
+  status: 'Active',
+  username: 'gslixby0',
+  avatarColor: 'primary',
+  country: 'El Salvador',
   fullName: 'Galen Slixby',
   company: 'Yotz PVT LTD',
-  role: 'editor',
-  username: 'gslixby0',
-  country: 'El Salvador',
   contact: '(479) 232-9151',
   email: 'gslixby0@abc.net.au',
-  currentPlan: 'enterprise',
-  status: 'inactive',
-  avatar: '',
-  avatarColor: 'primary'
+  currentPlan: 'enterprise'
 }
 
 // ** Styled <sup> component
@@ -75,20 +71,6 @@ const Sub = styled('sub')({
   fontSize: '1rem',
   alignSelf: 'flex-end'
 })
-
-const roleColors: ColorsType = {
-  admin: 'error',
-  editor: 'info',
-  author: 'warning',
-  maintainer: 'success',
-  subscriber: 'primary'
-}
-
-const statusColors: ColorsType = {
-  active: 'success',
-  pending: 'warning',
-  inactive: 'secondary'
-}
 
 const UserViewLeft = () => {
   // ** States
@@ -125,8 +107,8 @@ const UserViewLeft = () => {
               <CustomChip
                 skin='light'
                 size='small'
+                color='error'
                 label={data.role}
-                color={roleColors[data.role]}
                 sx={{
                   height: 20,
                   fontSize: '0.875rem',
@@ -182,8 +164,8 @@ const UserViewLeft = () => {
                   <CustomChip
                     skin='light'
                     size='small'
+                    color='success'
                     label={data.status}
-                    color={statusColors[data.status]}
                     sx={{
                       height: 20,
                       fontSize: '0.75rem',
