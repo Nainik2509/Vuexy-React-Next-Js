@@ -234,8 +234,8 @@ const CalendarWrapper = styled(Box)<BoxProps>(({ theme }) => {
 
       '& .fc-view-harness': {
         minHeight: '650px',
-        width: 'calc(100% + 44px)',
-        margin: theme.spacing(0, -6)
+        margin: theme.spacing(0, -5.25),
+        width: `calc(100% + ${theme.spacing(5.25 * 2)})`
       },
 
       // ** Calendar Head
