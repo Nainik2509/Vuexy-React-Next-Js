@@ -163,7 +163,14 @@ const NotificationDropdown = (props: Props) => {
   return (
     <Fragment>
       <IconButton color='inherit' aria-haspopup='true' onClick={handleDropdownOpen} aria-controls='customized-menu'>
-        <Badge color='error' badgeContent={notifications.length}>
+        <Badge
+          color='error'
+          variant='dot'
+          invisible={!notifications.length}
+          sx={{
+            '& .MuiBadge-badge': { top: 4, right: 4, boxShadow: theme => `0 0 0 2px ${theme.palette.background.paper}` }
+          }}
+        >
           <Icon icon='mdi:bell-outline' />
         </Badge>
       </IconButton>

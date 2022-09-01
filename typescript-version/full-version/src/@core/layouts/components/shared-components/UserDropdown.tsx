@@ -72,7 +72,7 @@ const UserDropdown = (props: Props) => {
     '& svg': {
       mr: 2,
       fontSize: '1.375rem',
-      color: 'text.secondary'
+      color: 'text.primary'
     }
   }
 
@@ -128,7 +128,7 @@ const UserDropdown = (props: Props) => {
             </Box>
           </Box>
         </Box>
-        <Divider sx={{ mt: '0 !important', mb: theme => `${theme.spacing(1)} !important` }} />
+        <Divider sx={{ mt: '0 !important' }} />
         <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose('/apps/user/view/12')}>
           <Box sx={styles}>
             <Icon icon='mdi:account-outline' />
@@ -167,8 +167,11 @@ const UserDropdown = (props: Props) => {
           </Box>
         </MenuItem>
         <Divider />
-        <MenuItem sx={{ py: 2, '& svg': { mr: 2, color: 'text.secondary' } }} onClick={handleLogout}>
-          <Icon icon='mdi:logout-variant' fontSize='1.375rem' />
+        <MenuItem
+          onClick={handleLogout}
+          sx={{ py: 2, '& svg': { mr: 2, fontSize: '1.375rem', color: 'text.primary' } }}
+        >
+          <Icon icon='mdi:logout-variant' />
           Logout
         </MenuItem>
       </Menu>
