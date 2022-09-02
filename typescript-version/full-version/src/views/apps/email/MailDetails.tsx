@@ -47,10 +47,10 @@ const HiddenReplyBack = styled(Box)<BoxProps>(({ theme }) => ({
   marginLeft: 'auto',
   marginRight: 'auto',
   borderStyle: 'solid',
+  borderColor: theme.palette.divider,
   borderTopLeftRadius: theme.shape.borderRadius,
   borderTopRightRadius: theme.shape.borderRadius,
-  backgroundColor: theme.palette.background.paper,
-  borderColor: `rgba(${theme.palette.customColors.main}, 0.12)`
+  backgroundColor: theme.palette.background.paper
 }))
 
 const HiddenReplyFront = styled(Box)<BoxProps>(({ theme }) => ({
@@ -63,10 +63,10 @@ const HiddenReplyFront = styled(Box)<BoxProps>(({ theme }) => ({
   marginLeft: 'auto',
   marginRight: 'auto',
   borderStyle: 'solid',
+  borderColor: theme.palette.divider,
   borderTopLeftRadius: theme.shape.borderRadius,
   borderTopRightRadius: theme.shape.borderRadius,
-  backgroundColor: theme.palette.background.paper,
-  borderColor: `rgba(${theme.palette.customColors.main}, 0.12)`
+  backgroundColor: theme.palette.background.paper
 }))
 
 const MailDetails = (props: MailDetailsType) => {
@@ -192,7 +192,7 @@ const MailDetails = (props: MailDetailsType) => {
       hideBackdrop
       direction='right'
       show={mailDetailsOpen}
-      sx={{ zIndex: 1, width: '100%', overflow: 'hidden' }}
+      sx={{ zIndex: 3, width: '100%', overflow: 'hidden' }}
       onClose={() => {
         setMailDetailsOpen(false)
         setShowReplies(false)

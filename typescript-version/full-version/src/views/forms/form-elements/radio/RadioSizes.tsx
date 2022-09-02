@@ -6,7 +6,7 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 const RadioSizes = () => {
   return (
     <RadioGroup row aria-label='sizes' name='sizes' defaultValue='small'>
-      <FormControlLabel value='small' control={<Radio size='small' defaultChecked />} label='Small' />
+      <FormControlLabel value='small' control={<Radio size='small' />} label='Small' />
       <FormControlLabel value='default' control={<Radio />} label='Default' />
     </RadioGroup>
   )

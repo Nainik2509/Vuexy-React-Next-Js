@@ -40,7 +40,7 @@ const DialogAddAddress = () => {
   const [addressType, setAddressType] = useState<'home' | 'office'>('home')
 
   // ** Hooks
-  const bgClasses = useBgColor()
+  const bgColors = useBgColor()
 
   return (
     <Card>
@@ -88,7 +88,7 @@ const DialogAddAddress = () => {
                   px: 4,
                   borderRadius: 1,
                   cursor: 'pointer',
-                  ...(addressType === 'home' ? { ...bgClasses.primaryLight } : { backgroundColor: 'action.hover' }),
+                  ...(addressType === 'home' ? { ...bgColors.primaryLight } : { backgroundColor: 'action.hover' }),
                   border: theme =>
                     `1px solid ${addressType === 'home' ? theme.palette.primary.main : theme.palette.divider}`
                 }}
@@ -112,7 +112,7 @@ const DialogAddAddress = () => {
                   px: 4,
                   borderRadius: 1,
                   cursor: 'pointer',
-                  ...(addressType === 'office' ? { ...bgClasses.primaryLight } : { backgroundColor: 'action.hover' }),
+                  ...(addressType === 'office' ? { ...bgColors.primaryLight } : { backgroundColor: 'action.hover' }),
                   border: theme =>
                     `1px solid ${addressType === 'office' ? theme.palette.primary.main : theme.palette.divider}`
                 }}

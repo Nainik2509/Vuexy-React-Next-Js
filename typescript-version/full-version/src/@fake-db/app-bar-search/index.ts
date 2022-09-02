@@ -407,7 +407,7 @@ const searchData: AppBarSearchType[] = [
   {
     id: 58,
     url: '/ui/cards/statistics',
-    icon: 'mdi:chart-box-outline',
+    icon: 'mdi:chart-timeline-variant-shimmer',
     title: 'Card Statistics',
     category: 'userInterface'
   },

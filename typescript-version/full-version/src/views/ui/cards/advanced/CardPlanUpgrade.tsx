@@ -28,7 +28,7 @@ const CardPlanUpgrade = () => {
   const [cvc2, setCvc2] = useState<number | string>('')
 
   // ** Hook
-  const colorClasses = useBgColor()
+  const bgColors = useBgColor()
 
   return (
     <Card>
@@ -51,7 +51,7 @@ const CardPlanUpgrade = () => {
             borderRadius: '4px',
             color: 'text.primary',
             p: theme => theme.spacing(2.25, 2.75),
-            backgroundColor: colorClasses.primaryLight.backgroundColor
+            backgroundColor: bgColors.primaryLight.backgroundColor
           }}
         >
           <Box sx={{ width: '100%', display: 'flex', alignItems: 'center' }}>

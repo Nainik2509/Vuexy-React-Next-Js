@@ -37,7 +37,7 @@ const DialogAuthentication = () => {
   const [showAuthDialog, setShowAuthDialog] = useState<boolean>(false)
 
   // ** Hooks
-  const bgClasses = useBgColor()
+  const bgColors = useBgColor()
   const { settings } = useSettings()
 
   // ** Var
@@ -107,7 +107,7 @@ const DialogAuthentication = () => {
                   px: 7.2,
                   borderRadius: 1,
                   cursor: 'pointer',
-                  ...(authType === 'app' ? { ...bgClasses.primaryLight } : { backgroundColor: 'action.hover' }),
+                  ...(authType === 'app' ? { ...bgColors.primaryLight } : { backgroundColor: 'action.hover' }),
                   border: theme =>
                     `1px solid ${authType === 'app' ? theme.palette.primary.main : theme.palette.divider}`
                 }}
@@ -136,7 +136,7 @@ const DialogAuthentication = () => {
                   px: 7.2,
                   borderRadius: 1,
                   cursor: 'pointer',
-                  ...(authType === 'sms' ? { ...bgClasses.primaryLight } : { backgroundColor: 'action.hover' }),
+                  ...(authType === 'sms' ? { ...bgColors.primaryLight } : { backgroundColor: 'action.hover' }),
                   border: theme =>
                     `1px solid ${authType === 'sms' ? theme.palette.primary.main : theme.palette.divider}`
                 }}
