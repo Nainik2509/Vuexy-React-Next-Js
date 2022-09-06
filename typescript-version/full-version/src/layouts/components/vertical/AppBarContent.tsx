@@ -57,9 +57,9 @@ const notifications: NotificationsType[] = [
   {
     meta: '19 Mar',
     avatarAlt: 'order',
-    title: 'Revised Order 📦',
+    title: 'received Order 📦',
     avatarImg: '/images/avatars/3.png',
-    subtitle: 'New order revised from John'
+    subtitle: 'New order received from John'
   },
   {
     meta: '27 Dec',
