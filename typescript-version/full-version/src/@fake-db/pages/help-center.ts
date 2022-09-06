@@ -628,6 +628,10 @@ mock.onGet('/pages/help-center/categories').reply(config => {
   return [200, { data: filteredData[0], activeTab: slug ? slug : filteredData[0].subCategories[0].slug }]
 })
 
+mock.onGet('/pages/help-center/articles').reply(() => {
+  return [200, Object.keys(data.articles)]
+})
+
 mock.onGet('/pages/help-center/article').reply(config => {
   const { article } = config.params
 

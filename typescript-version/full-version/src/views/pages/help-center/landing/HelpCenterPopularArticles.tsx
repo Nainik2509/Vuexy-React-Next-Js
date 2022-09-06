@@ -1,3 +1,6 @@
+// ** Next Imports
+import Link from 'next/link'
+
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
@@ -35,7 +38,11 @@ const HelpCenterPopularArticles = (props: Props) => {
                   {article.title}
                 </Typography>
                 <Typography sx={{ mb: 4, color: 'text.secondary' }}>{article.subtitle}</Typography>
-                <Button variant='outlined'>Read More</Button>
+                <Link href='/pages/help-center/article/changing-your-username/' passHref>
+                  <Button component='a' variant='outlined'>
+                    Read More
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           </Grid>

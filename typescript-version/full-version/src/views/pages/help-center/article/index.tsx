@@ -75,7 +75,9 @@ const HelpCenterArticle = (props: Props) => {
   const router = useRouter()
 
   // ** State
-  const [value, setValue] = useState<string>(String(router.query.article))
+  const [value, setValue] = useState<string>(
+    router.query.article ? String(router.query.article) : 'changing-your-username'
+  )
 
   const handleChange = (event: SyntheticEvent, newValue: string) => {
     router
