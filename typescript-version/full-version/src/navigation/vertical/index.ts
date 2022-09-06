@@ -173,6 +173,23 @@ const navigation = (): VerticalNavItemsType => {
           path: '/pages/knowledge-base'
         },
         {
+          title: 'Help Center',
+          children: [
+            {
+              title: 'Landing',
+              path: '/pages/help-center/landing'
+            },
+            {
+              title: 'Categories',
+              path: '/pages/help-center/categories'
+            },
+            {
+              title: 'Article',
+              path: '/pages/help-center/article'
+            }
+          ]
+        },
+        {
           title: 'Pricing',
           path: '/pages/pricing'
         },

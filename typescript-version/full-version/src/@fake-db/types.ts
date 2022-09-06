@@ -204,3 +204,33 @@ export type DataGridRowType = {
   start_date: string
   experience: string
 }
+
+// Help Center Types
+//-------------------
+export type HelpCenterSubCategoriesArticlesType = { slug: string; title: string }
+
+export type HelpCenterSubCategoriesType = {
+  slug: string
+  title: string
+  icon: string
+  articles: HelpCenterSubCategoriesArticlesType[]
+}
+export type HelpCenterCategoriesType = {
+  slug: string
+  title: string
+  icon: string
+  totalArticles: number
+  avatarColor: ThemeColor
+  subCategories: HelpCenterSubCategoriesType[]
+}
+
+export type HelpCenterPopularArticlesType = {
+  img: string
+  slug: string
+  title: string
+  subtitle: string
+}
+
+export type HelpCenterArticlesType = {
+  [key: string]: string
+}
