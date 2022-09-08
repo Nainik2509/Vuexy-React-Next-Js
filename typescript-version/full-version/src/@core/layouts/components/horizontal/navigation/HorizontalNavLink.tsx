@@ -50,6 +50,10 @@ const ListItem = styled(MuiListItem)<ListItemProps & { component?: ElementType; 
     },
     '&.active .MuiTypography-root, &.active .MuiListItemIcon-root': {
       color: theme.palette.primary.main
+    },
+    '&:focus-visible': {
+      outline: 0,
+      backgroundColor: theme.palette.action.focus
     }
   })
 )
@@ -104,12 +108,19 @@ const HorizontalNavLink = (props: Props) => {
                     borderRadius: 1,
                     '&.active, &.active:hover': {
                       backgroundColor: theme => theme.palette.primary.main,
+                      '&:focus-visible': { backgroundColor: 'primary.dark' },
                       '& .MuiTypography-root, & .MuiListItemIcon-root': {
                         color: 'common.white'
                       }
                     }
                   }
-                : {})
+                : {
+                    '&.active, &.active:hover': {
+                      '&:focus-visible': {
+                        backgroundColor: theme => hexToRGBA(theme.palette.primary.main, 0.24)
+                      }
+                    }
+                  })
             }}
           >
             <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>

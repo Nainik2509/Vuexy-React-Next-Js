@@ -50,7 +50,10 @@ const MenuNavLink = styled(ListItemButton)<
   transition: 'padding-left .25s ease-in-out',
   '&.active': {
     '&, &:hover': {
-      backgroundColor: theme.palette.primary.light
+      backgroundColor: theme.palette.primary.light,
+      '&.Mui-focusVisible': {
+        backgroundColor: theme.palette.primary.main
+      }
     },
     '& .MuiTypography-root, & .MuiListItemIcon-root': {
       color: `${theme.palette.common.white} !important`
@@ -117,6 +120,7 @@ const VerticalNavLink = ({
         <Link passHref href={item.path === undefined ? '/' : `${item.path}`}>
           <MenuNavLink
             component={'a'}
+            {...(item.disabled && { tabIndex: -1 })}
             className={isNavLinkActive() ? 'active' : ''}
             {...(item.openInNewTab ? { target: '_blank' } : null)}
             onClick={e => {

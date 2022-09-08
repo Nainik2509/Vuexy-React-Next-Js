@@ -59,11 +59,6 @@ const MenuItemTextWrapper = styled(Box)<BoxProps>(() => ({
   ...(themeConfig.menuTextTruncate && { overflow: 'hidden' })
 }))
 
-const MenuGroupToggleIcon = styled(Icon)(({ theme }) => ({
-  color: theme.palette.text.primary,
-  transition: 'transform .25s ease-in-out'
-}))
-
 const VerticalNavGroup = (props: Props) => {
   // ** Props
   const {
@@ -274,7 +269,21 @@ const VerticalNavGroup = (props: Props) => {
               >
                 <Translations text={item.title} />
               </Typography>
-              <Box className='menu-item-meta' sx={{ ml: 0.8, display: 'flex', alignItems: 'center' }}>
+              <Box
+                className='menu-item-meta'
+                sx={{
+                  ml: 0.8,
+                  display: 'flex',
+                  alignItems: 'center',
+                  '& svg': {
+                    color: theme.palette.text.primary,
+                    transition: 'transform .25s ease-in-out',
+                    ...(groupActive.includes(item.title) && {
+                      transform: direction === 'ltr' ? 'rotate(90deg)' : 'rotate(-90deg)'
+                    })
+                  }
+                }}
+              >
                 {item.badgeContent ? (
                   <Chip
                     label={item.badgeContent}
@@ -287,14 +296,7 @@ const VerticalNavGroup = (props: Props) => {
                     }}
                   />
                 ) : null}
-                <MenuGroupToggleIcon
-                  icon={direction === 'ltr' ? 'mdi:chevron-right' : 'mdi:chevron-left'}
-                  sx={{
-                    ...(groupActive.includes(item.title)
-                      ? { transform: direction === 'ltr' ? 'rotate(90deg)' : 'rotate(-90deg)' }
-                      : {})
-                  }}
-                />
+                <Icon icon={direction === 'ltr' ? 'mdi:chevron-right' : 'mdi:chevron-left'} />
               </Box>
             </MenuItemTextWrapper>
           </ListItemButton>

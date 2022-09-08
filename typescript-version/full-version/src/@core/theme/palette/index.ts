@@ -4,13 +4,14 @@ import { Skin } from 'src/@core/layouts/types'
 
 const DefaultPalette = (mode: PaletteMode, skin: Skin) => {
   // ** Vars
+  const whiteColor = '#FFF'
   const lightColor = '58, 53, 65'
   const darkColor = '231, 227, 252'
   const mainColor = mode === 'light' ? lightColor : darkColor
 
   const defaultBgColor = () => {
     if (skin === 'bordered' && mode === 'light') {
-      return '#FFF'
+      return whiteColor
     } else if (skin === 'bordered' && mode === 'dark') {
       return '#312D4B'
     } else if (mode === 'light') {
@@ -32,43 +33,43 @@ const DefaultPalette = (mode: PaletteMode, skin: Skin) => {
     mode: mode,
     common: {
       black: '#000',
-      white: '#FFF'
+      white: whiteColor
     },
     primary: {
       light: '#9E69FD',
       main: '#9155FD',
       dark: '#804BDF',
-      contrastText: '#FFF'
+      contrastText: whiteColor
     },
     secondary: {
       light: '#9C9FA4',
       main: '#8A8D93',
       dark: '#777B82',
-      contrastText: '#FFF'
+      contrastText: whiteColor
     },
     error: {
       light: '#FF6166',
       main: '#FF4C51',
       dark: '#E04347',
-      contrastText: '#FFF'
+      contrastText: whiteColor
     },
     warning: {
       light: '#FFCA64',
       main: '#FFB400',
       dark: '#E09E00',
-      contrastText: '#FFF'
+      contrastText: whiteColor
     },
     info: {
       light: '#32BAFF',
       main: '#16B1FF',
       dark: '#139CE0',
-      contrastText: '#FFF'
+      contrastText: whiteColor
     },
     success: {
       light: '#6AD01F',
       main: '#56CA00',
       dark: '#4CB200',
-      contrastText: '#FFF'
+      contrastText: whiteColor
     },
     grey: {
       50: '#FAFAFA',
@@ -93,7 +94,7 @@ const DefaultPalette = (mode: PaletteMode, skin: Skin) => {
     },
     divider: `rgba(${mainColor}, 0.12)`,
     background: {
-      paper: mode === 'light' ? '#FFF' : '#312D4B',
+      paper: mode === 'light' ? whiteColor : '#312D4B',
       default: defaultBgColor()
     },
     action: {

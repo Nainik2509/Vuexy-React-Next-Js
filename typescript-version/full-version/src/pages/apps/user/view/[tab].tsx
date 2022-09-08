@@ -19,8 +19,8 @@ export const getStaticPaths: GetStaticPaths = () => {
     paths: [
       { params: { tab: 'overview' } },
       { params: { tab: 'security' } },
-      { params: { tab: 'billing' } },
-      { params: { tab: 'notifications' } },
+      { params: { tab: 'billing-plan' } },
+      { params: { tab: 'notification' } },
       { params: { tab: 'connection' } }
     ],
     fallback: true

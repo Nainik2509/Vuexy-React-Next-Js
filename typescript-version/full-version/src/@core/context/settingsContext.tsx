@@ -131,6 +131,9 @@ export const SettingsProvider = ({ children, pageSettings }: SettingsProviderPro
   }, [pageSettings])
 
   useEffect(() => {
+    if (settings.layout === 'horizontal' && settings.mode === 'semi-dark') {
+      saveSettings({ ...settings, mode: 'light' })
+    }
     if (settings.layout === 'horizontal' && settings.appBar === 'hidden') {
       saveSettings({ ...settings, appBar: 'fixed' })
     }

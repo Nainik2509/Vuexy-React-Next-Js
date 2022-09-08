@@ -225,7 +225,7 @@ const searchData: AppBarSearchType[] = [
   {
     id: 32,
     url: '/pages/help-center/article',
-    icon: 'mdi:view-grid-outline',
+    icon: 'mdi:text-box-outline',
     title: 'Help Center - Article',
     category: 'appsPages'
   },
