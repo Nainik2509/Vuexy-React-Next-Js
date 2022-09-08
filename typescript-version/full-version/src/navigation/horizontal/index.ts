@@ -314,6 +314,7 @@ const navigation = (): HorizontalNavItemsType => {
         },
         {
           title: 'Help Center',
+          icon: 'mdi:help-circle-outline',
           children: [
             {
               title: 'Landing',

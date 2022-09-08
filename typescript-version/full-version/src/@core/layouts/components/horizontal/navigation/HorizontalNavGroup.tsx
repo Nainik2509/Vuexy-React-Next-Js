@@ -89,7 +89,7 @@ const HorizontalNavGroup = (props: Props) => {
   // ** Hooks & Vars
   const theme = useTheme()
   const router = useRouter()
-  const currentURL = router.pathname
+  const currentURL = router.asPath
   const { skin, direction } = settings
   const { navSubItemIcon, menuTextTruncate, horizontalMenuToggle, horizontalMenuAnimation } = themeConfig
 
