@@ -2,7 +2,7 @@
 
 Follow these steps to integrate Firebase into the starter-kit:
 
-1. Follow this [guide](http://localhost:8080/guide/development/authentication.html#how-to-remove-authentication) to remove the existing Authentication(JWT)
+1. Follow this [guide](/guide/development/authentication.html#how-to-remove-authentication) to remove the existing Authentication(JWT)
 2. Create a firebase account from [here](https://firebase.google.com/) and then create an app to get your configs
 3. Copy the `full-version/src/configs/firebase.ts` file and paste it into the `starter-kit/src/configs/firebase.ts` file
 4. Replace the `firebaseConfig` variable with your configs in the `src/configs/firebase.ts` file

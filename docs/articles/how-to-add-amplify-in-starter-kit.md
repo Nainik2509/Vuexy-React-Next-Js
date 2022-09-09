@@ -2,7 +2,7 @@
 
 Follow these steps to integrate Amplify into the starter-kit:
 
-1. Follow this [guide](http://localhost:8080/guide/development/authentication.html#how-to-remove-authentication) to remove the existing Authentication(JWT)
+1. Follow this [guide](/guide/development/authentication.html#how-to-remove-authentication) to remove the existing Authentication(JWT)
 2. First, you'll have to create an AWS account and install the required dependencies. Refer this [guide](https://docs.amplify.aws/start/getting-started/installation/q/integration/react/) for more information
 3. Run the `amplify init` command in your project root. When you initialize Amplify, you'll be prompted for some information about the app with the option to accept recommended values
 4. When you initialize a new Amplify project, it creates an `amplify` folder in your project root and an `aws-exports.js` file in your `src` folder

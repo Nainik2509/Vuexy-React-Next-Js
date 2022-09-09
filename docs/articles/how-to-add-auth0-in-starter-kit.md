@@ -2,7 +2,7 @@
 
 Follow these steps to integrate Auth0 into the starter-kit:
 
-1. Follow this [guide](http://localhost:8080/guide/development/authentication.html#how-to-remove-authentication) to remove the existing Authentication(JWT)
+1. Follow this [guide](/guide/development/authentication.html#how-to-remove-authentication) to remove the existing Authentication(JWT)
 2. Follow this [guide](https://auth0.com/docs/get-started/auth0-overview/create-applications) to create the Auth0 application
 3. Open [your Auth0 dashboard](https://manage.auth0.com/dashboard/), navigate to Settings, open the Advanced tab and add your login & logout URLs
 4. Open the `src/pages/_app.tsx` file and add the following import statement:
