@@ -17,13 +17,10 @@ const DataGrid = (theme: Theme) => {
           paddingLeft: `${theme.spacing(3.25)} !important`
         },
         columnHeaders: {
-          maxHeight: '54px !important',
-          minHeight: '54px !important',
           lineHeight: '24px !important',
           backgroundColor: theme.palette.customColors.tableHeaderBg
         },
         columnHeader: {
-          height: '52px',
           '&:not(.MuiDataGrid-columnHeaderCheckbox)': {
             padding: theme.spacing(4),
             '&:first-of-type': {
@@ -50,15 +47,6 @@ const DataGrid = (theme: Theme) => {
         columnSeparator: {
           color: theme.palette.divider
         },
-        virtualScroller: {
-          marginTop: '54px !important'
-        },
-        virtualScrollerRenderZone: {
-          '& .MuiDataGrid-row': {
-            maxHeight: '50px !important',
-            minHeight: '50px !important'
-          }
-        },
         row: {
           '&:last-child': {
             '& .MuiDataGrid-cell': {
@@ -67,8 +55,6 @@ const DataGrid = (theme: Theme) => {
           }
         },
         cell: {
-          maxHeight: '50px !important',
-          minHeight: '50px !important',
           lineHeight: '20px !important',
           borderColor: theme.palette.divider,
           '&:not(.MuiDataGrid-cellCheckbox)': {
