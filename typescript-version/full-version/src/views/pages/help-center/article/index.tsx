@@ -1,5 +1,5 @@
 // ** React Imports
-import { SyntheticEvent, useState } from 'react'
+import { SyntheticEvent, useEffect, useState } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
@@ -8,7 +8,6 @@ import { useRouter } from 'next/router'
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Tab from '@mui/material/Tab'
-import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
 import TabPanel from '@mui/lab/TabPanel'
 import Button from '@mui/material/Button'
@@ -18,6 +17,7 @@ import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 import MuiTabList, { TabListProps } from '@mui/lab/TabList'
+import CircularProgress from '@mui/material/CircularProgress'
 
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
@@ -26,25 +26,23 @@ import Icon from 'src/@core/components/icon'
 import CustomAvatar from 'src/@core/components/mui/avatar'
 
 // ** Types
-import {
-  HelpCenterCategoriesType,
-  HelpCenterSubCategoriesType,
-  HelpCenterSubCategoriesArticlesType
-} from 'src/@fake-db/types'
+import { HelpCenterSubcategoriesType, HelpCenterSubcategoryArticlesType } from 'src/@fake-db/types'
 
 interface Props {
-  article: string
-  category: HelpCenterCategoriesType
+  articles: HelpCenterSubcategoryArticlesType[]
+  activeSubcategory: HelpCenterSubcategoriesType
+  activeArticle: HelpCenterSubcategoryArticlesType
 }
 
 const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
   border: 0,
+  marginRight: 0,
   overflow: 'visible',
   '& .MuiTabs-flexContainer': {
     flexDirection: 'column'
   },
   '& .MuiTabs-indicator': {
-    backgroundColor: 'transparent'
+    display: 'none'
   },
   '& .Mui-selected': {
     backgroundColor: theme.palette.primary.main,
@@ -52,8 +50,9 @@ const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
   },
   '& .MuiTab-root': {
     minHeight: 40,
-    minWidth: 280,
-    textAlign: 'left',
+    minWidth: 300,
+    maxWidth: 300,
+    textAlign: 'start',
     flexDirection: 'row',
     justifyContent: 'flex-start',
     borderRadius: theme.shape.borderRadius,
@@ -62,70 +61,62 @@ const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
       marginRight: theme.spacing(1)
     },
     [theme.breakpoints.down('md')]: {
+      minWidth: '100%',
       maxWidth: '100%'
     }
   }
 }))
 
-const HelpCenterArticle = (props: Props) => {
-  // ** Props
-  const { article, category } = props
+const HelpCenterArticle = ({ articles, activeArticle, activeSubcategory }: Props) => {
+  // ** State
+  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [tabValue, setTabValue] = useState<string>(activeArticle.slug)
 
   // ** Hooks
   const router = useRouter()
 
-  // ** State
-  const [value, setValue] = useState<string>(
-    router.query.article ? String(router.query.article) : 'changing-your-username'
-  )
-
   const handleChange = (event: SyntheticEvent, newValue: string) => {
+    setIsLoading(true)
     router
-      .push({
-        pathname: router.pathname,
-        query: { article: newValue }
-      })
-      .then(() => {
-        setValue(newValue)
-      })
+      .push({ pathname: `/pages/help-center/${router.query.category}/${router.query.subcategory}/${newValue}` })
+      .then(() => setIsLoading(false))
   }
+
+  useEffect(() => {
+    if (activeArticle && activeArticle.slug !== tabValue) {
+      setTabValue(activeArticle.slug)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeArticle])
 
   const renderTabs = () => {
     return (
-      category &&
-      category.subCategories.map((sub: HelpCenterSubCategoriesType) =>
-        sub.articles.map((tab: HelpCenterSubCategoriesArticlesType) => (
-          <Tab key={tab.slug} value={tab.slug} label={tab.title} />
-        ))
-      )
+      articles &&
+      articles.map((article: HelpCenterSubcategoryArticlesType) => (
+        <Tab key={article.slug} value={article.slug} label={article.title} />
+      ))
     )
   }
 
-  const renderContent = () => {
-    const articleData = category.subCategories
-      .map((sub: HelpCenterSubCategoriesType) =>
-        sub.articles.filter((ar: HelpCenterSubCategoriesArticlesType) => ar.slug === value)
-      )
-      .filter((o: HelpCenterSubCategoriesArticlesType[]) => o.length)[0][0]
-
-    return (
+  const renderContent = () => (
+    <TabPanel value={tabValue} sx={{ p: 0, width: '100%' }}>
       <Card>
         <CardContent>
-          <Link href='/pages/help-center/landing' passHref>
+          <Link href={`/pages/help-center/${router.query.category}/${router.query.subcategory}`} passHref>
             <Button component='a' variant='outlined' startIcon={<Icon icon='mdi:chevron-left' />}>
-              Back to help center
+              Back to Categories
             </Button>
           </Link>
 
           <Box sx={{ mt: 6, mb: 6.5, display: 'flex', alignItems: 'center' }}>
             <CustomAvatar skin='light' variant='rounded' color='secondary' sx={{ mr: 3 }}>
-              <Icon icon={category.icon} />
+              <Icon icon={activeSubcategory.icon} />
             </CustomAvatar>
-            <Typography variant='h6'>{articleData.title}</Typography>
+            <Typography variant='h6'>{activeArticle.title}</Typography>
           </Box>
 
           <Box sx={{ 'p, .MuiTypography-root': { color: 'text.secondary' } }}>
-            <div dangerouslySetInnerHTML={{ __html: article }} />
+            <div dangerouslySetInnerHTML={{ __html: activeArticle.content }} />
             <Typography sx={{ mb: 4 }}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quod explicabo quia delectus autem maxime
               dignissimos omnis nihil perspiciatis! Vel rem sequi minima sed qui reprehenderit culpa autem sunt nam.
@@ -136,56 +127,67 @@ const HelpCenterArticle = (props: Props) => {
             </Typography>
           </Box>
         </CardContent>
-        <Divider sx={{ my: theme => `${theme.spacing(1)} !important` }} />
-        <CardContent>
-          <Box sx={{ display: 'flex', gap: 4, flexWrap: 'wrap', justifyContent: 'space-between' }}>
-            <Box>
-              <Typography variant='h6' sx={{ fontWeight: 600, fontSize: '1.125rem !important' }}>
-                {category.title}
+        <Divider sx={{ m: '0 !important' }} />
+        <CardContent
+          sx={{
+            gap: 4,
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'flex-start',
+            justifyContent: 'space-between'
+          }}
+        >
+          <div>
+            <Typography variant='h6' sx={{ fontWeight: 600 }}>
+              {activeArticle.title}
+            </Typography>
+            <Typography sx={{ mb: 4, color: 'text.secondary' }}>55 People found this helpful</Typography>
+            <div>
+              <Button variant='outlined' sx={{ mr: 2.5, p: 2, minWidth: 30 }}>
+                <Icon fontSize={14} icon='mdi:thumbs-up-outline' />
+              </Button>
+              <Button variant='outlined' sx={{ p: 2, minWidth: 30 }}>
+                <Icon fontSize={14} icon='mdi:thumbs-down-outline' />
+              </Button>
+            </div>
+          </div>
+          <Box sx={{ display: 'flex' }}>
+            <Typography sx={{ mr: 1, fontWeight: 600 }}>Still need help?</Typography>
+            <Link href='/' passHref>
+              <Typography
+                component='a'
+                onClick={(e: SyntheticEvent) => e.preventDefault()}
+                sx={{ fontWeight: 600, color: 'primary.main', textDecoration: 'none' }}
+              >
+                Contact us?
               </Typography>
-              <Typography sx={{ color: 'text.secondary' }}>55 People found this helpful</Typography>
-              <Box sx={{ mt: 4 }}>
-                <Button variant='outlined' sx={{ mr: 2.5, px: 2, minWidth: 30 }}>
-                  <Icon fontSize={12} icon='mdi:thumbs-up-outline' />
-                </Button>
-                <Button variant='outlined' sx={{ px: 2, minWidth: 30 }}>
-                  <Icon fontSize={12} icon='mdi:thumbs-down-outline' />
-                </Button>
-              </Box>
-            </Box>
-            <Box sx={{ display: 'flex', '& .MuiTypography-root': { fontWeight: 600 } }}>
-              <Typography>Still need help?</Typography>
-              <Link href='/' passHref>
-                <Typography
-                  component='a'
-                  onClick={(e: SyntheticEvent) => e.preventDefault()}
-                  sx={{ ml: 1, color: 'primary.main', textDecoration: 'none' }}
-                >
-                  Contact us?
-                </Typography>
-              </Link>
-            </Box>
+            </Link>
           </Box>
         </CardContent>
       </Card>
-    )
-  }
+    </TabPanel>
+  )
 
   return (
-    <TabContext value={value}>
-      <Grid container spacing={6}>
-        <Grid item xs={12} md={4} lg={4}>
-          <Typography variant='h6' sx={{ mb: 4, fontWeight: 600, fontSize: '1.375rem !important' }}>
-            {category.title}
+    <TabContext value={tabValue}>
+      <Box sx={{ display: 'flex', flexDirection: ['column', 'column', 'row'] }}>
+        <Box sx={{ mr: [0, 0, 5], mb: [5, 5, 0], display: 'flex', flexDirection: 'column' }}>
+          <Typography variant='h6' sx={{ mb: 4, fontWeight: 600 }}>
+            {activeSubcategory.title}
           </Typography>
           <TabList orientation='vertical' onChange={handleChange} aria-label='vertical tabs example'>
             {renderTabs()}
           </TabList>
-        </Grid>
-        <Grid item xs={12} md={8} lg={8}>
-          <TabPanel value={value}>{renderContent()}</TabPanel>
-        </Grid>
-      </Grid>
+        </Box>
+        {isLoading ? (
+          <Box sx={{ mt: 11, width: '100%', display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+            <CircularProgress sx={{ mb: 4 }} />
+            <Typography>Loading...</Typography>
+          </Box>
+        ) : (
+          renderContent()
+        )}
+      </Box>
     </TabContext>
   )
 }

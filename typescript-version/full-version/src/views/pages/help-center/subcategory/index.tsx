@@ -1,13 +1,13 @@
 // ** React Imports
-import { SyntheticEvent, useState } from 'react'
+import { SyntheticEvent, useEffect, useState } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Tab from '@mui/material/Tab'
-import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
 import TabPanel from '@mui/lab/TabPanel'
 import Button from '@mui/material/Button'
@@ -16,6 +16,7 @@ import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 import MuiTabList, { TabListProps } from '@mui/lab/TabList'
+import CircularProgress from '@mui/material/CircularProgress'
 
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
@@ -26,8 +27,8 @@ import CustomAvatar from 'src/@core/components/mui/avatar'
 // ** Types
 import {
   HelpCenterCategoriesType,
-  HelpCenterSubCategoriesType,
-  HelpCenterSubCategoriesArticlesType
+  HelpCenterSubcategoriesType,
+  HelpCenterSubcategoryArticlesType
 } from 'src/@fake-db/types'
 
 interface Props {
@@ -37,12 +38,13 @@ interface Props {
 
 const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
   border: 0,
+  marginRight: 0,
   overflow: 'visible',
   '& .MuiTabs-flexContainer': {
     flexDirection: 'column'
   },
   '& .MuiTabs-indicator': {
-    backgroundColor: 'transparent'
+    display: 'none'
   },
   '& .Mui-selected': {
     backgroundColor: theme.palette.primary.main,
@@ -50,8 +52,9 @@ const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
   },
   '& .MuiTab-root': {
     minHeight: 40,
-    minWidth: 280,
-    textAlign: 'center',
+    minWidth: 300,
+    maxWidth: 300,
+    textAlign: 'start',
     flexDirection: 'row',
     justifyContent: 'flex-start',
     borderRadius: theme.shape.borderRadius,
@@ -60,46 +63,59 @@ const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
       marginRight: theme.spacing(1)
     },
     [theme.breakpoints.down('md')]: {
+      minWidth: '100%',
       maxWidth: '100%'
     }
   }
 }))
 
-const HelpCenterCategories = (props: Props) => {
+const HelpCenterSubcategory = ({ data, activeTab }: Props) => {
   // ** State
-  const [value, setValue] = useState<string>(props.activeTab)
+  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [tabValue, setTabValue] = useState<string>(activeTab)
+
+  // ** Hook
+  const router = useRouter()
 
   const handleChange = (event: SyntheticEvent, newValue: string) => {
-    setValue(newValue)
+    setIsLoading(true)
+    router.push(`/pages/help-center/${data.slug}/${newValue}`).then(() => setIsLoading(false))
   }
+
+  useEffect(() => {
+    if (activeTab && activeTab !== tabValue) {
+      setTabValue(activeTab)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeTab])
 
   const renderTabs = () => {
     return (
-      props.data &&
-      props.data.subCategories.map((tab: HelpCenterSubCategoriesType) => (
+      data &&
+      data.subCategories.map((tab: HelpCenterSubcategoriesType) => (
         <Tab key={tab.slug} value={tab.slug} label={tab.title} />
       ))
     )
   }
 
   const renderContent = () => {
-    const dataToRender = props.data.subCategories.filter((i: HelpCenterSubCategoriesType) => i.slug === value)[0]
+    const dataToRender = data.subCategories.filter((item: HelpCenterSubcategoriesType) => item.slug === tabValue)[0]
 
     return (
-      <TabPanel value={value}>
+      <TabPanel value={tabValue} sx={{ p: 0, width: '100%' }}>
         <Card>
           <CardContent>
             <Box sx={{ mb: 7, display: 'flex', alignItems: 'center' }}>
               <CustomAvatar skin='light' variant='rounded' sx={{ mr: 3 }}>
                 <Icon icon={dataToRender.icon} />
               </CustomAvatar>
-              <Typography variant='h6' sx={{ fontWeight: 600, fontSize: '1.375rem !important' }}>
+              <Typography variant='h5' sx={{ fontWeight: 600 }}>
                 {dataToRender.title}
               </Typography>
             </Box>
 
             <Box sx={{ mb: 6 }}>
-              {dataToRender.articles.map((article: HelpCenterSubCategoriesArticlesType) => {
+              {dataToRender.articles.map((article: HelpCenterSubcategoryArticlesType) => {
                 return (
                   <Box
                     key={article.title}
@@ -111,17 +127,10 @@ const HelpCenterCategories = (props: Props) => {
                     }}
                   >
                     <Icon icon='mdi:chevron-right' />
-                    <Link href={`/pages/help-center/article/${article.slug}`} passHref>
-                      <Box
-                        component='a'
-                        sx={{
-                          ml: 3,
-                          textDecoration: 'none',
-                          '& .MuiTypography-root, & svg': { color: 'primary.main' }
-                        }}
-                      >
-                        <Typography>{article.title}</Typography>
-                      </Box>
+                    <Link href={`/pages/help-center/${data.slug}/${activeTab}/${article.slug}`} passHref>
+                      <Typography component='a' sx={{ ml: 1.5, color: 'primary.main', textDecoration: 'none' }}>
+                        {article.title}
+                      </Typography>
                     </Link>
                   </Box>
                 )
@@ -140,22 +149,27 @@ const HelpCenterCategories = (props: Props) => {
   }
 
   return (
-    <TabContext value={value}>
-      <Grid container spacing={6}>
-        <Grid item xs={12} md={4}>
-          <Typography variant='h6' sx={{ mb: 4, fontWeight: 600, fontSize: '1.125rem !important' }}>
-            {props.data.title}
+    <TabContext value={tabValue}>
+      <Box sx={{ display: 'flex', flexDirection: ['column', 'column', 'row'] }}>
+        <Box sx={{ mr: [0, 0, 5], mb: [5, 5, 0], display: 'flex', flexDirection: 'column' }}>
+          <Typography variant='h6' sx={{ mb: 4, fontWeight: 600 }}>
+            {data.title}
           </Typography>
           <TabList orientation='vertical' onChange={handleChange} aria-label='vertical tabs example'>
             {renderTabs()}
           </TabList>
-        </Grid>
-        <Grid item xs={12} md={8}>
-          {renderContent()}
-        </Grid>
-      </Grid>
+        </Box>
+        {isLoading ? (
+          <Box sx={{ mt: 11, width: '100%', display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+            <CircularProgress sx={{ mb: 4 }} />
+            <Typography>Loading...</Typography>
+          </Box>
+        ) : (
+          renderContent()
+        )}
+      </Box>
     </TabContext>
   )
 }
 
-export default HelpCenterCategories
+export default HelpCenterSubcategory

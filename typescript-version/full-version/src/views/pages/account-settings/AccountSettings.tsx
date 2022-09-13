@@ -53,14 +53,7 @@ const AccountSettings = ({ tab, apiPricingPlanData }: { tab: string; apiPricingP
 
   const handleChange = (event: SyntheticEvent, value: string) => {
     setIsLoading(true)
-    router
-      .push({
-        pathname: `/pages/account-settings/${value.toLowerCase()}`
-      })
-      .then(() => {
-        setActiveTab(value)
-        setIsLoading(false)
-      })
+    router.push(`/pages/account-settings/${value.toLowerCase()}`).then(() => setIsLoading(false))
   }
 
   useEffect(() => {

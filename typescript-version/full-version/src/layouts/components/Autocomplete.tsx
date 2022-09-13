@@ -552,7 +552,7 @@ const AutocompleteComponent = ({ hidden, settings }: Props) => {
                       <ListItemButton
                         sx={{
                           py: 2.5,
-                          px: ` ${theme.spacing(6)} !important`,
+                          px: `${theme.spacing(6)} !important`,
                           '& svg': { mr: 2.5, color: 'text.primary' }
                         }}
                       >

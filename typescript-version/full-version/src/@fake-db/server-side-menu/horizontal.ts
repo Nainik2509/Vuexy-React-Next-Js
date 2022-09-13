@@ -317,20 +317,7 @@ const navigation: HorizontalNavItemsType = [
       {
         title: 'Help Center',
         icon: 'mdi:help-circle-outline',
-        children: [
-          {
-            title: 'Landing',
-            path: '/pages/help-center/landing'
-          },
-          {
-            title: 'Categories',
-            path: '/pages/help-center/categories'
-          },
-          {
-            title: 'Article',
-            path: '/pages/help-center/article'
-          }
-        ]
+        path: '/pages/help-center'
       },
       {
         title: 'Pricing',
