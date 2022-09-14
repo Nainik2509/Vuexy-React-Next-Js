@@ -3,17 +3,18 @@ import { NavGroup, NavLink } from 'src/@core/layouts/types'
 import { NextRouter } from 'next/router'
 
 /**
- * Check for URL queries as well for matching
- * Current URL & Item Path
+ * Remove queries from URL and then check with the item path
  *
  * @param item
- * @param activeItem
+ * @param router
  */
-export const handleURLQueries = (router: NextRouter, path: string | undefined): boolean => {
-  if (Object.keys(router.query).length && path) {
-    const arr = Object.keys(router.query)
-
-    return router.asPath.includes(path) && router.asPath.includes(router.query[arr[0]] as string) && path !== '/'
+export const pathWithoutParams = (router: NextRouter, item: NavLink) => {
+  if (item.meta && item.meta.activeLink) {
+    if (router.asPath.includes(Object.keys(router.query)[0])) {
+      return router.asPath.split('/' + Object.keys(router.query)[0])[0] === item.meta.activeLink
+    } else {
+      return router.asPath.split('/' + router.query[Object.keys(router.query)[0]])[0] === item.meta.activeLink
+    }
   }
 
   return false

@@ -26,8 +26,8 @@ import UserIcon from 'src/layouts/components/UserIcon'
 import Translations from 'src/layouts/components/Translations'
 import CanViewNavLink from 'src/layouts/components/acl/CanViewNavLink'
 
-// ** Utils
-import { handleURLQueries } from 'src/@core/layouts/utils'
+// ** Util Import
+import { pathWithoutParams } from 'src/@core/layouts/utils'
 
 interface Props {
   parent?: boolean
@@ -102,7 +102,7 @@ const VerticalNavLink = ({
   }
 
   const isNavLinkActive = () => {
-    if (router.pathname === item.path || handleURLQueries(router, item.path)) {
+    if (router.asPath === item.path || pathWithoutParams(router, item)) {
       return true
     } else {
       return false

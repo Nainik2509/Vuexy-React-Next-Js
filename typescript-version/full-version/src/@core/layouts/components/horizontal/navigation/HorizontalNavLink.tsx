@@ -29,8 +29,9 @@ import UserIcon from 'src/layouts/components/UserIcon'
 import Translations from 'src/layouts/components/Translations'
 import CanViewNavLink from 'src/layouts/components/acl/CanViewNavLink'
 
-// ** Util Import
+// ** Util Imports
 import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
+import { pathWithoutParams } from 'src/@core/layouts/utils'
 
 interface Props {
   item: NavLink
@@ -70,16 +71,8 @@ const HorizontalNavLink = (props: Props) => {
 
   const Wrapper = !hasParent ? List : Fragment
 
-  const handleURLQueries = () => {
-    if (Object.keys(router.query).length && item.path) {
-      const arr = Object.keys(router.query)
-
-      return router.asPath.includes(item.path) && router.asPath.includes(router.query[arr[0]] as string)
-    }
-  }
-
   const isNavLinkActive = () => {
-    if (router.pathname === item.path || handleURLQueries()) {
+    if (router.asPath === item.path || pathWithoutParams(router, item)) {
       return true
     } else {
       return false
@@ -93,6 +86,7 @@ const HorizontalNavLink = (props: Props) => {
           <ListItem
             component={'a'}
             disabled={item.disabled}
+            {...(item.disabled && { tabIndex: -1 })}
             className={clsx({ active: isNavLinkActive() })}
             target={item.openInNewTab ? '_blank' : undefined}
             onClick={e => {

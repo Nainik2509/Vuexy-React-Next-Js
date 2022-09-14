@@ -137,7 +137,7 @@ const HelpCenterSubcategory = ({ data, activeTab }: Props) => {
               })}
             </Box>
 
-            <Link href='/pages/help-center/landing' passHref>
+            <Link href='/pages/help-center' passHref>
               <Button component='a' variant='outlined' startIcon={<Icon icon='mdi:chevron-left' />}>
                 Back to help center
               </Button>

@@ -26,7 +26,8 @@ const navigation = (): HorizontalNavItemsType => {
         {
           title: 'Email',
           icon: 'mdi:email-outline',
-          path: '/apps/email'
+          path: '/apps/email',
+          meta: { activeLink: '/apps/email' }
         },
         {
           title: 'Chat',
@@ -53,11 +54,13 @@ const navigation = (): HorizontalNavItemsType => {
             },
             {
               title: 'Preview',
-              path: '/apps/invoice/preview'
+              path: '/apps/invoice/preview',
+              meta: { activeLink: '/apps/invoice/preview' }
             },
             {
               title: 'Edit',
-              path: '/apps/invoice/edit'
+              path: '/apps/invoice/edit',
+              meta: { activeLink: '/apps/invoice/edit' }
             },
             {
               title: 'Add',
@@ -315,7 +318,8 @@ const navigation = (): HorizontalNavItemsType => {
         {
           title: 'Help Center',
           icon: 'mdi:help-circle-outline',
-          path: '/pages/help-center'
+          path: '/pages/help-center',
+          meta: { activeLink: '/pages/help-center' }
         },
         {
           title: 'Pricing',

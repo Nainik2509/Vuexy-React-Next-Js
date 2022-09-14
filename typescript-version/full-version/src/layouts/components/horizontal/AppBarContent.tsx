@@ -68,24 +68,24 @@ const notifications: NotificationsType[] = [
 const shortcuts: ShortcutsType[] = [
   {
     title: 'Calendar',
-    url: '/apps/calendar/',
+    url: '/apps/calendar',
     subtitle: 'Appointments',
     icon: 'mdi:calendar-month-outline'
   },
   {
     title: 'Invoice App',
-    url: '/apps/invoice/list/',
+    url: '/apps/invoice/list',
     subtitle: 'Manage Accounts',
     icon: 'mdi:receipt-text-outline'
   },
   {
     title: 'Users',
-    url: '/apps/user/list/',
+    url: '/apps/user/list',
     subtitle: 'Manage Users',
     icon: 'mdi:account-outline'
   },
   {
-    url: '/apps/roles/',
+    url: '/apps/roles',
     title: 'Role Management',
     subtitle: 'Permissions',
     icon: 'mdi:shield-check-outline'
@@ -100,19 +100,19 @@ const shortcuts: ShortcutsType[] = [
     title: 'Settings',
     icon: 'mdi:cog-outline',
     subtitle: 'Account Settings',
-    url: '/pages/account-settings/account/'
+    url: '/pages/account-settings/account'
   },
   {
     title: 'Help Center',
     subtitle: 'FAQs & Articles',
     icon: 'mdi:help-circle-outline',
-    url: '/pages/help-center/landing/'
+    url: '/pages/help-center'
   },
   {
     title: 'Dialogs',
     subtitle: 'Useful Dialogs',
     icon: 'mdi:window-maximize',
-    url: '/pages/dialog-examples/'
+    url: '/pages/dialog-examples'
   }
 ]
 
