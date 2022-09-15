@@ -53,11 +53,7 @@ const Table = (theme: Theme) => {
     MuiTableCell: {
       styleOverrides: {
         root: {
-          borderBottom: `1px solid ${theme.palette.divider}`,
-          '& .MuiButton-root': {
-            textTransform: 'uppercase',
-            color: theme.palette.text.secondary
-          }
+          borderBottom: `1px solid ${theme.palette.divider}`
         },
         paddingCheckbox: {
           paddingLeft: theme.spacing(2)

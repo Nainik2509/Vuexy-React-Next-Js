@@ -12,7 +12,6 @@ import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 const BoxWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   position: 'relative',
   padding: theme.spacing(11.25, 36),
-  marginBottom: theme.spacing(2.5),
   backgroundColor: hexToRGBA(theme.palette.primary.main, 0.04),
   [theme.breakpoints.down('xl')]: {
     padding: theme.spacing(11.25, 20)
@@ -21,7 +20,7 @@ const BoxWrapper = styled(Box)<BoxProps>(({ theme }) => ({
     textAlign: 'center'
   },
   [theme.breakpoints.down('sm')]: {
-    padding: theme.spacing(11.25, 5)
+    padding: theme.spacing(10, 5)
   }
 }))
 

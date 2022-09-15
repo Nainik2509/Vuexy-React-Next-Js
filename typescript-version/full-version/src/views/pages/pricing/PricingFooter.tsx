@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import MuiAccordion, { AccordionProps } from '@mui/material/Accordion'
-import MuiCardContent, { CardContentProps } from '@mui/material/CardContent'
 
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
@@ -19,17 +18,6 @@ import { PricingDataType, PricingFaqType } from 'src/@core/components/plan-detai
 interface Props {
   data: PricingDataType | null
 }
-
-// ** Styled Components
-const CardContent = styled(MuiCardContent)<CardContentProps>(({ theme }) => ({
-  padding: `${theme.spacing(17.5, 36)} !important`,
-  [theme.breakpoints.down('xl')]: {
-    padding: `${theme.spacing(12.5, 20)} !important`
-  },
-  [theme.breakpoints.down('sm')]: {
-    padding: `${theme.spacing(10, 5)} !important`
-  }
-}))
 
 const Accordion = styled(MuiAccordion)<AccordionProps>(({ theme }) => ({
   border: `1px solid ${theme.palette.divider}`,
@@ -72,7 +60,7 @@ const PricingFooter = (props: Props) => {
   }
 
   return (
-    <CardContent>
+    <>
       <Box sx={{ mb: 11.75, textAlign: 'center' }}>
         <Typography variant='h5' sx={{ mb: 2.5 }}>
           FAQ’s
@@ -82,7 +70,7 @@ const PricingFooter = (props: Props) => {
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
         <div>{renderAccordion()}</div>
       </Box>
-    </CardContent>
+    </>
   )
 }
 

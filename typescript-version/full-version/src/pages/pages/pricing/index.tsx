@@ -5,7 +5,6 @@ import { useState, ChangeEvent } from 'react'
 import { GetStaticProps, InferGetStaticPropsType } from 'next/types'
 
 // ** MUI Imports
-import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import { styled } from '@mui/material/styles'
 import MuiCardContent, { CardContentProps } from '@mui/material/CardContent'
@@ -25,18 +24,18 @@ import PricingFooter from 'src/views/pages/pricing/PricingFooter'
 
 // ** Styled Components
 const CardContent = styled(MuiCardContent)<CardContentProps>(({ theme }) => ({
-  padding: theme.spacing(17.5, 36, 20),
+  padding: `${theme.spacing(20, 36)} !important`,
   [theme.breakpoints.down('xl')]: {
-    padding: theme.spacing(12.5, 20, 20)
+    padding: `${theme.spacing(20)} !important`
   },
   [theme.breakpoints.down('sm')]: {
-    padding: theme.spacing(10, 5)
+    padding: `${theme.spacing(10, 5)} !important`
   }
 }))
 
 const Pricing = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // ** States
-  const [plan, setPlan] = useState<'monthly' | 'annually'>('monthly')
+  const [plan, setPlan] = useState<'monthly' | 'annually'>('annually')
 
   const handleChange = (e: ChangeEvent<{ checked: boolean }>) => {
     if (e.target.checked) {
@@ -52,15 +51,13 @@ const Pricing = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>) =>
         <PricingHeader plan={plan} handleChange={handleChange} />
         <PricingPlans plan={plan} data={apiData} />
       </CardContent>
-      <Box sx={{ backgroundColor: 'background.paper' }}>
-        <PricingCTA />
-      </Box>
+      <PricingCTA />
       <CardContent>
         <PricingTable data={apiData} />
       </CardContent>
-      <Box sx={{ pt: 2.25, backgroundColor: theme => (theme.palette.mode === 'dark' ? '#2E2A47' : '#FBFBFD') }}>
+      <CardContent sx={{ backgroundColor: 'action.hover' }}>
         <PricingFooter data={apiData} />
-      </Box>
+      </CardContent>
     </Card>
   )
 }
