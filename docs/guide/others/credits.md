@@ -6,9 +6,6 @@ sidebarDepth: 0
 
 | Name |  URL    | License           |
 | :--- | :------ | :---------------- |
-| @auth0/auth0-react | [https://github.com/auth0/auth0-react](https://github.com/auth0/auth0-react) | MIT |
-| @aws-amplify/auth | [https://github.com/aws-amplify/amplify-js](https://github.com/aws-amplify/amplify-js) | Apache-2.0 |
-| @aws-amplify/ui-react | [https://github.com/aws-amplify/amplify-ui](https://github.com/aws-amplify/amplify-ui) | Apache-2.0 |
 | @casl/ability | [https://github.com/stalniy/casl](https://github.com/stalniy/casl) | MIT |
 | @casl/react | [https://github.com/stalniy/casl](https://github.com/stalniy/casl) | MIT |
 | @emotion/cache | [https://github.com/emotion-js/emotion/tree/main/packages/cache](https://github.com/emotion-js/emotion/tree/main/packages/cache) | MIT |
@@ -30,7 +27,6 @@ sidebarDepth: 0
 | @mui/x-data-grid | [https://github.com/mui-org/material-ui-x](https://github.com/mui-org/material-ui-x) | MIT |
 | @reduxjs/toolkit | [https://github.com/reduxjs/redux-toolkit](https://github.com/reduxjs/redux-toolkit) | MIT |
 | apexcharts | [https://github.com/apexcharts/apexcharts.js](https://github.com/apexcharts/apexcharts.js) | MIT |
-| aws-amplify | [https://github.com/aws-amplify/amplify-js](https://github.com/aws-amplify/amplify-js) | Apache-2.0 |
 | axios | [https://github.com/axios/axios](https://github.com/axios/axios) | MIT |
 | axios-mock-adapter | [https://github.com/ctimmerm/axios-mock-adapter](https://github.com/ctimmerm/axios-mock-adapter) | MIT |
 | chart.js | [https://github.com/chartjs/Chart.js](https://github.com/chartjs/Chart.js) | MIT |

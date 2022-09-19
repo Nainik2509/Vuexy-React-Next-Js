@@ -8,11 +8,7 @@ pageClass: page-article-list
 
 [How to add Calendar app in starter-kit](/articles/how-to-add-calendar-app-in-starter-kit.md)
 
-[How to add Auth0 in starter-kit](/articles/how-to-add-auth0-in-starter-kit.md)
-
 [How to add Firebase in starter-kit](/articles/how-to-add-firebase-in-starter-kit.md)
-
-[How to add Amplify in starter-kit](/articles/how-to-add-amplify-in-starter-kit.md)
 
 [How to add Search in starter-kit](/articles/how-to-add-search-in-starter-kit.md)
 

@@ -12,9 +12,6 @@
     "build:icons": "tsc -b src/iconify-bundle && node src/iconify-bundle/bundle-icons-react.js"
   },
   "dependencies": {
-    "@auth0/auth0-react": "^1.10.1",
-    "@aws-amplify/auth": "^4.5.9",
-    "@aws-amplify/ui-react": "^3.0.4",
     "@casl/ability": "^6.2.0",
     "@casl/react": "^3.0.0",
     "@emotion/cache": "^11.6.0",
@@ -36,7 +33,6 @@
     "@popperjs/core": "^2.11.2",
     "@reduxjs/toolkit": "^1.8.3",
     "apexcharts-clevision": "3.28.5",
-    "aws-amplify": "^4.3.27",
     "axios": "^0.27.2",
     "axios-mock-adapter": "^1.20.0",
     "chart.js": "^3.7.1",

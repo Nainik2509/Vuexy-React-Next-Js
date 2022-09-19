@@ -35,10 +35,6 @@ The following dependencies are common and required to run the template. Do not t
 ```json
 "jsonwebtoken"
 "@types/jsonwebtoken" // Typescript version only
-"@auth0/auth0-react" // Auth0
-"aws-amplify" // Amplify
-"@aws-amplify/auth" // Amplify
-"@aws-amplify/ui-react" // Amplify
 "firebase" // Firebase
 ```
 
