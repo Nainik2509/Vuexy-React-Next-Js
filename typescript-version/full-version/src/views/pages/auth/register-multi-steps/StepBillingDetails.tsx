@@ -13,7 +13,6 @@ import InputAdornment from '@mui/material/InputAdornment'
 
 // ** Third Party Imports
 import Payment from 'payment'
-import Cards, { Focused } from 'react-credit-cards'
 
 // ** Type Import
 import { CustomRadioIconsData } from 'src/@core/components/custom-radio/types'
@@ -23,9 +22,6 @@ import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Imports
 import CustomRadioIcons from 'src/@core/components/custom-radio/icons'
-
-// ** Styled Component Imports
-import CardWrapper from 'src/@core/styles/libs/react-credit-cards'
 
 // ** Util Import
 import { formatCVC, formatExpirationDate, formatCreditCardNumber } from 'src/@core/utils/format'
@@ -108,12 +104,9 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
   // ** State
   const [cvc, setCvc] = useState<string>('')
   const [name, setName] = useState<string>('')
-  const [focus, setFocus] = useState<Focused>()
   const [expiry, setExpiry] = useState<string>('')
   const [cardNumber, setCardNumber] = useState<string>('')
   const [selectedRadio, setSelectedRadio] = useState<string>(initialSelected)
-
-  const handleBlur = () => setFocus(undefined)
 
   const handleInputChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
     if (target.name === 'cardNumber') {
@@ -143,7 +136,7 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
         <Typography sx={{ color: 'text.secondary' }}>Select plan as per your requirement</Typography>
       </Box>
 
-      <Grid container spacing={6}>
+      <Grid container spacing={5}>
         {data.map((item, index) => (
           <CustomRadioIcons
             key={index}
@@ -155,16 +148,9 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
           />
         ))}
 
-        <Grid item xs={12}>
-          <div>
-            <Typography variant='h5'>Payment Information</Typography>
-            <Typography sx={{ color: 'text.secondary' }}>Enter your card information</Typography>
-          </div>
-        </Grid>
-        <Grid item xs={12}>
-          <CardWrapper sx={{ '& .rccs': { m: '0 auto' } }}>
-            <Cards cvc={cvc} focused={focus} expiry={expiry} name={name} number={cardNumber} />
-          </CardWrapper>
+        <Grid item xs={12} sx={{ pt: theme => `${theme.spacing(11.5)} !important` }}>
+          <Typography variant='h5'>Payment Information</Typography>
+          <Typography sx={{ color: 'text.secondary' }}>Enter your card information</Typography>
         </Grid>
         <Grid item xs={12}>
           <FormControl fullWidth>
@@ -174,49 +160,41 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
               value={cardNumber}
               autoComplete='off'
               label='Card Number'
-              onBlur={handleBlur}
               onChange={handleInputChange}
               placeholder='0000 0000 0000 0000'
-              onFocus={e => setFocus(e.target.name as Focused)}
             />
           </FormControl>
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} sm={6}>
           <TextField
             fullWidth
             name='name'
             value={name}
             autoComplete='off'
-            onBlur={handleBlur}
             label='Name on Card'
             placeholder='John Doe'
             onChange={e => setName(e.target.value)}
-            onFocus={e => setFocus(e.target.name as Focused)}
           />
         </Grid>
-        <Grid item xs={12} md={3}>
+        <Grid item xs={6} sm={3}>
           <TextField
             fullWidth
             name='expiry'
             label='Expiry'
             value={expiry}
-            onBlur={handleBlur}
             placeholder='MM/YY'
             onChange={handleInputChange}
             inputProps={{ maxLength: '5' }}
-            onFocus={e => setFocus(e.target.name as Focused)}
           />
         </Grid>
-        <Grid item xs={12} md={3}>
+        <Grid item xs={6} sm={3}>
           <TextField
             fullWidth
             name='cvc'
             label='CVC'
             value={cvc}
             autoComplete='off'
-            onBlur={handleBlur}
             onChange={handleInputChange}
-            onFocus={e => setFocus(e.target.name as Focused)}
             InputProps={{
               endAdornment: (
                 <InputAdornment position='start' sx={{ '& svg': { cursor: 'pointer' } }}>
@@ -232,7 +210,12 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
         </Grid>
         <Grid item xs={12}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Button variant='contained' onClick={handlePrev} startIcon={<Icon icon='mdi:chevron-left' fontSize={20} />}>
+            <Button
+              color='secondary'
+              variant='contained'
+              onClick={handlePrev}
+              startIcon={<Icon icon='mdi:chevron-left' fontSize={20} />}
+            >
               Previous
             </Button>
             <Button color='success' variant='contained' onClick={() => alert('Submitted..!!')}>

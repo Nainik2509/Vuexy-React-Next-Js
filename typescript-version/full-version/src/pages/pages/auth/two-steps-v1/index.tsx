@@ -14,6 +14,7 @@ import MuiCard, { CardProps } from '@mui/material/Card'
 import FormHelperText from '@mui/material/FormHelperText'
 
 // ** Third Party Imports
+import clsx from 'clsx'
 import Cleave from 'cleave.js/react'
 import { useForm, Controller } from 'react-hook-form'
 
@@ -28,6 +29,9 @@ import FooterIllustrationsV1 from 'src/views/pages/auth/FooterIllustrationsV1'
 
 // ** Custom Styled Component
 import CleaveWrapper from 'src/@core/styles/libs/react-cleave'
+
+// ** Util Import
+import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 
 // ** Styles
 import 'cleave.js/dist/addons/cleave-phone.us'
@@ -48,7 +52,11 @@ const CleaveInput = styled(Cleave)(({ theme }) => ({
   textAlign: 'center',
   height: '50px !important',
   fontSize: '150% !important',
-  margin: theme.spacing(2, 1),
+  marginTop: theme.spacing(2),
+  marginBottom: theme.spacing(2),
+  '&:not(:last-child)': {
+    marginRight: theme.spacing(2)
+  },
   '&::-webkit-outer-spin-button, &::-webkit-inner-spin-button': {
     margin: 0,
     WebkitAppearance: 'none'
@@ -90,6 +98,13 @@ const TwoStepsV1 = () => {
           <Box
             type='number'
             value={value}
+            component={CleaveInput}
+            options={{ blocks: [1] }}
+            className={clsx({ invalid: errorsArray.length && errorsArray.includes(val) })}
+            sx={{
+              ...(errorsArray.length &&
+                errorsArray.includes(val) && { borderColor: theme => `${theme.palette.error.main} !important` })
+            }}
             onChange={(event: ChangeEvent) => {
               onChange(event)
 
@@ -98,13 +113,6 @@ const TwoStepsV1 = () => {
               const index = [...form].indexOf(event.target)
               form.elements[index + 1].focus()
               event.preventDefault()
-            }}
-            component={CleaveInput}
-            options={{ blocks: [1] }}
-            sx={{
-              ...(errorsArray.length && errorsArray.includes(val)
-                ? { '&, &:focus': { borderColor: theme => `${theme.palette.error.main} !important` } }
-                : {})
             }}
           />
         )}
@@ -200,7 +208,19 @@ const TwoStepsV1 = () => {
           </Box>
           <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>Type your 6 digit security code</Typography>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <CleaveWrapper sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <CleaveWrapper
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                ...(errorsArray.length && {
+                  '& .invalid:focus': {
+                    borderColor: theme => `${theme.palette.error.main} !important`,
+                    boxShadow: theme => `0 1px 3px 0 ${hexToRGBA(theme.palette.error.main, 0.4)}`
+                  }
+                })
+              }}
+            >
               {renderInputs()}
             </CleaveWrapper>
             {errorsArray.length ? (

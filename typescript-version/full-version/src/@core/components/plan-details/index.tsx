@@ -63,7 +63,7 @@ const PlanDetails = (props: PricingPlanProps) => {
           color='primary'
           sx={{
             top: 12,
-            right: 23,
+            right: 12,
             height: 24,
             position: 'absolute',
             '& .MuiChip-label': {
@@ -75,7 +75,12 @@ const PlanDetails = (props: PricingPlanProps) => {
         />
       ) : null}
       <Box sx={{ mb: 5, display: 'flex', justifyContent: 'center' }}>
-        <img src={`${data?.imgSrc}`} alt={`${data?.title.toLowerCase()}-plan-img`} />
+        <img
+          width={data?.imgWidth}
+          src={`${data?.imgSrc}`}
+          height={data?.imgHeight}
+          alt={`${data?.title.toLowerCase().replace(' ', '-')}-plan-img`}
+        />
       </Box>
       <Box sx={{ textAlign: 'center' }}>
         <Typography variant='h5' sx={{ mb: 1.5 }}>

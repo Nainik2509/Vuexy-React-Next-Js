@@ -7,9 +7,7 @@ import { PricingDataType } from 'src/@core/components/plan-details/types'
 const data: PricingDataType = {
   pricingPlans: [
     {
-      imgWidth: 264,
       title: 'Basic',
-      imgHeight: 163,
       monthlyPrice: 0,
       currentPlan: true,
       popularPlan: false,
@@ -28,8 +26,6 @@ const data: PricingDataType = {
       ]
     },
     {
-      imgWidth: 264,
-      imgHeight: 163,
       monthlyPrice: 49,
       title: 'Standard',
       popularPlan: true,
@@ -49,8 +45,6 @@ const data: PricingDataType = {
       ]
     },
     {
-      imgWidth: 264,
-      imgHeight: 163,
       monthlyPrice: 99,
       popularPlan: false,
       currentPlan: false,

@@ -118,13 +118,13 @@ const PricingTable = ({ data }: Props) => {
               ))}
               <TableRow sx={{ '& .MuiTableCell-root': { border: 0 } }}>
                 <TableCell></TableCell>
-                <TableCell align='center'>
+                <TableCell align='center' sx={{ whiteSpace: 'nowrap' }}>
                   <Button variant='outlined'>Choose Plan</Button>
                 </TableCell>
-                <TableCell align='center'>
+                <TableCell align='center' sx={{ whiteSpace: 'nowrap' }}>
                   <Button variant='contained'>Choose Plan</Button>
                 </TableCell>
-                <TableCell align='center'>
+                <TableCell align='center' sx={{ whiteSpace: 'nowrap' }}>
                   <Button variant='outlined'>Choose Plan</Button>
                 </TableCell>
               </TableRow>

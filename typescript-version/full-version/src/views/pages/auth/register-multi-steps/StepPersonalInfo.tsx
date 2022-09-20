@@ -21,15 +21,15 @@ const StepPersonalDetails = ({ handleNext, handlePrev }: { [key: string]: () => 
         <Typography sx={{ color: 'text.secondary' }}>Enter Your Personal Information</Typography>
       </Box>
 
-      <Grid container spacing={6}>
-        <Grid item xs={12} md={6}>
+      <Grid container spacing={5}>
+        <Grid item xs={12} sm={6}>
           <TextField fullWidth placeholder='john' label='First Name' />
         </Grid>
 
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} sm={6}>
           <TextField fullWidth label='Last Name' placeholder='Doe' />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} sm={6}>
           <TextField
             fullWidth
             label='Mobile'
@@ -39,7 +39,7 @@ const StepPersonalDetails = ({ handleNext, handlePrev }: { [key: string]: () => 
             }}
           />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} sm={6}>
           <TextField fullWidth type='number' label='Pincode' placeholder='689421' />
         </Grid>
         <Grid item xs={12}>
@@ -50,10 +50,10 @@ const StepPersonalDetails = ({ handleNext, handlePrev }: { [key: string]: () => 
         <Grid item xs={12}>
           <TextField fullWidth label='Landmark' placeholder='Mendez Plains' />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} sm={6}>
           <TextField fullWidth label='City' placeholder='Miami' />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} sm={6}>
           <FormControl fullWidth>
             <InputLabel id='state-select'>State</InputLabel>
             <Select labelId='state-select' label='State' defaultValue='New York'>
@@ -67,7 +67,12 @@ const StepPersonalDetails = ({ handleNext, handlePrev }: { [key: string]: () => 
         </Grid>
         <Grid item xs={12}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Button variant='contained' startIcon={<Icon icon='mdi:chevron-left' fontSize={20} />} onClick={handlePrev}>
+            <Button
+              color='secondary'
+              variant='contained'
+              onClick={handlePrev}
+              startIcon={<Icon icon='mdi:chevron-left' fontSize={20} />}
+            >
               Previous
             </Button>
             <Button variant='contained' onClick={handleNext} endIcon={<Icon icon='mdi:chevron-right' fontSize={20} />}>

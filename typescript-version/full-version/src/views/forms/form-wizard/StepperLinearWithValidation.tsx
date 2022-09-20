@@ -656,7 +656,7 @@ const StepperLinearWithValidation = () => {
                 <Step key={index}>
                   <StepLabel {...labelProps} StepIconComponent={StepperCustomDot}>
                     <div className='step-label'>
-                      <Typography className='step-number'>0{index + 1}</Typography>
+                      <Typography className='step-number'>{`0${index + 1}`}</Typography>
                       <div>
                         <Typography className='step-title'>{step.title}</Typography>
                         <Typography className='step-subtitle'>{step.subtitle}</Typography>

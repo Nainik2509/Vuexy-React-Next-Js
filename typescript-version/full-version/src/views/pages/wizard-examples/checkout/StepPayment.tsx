@@ -72,19 +72,19 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
             <Tab value='gc' label='Gift Card' />
           </TabList>
           <Grid container sx={{ mt: 5 }}>
-            <Grid item lg={6} md={8} xs={12}>
+            <Grid item md={8} xs={12}>
               <TabPanel value='cc'>
                 <Grid container spacing={4}>
                   <Grid item xs={12}>
                     <TextField fullWidth type='number' label='Card Number' placeholder='1356 3215 6548 7898' />
                   </Grid>
-                  <Grid item xs={12} md={6}>
+                  <Grid item xs={12} sm={6}>
                     <TextField fullWidth label='Name' placeholder='John Doe' />
                   </Grid>
-                  <Grid item xs={12} md={3}>
+                  <Grid item xs={6} sm={3}>
                     <TextField fullWidth label='Expiry Date' placeholder='MM/YY' />
                   </Grid>
-                  <Grid item xs={12} md={3}>
+                  <Grid item xs={6} sm={3}>
                     <TextField
                       fullWidth
                       label='CVV'

@@ -1,9 +1,9 @@
 export type PricingPlanType = {
   title: string
   imgSrc: string
-  imgWidth: number
   subtitle: string
-  imgHeight: number
+  imgWidth?: number
+  imgHeight?: number
   currentPlan: boolean
   popularPlan: boolean
   monthlyPrice: number
