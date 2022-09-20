@@ -125,7 +125,7 @@ const KanbanTasks = (props: KanbanTasksProps) => {
   return (
     // eslint-disable-next-line lines-around-comment
     // @ts-ignore
-    <Draggable key={task.id.toString()} draggableId={task.id.toString()} index={index}>
+    <Draggable key={`${task.id.toString()}-${index}`} draggableId={`${task.id.toString()}-${index}`} index={index}>
       {(provided: any) => (
         <Card
           ref={provided.innerRef}
