@@ -120,12 +120,12 @@ const Faqs = ({ data, activeTab, handleChange }: Props) => {
   return (
     <MuiBox>
       <TabContext value={activeTab}>
-        <TabList onChange={handleChange}>
-          {renderTabs()}
+        <Box>
+          <TabList onChange={handleChange}>{renderTabs()}</TabList>
           <Box sx={{ mt: 12, '& img': { maxWidth: '100%', display: { xs: 'none', md: 'block' } } }}>
             <img src='/images/cards/illustration-john.png' alt='illustration' width='250' />
           </Box>
-        </TabList>
+        </Box>
         {renderTabContent()}
       </TabContext>
     </MuiBox>
