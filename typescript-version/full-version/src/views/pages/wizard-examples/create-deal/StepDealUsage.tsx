@@ -11,7 +11,7 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 const StepDealUsage = () => {
   return (
     <Grid container spacing={6}>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} sm={6}>
         <FormControl fullWidth>
           <InputLabel id='select-user-type'>User Type</InputLabel>
           <Select labelId='select-user-type' label='User Type' defaultValue=''>
@@ -23,16 +23,16 @@ const StepDealUsage = () => {
           </Select>
         </FormControl>
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} sm={6}>
         <TextField fullWidth type='number' label='Max Users' placeholder='500' />
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} sm={6}>
         <TextField fullWidth type='number' label='Minimum Cart Amount' placeholder='$99' />
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} sm={6}>
         <TextField fullWidth type='number' label='Promotion Fee' placeholder='$9' />
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} sm={6}>
         <FormControl fullWidth>
           <InputLabel id='select-payment-method'>Payment Method</InputLabel>
           <Select labelId='select-payment-method' label='Payment Method' defaultValue=''>
@@ -44,7 +44,7 @@ const StepDealUsage = () => {
           </Select>
         </FormControl>
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} sm={6}>
         <FormControl fullWidth>
           <InputLabel id='select-deal-status'>Deal Status</InputLabel>
           <Select labelId='select-deal-status' label='Deal Status' defaultValue=''>

@@ -108,10 +108,16 @@ const TabConnections = () => {
               return (
                 <Box
                   key={account.title}
-                  sx={{ display: 'flex', justifyContent: 'space-between', '&:not(:last-of-type)': { mb: 4 } }}
+                  sx={{
+                    gap: 2,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    '&:not(:last-of-type)': { mb: 4 }
+                  }}
                 >
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Box sx={{ mr: 4 }}>
+                    <Box sx={{ mr: 4, display: 'flex', justifyContent: 'center' }}>
                       <img src={account.logo} alt={account.title} height='30' width='30' />
                     </Box>
                     <div>
@@ -142,6 +148,7 @@ const TabConnections = () => {
                 <Box
                   key={account.title}
                   sx={{
+                    gap: 2,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
@@ -149,7 +156,7 @@ const TabConnections = () => {
                   }}
                 >
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Box sx={{ mr: 4, minWidth: 40 }}>
+                    <Box sx={{ mr: 4, minWidth: 45, display: 'flex', justifyContent: 'center' }}>
                       <img src={account.logo} alt={account.title} height='30' />
                     </Box>
                     <div>

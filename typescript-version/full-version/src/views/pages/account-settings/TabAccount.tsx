@@ -100,9 +100,9 @@ const TabAccount = () => {
       {/* Account Details Card */}
       <Grid item xs={12}>
         <Card>
-          <CardHeader title='Account Details' sx={{ pb: 0 }} />
+          <CardHeader title='Account Details' />
           <form>
-            <CardContent>
+            <CardContent sx={{ pt: 0 }}>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <ImgStyled src={imgSrc} alt='Profile Pic' />
                 <div>

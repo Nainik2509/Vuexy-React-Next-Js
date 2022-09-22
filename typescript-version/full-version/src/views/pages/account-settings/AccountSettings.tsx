@@ -10,8 +10,9 @@ import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import TabPanel from '@mui/lab/TabPanel'
 import TabContext from '@mui/lab/TabContext'
-import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
+import { styled, Theme } from '@mui/material/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import MuiTabList, { TabListProps } from '@mui/lab/TabList'
 import CircularProgress from '@mui/material/CircularProgress'
 
@@ -37,9 +38,12 @@ const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
     color: `${theme.palette.common.white} !important`
   },
   '& .MuiTab-root': {
+    minWidth: 65,
     minHeight: 38,
-    minWidth: 130,
-    borderRadius: theme.shape.borderRadius
+    borderRadius: theme.shape.borderRadius,
+    [theme.breakpoints.up('md')]: {
+      minWidth: 130
+    }
   }
 }))
 
@@ -50,6 +54,7 @@ const AccountSettings = ({ tab, apiPricingPlanData }: { tab: string; apiPricingP
 
   // ** Hooks
   const router = useRouter()
+  const hideText = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
 
   const handleChange = (event: SyntheticEvent, value: string) => {
     setIsLoading(true)
@@ -81,45 +86,45 @@ const AccountSettings = ({ tab, apiPricingPlanData }: { tab: string; apiPricingP
                 <Tab
                   value='account'
                   label={
-                    <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', ...(!hideText && { '& svg': { mr: 2 } }) }}>
                       <Icon icon='mdi:account-outline' />
-                      Account
+                      {!hideText && 'Account'}
                     </Box>
                   }
                 />
                 <Tab
                   value='security'
                   label={
-                    <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', ...(!hideText && { '& svg': { mr: 2 } }) }}>
                       <Icon icon='mdi:lock-open-outline' />
-                      Security
+                      {!hideText && 'Security'}
                     </Box>
                   }
                 />
                 <Tab
                   value='billing'
                   label={
-                    <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', ...(!hideText && { '& svg': { mr: 2 } }) }}>
                       <Icon icon='mdi:bookmark-outline' />
-                      Billing
+                      {!hideText && 'Billing'}
                     </Box>
                   }
                 />
                 <Tab
                   value='notifications'
                   label={
-                    <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', ...(!hideText && { '& svg': { mr: 2 } }) }}>
                       <Icon icon='mdi:bell-outline' />
-                      Notifications
+                      {!hideText && 'Notifications'}
                     </Box>
                   }
                 />
                 <Tab
                   value='connections'
                   label={
-                    <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', ...(!hideText && { '& svg': { mr: 2 } }) }}>
                       <Icon icon='mdi:link-variant' />
-                      Connections
+                      {!hideText && 'Connections'}
                     </Box>
                   }
                 />

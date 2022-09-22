@@ -73,7 +73,7 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
           </TabList>
           <Grid container sx={{ mt: 5 }}>
             <Grid item md={8} xs={12}>
-              <TabPanel value='cc'>
+              <TabPanel value='cc' sx={{ p: 0 }}>
                 <Grid container spacing={4}>
                   <Grid item xs={12}>
                     <TextField fullWidth type='number' label='Card Number' placeholder='1356 3215 6548 7898' />
@@ -119,7 +119,7 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
                   </Grid>
                 </Grid>
               </TabPanel>
-              <TabPanel value='cod'>
+              <TabPanel value='cod' sx={{ p: 0 }}>
                 <Typography sx={{ mb: 4 }}>
                   Cash on Delivery is a type of payment method where the recipient make payment for the order at the
                   time of delivery rather than in advance.
@@ -128,7 +128,7 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
                   Pay On Delivery
                 </Button>
               </TabPanel>
-              <TabPanel value='gc'>
+              <TabPanel value='gc' sx={{ p: 0 }}>
                 <Typography sx={{ mb: 4, fontWeight: 500 }}>Enter Gift Card Details</Typography>
                 <Grid container spacing={4}>
                   <Grid item xs={12}>

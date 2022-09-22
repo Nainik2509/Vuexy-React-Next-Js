@@ -101,7 +101,7 @@ const ChangePasswordCard = () => {
       <CardContent>
         <form onSubmit={handleSubmit(onPasswordFormSubmit)}>
           <Grid container spacing={6}>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} sm={6}>
               <FormControl fullWidth>
                 <InputLabel htmlFor='input-current-password' error={Boolean(errors.currentPassword)}>
                   Current Password
@@ -139,7 +139,7 @@ const ChangePasswordCard = () => {
             </Grid>
           </Grid>
           <Grid container spacing={6} sx={{ mt: 0 }}>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} sm={6}>
               <FormControl fullWidth>
                 <InputLabel htmlFor='input-new-password' error={Boolean(errors.newPassword)}>
                   New Password
@@ -175,7 +175,7 @@ const ChangePasswordCard = () => {
                 )}
               </FormControl>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} sm={6}>
               <FormControl fullWidth>
                 <InputLabel htmlFor='input-confirm-new-password' error={Boolean(errors.confirmNewPassword)}>
                   Confirm New Password

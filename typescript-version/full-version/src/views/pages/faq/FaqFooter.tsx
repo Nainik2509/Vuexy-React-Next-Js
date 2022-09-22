@@ -24,12 +24,7 @@ const StyledBox1 = styled(Box)<BoxProps>(({ theme }) => ({
   alignItems: 'center',
   flexDirection: 'column',
   padding: theme.spacing(6.5, 6),
-  marginRight: theme.spacing(3.125),
-  backgroundColor: `rgba(${theme.palette.customColors.main}, 0.04)`,
-  [theme.breakpoints.down('md')]: {
-    marginRight: 0,
-    marginBottom: theme.spacing(3.125)
-  }
+  backgroundColor: `rgba(${theme.palette.customColors.main}, 0.04)`
 }))
 
 // Styled Box component
@@ -39,28 +34,21 @@ const StyledBox2 = styled(Box)<BoxProps>(({ theme }) => ({
   alignItems: 'center',
   flexDirection: 'column',
   padding: theme.spacing(6.5, 6),
-  marginLeft: theme.spacing(3.125),
-  backgroundColor: `rgba(${theme.palette.customColors.main}, 0.04)`,
-  [theme.breakpoints.down('md')]: {
-    marginLeft: 0,
-    marginTop: theme.spacing(3.125)
-  }
+  backgroundColor: `rgba(${theme.palette.customColors.main}, 0.04)`
 }))
 
 const FaqFooter = () => {
   return (
-    <Box sx={{ mt: 13 }}>
-      <Box sx={{ textAlign: 'center' }}>
-        <CustomChip rounded size='small' skin='light' color='primary' label='Question' />
-        <Typography variant='h6' sx={{ mt: 1.5, mb: 2 }}>
-          You still have a question?
-        </Typography>
-        <Typography sx={{ mb: 11, color: 'text.secondary' }}>
-          If you cannot find a question in our FAQ, you can always contact us. We will answer to you shortly!
-        </Typography>
-      </Box>
+    <Box sx={{ mt: 13, textAlign: 'center' }}>
+      <CustomChip rounded size='small' skin='light' color='primary' label='Question' />
+      <Typography variant='h5' sx={{ mt: 1.5, mb: 2 }}>
+        You still have a question?
+      </Typography>
+      <Typography sx={{ mb: 10, color: 'text.secondary' }}>
+        If you cannot find a question in our FAQ, you can always contact us. We will answer to you shortly!
+      </Typography>
 
-      <Grid container>
+      <Grid container spacing={6}>
         <Grid item xs={12} md={6}>
           <StyledBox1>
             <CustomAvatar skin='light' variant='rounded' sx={{ mt: 1.5, height: 38, width: 38 }}>

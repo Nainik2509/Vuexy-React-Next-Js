@@ -19,21 +19,23 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogActions from '@mui/material/DialogActions'
 import LinearProgress from '@mui/material/LinearProgress'
 
-// ** Custom Components Imports
-import CustomChip from 'src/@core/components/mui/chip'
-import PlanDetails from 'src/@core/components/plan-details'
-
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
 
 // ** Types
 import { PricingPlanType } from 'src/@core/components/plan-details/types'
 
+// ** Custom Components Imports
+import CustomChip from 'src/@core/components/mui/chip'
+
+// ** Component Import
+import PricingPlans from 'src/views/pages/pricing/PricingPlans'
+
 const CurrentPlanCard = ({ data }: { data: PricingPlanType[] }) => {
   // ** State
   const [open, setOpen] = useState<boolean>(false)
   const [userInput, setUserInput] = useState<string>('yes')
-  const [plan, setPlan] = useState<'monthly' | 'annually'>('monthly')
+  const [plan, setPlan] = useState<'monthly' | 'annually'>('annually')
   const [secondDialogOpen, setSecondDialogOpen] = useState<boolean>(false)
   const [openPricingDialog, setOpenPricingDialog] = useState<boolean>(false)
 
@@ -55,23 +57,13 @@ const CurrentPlanCard = ({ data }: { data: PricingPlanType[] }) => {
     setSecondDialogOpen(true)
   }
 
-  const renderPlan = () => {
-    return data?.map((item: PricingPlanType) => {
-      return (
-        <Grid item xs={12} md={4} key={item.title.toLowerCase()}>
-          <PlanDetails plan={plan} data={item} />
-        </Grid>
-      )
-    })
-  }
-
   return (
     <>
       <Card>
         <CardHeader title='Current Plan' />
         <CardContent>
           <Grid container spacing={6}>
-            <Grid item xs={12} lg={6}>
+            <Grid item xs={12} md={6}>
               <Box sx={{ mb: 6 }}>
                 <Typography sx={{ mb: 2, fontWeight: 500 }}>Your Current Plan is Basic</Typography>
                 <Typography sx={{ color: 'text.secondary' }}>A simple start for everyone</Typography>
@@ -90,7 +82,7 @@ const CurrentPlanCard = ({ data }: { data: PricingPlanType[] }) => {
                 <Typography sx={{ color: 'text.secondary' }}>Standard plan for small to medium businesses</Typography>
               </div>
             </Grid>
-            <Grid item xs={12} lg={6}>
+            <Grid item xs={12} md={6}>
               <Alert severity='warning' icon={false} sx={{ mb: 6 }}>
                 <AlertTitle sx={{ fontWeight: 700 }}>We need your attention!</AlertTitle>
                 Your plan requires update
@@ -214,9 +206,7 @@ const CurrentPlanCard = ({ data }: { data: PricingPlanType[] }) => {
               Annually
             </InputLabel>
           </Box>
-          <Grid container spacing={6}>
-            {renderPlan()}
-          </Grid>
+          <PricingPlans data={data} plan={plan} />
         </DialogContent>
       </Dialog>
     </>

@@ -71,13 +71,13 @@ const StepDealDetails = () => {
 
   return (
     <Grid container spacing={6}>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} sm={6}>
         <TextField fullWidth label='Deal Title' placeholder='Black Friday sale, 25% off' />
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} sm={6}>
         <TextField fullWidth label='Deal Code' placeholder='25PEROFF' />
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} sm={6}>
         <TextField
           fullWidth
           multiline
@@ -86,7 +86,7 @@ const StepDealDetails = () => {
           placeholder='To sell or distribute something as a business deal'
         />
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} sm={6}>
         <FormControl fullWidth sx={{ mb: 4 }}>
           <InputLabel id='select-offered-items'>Offered Items</InputLabel>
           <Select
@@ -119,7 +119,7 @@ const StepDealDetails = () => {
           </Select>
         </FormControl>
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} sm={6}>
         <DatePicker
           selectsRange
           endDate={endDate}
@@ -133,7 +133,7 @@ const StepDealDetails = () => {
           }
         />
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} sm={6}>
         <FormControl component='fieldset'>
           <FormLabel component='legend'>Notify Users</FormLabel>
           <FormGroup aria-label='position' row>

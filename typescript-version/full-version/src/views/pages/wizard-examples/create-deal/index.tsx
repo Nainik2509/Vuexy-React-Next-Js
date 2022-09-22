@@ -59,7 +59,7 @@ const Stepper = styled(MuiStepper)<StepperProps>(({ theme }) => ({
   '& .MuiStep-root:not(:last-of-type) .MuiStepLabel-root': {
     paddingBottom: theme.spacing(5)
   },
-  [theme.breakpoints.down('lg')]: {
+  [theme.breakpoints.down('md')]: {
     minWidth: 0
   }
 }))
@@ -89,7 +89,7 @@ const StepLabel = styled(MuiStepLabel)<StepLabelProps>(({ theme }) => ({
 
 const StepperHeaderContainer = styled(CardContent)<CardContentProps>(({ theme }) => ({
   borderRight: `1px solid ${theme.palette.divider}`,
-  [theme.breakpoints.down('lg')]: {
+  [theme.breakpoints.down('md')]: {
     borderRight: 0,
     borderBottom: `1px solid ${theme.palette.divider}`
   }
@@ -155,7 +155,7 @@ const CreateDealWizard = () => {
   }
 
   return (
-    <Card sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' } }}>
+    <Card sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' } }}>
       <StepperHeaderContainer>
         <StepperWrapper sx={{ height: '100%' }}>
           <Stepper connector={<></>} activeStep={activeStep} orientation='vertical'>

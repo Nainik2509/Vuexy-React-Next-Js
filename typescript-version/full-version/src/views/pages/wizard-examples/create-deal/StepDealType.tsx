@@ -113,13 +113,13 @@ const StepDealType = () => {
           iconProps={icons[index].iconProps}
         />
       ))}
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} sm={6}>
         <FormControl fullWidth>
           <TextField type='number' label='Discount' placeholder='25' />
           <FormHelperText>Enter the discount percentage. 10 = 10%</FormHelperText>
         </FormControl>
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} sm={6}>
         <FormControl fullWidth>
           <InputLabel id='select-region'>Region</InputLabel>
           <Select

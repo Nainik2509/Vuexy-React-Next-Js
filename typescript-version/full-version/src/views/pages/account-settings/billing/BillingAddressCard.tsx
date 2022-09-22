@@ -41,7 +41,7 @@ const BillingAddressCard = () => {
       <CardContent>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Grid container spacing={6}>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} sm={6}>
               <FormControl fullWidth>
                 <Controller
                   name='companyName'
@@ -62,7 +62,7 @@ const BillingAddressCard = () => {
                 )}
               </FormControl>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} sm={6}>
               <FormControl fullWidth>
                 <Controller
                   control={control}
@@ -84,13 +84,13 @@ const BillingAddressCard = () => {
                 )}
               </FormControl>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} sm={6}>
               <TextField fullWidth label='TAX ID' placeholder='Enter TAX ID' />
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} sm={6}>
               <TextField fullWidth label='VAT Number' placeholder='Enter VAT Number' />
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} sm={6}>
               <TextField
                 fullWidth
                 type='number'
@@ -99,7 +99,7 @@ const BillingAddressCard = () => {
                 InputProps={{ startAdornment: <InputAdornment position='start'>US (+1)</InputAdornment> }}
               />
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} sm={6}>
               <FormControl fullWidth>
                 <InputLabel>Country</InputLabel>
                 <Select label='Country' defaultValue='australia'>
@@ -114,10 +114,10 @@ const BillingAddressCard = () => {
             <Grid item xs={12}>
               <TextField fullWidth label='Billing Address' placeholder='Billing Address' />
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} sm={6}>
               <TextField fullWidth label='State' placeholder='California' />
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} sm={6}>
               <TextField fullWidth type='number' label='Zip Code' placeholder='231465' />
             </Grid>
             <Grid item xs={12}>

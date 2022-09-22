@@ -33,7 +33,7 @@ const CreateApiKeyCard = () => {
         <Grid container spacing={5}>
           <Grid item xs={12} md={6}>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <FormControl fullWidth>
+              <FormControl fullWidth sx={{ mb: 5 }}>
                 <InputLabel>Choose The Api Key Type You Want To Create</InputLabel>
                 <Select label='Choose The Api Key Type You Want To Create' defaultValue=''>
                   <MenuItem value='full-control'>Full Control</MenuItem>
@@ -44,7 +44,7 @@ const CreateApiKeyCard = () => {
                   <MenuItem value='read-write'>Read Write</MenuItem>
                 </Select>
               </FormControl>
-              <FormControl fullWidth sx={{ my: 6 }}>
+              <FormControl fullWidth sx={{ mb: 5 }}>
                 <Controller
                   name='apiKeyName'
                   control={control}
@@ -68,12 +68,7 @@ const CreateApiKeyCard = () => {
             </form>
           </Grid>
 
-          <Grid
-            item
-            md={6}
-            xs={12}
-            sx={{ display: 'flex', mt: [7.5, 2.5], alignItems: 'center', justifyContent: 'center' }}
-          >
+          <Grid item md={6} xs={12} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <img width={183} alt='avatar' height={256} src='/images/pages/pose-m-1.png' />
           </Grid>
         </Grid>

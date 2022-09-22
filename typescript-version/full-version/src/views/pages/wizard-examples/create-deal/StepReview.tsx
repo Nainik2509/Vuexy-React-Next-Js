@@ -1,9 +1,13 @@
 // ** MUI Imports
-import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
+import Table from '@mui/material/Table'
 import Switch from '@mui/material/Switch'
+import TableRow from '@mui/material/TableRow'
+import TableBody from '@mui/material/TableBody'
+import TableCell from '@mui/material/TableCell'
 import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
+import TableContainer from '@mui/material/TableContainer'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
 // ** Custom Components Imports
@@ -25,35 +29,73 @@ const ReviewComplete = () => {
               Confirm your deal details information and submit to create it.
             </Typography>
           </Grid>
-          <Grid item xs={5} sm={3}>
-            <Typography sx={{ fontWeight: 700, color: 'text.secondary' }}>Deal Type</Typography>
-          </Grid>
-          <Grid item xs={7} sm={9}>
-            <Typography sx={{ color: 'text.secondary' }}>Percentage</Typography>
-          </Grid>
-          <Grid item xs={5} sm={3}>
-            <Typography sx={{ fontWeight: 700, color: 'text.secondary' }}>Amount</Typography>
-          </Grid>
-          <Grid item xs={7} sm={9}>
-            <Typography sx={{ color: 'text.secondary' }}>25%</Typography>
-          </Grid>
-          <Grid item xs={5} sm={3}>
-            <Typography sx={{ fontWeight: 700, color: 'text.secondary' }}>Deal Code</Typography>
-          </Grid>
-          <Grid item xs={7} sm={9}>
-            <CustomChip rounded size='small' skin='light' color='warning' label='25PEROFF' />
-          </Grid>
-          <Grid item xs={5} sm={3}>
-            <Typography sx={{ fontWeight: 700, color: 'text.secondary' }}>Deal Title</Typography>
-          </Grid>
-          <Grid item xs={7} sm={9}>
-            <Typography sx={{ color: 'text.secondary' }}>Black friday sale, 25% OFF</Typography>
-          </Grid>
-          <Grid item xs={5} sm={3}>
-            <Typography sx={{ fontWeight: 700, color: 'text.secondary' }}>Deal Duration</Typography>
-          </Grid>
-          <Grid item xs={7} sm={9}>
-            <Typography sx={{ color: 'text.secondary' }}>2021-07-14 to 2021-07-30</Typography>
+          <Grid item xs={12}>
+            <TableContainer>
+              <Table>
+                <TableBody
+                  sx={{
+                    '& .MuiTableCell-root': {
+                      borderBottom: 0,
+                      verticalAlign: 'top',
+                      '&:last-of-type': { px: '0 !important' },
+                      '&:first-of-type': { pl: '0 !important' },
+                      py: theme => `${theme.spacing(1)} !important`
+                    }
+                  }}
+                >
+                  <TableRow>
+                    <TableCell>
+                      <Typography noWrap sx={{ fontWeight: 700, color: 'text.secondary' }}>
+                        Deal Type
+                      </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Typography sx={{ color: 'text.secondary' }}>Percentage</Typography>
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>
+                      <Typography noWrap sx={{ fontWeight: 700, color: 'text.secondary' }}>
+                        Amount
+                      </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Typography sx={{ color: 'text.secondary' }}>25%</Typography>
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>
+                      <Typography noWrap sx={{ fontWeight: 700, color: 'text.secondary' }}>
+                        Deal Code
+                      </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <CustomChip rounded size='small' skin='light' color='warning' label='25PEROFF' />
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>
+                      <Typography noWrap sx={{ fontWeight: 700, color: 'text.secondary' }}>
+                        Deal Title
+                      </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Typography sx={{ color: 'text.secondary' }}>Black friday sale, 25% OFF</Typography>
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>
+                      <Typography noWrap sx={{ fontWeight: 700, color: 'text.secondary' }}>
+                        Deal Duration
+                      </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Typography sx={{ color: 'text.secondary' }}>2021-07-14 to 2021-07-30</Typography>
+                    </TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </TableContainer>
           </Grid>
           <Grid item xs={12}>
             <FormControlLabel
@@ -64,14 +106,17 @@ const ReviewComplete = () => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item xs={12} lg={6}>
-        <Box sx={{ display: 'flex', justifyContent: 'center', '& img': { maxWidth: '100%' } }}>
-          <img
-            width={350}
-            alt='review-illustration'
-            src={`/images/pages/girl-checkout-offer-${theme.palette.mode}.png`}
-          />
-        </Box>
+      <Grid
+        item
+        xs={12}
+        lg={6}
+        sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', '& img': { maxWidth: '100%' } }}
+      >
+        <img
+          width={350}
+          alt='review-illustration'
+          src={`/images/pages/girl-checkout-offer-${theme.palette.mode}.png`}
+        />
       </Grid>
     </Grid>
   )

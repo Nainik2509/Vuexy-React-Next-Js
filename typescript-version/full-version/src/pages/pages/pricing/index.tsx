@@ -49,7 +49,7 @@ const Pricing = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>) =>
     <Card>
       <CardContent>
         <PricingHeader plan={plan} handleChange={handleChange} />
-        <PricingPlans plan={plan} data={apiData} />
+        <PricingPlans plan={plan} data={apiData.pricingPlans} />
       </CardContent>
       <PricingCTA />
       <CardContent>

@@ -70,14 +70,14 @@ const Faqs = ({ data, activeTab, handleChange }: Props) => {
   const renderTabContent = () => {
     return Object.values(data.faqData).map(tab => {
       return (
-        <TabPanel key={tab.id} value={tab.id} sx={{ pt: 0, pl: { xs: 3, md: 12 }, width: '100%' }}>
+        <TabPanel key={tab.id} value={tab.id} sx={{ p: 6, pt: 0, width: '100%' }}>
           <Box key={tab.id}>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <CustomAvatar skin='light' variant='rounded' sx={{ height: 50, width: 50 }}>
-                <Icon icon={tab.icon} fontSize={35} />
+              <CustomAvatar skin='light' variant='rounded' sx={{ height: 42, width: 42 }}>
+                <Icon icon={tab.icon} fontSize={28} />
               </CustomAvatar>
               <Box sx={{ ml: 4 }}>
-                <Typography sx={{ fontWeight: 500, fontSize: '1.375rem', lineHeight: 1.1 }}>{tab.title}</Typography>
+                <Typography variant='h5'>{tab.title}</Typography>
                 <Typography sx={{ color: 'text.secondary' }}>{tab.subtitle}</Typography>
               </Box>
             </Box>
@@ -86,9 +86,7 @@ const Faqs = ({ data, activeTab, handleChange }: Props) => {
                 return (
                   <Accordion key={item.id}>
                     <AccordionSummary expandIcon={<Icon icon='mdi:chevron-down' />}>
-                      <Typography sx={{ fontWeight: '500' }}>
-                        Q{index + 1}: {item.question}
-                      </Typography>
+                      <Typography sx={{ fontWeight: '500' }}>{`Q${index + 1}: ${item.question}`}</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
                       <Typography sx={{ color: 'text.secondary' }}>{item.answer}</Typography>

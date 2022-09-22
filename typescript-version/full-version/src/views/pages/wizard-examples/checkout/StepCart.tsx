@@ -186,14 +186,10 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
         <Card sx={{ mb: 4, background: 'transparent', boxShadow: 'none', border: '1px solid', borderColor: 'divider' }}>
           <CardContent sx={{ p: 4 }}>
             <Typography sx={{ mb: 4, fontWeight: 500 }}>Offer</Typography>
-            <Grid container spacing={4} sx={{ mb: 4 }}>
-              <Grid item xl={8} xs={12}>
-                <TextField size='small' placeholder='Enter Promo Code' />
-              </Grid>
-              <Grid item xl={4} xs={12}>
-                <Button variant='outlined'>Apply</Button>
-              </Grid>
-            </Grid>
+            <Box sx={{ mb: 4, display: 'flex', alignItems: 'center' }}>
+              <TextField fullWidth sx={{ mr: 4 }} size='small' placeholder='Enter Promo Code' />
+              <Button variant='outlined'>Apply</Button>
+            </Box>
             <Box sx={{ p: 4, borderRadius: 1, backgroundColor: 'action.hover' }}>
               <Typography sx={{ mb: 4, fontWeight: 600, color: 'text.secondary' }}>
                 Buying gift for a loved one?

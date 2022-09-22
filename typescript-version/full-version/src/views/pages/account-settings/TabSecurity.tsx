@@ -175,7 +175,7 @@ const TabSecurity = () => {
                   </Box>
                   <Box sx={{ mb: 2, display: 'flex', alignItems: 'center' }}>
                     <Typography sx={{ mr: 3, color: 'text.secondary', fontWeight: 600 }}>{item.key}</Typography>
-                    <Box component='span' sx={{ cursor: 'pointer', color: 'text.secondary' }}>
+                    <Box component='span' sx={{ display: 'flex', cursor: 'pointer', color: 'text.secondary' }}>
                       <Icon icon='mdi:content-copy' fontSize='1rem' />
                     </Box>
                   </Box>

@@ -5,11 +5,11 @@ import Grid from '@mui/material/Grid'
 import PlanDetails from 'src/@core/components/plan-details'
 
 // ** Types
-import { PricingDataType, PricingPlanType } from 'src/@core/components/plan-details/types'
+import { PricingPlanType } from 'src/@core/components/plan-details/types'
 
 interface Props {
   plan: string
-  data: PricingDataType | null
+  data: PricingPlanType[] | null
 }
 
 const PricingPlans = (props: Props) => {
@@ -18,7 +18,7 @@ const PricingPlans = (props: Props) => {
 
   return (
     <Grid container spacing={6}>
-      {data?.pricingPlans.map((item: PricingPlanType) => (
+      {data?.map((item: PricingPlanType) => (
         <Grid item xs={12} md={4} key={item.title.toLowerCase()}>
           <PlanDetails plan={plan} data={item} />
         </Grid>

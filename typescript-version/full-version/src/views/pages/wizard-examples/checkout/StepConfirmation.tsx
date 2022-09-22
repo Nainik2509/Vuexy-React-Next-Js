@@ -172,7 +172,7 @@ const StepConfirmation = () => {
           </ListItem>
         </HorizontalList>
       </Grid>
-      <Grid item xs={12} lg={8} xl={9}>
+      <Grid item xs={12} md={8} xl={9}>
         <StyledList>
           <ListItem>
             <ListItemAvatar>
@@ -234,7 +234,7 @@ const StepConfirmation = () => {
           </ListItem>
         </StyledList>
       </Grid>
-      <Grid item xs={12} lg={4} xl={3}>
+      <Grid item xs={12} md={4} xl={3}>
         <Card
           sx={{ mt: 1.5, background: 'transparent', boxShadow: 'none', border: '1px solid', borderColor: 'divider' }}
         >
