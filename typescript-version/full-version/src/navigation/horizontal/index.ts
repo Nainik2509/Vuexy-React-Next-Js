@@ -311,11 +311,6 @@ const navigation = (): HorizontalNavItemsType => {
           icon: 'mdi:help-circle-outline'
         },
         {
-          icon: 'mdi:book-open-outline',
-          title: 'Knowledge Base',
-          path: '/pages/knowledge-base'
-        },
-        {
           title: 'Help Center',
           icon: 'mdi:help-circle-outline',
           path: '/pages/help-center',

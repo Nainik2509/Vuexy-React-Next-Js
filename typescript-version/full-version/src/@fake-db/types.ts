@@ -33,31 +33,6 @@ export type FaqType = {
   }
 }
 
-// Knowledge Base
-//-------------------------
-export type KnowledgeBaseData = {
-  desc: string
-  title: string
-  imgSrc: string
-  imgWidth: number
-  category: string
-  imgHeight: number
-}
-export type KnowledgeBaseCategoryQuestion = {
-  slug: string
-  question: string
-}
-export type KnowledgeBaseCategoryData = {
-  icon: string
-  title: string
-  iconColor?: ThemeColor
-  questions: KnowledgeBaseCategoryQuestion[]
-}
-export type KnowledgeBaseType = {
-  knowledgeBase: KnowledgeBaseData[]
-  knowledgeBaseCategory: KnowledgeBaseCategoryData[]
-}
-
 // Card Statistics Page
 //-------------------------------
 export type CardStatsHorizontalType = {

@@ -172,10 +172,6 @@ const navigation = (): VerticalNavItemsType => {
           path: '/pages/faq'
         },
         {
-          title: 'Knowledge Base',
-          path: '/pages/knowledge-base'
-        },
-        {
           title: 'Help Center',
           path: '/pages/help-center',
           meta: { activeLink: '/pages/help-center' }

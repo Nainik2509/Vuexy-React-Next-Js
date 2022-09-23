@@ -17,7 +17,6 @@ import './iconify-icons'
 import './app-bar-search'
 import './apps/permissions'
 import './pages/help-center'
-import './pages/knowledge-base'
 import './server-side-menu/vertical'
 import './server-side-menu/horizontal'
 

@@ -612,7 +612,6 @@ const data: Data = {
   ]
 }
 
-// Knowledge Base
 mock.onGet('/pages/help-center/landing').reply(() => {
   const allArticles: HelpCenterSubcategoryArticlesType[] = []
 
