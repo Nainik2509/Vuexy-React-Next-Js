@@ -50,11 +50,11 @@ const RatingsCustomized = () => {
         <Typography sx={{ fontWeight: 500 }}>Custom icon and color</Typography>
         <Rating
           precision={0.5}
-          emptyIcon={null}
           defaultValue={3}
           name='customized-color'
           sx={{ color: 'error.main' }}
           icon={<Icon icon='mdi:heart' />}
+          emptyIcon={<Icon icon='mdi:heart' />}
         />
       </Box>
       <Box sx={{ mb: 3 }}>

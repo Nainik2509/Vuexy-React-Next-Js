@@ -41,11 +41,11 @@ const Swiper = () => {
     <KeenSliderWrapper>
       <Grid container spacing={6} className='match-height'>
         <PageHeader
-          subtitle={<Typography variant='body2'>Swiper is the most modern free mobile touch slider.</Typography>}
+          subtitle={<Typography variant='body2'>Easily create sliders, carousels and much more</Typography>}
           title={
             <Typography variant='h5'>
-              <Link href='https://swiperjs.com/react' target='_blank'>
-                Swiper
+              <Link href='https://github.com/rcbyr/keen-slider' target='_blank'>
+                Keen Slider
               </Link>
             </Typography>
           }

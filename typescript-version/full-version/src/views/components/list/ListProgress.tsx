@@ -28,17 +28,9 @@ const StyledList = styled(List)<ListProps>(({ theme }) => ({
       borderBottom: 0
     },
     '& .MuiListItemText-root': {
-      marginTop: 0,
-      marginBottom: theme.spacing(2),
+      margin: theme.spacing(0, 0, 2),
       '& .MuiTypography-root': {
         fontWeight: 500
-      }
-    },
-    '& .MuiLinearProgress-root': {
-      height: 5,
-      borderRadius: 8,
-      '& .MuiLinearProgress-bar': {
-        borderRadius: 8
       }
     }
   }
@@ -55,7 +47,7 @@ const ListProgress = () => {
         </ListItemAvatar>
         <Box sx={{ width: '100%' }}>
           <ListItemText primary='React is a JavaScript library for building user interfaces' />
-          <LinearProgress color='info' value={90} variant='determinate' />
+          <LinearProgress color='info' value={90} sx={{ height: 5 }} variant='determinate' />
         </Box>
       </ListItem>
       <ListItem>
@@ -66,7 +58,7 @@ const ListProgress = () => {
         </ListItemAvatar>
         <Box sx={{ width: '100%' }}>
           <ListItemText primary='Bootstrap is an open source toolkit' />
-          <LinearProgress value={75} variant='determinate' />
+          <LinearProgress value={75} sx={{ height: 5 }} variant='determinate' />
         </Box>
       </ListItem>
       <ListItem>
@@ -77,7 +69,7 @@ const ListProgress = () => {
         </ListItemAvatar>
         <Box sx={{ width: '100%' }}>
           <ListItemText primary='Vue.js is the Progressive JavaScript Framework' />
-          <LinearProgress color='success' value={85} variant='determinate' />
+          <LinearProgress color='success' value={85} sx={{ height: 5 }} variant='determinate' />
         </Box>
       </ListItem>
       <ListItem>
@@ -88,7 +80,7 @@ const ListProgress = () => {
         </ListItemAvatar>
         <Box sx={{ width: '100%' }}>
           <ListItemText primary='Angular implements Functional Programming concepts' />
-          <LinearProgress color='error' value={60} variant='determinate' />
+          <LinearProgress color='error' value={60} sx={{ height: 5 }} variant='determinate' />
         </Box>
       </ListItem>
       <ListItem>
@@ -99,7 +91,7 @@ const ListProgress = () => {
         </ListItemAvatar>
         <Box sx={{ width: '100%' }}>
           <ListItemText primary='JavaScript is the programming language of the Web' />
-          <LinearProgress color='warning' value={70} variant='determinate' />
+          <LinearProgress color='warning' value={70} sx={{ height: 5 }} variant='determinate' />
         </Box>
       </ListItem>
     </StyledList>

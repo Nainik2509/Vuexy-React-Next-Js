@@ -103,7 +103,7 @@ const Connections = ({ data }: { data: ConnectionsTabType[] }) => {
                       >
                         {item.isConnected ? 'Connected' : 'Connect'}
                       </Button>
-                      <Button variant='outlined' color='secondary' sx={{ px: 0, minWidth: 38 }}>
+                      <Button variant='outlined' color='secondary' sx={{ p: 1.5, minWidth: 38 }}>
                         <Icon icon='mdi:email-outline' />
                       </Button>
                     </Box>

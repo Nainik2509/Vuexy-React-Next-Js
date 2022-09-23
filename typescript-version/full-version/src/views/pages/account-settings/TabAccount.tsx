@@ -85,9 +85,7 @@ const TabAccount = () => {
     const reader = new FileReader()
     const { files } = file.target as HTMLInputElement
     if (files && files.length !== 0) {
-      reader.onload = () => {
-        setImgSrc(reader.result as string)
-      }
+      reader.onload = () => setImgSrc(reader.result as string)
       reader.readAsDataURL(files[0])
 
       if (reader.result !== null) {

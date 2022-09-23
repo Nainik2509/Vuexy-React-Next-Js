@@ -115,17 +115,10 @@ const HelpCenterArticle = ({ articles, activeArticle, activeSubcategory }: Props
             <Typography variant='h6'>{activeArticle.title}</Typography>
           </Box>
 
-          <Box sx={{ 'p, .MuiTypography-root': { color: 'text.secondary' } }}>
-            <div dangerouslySetInnerHTML={{ __html: activeArticle.content }} />
-            <Typography sx={{ mb: 4 }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quod explicabo quia delectus autem maxime
-              dignissimos omnis nihil perspiciatis! Vel rem sequi minima sed qui reprehenderit culpa autem sunt nam.
-            </Typography>
-            <Typography>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quod explicabo quia delectus autem maxime
-              dignissimos omnis nihil perspiciatis! Vel rem sequi minima sed qui reprehenderit culpa autem sunt nam.
-            </Typography>
-          </Box>
+          <Box
+            sx={{ '& p': { color: 'text.secondary' } }}
+            dangerouslySetInnerHTML={{ __html: activeArticle.content }}
+          />
         </CardContent>
         <Divider sx={{ m: '0 !important' }} />
         <CardContent
@@ -143,11 +136,11 @@ const HelpCenterArticle = ({ articles, activeArticle, activeSubcategory }: Props
             </Typography>
             <Typography sx={{ mb: 4, color: 'text.secondary' }}>55 People found this helpful</Typography>
             <div>
-              <Button variant='outlined' sx={{ mr: 2.5, p: 2, minWidth: 30 }}>
-                <Icon fontSize={14} icon='mdi:thumbs-up-outline' />
+              <Button variant='outlined' sx={{ mr: 2.5, p: 1.5, minWidth: 32 }}>
+                <Icon fontSize={18} icon='mdi:thumbs-up-outline' />
               </Button>
-              <Button variant='outlined' sx={{ p: 2, minWidth: 30 }}>
-                <Icon fontSize={14} icon='mdi:thumbs-down-outline' />
+              <Button variant='outlined' sx={{ p: 1.5, minWidth: 32 }}>
+                <Icon fontSize={18} icon='mdi:thumbs-down-outline' />
               </Button>
             </div>
           </div>

@@ -68,8 +68,8 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
                     <Button
                       size='small'
                       color='primary'
-                      sx={{ minWidth: 28, p: theme => `${theme.spacing(1.25, 1)} !important` }}
                       variant={connection.isFriend ? 'contained' : 'outlined'}
+                      sx={{ minWidth: 38, p: theme => `${theme.spacing(1.5)} !important` }}
                     >
                       <Icon icon='mdi:account-outline' />
                     </Button>

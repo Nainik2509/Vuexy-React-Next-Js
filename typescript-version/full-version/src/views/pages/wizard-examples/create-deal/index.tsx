@@ -67,6 +67,7 @@ const Stepper = styled(MuiStepper)<StepperProps>(({ theme }) => ({
 const StepLabel = styled(MuiStepLabel)<StepLabelProps>(({ theme }) => ({
   '& .MuiStepLabel-label': {
     display: 'flex',
+    cursor: 'pointer',
     '& .step-title, & .step-subtitle, & .MuiAvatar-root svg': {
       color: theme.palette.text.secondary
     },
@@ -164,10 +165,7 @@ const CreateDealWizard = () => {
                 <Step
                   key={index}
                   onClick={() => setActiveStep(index)}
-                  sx={{
-                    cursor: 'pointer',
-                    '&.Mui-completed + svg': { color: 'primary.main' }
-                  }}
+                  sx={{ '&.Mui-completed + svg': { color: 'primary.main' } }}
                 >
                   <StepLabel icon={<></>}>
                     <CustomAvatar

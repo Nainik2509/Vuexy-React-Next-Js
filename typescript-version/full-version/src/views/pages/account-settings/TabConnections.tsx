@@ -179,7 +179,7 @@ const TabConnections = () => {
                   </Box>
                   <Button
                     variant='outlined'
-                    sx={{ p: 1.5, minWidth: 0 }}
+                    sx={{ p: 1.5, minWidth: 38 }}
                     color={account.isConnected ? 'error' : 'secondary'}
                   >
                     <Icon icon={account.isConnected ? 'mdi:delete-outline' : 'mdi:link-variant'} />
