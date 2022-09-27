@@ -22,7 +22,7 @@ export const getStaticPaths: GetStaticPaths = () => {
       { params: { tab: 'projects' } },
       { params: { tab: 'connections' } }
     ],
-    fallback: true
+    fallback: false
   }
 }
 

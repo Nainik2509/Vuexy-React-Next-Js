@@ -23,7 +23,7 @@ export const getStaticPaths: GetStaticPaths = () => {
       { params: { tab: 'notification' } },
       { params: { tab: 'connection' } }
     ],
-    fallback: true
+    fallback: false
   }
 }
 
