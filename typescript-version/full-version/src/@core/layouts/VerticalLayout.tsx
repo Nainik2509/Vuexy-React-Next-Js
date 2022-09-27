@@ -58,7 +58,6 @@ const VerticalLayout = (props: LayoutProps) => {
   const collapsedNavWidth = collapsedNavigationSize
 
   // ** States
-  const [navHover, setNavHover] = useState<boolean>(false)
   const [navVisible, setNavVisible] = useState<boolean>(false)
 
   // ** Toggle Functions
@@ -73,9 +72,7 @@ const VerticalLayout = (props: LayoutProps) => {
         !(navHidden && settings.lastLayout === 'horizontal') ? null : (
           <Navigation
             navWidth={navWidth}
-            navHover={navHover}
             navVisible={navVisible}
-            setNavHover={setNavHover}
             setNavVisible={setNavVisible}
             collapsedNavWidth={collapsedNavWidth}
             toggleNavVisibility={toggleNavVisibility}

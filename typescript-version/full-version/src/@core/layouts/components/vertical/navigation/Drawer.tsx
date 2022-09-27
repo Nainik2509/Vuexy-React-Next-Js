@@ -95,10 +95,14 @@ const Drawer = (props: Props) => {
     onOpen: () => null,
     onClose: () => null,
     onMouseEnter: () => {
-      setNavHover(true)
+      if (navCollapsed) {
+        setNavHover(true)
+      }
     },
     onMouseLeave: () => {
-      setNavHover(false)
+      if (navCollapsed) {
+        setNavHover(false)
+      }
     }
   }
 

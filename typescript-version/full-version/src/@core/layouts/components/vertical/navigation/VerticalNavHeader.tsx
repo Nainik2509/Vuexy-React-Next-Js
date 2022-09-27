@@ -86,9 +86,9 @@ const VerticalNavHeader = (props: Props) => {
     }
   }
 
-  const MenuLockedIcon = () => userMenuLockedIcon || <Icon icon='mdi:record-circle-outline' />
+  const MenuLockedIcon = () => userMenuLockedIcon || <Icon icon='mdi:radiobox-marked' />
 
-  const MenuUnlockedIcon = () => userMenuUnlockedIcon || <Icon icon='mdi:circle-outline' />
+  const MenuUnlockedIcon = () => userMenuUnlockedIcon || <Icon icon='mdi:radiobox-blank' />
 
   return (
     <MenuHeaderWrapper className='nav-header' sx={{ pl: menuHeaderPaddingLeft() }}>

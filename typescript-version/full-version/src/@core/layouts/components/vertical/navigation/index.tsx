@@ -24,7 +24,6 @@ import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 
 interface Props {
   navWidth: number
-  navHover: boolean
   navVisible: boolean
   collapsedNavWidth: number
   hidden: LayoutProps['hidden']
@@ -32,7 +31,6 @@ interface Props {
   toggleNavVisibility: () => void
   settings: LayoutProps['settings']
   children: LayoutProps['children']
-  setNavHover: (values: boolean) => void
   setNavVisible: (value: boolean) => void
   saveSettings: LayoutProps['saveSettings']
   navMenuContent: LayoutProps['verticalLayoutProps']['navMenu']['content']
@@ -64,6 +62,7 @@ const Navigation = (props: Props) => {
   const { hidden, settings, afterNavMenuContent, beforeNavMenuContent, navMenuContent: userNavMenuContent } = props
 
   // ** States
+  const [navHover, setNavHover] = useState<boolean>(false)
   const [groupActive, setGroupActive] = useState<string[]>([])
   const [currentActiveGroup, setCurrentActiveGroup] = useState<string[]>([])
 
@@ -132,8 +131,8 @@ const Navigation = (props: Props) => {
   const ScrollWrapper = hidden ? Box : PerfectScrollbar
 
   return (
-    <Drawer {...props}>
-      <VerticalNavHeader {...props} />
+    <Drawer {...props} navHover={navHover} setNavHover={setNavHover}>
+      <VerticalNavHeader {...props} navHover={navHover} />
       {beforeNavMenuContent && beforeVerticalNavMenuContentPosition === 'fixed' ? beforeNavMenuContent(props) : null}
       {(beforeVerticalNavMenuContentPosition === 'static' || !beforeNavMenuContent) && (
         <StyledBoxForShadow ref={shadowRef} sx={{ background: shadowBgColor() }} />
@@ -160,6 +159,7 @@ const Navigation = (props: Props) => {
           ) : (
             <List className='nav-items' sx={{ pt: 0, '& > :first-child': { mt: '0' } }}>
               <VerticalNavItems
+                navHover={navHover}
                 groupActive={groupActive}
                 setGroupActive={setGroupActive}
                 currentActiveGroup={currentActiveGroup}
