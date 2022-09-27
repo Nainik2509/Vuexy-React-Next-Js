@@ -1,9 +1,16 @@
 // ** MUI Imports
 import { Theme } from '@mui/material/styles'
 
+// ** Hook Import
+import { useSettings } from 'src/@core/hooks/useSettings'
+
 const GlobalStyles = (theme: Theme) => {
+  // ** Hook & Var
+  const { settings } = useSettings()
+  const { mode } = settings
+
   const perfectScrollbarThumbBgColor = () => {
-    if (theme.palette.mode === 'light') {
+    if (mode === 'light') {
       return '#C2C4D1 !important'
     } else {
       return '#504B6D !important'
