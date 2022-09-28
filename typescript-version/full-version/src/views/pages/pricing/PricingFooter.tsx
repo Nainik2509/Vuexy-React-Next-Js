@@ -20,13 +20,13 @@ interface Props {
 }
 
 const Accordion = styled(MuiAccordion)<AccordionProps>(({ theme }) => ({
-  border: `1px solid ${theme.palette.divider}`,
-  '&:before': {
-    height: 0
-  },
-  '&.Mui-expanded': {
-    boxShadow: 'none'
-  }
+  '&:before': { display: 'none' },
+  boxShadow: `${theme.shadows[0]} !important`,
+  borderLeft: `1px solid ${theme.palette.divider}`,
+  borderRight: `1px solid ${theme.palette.divider}`,
+  borderBottom: `1px solid ${theme.palette.divider}`,
+  '&:first-of-type': { borderTop: `1px solid ${theme.palette.divider}` },
+  '&.Mui-expanded + .MuiAccordion-root': { borderTop: `1px solid ${theme.palette.divider}` }
 }))
 
 const PricingFooter = (props: Props) => {
