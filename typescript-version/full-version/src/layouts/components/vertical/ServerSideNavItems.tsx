@@ -19,7 +19,7 @@ const ServerSideNavItems = () => {
     })
   }, [])
 
-  return menuItems
+  return { menuItems }
 }
 
 export default ServerSideNavItems
