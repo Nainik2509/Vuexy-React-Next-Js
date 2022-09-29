@@ -33,7 +33,7 @@ const Home = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  return <Spinner />
+  return <Spinner sx={{ height: '100%' }} />
 }
 
 export default Home
