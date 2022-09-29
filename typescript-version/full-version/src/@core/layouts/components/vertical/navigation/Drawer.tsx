@@ -57,26 +57,18 @@ const Drawer = (props: Props) => {
   // ** Vars
   const { mode, navCollapsed } = settings
 
-  const drawerColor = () => {
+  const drawerColors = () => {
     if (mode === 'semi-dark') {
       return {
+        backgroundColor: 'customColors.darkBg',
         '& .MuiTypography-root, & svg': {
           color: `rgba(${theme.palette.customColors.dark}, 0.87)`
         }
       }
-    } else return {}
-  }
-
-  const drawerBgColor = () => {
-    if (mode === 'semi-dark') {
-      return {
-        backgroundColor: 'customColors.darkBg'
-      }
-    } else {
+    } else
       return {
         backgroundColor: 'background.default'
       }
-    }
   }
 
   // Drawer Props for Mobile & Tablet screens
@@ -89,20 +81,16 @@ const Drawer = (props: Props) => {
     }
   }
 
-  // Drawer Props for Desktop screens
+  // Drawer Props for Laptop & Desktop screens
   const DesktopDrawerProps = {
     open: true,
     onOpen: () => null,
     onClose: () => null,
     onMouseEnter: () => {
-      if (navCollapsed) {
-        setNavHover(true)
-      }
+      setNavHover(true)
     },
     onMouseLeave: () => {
-      if (navCollapsed) {
-        setNavHover(false)
-      }
+      setNavHover(false)
     }
   }
 
@@ -125,8 +113,7 @@ const Drawer = (props: Props) => {
       {...(hidden ? { ...MobileDrawerProps } : { ...DesktopDrawerProps })}
       PaperProps={{
         sx: {
-          ...drawerColor(),
-          ...drawerBgColor(),
+          ...drawerColors(),
           width: navCollapsed && !navHover ? collapsedNavWidth : navWidth,
           ...userNavMenuPaperStyle
         },
