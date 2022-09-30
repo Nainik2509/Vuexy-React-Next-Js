@@ -26,12 +26,16 @@ interface Props {
 }
 
 const UserLayout = ({ children }: Props) => {
+
+  // ** Vars for server side navigation
+  const { menuItems: verticalMenuItems } = ServerSideVerticalNavItems()
+
   return (
     <Layout
       {...} // other props
       verticalLayoutProps={{
         navMenu: {
-          navItems: ServerSideVerticalNavItems()
+          navItems: verticalMenuItems
         }
       }}
     >
@@ -51,12 +55,16 @@ import Layout from 'src/@core/layouts/Layout'
 import ServerSideVerticalNavItems from 'src/layouts/components/vertical/ServerSideNavItems.tsx'
 
 const UserLayout = ({ children }) => {
+  
+  // ** Vars for server side navigation
+  const { menuItems: verticalMenuItems } = ServerSideVerticalNavItems()
+  
   return (
     <Layout
       {...} // other props
       verticalLayoutProps={{
         navMenu: {
-          navItems: ServerSideVerticalNavItems()
+          navItems: verticalMenuItems
         }
       }}
     >
@@ -96,18 +104,23 @@ interface Props {
 }
 
 const UserLayout = ({ children }: Props) => {
+
+  // ** Vars for server side navigation
+  const { menuItems: verticalMenuItems } = ServerSideVerticalNavItems()
+  const { menuItems: horizontalMenuItems } = ServerSideHorizontalNavItems()
+
   return (
     <Layout
       {...} // other props
       verticalLayoutProps={{
         navMenu: {
-          navItems: ServerSideVerticalNavItems()
+          navItems: verticalMenuItems
         }
       }}
       {...(settings.layout === 'horizontal' && {
         horizontalLayoutProps: {
           navMenu: {
-            navItems: ServerSideHorizontalNavItems()
+            navItems: horizontalMenuItems
           }
         }
       })}
@@ -129,18 +142,23 @@ import ServerSideVerticalNavItems from 'src/layouts/components/vertical/ServerSi
 import ServerSideHorizontalNavItems from 'src/layouts/components/horizontal/ServerSideNavItems.tsx'
 
 const UserLayout = ({ children }) => {
+
+  // ** Vars for server side navigation
+  const { menuItems: verticalMenuItems } = ServerSideVerticalNavItems()
+  const { menuItems: horizontalMenuItems } = ServerSideHorizontalNavItems()
+
   return (
     <Layout
       {...} // other props
       verticalLayoutProps={{
         navMenu: {
-          navItems: ServerSideVerticalNavItems()
+          navItems: verticalMenuItems
         }
       }}
       {...(settings.layout === 'horizontal' && {
         horizontalLayoutProps: {
           navMenu: {
-            navItems: ServerSideHorizontalNavItems()
+            navItems: horizontalMenuItems
           }
         }
       })}
