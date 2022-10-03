@@ -797,19 +797,6 @@ mock.onGet('/apps/users/list').reply(config => {
   ]
 })
 
-// GET: particular user data
-mock.onGet('/apps/user').reply(config => {
-  const { id } = config.params
-
-  const userData = data.users.filter(user => user.id === parseInt(id, 10))
-
-  if (userData.length) {
-    return [200, userData[0]]
-  } else {
-    return [404, { message: 'Unable to find the requested user!' }]
-  }
-})
-
 // DELETE: Deletes User
 mock.onDelete('/apps/users/delete').reply(config => {
   // Get user id from URL
