@@ -47,13 +47,14 @@ const StyledBoxForShadow = styled(Box)<BoxProps>(({ theme }) => ({
   top: 60,
   left: -8,
   zIndex: 2,
-  display: 'none',
+  opacity: 0,
   position: 'absolute',
   pointerEvents: 'none',
   width: 'calc(100% + 15px)',
   height: theme.mixins.toolbar.minHeight,
-  '&.d-block': {
-    display: 'block'
+  transition: 'opacity .15s ease-in-out',
+  '&.scrolled': {
+    opacity: 1
   }
 }))
 
@@ -97,13 +98,13 @@ const Navigation = (props: Props) => {
       container = hidden ? container.target : container
       if (shadowRef && container.scrollTop > 0) {
         // @ts-ignore
-        if (!shadowRef.current.classList.contains('d-block')) {
+        if (!shadowRef.current.classList.contains('scrolled')) {
           // @ts-ignore
-          shadowRef.current.classList.add('d-block')
+          shadowRef.current.classList.add('scrolled')
         }
       } else {
         // @ts-ignore
-        shadowRef.current.classList.remove('d-block')
+        shadowRef.current.classList.remove('scrolled')
       }
     }
   }
