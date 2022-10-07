@@ -296,7 +296,7 @@ const NoResult = ({ value, setOpenDialog }: NoResultProps) => {
                 <Icon icon='mdi:account-outline' fontSize={20} />
               </Box>
               <Typography variant='body2' sx={{ color: 'text.primary' }}>
-                User View
+                User Profile
               </Typography>
             </Box>
           </Link>
