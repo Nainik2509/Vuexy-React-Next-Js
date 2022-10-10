@@ -82,7 +82,12 @@ const AccountSettings = ({ tab, apiPricingPlanData }: { tab: string; apiPricingP
         <TabContext value={activeTab}>
           <Grid container spacing={6}>
             <Grid item xs={12}>
-              <TabList onChange={handleChange} aria-label='customized tabs example'>
+              <TabList
+                variant='scrollable'
+                scrollButtons='auto'
+                onChange={handleChange}
+                aria-label='customized tabs example'
+              >
                 <Tab
                   value='account'
                   label={

@@ -51,7 +51,12 @@ const TabLabel = (props: TabLabelProps) => {
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <Avatar
           variant='rounded'
-          sx={{ mr: 3, ...(active ? { color: 'common.white', backgroundColor: 'primary.main' } : {}) }}
+          sx={{
+            mr: 3,
+            ...(active
+              ? { color: 'common.white', backgroundColor: 'primary.main' }
+              : { backgroundColor: 'action.selected' })
+          }}
         >
           {icon}
         </Avatar>
