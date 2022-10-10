@@ -10,8 +10,9 @@ import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import TabPanel from '@mui/lab/TabPanel'
 import TabContext from '@mui/lab/TabContext'
-import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
+import { styled, Theme } from '@mui/material/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import MuiTabList, { TabListProps } from '@mui/lab/TabList'
 import CircularProgress from '@mui/material/CircularProgress'
 
@@ -43,9 +44,12 @@ const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
     color: `${theme.palette.common.white} !important`
   },
   '& .MuiTab-root': {
+    minWidth: 65,
     minHeight: 38,
-    minWidth: 130,
-    borderRadius: theme.shape.borderRadius
+    borderRadius: theme.shape.borderRadius,
+    [theme.breakpoints.up('sm')]: {
+      minWidth: 130
+    }
   }
 }))
 
@@ -56,12 +60,16 @@ const UserProfile = ({ tab, data }: { tab: string; data: UserProfileActiveTab })
 
   // ** Hooks
   const router = useRouter()
+  const hideText = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
 
   const handleChange = (event: SyntheticEvent, value: string) => {
+    setIsLoading(true)
     setActiveTab(value)
-    router.push({
-      pathname: `/pages/user-profile/${value.toLowerCase()}`
-    })
+    router
+      .push({
+        pathname: `/pages/user-profile/${value.toLowerCase()}`
+      })
+      .then(() => setIsLoading(false))
   }
 
   useEffect(() => {
@@ -95,44 +103,45 @@ const UserProfile = ({ tab, data }: { tab: string; data: UserProfileActiveTab })
           <TabContext value={activeTab}>
             <Grid container spacing={6}>
               <Grid item xs={12}>
-                <TabList onChange={handleChange} aria-label='customized tabs example'>
+                <TabList
+                  variant='scrollable'
+                  scrollButtons='auto'
+                  onChange={handleChange}
+                  aria-label='customized tabs example'
+                >
                   <Tab
                     value='profile'
-                    onClick={() => setIsLoading(true)}
                     label={
-                      <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
+                      <Box sx={{ display: 'flex', alignItems: 'center', ...(!hideText && { '& svg': { mr: 2 } }) }}>
                         <Icon icon='mdi:account-outline' />
-                        Profile
+                        {!hideText && 'Profile'}
                       </Box>
                     }
                   />
                   <Tab
                     value='teams'
-                    onClick={() => setIsLoading(true)}
                     label={
-                      <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
+                      <Box sx={{ display: 'flex', alignItems: 'center', ...(!hideText && { '& svg': { mr: 2 } }) }}>
                         <Icon icon='mdi:account-multiple-outline' />
-                        Teams
+                        {!hideText && 'Teams'}
                       </Box>
                     }
                   />
                   <Tab
                     value='projects'
-                    onClick={() => setIsLoading(true)}
                     label={
-                      <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
+                      <Box sx={{ display: 'flex', alignItems: 'center', ...(!hideText && { '& svg': { mr: 2 } }) }}>
                         <Icon icon='mdi:view-grid-outline' />
-                        Projects
+                        {!hideText && 'Projects'}
                       </Box>
                     }
                   />
                   <Tab
                     value='connections'
-                    onClick={() => setIsLoading(true)}
                     label={
-                      <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
+                      <Box sx={{ display: 'flex', alignItems: 'center', ...(!hideText && { '& svg': { mr: 2 } }) }}>
                         <Icon icon='mdi:link-variant' />
-                        Connections
+                        {!hideText && 'Connections'}
                       </Box>
                     }
                   />

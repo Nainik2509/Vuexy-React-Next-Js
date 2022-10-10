@@ -13,7 +13,7 @@ const withTM = require('next-transpile-modules')([
 ])
 
 module.exports = withTM({
-  trailingSlash: false,
+  trailingSlash: true,
   reactStrictMode: false,
   experimental: {
     esmExternals: false

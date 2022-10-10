@@ -44,6 +44,7 @@ const AccordionSummary = styled(MuiAccordionSummary)<AccordionSummaryProps>(({ t
   marginBottom: -1,
   padding: theme.spacing(0, 4),
   minHeight: theme.spacing(12),
+  transition: 'min-height 0.15s ease-in-out',
   backgroundColor: theme.palette.mode === 'light' ? theme.palette.grey[50] : theme.palette.background.default,
   borderBottom:
     theme.palette.mode === 'light' ? `1px solid ${theme.palette.grey[300]}` : `1px solid ${theme.palette.divider}`,
@@ -51,7 +52,7 @@ const AccordionSummary = styled(MuiAccordionSummary)<AccordionSummaryProps>(({ t
     minHeight: theme.spacing(12)
   },
   '& .MuiAccordionSummary-content.Mui-expanded': {
-    margin: '12px 0'
+    margin: '10px 0'
   }
 }))
 

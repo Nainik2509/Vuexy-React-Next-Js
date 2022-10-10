@@ -67,9 +67,7 @@ const VerticalLayout = (props: LayoutProps) => {
     <>
       <VerticalLayoutWrapper className='layout-wrapper'>
         {/* Navigation Menu */}
-        {navHidden &&
-        themeConfig.layout === 'vertical' &&
-        !(navHidden && settings.lastLayout === 'horizontal') ? null : (
+        {navHidden && !(navHidden && settings.lastLayout === 'horizontal') ? null : (
           <Navigation
             navWidth={navWidth}
             navVisible={navVisible}

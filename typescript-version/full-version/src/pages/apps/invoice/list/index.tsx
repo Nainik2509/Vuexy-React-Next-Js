@@ -227,7 +227,7 @@ const InvoiceList = () => {
   const [statusValue, setStatusValue] = useState<string>('')
   const [endDateRange, setEndDateRange] = useState<DateType>(null)
   const [selectedRows, setSelectedRows] = useState<GridRowId[]>([])
-  const [startDateRange, setStartDateRange] = useState<DateType>(new Date())
+  const [startDateRange, setStartDateRange] = useState<DateType>(null)
 
   // ** Hooks
   const dispatch = useDispatch<AppDispatch>()

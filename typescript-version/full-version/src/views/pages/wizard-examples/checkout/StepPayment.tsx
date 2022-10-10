@@ -66,7 +66,12 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
           </div>
         </Alert>
         <TabContext value={value}>
-          <TabList onChange={handleChange} aria-label='customized tabs example'>
+          <TabList
+            variant='scrollable'
+            scrollButtons='auto'
+            onChange={handleChange}
+            aria-label='customized tabs example'
+          >
             <Tab value='cc' label='Card' />
             <Tab value='cod' label='Cash On Delivery' />
             <Tab value='gc' label='Gift Card' />

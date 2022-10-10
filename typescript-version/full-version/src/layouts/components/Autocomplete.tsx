@@ -63,22 +63,22 @@ const defaultSuggestionsData: DefaultSuggestionsType[] = [
       {
         icon: 'mdi:poll',
         suggestion: 'Analytics',
-        link: '/dashboards/analytics/'
+        link: '/dashboards/analytics'
       },
       {
         icon: 'mdi:chart-bubble',
         suggestion: 'eCommerce',
-        link: '/dashboards/ecommerce/'
+        link: '/dashboards/ecommerce'
       },
       {
         icon: 'mdi:account-group',
         suggestion: 'User List',
-        link: '/apps/user/list/'
+        link: '/apps/user/list'
       },
       {
         icon: 'mdi:message-outline',
         suggestion: 'Chat',
-        link: '/apps/chat/'
+        link: '/apps/chat'
       }
     ]
   },
@@ -88,17 +88,17 @@ const defaultSuggestionsData: DefaultSuggestionsType[] = [
       {
         icon: 'mdi:calendar-blank',
         suggestion: 'Calendar',
-        link: '/apps/calendar/'
+        link: '/apps/calendar'
       },
       {
         icon: 'mdi:format-list-numbered',
         suggestion: 'Invoice List',
-        link: '/apps/invoice/list/'
+        link: '/apps/invoice/list'
       },
       {
         icon: 'mdi:currency-usd',
         suggestion: 'Pricing',
-        link: '/pages/pricing/'
+        link: '/pages/pricing'
       },
       {
         icon: 'mdi:account-cog-outline',
@@ -113,22 +113,22 @@ const defaultSuggestionsData: DefaultSuggestionsType[] = [
       {
         icon: 'mdi:format-text-variant-outline',
         suggestion: 'Typography',
-        link: '/ui/typography/'
+        link: '/ui/typography'
       },
       {
         icon: 'mdi:tab',
         suggestion: 'Tabs',
-        link: '/components/tabs/'
+        link: '/components/tabs'
       },
       {
         icon: 'mdi:gesture-tap-button',
         suggestion: 'Buttons',
-        link: '/components/buttons/'
+        link: '/components/buttons'
       },
       {
         icon: 'mdi:card-bulleted-settings-outline',
         suggestion: 'Advanced Cards',
-        link: '/ui/cards/advanced/'
+        link: '/ui/cards/advanced'
       }
     ]
   },
@@ -138,22 +138,22 @@ const defaultSuggestionsData: DefaultSuggestionsType[] = [
       {
         icon: 'mdi:format-list-checkbox',
         suggestion: 'Select',
-        link: '/forms/form-elements/select/'
+        link: '/forms/form-elements/select'
       },
       {
         icon: 'mdi:lastpass',
         suggestion: 'Autocomplete',
-        link: '/forms/form-elements/autocomplete/'
+        link: '/forms/form-elements/autocomplete'
       },
       {
         icon: 'mdi:view-grid-outline',
         suggestion: 'Table',
-        link: '/tables/mui/'
+        link: '/tables/mui'
       },
       {
         icon: 'mdi:calendar-range',
         suggestion: 'Date Pickers',
-        link: '/forms/form-elements/pickers/'
+        link: '/forms/form-elements/pickers'
       }
     ]
   }
@@ -262,7 +262,7 @@ const NoResult = ({ value, setOpenDialog }: NoResultProps) => {
       </Typography>
       <List sx={{ py: 0 }}>
         <ListItem sx={{ py: 2 }} disablePadding onClick={() => setOpenDialog(false)}>
-          <Link passHref href='/dashboards/ecommerce/'>
+          <Link passHref href='/dashboards/ecommerce'>
             <Box
               component='a'
               sx={{
@@ -282,7 +282,7 @@ const NoResult = ({ value, setOpenDialog }: NoResultProps) => {
           </Link>
         </ListItem>
         <ListItem sx={{ py: 2 }} disablePadding onClick={() => setOpenDialog(false)}>
-          <Link passHref href='/apps/user/view/2/'>
+          <Link passHref href='/pages/user-profile/profile'>
             <Box
               component='a'
               sx={{
@@ -296,7 +296,7 @@ const NoResult = ({ value, setOpenDialog }: NoResultProps) => {
                 <Icon icon='mdi:account-outline' fontSize={20} />
               </Box>
               <Typography variant='body2' sx={{ color: 'text.primary' }}>
-                User View
+                User Profile
               </Typography>
             </Box>
           </Link>

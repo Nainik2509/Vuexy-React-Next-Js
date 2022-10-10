@@ -31,7 +31,7 @@ import CanViewNavLink from 'src/layouts/components/acl/CanViewNavLink'
 
 // ** Util Imports
 import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
-import { pathWithoutParams } from 'src/@core/layouts/utils'
+import { handleURLQueries } from 'src/@core/layouts/utils'
 
 interface Props {
   item: NavLink
@@ -72,7 +72,7 @@ const HorizontalNavLink = (props: Props) => {
   const Wrapper = !hasParent ? List : Fragment
 
   const isNavLinkActive = () => {
-    if (router.asPath === item.path || pathWithoutParams(router, item)) {
+    if (router.pathname === item.path || handleURLQueries(router, item.path)) {
       return true
     } else {
       return false

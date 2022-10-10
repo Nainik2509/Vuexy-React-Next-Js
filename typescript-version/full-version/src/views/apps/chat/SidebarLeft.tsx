@@ -373,8 +373,8 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
       >
         <Box
           sx={{
-            py: 3,
             px: 5,
+            py: 3.125,
             display: 'flex',
             alignItems: 'center',
             borderBottom: (theme: Theme) => `1px solid ${theme.palette.divider}`
@@ -432,7 +432,7 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
           ) : null}
         </Box>
 
-        <Box sx={{ height: `calc(100% - 4.0625rem)` }}>
+        <Box sx={{ height: `calc(100% - 4.125rem)` }}>
           <ScrollWrapper hidden={hidden}>
             <Box sx={{ p: (theme: Theme) => theme.spacing(7, 3, 3) }}>
               <Typography variant='h6' sx={{ ml: 3, mb: 3, color: 'primary.main' }}>
