@@ -1,6 +1,3 @@
-// ** React Imports
-import { useEffect } from 'react'
-
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
 
@@ -23,18 +20,7 @@ const LanguageDropdown = ({ settings, saveSettings }: Props) => {
   const { i18n } = useTranslation()
 
   // ** Vars
-  const { layout, direction } = settings
-
-  useEffect(() => {
-    if (i18n.language === 'ar' && direction === 'ltr') {
-      saveSettings({ ...settings, direction: 'ltr' })
-    } else if (i18n.language === 'ar' || direction === 'rtl') {
-      saveSettings({ ...settings, direction: 'rtl' })
-    } else {
-      saveSettings({ ...settings, direction: 'ltr' })
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [i18n.language, direction])
+  const { layout } = settings
 
   const handleLangItemClick = (lang: 'en' | 'fr' | 'ar') => {
     i18n.changeLanguage(lang)

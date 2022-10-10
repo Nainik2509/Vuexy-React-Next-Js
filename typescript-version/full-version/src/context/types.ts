@@ -23,12 +23,10 @@ export type UserDataType = {
 
 export type AuthValuesType = {
   loading: boolean
-  setLoading: (value: boolean) => void
   logout: () => void
-  isInitialized: boolean
   user: UserDataType | null
+  setLoading: (value: boolean) => void
   setUser: (value: UserDataType | null) => void
-  setIsInitialized: (value: boolean) => void
   login: (params: LoginParams, errorCallback?: ErrCallbackType) => void
   register: (params: RegisterParams, errorCallback?: ErrCallbackType) => void
 }

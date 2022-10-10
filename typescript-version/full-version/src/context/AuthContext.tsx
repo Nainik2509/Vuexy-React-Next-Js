@@ -19,10 +19,8 @@ const defaultProvider: AuthValuesType = {
   loading: true,
   setUser: () => null,
   setLoading: () => Boolean,
-  isInitialized: false,
   login: () => Promise.resolve(),
   logout: () => Promise.resolve(),
-  setIsInitialized: () => Boolean,
   register: () => Promise.resolve()
 }
 
@@ -36,14 +34,12 @@ const AuthProvider = ({ children }: Props) => {
   // ** States
   const [user, setUser] = useState<UserDataType | null>(defaultProvider.user)
   const [loading, setLoading] = useState<boolean>(defaultProvider.loading)
-  const [isInitialized, setIsInitialized] = useState<boolean>(defaultProvider.isInitialized)
 
   // ** Hooks
   const router = useRouter()
 
   useEffect(() => {
     const initAuth = async (): Promise<void> => {
-      setIsInitialized(true)
       const storedToken = window.localStorage.getItem(authConfig.storageTokenKeyName)!
       if (storedToken) {
         setLoading(true)
@@ -71,10 +67,8 @@ const AuthProvider = ({ children }: Props) => {
         setLoading(false)
       }
     }
-    initAuth()
-    router.events.on('routeChangeComplete', () => initAuth())
 
-    return router.events.off('routeChangeComplete', () => initAuth())
+    initAuth()
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -110,7 +104,6 @@ const AuthProvider = ({ children }: Props) => {
 
   const handleLogout = () => {
     setUser(null)
-    setIsInitialized(false)
     window.localStorage.removeItem('userData')
     window.localStorage.removeItem(authConfig.storageTokenKeyName)
     router.push('/login')
@@ -134,8 +127,6 @@ const AuthProvider = ({ children }: Props) => {
     loading,
     setUser,
     setLoading,
-    isInitialized,
-    setIsInitialized,
     login: handleLogin,
     logout: handleLogout,
     register: handleRegister
