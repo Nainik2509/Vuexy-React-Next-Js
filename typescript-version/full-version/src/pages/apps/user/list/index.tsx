@@ -2,6 +2,7 @@
 import { useState, useEffect, MouseEvent, useCallback } from 'react'
 
 // ** Next Import
+import Link from 'next/link'
 import { GetStaticProps, InferGetStaticPropsType } from 'next/types'
 
 // ** MUI Imports
@@ -11,6 +12,7 @@ import Menu from '@mui/material/Menu'
 import Grid from '@mui/material/Grid'
 import Divider from '@mui/material/Divider'
 import { DataGrid } from '@mui/x-data-grid'
+import { styled } from '@mui/material/styles'
 import MenuItem from '@mui/material/MenuItem'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
@@ -78,6 +80,17 @@ const userStatusObj: UserStatusType = {
   inactive: 'secondary'
 }
 
+const StyledLink = styled('a')(({ theme }) => ({
+  fontWeight: 600,
+  fontSize: '1rem',
+  cursor: 'pointer',
+  textDecoration: 'none',
+  color: theme.palette.text.secondary,
+  '&:hover': {
+    color: theme.palette.primary.main
+  }
+}))
+
 // ** renders client column
 const renderClient = (row: UsersType) => {
   if (row.avatar.length) {
@@ -136,10 +149,12 @@ const RowOptions = ({ id }: { id: number | string }) => {
         }}
         PaperProps={{ style: { minWidth: '8rem' } }}
       >
-        <MenuItem sx={{ '& svg': { mr: 2 } }} onClick={handleRowOptionsClose}>
-          <Icon icon='mdi:eye-outline' fontSize={20} />
-          View
-        </MenuItem>
+        <Link href='/apps/user/view/overview/' passHref>
+          <MenuItem component='a' sx={{ '& svg': { mr: 2 } }} onClick={handleRowOptionsClose}>
+            <Icon icon='mdi:eye-outline' fontSize={20} />
+            View
+          </MenuItem>
+        </Link>
         <MenuItem onClick={handleRowOptionsClose} sx={{ '& svg': { mr: 2 } }}>
           <Icon icon='mdi:pencil-outline' fontSize={20} />
           Edit
@@ -166,14 +181,9 @@ const columns = [
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           {renderClient(row)}
           <Box sx={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
-            <Typography
-              noWrap
-              component='a'
-              variant='body2'
-              sx={{ fontWeight: 600, color: 'text.primary', textDecoration: 'none' }}
-            >
-              {fullName}
-            </Typography>
+            <Link href='/apps/user/view/overview/' passHref>
+              <StyledLink>{fullName}</StyledLink>
+            </Link>
             <Typography noWrap component='a' variant='caption' sx={{ textDecoration: 'none' }}>
               @{username}
             </Typography>
