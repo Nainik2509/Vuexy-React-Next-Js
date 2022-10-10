@@ -296,7 +296,7 @@ const RolesCards = () => {
         </DialogContent>
         <DialogActions sx={{ pt: 0, display: 'flex', justifyContent: 'center' }}>
           <Box className='demo-space-x'>
-            <Button size='large' type='submit' variant='contained'>
+            <Button size='large' type='submit' variant='contained' onClick={handleClose}>
               Submit
             </Button>
             <Button size='large' color='secondary' variant='outlined' onClick={handleClose}>
