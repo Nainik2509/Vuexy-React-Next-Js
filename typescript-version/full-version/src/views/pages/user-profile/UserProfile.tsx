@@ -63,10 +63,13 @@ const UserProfile = ({ tab, data }: { tab: string; data: UserProfileActiveTab })
   const hideText = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
 
   const handleChange = (event: SyntheticEvent, value: string) => {
+    setIsLoading(true)
     setActiveTab(value)
-    router.push({
-      pathname: `/pages/user-profile/${value.toLowerCase()}`
-    })
+    router
+      .push({
+        pathname: `/pages/user-profile/${value.toLowerCase()}`
+      })
+      .then(() => setIsLoading(false))
   }
 
   useEffect(() => {
@@ -108,7 +111,6 @@ const UserProfile = ({ tab, data }: { tab: string; data: UserProfileActiveTab })
                 >
                   <Tab
                     value='profile'
-                    onClick={() => setIsLoading(true)}
                     label={
                       <Box sx={{ display: 'flex', alignItems: 'center', ...(!hideText && { '& svg': { mr: 2 } }) }}>
                         <Icon icon='mdi:account-outline' />
@@ -118,7 +120,6 @@ const UserProfile = ({ tab, data }: { tab: string; data: UserProfileActiveTab })
                   />
                   <Tab
                     value='teams'
-                    onClick={() => setIsLoading(true)}
                     label={
                       <Box sx={{ display: 'flex', alignItems: 'center', ...(!hideText && { '& svg': { mr: 2 } }) }}>
                         <Icon icon='mdi:account-multiple-outline' />
@@ -128,7 +129,6 @@ const UserProfile = ({ tab, data }: { tab: string; data: UserProfileActiveTab })
                   />
                   <Tab
                     value='projects'
-                    onClick={() => setIsLoading(true)}
                     label={
                       <Box sx={{ display: 'flex', alignItems: 'center', ...(!hideText && { '& svg': { mr: 2 } }) }}>
                         <Icon icon='mdi:view-grid-outline' />
@@ -138,7 +138,6 @@ const UserProfile = ({ tab, data }: { tab: string; data: UserProfileActiveTab })
                   />
                   <Tab
                     value='connections'
-                    onClick={() => setIsLoading(true)}
                     label={
                       <Box sx={{ display: 'flex', alignItems: 'center', ...(!hideText && { '& svg': { mr: 2 } }) }}>
                         <Icon icon='mdi:link-variant' />
