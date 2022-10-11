@@ -1,8 +1,5 @@
 // ** React Imports
-import { ReactNode, ChangeEvent } from 'react'
-
-// ** Next Import
-import { useRouter } from 'next/router'
+import { ReactNode, ChangeEvent, useState, KeyboardEvent } from 'react'
 
 // ** MUI Components
 import Box from '@mui/material/Box'
@@ -73,11 +70,14 @@ const defaultValues: { [key: string]: string } = {
 }
 
 const TwoStepsV1 = () => {
+  // ** State
+  const [isBackspace, setIsBackspace] = useState<boolean>(false)
+
   // ** Hook
   const theme = useTheme()
-  const router = useRouter()
   const {
     control,
+    setValue,
     handleSubmit,
     formState: { errors }
   } = useForm({ defaultValues })
@@ -85,10 +85,39 @@ const TwoStepsV1 = () => {
   // ** Vars
   const errorsArray = Object.keys(errors)
 
-  const onSubmit = () => router.push('/')
+  const handleChange = (event: ChangeEvent, onChange: (...event: any[]) => void) => {
+    if (!isBackspace) {
+      onChange(event)
+
+      // @ts-ignore
+      const form = event.target.form
+      const index = [...form].indexOf(event.target)
+      form.elements[index + 1].focus()
+      event.preventDefault()
+    }
+  }
+
+  const handleKeyDown = (event: KeyboardEvent, val: string) => {
+    if (event.code === 'Backspace') {
+      setIsBackspace(true)
+
+      // @ts-ignore
+      const form = event.target.form
+      const index = [...form].indexOf(event.target)
+      if (index >= 1) {
+        if (form[index].value && form[index].value.length) {
+          setValue(val, '')
+        } else {
+          form.elements[index - 1].focus()
+        }
+      }
+    } else {
+      setIsBackspace(false)
+    }
+  }
 
   const renderInputs = () => {
-    return Object.keys(defaultValues).map(val => (
+    return Object.keys(defaultValues).map((val, index) => (
       <Controller
         key={val}
         name={val}
@@ -96,23 +125,17 @@ const TwoStepsV1 = () => {
         rules={{ required: true }}
         render={({ field: { value, onChange } }) => (
           <Box
-            type='number'
+            type='tel'
             value={value}
+            autoFocus={index === 0}
             component={CleaveInput}
             options={{ blocks: [1] }}
+            onKeyDown={(event: KeyboardEvent) => handleKeyDown(event, val)}
+            onChange={(event: ChangeEvent) => handleChange(event, onChange)}
             className={clsx({ invalid: errorsArray.length && errorsArray.includes(val) })}
             sx={{
               ...(errorsArray.length &&
                 errorsArray.includes(val) && { borderColor: theme => `${theme.palette.error.main} !important` })
-            }}
-            onChange={(event: ChangeEvent) => {
-              onChange(event)
-
-              // @ts-ignore
-              const form = event.target.form
-              const index = [...form].indexOf(event.target)
-              form.elements[index + 1].focus()
-              event.preventDefault()
             }}
           />
         )}
@@ -207,7 +230,7 @@ const TwoStepsV1 = () => {
             <Typography sx={{ mt: 2, fontWeight: 700 }}>******1234</Typography>
           </Box>
           <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>Type your 6 digit security code</Typography>
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form onSubmit={handleSubmit(() => true)}>
             <CleaveWrapper
               sx={{
                 display: 'flex',
@@ -224,7 +247,7 @@ const TwoStepsV1 = () => {
               {renderInputs()}
             </CleaveWrapper>
             {errorsArray.length ? (
-              <FormHelperText sx={{ mt: 2, color: 'error.main' }}>Please enter a valid OTP</FormHelperText>
+              <FormHelperText sx={{ color: 'error.main' }}>Please enter a valid OTP</FormHelperText>
             ) : null}
             <Button fullWidth type='submit' variant='contained' sx={{ mt: 4 }}>
               Verify My Account

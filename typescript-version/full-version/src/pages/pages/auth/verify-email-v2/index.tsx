@@ -1,9 +1,6 @@
 // ** React Imports
 import { ReactNode } from 'react'
 
-// ** Next Imports
-import Link from 'next/link'
-
 // ** MUI Components
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
@@ -197,11 +194,9 @@ const VerifyEmailV2 = () => {
                 the link inside to continue.
               </Typography>
             </Box>
-            <Link passHref href='/'>
-              <Button fullWidth component='a' variant='contained'>
-                Skip for now
-              </Button>
-            </Link>
+            <Button fullWidth variant='contained'>
+              Skip for now
+            </Button>
             <Box sx={{ mt: 4, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Typography sx={{ color: 'text.secondary' }}>Didn't get the mail?</Typography>
               <LinkStyled href='/' onClick={e => e.preventDefault()}>

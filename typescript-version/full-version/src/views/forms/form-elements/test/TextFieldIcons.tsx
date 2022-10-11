@@ -43,9 +43,11 @@ const TextFieldIcons = () => {
             }}
           />
           <Box sx={{ display: 'inline-flex' }}>
-            <Grid container spacing={2} alignItems='flex-end'>
-              <Grid item sx={{ '& svg': { color: theme => theme.palette.action.active } }}>
-                <Icon icon='account-circle-outline' />
+            <Grid container alignItems='center'>
+              <Grid item sx={{ mr: 2, '& svg': { color: theme => theme.palette.action.active } }}>
+                <Box sx={{ display: 'flex' }}>
+                  <Icon icon='mdi:account-circle-outline' />
+                </Box>
               </Grid>
               <Grid item>
                 <TextField label='With a grid' />
@@ -77,9 +79,11 @@ const TextFieldIcons = () => {
             }}
           />
           <Box sx={{ display: 'inline-flex' }}>
-            <Grid container spacing={2} alignItems='flex-end'>
-              <Grid item sx={{ '& svg': { color: theme => theme.palette.action.active } }}>
-                <Icon icon='account-circle-outline' />
+            <Grid container alignItems='center'>
+              <Grid item sx={{ mr: 2, '& svg': { color: theme => theme.palette.action.active } }}>
+                <Box sx={{ display: 'flex' }}>
+                  <Icon icon='mdi:account-circle-outline' />
+                </Box>
               </Grid>
               <Grid item>
                 <TextField variant='filled' label='With a grid' />
@@ -111,9 +115,11 @@ const TextFieldIcons = () => {
             }}
           />
           <Box sx={{ display: 'inline-flex' }}>
-            <Grid container spacing={2} alignItems='flex-end'>
-              <Grid item sx={{ '& svg': { color: theme => theme.palette.action.active } }}>
-                <Icon icon='account-circle-outline' />
+            <Grid container alignItems='center'>
+              <Grid item sx={{ mr: 2, '& svg': { mt: 3, color: theme => theme.palette.action.active } }}>
+                <Box sx={{ display: 'flex' }}>
+                  <Icon icon='mdi:account-circle-outline' />
+                </Box>
               </Grid>
               <Grid item>
                 <TextField variant='standard' label='With a grid' />
