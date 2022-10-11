@@ -10,7 +10,6 @@ import { styled, useTheme } from '@mui/material/styles'
 import FormHelperText from '@mui/material/FormHelperText'
 
 // ** Third Party Imports
-import clsx from 'clsx'
 import Cleave from 'cleave.js/react'
 import { useForm, Controller } from 'react-hook-form'
 
@@ -115,7 +114,6 @@ const TwoStepsV2 = () => {
   const { settings } = useSettings()
   const {
     control,
-    setValue,
     handleSubmit,
     formState: { errors }
   } = useForm({ defaultValues })
@@ -136,22 +134,22 @@ const TwoStepsV2 = () => {
       // @ts-ignore
       const form = event.target.form
       const index = [...form].indexOf(event.target)
-      form.elements[index + 1].focus()
+      if (form[index].value && form[index].value.length) {
+        form.elements[index + 1].focus()
+      }
       event.preventDefault()
     }
   }
 
-  const handleKeyDown = (event: KeyboardEvent, val: string) => {
-    if (event.code === 'Backspace') {
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (event.key === 'Backspace') {
       setIsBackspace(true)
 
       // @ts-ignore
       const form = event.target.form
       const index = [...form].indexOf(event.target)
       if (index >= 1) {
-        if (form[index].value && form[index].value.length) {
-          setValue(val, '')
-        } else {
+        if (!(form[index].value && form[index].value.length)) {
           form.elements[index - 1].focus()
         }
       }
@@ -173,14 +171,10 @@ const TwoStepsV2 = () => {
             value={value}
             autoFocus={index === 0}
             component={CleaveInput}
-            options={{ blocks: [1] }}
-            onKeyDown={(event: KeyboardEvent) => handleKeyDown(event, val)}
+            onKeyDown={handleKeyDown}
             onChange={(event: ChangeEvent) => handleChange(event, onChange)}
-            className={clsx({ invalid: errorsArray.length && errorsArray.includes(val) })}
-            sx={{
-              ...(errorsArray.length &&
-                errorsArray.includes(val) && { borderColor: theme => `${theme.palette.error.main} !important` })
-            }}
+            options={{ blocks: [1], numeral: true, numeralPositiveOnly: true }}
+            sx={{ [theme.breakpoints.down('sm')]: { px: `${theme.spacing(2)} !important` } }}
           />
         )}
       />
