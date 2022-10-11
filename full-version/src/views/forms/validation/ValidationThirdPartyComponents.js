@@ -119,6 +119,7 @@ const ValidationThirdPartyComponents = () => {
               render={({ field }) => (
                 <Flatpickr
                   {...field}
+                  options={{ allowInput: true }} 
                   className={classnames('form-control', {
                     'is-invalid': data !== null && data.reactFlatpickr === null
                   })}
