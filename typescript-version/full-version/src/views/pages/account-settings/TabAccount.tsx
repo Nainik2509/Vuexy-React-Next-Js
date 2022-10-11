@@ -41,18 +41,18 @@ interface Data {
   timezone: string
   firstName: string
   organization: string
-  number: number | undefined
-  zipCode: number | undefined
+  number: number | string
+  zipCode: number | string
 }
 
 const initialData: Data = {
   state: '',
+  number: '',
   address: '',
+  zipCode: '',
   lastName: 'Doe',
   currency: 'usd',
-  number: undefined,
   firstName: 'John',
-  zipCode: undefined,
   language: 'arabic',
   timezone: 'gmt-12',
   country: 'australia',
