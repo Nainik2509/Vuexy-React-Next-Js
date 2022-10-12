@@ -29,7 +29,7 @@ const ChartjsBubbleChart = (props: BubbleProps) => {
   const options: ChartOptions<'bubble'> = {
     responsive: true,
     maintainAspectRatio: false,
-    animation: { duration: 10000 },
+    animation: { duration: 2000 },
     scales: {
       x: {
         min: 0,
