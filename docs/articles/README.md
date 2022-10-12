@@ -21,3 +21,5 @@ pageClass: page-article-list
 [How to replace API endpoints](/articles/how-to-replace-api-endpoints.md)
 
 [Why have we not used `getServerSideProps` method](/articles/why-getServerSideProps-not-used.md)
+
+[How to create pages accessible  to signed-in and signed-out users](/articles/how-to-create-pages-accessible-to-signed-in-and-signed-out-users.md)
