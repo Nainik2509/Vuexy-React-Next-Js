@@ -4,7 +4,8 @@ import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
 // ** Third Party Imports
-import { Line, ChartProps } from 'react-chartjs-2'
+import { Line } from 'react-chartjs-2'
+import { ChartData, ChartOptions } from 'chart.js'
 
 interface LineProps {
   white: string
@@ -20,7 +21,7 @@ const ChartjsLineChart = (props: LineProps) => {
   // ** Props
   const { white, primary, success, warning, labelColor, borderColor, legendColor } = props
 
-  const options: ChartProps['options'] = {
+  const options: ChartOptions<'line'> = {
     responsive: true,
     maintainAspectRatio: false,
     scales: {
@@ -60,7 +61,7 @@ const ChartjsLineChart = (props: LineProps) => {
     }
   }
 
-  const data = {
+  const data: ChartData<'line'> = {
     labels: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140],
     datasets: [
       {
@@ -115,7 +116,7 @@ const ChartjsLineChart = (props: LineProps) => {
     <Card>
       <CardHeader title='New Technologies Data' subheader='Commercial networks & enterprises' />
       <CardContent>
-        <Line data={data} height={400} options={options as any} />
+        <Line data={data} height={400} options={options} />
       </CardContent>
     </Card>
   )

@@ -1,3 +1,6 @@
+// ** Next Import
+import dynamic from 'next/dynamic'
+
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
 import Link from '@mui/material/Link'
@@ -14,12 +17,12 @@ import RechartsWrapper from 'src/@core/styles/libs/recharts'
 import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 // ** Demo Components Imports
-import RechartsBarChart from 'src/views/charts/recharts/RechartsBarChart'
-import RechartsPieChart from 'src/views/charts/recharts/RechartsPieChart'
-import RechartsLineChart from 'src/views/charts/recharts/RechartsLineChart'
-import RechartsAreaChart from 'src/views/charts/recharts/RechartsAreaChart'
-import RechartsRadarChart from 'src/views/charts/recharts/RechartsRadarChart'
-import RechartsScatterChart from 'src/views/charts/recharts/RechartsScatterChart'
+const RechartsBarChart = dynamic(() => import('src/views/charts/recharts/RechartsBarChart'), { ssr: false })
+const RechartsPieChart = dynamic(() => import('src/views/charts/recharts/RechartsPieChart'), { ssr: false })
+const RechartsLineChart = dynamic(() => import('src/views/charts/recharts/RechartsLineChart'), { ssr: false })
+const RechartsAreaChart = dynamic(() => import('src/views/charts/recharts/RechartsAreaChart'), { ssr: false })
+const RechartsRadarChart = dynamic(() => import('src/views/charts/recharts/RechartsRadarChart'), { ssr: false })
+const RechartsScatterChart = dynamic(() => import('src/views/charts/recharts/RechartsScatterChart'), { ssr: false })
 
 const Recharts = () => {
   // ** Hooks

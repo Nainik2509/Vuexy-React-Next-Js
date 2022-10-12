@@ -10,8 +10,9 @@ import InputAdornment from '@mui/material/InputAdornment'
 
 // ** Third Party Imports
 import format from 'date-fns/format'
+import { Bar } from 'react-chartjs-2'
 import DatePicker from 'react-datepicker'
-import { Bar, ChartProps } from 'react-chartjs-2'
+import { ChartData, ChartOptions } from 'chart.js'
 
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
@@ -33,7 +34,7 @@ const ChartjsBarChart = (props: BarProp) => {
   const [endDate, setEndDate] = useState<DateType>(null)
   const [startDate, setStartDate] = useState<DateType>(new Date())
 
-  const options: ChartProps['options'] = {
+  const options: ChartOptions<'bar'> = {
     responsive: true,
     maintainAspectRatio: false,
     animation: { duration: 500 },
@@ -65,7 +66,7 @@ const ChartjsBarChart = (props: BarProp) => {
     }
   }
 
-  const data = {
+  const data: ChartData<'bar'> = {
     labels: [
       '7/12',
       '8/12',
@@ -150,7 +151,7 @@ const ChartjsBarChart = (props: BarProp) => {
         }
       />
       <CardContent>
-        <Bar data={data} height={400} options={options as any} />
+        <Bar data={data} height={400} options={options} />
       </CardContent>
     </Card>
   )

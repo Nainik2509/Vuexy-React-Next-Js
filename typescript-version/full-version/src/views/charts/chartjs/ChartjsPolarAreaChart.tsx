@@ -4,7 +4,8 @@ import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
 // ** Third Party Imports
-import { PolarArea, ChartProps } from 'react-chartjs-2'
+import { PolarArea } from 'react-chartjs-2'
+import { ChartData, ChartOptions } from 'chart.js'
 
 // ** Custom Components Imports
 import OptionsMenu from 'src/@core/components/option-menu'
@@ -23,7 +24,7 @@ const ChartjsPolarAreaChart = (props: PolarAreaProps) => {
   // ** Props
   const { info, grey, green, yellow, primary, warning, legendColor } = props
 
-  const options: ChartProps['options'] = {
+  const options: ChartOptions<'polarArea'> = {
     responsive: true,
     maintainAspectRatio: false,
     animation: { duration: 500 },
@@ -52,7 +53,7 @@ const ChartjsPolarAreaChart = (props: PolarAreaProps) => {
     }
   }
 
-  const data = {
+  const data: ChartData<'polarArea'> = {
     labels: ['Africa', 'Asia', 'Europe', 'America', 'Antarctica', 'Australia'],
     datasets: [
       {
@@ -77,7 +78,7 @@ const ChartjsPolarAreaChart = (props: PolarAreaProps) => {
         }
       />
       <CardContent>
-        <PolarArea data={data} height={350} options={options as any} />
+        <PolarArea data={data} height={350} options={options} />
       </CardContent>
     </Card>
   )

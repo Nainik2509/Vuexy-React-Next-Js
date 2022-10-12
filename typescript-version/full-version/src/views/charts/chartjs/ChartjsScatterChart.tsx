@@ -9,7 +9,8 @@ import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 
 // ** Third Party Imports
-import { Scatter, ChartProps } from 'react-chartjs-2'
+import { Scatter } from 'react-chartjs-2'
+import { ChartData, ChartOptions } from 'chart.js'
 
 interface ScatterProps {
   green: string
@@ -31,7 +32,7 @@ const ChartjsScatterChart = (props: ScatterProps) => {
     setActive(newActive)
   }
 
-  const options: ChartProps['options'] = {
+  const options: ChartOptions<'scatter'> = {
     responsive: true,
     maintainAspectRatio: false,
     animation: { duration: 800 },
@@ -82,7 +83,7 @@ const ChartjsScatterChart = (props: ScatterProps) => {
     }
   }
 
-  const data = {
+  const data: ChartData<'scatter'> = {
     datasets: [
       {
         pointRadius: 5,
@@ -181,7 +182,7 @@ const ChartjsScatterChart = (props: ScatterProps) => {
         }
       />
       <CardContent>
-        <Scatter data={data} height={400} options={options as any} />
+        <Scatter data={data} height={400} options={options} />
       </CardContent>
     </Card>
   )

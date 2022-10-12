@@ -10,8 +10,9 @@ import InputAdornment from '@mui/material/InputAdornment'
 
 // ** Third Party Imports
 import format from 'date-fns/format'
+import { Line } from 'react-chartjs-2'
 import DatePicker from 'react-datepicker'
-import { Line, ChartProps } from 'react-chartjs-2'
+import { ChartData, ChartOptions } from 'chart.js'
 
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
@@ -42,7 +43,7 @@ const ChartjsAreaChart = (props: AreaProps) => {
   const [endDate, setEndDate] = useState<DateType>(null)
   const [startDate, setStartDate] = useState<DateType>(new Date())
 
-  const options: ChartProps['options'] = {
+  const options: ChartOptions<'line'> = {
     responsive: true,
     maintainAspectRatio: false,
     layout: {
@@ -83,7 +84,7 @@ const ChartjsAreaChart = (props: AreaProps) => {
     }
   }
 
-  const data = {
+  const data: ChartData<'line'> = {
     labels: [
       '7/12',
       '8/12',
@@ -208,7 +209,7 @@ const ChartjsAreaChart = (props: AreaProps) => {
         }
       />
       <CardContent>
-        <Line data={data} height={450} options={options as any} />
+        <Line data={data} height={450} options={options} />
       </CardContent>
     </Card>
   )

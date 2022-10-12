@@ -9,7 +9,8 @@ import CardContent from '@mui/material/CardContent'
 import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
-import { Bubble, ChartProps } from 'react-chartjs-2'
+import { Bubble } from 'react-chartjs-2'
+import { ChartData, ChartOptions } from 'chart.js'
 
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
@@ -25,9 +26,10 @@ const ChartjsBubbleChart = (props: BubbleProps) => {
   // ** Props
   const { yellow, primary, labelColor, borderColor } = props
 
-  const options: ChartProps['options'] = {
+  const options: ChartOptions<'bubble'> = {
     responsive: true,
     maintainAspectRatio: false,
+    animation: { duration: 10000 },
     scales: {
       x: {
         min: 0,
@@ -61,8 +63,7 @@ const ChartjsBubbleChart = (props: BubbleProps) => {
     }
   }
 
-  const data = {
-    animation: { duration: 10000 },
+  const data: ChartData<'bubble'> = {
     datasets: [
       {
         label: 'Dataset 1',
@@ -138,7 +139,7 @@ const ChartjsBubbleChart = (props: BubbleProps) => {
         }
       />
       <CardContent>
-        <Bubble data={data} height={450} options={options as any} />
+        <Bubble data={data} height={450} options={options} />
       </CardContent>
     </Card>
   )
