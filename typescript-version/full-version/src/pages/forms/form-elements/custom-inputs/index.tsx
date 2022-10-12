@@ -22,8 +22,8 @@ const CustomInputs = () => {
         <CardSnippet
           title='Custom Radios'
           code={{
-            tsx: source.CustomRadiosTSXCode,
-            jsx: source.CustomRadiosJSXCode
+            tsx: source.CustomRadioBasicTSXCode,
+            jsx: source.CustomRadioBasicJSXCode
           }}
         >
           <CustomRadioBasic />
@@ -33,8 +33,8 @@ const CustomInputs = () => {
         <CardSnippet
           title='Custom Checkboxes'
           code={{
-            tsx: source.CustomCheckboxTSXCode,
-            jsx: source.CustomCheckboxJSXCode
+            tsx: source.CustomCheckboxBasicTSXCode,
+            jsx: source.CustomCheckboxBasicJSXCode
           }}
         >
           <CustomCheckboxBasic />

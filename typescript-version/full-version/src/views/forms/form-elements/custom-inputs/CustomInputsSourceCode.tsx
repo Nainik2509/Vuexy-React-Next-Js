@@ -4,7 +4,7 @@ export const CustomCheckboxIconsJSXCode = (
   </pre>
 )
 
-export const CustomCheckboxJSXCode = (
+export const CustomCheckboxBasicJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{``}</code>
   </pre>
@@ -22,7 +22,7 @@ export const CustomRadioImgJSXCode = (
   </pre>
 )
 
-export const CustomRadiosJSXCode = (
+export const CustomRadioBasicJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{``}</code>
   </pre>
@@ -34,7 +34,7 @@ export const CustomRadioIconsJSXCode = (
   </pre>
 )
 
-export const CustomCheckboxTSXCode = (
+export const CustomCheckboxBasicTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{``}</code>
   </pre>
@@ -64,7 +64,7 @@ export const CustomCheckboxImgTSXCode = (
   </pre>
 )
 
-export const CustomRadiosTSXCode = (
+export const CustomRadioBasicTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{``}</code>
   </pre>
