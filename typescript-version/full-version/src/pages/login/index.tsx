@@ -111,6 +111,7 @@ interface FormData {
 }
 
 const LoginPage = () => {
+  const [rememberMe, setRememberMe] = useState<boolean>(true)
   const [showPassword, setShowPassword] = useState<boolean>(false)
 
   // ** Hooks
@@ -136,7 +137,7 @@ const LoginPage = () => {
 
   const onSubmit = (data: FormData) => {
     const { email, password } = data
-    auth.login({ email, password }, () => {
+    auth.login({ email, password, rememberMe }, () => {
       setError('email', {
         type: 'manual',
         message: 'Email or Password is invalid'
@@ -325,7 +326,10 @@ const LoginPage = () => {
               <Box
                 sx={{ mb: 4, display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'space-between' }}
               >
-                <FormControlLabel control={<Checkbox />} label='Remember Me' />
+                <FormControlLabel
+                  label='Remember Me'
+                  control={<Checkbox checked={rememberMe} onChange={e => setRememberMe(e.target.checked)} />}
+                />
                 <Link passHref href='/forgot-password'>
                   <LinkStyled>Forgot Password?</LinkStyled>
                 </Link>

@@ -65,38 +65,36 @@ const AuthProvider = ({ children }: Props) => {
           })
       } else {
         setLoading(false)
+        if (!router.pathname.includes('login')) {
+          router.replace({
+            pathname: '/login',
+            query: { returnUrl: router.asPath }
+          })
+        }
       }
     }
 
     initAuth()
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const handleLogin = (params: LoginParams, errorCallback?: ErrCallbackType) => {
     axios
       .post(authConfig.loginEndpoint, params)
-      .then(async res => {
-        window.localStorage.setItem(authConfig.storageTokenKeyName, res.data.accessToken)
+      .then(async response => {
+        params.rememberMe
+          ? window.localStorage.setItem(authConfig.storageTokenKeyName, response.data.accessToken)
+          : null
+        const returnUrl = router.query.returnUrl
+
+        setUser({ ...response.data.userData })
+        params.rememberMe ? window.localStorage.setItem('userData', JSON.stringify(response.data.userData)) : null
+
+        const redirectURL = returnUrl && returnUrl !== '/' ? returnUrl : '/'
+
+        router.replace(redirectURL as string)
       })
-      .then(() => {
-        axios
-          .get(authConfig.meEndpoint, {
-            headers: {
-              Authorization: window.localStorage.getItem(authConfig.storageTokenKeyName)!
-            }
-          })
-          .then(async response => {
-            const returnUrl = router.query.returnUrl
 
-            setUser({ ...response.data.userData })
-            await window.localStorage.setItem('userData', JSON.stringify(response.data.userData))
-
-            const redirectURL = returnUrl && returnUrl !== '/' ? returnUrl : '/'
-
-            router.replace(redirectURL as string)
-          })
-      })
       .catch(err => {
         if (errorCallback) errorCallback(err)
       })

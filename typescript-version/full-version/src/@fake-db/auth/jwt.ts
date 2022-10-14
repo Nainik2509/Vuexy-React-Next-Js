@@ -51,7 +51,8 @@ mock.onPost('/jwt/login').reply(request => {
     const accessToken = jwt.sign({ id: user.id }, jwtConfig.secret, { expiresIn: jwtConfig.expirationTime })
 
     const response = {
-      accessToken
+      accessToken,
+      userData: { ...user, password: undefined }
     }
 
     return [200, response]
