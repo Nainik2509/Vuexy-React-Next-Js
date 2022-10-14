@@ -124,6 +124,7 @@ const TwoStepsV1 = () => {
         render={({ field: { value, onChange } }) => (
           <Box
             type='tel'
+            maxLength={1}
             value={value}
             autoFocus={index === 0}
             component={CleaveInput}
@@ -224,7 +225,7 @@ const TwoStepsV1 = () => {
             <Typography sx={{ mt: 2, fontWeight: 700 }}>******1234</Typography>
           </Box>
           <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>Type your 6 digit security code</Typography>
-          <form onSubmit={handleSubmit(() => true)}>
+          <form onSubmit={handleSubmit(() => true)} autoComplete='off'>
             <CleaveWrapper
               sx={{
                 display: 'flex',
