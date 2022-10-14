@@ -114,9 +114,9 @@ Following is the table of all the properties and their possible values that are 
 | :----------------------------------- | :--------------------------------- | :-------------------------------------------------------------------------- |
 | templateName                         | `string`                           | Name of the template, project or company                                    |
 | layout                               | `vertical`, `horizontal`           | Set Vertical or Horizontal layout for the template                          |
-| mode                                 | `light`, `dark`                    | Set Light or Dark mode for the template                                     |
+| mode                                 | `light`, `dark`, `semi-dark`       | Set Light or Dark mode for the template                                     |
 | direction                            | `ltr`, `rtl`                       | Content direction                                                           |
-| skin                                 | `default`, `bordered`, `semi-dark` | Change template skin                                                        |
+| skin                                 | `default`, `bordered`              | Change template skin                                                        |
 | contentWidth                         | `full`, `boxed`                    | Full or container width of AppBar, Content and Footer                       |
 | footer                               | `fixed`, `static`, `hidden`        | Change footer position                                                      |
 | routingLoader                        | `true`, `false`                    | Loader on top of the app on route change                                    |

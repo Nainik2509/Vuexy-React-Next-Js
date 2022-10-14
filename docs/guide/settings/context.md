@@ -10,8 +10,8 @@ Following are the properties and their values that are stored in the Settings Co
 
 | Properties            | Values                             | Description                                                           |
 | :-------------------- | :--------------------------------- | :-------------------------------------------------------------------- |
-| skin                  | `default`, `bordered`, `semi-dark` | Change template skin                                                  |
-| mode                  | `light`, `dark`                    | Set Light or Dark mode for the template                               |
+| skin                  | `default`, `bordered`              | Change template skin                                                  |
+| mode                  | `light`, `dark`, `semi-dark`       | Set Light or Dark mode for the template                               |
 | direction             | `ltr`, `rtl`                       | Content direction                                                     |
 | navCollapsed          | `true`, `false`                    | If `true`, the vertical navigation menu is collapsed                  |
 | navHidden             | `true`, `false`                    | If `true`, the navigation menu is hidden                              |
@@ -30,8 +30,8 @@ Following are the properties and their values that are stored in `localStorage` 
 
 | Properties            | Values                                                        | Description                                                |
 | :-------------------- | :------------------------------------------------------------ | :--------------------------------------------------------- |
-| skin                  | `default`, `bordered`, `semi-dark`                            | Change template skin                                       |
-| mode                  | `light`, `dark`                                               | Set Light or Dark mode for the template                    |
+| skin                  | `default`, `bordered`                                         | Change template skin                                       |
+| mode                  | `light`, `dark`, `semi-dark`                                  | Set Light or Dark mode for the template                    |
 | direction             | `ltr`, `rtl`                                                  | Content direction                                          |
 | navCollapsed          | `true`, `false`                                               | If `true`, the vertical navigation menu is collapsed       |
 | verticalNavToggleType | `accordion`, `collapse`                                       | Set behavior of menu group in the vertical navigation menu |
