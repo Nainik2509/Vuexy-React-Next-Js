@@ -76,7 +76,7 @@ export type VerticalLayoutProps = {
   navMenu: {
     lockedIcon?: ReactNode
     unlockedIcon?: ReactNode
-    navItems: VerticalNavItemsType
+    navItems?: VerticalNavItemsType
     content?: (props?: any) => ReactNode
     branding?: (props?: any) => ReactNode
     afterContent?: (props?: any) => ReactNode
@@ -91,9 +91,9 @@ export type HorizontalLayoutProps = {
     content?: (props?: any) => ReactNode
     branding?: (props?: any) => ReactNode
   }
-  navMenu: {
+  navMenu?: {
     sx?: SxProps<Theme>
-    navItems: HorizontalNavItemsType
+    navItems?: HorizontalNavItemsType
     content?: (props?: any) => ReactNode
   }
 }

@@ -12,7 +12,8 @@ import HorizontalNavItems from './HorizontalNavItems'
 
 // ** Types
 interface Props {
-  horizontalNavItems: NonNullable<LayoutProps['horizontalLayoutProps']>['navMenu']['navItems']
+  settings: LayoutProps['settings']
+  horizontalNavItems: NonNullable<NonNullable<LayoutProps['horizontalLayoutProps']>['navMenu']>['navItems']
 }
 
 const Navigation = (props: Props) => {

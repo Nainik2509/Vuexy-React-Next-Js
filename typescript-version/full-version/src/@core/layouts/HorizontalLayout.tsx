@@ -75,7 +75,7 @@ const HorizontalLayout = (props: LayoutProps) => {
   // ** Vars
   const { skin, appBar, navHidden, contentWidth } = settings
   const appBarProps = horizontalLayoutProps?.appBar?.componentProps
-  const userNavMenuContent = horizontalLayoutProps?.navMenu.content
+  const userNavMenuContent = horizontalLayoutProps?.navMenu?.content
 
   let userAppBarStyle = {}
   if (appBarProps && appBarProps.sx) {
@@ -133,7 +133,7 @@ const HorizontalLayout = (props: LayoutProps) => {
           </Box>
           {/* Navigation Menu */}
           {navHidden ? null : (
-            <Box className='layout-horizontal-nav' sx={{ width: '100%', ...horizontalLayoutProps?.navMenu.sx }}>
+            <Box className='layout-horizontal-nav' sx={{ width: '100%', ...horizontalLayoutProps?.navMenu?.sx }}>
               <Toolbar
                 className='horizontal-nav-content-container'
                 sx={{
@@ -147,7 +147,7 @@ const HorizontalLayout = (props: LayoutProps) => {
                   <Navigation
                     {...props}
                     horizontalNavItems={
-                      (horizontalLayoutProps as NonNullable<LayoutProps['horizontalLayoutProps']>).navMenu.navItems
+                      (horizontalLayoutProps as NonNullable<LayoutProps['horizontalLayoutProps']>).navMenu?.navItems
                     }
                   />
                 )}
