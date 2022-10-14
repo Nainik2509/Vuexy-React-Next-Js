@@ -50,13 +50,15 @@ Following is the folder structure of the full-version under both typescript / ja
 │   └── views                    -> View files that are included in pages folder
 ├── styles                       -> Global styling
 ├── .env                         -> Environment file
+├── .eslintrc.json               -> ESLint configurations (Linting code)
+├── .gitignore                   -> gitignore (ignore files and folder to sync with repo)
+├── .npmrc                       -> Node configuration file
+├── .nvmrc                       -> nvm configuration file
+├── .prettierrc.js               -> Prettier configurations (editor code formatting)
 ├── next.config.js               -> Next js configurations
 ├── next.d.ts                    -> Next js global types configurations
 ├── package.json                 -> All the dependencies require to run the template
-├── .gitignore                   -> gitignore (ignore files and folder to sync with repo)
-├── .eslintrc.js                 -> ESLint configurations (Linting code)
-├── .prettierrc.js               -> Prettier configurations (editor code formatting)
-├── .tsconfig.json               -> TypeScript configurations
+├── tsconfig.json               -> TypeScript configurations
 ```
 
 ## @core folder

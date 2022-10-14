@@ -4,7 +4,7 @@ sidebarDepth: 0
 
 # Installation warnings
 
-You might get some warnings while running `yarn install` or `npm install --legacy-peer-deps` like below:
+You might get some warnings while running `yarn install` or `npm install` like below:
 
 <img alt='installation warnings' class='medium-zoom' :src="$withBase('/images/faqs/installation-warnings.png')" />
 

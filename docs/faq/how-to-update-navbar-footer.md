@@ -22,4 +22,4 @@ While updating the footer, only the content inside the footer can be overridden 
 
 Please refer following docs in order to override Footer in Vertical and Horizontal layouts:
 
-[Footer Content](/guide/layout/layout-overrides.html#_8-footer)
+[Footer Content](/guide/layout/layout-overrides.html#_8-footer-content)

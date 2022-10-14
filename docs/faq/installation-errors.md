@@ -4,7 +4,7 @@ sidebarDepth: 0
 
 # Installation errors
 
-Causes of `yarn install` or `npm install --legacy-peer-deps` issues can be due to various things which include:
+Causes of `yarn install` or `npm install` issues can be due to various things which include:
 
 - Missing or inappropriate dependencies like node or some other environmental issues
 - Dependency resolved by package manager (yarn/npm) conflicts with other installed dependency

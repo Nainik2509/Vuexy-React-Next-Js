@@ -31,9 +31,9 @@ export type LayoutProps = {
       content?: (props?: any) => ReactNode
       branding?: (props?: any) => ReactNode
     }
-    navMenu: {
+    navMenu?: {
       sx?: SxProps<Theme>
-      navItems: HorizontalNavItemsType
+      navItems?: HorizontalNavItemsType
       content?: (props?: any) => ReactNode
     }
   }
@@ -45,7 +45,7 @@ export type LayoutProps = {
     navMenu: {
       lockedIcon?: ReactNode
       unlockedIcon?: ReactNode
-      navItems: VerticalNavItemsType
+      navItems?: VerticalNavItemsType
       content?: (props?: any) => ReactNode
       branding?: (props?: any) => ReactNode
       afterContent?: (props?: any) => ReactNode
@@ -527,7 +527,7 @@ const MenuFooter = () => {
         borderTop: theme => `1px solid ${theme.palette.divider}`
       }}
     >
-      <img src='...' width='230' height='144' alt='menu-footer' />
+      <img src='...' width='...' height='...' alt='menu-footer' />
     </Box>
   )
 }
@@ -566,7 +566,7 @@ const MenuFooter = () => {
         borderTop: theme => `1px solid ${theme.palette.divider}`
       }}
     >
-      <img src='...' width='230' height='144' alt='menu-footer' />
+      <img src='...' width='...' height='...' alt='menu-footer' />
     </Box>
   )
 }
@@ -1180,11 +1180,11 @@ interface Props {
 }
 
 const AppBarContent = (props: Props) => {
-  const { settings } = props
+  const { settings, horizontalNavItems } = props
 
   return (
     <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-      <Navigation {...props} />
+      <Navigation settings={settings} horizontalNavItems={horizontalNavItems} />
       <UserDropdown settings={settings} />
     </Box>
   )
@@ -1203,11 +1203,11 @@ import Navigation from 'src/@core/layouts/components/horizontal/navigation'
 import UserDropdown from 'src/@core/layouts/components/shared-components/UserDropdown'
 
 const AppBarContent = props => {
-  const { settings } = props
+  const { settings, horizontalNavItems } = props
 
   return (
     <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-      <Navigation {...props} />
+      <Navigation settings={settings} horizontalNavItems={horizontalNavItems} />
       <UserDropdown settings={settings} />
     </Box>
   )

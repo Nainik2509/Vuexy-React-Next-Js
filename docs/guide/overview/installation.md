@@ -19,7 +19,7 @@ Before installing the **node_modules**, make sure you have files starting with a
 :::
 
 ::: danger Important!
-If you decide to use **npm**, make sure you use following command: **npm install --legacy-peer-deps**
+If you decide to use **npm**, make sure you use following command: **npm install**
 :::
 
 - After downloading zip, copy this zip to your desired location and then unzip it. **Do not unzip first and then copy files to another location**, it may not be able to run the template due to missing hidden files not copied over.
@@ -36,7 +36,7 @@ yarn install
 
 <code-block title="NPM">
 ```bash
-npm install --legacy-peer-deps
+npm install
 ```
 </code-block>
 </code-group>

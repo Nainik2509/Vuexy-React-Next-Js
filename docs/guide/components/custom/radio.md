@@ -332,15 +332,15 @@ const data: CustomRadioImgData[] = [
   {
     value: 'clock',
     isSelected: true,
-    img: '/images/pages/background-3.jpg'
+    img: '...'
   },
   {
     value: 'donuts',
-    img: '/images/pages/background-8.jpg'
+    img: '...'
   },
   {
     value: 'flowers',
-    img: '/images/pages/background-5.jpg'
+    img: '...'
   }
 ]
 
@@ -387,15 +387,15 @@ const data = [
   {
     value: 'clock',
     isSelected: true,
-    img: '/images/pages/background-3.jpg'
+    img: '...'
   },
   {
     value: 'donuts',
-    img: '/images/pages/background-8.jpg'
+    img: '...'
   },
   {
     value: 'flowers',
-    img: '/images/pages/background-5.jpg'
+    img: '...'
   }
 ]
 

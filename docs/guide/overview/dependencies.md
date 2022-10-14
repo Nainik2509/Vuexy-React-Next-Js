@@ -11,13 +11,22 @@ The following dependencies are common and required to run the template. Do not t
 :::
 
 ```json
+"@casl/ability"
+"@casl/react"
 "@emotion/cache"
 "@emotion/react"
 "@emotion/server"
 "@emotion/styled"
 "@iconify/react"
+"@iconify/iconify"
+"@iconify/json"
+"@iconify/tools"
+"@iconify/types"
+"@iconify/utils"
 "@mui/lab"
 "@mui/material"
+"@popperjs/core"
+"react-popper"
 "clsx"
 "next"
 "next-transpile-modules"
@@ -87,6 +96,7 @@ The following dependencies are common and required to run the template. Do not t
 ```json
 "@reduxjs/toolkit"
 "react-redux"
+"@types/react-redux" // Typescript version only
 ```
 
 ## Editor
