@@ -22,7 +22,7 @@ const Component = () => {
   }
 
   const handleLogin = () => {
-    login({ email, password }, err => handleErrCallback(err))
+    login({ email, password, rememberMe }, err => handleErrCallback(err))
   }
 
   const handleRegister = () => {
