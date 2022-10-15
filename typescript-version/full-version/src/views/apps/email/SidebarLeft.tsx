@@ -137,9 +137,7 @@ const SidebarLeft = (props: MailSidebarType) => {
                   borderLeftColor: theme => (activeInboxCondition ? theme.palette.primary.main : 'transparent')
                 }}
               >
-                <ListItemIcon
-                  sx={{ color: activeInboxCondition ? 'primary.main' : 'text.secondary', '& svg': { mr: 2 } }}
-                >
+                <ListItemIcon sx={{ color: activeInboxCondition ? 'primary.main' : 'text.secondary' }}>
                   <Icon icon='mdi:email-outline' />
                 </ListItemIcon>
                 <ListItemText
@@ -166,8 +164,7 @@ const SidebarLeft = (props: MailSidebarType) => {
               >
                 <ListItemIcon
                   sx={{
-                    color: handleActiveItem('folder', 'sent') ? 'primary.main' : 'text.secondary',
-                    '& svg': { mr: 2 }
+                    color: handleActiveItem('folder', 'sent') ? 'primary.main' : 'text.secondary'
                   }}
                 >
                   <Icon icon='mdi:send-outline' />
@@ -195,8 +192,7 @@ const SidebarLeft = (props: MailSidebarType) => {
               >
                 <ListItemIcon
                   sx={{
-                    color: handleActiveItem('folder', 'draft') ? 'primary.main' : 'text.secondary',
-                    '& svg': { mr: 2 }
+                    color: handleActiveItem('folder', 'draft') ? 'primary.main' : 'text.secondary'
                   }}
                 >
                   <Icon icon='mdi:pencil-outline' />
@@ -225,8 +221,7 @@ const SidebarLeft = (props: MailSidebarType) => {
               >
                 <ListItemIcon
                   sx={{
-                    color: handleActiveItem('folder', 'starred') ? 'primary.main' : 'text.secondary',
-                    '& svg': { mr: 2 }
+                    color: handleActiveItem('folder', 'starred') ? 'primary.main' : 'text.secondary'
                   }}
                 >
                   <Icon icon='mdi:star-outline' />
@@ -254,8 +249,7 @@ const SidebarLeft = (props: MailSidebarType) => {
               >
                 <ListItemIcon
                   sx={{
-                    color: handleActiveItem('folder', 'spam') ? 'primary.main' : 'text.secondary',
-                    '& svg': { mr: 2 }
+                    color: handleActiveItem('folder', 'spam') ? 'primary.main' : 'text.secondary'
                   }}
                 >
                   <Icon icon='mdi:alert-octagon-outline' />
@@ -284,8 +278,7 @@ const SidebarLeft = (props: MailSidebarType) => {
               >
                 <ListItemIcon
                   sx={{
-                    color: handleActiveItem('folder', 'trash') ? 'primary.main' : 'text.secondary',
-                    '& svg': { mr: 2 }
+                    color: handleActiveItem('folder', 'trash') ? 'primary.main' : 'text.secondary'
                   }}
                 >
                   <Icon icon='mdi:delete-outline' />
