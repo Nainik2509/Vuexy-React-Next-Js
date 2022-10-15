@@ -131,9 +131,7 @@ const CardPlanUpgrade = () => {
               type='number'
               sx={{ width: 80, mt: 0.4 }}
               onChange={e =>
-                e.target.value.length > 3
-                  ? setCvc1(parseInt(e.target.value.slice(0, 3)))
-                  : setCvc1(parseInt(e.target.value))
+                e.target.value.length > 3 ? setCvc1(e.target.value.slice(0, 3)) : setCvc1(e.target.value)
               }
             />
           </Box>

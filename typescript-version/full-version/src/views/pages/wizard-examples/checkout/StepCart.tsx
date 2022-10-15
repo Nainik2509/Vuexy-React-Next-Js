@@ -13,14 +13,15 @@ import Button from '@mui/material/Button'
 import Rating from '@mui/material/Rating'
 import Divider from '@mui/material/Divider'
 import ListItem from '@mui/material/ListItem'
-import { styled } from '@mui/material/styles'
 import TextField from '@mui/material/TextField'
 import IconButton from '@mui/material/IconButton'
 import AlertTitle from '@mui/material/AlertTitle'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
+import { Theme, styled } from '@mui/material/styles'
 import List, { ListProps } from '@mui/material/List'
 import ListItemText from '@mui/material/ListItemText'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import ListItemAvatar from '@mui/material/ListItemAvatar'
 
 // ** Custom Components Imports
@@ -62,6 +63,8 @@ const StyledList = styled(List)<ListProps>(({ theme }) => ({
 }))
 
 const StepCart = ({ handleNext }: { handleNext: () => void }) => {
+  const breakpointMD = useMediaQuery((theme: Theme) => theme.breakpoints.between('sm', 'lg'))
+
   return (
     <Grid container spacing={6}>
       <Grid item lg={8} xs={12}>
@@ -254,9 +257,11 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
             </Grid>
           </CardContent>
         </Card>
-        <Button fullWidth variant='contained' onClick={handleNext}>
-          Place Order
-        </Button>
+        <Box sx={{ display: 'flex', ...(breakpointMD ? { justifyContent: 'flex-end' } : {}) }}>
+          <Button fullWidth={!breakpointMD} variant='contained' onClick={handleNext}>
+            Place Order
+          </Button>
+        </Box>
       </Grid>
     </Grid>
   )
