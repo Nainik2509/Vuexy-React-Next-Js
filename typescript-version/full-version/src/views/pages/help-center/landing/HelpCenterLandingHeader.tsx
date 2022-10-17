@@ -109,7 +109,7 @@ const HelpCenterLandingHeader = ({ data, allArticles }: Props) => {
           (option as HelpCenterSubcategoryArticlesType).title
         }
         isOptionEqualToValue={(option: HelpCenterSubcategoryArticlesType | unknown, value) =>
-          value === (option as HelpCenterSubcategoryArticlesType).title
+          value === (option as HelpCenterSubcategoryArticlesType)
         }
         onChange={(event, option: HelpCenterSubcategoryArticlesType | unknown) =>
           handleRedirection(option as HelpCenterSubcategoryArticlesType)
