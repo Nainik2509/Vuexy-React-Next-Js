@@ -90,19 +90,16 @@ const Stepper = styled(MuiStepper)<StepperProps>(({ theme }) => ({
     },
     '& + svg': {
       display: 'none',
-      color: theme.palette.text.secondary
+      color: theme.palette.text.disabled
     },
 
     '& .MuiStepLabel-label': {
       display: 'flex',
       cursor: 'pointer',
       alignItems: 'center',
-      '& .MuiTypography-root': {
-        color: theme.palette.text.secondary
-      },
       svg: {
         marginRight: theme.spacing(1.5),
-        fill: theme.palette.text.secondary
+        fill: theme.palette.text.primary
       },
       '&.Mui-active, &.Mui-completed': {
         '& .MuiTypography-root': {

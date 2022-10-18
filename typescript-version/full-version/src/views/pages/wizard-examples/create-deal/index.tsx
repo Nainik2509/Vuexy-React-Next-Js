@@ -4,28 +4,25 @@ import { useState } from 'react'
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
-import Step from '@mui/material/Step'
 import Button from '@mui/material/Button'
+import Stepper from '@mui/material/Stepper'
 import { styled } from '@mui/material/styles'
+import StepLabel from '@mui/material/StepLabel'
 import Typography from '@mui/material/Typography'
-import MuiStepper, { StepperProps } from '@mui/material/Stepper'
-import MuiStepLabel, { StepLabelProps } from '@mui/material/StepLabel'
+import MuiStep, { StepProps } from '@mui/material/Step'
 import CardContent, { CardContentProps } from '@mui/material/CardContent'
 
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Imports
-import CustomAvatar from 'src/@core/components/mui/avatar'
+import StepperCustomDot from 'src/views/forms/form-wizard/StepperCustomDot'
 
 // ** Step Components
 import StepDealType from 'src/views/pages/wizard-examples/create-deal/StepDealType'
 import StepReview from 'src/views/pages/wizard-examples/create-deal/StepReview'
 import StepDealUsage from 'src/views/pages/wizard-examples/create-deal/StepDealUsage'
 import StepDealDetails from 'src/views/pages/wizard-examples/create-deal/StepDealDetails'
-
-// ** Util Import
-import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 
 // ** Styled Components
 import StepperWrapper from 'src/@core/styles/mui/stepper'
@@ -53,42 +50,17 @@ const steps = [
   }
 ]
 
-const Stepper = styled(MuiStepper)<StepperProps>(({ theme }) => ({
-  height: '100%',
-  minWidth: '15rem',
-  '& .MuiStep-root:not(:last-of-type) .MuiStepLabel-root': {
-    paddingBottom: theme.spacing(5)
+const Step = styled(MuiStep)<StepProps>(({ theme }) => ({
+  '&:not(:last-of-type)': {
+    marginBottom: theme.spacing(4)
   },
-  [theme.breakpoints.down('md')]: {
-    minWidth: 0
-  }
-}))
-
-const StepLabel = styled(MuiStepLabel)<StepLabelProps>(({ theme }) => ({
-  '& .MuiStepLabel-label': {
-    display: 'flex',
-    cursor: 'pointer',
-    '& .step-title, & .step-subtitle, & .MuiAvatar-root svg': {
-      color: theme.palette.text.secondary
-    },
-    '&.Mui-active': {
-      '& .step-title': {
-        color: theme.palette.primary.main
-      },
-      '& .MuiAvatar-root svg': {
-        color: theme.palette.common.white
-      }
-    },
-    '&.Mui-completed': {
-      opacity: 0.65,
-      '& .MuiAvatar-root svg': {
-        color: theme.palette.primary.main
-      }
-    }
+  '& .MuiStepLabel-root': {
+    padding: 0
   }
 }))
 
 const StepperHeaderContainer = styled(CardContent)<CardContentProps>(({ theme }) => ({
+  minWidth: 300,
   borderRight: `1px solid ${theme.palette.divider}`,
   [theme.breakpoints.down('md')]: {
     borderRight: 0,
@@ -167,26 +139,13 @@ const CreateDealWizard = () => {
                   onClick={() => setActiveStep(index)}
                   sx={{ '&.Mui-completed + svg': { color: 'primary.main' } }}
                 >
-                  <StepLabel icon={<></>}>
-                    <CustomAvatar
-                      variant='rounded'
-                      skin={activeStep === index ? 'filled' : 'light'}
-                      color={activeStep === index || activeStep > index ? 'primary' : 'secondary'}
-                      sx={{
-                        mr: 4,
-                        boxShadow: theme =>
-                          activeStep === index
-                            ? `0 0.1875rem 0.375rem 0 ${hexToRGBA(theme.palette.primary.main, 0.4)}`
-                            : 'none'
-                      }}
-                    >
-                      <Icon icon={step.icon} />
-                    </CustomAvatar>
-                    <div>
-                      <Typography className='step-title'>{step.title}</Typography>
-                      <Typography variant='caption' className='step-subtitle'>
-                        {step.subtitle}
-                      </Typography>
+                  <StepLabel StepIconComponent={StepperCustomDot}>
+                    <div className='step-label'>
+                      <Typography className='step-number'>{`0${index + 1}`}</Typography>
+                      <div>
+                        <Typography className='step-title'>{step.title}</Typography>
+                        <Typography className='step-subtitle'>{step.subtitle}</Typography>
+                      </div>
                     </div>
                   </StepLabel>
                 </Step>
