@@ -41,7 +41,7 @@ const ChartjsAreaChart = (props: AreaProps) => {
 
   // ** States
   const [endDate, setEndDate] = useState<DateType>(null)
-  const [startDate, setStartDate] = useState<DateType>(new Date())
+  const [startDate, setStartDate] = useState<DateType>(null)
 
   const options: ChartOptions<'line'> = {
     responsive: true,
@@ -152,7 +152,7 @@ const ChartjsAreaChart = (props: AreaProps) => {
   }
 
   const CustomInput = forwardRef((props: PickerProps, ref) => {
-    const startDate = format(props.start, 'MM/dd/yyyy')
+    const startDate = props.start !== null ? format(props.start, 'MM/dd/yyyy') : ''
     const endDate = props.end !== null ? ` - ${format(props.end, 'MM/dd/yyyy')}` : null
 
     const value = `${startDate}${endDate !== null ? endDate : ''}`

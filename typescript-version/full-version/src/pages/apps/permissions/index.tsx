@@ -1,5 +1,5 @@
 // ** React Imports
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, FormEvent } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -17,14 +17,10 @@ import Typography from '@mui/material/Typography'
 import AlertTitle from '@mui/material/AlertTitle'
 import DialogTitle from '@mui/material/DialogTitle'
 import DialogContent from '@mui/material/DialogContent'
-import FormHelperText from '@mui/material/FormHelperText'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
-
-// ** Third Party Imports
-import { useForm, Controller } from 'react-hook-form'
 
 // ** Store Imports
 import { useDispatch, useSelector } from 'react-redux'
@@ -99,15 +95,10 @@ const PermissionsTable = () => {
   // ** State
   const [value, setValue] = useState<string>('')
   const [pageSize, setPageSize] = useState<number>(10)
+  const [editValue, setEditValue] = useState<string>('')
   const [editDialogOpen, setEditDialogOpen] = useState<boolean>(false)
 
   // ** Hooks
-  const {
-    control,
-    setValue: setFormValue,
-    handleSubmit,
-    formState: { errors }
-  } = useForm({ defaultValues: { name: '' } })
   const dispatch = useDispatch<AppDispatch>()
   const store = useSelector((state: RootState) => state.permissions)
 
@@ -124,15 +115,15 @@ const PermissionsTable = () => {
   }, [])
 
   const handleEditPermission = (name: string) => {
-    setFormValue('name', name)
+    setEditValue(name)
     setEditDialogOpen(true)
   }
 
   const handleDialogToggle = () => setEditDialogOpen(!editDialogOpen)
 
-  const onSubmit = () => {
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     setEditDialogOpen(false)
-    setFormValue('name', '')
+    e.preventDefault()
   }
 
   const columns = [
@@ -198,33 +189,22 @@ const PermissionsTable = () => {
             absolutely certain before proceeding.
           </Alert>
 
-          <Box component='form' sx={{ mt: 8 }} onSubmit={handleSubmit(onSubmit)}>
+          <Box component='form' sx={{ mt: 8 }} onSubmit={onSubmit}>
             <FormGroup sx={{ mb: 2, alignItems: 'center', flexDirection: 'row', flexWrap: ['wrap', 'nowrap'] }}>
-              <Controller
-                name='name'
-                control={control}
-                rules={{ required: true }}
-                render={({ field: { value, onChange } }) => (
-                  <TextField
-                    fullWidth
-                    size='small'
-                    value={value}
-                    label='Permission Name'
-                    onChange={onChange}
-                    error={Boolean(errors.name)}
-                    placeholder='Enter Permission Name'
-                    sx={{ mr: [0, 4], mb: [3, 0] }}
-                  />
-                )}
+              <TextField
+                fullWidth
+                size='small'
+                value={editValue}
+                label='Permission Name'
+                sx={{ mr: [0, 4], mb: [3, 0] }}
+                placeholder='Enter Permission Name'
+                onChange={e => setEditValue(e.target.value)}
               />
 
               <Button type='submit' variant='contained'>
                 Update
               </Button>
             </FormGroup>
-            {errors.name && (
-              <FormHelperText sx={{ color: 'error.main' }}>Please enter a valid permission name</FormHelperText>
-            )}
             <FormControlLabel control={<Checkbox />} label='Set as core permission' />
           </Box>
         </DialogContent>

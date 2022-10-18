@@ -107,7 +107,7 @@ const MailLog = (props: MailLogType) => {
     {
       name: 'draft',
       icon: (
-        <Box component='span' sx={{ mr: 2 }}>
+        <Box component='span' sx={{ mr: 2, display: 'flex' }}>
           <Icon icon='mdi:pencil-outline' fontSize={20} />
         </Box>
       )
@@ -115,7 +115,7 @@ const MailLog = (props: MailLogType) => {
     {
       name: 'spam',
       icon: (
-        <Box component='span' sx={{ mr: 2 }}>
+        <Box component='span' sx={{ mr: 2, display: 'flex' }}>
           <Icon icon='mdi:alert-octagon-outline' fontSize={20} />
         </Box>
       )
@@ -123,7 +123,7 @@ const MailLog = (props: MailLogType) => {
     {
       name: 'trash',
       icon: (
-        <Box component='span' sx={{ mr: 2 }}>
+        <Box component='span' sx={{ mr: 2, display: 'flex' }}>
           <Icon icon='mdi:delete-outline' fontSize={20} />
         </Box>
       )
@@ -131,7 +131,7 @@ const MailLog = (props: MailLogType) => {
     {
       name: 'inbox',
       icon: (
-        <Box component='span' sx={{ mr: 2 }}>
+        <Box component='span' sx={{ mr: 2, display: 'flex' }}>
           <Icon icon='mdi:email-outline' fontSize={20} />
         </Box>
       )
@@ -142,7 +142,7 @@ const MailLog = (props: MailLogType) => {
     draft: {
       name: 'draft',
       icon: (
-        <Box component='span' sx={{ mr: 2 }}>
+        <Box component='span' sx={{ mr: 2, display: 'flex' }}>
           <Icon icon='mdi:pencil-outline' fontSize={20} />
         </Box>
       )
@@ -150,7 +150,7 @@ const MailLog = (props: MailLogType) => {
     spam: {
       name: 'spam',
       icon: (
-        <Box component='span' sx={{ mr: 2 }}>
+        <Box component='span' sx={{ mr: 2, display: 'flex' }}>
           <Icon icon='mdi:alert-octagon-outline' fontSize={20} />
         </Box>
       )
@@ -158,7 +158,7 @@ const MailLog = (props: MailLogType) => {
     trash: {
       name: 'trash',
       icon: (
-        <Box component='span' sx={{ mr: 2 }}>
+        <Box component='span' sx={{ mr: 2, display: 'flex' }}>
           <Icon icon='mdi:delete-outline' fontSize={20} />
         </Box>
       )
@@ -166,7 +166,7 @@ const MailLog = (props: MailLogType) => {
     inbox: {
       name: 'inbox',
       icon: (
-        <Box component='span' sx={{ mr: 2 }}>
+        <Box component='span' sx={{ mr: 2, display: 'flex' }}>
           <Icon icon='mdi:email-outline' fontSize={20} />
         </Box>
       )

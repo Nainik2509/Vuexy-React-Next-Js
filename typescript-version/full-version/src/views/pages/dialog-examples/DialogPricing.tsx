@@ -4,7 +4,6 @@ import { Ref, useState, forwardRef, ReactElement, ChangeEvent } from 'react'
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
-import Grid from '@mui/material/Grid'
 import Switch from '@mui/material/Switch'
 import Dialog from '@mui/material/Dialog'
 import Button from '@mui/material/Button'
@@ -18,14 +17,14 @@ import DialogContent from '@mui/material/DialogContent'
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
 
-// ** Custom Components Imports
-import PlanDetails from 'src/@core/components/plan-details'
-
 // ** Types
-import { PricingDataType, PricingPlanType } from 'src/@core/components/plan-details/types'
+import { PricingPlanType } from 'src/@core/components/plan-details/types'
+
+// ** Component Import
+import PricingPlans from 'src/views/pages/pricing/PricingPlans'
 
 interface Props {
-  data: PricingDataType
+  data: PricingPlanType[]
 }
 
 const Transition = forwardRef(function Transition(
@@ -38,7 +37,7 @@ const Transition = forwardRef(function Transition(
 const DialogPricing = ({ data }: Props) => {
   // ** States
   const [show, setShow] = useState<boolean>(false)
-  const [plan, setPlan] = useState<'monthly' | 'annually'>('monthly')
+  const [plan, setPlan] = useState<'monthly' | 'annually'>('annually')
 
   const handleChange = (e: ChangeEvent<{ checked: boolean }>) => {
     if (e.target.checked) {
@@ -46,16 +45,6 @@ const DialogPricing = ({ data }: Props) => {
     } else {
       setPlan('monthly')
     }
-  }
-
-  const renderPlan = () => {
-    return data?.pricingPlans.map((item: PricingPlanType) => {
-      return (
-        <Grid item xs={12} md={4} key={item.title.toLowerCase()}>
-          <PlanDetails plan={plan} data={item} />
-        </Grid>
-      )
-    })
   }
 
   return (
@@ -111,9 +100,7 @@ const DialogPricing = ({ data }: Props) => {
               Annually
             </InputLabel>
           </Box>
-          <Grid container spacing={6}>
-            {renderPlan()}
-          </Grid>
+          <PricingPlans data={data} plan={plan} />
           <Box sx={{ mt: 6, textAlign: 'center' }}>
             <Typography variant='body2' sx={{ mb: 2.5 }}>
               Still Not Convinced? Start with a 14-day FREE trial!

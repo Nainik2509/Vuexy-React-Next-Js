@@ -256,6 +256,7 @@ const UserViewSecurity = () => {
               </Typography>
               <form onSubmit={e => e.preventDefault()}>
                 <TextField
+                  autoFocus
                   fullWidth
                   value={mobileNumber}
                   label='Mobile number with country code'

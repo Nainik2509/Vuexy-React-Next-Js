@@ -82,13 +82,13 @@ const reactData = [
 const RechartsScatterChart = ({ direction }: Props) => {
   // ** States
   const [endDate, setEndDate] = useState<DateType>(null)
-  const [startDate, setStartDate] = useState<DateType>(new Date())
+  const [startDate, setStartDate] = useState<DateType>(null)
 
   // ** Hooks
   const theme = useTheme()
 
   const CustomInput = forwardRef((props: PickerProps, ref) => {
-    const startDate = format(props.start, 'MM/dd/yyyy')
+    const startDate = props.start !== null ? format(props.start, 'MM/dd/yyyy') : ''
     const endDate = props.end !== null ? ` - ${format(props.end, 'MM/dd/yyyy')}` : null
 
     const value = `${startDate}${endDate !== null ? endDate : ''}`

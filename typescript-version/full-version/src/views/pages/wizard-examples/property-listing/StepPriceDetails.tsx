@@ -68,7 +68,6 @@ const StepPriceDetails = () => {
         <FormControl fullWidth>
           <InputLabel id='select-maintenance'>Maintenance Period</InputLabel>
           <Select labelId='select-maintenance' label='Maintenance Period' defaultValue=''>
-            <MenuItem value=''></MenuItem>
             <MenuItem value='Monthly'>Monthly</MenuItem>
             <MenuItem value='Quarterly'>Quarterly</MenuItem>
             <MenuItem value='Yearly'>Yearly</MenuItem>

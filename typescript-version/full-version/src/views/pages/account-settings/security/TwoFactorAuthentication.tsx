@@ -46,6 +46,7 @@ const TwoFactorAuthenticationCard = () => {
   const close2FADialog = () => {
     toggle2FADialog()
     clearErrors('phoneNumber')
+    setValue('phoneNumber', '')
   }
 
   return (
@@ -104,8 +105,8 @@ const TwoFactorAuthenticationCard = () => {
                   <OutlinedInput
                     type='number'
                     value={value}
-                    label='Phone Number'
                     onChange={onChange}
+                    label='Phone Number'
                     id='opt-phone-number'
                     placeholder='202 555 0111'
                     error={Boolean(errors.phoneNumber)}

@@ -225,7 +225,7 @@ const TwoStepsV1 = () => {
             <Typography sx={{ mt: 2, fontWeight: 700 }}>******1234</Typography>
           </Box>
           <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>Type your 6 digit security code</Typography>
-          <form onSubmit={handleSubmit(() => true)} autoComplete='off'>
+          <form onSubmit={handleSubmit(() => true)}>
             <CleaveWrapper
               sx={{
                 display: 'flex',

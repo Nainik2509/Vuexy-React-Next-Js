@@ -98,7 +98,6 @@ const StepPropertyDetails = () => {
             <FormControl fullWidth>
               <InputLabel htmlFor='validation-property-select'>Property Type</InputLabel>
               <Select label='Property Type' labelId='validation-property-select' defaultValue=''>
-                <MenuItem value=''></MenuItem>
                 <MenuItem value='UK'>UK</MenuItem>
                 <MenuItem value='USA'>USA</MenuItem>
                 <MenuItem value='Australia'>Australia</MenuItem>
@@ -115,7 +114,6 @@ const StepPropertyDetails = () => {
             <FormControl fullWidth>
               <InputLabel htmlFor='country-select'>Country</InputLabel>
               <Select label='Country' labelId='country-select' aria-describedby='country-select' defaultValue=''>
-                <MenuItem value=''></MenuItem>
                 <MenuItem value='UK'>UK</MenuItem>
                 <MenuItem value='USA'>USA</MenuItem>
                 <MenuItem value='India'>India</MenuItem>

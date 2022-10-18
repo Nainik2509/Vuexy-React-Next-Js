@@ -108,6 +108,7 @@ const InvoiceAction = styled(Box)<BoxProps>(({ theme }) => ({
 }))
 
 const CustomSelectItem = styled(MenuItem)<MenuItemProps>(({ theme }) => ({
+  color: theme.palette.success.main,
   backgroundColor: 'transparent !important',
   '&:hover': { backgroundColor: `${alpha(theme.palette.success.main, 0.1)} !important` }
 }))
@@ -284,17 +285,11 @@ const AddCard = (props: Props) => {
               Invoice To:
             </Typography>
             <Select size='small' value={selected} onChange={handleInvoiceChange} sx={{ mb: 4, width: '200px' }}>
-              <CustomSelectItem value=''>
-                <Button
-                  fullWidth
-                  size='small'
-                  color='success'
-                  onClick={handleAddNewCustomer}
-                  startIcon={<Icon icon='mdi:plus' fontSize={20} />}
-                  sx={{ '&:hover': { backgroundColor: 'transparent' } }}
-                >
+              <CustomSelectItem value='' onClick={handleAddNewCustomer}>
+                <Box sx={{ display: 'flex', alignItems: 'center', color: 'success.main', '& svg': { mr: 2 } }}>
+                  <Icon icon='mdi:plus' fontSize={20} />
                   Add New Customer
-                </Button>
+                </Box>
               </CustomSelectItem>
               {clients !== undefined &&
                 clients.map(client => (

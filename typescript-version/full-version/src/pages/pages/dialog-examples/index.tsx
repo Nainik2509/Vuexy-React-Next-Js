@@ -20,7 +20,7 @@ import DialogShareProject from 'src/views/pages/dialog-examples/DialogShareProje
 import DialogEditUserInfo from 'src/views/pages/dialog-examples/DialogEditUserInfo'
 import DialogAuthentication from 'src/views/pages/dialog-examples/DialogAuthentication'
 
-const DialogExamples = ({ apiPricingData }: InferGetStaticPropsType<typeof getStaticProps>) => (
+const DialogExamples = ({ apiPricingPlanData }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <Grid container spacing={6} className='match-height'>
     <Grid item md={4} sm={6} xs={12}>
       <DialogShareProject />
@@ -29,7 +29,7 @@ const DialogExamples = ({ apiPricingData }: InferGetStaticPropsType<typeof getSt
       <DialogAddCard />
     </Grid>
     <Grid item md={4} sm={6} xs={12}>
-      <DialogPricing data={apiPricingData} />
+      <DialogPricing data={apiPricingPlanData} />
     </Grid>
     <Grid item md={4} sm={6} xs={12}>
       <DialogReferEarn />
@@ -51,11 +51,11 @@ const DialogExamples = ({ apiPricingData }: InferGetStaticPropsType<typeof getSt
 
 export const getStaticProps: GetStaticProps = async () => {
   const res = await axios.get('/pages/pricing')
-  const apiPricingData: PricingDataType = res.data
+  const data: PricingDataType = res.data
 
   return {
     props: {
-      apiPricingData
+      apiPricingPlanData: data.pricingPlans
     }
   }
 }

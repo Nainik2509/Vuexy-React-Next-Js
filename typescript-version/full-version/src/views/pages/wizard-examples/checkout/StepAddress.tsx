@@ -10,9 +10,10 @@ import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
 import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
-import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
+import { Theme, useTheme } from '@mui/material/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
 
 // ** Type Imports
 import {
@@ -192,6 +193,7 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
 
   // ** Hook
   const theme = useTheme()
+  const breakpointMD = useMediaQuery((theme: Theme) => theme.breakpoints.between('sm', 'lg'))
 
   const icons: IconType[] = [
     {
@@ -314,9 +316,11 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
             </Grid>
           </CardContent>
         </Card>
-        <Button fullWidth variant='contained' onClick={handleNext}>
-          Place Order
-        </Button>
+        <Box sx={{ display: 'flex', ...(breakpointMD ? { justifyContent: 'flex-end' } : {}) }}>
+          <Button fullWidth={!breakpointMD} variant='contained' onClick={handleNext}>
+            Place Order
+          </Button>
+        </Box>
       </Grid>
     </Grid>
   )

@@ -204,7 +204,7 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
               <br />
               Los Angeles, CA, 90017.
               <br />
-              Mobile : +1 906 568 2332
+              Mobile : +123456789
             </Box>
             <Link href='/' passHref>
               <Box
