@@ -10,7 +10,6 @@ import List from '@mui/material/List'
 import Chip from '@mui/material/Chip'
 import Badge from '@mui/material/Badge'
 import Drawer from '@mui/material/Drawer'
-import { Theme } from '@mui/material/styles'
 import MuiAvatar from '@mui/material/Avatar'
 import ListItem from '@mui/material/ListItem'
 import TextField from '@mui/material/TextField'
@@ -139,7 +138,7 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
                   width: '100%',
                   borderRadius: 1,
                   alignItems: 'flex-start',
-                  backgroundColor: (theme: Theme) => (activeCondition ? `${theme.palette.primary.main} !important` : '')
+                  ...(activeCondition && { backgroundColor: theme => `${theme.palette.primary.main} !important` })
                 }}
               >
                 <ListItemAvatar sx={{ m: 0 }}>
@@ -158,7 +157,7 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
                           borderRadius: '50%',
                           color: `${statusObj[chat.status]}.main`,
                           backgroundColor: `${statusObj[chat.status]}.main`,
-                          boxShadow: (theme: Theme) =>
+                          boxShadow: theme =>
                             `0 0 0 2px ${
                               !activeCondition ? theme.palette.background.paper : theme.palette.common.white
                             }`
@@ -173,7 +172,7 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
                         sx={{
                           width: 38,
                           height: 38,
-                          border: (theme: Theme) => (activeCondition ? `2px solid ${theme.palette.common.white}` : '')
+                          ...(activeCondition && { border: theme => `2px solid ${theme.palette.common.white}` })
                         }}
                       />
                     ) : (
@@ -184,7 +183,7 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
                           width: 38,
                           height: 38,
                           fontSize: '1rem',
-                          border: (theme: Theme) => (activeCondition ? `2px solid ${theme.palette.common.white}` : '')
+                          ...(activeCondition && { border: theme => `2px solid ${theme.palette.common.white}` })
                         }}
                       >
                         {getInitials(chat.fullName)}
@@ -197,7 +196,7 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
                     my: 0,
                     ml: 4,
                     mr: 1.5,
-                    '& .MuiTypography-root': { ...(activeCondition ? { color: 'common.white' } : {}) }
+                    '& .MuiTypography-root': { ...(activeCondition && { color: 'common.white' }) }
                   }}
                   primary={
                     <Typography noWrap sx={{ fontWeight: 500, fontSize: '0.875rem' }}>
@@ -205,11 +204,7 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
                     </Typography>
                   }
                   secondary={
-                    <Typography
-                      noWrap
-                      variant='body2'
-                      sx={{ color: !activeCondition ? (theme: Theme) => theme.palette.text.disabled : {} }}
-                    >
+                    <Typography noWrap variant='body2' sx={{ ...(!activeCondition && { color: 'text.disabled' }) }}>
                       {lastMessage ? lastMessage.message : null}
                     </Typography>
                   }
@@ -276,8 +271,7 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
                       py: 2.5,
                       width: '100%',
                       borderRadius: 1,
-                      backgroundColor: (theme: Theme) =>
-                        activeCondition ? `${theme.palette.primary.main} !important` : ''
+                      ...(activeCondition && { backgroundColor: theme => `${theme.palette.primary.main} !important` })
                     }}
                   >
                     <ListItemAvatar sx={{ m: 0 }}>
@@ -288,7 +282,7 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
                           sx={{
                             width: 38,
                             height: 38,
-                            border: (theme: Theme) => (activeCondition ? `2px solid ${theme.palette.common.white}` : '')
+                            ...(activeCondition && { border: theme => `2px solid ${theme.palette.common.white}` })
                           }}
                         />
                       ) : (
@@ -299,7 +293,7 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
                             width: 38,
                             height: 38,
                             fontSize: '1rem',
-                            border: (theme: Theme) => (activeCondition ? `2px solid ${theme.palette.common.white}` : '')
+                            ...(activeCondition && { border: theme => `2px solid ${theme.palette.common.white}` })
                           }}
                         >
                           {getInitials(contact.fullName)}
@@ -307,16 +301,16 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
                       )}
                     </ListItemAvatar>
                     <ListItemText
-                      sx={{ my: 0, ml: 4, '& .MuiTypography-root': { color: activeCondition ? 'common.white' : '' } }}
+                      sx={{
+                        my: 0,
+                        ml: 4,
+                        ...(activeCondition && { '& .MuiTypography-root': { color: 'common.white' } })
+                      }}
                       primary={
                         <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>{contact.fullName}</Typography>
                       }
                       secondary={
-                        <Typography
-                          noWrap
-                          variant='body2'
-                          sx={{ color: !activeCondition ? (theme: Theme) => theme.palette.text.disabled : {} }}
-                        >
+                        <Typography noWrap variant='body2' sx={{ ...(!activeCondition && { color: 'text.disabled' }) }}>
                           {contact.about}
                         </Typography>
                       }
@@ -361,13 +355,13 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
             boxShadow: 'none',
             width: sidebarWidth,
             position: mdAbove ? 'static' : 'absolute',
-            borderTopLeftRadius: (theme: Theme) => theme.shape.borderRadius,
-            borderBottomLeftRadius: (theme: Theme) => theme.shape.borderRadius
+            borderTopLeftRadius: theme => theme.shape.borderRadius,
+            borderBottomLeftRadius: theme => theme.shape.borderRadius
           },
           '& > .MuiBackdrop-root': {
             borderRadius: 1,
             position: 'absolute',
-            zIndex: (theme: Theme) => theme.zIndex.drawer - 1
+            zIndex: theme => theme.zIndex.drawer - 1
           }
         }}
       >
@@ -377,7 +371,7 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
             py: 3.125,
             display: 'flex',
             alignItems: 'center',
-            borderBottom: (theme: Theme) => `1px solid ${theme.palette.divider}`
+            borderBottom: theme => `1px solid ${theme.palette.divider}`
           }}
         >
           {store && store.userProfile ? (
@@ -398,7 +392,7 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
                     borderRadius: '50%',
                     color: `${statusObj[userStatus]}.main`,
                     backgroundColor: `${statusObj[userStatus]}.main`,
-                    boxShadow: (theme: Theme) => `0 0 0 2px ${theme.palette.background.paper}`
+                    boxShadow: theme => `0 0 0 2px ${theme.palette.background.paper}`
                   }}
                 />
               }
@@ -434,7 +428,7 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
 
         <Box sx={{ height: `calc(100% - 4.125rem)` }}>
           <ScrollWrapper hidden={hidden}>
-            <Box sx={{ p: (theme: Theme) => theme.spacing(7, 3, 3) }}>
+            <Box sx={{ p: theme => theme.spacing(7, 3, 3) }}>
               <Typography variant='h6' sx={{ ml: 3, mb: 3, color: 'primary.main' }}>
                 Chats
               </Typography>

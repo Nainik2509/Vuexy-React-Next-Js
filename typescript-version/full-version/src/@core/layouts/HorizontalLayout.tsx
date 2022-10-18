@@ -97,9 +97,9 @@ const HorizontalLayout = (props: LayoutProps) => {
             alignItems: 'center',
             color: 'text.primary',
             justifyContent: 'center',
+            backgroundColor: 'background.paper',
             ...(appBar === 'static' && { zIndex: 13 }),
             transition: 'border-bottom 0.2s ease-in-out',
-            backgroundColor: theme => theme.palette.background.paper,
             ...(skin === 'bordered' && { borderBottom: theme => `1px solid ${theme.palette.divider}` }),
             ...userAppBarStyle
           }}

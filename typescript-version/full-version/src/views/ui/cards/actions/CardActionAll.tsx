@@ -79,7 +79,7 @@ const CardActionAll = () => {
             open={reload}
             sx={{
               position: 'absolute',
-              color: theme => theme.palette.common.white,
+              color: 'common.white',
               zIndex: theme => theme.zIndex.mobileStepper - 1
             }}
           >

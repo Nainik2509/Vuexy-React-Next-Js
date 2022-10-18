@@ -45,16 +45,16 @@ const ApexDonutChart = () => {
           labels: {
             show: true,
             name: {
-              fontSize: '1.5rem'
+              fontSize: '1.2rem'
             },
             value: {
-              fontSize: '1.5rem',
+              fontSize: '1.2rem',
               color: theme.palette.text.secondary,
               formatter: (val: string) => `${parseInt(val, 10)}`
             },
             total: {
               show: true,
-              fontSize: '1.5rem',
+              fontSize: '1.2rem',
               label: 'Operational',
               formatter: () => '31%',
               color: theme.palette.text.primary
@@ -111,12 +111,7 @@ const ApexDonutChart = () => {
         subheader='Spending on various categories'
         subheaderTypographyProps={{ sx: { color: theme => `${theme.palette.text.disabled} !important` } }}
       />
-      <CardContent
-        sx={{
-          '& .apexcharts-canvas .apexcharts-pie .apexcharts-datalabel-label, & .apexcharts-canvas .apexcharts-pie .apexcharts-datalabel-value':
-            { fontSize: '1.2rem' }
-        }}
-      >
+      <CardContent>
         <ReactApexcharts type='donut' height={400} options={options} series={[85, 16, 50, 50]} />
       </CardContent>
     </Card>

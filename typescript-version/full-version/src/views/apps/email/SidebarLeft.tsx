@@ -133,9 +133,7 @@ const SidebarLeft = (props: MailSidebarType) => {
               <ListItemStyled
                 component='a'
                 onClick={handleListItemClick}
-                sx={{
-                  borderLeftColor: theme => (activeInboxCondition ? theme.palette.primary.main : 'transparent')
-                }}
+                sx={{ borderLeftColor: activeInboxCondition ? 'primary.main' : 'transparent' }}
               >
                 <ListItemIcon sx={{ color: activeInboxCondition ? 'primary.main' : 'text.secondary' }}>
                   <Icon icon='mdi:email-outline' />
@@ -144,10 +142,7 @@ const SidebarLeft = (props: MailSidebarType) => {
                   primary='Inbox'
                   primaryTypographyProps={{
                     noWrap: true,
-                    sx: {
-                      fontWeight: 500,
-                      color: theme => (activeInboxCondition ? theme.palette.primary.main : '')
-                    }
+                    sx: { fontWeight: 500, ...(activeInboxCondition && { color: 'primary.main' }) }
                   }}
                 />
                 {RenderBadge('inbox', 'primary')}
@@ -158,8 +153,7 @@ const SidebarLeft = (props: MailSidebarType) => {
                 component='a'
                 onClick={handleListItemClick}
                 sx={{
-                  borderLeftColor: theme =>
-                    handleActiveItem('folder', 'sent') ? theme.palette.primary.main : 'transparent'
+                  borderLeftColor: handleActiveItem('folder', 'sent') ? 'primary.main' : 'transparent'
                 }}
               >
                 <ListItemIcon
@@ -173,10 +167,7 @@ const SidebarLeft = (props: MailSidebarType) => {
                   primary='Sent'
                   primaryTypographyProps={{
                     noWrap: true,
-                    sx: {
-                      fontWeight: 500,
-                      color: theme => (handleActiveItem('folder', 'sent') ? theme.palette.primary.main : '')
-                    }
+                    sx: { fontWeight: 500, ...(handleActiveItem('folder', 'sent') && { color: 'primary.main' }) }
                   }}
                 />
               </ListItemStyled>
@@ -186,8 +177,7 @@ const SidebarLeft = (props: MailSidebarType) => {
                 component='a'
                 onClick={handleListItemClick}
                 sx={{
-                  borderLeftColor: theme =>
-                    handleActiveItem('folder', 'draft') ? theme.palette.primary.main : 'transparent'
+                  borderLeftColor: handleActiveItem('folder', 'draft') ? 'primary.main' : 'transparent'
                 }}
               >
                 <ListItemIcon
@@ -201,10 +191,7 @@ const SidebarLeft = (props: MailSidebarType) => {
                   primary='Draft'
                   primaryTypographyProps={{
                     noWrap: true,
-                    sx: {
-                      fontWeight: 500,
-                      color: theme => (handleActiveItem('folder', 'draft') ? theme.palette.primary.main : '')
-                    }
+                    sx: { fontWeight: 500, ...(handleActiveItem('folder', 'draft') && { color: 'primary.main' }) }
                   }}
                 />
                 {RenderBadge('draft', 'warning')}
@@ -215,8 +202,7 @@ const SidebarLeft = (props: MailSidebarType) => {
                 component='a'
                 onClick={handleListItemClick}
                 sx={{
-                  borderLeftColor: theme =>
-                    handleActiveItem('folder', 'starred') ? theme.palette.primary.main : 'transparent'
+                  borderLeftColor: handleActiveItem('folder', 'starred') ? 'primary.main' : 'transparent'
                 }}
               >
                 <ListItemIcon
@@ -230,10 +216,7 @@ const SidebarLeft = (props: MailSidebarType) => {
                   primary='Starred'
                   primaryTypographyProps={{
                     noWrap: true,
-                    sx: {
-                      fontWeight: 500,
-                      color: theme => (handleActiveItem('folder', 'starred') ? theme.palette.primary.main : '')
-                    }
+                    sx: { fontWeight: 500, ...(handleActiveItem('folder', 'starred') && { color: 'primary.main' }) }
                   }}
                 />
               </ListItemStyled>
@@ -243,8 +226,7 @@ const SidebarLeft = (props: MailSidebarType) => {
                 component='a'
                 onClick={handleListItemClick}
                 sx={{
-                  borderLeftColor: theme =>
-                    handleActiveItem('folder', 'spam') ? theme.palette.primary.main : 'transparent'
+                  borderLeftColor: handleActiveItem('folder', 'spam') ? 'primary.main' : 'transparent'
                 }}
               >
                 <ListItemIcon
@@ -258,10 +240,7 @@ const SidebarLeft = (props: MailSidebarType) => {
                   primary='Spam'
                   primaryTypographyProps={{
                     noWrap: true,
-                    sx: {
-                      fontWeight: 500,
-                      color: theme => (handleActiveItem('folder', 'spam') ? theme.palette.primary.main : '')
-                    }
+                    sx: { fontWeight: 500, ...(handleActiveItem('folder', 'spam') && { color: 'primary.main' }) }
                   }}
                 />
                 {RenderBadge('spam', 'error')}
@@ -272,8 +251,7 @@ const SidebarLeft = (props: MailSidebarType) => {
                 component='a'
                 onClick={handleListItemClick}
                 sx={{
-                  borderLeftColor: theme =>
-                    handleActiveItem('folder', 'trash') ? theme.palette.primary.main : 'transparent'
+                  borderLeftColor: handleActiveItem('folder', 'trash') ? 'primary.main' : 'transparent'
                 }}
               >
                 <ListItemIcon
@@ -287,10 +265,7 @@ const SidebarLeft = (props: MailSidebarType) => {
                   primary='Trash'
                   primaryTypographyProps={{
                     noWrap: true,
-                    sx: {
-                      fontWeight: 500,
-                      color: theme => (handleActiveItem('folder', 'trash') ? theme.palette.primary.main : '')
-                    }
+                    sx: { fontWeight: 500, ...(handleActiveItem('folder', 'trash') && { color: 'primary.main' }) }
                   }}
                 />
               </ListItemStyled>
@@ -309,8 +284,7 @@ const SidebarLeft = (props: MailSidebarType) => {
                 component='a'
                 onClick={handleListItemClick}
                 sx={{
-                  borderLeftColor: theme =>
-                    handleActiveItem('label', 'personal') ? theme.palette.primary.main : 'transparent'
+                  borderLeftColor: handleActiveItem('label', 'personal') ? 'primary.main' : 'transparent'
                 }}
               >
                 <ListItemIcon sx={{ mr: 3.5, '& svg': { color: 'success.main' } }}>
@@ -320,10 +294,7 @@ const SidebarLeft = (props: MailSidebarType) => {
                   primary='Personal'
                   primaryTypographyProps={{
                     noWrap: true,
-                    sx: {
-                      fontWeight: 500,
-                      color: theme => (handleActiveItem('label', 'personal') ? theme.palette.primary.main : '')
-                    }
+                    sx: { fontWeight: 500, ...(handleActiveItem('label', 'personal') && { color: 'primary.main' }) }
                   }}
                 />
               </ListItemStyled>
@@ -333,8 +304,7 @@ const SidebarLeft = (props: MailSidebarType) => {
                 component='a'
                 onClick={handleListItemClick}
                 sx={{
-                  borderLeftColor: theme =>
-                    handleActiveItem('label', 'company') ? theme.palette.primary.main : 'transparent'
+                  borderLeftColor: handleActiveItem('label', 'company') ? 'primary.main' : 'transparent'
                 }}
               >
                 <ListItemIcon sx={{ mr: 3.5, '& svg': { color: 'primary.main' } }}>
@@ -344,10 +314,7 @@ const SidebarLeft = (props: MailSidebarType) => {
                   primary='Company'
                   primaryTypographyProps={{
                     noWrap: true,
-                    sx: {
-                      fontWeight: 500,
-                      color: theme => (handleActiveItem('label', 'company') ? theme.palette.primary.main : '')
-                    }
+                    sx: { fontWeight: 500, ...(handleActiveItem('label', 'company') && { color: 'primary.main' }) }
                   }}
                 />
               </ListItemStyled>
@@ -357,8 +324,7 @@ const SidebarLeft = (props: MailSidebarType) => {
                 component='a'
                 onClick={handleListItemClick}
                 sx={{
-                  borderLeftColor: theme =>
-                    handleActiveItem('label', 'important') ? theme.palette.primary.main : 'transparent'
+                  borderLeftColor: handleActiveItem('label', 'important') ? 'primary.main' : 'transparent'
                 }}
               >
                 <ListItemIcon sx={{ mr: 3.5, '& svg': { color: 'warning.main' } }}>
@@ -368,10 +334,7 @@ const SidebarLeft = (props: MailSidebarType) => {
                   primary='Important'
                   primaryTypographyProps={{
                     noWrap: true,
-                    sx: {
-                      fontWeight: 500,
-                      color: theme => (handleActiveItem('label', 'important') ? theme.palette.primary.main : '')
-                    }
+                    sx: { fontWeight: 500, ...(handleActiveItem('label', 'important') && { color: 'primary.main' }) }
                   }}
                 />
               </ListItemStyled>
@@ -381,8 +344,7 @@ const SidebarLeft = (props: MailSidebarType) => {
                 component='a'
                 onClick={handleListItemClick}
                 sx={{
-                  borderLeftColor: theme =>
-                    handleActiveItem('label', 'private') ? theme.palette.primary.main : 'transparent'
+                  borderLeftColor: handleActiveItem('label', 'private') ? 'primary.main' : 'transparent'
                 }}
               >
                 <ListItemIcon sx={{ mr: 3.5, '& svg': { color: 'error.main' } }}>
@@ -392,10 +354,7 @@ const SidebarLeft = (props: MailSidebarType) => {
                   primary='Private'
                   primaryTypographyProps={{
                     noWrap: true,
-                    sx: {
-                      fontWeight: 500,
-                      color: theme => (handleActiveItem('label', 'private') ? theme.palette.primary.main : '')
-                    }
+                    sx: { fontWeight: 500, ...(handleActiveItem('label', 'private') && { color: 'primary.main' }) }
                   }}
                 />
               </ListItemStyled>

@@ -44,7 +44,7 @@ const TextFieldIcons = () => {
           />
           <Box sx={{ display: 'inline-flex' }}>
             <Grid container alignItems='center'>
-              <Grid item sx={{ mr: 2, '& svg': { color: theme => theme.palette.action.active } }}>
+              <Grid item sx={{ mr: 2, '& svg': { color: 'action.active' } }}>
                 <Box sx={{ display: 'flex' }}>
                   <Icon icon='mdi:account-circle-outline' />
                 </Box>
@@ -80,7 +80,7 @@ const TextFieldIcons = () => {
           />
           <Box sx={{ display: 'inline-flex' }}>
             <Grid container alignItems='center'>
-              <Grid item sx={{ mr: 2, '& svg': { color: theme => theme.palette.action.active } }}>
+              <Grid item sx={{ mr: 2, '& svg': { color: 'action.active' } }}>
                 <Box sx={{ display: 'flex' }}>
                   <Icon icon='mdi:account-circle-outline' />
                 </Box>
@@ -116,7 +116,7 @@ const TextFieldIcons = () => {
           />
           <Box sx={{ display: 'inline-flex' }}>
             <Grid container alignItems='center'>
-              <Grid item sx={{ mr: 2, '& svg': { mt: 3, color: theme => theme.palette.action.active } }}>
+              <Grid item sx={{ mr: 2, '& svg': { mt: 3, color: 'action.active' } }}>
                 <Box sx={{ display: 'flex' }}>
                   <Icon icon='mdi:account-circle-outline' />
                 </Box>

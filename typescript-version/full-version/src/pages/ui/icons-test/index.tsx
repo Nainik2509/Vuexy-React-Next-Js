@@ -53,7 +53,7 @@ const AnalyticsDashboard = () => {
       </Typography>
       <Typography>
         Our logo wrapped with <code>Box</code> component
-        <Box component='span' sx={{ ml: 5, display: 'inline-flex', color: theme => theme.palette.primary.main }}>
+        <Box component='span' sx={{ ml: 5, display: 'inline-flex', color: 'primary.main' }}>
           <Icon icon='custom:logo' />
         </Box>
       </Typography>
@@ -70,7 +70,7 @@ const AnalyticsDashboard = () => {
       </Typography>
       <Typography sx={{ display: 'flex', alignItems: 'center' }}>
         MDI Icon wrapped with <code>Box</code> component
-        <Box component='span' sx={{ ml: 5, display: 'inline-flex', color: theme => theme.palette.success.main }}>
+        <Box component='span' sx={{ ml: 5, display: 'inline-flex', color: 'success.main' }}>
           <Icon icon='mdi:airplane-alert' />
         </Box>
       </Typography>

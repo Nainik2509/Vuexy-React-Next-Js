@@ -332,7 +332,7 @@ const MailDetails = (props: MailDetailsType) => {
               </div>
             </Box>
           </Box>
-          <Box sx={{ height: 'calc(100% - 7.75rem)', backgroundColor: theme => theme.palette.action.hover }}>
+          <Box sx={{ height: 'calc(100% - 7.75rem)', backgroundColor: 'action.hover' }}>
             <ScrollWrapper>
               <Box
                 sx={{

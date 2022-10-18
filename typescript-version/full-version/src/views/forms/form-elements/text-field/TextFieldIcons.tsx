@@ -37,7 +37,7 @@ const TextFieldIcons = () => {
       />
       <div>
         <Grid container spacing={2} alignItems='flex-end'>
-          <Grid item sx={{ '& svg': { color: theme => theme.palette.action.active } }}>
+          <Grid item sx={{ '& svg': { color: 'action.active' } }}>
             <Icon icon='mdi:account-circle-outline' />
           </Grid>
           <Grid item>

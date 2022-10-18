@@ -90,7 +90,7 @@ const VerticalNavLink = ({
 
   const icon = parent && !item.icon ? themeConfig.navSubItemIcon : item.icon
 
-  const conditionalBgColor = () => {
+  const conditionalColors = () => {
     if (mode === 'semi-dark') {
       return {
         color: `rgba(${theme.palette.customColors.dark}, 0.87)`,
@@ -134,7 +134,7 @@ const VerticalNavLink = ({
             }}
             sx={{
               py: 2.5,
-              ...conditionalBgColor(),
+              ...conditionalColors(),
               ...(item.disabled ? { pointerEvents: 'none' } : { cursor: 'pointer' }),
               pr: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 4.5,
               pl: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 5.5

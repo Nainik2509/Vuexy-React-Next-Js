@@ -519,7 +519,7 @@ const MailLog = (props: MailLogType) => {
             sx={{
               zIndex: 5,
               position: 'absolute',
-              color: theme => theme.palette.common.white,
+              color: 'common.white',
               backgroundColor: 'action.disabledBackground'
             }}
           >

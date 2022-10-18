@@ -39,8 +39,8 @@ const Footer = (props: Props) => {
         ...(footer === 'fixed' && {
           bottom: 0,
           position: 'sticky',
-          backgroundColor: theme => theme.palette.background.paper,
-          boxShadow: theme => theme.shadows[skin === 'bordered' ? 0 : 4],
+          backgroundColor: 'background.paper',
+          boxShadow: skin === 'bordered' ? 0 : 4,
           ...(skin === 'bordered' && { borderTop: theme => `1px solid ${theme.palette.divider}` })
         }),
         ...footerStyles

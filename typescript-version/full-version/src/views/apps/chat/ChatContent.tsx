@@ -74,8 +74,8 @@ const ChatContent = (props: ChatContentType) => {
                 px: 7.5,
                 width: 110,
                 height: 110,
-                backgroundColor: 'background.paper',
-                boxShadow: theme => theme.shadows[3]
+                boxShadow: 3,
+                backgroundColor: 'background.paper'
               }}
             >
               <Icon icon='mdi:message-outline' fontSize='3.125rem' />
@@ -85,9 +85,9 @@ const ChatContent = (props: ChatContentType) => {
               sx={{
                 py: 2,
                 px: 6,
+                boxShadow: 3,
                 borderRadius: 5,
                 backgroundColor: 'background.paper',
-                boxShadow: theme => theme.shadows[3],
                 cursor: mdAbove ? 'default' : 'pointer'
               }}
             >
@@ -104,7 +104,7 @@ const ChatContent = (props: ChatContentType) => {
               flexGrow: 1,
               width: '100%',
               height: '100%',
-              backgroundColor: theme => theme.palette.action.hover
+              backgroundColor: 'action.hover'
             }}
           >
             <Box

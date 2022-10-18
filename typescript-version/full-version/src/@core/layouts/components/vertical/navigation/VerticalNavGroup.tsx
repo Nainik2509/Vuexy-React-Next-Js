@@ -178,23 +178,7 @@ const VerticalNavGroup = (props: Props) => {
 
   const menuGroupCollapsedStyles = navCollapsed && !navHover ? { opacity: 0 } : { opacity: 1 }
 
-  // const conditionalColor = () => {
-  //   if (skin === 'semi-dark' && theme.palette.mode === 'light') {
-  //     return {
-  //       color: `rgba(${theme.palette.customColors.dark}, 0.68) !important`
-  //     }
-  //   } else if (skin === 'semi-dark' && theme.palette.mode === 'dark') {
-  //     return {
-  //       color: `rgba(${theme.palette.customColors.light}, 0.68) !important`
-  //     }
-  //   } else {
-  //     return {
-  //       color: `${theme.palette.text.secondary} !important`
-  //     }
-  //   }
-  // }
-
-  const conditionalBgColor = () => {
+  const conditionalColors = () => {
     if (mode === 'semi-dark') {
       return {
         color: `rgba(${theme.palette.customColors.dark}, 0.87)`,
@@ -236,7 +220,7 @@ const VerticalNavGroup = (props: Props) => {
             sx={{
               py: 2.5,
               width: '100%',
-              ...conditionalBgColor(),
+              ...conditionalColors(),
               transition: 'padding-left .25s ease-in-out',
               pr: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 4.5,
               pl: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 5.5,
@@ -276,7 +260,7 @@ const VerticalNavGroup = (props: Props) => {
                   display: 'flex',
                   alignItems: 'center',
                   '& svg': {
-                    color: theme.palette.text.primary,
+                    color: 'text.primary',
                     transition: 'transform .25s ease-in-out',
                     ...(groupActive.includes(item.title) && {
                       transform: direction === 'ltr' ? 'rotate(90deg)' : 'rotate(-90deg)'
