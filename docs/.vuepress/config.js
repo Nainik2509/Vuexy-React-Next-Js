@@ -1,7 +1,7 @@
 module.exports = {
-  base: '/',
   theme: 'book',
   title: 'Master',
+  base: process.env.BASE || '/',
   description: 'Master React Admin Dashboard Template',
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   globalUIComponents: ['SurveyPopup'],
