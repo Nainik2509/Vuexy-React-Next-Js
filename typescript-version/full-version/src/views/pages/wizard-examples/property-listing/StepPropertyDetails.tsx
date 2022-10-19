@@ -79,7 +79,7 @@ const StepPropertyDetails = () => {
   }
 
   return (
-    <Grid container spacing={6}>
+    <Grid container spacing={5}>
       {data.map((item, index) => (
         <CustomRadioIcons
           key={index}
@@ -92,49 +92,45 @@ const StepPropertyDetails = () => {
           iconProps={icons[index].iconProps}
         />
       ))}
+      <Grid item xs={12} md={6}>
+        <FormControl fullWidth>
+          <InputLabel htmlFor='validation-property-select'>Property Type</InputLabel>
+          <Select label='Property Type' labelId='validation-property-select' defaultValue=''>
+            <MenuItem value='UK'>UK</MenuItem>
+            <MenuItem value='USA'>USA</MenuItem>
+            <MenuItem value='Australia'>Australia</MenuItem>
+            <MenuItem value='Germany'>Germany</MenuItem>
+          </Select>
+        </FormControl>
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <FormControl fullWidth>
+          <TextField type='number' label='Zip Code' placeholder='99950' aria-describedby='validation-zip-code' />
+        </FormControl>
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <FormControl fullWidth>
+          <InputLabel htmlFor='country-select'>Country</InputLabel>
+          <Select label='Country' labelId='country-select' aria-describedby='country-select' defaultValue=''>
+            <MenuItem value='UK'>UK</MenuItem>
+            <MenuItem value='USA'>USA</MenuItem>
+            <MenuItem value='India'>India</MenuItem>
+            <MenuItem value='Australia'>Australia</MenuItem>
+            <MenuItem value='Germany'>Germany</MenuItem>
+          </Select>
+        </FormControl>
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <TextField fullWidth label='State' placeholder='California' />
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <TextField fullWidth label='City' placeholder='Los Angeles' />
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <TextField fullWidth label='Landmark' placeholder='Nr. Hard Rock Cafe' />
+      </Grid>
       <Grid item xs={12}>
-        <Grid container spacing={6}>
-          <Grid item xs={12} md={6}>
-            <FormControl fullWidth>
-              <InputLabel htmlFor='validation-property-select'>Property Type</InputLabel>
-              <Select label='Property Type' labelId='validation-property-select' defaultValue=''>
-                <MenuItem value='UK'>UK</MenuItem>
-                <MenuItem value='USA'>USA</MenuItem>
-                <MenuItem value='Australia'>Australia</MenuItem>
-                <MenuItem value='Germany'>Germany</MenuItem>
-              </Select>
-            </FormControl>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <FormControl fullWidth>
-              <TextField type='number' label='Zip Code' placeholder='99950' aria-describedby='validation-zip-code' />
-            </FormControl>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <FormControl fullWidth>
-              <InputLabel htmlFor='country-select'>Country</InputLabel>
-              <Select label='Country' labelId='country-select' aria-describedby='country-select' defaultValue=''>
-                <MenuItem value='UK'>UK</MenuItem>
-                <MenuItem value='USA'>USA</MenuItem>
-                <MenuItem value='India'>India</MenuItem>
-                <MenuItem value='Australia'>Australia</MenuItem>
-                <MenuItem value='Germany'>Germany</MenuItem>
-              </Select>
-            </FormControl>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <TextField fullWidth label='State' placeholder='California' />
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <TextField fullWidth label='City' placeholder='Los Angeles' />
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <TextField fullWidth label='Landmark' placeholder='Nr. Hard Rock Cafe' />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField fullWidth multiline minRows={2} label='Address' />
-          </Grid>
-        </Grid>
+        <TextField fullWidth multiline minRows={2} label='Address' />
       </Grid>
     </Grid>
   )

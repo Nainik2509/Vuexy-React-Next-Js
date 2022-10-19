@@ -55,7 +55,8 @@ const Step = styled(MuiStep)<StepProps>(({ theme }) => ({
     marginBottom: theme.spacing(4)
   },
   '& .MuiStepLabel-root': {
-    padding: 0
+    padding: 0,
+    cursor: 'pointer'
   }
 }))
 
@@ -111,14 +112,14 @@ const CreateDealWizard = () => {
           variant='outlined'
           onClick={handlePrev}
           disabled={activeStep === 0}
-          startIcon={<Icon icon='mdi:chevron-left' />}
+          startIcon={<Icon icon='mdi:arrow-left' />}
         >
           Previous
         </Button>
         <Button
           variant='contained'
           color={stepCondition ? 'success' : 'primary'}
-          {...(!stepCondition ? { endIcon: <Icon icon='mdi:chevron-right' /> } : {})}
+          {...(!stepCondition ? { endIcon: <Icon icon='mdi:arrow-right' /> } : {})}
           onClick={() => (stepCondition ? alert('Submitted..!!') : handleNext())}
         >
           {stepCondition ? 'Submit' : 'Next'}
@@ -130,7 +131,7 @@ const CreateDealWizard = () => {
   return (
     <Card sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' } }}>
       <StepperHeaderContainer>
-        <StepperWrapper sx={{ height: '100%' }}>
+        <StepperWrapper sx={{ height: '100%', '& .MuiStepLabel-label': { cursor: 'pointer' } }}>
           <Stepper connector={<></>} activeStep={activeStep} orientation='vertical'>
             {steps.map((step, index) => {
               return (

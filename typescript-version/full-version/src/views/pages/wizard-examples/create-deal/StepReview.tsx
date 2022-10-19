@@ -1,11 +1,11 @@
 // ** MUI Imports
+import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Table from '@mui/material/Table'
 import Switch from '@mui/material/Switch'
 import TableRow from '@mui/material/TableRow'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
-import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import TableContainer from '@mui/material/TableContainer'
 import FormControlLabel from '@mui/material/FormControlLabel'
@@ -14,12 +14,9 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import CustomChip from 'src/@core/components/mui/chip'
 
 const ReviewComplete = () => {
-  // ** Hooks
-  const theme = useTheme()
-
   return (
     <Grid container spacing={6}>
-      <Grid item xs={12} lg={6}>
+      <Grid item xs={12} lg={6} xl={7}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <Typography variant='h5' sx={{ mb: 4 }}>
@@ -45,7 +42,7 @@ const ReviewComplete = () => {
                 >
                   <TableRow>
                     <TableCell>
-                      <Typography noWrap sx={{ fontWeight: 700, color: 'text.secondary' }}>
+                      <Typography noWrap sx={{ fontWeight: 600, color: 'text.secondary' }}>
                         Deal Type
                       </Typography>
                     </TableCell>
@@ -55,7 +52,7 @@ const ReviewComplete = () => {
                   </TableRow>
                   <TableRow>
                     <TableCell>
-                      <Typography noWrap sx={{ fontWeight: 700, color: 'text.secondary' }}>
+                      <Typography noWrap sx={{ fontWeight: 600, color: 'text.secondary' }}>
                         Amount
                       </Typography>
                     </TableCell>
@@ -65,17 +62,17 @@ const ReviewComplete = () => {
                   </TableRow>
                   <TableRow>
                     <TableCell>
-                      <Typography noWrap sx={{ fontWeight: 700, color: 'text.secondary' }}>
+                      <Typography noWrap sx={{ fontWeight: 600, color: 'text.secondary' }}>
                         Deal Code
                       </Typography>
                     </TableCell>
                     <TableCell>
-                      <CustomChip rounded size='small' skin='light' color='warning' label='25PEROFF' />
+                      <CustomChip size='small' skin='light' color='warning' label='25PEROFF' />
                     </TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>
-                      <Typography noWrap sx={{ fontWeight: 700, color: 'text.secondary' }}>
+                      <Typography noWrap sx={{ fontWeight: 600, color: 'text.secondary' }}>
                         Deal Title
                       </Typography>
                     </TableCell>
@@ -85,7 +82,7 @@ const ReviewComplete = () => {
                   </TableRow>
                   <TableRow>
                     <TableCell>
-                      <Typography noWrap sx={{ fontWeight: 700, color: 'text.secondary' }}>
+                      <Typography noWrap sx={{ fontWeight: 600, color: 'text.secondary' }}>
                         Deal Duration
                       </Typography>
                     </TableCell>
@@ -98,25 +95,30 @@ const ReviewComplete = () => {
             </TableContainer>
           </Grid>
           <Grid item xs={12}>
-            <FormControlLabel
-              control={<Switch />}
-              label='I have confirmed the deal details.'
-              sx={{ '& .MuiTypography-root': { color: 'text.secondary' } }}
-            />
+            <FormControlLabel control={<Switch />} label='I have confirmed the deal details.' />
           </Grid>
         </Grid>
       </Grid>
       <Grid
         item
-        xs={12}
         lg={6}
+        xl={5}
+        xs={12}
         sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', '& img': { maxWidth: '100%' } }}
       >
-        <img
-          width={350}
-          alt='review-illustration'
-          src={`/images/pages/girl-checkout-offer-${theme.palette.mode}.png`}
-        />
+        <Box
+          sx={{
+            pt: 4.5,
+            px: 4.5,
+            width: '100%',
+            display: 'flex',
+            borderRadius: 1,
+            justifyContent: 'center',
+            border: theme => `1px solid ${theme.palette.divider}`
+          }}
+        >
+          <img height={300} alt='review-illustration' src='/images/pages/create-deal-review-complete.png' />
+        </Box>
       </Grid>
     </Grid>
   )

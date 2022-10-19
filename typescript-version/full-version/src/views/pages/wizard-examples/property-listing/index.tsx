@@ -119,14 +119,14 @@ const PropertyListingWizard = () => {
           variant='outlined'
           onClick={handlePrev}
           disabled={activeStep === 0}
-          startIcon={<Icon icon='mdi:chevron-left' />}
+          startIcon={<Icon icon='mdi:arrow-left' />}
         >
           Previous
         </Button>
         <Button
           variant='contained'
           color={stepCondition ? 'success' : 'primary'}
-          {...(!stepCondition ? { endIcon: <Icon icon='mdi:chevron-right' /> } : {})}
+          {...(!stepCondition ? { endIcon: <Icon icon='mdi:arrow-right' /> } : {})}
           onClick={() => (stepCondition ? alert('Submitted..!!') : handleNext())}
         >
           {stepCondition ? 'Submit' : 'Next'}

@@ -41,7 +41,7 @@ const offeredItemsArray = [
 ]
 
 const CustomInput = forwardRef((props: PickerProps, ref) => {
-  const startDate = format(props.start, 'MM/dd/yyyy')
+  const startDate = props.start !== null ? format(props.start, 'MM/dd/yyyy') : ''
   const endDate = props.end !== null ? ` - ${format(props.end, 'MM/dd/yyyy')}` : null
 
   const value = `${startDate}${endDate !== null ? endDate : ''}`
@@ -52,8 +52,8 @@ const CustomInput = forwardRef((props: PickerProps, ref) => {
 const StepDealDetails = () => {
   // ** State
   const [endDate, setEndDate] = useState<DateType>(null)
+  const [startDate, setStartDate] = useState<DateType>(null)
   const [offeredItems, setOfferedItems] = useState<string[]>([])
-  const [startDate, setStartDate] = useState<DateType>(new Date())
 
   const handleChange = (event: SelectChangeEvent<typeof offeredItems>) => {
     const {
@@ -69,7 +69,7 @@ const StepDealDetails = () => {
   }
 
   return (
-    <Grid container spacing={6}>
+    <Grid container spacing={5}>
       <Grid item xs={12} sm={6}>
         <TextField fullWidth label='Deal Title' placeholder='Black Friday sale, 25% off' />
       </Grid>
@@ -82,11 +82,12 @@ const StepDealDetails = () => {
           multiline
           minRows={4}
           label='Deal Description'
+          sx={{ '&, & .MuiInputBase-root': { height: '100%' } }}
           placeholder='To sell or distribute something as a business deal'
         />
       </Grid>
       <Grid item xs={12} sm={6}>
-        <FormControl fullWidth sx={{ mb: 4 }}>
+        <FormControl fullWidth sx={{ mb: 5 }}>
           <InputLabel id='select-offered-items'>Offered Items</InputLabel>
           <Select
             multiple
@@ -97,7 +98,7 @@ const StepDealDetails = () => {
             renderValue={selected => (
               <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
                 {selected.map(value => (
-                  <CustomChip rounded key={value} label={value} skin='light' />
+                  <CustomChip key={value} label={value} skin='light' />
                 ))}
               </Box>
             )}
@@ -133,7 +134,12 @@ const StepDealDetails = () => {
       </Grid>
       <Grid item xs={12} sm={6}>
         <FormControl component='fieldset'>
-          <FormLabel component='legend'>Notify Users</FormLabel>
+          <FormLabel
+            component='legend'
+            sx={{ fontWeight: 500, fontSize: '0.875rem', lineHeight: '21px', letterSpacing: '0.1px' }}
+          >
+            Notify Users
+          </FormLabel>
           <FormGroup aria-label='position' row>
             <FormControlLabel value='email' label='Email' control={<Checkbox />} />
             <FormControlLabel value='sms' label='SMS' control={<Checkbox />} />

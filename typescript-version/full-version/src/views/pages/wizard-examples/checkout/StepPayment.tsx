@@ -1,15 +1,12 @@
 // ** React Imports
 import { SyntheticEvent, useState } from 'react'
 
-// ** Next Imports
-import Link from 'next/link'
-
 // ** MUI Imports
 import Tab from '@mui/material/Tab'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
-import Card from '@mui/material/Card'
 import Alert from '@mui/material/Alert'
+import MuiLink from '@mui/material/Link'
 import TabPanel from '@mui/lab/TabPanel'
 import Switch from '@mui/material/Switch'
 import Button from '@mui/material/Button'
@@ -56,12 +53,15 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
 
   return (
     <Grid container spacing={6}>
-      <Grid item xs={12} lg={8} xl={9}>
-        <Alert severity='success' icon={<Icon icon='mdi:tag-outline' />} sx={{ mb: 4 }}>
-          <AlertTitle>Bank Offers</AlertTitle>
+      <Grid item xs={12} lg={8}>
+        <Alert severity='success' icon={<Icon icon='mdi:tag-outline' />} sx={{ mb: 6 }}>
+          <AlertTitle>Available Offers</AlertTitle>
           <div>
             <Typography sx={{ color: 'success.main' }}>
               - 10% Instant Discount on Bank of America Corp Bank Debit and Credit cards
+            </Typography>
+            <Typography sx={{ color: 'success.main' }}>
+              - 25% Cashback Voucher of up to $60 on first ever PayPal transaction. TCA
             </Typography>
           </div>
         </Alert>
@@ -108,11 +108,7 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
                     />
                   </Grid>
                   <Grid item xs={12}>
-                    <FormControlLabel
-                      control={<Switch defaultChecked />}
-                      label='Save Card for future billing?'
-                      sx={{ '& .MuiTypography-root': { color: 'text.secondary' } }}
-                    />
+                    <FormControlLabel control={<Switch defaultChecked />} label='Save Card for future billing?' />
                   </Grid>
                   <Grid item xs={12}>
                     <Button variant='contained' sx={{ mr: 3.5 }} onClick={handleNext}>
@@ -153,70 +149,91 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
           </Grid>
         </TabContext>
       </Grid>
-      <Grid item xs={12} lg={4} xl={3}>
-        <Card sx={{ mb: 4, background: 'transparent', boxShadow: 'none', border: '1px solid', borderColor: 'divider' }}>
-          <CardContent sx={{ p: 4 }}>
-            <Typography sx={{ mb: 4, fontWeight: 500 }}>Price Details</Typography>
-            <Grid container>
-              <Grid item xs={6} sx={{ mb: 2 }}>
-                <Typography sx={{ color: 'text.secondary' }}>Order Total</Typography>
-              </Grid>
-              <Grid item xs={6} sx={{ mb: 2 }}>
-                <Typography sx={{ textAlign: 'right', color: 'text.secondary' }}>$1100.00</Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Typography sx={{ color: 'text.secondary' }}>Delivery Charges</Typography>
-              </Grid>
-              <Grid item xs={6}>
+      <Grid item xs={12} lg={4}>
+        <Box sx={{ borderRadius: 1, border: theme => `1px solid ${theme.palette.divider}` }}>
+          <CardContent>
+            <Typography sx={{ mb: 4, fontWeight: 600 }}>Price Details</Typography>
+            <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+              <Box
+                sx={{
+                  mb: 2,
+                  gap: 2,
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  alignItems: 'center',
+                  justifyContent: 'space-between'
+                }}
+              >
+                <Typography variant='body2' sx={{ fontWeight: 600 }}>
+                  Order Total
+                </Typography>
+                <Typography variant='body2' sx={{ color: 'text.secondary' }}>
+                  $1198.00
+                </Typography>
+              </Box>
+              <Box
+                sx={{
+                  gap: 2,
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  alignItems: 'center',
+                  justifyContent: 'space-between'
+                }}
+              >
+                <Typography variant='body2' sx={{ color: 'text.primary' }}>
+                  Delivery Charges
+                </Typography>
                 <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-                  <Typography sx={{ mr: 2, textDecoration: 'line-through', color: 'text.secondary' }}>$5.00</Typography>
-                  <CustomChip rounded size='small' skin='light' color='success' label='Free' />
+                  <Typography variant='body2' sx={{ mr: 2, textDecoration: 'line-through', color: 'text.disabled' }}>
+                    $5.00
+                  </Typography>
+                  <CustomChip size='small' skin='light' color='success' label='Free' />
                 </Box>
-              </Grid>
-            </Grid>
+              </Box>
+            </Box>
           </CardContent>
           <Divider sx={{ my: '0 !important' }} />
-          <CardContent sx={{ p: 4 }}>
-            <Grid container sx={{ mb: 4 }}>
-              <Grid item xs={6} sx={{ mb: 2 }}>
-                <Typography sx={{ fontWeight: 700, color: 'text.secondary' }}>Total</Typography>
-              </Grid>
-              <Grid item xs={6} sx={{ mb: 2 }}>
-                <Typography sx={{ textAlign: 'right', color: 'text.secondary' }}>$1100.00</Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Typography sx={{ fontWeight: 700, color: 'text.secondary' }}>Deliver to:</Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Box sx={{ textAlign: 'right' }}>
-                  <CustomChip rounded size='small' skin='light' color='primary' label='Home' />
-                </Box>
-              </Grid>
-            </Grid>
-
-            <Box component='address' sx={{ mb: 4.5, fontStyle: 'normal', color: 'text.secondary' }}>
-              <Box component='span' sx={{ fontWeight: 600 }}>
-                {' '}
-                John Doe (Default),
-              </Box>
-              <br />
-              4135 Parkway Street,
-              <br />
-              Los Angeles, CA, 90017.
-              <br />
-              Mobile : +123456789
+          <CardContent>
+            <Box
+              sx={{
+                mb: 2,
+                gap: 2,
+                display: 'flex',
+                flexWrap: 'wrap',
+                alignItems: 'center',
+                justifyContent: 'space-between'
+              }}
+            >
+              <Typography sx={{ fontWeight: 600 }}>Total</Typography>
+              <Typography>$1198.00</Typography>
             </Box>
-            <Link href='/' passHref>
-              <Box
-                component='a'
-                onClick={(e: SyntheticEvent) => e.preventDefault()}
-                sx={{ mr: 2, color: 'primary.main', textDecoration: 'none' }}
-              >
-                Change address
-              </Box>
-            </Link>
+            <Box
+              sx={{
+                mb: 4,
+                gap: 2,
+                display: 'flex',
+                flexWrap: 'wrap',
+                alignItems: 'center',
+                justifyContent: 'space-between'
+              }}
+            >
+              <Typography sx={{ fontWeight: 600 }}>Deliver to:</Typography>
+              <CustomChip size='small' skin='light' color='primary' label='Home' />
+            </Box>
+            <Typography sx={{ fontWeight: 600 }}>John Doe (Default),</Typography>
+            <Typography sx={{ color: 'text.secondary' }}>4135 Parkway Street,</Typography>
+            <Typography sx={{ color: 'text.secondary' }}>Los Angeles, CA, 90017.</Typography>
+            <Typography sx={{ mb: 4, color: 'text.secondary' }}>Mobile : +1 906 568 2332</Typography>
+            <Typography
+              href='/'
+              component={MuiLink}
+              onClick={e => e.preventDefault()}
+              sx={{ fontWeight: 600, color: 'primary.main' }}
+            >
+              Change address
+            </Typography>
           </CardContent>
-        </Card>
+        </Box>
       </Grid>
     </Grid>
   )

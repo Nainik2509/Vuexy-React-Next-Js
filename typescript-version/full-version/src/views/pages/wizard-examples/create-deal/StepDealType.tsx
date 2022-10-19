@@ -95,10 +95,10 @@ const StepDealType = () => {
   }
 
   return (
-    <Grid container spacing={6}>
+    <Grid container spacing={5}>
       <Grid item xs={12}>
-        <Box sx={{ borderRadius: 1, display: 'flex', border: theme => `1px solid ${theme.palette.divider}` }}>
-          <Img alt='illustration' src={`/images/pages/shopping-girl-${theme.palette.mode}.png`} />
+        <Box sx={{ borderRadius: 1, display: 'flex', border: `1px solid ${theme.palette.divider}` }}>
+          <Img alt='illustration' src='/images/pages/shopping-girl.png' />
         </Box>
       </Grid>
       {data.map((item, index) => (
@@ -131,7 +131,7 @@ const StepDealType = () => {
             renderValue={selected => (
               <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
                 {selected.map(value => (
-                  <CustomChip rounded key={value} label={value} skin='light' />
+                  <CustomChip key={value} label={value} skin='light' />
                 ))}
               </Box>
             )}

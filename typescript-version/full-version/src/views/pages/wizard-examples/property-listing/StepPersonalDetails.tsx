@@ -85,7 +85,7 @@ const StepPersonalDetails = () => {
   }
 
   return (
-    <Grid container spacing={6}>
+    <Grid container spacing={5}>
       {data.map((item, index) => (
         <CustomRadioIcons
           key={index}
@@ -98,56 +98,52 @@ const StepPersonalDetails = () => {
           iconProps={icons[index].iconProps}
         />
       ))}
-      <Grid item xs={12}>
-        <Grid container spacing={6}>
-          <Grid item xs={12} md={6}>
-            <FormControl fullWidth>
-              <TextField label='First Name' placeholder='John' />
-            </FormControl>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <FormControl fullWidth>
-              <TextField label='Last Name' placeholder='Doe' />
-            </FormControl>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <TextField fullWidth label='Username' placeholder='john.doe' />
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <TextField
-              fullWidth
-              label='Password'
-              type={showValues ? 'text' : 'password'}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position='end'>
-                    <IconButton
-                      edge='end'
-                      onClick={handleTogglePasswordView}
-                      aria-label='toggle password visibility'
-                      onMouseDown={handleMousePasswordView}
-                    >
-                      <Icon icon={showValues ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
-                    </IconButton>
-                  </InputAdornment>
-                )
-              }}
-            />
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <TextField fullWidth type='email' label='Email' placeholder='john.doe@email.com' />
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <TextField
-              fullWidth
-              label='Contact'
-              placeholder='202 555 0111'
-              InputProps={{
-                startAdornment: <InputAdornment position='start'>US (+1)</InputAdornment>
-              }}
-            />
-          </Grid>
-        </Grid>
+      <Grid item xs={12} md={6}>
+        <FormControl fullWidth>
+          <TextField label='First Name' placeholder='John' />
+        </FormControl>
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <FormControl fullWidth>
+          <TextField label='Last Name' placeholder='Doe' />
+        </FormControl>
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <TextField fullWidth label='Username' placeholder='john.doe' />
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <TextField
+          fullWidth
+          label='Password'
+          type={showValues ? 'text' : 'password'}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position='end'>
+                <IconButton
+                  edge='end'
+                  onClick={handleTogglePasswordView}
+                  aria-label='toggle password visibility'
+                  onMouseDown={handleMousePasswordView}
+                >
+                  <Icon icon={showValues ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
+                </IconButton>
+              </InputAdornment>
+            )
+          }}
+        />
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <TextField fullWidth type='email' label='Email' placeholder='john.doe@email.com' />
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <TextField
+          fullWidth
+          label='Contact'
+          placeholder='202 555 0111'
+          InputProps={{
+            startAdornment: <InputAdornment position='start'>US (+1)</InputAdornment>
+          }}
+        />
       </Grid>
     </Grid>
   )

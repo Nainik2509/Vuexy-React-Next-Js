@@ -44,7 +44,7 @@ const StepPropertyFeatures = () => {
   }
 
   return (
-    <Grid container spacing={6}>
+    <Grid container spacing={5}>
       <Grid item xs={12} md={6}>
         <TextField fullWidth label='Bedrooms' placeholder='3' />
       </Grid>
@@ -77,7 +77,7 @@ const StepPropertyFeatures = () => {
             renderValue={selected => (
               <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
                 {selected.map(value => (
-                  <CustomChip rounded key={value} label={value} skin='light' />
+                  <CustomChip key={value} label={value} skin='light' />
                 ))}
               </Box>
             )}
@@ -92,7 +92,12 @@ const StepPropertyFeatures = () => {
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl>
-          <FormLabel id='common-area-radio'>Is There Any Common Area</FormLabel>
+          <FormLabel
+            id='common-area-radio'
+            sx={{ fontWeight: 500, fontSize: '0.875rem', lineHeight: '21px', letterSpacing: '0.1px' }}
+          >
+            Is There Any Common Area
+          </FormLabel>
           <RadioGroup defaultValue='yes' name='common-area-group' aria-labelledby='common-area-radio'>
             <FormControlLabel value='yes' control={<Radio />} label='Yes' />
             <FormControlLabel value='no' control={<Radio />} label='No' />
@@ -101,7 +106,12 @@ const StepPropertyFeatures = () => {
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl>
-          <FormLabel id='balcony-radio'>Is There Any Attached Balcony</FormLabel>
+          <FormLabel
+            id='balcony-radio'
+            sx={{ fontWeight: 500, fontSize: '0.875rem', lineHeight: '21px', letterSpacing: '0.1px' }}
+          >
+            Is There Any Attached Balcony
+          </FormLabel>
           <RadioGroup defaultValue='yes' name='balcony-group' aria-labelledby='balcony-radio'>
             <FormControlLabel value='yes' control={<Radio />} label='Yes' />
             <FormControlLabel value='no' control={<Radio />} label='No' />

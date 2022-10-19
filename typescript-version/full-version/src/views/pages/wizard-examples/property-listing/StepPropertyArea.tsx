@@ -42,7 +42,7 @@ const StepPropertyArea = () => {
   const [date, setDate] = useState<DateType>(null)
 
   return (
-    <Grid container spacing={6}>
+    <Grid container spacing={5}>
       <Grid item xs={12} md={6}>
         <TextField
           fullWidth
@@ -87,7 +87,12 @@ const StepPropertyArea = () => {
 
       <Grid item xs={12} md={6}>
         <FormControl>
-          <FormLabel id='possession-status-radio'>Possession Status</FormLabel>
+          <FormLabel
+            id='possession-status-radio'
+            sx={{ fontWeight: 500, fontSize: '0.875rem', lineHeight: '21px', letterSpacing: '0.1px' }}
+          >
+            Possession Status
+          </FormLabel>
           <RadioGroup
             name='possession-status-group'
             defaultValue='under-construction'
@@ -100,7 +105,12 @@ const StepPropertyArea = () => {
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl>
-          <FormLabel id='transaction-radio'>Transaction Type</FormLabel>
+          <FormLabel
+            id='transaction-radio'
+            sx={{ fontWeight: 500, fontSize: '0.875rem', lineHeight: '21px', letterSpacing: '0.1px' }}
+          >
+            Transaction Type
+          </FormLabel>
           <RadioGroup defaultValue='new-property' name='transaction-group' aria-labelledby='transaction-radio'>
             <FormControlLabel value='new-property' control={<Radio />} label='New property' />
             <FormControlLabel value='resale' control={<Radio />} label='Resale' />
@@ -109,7 +119,12 @@ const StepPropertyArea = () => {
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl>
-          <FormLabel id='main-road-radio'>Is Property Facing Main Road</FormLabel>
+          <FormLabel
+            id='main-road-radio'
+            sx={{ fontWeight: 500, fontSize: '0.875rem', lineHeight: '21px', letterSpacing: '0.1px' }}
+          >
+            Is Property Facing Main Road
+          </FormLabel>
           <RadioGroup defaultValue='yes' name='main-road-group' aria-labelledby='main-road-radio'>
             <FormControlLabel value='yes' control={<Radio />} label='Yes' />
             <FormControlLabel value='no' control={<Radio />} label='no' />
@@ -118,7 +133,12 @@ const StepPropertyArea = () => {
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl>
-          <FormLabel id='gated-colony-radio'>Gated Colony</FormLabel>
+          <FormLabel
+            id='gated-colony-radio'
+            sx={{ fontWeight: 500, fontSize: '0.875rem', lineHeight: '21px', letterSpacing: '0.1px' }}
+          >
+            Gated Colony
+          </FormLabel>
           <RadioGroup defaultValue='yes' name='gated-colony-group' aria-labelledby='gated-colony-radio'>
             <FormControlLabel value='yes' control={<Radio />} label='Yes' />
             <FormControlLabel value='no' control={<Radio />} label='no' />

@@ -10,7 +10,7 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 
 const StepDealUsage = () => {
   return (
-    <Grid container spacing={6}>
+    <Grid container spacing={5}>
       <Grid item xs={12} sm={6}>
         <FormControl fullWidth>
           <InputLabel id='select-user-type'>User Type</InputLabel>
@@ -54,11 +54,7 @@ const StepDealUsage = () => {
         </FormControl>
       </Grid>
       <Grid item xs={12}>
-        <FormControlLabel
-          control={<Switch />}
-          label='Limit this discount to a single-use per customer?'
-          sx={{ '& .MuiTypography-root': { color: 'text.secondary' } }}
-        />
+        <FormControlLabel control={<Switch />} label='Limit this discount to a single-use per customer?' />
       </Grid>
     </Grid>
   )

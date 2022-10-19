@@ -1,10 +1,7 @@
-// ** React Imports
-import { SyntheticEvent } from 'react'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
-import Card from '@mui/material/Card'
+import MuiLink from '@mui/material/Link'
 import Divider from '@mui/material/Divider'
 import ListItem from '@mui/material/ListItem'
 import { styled } from '@mui/material/styles'
@@ -21,8 +18,9 @@ import CustomChip from 'src/@core/components/mui/chip'
 import Icon from 'src/@core/components/icon'
 
 const StyledList = styled(List)<ListProps>(({ theme }) => ({
+  padding: 0,
   '& .MuiListItem-root': {
-    padding: theme.spacing(2, 4),
+    padding: theme.spacing(5),
     border: `1px solid ${theme.palette.divider}`,
     '&:first-of-type': {
       borderTopLeftRadius: 6,
@@ -37,16 +35,19 @@ const StyledList = styled(List)<ListProps>(({ theme }) => ({
     },
     '& .MuiListItemText-root': {
       marginTop: 0,
-
+      marginBottom: theme.spacing(4),
       '& .MuiTypography-root': {
         fontWeight: 500
       }
     },
     '& .remove-item': {
-      top: '1rem',
-      right: '1rem',
+      top: '0.5rem',
+      right: '0.625rem',
       position: 'absolute',
-      color: theme.palette.text.secondary
+      color: theme.palette.text.disabled
+    },
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column'
     }
   }
 }))
@@ -57,6 +58,7 @@ const HorizontalList = styled(List)<ListProps>(({ theme }) => ({
   borderRadius: 6,
   border: `1px solid ${theme.palette.divider}`,
   '& .MuiListItem-root': {
+    padding: theme.spacing(5),
     '&:not(:last-of-type)': {
       borderRight: `1px solid ${theme.palette.divider}`
     }
@@ -76,97 +78,70 @@ const StepConfirmation = () => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12}>
-        <Box
-          sx={{
-            pt: 4,
-            display: 'flex',
-            textAlign: 'center',
-            alignItems: 'center',
-            px: { lg: 30, xs: 6 },
-            flexDirection: 'column'
-          }}
-        >
-          <Typography variant='h6'>Thank You! 😇</Typography>
-          <Typography sx={{ my: 4, color: 'text.secondary' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+          <Typography variant='h5' sx={{ mb: 4 }}>
+            Thank You! 😇
+          </Typography>
+          <Typography sx={{ mb: 4, color: 'text.secondary' }}>
             Your order{' '}
-            <Box
-              href='/'
-              component='a'
-              sx={{ color: 'primary.main', textDecoration: 'none' }}
-              onClick={(e: SyntheticEvent) => e.preventDefault()}
-            >
+            <Box href='/' component={MuiLink} onClick={e => e.preventDefault()}>
               #1536548131
             </Box>{' '}
             has been placed!
           </Typography>
           <Typography sx={{ color: 'text.secondary' }}>
             We sent an email to{' '}
-            <Box
-              href='/'
-              component='a'
-              sx={{ color: 'primary.main', textDecoration: 'none' }}
-              onClick={(e: SyntheticEvent) => e.preventDefault()}
-            >
+            <Box href='/' component={MuiLink} onClick={e => e.preventDefault()}>
               john.doe@example.com
             </Box>{' '}
-            with your order confirmation and receipt. If the email hasn't arrived within two minutes, please check your
-            spam folder to see if the email was routed there.
+            with your order confirmation and receipt.
           </Typography>
-          <Typography sx={{ mt: 4, color: 'text.secondary' }}>
-            <Box component='span' sx={{ display: 'inline-flex', mr: 2, verticalAlign: 'middle' }}>
-              <Icon icon='mdi:clock-time-five-outline' fontSize={20} />
-            </Box>
-            <Box component='span' sx={{ fontWeight: 600 }}>
-              Time placed:
-            </Box>{' '}
-            25/05/2020 13:35pm
+          <Typography sx={{ mb: 4, color: 'text.secondary' }}>
+            If the email hasn't arrived within two minutes, please check your spam folder to see if the email was routed
+            there.
           </Typography>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Icon icon='mdi:clock-time-five-outline' fontSize={20} />
+            <Typography sx={{ ml: 1.5, color: 'text.secondary' }}>Time placed: 25/05/2020 13:35pm</Typography>
+          </Box>
         </Box>
       </Grid>
       <Grid item xs={12}>
         <HorizontalList>
           <ListItem sx={{ flexDirection: 'column', alignItems: 'flex-start' }}>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <Box component='span' sx={{ display: 'inline-flex', mr: 1 }}>
+            <Box sx={{ mb: 4, display: 'flex', alignItems: 'center' }}>
+              <Box sx={{ mr: 1.5, display: 'flex' }}>
                 <Icon icon='mdi:map-marker-outline' fontSize={20} />
               </Box>
-              <Typography sx={{ fontWeight: 500 }}>Shipping</Typography>
+              <Typography sx={{ fontWeight: 600 }}>Shipping</Typography>
             </Box>
-            <Box component='address' sx={{ mt: 4, fontStyle: 'normal', color: 'text.secondary' }}>
-              John Doe <br />
-              4135 Parkway Street,
-              <br />
-              Los Angeles, CA 90017,
-              <br />
-              USA <br />
-              +123456789
-            </Box>
+            <Typography sx={{ color: 'text.secondary' }}>John Doe</Typography>
+            <Typography sx={{ color: 'text.secondary' }}>4135 Parkway Street,</Typography>
+            <Typography sx={{ color: 'text.secondary' }}>Los Angeles, CA 90017,</Typography>
+            <Typography sx={{ mb: 4, color: 'text.secondary' }}>USA</Typography>
+            <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>+123456789</Typography>
           </ListItem>
           <ListItem sx={{ flexDirection: 'column', alignItems: 'flex-start' }}>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <Box component='span' sx={{ display: 'inline-flex', mr: 1 }}>
+            <Box sx={{ mb: 4, display: 'flex', alignItems: 'center' }}>
+              <Box sx={{ mr: 1.5, display: 'flex' }}>
                 <Icon icon='mdi:credit-card-outline' fontSize={20} />
               </Box>
-              <Typography sx={{ fontWeight: 500 }}>Billing Address</Typography>
+              <Typography sx={{ fontWeight: 600 }}>Billing Address</Typography>
             </Box>
-            <Box component='address' sx={{ mt: 4, fontStyle: 'normal', color: 'text.secondary' }}>
-              John Doe <br />
-              4135 Parkway Street,
-              <br />
-              Los Angeles, CA 90017,
-              <br />
-              USA <br />
-              +123456789
-            </Box>
+            <Typography sx={{ color: 'text.secondary' }}>John Doe</Typography>
+            <Typography sx={{ color: 'text.secondary' }}>4135 Parkway Street,</Typography>
+            <Typography sx={{ color: 'text.secondary' }}>Los Angeles, CA 90017,</Typography>
+            <Typography sx={{ mb: 4, color: 'text.secondary' }}>USA</Typography>
+            <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>+123456789</Typography>
           </ListItem>
           <ListItem sx={{ flexDirection: 'column', alignItems: 'flex-start' }}>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <Box component='span' sx={{ display: 'inline-flex', mr: 1 }}>
+            <Box sx={{ mb: 4, display: 'flex', alignItems: 'center' }}>
+              <Box sx={{ mr: 1.5, display: 'flex' }}>
                 <Icon icon='mdi:archive-outline' fontSize={20} />
               </Box>
-              <Typography sx={{ fontWeight: 500 }}>Shipping Method</Typography>
+              <Typography sx={{ fontWeight: 600 }}>Shipping Method</Typography>
             </Box>
-            <Typography sx={{ mt: 4, fontWeight: 600, color: 'text.secondary' }}>Preferred Method:</Typography>
+            <Typography sx={{ mb: 4, fontWeight: 600, color: 'text.secondary' }}>Preferred Method:</Typography>
             <Typography sx={{ color: 'text.secondary' }}>Standard Delivery</Typography>
             <Typography sx={{ color: 'text.secondary' }}>(Normally 3-4 business days)</Typography>
           </ListItem>
@@ -176,100 +151,119 @@ const StepConfirmation = () => {
         <StyledList>
           <ListItem>
             <ListItemAvatar>
-              <img width={75} src='/images/products/google-home.png' alt='Google Home' />
+              <img width={80} src='/images/products/google-home.png' alt='Google Home' />
             </ListItemAvatar>
-            <Grid container>
-              <Grid item xs={12} md={8}>
+            <Grid container spacing={5}>
+              <Grid item xs={12} sm={8}>
                 <ListItemText primary='Google - Google Home - White' />
-                <Box sx={{ mt: 4, display: 'flex', alignItems: 'center' }}>
-                  <Typography sx={{ color: 'text.disabled' }}>Sold By:</Typography>
-                  <Typography sx={{ mx: 1, color: 'primary.main', cursor: 'pointer' }}>Google</Typography>
-                  <CustomChip rounded size='small' skin='light' color='success' label='In Stock' />
+                <Box sx={{ display: 'flex' }}>
+                  <Typography sx={{ mr: 2, color: 'text.disabled' }}>Sold By:</Typography>
+                  <Typography
+                    href='/'
+                    component={MuiLink}
+                    onClick={e => e.preventDefault()}
+                    sx={{ mr: 4, color: 'primary.main' }}
+                  >
+                    Google
+                  </Typography>
+                  <CustomChip size='small' skin='light' color='success' label='In Stock' />
                 </Box>
               </Grid>
-              <Grid item xs={12} md={4}>
-                <Box
-                  sx={{
-                    height: '100%',
-                    display: 'flex',
-                    mt: { xs: 1, md: 0 },
-                    alignItems: 'center',
-                    justifyContent: { xs: 'flex-start', md: 'flex-end' }
-                  }}
-                >
-                  <Typography sx={{ color: 'primary.main' }}>$299</Typography>
-                  <Typography sx={{ textDecoration: 'line-through', color: 'text.disabled' }}>/$359</Typography>
-                </Box>
+              <Grid
+                item
+                sm={4}
+                xs={12}
+                sx={{ display: 'flex', alignItems: 'center', justifyContent: { xs: 'flex-start', sm: 'flex-end' } }}
+              >
+                <Typography sx={{ color: 'primary.main' }}>$299</Typography>
+                <Typography sx={{ color: 'text.disabled', textDecoration: 'line-through' }}>/$359</Typography>
               </Grid>
             </Grid>
           </ListItem>
           <ListItem>
             <ListItemAvatar>
-              <img width={75} src='/images/products/iphone-11.png' alt='iphone 11' />
+              <img width={80} src='/images/products/iphone-11.png' alt='iphone 11' />
             </ListItemAvatar>
-            <Grid container>
-              <Grid item xs={12} md={8}>
+            <Grid container spacing={5}>
+              <Grid item xs={12} sm={8}>
                 <ListItemText primary='Apple iPhone 11 (64GB, Black)' />
-                <Box sx={{ mt: 4, display: 'flex', alignItems: 'center' }}>
-                  <Typography sx={{ color: 'text.disabled' }}>Sold By:</Typography>
-                  <Typography sx={{ mx: 1, color: 'primary.main', cursor: 'pointer' }}>Apple</Typography>
-                  <CustomChip rounded size='small' skin='light' color='success' label='In Stock' />
+                <Box sx={{ display: 'flex' }}>
+                  <Typography sx={{ mr: 2, color: 'text.disabled' }}>Sold By:</Typography>
+                  <Typography
+                    href='/'
+                    component={MuiLink}
+                    onClick={e => e.preventDefault()}
+                    sx={{ mr: 4, color: 'primary.main' }}
+                  >
+                    Apple
+                  </Typography>
+                  <CustomChip size='small' skin='light' color='success' label='In Stock' />
                 </Box>
               </Grid>
-              <Grid item xs={12} md={4}>
-                <Box
-                  sx={{
-                    height: '100%',
-                    display: 'flex',
-                    mt: { xs: 1, md: 0 },
-                    alignItems: 'center',
-                    justifyContent: { xs: 'flex-start', md: 'flex-end' }
-                  }}
-                >
-                  <Typography sx={{ color: 'primary.main' }}>$299</Typography>
-                  <Typography sx={{ textDecoration: 'line-through', color: 'text.disabled' }}>/$359</Typography>
-                </Box>
+              <Grid
+                item
+                sm={4}
+                xs={12}
+                sx={{ display: 'flex', alignItems: 'center', justifyContent: { xs: 'flex-start', sm: 'flex-end' } }}
+              >
+                <Typography sx={{ color: 'primary.main' }}>$899</Typography>
+                <Typography sx={{ color: 'text.disabled', textDecoration: 'line-through' }}>/$999</Typography>
               </Grid>
             </Grid>
           </ListItem>
         </StyledList>
       </Grid>
       <Grid item xs={12} md={4} xl={3}>
-        <Card
-          sx={{ mt: 1.5, background: 'transparent', boxShadow: 'none', border: '1px solid', borderColor: 'divider' }}
-        >
-          <CardContent sx={{ p: 4 }}>
-            <Typography sx={{ mb: 4, fontWeight: 500 }}>Price Details</Typography>
-            <Grid container>
-              <Grid item xs={6} sx={{ mb: 2 }}>
-                <Typography sx={{ color: 'text.secondary' }}> Order Total</Typography>
-              </Grid>
-              <Grid item xs={6} sx={{ mb: 2 }}>
-                <Typography sx={{ textAlign: 'right', color: 'text.secondary' }}>$1100.00</Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Typography sx={{ color: 'text.secondary' }}> Delivery Charges</Typography>
-              </Grid>
-              <Grid item xs={6}>
+        <Box sx={{ mb: 4, borderRadius: 1, border: theme => `1px solid ${theme.palette.divider}` }}>
+          <CardContent>
+            <Typography sx={{ mb: 4, fontWeight: 600 }}>Price Details</Typography>
+            <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+              <Box
+                sx={{
+                  mb: 4,
+                  gap: 2,
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  alignItems: 'center',
+                  justifyContent: 'space-between'
+                }}
+              >
+                <Typography variant='body2' sx={{ color: 'text.primary' }}>
+                  Order Total
+                </Typography>
+                <Typography variant='body2'>$1198.00</Typography>
+              </Box>
+              <Box
+                sx={{
+                  gap: 2,
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  alignItems: 'center',
+                  justifyContent: 'space-between'
+                }}
+              >
+                <Typography variant='body2' sx={{ color: 'text.primary' }}>
+                  Delivery Charges
+                </Typography>
                 <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-                  <Typography sx={{ mr: 2, textDecoration: 'line-through', color: 'text.secondary' }}>$5.00</Typography>
-                  <CustomChip rounded size='small' skin='light' color='success' label='Free' />
+                  <Typography variant='body2' sx={{ mr: 2, textDecoration: 'line-through', color: 'text.disabled' }}>
+                    $5.00
+                  </Typography>
+                  <CustomChip size='small' skin='light' color='success' label='Free' />
                 </Box>
-              </Grid>
-            </Grid>
+              </Box>
+            </Box>
           </CardContent>
           <Divider sx={{ m: '0 !important' }} />
-          <CardContent sx={{ p: theme => `${theme.spacing(4)} !important` }}>
-            <Grid container>
-              <Grid item xs={6}>
-                <Typography sx={{ fontWeight: 700, color: 'text.secondary' }}>Total</Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Typography sx={{ textAlign: 'right', color: 'text.secondary' }}>$1100.00</Typography>
-              </Grid>
-            </Grid>
+          <CardContent sx={{ py: theme => `${theme.spacing(3.5)} !important` }}>
+            <Box
+              sx={{ gap: 2, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}
+            >
+              <Typography sx={{ fontWeight: 600 }}>Total</Typography>
+              <Typography sx={{ fontWeight: 600 }}>$1198.00</Typography>
+            </Box>
           </CardContent>
-        </Card>
+        </Box>
       </Grid>
     </Grid>
   )
