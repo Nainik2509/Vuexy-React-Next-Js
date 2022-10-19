@@ -16,8 +16,9 @@ import { useSettings } from 'src/@core/hooks/useSettings'
 import RegisterMultiStepsWizard from 'src/views/pages/auth/register-multi-steps'
 
 // ** Styled Components
-const LoginIllustration = styled('img')({
+const RegisterMultiStepsIllustration = styled('img')({
   height: 'auto',
+  maxHeight: 650,
   maxWidth: '100%'
 })
 
@@ -71,9 +72,9 @@ const RegisterMultiSteps = () => {
     <Box className='content-right'>
       {!hidden ? (
         <LeftWrapper>
-          <LoginIllustration
-            alt='register-illustration'
-            src={`/images/pages/create-account-${theme.palette.mode}.png`}
+          <RegisterMultiStepsIllustration
+            alt='register-multi-steps-illustration'
+            src='/images/pages/auth-v2-register-multi-steps-illustration.png'
           />
         </LeftWrapper>
       ) : null}

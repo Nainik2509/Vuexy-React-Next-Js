@@ -35,7 +35,7 @@ import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 import 'cleave.js/dist/addons/cleave-phone.us'
 
 // ** Styled Components
-const RegisterIllustrationWrapper = styled(Box)<BoxProps>(({ theme }) => ({
+const TwoStepsIllustrationWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   padding: theme.spacing(20),
   paddingRight: '0 !important',
   [theme.breakpoints.down('lg')]: {
@@ -43,7 +43,7 @@ const RegisterIllustrationWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   }
 }))
 
-const RegisterIllustration = styled('img')(({ theme }) => ({
+const TwoStepsIllustration = styled('img')(({ theme }) => ({
   maxWidth: '46rem',
   [theme.breakpoints.down('lg')]: {
     maxWidth: '35rem'
@@ -122,7 +122,7 @@ const TwoStepsV2 = () => {
   const { skin } = settings
   const hidden = useMediaQuery(theme.breakpoints.down('md'))
 
-  const imageSource = skin === 'bordered' ? 'auth-v2-register-illustration-bordered' : 'auth-v2-register-illustration'
+  const imageSource = skin === 'bordered' ? 'auth-v2-two-steps-illustration-bordered' : 'auth-v2-two-steps-illustration'
 
   // ** Vars
   const errorsArray = Object.keys(errors)
@@ -185,12 +185,12 @@ const TwoStepsV2 = () => {
     <Box className='content-right'>
       {!hidden ? (
         <Box sx={{ flex: 1, display: 'flex', position: 'relative', alignItems: 'center', justifyContent: 'center' }}>
-          <RegisterIllustrationWrapper>
-            <RegisterIllustration
-              alt='register-illustration'
+          <TwoStepsIllustrationWrapper>
+            <TwoStepsIllustration
+              alt='two-steps-illustration'
               src={`/images/pages/${imageSource}-${theme.palette.mode}.png`}
             />
-          </RegisterIllustrationWrapper>
+          </TwoStepsIllustrationWrapper>
           <FooterIllustrationsV2 image={<TreeIllustration alt='tree' src='/images/pages/tree-2.png' />} />
         </Box>
       ) : null}
@@ -322,7 +322,7 @@ const TwoStepsV2 = () => {
               </Button>
             </form>
             <Box sx={{ mt: 4, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Typography sx={{ color: 'text.secondary' }}>Didn't get the mail?</Typography>
+              <Typography sx={{ color: 'text.secondary' }}>Didn't get the code?</Typography>
               <LinkStyled href='/' onClick={e => e.preventDefault()}>
                 Resend
               </LinkStyled>

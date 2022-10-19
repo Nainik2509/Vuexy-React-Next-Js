@@ -249,7 +249,7 @@ const TwoStepsV1 = () => {
             </Button>
           </form>
           <Box sx={{ mt: 4, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Typography sx={{ color: 'text.secondary' }}>Didn't get the mail?</Typography>
+            <Typography sx={{ color: 'text.secondary' }}>Didn't get the code?</Typography>
             <LinkStyled href='/' onClick={e => e.preventDefault()}>
               Resend
             </LinkStyled>

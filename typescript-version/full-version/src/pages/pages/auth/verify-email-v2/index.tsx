@@ -21,7 +21,7 @@ import { useSettings } from 'src/@core/hooks/useSettings'
 import FooterIllustrationsV2 from 'src/views/pages/auth/FooterIllustrationsV2'
 
 // ** Styled Components
-const RegisterIllustrationWrapper = styled(Box)<BoxProps>(({ theme }) => ({
+const VerifyEmailIllustrationWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   padding: theme.spacing(20),
   paddingRight: '0 !important',
   [theme.breakpoints.down('lg')]: {
@@ -29,7 +29,7 @@ const RegisterIllustrationWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   }
 }))
 
-const RegisterIllustration = styled('img')(({ theme }) => ({
+const VerifyEmailIllustration = styled('img')(({ theme }) => ({
   maxWidth: '46rem',
   [theme.breakpoints.down('lg')]: {
     maxWidth: '35rem'
@@ -76,18 +76,19 @@ const VerifyEmailV2 = () => {
   const { skin } = settings
   const hidden = useMediaQuery(theme.breakpoints.down('md'))
 
-  const imageSource = skin === 'bordered' ? 'auth-v2-register-illustration-bordered' : 'auth-v2-register-illustration'
+  const imageSource =
+    skin === 'bordered' ? 'auth-v2-verify-email-illustration-bordered' : 'auth-v2-verify-email-illustration'
 
   return (
     <Box className='content-right'>
       {!hidden ? (
         <Box sx={{ flex: 1, display: 'flex', position: 'relative', alignItems: 'center', justifyContent: 'center' }}>
-          <RegisterIllustrationWrapper>
-            <RegisterIllustration
-              alt='register-illustration'
+          <VerifyEmailIllustrationWrapper>
+            <VerifyEmailIllustration
+              alt='verify-email-illustration'
               src={`/images/pages/${imageSource}-${theme.palette.mode}.png`}
             />
-          </RegisterIllustrationWrapper>
+          </VerifyEmailIllustrationWrapper>
           <FooterIllustrationsV2 image={<TreeIllustration alt='tree' src='/images/pages/tree-2.png' />} />
         </Box>
       ) : null}
