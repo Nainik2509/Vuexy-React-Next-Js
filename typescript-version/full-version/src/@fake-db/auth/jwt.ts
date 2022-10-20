@@ -31,9 +31,9 @@ const users: UserDataType[] = [
 
 // ! These two secrets should be in .env file and not in any other file
 const jwtConfig = {
-  expirationTime: '60m',
-  secret: 'dd5f3089-40c3-403d-af14-d0c228b05cb4',
-  refreshTokenSecret: '7c4c1c50-3230-45bf-9eae-c9b2e401c767'
+  secret: process.env.NEXT_PUBLIC_JWT_SECRET,
+  expirationTime: process.env.NEXT_PUBLIC_JWT_EXPIRATION,
+  refreshTokenSecret: process.env.NEXT_PUBLIC_JWT_REFRESH_TOKEN_SECRET
 }
 
 type ResponseType = [number, { [key: string]: any }]
@@ -48,7 +48,7 @@ mock.onPost('/jwt/login').reply(request => {
   const user = users.find(u => u.email === email && u.password === password)
 
   if (user) {
-    const accessToken = jwt.sign({ id: user.id }, jwtConfig.secret, { expiresIn: jwtConfig.expirationTime })
+    const accessToken = jwt.sign({ id: user.id }, jwtConfig.secret as string, { expiresIn: jwtConfig.expirationTime })
 
     const response = {
       accessToken,
@@ -93,7 +93,7 @@ mock.onPost('/jwt/register').reply(request => {
 
       users.push(userData)
 
-      const accessToken = jwt.sign({ id: userData.id }, jwtConfig.secret)
+      const accessToken = jwt.sign({ id: userData.id }, jwtConfig.secret as string)
 
       const user = { ...userData }
       delete user.password
@@ -118,7 +118,7 @@ mock.onGet('/auth/me').reply(config => {
   let response: ResponseType = [200, {}]
 
   // ** Checks if the token is valid or expired
-  jwt.verify(token, jwtConfig.secret, (err, decoded) => {
+  jwt.verify(token, jwtConfig.secret as string, (err, decoded) => {
     // ** If token is expired
     if (err) {
       // ** If onTokenExpiration === 'logout' then send 401 error
@@ -137,7 +137,9 @@ mock.onGet('/auth/me').reply(config => {
         const user = users.find(u => u.id === userId)
 
         // ** Sign a new token
-        const accessToken = jwt.sign({ id: userId }, jwtConfig.secret, { expiresIn: jwtConfig.expirationTime })
+        const accessToken = jwt.sign({ id: userId }, jwtConfig.secret as string, {
+          expiresIn: jwtConfig.expirationTime
+        })
 
         // ** Set new token in localStorage
         window.localStorage.setItem(defaultAuthConfig.storageTokenKeyName, accessToken)
