@@ -96,10 +96,8 @@ const StepPropertyDetails = () => {
         <FormControl fullWidth>
           <InputLabel htmlFor='validation-property-select'>Property Type</InputLabel>
           <Select label='Property Type' labelId='validation-property-select' defaultValue=''>
-            <MenuItem value='UK'>UK</MenuItem>
-            <MenuItem value='USA'>USA</MenuItem>
-            <MenuItem value='Australia'>Australia</MenuItem>
-            <MenuItem value='Germany'>Germany</MenuItem>
+            <MenuItem value='Residential'>Residential</MenuItem>
+            <MenuItem value='Commercial'>Commercial</MenuItem>
           </Select>
         </FormControl>
       </Grid>

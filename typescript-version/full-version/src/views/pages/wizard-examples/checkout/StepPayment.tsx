@@ -112,7 +112,7 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
                   </Grid>
                   <Grid item xs={12}>
                     <Button variant='contained' sx={{ mr: 3.5 }} onClick={handleNext}>
-                      Save Changes
+                      Checkout
                     </Button>
                     <Button type='reset' variant='outlined' color='secondary'>
                       Reset
