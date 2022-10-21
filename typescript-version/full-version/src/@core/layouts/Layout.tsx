@@ -20,10 +20,6 @@ const Layout = (props: LayoutProps) => {
       if (settings.navCollapsed) {
         saveSettings({ ...settings, navCollapsed: false, layout: 'vertical' })
         isCollapsed.current = true
-      } else {
-        // if (settings.layout === 'horizontal') {
-        //   saveSettings({ ...settings, layout: 'vertical' })
-        // }
       }
     } else {
       if (isCollapsed.current) {
@@ -35,6 +31,7 @@ const Layout = (props: LayoutProps) => {
         }
       }
     }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hidden])
 
