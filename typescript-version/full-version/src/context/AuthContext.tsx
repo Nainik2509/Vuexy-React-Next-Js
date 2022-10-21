@@ -65,12 +65,6 @@ const AuthProvider = ({ children }: Props) => {
           })
       } else {
         setLoading(false)
-        if (!router.pathname.includes('login')) {
-          router.replace({
-            pathname: '/login',
-            query: { returnUrl: router.asPath }
-          })
-        }
       }
     }
 
