@@ -127,15 +127,14 @@ const CardDepositWithdraw = () => {
           title='Deposit'
           sx={{ '& .MuiCardHeader-action': { mt: -0.8 } }}
           action={
-            <Link passHref href='/'>
-              <Box
-                component='a'
-                onClick={(e: SyntheticEvent) => e.preventDefault()}
-                sx={{ fontSize: '.75rem', color: 'primary.main', textDecoration: 'none' }}
-              >
-                View All
-              </Box>
-            </Link>
+            <Box
+              href='/'
+              component={Link}
+              onClick={(e: SyntheticEvent) => e.preventDefault()}
+              sx={{ fontSize: '.75rem', color: 'primary.main', textDecoration: 'none' }}
+            >
+              View All
+            </Box>
           }
         />
         <CardContent>
@@ -179,15 +178,14 @@ const CardDepositWithdraw = () => {
           title='Withdraw'
           sx={{ '& .MuiCardHeader-action': { mt: -0.8 } }}
           action={
-            <Link passHref href='/'>
-              <Box
-                component='a'
-                onClick={(e: SyntheticEvent) => e.preventDefault()}
-                sx={{ fontSize: '.75rem', color: 'primary.main', textDecoration: 'none' }}
-              >
-                View All
-              </Box>
-            </Link>
+            <Box
+              href='/'
+              component={Link}
+              onClick={(e: SyntheticEvent) => e.preventDefault()}
+              sx={{ fontSize: '.75rem', color: 'primary.main', textDecoration: 'none' }}
+            >
+              View All
+            </Box>
           }
         />
         <CardContent>

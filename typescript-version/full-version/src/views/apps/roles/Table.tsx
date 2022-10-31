@@ -1,6 +1,9 @@
 // ** React Imports
 import { useEffect, useCallback, useState } from 'react'
 
+// ** Next Import
+import Link from 'next/link'
+
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -89,14 +92,20 @@ const columns = [
           <Box sx={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
             <Typography
               noWrap
-              component='a'
               variant='body2'
-              sx={{ fontWeight: 600, color: 'text.primary', textDecoration: 'none' }}
+              component={Link}
+              href='/apps/user/view/overview/'
+              sx={{
+                fontWeight: 600,
+                color: 'text.primary',
+                textDecoration: 'none',
+                '&:hover': { color: theme => theme.palette.primary.main }
+              }}
             >
               {fullName}
             </Typography>
-            <Typography noWrap component='a' variant='caption' sx={{ textDecoration: 'none' }}>
-              @{username}
+            <Typography noWrap variant='caption'>
+              {`@${username}`}
             </Typography>
           </Box>
         </Box>
@@ -169,7 +178,7 @@ const columns = [
     field: 'actions',
     headerName: 'Actions',
     renderCell: () => (
-      <IconButton>
+      <IconButton component={Link} href='/apps/user/view/overview/'>
         <Icon icon='mdi:eye-outline' />
       </IconButton>
     )

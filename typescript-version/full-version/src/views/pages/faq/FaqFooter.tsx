@@ -54,16 +54,15 @@ const FaqFooter = () => {
             <CustomAvatar skin='light' variant='rounded' sx={{ mt: 1.5, height: 38, width: 38 }}>
               <Icon icon='mdi:phone-outline' />
             </CustomAvatar>
-            <Link href='/' passHref>
-              <Typography
-                variant='h6'
-                component='a'
-                onClick={(e: SyntheticEvent) => e.preventDefault()}
-                sx={{ mt: 4, textDecoration: 'none', '&:hover': { color: 'primary.main' } }}
-              >
-                + (810) 2548 2568
-              </Typography>
-            </Link>
+            <Typography
+              href='/'
+              variant='h6'
+              component={Link}
+              onClick={(e: SyntheticEvent) => e.preventDefault()}
+              sx={{ mt: 4, textDecoration: 'none', '&:hover': { color: 'primary.main' } }}
+            >
+              + (810) 2548 2568
+            </Typography>
             <Typography sx={{ mt: 2, color: 'text.secondary' }}>We are always happy to help!</Typography>
           </StyledBox1>
         </Grid>
@@ -73,16 +72,15 @@ const FaqFooter = () => {
             <CustomAvatar skin='light' variant='rounded' sx={{ mt: 1.5, height: 38, width: 38 }}>
               <Icon icon='mdi:email-outline' />
             </CustomAvatar>
-            <Link href='/' passHref>
-              <Typography
-                variant='h6'
-                component='a'
-                onClick={(e: SyntheticEvent) => e.preventDefault()}
-                sx={{ mt: 4, textDecoration: 'none', '&:hover': { color: 'primary.main' } }}
-              >
-                hello@help.com
-              </Typography>
-            </Link>
+            <Typography
+              href='/'
+              variant='h6'
+              component={Link}
+              onClick={(e: SyntheticEvent) => e.preventDefault()}
+              sx={{ mt: 4, textDecoration: 'none', '&:hover': { color: 'primary.main' } }}
+            >
+              hello@help.com
+            </Typography>
             <Typography sx={{ mt: 2, color: 'text.secondary' }}>Best way to get answer faster!</Typography>
           </StyledBox2>
         </Grid>

@@ -65,7 +65,7 @@ const TypographyStyled = styled(Typography)<TypographyProps>(({ theme }) => ({
   [theme.breakpoints.down('md')]: { marginTop: theme.spacing(8) }
 }))
 
-const LinkStyled = styled('a')(({ theme }) => ({
+const LinkStyled = styled(Link)(({ theme }) => ({
   display: 'flex',
   fontSize: '0.875rem',
   alignItems: 'center',
@@ -209,12 +209,10 @@ const ForgotPassword = () => {
                 Send reset link
               </Button>
               <Typography variant='body2' sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Link passHref href='/login'>
-                  <LinkStyled>
-                    <Icon icon='mdi:chevron-left' />
-                    <span>Back to login</span>
-                  </LinkStyled>
-                </Link>
+                <LinkStyled href='/login'>
+                  <Icon icon='mdi:chevron-left' />
+                  <span>Back to login</span>
+                </LinkStyled>
               </Typography>
             </form>
           </BoxWrapper>

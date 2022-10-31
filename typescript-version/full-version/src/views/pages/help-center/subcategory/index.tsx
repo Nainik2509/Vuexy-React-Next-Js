@@ -127,21 +127,26 @@ const HelpCenterSubcategory = ({ data, activeTab }: Props) => {
                     }}
                   >
                     <Icon icon='mdi:chevron-right' />
-                    <Link href={`/pages/help-center/${data.slug}/${activeTab}/${article.slug}`} passHref>
-                      <Typography component='a' sx={{ ml: 1.5, color: 'primary.main', textDecoration: 'none' }}>
-                        {article.title}
-                      </Typography>
-                    </Link>
+                    <Typography
+                      component={Link}
+                      sx={{ ml: 1.5, color: 'primary.main', textDecoration: 'none' }}
+                      href={`/pages/help-center/${data.slug}/${activeTab}/${article.slug}`}
+                    >
+                      {article.title}
+                    </Typography>
                   </Box>
                 )
               })}
             </Box>
 
-            <Link href='/pages/help-center' passHref>
-              <Button component='a' variant='outlined' startIcon={<Icon icon='mdi:chevron-left' />}>
-                Back to help center
-              </Button>
-            </Link>
+            <Button
+              component={Link}
+              variant='outlined'
+              href='/pages/help-center'
+              startIcon={<Icon icon='mdi:chevron-left' />}
+            >
+              Back to help center
+            </Button>
           </CardContent>
         </Card>
       </TabPanel>

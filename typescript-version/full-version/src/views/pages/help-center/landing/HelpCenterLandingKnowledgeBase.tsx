@@ -46,49 +46,43 @@ const HelpCenterLandingKnowledgeBase = ({ categories }: { categories: HelpCenter
                 >
                   <Icon icon={category.icon} />
                 </CustomAvatar>
-                <Link href={`/pages/help-center/${category.slug}/${category.subCategories[0].slug}`} passHref>
-                  <Typography
-                    variant='h6'
-                    component='a'
-                    sx={{ fontWeight: 600, textDecoration: 'none', '&:hover': { color: 'primary.main' } }}
-                  >
-                    {category.title}
-                  </Typography>
-                </Link>
+                <Typography
+                  variant='h6'
+                  component={Link}
+                  href={`/pages/help-center/${category.slug}/${category.subCategories[0].slug}`}
+                  sx={{ fontWeight: 600, textDecoration: 'none', '&:hover': { color: 'primary.main' } }}
+                >
+                  {category.title}
+                </Typography>
               </Box>
               <Box sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                 {category.subCategories.map(subcategory => (
-                  <Link
-                    passHref
+                  <Box
+                    component={Link}
                     key={subcategory.title}
                     href={`/pages/help-center/${category.slug}/${subcategory.slug}`}
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      textDecoration: 'none',
+                      '&:not(:last-of-type)': { mb: 2 },
+                      '& svg': { color: 'primary.main' }
+                    }}
                   >
-                    <Box
-                      component='a'
-                      sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        textDecoration: 'none',
-                        '&:not(:last-of-type)': { mb: 2 },
-                        '& svg': { color: 'primary.main' }
-                      }}
-                    >
-                      <Box sx={{ display: 'flex' }}>
-                        <Icon icon='mdi:circle-small' />
-                      </Box>
-                      <Typography sx={{ color: 'primary.main' }}>{subcategory.title}</Typography>
+                    <Box sx={{ display: 'flex' }}>
+                      <Icon icon='mdi:circle-small' />
                     </Box>
-                  </Link>
+                    <Typography sx={{ color: 'primary.main' }}>{subcategory.title}</Typography>
+                  </Box>
                 ))}
               </Box>
-              <Link href={`/pages/help-center/${category.slug}/${category.subCategories[0].slug}`} passHref>
-                <Typography
-                  component='a'
-                  sx={{ mt: 'auto', textDecoration: 'none', '&:hover': { color: 'primary.main' } }}
-                >
-                  {`${totalArticles} Articles`}
-                </Typography>
-              </Link>
+              <Typography
+                component={Link}
+                href={`/pages/help-center/${category.slug}/${category.subCategories[0].slug}`}
+                sx={{ mt: 'auto', textDecoration: 'none', '&:hover': { color: 'primary.main' } }}
+              >
+                {`${totalArticles} Articles`}
+              </Typography>
             </Box>
           </Grid>
         )

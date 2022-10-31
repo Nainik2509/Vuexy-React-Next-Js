@@ -74,20 +74,19 @@ const Projects = ({ data }: { data: ProjectsTabType[] }) => {
                     />
                   }
                   title={
-                    <Link href='/' passHref>
-                      <Typography
-                        variant='h6'
-                        component='a'
-                        onClick={(e: SyntheticEvent) => e.preventDefault()}
-                        sx={{
-                          color: 'text.primary',
-                          textDecoration: 'none',
-                          '&:hover': { color: 'primary.main' }
-                        }}
-                      >
-                        {item.title}
-                      </Typography>
-                    </Link>
+                    <Typography
+                      href='/'
+                      variant='h6'
+                      component={Link}
+                      onClick={(e: SyntheticEvent) => e.preventDefault()}
+                      sx={{
+                        color: 'text.primary',
+                        textDecoration: 'none',
+                        '&:hover': { color: 'primary.main' }
+                      }}
+                    >
+                      {item.title}
+                    </Typography>
                   }
                 />
                 <CardContent>
@@ -177,21 +176,20 @@ const Projects = ({ data }: { data: ProjectsTabType[] }) => {
                         {item.members}
                       </Typography>
                     </Box>
-                    <Link href='/' passHref>
-                      <Box
-                        component='a'
-                        onClick={(e: SyntheticEvent) => e.preventDefault()}
-                        sx={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          textDecoration: 'none',
-                          '& svg': { mr: 1, color: 'text.secondary' }
-                        }}
-                      >
-                        <Icon icon='mdi:message-outline' />
-                        <Typography sx={{ color: 'text.secondary' }}>{item.comments}</Typography>
-                      </Box>
-                    </Link>
+                    <Box
+                      href='/'
+                      component={Link}
+                      onClick={(e: SyntheticEvent) => e.preventDefault()}
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        textDecoration: 'none',
+                        '& svg': { mr: 1, color: 'text.secondary' }
+                      }}
+                    >
+                      <Icon icon='mdi:message-outline' />
+                      <Typography sx={{ color: 'text.secondary' }}>{item.comments}</Typography>
+                    </Box>
                   </Box>
                 </CardContent>
               </Card>

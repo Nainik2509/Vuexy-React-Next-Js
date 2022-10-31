@@ -52,11 +52,14 @@ const HelpCenterLandingArticlesOverview = (props: Props) => {
               >
                 {article.subtitle}
               </Typography>
-              <Link href='/pages/help-center/getting-started/account/changing-your-username' passHref>
-                <Button sx={{ mt: 4 }} variant='outlined'>
-                  Read More
-                </Button>
-              </Link>
+              <Button
+                sx={{ mt: 4 }}
+                component={Link}
+                variant='outlined'
+                href='/pages/help-center/getting-started/account/changing-your-username'
+              >
+                Read More
+              </Button>
             </Box>
           </Grid>
         )

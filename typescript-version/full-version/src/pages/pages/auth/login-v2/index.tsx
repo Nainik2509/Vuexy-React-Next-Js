@@ -78,7 +78,7 @@ const TypographyStyled = styled(Typography)<TypographyProps>(({ theme }) => ({
   [theme.breakpoints.down('md')]: { marginTop: theme.spacing(8) }
 }))
 
-const LinkStyled = styled('a')(({ theme }) => ({
+const LinkStyled = styled(Link)(({ theme }) => ({
   fontSize: '0.875rem',
   textDecoration: 'none',
   color: theme.palette.primary.main
@@ -261,9 +261,7 @@ const LoginV2 = () => {
                 sx={{ mb: 4, display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'space-between' }}
               >
                 <FormControlLabel control={<Checkbox />} label='Remember Me' />
-                <Link passHref href='/pages/auth/forgot-password-v2'>
-                  <LinkStyled>Forgot Password?</LinkStyled>
-                </Link>
+                <LinkStyled href='/pages/auth/forgot-password-v2'>Forgot Password?</LinkStyled>
               </Box>
               <Button fullWidth size='large' type='submit' variant='contained' sx={{ mb: 7 }}>
                 Login
@@ -273,49 +271,43 @@ const LoginV2 = () => {
                   New on our platform?
                 </Typography>
                 <Typography variant='body2'>
-                  <Link passHref href='/pages/auth/register-v2'>
-                    <LinkStyled>Create an account</LinkStyled>
-                  </Link>
+                  <LinkStyled href='/pages/auth/register-v2'>Create an account</LinkStyled>
                 </Typography>
               </Box>
               <Divider sx={{ my: `${theme.spacing(5)} !important` }}>or</Divider>
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Link href='/' passHref>
-                  <IconButton
-                    component='a'
-                    sx={{ color: '#497ce2' }}
-                    onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}
-                  >
-                    <Icon icon='mdi:facebook' />
-                  </IconButton>
-                </Link>
-                <Link href='/' passHref>
-                  <IconButton
-                    component='a'
-                    sx={{ color: '#1da1f2' }}
-                    onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}
-                  >
-                    <Icon icon='mdi:twitter' />
-                  </IconButton>
-                </Link>
-                <Link href='/' passHref>
-                  <IconButton
-                    component='a'
-                    onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}
-                    sx={{ color: theme => (theme.palette.mode === 'light' ? '#272727' : 'grey.300') }}
-                  >
-                    <Icon icon='mdi:github' />
-                  </IconButton>
-                </Link>
-                <Link href='/' passHref>
-                  <IconButton
-                    component='a'
-                    sx={{ color: '#db4437' }}
-                    onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}
-                  >
-                    <Icon icon='mdi:google' />
-                  </IconButton>
-                </Link>
+                <IconButton
+                  href='/'
+                  component={Link}
+                  sx={{ color: '#497ce2' }}
+                  onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}
+                >
+                  <Icon icon='mdi:facebook' />
+                </IconButton>
+                <IconButton
+                  href='/'
+                  component={Link}
+                  sx={{ color: '#1da1f2' }}
+                  onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}
+                >
+                  <Icon icon='mdi:twitter' />
+                </IconButton>
+                <IconButton
+                  href='/'
+                  component={Link}
+                  onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}
+                  sx={{ color: theme => (theme.palette.mode === 'light' ? '#272727' : 'grey.300') }}
+                >
+                  <Icon icon='mdi:github' />
+                </IconButton>
+                <IconButton
+                  href='/'
+                  component={Link}
+                  sx={{ color: '#db4437' }}
+                  onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}
+                >
+                  <Icon icon='mdi:google' />
+                </IconButton>
               </Box>
             </form>
           </BoxWrapper>

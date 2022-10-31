@@ -262,64 +262,61 @@ const NoResult = ({ value, setOpenDialog }: NoResultProps) => {
       </Typography>
       <List sx={{ py: 0 }}>
         <ListItem sx={{ py: 2 }} disablePadding onClick={() => setOpenDialog(false)}>
-          <Link passHref href='/dashboards/ecommerce'>
-            <Box
-              component='a'
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                textDecoration: 'none',
-                '&:hover > *': { color: 'primary.main' }
-              }}
-            >
-              <Box sx={{ mr: 2.5, display: 'flex', color: 'text.primary' }}>
-                <Icon icon='mdi:cart-outline' fontSize={20} />
-              </Box>
-              <Typography variant='body2' sx={{ color: 'text.primary' }}>
-                eCommerce Dashboard
-              </Typography>
+          <Box
+            component={Link}
+            href='/dashboards/ecommerce'
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              textDecoration: 'none',
+              '&:hover > *': { color: 'primary.main' }
+            }}
+          >
+            <Box sx={{ mr: 2.5, display: 'flex', color: 'text.primary' }}>
+              <Icon icon='mdi:cart-outline' fontSize={20} />
             </Box>
-          </Link>
+            <Typography variant='body2' sx={{ color: 'text.primary' }}>
+              eCommerce Dashboard
+            </Typography>
+          </Box>
         </ListItem>
         <ListItem sx={{ py: 2 }} disablePadding onClick={() => setOpenDialog(false)}>
-          <Link passHref href='/pages/user-profile/profile'>
-            <Box
-              component='a'
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                textDecoration: 'none',
-                '&:hover > *': { color: 'primary.main' }
-              }}
-            >
-              <Box sx={{ mr: 2.5, display: 'flex', color: 'text.primary' }}>
-                <Icon icon='mdi:account-outline' fontSize={20} />
-              </Box>
-              <Typography variant='body2' sx={{ color: 'text.primary' }}>
-                User Profile
-              </Typography>
+          <Box
+            component={Link}
+            href='/pages/user-profile/profile'
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              textDecoration: 'none',
+              '&:hover > *': { color: 'primary.main' }
+            }}
+          >
+            <Box sx={{ mr: 2.5, display: 'flex', color: 'text.primary' }}>
+              <Icon icon='mdi:account-outline' fontSize={20} />
             </Box>
-          </Link>
+            <Typography variant='body2' sx={{ color: 'text.primary' }}>
+              User Profile
+            </Typography>
+          </Box>
         </ListItem>
         <ListItem sx={{ py: 2 }} disablePadding onClick={() => setOpenDialog(false)}>
-          <Link passHref href='/pages/account-settings/account'>
-            <Box
-              component='a'
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                textDecoration: 'none',
-                '&:hover > *': { color: 'primary.main' }
-              }}
-            >
-              <Box sx={{ mr: 2.5, display: 'flex', color: 'text.primary' }}>
-                <Icon icon='mdi:account-cog-outline' fontSize={20} />
-              </Box>
-              <Typography variant='body2' sx={{ color: 'text.primary' }}>
-                Account Settings
-              </Typography>
+          <Box
+            component={Link}
+            href='/pages/account-settings/account'
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              textDecoration: 'none',
+              '&:hover > *': { color: 'primary.main' }
+            }}
+          >
+            <Box sx={{ mr: 2.5, display: 'flex', color: 'text.primary' }}>
+              <Icon icon='mdi:account-cog-outline' fontSize={20} />
             </Box>
-          </Link>
+            <Typography variant='body2' sx={{ color: 'text.primary' }}>
+              Account Settings
+            </Typography>
+          </Box>
         </ListItem>
       </List>
     </Box>
@@ -337,25 +334,24 @@ const DefaultSuggestions = ({ setOpenDialog }: DefaultSuggestionsProps) => {
           <List sx={{ py: 2.5 }}>
             {item.suggestions.map((suggestionItem, index2) => (
               <ListItem key={index2} sx={{ py: 2 }} disablePadding>
-                <Link passHref href={suggestionItem.link}>
-                  <Box
-                    component='a'
-                    onClick={() => setOpenDialog(false)}
-                    sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      '& svg': { mr: 2.5 },
-                      color: 'text.primary',
-                      textDecoration: 'none',
-                      '&:hover > *': { color: 'primary.main' }
-                    }}
-                  >
-                    <Icon icon={suggestionItem.icon} fontSize={20} />
-                    <Typography variant='body2' sx={{ color: 'text.primary' }}>
-                      {suggestionItem.suggestion}
-                    </Typography>
-                  </Box>
-                </Link>
+                <Box
+                  component={Link}
+                  href={suggestionItem.link}
+                  onClick={() => setOpenDialog(false)}
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    '& svg': { mr: 2.5 },
+                    color: 'text.primary',
+                    textDecoration: 'none',
+                    '&:hover > *': { color: 'primary.main' }
+                  }}
+                >
+                  <Icon icon={suggestionItem.icon} fontSize={20} />
+                  <Typography variant='body2' sx={{ color: 'text.primary' }}>
+                    {suggestionItem.suggestion}
+                  </Typography>
+                </Box>
               </ListItem>
             ))}
           </List>

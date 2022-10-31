@@ -14,19 +14,20 @@ import { IconProps } from '@iconify/react'
 export type OptionDividerType = {
   divider: boolean
   dividerProps?: DividerProps
-  url?: never
-  text?: never
+  href?: never
   icon?: never
+  text?: never
+  linkProps?: never
   menuItemProps?: never
 }
 export type OptionMenuItemType = {
   text: ReactNode
   icon?: ReactNode
+  linkProps?: LinkProps
+  href?: LinkProps['href']
   menuItemProps?: MenuItemProps
   divider?: never
   dividerProps?: never
-  linkProps?: LinkProps
-  href?: LinkProps['href']
 }
 
 export type OptionType = string | OptionDividerType | OptionMenuItemType

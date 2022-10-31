@@ -57,11 +57,9 @@ const UnderMaintenance = () => {
           </Typography>
         </BoxWrapper>
         <Img height='487' alt='under-maintenance-illustration' src='/images/pages/misc-under-maintenance.png' />
-        <Link passHref href='/'>
-          <Button component='a' variant='contained' sx={{ px: 5.5 }}>
-            Back to Home
-          </Button>
-        </Link>
+        <Button href='/' component={Link} variant='contained' sx={{ px: 5.5 }}>
+          Back to Home
+        </Button>
       </Box>
       <FooterIllustrations image={<TreeIllustration alt='tree' src='/images/pages/tree-3.png' />} />
     </Box>

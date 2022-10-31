@@ -5,6 +5,7 @@ import { MouseEvent, useState, ReactNode } from 'react'
 import Link from 'next/link'
 
 // ** MUI Imports
+import Box from '@mui/material/Box'
 import Menu from '@mui/material/Menu'
 import Divider from '@mui/material/Divider'
 import MenuItem from '@mui/material/MenuItem'
@@ -22,9 +23,22 @@ import { useSettings } from 'src/@core/hooks/useSettings'
 const MenuItemWrapper = ({ children, option }: { children: ReactNode; option: OptionMenuItemType }) => {
   if (option.href) {
     return (
-      <Link href={option.href} passHref {...option.linkProps}>
+      <Box
+        component={Link}
+        href={option.href}
+        {...option.linkProps}
+        sx={{
+          px: 4,
+          py: 1.5,
+          width: '100%',
+          display: 'flex',
+          color: 'inherit',
+          alignItems: 'center',
+          textDecoration: 'none'
+        }}
+      >
         {children}
-      </Link>
+      </Box>
     )
   } else {
     return <>{children}</>
@@ -77,18 +91,20 @@ const OptionsMenu = (props: OptionsMenuType) => {
             return option.divider && <Divider key={index} {...option.dividerProps} />
           } else {
             return (
-              <MenuItemWrapper key={index} option={option}>
-                <MenuItem
-                  {...option.menuItemProps}
-                  onClick={e => {
-                    handleClose()
-                    option.menuItemProps && option.menuItemProps.onClick ? option.menuItemProps.onClick(e) : null
-                  }}
-                >
+              <MenuItem
+                key={index}
+                {...option.menuItemProps}
+                {...(option.href && { sx: { p: 0 } })}
+                onClick={e => {
+                  handleClose()
+                  option.menuItemProps && option.menuItemProps.onClick ? option.menuItemProps.onClick(e) : null
+                }}
+              >
+                <MenuItemWrapper option={option}>
                   {option.icon ? option.icon : null}
                   {option.text}
-                </MenuItem>
-              </MenuItemWrapper>
+                </MenuItemWrapper>
+              </MenuItem>
             )
           }
         })}

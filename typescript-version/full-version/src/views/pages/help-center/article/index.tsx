@@ -102,11 +102,14 @@ const HelpCenterArticle = ({ articles, activeArticle, activeSubcategory }: Props
     <TabPanel value={tabValue} sx={{ p: 0, width: '100%' }}>
       <Card>
         <CardContent>
-          <Link href={`/pages/help-center/${router.query.category}/${router.query.subcategory}`} passHref>
-            <Button component='a' variant='outlined' startIcon={<Icon icon='mdi:chevron-left' />}>
-              Back to Categories
-            </Button>
-          </Link>
+          <Button
+            component={Link}
+            variant='outlined'
+            startIcon={<Icon icon='mdi:chevron-left' />}
+            href={`/pages/help-center/${router.query.category}/${router.query.subcategory}`}
+          >
+            Back to Categories
+          </Button>
 
           <Box sx={{ mt: 6, mb: 6.5, display: 'flex', alignItems: 'center' }}>
             <CustomAvatar skin='light' variant='rounded' color='secondary' sx={{ mr: 3 }}>
@@ -146,15 +149,14 @@ const HelpCenterArticle = ({ articles, activeArticle, activeSubcategory }: Props
           </div>
           <Box sx={{ display: 'flex' }}>
             <Typography sx={{ mr: 1, fontWeight: 600 }}>Still need help?</Typography>
-            <Link href='/' passHref>
-              <Typography
-                component='a'
-                onClick={(e: SyntheticEvent) => e.preventDefault()}
-                sx={{ fontWeight: 600, color: 'primary.main', textDecoration: 'none' }}
-              >
-                Contact us?
-              </Typography>
-            </Link>
+            <Typography
+              href='/'
+              component={Link}
+              onClick={(e: SyntheticEvent) => e.preventDefault()}
+              sx={{ fontWeight: 600, color: 'primary.main', textDecoration: 'none' }}
+            >
+              Contact us?
+            </Typography>
           </Box>
         </CardContent>
       </Card>

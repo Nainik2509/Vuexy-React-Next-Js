@@ -42,7 +42,7 @@ interface CellType {
   row: InvoiceType
 }
 
-const StyledLink = styled('a')(({ theme }) => ({
+const StyledLink = styled(Link)(({ theme }) => ({
   textDecoration: 'none',
   color: theme.palette.primary.main
 }))
@@ -63,11 +63,7 @@ const columns = [
     field: 'id',
     minWidth: 90,
     headerName: '# ID',
-    renderCell: ({ row }: CellType) => (
-      <Link href={`/apps/invoice/preview/${row.id}`} passHref>
-        <StyledLink>{`#${row.id}`}</StyledLink>
-      </Link>
-    )
+    renderCell: ({ row }: CellType) => <StyledLink href={`/apps/invoice/preview/${row.id}`}>{`#${row.id}`}</StyledLink>
   },
   {
     flex: 0.15,
@@ -134,13 +130,9 @@ const columns = [
           </IconButton>
         </Tooltip>
         <Tooltip title='View'>
-          <div>
-            <Link href={`/apps/invoice/preview/${row.id}`} passHref>
-              <IconButton size='small' component='a' sx={{ textDecoration: 'none' }}>
-                <Icon icon='mdi:eye-outline' fontSize={20} />
-              </IconButton>
-            </Link>
-          </div>
+          <IconButton size='small' component={Link} href={`/apps/invoice/preview/${row.id}`}>
+            <Icon icon='mdi:eye-outline' fontSize={20} />
+          </IconButton>
         </Tooltip>
         <OptionsMenu
           iconProps={{ fontSize: 20 }}

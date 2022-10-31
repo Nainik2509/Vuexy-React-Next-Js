@@ -41,7 +41,7 @@ const Card = styled(MuiCard)<CardProps>(({ theme }) => ({
   [theme.breakpoints.up('sm')]: { width: '28rem' }
 }))
 
-const LinkStyled = styled('a')(({ theme }) => ({
+const LinkStyled = styled(Link)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   textDecoration: 'none',
@@ -220,12 +220,10 @@ const ResetPasswordV1 = () => {
               Set New Password
             </Button>
             <Typography variant='body2' sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Link passHref href='/pages/auth/login-v1'>
-                <LinkStyled>
-                  <Icon icon='mdi:chevron-left' />
-                  <span>Back to login</span>
-                </LinkStyled>
-              </Link>
+              <LinkStyled href='/pages/auth/login-v1'>
+                <Icon icon='mdi:chevron-left' />
+                <span>Back to login</span>
+              </LinkStyled>
             </Typography>
           </form>
         </CardContent>

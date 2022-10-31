@@ -65,7 +65,7 @@ interface CellType {
 }
 
 // ** Styled component for the link in the dataTable
-const StyledLink = styled('a')(({ theme }) => ({
+const StyledLink = styled(Link)(({ theme }) => ({
   textDecoration: 'none',
   color: theme.palette.primary.main
 }))
@@ -103,11 +103,7 @@ const defaultColumns = [
     field: 'id',
     minWidth: 80,
     headerName: '#',
-    renderCell: ({ row }: CellType) => (
-      <Link href={`/apps/invoice/preview/${row.id}`} passHref>
-        <StyledLink>{`#${row.id}`}</StyledLink>
-      </Link>
-    )
+    renderCell: ({ row }: CellType) => <StyledLink href={`/apps/invoice/preview/${row.id}`}>{`#${row.id}`}</StyledLink>
   },
   {
     flex: 0.1,
@@ -257,13 +253,9 @@ const BillingHistoryTable = () => {
             </IconButton>
           </Tooltip>
           <Tooltip title='View'>
-            <div>
-              <Link href={`/apps/invoice/preview/${row.id}`} passHref>
-                <IconButton size='small' component='a' sx={{ textDecoration: 'none' }}>
-                  <Icon icon='mdi:eye-outline' fontSize={20} />
-                </IconButton>
-              </Link>
-            </div>
+            <IconButton size='small' component={Link} href={`/apps/invoice/preview/${row.id}`}>
+              <Icon icon='mdi:eye-outline' fontSize={20} />
+            </IconButton>
           </Tooltip>
           <OptionsMenu
             iconProps={{ fontSize: 20 }}
@@ -304,11 +296,9 @@ const BillingHistoryTable = () => {
             justifyContent: 'space-between'
           }}
         >
-          <Link href='/apps/invoice/add' passHref>
-            <Button variant='contained' startIcon={<Icon icon='mdi:plus' />}>
-              Create Invoice
-            </Button>
-          </Link>
+          <Button component={Link} variant='contained' href='/apps/invoice/add' startIcon={<Icon icon='mdi:plus' />}>
+            Create Invoice
+          </Button>
           <Box
             sx={{
               gap: 4,

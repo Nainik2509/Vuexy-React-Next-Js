@@ -39,25 +39,25 @@ interface Props {
   hasParent: boolean
 }
 
-const ListItem = styled(MuiListItem)<ListItemProps & { component?: ElementType; target?: '_blank' | undefined }>(
-  ({ theme }) => ({
-    width: 'auto',
-    color: theme.palette.text.primary,
-    '&:hover': {
-      backgroundColor: theme.palette.action.hover
-    },
-    '&.active, &.active:hover': {
-      backgroundColor: hexToRGBA(theme.palette.primary.main, 0.08)
-    },
-    '&.active .MuiTypography-root, &.active .MuiListItemIcon-root': {
-      color: theme.palette.primary.main
-    },
-    '&:focus-visible': {
-      outline: 0,
-      backgroundColor: theme.palette.action.focus
-    }
-  })
-)
+const ListItem = styled(MuiListItem)<
+  ListItemProps & { component?: ElementType; href: string; target?: '_blank' | undefined }
+>(({ theme }) => ({
+  width: 'auto',
+  color: theme.palette.text.primary,
+  '&:hover': {
+    backgroundColor: theme.palette.action.hover
+  },
+  '&.active, &.active:hover': {
+    backgroundColor: hexToRGBA(theme.palette.primary.main, 0.08)
+  },
+  '&.active .MuiTypography-root, &.active .MuiListItemIcon-root': {
+    color: theme.palette.primary.main
+  },
+  '&:focus-visible': {
+    outline: 0,
+    backgroundColor: theme.palette.action.focus
+  }
+}))
 
 const HorizontalNavLink = (props: Props) => {
   // ** Props
@@ -82,71 +82,70 @@ const HorizontalNavLink = (props: Props) => {
   return (
     <CanViewNavLink navLink={item}>
       <Wrapper {...(!hasParent ? { component: 'div', sx: { py: settings.skin === 'bordered' ? 2.875 : 3 } } : {})}>
-        <Link passHref href={item.path === undefined ? '/' : `${item.path}`}>
-          <ListItem
-            component={'a'}
-            disabled={item.disabled}
-            {...(item.disabled && { tabIndex: -1 })}
-            className={clsx({ active: isNavLinkActive() })}
-            target={item.openInNewTab ? '_blank' : undefined}
-            onClick={e => {
-              if (item.path === undefined) {
-                e.preventDefault()
-                e.stopPropagation()
-              }
-            }}
-            sx={{
-              ...(item.disabled ? { pointerEvents: 'none' } : { cursor: 'pointer' }),
-              ...(!hasParent
-                ? {
-                    borderRadius: 1,
-                    '&.active, &.active:hover': {
-                      backgroundColor: theme => theme.palette.primary.main,
-                      '&:focus-visible': { backgroundColor: 'primary.dark' },
-                      '& .MuiTypography-root, & .MuiListItemIcon-root': {
-                        color: 'common.white'
-                      }
+        <ListItem
+          component={Link}
+          disabled={item.disabled}
+          {...(item.disabled && { tabIndex: -1 })}
+          className={clsx({ active: isNavLinkActive() })}
+          target={item.openInNewTab ? '_blank' : undefined}
+          href={item.path === undefined ? '/' : `${item.path}`}
+          onClick={e => {
+            if (item.path === undefined) {
+              e.preventDefault()
+              e.stopPropagation()
+            }
+          }}
+          sx={{
+            ...(item.disabled ? { pointerEvents: 'none' } : { cursor: 'pointer' }),
+            ...(!hasParent
+              ? {
+                  borderRadius: 1,
+                  '&.active, &.active:hover': {
+                    backgroundColor: theme => theme.palette.primary.main,
+                    '&:focus-visible': { backgroundColor: 'primary.dark' },
+                    '& .MuiTypography-root, & .MuiListItemIcon-root': {
+                      color: 'common.white'
                     }
                   }
-                : {
-                    '&.active, &.active:hover': {
-                      '&:focus-visible': {
-                        backgroundColor: theme => hexToRGBA(theme.palette.primary.main, 0.24)
-                      }
+                }
+              : {
+                  '&.active, &.active:hover': {
+                    '&:focus-visible': {
+                      backgroundColor: theme => hexToRGBA(theme.palette.primary.main, 0.24)
                     }
-                  })
-            }}
-          >
-            <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <Box
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  ...(menuTextTruncate && { overflow: 'hidden' })
-                }}
-              >
-                <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
-                  <UserIcon icon={icon} fontSize={icon === navSubItemIcon ? '1rem' : '1.125rem'} />
-                </ListItemIcon>
-                <Typography {...(menuTextTruncate && { noWrap: true })}>
-                  <Translations text={item.title} />
-                </Typography>
-              </Box>
-              {item.badgeContent ? (
-                <Chip
-                  label={item.badgeContent}
-                  color={item.badgeColor || 'primary'}
-                  sx={{
-                    ml: 1.6,
-                    height: 20,
-                    fontWeight: 500,
-                    '& .MuiChip-label': { px: 1.5, textTransform: 'capitalize' }
-                  }}
-                />
-              ) : null}
+                  }
+                })
+          }}
+        >
+          <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                ...(menuTextTruncate && { overflow: 'hidden' })
+              }}
+            >
+              <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
+                <UserIcon icon={icon} fontSize={icon === navSubItemIcon ? '1rem' : '1.125rem'} />
+              </ListItemIcon>
+              <Typography {...(menuTextTruncate && { noWrap: true })}>
+                <Translations text={item.title} />
+              </Typography>
             </Box>
-          </ListItem>
-        </Link>
+            {item.badgeContent ? (
+              <Chip
+                label={item.badgeContent}
+                color={item.badgeColor || 'primary'}
+                sx={{
+                  ml: 1.6,
+                  height: 20,
+                  fontWeight: 500,
+                  '& .MuiChip-label': { px: 1.5, textTransform: 'capitalize' }
+                }}
+              />
+            ) : null}
+          </Box>
+        </ListItem>
       </Wrapper>
     </CanViewNavLink>
   )

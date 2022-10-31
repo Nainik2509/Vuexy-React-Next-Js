@@ -51,19 +51,19 @@ const Connections = ({ data }: { data: ConnectionsTabType[] }) => {
                     <Box sx={{ mb: 8, display: 'flex', alignItems: 'center' }}>
                       {item.chips &&
                         item.chips.map((chip, index) => (
-                          <Link key={index} href='/' passHref>
-                            <Box
-                              component='a'
-                              onClick={(e: SyntheticEvent) => e.preventDefault()}
-                              sx={{
-                                textDecoration: 'none',
-                                '&:not(:last-of-type)': { mr: 3 },
-                                '& .MuiChip-root': { cursor: 'pointer' }
-                              }}
-                            >
-                              <CustomChip rounded size='small' skin='light' color={chip.color} label={chip.title} />
-                            </Box>
-                          </Link>
+                          <Box
+                            href='/'
+                            key={index}
+                            component={Link}
+                            onClick={(e: SyntheticEvent) => e.preventDefault()}
+                            sx={{
+                              textDecoration: 'none',
+                              '&:not(:last-of-type)': { mr: 3 },
+                              '& .MuiChip-root': { cursor: 'pointer' }
+                            }}
+                          >
+                            <CustomChip rounded size='small' skin='light' color={chip.color} label={chip.title} />
+                          </Box>
                         ))}
                     </Box>
                     <Box

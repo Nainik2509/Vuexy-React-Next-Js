@@ -77,15 +77,14 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
                 )
               })}
             <Box sx={{ width: '100%', textAlign: 'center' }}>
-              <Link href='/' passHref>
-                <Typography
-                  component='a'
-                  onClick={(e: SyntheticEvent) => e.preventDefault()}
-                  sx={{ color: 'primary.main', textDecoration: 'none' }}
-                >
-                  View all connections
-                </Typography>
-              </Link>
+              <Typography
+                href='/'
+                component={Link}
+                onClick={(e: SyntheticEvent) => e.preventDefault()}
+                sx={{ color: 'primary.main', textDecoration: 'none' }}
+              >
+                View all connections
+              </Typography>
             </Box>
           </CardContent>
         </Card>
@@ -122,28 +121,26 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
                         </Typography>
                       </div>
                     </Box>
-                    <Link href='/' passHref>
-                      <Box
-                        component='a'
-                        onClick={(e: SyntheticEvent) => e.preventDefault()}
-                        sx={{ height: 0, textDecoration: 'none', '& .MuiChip-root': { cursor: 'pointer' } }}
-                      >
-                        <CustomChip rounded size='small' skin='light' color={team.ChipColor} label={team.chipText} />
-                      </Box>
-                    </Link>
+                    <Box
+                      href='/'
+                      component={Link}
+                      onClick={(e: SyntheticEvent) => e.preventDefault()}
+                      sx={{ height: 0, textDecoration: 'none', '& .MuiChip-root': { cursor: 'pointer' } }}
+                    >
+                      <CustomChip rounded size='small' skin='light' color={team.ChipColor} label={team.chipText} />
+                    </Box>
                   </Box>
                 )
               })}
             <Box sx={{ width: '100%', textAlign: 'center' }}>
-              <Link href='/' passHref>
-                <Typography
-                  component='a'
-                  onClick={(e: SyntheticEvent) => e.preventDefault()}
-                  sx={{ color: 'primary.main', textDecoration: 'none' }}
-                >
-                  View all teams
-                </Typography>
-              </Link>
+              <Typography
+                href='/'
+                component={Link}
+                onClick={(e: SyntheticEvent) => e.preventDefault()}
+                sx={{ color: 'primary.main', textDecoration: 'none' }}
+              >
+                View all teams
+              </Typography>
             </Box>
           </CardContent>
         </Card>

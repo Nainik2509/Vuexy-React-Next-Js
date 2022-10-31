@@ -46,30 +46,28 @@ const data: CustomRadioBasicData[] = [
         </Typography>
         <Divider sx={{ m: theme => `${theme.spacing(3, 0, 4)} !important` }} />
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Link href='/' passHref>
-            <Box
-              component='a'
-              sx={{ mr: 3, color: 'primary.main', textDecoration: 'none' }}
-              onClick={(e: SyntheticEvent) => {
-                e.preventDefault()
-                e.stopPropagation()
-              }}
-            >
-              Edit
-            </Box>
-          </Link>
-          <Link href='/' passHref>
-            <Box
-              component='a'
-              sx={{ color: 'primary.main', textDecoration: 'none' }}
-              onClick={(e: SyntheticEvent) => {
-                e.preventDefault()
-                e.stopPropagation()
-              }}
-            >
-              Remove
-            </Box>
-          </Link>
+          <Box
+            href='/'
+            component={Link}
+            sx={{ mr: 3, color: 'primary.main', textDecoration: 'none' }}
+            onClick={(e: SyntheticEvent) => {
+              e.preventDefault()
+              e.stopPropagation()
+            }}
+          >
+            Edit
+          </Box>
+          <Box
+            href='/'
+            component={Link}
+            sx={{ color: 'primary.main', textDecoration: 'none' }}
+            onClick={(e: SyntheticEvent) => {
+              e.preventDefault()
+              e.stopPropagation()
+            }}
+          >
+            Remove
+          </Box>
         </Box>
       </Box>
     )
@@ -87,30 +85,28 @@ const data: CustomRadioBasicData[] = [
         </Typography>
         <Divider sx={{ m: theme => `${theme.spacing(3, 0, 4)} !important` }} />
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Link href='/' passHref>
-            <Box
-              component='a'
-              sx={{ mr: 3, color: 'primary.main', textDecoration: 'none' }}
-              onClick={(e: SyntheticEvent) => {
-                e.preventDefault()
-                e.stopPropagation()
-              }}
-            >
-              Edit
-            </Box>
-          </Link>
-          <Link href='/' passHref>
-            <Box
-              component='a'
-              sx={{ color: 'primary.main', textDecoration: 'none' }}
-              onClick={(e: SyntheticEvent) => {
-                e.preventDefault()
-                e.stopPropagation()
-              }}
-            >
-              Remove
-            </Box>
-          </Link>
+          <Box
+            href='/'
+            component={Link}
+            sx={{ mr: 3, color: 'primary.main', textDecoration: 'none' }}
+            onClick={(e: SyntheticEvent) => {
+              e.preventDefault()
+              e.stopPropagation()
+            }}
+          >
+            Edit
+          </Box>
+          <Box
+            href='/'
+            component={Link}
+            sx={{ color: 'primary.main', textDecoration: 'none' }}
+            onClick={(e: SyntheticEvent) => {
+              e.preventDefault()
+              e.stopPropagation()
+            }}
+          >
+            Remove
+          </Box>
         </Box>
       </Box>
     )

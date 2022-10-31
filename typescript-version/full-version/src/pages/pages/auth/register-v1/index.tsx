@@ -43,7 +43,7 @@ const Card = styled(MuiCard)<CardProps>(({ theme }) => ({
   [theme.breakpoints.up('sm')]: { width: '28rem' }
 }))
 
-const LinkStyled = styled('a')(({ theme }) => ({
+const LinkStyled = styled(Link)(({ theme }) => ({
   fontSize: '0.875rem',
   textDecoration: 'none',
   color: theme.palette.primary.main
@@ -191,11 +191,9 @@ const RegisterV1 = () => {
               label={
                 <Fragment>
                   <span>I agree to </span>
-                  <Link href='/' passHref>
-                    <LinkStyled onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}>
-                      privacy policy & terms
-                    </LinkStyled>
-                  </Link>
+                  <LinkStyled href='/' onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}>
+                    privacy policy & terms
+                  </LinkStyled>
                 </Fragment>
               }
             />
@@ -207,49 +205,43 @@ const RegisterV1 = () => {
                 Already have an account?
               </Typography>
               <Typography variant='body2'>
-                <Link passHref href='/pages/auth/login-v1'>
-                  <LinkStyled>Sign in instead</LinkStyled>
-                </Link>
+                <LinkStyled href='/pages/auth/login-v1'>Sign in instead</LinkStyled>
               </Typography>
             </Box>
             <Divider sx={{ my: theme => `${theme.spacing(5)} !important` }}>or</Divider>
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Link href='/' passHref>
-                <IconButton
-                  component='a'
-                  sx={{ color: '#497ce2' }}
-                  onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}
-                >
-                  <Icon icon='mdi:facebook' />
-                </IconButton>
-              </Link>
-              <Link href='/' passHref>
-                <IconButton
-                  component='a'
-                  sx={{ color: '#1da1f2' }}
-                  onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}
-                >
-                  <Icon icon='mdi:twitter' />
-                </IconButton>
-              </Link>
-              <Link href='/' passHref>
-                <IconButton
-                  component='a'
-                  onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}
-                  sx={{ color: theme => (theme.palette.mode === 'light' ? '#272727' : 'grey.300') }}
-                >
-                  <Icon icon='mdi:github' />
-                </IconButton>
-              </Link>
-              <Link href='/' passHref>
-                <IconButton
-                  component='a'
-                  sx={{ color: '#db4437' }}
-                  onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}
-                >
-                  <Icon icon='mdi:google' />
-                </IconButton>
-              </Link>
+              <IconButton
+                href='/'
+                component={Link}
+                sx={{ color: '#497ce2' }}
+                onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}
+              >
+                <Icon icon='mdi:facebook' />
+              </IconButton>
+              <IconButton
+                href='/'
+                component={Link}
+                sx={{ color: '#1da1f2' }}
+                onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}
+              >
+                <Icon icon='mdi:twitter' />
+              </IconButton>
+              <IconButton
+                href='/'
+                component={Link}
+                onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}
+                sx={{ color: theme => (theme.palette.mode === 'light' ? '#272727' : 'grey.300') }}
+              >
+                <Icon icon='mdi:github' />
+              </IconButton>
+              <IconButton
+                href='/'
+                component={Link}
+                sx={{ color: '#db4437' }}
+                onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}
+              >
+                <Icon icon='mdi:google' />
+              </IconButton>
             </Box>
           </form>
         </CardContent>

@@ -1,7 +1,7 @@
 // ** React Imports
 import { useState, useEffect, MouseEvent, useCallback } from 'react'
 
-// ** Next Import
+// ** Next Imports
 import Link from 'next/link'
 import { GetStaticProps, InferGetStaticPropsType } from 'next/types'
 
@@ -80,7 +80,7 @@ const userStatusObj: UserStatusType = {
   inactive: 'secondary'
 }
 
-const StyledLink = styled('a')(({ theme }) => ({
+const StyledLink = styled(Link)(({ theme }) => ({
   fontWeight: 600,
   fontSize: '1rem',
   cursor: 'pointer',
@@ -149,12 +149,15 @@ const RowOptions = ({ id }: { id: number | string }) => {
         }}
         PaperProps={{ style: { minWidth: '8rem' } }}
       >
-        <Link href='/apps/user/view/overview/' passHref>
-          <MenuItem component='a' sx={{ '& svg': { mr: 2 } }} onClick={handleRowOptionsClose}>
-            <Icon icon='mdi:eye-outline' fontSize={20} />
-            View
-          </MenuItem>
-        </Link>
+        <MenuItem
+          component={Link}
+          sx={{ '& svg': { mr: 2 } }}
+          onClick={handleRowOptionsClose}
+          href='/apps/user/view/overview/'
+        >
+          <Icon icon='mdi:eye-outline' fontSize={20} />
+          View
+        </MenuItem>
         <MenuItem onClick={handleRowOptionsClose} sx={{ '& svg': { mr: 2 } }}>
           <Icon icon='mdi:pencil-outline' fontSize={20} />
           Edit
@@ -181,11 +184,9 @@ const columns = [
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           {renderClient(row)}
           <Box sx={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
-            <Link href='/apps/user/view/overview/' passHref>
-              <StyledLink>{fullName}</StyledLink>
-            </Link>
-            <Typography noWrap component='a' variant='caption' sx={{ textDecoration: 'none' }}>
-              @{username}
+            <StyledLink href='/apps/user/view/overview/'>{fullName}</StyledLink>
+            <Typography noWrap variant='caption'>
+              {`@${username}`}
             </Typography>
           </Box>
         </Box>

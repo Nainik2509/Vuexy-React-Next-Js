@@ -137,33 +137,35 @@ const ShortcutsDropdown = (props: Props) => {
             }}
           >
             {shortcuts.map(shortcut => (
-              <Link key={shortcut.title} href={shortcut.url}>
-                <Grid
-                  item
-                  xs={6}
-                  sx={{ cursor: 'pointer', '&:hover': { backgroundColor: 'action.hover' } }}
-                  onClick={handleDropdownClose}
+              <Grid
+                item
+                xs={6}
+                key={shortcut.title}
+                onClick={handleDropdownClose}
+                sx={{ cursor: 'pointer', '&:hover': { backgroundColor: 'action.hover' } }}
+              >
+                <Box
+                  component={Link}
+                  href={shortcut.url}
+                  sx={{
+                    p: 6,
+                    display: 'flex',
+                    textAlign: 'center',
+                    alignItems: 'center',
+                    textDecoration: 'none',
+                    flexDirection: 'column',
+                    justifyContent: 'center'
+                  }}
                 >
-                  <Box
-                    sx={{
-                      p: 6,
-                      display: 'flex',
-                      textAlign: 'center',
-                      alignItems: 'center',
-                      flexDirection: 'column',
-                      justifyContent: 'center'
-                    }}
-                  >
-                    <CustomAvatar skin='light' color='secondary' sx={{ mb: 2, width: 50, height: 50 }}>
-                      <Icon icon={shortcut.icon} />
-                    </CustomAvatar>
-                    <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>{shortcut.title}</Typography>
-                    <Typography variant='body2' sx={{ color: 'text.disabled' }}>
-                      {shortcut.subtitle}
-                    </Typography>
-                  </Box>
-                </Grid>
-              </Link>
+                  <CustomAvatar skin='light' color='secondary' sx={{ mb: 2, width: 50, height: 50 }}>
+                    <Icon icon={shortcut.icon} />
+                  </CustomAvatar>
+                  <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>{shortcut.title}</Typography>
+                  <Typography variant='body2' sx={{ color: 'text.disabled' }}>
+                    {shortcut.subtitle}
+                  </Typography>
+                </Box>
+              </Grid>
             ))}
           </Grid>
         </ScrollWrapper>
