@@ -11,6 +11,9 @@ const RechartsWrapper = styled('div')(({ theme }) => ({
   '& .recharts-polar-grid-concentric-polygon': {
     stroke: theme.palette.divider
   },
+  '& .recharts-tooltip-wrapper': {
+    outline: 'none'
+  },
   '& .recharts-default-tooltip': {
     border: 'none !important',
     boxShadow: theme.shadows[3],
