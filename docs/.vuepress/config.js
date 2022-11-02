@@ -114,6 +114,7 @@ module.exports = {
             '/guide/components/styled-components'
           ]
         },
+        ['/guide/migration', 'Migration Guide'],
         {
           title: 'Others',
           collapsable: false,

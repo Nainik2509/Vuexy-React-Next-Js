@@ -383,7 +383,7 @@ import Icon from 'src/@core/components/icon'
 
 const Component = () => {
   return (
-    <Box sx={{ display: 'inline-flex', color: theme => theme.palette.primary.main }}>
+    <Box sx={{ display: 'flex', color: theme => theme.palette.primary.main }}>
       <Icon icon='mdi:material-ui' />
     </Box>
   )
