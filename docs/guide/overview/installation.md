@@ -18,10 +18,6 @@ Please make sure you use the node’s LTS version which is recommended by the of
 Before installing the **node_modules**, make sure you have files starting with a **dot(.eslintrc, .env etc..)**. It mostly happens when hidden files are not enabled on your machine and you try to copy our template at some other place on your system.
 :::
 
-::: danger Important!
-If you decide to use **npm**, make sure you use following command: **npm install**
-:::
-
 - After downloading zip, copy this zip to your desired location and then unzip it. **Do not unzip first and then copy files to another location**, it may not be able to run the template due to missing hidden files not copied over.
   
 - In uncompressed folder you will find `ts-version` / `js-version` folders which contains `full-version` & `starter-kit` folders. Unzip the one you want to get started with and open this folder in your console/terminal.
