@@ -260,8 +260,8 @@ const VerticalNavGroup = (props: Props) => {
                   display: 'flex',
                   alignItems: 'center',
                   '& svg': {
-                    color: 'text.primary',
                     transition: 'transform .25s ease-in-out',
+                    color: mode === 'semi-dark' ? `rgba(${theme.palette.customColors.dark}, 0.87)` : 'text.primary',
                     ...(groupActive.includes(item.title) && {
                       transform: direction === 'ltr' ? 'rotate(90deg)' : 'rotate(-90deg)'
                     })
