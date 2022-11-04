@@ -57,6 +57,8 @@ const Drawer = (props: Props) => {
   // ** Vars
   const { mode, navCollapsed } = settings
 
+  let flag = true
+
   const drawerColors = () => {
     if (mode === 'semi-dark') {
       return {
@@ -87,10 +89,16 @@ const Drawer = (props: Props) => {
     onOpen: () => null,
     onClose: () => null,
     onMouseEnter: () => {
-      setNavHover(true)
+      // Declared flag to resolve first time flicker issue while trying to collapse the menu
+      if (flag || navCollapsed) {
+        setNavHover(true)
+        flag = false
+      }
     },
     onMouseLeave: () => {
-      setNavHover(false)
+      if (navCollapsed) {
+        setNavHover(false)
+      }
     }
   }
 
