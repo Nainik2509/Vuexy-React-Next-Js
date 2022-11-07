@@ -80,6 +80,16 @@
       transform: translateX(10px);
     }
   }
+
+  &.react-dataTable-selectable-rows {
+    .rdt_TableHead {
+      .rdt_TableHeadRow {
+        .rdt_TableCol:not(:first-child) {
+          padding-left: 0.2rem;
+        }
+      }
+    }
+  }
 }
 
 .permission-header {
