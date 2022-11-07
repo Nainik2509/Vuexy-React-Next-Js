@@ -28,6 +28,10 @@ export default [
     link: 'https://mui.com/material-ui/react-drawer/'
   },
   {
+    component: 'Icons',
+    link: 'https://mui.com/material-ui/icons/'
+  },
+  {
     component: 'Link',
     link: 'https://mui.com/material-ui/react-link/'
   },

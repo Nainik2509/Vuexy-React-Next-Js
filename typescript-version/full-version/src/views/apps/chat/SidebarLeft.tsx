@@ -1,7 +1,7 @@
 // ** React Imports
 import { useState, useEffect, ChangeEvent, ReactNode } from 'react'
 
-// ** Next Imports
+// ** Next Import
 import { useRouter } from 'next/router'
 
 // ** MUI Imports

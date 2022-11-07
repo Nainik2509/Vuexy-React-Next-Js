@@ -20,7 +20,8 @@ Before installing the **node_modules**, make sure you have files starting with a
 
 - After downloading zip, copy this zip to your desired location and then unzip it. **Do not unzip first and then copy files to another location**, it may not be able to run the template due to missing hidden files not copied over.
   
-- In uncompressed folder you will find `ts-version` / `js-version` folders which contains `full-version` & `starter-kit` folders. Unzip the one you want to get started with and open this folder in your console/terminal.
+- In the uncompressed folder, you will find the `typescript-version` and `javascript-version` folders which contains the `full-version` & `starter-kit` folders. Open the one you want to get started with in your code editor.
+
 - Run below command in console:
 
 <code-group>
