@@ -71,7 +71,7 @@
     "react-select": "^5.3.2",
     "react-shepherd": "^4.1.0",
     "react-slidedown": "^2.4.7",
-    "react-sortablejs": "^6.1.4",
+    "react-sortablejs": "6.0.0",
     "reactstrap": "^9.1.5",
     "recharts": "^2.1.9",
     "redux": "^4.2.0",
@@ -90,8 +90,8 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider && craco start",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
     "format": "prettier --write \"src/**/*.js\"",
@@ -118,12 +118,14 @@
     "not op_mini all"
   ],
   "resolutions": {
-    "react-error-overlay": "6.0.9",
-    "postcss-custom-properties": "12.1.10"
+    "react-scripts/**/react-error-overlay": "6.0.9",
+    "react-scripts/**/postcss-custom-properties": "12.1.10"
   },
   "overrides": {
-    "react-error-overlay": "6.0.9",
-    "postcss-custom-properties": "12.1.10"
+    "react-scripts": {
+      "react-error-overlay": "6.0.9",
+      "postcss-custom-properties": "12.1.10"
+    }
   },
   "homepage": ""
 }

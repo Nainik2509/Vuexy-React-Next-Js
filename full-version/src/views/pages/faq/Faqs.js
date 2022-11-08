@@ -65,7 +65,7 @@ const Faqs = ({ data }) => {
             </div>
           </div>
           {item.qandA.length ? (
-            <UncontrolledAccordion className='accordion-margin mt-2'>
+            <UncontrolledAccordion className='accordion-margin mt-2' defaultOpen='0'>
               {item.qandA.map((r, index) => {
                 return (
                   <AccordionItem key={index + 1}>
