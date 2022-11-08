@@ -90,8 +90,8 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "start": "set NODE_OPTIONS=--openssl-legacy-provider && craco start",
-    "build": "set NODE_OPTIONS=--openssl-legacy-provider && craco build",
+    "start": "craco --openssl-legacy-provider start",
+    "build": "craco --openssl-legacy-provider build",
     "test": "craco test",
     "eject": "react-scripts eject",
     "format": "prettier --write \"src/**/*.js\"",
