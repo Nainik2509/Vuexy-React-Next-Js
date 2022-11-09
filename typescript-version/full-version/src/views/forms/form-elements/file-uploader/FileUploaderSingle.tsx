@@ -42,7 +42,7 @@ const FileUploaderSingle = () => {
   const [files, setFiles] = useState<File[]>([])
 
   // ** Hook
-  const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
+  const { getRootProps, getInputProps } = useDropzone({
     multiple: false,
     accept: {
       'image/*': ['.png', '.jpg', '.jpeg', '.gif']
@@ -61,22 +61,25 @@ const FileUploaderSingle = () => {
   ))
 
   return (
-    <Box {...getRootProps({ className: 'dropzone' })} sx={acceptedFiles.length ? { height: 450 } : {}}>
+    <Box {...getRootProps({ className: 'dropzone' })} sx={files.length ? { height: 450 } : {}}>
       <input {...getInputProps()} />
-      <Box sx={{ display: 'flex', flexDirection: ['column', 'column', 'row'], alignItems: 'center' }}>
-        <Img alt='Upload img' src='/images/misc/upload.png' />
-        <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: ['center', 'center', 'inherit'] }}>
-          <HeadingTypography variant='h5'>Drop files here or click to upload.</HeadingTypography>
-          <Typography color='textSecondary'>
-            Drop files here or click{' '}
-            <Link href='/' onClick={handleLinkClick}>
-              browse
-            </Link>{' '}
-            thorough your machine
-          </Typography>
+      {files.length ? (
+        img
+      ) : (
+        <Box sx={{ display: 'flex', flexDirection: ['column', 'column', 'row'], alignItems: 'center' }}>
+          <Img alt='Upload img' src='/images/misc/upload.png' />
+          <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: ['center', 'center', 'inherit'] }}>
+            <HeadingTypography variant='h5'>Drop files here or click to upload.</HeadingTypography>
+            <Typography color='textSecondary'>
+              Drop files here or click{' '}
+              <Link href='/' onClick={handleLinkClick}>
+                browse
+              </Link>{' '}
+              thorough your machine
+            </Typography>
+          </Box>
         </Box>
-      </Box>
-      {files.length ? img : null}
+      )}
     </Box>
   )
 }

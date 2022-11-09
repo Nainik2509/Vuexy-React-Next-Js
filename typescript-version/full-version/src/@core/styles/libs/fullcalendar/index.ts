@@ -134,6 +134,9 @@ const CalendarWrapper = styled(Box)<BoxProps>(({ theme }) => {
         borderColor: theme.palette.divider,
         '&.fc-col-header-cell': {
           borderLeft: 0
+        },
+        '&[role="presentation"]': {
+          borderRightWidth: 0
         }
       },
 

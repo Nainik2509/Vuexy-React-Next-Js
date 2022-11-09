@@ -99,7 +99,7 @@ const columns = [
                 fontWeight: 600,
                 color: 'text.primary',
                 textDecoration: 'none',
-                '&:hover': { color: theme => theme.palette.primary.main }
+                '&:hover': { color: 'primary.main' }
               }}
             >
               {fullName}
