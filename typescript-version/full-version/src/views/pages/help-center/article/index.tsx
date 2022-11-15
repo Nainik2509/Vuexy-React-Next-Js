@@ -152,7 +152,7 @@ const HelpCenterArticle = ({ articles, activeArticle, activeSubcategory }: Props
             <Typography
               href='/'
               component={Link}
-              onClick={(e: SyntheticEvent) => e.preventDefault()}
+              onClick={e => e.preventDefault()}
               sx={{ fontWeight: 600, color: 'primary.main', textDecoration: 'none' }}
             >
               Contact us?

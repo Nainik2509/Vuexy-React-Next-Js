@@ -1,5 +1,5 @@
 // ** React Imports
-import { ReactNode, SyntheticEvent } from 'react'
+import { ReactNode } from 'react'
 
 // ** Next Import
 import Link from 'next/link'
@@ -82,10 +82,6 @@ const ForgotPasswordV2 = () => {
   // ** Vars
   const { skin } = settings
   const hidden = useMediaQuery(theme.breakpoints.down('md'))
-
-  const handleSubmit = (e: SyntheticEvent) => {
-    e.preventDefault()
-  }
 
   const imageSource =
     skin === 'bordered' ? 'auth-v2-forgot-password-illustration-bordered' : 'auth-v2-forgot-password-illustration'
@@ -203,7 +199,7 @@ const ForgotPasswordV2 = () => {
                 Enter your email and we&prime;ll send you instructions to reset your password
               </Typography>
             </Box>
-            <form noValidate autoComplete='off' onSubmit={handleSubmit}>
+            <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()}>
               <TextField autoFocus type='email' label='Email' sx={{ display: 'flex', mb: 4 }} />
               <Button fullWidth size='large' type='submit' variant='contained' sx={{ mb: 5.25 }}>
                 Send reset link

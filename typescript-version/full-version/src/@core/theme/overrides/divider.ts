@@ -6,7 +6,7 @@ const Divider = (theme: Theme) => {
     MuiDivider: {
       styleOverrides: {
         root: {
-          '&:not(.MuiDivider-vertical)': {
+          '.MuiStack-root &:not(.MuiDivider-vertical)': {
             marginTop: theme.spacing(2),
             marginBottom: theme.spacing(2)
           }

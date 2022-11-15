@@ -1,6 +1,6 @@
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
-import Link from '@mui/material/Link'
+import MuiLink from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 
 // ** Custom Components Imports
@@ -21,9 +21,9 @@ const FormValidation = () => {
         <PageHeader
           title={
             <Typography variant='h5'>
-              <Link href='https://github.com/react-hook-form/react-hook-form' target='_blank'>
+              <MuiLink href='https://github.com/react-hook-form/react-hook-form' target='_blank'>
                 React Hook Form
-              </Link>
+              </MuiLink>
             </Typography>
           }
           subtitle={<Typography variant='body2'>React Hooks for forms validation (Web + React Native)</Typography>}

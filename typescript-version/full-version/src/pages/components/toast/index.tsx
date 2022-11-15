@@ -1,6 +1,6 @@
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
-import Link from '@mui/material/Link'
+import MuiLink from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 
 // ** Custom Components Imports
@@ -28,9 +28,9 @@ const ReactHotToasts = () => {
         subtitle={<Typography variant='body2'>Smoking hot React notifications.</Typography>}
         title={
           <Typography variant='h5'>
-            <Link href='https://github.com/timolins/react-hot-toast' target='_blank'>
+            <MuiLink href='https://github.com/timolins/react-hot-toast' target='_blank'>
               React Hot Toasts
-            </Link>
+            </MuiLink>
           </Typography>
         }
       />

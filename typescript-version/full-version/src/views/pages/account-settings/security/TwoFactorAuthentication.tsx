@@ -1,5 +1,5 @@
 // ** React Imports
-import { SyntheticEvent, useState } from 'react'
+import { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -63,7 +63,7 @@ const TwoFactorAuthenticationCard = () => {
             <Box
               href='/'
               component={'a'}
-              onClick={(e: SyntheticEvent) => e.preventDefault()}
+              onClick={e => e.preventDefault()}
               sx={{ textDecoration: 'none', color: 'primary.main' }}
             >
               Learn more.

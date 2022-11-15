@@ -1,6 +1,3 @@
-// ** React Imports
-import { SyntheticEvent } from 'react'
-
 // ** Next Import
 import Link from 'next/link'
 
@@ -58,7 +55,7 @@ const FaqFooter = () => {
               href='/'
               variant='h6'
               component={Link}
-              onClick={(e: SyntheticEvent) => e.preventDefault()}
+              onClick={e => e.preventDefault()}
               sx={{ mt: 4, textDecoration: 'none', '&:hover': { color: 'primary.main' } }}
             >
               + (810) 2548 2568
@@ -76,7 +73,7 @@ const FaqFooter = () => {
               href='/'
               variant='h6'
               component={Link}
-              onClick={(e: SyntheticEvent) => e.preventDefault()}
+              onClick={e => e.preventDefault()}
               sx={{ mt: 4, textDecoration: 'none', '&:hover': { color: 'primary.main' } }}
             >
               hello@help.com

@@ -154,6 +154,7 @@ module.exports = {
             ['how-to-update-this-template', 'How to update this template'],
             ['slow-speed-in-local', 'Why app runs slow in local'],
             ['how-to-use-nextjs-image-component', 'How to use Nextjs Image Component without Height & Width'],
+            ['why-next-image-component-do-not-work-with-next-export', "Why Next.js image component doesn't work with next export"],
             ['why-images-are-missing-on-deployment', 'Why images are missing on deployment'],
             ['horizontal-scroll-horizontal-layout', 'Horizontal scrollbar in Horizontal layout']
           ]

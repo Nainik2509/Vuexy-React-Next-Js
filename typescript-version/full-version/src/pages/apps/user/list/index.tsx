@@ -80,7 +80,7 @@ const userStatusObj: UserStatusType = {
   inactive: 'secondary'
 }
 
-const StyledLink = styled(Link)(({ theme }) => ({
+const LinkStyled = styled(Link)(({ theme }) => ({
   fontWeight: 600,
   fontSize: '1rem',
   cursor: 'pointer',
@@ -184,7 +184,7 @@ const columns = [
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           {renderClient(row)}
           <Box sx={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
-            <StyledLink href='/apps/user/view/overview/'>{fullName}</StyledLink>
+            <LinkStyled href='/apps/user/view/overview/'>{fullName}</LinkStyled>
             <Typography noWrap variant='caption'>
               {`@${username}`}
             </Typography>

@@ -1,6 +1,6 @@
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
-import Link from '@mui/material/Link'
+import MuiLink from '@mui/material/Link'
 import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 
@@ -44,9 +44,9 @@ const ReactDatePicker = () => {
           subtitle={<Typography variant='body2'>A simple and reusable datepicker component for React</Typography>}
           title={
             <Typography variant='h5'>
-              <Link href='https://github.com/Hacker0x01/react-datepicker/' target='_blank'>
+              <MuiLink href='https://github.com/Hacker0x01/react-datepicker/' target='_blank'>
                 React DatePicker
-              </Link>
+              </MuiLink>
             </Typography>
           }
         />

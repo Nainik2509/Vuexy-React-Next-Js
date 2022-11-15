@@ -1,6 +1,6 @@
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
-import Link from '@mui/material/Link'
+import MuiLink from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 
 // ** Custom Components Imports
@@ -27,9 +27,9 @@ const Editors = () => {
         <PageHeader
           title={
             <Typography variant='h5'>
-              <Link href='https://jpuri.github.io/react-draft-wysiwyg/#/' target='_blank'>
+              <MuiLink href='https://jpuri.github.io/react-draft-wysiwyg/#/' target='_blank'>
                 React Draft Wysiwyg
-              </Link>
+              </MuiLink>
             </Typography>
           }
           subtitle={<Typography variant='body2'>A Wysiwyg Built on ReactJS and DraftJS</Typography>}

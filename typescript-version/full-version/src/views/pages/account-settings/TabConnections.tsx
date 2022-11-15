@@ -1,11 +1,10 @@
-// ** React Import
-import { SyntheticEvent } from 'react'
+// ** Next Import
+import Link from 'next/link'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
-import Link from '@mui/material/Link'
 import Switch from '@mui/material/Switch'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
@@ -165,8 +164,8 @@ const TabConnections = () => {
                         <Typography
                           href='/'
                           component={Link}
-                          sx={{ color: 'primary.main' }}
-                          onClick={(e: SyntheticEvent) => e.preventDefault()}
+                          onClick={e => e.preventDefault()}
+                          sx={{ color: 'primary.main', textDecoration: 'none' }}
                         >
                           {account.username}
                         </Typography>

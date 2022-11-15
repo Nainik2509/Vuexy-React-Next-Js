@@ -1,7 +1,7 @@
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
-import Link from '@mui/material/Link'
+import MuiLink from '@mui/material/Link'
 import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
@@ -84,9 +84,9 @@ const Icons = () => {
       <PageHeader
         title={
           <Typography variant='h5'>
-            <Link href='https://iconify.design/' target='_blank'>
+            <MuiLink href='https://iconify.design/' target='_blank'>
               Iconify Design
-            </Link>
+            </MuiLink>
           </Typography>
         }
         subtitle={<Typography variant='body2'>Modern unified SVG framework</Typography>}
@@ -100,7 +100,7 @@ const Icons = () => {
         <Button
           target='_blank'
           rel='noreferrer'
-          component={Link}
+          component={MuiLink}
           variant='contained'
           href='https://icon-sets.iconify.design/'
         >

@@ -1,6 +1,3 @@
-// ** React Imports
-import { SyntheticEvent } from 'react'
-
 // ** Next Import
 import Link from 'next/link'
 
@@ -78,7 +75,7 @@ const Projects = ({ data }: { data: ProjectsTabType[] }) => {
                       href='/'
                       variant='h6'
                       component={Link}
-                      onClick={(e: SyntheticEvent) => e.preventDefault()}
+                      onClick={e => e.preventDefault()}
                       sx={{
                         color: 'text.primary',
                         textDecoration: 'none',
@@ -179,7 +176,7 @@ const Projects = ({ data }: { data: ProjectsTabType[] }) => {
                     <Box
                       href='/'
                       component={Link}
-                      onClick={(e: SyntheticEvent) => e.preventDefault()}
+                      onClick={e => e.preventDefault()}
                       sx={{
                         display: 'flex',
                         alignItems: 'center',

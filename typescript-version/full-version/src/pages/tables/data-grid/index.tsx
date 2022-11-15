@@ -1,6 +1,6 @@
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
-import Link from '@mui/material/Link'
+import MuiLink from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 
 // ** Custom Components Imports
@@ -21,9 +21,9 @@ const DataGrid = () => {
       <PageHeader
         title={
           <Typography variant='h5'>
-            <Link href='https://mui.com/x/react-data-grid/' target='_blank'>
+            <MuiLink href='https://mui.com/x/react-data-grid/' target='_blank'>
               Data Grid
-            </Link>
+            </MuiLink>
           </Typography>
         }
         subtitle={

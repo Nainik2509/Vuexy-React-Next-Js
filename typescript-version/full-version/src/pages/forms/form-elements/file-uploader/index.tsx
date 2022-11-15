@@ -1,6 +1,6 @@
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
-import Link from '@mui/material/Link'
+import MuiLink from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 
 // ** Custom Components Imports
@@ -25,9 +25,9 @@ const FileUploader = () => {
         <PageHeader
           title={
             <Typography variant='h5'>
-              <Link href='https://github.com/react-dropzone/react-dropzone/' target='_blank'>
+              <MuiLink href='https://github.com/react-dropzone/react-dropzone/' target='_blank'>
                 React Dropzone
-              </Link>
+              </MuiLink>
             </Typography>
           }
           subtitle={<Typography variant='body2'>Simple HTML5 drag-drop zone with React.js</Typography>}

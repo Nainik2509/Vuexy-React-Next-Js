@@ -31,9 +31,7 @@ By default, `next export` will generate an `out` directory, which can be served 
 The choice of your server software isn’t important either. Since the output of the export command is completely platform-agnostic, there’s no need to explicitly use Node.
 
 ::: warning
-We are using `img` element instead of [nextjs/Image](https://nextjs.org/docs/api-reference/next/image).
-If you're using `nextjs/Image` instead of `img` element then you'll get image optimization error with static HTML export.
-You'll need a loader to fix this. Read this [doc](https://nextjs.org/docs/api-reference/next/image#built-in-loaders) for more info.
+We are using `img` element instead of [nextjs/Image](https://nextjs.org/docs/api-reference/next/image). If you're using `nextjs/Image` instead of `img` element then you'll get image optimization error with static HTML export. You'll need a loader to fix this. Read this [doc](https://nextjs.org/docs/api-reference/next/image#loader-configuration) for more info.
 :::
 
 ## Vercel Deployment

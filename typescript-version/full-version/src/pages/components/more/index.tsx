@@ -1,9 +1,9 @@
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
-import Link from '@mui/material/Link'
 import Alert from '@mui/material/Alert'
 import Table from '@mui/material/Table'
+import MuiLink from '@mui/material/Link'
 import TableRow from '@mui/material/TableRow'
 import TableHead from '@mui/material/TableHead'
 import TableCell from '@mui/material/TableCell'
@@ -39,9 +39,9 @@ const Misc = () => {
                     <TableRow key={index} sx={{ '&:last-of-type .MuiTableCell-root ': { border: 0 } }}>
                       <TableCell>{data.component}</TableCell>
                       <TableCell>
-                        <Link href={data.link} target='_blank'>
+                        <MuiLink href={data.link} target='_blank'>
                           {data.link}
-                        </Link>
+                        </MuiLink>
                       </TableCell>
                     </TableRow>
                   ))}

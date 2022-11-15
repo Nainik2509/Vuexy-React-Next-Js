@@ -1,7 +1,7 @@
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
-import Link from '@mui/material/Link'
 import Card from '@mui/material/Card'
+import MuiLink from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 import CardHeader from '@mui/material/CardHeader'
 
@@ -23,9 +23,9 @@ const MUITable = () => {
       <PageHeader
         title={
           <Typography variant='h5'>
-            <Link href='https://mui.com/material-ui/react-table/' target='_blank'>
+            <MuiLink href='https://mui.com/material-ui/react-table/' target='_blank'>
               MUI Tables
-            </Link>
+            </MuiLink>
           </Typography>
         }
         subtitle={<Typography variant='body2'>Tables display sets of data. They can be fully customized</Typography>}

@@ -1,6 +1,6 @@
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
-import Link from '@mui/material/Link'
+import MuiLink from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 
 // ** Custom Components Imports
@@ -44,9 +44,9 @@ const Swiper = () => {
           subtitle={<Typography variant='body2'>Easily create sliders, carousels and much more</Typography>}
           title={
             <Typography variant='h5'>
-              <Link href='https://github.com/rcbyr/keen-slider' target='_blank'>
+              <MuiLink href='https://github.com/rcbyr/keen-slider' target='_blank'>
                 Keen Slider
-              </Link>
+              </MuiLink>
             </Typography>
           }
         />

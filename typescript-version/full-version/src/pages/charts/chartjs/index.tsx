@@ -1,6 +1,6 @@
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
-import Link from '@mui/material/Link'
+import MuiLink from '@mui/material/Link'
 import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 
@@ -56,9 +56,9 @@ const ChartJS = () => {
         <PageHeader
           title={
             <Typography variant='h5'>
-              <Link href='https://github.com/reactchartjs/react-chartjs-2' target='_blank'>
+              <MuiLink href='https://github.com/reactchartjs/react-chartjs-2' target='_blank'>
                 React ChartJS 2
-              </Link>
+              </MuiLink>
             </Typography>
           }
           subtitle={<Typography variant='body2'>React wrapper for Chart.js</Typography>}

@@ -1,6 +1,6 @@
 // ** MUI Imports
 import Box from '@mui/material/Box'
-import Link from '@mui/material/Link'
+import MuiLink from '@mui/material/Link'
 import { Theme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import useMediaQuery from '@mui/material/useMediaQuery'
@@ -17,24 +17,24 @@ const FooterContent = () => {
           ❤️
         </Box>
         {` by `}
-        <Link target='_blank' href='https://themeselection.com/'>
+        <MuiLink target='_blank' href='https://themeselection.com/'>
           ThemeSelection
-        </Link>
+        </MuiLink>
       </Typography>
       {hidden ? null : (
         <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', '& :not(:last-child)': { mr: 4 } }}>
-          <Link target='_blank' href='https://themeselection.com/license/'>
+          <MuiLink target='_blank' href='https://themeselection.com/license/'>
             License
-          </Link>
-          <Link target='_blank' href='https://themeselection.com/'>
+          </MuiLink>
+          <MuiLink target='_blank' href='https://themeselection.com/'>
             More Themes
-          </Link>
-          <Link target='_blank' href='https://themeselection.com/docs/'>
+          </MuiLink>
+          <MuiLink target='_blank' href='https://themeselection.com/docs/'>
             Documentation
-          </Link>
-          <Link target='_blank' href='https://themeselection.com/support/'>
+          </MuiLink>
+          <MuiLink target='_blank' href='https://themeselection.com/support/'>
             Support
-          </Link>
+          </MuiLink>
         </Box>
       )}
     </Box>
