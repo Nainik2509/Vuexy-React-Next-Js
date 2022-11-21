@@ -5,18 +5,18 @@ import { Skin } from 'src/@core/layouts/types'
 const DefaultPalette = (mode: PaletteMode, skin: Skin) => {
   // ** Vars
   const whiteColor = '#FFF'
-  const lightColor = '58, 53, 65'
-  const darkColor = '231, 227, 252'
+  const lightColor = '51, 48, 60'
+  const darkColor = '228, 230, 244'
   const mainColor = mode === 'light' ? lightColor : darkColor
 
   const defaultBgColor = () => {
     if (skin === 'bordered' && mode === 'light') {
       return whiteColor
     } else if (skin === 'bordered' && mode === 'dark') {
-      return '#312D4B'
+      return '#2F3349'
     } else if (mode === 'light') {
-      return '#F4F5FA'
-    } else return '#28243D'
+      return '#F8F7FA'
+    } else return '#25293C'
   }
 
   return {
@@ -24,10 +24,10 @@ const DefaultPalette = (mode: PaletteMode, skin: Skin) => {
       dark: darkColor,
       main: mainColor,
       light: lightColor,
-      bodyBg: mode === 'light' ? '#F4F5FA' : '#28243D', // Same as palette.background.default but doesn't consider bordered skin
-      trackBg: mode === 'light' ? '#F4F5FA' : '#28243D',
-      darkBg: skin === 'bordered' ? '#312D4B' : '#28243D',
-      lightBg: skin === 'bordered' ? whiteColor : '#F4F5FA',
+      bodyBg: mode === 'light' ? '#F8F7FA' : '#25293C', // Same as palette.background.default but doesn't consider bordered skin
+      trackBg: mode === 'light' ? '#F8F7FA' : '#25293C',
+      darkBg: skin === 'bordered' ? '#2F3349' : '#25293C',
+      lightBg: skin === 'bordered' ? whiteColor : '#F8F7FA',
       tableHeaderBg: mode === 'light' ? '#F9FAFC' : '#3D3759'
     },
     mode: mode,
@@ -36,39 +36,39 @@ const DefaultPalette = (mode: PaletteMode, skin: Skin) => {
       white: whiteColor
     },
     primary: {
-      light: '#9E69FD',
-      main: '#9155FD',
-      dark: '#804BDF',
+      light: '#8479F2',
+      main: '#7367F0',
+      dark: '#655BD3',
       contrastText: whiteColor
     },
     secondary: {
-      light: '#9C9FA4',
-      main: '#8A8D93',
-      dark: '#777B82',
+      light: '#B2B4B8',
+      main: '#A8AAAE',
+      dark: '#949699',
       contrastText: whiteColor
     },
     error: {
-      light: '#FF6166',
-      main: '#FF4C51',
-      dark: '#E04347',
+      light: '#ED6F70',
+      main: '#EA5455',
+      dark: '#CE4A4B',
       contrastText: whiteColor
     },
     warning: {
-      light: '#FFCA64',
-      main: '#FFB400',
-      dark: '#E09E00',
+      light: '#FFAB5A',
+      main: '#FF9F43',
+      dark: '#E08C3B',
       contrastText: whiteColor
     },
     info: {
-      light: '#32BAFF',
-      main: '#16B1FF',
-      dark: '#139CE0',
+      light: '#1FD5EB',
+      main: '#00CFE8',
+      dark: '#00B6CC',
       contrastText: whiteColor
     },
     success: {
-      light: '#6AD01F',
-      main: '#56CA00',
-      dark: '#4CB200',
+      light: '#42CE80',
+      main: '#28C76F',
+      dark: '#23AF62',
       contrastText: whiteColor
     },
     grey: {
@@ -94,7 +94,7 @@ const DefaultPalette = (mode: PaletteMode, skin: Skin) => {
     },
     divider: `rgba(${mainColor}, 0.12)`,
     background: {
-      paper: mode === 'light' ? whiteColor : '#312D4B',
+      paper: mode === 'light' ? whiteColor : '#2F3349',
       default: defaultBgColor()
     },
     action: {

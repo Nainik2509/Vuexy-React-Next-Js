@@ -14,7 +14,7 @@ const donutColors = {
   series1: '#fdd835',
   series2: '#00d4bd',
   series3: '#826bf8',
-  series4: '#32baff',
+  series4: '#1FD5EB',
   series5: '#ffa1a1'
 }
 

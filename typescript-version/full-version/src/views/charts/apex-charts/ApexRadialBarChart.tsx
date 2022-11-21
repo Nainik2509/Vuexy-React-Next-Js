@@ -15,7 +15,7 @@ import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 
 const radialBarColors = {
   series1: '#fdd835',
-  series2: '#32baff',
+  series2: '#1FD5EB',
   series3: '#00d4bd',
   series4: '#7367f0',
   series5: '#FFA1A1'

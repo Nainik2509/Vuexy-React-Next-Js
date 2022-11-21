@@ -37,7 +37,7 @@ const ChartJS = () => {
   const polarChartInfo = '#299aff'
   const lineChartYellow = '#d4e157'
   const polarChartGreen = '#28dac6'
-  const lineChartPrimary = '#9e69fd'
+  const lineChartPrimary = '#8479F2'
   const lineChartWarning = '#ff9800'
   const horizontalBarInfo = '#26c6da'
   const polarChartWarning = '#ff8131'
