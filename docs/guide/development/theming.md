@@ -78,7 +78,7 @@ Please read MUI doc on how to [customize component appearance](https://mui.com/m
 
 ### How to change font
 
-We have used [Inter fonts](https://fonts.google.com/specimen/Inter?query=inter) in the whole template. Now suppose you want to implement [Montserrat fonts](https://fonts.google.com/specimen/Montserrat?query=montserrat).
+We have used [Public Sans fonts](https://fonts.google.com/?query=Public+Sans) in the whole template. Now suppose you want to implement [Montserrat fonts](https://fonts.google.com/specimen/Montserrat?query=montserrat).
 
 First open `src/pages/_document.tsx` file and change font's URL like following:
 
@@ -107,7 +107,7 @@ typography: {
 ```ts
 typography: {
   fontFamily:
-    '"Inter", sans-serif',
+    '"Public Sans", sans-serif',
   h1: {
     fontFamily:
     '"Montserrat", sans-serif',

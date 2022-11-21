@@ -35,7 +35,7 @@ const TypographyTexts = () => {
             <Typography variant='subtitle2' sx={{ mb: 2 }}>
               Cupcake ipsum dolor sit amet chocolate bar pastry sesame snaps.
             </Typography>
-            <Typography variant='body2'>font-size: 14px / line-height: 21px / font-weight: 500</Typography>
+            <Typography variant='body2'>font-size: 14px / line-height: 22px / font-weight: 500</Typography>
           </DemoGrid>
 
           <Grid item xs={12} sm={2} sx={{ display: 'flex', alignItems: 'center' }}>
@@ -53,7 +53,7 @@ const TypographyTexts = () => {
             <Typography variant='body2' sx={{ mb: 2 }}>
               Cupcake ipsum dolor sit amet chocolate bar pastry sesame snaps.
             </Typography>
-            <Typography variant='body2'>font-size: 14px / line-height: 21px / font-weight: 400</Typography>
+            <Typography variant='body2'>font-size: 14px / line-height: 20px / font-weight: 400</Typography>
           </DemoGrid>
 
           <Grid item xs={12} sm={2} sx={{ display: 'flex', alignItems: 'center' }}>
@@ -62,7 +62,7 @@ const TypographyTexts = () => {
           <DemoGrid item xs={12} sm={10}>
             <Typography variant='button'>Button Text</Typography>
             <Typography variant='body2' sx={{ mt: 2 }}>
-              font-size: 14px / line-height: 17px / font-weight: 500 / text-transform: uppercase
+              font-size: 14px / line-height: 16px / font-weight: 500 / text-transform: uppercase
             </Typography>
           </DemoGrid>
 
@@ -72,7 +72,7 @@ const TypographyTexts = () => {
           <DemoGrid item xs={12} sm={10}>
             <Typography variant='caption'>Cupcake ipsum dolor sit amet chocolate bar pastry sesame snaps.</Typography>
             <Typography variant='body2' sx={{ mt: 2 }}>
-              font-size: 12px / line-height: 15px / font-weight: 400
+              font-size: 12px / line-height: 14px / font-weight: 400
             </Typography>
           </DemoGrid>
 
@@ -82,7 +82,7 @@ const TypographyTexts = () => {
           <DemoGrid item xs={12} sm={10}>
             <Typography variant='overline'>Cupcake ipsum dolor sit amet chocolate bar pastry sesame snaps.</Typography>
             <Typography variant='body2' sx={{ mt: 1 }}>
-              font-size: 12px / line-height: 15px / font-weight: 400 / text-transform: uppercase
+              font-size: 12px / line-height: 14px / font-weight: 400 / text-transform: uppercase
             </Typography>
           </DemoGrid>
         </Grid>
