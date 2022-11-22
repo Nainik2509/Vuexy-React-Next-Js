@@ -19,46 +19,43 @@ const OutsideBreadcrumb = () => {
   }
 
   return (
-    <Box sx={{ '& a': { color: 'inherit', textDecoration: 'none' } }}>
+    <Box>
       <Breadcrumbs aria-label='breadcrumb'>
-        <Link color='inherit' href='/' onClick={handleClick}>
+        <Link href='/' onClick={handleClick}>
           MUI
         </Link>
-        <Link color='inherit' href='/' onClick={handleClick}>
+        <Link href='/' onClick={handleClick}>
           Core
         </Link>
         <Typography>Breadcrumb</Typography>
       </Breadcrumbs>
 
       <Breadcrumbs separator='-' aria-label='breadcrumb'>
-        <Link color='inherit' href='/' onClick={handleClick}>
+        <Link href='/' onClick={handleClick}>
           MUI
         </Link>
-        <Link color='inherit' href='/' onClick={handleClick}>
+        <Link href='/' onClick={handleClick}>
           Core
         </Link>
         <Typography>Breadcrumb</Typography>
       </Breadcrumbs>
 
       <Breadcrumbs aria-label='breadcrumb' separator={<Icon icon='mdi:chevron-right' fontSize={20} />}>
-        <Link color='inherit' href='/' onClick={handleClick}>
+        <Link href='/' onClick={handleClick}>
           MUI
         </Link>
-        <Link color='inherit' href='/' onClick={handleClick}>
+        <Link href='/' onClick={handleClick}>
           Core
         </Link>
         <Typography>Breadcrumb</Typography>
       </Breadcrumbs>
 
-      <Breadcrumbs
-        aria-label='breadcrumb'
-        sx={{ mt: 2, '& a': { color: 'inherit', display: 'flex', alignItems: 'center' } }}
-      >
-        <Link color='inherit' href='/' onClick={handleClick}>
+      <Breadcrumbs aria-label='breadcrumb' sx={{ mt: 2, '& a': { display: 'flex', alignItems: 'center' } }}>
+        <Link href='/' onClick={handleClick}>
           <Icon icon='mdi:home-outline' fontSize={20} />
           MUI
         </Link>
-        <Link color='inherit' href='/' onClick={handleClick}>
+        <Link href='/' onClick={handleClick}>
           <Icon icon='mdi:bookmark-outline' fontSize={20} />
           Core
         </Link>

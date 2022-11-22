@@ -31,6 +31,7 @@ import MuiTimeline from './timeline'
 import MuiAccordion from './accordion'
 import MuiPagination from './pagination'
 import MuiTypography from './typography'
+import MuiBreadcrumb from './breadcrumbs'
 import MuiAutocomplete from './autocomplete'
 import MuiToggleButton from './toggleButton'
 
@@ -58,6 +59,7 @@ const Overrides = (theme: Theme, settings: Settings) => {
   const dialog = MuiDialog(theme, skin)
   const pagination = MuiPagination(theme)
   const popover = MuiPopover(theme, skin)
+  const breadcrumb = MuiBreadcrumb(theme)
   const snackbar = MuiSnackbar(theme, skin)
   const autocomplete = MuiAutocomplete(theme, skin)
 
@@ -86,6 +88,7 @@ const Overrides = (theme: Theme, settings: Settings) => {
     timeline,
     accordion,
     MuiSelect,
+    breadcrumb,
     pagination,
     autocomplete,
     MuiTypography,
