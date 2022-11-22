@@ -1,6 +1,10 @@
 // ** MUI Imports
 import { Theme } from '@mui/material/styles'
 
+const rowHeight = 50
+const headerHeight = 54
+const checkboxCellWidth = 58
+
 const DataGrid = (theme: Theme) => {
   return {
     MuiDataGrid: {
@@ -10,6 +14,11 @@ const DataGrid = (theme: Theme) => {
           color: theme.palette.text.primary,
           '& .MuiDataGrid-columnHeader:focus, & .MuiDataGrid-columnHeader:focus-within': {
             outline: 'none'
+          }
+        },
+        main: {
+          '& > :first-of-type:not([class])': {
+            height: `calc(100% - ${headerHeight}px) !important`
           }
         },
         toolbarContainer: {
@@ -32,8 +41,8 @@ const DataGrid = (theme: Theme) => {
           }
         },
         columnHeaderCheckbox: {
-          maxWidth: '58px !important',
-          minWidth: '58px !important'
+          maxWidth: `${checkboxCellWidth}px !important`,
+          minWidth: `${checkboxCellWidth}px !important`
         },
         columnHeaderTitleContainer: {
           padding: 0
@@ -71,8 +80,8 @@ const DataGrid = (theme: Theme) => {
           }
         },
         cellCheckbox: {
-          maxWidth: '58px !important',
-          minWidth: '58px !important'
+          maxWidth: `${checkboxCellWidth}px !important`,
+          minWidth: `${checkboxCellWidth}px !important`
         },
         editInputCell: {
           padding: 0,
@@ -82,10 +91,10 @@ const DataGrid = (theme: Theme) => {
           }
         },
         footerContainer: {
-          minHeight: '50px !important',
+          minHeight: `${rowHeight}px !important`,
           borderTop: `1px solid ${theme.palette.divider}`,
           '& .MuiTablePagination-toolbar': {
-            minHeight: '50px !important',
+            minHeight: `${rowHeight}px !important`,
             paddingLeft: `${theme.spacing(4)} !important`,
             paddingRight: `${theme.spacing(4)} !important`
           },
@@ -100,8 +109,8 @@ const DataGrid = (theme: Theme) => {
         }
       },
       defaultProps: {
-        rowHeight: 50,
-        headerHeight: 54
+        rowHeight,
+        headerHeight
       }
     }
   }
