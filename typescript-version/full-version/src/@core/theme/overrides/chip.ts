@@ -25,9 +25,6 @@ const Chip = (theme: Theme) => {
         avatar: {
           color: theme.palette.text.primary
         },
-        iconColorDefault: {
-          color: theme.palette.text.primary
-        },
         deletableColorPrimary: {
           '&.MuiChip-light .MuiChip-deleteIcon': {
             color: hexToRGBA(theme.palette.primary.main, 0.7),

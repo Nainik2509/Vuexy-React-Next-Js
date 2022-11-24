@@ -1,24 +1,16 @@
 // ** MUI Imports
 import { Theme } from '@mui/material/styles'
 
-// ** Util Import
-import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
-
 const Tooltip = (theme: Theme) => {
   return {
     MuiTooltip: {
       styleOverrides: {
         tooltip: {
-          backgroundColor:
-            theme.palette.mode === 'light'
-              ? hexToRGBA(theme.palette.grey[900], 0.9)
-              : hexToRGBA(theme.palette.grey[700], 0.9)
+          backgroundColor: `rgba(${theme.palette.customColors.main}, 0.9)`,
+          color: theme.palette.common[theme.palette.mode === 'light' ? 'white' : 'black']
         },
         arrow: {
-          color:
-            theme.palette.mode === 'light'
-              ? hexToRGBA(theme.palette.grey[900], 0.9)
-              : hexToRGBA(theme.palette.grey[700], 0.9)
+          color: `rgba(${theme.palette.customColors.main}, 0.9)`
         }
       }
     }
