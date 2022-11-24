@@ -10,7 +10,8 @@ const Snackbar = (theme: Theme, skin: Skin) => {
       styleOverrides: {
         root: {
           ...(skin === 'bordered' && { boxShadow: 'none' }),
-          backgroundColor: theme.palette.mode === 'light' ? theme.palette.grey[900] : theme.palette.grey[100]
+          backgroundColor: `rgba(${theme.palette.customColors.main}, 1)`,
+          color: theme.palette.common[theme.palette.mode === 'light' ? 'white' : 'black']
         }
       }
     }
