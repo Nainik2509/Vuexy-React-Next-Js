@@ -9,6 +9,7 @@ const Chip = (theme: Theme) => {
     MuiChip: {
       styleOverrides: {
         root: {
+          height: 30,
           '&.MuiChip-rounded': {
             borderRadius: 4
           }
@@ -17,6 +18,13 @@ const Chip = (theme: Theme) => {
           '&.MuiChip-colorDefault': {
             borderColor: `rgba(${theme.palette.customColors.main}, 0.22)`
           }
+        },
+        sizeSmall: {
+          height: 24
+        },
+        labelSmall: {
+          paddingLeft: theme.spacing(2.5),
+          paddingRight: theme.spacing(2.5)
         },
         deleteIcon: {
           width: 18,
