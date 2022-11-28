@@ -26,12 +26,13 @@ const Card = (theme: Theme, skin: Skin) => {
     MuiCardHeader: {
       styleOverrides: {
         root: {
-          padding: theme.spacing(5),
+          padding: theme.spacing(6),
           '& + .MuiCardContent-root, & + .MuiCardActions-root, & + .MuiCollapse-root .MuiCardContent-root': {
             paddingTop: 0
           },
           '& .MuiCardHeader-subheader': {
             fontSize: '0.875rem',
+            marginTop: theme.spacing(1),
             color: theme.palette.text.secondary
           }
         },
@@ -53,12 +54,12 @@ const Card = (theme: Theme, skin: Skin) => {
     MuiCardContent: {
       styleOverrides: {
         root: {
-          padding: theme.spacing(5),
+          padding: theme.spacing(6),
           '& + .MuiCardHeader-root, & + .MuiCardContent-root, & + .MuiCardActions-root': {
             paddingTop: 0
           },
           '&:last-of-type': {
-            paddingBottom: theme.spacing(5)
+            paddingBottom: theme.spacing(6)
           }
         }
       }
@@ -66,19 +67,19 @@ const Card = (theme: Theme, skin: Skin) => {
     MuiCardActions: {
       styleOverrides: {
         root: {
-          padding: theme.spacing(5),
+          padding: theme.spacing(6),
           '& .MuiButton-text': {
-            paddingLeft: theme.spacing(2.5),
-            paddingRight: theme.spacing(2.5)
+            paddingLeft: theme.spacing(3),
+            paddingRight: theme.spacing(3)
           },
           '&.card-action-dense': {
-            padding: theme.spacing(0, 2.5, 2.5),
+            padding: theme.spacing(0, 3, 3),
             '.MuiCard-root .MuiCardMedia-root + &': {
-              paddingTop: theme.spacing(2.5)
+              paddingTop: theme.spacing(3)
             }
           },
           '.MuiCard-root &:first-of-type': {
-            paddingTop: theme.spacing(2.5),
+            paddingTop: theme.spacing(3),
             '& + .MuiCardHeader-root, & + .MuiCardContent-root, & + .MuiCardActions-root': {
               paddingTop: 0
             }
