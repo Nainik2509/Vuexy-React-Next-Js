@@ -12,6 +12,9 @@ import MuiMenuItem, { MenuItemProps } from '@mui/material/MenuItem'
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
 
+// ** Util Import
+import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
+
 // Styled Menu component
 const Menu = styled(MuiMenu)<MenuProps>(({ theme }) => ({
   '& .MuiMenu-paper': {
@@ -21,9 +24,17 @@ const Menu = styled(MuiMenu)<MenuProps>(({ theme }) => ({
 
 // Styled MenuItem component
 const MenuItem = styled(MuiMenuItem)<MenuItemProps>(({ theme }) => ({
-  '&:focus': {
+  margin: 0,
+  borderRadius: 0,
+  '&:not(.Mui-focusVisible):hover': {
+    backgroundColor: theme.palette.action.hover
+  },
+  '&.Mui-selected': {
+    backgroundColor: hexToRGBA(theme.palette.primary.main, 0.08)
+  },
+  '&.Mui-focusVisible': {
     backgroundColor: theme.palette.primary.main,
-    '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
+    '& .MuiListItemIcon-root, & .MuiTypography-root': {
       color: theme.palette.common.white
     }
   }

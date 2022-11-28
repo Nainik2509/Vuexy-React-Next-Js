@@ -4,6 +4,9 @@ import { Theme } from '@mui/material/styles'
 // ** Theme Type Import
 import { Skin } from 'src/@core/layouts/types'
 
+// ** Util Import
+import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
+
 const Menu = (theme: Theme, skin: Skin) => {
   const boxShadow = () => {
     if (skin === 'bordered') {
@@ -18,9 +21,31 @@ const Menu = (theme: Theme, skin: Skin) => {
       styleOverrides: {
         root: {
           '& .MuiMenu-paper': {
-            borderRadius: 5,
             boxShadow: boxShadow(),
             ...(skin === 'bordered' && { border: `1px solid ${theme.palette.divider}` })
+          }
+        }
+      }
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          margin: theme.spacing(0, 2, 1),
+          padding: theme.spacing(1.75, 4),
+          borderRadius: theme.shape.borderRadius,
+          '&:last-child': {
+            marginBottom: 0
+          },
+          '&:not(.Mui-focusVisible):hover': {
+            color: theme.palette.primary.main,
+            backgroundColor: hexToRGBA(theme.palette.primary.main, 0.08)
+          },
+          '&.Mui-selected': {
+            color: `${theme.palette.common.white} !important`,
+            backgroundColor: `${theme.palette.primary.main} !important`,
+            '&.Mui-focusVisible': {
+              backgroundColor: `${theme.palette.primary.dark} !important`
+            }
           }
         }
       }
