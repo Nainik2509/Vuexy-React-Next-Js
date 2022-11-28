@@ -6,7 +6,7 @@ const List = (theme: Theme) => {
     MuiListItemIcon: {
       styleOverrides: {
         root: {
-          minWidth: 0,
+          minWidth: '0 !important',
           marginRight: theme.spacing(2.25),
           color: theme.palette.text.secondary
         }
