@@ -48,7 +48,12 @@ const DialogsScroll = () => {
         aria-labelledby='scroll-dialog-title'
         aria-describedby='scroll-dialog-description'
       >
-        <DialogTitle id='scroll-dialog-title'>Subscribe</DialogTitle>
+        <DialogTitle
+          id='scroll-dialog-title'
+          sx={{ ...(scroll === 'paper' && { pb: theme => `${theme.spacing(5)} !important` }) }}
+        >
+          Subscribe
+        </DialogTitle>
         <DialogContent dividers={scroll === 'paper'}>
           <DialogContentText id='scroll-dialog-description' ref={descriptionElementRef} tabIndex={-1}>
             {[...new Array(50)].map(
@@ -59,7 +64,10 @@ const DialogsScroll = () => {
             )}
           </DialogContentText>
         </DialogContent>
-        <DialogActions sx={{ p: theme => `${theme.spacing(2.5)} !important` }}>
+        <DialogActions
+          className='dialog-actions-dense'
+          sx={{ ...(scroll === 'paper' && { p: theme => `${theme.spacing(2.5)} !important` }) }}
+        >
           <Button onClick={handleClose}>Cancel</Button>
           <Button onClick={handleClose}>Subscribe</Button>
         </DialogActions>

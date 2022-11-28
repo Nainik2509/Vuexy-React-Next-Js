@@ -9,7 +9,7 @@ const Dialog = (theme: Theme, skin: Skin) => {
     MuiDialog: {
       styleOverrides: {
         paper: {
-          boxShadow: theme.shadows[skin === 'bordered' ? 0 : 6],
+          boxShadow: theme.shadows[skin === 'bordered' ? 0 : 9],
           ...(skin === 'bordered' && { border: `1px solid ${theme.palette.divider}` }),
           '&:not(.MuiDialog-paperFullScreen)': {
             '@media (max-width:599px)': {
@@ -28,30 +28,23 @@ const Dialog = (theme: Theme, skin: Skin) => {
     MuiDialogTitle: {
       styleOverrides: {
         root: {
-          padding: theme.spacing(5)
+          padding: theme.spacing(5, 6, 1)
         }
       }
     },
     MuiDialogContent: {
       styleOverrides: {
         root: {
-          padding: theme.spacing(5),
-          '& + .MuiDialogContent-root': {
-            paddingTop: 0
-          },
-          '& + .MuiDialogActions-root': {
-            paddingTop: 0
-          }
+          padding: `${theme.spacing(5, 6)} !important`
         }
       }
     },
     MuiDialogActions: {
       styleOverrides: {
         root: {
-          padding: theme.spacing(5),
+          padding: theme.spacing(1, 6, 5),
           '&.dialog-actions-dense': {
-            padding: theme.spacing(2.5),
-            paddingTop: 0
+            padding: theme.spacing(1, 2.5, 2.5)
           }
         }
       }
