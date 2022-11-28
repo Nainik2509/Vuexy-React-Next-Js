@@ -12,7 +12,7 @@ const Dialog = (theme: Theme, skin: Skin) => {
           boxShadow: theme.shadows[skin === 'bordered' ? 0 : 9],
           ...(skin === 'bordered' && { border: `1px solid ${theme.palette.divider}` }),
           '&:not(.MuiDialog-paperFullScreen)': {
-            '@media (max-width:599px)': {
+            [theme.breakpoints.down('sm')]: {
               margin: theme.spacing(4),
               width: `calc(100% - ${theme.spacing(8)})`,
               maxWidth: `calc(100% - ${theme.spacing(8)}) !important`

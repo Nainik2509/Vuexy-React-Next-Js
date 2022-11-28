@@ -39,7 +39,7 @@ const DialogFullScreen = () => {
             <Icon icon='mdi:close' />
           </IconButton>
         </DialogTitle>
-        <DialogContent dividers>
+        <DialogContent>
           <Typography gutterBottom>
             Chupa chups jelly-o candy sweet roll wafer cake chocolate bar. Brownie sweet roll topping cake chocolate
             cake cheesecake tiramisu chocolate cake. Jujubes liquorice chocolate bar pastry. Chocolate jujubes caramels
@@ -54,7 +54,7 @@ const DialogFullScreen = () => {
             chocolate bar chocolate marzipan candy fruitcake jujubes.
           </Typography>
         </DialogContent>
-        <DialogActions sx={{ p: theme => `${theme.spacing(3)} !important` }}>
+        <DialogActions className='dialog-actions-dense'>
           <Button onClick={handleClose}>Save changes</Button>
         </DialogActions>
       </Dialog>
