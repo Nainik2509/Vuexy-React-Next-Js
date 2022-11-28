@@ -25,6 +25,7 @@ import MuiPopover from './popover'
 import MuiTooltip from './tooltip'
 import MuiBackdrop from './backdrop'
 import MuiDataGrid from './dataGrid'
+import MuiProgress from './progress'
 import MuiSnackbar from './snackbar'
 import MuiSwitches from './switches'
 import MuiTimeline from './timeline'
@@ -53,6 +54,7 @@ const Overrides = (theme: Theme, settings: Settings) => {
   const cards = MuiCard(theme, skin)
   const backdrop = MuiBackdrop(theme)
   const dataGrid = MuiDataGrid(theme)
+  const progress = MuiProgress(theme)
   const switches = MuiSwitches(theme)
   const timeline = MuiTimeline(theme)
   const accordion = MuiAccordion(theme)
@@ -83,6 +85,7 @@ const Overrides = (theme: Theme, settings: Settings) => {
     backdrop,
     dataGrid,
     MuiPaper,
+    progress,
     snackbar,
     switches,
     timeline,
