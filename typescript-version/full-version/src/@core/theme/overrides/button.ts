@@ -10,20 +10,21 @@ const Button = (theme: Theme) => {
       styleOverrides: {
         root: {
           fontWeight: 500,
-          borderRadius: 5,
-          lineHeight: 1.71,
-          letterSpacing: '0.3px',
-          padding: `${theme.spacing(1.875, 3)}`
+          lineHeight: 1.7143,
+          letterSpacing: '0.43px',
+          padding: `${theme.spacing(1.75, 5)}`
         },
         contained: {
-          boxShadow: theme.shadows[3],
-          padding: `${theme.spacing(1.875, 5.5)}`
+          boxShadow: theme.shadows[2],
+          padding: `${theme.spacing(1.75, 5)}`
         },
         outlined: {
-          padding: `${theme.spacing(1.625, 5.25)}`
+          padding: `${theme.spacing(1.5, 4.75)}`
         },
         sizeSmall: {
-          padding: `${theme.spacing(1, 2.25)}`,
+          lineHeight: 1.53846,
+          borderRadius: '4px',
+          padding: `${theme.spacing(1, 3.5)}`,
           '&.MuiButton-contained': {
             padding: `${theme.spacing(1, 3.5)}`
           },
@@ -32,12 +33,14 @@ const Button = (theme: Theme) => {
           }
         },
         sizeLarge: {
-          padding: `${theme.spacing(2.125, 5.5)}`,
+          lineHeight: 2,
+          borderRadius: '8px',
+          padding: `${theme.spacing(2.25, 6.5)}`,
           '&.MuiButton-contained': {
-            padding: `${theme.spacing(2.125, 6.5)}`
+            padding: `${theme.spacing(2.25, 6.5)}`
           },
           '&.MuiButton-outlined': {
-            padding: `${theme.spacing(1.875, 6.25)}`
+            padding: `${theme.spacing(2, 6.25)}`
           }
         }
       }
