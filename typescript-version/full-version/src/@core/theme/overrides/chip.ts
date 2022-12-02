@@ -10,6 +10,7 @@ const Chip = (theme: Theme) => {
       styleOverrides: {
         root: {
           height: 30,
+          fontWeight: 500,
           '&.MuiChip-rounded': {
             borderRadius: 4
           }
