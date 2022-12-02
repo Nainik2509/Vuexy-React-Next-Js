@@ -5,6 +5,12 @@ const Tabs = (theme: Theme) => {
   return {
     MuiTabs: {
       styleOverrides: {
+        root: {
+          minHeight: 38,
+          '&:not(.MuiTabs-vertical)': {
+            borderBottom: `1px solid ${theme.palette.divider}`
+          }
+        },
         vertical: {
           minWidth: 130,
           marginRight: theme.spacing(4),
@@ -17,6 +23,10 @@ const Tabs = (theme: Theme) => {
     },
     MuiTab: {
       styleOverrides: {
+        root: {
+          minHeight: 38,
+          padding: theme.spacing(1.75, 5)
+        },
         textColorSecondary: {
           '&.Mui-selected': {
             color: theme.palette.text.secondary

@@ -11,6 +11,7 @@ import MuiTabList, { TabListProps } from '@mui/lab/TabList'
 
 // Styled TabList component
 const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
+  borderBottom: '0 !important',
   '& .MuiTabs-indicator': {
     display: 'none'
   },
@@ -19,8 +20,7 @@ const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
     color: `${theme.palette.common.white} !important`
   },
   '& .MuiTab-root': {
-    minHeight: 38,
-    minWidth: 130,
+    lineHeight: 1,
     borderRadius: theme.shape.borderRadius
   }
 }))

@@ -21,9 +21,8 @@ const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
     color: `${theme.palette.common.white} !important`
   },
   '& .MuiTab-root': {
-    minHeight: 38,
-    minWidth: 130,
-    margin: theme.spacing(1, 0),
+    lineHeight: 1,
+    margin: theme.spacing(0.5, 0),
     borderRadius: theme.shape.borderRadius
   }
 }))
