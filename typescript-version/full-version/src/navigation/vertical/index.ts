@@ -38,11 +38,6 @@ const navigation = (): VerticalNavItemsType => {
       path: '/apps/calendar'
     },
     {
-      title: 'Kanban',
-      icon: 'mdi:view-grid-outline',
-      path: '/apps/kanban'
-    },
-    {
       title: 'Invoice',
       icon: 'mdi:file-document-outline',
       children: [

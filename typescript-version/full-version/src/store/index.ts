@@ -5,7 +5,6 @@ import { configureStore } from '@reduxjs/toolkit'
 import chat from 'src/store/apps/chat'
 import user from 'src/store/apps/user'
 import email from 'src/store/apps/email'
-import kanban from 'src/store/apps/kanban'
 import invoice from 'src/store/apps/invoice'
 import calendar from 'src/store/apps/calendar'
 import permissions from 'src/store/apps/permissions'
@@ -15,7 +14,6 @@ export const store = configureStore({
     user,
     chat,
     email,
-    kanban,
     invoice,
     calendar,
     permissions
