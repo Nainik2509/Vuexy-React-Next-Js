@@ -13,10 +13,12 @@ import Icon from 'src/@core/components/icon'
 
 // Styled component for Accordion component
 const Accordion = styled(MuiAccordion)<AccordionProps>(({ theme }) => ({
+  margin: 0,
+  borderRadius: 0,
   boxShadow: 'none !important',
   border:
     theme.palette.mode === 'light' ? `1px solid ${theme.palette.grey[300]}` : `1px solid ${theme.palette.divider}`,
-  '&:not(:last-of-type)': {
+  '&:not(:last-of-type), &:last-child .MuiAccordionSummary-root:not(.Mui-expanded)': {
     borderBottom: 0
   },
   '&:before': {
@@ -45,14 +47,23 @@ const AccordionSummary = styled(MuiAccordionSummary)<AccordionSummaryProps>(({ t
   padding: theme.spacing(0, 4),
   minHeight: theme.spacing(12),
   transition: 'min-height 0.15s ease-in-out',
-  backgroundColor: theme.palette.mode === 'light' ? theme.palette.grey[50] : theme.palette.background.default,
+  backgroundColor: theme.palette.action[theme.palette.mode === 'light' ? 'hover' : 'selected'],
   borderBottom:
     theme.palette.mode === 'light' ? `1px solid ${theme.palette.grey[300]}` : `1px solid ${theme.palette.divider}`,
   '&.Mui-expanded': {
     minHeight: theme.spacing(12)
   },
-  '& .MuiAccordionSummary-content.Mui-expanded': {
-    margin: '10px 0'
+  '& .MuiAccordionSummary-content': {
+    alignItems: 'center',
+    '&.Mui-expanded': {
+      margin: '12px 0'
+    }
+  },
+  '& .MuiTypography-root': {
+    fontWeight: 400
+  },
+  '& .MuiAccordionSummary-expandIconWrapper': {
+    color: theme.palette.text.secondary
   }
 }))
 
@@ -69,7 +80,7 @@ const AccordionCustomized = () => {
     setExpanded(isExpanded ? panel : false)
   }
 
-  const expandIcon = (value: string) => <Icon icon={expanded === value ? 'mdi:minus' : 'mdi:plus'} />
+  const expandIcon = (value: string) => <Icon icon={expanded === value ? 'tabler:minus' : 'tabler:plus'} />
 
   return (
     <div>
@@ -79,7 +90,8 @@ const AccordionCustomized = () => {
           expandIcon={expandIcon('panel1')}
           aria-controls='customized-panel-content-1'
         >
-          <Typography>Accordion 1</Typography>
+          <Icon fontSize='1.25rem' icon='mdi:account-outline' />
+          <Typography sx={{ ml: 2 }}>Accordion 1</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -95,7 +107,8 @@ const AccordionCustomized = () => {
           expandIcon={expandIcon('panel2')}
           aria-controls='customized-panel-content-2'
         >
-          <Typography>Accordion 2</Typography>
+          <Icon fontSize='1.25rem' icon='mdi:briefcase-variant-outline' />
+          <Typography sx={{ ml: 2 }}>Accordion 2</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -111,7 +124,8 @@ const AccordionCustomized = () => {
           expandIcon={expandIcon('panel3')}
           aria-controls='customized-panel-content-3'
         >
-          <Typography>Accordion 3</Typography>
+          <Icon fontSize='1.25rem' icon='mdi:gift-outline' />
+          <Typography sx={{ ml: 2 }}>Accordion 3</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>

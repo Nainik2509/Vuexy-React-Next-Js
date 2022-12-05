@@ -26,7 +26,7 @@ const AccordionActions = () => {
         <AccordionSummary
           id='actions-panel-header-1'
           aria-controls='actions-panel-content-1'
-          expandIcon={<Icon icon='mdi:chevron-down' />}
+          expandIcon={<Icon fontSize='1.25rem' icon='tabler:chevron-down' />}
         >
           <FormControlLabel
             label='Accordion 1'
@@ -37,7 +37,7 @@ const AccordionActions = () => {
           />
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{ color: 'text.secondary' }}>
             Wafer sesame snaps chocolate bar candy canes halvah. Cupcake sesame snaps sweet tart dessert biscuit.
             Topping soufflé tart sweet croissant.
           </Typography>
@@ -48,7 +48,7 @@ const AccordionActions = () => {
         <AccordionSummary
           id='actions-panel-header-2'
           aria-controls='actions-panel-content-2'
-          expandIcon={<Icon icon='mdi:chevron-down' />}
+          expandIcon={<Icon fontSize='1.25rem' icon='tabler:chevron-down' />}
         >
           <FormControlLabel
             label='Accordion 2'
@@ -59,7 +59,7 @@ const AccordionActions = () => {
           />
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{ color: 'text.secondary' }}>
             Sugar plum sesame snaps caramels. Cake pie tart fruitcake sesame snaps donut cupcake macaroon. Gingerbread
             pudding cheesecake pie ice cream.
           </Typography>
@@ -70,7 +70,7 @@ const AccordionActions = () => {
         <AccordionSummary
           id='actions-panel-header-3'
           aria-controls='actions-panel-content-3'
-          expandIcon={<Icon icon='mdi:chevron-down' />}
+          expandIcon={<Icon fontSize='1.25rem' icon='tabler:chevron-down' />}
         >
           <FormControlLabel
             label='Accordion 3'
@@ -81,7 +81,7 @@ const AccordionActions = () => {
           />
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{ color: 'text.secondary' }}>
             Gingerbread lemon drops bear claw gummi bears bonbon wafer jujubes tiramisu. Jelly pie cake. Sweet roll
             dessert sweet pastry powder.
           </Typography>
