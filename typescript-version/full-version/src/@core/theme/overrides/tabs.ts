@@ -33,6 +33,13 @@ const Tabs = (theme: Theme) => {
           }
         }
       }
+    },
+    MuiTabPanel: {
+      styleOverrides: {
+        root: {
+          padding: theme.spacing(6)
+        }
+      }
     }
   }
 }
