@@ -1,10 +1,6 @@
 // ** MUI Imports
 import { Theme } from '@mui/material/styles'
 
-const rowHeight = 50
-const headerHeight = 54
-const checkboxCellWidth = 58
-
 const DataGrid = (theme: Theme) => {
   return {
     MuiDataGrid: {
@@ -16,22 +12,17 @@ const DataGrid = (theme: Theme) => {
             outline: 'none'
           }
         },
-        main: {
-          '& > :first-of-type:not([class])': {
-            height: `calc(100% - ${headerHeight}px) !important`
-          }
-        },
         toolbarContainer: {
           paddingRight: `${theme.spacing(5)} !important`,
           paddingLeft: `${theme.spacing(3.25)} !important`
         },
         columnHeaders: {
-          lineHeight: '24px !important',
           backgroundColor: theme.palette.customColors.tableHeaderBg
         },
         columnHeader: {
           '&:not(.MuiDataGrid-columnHeaderCheckbox)': {
-            padding: theme.spacing(4),
+            paddingLeft: theme.spacing(4),
+            paddingRight: theme.spacing(4),
             '&:first-of-type': {
               paddingLeft: theme.spacing(5)
             }
@@ -41,8 +32,8 @@ const DataGrid = (theme: Theme) => {
           }
         },
         columnHeaderCheckbox: {
-          maxWidth: `${checkboxCellWidth}px !important`,
-          minWidth: `${checkboxCellWidth}px !important`
+          maxWidth: '58px !important',
+          minWidth: '58px !important'
         },
         columnHeaderTitleContainer: {
           padding: 0
@@ -64,10 +55,10 @@ const DataGrid = (theme: Theme) => {
           }
         },
         cell: {
-          lineHeight: '20px !important',
           borderColor: theme.palette.divider,
           '&:not(.MuiDataGrid-cellCheckbox)': {
-            padding: theme.spacing(4),
+            paddingLeft: theme.spacing(4),
+            paddingRight: theme.spacing(4),
             '&:first-of-type': {
               paddingLeft: theme.spacing(5)
             }
@@ -80,8 +71,8 @@ const DataGrid = (theme: Theme) => {
           }
         },
         cellCheckbox: {
-          maxWidth: `${checkboxCellWidth}px !important`,
-          minWidth: `${checkboxCellWidth}px !important`
+          maxWidth: '58px !important',
+          minWidth: '58px !important'
         },
         editInputCell: {
           padding: 0,
@@ -91,10 +82,8 @@ const DataGrid = (theme: Theme) => {
           }
         },
         footerContainer: {
-          minHeight: `${rowHeight}px !important`,
           borderTop: `1px solid ${theme.palette.divider}`,
           '& .MuiTablePagination-toolbar': {
-            minHeight: `${rowHeight}px !important`,
             paddingLeft: `${theme.spacing(4)} !important`,
             paddingRight: `${theme.spacing(4)} !important`
           },
@@ -107,10 +96,6 @@ const DataGrid = (theme: Theme) => {
           paddingLeft: theme.spacing(4),
           paddingRight: theme.spacing(4)
         }
-      },
-      defaultProps: {
-        rowHeight,
-        headerHeight
       }
     }
   }
