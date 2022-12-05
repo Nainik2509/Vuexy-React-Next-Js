@@ -8,9 +8,6 @@ const Avatar = (theme: Theme) => {
         colorDefault: {
           color: theme.palette.text.secondary,
           backgroundColor: theme.palette.customColors.avatarBg
-        },
-        rounded: {
-          borderRadius: 5
         }
       }
     },
