@@ -10,6 +10,18 @@ const input = (theme: Theme) => {
         }
       }
     },
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          '& .MuiInputBase-input::placeholder': {
+            transition: 'transform 0.25s ease-in-out'
+          },
+          '&.Mui-focused .MuiInputBase-input::placeholder': {
+            transform: 'translateX(4px)'
+          }
+        }
+      }
+    },
     MuiInput: {
       styleOverrides: {
         root: {
@@ -55,6 +67,9 @@ const input = (theme: Theme) => {
           },
           '&.Mui-disabled .MuiOutlinedInput-notchedOutline': {
             borderColor: theme.palette.text.disabled
+          },
+          '&.Mui-focused': {
+            boxShadow: `0 2px 3px 0 rgba(${theme.palette.customColors.main}, 0.1)`
           }
         }
       }
