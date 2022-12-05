@@ -33,7 +33,7 @@ const Card = (theme: Theme, skin: Skin) => {
           '& .MuiCardHeader-subheader': {
             fontSize: '0.875rem',
             marginTop: theme.spacing(1),
-            color: theme.palette.text.secondary
+            color: theme.palette.text.disabled
           }
         },
         title: {
