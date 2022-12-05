@@ -367,10 +367,6 @@ const navigation = (): VerticalNavItemsType => {
           path: '/ui/cards/statistics'
         },
         {
-          title: 'Gamification',
-          path: '/ui/cards/gamification'
-        },
-        {
           title: 'Actions',
           path: '/ui/cards/actions'
         }
