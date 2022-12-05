@@ -11,10 +11,10 @@ import axios from 'axios'
 import { CardStatsType } from 'src/@fake-db/types'
 
 // ** Demo Components Imports
-import CardStatisticsSales from 'src/views/ui/cards/statistics/CardStatisticsSales'
 import CardStatisticsVertical from 'src/views/ui/cards/statistics/CardStatisticsVertical'
 import CardStatisticsHorizontal from 'src/views/ui/cards/statistics/CardStatisticsHorizontal'
 import CardStatisticsCharacters from 'src/views/ui/cards/statistics/CardStatisticsCharacters'
+import CardStatisticsTransactions from 'src/views/ui/cards/statistics/CardStatisticsTransactions'
 
 const CardStatistics = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
@@ -23,7 +23,7 @@ const CardStatistics = ({ apiData }: InferGetStaticPropsType<typeof getStaticPro
         <CardStatisticsHorizontal data={apiData.statsHorizontal} />
       </Grid>
       <Grid item xs={12}>
-        <CardStatisticsSales />
+        <CardStatisticsTransactions />
       </Grid>
       <Grid item xs={12}>
         <CardStatisticsVertical data={apiData.statsVertical} />

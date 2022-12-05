@@ -16,14 +16,14 @@ import { ThemeColor } from 'src/@core/layouts/types'
 import CustomAvatar from 'src/@core/components/mui/avatar'
 import OptionsMenu from 'src/@core/components/option-menu'
 
-interface SaleDataType {
+interface DataType {
   icon: string
   stats: string
   title: string
   color: ThemeColor
 }
 
-const salesData: SaleDataType[] = [
+const data: DataType[] = [
   {
     stats: '245k',
     title: 'Sales',
@@ -51,7 +51,7 @@ const salesData: SaleDataType[] = [
 ]
 
 const renderStats = () => {
-  return salesData.map((sale: SaleDataType, index: number) => (
+  return data.map((sale: DataType, index: number) => (
     <Grid item xs={6} md={3} key={index}>
       <Box key={index} sx={{ display: 'flex', alignItems: 'center' }}>
         <CustomAvatar variant='rounded' color={sale.color} sx={{ boxShadow: 3, mr: 4, width: 44, height: 44 }}>
@@ -70,14 +70,14 @@ const renderStats = () => {
   ))
 }
 
-const CardStatisticsSales = () => {
+const CardStatisticsTransactions = () => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12} lg={8}>
         <Card>
           <CardHeader
             sx={{ pt: 4 }}
-            title='Statistics Card'
+            title='Transactions'
             action={
               <OptionsMenu
                 options={['Refresh', 'Share', 'Update']}
@@ -96,4 +96,4 @@ const CardStatisticsSales = () => {
   )
 }
 
-export default CardStatisticsSales
+export default CardStatisticsTransactions
