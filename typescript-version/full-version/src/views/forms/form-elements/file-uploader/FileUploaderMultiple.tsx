@@ -1,17 +1,14 @@
 // ** React Imports
 import { Fragment, useState } from 'react'
 
-// ** Next Import
-import Link from 'next/link'
-
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import List from '@mui/material/List'
 import Button from '@mui/material/Button'
 import ListItem from '@mui/material/ListItem'
-import { styled } from '@mui/material/styles'
+import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
-import Typography, { TypographyProps } from '@mui/material/Typography'
+import { styled, useTheme } from '@mui/material/styles'
 
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
@@ -27,23 +24,9 @@ interface FileProp {
 
 // Styled component for the upload image inside the dropzone area
 const Img = styled('img')(({ theme }) => ({
-  [theme.breakpoints.up('md')]: {
-    marginRight: theme.spacing(15.75)
-  },
-  [theme.breakpoints.down('md')]: {
-    marginBottom: theme.spacing(4)
-  },
-  [theme.breakpoints.down('sm')]: {
-    width: 160
-  }
-}))
-
-// Styled component for the heading inside the dropzone area
-const HeadingTypography = styled(Typography)<TypographyProps>(({ theme }) => ({
-  marginBottom: theme.spacing(5),
-  [theme.breakpoints.down('sm')]: {
-    marginBottom: theme.spacing(4)
-  }
+  width: 48,
+  height: 48,
+  marginBottom: theme.spacing(8.75)
 }))
 
 const FileUploaderMultiple = () => {
@@ -51,6 +34,7 @@ const FileUploaderMultiple = () => {
   const [files, setFiles] = useState<File[]>([])
 
   // ** Hooks
+  const theme = useTheme()
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: (acceptedFiles: File[]) => {
       setFiles(acceptedFiles.map((file: File) => Object.assign(file)))
@@ -98,18 +82,14 @@ const FileUploaderMultiple = () => {
     <Fragment>
       <div {...getRootProps({ className: 'dropzone' })}>
         <input {...getInputProps()} />
-        <Box sx={{ display: 'flex', flexDirection: ['column', 'column', 'row'], alignItems: 'center' }}>
-          <Img alt='Upload img' src='/images/misc/upload.png' />
-          <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: ['center', 'center', 'inherit'] }}>
-            <HeadingTypography variant='h5'>Drop files here or click to upload.</HeadingTypography>
-            <Typography color='textSecondary' sx={{ '& a': { color: 'primary.main', textDecoration: 'none' } }}>
-              Drop files here or click{' '}
-              <Link href='/' onClick={e => e.preventDefault()}>
-                browse
-              </Link>{' '}
-              thorough your machine
-            </Typography>
-          </Box>
+        <Box sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column' }}>
+          <Img alt='Upload img' src={`/images/misc/upload-${theme.palette.mode}.png`} />
+          <Typography variant='h5' sx={{ mb: 2.5 }}>
+            Drop files here or click to upload.
+          </Typography>
+          <Typography sx={{ color: 'text.secondary' }}>
+            (This is just a demo drop zone. Selected files are not actually uploaded.)
+          </Typography>
         </Box>
       </div>
       {files.length ? (
