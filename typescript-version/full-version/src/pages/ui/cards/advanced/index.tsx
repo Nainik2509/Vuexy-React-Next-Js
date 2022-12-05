@@ -1,64 +1,69 @@
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
 
+// ** Styled Component Import
+import KeenSliderWrapper from 'src/@core/styles/libs/keen-slider'
+
 // ** Demo Components Imports
-import CardTeamMembers from 'src/views/ui/cards/advanced/CardTeamMembers'
-import CardPlanUpgrade from 'src/views/ui/cards/advanced/CardPlanUpgrade'
-import CardCafeBadilico from 'src/views/ui/cards/advanced/CardCafeBadilico'
+import CardOrders from 'src/views/ui/cards/advanced/CardOrders'
 import CardTransactions from 'src/views/ui/cards/advanced/CardTransactions'
-import CardTotalEarnings from 'src/views/ui/cards/advanced/CardTotalEarings'
-import CardFinanceSummary from 'src/views/ui/cards/advanced/CardFinanceSummary'
-import CardDepositWithdraw from 'src/views/ui/cards/advanced/CardDepositWithdraw'
-import CardSocialAnalytics from 'src/views/ui/cards/advanced/CardSocialAnalytics'
-import CardMeetingSchedule from 'src/views/ui/cards/advanced/CardMeetingSchedule'
-import CardDeveloperMeetup from 'src/views/ui/cards/advanced/CardDeveloperMeetup'
+import CardSourceVisits from 'src/views/ui/cards/advanced/CardSourceVisits'
+import CardBrowserStates from 'src/views/ui/cards/advanced/CardBrowserStates'
+import CardActiveProjects from 'src/views/ui/cards/advanced/CardActiveProjects'
+import CardEarningReports from 'src/views/ui/cards/advanced/CardEarningReports'
+import CardPopularProducts from 'src/views/ui/cards/advanced/CardPopularProducts'
+import CardLastTransaction from 'src/views/ui/cards/advanced/CardLastTransaction'
 import CardSalesByCountries from 'src/views/ui/cards/advanced/CardSalesByCountries'
 import CardActivityTimeline from 'src/views/ui/cards/advanced/CardActivityTimeline'
-import CardWebsiteStatistics from 'src/views/ui/cards/advanced/CardWebsiteStatistics'
+import CardCongratulationsJohn from 'src/views/ui/cards/advanced/CardCongratulationsJohn'
+import CardMonthlyCampaignState from 'src/views/ui/cards/advanced/CardMonthlyCampaignState'
+import CardWebsiteAnalyticsSlider from 'src/views/ui/cards/advanced/CardWebsiteAnalyticsSlider'
 
 const CardsAdvanced = () => {
   return (
-    <Grid container spacing={6}>
-      <Grid item xs={12} md={6} lg={4}>
-        <CardTransactions />
+    <KeenSliderWrapper>
+      <Grid container spacing={6}>
+        <Grid item xs={12} md={6} lg={4}>
+          <CardMonthlyCampaignState />
+        </Grid>
+        <Grid item xs={12} md={6} lg={4}>
+          <CardActiveProjects />
+        </Grid>
+        <Grid item xs={12} md={6} lg={4}>
+          <CardSourceVisits />
+        </Grid>
+        <Grid item xs={12} md={6} lg={4}>
+          <CardSalesByCountries />
+        </Grid>
+        <Grid item xs={12} md={6} lg={4}>
+          <CardEarningReports />
+        </Grid>
+        <Grid item xs={12} md={6} lg={4}>
+          <CardBrowserStates />
+        </Grid>
+        <Grid item xs={12} lg={4}>
+          <CardOrders />
+        </Grid>
+        <Grid item xs={12} md={6} lg={4}>
+          <CardTransactions />
+        </Grid>
+        <Grid item xs={12} md={6} lg={4}>
+          <CardPopularProducts />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <CardLastTransaction />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <CardActivityTimeline />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <CardWebsiteAnalyticsSlider />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <CardCongratulationsJohn />
+        </Grid>
       </Grid>
-      <Grid item xs={12} md={6} lg={4}>
-        <CardPlanUpgrade />
-      </Grid>
-      <Grid item xs={12} md={6} lg={4}>
-        <CardMeetingSchedule />
-      </Grid>
-      <Grid item xs={12} md={6} lg={5}>
-        <CardTeamMembers />
-      </Grid>
-      <Grid item xs={12} lg={7}>
-        <CardDepositWithdraw />
-      </Grid>
-      <Grid item xs={12} md={6} lg={4}>
-        <CardTotalEarnings />
-      </Grid>
-      <Grid item xs={12} md={6} lg={5}>
-        <CardFinanceSummary />
-      </Grid>
-      <Grid item xs={12} md={6} lg={3}>
-        <CardSocialAnalytics />
-      </Grid>
-      <Grid item xs={12} md={6} lg={4}>
-        <CardWebsiteStatistics />
-      </Grid>
-      <Grid item xs={12} md={6} lg={4}>
-        <CardDeveloperMeetup />
-      </Grid>
-      <Grid item xs={12} md={6} lg={4}>
-        <CardSalesByCountries />
-      </Grid>
-      <Grid item xs={12} md={6} lg={8}>
-        <CardActivityTimeline />
-      </Grid>
-      <Grid item xs={12} md={6} lg={4}>
-        <CardCafeBadilico />
-      </Grid>
-    </Grid>
+    </KeenSliderWrapper>
   )
 }
 

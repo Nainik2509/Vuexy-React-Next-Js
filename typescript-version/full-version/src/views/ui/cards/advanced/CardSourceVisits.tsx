@@ -1,6 +1,7 @@
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
+import Avatar from '@mui/material/Avatar'
 import Typography from '@mui/material/Typography'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
@@ -9,11 +10,13 @@ import CardContent from '@mui/material/CardContent'
 import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Imports
+import CustomChip from 'src/@core/components/mui/chip'
 import OptionsMenu from 'src/@core/components/option-menu'
 
 interface DataType {
+  icon: string
   title: string
-  imgSrc: string
+  amount: string
   subtitle: string
   trendNumber: number
   trend?: 'positive' | 'negative'
@@ -21,51 +24,56 @@ interface DataType {
 
 const data: DataType[] = [
   {
-    title: '$8.45k',
-    trendNumber: 25.8,
-    subtitle: 'United States',
-    imgSrc: '/images/cards/us.png'
+    amount: '1.2k',
+    trendNumber: 4.2,
+    icon: 'tabler:shadow',
+    title: 'Direct Source',
+    subtitle: 'Direct link click'
   },
   {
-    title: '$7.78k',
+    amount: '31.5k',
+    trendNumber: 8.2,
+    icon: 'tabler:globe',
+    title: 'Social Networks',
+    subtitle: 'Social Channels'
+  },
+  {
+    amount: '893',
+    trendNumber: 2.4,
+    icon: 'tabler:mail',
+    title: 'Email Newsletter',
+    subtitle: 'Mail Campaigns'
+  },
+  {
+    amount: '342',
+    trendNumber: 0.4,
     trend: 'negative',
-    trendNumber: 16.2,
-    subtitle: 'Brazil',
-    imgSrc: '/images/cards/brazil.png'
+    title: 'Referrals',
+    icon: 'tabler:external-link',
+    subtitle: 'Impact Radius Visits'
   },
   {
-    title: '$6.48k',
-    subtitle: 'India',
-    trendNumber: 12.3,
-    imgSrc: '/images/cards/india.png'
+    title: 'ADVT',
+    amount: '2.15k',
+    trendNumber: 9.1,
+    subtitle: 'Google ADVT',
+    icon: 'tabler:discount-2'
   },
   {
-    title: '$5.12k',
-    trend: 'negative',
-    trendNumber: 11.9,
-    subtitle: 'Australia',
-    imgSrc: '/images/cards/australia.png'
-  },
-  {
-    title: '$4.45k',
-    subtitle: 'France',
-    trendNumber: 16.2,
-    imgSrc: '/images/cards/france.png'
-  },
-  {
-    title: '$3.90k',
-    subtitle: 'China',
-    trendNumber: 14.8,
-    imgSrc: '/images/cards/china.png'
+    title: 'Other',
+    amount: '12.5k',
+    trendNumber: 6.2,
+    icon: 'tabler:star',
+    subtitle: 'Many Sources'
   }
 ]
 
-const CardSalesByCountries = () => {
+const CardSourceVisits = () => {
   return (
     <Card>
       <CardHeader
-        title='Sales by Countries'
-        subheader='Monthly Sales Overview'
+        title='Source Visits'
+        subheader='38.4k Visitors'
         subheaderTypographyProps={{ sx: { mt: '0 !important' } }}
         action={
           <OptionsMenu
@@ -78,16 +86,16 @@ const CardSalesByCountries = () => {
         {data.map((item: DataType, index: number) => {
           return (
             <Box
-              key={item.title}
+              key={index}
               sx={{
                 display: 'flex',
-                '& img': { mr: 4 },
                 alignItems: 'center',
                 mb: index !== data.length - 1 ? 4 : undefined
               }}
             >
-              <img width={34} src={item.imgSrc} alt={item.subtitle} />
-
+              <Avatar variant='rounded' sx={{ mr: 4, width: 34, height: 34 }}>
+                <Icon icon={item.icon} />
+              </Avatar>
               <Box
                 sx={{
                   rowGap: 1,
@@ -105,19 +113,16 @@ const CardSalesByCountries = () => {
                     {item.subtitle}
                   </Typography>
                 </Box>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    '& svg': { mr: 1 },
-                    alignItems: 'center',
-                    '& > *': { color: item.trend === 'negative' ? 'error.main' : 'success.main' }
-                  }}
-                >
-                  <Icon
-                    fontSize='1.25rem'
-                    icon={item.trend === 'negative' ? 'tabler:chevron-down' : 'tabler:chevron-up'}
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                  <Typography sx={{ mr: 4, color: 'text.secondary' }}>{item.amount}</Typography>
+                  <CustomChip
+                    rounded
+                    size='small'
+                    skin='light'
+                    sx={{ lineHeight: 1 }}
+                    color={item.trend === 'negative' ? 'error' : 'success'}
+                    label={`${item.trend === 'negative' ? '-' : '+'}${item.trendNumber}%`}
                   />
-                  <Typography sx={{ fontWeight: 500 }}>{`${item.trendNumber}%`}</Typography>
                 </Box>
               </Box>
             </Box>
@@ -128,4 +133,4 @@ const CardSalesByCountries = () => {
   )
 }
 
-export default CardSalesByCountries
+export default CardSourceVisits

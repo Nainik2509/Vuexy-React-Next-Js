@@ -4,9 +4,10 @@ import Card from '@mui/material/Card'
 import Typography from '@mui/material/Typography'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
+import LinearProgress from '@mui/material/LinearProgress'
 
-// ** Icon Imports
-import Icon from 'src/@core/components/icon'
+// ** Types
+import { ThemeColor } from 'src/@core/layouts/types'
 
 // ** Custom Components Imports
 import OptionsMenu from 'src/@core/components/option-menu'
@@ -14,58 +15,62 @@ import OptionsMenu from 'src/@core/components/option-menu'
 interface DataType {
   title: string
   imgSrc: string
+  progress: number
   subtitle: string
-  trendNumber: number
-  trend?: 'positive' | 'negative'
+  progressColor: ThemeColor
 }
 
 const data: DataType[] = [
   {
-    title: '$8.45k',
-    trendNumber: 25.8,
-    subtitle: 'United States',
-    imgSrc: '/images/cards/us.png'
+    progress: 54,
+    title: 'Laravel',
+    subtitle: 'eCommerce',
+    progressColor: 'error',
+    imgSrc: '/images/logos/laravel.png'
   },
   {
-    title: '$7.78k',
-    trend: 'negative',
-    trendNumber: 16.2,
-    subtitle: 'Brazil',
-    imgSrc: '/images/cards/brazil.png'
+    progress: 85,
+    title: 'Figma',
+    subtitle: 'App UI Kit',
+    progressColor: 'primary',
+    imgSrc: '/images/logos/figma.png'
   },
   {
-    title: '$6.48k',
-    subtitle: 'India',
-    trendNumber: 12.3,
-    imgSrc: '/images/cards/india.png'
+    progress: 64,
+    title: 'VusJs',
+    subtitle: 'Calendar App',
+    progressColor: 'success',
+    imgSrc: '/images/logos/vuejs.png'
   },
   {
-    title: '$5.12k',
-    trend: 'negative',
-    trendNumber: 11.9,
-    subtitle: 'Australia',
-    imgSrc: '/images/cards/australia.png'
+    progress: 40,
+    title: 'React',
+    subtitle: 'Dashboard',
+    progressColor: 'info',
+    imgSrc: '/images/logos/react.png'
   },
   {
-    title: '$4.45k',
-    subtitle: 'France',
-    trendNumber: 16.2,
-    imgSrc: '/images/cards/france.png'
+    progress: 17,
+    title: 'Bootstrap',
+    subtitle: 'Website',
+    progressColor: 'primary',
+    imgSrc: '/images/logos/bootstrap.png'
   },
   {
-    title: '$3.90k',
-    subtitle: 'China',
-    trendNumber: 14.8,
-    imgSrc: '/images/cards/china.png'
+    progress: 30,
+    title: 'Sketch',
+    progressColor: 'warning',
+    subtitle: 'Website Design',
+    imgSrc: '/images/logos/sketch.png'
   }
 ]
 
-const CardSalesByCountries = () => {
+const CardActiveProjects = () => {
   return (
     <Card>
       <CardHeader
-        title='Sales by Countries'
-        subheader='Monthly Sales Overview'
+        title='Active Projects'
+        subheader='Average 72% completed'
         subheaderTypographyProps={{ sx: { mt: '0 !important' } }}
         action={
           <OptionsMenu
@@ -78,18 +83,17 @@ const CardSalesByCountries = () => {
         {data.map((item: DataType, index: number) => {
           return (
             <Box
-              key={item.title}
+              key={index}
               sx={{
                 display: 'flex',
-                '& img': { mr: 4 },
                 alignItems: 'center',
                 mb: index !== data.length - 1 ? 4 : undefined
               }}
             >
-              <img width={34} src={item.imgSrc} alt={item.subtitle} />
-
+              <img alt={item.title} src={item.imgSrc} width={32} />
               <Box
                 sx={{
+                  ml: 4,
                   rowGap: 1,
                   columnGap: 4,
                   width: '100%',
@@ -105,19 +109,14 @@ const CardSalesByCountries = () => {
                     {item.subtitle}
                   </Typography>
                 </Box>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    '& svg': { mr: 1 },
-                    alignItems: 'center',
-                    '& > *': { color: item.trend === 'negative' ? 'error.main' : 'success.main' }
-                  }}
-                >
-                  <Icon
-                    fontSize='1.25rem'
-                    icon={item.trend === 'negative' ? 'tabler:chevron-down' : 'tabler:chevron-up'}
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                  <LinearProgress
+                    value={item.progress}
+                    variant='determinate'
+                    color={item.progressColor}
+                    sx={{ mr: 4, height: 8, width: 80 }}
                   />
-                  <Typography sx={{ fontWeight: 500 }}>{`${item.trendNumber}%`}</Typography>
+                  <Typography sx={{ color: 'text.disabled' }}>{`${item.progress}%`}</Typography>
                 </Box>
               </Box>
             </Box>
@@ -128,4 +127,4 @@ const CardSalesByCountries = () => {
   )
 }
 
-export default CardSalesByCountries
+export default CardActiveProjects

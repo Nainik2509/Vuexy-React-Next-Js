@@ -16,75 +16,67 @@ import CustomAvatar from 'src/@core/components/mui/avatar'
 import OptionsMenu from 'src/@core/components/option-menu'
 
 interface DataType {
+  icon: string
   title: string
-  amount: number
-  subtitle: string
-  avatarIcon: string
+  amount: string
+  trendNumber: string
   avatarColor: ThemeColor
-  amountDiff?: 'positive' | 'negative'
+  trend?: 'positive' | 'negative'
 }
 
 const data: DataType[] = [
   {
-    amount: 75,
-    title: 'Wallet',
-    subtitle: 'Starbucks',
-    amountDiff: 'negative',
-    avatarColor: 'primary',
-    avatarIcon: 'tabler:wallet'
+    title: 'Emails',
+    amount: '12,346',
+    icon: 'tabler:mail',
+    trendNumber: '0.3%',
+    avatarColor: 'success'
   },
   {
-    amount: 480,
-    subtitle: 'Add Money',
-    title: 'Bank Transfer',
-    avatarColor: 'success',
-    avatarIcon: 'tabler:browser-check'
-  },
-  {
-    amount: 268,
-    title: 'PayPal',
-    avatarColor: 'error',
-    subtitle: 'Client Payment',
-    avatarIcon: 'tabler:brand-paypal'
-  },
-  {
-    amount: 699,
-    title: 'Master Card',
-    amountDiff: 'negative',
-    avatarColor: 'secondary',
-    subtitle: 'Ordered iPhone 13',
-    avatarIcon: 'tabler:credit-card'
-  },
-  {
-    amount: 98,
-    subtitle: 'Refund',
+    title: 'Opened',
+    amount: '8,734',
+    trendNumber: '2.1%',
     avatarColor: 'info',
-    title: 'Bank Transaction',
-    avatarIcon: 'tabler:currency-dollar'
+    icon: 'tabler:link'
   },
   {
-    amount: 126,
-    title: 'PayPal',
-    avatarColor: 'error',
-    subtitle: 'Client Payment',
-    avatarIcon: 'tabler:brand-paypal'
+    amount: '967',
+    title: 'Clicked',
+    trend: 'negative',
+    trendNumber: '1.4%',
+    icon: 'tabler:click',
+    avatarColor: 'warning'
   },
   {
-    amount: 1290,
-    title: 'Bank Transfer',
-    amountDiff: 'negative',
-    avatarColor: 'success',
-    subtitle: 'Pay Office Rent',
-    avatarIcon: 'tabler:browser-check'
+    amount: '345',
+    title: 'Subscribe',
+    trendNumber: '8.5%',
+    icon: 'tabler:users',
+    avatarColor: 'primary'
+  },
+  {
+    amount: '10',
+    trend: 'negative',
+    title: 'Complaints',
+    trendNumber: '1.5%',
+    avatarColor: 'secondary',
+    icon: 'tabler:alert-triangle'
+  },
+  {
+    amount: '86',
+    icon: 'tabler:ban',
+    trendNumber: '0.8%',
+    title: 'Unsubscribe',
+    avatarColor: 'error'
   }
 ]
 
-const CardTransactions = () => {
+const CardMonthlyCampaignState = () => {
   return (
     <Card>
       <CardHeader
-        title='Transactions'
-        subheader='Total 58 transaction done in month'
+        title='Monthly Campaign State'
+        subheader='8.52k Social Visitors'
         subheaderTypographyProps={{ sx: { mt: '0 !important' } }}
         action={
           <OptionsMenu
@@ -101,7 +93,7 @@ const CardTransactions = () => {
               sx={{
                 display: 'flex',
                 alignItems: 'center',
-                mb: index !== data.length - 1 ? 3.75 : undefined
+                mb: index !== data.length - 1 ? 7 : undefined
               }}
             >
               <CustomAvatar
@@ -110,7 +102,7 @@ const CardTransactions = () => {
                 color={item.avatarColor}
                 sx={{ mr: 4, width: 34, height: 34 }}
               >
-                <Icon icon={item.avatarIcon} />
+                <Icon icon={item.icon} />
               </CustomAvatar>
               <Box
                 sx={{
@@ -123,17 +115,13 @@ const CardTransactions = () => {
                   justifyContent: 'space-between'
                 }}
               >
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                  <Typography sx={{ fontWeight: 500 }}>{item.title}</Typography>
-                  <Typography variant='body2' sx={{ color: 'text.disabled' }}>
-                    {item.subtitle}
+                <Typography sx={{ fontWeight: 500 }}>{item.title}</Typography>
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                  <Typography sx={{ mr: 4, fontWeight: 500, color: 'text.secondary' }}>{item.amount}</Typography>
+                  <Typography sx={{ color: `${item.trend === 'negative' ? 'error' : 'success'}.main` }}>
+                    {item.trendNumber}
                   </Typography>
                 </Box>
-                <Typography
-                  sx={{ fontWeight: 500, color: item.amountDiff === 'negative' ? 'error.main' : 'success.main' }}
-                >
-                  {`${item.amountDiff === 'negative' ? '-' : '+'}$${item.amount}`}
-                </Typography>
               </Box>
             </Box>
           )
@@ -143,4 +131,4 @@ const CardTransactions = () => {
   )
 }
 
-export default CardTransactions
+export default CardMonthlyCampaignState

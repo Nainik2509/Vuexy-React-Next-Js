@@ -22,7 +22,7 @@ const UseBgColor = () => {
     },
     primaryLight: {
       color: theme.palette.primary.main,
-      backgroundColor: hexToRGBA(theme.palette.primary.main, 0.12)
+      backgroundColor: hexToRGBA(theme.palette.primary.main, 0.16)
     },
     secondaryFilled: {
       color: theme.palette.secondary.contrastText,
@@ -30,7 +30,7 @@ const UseBgColor = () => {
     },
     secondaryLight: {
       color: theme.palette.secondary.main,
-      backgroundColor: hexToRGBA(theme.palette.secondary.main, 0.12)
+      backgroundColor: hexToRGBA(theme.palette.secondary.main, 0.16)
     },
     successFilled: {
       color: theme.palette.success.contrastText,
@@ -38,7 +38,7 @@ const UseBgColor = () => {
     },
     successLight: {
       color: theme.palette.success.main,
-      backgroundColor: hexToRGBA(theme.palette.success.main, 0.12)
+      backgroundColor: hexToRGBA(theme.palette.success.main, 0.16)
     },
     errorFilled: {
       color: theme.palette.error.contrastText,
@@ -46,7 +46,7 @@ const UseBgColor = () => {
     },
     errorLight: {
       color: theme.palette.error.main,
-      backgroundColor: hexToRGBA(theme.palette.error.main, 0.12)
+      backgroundColor: hexToRGBA(theme.palette.error.main, 0.16)
     },
     warningFilled: {
       color: theme.palette.warning.contrastText,
@@ -54,7 +54,7 @@ const UseBgColor = () => {
     },
     warningLight: {
       color: theme.palette.warning.main,
-      backgroundColor: hexToRGBA(theme.palette.warning.main, 0.12)
+      backgroundColor: hexToRGBA(theme.palette.warning.main, 0.16)
     },
     infoFilled: {
       color: theme.palette.info.contrastText,
@@ -62,7 +62,7 @@ const UseBgColor = () => {
     },
     infoLight: {
       color: theme.palette.info.main,
-      backgroundColor: hexToRGBA(theme.palette.info.main, 0.12)
+      backgroundColor: hexToRGBA(theme.palette.info.main, 0.16)
     }
   }
 }

@@ -5,67 +5,61 @@ import Typography from '@mui/material/Typography'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
-// ** Icon Imports
-import Icon from 'src/@core/components/icon'
-
 // ** Custom Components Imports
 import OptionsMenu from 'src/@core/components/option-menu'
 
 interface DataType {
   title: string
   imgSrc: string
+  amount: string
   subtitle: string
-  trendNumber: number
-  trend?: 'positive' | 'negative'
 }
 
 const data: DataType[] = [
   {
-    title: '$8.45k',
-    trendNumber: 25.8,
-    subtitle: 'United States',
-    imgSrc: '/images/cards/us.png'
+    amount: '$999.29',
+    title: 'Apple iPhone 13',
+    subtitle: 'Item: #FXZ-4567',
+    imgSrc: '/images/cards/apple-iPhone-13.png'
   },
   {
-    title: '$7.78k',
-    trend: 'negative',
-    trendNumber: 16.2,
-    subtitle: 'Brazil',
-    imgSrc: '/images/cards/brazil.png'
+    amount: '$72.40',
+    title: 'Nike Air Jordan',
+    subtitle: 'Item: #FXZ-3456',
+    imgSrc: '/images/cards/nike-air-jordan.png'
   },
   {
-    title: '$6.48k',
-    subtitle: 'India',
-    trendNumber: 12.3,
-    imgSrc: '/images/cards/india.png'
+    amount: '$99.90',
+    title: 'Beats Studio 2',
+    subtitle: 'Item: #FXZ-9485',
+    imgSrc: '/images/cards/beats-studio-2.png'
   },
   {
-    title: '$5.12k',
-    trend: 'negative',
-    trendNumber: 11.9,
-    subtitle: 'Australia',
-    imgSrc: '/images/cards/australia.png'
+    amount: '$249.99',
+    subtitle: 'Item: #FXZ-2345',
+    title: 'Apple Watch Series 7',
+    imgSrc: '/images/cards/apple-watch-series-7.png'
   },
   {
-    title: '$4.45k',
-    subtitle: 'France',
-    trendNumber: 16.2,
-    imgSrc: '/images/cards/france.png'
+    amount: '$79.40',
+    title: 'Amazon Echo Dot',
+    subtitle: 'Item: #FXZ-8959',
+    imgSrc: '/images/cards/amazon-echo-dot.png'
   },
   {
-    title: '$3.90k',
-    subtitle: 'China',
-    trendNumber: 14.8,
-    imgSrc: '/images/cards/china.png'
+    amount: '$129.48',
+    subtitle: 'Item: #FXZ-7892',
+    title: 'PlayStation Console',
+    imgSrc: '/images/cards/play-station-console.png'
   }
 ]
 
-const CardSalesByCountries = () => {
+const CardPopularProducts = () => {
   return (
     <Card>
       <CardHeader
-        title='Sales by Countries'
-        subheader='Monthly Sales Overview'
+        title='Popular Products'
+        subheader='Total 10.4k Visitors'
         subheaderTypographyProps={{ sx: { mt: '0 !important' } }}
         action={
           <OptionsMenu
@@ -83,10 +77,10 @@ const CardSalesByCountries = () => {
                 display: 'flex',
                 '& img': { mr: 4 },
                 alignItems: 'center',
-                mb: index !== data.length - 1 ? 4 : undefined
+                mb: index !== data.length - 1 ? 6.25 : undefined
               }}
             >
-              <img width={34} src={item.imgSrc} alt={item.subtitle} />
+              <img width={46} src={item.imgSrc} alt={item.title} />
 
               <Box
                 sx={{
@@ -105,20 +99,7 @@ const CardSalesByCountries = () => {
                     {item.subtitle}
                   </Typography>
                 </Box>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    '& svg': { mr: 1 },
-                    alignItems: 'center',
-                    '& > *': { color: item.trend === 'negative' ? 'error.main' : 'success.main' }
-                  }}
-                >
-                  <Icon
-                    fontSize='1.25rem'
-                    icon={item.trend === 'negative' ? 'tabler:chevron-down' : 'tabler:chevron-up'}
-                  />
-                  <Typography sx={{ fontWeight: 500 }}>{`${item.trendNumber}%`}</Typography>
-                </Box>
+                <Typography sx={{ color: 'text.secondary' }}>{item.amount}</Typography>
               </Box>
             </Box>
           )
@@ -128,4 +109,4 @@ const CardSalesByCountries = () => {
   )
 }
 
-export default CardSalesByCountries
+export default CardPopularProducts
