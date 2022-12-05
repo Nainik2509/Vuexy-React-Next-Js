@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /logo.svg
-heroText: Master Admin Dashboard Template
+heroText: Master  - MUI React Next.Js Admin Template
 tagline: Best selling, Production Ready, Carefully Crafted, Extensive Admin Template
 actionText: Get Started →
 actionLink: /guide/
