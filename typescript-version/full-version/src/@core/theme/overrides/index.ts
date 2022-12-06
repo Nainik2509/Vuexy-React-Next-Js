@@ -14,6 +14,7 @@ import MuiTabs from './tabs'
 import MuiInput from './input'
 import MuiPaper from './paper'
 import MuiTable from './table'
+import MuiRadio from './radio'
 import MuiAlerts from './alerts'
 import MuiButton from './button'
 import MuiDialog from './dialog'
@@ -43,6 +44,7 @@ const Overrides = (theme: Theme, settings: Settings) => {
   const chip = MuiChip(theme)
   const list = MuiList(theme)
   const tabs = MuiTabs(theme)
+  const radio = MuiRadio(theme)
   const input = MuiInput(theme)
   const tables = MuiTable(theme)
   const alerts = MuiAlerts(theme)
@@ -71,6 +73,7 @@ const Overrides = (theme: Theme, settings: Settings) => {
     menu,
     tabs,
     cards,
+    radio,
     input,
     alerts,
     button,
