@@ -42,48 +42,36 @@ const Radio = (theme: Theme) => {
                 theme.palette.mode === 'light' ? theme.palette.customColors.main : '12, 16, 27'
               }, 0.16))`
             },
-            '&.Mui-disabled': {
-              '& svg': {
-                opacity: 0.4,
-                filter: 'none',
-                '& path:first-of-type': {
-                  fill: theme.palette.text.disabled
-                },
-                '& path:last-of-type': {
-                  fill: theme.palette.common.white,
-                  stroke: theme.palette.common.white,
-                  opacity: theme.palette.mode === 'dark' ? 0.5 : 0.9
-                }
+            '&.Mui-disabled svg': {
+              opacity: 0.4,
+              filter: 'none',
+              '& path:first-of-type': {
+                fill: theme.palette.text.disabled
+              },
+              '& path:last-of-type': {
+                fill: theme.palette.common.white,
+                stroke: theme.palette.common.white,
+                opacity: theme.palette.mode === 'dark' ? 0.5 : 0.9
               }
             }
           },
           '&.Mui-disabled:not(.Mui-checked) svg': {
             opacity: 0.5
           },
-          '&.Mui-checked.MuiRadio-colorSecondary svg': {
-            '& path:first-of-type': {
-              fill: `${theme.palette.secondary.main}`
-            }
+          '&.Mui-checked.MuiRadio-colorSecondary svg path:first-of-type': {
+            fill: theme.palette.secondary.main
           },
-          '&.Mui-checked.MuiRadio-colorSuccess svg': {
-            '& path:first-of-type': {
-              fill: `${theme.palette.success.main}`
-            }
+          '&.Mui-checked.MuiRadio-colorSuccess svg path:first-of-type': {
+            fill: theme.palette.success.main
           },
-          '&.Mui-checked.MuiRadio-colorError svg': {
-            '& path:first-of-type': {
-              fill: `${theme.palette.error.main}`
-            }
+          '&.Mui-checked.MuiRadio-colorError svg path:first-of-type': {
+            fill: theme.palette.error.main
           },
-          '&.Mui-checked.MuiRadio-colorWarning svg': {
-            '& path:first-of-type': {
-              fill: `${theme.palette.warning.main}`
-            }
+          '&.Mui-checked.MuiRadio-colorWarning svg path:first-of-type': {
+            fill: theme.palette.warning.main
           },
-          '&.Mui-checked.MuiRadio-colorInfo svg': {
-            '& path:first-of-type': {
-              fill: `${theme.palette.info.main}`
-            }
+          '&.Mui-checked.MuiRadio-colorInfo svg path:first-of-type': {
+            fill: theme.palette.info.main
           }
         }
       }
