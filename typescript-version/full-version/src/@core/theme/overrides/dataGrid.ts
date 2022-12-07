@@ -13,7 +13,7 @@ const DataGrid = (theme: Theme) => {
           }
         },
         toolbarContainer: {
-          paddingRight: `${theme.spacing(5)} !important`,
+          paddingRight: `${theme.spacing(6)} !important`,
           paddingLeft: `${theme.spacing(3.25)} !important`
         },
         columnHeaders: {
@@ -24,11 +24,11 @@ const DataGrid = (theme: Theme) => {
             paddingLeft: theme.spacing(4),
             paddingRight: theme.spacing(4),
             '&:first-of-type': {
-              paddingLeft: theme.spacing(5)
+              paddingLeft: theme.spacing(6)
             }
           },
           '&:last-of-type': {
-            paddingRight: theme.spacing(5)
+            paddingRight: theme.spacing(6)
           }
         },
         columnHeaderCheckbox: {
@@ -41,7 +41,7 @@ const DataGrid = (theme: Theme) => {
         columnHeaderTitle: {
           fontWeight: 600,
           fontSize: '0.75rem',
-          letterSpacing: '0.17px',
+          letterSpacing: '1px',
           textTransform: 'uppercase'
         },
         columnSeparator: {
@@ -60,11 +60,11 @@ const DataGrid = (theme: Theme) => {
             paddingLeft: theme.spacing(4),
             paddingRight: theme.spacing(4),
             '&:first-of-type': {
-              paddingLeft: theme.spacing(5)
+              paddingLeft: theme.spacing(6)
             }
           },
           '&:last-of-type': {
-            paddingRight: theme.spacing(5)
+            paddingRight: theme.spacing(6)
           },
           '&:focus, &:focus-within': {
             outline: 'none'

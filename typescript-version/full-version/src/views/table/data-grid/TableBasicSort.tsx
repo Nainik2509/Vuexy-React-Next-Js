@@ -136,6 +136,7 @@ const TableSort = () => {
 
         return (
           <CustomChip
+            rounded
             size='small'
             skin='light'
             color={status.color}

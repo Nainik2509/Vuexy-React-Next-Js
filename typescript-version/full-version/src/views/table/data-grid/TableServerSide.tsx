@@ -129,6 +129,7 @@ const columns: GridColumns = [
 
       return (
         <CustomChip
+          rounded
           size='small'
           skin='light'
           color={status.color}
