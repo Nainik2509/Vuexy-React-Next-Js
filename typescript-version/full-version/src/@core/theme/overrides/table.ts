@@ -18,7 +18,7 @@ const Table = (theme: Theme) => {
           '& .MuiTableCell-head': {
             fontSize: '0.75rem',
             fontWeight: 600,
-            letterSpacing: '0.13px'
+            letterSpacing: '1px'
           }
         }
       }
@@ -42,10 +42,10 @@ const Table = (theme: Theme) => {
         root: {
           '& .MuiTableCell-head:not(.MuiTableCell-paddingCheckbox):first-child, & .MuiTableCell-root:not(.MuiTableCell-paddingCheckbox):first-child ':
             {
-              paddingLeft: theme.spacing(5)
+              paddingLeft: theme.spacing(6)
             },
           '& .MuiTableCell-head:last-child, & .MuiTableCell-root:last-child': {
-            paddingRight: theme.spacing(5)
+            paddingRight: theme.spacing(6)
           }
         }
       }
@@ -56,7 +56,7 @@ const Table = (theme: Theme) => {
           borderBottom: `1px solid ${theme.palette.divider}`
         },
         paddingCheckbox: {
-          paddingLeft: theme.spacing(2)
+          paddingLeft: theme.spacing(3.25)
         },
         stickyHeader: {
           backgroundColor: theme.palette.customColors.tableHeaderBg
