@@ -1,49 +1,56 @@
 // ** MUI Imports
-import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 
-// ** Custom Components Imports
-import CustomAvatar from 'src/@core/components/mui/avatar'
-import OptionsMenu from 'src/@core/components/option-menu'
-
-// ** Types Imports
+// ** Type Import
 import { CardStatsVerticalProps } from 'src/@core/components/card-statistics/types'
+
+// ** Custom Component Import
+import Icon from 'src/@core/components/icon'
+import CustomChip from 'src/@core/components/mui/chip'
+import CustomAvatar from 'src/@core/components/mui/avatar'
 
 const CardStatsVertical = (props: CardStatsVerticalProps) => {
   // ** Props
-  const { title, subtitle, icon, stats, trendNumber, optionsMenuProps, color = 'primary', trend = 'positive' } = props
+  const {
+    sx,
+    stats,
+    title,
+    subtitle,
+    trendDiff,
+    avatarIcon,
+    iconSize = 24,
+    avatarSize = 42,
+    trend = 'positive',
+    avatarColor = 'primary'
+  } = props
 
   return (
-    <Card>
-      <CardContent>
-        <Box sx={{ display: 'flex', mb: 5.5, alignItems: 'flex-start', justifyContent: 'space-between' }}>
-          <CustomAvatar color={color} sx={{ width: 38, height: 38, boxShadow: 3, mr: 4 }}>
-            {icon}
-          </CustomAvatar>
-          {optionsMenuProps ? (
-            <OptionsMenu {...optionsMenuProps} />
-          ) : (
-            <OptionsMenu
-              options={['Refresh', 'Share', 'Update']}
-              iconButtonProps={{ size: 'small', className: 'card-more-options', sx: { color: 'text.secondary' } }}
-            />
-          )}
-        </Box>
-        <Typography sx={{ fontWeight: 600, fontSize: '0.875rem' }}>{title}</Typography>
-        <Box sx={{ mt: 1.5, display: 'flex', flexWrap: 'wrap', mb: 1.5, alignItems: 'flex-start' }}>
-          <Typography variant='h5' sx={{ mr: 1, fontWeight: 600 }}>
-            {stats}
-          </Typography>
-          <Typography
-            component='sup'
-            sx={{ fontSize: '0.75rem', color: trend === 'positive' ? 'success.main' : 'error.main' }}
-          >
-            {trendNumber}
-          </Typography>
-        </Box>
-        <Typography variant='caption'>{subtitle}</Typography>
+    <Card sx={{ ...sx }}>
+      <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+        <CustomAvatar
+          skin='light'
+          variant='rounded'
+          color={avatarColor}
+          sx={{ mb: 3.5, width: avatarSize, height: avatarSize }}
+        >
+          <Icon icon={avatarIcon} fontSize={iconSize} />
+        </CustomAvatar>
+        <Typography variant='h6' sx={{ mb: 1 }}>
+          {title}
+        </Typography>
+        <Typography variant='body2' sx={{ mb: 1, color: 'text.disabled' }}>
+          {subtitle}
+        </Typography>
+        <Typography sx={{ mb: 3.5, color: 'text.secondary' }}>{stats}</Typography>
+        <CustomChip
+          rounded
+          size='small'
+          skin='light'
+          color={trend === 'negative' ? 'error' : 'success'}
+          label={`${trend === 'negative' ? '-' : '+'}${trendDiff}`}
+        />
       </CardContent>
     </Card>
   )

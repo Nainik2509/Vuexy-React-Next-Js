@@ -312,7 +312,7 @@ const UserList = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>) =
             {apiData.statsHorizontal.map((item: CardStatsHorizontalProps, index: number) => {
               return (
                 <Grid item xs={12} md={3} sm={6} key={index}>
-                  <CardStatisticsHorizontal {...item} icon={<Icon icon={item.icon as string} />} />
+                  <CardStatisticsHorizontal {...item} />
                 </Grid>
               )
             })}

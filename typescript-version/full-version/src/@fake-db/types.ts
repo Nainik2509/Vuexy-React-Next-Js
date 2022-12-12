@@ -1,9 +1,10 @@
 // Type Imports
 import { ThemeColor } from 'src/@core/layouts/types'
 import {
-  CardStatsCharacterProps,
+  CardStatsSquareProps,
+  CardStatsVerticalProps,
   CardStatsHorizontalProps,
-  CardStatsVerticalProps
+  CardStatsWithAreaChartProps
 } from 'src/@core/components/card-statistics/types'
 
 // Template Search
@@ -40,9 +41,10 @@ export type FaqType = {
 // Card Statistics Page
 //-------------------------------
 export type CardStatsType = {
+  statsSquare: CardStatsSquareProps[]
   statsVertical: CardStatsVerticalProps[]
-  statsCharacter: CardStatsCharacterProps[]
   statsHorizontal: CardStatsHorizontalProps[]
+  statsWithAreaChart: CardStatsWithAreaChartProps[]
 }
 
 // User Profile pages

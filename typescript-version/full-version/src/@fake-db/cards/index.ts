@@ -5,121 +5,94 @@ import mock from 'src/@fake-db/mock'
 import { CardStatsType } from 'src/@fake-db/types'
 
 const cardStatsData: CardStatsType = {
+  statsSquare: [
+    {
+      stats: '97.8k',
+      title: 'Orders',
+      avatarColor: 'error',
+      icon: 'tabler:briefcase'
+    },
+    {
+      stats: '3.4k',
+      title: 'Review',
+      avatarColor: 'success',
+      icon: 'tabler:message-dots'
+    }
+  ],
   statsHorizontal: [
     {
-      stats: '2,856',
-      trend: 'negative',
-      trendNumber: '10.2%',
-      title: 'New Customers',
-      icon: 'mdi:account-outline'
+      stats: '86%',
+      icon: 'tabler:cpu',
+      title: 'CPU Usage'
     },
     {
-      stats: '28.6K',
-      color: 'success',
-      trendNumber: '25.8%',
-      title: 'Total Revenue',
-      icon: 'mdi:currency-usd'
+      stats: '1.24gb',
+      icon: 'tabler:server',
+      title: 'Memory Usage',
+      avatarColor: 'success'
     },
     {
-      color: 'info',
-      stats: '16.6K',
-      trend: 'negative',
-      trendNumber: '12.1%',
-      title: 'New Transactions',
-      icon: 'mdi:trending-up'
+      stats: '0.2%',
+      avatarColor: 'error',
+      title: 'Downtime Ratio',
+      icon: 'tabler:chart-pie-2'
     },
     {
-      stats: '2,856',
-      color: 'warning',
-      icon: 'mdi:poll',
-      trendNumber: '54.6%',
-      title: 'Total Profit'
+      stats: '128',
+      title: 'Issues Found',
+      avatarColor: 'warning',
+      icon: 'tabler:alert-octagon'
     }
   ],
   statsVertical: [
     {
-      stats: '862',
+      stats: '1.28k',
       trend: 'negative',
-      trendNumber: '-18%',
-      title: 'New Project',
-      subtitle: 'Yearly Project',
-      icon: 'mdi:briefcase-variant-outline'
-    },
-    {
-      icon: 'mdi:poll',
-      stats: '$25.6k',
-      color: 'secondary',
-      trendNumber: '+42%',
+      trendDiff: '12.2%',
+      avatarColor: 'error',
       title: 'Total Profit',
-      subtitle: 'Weekly Profit'
+      subtitle: 'Last week',
+      avatarIcon: 'tabler:credit-card'
     },
     {
-      stats: '$95.2k',
-      title: 'Revenue',
-      color: 'success',
-      trendNumber: '+12%',
-      icon: 'mdi:currency-usd',
-      subtitle: 'Revenue Increase'
-    },
-    {
-      color: 'error',
-      stats: '44.10k',
-      trend: 'negative',
-      title: 'Logistics',
-      trendNumber: '-25%',
-      icon: 'mdi:truck-outline',
-      subtitle: 'Regional Logistics'
-    },
-    {
-      stats: '268',
-      title: 'Reports',
-      color: 'warning',
-      trend: 'negative',
-      trendNumber: '-8%',
-      icon: 'mdi:check',
-      subtitle: 'System Bugs'
-    },
-    {
-      stats: '1.2k',
-      color: 'info',
-      trendNumber: '+12%',
-      title: 'Transactions',
-      icon: 'mdi:trending-up',
-      subtitle: 'Daily Transactions'
+      stats: '24.67k',
+      trendDiff: '25.7%',
+      title: 'Total Sales',
+      subtitle: 'Last week',
+      avatarColor: 'success',
+      avatarIcon: 'tabler:credit-card'
     }
   ],
-  statsCharacter: [
+  statsWithAreaChart: [
     {
-      stats: '13.7k',
-      title: 'Ratings',
-      trendNumber: '+38%',
-      src: '/images/cards/pose_f9.png',
-      chipText: `Year of ${new Date().getFullYear()}`
+      stats: '92.6k',
+      avatarIcon: 'tabler:users',
+      title: 'Subscribers Gained',
+      chartSeries: [{ data: [40, 4, 58, 12, 35, 10, 84] }]
     },
     {
-      stats: '24.5k',
-      trend: 'negative',
-      title: 'Sessions',
-      trendNumber: '-22%',
-      chipText: 'Last Week',
-      chipColor: 'secondary',
-      src: '/images/cards/pose_m18.png'
+      stats: '36.5%',
+      chartColor: 'error',
+      avatarColor: 'error',
+      title: 'Quarterly Sales',
+      avatarIcon: 'tabler:shopping-cart',
+      chartSeries: [{ data: [44, 75, 24, 57, 6, 84] }]
     },
     {
-      stats: '2,856',
-      chipColor: 'info',
-      title: 'Customers',
-      trendNumber: '+59%',
-      chipText: 'Last Quarter',
-      src: '/images/cards/pose_m1.png'
+      stats: '97.5k',
+      chartColor: 'warning',
+      avatarColor: 'warning',
+      title: 'Orders Received',
+      avatarIcon: 'tabler:package',
+      chartSeries: [{ data: [30, 84, 11, 76, 0, 49, 9] }]
     },
     {
-      stats: '42.5k',
-      trendNumber: '+26%',
-      chipColor: 'warning',
-      title: 'Total Orders',
-      chipText: 'Last Month',
-      src: '/images/cards/pose_m35.png'
+      stats: '91.8k',
+      chartColor: 'success',
+      avatarColor: 'success',
+      title: 'Revenue Generated',
+      avatarIcon: 'tabler:credit-card',
+      chartSeries: [{ data: [6, 35, 25, 61, 32, 84, 70] }]
     }
   ]
 }

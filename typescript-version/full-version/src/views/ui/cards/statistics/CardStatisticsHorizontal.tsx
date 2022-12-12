@@ -1,35 +1,26 @@
-// ** MUI Import
+// ** MUI Imports
 import Grid from '@mui/material/Grid'
 
-// ** Icon Imports
-import Icon from 'src/@core/components/icon'
-
-// ** Types Imports
+// ** Type Imports
 import { CardStatsHorizontalProps } from 'src/@core/components/card-statistics/types'
 
-// ** Custom Components Imports
-import CardStatisticsHorizontal from 'src/@core/components/card-statistics/card-stats-horizontal'
+// ** Custom Component Import
+import CardStatsHorizontal from 'src/@core/components/card-statistics/card-stats-horizontal'
 
-interface Props {
-  data: CardStatsHorizontalProps[]
+const CardStatisticsHorizontal = ({ data }: { data: CardStatsHorizontalProps[] }) => {
+  const renderData = data
+    ? data.map((item: CardStatsHorizontalProps, index: number) => (
+        <Grid item xs={12} sm={6} md={3} key={index}>
+          <CardStatsHorizontal {...item} />
+        </Grid>
+      ))
+    : null
+
+  return (
+    <Grid container spacing={6}>
+      {renderData}
+    </Grid>
+  )
 }
 
-const CardStatsHorizontal = ({ data }: Props) => {
-  if (data) {
-    return (
-      <Grid container spacing={6}>
-        {data.map((item: CardStatsHorizontalProps, index: number) => {
-          return (
-            <Grid item xs={12} md={3} sm={6} key={index}>
-              <CardStatisticsHorizontal {...item} icon={<Icon icon={item.icon as string} />} />
-            </Grid>
-          )
-        })}
-      </Grid>
-    )
-  } else {
-    return null
-  }
-}
-
-export default CardStatsHorizontal
+export default CardStatisticsHorizontal

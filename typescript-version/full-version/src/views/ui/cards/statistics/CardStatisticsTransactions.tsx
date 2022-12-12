@@ -14,7 +14,6 @@ import { ThemeColor } from 'src/@core/layouts/types'
 
 // ** Custom Components Imports
 import CustomAvatar from 'src/@core/components/mui/avatar'
-import OptionsMenu from 'src/@core/components/option-menu'
 
 interface DataType {
   icon: string
@@ -25,28 +24,28 @@ interface DataType {
 
 const data: DataType[] = [
   {
-    stats: '245k',
+    stats: '230k',
     title: 'Sales',
     color: 'primary',
-    icon: 'mdi:trending-up'
+    icon: 'tabler:chart-pie-2'
   },
   {
-    stats: '12.5k',
-    title: 'Customers',
-    color: 'success',
-    icon: 'mdi:account-outline'
-  },
-  {
-    stats: '1.54k',
-    color: 'warning',
-    title: 'Products',
-    icon: 'mdi:label-variant-outline'
-  },
-  {
-    stats: '$88k',
     color: 'info',
+    stats: '8.549k',
+    title: 'Customers',
+    icon: 'tabler:users'
+  },
+  {
+    color: 'error',
+    stats: '1.423k',
+    title: 'Products',
+    icon: 'tabler:shopping-cart'
+  },
+  {
+    stats: '$9745',
+    color: 'success',
     title: 'Revenue',
-    icon: 'mdi:currency-usd'
+    icon: 'tabler:currency-dollar'
   }
 ]
 
@@ -54,16 +53,12 @@ const renderStats = () => {
   return data.map((sale: DataType, index: number) => (
     <Grid item xs={6} md={3} key={index}>
       <Box key={index} sx={{ display: 'flex', alignItems: 'center' }}>
-        <CustomAvatar variant='rounded' color={sale.color} sx={{ boxShadow: 3, mr: 4, width: 44, height: 44 }}>
-          <Icon icon={sale.icon} fontSize='1.75rem' />
+        <CustomAvatar skin='light' color={sale.color} sx={{ mr: 4, width: 42, height: 42 }}>
+          <Icon icon={sale.icon} />
         </CustomAvatar>
         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-          <Typography variant='caption' sx={{ mb: 0.5 }}>
-            {sale.title}
-          </Typography>
-          <Typography variant='h6' sx={{ fontWeight: 600, lineHeight: 1.05 }}>
-            {sale.stats}
-          </Typography>
+          <Typography variant='h6'>{sale.stats}</Typography>
+          <Typography variant='body2'>{sale.title}</Typography>
         </Box>
       </Box>
     </Grid>
@@ -72,27 +67,22 @@ const renderStats = () => {
 
 const CardStatisticsTransactions = () => {
   return (
-    <Grid container spacing={6}>
-      <Grid item xs={12} lg={8}>
-        <Card>
-          <CardHeader
-            sx={{ pt: 4 }}
-            title='Transactions'
-            action={
-              <OptionsMenu
-                options={['Refresh', 'Share', 'Update']}
-                iconButtonProps={{ size: 'small', className: 'card-more-options', sx: { color: 'text.secondary' } }}
-              />
-            }
-          />
-          <CardContent>
-            <Grid container spacing={6}>
-              {renderStats()}
-            </Grid>
-          </CardContent>
-        </Card>
-      </Grid>
-    </Grid>
+    <Card>
+      <CardHeader
+        title='Transactions'
+        sx={{ '& .MuiCardHeader-action': { m: 0, alignSelf: 'center' } }}
+        action={
+          <Typography variant='body2' sx={{ color: 'text.disabled' }}>
+            Updated 1 month ago
+          </Typography>
+        }
+      />
+      <CardContent sx={{ pt: theme => `${theme.spacing(0.5)} !important` }}>
+        <Grid container spacing={6}>
+          {renderStats()}
+        </Grid>
+      </CardContent>
+    </Card>
   )
 }
 

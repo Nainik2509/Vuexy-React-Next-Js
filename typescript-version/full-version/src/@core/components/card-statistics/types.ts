@@ -1,36 +1,49 @@
-// ** React Imports
-import { ReactNode } from 'react'
-
 // ** Types
+import { ApexOptions } from 'apexcharts'
+import { SxProps, Theme } from '@mui/material'
 import { ThemeColor } from 'src/@core/layouts/types'
-import { OptionsMenuType } from 'src/@core/components/option-menu/types'
+
+export type CardStatsSquareProps = {
+  icon: string
+  stats: string
+  title: string
+  sx?: SxProps<Theme>
+  avatarSize?: number
+  avatarColor?: ThemeColor
+  iconSize?: number | string
+}
 
 export type CardStatsHorizontalProps = {
-  title: string
+  icon: string
   stats: string
-  icon: ReactNode
-  color?: ThemeColor
-  trendNumber: string
-  trend?: 'positive' | 'negative'
+  title: string
+  sx?: SxProps<Theme>
+  avatarSize?: number
+  avatarColor?: ThemeColor
+  iconSize?: number | string
+}
+
+export type CardStatsWithAreaChartProps = {
+  stats: string
+  title: string
+  avatarIcon: string
+  sx?: SxProps<Theme>
+  avatarSize?: number
+  chartColor?: ThemeColor
+  avatarColor?: ThemeColor
+  avatarIconSize?: number | string
+  chartSeries: ApexOptions['series']
 }
 
 export type CardStatsVerticalProps = {
-  title: string
   stats: string
-  icon: ReactNode
+  title: string
   subtitle: string
-  color?: ThemeColor
-  trendNumber: string
-  trend?: 'positive' | 'negative'
-  optionsMenuProps?: OptionsMenuType
-}
-
-export type CardStatsCharacterProps = {
-  src: string
-  title: string
-  stats: string
-  chipText: string
-  trendNumber: string
-  chipColor?: ThemeColor
+  trendDiff: string
+  avatarIcon: string
+  sx?: SxProps<Theme>
+  avatarSize?: number
+  avatarColor?: ThemeColor
+  iconSize?: number | string
   trend?: 'positive' | 'negative'
 }
