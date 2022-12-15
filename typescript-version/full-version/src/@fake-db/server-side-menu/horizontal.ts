@@ -149,6 +149,10 @@ const navigation: HorizontalNavItemsType = [
             path: '/ui/cards/statistics'
           },
           {
+            title: 'Widgets',
+            path: '/ui/cards/widgets'
+          },
+          {
             title: 'Actions',
             path: '/ui/cards/actions'
           }
