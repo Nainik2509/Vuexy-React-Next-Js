@@ -10,7 +10,7 @@ const navigation: HorizontalNavItemsType = [
     title: 'Dashboards',
     children: [
       {
-        icon: 'mdi:chart-timeline-variant',
+        icon: 'tabler:chart-pie-2',
         title: 'Analytics',
         path: '/dashboards/analytics'
       },

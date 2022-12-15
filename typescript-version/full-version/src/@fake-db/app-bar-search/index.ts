@@ -8,7 +8,7 @@ const searchData: AppBarSearchType[] = [
   {
     id: 1,
     url: '/dashboards/analytics',
-    icon: 'mdi:chart-timeline-variant',
+    icon: 'tabler:chart-pie-2',
     title: 'Analytics Dashboard',
     category: 'dashboards'
   },
