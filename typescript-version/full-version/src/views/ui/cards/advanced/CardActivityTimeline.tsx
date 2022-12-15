@@ -53,7 +53,7 @@ const CardActivityTimeline = () => {
         }
         action={
           <OptionsMenu
-            options={['Last 28 Days', 'Last Month', 'Last Year']}
+            options={['Share timeline', 'Suggest edits', 'Report bug']}
             iconButtonProps={{ size: 'small', sx: { color: 'text.disabled' } }}
           />
         }

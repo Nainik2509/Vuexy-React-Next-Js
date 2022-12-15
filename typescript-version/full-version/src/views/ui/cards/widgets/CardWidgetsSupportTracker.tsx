@@ -1,7 +1,7 @@
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
-import Grid, { GridProps } from '@mui/material/Grid'
+import Grid from '@mui/material/Grid'
 import { useTheme } from '@mui/material/styles'
 import CardHeader from '@mui/material/CardHeader'
 import Typography from '@mui/material/Typography'
@@ -27,26 +27,22 @@ interface DataType {
   subtitle: string
   avatarIcon: string
   avatarColor?: ThemeColor
-  smallScreenGrid: GridProps['xs']
 }
 
 const data: DataType[] = [
   {
     subtitle: '142',
-    smallScreenGrid: 6,
     title: 'New Tickets',
     avatarIcon: 'tabler:ticket'
   },
   {
     subtitle: '28',
-    smallScreenGrid: 6,
     avatarColor: 'info',
     title: 'Open Tickets',
     avatarIcon: 'tabler:circle-check'
   },
   {
     subtitle: '1 Day',
-    smallScreenGrid: 12,
     title: 'Response Time',
     avatarColor: 'warning',
     avatarIcon: 'tabler:clock'
@@ -124,7 +120,7 @@ const CardWidgetsSupportTracker = () => {
         subheaderTypographyProps={{ sx: { mt: '0 !important' } }}
         action={
           <OptionsMenu
-            options={['Last 28 Days', 'Last Month', 'Last Year']}
+            options={['Refresh', 'Edit', 'Share']}
             iconButtonProps={{ size: 'small', sx: { color: 'text.disabled' } }}
           />
         }
@@ -134,28 +130,27 @@ const CardWidgetsSupportTracker = () => {
           <Grid item xs={12} sm={5}>
             <Typography variant='h4'>164</Typography>
             <Typography sx={{ mb: 6, color: 'text.secondary' }}>Total Tickets</Typography>
-            <Grid container spacing={4}>
-              {data.map((item: DataType, index: number) => (
-                <Grid item sm={12} key={index} xs={item.smallScreenGrid}>
-                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <CustomAvatar
-                      skin='light'
-                      variant='rounded'
-                      color={item.avatarColor}
-                      sx={{ mr: 4, width: 34, height: 34 }}
-                    >
-                      <Icon icon={item.avatarIcon} />
-                    </CustomAvatar>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                      <Typography sx={{ fontWeight: 500 }}>{item.title}</Typography>
-                      <Typography variant='body2' sx={{ color: 'text.disabled' }}>
-                        {item.subtitle}
-                      </Typography>
-                    </Box>
-                  </Box>
-                </Grid>
-              ))}
-            </Grid>
+            {data.map((item: DataType, index: number) => (
+              <Box
+                key={index}
+                sx={{ display: 'flex', alignItems: 'center', mb: index !== data.length - 1 ? 4 : undefined }}
+              >
+                <CustomAvatar
+                  skin='light'
+                  variant='rounded'
+                  color={item.avatarColor}
+                  sx={{ mr: 4, width: 34, height: 34 }}
+                >
+                  <Icon icon={item.avatarIcon} />
+                </CustomAvatar>
+                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                  <Typography sx={{ fontWeight: 500 }}>{item.title}</Typography>
+                  <Typography variant='body2' sx={{ color: 'text.disabled' }}>
+                    {item.subtitle}
+                  </Typography>
+                </Box>
+              </Box>
+            ))}
           </Grid>
           <Grid item xs={12} sm={7} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <ReactApexcharts type='radialBar' height={325} options={options} series={[85]} />

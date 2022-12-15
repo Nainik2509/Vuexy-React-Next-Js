@@ -137,7 +137,7 @@ const CardWidgetsEarningReports = () => {
         subheaderTypographyProps={{ sx: { mt: '0 !important' } }}
         action={
           <OptionsMenu
-            options={['Last 28 Days', 'Last Month', 'Last Year']}
+            options={['Last Week', 'Last Month', 'Last Year']}
             iconButtonProps={{ size: 'small', sx: { color: 'text.disabled' } }}
           />
         }
@@ -154,9 +154,7 @@ const CardWidgetsEarningReports = () => {
               <Typography variant='h4'>$468</Typography>
               <CustomChip rounded size='small' skin='light' color='success' label='+4.2%' />
             </Box>
-            <Typography variant='body2' sx={{ color: 'text.disabled' }}>
-              You informed of this week compared to last week
-            </Typography>
+            <Typography variant='body2'>You informed of this week compared to last week</Typography>
           </StyledGrid>
           <StyledGrid item xs={12} sm={7}>
             <ReactApexcharts type='bar' height={160} series={series} options={options} />

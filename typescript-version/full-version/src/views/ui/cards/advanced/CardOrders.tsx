@@ -133,7 +133,7 @@ const CardOrders = () => {
         subheaderTypographyProps={{ sx: { mt: '0 !important' } }}
         action={
           <OptionsMenu
-            options={['Last 28 Days', 'Last Month', 'Last Year']}
+            options={['Show all orders', 'Share', 'Refresh']}
             iconButtonProps={{ size: 'small', sx: { color: 'text.disabled' } }}
           />
         }

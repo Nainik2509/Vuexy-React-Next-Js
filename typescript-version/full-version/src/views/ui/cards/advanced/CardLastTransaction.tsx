@@ -91,7 +91,7 @@ const CardLastTransaction = () => {
         title='Last Transaction'
         action={
           <OptionsMenu
-            options={['Last 28 Days', 'Last Month', 'Last Year']}
+            options={['Show all entries', 'Refresh', 'Download']}
             iconButtonProps={{ size: 'small', sx: { color: 'text.disabled' } }}
           />
         }

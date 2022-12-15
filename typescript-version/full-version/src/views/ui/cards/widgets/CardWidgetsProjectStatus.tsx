@@ -109,7 +109,7 @@ const CardWidgetsProjectStatus = () => {
         title='Project Status'
         action={
           <OptionsMenu
-            options={['Last 28 Days', 'Last Month', 'Last Year']}
+            options={['Share', 'Refresh', 'Update']}
             iconButtonProps={{ size: 'small', sx: { color: 'text.disabled' } }}
           />
         }

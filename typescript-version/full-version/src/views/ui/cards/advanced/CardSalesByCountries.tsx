@@ -69,7 +69,7 @@ const CardSalesByCountries = () => {
         subheaderTypographyProps={{ sx: { mt: '0 !important' } }}
         action={
           <OptionsMenu
-            options={['Last 28 Days', 'Last Month', 'Last Year']}
+            options={['Last Week', 'Last Month', 'Last Year']}
             iconButtonProps={{ size: 'small', sx: { color: 'text.disabled' } }}
           />
         }

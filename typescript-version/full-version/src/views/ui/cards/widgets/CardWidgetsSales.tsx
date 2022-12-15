@@ -96,7 +96,7 @@ const CardWidgetsSales = () => {
         subheaderTypographyProps={{ sx: { mt: '0 !important' } }}
         action={
           <OptionsMenu
-            options={['Last 28 Days', 'Last Month', 'Last Year']}
+            options={['Last Month', 'Last 6 months', 'Last Year']}
             iconButtonProps={{ size: 'small', sx: { color: 'text.disabled' } }}
           />
         }
