@@ -15,7 +15,7 @@ const navigation: HorizontalNavItemsType = [
         path: '/dashboards/analytics'
       },
       {
-        icon: 'mdi:cart-outline',
+        icon: 'tabler:shopping-cart',
         title: 'eCommerce',
         path: '/dashboards/ecommerce'
       }

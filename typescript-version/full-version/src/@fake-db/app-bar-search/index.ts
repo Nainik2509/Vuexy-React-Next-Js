@@ -15,7 +15,7 @@ const searchData: AppBarSearchType[] = [
   {
     id: 2,
     url: '/dashboards/ecommerce',
-    icon: 'mdi:cart-outline',
+    icon: 'tabler:shopping-cart',
     title: 'eCommerce Dashboard',
     category: 'dashboards'
   },
