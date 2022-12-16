@@ -2,15 +2,15 @@
 import Grid from '@mui/material/Grid'
 
 // ** Demo Component Imports
-import CardAnalyticsProject from 'src/views/dashboards/analytics/CardAnalyticsProject'
-import CardAnalyticsOrderVisits from 'src/views/dashboards/analytics/CardAnalyticsOrderVisits'
-import CardAnalyticsTotalEarning from 'src/views/dashboards/analytics/CardAnalyticsTotalEarning'
-import CardAnalyticsSourceVisits from 'src/views/dashboards/analytics/CardAnalyticsSourceVisits'
-import CardAnalyticsEarningReports from 'src/views/dashboards/analytics/CardAnalyticsEarningReports'
-import CardAnalyticsSupportTracker from 'src/views/dashboards/analytics/CardAnalyticsSupportTracker'
-import CardAnalyticsSalesByCountries from 'src/views/dashboards/analytics/CardAnalyticsSalesByCountries'
-import CardAnalyticsMonthlyCampaignState from 'src/views/dashboards/analytics/CardAnalyticsMonthlyCampaignState'
-import CardAnalyticsWebsiteAnalyticsSlider from 'src/views/dashboards/analytics/CardAnalyticsWebsiteAnalyticsSlider'
+import AnalyticsProject from 'src/views/dashboards/analytics/AnalyticsProject'
+import AnalyticsOrderVisits from 'src/views/dashboards/analytics/AnalyticsOrderVisits'
+import AnalyticsTotalEarning from 'src/views/dashboards/analytics/AnalyticsTotalEarning'
+import AnalyticsSourceVisits from 'src/views/dashboards/analytics/AnalyticsSourceVisits'
+import AnalyticsEarningReports from 'src/views/dashboards/analytics/AnalyticsEarningReports'
+import AnalyticsSupportTracker from 'src/views/dashboards/analytics/AnalyticsSupportTracker'
+import AnalyticsSalesByCountries from 'src/views/dashboards/analytics/AnalyticsSalesByCountries'
+import AnalyticsMonthlyCampaignState from 'src/views/dashboards/analytics/AnalyticsMonthlyCampaignState'
+import AnalyticsWebsiteAnalyticsSlider from 'src/views/dashboards/analytics/AnalyticsWebsiteAnalyticsSlider'
 
 // ** Custom Component Import
 import KeenSliderWrapper from 'src/@core/styles/libs/keen-slider'
@@ -23,10 +23,10 @@ const AnalyticsDashboard = () => {
       <KeenSliderWrapper>
         <Grid container spacing={6}>
           <Grid item xs={12} lg={6}>
-            <CardAnalyticsWebsiteAnalyticsSlider />
+            <AnalyticsWebsiteAnalyticsSlider />
           </Grid>
           <Grid item xs={12} sm={6} lg={3}>
-            <CardAnalyticsOrderVisits />
+            <AnalyticsOrderVisits />
           </Grid>
           <Grid item xs={12} sm={6} lg={3}>
             <CardStatsWithAreaChart
@@ -39,25 +39,25 @@ const AnalyticsDashboard = () => {
             />
           </Grid>
           <Grid item xs={12} md={6}>
-            <CardAnalyticsEarningReports />
+            <AnalyticsEarningReports />
           </Grid>
           <Grid item xs={12} md={6}>
-            <CardAnalyticsSupportTracker />
+            <AnalyticsSupportTracker />
           </Grid>
           <Grid item xs={12} md={6} lg={4}>
-            <CardAnalyticsSalesByCountries />
+            <AnalyticsSalesByCountries />
           </Grid>
           <Grid item xs={12} md={6} lg={4}>
-            <CardAnalyticsTotalEarning />
+            <AnalyticsTotalEarning />
           </Grid>
           <Grid item xs={12} md={6} lg={4}>
-            <CardAnalyticsMonthlyCampaignState />
+            <AnalyticsMonthlyCampaignState />
           </Grid>
           <Grid item xs={12} md={6} lg={4}>
-            <CardAnalyticsSourceVisits />
+            <AnalyticsSourceVisits />
           </Grid>
           <Grid item xs={12} lg={8}>
-            <CardAnalyticsProject />
+            <AnalyticsProject />
           </Grid>
         </Grid>
       </KeenSliderWrapper>

@@ -71,7 +71,7 @@ const data: DataType[] = [
   }
 ]
 
-const CardAnalyticsMonthlyCampaignState = () => {
+const AnalyticsMonthlyCampaignState = () => {
   return (
     <Card>
       <CardHeader
@@ -131,4 +131,4 @@ const CardAnalyticsMonthlyCampaignState = () => {
   )
 }
 
-export default CardAnalyticsMonthlyCampaignState
+export default AnalyticsMonthlyCampaignState

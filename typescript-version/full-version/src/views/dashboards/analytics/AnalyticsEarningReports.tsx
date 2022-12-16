@@ -66,7 +66,7 @@ const StyledGrid = styled(Grid)<GridProps>(({ theme }) => ({
   }
 }))
 
-const CardAnalyticsEarningReports = () => {
+const AnalyticsEarningReports = () => {
   // ** Hook
   const theme = useTheme()
 
@@ -193,4 +193,4 @@ const CardAnalyticsEarningReports = () => {
   )
 }
 
-export default CardAnalyticsEarningReports
+export default AnalyticsEarningReports

@@ -49,7 +49,7 @@ const data: DataType[] = [
   }
 ]
 
-const CardAnalyticsSupportTracker = () => {
+const AnalyticsSupportTracker = () => {
   // ** Hook
   const theme = useTheme()
 
@@ -161,4 +161,4 @@ const CardAnalyticsSupportTracker = () => {
   )
 }
 
-export default CardAnalyticsSupportTracker
+export default AnalyticsSupportTracker

@@ -60,7 +60,7 @@ const data: DataType[] = [
   }
 ]
 
-const CardAnalyticsSalesByCountries = () => {
+const AnalyticsSalesByCountries = () => {
   return (
     <Card>
       <CardHeader
@@ -128,4 +128,4 @@ const CardAnalyticsSalesByCountries = () => {
   )
 }
 
-export default CardAnalyticsSalesByCountries
+export default AnalyticsSalesByCountries

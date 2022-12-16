@@ -138,7 +138,7 @@ const Slides = ({ theme }: { theme: Theme }) => {
   )
 }
 
-const CardAnalyticsWebsiteAnalyticsSlider = () => {
+const AnalyticsWebsiteAnalyticsSlider = () => {
   // ** States
   const [loaded, setLoaded] = useState<boolean>(false)
   const [currentSlide, setCurrentSlide] = useState<number>(0)
@@ -224,4 +224,4 @@ const CardAnalyticsWebsiteAnalyticsSlider = () => {
   )
 }
 
-export default CardAnalyticsWebsiteAnalyticsSlider
+export default AnalyticsWebsiteAnalyticsSlider

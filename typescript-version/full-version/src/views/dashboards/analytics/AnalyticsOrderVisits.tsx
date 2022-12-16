@@ -12,7 +12,7 @@ import CustomAvatar from 'src/@core/components/mui/avatar'
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
 
-const CardAnalyticsOrderVisits = () => {
+const AnalyticsOrderVisits = () => {
   return (
     <Card>
       <CardContent>
@@ -78,4 +78,4 @@ const CardAnalyticsOrderVisits = () => {
   )
 }
 
-export default CardAnalyticsOrderVisits
+export default AnalyticsOrderVisits

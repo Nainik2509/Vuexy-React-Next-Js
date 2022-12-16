@@ -52,7 +52,7 @@ const data: DataType[] = [
   }
 ]
 
-const CardAnalyticsTotalEarning = () => {
+const AnalyticsTotalEarning = () => {
   // ** Hook
   const theme = useTheme()
 
@@ -219,4 +219,4 @@ const CardAnalyticsTotalEarning = () => {
   )
 }
 
-export default CardAnalyticsTotalEarning
+export default AnalyticsTotalEarning

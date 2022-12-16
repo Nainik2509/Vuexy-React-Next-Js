@@ -149,7 +149,7 @@ const columns = [
   }
 ]
 
-const CardAnalyticsProject = () => {
+const AnalyticsProject = () => {
   // ** State
   const [data, setData] = useState([])
   const [value, setValue] = useState<string>('')
@@ -195,4 +195,4 @@ const CardAnalyticsProject = () => {
   ) : null
 }
 
-export default CardAnalyticsProject
+export default AnalyticsProject
