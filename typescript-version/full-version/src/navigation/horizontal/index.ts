@@ -13,6 +13,11 @@ const navigation = (): HorizontalNavItemsType => {
           path: '/dashboards/analytics'
         },
         {
+          icon: 'tabler:device-analytics',
+          title: 'CRM',
+          path: '/dashboards/crm'
+        },
+        {
           icon: 'tabler:shopping-cart',
           title: 'eCommerce',
           path: '/dashboards/ecommerce'

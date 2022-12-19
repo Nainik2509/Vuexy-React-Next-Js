@@ -14,692 +14,699 @@ const searchData: AppBarSearchType[] = [
   },
   {
     id: 2,
+    url: '/dashboards/crm',
+    icon: 'tabler:device-analytics',
+    title: 'CRM Dashboard',
+    category: 'dashboards'
+  },
+  {
+    id: 3,
     url: '/dashboards/ecommerce',
     icon: 'tabler:shopping-cart',
     title: 'eCommerce Dashboard',
     category: 'dashboards'
   },
   {
-    id: 3,
+    id: 4,
     url: '/apps/email',
     icon: 'mdi:email-outline',
     title: 'Email',
     category: 'appsPages'
   },
   {
-    id: 4,
+    id: 5,
     url: '/apps/chat',
     icon: 'mdi:message-outline',
     title: 'Chat',
     category: 'appsPages'
   },
   {
-    id: 5,
+    id: 6,
     url: '/apps/calendar',
     icon: 'mdi:calendar-blank-outline',
     title: 'Calendar',
     category: 'appsPages'
   },
   {
-    id: 6,
+    id: 7,
     url: '/apps/invoice/list',
     icon: 'mdi:format-list-numbered',
     title: 'Invoice List',
     category: 'appsPages'
   },
   {
-    id: 7,
+    id: 8,
     url: '/apps/invoice/preview',
     icon: 'mdi:file-document-outline',
     title: 'Invoice Preview',
     category: 'appsPages'
   },
   {
-    id: 8,
+    id: 9,
     url: '/apps/invoice/edit',
     icon: 'mdi:file-document-edit-outline',
     title: 'Invoice Edit',
     category: 'appsPages'
   },
   {
-    id: 9,
+    id: 10,
     url: '/apps/invoice/add',
     icon: 'mdi:file-plus-outline',
     title: 'Invoice Add',
     category: 'appsPages'
   },
   {
-    id: 10,
+    id: 11,
     url: '/apps/user/list',
     icon: 'mdi:account-group',
     title: 'User List',
     category: 'appsPages'
   },
   {
-    id: 11,
+    id: 12,
     url: '/apps/user/view/overview',
     icon: 'mdi:eye-outline',
     title: 'User View - Overview',
     category: 'appsPages'
   },
   {
-    id: 12,
+    id: 13,
     url: '/apps/user/view/security',
     icon: 'mdi:lock-open-outline',
     title: 'User View - Security',
     category: 'appsPages'
   },
   {
-    id: 13,
+    id: 14,
     url: '/apps/user/view/billing-plan',
     icon: 'mdi:currency-usd',
     title: 'User View - Billing & Plans',
     category: 'appsPages'
   },
   {
-    id: 14,
+    id: 15,
     url: '/apps/user/view/notification',
     icon: 'mdi:bell-outline',
     title: 'User View - Notification',
     category: 'appsPages'
   },
   {
-    id: 15,
+    id: 16,
     url: '/apps/user/view/connection',
     icon: 'mdi:link-variant',
     title: 'User View - Connection',
     category: 'appsPages'
   },
   {
-    id: 16,
+    id: 17,
     url: '/apps/roles',
     icon: 'mdi:shield-outline',
     title: 'Roles',
     category: 'appsPages'
   },
   {
-    id: 17,
+    id: 18,
     url: '/apps/permissions',
     icon: 'mdi:lock-outline',
     title: 'Permissions',
     category: 'appsPages'
   },
   {
-    id: 18,
+    id: 19,
     url: '/pages/user-profile/profile',
     icon: 'mdi:card-account-details-outline',
     title: 'User Profile',
     category: 'appsPages'
   },
   {
-    id: 19,
+    id: 20,
     url: '/pages/user-profile/teams',
     icon: 'mdi:account-group',
     title: 'User Profile - Teams',
     category: 'appsPages'
   },
   {
-    id: 20,
+    id: 21,
     url: '/pages/user-profile/projects',
     icon: 'mdi:view-grid-outline',
     title: 'User Profile - Projects',
     category: 'appsPages'
   },
   {
-    id: 21,
+    id: 22,
     url: '/pages/user-profile/connections',
     icon: 'mdi:link-variant',
     title: 'User Profile - Connections',
     category: 'appsPages'
   },
   {
-    id: 22,
+    id: 23,
     url: '/pages/account-settings/account',
     icon: 'mdi:account-cog-outline',
     title: 'Account Settings',
     category: 'appsPages'
   },
   {
-    id: 23,
+    id: 24,
     url: '/pages/account-settings/security',
     icon: 'mdi:lock-open-outline',
     title: 'Account Settings - Security',
     category: 'appsPages'
   },
   {
-    id: 24,
+    id: 25,
     url: '/pages/account-settings/billing',
     icon: 'mdi:currency-usd',
     title: 'Account Settings - Billing',
     category: 'appsPages'
   },
   {
-    id: 25,
+    id: 26,
     url: '/pages/account-settings/notifications',
     icon: 'mdi:bell-outline',
     title: 'Account Settings - Notifications',
     category: 'appsPages'
   },
   {
-    id: 26,
+    id: 27,
     url: '/pages/account-settings/connections',
     icon: 'mdi:link-variant',
     title: 'Account Settings - Connections',
     category: 'appsPages'
   },
   {
-    id: 27,
+    id: 28,
     url: '/pages/faq',
     icon: 'mdi:help-circle-outline',
     title: 'FAQ',
     category: 'appsPages'
   },
   {
-    id: 28,
+    id: 29,
     url: '/pages/help-center',
     icon: 'mdi:help-circle-outline',
     title: 'Help Center',
     category: 'appsPages'
   },
   {
-    id: 29,
+    id: 30,
     url: '/pages/pricing',
     icon: 'mdi:currency-usd',
     title: 'Pricing',
     category: 'appsPages'
   },
   {
-    id: 30,
+    id: 31,
     url: '/pages/misc/coming-soon',
     icon: 'mdi:clock-outline',
     title: 'Coming Soon',
     category: 'appsPages'
   },
   {
-    id: 31,
+    id: 32,
     url: '/pages/misc/under-maintenance',
     icon: 'mdi:cog-outline',
     title: 'Under Maintenance',
     category: 'appsPages'
   },
   {
-    id: 32,
+    id: 33,
     url: '/pages/misc/404-not-found',
     icon: 'mdi:alert-circle-outline',
     title: 'Page Not Found - 404',
     category: 'appsPages'
   },
   {
-    id: 33,
+    id: 34,
     url: '/pages/misc/401-not-authorized',
     icon: 'mdi:account-multiple-remove-outline',
     title: 'Not Authorized - 401',
     category: 'appsPages'
   },
   {
-    id: 34,
+    id: 35,
     url: '/pages/misc/500-server-error',
     icon: 'mdi:server-off',
     title: 'Server Error - 500',
     category: 'appsPages'
   },
   {
-    id: 35,
+    id: 36,
     url: '/pages/auth/login-v1',
     icon: 'mdi:login',
     title: 'Login V1',
     category: 'appsPages'
   },
   {
-    id: 36,
+    id: 37,
     url: '/pages/auth/login-v2',
     icon: 'mdi:login',
     title: 'Login V2',
     category: 'appsPages'
   },
   {
-    id: 37,
+    id: 38,
     url: '/pages/auth/login-with-appbar',
     icon: 'mdi:login',
     title: 'Login With AppBar',
     category: 'appsPages'
   },
   {
-    id: 38,
+    id: 39,
     url: '/pages/auth/register-v1',
     icon: 'mdi:account-plus-outline',
     title: 'Register V1',
     category: 'appsPages'
   },
   {
-    id: 39,
+    id: 40,
     url: '/pages/auth/register-v2',
     icon: 'mdi:account-plus-outline',
     title: 'Register V2',
     category: 'appsPages'
   },
   {
-    id: 40,
+    id: 41,
     url: '/pages/auth/register-multi-steps',
     icon: 'mdi:account-plus-outline',
     title: 'Register Multi-Steps',
     category: 'appsPages'
   },
   {
-    id: 41,
+    id: 42,
     icon: 'mdi:email-check-outline',
     category: 'appsPages',
     title: 'Verify Email V1',
     url: '/pages/auth/verify-email-v1'
   },
   {
-    id: 42,
+    id: 43,
     icon: 'mdi:email-check-outline',
     category: 'appsPages',
     title: 'Verify Email V2',
     url: '/pages/auth/verify-email-v2'
   },
   {
-    id: 43,
+    id: 44,
     url: '/pages/auth/forgot-password-v1',
     icon: 'mdi:lock-alert-outline',
     title: 'Forgot Password V1',
     category: 'appsPages'
   },
   {
-    id: 44,
+    id: 45,
     url: '/pages/auth/forgot-password-v2',
     icon: 'mdi:lock-alert-outline',
     title: 'Forgot Password V2',
     category: 'appsPages'
   },
   {
-    id: 45,
+    id: 46,
     url: '/pages/auth/reset-password-v1',
     icon: 'mdi:lock-reset',
     title: 'Reset Password V1',
     category: 'appsPages'
   },
   {
-    id: 46,
+    id: 47,
     url: '/pages/auth/reset-password-v2',
     icon: 'mdi:lock-reset',
     title: 'Reset Password V2',
     category: 'appsPages'
   },
   {
-    id: 47,
+    id: 48,
     icon: 'mdi:cellphone-link',
     category: 'appsPages',
     title: 'Two Steps V1',
     url: '/pages/auth/two-steps-v1'
   },
   {
-    id: 48,
+    id: 49,
     icon: 'mdi:cellphone-link',
     category: 'appsPages',
     title: 'Two Steps V2',
     url: '/pages/auth/two-steps-v2'
   },
   {
-    id: 49,
+    id: 50,
     icon: 'mdi:cart-outline',
     category: 'appsPages',
     title: 'Wizard - Checkout',
     url: '/pages/wizard-examples/checkout'
   },
   {
-    id: 50,
+    id: 51,
     category: 'appsPages',
     icon: 'mdi:office-building-outline',
     title: 'Wizard - Property Listing',
     url: '/pages/wizard-examples/property-listing'
   },
   {
-    id: 51,
+    id: 52,
     icon: 'mdi:gift-outline',
     category: 'appsPages',
     title: 'Wizard - Create Deal',
     url: '/pages/wizard-examples/create-deal'
   },
   {
-    id: 52,
+    id: 53,
     url: '/pages/dialog-examples',
     icon: 'mdi:vector-arrange-below',
     title: 'Dialog Examples',
     category: 'appsPages'
   },
   {
-    id: 53,
+    id: 54,
     url: '/ui/typography',
     icon: 'mdi:format-letter-case',
     title: 'Typography',
     category: 'userInterface'
   },
   {
-    id: 54,
+    id: 55,
     url: '/ui/icons',
     icon: 'mdi:google-circles-extended',
     title: 'Icons',
     category: 'userInterface'
   },
   {
-    id: 55,
+    id: 56,
     url: '/ui/cards/basic',
     icon: 'mdi:card-outline',
     title: 'Card Basic',
     category: 'userInterface'
   },
   {
-    id: 56,
+    id: 57,
     url: '/ui/cards/advanced',
     icon: 'mdi:card-bulleted-settings-outline',
     title: 'Card Advanced',
     category: 'userInterface'
   },
   {
-    id: 57,
+    id: 58,
     url: '/ui/cards/statistics',
     icon: 'mdi:chart-box-outline',
     title: 'Card Statistics',
     category: 'userInterface'
   },
   {
-    id: 58,
+    id: 59,
     url: '/ui/cards/widgets',
     icon: 'tabler:chart-bar',
     title: 'Card Widgets',
     category: 'userInterface'
   },
   {
-    id: 59,
+    id: 60,
     url: '/ui/cards/actions',
     icon: 'mdi:card-plus-outline',
     title: 'Card Actions',
     category: 'userInterface'
   },
   {
-    id: 60,
+    id: 61,
     url: '/components/accordion',
     icon: 'mdi:fullscreen-exit',
     title: 'Accordion',
     category: 'userInterface'
   },
   {
-    id: 61,
+    id: 62,
     url: '/components/alerts',
     icon: 'mdi:alert-outline',
     title: 'Alerts',
     category: 'userInterface'
   },
   {
-    id: 62,
+    id: 63,
     url: '/components/avatars',
     icon: 'mdi:account-circle-outline',
     title: 'Avatars',
     category: 'userInterface'
   },
   {
-    id: 63,
+    id: 64,
     url: '/components/badges',
     icon: 'mdi:bell-badge-outline',
     title: 'Badges',
     category: 'userInterface'
   },
   {
-    id: 64,
+    id: 65,
     url: '/components/buttons',
     icon: 'mdi:gesture-tap-button',
     title: 'Buttons',
     category: 'userInterface'
   },
   {
-    id: 65,
+    id: 66,
     url: '/components/button-group',
     icon: 'mdi:checkbox-multiple-blank-outline',
     title: 'Button Group',
     category: 'userInterface'
   },
   {
-    id: 66,
+    id: 67,
     url: '/components/chips',
     icon: 'mdi:new-box',
     title: 'Chips',
     category: 'userInterface'
   },
   {
-    id: 67,
+    id: 68,
     url: '/components/dialogs',
     icon: 'mdi:card-bulleted-outline',
     title: 'Dialogs',
     category: 'userInterface'
   },
   {
-    id: 68,
+    id: 69,
     url: '/components/list',
     icon: 'mdi:format-list-bulleted',
     title: 'List',
     category: 'userInterface'
   },
   {
-    id: 69,
+    id: 70,
     url: '/components/menu',
     icon: 'mdi:menu',
     title: 'Menu',
     category: 'userInterface'
   },
   {
-    id: 70,
+    id: 71,
     url: '/components/pagination',
     icon: 'mdi:page-last',
     title: 'Pagination',
     category: 'userInterface'
   },
   {
-    id: 71,
+    id: 72,
     url: '/components/ratings',
     icon: 'mdi:star-outline',
     title: 'Ratings',
     category: 'userInterface'
   },
   {
-    id: 72,
+    id: 73,
     url: '/components/snackbar',
     icon: 'mdi:message-processing-outline',
     title: 'Snackbar',
     category: 'userInterface'
   },
   {
-    id: 73,
+    id: 74,
     url: '/components/swiper',
     icon: 'mdi:view-carousel-outline',
     title: 'Swiper',
     category: 'userInterface'
   },
   {
-    id: 74,
+    id: 75,
     url: '/components/tabs',
     icon: 'mdi:tab',
     title: 'Tabs',
     category: 'userInterface'
   },
   {
-    id: 75,
+    id: 76,
     url: '/components/timeline',
     icon: 'mdi:timeline-outline',
     title: 'Timeline',
     category: 'userInterface'
   },
   {
-    id: 76,
+    id: 77,
     url: '/components/toast',
     icon: 'mdi:bell-outline',
     title: 'Toast',
     category: 'userInterface'
   },
   {
-    id: 77,
+    id: 78,
     url: '/components/tree-view',
     icon: 'mdi:file-tree-outline',
     title: 'Tree View',
     category: 'userInterface'
   },
   {
-    id: 78,
+    id: 79,
     url: '/components/more',
     icon: 'mdi:view-grid-plus-outline',
     title: 'More Components',
     category: 'userInterface'
   },
   {
-    id: 79,
+    id: 80,
     url: '/forms/form-elements/text-field',
     icon: 'mdi:lastpass',
     title: 'TextField',
     category: 'formsTables'
   },
   {
-    id: 80,
+    id: 81,
     url: '/forms/form-elements/select',
     icon: 'mdi:format-list-checkbox',
     title: 'Select',
     category: 'formsTables'
   },
   {
-    id: 81,
+    id: 82,
     url: '/forms/form-elements/checkbox',
     icon: 'mdi:checkbox-outline',
     title: 'Checkbox',
     category: 'formsTables'
   },
   {
-    id: 82,
+    id: 83,
     url: '/forms/form-elements/radio',
     icon: 'mdi:radiobox-marked',
     title: 'Radio',
     category: 'formsTables'
   },
   {
-    id: 83,
+    id: 84,
     icon: 'mdi:order-bool-ascending-variant',
     title: 'Custom Inputs',
     category: 'formsTables',
     url: '/forms/form-elements/custom-inputs'
   },
   {
-    id: 84,
+    id: 85,
     url: '/forms/form-elements/textarea',
     icon: 'mdi:card-text-outline',
     title: 'Textarea',
     category: 'formsTables'
   },
   {
-    id: 85,
+    id: 86,
     url: '/forms/form-elements/autocomplete',
     icon: 'mdi:lastpass',
     title: 'Autocomplete',
     category: 'formsTables'
   },
   {
-    id: 86,
+    id: 87,
     url: '/forms/form-elements/pickers',
     icon: 'mdi:calendar-month',
     title: 'Date Pickers',
     category: 'formsTables'
   },
   {
-    id: 87,
+    id: 88,
     url: '/forms/form-elements/switch',
     icon: 'mdi:toggle-switch-outline',
     title: 'Switch',
     category: 'formsTables'
   },
   {
-    id: 88,
+    id: 89,
     url: '/forms/form-elements/file-uploader',
     icon: 'mdi:tray-arrow-up',
     title: 'File Uploader',
     category: 'formsTables'
   },
   {
-    id: 89,
+    id: 90,
     url: '/forms/form-elements/editor',
     icon: 'mdi:square-edit-outline',
     title: 'Editor',
     category: 'formsTables'
   },
   {
-    id: 90,
+    id: 91,
     url: '/forms/form-elements/slider',
     icon: 'mdi:gesture-swipe-horizontal',
     title: 'Slider',
     category: 'formsTables'
   },
   {
-    id: 91,
+    id: 92,
     url: '/forms/form-elements/input-mask',
     icon: 'mdi:lastpass',
     title: 'Input Mask',
     category: 'formsTables'
   },
   {
-    id: 92,
+    id: 93,
     url: '/forms/form-layouts',
     icon: 'mdi:cube-outline',
     title: 'Form Layouts',
     category: 'formsTables'
   },
   {
-    id: 93,
+    id: 94,
     url: '/forms/form-validation',
     icon: 'mdi:checkbox-marked-circle-outline',
     title: 'Form Validation',
     category: 'formsTables'
   },
   {
-    id: 94,
+    id: 95,
     url: '/forms/form-wizard',
     icon: 'mdi:transit-connection-horizontal',
     title: 'Form Wizard',
     category: 'formsTables'
   },
   {
-    id: 95,
+    id: 96,
     url: '/tables/mui',
     icon: 'mdi:grid-large',
     title: 'Table',
     category: 'formsTables'
   },
   {
-    id: 96,
+    id: 97,
     url: '/tables/data-grid',
     icon: 'mdi:grid',
     title: 'Mui DataGrid',
     category: 'formsTables'
   },
   {
-    id: 97,
+    id: 98,
     url: '/charts/apex-charts',
     icon: 'mdi:chart-line',
     title: 'Apex Charts',
     category: 'chartsMisc'
   },
   {
-    id: 98,
+    id: 99,
     url: '/charts/recharts',
     icon: 'mdi:chart-bell-curve-cumulative',
     title: 'Recharts',
     category: 'chartsMisc'
   },
   {
-    id: 99,
+    id: 100,
     url: '/charts/chartjs',
     icon: 'mdi:chart-bell-curve',
     title: 'ChartJS',
     category: 'chartsMisc'
   },
   {
-    id: 100,
+    id: 101,
     url: '/acl',
     icon: 'mdi:shield-outline',
     title: 'Access Control (ACL)',
