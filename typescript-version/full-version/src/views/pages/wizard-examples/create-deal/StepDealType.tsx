@@ -46,11 +46,24 @@ const data: CustomRadioIconsData[] = [
 
 const regionArray = ['Asia', 'Europe', 'Africa', 'Australia', 'North America', 'South America']
 
-const Img = styled('img')({
-  width: '100%',
-  height: 'auto',
-  maxWidth: '100%'
-})
+const ImgWrapper = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'flex-end',
+  justifyContent: 'center',
+  borderRadius: theme.shape.borderRadius,
+  border: `1px solid ${theme.palette.divider}`,
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(4, 4, 0, 4)
+  },
+  [theme.breakpoints.up('sm')]: {
+    height: 250,
+    padding: theme.spacing(5, 5, 0, 5)
+  },
+  '& img': {
+    height: 'auto',
+    maxWidth: '100%'
+  }
+}))
 
 const StepDealType = () => {
   const initialIconSelected: string = data.filter(item => item.isSelected)[
@@ -97,9 +110,9 @@ const StepDealType = () => {
   return (
     <Grid container spacing={5}>
       <Grid item xs={12}>
-        <Box sx={{ borderRadius: 1, display: 'flex', border: `1px solid ${theme.palette.divider}` }}>
-          <Img alt='illustration' src='/images/pages/shopping-girl.png' />
-        </Box>
+        <ImgWrapper>
+          <img width={650} alt='illustration' src={`/images/pages/create-deal-type-${theme.palette.mode}.png`} />
+        </ImgWrapper>
       </Grid>
       {data.map((item, index) => (
         <CustomRadioIcons
@@ -129,9 +142,9 @@ const StepDealType = () => {
             onChange={handleChange}
             input={<OutlinedInput label='Region' />}
             renderValue={selected => (
-              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
                 {selected.map(value => (
-                  <CustomChip key={value} label={value} skin='light' />
+                  <CustomChip rounded key={value} label={value} skin='light' />
                 ))}
               </Box>
             )}

@@ -67,7 +67,7 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12} lg={8}>
-        <Alert severity='success' icon={<Icon icon='mdi:tag-outline' />} sx={{ mb: 4 }}>
+        <Alert severity='success' icon={<Icon icon='mdi:bookmark-multiple-outline' />} sx={{ mb: 4 }}>
           <AlertTitle>Available Offers</AlertTitle>
           <div>
             <Typography sx={{ color: 'success.main' }}>
@@ -102,7 +102,7 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
                   >
                     Google
                   </Typography>
-                  <CustomChip size='small' skin='light' color='success' label='In Stock' />
+                  <CustomChip rounded size='small' skin='light' color='success' label='In Stock' />
                 </Box>
                 <Rating name='google-nest-rating' value={4} readOnly sx={{ mb: 6 }} />
                 <TextField size='small' type='number' defaultValue='1' sx={{ maxWidth: 100, display: 'block' }} />
@@ -149,7 +149,7 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
                   >
                     Apple
                   </Typography>
-                  <CustomChip size='small' skin='light' color='success' label='In Stock' />
+                  <CustomChip rounded size='small' skin='light' color='success' label='In Stock' />
                 </Box>
                 <Rating name='iphone-11-rating' value={4} readOnly sx={{ mb: 6 }} />
                 <TextField size='small' type='number' defaultValue='1' sx={{ maxWidth: 100, display: 'block' }} />
@@ -203,13 +203,13 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
       <Grid item xs={12} lg={4}>
         <Box sx={{ mb: 4, borderRadius: 1, border: theme => `1px solid ${theme.palette.divider}` }}>
           <CardContent>
-            <Typography sx={{ mb: 4, fontWeight: 600 }}>Offer</Typography>
+            <Typography sx={{ mb: 4, fontWeight: 500 }}>Offer</Typography>
             <Box sx={{ mb: 4, display: 'flex', alignItems: 'center' }}>
               <TextField fullWidth sx={{ mr: 4 }} size='small' placeholder='Enter Promo Code' />
               <Button variant='outlined'>Apply</Button>
             </Box>
             <Box sx={{ p: 4, borderRadius: 1, backgroundColor: 'action.hover' }}>
-              <Typography sx={{ mb: 2, fontWeight: 600 }}>Buying gift for a loved one?</Typography>
+              <Typography sx={{ mb: 2, fontWeight: 500 }}>Buying gift for a loved one?</Typography>
               <Typography sx={{ mb: 2, color: 'text.secondary' }}>
                 Gift wrap and personalized message on card, Only for $2.
               </Typography>
@@ -218,7 +218,7 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
                 variant='body2'
                 component={Link}
                 onClick={e => e.preventDefault()}
-                sx={{ color: 'primary.main', fontWeight: 600, textDecoration: 'none' }}
+                sx={{ color: 'primary.main', fontWeight: 500, textDecoration: 'none' }}
               >
                 Add a gift wrap
               </Typography>
@@ -226,7 +226,7 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
           </CardContent>
           <Divider sx={{ my: '0 !important' }} />
           <CardContent>
-            <Typography sx={{ mb: 4, fontWeight: 600 }}>Price Details</Typography>
+            <Typography sx={{ mb: 4, fontWeight: 500 }}>Price Details</Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
               <Box
                 sx={{
@@ -261,7 +261,7 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
                   variant='body2'
                   component={Link}
                   onClick={e => e.preventDefault()}
-                  sx={{ display: 'block', fontWeight: 600, color: 'primary.main', textDecoration: 'none' }}
+                  sx={{ display: 'block', fontWeight: 500, color: 'primary.main', textDecoration: 'none' }}
                 >
                   Apply Coupon
                 </Typography>
@@ -297,7 +297,7 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
                   <Typography variant='body2' sx={{ mr: 2, textDecoration: 'line-through', color: 'text.disabled' }}>
                     $5.00
                   </Typography>
-                  <CustomChip size='small' skin='light' color='success' label='Free' />
+                  <CustomChip rounded size='small' skin='light' color='success' label='Free' />
                 </Box>
               </Box>
             </Box>
@@ -307,8 +307,8 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
             <Box
               sx={{ gap: 2, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}
             >
-              <Typography sx={{ fontWeight: 600 }}>Total</Typography>
-              <Typography sx={{ fontWeight: 600 }}>$1198.00</Typography>
+              <Typography sx={{ fontWeight: 500 }}>Total</Typography>
+              <Typography sx={{ fontWeight: 500 }}>$1198.00</Typography>
             </Box>
           </CardContent>
         </Box>

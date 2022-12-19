@@ -81,9 +81,8 @@ const Stepper = styled(MuiStepper)<StepperProps>(({ theme }) => ({
   '& .MuiStep-root': {
     cursor: 'pointer',
     textAlign: 'center',
-    paddingBottom: theme.spacing(8),
-    '& .step-title': {
-      fontSize: '1rem'
+    '&:not(:last-child)': {
+      paddingBottom: theme.spacing(8)
     },
     '&.Mui-completed + svg': {
       color: theme.palette.primary.main
@@ -98,7 +97,8 @@ const Stepper = styled(MuiStepper)<StepperProps>(({ theme }) => ({
       cursor: 'pointer',
       alignItems: 'center',
       svg: {
-        marginRight: theme.spacing(1.5),
+        marginRight: theme.spacing(1),
+        marginBottom: theme.spacing(0.75),
         fill: theme.palette.text.primary
       },
       '&.Mui-active, &.Mui-completed': {
@@ -112,7 +112,7 @@ const Stepper = styled(MuiStepper)<StepperProps>(({ theme }) => ({
     },
 
     [theme.breakpoints.up('md')]: {
-      paddingBottom: 0,
+      paddingBottom: '0 !important',
       '& + svg': {
         display: 'block'
       },
@@ -153,7 +153,7 @@ const CheckoutWizard = () => {
 
   return (
     <Card>
-      <CardContent sx={{ py: 5.375 }}>
+      <CardContent sx={{ py: 11.5 }}>
         <StepperWrapper>
           <Stepper activeStep={activeStep} connector={<Icon icon='mdi:chevron-right' />}>
             {steps.map((step, index) => {

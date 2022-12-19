@@ -96,9 +96,9 @@ const StepDealDetails = () => {
             labelId='select-offered-items'
             input={<OutlinedInput label='Offered Items' />}
             renderValue={selected => (
-              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
                 {selected.map(value => (
-                  <CustomChip key={value} label={value} skin='light' />
+                  <CustomChip rounded key={value} label={value} skin='light' />
                 ))}
               </Box>
             )}

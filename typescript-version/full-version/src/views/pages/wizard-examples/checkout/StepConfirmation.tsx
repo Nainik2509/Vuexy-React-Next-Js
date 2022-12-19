@@ -60,7 +60,7 @@ const HorizontalList = styled(List)<ListProps>(({ theme }) => ({
   borderRadius: 6,
   border: `1px solid ${theme.palette.divider}`,
   '& .MuiListItem-root': {
-    padding: theme.spacing(5),
+    padding: theme.spacing(6),
     '&:not(:last-of-type)': {
       borderRight: `1px solid ${theme.palette.divider}`
     }
@@ -112,9 +112,14 @@ const StepConfirmation = () => {
             If the email hasn't arrived within two minutes, please check your spam folder to see if the email was routed
             there.
           </Typography>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { color: 'text.secondary' } }}>
             <Icon icon='mdi:clock-time-five-outline' fontSize={20} />
-            <Typography sx={{ ml: 1.5, color: 'text.secondary' }}>Time placed: 25/05/2020 13:35pm</Typography>
+            <Typography sx={{ ml: 1.5, color: 'text.secondary' }}>
+              <Typography component='span' sx={{ fontWeight: 500, color: 'text.secondary' }}>
+                Time placed:
+              </Typography>{' '}
+              25/05/2020 13:35pm
+            </Typography>
           </Box>
         </Box>
       </Grid>
@@ -125,35 +130,35 @@ const StepConfirmation = () => {
               <Box sx={{ mr: 1.5, display: 'flex' }}>
                 <Icon icon='mdi:map-marker-outline' fontSize={20} />
               </Box>
-              <Typography sx={{ fontWeight: 600 }}>Shipping</Typography>
+              <Typography sx={{ fontWeight: 500 }}>Shipping</Typography>
             </Box>
             <Typography sx={{ color: 'text.secondary' }}>John Doe</Typography>
             <Typography sx={{ color: 'text.secondary' }}>4135 Parkway Street,</Typography>
             <Typography sx={{ color: 'text.secondary' }}>Los Angeles, CA 90017,</Typography>
             <Typography sx={{ mb: 4, color: 'text.secondary' }}>USA</Typography>
-            <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>+123456789</Typography>
+            <Typography sx={{ color: 'text.secondary' }}>+123456789</Typography>
           </ListItem>
           <ListItem sx={{ flexDirection: 'column', alignItems: 'flex-start' }}>
             <Box sx={{ mb: 4, display: 'flex', alignItems: 'center' }}>
               <Box sx={{ mr: 1.5, display: 'flex' }}>
                 <Icon icon='mdi:credit-card-outline' fontSize={20} />
               </Box>
-              <Typography sx={{ fontWeight: 600 }}>Billing Address</Typography>
+              <Typography sx={{ fontWeight: 500 }}>Billing Address</Typography>
             </Box>
             <Typography sx={{ color: 'text.secondary' }}>John Doe</Typography>
             <Typography sx={{ color: 'text.secondary' }}>4135 Parkway Street,</Typography>
             <Typography sx={{ color: 'text.secondary' }}>Los Angeles, CA 90017,</Typography>
             <Typography sx={{ mb: 4, color: 'text.secondary' }}>USA</Typography>
-            <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>+123456789</Typography>
+            <Typography sx={{ color: 'text.secondary' }}>+123456789</Typography>
           </ListItem>
           <ListItem sx={{ flexDirection: 'column', alignItems: 'flex-start' }}>
             <Box sx={{ mb: 4, display: 'flex', alignItems: 'center' }}>
               <Box sx={{ mr: 1.5, display: 'flex' }}>
                 <Icon icon='mdi:archive-outline' fontSize={20} />
               </Box>
-              <Typography sx={{ fontWeight: 600 }}>Shipping Method</Typography>
+              <Typography sx={{ fontWeight: 500 }}>Shipping Method</Typography>
             </Box>
-            <Typography sx={{ mb: 4, fontWeight: 600, color: 'text.secondary' }}>Preferred Method:</Typography>
+            <Typography sx={{ mb: 4, color: 'text.secondary' }}>Preferred Method:</Typography>
             <Typography sx={{ color: 'text.secondary' }}>Standard Delivery</Typography>
             <Typography sx={{ color: 'text.secondary' }}>(Normally 3-4 business days)</Typography>
           </ListItem>
@@ -178,7 +183,7 @@ const StepConfirmation = () => {
                   >
                     Google
                   </Typography>
-                  <CustomChip size='small' skin='light' color='success' label='In Stock' />
+                  <CustomChip rounded size='small' skin='light' color='success' label='In Stock' />
                 </Box>
               </Grid>
               <Grid
@@ -209,7 +214,7 @@ const StepConfirmation = () => {
                   >
                     Apple
                   </Typography>
-                  <CustomChip size='small' skin='light' color='success' label='In Stock' />
+                  <CustomChip rounded size='small' skin='light' color='success' label='In Stock' />
                 </Box>
               </Grid>
               <Grid
@@ -228,7 +233,7 @@ const StepConfirmation = () => {
       <Grid item xs={12} md={4} xl={3}>
         <Box sx={{ mb: 4, borderRadius: 1, border: theme => `1px solid ${theme.palette.divider}` }}>
           <CardContent>
-            <Typography sx={{ mb: 4, fontWeight: 600 }}>Price Details</Typography>
+            <Typography sx={{ mb: 4, fontWeight: 500 }}>Price Details</Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
               <Box
                 sx={{
@@ -261,7 +266,7 @@ const StepConfirmation = () => {
                   <Typography variant='body2' sx={{ mr: 2, textDecoration: 'line-through', color: 'text.disabled' }}>
                     $5.00
                   </Typography>
-                  <CustomChip size='small' skin='light' color='success' label='Free' />
+                  <CustomChip rounded size='small' skin='light' color='success' label='Free' />
                 </Box>
               </Box>
             </Box>
@@ -271,8 +276,8 @@ const StepConfirmation = () => {
             <Box
               sx={{ gap: 2, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}
             >
-              <Typography sx={{ fontWeight: 600 }}>Total</Typography>
-              <Typography sx={{ fontWeight: 600 }}>$1198.00</Typography>
+              <Typography sx={{ fontWeight: 500 }}>Total</Typography>
+              <Typography sx={{ fontWeight: 500 }}>$1198.00</Typography>
             </Box>
           </CardContent>
         </Box>

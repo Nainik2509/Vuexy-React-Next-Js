@@ -87,10 +87,7 @@ const StepPropertyArea = () => {
 
       <Grid item xs={12} md={6}>
         <FormControl>
-          <FormLabel
-            id='possession-status-radio'
-            sx={{ fontWeight: 500, fontSize: '0.875rem', lineHeight: '21px', letterSpacing: '0.1px' }}
-          >
+          <FormLabel id='possession-status-radio' sx={{ fontSize: '0.875rem' }}>
             Possession Status
           </FormLabel>
           <RadioGroup
@@ -105,10 +102,7 @@ const StepPropertyArea = () => {
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl>
-          <FormLabel
-            id='transaction-radio'
-            sx={{ fontWeight: 500, fontSize: '0.875rem', lineHeight: '21px', letterSpacing: '0.1px' }}
-          >
+          <FormLabel id='transaction-radio' sx={{ fontSize: '0.875rem' }}>
             Transaction Type
           </FormLabel>
           <RadioGroup defaultValue='new-property' name='transaction-group' aria-labelledby='transaction-radio'>
@@ -119,11 +113,8 @@ const StepPropertyArea = () => {
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl>
-          <FormLabel
-            id='main-road-radio'
-            sx={{ fontWeight: 500, fontSize: '0.875rem', lineHeight: '21px', letterSpacing: '0.1px' }}
-          >
-            Is Property Facing Main Road
+          <FormLabel id='main-road-radio' sx={{ fontSize: '0.875rem' }}>
+            Is Property Facing Main Road?
           </FormLabel>
           <RadioGroup defaultValue='yes' name='main-road-group' aria-labelledby='main-road-radio'>
             <FormControlLabel value='yes' control={<Radio />} label='Yes' />
@@ -133,11 +124,8 @@ const StepPropertyArea = () => {
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl>
-          <FormLabel
-            id='gated-colony-radio'
-            sx={{ fontWeight: 500, fontSize: '0.875rem', lineHeight: '21px', letterSpacing: '0.1px' }}
-          >
-            Gated Colony
+          <FormLabel id='gated-colony-radio' sx={{ fontSize: '0.875rem' }}>
+            Gated Colony?
           </FormLabel>
           <RadioGroup defaultValue='yes' name='gated-colony-group' aria-labelledby='gated-colony-radio'>
             <FormControlLabel value='yes' control={<Radio />} label='Yes' />

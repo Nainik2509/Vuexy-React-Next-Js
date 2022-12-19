@@ -56,14 +56,11 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12} lg={8}>
-        <Alert severity='success' icon={<Icon icon='mdi:tag-outline' />} sx={{ mb: 6 }}>
+        <Alert severity='success' icon={<Icon icon='mdi:bookmark-multiple-outline' />} sx={{ mb: 6 }}>
           <AlertTitle>Available Offers</AlertTitle>
           <div>
             <Typography sx={{ color: 'success.main' }}>
               - 10% Instant Discount on Bank of America Corp Bank Debit and Credit cards
-            </Typography>
-            <Typography sx={{ color: 'success.main' }}>
-              - 25% Cashback Voucher of up to $60 on first ever PayPal transaction. TCA
             </Typography>
           </div>
         </Alert>
@@ -72,6 +69,7 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
             variant='scrollable'
             scrollButtons='auto'
             onChange={handleChange}
+            sx={{ border: '0 !important' }}
             aria-label='customized tabs example'
           >
             <Tab value='cc' label='Card' />
@@ -154,42 +152,36 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
       <Grid item xs={12} lg={4}>
         <Box sx={{ borderRadius: 1, border: theme => `1px solid ${theme.palette.divider}` }}>
           <CardContent>
-            <Typography sx={{ mb: 4, fontWeight: 600 }}>Price Details</Typography>
+            <Typography sx={{ mb: 4, fontWeight: 500 }}>Price Details</Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
               <Box
                 sx={{
-                  mb: 2,
-                  gap: 2,
+                  mb: 4,
+                  rowGap: 1,
+                  columnGap: 4,
                   display: 'flex',
                   flexWrap: 'wrap',
                   alignItems: 'center',
                   justifyContent: 'space-between'
                 }}
               >
-                <Typography variant='body2' sx={{ fontWeight: 600 }}>
-                  Order Total
-                </Typography>
-                <Typography variant='body2' sx={{ color: 'text.secondary' }}>
-                  $1198.00
-                </Typography>
+                <Typography>Order Total</Typography>
+                <Typography sx={{ color: 'text.secondary' }}>$1198.00</Typography>
               </Box>
               <Box
                 sx={{
-                  gap: 2,
+                  rowGap: 1,
+                  columnGap: 4,
                   display: 'flex',
                   flexWrap: 'wrap',
                   alignItems: 'center',
                   justifyContent: 'space-between'
                 }}
               >
-                <Typography variant='body2' sx={{ color: 'text.primary' }}>
-                  Delivery Charges
-                </Typography>
+                <Typography sx={{ color: 'text.primary' }}>Delivery Charges</Typography>
                 <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-                  <Typography variant='body2' sx={{ mr: 2, textDecoration: 'line-through', color: 'text.disabled' }}>
-                    $5.00
-                  </Typography>
-                  <CustomChip size='small' skin='light' color='success' label='Free' />
+                  <Typography sx={{ mr: 2, textDecoration: 'line-through', color: 'text.disabled' }}>$5.00</Typography>
+                  <CustomChip rounded size='small' skin='light' color='success' label='Free' />
                 </Box>
               </Box>
             </Box>
@@ -198,31 +190,33 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
           <CardContent>
             <Box
               sx={{
-                mb: 2,
-                gap: 2,
+                mb: 4,
+                rowGap: 1,
+                columnGap: 4,
                 display: 'flex',
                 flexWrap: 'wrap',
                 alignItems: 'center',
                 justifyContent: 'space-between'
               }}
             >
-              <Typography sx={{ fontWeight: 600 }}>Total</Typography>
-              <Typography>$1198.00</Typography>
+              <Typography sx={{ fontWeight: 500 }}>Total</Typography>
+              <Typography sx={{ fontWeight: 500 }}>$1198.00</Typography>
             </Box>
             <Box
               sx={{
                 mb: 4,
-                gap: 2,
+                rowGap: 1,
+                columnGap: 4,
                 display: 'flex',
                 flexWrap: 'wrap',
                 alignItems: 'center',
                 justifyContent: 'space-between'
               }}
             >
-              <Typography sx={{ fontWeight: 600 }}>Deliver to:</Typography>
-              <CustomChip size='small' skin='light' color='primary' label='Home' />
+              <Typography sx={{ fontWeight: 500 }}>Deliver to:</Typography>
+              <CustomChip rounded size='small' skin='light' color='primary' label='Home' />
             </Box>
-            <Typography sx={{ fontWeight: 600 }}>John Doe (Default),</Typography>
+            <Typography sx={{ fontWeight: 500 }}>John Doe (Default),</Typography>
             <Typography sx={{ color: 'text.secondary' }}>4135 Parkway Street,</Typography>
             <Typography sx={{ color: 'text.secondary' }}>Los Angeles, CA, 90017.</Typography>
             <Typography sx={{ mb: 4, color: 'text.secondary' }}>Mobile : +1 906 568 2332</Typography>
@@ -230,7 +224,7 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
               href='/'
               component={Link}
               onClick={e => e.preventDefault()}
-              sx={{ fontWeight: 600, color: 'primary.main', textDecoration: 'none' }}
+              sx={{ fontWeight: 500, color: 'primary.main', textDecoration: 'none' }}
             >
               Change address
             </Typography>

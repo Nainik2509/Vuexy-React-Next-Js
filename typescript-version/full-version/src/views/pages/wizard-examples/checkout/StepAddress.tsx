@@ -36,7 +36,7 @@ const data: CustomRadioBasicData[] = [
     value: 'home',
     isSelected: true,
     title: 'John Doe (Default)',
-    meta: <CustomChip size='small' skin='light' label='Home' color='primary' />,
+    meta: <CustomChip rounded size='small' skin='light' label='Home' color='primary' />,
     content: (
       <Box sx={{ mt: 3, height: '100%', display: 'flex', flexDirection: 'column' }}>
         <Typography variant='body2' sx={{ mb: 'auto' }}>
@@ -44,7 +44,7 @@ const data: CustomRadioBasicData[] = [
           <br />
           Mobile : 1234567890 Cash / Card on delivery available
         </Typography>
-        <Divider sx={{ m: theme => `${theme.spacing(3, 0, 4)} !important` }} />
+        <Divider sx={{ my: theme => `${theme.spacing(2.5)} !important` }} />
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Box
             href='/'
@@ -75,7 +75,7 @@ const data: CustomRadioBasicData[] = [
   {
     value: 'office',
     title: 'ACME Inc.',
-    meta: <CustomChip size='small' skin='light' label='Office' color='success' />,
+    meta: <CustomChip rounded size='small' skin='light' label='Office' color='success' />,
     content: (
       <Box sx={{ mt: 3, height: '100%', display: 'flex', flexDirection: 'column' }}>
         <Typography variant='body2' sx={{ mb: 'auto' }}>
@@ -83,7 +83,7 @@ const data: CustomRadioBasicData[] = [
           <br />
           Mobile : 1234567890 Cash / Card on delivery available
         </Typography>
-        <Divider sx={{ m: theme => `${theme.spacing(3, 0, 4)} !important` }} />
+        <Divider sx={{ my: theme => `${theme.spacing(2.5)} !important` }} />
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Box
             href='/'
@@ -236,7 +236,7 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
         <Button variant='outlined' sx={{ mt: 4 }}>
           Add new address
         </Button>
-        <Typography sx={{ mt: 9, mb: 4 }}>Choose Delivery Speed</Typography>
+        <Typography sx={{ mt: 6, mb: 4 }}>Choose Delivery Speed</Typography>
         <Grid container spacing={4}>
           {dataIcons.map((item, index) => (
             <CustomRadioIcons
@@ -255,14 +255,14 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
       <Grid item xs={12} lg={4}>
         <Box sx={{ mb: 4, borderRadius: 1, border: theme => `1px solid ${theme.palette.divider}` }}>
           <CardContent>
-            <Typography sx={{ mb: 4, fontWeight: 600 }}>Estimated Delivery Date</Typography>
+            <Typography sx={{ mb: 4, fontWeight: 500 }}>Estimated Delivery Date</Typography>
             <Box sx={{ mb: 4, display: 'flex' }}>
               <Box sx={{ mr: 4 }}>
                 <img width={50} src='/images/products/google-home.png' alt='Google Home' />
               </Box>
               <div>
                 <Typography variant='body2'>Google - Google Home - White</Typography>
-                <Typography variant='body2' sx={{ fontWeight: 600 }}>
+                <Typography variant='body2' sx={{ fontWeight: 500 }}>
                   18th Nov 2021
                 </Typography>
               </div>
@@ -273,7 +273,7 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
               </Box>
               <div>
                 <Typography variant='body2'>Apple iPhone 11 (64GB, Black)</Typography>
-                <Typography variant='body2' sx={{ fontWeight: 600 }}>
+                <Typography variant='body2' sx={{ fontWeight: 500 }}>
                   20th Nov 2021
                 </Typography>
               </div>
@@ -281,7 +281,7 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
           </CardContent>
           <Divider sx={{ m: '0 !important' }} />
           <CardContent>
-            <Typography sx={{ mb: 4, fontWeight: 600 }}>Price Details</Typography>
+            <Typography sx={{ mb: 4, fontWeight: 500 }}>Price Details</Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
               <Box
                 sx={{
@@ -314,7 +314,7 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
                   <Typography variant='body2' sx={{ mr: 2, textDecoration: 'line-through', color: 'text.disabled' }}>
                     $5.00
                   </Typography>
-                  <CustomChip size='small' skin='light' color='success' label='Free' />
+                  <CustomChip rounded size='small' skin='light' color='success' label='Free' />
                 </Box>
               </Box>
             </Box>
@@ -324,8 +324,8 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
             <Box
               sx={{ gap: 2, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}
             >
-              <Typography sx={{ fontWeight: 600 }}>Total</Typography>
-              <Typography sx={{ fontWeight: 600 }}>$1198.00</Typography>
+              <Typography sx={{ fontWeight: 500 }}>Total</Typography>
+              <Typography sx={{ fontWeight: 500 }}>$1198.00</Typography>
             </Box>
           </CardContent>
         </Box>

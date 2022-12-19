@@ -108,7 +108,9 @@ const StepPriceDetails = () => {
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl>
-          <FormLabel id='price-radio'>Show Price As</FormLabel>
+          <FormLabel id='price-radio' sx={{ fontSize: '0.875rem' }}>
+            Show Price As
+          </FormLabel>
           <RadioGroup name='price-group' defaultValue='negotiable' aria-labelledby='price-radio'>
             <FormControlLabel value='negotiable' control={<Radio />} label='Negotiable' />
             <FormControlLabel value='call-for-price' control={<Radio />} label='Call For Price' />
@@ -117,10 +119,15 @@ const StepPriceDetails = () => {
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl component='fieldset'>
-          <FormLabel component='legend'>Price Includes</FormLabel>
+          <FormLabel component='legend' sx={{ fontSize: '0.875rem' }}>
+            Price Includes
+          </FormLabel>
           <FormControlLabel control={<Checkbox />} label='Car Parking' />
           <FormControlLabel control={<Checkbox />} label='Club Membership' />
         </FormControl>
+      </Grid>
+      <Grid item xs={12}>
+        <FormControlLabel control={<Checkbox defaultChecked />} label='Stamp Duty & Registration charges excluded.' />
       </Grid>
     </Grid>
   )

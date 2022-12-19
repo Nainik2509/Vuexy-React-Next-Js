@@ -75,9 +75,9 @@ const StepPropertyFeatures = () => {
             value={furnishingDetails}
             input={<OutlinedInput label='Furnishing Details' />}
             renderValue={selected => (
-              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
                 {selected.map(value => (
-                  <CustomChip key={value} label={value} skin='light' />
+                  <CustomChip rounded key={value} label={value} skin='light' />
                 ))}
               </Box>
             )}
@@ -92,11 +92,8 @@ const StepPropertyFeatures = () => {
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl>
-          <FormLabel
-            id='common-area-radio'
-            sx={{ fontWeight: 500, fontSize: '0.875rem', lineHeight: '21px', letterSpacing: '0.1px' }}
-          >
-            Is There Any Common Area
+          <FormLabel id='common-area-radio' sx={{ fontSize: '0.875rem' }}>
+            Common Area?
           </FormLabel>
           <RadioGroup defaultValue='yes' name='common-area-group' aria-labelledby='common-area-radio'>
             <FormControlLabel value='yes' control={<Radio />} label='Yes' />
@@ -106,13 +103,10 @@ const StepPropertyFeatures = () => {
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl>
-          <FormLabel
-            id='balcony-radio'
-            sx={{ fontWeight: 500, fontSize: '0.875rem', lineHeight: '21px', letterSpacing: '0.1px' }}
-          >
-            Is There Any Attached Balcony
+          <FormLabel id='gated-radio' sx={{ fontSize: '0.875rem' }}>
+            Is a gated colony?
           </FormLabel>
-          <RadioGroup defaultValue='yes' name='balcony-group' aria-labelledby='balcony-radio'>
+          <RadioGroup defaultValue='yes' name='gated-group' aria-labelledby='gated-radio'>
             <FormControlLabel value='yes' control={<Radio />} label='Yes' />
             <FormControlLabel value='no' control={<Radio />} label='No' />
           </RadioGroup>

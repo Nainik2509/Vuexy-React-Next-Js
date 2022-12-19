@@ -36,13 +36,13 @@ const ReviewComplete = () => {
                       verticalAlign: 'top',
                       '&:last-of-type': { px: '0 !important' },
                       '&:first-of-type': { pl: '0 !important' },
-                      py: theme => `${theme.spacing(1)} !important`
+                      py: theme => `${theme.spacing(0.75)} !important`
                     }
                   }}
                 >
                   <TableRow>
                     <TableCell>
-                      <Typography noWrap sx={{ fontWeight: 600, color: 'text.secondary' }}>
+                      <Typography noWrap sx={{ fontWeight: 500, color: 'text.secondary' }}>
                         Deal Type
                       </Typography>
                     </TableCell>
@@ -52,7 +52,7 @@ const ReviewComplete = () => {
                   </TableRow>
                   <TableRow>
                     <TableCell>
-                      <Typography noWrap sx={{ fontWeight: 600, color: 'text.secondary' }}>
+                      <Typography noWrap sx={{ fontWeight: 500, color: 'text.secondary' }}>
                         Amount
                       </Typography>
                     </TableCell>
@@ -62,17 +62,17 @@ const ReviewComplete = () => {
                   </TableRow>
                   <TableRow>
                     <TableCell>
-                      <Typography noWrap sx={{ fontWeight: 600, color: 'text.secondary' }}>
+                      <Typography noWrap sx={{ fontWeight: 500, color: 'text.secondary' }}>
                         Deal Code
                       </Typography>
                     </TableCell>
                     <TableCell>
-                      <CustomChip size='small' skin='light' color='warning' label='25PEROFF' />
+                      <CustomChip rounded size='small' skin='light' color='warning' label='25PEROFF' />
                     </TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>
-                      <Typography noWrap sx={{ fontWeight: 600, color: 'text.secondary' }}>
+                      <Typography noWrap sx={{ fontWeight: 500, color: 'text.secondary' }}>
                         Deal Title
                       </Typography>
                     </TableCell>
@@ -82,7 +82,7 @@ const ReviewComplete = () => {
                   </TableRow>
                   <TableRow>
                     <TableCell>
-                      <Typography noWrap sx={{ fontWeight: 600, color: 'text.secondary' }}>
+                      <Typography noWrap sx={{ fontWeight: 500, color: 'text.secondary' }}>
                         Deal Duration
                       </Typography>
                     </TableCell>
@@ -104,20 +104,21 @@ const ReviewComplete = () => {
         lg={6}
         xl={5}
         xs={12}
-        sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', '& img': { maxWidth: '100%' } }}
+        sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', '& img': { maxWidth: '100%' } }}
       >
         <Box
           sx={{
-            pt: 4.5,
-            px: 4.5,
+            pt: 5,
+            px: 5,
             width: '100%',
             display: 'flex',
             borderRadius: 1,
+            alignItems: 'flex-end',
             justifyContent: 'center',
             border: theme => `1px solid ${theme.palette.divider}`
           }}
         >
-          <img height={300} alt='review-illustration' src='/images/pages/create-deal-review-complete.png' />
+          <img height={230} alt='review-illustration' src='/images/pages/create-deal-review-complete.png' />
         </Box>
       </Grid>
     </Grid>

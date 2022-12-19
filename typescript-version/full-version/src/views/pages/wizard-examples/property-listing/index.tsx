@@ -4,6 +4,7 @@ import { useState } from 'react'
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
+import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import Stepper from '@mui/material/Stepper'
 import { styled } from '@mui/material/styles'
@@ -16,7 +17,7 @@ import CardContent, { CardContentProps } from '@mui/material/CardContent'
 import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Imports
-import StepperCustomDot from 'src/views/forms/form-wizard/StepperCustomDot'
+import CustomAvatar from 'src/@core/components/mui/avatar'
 
 // ** Step Components
 import StepPropertyArea from 'src/views/pages/wizard-examples/property-listing/StepPropertyArea'
@@ -25,52 +26,72 @@ import StepPropertyDetails from 'src/views/pages/wizard-examples/property-listin
 import StepPersonalDetails from 'src/views/pages/wizard-examples/property-listing/StepPersonalDetails'
 import StepPropertyFeatures from 'src/views/pages/wizard-examples/property-listing/StepPropertyFeatures'
 
+// ** Util Import
+import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
+
 // ** Styled Components
 import StepperWrapper from 'src/@core/styles/mui/stepper'
 
 const steps = [
   {
     title: 'Personal Details',
-    subtitle: 'Your Name/Email',
-    icon: 'mdi:account-outline'
+    subtitle: 'Name/Email/Contact',
+    icon: 'bx:user'
   },
   {
-    icon: 'mdi:home-outline',
-    title: 'Property Details',
-    subtitle: 'Property Type'
+    icon: 'bx:home',
+    subtitle: 'Property Type',
+    title: 'Property Details'
   },
   {
-    icon: 'mdi:star-outline',
+    icon: 'bx:star',
     title: 'Property Features',
     subtitle: 'Bedrooms/Floor No'
   },
   {
+    icon: 'bx:map',
     title: 'Property Area',
-    subtitle: 'Covered Area',
-    icon: 'mdi:map-marker-outline'
+    subtitle: 'Covered Area'
   },
   {
     title: 'Price Details',
-    icon: 'mdi:currency-usd',
+    icon: 'bx:dollar',
     subtitle: 'Expected Price'
   }
 ]
 
-const Step = styled(MuiStep)<StepProps>(({ theme }) => ({
-  '&:not(:last-of-type)': {
-    marginBottom: theme.spacing(4)
-  },
-  '& .MuiStepLabel-root': {
-    padding: 0
-  }
-}))
-
 const StepperHeaderContainer = styled(CardContent)<CardContentProps>(({ theme }) => ({
-  minWidth: 300,
   borderRight: `1px solid ${theme.palette.divider}`,
   [theme.breakpoints.down('lg')]: {
     borderRight: 0,
     borderBottom: `1px solid ${theme.palette.divider}`
+  }
+}))
+
+const Step = styled(MuiStep)<StepProps>(({ theme }) => ({
+  '& .MuiStepLabel-root': {
+    paddingTop: 0
+  },
+  '&:not(:last-of-type) .MuiStepLabel-root': {
+    paddingBottom: theme.spacing(6)
+  },
+  '&:last-of-type .MuiStepLabel-root': {
+    paddingBottom: 0
+  },
+  '& .MuiStepLabel-iconContainer': {
+    display: 'none'
+  },
+  '& .step-subtitle': {
+    color: `${theme.palette.text.disabled} !important`
+  },
+  '& + svg': {
+    color: theme.palette.text.disabled
+  },
+  '&.Mui-completed .step-title': {
+    color: theme.palette.text.disabled
+  },
+  '& .MuiStepLabel-label': {
+    cursor: 'pointer'
   }
 }))
 
@@ -113,20 +134,20 @@ const PropertyListingWizard = () => {
     const stepCondition = activeStep === steps.length - 1
 
     return (
-      <Box sx={{ mt: 4, display: 'flex', justifyContent: 'space-between' }}>
+      <Box sx={{ mt: 6, display: 'flex', justifyContent: 'space-between' }}>
         <Button
           color='secondary'
           variant='outlined'
           onClick={handlePrev}
           disabled={activeStep === 0}
-          startIcon={<Icon icon='mdi:arrow-left' />}
+          startIcon={<Icon icon='bx:chevron-left' />}
         >
           Previous
         </Button>
         <Button
           variant='contained'
           color={stepCondition ? 'success' : 'primary'}
-          {...(!stepCondition ? { endIcon: <Icon icon='mdi:arrow-right' /> } : {})}
+          {...(!stepCondition ? { endIcon: <Icon icon='bx:chevron-right' /> } : {})}
           onClick={() => (stepCondition ? alert('Submitted..!!') : handleNext())}
         >
           {stepCondition ? 'Submit' : 'Next'}
@@ -138,18 +159,36 @@ const PropertyListingWizard = () => {
   return (
     <Card sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' } }}>
       <StepperHeaderContainer>
-        <StepperWrapper sx={{ height: '100%', '& .MuiStepLabel-label': { cursor: 'pointer' } }}>
-          <Stepper connector={<></>} activeStep={activeStep} orientation='vertical'>
+        <StepperWrapper sx={{ height: '100%' }}>
+          <Stepper
+            connector={<></>}
+            orientation='vertical'
+            activeStep={activeStep}
+            sx={{ height: '100%', minWidth: '15rem' }}
+          >
             {steps.map((step, index) => {
+              const RenderAvatar = activeStep >= index ? CustomAvatar : Avatar
+
               return (
                 <Step
                   key={index}
                   onClick={() => setActiveStep(index)}
                   sx={{ '&.Mui-completed + svg': { color: 'primary.main' } }}
                 >
-                  <StepLabel StepIconComponent={StepperCustomDot}>
+                  <StepLabel>
                     <div className='step-label'>
-                      <Typography className='step-number'>{`0${index + 1}`}</Typography>
+                      <RenderAvatar
+                        variant='rounded'
+                        {...(activeStep >= index && { skin: 'light' })}
+                        {...(activeStep === index && { skin: 'filled' })}
+                        {...(activeStep >= index && { color: 'primary' })}
+                        sx={{
+                          ...(activeStep === index && { boxShadow: theme => theme.shadows[3] }),
+                          ...(activeStep > index && { color: theme => hexToRGBA(theme.palette.primary.main, 0.4) })
+                        }}
+                      >
+                        <Icon icon={step.icon} />
+                      </RenderAvatar>
                       <div>
                         <Typography className='step-title'>{step.title}</Typography>
                         <Typography className='step-subtitle'>{step.subtitle}</Typography>
@@ -162,12 +201,10 @@ const PropertyListingWizard = () => {
           </Stepper>
         </StepperWrapper>
       </StepperHeaderContainer>
-      <div>
-        <CardContent>
-          {renderContent()}
-          {renderFooter()}
-        </CardContent>
-      </div>
+      <CardContent sx={{ pt: theme => `${theme.spacing(6)} !important` }}>
+        {renderContent()}
+        {renderFooter()}
+      </CardContent>
     </Card>
   )
 }
