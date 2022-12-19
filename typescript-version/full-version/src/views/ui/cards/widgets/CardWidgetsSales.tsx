@@ -12,14 +12,8 @@ import OptionsMenu from 'src/@core/components/option-menu'
 import ReactApexcharts from 'src/@core/components/react-apexcharts'
 
 const series = [
-  {
-    name: 'Sales',
-    data: [32, 27, 27, 30, 25, 25]
-  },
-  {
-    name: 'Visits',
-    data: [25, 35, 20, 20, 20, 20]
-  }
+  { name: 'Sales', data: [32, 27, 27, 30, 25, 25] },
+  { name: 'Visits', data: [25, 35, 20, 20, 20, 20] }
 ]
 
 const CardWidgetsSales = () => {

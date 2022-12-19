@@ -1,5 +1,6 @@
 // ** MUI Imports
 import Card from '@mui/material/Card'
+import Chip from '@mui/material/Chip'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 
@@ -17,14 +18,16 @@ const CardStatsVertical = (props: CardStatsVerticalProps) => {
     sx,
     stats,
     title,
+    chipText,
     subtitle,
-    trendDiff,
     avatarIcon,
     iconSize = 24,
     avatarSize = 42,
-    trend = 'positive',
+    chipColor = 'primary',
     avatarColor = 'primary'
   } = props
+
+  const RenderChip = chipColor === 'default' ? Chip : CustomChip
 
   return (
     <Card sx={{ ...sx }}>
@@ -44,12 +47,13 @@ const CardStatsVertical = (props: CardStatsVerticalProps) => {
           {subtitle}
         </Typography>
         <Typography sx={{ mb: 3.5, color: 'text.secondary' }}>{stats}</Typography>
-        <CustomChip
-          rounded
+        <RenderChip
           size='small'
-          skin='light'
-          color={trend === 'negative' ? 'error' : 'success'}
-          label={`${trend === 'negative' ? '-' : '+'}${trendDiff}`}
+          label={chipText}
+          color={chipColor}
+          {...(chipColor === 'default'
+            ? { sx: { borderRadius: '4px', color: 'text.secondary' } }
+            : { rounded: true, skin: 'light' })}
         />
       </CardContent>
     </Card>

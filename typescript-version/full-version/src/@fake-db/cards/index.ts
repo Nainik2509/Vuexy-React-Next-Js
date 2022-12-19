@@ -47,8 +47,8 @@ const cardStatsData: CardStatsType = {
   statsVertical: [
     {
       stats: '1.28k',
-      trend: 'negative',
-      trendDiff: '12.2%',
+      chipColor: 'error',
+      chipText: '-12.2%',
       avatarColor: 'error',
       title: 'Total Profit',
       subtitle: 'Last week',
@@ -56,8 +56,9 @@ const cardStatsData: CardStatsType = {
     },
     {
       stats: '24.67k',
-      trendDiff: '25.7%',
+      chipText: '+25.7%',
       title: 'Total Sales',
+      chipColor: 'success',
       subtitle: 'Last week',
       avatarColor: 'success',
       avatarIcon: 'tabler:credit-card'

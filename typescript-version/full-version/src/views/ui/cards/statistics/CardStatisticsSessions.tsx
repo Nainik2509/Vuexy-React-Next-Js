@@ -15,14 +15,8 @@ import ReactApexcharts from 'src/@core/components/react-apexcharts'
 import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 
 const series = [
-  {
-    name: 'Earning',
-    data: [29, 18, 44, 28, 16]
-  },
-  {
-    name: 'Expense',
-    data: [-17, -22, -17, -11, -22]
-  }
+  { name: 'Earning', data: [29, 18, 44, 28, 16] },
+  { name: 'Expense', data: [-17, -22, -17, -11, -22] }
 ]
 
 const CardStatisticsSessions = () => {
