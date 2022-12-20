@@ -1,21 +1,18 @@
 // ** React Imports
-import { useState, useRef, HTMLAttributes } from 'react'
+import { useState, HTMLAttributes } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Chip from '@mui/material/Chip'
 import List from '@mui/material/List'
-import Menu from '@mui/material/Menu'
 import Input from '@mui/material/Input'
 import Button from '@mui/material/Button'
 import Drawer from '@mui/material/Drawer'
-import MenuItem from '@mui/material/MenuItem'
 import ListItem from '@mui/material/ListItem'
 import TextField from '@mui/material/TextField'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import InputLabel from '@mui/material/InputLabel'
-import ButtonGroup from '@mui/material/ButtonGroup'
 import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete'
 
 // ** Icon Imports
@@ -90,25 +87,13 @@ const ComposePopup = (props: MailComposeType) => {
   const [ccValue, setccValue] = useState<FieldMenuItems[]>([])
   const [subjectValue, setSubjectValue] = useState<string>('')
   const [bccValue, setbccValue] = useState<FieldMenuItems[]>([])
-  const [sendBtnOpen, setSendBtnOpen] = useState<boolean>(false)
   const [messageValue, setMessageValue] = useState(EditorState.createEmpty())
   const [visibility, setVisibility] = useState<MailFields>({
     cc: false,
     bcc: false
   })
 
-  // ** Ref
-  const anchorRefSendBtn = useRef<HTMLDivElement>(null)
-
   const toggleVisibility = (value: 'cc' | 'bcc') => setVisibility({ ...visibility, [value]: !visibility[value] })
-
-  const handleSendMenuItemClick = () => {
-    setSendBtnOpen(false)
-  }
-
-  const handleSendBtnToggle = () => {
-    setSendBtnOpen(prevOpen => !prevOpen)
-  }
 
   const handleMailDelete = (value: string, state: FieldMenuItems[], setState: (val: FieldMenuItems[]) => void) => {
     const arr = state
@@ -200,6 +185,7 @@ const ComposePopup = (props: MailComposeType) => {
   return (
     <Drawer
       hideBackdrop
+      elevation={18}
       anchor='bottom'
       open={composeOpen}
       variant='temporary'
@@ -207,10 +193,11 @@ const ComposePopup = (props: MailComposeType) => {
       sx={{
         top: 'auto',
         left: 'auto',
-        right: mdAbove ? '1.5rem' : '1rem',
-        bottom: '1.5rem',
         display: 'block',
-        zIndex: theme => `${theme.zIndex.drawer} + 1`,
+        bottom: theme => theme.spacing(5),
+        zIndex: theme => theme.zIndex.drawer + 1,
+        right: theme => theme.spacing(mdAbove ? 6 : 4),
+        '& .Mui-focused': { boxShadow: 'none !important' },
         '& .MuiDrawer-paper': {
           borderRadius: 1,
           position: 'static',
@@ -220,15 +207,17 @@ const ComposePopup = (props: MailComposeType) => {
     >
       <Box
         sx={{
-          px: 4,
-          py: 2.5,
+          px: 5,
+          py: 4,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          backgroundColor: theme => `rgba(${theme.palette.customColors.main}, 0.08)`
+          backgroundColor: 'action.hover'
         }}
       >
-        <Typography sx={{ fontWeight: 500 }}>Compose Mail</Typography>
+        <Typography variant='h6' sx={{ fontWeight: 500 }}>
+          Compose Mail
+        </Typography>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <IconButton sx={{ p: 1, mr: 2 }} onClick={handleMinimize}>
             <Icon icon='mdi:minus' fontSize={20} />
@@ -240,8 +229,7 @@ const ComposePopup = (props: MailComposeType) => {
       </Box>
       <Box
         sx={{
-          py: 1,
-          px: 4,
+          px: 5,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -279,19 +267,22 @@ const ComposePopup = (props: MailComposeType) => {
                 {...params}
                 autoComplete='new-password'
                 sx={{
-                  border: 0,
                   '& fieldset': { border: '0 !important' },
-                  '& .MuiOutlinedInput-root': { p: '0 !important' }
+                  '& .MuiOutlinedInput-root': { p: '0 !important' },
+                  '& .MuiInputBase-input': {
+                    px: theme => `${theme.spacing(1.5)} !important`,
+                    py: theme => `${theme.spacing(2.125)} !important`
+                  }
                 }}
               />
             )}
           />
         </Box>
-        <Typography>
+        <Typography variant='body2' sx={{ color: 'primary.main' }}>
           <Box component='span' sx={{ cursor: 'pointer' }} onClick={() => toggleVisibility('cc')}>
             Cc
           </Box>
-          <Box component='span' sx={{ mx: 2 }}>
+          <Box component='span' sx={{ mx: 1 }}>
             |
           </Box>
           <Box component='span' sx={{ cursor: 'pointer' }} onClick={() => toggleVisibility('bcc')}>
@@ -302,8 +293,7 @@ const ComposePopup = (props: MailComposeType) => {
       {visibility.cc ? (
         <Box
           sx={{
-            py: 1,
-            px: 4,
+            px: 5,
             display: 'flex',
             alignItems: 'center',
             borderBottom: theme => `1px solid ${theme.palette.divider}`
@@ -318,7 +308,6 @@ const ComposePopup = (props: MailComposeType) => {
             fullWidth
             size='small'
             sx={{
-              border: 0,
               '& fieldset': { border: '0 !important' },
               '& .MuiOutlinedInput-root': { p: '0 !important' }
             }}
@@ -328,8 +317,7 @@ const ComposePopup = (props: MailComposeType) => {
       {visibility.bcc ? (
         <Box
           sx={{
-            py: 1,
-            px: 4,
+            px: 5,
             display: 'flex',
             alignItems: 'center',
             borderBottom: theme => `1px solid ${theme.palette.divider}`
@@ -344,7 +332,6 @@ const ComposePopup = (props: MailComposeType) => {
             fullWidth
             size='small'
             sx={{
-              border: 0,
               '& fieldset': { border: '0 !important' },
               '& .MuiOutlinedInput-root': { p: '0 !important' }
             }}
@@ -353,8 +340,7 @@ const ComposePopup = (props: MailComposeType) => {
       ) : null}
       <Box
         sx={{
-          py: 1,
-          px: 4,
+          px: 5,
           display: 'flex',
           alignItems: 'center',
           borderBottom: theme => `1px solid ${theme.palette.divider}`
@@ -370,27 +356,40 @@ const ComposePopup = (props: MailComposeType) => {
           value={subjectValue}
           id='email-subject-input'
           onChange={e => setSubjectValue(e.target.value)}
-          sx={{ '&:before, &:after': { display: 'none' }, '& .MuiInput-input': { py: 1.875 } }}
+          sx={{ '&:before, &:after': { display: 'none' }, '& .MuiInput-input': { py: 2.125 } }}
         />
       </Box>
-      <EditorWrapper sx={{ '& .rdw-editor-wrapper': { border: 0 } }}>
+      <EditorWrapper
+        sx={{
+          '& .rdw-editor-wrapper .rdw-editor-main': { px: 5 },
+          '& .rdw-editor-wrapper, & .rdw-option-wrapper': { border: 0 }
+        }}
+      >
         <ReactDraftWysiwyg
           editorState={messageValue}
           onEditorStateChange={editorState => setMessageValue(editorState)}
-          placeholder='Message'
+          placeholder='Write your message...'
           toolbar={{
-            options: ['inline', 'textAlign'],
+            options: ['inline', 'list', 'link', 'image'],
             inline: {
               inDropdown: false,
-              options: ['bold', 'italic', 'underline', 'strikethrough']
+              options: ['bold', 'italic', 'underline']
+            },
+            list: {
+              inDropdown: false,
+              options: ['unordered', 'ordered']
+            },
+            link: {
+              inDropdown: false,
+              options: ['link']
             }
           }}
         />
       </EditorWrapper>
       <Box
         sx={{
-          py: 2,
-          px: 4,
+          py: 4,
+          px: 5,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -398,37 +397,9 @@ const ComposePopup = (props: MailComposeType) => {
         }}
       >
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <ButtonGroup variant='contained' ref={anchorRefSendBtn} aria-label='split button'>
-            <Button onClick={handlePopupClose}>Send</Button>
-            <Button
-              size='small'
-              aria-haspopup='true'
-              onClick={handleSendBtnToggle}
-              aria-label='select merge strategy'
-              aria-expanded={sendBtnOpen ? 'true' : undefined}
-              aria-controls={sendBtnOpen ? 'email-send-menu' : undefined}
-            >
-              <Icon icon='mdi:chevron-up' fontSize='1.25rem' />
-            </Button>
-          </ButtonGroup>
-          <Menu
-            keepMounted
-            open={sendBtnOpen}
-            id='email-send-menu'
-            onClose={handleSendMenuItemClick}
-            anchorEl={anchorRefSendBtn.current}
-            anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'left'
-            }}
-            transformOrigin={{
-              vertical: 'bottom',
-              horizontal: 'left'
-            }}
-          >
-            <MenuItem onClick={handleSendMenuItemClick}>Schedule Send</MenuItem>
-            <MenuItem onClick={handleSendMenuItemClick}>Save as Draft</MenuItem>
-          </Menu>
+          <Button variant='contained' onClick={handlePopupClose} startIcon={<Icon icon='mdi:send-outline' />}>
+            Send
+          </Button>
           <IconButton size='small' sx={{ ml: 3, color: 'text.secondary' }}>
             <Icon icon='mdi:attachment' fontSize='1.375rem' />
           </IconButton>

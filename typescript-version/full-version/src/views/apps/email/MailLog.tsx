@@ -43,8 +43,8 @@ import { OptionType } from 'src/@core/components/option-menu/types'
 
 const MailItem = styled(ListItem)<ListItemProps>(({ theme }) => ({
   cursor: 'pointer',
-  paddingTop: theme.spacing(3),
-  paddingBottom: theme.spacing(3),
+  paddingTop: theme.spacing(2.25),
+  paddingBottom: theme.spacing(2.25),
   justifyContent: 'space-between',
   transition: 'border 0.15s ease-in-out, transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out',
   '&:not(:first-child)': {
@@ -315,7 +315,7 @@ const MailLog = (props: MailLogType) => {
   return (
     <Box sx={{ width: '100%', overflow: 'hidden', position: 'relative', '& .ps__rail-y': { zIndex: 5 } }}>
       <Box sx={{ height: '100%', backgroundColor: 'background.paper' }}>
-        <Box sx={{ px: 5, py: 3 }}>
+        <Box sx={{ px: 5, py: 3.75 }}>
           <Box sx={{ display: 'flex', alignItems: 'center', width: '100%' }}>
             {lgAbove ? null : (
               <IconButton onClick={handleLeftSidebarToggle} sx={{ mr: 1, ml: -2 }}>
@@ -379,7 +379,7 @@ const MailLog = (props: MailLogType) => {
           </Box>
         </Box>
         <Divider sx={{ m: '0 !important' }} />
-        <Box sx={{ p: 0, position: 'relative', overflowX: 'hidden', height: 'calc(100% - 7.25rem)' }}>
+        <Box sx={{ p: 0, position: 'relative', overflowX: 'hidden', height: 'calc(100% - 7.625rem)' }}>
           <ScrollWrapper hidden={hidden}>
             {store && store.mails && store.mails.length ? (
               <List sx={{ p: 0 }}>
@@ -433,7 +433,7 @@ const MailLog = (props: MailLogType) => {
                         >
                           <Typography
                             sx={{
-                              mr: 4,
+                              mr: 3,
                               fontWeight: 500,
                               whiteSpace: 'nowrap',
                               width: ['100%', 'auto'],
@@ -443,7 +443,7 @@ const MailLog = (props: MailLogType) => {
                           >
                             {mail.from.name}
                           </Typography>
-                          <Typography noWrap variant='body2' sx={{ width: '100%' }}>
+                          <Typography noWrap sx={{ width: '100%', color: 'text.secondary' }}>
                             {mail.subject}
                           </Typography>
                         </Box>
@@ -492,7 +492,7 @@ const MailLog = (props: MailLogType) => {
                       >
                         <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>{renderMailLabels(mail.labels)}</Box>
                         <Typography
-                          variant='caption'
+                          variant='body2'
                           sx={{ minWidth: '50px', textAlign: 'right', whiteSpace: 'nowrap', color: 'text.disabled' }}
                         >
                           {new Date(mail.time).toLocaleTimeString('en-US', {

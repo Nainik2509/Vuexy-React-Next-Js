@@ -121,14 +121,14 @@ const SidebarLeft = (props: MailSidebarType) => {
         }
       }}
     >
-      <Box sx={{ p: 5, overflowY: 'hidden' }}>
+      <Box sx={{ p: 6, overflowY: 'hidden' }}>
         <Button fullWidth variant='contained' onClick={toggleComposeOpen}>
           Compose
         </Button>
       </Box>
       <ScrollWrapper>
         <Box sx={{ pt: 0, overflowY: 'hidden' }}>
-          <List component='div'>
+          <List component='div' sx={{ '& .MuiListItemIcon-root': { mr: 2 } }}>
             <ListItemStyled
               component={Link}
               href='/apps/email/inbox'
@@ -266,9 +266,8 @@ const SidebarLeft = (props: MailSidebarType) => {
             </ListItemStyled>
           </List>
           <Typography
-            component='h6'
-            variant='caption'
-            sx={{ mx: 6, mt: 4, mb: 0, color: 'text.disabled', letterSpacing: '0.21px', textTransform: 'uppercase' }}
+            variant='body2'
+            sx={{ mx: 6, mt: 5.5, mb: 1.5, color: 'text.disabled', textTransform: 'uppercase' }}
           >
             Labels
           </Typography>
@@ -281,8 +280,8 @@ const SidebarLeft = (props: MailSidebarType) => {
                 borderLeftColor: handleActiveItem('label', 'personal') ? 'primary.main' : 'transparent'
               }}
             >
-              <ListItemIcon sx={{ mr: 3.5, '& svg': { color: 'success.main' } }}>
-                <Icon icon='mdi:circle' fontSize='0.75rem' />
+              <ListItemIcon sx={{ mr: 2.5, '& svg': { color: 'success.main' } }}>
+                <Icon icon='mdi:circle' fontSize='0.625rem' />
               </ListItemIcon>
               <ListItemText
                 primary='Personal'
@@ -300,8 +299,8 @@ const SidebarLeft = (props: MailSidebarType) => {
                 borderLeftColor: handleActiveItem('label', 'company') ? 'primary.main' : 'transparent'
               }}
             >
-              <ListItemIcon sx={{ mr: 3.5, '& svg': { color: 'primary.main' } }}>
-                <Icon icon='mdi:circle' fontSize='0.75rem' />
+              <ListItemIcon sx={{ mr: 2.5, '& svg': { color: 'primary.main' } }}>
+                <Icon icon='mdi:circle' fontSize='0.625rem' />
               </ListItemIcon>
               <ListItemText
                 primary='Company'
@@ -319,8 +318,8 @@ const SidebarLeft = (props: MailSidebarType) => {
                 borderLeftColor: handleActiveItem('label', 'important') ? 'primary.main' : 'transparent'
               }}
             >
-              <ListItemIcon sx={{ mr: 3.5, '& svg': { color: 'warning.main' } }}>
-                <Icon icon='mdi:circle' fontSize='0.75rem' />
+              <ListItemIcon sx={{ mr: 2.5, '& svg': { color: 'warning.main' } }}>
+                <Icon icon='mdi:circle' fontSize='0.625rem' />
               </ListItemIcon>
               <ListItemText
                 primary='Important'
@@ -338,8 +337,8 @@ const SidebarLeft = (props: MailSidebarType) => {
                 borderLeftColor: handleActiveItem('label', 'private') ? 'primary.main' : 'transparent'
               }}
             >
-              <ListItemIcon sx={{ mr: 3.5, '& svg': { color: 'error.main' } }}>
-                <Icon icon='mdi:circle' fontSize='0.75rem' />
+              <ListItemIcon sx={{ mr: 2.5, '& svg': { color: 'error.main' } }}>
+                <Icon icon='mdi:circle' fontSize='0.625rem' />
               </ListItemIcon>
               <ListItemText
                 primary='Private'
