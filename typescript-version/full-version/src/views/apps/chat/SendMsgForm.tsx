@@ -18,8 +18,8 @@ import { SendMsgComponentType } from 'src/types/apps/chatTypes'
 const ChatFormWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
+  padding: theme.spacing(2.5),
   boxShadow: theme.shadows[1],
-  padding: theme.spacing(1.25, 4),
   justifyContent: 'space-between',
   borderRadius: theme.shape.borderRadius,
   backgroundColor: theme.palette.background.paper
@@ -54,14 +54,22 @@ const SendMsgForm = (props: SendMsgComponentType) => {
             size='small'
             placeholder='Type your message here…'
             onChange={e => setMsg(e.target.value)}
-            sx={{ '& .MuiOutlinedInput-input': { pl: 0 }, '& fieldset': { border: '0 !important' } }}
+            sx={{
+              '& .MuiOutlinedInput-root': {
+                '&.Mui-focused': { boxShadow: 'none' }
+              },
+              '& .MuiOutlinedInput-input': {
+                p: theme => theme.spacing(1.875, 2.5)
+              },
+              '& fieldset': { border: '0 !important' }
+            }}
           />
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <IconButton size='small' sx={{ color: 'text.primary' }}>
             <Icon icon='mdi:microphone' fontSize='1.375rem' />
           </IconButton>
-          <IconButton size='small' component='label' htmlFor='upload-img' sx={{ mr: 4, color: 'text.primary' }}>
+          <IconButton size='small' component='label' htmlFor='upload-img' sx={{ mr: 3, color: 'text.primary' }}>
             <Icon icon='mdi:attachment' fontSize='1.375rem' />
             <input hidden type='file' id='upload-img' />
           </IconButton>

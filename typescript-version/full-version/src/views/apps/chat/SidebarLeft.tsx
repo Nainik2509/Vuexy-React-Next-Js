@@ -26,6 +26,9 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
 
+// ** Util Import
+import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
+
 // ** Types
 import { ContactType, ChatSidebarLeftType, ChatsArrType } from 'src/types/apps/chatTypes'
 
@@ -128,20 +131,26 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
           const activeCondition = active !== null && active.id === chat.id && active.type === 'chat'
 
           return (
-            <ListItem key={index} disablePadding sx={{ '&:not(:last-child)': { mb: 1.5 } }}>
+            <ListItem key={index} disablePadding sx={{ '&:not(:last-child)': { mb: 1 } }}>
               <ListItemButton
                 disableRipple
                 onClick={() => handleChatClick('chat', chat.id)}
                 sx={{
+                  py: 2,
                   px: 3,
-                  py: 2.5,
                   width: '100%',
                   borderRadius: 1,
                   alignItems: 'flex-start',
-                  ...(activeCondition && { backgroundColor: theme => `${theme.palette.primary.main} !important` })
+                  ...(activeCondition && {
+                    background: theme =>
+                      `linear-gradient(72.47deg, ${theme.palette.primary.main} 22.16%, ${hexToRGBA(
+                        theme.palette.primary.main,
+                        0.7
+                      )} 76.47%) !important`
+                  })
                 }}
               >
-                <ListItemAvatar sx={{ m: 0 }}>
+                <ListItemAvatar sx={{ m: 0, alignSelf: 'center' }}>
                   <Badge
                     overlap='circular'
                     anchorOrigin={{
@@ -194,17 +203,17 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
                 <ListItemText
                   sx={{
                     my: 0,
-                    ml: 4,
+                    ml: 3,
                     mr: 1.5,
                     '& .MuiTypography-root': { ...(activeCondition && { color: 'common.white' }) }
                   }}
                   primary={
-                    <Typography noWrap sx={{ fontWeight: 500, fontSize: '0.875rem' }}>
+                    <Typography noWrap sx={{ fontWeight: 500 }}>
                       {chat.fullName}
                     </Typography>
                   }
                   secondary={
-                    <Typography noWrap variant='body2' sx={{ ...(!activeCondition && { color: 'text.disabled' }) }}>
+                    <Typography noWrap sx={{ ...(!activeCondition && { color: 'text.secondary' }) }}>
                       {lastMessage ? lastMessage.message : null}
                     </Typography>
                   }
@@ -262,16 +271,22 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
                 active !== null && active.id === contact.id && active.type === 'contact' && !hasActiveId(contact.id)
 
               return (
-                <ListItem key={index} disablePadding sx={{ '&:not(:last-child)': { mb: 1.5 } }}>
+                <ListItem key={index} disablePadding sx={{ '&:not(:last-child)': { mb: 1 } }}>
                   <ListItemButton
                     disableRipple
                     onClick={() => handleChatClick(hasActiveId(contact.id) ? 'chat' : 'contact', contact.id)}
                     sx={{
+                      py: 2,
                       px: 3,
-                      py: 2.5,
                       width: '100%',
                       borderRadius: 1,
-                      ...(activeCondition && { backgroundColor: theme => `${theme.palette.primary.main} !important` })
+                      ...(activeCondition && {
+                        background: theme =>
+                          `linear-gradient(72.47deg, ${theme.palette.primary.main} 22.16%, ${hexToRGBA(
+                            theme.palette.primary.main,
+                            0.7
+                          )} 76.47%) !important`
+                      })
                     }}
                   >
                     <ListItemAvatar sx={{ m: 0 }}>
@@ -282,7 +297,8 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
                           sx={{
                             width: 38,
                             height: 38,
-                            outline: theme => `2px solid ${activeCondition ? theme.palette.common.white : 'transparent'}`
+                            outline: theme =>
+                              `2px solid ${activeCondition ? theme.palette.common.white : 'transparent'}`
                           }}
                         />
                       ) : (
@@ -293,7 +309,8 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
                             width: 38,
                             height: 38,
                             fontSize: '1rem',
-                            outline: theme => `2px solid ${activeCondition ? theme.palette.common.white : 'transparent'}`
+                            outline: theme =>
+                              `2px solid ${activeCondition ? theme.palette.common.white : 'transparent'}`
                           }}
                         >
                           {getInitials(contact.fullName)}
@@ -303,14 +320,12 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
                     <ListItemText
                       sx={{
                         my: 0,
-                        ml: 4,
+                        ml: 3,
                         ...(activeCondition && { '& .MuiTypography-root': { color: 'common.white' } })
                       }}
-                      primary={
-                        <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>{contact.fullName}</Typography>
-                      }
+                      primary={<Typography sx={{ fontWeight: 500 }}>{contact.fullName}</Typography>}
                       secondary={
-                        <Typography noWrap variant='body2' sx={{ ...(!activeCondition && { color: 'text.disabled' }) }}>
+                        <Typography noWrap sx={{ ...(!activeCondition && { color: 'text.secondary' }) }}>
                           {contact.about}
                         </Typography>
                       }
@@ -367,8 +382,8 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
       >
         <Box
           sx={{
+            py: 3,
             px: 5,
-            py: 3.125,
             display: 'flex',
             alignItems: 'center',
             borderBottom: theme => `1px solid ${theme.palette.divider}`
@@ -381,7 +396,7 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
                 vertical: 'bottom',
                 horizontal: 'right'
               }}
-              sx={{ mr: 4 }}
+              sx={{ mr: 3 }}
               onClick={handleUserProfileLeftSidebarToggle}
               badgeContent={
                 <Box
@@ -426,14 +441,14 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
           ) : null}
         </Box>
 
-        <Box sx={{ height: `calc(100% - 4.125rem)` }}>
+        <Box sx={{ height: `calc(100% - 4.0625rem)` }}>
           <ScrollWrapper hidden={hidden}>
-            <Box sx={{ p: theme => theme.spacing(7, 3, 3) }}>
-              <Typography variant='h6' sx={{ ml: 3, mb: 3, color: 'primary.main' }}>
+            <Box sx={{ p: theme => theme.spacing(5, 3, 3) }}>
+              <Typography variant='h6' sx={{ ml: 3, mb: 3.5, color: 'primary.main' }}>
                 Chats
               </Typography>
-              <List sx={{ mb: 4, p: 0 }}>{renderChats()}</List>
-              <Typography variant='h6' sx={{ ml: 3, mb: 3, color: 'primary.main' }}>
+              <List sx={{ mb: 5, p: 0 }}>{renderChats()}</List>
+              <Typography variant='h6' sx={{ ml: 3, mb: 3.5, color: 'primary.main' }}>
                 Contacts
               </Typography>
               <List sx={{ p: 0 }}>{renderContacts()}</List>

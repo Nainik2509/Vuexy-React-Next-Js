@@ -109,11 +109,12 @@ const ChatContent = (props: ChatContentType) => {
           >
             <Box
               sx={{
-                py: 3,
+                py: 2,
                 px: 5,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
+                backgroundColor: 'background.paper',
                 borderBottom: theme => `1px solid ${theme.palette.divider}`
               }}
             >
@@ -150,27 +151,23 @@ const ChatContent = (props: ChatContentType) => {
                   >
                     {selectedChat.contact.avatar ? (
                       <MuiAvatar
+                        sx={{ width: 38, height: 38 }}
                         src={selectedChat.contact.avatar}
                         alt={selectedChat.contact.fullName}
-                        sx={{ width: '2.375rem', height: '2.375rem' }}
                       />
                     ) : (
                       <CustomAvatar
                         skin='light'
                         color={selectedChat.contact.avatarColor}
-                        sx={{ width: '2.375rem', height: '2.375rem', fontSize: '1rem' }}
+                        sx={{ width: 38, height: 38, fontSize: '1rem' }}
                       >
                         {getInitials(selectedChat.contact.fullName)}
                       </CustomAvatar>
                     )}
                   </Badge>
                   <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                    <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>
-                      {selectedChat.contact.fullName}
-                    </Typography>
-                    <Typography variant='caption' sx={{ color: 'text.disabled' }}>
-                      {selectedChat.contact.role}
-                    </Typography>
+                    <Typography sx={{ fontWeight: 500 }}>{selectedChat.contact.fullName}</Typography>
+                    <Typography sx={{ color: 'text.disabled' }}>{selectedChat.contact.role}</Typography>
                   </Box>
                 </Box>
               </Box>
@@ -179,20 +176,20 @@ const ChatContent = (props: ChatContentType) => {
                 {mdAbove ? (
                   <Fragment>
                     <IconButton size='small' sx={{ color: 'text.secondary' }}>
-                      <Icon icon='mdi:phone-outline' fontSize='1.25rem' />
+                      <Icon icon='mdi:phone-outline' />
                     </IconButton>
                     <IconButton size='small' sx={{ color: 'text.secondary' }}>
-                      <Icon icon='mdi:video-outline' fontSize='1.5rem' />
+                      <Icon icon='mdi:video-outline' />
                     </IconButton>
                     <IconButton size='small' sx={{ color: 'text.secondary' }}>
-                      <Icon icon='mdi:magnify' fontSize='1.25rem' />
+                      <Icon icon='mdi:magnify' />
                     </IconButton>
                   </Fragment>
                 ) : null}
 
                 <OptionsMenu
                   menuProps={{ sx: { mt: 2 } }}
-                  icon={<Icon icon='mdi:dots-vertical' fontSize='1.25rem' />}
+                  icon={<Icon icon='mdi:dots-vertical' />}
                   iconButtonProps={{ size: 'small', sx: { color: 'text.secondary' } }}
                   options={['View Contact', 'Mute Notifications', 'Block Contact', 'Clear Chat', 'Report']}
                 />

@@ -69,12 +69,12 @@ const UserProfileRight = (props: UserProfileRightType) => {
             <IconButton
               size='small'
               onClick={handleUserProfileRightSidebarToggle}
-              sx={{ top: '0.5rem', right: '0.5rem', position: 'absolute', color: 'text.secondary' }}
+              sx={{ top: '0.5rem', right: '0.5rem', position: 'absolute', color: 'text.disabled' }}
             >
-              <Icon icon='mdi:close' fontSize='1.375rem' />
+              <Icon icon='mdi:close' />
             </IconButton>
-            <Box sx={{ p: 5, display: 'flex', flexDirection: 'column' }}>
-              <Box sx={{ mb: 5.5, display: 'flex', justifyContent: 'center' }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', p: theme => theme.spacing(11.25, 6, 4.5) }}>
+              <Box sx={{ mb: 3.5, display: 'flex', justifyContent: 'center' }}>
                 <Badge
                   overlap='circular'
                   anchorOrigin={{
@@ -112,97 +112,98 @@ const UserProfileRight = (props: UserProfileRightType) => {
                   )}
                 </Badge>
               </Box>
-              <Typography sx={{ mb: 0.5, fontWeight: 500, textAlign: 'center' }}>
+              <Typography variant='h6' sx={{ textAlign: 'center' }}>
                 {store.selectedChat.contact.fullName}
               </Typography>
-              <Typography variant='body2' sx={{ textAlign: 'center' }}>
+              <Typography sx={{ textAlign: 'center', color: 'text.secondary' }}>
                 {store.selectedChat.contact.role}
               </Typography>
             </Box>
           </Box>
 
-          <Box sx={{ height: 'calc(100% - 11.8125rem)' }}>
+          <Box sx={{ height: 'calc(100% - 13.3125rem)' }}>
             <ScrollWrapper>
-              <Box sx={{ p: 5 }}>
-                <FormGroup sx={{ mb: 10.5 }}>
-                  <Typography variant='body2' sx={{ mb: 3.5, textTransform: 'uppercase' }}>
+              <Box sx={{ p: 6 }}>
+                <FormGroup sx={{ mb: 6.5 }}>
+                  <Typography variant='body2' sx={{ mb: 3.5, color: 'text.disabled', textTransform: 'uppercase' }}>
                     About
                   </Typography>
-                  <Typography sx={{ fontSize: '0.875rem' }}>{store.selectedChat.contact.about}</Typography>
+                  <Typography sx={{ color: 'text.secondary' }}>{store.selectedChat.contact.about}</Typography>
                 </FormGroup>
 
-                <Box sx={{ mb: 8.5 }}>
-                  <Typography variant='body2' sx={{ mb: 3.5, textTransform: 'uppercase' }}>
+                <Box sx={{ mb: 6 }}>
+                  <Typography variant='body2' sx={{ mb: 3.5, color: 'text.disabled', textTransform: 'uppercase' }}>
                     Personal Information
                   </Typography>
                   <List dense sx={{ p: 0 }}>
                     <ListItem sx={{ px: 2 }}>
-                      <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
-                        <Icon icon='mdi:email-outline' fontSize='1.375rem' />
+                      <ListItemIcon sx={{ mr: 2 }}>
+                        <Icon icon='mdi:email-outline' fontSize='1.5rem' />
                       </ListItemIcon>
                       <ListItemText
                         sx={{ textTransform: 'lowercase' }}
+                        primaryTypographyProps={{ variant: 'body1' }}
                         primary={`${store.selectedChat.contact.fullName.replace(/\s/g, '_')}@email.com`}
                       />
                     </ListItem>
                     <ListItem sx={{ px: 2 }}>
-                      <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
-                        <Icon icon='mdi:phone-outline' fontSize='1.375rem' />
+                      <ListItemIcon sx={{ mr: 2 }}>
+                        <Icon icon='mdi:phone-outline' fontSize='1.5rem' />
                       </ListItemIcon>
-                      <ListItemText primary='+1(123) 456 - 7890' />
+                      <ListItemText primaryTypographyProps={{ variant: 'body1' }} primary='+1(123) 456 - 7890' />
                     </ListItem>
                     <ListItem sx={{ px: 2 }}>
-                      <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
-                        <Icon icon='mdi:clock-time-five-outline' fontSize='1.375rem' />
+                      <ListItemIcon sx={{ mr: 2 }}>
+                        <Icon icon='mdi:clock-time-five-outline' fontSize='1.5rem' />
                       </ListItemIcon>
-                      <ListItemText primary='Mon - Fri 10AM - 8PM' />
+                      <ListItemText primaryTypographyProps={{ variant: 'body1' }} primary='Mon - Fri 10AM - 8PM' />
                     </ListItem>
                   </List>
                 </Box>
 
                 <div>
-                  <Typography variant='body2' sx={{ mb: 3.5, textTransform: 'uppercase' }}>
+                  <Typography variant='body2' sx={{ mb: 3.5, color: 'text.disabled', textTransform: 'uppercase' }}>
                     Options
                   </Typography>
                   <List dense sx={{ p: 0 }}>
                     <ListItem disablePadding>
                       <ListItemButton sx={{ px: 2 }}>
-                        <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
-                          <Icon icon='mdi:bookmark-outline' fontSize='1.375rem' />
+                        <ListItemIcon sx={{ mr: 2 }}>
+                          <Icon icon='mdi:bookmark-outline' fontSize='1.5rem' />
                         </ListItemIcon>
-                        <ListItemText primary='Add Tag' />
+                        <ListItemText primary='Add Tag' primaryTypographyProps={{ variant: 'body1' }} />
                       </ListItemButton>
                     </ListItem>
                     <ListItem disablePadding>
                       <ListItemButton sx={{ px: 2 }}>
-                        <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
-                          <Icon icon='mdi:star-outline' fontSize='1.375rem' />
+                        <ListItemIcon sx={{ mr: 2 }}>
+                          <Icon icon='mdi:star-outline' fontSize='1.5rem' />
                         </ListItemIcon>
-                        <ListItemText primary='Important Contact' />
+                        <ListItemText primary='Important Contact' primaryTypographyProps={{ variant: 'body1' }} />
                       </ListItemButton>
                     </ListItem>
                     <ListItem disablePadding>
                       <ListItemButton sx={{ px: 2 }}>
-                        <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
-                          <Icon icon='mdi:image-outline' fontSize='1.375rem' />
+                        <ListItemIcon sx={{ mr: 2 }}>
+                          <Icon icon='mdi:image-outline' fontSize='1.5rem' />
                         </ListItemIcon>
-                        <ListItemText primary='Shared Media' />
+                        <ListItemText primary='Shared Media' primaryTypographyProps={{ variant: 'body1' }} />
                       </ListItemButton>
                     </ListItem>
                     <ListItem disablePadding>
                       <ListItemButton sx={{ px: 2 }}>
-                        <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
-                          <Icon icon='mdi:delete-outline' fontSize='1.375rem' />
+                        <ListItemIcon sx={{ mr: 2 }}>
+                          <Icon icon='mdi:delete-outline' fontSize='1.5rem' />
                         </ListItemIcon>
-                        <ListItemText primary='Delete Contact' />
+                        <ListItemText primary='Delete Contact' primaryTypographyProps={{ variant: 'body1' }} />
                       </ListItemButton>
                     </ListItem>
                     <ListItem disablePadding>
                       <ListItemButton sx={{ px: 2 }}>
-                        <ListItemIcon sx={{ mr: 2.5, ml: 0.5, color: 'text.primary' }}>
-                          <Icon icon='mdi:block-helper' fontSize='1.125rem' />
+                        <ListItemIcon sx={{ mr: 2 }}>
+                          <Icon icon='mdi:block-helper' fontSize='1.5rem' />
                         </ListItemIcon>
-                        <ListItemText primary='Block Contact' />
+                        <ListItemText primary='Block Contact' primaryTypographyProps={{ variant: 'body1' }} />
                       </ListItemButton>
                     </ListItem>
                   </List>

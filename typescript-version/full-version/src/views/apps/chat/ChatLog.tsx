@@ -98,8 +98,8 @@ const ChatLog = (props: ChatLogType) => {
     if (isSender) {
       if (feedback.isSent && !feedback.isDelivered) {
         return (
-          <Box component='span' sx={{ display: 'inline-flex', '& svg': { mr: 2, color: 'text.secondary' } }}>
-            <Icon icon='mdi:check' fontSize='1rem' />
+          <Box component='span' sx={{ display: 'flex', '& svg': { mr: 1.5, color: 'text.secondary' } }}>
+            <Icon icon='mdi:check' fontSize='1.125rem' />
           </Box>
         )
       } else if (feedback.isSent && feedback.isDelivered) {
@@ -107,11 +107,11 @@ const ChatLog = (props: ChatLogType) => {
           <Box
             component='span'
             sx={{
-              display: 'inline-flex',
-              '& svg': { mr: 2, color: feedback.isSeen ? 'success.main' : 'text.secondary' }
+              display: 'flex',
+              '& svg': { mr: 1.5, color: feedback.isSeen ? 'success.main' : 'text.secondary' }
             }}
           >
-            <Icon icon='mdi:check-all' fontSize='1rem' />
+            <Icon icon='mdi:check-all' fontSize='1.125rem' />
           </Box>
         )
       } else {
@@ -146,11 +146,11 @@ const ChatLog = (props: ChatLogType) => {
               skin='light'
               color={data.contact.avatarColor ? data.contact.avatarColor : undefined}
               sx={{
-                width: '2rem',
-                height: '2rem',
-                fontSize: '0.875rem',
-                ml: isSender ? 3.5 : undefined,
-                mr: !isSender ? 3.5 : undefined
+                width: 32,
+                height: 32,
+                fontSize: '1rem',
+                ml: isSender ? 3 : undefined,
+                mr: !isSender ? 3 : undefined
               }}
               {...(data.contact.avatar && !isSender
                 ? {
@@ -174,15 +174,14 @@ const ChatLog = (props: ChatLogType) => {
               const time = new Date(chat.time)
 
               return (
-                <Box key={index} sx={{ '&:not(:last-of-type)': { mb: 3.5 } }}>
+                <Box key={index} sx={{ '&:not(:last-of-type)': { mb: 3 } }}>
                   <div>
                     <Typography
                       sx={{
                         boxShadow: 1,
                         borderRadius: 1,
                         width: 'fit-content',
-                        fontSize: '0.875rem',
-                        p: theme => theme.spacing(3, 4),
+                        p: theme => theme.spacing(2.25, 4),
                         ml: isSender ? 'auto' : undefined,
                         borderTopLeftRadius: !isSender ? 0 : undefined,
                         borderTopRightRadius: isSender ? 0 : undefined,
@@ -203,7 +202,7 @@ const ChatLog = (props: ChatLogType) => {
                       }}
                     >
                       {renderMsgFeedback(isSender, chat.feedback)}
-                      <Typography variant='caption'>
+                      <Typography variant='body2' sx={{ color: 'text.disabled' }}>
                         {time
                           ? new Date(time).toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
                           : null}
@@ -236,7 +235,7 @@ const ChatLog = (props: ChatLogType) => {
   }
 
   return (
-    <Box sx={{ height: 'calc(100% - 8.4375rem)' }}>
+    <Box sx={{ height: 'calc(100% - 8.9375rem)' }}>
       <ScrollWrapper>{renderChats()}</ScrollWrapper>
     </Box>
   )

@@ -76,13 +76,13 @@ const UserProfileLeft = (props: UserProfileLeftType) => {
           <IconButton
             size='small'
             onClick={handleUserProfileLeftSidebarToggle}
-            sx={{ top: '0.5rem', right: '0.5rem', position: 'absolute', color: 'text.secondary' }}
+            sx={{ top: '0.5rem', right: '0.5rem', position: 'absolute', color: 'text.disabled' }}
           >
-            <Icon icon='mdi:close' fontSize='1.375rem' />
+            <Icon icon='mdi:close' />
           </IconButton>
 
-          <Box sx={{ p: 5, display: 'flex', flexDirection: 'column' }}>
-            <Box sx={{ mb: 5.5, display: 'flex', justifyContent: 'center' }}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', p: theme => theme.spacing(11.25, 6, 4.5) }}>
+            <Box sx={{ mb: 3.5, display: 'flex', justifyContent: 'center' }}>
               <Badge
                 overlap='circular'
                 anchorOrigin={{
@@ -110,23 +110,25 @@ const UserProfileLeft = (props: UserProfileLeftType) => {
                 />
               </Badge>
             </Box>
-            <Typography sx={{ mb: 0.5, fontWeight: 500, textAlign: 'center' }}>{store.userProfile.fullName}</Typography>
-            <Typography variant='body2' sx={{ textAlign: 'center', textTransform: 'capitalize' }}>
+            <Typography variant='h6' sx={{ textAlign: 'center' }}>
+              {store.userProfile.fullName}
+            </Typography>
+            <Typography sx={{ textAlign: 'center', color: 'text.secondary', textTransform: 'capitalize' }}>
               {store.userProfile.role}
             </Typography>
           </Box>
 
-          <Box sx={{ height: 'calc(100% - 11.8125rem)' }}>
+          <Box sx={{ height: 'calc(100% - 13.3125rem)' }}>
             <ScrollWrapper>
-              <Box sx={{ p: 5 }}>
-                <Typography variant='body2' sx={{ mb: 4, textTransform: 'uppercase' }}>
+              <Box sx={{ p: 6 }}>
+                <Typography variant='body2' sx={{ mb: 3.5, color: 'text.disabled', textTransform: 'uppercase' }}>
                   About
                 </Typography>
-                <TextField minRows={3} multiline fullWidth sx={{ mb: 4 }} defaultValue={store.userProfile.about} />
-                <Typography variant='body2' sx={{ mb: 4, textTransform: 'uppercase' }}>
+                <TextField minRows={4} multiline fullWidth sx={{ mb: 6 }} defaultValue={store.userProfile.about} />
+                <Typography variant='body2' sx={{ mb: 3.5, color: 'text.disabled', textTransform: 'uppercase' }}>
                   Status
                 </Typography>
-                <RadioGroup value={userStatus} sx={{ mb: 4, ml: 0.8 }} onChange={handleUserStatus}>
+                <RadioGroup value={userStatus} sx={{ mb: 6, ml: 0.8 }} onChange={handleUserStatus}>
                   <div>
                     <FormControlLabel
                       value='online'
@@ -152,16 +154,16 @@ const UserProfileLeft = (props: UserProfileLeftType) => {
                     />
                   </div>
                 </RadioGroup>
-                <Typography variant='body2' sx={{ mb: 4, textTransform: 'uppercase' }}>
+                <Typography variant='body2' sx={{ mb: 3.5, color: 'text.disabled', textTransform: 'uppercase' }}>
                   Settings
                 </Typography>
-                <List dense sx={{ p: 0, mb: 4 }}>
-                  <ListItem disablePadding secondaryAction={<Switch defaultChecked />}>
+                <List dense sx={{ p: 0, mb: 3.5 }}>
+                  <ListItem disablePadding secondaryAction={<Switch />}>
                     <ListItemButton sx={{ px: 2 }}>
                       <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
                         <Icon icon='mdi:check-circle-outline' fontSize='1.375rem' />
                       </ListItemIcon>
-                      <ListItemText primary='Two-step Verification' />
+                      <ListItemText primary='Two-step Verification' primaryTypographyProps={{ variant: 'body1' }} />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding secondaryAction={<Switch defaultChecked />}>
@@ -169,7 +171,7 @@ const UserProfileLeft = (props: UserProfileLeftType) => {
                       <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
                         <Icon icon='mdi:bell-outline' fontSize='1.375rem' />
                       </ListItemIcon>
-                      <ListItemText primary='Notification' />
+                      <ListItemText primary='Notification' primaryTypographyProps={{ variant: 'body1' }} />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
@@ -177,7 +179,7 @@ const UserProfileLeft = (props: UserProfileLeftType) => {
                       <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
                         <Icon icon='mdi:account-outline' fontSize='1.375rem' />
                       </ListItemIcon>
-                      <ListItemText primary='Invite Friends' />
+                      <ListItemText primary='Invite Friends' primaryTypographyProps={{ variant: 'body1' }} />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
@@ -185,7 +187,7 @@ const UserProfileLeft = (props: UserProfileLeftType) => {
                       <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
                         <Icon icon='mdi:delete-outline' fontSize='1.375rem' />
                       </ListItemIcon>
-                      <ListItemText primary='Delete Account' />
+                      <ListItemText primary='Delete Account' primaryTypographyProps={{ variant: 'body1' }} />
                     </ListItemButton>
                   </ListItem>
                 </List>

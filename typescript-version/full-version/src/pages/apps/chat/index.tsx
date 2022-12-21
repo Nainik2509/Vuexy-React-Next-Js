@@ -42,7 +42,7 @@ const AppChat = () => {
   // ** Vars
   const { skin } = settings
   const smAbove = useMediaQuery(theme.breakpoints.up('sm'))
-  const sidebarWidth = smAbove ? 370 : 300
+  const sidebarWidth = smAbove ? 360 : 300
   const mdAbove = useMediaQuery(theme.breakpoints.up('md'))
   const statusObj: StatusObjType = {
     busy: 'error',
