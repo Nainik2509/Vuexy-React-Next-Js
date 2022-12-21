@@ -51,11 +51,11 @@ interface CellType {
 
 // ** Vars
 const userRoleObj: UserRoleType = {
-  admin: { icon: 'mdi:laptop', color: 'error.main' },
-  author: { icon: 'mdi:cog-outline', color: 'warning.main' },
-  editor: { icon: 'mdi:pencil-outline', color: 'info.main' },
-  maintainer: { icon: 'mdi:chart-donut', color: 'success.main' },
-  subscriber: { icon: 'mdi:account-outline', color: 'primary.main' }
+  editor: { icon: 'tabler:edit', color: 'info' },
+  author: { icon: 'tabler:user', color: 'warning' },
+  admin: { icon: 'tabler:device-laptop', color: 'error' },
+  maintainer: { icon: 'tabler:chart-pie-2', color: 'success' },
+  subscriber: { icon: 'tabler:circle-check', color: 'primary' }
 }
 
 const userStatusObj: UserStatusType = {
@@ -67,10 +67,14 @@ const userStatusObj: UserStatusType = {
 // ** renders client column
 const renderClient = (row: UsersType) => {
   if (row.avatar.length) {
-    return <CustomAvatar src={row.avatar} sx={{ mr: 3, width: 30, height: 30 }} />
+    return <CustomAvatar src={row.avatar} sx={{ mr: 3, width: 38, height: 38 }} />
   } else {
     return (
-      <CustomAvatar skin='light' color={row.avatarColor} sx={{ mr: 3, width: 30, height: 30, fontSize: '.875rem' }}>
+      <CustomAvatar
+        skin='light'
+        color={row.avatarColor}
+        sx={{ mr: 2.5, width: 38, height: 38, fontSize: '1rem', fontWeight: 500 }}
+      >
         {getInitials(row.fullName ? row.fullName : 'John Doe')}
       </CustomAvatar>
     )
@@ -79,12 +83,12 @@ const renderClient = (row: UsersType) => {
 
 const columns = [
   {
-    flex: 0.2,
-    minWidth: 230,
+    flex: 0.25,
+    minWidth: 280,
     field: 'fullName',
     headerName: 'User',
     renderCell: ({ row }: CellType) => {
-      const { fullName, username } = row
+      const { fullName, email } = row
 
       return (
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -92,20 +96,19 @@ const columns = [
           <Box sx={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
             <Typography
               noWrap
-              variant='body2'
               component={Link}
               href='/apps/user/view/overview/'
               sx={{
-                fontWeight: 600,
-                color: 'text.primary',
+                fontWeight: 500,
                 textDecoration: 'none',
+                color: 'text.secondary',
                 '&:hover': { color: 'primary.main' }
               }}
             >
               {fullName}
             </Typography>
-            <Typography noWrap variant='caption'>
-              {`@${username}`}
+            <Typography noWrap variant='body2' sx={{ color: 'text.disabled' }}>
+              {email}
             </Typography>
           </Box>
         </Box>
@@ -113,27 +116,20 @@ const columns = [
     }
   },
   {
-    flex: 0.2,
-    minWidth: 250,
-    field: 'email',
-    headerName: 'Email',
-    renderCell: ({ row }: CellType) => {
-      return (
-        <Typography variant='body2' noWrap>
-          {row.email}
-        </Typography>
-      )
-    }
-  },
-  {
     flex: 0.15,
     field: 'role',
-    minWidth: 150,
+    minWidth: 170,
     headerName: 'Role',
     renderCell: ({ row }: CellType) => {
       return (
-        <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 3, color: userRoleObj[row.role].color } }}>
-          <Icon icon={userRoleObj[row.role].icon} fontSize={20} />
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <CustomAvatar
+            skin='light'
+            sx={{ mr: 4, width: 30, height: 30 }}
+            color={(userRoleObj[row.role].color as ThemeColor) || 'primary'}
+          >
+            <Icon icon={userRoleObj[row.role].icon} />
+          </CustomAvatar>
           <Typography noWrap sx={{ color: 'text.secondary', textTransform: 'capitalize' }}>
             {row.role}
           </Typography>
@@ -142,14 +138,27 @@ const columns = [
     }
   },
   {
-    flex: 0.15,
+    flex: 0.1,
     minWidth: 120,
     headerName: 'Plan',
     field: 'currentPlan',
     renderCell: ({ row }: CellType) => {
       return (
-        <Typography noWrap sx={{ textTransform: 'capitalize' }}>
+        <Typography noWrap sx={{ fontWeight: 500, color: 'text.secondary', textTransform: 'capitalize' }}>
           {row.currentPlan}
+        </Typography>
+      )
+    }
+  },
+  {
+    flex: 0.15,
+    minWidth: 190,
+    field: 'billing',
+    headerName: 'Billing',
+    renderCell: ({ row }: CellType) => {
+      return (
+        <Typography noWrap sx={{ color: 'text.secondary' }}>
+          {row.billing}
         </Typography>
       )
     }
@@ -162,6 +171,7 @@ const columns = [
     renderCell: ({ row }: CellType) => {
       return (
         <CustomChip
+          rounded
           skin='light'
           size='small'
           label={row.status}
@@ -179,7 +189,7 @@ const columns = [
     headerName: 'Actions',
     renderCell: () => (
       <IconButton component={Link} href='/apps/user/view/overview/'>
-        <Icon icon='mdi:eye-outline' />
+        <Icon icon='tabler:eye' />
       </IconButton>
     )
   }
@@ -221,6 +231,7 @@ const UserList = () => {
           <TableHeader plan={plan} value={value} handleFilter={handleFilter} handlePlanChange={handlePlanChange} />
           <DataGrid
             autoHeight
+            rowHeight={62}
             rows={store.data}
             columns={columns}
             checkboxSelection

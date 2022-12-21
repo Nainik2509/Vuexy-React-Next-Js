@@ -8,6 +8,7 @@ const data: { users: UsersType[] } = {
   users: [
     {
       id: 1,
+      billing: 'Auto Debit',
       fullName: 'Galen Slixby',
       company: 'Yotz PVT LTD',
       role: 'editor',
@@ -22,6 +23,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 2,
+      billing: 'Manual - Paypal',
       fullName: 'Halsey Redmore',
       company: 'Skinder PVT LTD',
       role: 'author',
@@ -35,6 +37,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 3,
+      billing: 'Manual - Cash',
       fullName: 'Marjory Sicely',
       company: 'Oozz PVT LTD',
       role: 'maintainer',
@@ -48,6 +51,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 4,
+      billing: 'Auto Debit',
       fullName: 'Cyrill Risby',
       company: 'Oozz PVT LTD',
       role: 'maintainer',
@@ -61,6 +65,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 5,
+      billing: 'Auto Debit',
       fullName: 'Maggy Hurran',
       company: 'Aimbo PVT LTD',
       role: 'subscriber',
@@ -74,6 +79,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 6,
+      billing: 'Manual - Cash',
       fullName: 'Silvain Halstead',
       company: 'Jaxbean PVT LTD',
       role: 'author',
@@ -88,6 +94,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 7,
+      billing: 'Manual - Paypal',
       fullName: 'Breena Gallemore',
       company: 'Jazzy PVT LTD',
       role: 'subscriber',
@@ -102,6 +109,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 8,
+      billing: 'Auto Debit',
       fullName: 'Kathryne Liger',
       company: 'Pixoboo PVT LTD',
       role: 'author',
@@ -115,6 +123,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 9,
+      billing: 'Manual - Credit Card',
       fullName: 'Franz Scotfurth',
       company: 'Tekfly PVT LTD',
       role: 'subscriber',
@@ -128,6 +137,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 10,
+      billing: 'Manual - Credit Card',
       fullName: 'Jillene Bellany',
       company: 'Gigashots PVT LTD',
       role: 'maintainer',
@@ -141,6 +151,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 11,
+      billing: 'Auto Debit',
       fullName: 'Jonah Wharlton',
       company: 'Eare PVT LTD',
       role: 'subscriber',
@@ -154,6 +165,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 12,
+      billing: 'Auto Debit',
       fullName: 'Seth Hallam',
       company: 'Yakitri PVT LTD',
       role: 'subscriber',
@@ -167,6 +179,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 13,
+      billing: 'Manual - Cash',
       fullName: 'Yoko Pottie',
       company: 'Leenti PVT LTD',
       role: 'subscriber',
@@ -180,6 +193,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 14,
+      billing: 'Manual - Paypal',
       fullName: 'Maximilianus Krause',
       company: 'Digitube PVT LTD',
       role: 'author',
@@ -193,6 +207,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 15,
+      billing: 'Manual - Credit Card',
       fullName: 'Zsazsa McCleverty',
       company: 'Kaymbo PVT LTD',
       role: 'maintainer',
@@ -206,6 +221,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 16,
+      billing: 'Auto Debit',
       fullName: 'Bentlee Emblin',
       company: 'Yambee PVT LTD',
       role: 'author',
@@ -219,6 +235,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 17,
+      billing: 'Manual - Paypal',
       fullName: 'Brockie Myles',
       company: 'Wikivu PVT LTD',
       role: 'maintainer',
@@ -233,6 +250,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 18,
+      billing: 'Auto Debit',
       fullName: 'Bertha Biner',
       company: 'Twinte PVT LTD',
       role: 'editor',
@@ -246,6 +264,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 19,
+      billing: 'Auto Debit',
       fullName: 'Travus Bruntjen',
       company: 'Cogidoo PVT LTD',
       role: 'admin',
@@ -260,6 +279,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 20,
+      billing: 'Auto Debit',
       fullName: 'Wesley Burland',
       company: 'Bubblemix PVT LTD',
       role: 'editor',
@@ -273,6 +293,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 21,
+      billing: 'Manual - Cash',
       fullName: 'Selina Kyle',
       company: 'Wayne Enterprises',
       role: 'admin',
@@ -286,6 +307,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 22,
+      billing: 'Manual - Cash',
       fullName: 'Jameson Lyster',
       company: 'Quaxo PVT LTD',
       role: 'editor',
@@ -299,6 +321,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 23,
+      billing: 'Manual - Paypal',
       fullName: 'Kare Skitterel',
       company: 'Ainyx PVT LTD',
       role: 'maintainer',
@@ -312,6 +335,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 24,
+      billing: 'Auto Debit',
       fullName: 'Cleavland Hatherleigh',
       company: 'Flipopia PVT LTD',
       role: 'admin',
@@ -325,6 +349,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 25,
+      billing: 'Manual - Paypal',
       fullName: 'Adeline Micco',
       company: 'Topicware PVT LTD',
       role: 'admin',
@@ -339,6 +364,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 26,
+      billing: 'Manual - Credit Card',
       fullName: 'Hugh Hasson',
       company: 'Skinix PVT LTD',
       role: 'admin',
@@ -352,6 +378,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 27,
+      billing: 'Manual - Cash',
       fullName: 'Germain Jacombs',
       company: 'Youopia PVT LTD',
       role: 'editor',
@@ -365,6 +392,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 28,
+      billing: 'Manual - Cash',
       fullName: 'Bree Kilday',
       company: 'Jetpulse PVT LTD',
       role: 'maintainer',
@@ -379,6 +407,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 29,
+      billing: 'Auto Debit',
       fullName: 'Candice Pinyon',
       company: 'Kare PVT LTD',
       role: 'maintainer',
@@ -392,6 +421,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 30,
+      billing: 'Manual - Cash',
       fullName: 'Isabel Mallindine',
       company: 'Voomm PVT LTD',
       role: 'subscriber',
@@ -406,6 +436,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 31,
+      billing: 'Auto Debit',
       fullName: 'Gwendolyn Meineken',
       company: 'Oyondu PVT LTD',
       role: 'admin',
@@ -419,6 +450,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 32,
+      billing: 'Manual - Paypal',
       fullName: 'Rafaellle Snowball',
       company: 'Fivespan PVT LTD',
       role: 'editor',
@@ -432,6 +464,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 33,
+      billing: 'Manual - Credit Card',
       fullName: 'Rochette Emer',
       company: 'Thoughtworks PVT LTD',
       role: 'admin',
@@ -445,6 +478,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 34,
+      billing: 'Manual - Cash',
       fullName: 'Ophelie Fibbens',
       company: 'Jaxbean PVT LTD',
       role: 'subscriber',
@@ -458,6 +492,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 35,
+      billing: 'Manual - Paypal',
       fullName: 'Stephen MacGilfoyle',
       company: 'Browseblab PVT LTD',
       role: 'maintainer',
@@ -472,6 +507,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 36,
+      billing: 'Auto Debit',
       fullName: 'Bradan Rosebotham',
       company: 'Agivu PVT LTD',
       role: 'subscriber',
@@ -486,6 +522,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 37,
+      billing: 'Manual - Cash',
       fullName: 'Skip Hebblethwaite',
       company: 'Katz PVT LTD',
       role: 'admin',
@@ -499,6 +536,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 38,
+      billing: 'Auto Debit',
       fullName: 'Moritz Piccard',
       company: 'Twitternation PVT LTD',
       role: 'maintainer',
@@ -512,6 +550,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 39,
+      billing: 'Manual - Paypal',
       fullName: 'Tyne Widmore',
       company: 'Yombu PVT LTD',
       role: 'subscriber',
@@ -526,6 +565,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 40,
+      billing: 'Auto Debit',
       fullName: 'Florenza Desporte',
       company: 'Kamba PVT LTD',
       role: 'author',
@@ -539,6 +579,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 41,
+      billing: 'Auto Debit',
       fullName: 'Edwina Baldetti',
       company: 'Dazzlesphere PVT LTD',
       role: 'maintainer',
@@ -553,6 +594,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 42,
+      billing: 'Manual - Credit Card',
       fullName: 'Benedetto Rossiter',
       company: 'Mybuzz PVT LTD',
       role: 'editor',
@@ -567,6 +609,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 43,
+      billing: 'Auto Debit',
       fullName: 'Micaela McNirlan',
       company: 'Tambee PVT LTD',
       role: 'admin',
@@ -581,6 +624,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 44,
+      billing: 'Manual - Paypal',
       fullName: 'Vladamir Koschek',
       company: 'Centimia PVT LTD',
       role: 'author',
@@ -595,6 +639,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 45,
+      billing: 'Manual - Cash',
       fullName: 'Corrie Perot',
       company: 'Flipopia PVT LTD',
       role: 'subscriber',
@@ -608,6 +653,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 46,
+      billing: 'Manual - Credit Card',
       fullName: 'Saunder Offner',
       company: 'Skalith PVT LTD',
       role: 'maintainer',
@@ -622,6 +668,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 47,
+      billing: 'Auto Debit',
       fullName: 'Karena Courtliff',
       company: 'Feedfire PVT LTD',
       role: 'admin',
@@ -635,6 +682,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 48,
+      billing: 'Auto Debit',
       fullName: 'Onfre Wind',
       company: 'Thoughtmix PVT LTD',
       role: 'admin',
@@ -649,6 +697,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 49,
+      billing: 'Auto Debit',
       fullName: 'Paulie Durber',
       company: 'Babbleblab PVT LTD',
       role: 'subscriber',
@@ -663,6 +712,7 @@ const data: { users: UsersType[] } = {
     },
     {
       id: 50,
+      billing: 'Manual - Cash',
       fullName: 'Beverlie Krabbe',
       company: 'Kaymbo PVT LTD',
       role: 'editor',

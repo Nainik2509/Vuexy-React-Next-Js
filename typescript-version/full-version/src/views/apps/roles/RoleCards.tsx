@@ -111,9 +111,13 @@ const RolesCards = () => {
       <Grid item xs={12} sm={6} lg={4} key={index}>
         <Card>
           <CardContent>
-            <Box sx={{ mb: 3, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <Typography variant='body2'>{`Total ${item.totalUsers} users`}</Typography>
-              <AvatarGroup max={4} sx={{ '& .MuiAvatar-root': { width: 32, height: 32, fontSize: '0.875rem' } }}>
+            <Box sx={{ mb: 1.5, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <Typography sx={{ color: 'text.secondary' }}>{`Total ${item.totalUsers} users`}</Typography>
+              <AvatarGroup
+                max={4}
+                className='pull-up'
+                sx={{ '& .MuiAvatar-root': { width: 32, height: 32, fontSize: '0.875rem' } }}
+              >
                 {item.avatars.map((img, index: number) => (
                   <Avatar key={index} alt={item.title} src={`/images/avatars/${img}`} />
                 ))}
@@ -121,10 +125,11 @@ const RolesCards = () => {
             </Box>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
               <Box sx={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
-                <Typography variant='h6'>{item.title}</Typography>
+                <Typography variant='h5' sx={{ mb: 1 }}>
+                  {item.title}
+                </Typography>
                 <Typography
                   href='/'
-                  variant='body2'
                   component={Link}
                   sx={{ color: 'primary.main', textDecoration: 'none' }}
                   onClick={e => {
@@ -136,8 +141,8 @@ const RolesCards = () => {
                   Edit Role
                 </Typography>
               </Box>
-              <IconButton sx={{ color: 'text.secondary' }}>
-                <Icon icon='mdi:content-copy' fontSize={20} />
+              <IconButton size='small' sx={{ color: 'text.disabled' }}>
+                <Icon icon='tabler:copy' />
               </IconButton>
             </Box>
           </CardContent>
@@ -158,12 +163,20 @@ const RolesCards = () => {
         >
           <Grid container sx={{ height: '100%' }}>
             <Grid item xs={5}>
-              <Box sx={{ height: '100%', display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }}>
-                <img width={65} height={130} alt='add-role' src='/images/cards/pose_m1.png' />
+              <Box
+                sx={{
+                  height: '100%',
+                  minHeight: 140,
+                  display: 'flex',
+                  alignItems: 'flex-end',
+                  justifyContent: 'center'
+                }}
+              >
+                <img height={122} alt='add-role' src='/images/pages/add-new-role-illustration.png' />
               </Box>
             </Grid>
             <Grid item xs={7}>
-              <CardContent>
+              <CardContent sx={{ pl: 0, height: '100%' }}>
                 <Box sx={{ textAlign: 'right' }}>
                   <Button
                     variant='contained'
@@ -173,9 +186,9 @@ const RolesCards = () => {
                       setDialogTitle('Add')
                     }}
                   >
-                    Add Role
+                    Add New Role
                   </Button>
-                  <Typography>Add role, if it doesn't exist.</Typography>
+                  <Typography sx={{ color: 'text.secondary' }}>Add role, if it doesn't exist.</Typography>
                 </Box>
               </CardContent>
             </Grid>
@@ -214,7 +227,7 @@ const RolesCards = () => {
                       Administrator Access
                       <Tooltip placement='top' title='Allows a full access to the system'>
                         <Box sx={{ display: 'flex' }}>
-                          <Icon icon='mdi:information-outline' fontSize='1rem' />
+                          <Icon icon='tabler:info-circle' fontSize='1.25rem' />
                         </Box>
                       </Tooltip>
                     </Box>
@@ -298,10 +311,10 @@ const RolesCards = () => {
         </DialogContent>
         <DialogActions sx={{ pt: 0, display: 'flex', justifyContent: 'center' }}>
           <Box className='demo-space-x'>
-            <Button size='large' type='submit' variant='contained' onClick={handleClose}>
+            <Button type='submit' variant='contained' onClick={handleClose}>
               Submit
             </Button>
-            <Button size='large' color='secondary' variant='outlined' onClick={handleClose}>
+            <Button color='secondary' variant='outlined' onClick={handleClose}>
               Cancel
             </Button>
           </Box>

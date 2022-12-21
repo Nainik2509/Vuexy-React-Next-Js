@@ -7,6 +7,7 @@ export type UsersType = {
   email: string
   status: string
   avatar: string
+  billing: string
   company: string
   country: string
   contact: string
