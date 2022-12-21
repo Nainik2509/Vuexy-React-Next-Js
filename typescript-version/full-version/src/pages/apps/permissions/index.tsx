@@ -62,16 +62,17 @@ const defaultColumns = [
     field: 'name',
     minWidth: 240,
     headerName: 'Name',
-    renderCell: ({ row }: CellType) => <Typography>{row.name}</Typography>
+    renderCell: ({ row }: CellType) => <Typography sx={{ color: 'text.secondary' }}>{row.name}</Typography>
   },
   {
     flex: 0.35,
-    minWidth: 280,
+    minWidth: 290,
     field: 'assignedTo',
     headerName: 'Assigned To',
     renderCell: ({ row }: CellType) => {
       return row.assignedTo.map((assignee: string, index: number) => (
         <CustomChip
+          rounded
           size='small'
           key={index}
           skin='light'
@@ -84,10 +85,10 @@ const defaultColumns = [
   },
   {
     flex: 0.25,
-    minWidth: 215,
+    minWidth: 210,
     field: 'createdDate',
     headerName: 'Created Date',
-    renderCell: ({ row }: CellType) => <Typography>{row.createdDate}</Typography>
+    renderCell: ({ row }: CellType) => <Typography sx={{ color: 'text.secondary' }}>{row.createdDate}</Typography>
   }
 ]
 
@@ -130,17 +131,17 @@ const PermissionsTable = () => {
     ...defaultColumns,
     {
       flex: 0.15,
-      minWidth: 115,
+      minWidth: 120,
       sortable: false,
       field: 'actions',
       headerName: 'Actions',
       renderCell: ({ row }: CellType) => (
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <IconButton onClick={() => handleEditPermission(row.name)}>
-            <Icon icon='mdi:pencil-outline' fontSize={20} />
+            <Icon icon='tabler:edit' />
           </IconButton>
           <IconButton>
-            <Icon icon='mdi:delete-outline' fontSize={20} />
+            <Icon icon='tabler:trash' />
           </IconButton>
         </Box>
       )
@@ -152,9 +153,13 @@ const PermissionsTable = () => {
       <Grid container spacing={6}>
         <Grid item xs={12}>
           <PageHeader
-            title={<Typography variant='h5'>Permissions List</Typography>}
+            title={
+              <Typography variant='h5' sx={{ mb: 6 }}>
+                Permissions List
+              </Typography>
+            }
             subtitle={
-              <Typography variant='body2'>
+              <Typography sx={{ color: 'text.secondary' }}>
                 Each category (Basic, Professional, and Business) includes the four predefined roles shown below.
               </Typography>
             }
