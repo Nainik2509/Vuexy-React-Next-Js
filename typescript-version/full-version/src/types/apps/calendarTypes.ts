@@ -77,6 +77,7 @@ export type CalendarType = {
 
 export type SidebarLeftType = {
   mdAbove: boolean
+  calendarApi: any
   dispatch: Dispatch<any>
   leftSidebarWidth: number
   leftSidebarOpen: boolean

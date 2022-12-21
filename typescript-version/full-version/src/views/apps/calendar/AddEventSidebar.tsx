@@ -177,10 +177,10 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
     if (store.selectedEvent === null || (store.selectedEvent !== null && !store.selectedEvent.title.length)) {
       return (
         <Fragment>
-          <Button size='large' type='submit' variant='contained' sx={{ mr: 4 }}>
+          <Button type='submit' variant='contained' sx={{ mr: 4 }}>
             Add
           </Button>
-          <Button size='large' variant='outlined' color='secondary' onClick={resetToEmptyValues}>
+          <Button variant='outlined' color='secondary' onClick={resetToEmptyValues}>
             Reset
           </Button>
         </Fragment>
@@ -188,10 +188,10 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
     } else {
       return (
         <Fragment>
-          <Button size='large' type='submit' variant='contained' sx={{ mr: 4 }}>
+          <Button type='submit' variant='contained' sx={{ mr: 4 }}>
             Update
           </Button>
-          <Button size='large' variant='outlined' color='secondary' onClick={resetToStoredValues}>
+          <Button variant='outlined' color='secondary' onClick={resetToStoredValues}>
             Reset
           </Button>
         </Fragment>
@@ -210,10 +210,9 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
       <Box
         className='sidebar-header'
         sx={{
+          p: 6,
           display: 'flex',
-          justifyContent: 'space-between',
-          backgroundColor: 'background.default',
-          p: theme => theme.spacing(3, 3.255, 3, 5.255)
+          justifyContent: 'space-between'
         }}
       >
         <Typography variant='h6'>
@@ -234,10 +233,10 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
           </IconButton>
         </Box>
       </Box>
-      <Box className='sidebar-body' sx={{ p: theme => theme.spacing(5, 6) }}>
+      <Box className='sidebar-body' sx={{ p: theme => theme.spacing(0, 6, 6) }}>
         <DatePickerWrapper>
           <form onSubmit={handleSubmit(onSubmit)} autoComplete='off'>
-            <FormControl fullWidth sx={{ mb: 6 }}>
+            <FormControl fullWidth sx={{ mb: 4 }}>
               <Controller
                 name='title'
                 control={control}
@@ -252,7 +251,7 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
                 </FormHelperText>
               )}
             </FormControl>
-            <FormControl fullWidth sx={{ mb: 6 }}>
+            <FormControl fullWidth sx={{ mb: 4 }}>
               <InputLabel id='event-calendar'>Calendar</InputLabel>
               <Select
                 label='Calendar'
@@ -267,7 +266,7 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
                 <MenuItem value='ETC'>ETC</MenuItem>
               </Select>
             </FormControl>
-            <Box sx={{ mb: 6 }}>
+            <Box sx={{ mb: 4 }}>
               <DatePicker
                 selectsStart
                 id='event-start-date'
@@ -281,7 +280,7 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
                 onSelect={handleStartDate}
               />
             </Box>
-            <Box sx={{ mb: 6 }}>
+            <Box sx={{ mb: 4 }}>
               <DatePicker
                 selectsEnd
                 id='event-end-date'
@@ -295,7 +294,7 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
                 onChange={(date: Date) => setValues({ ...values, endDate: new Date(date) })}
               />
             </Box>
-            <FormControl sx={{ mb: 6 }}>
+            <FormControl sx={{ mb: 4 }}>
               <FormControlLabel
                 label='All Day'
                 control={
@@ -307,12 +306,12 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
               fullWidth
               type='url'
               id='event-url'
-              sx={{ mb: 6 }}
+              sx={{ mb: 4 }}
               label='Event URL'
               value={values.url}
               onChange={e => setValues({ ...values, url: e.target.value })}
             />
-            <FormControl fullWidth sx={{ mb: 6 }}>
+            <FormControl fullWidth sx={{ mb: 4 }}>
               <InputLabel id='event-guests'>Guests</InputLabel>
               <Select
                 multiple
@@ -333,7 +332,7 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
               rows={4}
               multiline
               fullWidth
-              sx={{ mb: 6 }}
+              sx={{ mb: 6.5 }}
               label='Description'
               id='event-description'
               value={values.description}

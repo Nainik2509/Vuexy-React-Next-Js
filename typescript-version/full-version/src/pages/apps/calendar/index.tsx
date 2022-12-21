@@ -54,7 +54,7 @@ const AppCalendar = () => {
   const store = useSelector((state: RootState) => state.calendar)
 
   // ** Vars
-  const leftSidebarWidth = 260
+  const leftSidebarWidth = 300
   const addEventSidebarWidth = 400
   const { skin, direction } = settings
   const mdAbove = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'))
@@ -79,6 +79,7 @@ const AppCalendar = () => {
         store={store}
         mdAbove={mdAbove}
         dispatch={dispatch}
+        calendarApi={calendarApi}
         calendarsColor={calendarsColor}
         leftSidebarOpen={leftSidebarOpen}
         leftSidebarWidth={leftSidebarWidth}
@@ -90,7 +91,7 @@ const AppCalendar = () => {
       />
       <Box
         sx={{
-          p: 5,
+          p: 6,
           pb: 0,
           flexGrow: 1,
           borderRadius: 1,

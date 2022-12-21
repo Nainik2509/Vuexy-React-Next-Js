@@ -1,19 +1,31 @@
 // ** MUI Imports
+import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Drawer from '@mui/material/Drawer'
+import Divider from '@mui/material/Divider'
 import Checkbox from '@mui/material/Checkbox'
 import Typography from '@mui/material/Typography'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
+// ** Third Party Imports
+import DatePicker from 'react-datepicker'
+
+// ** Icons Imports
+import Icon from 'src/@core/components/icon'
+
 // ** Types
 import { ThemeColor } from 'src/@core/layouts/types'
 import { SidebarLeftType, CalendarFiltersType } from 'src/types/apps/calendarTypes'
+
+// ** Styled Component
+import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 const SidebarLeft = (props: SidebarLeftType) => {
   const {
     store,
     mdAbove,
     dispatch,
+    calendarApi,
     calendarsColor,
     leftSidebarOpen,
     leftSidebarWidth,
@@ -72,7 +84,6 @@ const SidebarLeft = (props: SidebarLeftType) => {
             borderTopRightRadius: 0,
             alignItems: 'flex-start',
             borderBottomRightRadius: 0,
-            p: theme => theme.spacing(5),
             zIndex: mdAbove ? 2 : 'drawer',
             position: mdAbove ? 'static' : 'absolute'
           },
@@ -82,24 +93,44 @@ const SidebarLeft = (props: SidebarLeftType) => {
           }
         }}
       >
-        <Button fullWidth variant='contained' onClick={handleSidebarToggleSidebar}>
-          Add Event
-        </Button>
+        <Box sx={{ p: 6, width: '100%' }}>
+          <Button
+            fullWidth
+            variant='contained'
+            startIcon={<Icon icon='mdi:plus' />}
+            onClick={handleSidebarToggleSidebar}
+          >
+            Add Event
+          </Button>
+        </Box>
 
-        <Typography variant='caption' sx={{ mt: 7, mb: 2, textTransform: 'uppercase' }}>
-          Calendars
-        </Typography>
-        <FormControlLabel
-          label='View All'
-          control={
-            <Checkbox
-              color='secondary'
-              checked={store.selectedCalendars.length === colorsArr.length}
-              onChange={e => dispatch(handleAllCalendars(e.target.checked))}
-            />
-          }
-        />
-        {renderFilters}
+        <Divider sx={{ width: '100%', m: '0 !important' }} />
+        <DatePickerWrapper
+          sx={{
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            '& .react-datepicker': { boxShadow: 'none !important', border: 'none !important' }
+          }}
+        >
+          <DatePicker inline onChange={date => calendarApi.gotoDate(date)} />
+        </DatePickerWrapper>
+        <Divider sx={{ width: '100%', m: '0 !important' }} />
+        <Box sx={{ p: 6, width: '100%', display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
+          <Typography variant='body2' sx={{ mb: 2, color: 'text.disabled', textTransform: 'uppercase' }}>
+            Filters
+          </Typography>
+          <FormControlLabel
+            label='View All'
+            control={
+              <Checkbox
+                checked={store.selectedCalendars.length === colorsArr.length}
+                onChange={e => dispatch(handleAllCalendars(e.target.checked))}
+              />
+            }
+          />
+          {renderFilters}
+        </Box>
       </Drawer>
     )
   } else {
