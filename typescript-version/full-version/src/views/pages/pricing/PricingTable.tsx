@@ -14,6 +14,7 @@ import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
+import CustomAvatar from 'src/@core/components/mui/avatar'
 
 // ** Types
 import { PricingDataType, PricingTableRowType } from 'src/@core/components/plan-details/types'
@@ -25,19 +26,25 @@ interface Props {
 const PricingTable = ({ data }: Props) => {
   const renderTableCell = (row: PricingTableRowType) => {
     if (typeof row.pro === 'boolean') {
-      return <Icon fontSize={20} icon={row.pro ? 'mdi:check-circle' : 'mdi:close-circle'} />
+      return (
+        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+          <CustomAvatar skin='light' sx={{ width: 20, height: 20 }} color={row.starter ? 'primary' : 'secondary'}>
+            <Icon fontSize='0.875rem' icon={row.starter ? 'tabler:check' : 'tabler:x'} />
+          </CustomAvatar>
+        </Box>
+      )
     } else {
-      return <CustomChip size='small' skin='light' label={row.pro} color='primary' sx={{ lineHeight: 1 }} />
+      return <CustomChip rounded size='small' skin='light' label={row.pro} color='primary' />
     }
   }
 
   return data && data.pricingTable ? (
     <div>
-      <Box sx={{ mb: 12, textAlign: 'center' }}>
-        <Typography variant='h5' sx={{ mb: 2.5 }}>
+      <Box sx={{ mb: 10, textAlign: 'center' }}>
+        <Typography variant='h4' sx={{ mb: 2.5 }}>
           Pick a plan that works best for you
         </Typography>
-        <Typography variant='body2'>Stay cool, we have a 48-hour money back guarantee!</Typography>
+        <Typography sx={{ color: 'text.disabled' }}>Stay cool, we have a 48-hour money back guarantee!</Typography>
       </Box>
 
       <Box
@@ -63,26 +70,31 @@ const PricingTable = ({ data }: Props) => {
                       }}
                     >
                       {head.isPro ? (
-                        <Box
-                          sx={{
-                            position: 'relative',
-                            '& svg': { top: -10, right: -25, position: 'absolute', color: 'primary.main' }
-                          }}
-                        >
-                          <Typography noWrap sx={{ fontSize: '.75rem', fontWeight: 600, letterSpacing: '.17px' }}>
+                        <Box sx={{ position: 'relative' }}>
+                          <Typography noWrap variant='body2' sx={{ mb: 1, fontWeight: 500, color: 'text.primary' }}>
                             {head.title}
                           </Typography>
-                          {head.isPro ? <Icon icon='mdi:star-circle' /> : null}
+                          {head.isPro ? (
+                            <CustomAvatar
+                              sx={{
+                                top: -10,
+                                width: 24,
+                                right: -25,
+                                height: 24,
+                                position: 'absolute',
+                                color: 'common.white'
+                              }}
+                            >
+                              <Icon fontSize='1rem' icon='tabler:star' />
+                            </CustomAvatar>
+                          ) : null}
                         </Box>
                       ) : (
-                        <Typography noWrap sx={{ fontSize: '.75rem', fontWeight: 600, letterSpacing: '.17px' }}>
+                        <Typography noWrap variant='body2' sx={{ mb: 1, fontWeight: 500, color: 'text.primary' }}>
                           {head.title}
                         </Typography>
                       )}
-                      <Typography
-                        noWrap
-                        sx={{ fontSize: '.75rem', letterSpacing: '.4px', textTransform: 'capitalize' }}
-                      >
+                      <Typography noWrap variant='body2' sx={{ color: 'text.disabled', textTransform: 'capitalize' }}>
                         {head.subtitle}
                       </Typography>
                     </Box>
@@ -92,27 +104,35 @@ const PricingTable = ({ data }: Props) => {
             </TableHead>
             <TableBody>
               {data.pricingTable.rows.map((row, index) => (
-                <TableRow key={index}>
-                  <TableCell sx={{ whiteSpace: 'nowrap' }}>{row.feature}</TableCell>
-                  <TableCell
-                    align='center'
-                    sx={{ '& svg': { verticalAlign: 'middle', color: row.starter ? 'primary.main' : 'text.disabled' } }}
-                  >
-                    <Icon fontSize={20} icon={row.starter ? 'mdi:check-circle' : 'mdi:close-circle'} />
+                <TableRow
+                  key={index}
+                  sx={{ '& .MuiTableCell-root': { py: theme => `${theme.spacing(3)} !important` } }}
+                >
+                  <TableCell sx={{ whiteSpace: 'nowrap' }}>
+                    <Typography sx={{ color: 'text.secondary' }}>{row.feature}</Typography>
                   </TableCell>
-                  <TableCell
-                    align='center'
-                    sx={{ '& svg': { verticalAlign: 'middle', color: row.pro ? 'primary.main' : 'text.disabled' } }}
-                  >
-                    {renderTableCell(row)}
+                  <TableCell>
+                    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                      <CustomAvatar
+                        skin='light'
+                        sx={{ width: 20, height: 20 }}
+                        color={row.starter ? 'primary' : 'secondary'}
+                      >
+                        <Icon fontSize='0.875rem' icon={row.starter ? 'tabler:check' : 'tabler:x'} />
+                      </CustomAvatar>
+                    </Box>
                   </TableCell>
-                  <TableCell
-                    align='center'
-                    sx={{
-                      '& svg': { verticalAlign: 'middle', color: row.enterprise ? 'primary.main' : 'text.disabled' }
-                    }}
-                  >
-                    <Icon fontSize={20} icon={row.enterprise ? 'mdi:check-circle' : 'mdi:close-circle'} />
+                  <TableCell align='center'>{renderTableCell(row)}</TableCell>
+                  <TableCell>
+                    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                      <CustomAvatar
+                        skin='light'
+                        sx={{ width: 20, height: 20 }}
+                        color={row.enterprise ? 'primary' : 'secondary'}
+                      >
+                        <Icon fontSize='0.875rem' icon={row.enterprise ? 'tabler:check' : 'tabler:x'} />
+                      </CustomAvatar>
+                    </Box>
                   </TableCell>
                 </TableRow>
               ))}

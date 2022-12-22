@@ -31,23 +31,17 @@ const PricingHeader = (props: Props) => {
     <Box sx={{ mb: [10, 17.5], textAlign: 'center' }}>
       <Typography variant='h4'>Pricing Plans</Typography>
       <Box sx={{ mt: 2.5, mb: 10.75 }}>
-        <Typography variant='body2'>
+        <Typography sx={{ color: 'text.secondary' }}>
           All plans include 40+ advanced tools and features to boost your product.
         </Typography>
-        <Typography variant='body2'>Choose the best plan to fit your needs.</Typography>
+        <Typography sx={{ color: 'text.secondary' }}>Choose the best plan to fit your needs.</Typography>
       </Box>
       <Box sx={{ display: 'flex', position: 'relative', alignItems: 'center', justifyContent: 'center' }}>
-        <InputLabel
-          htmlFor='pricing-switch'
-          sx={{ fontWeight: 600, cursor: 'pointer', fontSize: '0.875rem', color: 'text.secondary' }}
-        >
+        <InputLabel htmlFor='pricing-switch' sx={{ cursor: 'pointer' }}>
           Monthly
         </InputLabel>
         <Switch id='pricing-switch' onChange={handleChange} checked={plan === 'annually'} />
-        <InputLabel
-          htmlFor='pricing-switch'
-          sx={{ fontWeight: 600, cursor: 'pointer', fontSize: '0.875rem', color: 'text.secondary' }}
-        >
+        <InputLabel htmlFor='pricing-switch' sx={{ cursor: 'pointer' }}>
           Annually
         </InputLabel>
         {!hidden && (
@@ -58,11 +52,11 @@ const PricingHeader = (props: Props) => {
               display: 'flex',
               position: 'absolute',
               transform: 'translateX(35%)',
-              '& svg': { mt: 2, mr: 1, color: 'text.disabled' }
+              '& svg': { mt: 1.5, mr: 1, color: 'text.disabled' }
             }}
           >
-            <Icon icon='mdi:arrow-down-left' />
-            <CustomChip size='small' skin='light' color='primary' label='Save up to 10%' />
+            <Icon icon='tabler:corner-left-down' />
+            <CustomChip rounded size='small' skin='light' color='primary' label='Save up to 10%' />
           </Box>
         )}
       </Box>

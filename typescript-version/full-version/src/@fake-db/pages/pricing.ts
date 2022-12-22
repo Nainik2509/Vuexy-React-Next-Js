@@ -7,12 +7,14 @@ import { PricingDataType } from 'src/@core/components/plan-details/types'
 const data: PricingDataType = {
   pricingPlans: [
     {
+      imgWidth: 140,
+      imgHeight: 140,
       title: 'Basic',
       monthlyPrice: 0,
       currentPlan: true,
       popularPlan: false,
       subtitle: 'A simple start for everyone',
-      imgSrc: '/images/pages/pricing-tree-1.png',
+      imgSrc: '/images/pages/pricing-plan-basic.png',
       yearlyPlan: {
         perMonth: 0,
         totalAnnual: 0
@@ -26,12 +28,14 @@ const data: PricingDataType = {
       ]
     },
     {
+      imgWidth: 140,
+      imgHeight: 140,
       monthlyPrice: 49,
       title: 'Standard',
       popularPlan: true,
       currentPlan: false,
       subtitle: 'For small to medium businesses',
-      imgSrc: '/images/pages/pricing-tree-2.png',
+      imgSrc: '/images/pages/pricing-plan-standard.png',
       yearlyPlan: {
         perMonth: 40,
         totalAnnual: 480
@@ -45,12 +49,14 @@ const data: PricingDataType = {
       ]
     },
     {
+      imgWidth: 140,
+      imgHeight: 140,
       monthlyPrice: 99,
       popularPlan: false,
       currentPlan: false,
       title: 'Enterprise',
       subtitle: 'Solution for big organizations',
-      imgSrc: '/images/pages/pricing-tree-3.png',
+      imgSrc: '/images/pages/pricing-plan-enterprise.png',
       yearlyPlan: {
         perMonth: 80,
         totalAnnual: 960

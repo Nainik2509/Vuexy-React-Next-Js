@@ -20,15 +20,15 @@ import { PricingPlanProps } from './types'
 const BoxWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   position: 'relative',
   padding: theme.spacing(6),
-  paddingTop: theme.spacing(14.75),
+  paddingTop: theme.spacing(16),
   borderRadius: theme.shape.borderRadius
 }))
 
 // ** Styled Component for the wrapper of all the features of a plan
 const BoxFeature = styled(Box)<BoxProps>(({ theme }) => ({
-  marginBottom: theme.spacing(5),
-  '& > :not(:first-of-type)': {
-    marginTop: theme.spacing(4)
+  marginBottom: theme.spacing(4),
+  '& > :not(:last-child)': {
+    marginBottom: theme.spacing(2.5)
   }
 }))
 
@@ -39,10 +39,10 @@ const PlanDetails = (props: PricingPlanProps) => {
   const renderFeatures = () => {
     return data?.planBenefits.map((item: string, index: number) => (
       <Box key={index} sx={{ display: 'flex', alignItems: 'center' }}>
-        <Box component='span' sx={{ display: 'inline-flex', color: 'text.secondary', mr: 2 }}>
-          <Icon icon='mdi:circle-outline' fontSize='0.75rem' />
+        <Box component='span' sx={{ display: 'inline-flex', color: 'text.secondary', mr: 2.5 }}>
+          <Icon icon='tabler:circle' fontSize='0.875rem' />
         </Box>
-        <Typography variant='body2'>{item}</Typography>
+        <Typography sx={{ color: 'text.secondary' }}>{item}</Typography>
       </Box>
     ))
   }
@@ -58,23 +58,24 @@ const PlanDetails = (props: PricingPlanProps) => {
     >
       {data?.popularPlan ? (
         <CustomChip
+          rounded
+          size='small'
           skin='light'
           label='Popular'
           color='primary'
           sx={{
-            top: 12,
-            right: 12,
-            height: 24,
+            top: 24,
+            right: 24,
             position: 'absolute',
             '& .MuiChip-label': {
               px: 1.75,
-              fontWeight: 600,
+              fontWeight: 500,
               fontSize: '0.75rem'
             }
           }}
         />
       ) : null}
-      <Box sx={{ mb: 5, display: 'flex', justifyContent: 'center' }}>
+      <Box sx={{ mb: 4, display: 'flex', justifyContent: 'center' }}>
         <img
           width={data?.imgWidth}
           src={`${data?.imgSrc}`}
@@ -83,26 +84,24 @@ const PlanDetails = (props: PricingPlanProps) => {
         />
       </Box>
       <Box sx={{ textAlign: 'center' }}>
-        <Typography variant='h5' sx={{ mb: 1.5 }}>
+        <Typography sx={{ mb: 1.5, fontWeight: 500, lineHeight: 1.385, fontSize: '1.625rem' }}>
           {data?.title}
         </Typography>
-        <Typography variant='body2'>{data?.subtitle}</Typography>
+        <Typography sx={{ color: 'text.secondary' }}>{data?.subtitle}</Typography>
         <Box sx={{ my: 7, position: 'relative' }}>
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Typography variant='body2' sx={{ mt: 1.6, fontWeight: 600, alignSelf: 'flex-start' }}>
+            <Typography sx={{ mt: 2.5, mr: 0.5, fontWeight: 500, color: 'primary.main', alignSelf: 'flex-start' }}>
               $
             </Typography>
-            <Typography variant='h3' sx={{ fontWeight: 600, color: 'primary.main', lineHeight: 1.17 }}>
+            <Typography variant='h3' sx={{ fontWeight: 500, color: 'primary.main' }}>
               {plan === 'monthly' ? data?.monthlyPrice : data?.yearlyPlan.perMonth}
             </Typography>
-            <Typography variant='body2' sx={{ mb: 1.6, fontWeight: 600, alignSelf: 'flex-end' }}>
-              /month
-            </Typography>
+            <Typography sx={{ mb: 1.5, alignSelf: 'flex-end', color: 'text.disabled' }}>/month</Typography>
           </Box>
           {plan !== 'monthly' && data?.monthlyPrice !== 0 ? (
             <Typography
-              variant='caption'
-              sx={{ top: 50, left: '50%', position: 'absolute', transform: 'translateX(-50%)' }}
+              variant='body2'
+              sx={{ top: 52, left: '50%', position: 'absolute', color: 'text.disabled', transform: 'translateX(-50%)' }}
             >{`USD ${data?.yearlyPlan.totalAnnual}/year`}</Typography>
           ) : null}
         </Box>
