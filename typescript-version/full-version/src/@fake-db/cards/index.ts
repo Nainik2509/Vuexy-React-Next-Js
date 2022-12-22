@@ -95,6 +95,40 @@ const cardStatsData: CardStatsType = {
       avatarIcon: 'tabler:credit-card',
       chartSeries: [{ data: [6, 35, 25, 61, 32, 84, 70] }]
     }
+  ],
+  statsHorizontalWithDetails: [
+    {
+      stats: '21,459',
+      title: 'Session',
+      trendDiff: '+29',
+      icon: 'tabler:user',
+      subtitle: 'Total Users'
+    },
+    {
+      stats: '4,567',
+      trendDiff: '+18',
+      title: 'Paid Users',
+      avatarColor: 'error',
+      icon: 'tabler:user-plus',
+      subtitle: 'Last week analytics'
+    },
+    {
+      stats: '19,860',
+      trendDiff: '-14',
+      trend: 'negative',
+      title: 'Active Users',
+      avatarColor: 'success',
+      icon: 'tabler:user-check',
+      subtitle: 'Last week analytics'
+    },
+    {
+      stats: '237',
+      trendDiff: '+42',
+      title: 'Pending Users',
+      avatarColor: 'warning',
+      icon: 'tabler:user-exclamation',
+      subtitle: 'Last week analytics'
+    }
   ]
 }
 

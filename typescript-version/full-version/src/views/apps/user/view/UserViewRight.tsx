@@ -6,12 +6,12 @@ import { useRouter } from 'next/router'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
-import TabList from '@mui/lab/TabList'
 import TabPanel from '@mui/lab/TabPanel'
 import TabContext from '@mui/lab/TabContext'
 import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import MuiTab, { TabProps } from '@mui/material/Tab'
+import MuiTabList, { TabListProps } from '@mui/lab/TabList'
 import CircularProgress from '@mui/material/CircularProgress'
 
 // ** Icon Imports
@@ -19,7 +19,7 @@ import Icon from 'src/@core/components/icon'
 
 // ** Demo Components Imports
 import UserViewBilling from 'src/views/apps/user/view/UserViewBilling'
-import UserViewOverview from 'src/views/apps/user/view/UserViewOverview'
+import UserViewAccount from 'src/views/apps/user/view/UserViewAccount'
 import UserViewSecurity from 'src/views/apps/user/view/UserViewSecurity'
 import UserViewConnection from 'src/views/apps/user/view/UserViewConnection'
 import UserViewNotification from 'src/views/apps/user/view/UserViewNotification'
@@ -34,11 +34,25 @@ interface Props {
 
 // ** Styled Tab component
 const Tab = styled(MuiTab)<TabProps>(({ theme }) => ({
-  minHeight: 48,
   flexDirection: 'row',
   '& svg': {
     marginBottom: '0 !important',
-    marginRight: theme.spacing(3)
+    marginRight: theme.spacing(1.5)
+  }
+}))
+
+const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
+  borderBottom: '0 !important',
+  '& .MuiTabs-indicator': {
+    display: 'none'
+  },
+  '& .Mui-selected': {
+    backgroundColor: theme.palette.primary.main,
+    color: `${theme.palette.common.white} !important`
+  },
+  '& .MuiTab-root': {
+    lineHeight: 1,
+    borderRadius: theme.shape.borderRadius
   }
 }))
 
@@ -83,11 +97,15 @@ const UserViewRight = ({ tab, invoiceData }: Props) => {
         aria-label='forced scroll tabs example'
         sx={{ borderBottom: theme => `1px solid ${theme.palette.divider}` }}
       >
-        <Tab value='overview' label='Overview' icon={<Icon icon='mdi:account-outline' />} />
-        <Tab value='security' label='Security' icon={<Icon icon='mdi:lock-outline' />} />
-        <Tab value='billing-plan' label='Billing & Plan' icon={<Icon icon='mdi:bookmark-outline' />} />
-        <Tab value='notification' label='Notification' icon={<Icon icon='mdi:bell-outline' />} />
-        <Tab value='connection' label='Connection' icon={<Icon icon='mdi:link-variant' />} />
+        <Tab value='account' label='Account' icon={<Icon fontSize='1.125rem' icon='tabler:user-check' />} />
+        <Tab value='security' label='Security' icon={<Icon fontSize='1.125rem' icon='tabler:lock' />} />
+        <Tab
+          value='billing-plan'
+          label='Billing & Plan'
+          icon={<Icon fontSize='1.125rem' icon='tabler:currency-dollar' />}
+        />
+        <Tab value='notification' label='Notification' icon={<Icon fontSize='1.125rem' icon='tabler:bell' />} />
+        <Tab value='connection' label='Connection' icon={<Icon fontSize='1.125rem' icon='tabler:link' />} />
       </TabList>
       <Box sx={{ mt: 6 }}>
         {isLoading ? (
@@ -97,8 +115,8 @@ const UserViewRight = ({ tab, invoiceData }: Props) => {
           </Box>
         ) : (
           <>
-            <TabPanel sx={{ p: 0 }} value='overview'>
-              <UserViewOverview invoiceData={invoiceData} />
+            <TabPanel sx={{ p: 0 }} value='account'>
+              <UserViewAccount invoiceData={invoiceData} />
             </TabPanel>
             <TabPanel sx={{ p: 0 }} value='security'>
               <UserViewSecurity />

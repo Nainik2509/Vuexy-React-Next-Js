@@ -97,7 +97,7 @@ const columns = [
             <Typography
               noWrap
               component={Link}
-              href='/apps/user/view/overview/'
+              href='/apps/user/view/account'
               sx={{
                 fontWeight: 500,
                 textDecoration: 'none',
@@ -188,7 +188,7 @@ const columns = [
     field: 'actions',
     headerName: 'Actions',
     renderCell: () => (
-      <IconButton component={Link} href='/apps/user/view/overview/'>
+      <IconButton component={Link} href='/apps/user/view/account'>
         <Icon icon='tabler:eye' />
       </IconButton>
     )

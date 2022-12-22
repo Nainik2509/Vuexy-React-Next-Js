@@ -40,6 +40,7 @@ interface SidebarAddUserType {
 interface UserData {
   email: string
   company: string
+  billing: string
   country: string
   contact: number
   fullName: string
@@ -59,13 +60,13 @@ const showErrors = (field: string, valueLen: number, min: number) => {
 const Header = styled(Box)<BoxProps>(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
-  padding: theme.spacing(3, 4),
-  justifyContent: 'space-between',
-  backgroundColor: theme.palette.background.default
+  padding: theme.spacing(6),
+  justifyContent: 'space-between'
 }))
 
 const schema = yup.object().shape({
   company: yup.string().required(),
+  billing: yup.string().required(),
   country: yup.string().required(),
   email: yup.string().email().required(),
   contact: yup
@@ -87,6 +88,7 @@ const defaultValues = {
   email: '',
   company: '',
   country: '',
+  billing: '',
   fullName: '',
   username: '',
   contact: Number('')
@@ -139,13 +141,17 @@ const SidebarAddUser = (props: SidebarAddUserType) => {
     >
       <Header>
         <Typography variant='h6'>Add User</Typography>
-        <IconButton size='small' onClick={handleClose} sx={{ color: 'text.primary' }}>
+        <IconButton
+          size='small'
+          onClick={handleClose}
+          sx={{ borderRadius: 1, color: 'text.primary', backgroundColor: 'action.selected' }}
+        >
           <Icon icon='mdi:close' fontSize={20} />
         </IconButton>
       </Header>
-      <Box sx={{ p: 5 }}>
+      <Box sx={{ p: theme => theme.spacing(0, 6, 6) }}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <FormControl fullWidth sx={{ mb: 6 }}>
+          <FormControl fullWidth sx={{ mb: 4 }}>
             <Controller
               name='fullName'
               control={control}
@@ -162,7 +168,7 @@ const SidebarAddUser = (props: SidebarAddUserType) => {
             />
             {errors.fullName && <FormHelperText sx={{ color: 'error.main' }}>{errors.fullName.message}</FormHelperText>}
           </FormControl>
-          <FormControl fullWidth sx={{ mb: 6 }}>
+          <FormControl fullWidth sx={{ mb: 4 }}>
             <Controller
               name='username'
               control={control}
@@ -179,7 +185,7 @@ const SidebarAddUser = (props: SidebarAddUserType) => {
             />
             {errors.username && <FormHelperText sx={{ color: 'error.main' }}>{errors.username.message}</FormHelperText>}
           </FormControl>
-          <FormControl fullWidth sx={{ mb: 6 }}>
+          <FormControl fullWidth sx={{ mb: 4 }}>
             <Controller
               name='email'
               control={control}
@@ -197,7 +203,7 @@ const SidebarAddUser = (props: SidebarAddUserType) => {
             />
             {errors.email && <FormHelperText sx={{ color: 'error.main' }}>{errors.email.message}</FormHelperText>}
           </FormControl>
-          <FormControl fullWidth sx={{ mb: 6 }}>
+          <FormControl fullWidth sx={{ mb: 4 }}>
             <Controller
               name='company'
               control={control}
@@ -214,7 +220,7 @@ const SidebarAddUser = (props: SidebarAddUserType) => {
             />
             {errors.company && <FormHelperText sx={{ color: 'error.main' }}>{errors.company.message}</FormHelperText>}
           </FormControl>
-          <FormControl fullWidth sx={{ mb: 6 }}>
+          <FormControl fullWidth sx={{ mb: 4 }}>
             <Controller
               name='country'
               control={control}
@@ -231,7 +237,7 @@ const SidebarAddUser = (props: SidebarAddUserType) => {
             />
             {errors.country && <FormHelperText sx={{ color: 'error.main' }}>{errors.country.message}</FormHelperText>}
           </FormControl>
-          <FormControl fullWidth sx={{ mb: 6 }}>
+          <FormControl fullWidth sx={{ mb: 4 }}>
             <Controller
               name='contact'
               control={control}
@@ -249,7 +255,42 @@ const SidebarAddUser = (props: SidebarAddUserType) => {
             />
             {errors.contact && <FormHelperText sx={{ color: 'error.main' }}>{errors.contact.message}</FormHelperText>}
           </FormControl>
-          <FormControl fullWidth sx={{ mb: 6 }}>
+          <FormControl fullWidth sx={{ mb: 4 }}>
+            <InputLabel
+              id='validation-billing-select'
+              error={Boolean(errors.billing)}
+              htmlFor='validation-billing-select'
+            >
+              Billing
+            </InputLabel>
+            <Controller
+              name='billing'
+              control={control}
+              rules={{ required: true }}
+              render={({ field: { value, onChange } }) => (
+                <Select
+                  value={value}
+                  label='Billing'
+                  onChange={onChange}
+                  error={Boolean(errors.billing)}
+                  labelId='validation-billing-select'
+                  aria-describedby='validation-billing-select'
+                >
+                  <MenuItem value=''>Billing</MenuItem>
+                  <MenuItem value='Auto Debit'>Auto Debit</MenuItem>
+                  <MenuItem value='Manual - Cash'>Manual - Cash</MenuItem>
+                  <MenuItem value='Manual - Paypal'>Manual - Paypal</MenuItem>
+                  <MenuItem value='Manual - Credit Card'>Manual - Credit Card</MenuItem>
+                </Select>
+              )}
+            />
+            {errors.billing && (
+              <FormHelperText sx={{ color: 'error.main' }} id='validation-billing-select'>
+                This field is required
+              </FormHelperText>
+            )}
+          </FormControl>
+          <FormControl fullWidth sx={{ mb: 4 }}>
             <InputLabel id='role-select'>Select Role</InputLabel>
             <Select
               fullWidth
@@ -285,10 +326,10 @@ const SidebarAddUser = (props: SidebarAddUserType) => {
             </Select>
           </FormControl>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Button size='large' type='submit' variant='contained' sx={{ mr: 3 }}>
+            <Button type='submit' variant='contained' sx={{ mr: 3 }}>
               Submit
             </Button>
-            <Button size='large' variant='outlined' color='secondary' onClick={handleClose}>
+            <Button variant='outlined' color='secondary' onClick={handleClose}>
               Cancel
             </Button>
           </Box>

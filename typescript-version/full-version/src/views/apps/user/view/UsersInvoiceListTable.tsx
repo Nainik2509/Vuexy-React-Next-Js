@@ -43,26 +43,27 @@ interface CellType {
 }
 
 const LinkStyled = styled(Link)(({ theme }) => ({
+  fontSize: '1rem',
   textDecoration: 'none',
   color: theme.palette.primary.main
 }))
 
 // ** Vars
 const invoiceStatusObj: InvoiceStatusObj = {
-  Sent: { color: 'secondary', icon: 'mdi:send' },
-  Paid: { color: 'success', icon: 'mdi:check' },
-  Draft: { color: 'primary', icon: 'mdi:content-save-outline' },
-  'Partial Payment': { color: 'warning', icon: 'mdi:chart-pie' },
-  'Past Due': { color: 'error', icon: 'mdi:information-outline' },
-  Downloaded: { color: 'info', icon: 'mdi:arrow-down' }
+  Sent: { color: 'secondary', icon: 'tabler:circle-check' },
+  Paid: { color: 'success', icon: 'tabler:circle-half-2' },
+  Draft: { color: 'primary', icon: 'tabler:device-floppy' },
+  'Partial Payment': { color: 'warning', icon: 'tabler:chart-pie' },
+  'Past Due': { color: 'error', icon: 'tabler:alert-circle' },
+  Downloaded: { color: 'info', icon: 'tabler:arrow-down-circle' }
 }
 
 const columns = [
   {
     flex: 0.2,
     field: 'id',
-    minWidth: 90,
-    headerName: '# ID',
+    minWidth: 100,
+    headerName: 'ID',
     renderCell: ({ row }: CellType) => <LinkStyled href={`/apps/invoice/preview/${row.id}`}>{`#${row.id}`}</LinkStyled>
   },
   {
@@ -95,26 +96,26 @@ const columns = [
             </>
           }
         >
-          <CustomAvatar skin='light' color={color} sx={{ width: '1.875rem', height: '1.875rem' }}>
-            <Icon icon={invoiceStatusObj[invoiceStatus].icon} fontSize='1rem' />
+          <CustomAvatar skin='light' color={color} sx={{ width: 30, height: 30 }}>
+            <Icon icon={invoiceStatusObj[invoiceStatus].icon} />
           </CustomAvatar>
         </Tooltip>
       )
     }
   },
   {
-    flex: 0.25,
+    flex: 0.2,
     minWidth: 90,
     field: 'total',
     headerName: 'Total',
-    renderCell: ({ row }: CellType) => <Typography variant='body2'>${row.total || 0}</Typography>
+    renderCell: ({ row }: CellType) => <Typography sx={{ color: 'text.secondary' }}>${row.total || 0}</Typography>
   },
   {
     flex: 0.3,
     minWidth: 125,
     field: 'issuedDate',
     headerName: 'Issued Date',
-    renderCell: ({ row }: CellType) => <Typography variant='body2'>{row.issuedDate}</Typography>
+    renderCell: ({ row }: CellType) => <Typography sx={{ color: 'text.secondary' }}>{row.issuedDate}</Typography>
   },
   {
     flex: 0.1,
@@ -125,12 +126,17 @@ const columns = [
     renderCell: ({ row }: CellType) => (
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <Tooltip title='Delete Invoice'>
-          <IconButton size='small'>
+          <IconButton size='small' sx={{ color: 'text.secondary' }}>
             <Icon icon='mdi:delete-outline' fontSize={20} />
           </IconButton>
         </Tooltip>
         <Tooltip title='View'>
-          <IconButton size='small' component={Link} href={`/apps/invoice/preview/${row.id}`}>
+          <IconButton
+            size='small'
+            component={Link}
+            sx={{ color: 'text.secondary' }}
+            href={`/apps/invoice/preview/${row.id}`}
+          >
             <Icon icon='mdi:eye-outline' fontSize={20} />
           </IconButton>
         </Tooltip>
@@ -182,7 +188,8 @@ const InvoiceListTable = ({ invoiceData }: Props) => {
         action={
           <>
             <Button
-              variant='contained'
+              color='secondary'
+              variant='outlined'
               aria-haspopup='true'
               onClick={handleClick}
               aria-expanded={open ? 'true' : undefined}
@@ -201,6 +208,7 @@ const InvoiceListTable = ({ invoiceData }: Props) => {
       />
       <DataGrid
         autoHeight
+        rowHeight={54}
         columns={columns}
         rows={invoiceData}
         pageSize={pageSize}

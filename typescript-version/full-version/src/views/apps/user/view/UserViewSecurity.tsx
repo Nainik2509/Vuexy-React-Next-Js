@@ -42,6 +42,8 @@ interface State {
 }
 
 interface DataType {
+  icon: string
+  color: string
   device: string
   browser: string
   location: string
@@ -50,28 +52,52 @@ interface DataType {
 
 const data: DataType[] = [
   {
-    device: 'Dell XPS 15',
-    location: 'United States',
+    color: 'info.main',
+    location: 'Switzerland',
+    device: 'HP Specter 360',
+    icon: 'tabler:brand-windows',
     browser: 'Chrome on Windows',
-    recentActivity: '10, Jan 2020 20:07'
+    recentActivity: '10, July 2022 20:07'
   },
   {
-    location: 'Ghana',
-    device: 'Google Pixel 3a',
-    browser: 'Chrome on Android',
-    recentActivity: '11, Jan 2020 10:16'
-  },
-  {
-    location: 'Mayotte',
-    device: 'Apple iMac',
-    browser: 'Chrome on MacOS',
-    recentActivity: '11, Jan 2020 12:10'
-  },
-  {
-    location: 'Mauritania',
-    device: 'Apple iPhone XR',
+    color: 'error.main',
+    device: 'iPhone 12x',
+    location: 'Australia',
     browser: 'Chrome on iPhone',
-    recentActivity: '12, Jan 2020 8:29'
+    icon: 'tabler:device-mobile',
+    recentActivity: '13, July 2022 10:10'
+  },
+  {
+    location: 'Dubai',
+    color: 'success.main',
+    device: 'OnePlus 9 Pro',
+    icon: 'tabler:brand-android',
+    browser: 'Chrome on Android',
+    recentActivity: '4, July 2022 15:15'
+  },
+  {
+    location: 'India',
+    device: 'Apple IMac',
+    color: 'secondary.main',
+    icon: 'tabler:brand-apple',
+    browser: 'Chrome on macOS',
+    recentActivity: '20, July 2022 21:01'
+  },
+  {
+    color: 'info.main',
+    location: 'Switzerland',
+    device: 'HP Specter 360',
+    browser: 'Chrome on Windows',
+    icon: 'tabler:brand-windows',
+    recentActivity: '15, July 2022 11:15'
+  },
+  {
+    location: 'Dubai',
+    color: 'success.main',
+    device: 'OnePlus 9 Pro',
+    icon: 'tabler:brand-android',
+    browser: 'Chrome on Android',
+    recentActivity: '14, July 2022 20:20'
   }
 ]
 
@@ -123,15 +149,17 @@ const UserViewSecurity = () => {
         <Card>
           <CardHeader title='Change Password' />
           <CardContent>
-            <Alert icon={false} severity='warning' sx={{ mb: 6 }}>
-              <AlertTitle sx={{ fontWeight: 600, mb: theme => `${theme.spacing(1)} !important` }}>
+            <Alert icon={false} severity='warning' sx={{ mb: 4 }}>
+              <AlertTitle
+                sx={{ fontWeight: 500, fontSize: '1.25rem', mb: theme => `${theme.spacing(2.5)} !important` }}
+              >
                 Ensure that these requirements are met
               </AlertTitle>
               Minimum 8 characters long, uppercase & symbol
             </Alert>
 
             <form onSubmit={e => e.preventDefault()}>
-              <Grid container spacing={6}>
+              <Grid container spacing={4}>
                 <Grid item xs={12} sm={6}>
                   <FormControl fullWidth>
                     <InputLabel htmlFor='user-view-security-new-password'>New Password</InputLabel>
@@ -197,31 +225,35 @@ const UserViewSecurity = () => {
         <Card>
           <CardHeader
             title='Two-step verification'
-            titleTypographyProps={{ sx: { mb: 1 } }}
+            titleTypographyProps={{ sx: { mb: 2 } }}
             subheader='Keep your account secure with authentication step.'
+            sx={{ pb: 4, '& .MuiCardHeader-subheader': { mt: 0, fontSize: '1rem', color: 'text.secondary' } }}
           />
           <CardContent>
-            <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>SMS</Typography>
+            <Typography sx={{ fontWeight: 500, color: 'text.secondary' }}>SMS</Typography>
 
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <Typography variant='body2'>{mobileNumber}</Typography>
+              <Typography sx={{ color: 'text.secondary' }}>{mobileNumber}</Typography>
               <div>
                 <IconButton
+                  size='small'
                   aria-label='edit'
                   sx={{ color: 'text.secondary' }}
                   onClick={handleEditMobileNumberClickOpen}
                 >
-                  <Icon icon='mdi:square-edit-outline' fontSize='1.25rem' />
+                  <Icon icon='tabler:edit' />
                 </IconButton>
-                <IconButton aria-label='delete' sx={{ color: 'text.secondary' }}>
-                  <Icon icon='mdi:delete-outline' fontSize='1.25rem' />
+                <IconButton size='small' aria-label='delete' sx={{ color: 'text.secondary' }}>
+                  <Icon icon='tabler:trash' />
                 </IconButton>
               </div>
             </Box>
 
-            <Divider sx={{ mt: '0 !important', mb: theme => `${theme.spacing(4)} !important` }} />
+            <Divider
+              sx={{ mt: theme => `${theme.spacing(0.75)} !important`, mb: theme => `${theme.spacing(4)} !important` }}
+            />
 
-            <Typography variant='body2' sx={{ '& a': { color: 'primary.main', textDecoration: 'none' } }}>
+            <Typography sx={{ color: 'text.secondary', '& a': { color: 'primary.main', textDecoration: 'none' } }}>
               Two-factor authentication adds an additional layer of security to your account by requiring more than just
               a password to log in.{' '}
               <Link href='/' onClick={e => e.preventDefault()}>
@@ -280,9 +312,7 @@ const UserViewSecurity = () => {
 
           <TableContainer>
             <Table sx={{ minWidth: 500 }}>
-              <TableHead
-                sx={{ backgroundColor: theme => (theme.palette.mode === 'light' ? 'grey.50' : 'background.default') }}
-              >
+              <TableHead>
                 <TableRow>
                   <TableCell>Browser</TableCell>
                   <TableCell>Device</TableCell>
@@ -295,14 +325,34 @@ const UserViewSecurity = () => {
                 {data.map((item: DataType, index: number) => (
                   <TableRow hover key={index} sx={{ '&:last-of-type td': { border: 0 } }}>
                     <TableCell>
-                      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                        <img width='22' height='22' alt='Chrome' src='/images/logos/chrome.png' />
-                        <Typography sx={{ ml: 2, fontWeight: 500, fontSize: '0.875rem' }}>{item.browser}</Typography>
+                      <Box
+                        sx={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          '& svg': { mr: 2, fontSize: '1.125rem', color: item.color }
+                        }}
+                      >
+                        <Icon icon={item.icon} />
+                        <Typography noWrap sx={{ color: 'text.secondary' }}>
+                          {item.browser}
+                        </Typography>
                       </Box>
                     </TableCell>
-                    <TableCell>{item.device}</TableCell>
-                    <TableCell>{item.location}</TableCell>
-                    <TableCell>{item.recentActivity}</TableCell>
+                    <TableCell>
+                      <Typography noWrap sx={{ color: 'text.secondary' }}>
+                        {item.device}
+                      </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Typography noWrap sx={{ color: 'text.secondary' }}>
+                        {item.location}
+                      </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Typography noWrap sx={{ color: 'text.secondary' }}>
+                        {item.recentActivity}
+                      </Typography>
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>

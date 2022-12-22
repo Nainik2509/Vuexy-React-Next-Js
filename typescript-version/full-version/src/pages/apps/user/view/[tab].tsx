@@ -17,7 +17,7 @@ const UserView = ({ tab, invoiceData }: InferGetStaticPropsType<typeof getStatic
 export const getStaticPaths: GetStaticPaths = () => {
   return {
     paths: [
-      { params: { tab: 'overview' } },
+      { params: { tab: 'account' } },
       { params: { tab: 'security' } },
       { params: { tab: 'billing-plan' } },
       { params: { tab: 'notification' } },

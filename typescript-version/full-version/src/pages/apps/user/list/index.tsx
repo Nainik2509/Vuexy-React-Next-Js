@@ -12,7 +12,6 @@ import Menu from '@mui/material/Menu'
 import Grid from '@mui/material/Grid'
 import Divider from '@mui/material/Divider'
 import { DataGrid } from '@mui/x-data-grid'
-import { styled } from '@mui/material/styles'
 import MenuItem from '@mui/material/MenuItem'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
@@ -31,7 +30,7 @@ import { useDispatch, useSelector } from 'react-redux'
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
 import CustomAvatar from 'src/@core/components/mui/avatar'
-import CardStatisticsHorizontal from 'src/@core/components/card-statistics/card-stats-horizontal'
+import CardStatsHorizontalWithDetails from 'src/@core/components/card-statistics/card-stats-horizontal-with-details'
 
 // ** Utils Import
 import { getInitials } from 'src/@core/utils/get-initials'
@@ -47,7 +46,7 @@ import { RootState, AppDispatch } from 'src/store'
 import { CardStatsType } from 'src/@fake-db/types'
 import { ThemeColor } from 'src/@core/layouts/types'
 import { UsersType } from 'src/types/apps/userTypes'
-import { CardStatsHorizontalProps } from 'src/@core/components/card-statistics/types'
+import { CardStatsHorizontalWithDetailsProps } from 'src/@core/components/card-statistics/types'
 
 // ** Custom Table Components Imports
 import TableHeader from 'src/views/apps/user/list/TableHeader'
@@ -61,17 +60,17 @@ interface UserStatusType {
   [key: string]: ThemeColor
 }
 
-// ** Vars
-const userRoleObj: UserRoleType = {
-  admin: { icon: 'mdi:laptop', color: 'error.main' },
-  author: { icon: 'mdi:cog-outline', color: 'warning.main' },
-  editor: { icon: 'mdi:pencil-outline', color: 'info.main' },
-  maintainer: { icon: 'mdi:chart-donut', color: 'success.main' },
-  subscriber: { icon: 'mdi:account-outline', color: 'primary.main' }
-}
-
 interface CellType {
   row: UsersType
+}
+
+// ** renders client column
+const userRoleObj: UserRoleType = {
+  admin: { icon: 'mdi:laptop', color: 'error' },
+  author: { icon: 'mdi:cog-outline', color: 'warning' },
+  editor: { icon: 'mdi:pencil-outline', color: 'info' },
+  maintainer: { icon: 'mdi:chart-donut', color: 'success' },
+  subscriber: { icon: 'mdi:account-outline', color: 'primary' }
 }
 
 const userStatusObj: UserStatusType = {
@@ -80,27 +79,16 @@ const userStatusObj: UserStatusType = {
   inactive: 'secondary'
 }
 
-const LinkStyled = styled(Link)(({ theme }) => ({
-  fontWeight: 600,
-  fontSize: '1rem',
-  cursor: 'pointer',
-  textDecoration: 'none',
-  color: theme.palette.text.secondary,
-  '&:hover': {
-    color: theme.palette.primary.main
-  }
-}))
-
 // ** renders client column
 const renderClient = (row: UsersType) => {
   if (row.avatar.length) {
-    return <CustomAvatar src={row.avatar} sx={{ mr: 3, width: 30, height: 30 }} />
+    return <CustomAvatar src={row.avatar} sx={{ mr: 2.5, width: 38, height: 38 }} />
   } else {
     return (
       <CustomAvatar
         skin='light'
-        color={row.avatarColor || 'primary'}
-        sx={{ mr: 3, width: 30, height: 30, fontSize: '.875rem' }}
+        color={row.avatarColor}
+        sx={{ mr: 2.5, width: 38, height: 38, fontSize: '1rem', fontWeight: 500 }}
       >
         {getInitials(row.fullName ? row.fullName : 'John Doe')}
       </CustomAvatar>
@@ -152,8 +140,8 @@ const RowOptions = ({ id }: { id: number | string }) => {
         <MenuItem
           component={Link}
           sx={{ '& svg': { mr: 2 } }}
+          href='/apps/user/view/account'
           onClick={handleRowOptionsClose}
-          href='/apps/user/view/overview/'
         >
           <Icon icon='mdi:eye-outline' fontSize={20} />
           View
@@ -173,20 +161,32 @@ const RowOptions = ({ id }: { id: number | string }) => {
 
 const columns = [
   {
-    flex: 0.2,
-    minWidth: 230,
+    flex: 0.25,
+    minWidth: 280,
     field: 'fullName',
     headerName: 'User',
     renderCell: ({ row }: CellType) => {
-      const { fullName, username } = row
+      const { fullName, email } = row
 
       return (
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           {renderClient(row)}
           <Box sx={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
-            <LinkStyled href='/apps/user/view/overview/'>{fullName}</LinkStyled>
-            <Typography noWrap variant='caption'>
-              {`@${username}`}
+            <Typography
+              noWrap
+              component={Link}
+              href='/apps/user/view/account'
+              sx={{
+                fontWeight: 500,
+                textDecoration: 'none',
+                color: 'text.secondary',
+                '&:hover': { color: 'primary.main' }
+              }}
+            >
+              {fullName}
+            </Typography>
+            <Typography noWrap variant='body2' sx={{ color: 'text.disabled' }}>
+              {email}
             </Typography>
           </Box>
         </Box>
@@ -194,27 +194,20 @@ const columns = [
     }
   },
   {
-    flex: 0.2,
-    minWidth: 250,
-    field: 'email',
-    headerName: 'Email',
-    renderCell: ({ row }: CellType) => {
-      return (
-        <Typography noWrap variant='body2'>
-          {row.email}
-        </Typography>
-      )
-    }
-  },
-  {
     flex: 0.15,
     field: 'role',
-    minWidth: 150,
+    minWidth: 170,
     headerName: 'Role',
     renderCell: ({ row }: CellType) => {
       return (
-        <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 3, color: userRoleObj[row.role].color } }}>
-          <Icon icon={userRoleObj[row.role].icon} fontSize={20} />
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <CustomAvatar
+            skin='light'
+            sx={{ mr: 4, width: 30, height: 30 }}
+            color={(userRoleObj[row.role].color as ThemeColor) || 'primary'}
+          >
+            <Icon icon={userRoleObj[row.role].icon} />
+          </CustomAvatar>
           <Typography noWrap sx={{ color: 'text.secondary', textTransform: 'capitalize' }}>
             {row.role}
           </Typography>
@@ -229,8 +222,21 @@ const columns = [
     field: 'currentPlan',
     renderCell: ({ row }: CellType) => {
       return (
-        <Typography noWrap sx={{ textTransform: 'capitalize' }}>
+        <Typography noWrap sx={{ fontWeight: 500, color: 'text.secondary', textTransform: 'capitalize' }}>
           {row.currentPlan}
+        </Typography>
+      )
+    }
+  },
+  {
+    flex: 0.15,
+    minWidth: 190,
+    field: 'billing',
+    headerName: 'Billing',
+    renderCell: ({ row }: CellType) => {
+      return (
+        <Typography noWrap sx={{ color: 'text.secondary' }}>
+          {row.billing}
         </Typography>
       )
     }
@@ -243,6 +249,7 @@ const columns = [
     renderCell: ({ row }: CellType) => {
       return (
         <CustomChip
+          rounded
           skin='light'
           size='small'
           label={row.status}
@@ -254,7 +261,7 @@ const columns = [
   },
   {
     flex: 0.1,
-    minWidth: 90,
+    minWidth: 100,
     sortable: false,
     field: 'actions',
     headerName: 'Actions',
@@ -305,14 +312,14 @@ const UserList = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>) =
   const toggleAddUserDrawer = () => setAddUserOpen(!addUserOpen)
 
   return (
-    <Grid container spacing={6}>
+    <Grid container spacing={6.5}>
       <Grid item xs={12}>
         {apiData && (
           <Grid container spacing={6}>
-            {apiData.statsHorizontal.map((item: CardStatsHorizontalProps, index: number) => {
+            {apiData.statsHorizontalWithDetails.map((item: CardStatsHorizontalWithDetailsProps, index: number) => {
               return (
                 <Grid item xs={12} md={3} sm={6} key={index}>
-                  <CardStatisticsHorizontal {...item} />
+                  <CardStatsHorizontalWithDetails {...item} />
                 </Grid>
               )
             })}
@@ -386,13 +393,13 @@ const UserList = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>) =
               </Grid>
             </Grid>
           </CardContent>
-          <Divider />
+          <Divider sx={{ m: '0 !important' }} />
           <TableHeader value={value} handleFilter={handleFilter} toggle={toggleAddUserDrawer} />
           <DataGrid
             autoHeight
+            rowHeight={62}
             rows={store.data}
             columns={columns}
-            checkboxSelection
             pageSize={pageSize}
             disableSelectionOnClick
             rowsPerPageOptions={[10, 25, 50]}

@@ -11,6 +11,7 @@ export type UsersType = {
   company: string
   country: string
   contact: string
+  billing: string
   fullName: string
   username: string
   currentPlan: string

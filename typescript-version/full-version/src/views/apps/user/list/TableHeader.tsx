@@ -17,26 +17,33 @@ const TableHeader = (props: TableHeaderProps) => {
   const { handleFilter, toggle, value } = props
 
   return (
-    <Box sx={{ p: 5, pb: 3, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
-      <Button
-        sx={{ mr: 4, mb: 2 }}
-        color='secondary'
-        variant='outlined'
-        startIcon={<Icon icon='mdi:export-variant' fontSize={20} />}
-      >
+    <Box
+      sx={{
+        py: 4,
+        px: 6,
+        rowGap: 2,
+        columnGap: 4,
+        display: 'flex',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+      }}
+    >
+      <Button color='secondary' variant='outlined' startIcon={<Icon icon='mdi:export-variant' fontSize={20} />}>
         Export
       </Button>
-      <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
+      <Box sx={{ rowGap: 2, display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
         <TextField
           size='small'
           value={value}
-          sx={{ mr: 4, mb: 2 }}
+          sx={{ mr: 4 }}
           placeholder='Search User'
           onChange={e => handleFilter(e.target.value)}
         />
 
-        <Button sx={{ mb: 2 }} onClick={toggle} variant='contained'>
-          Add User
+        <Button onClick={toggle} variant='contained' sx={{ '& svg': { mr: 2 } }}>
+          <Icon fontSize='1.125rem' icon='tabler:plus' />
+          Add New User
         </Button>
       </Box>
     </Box>

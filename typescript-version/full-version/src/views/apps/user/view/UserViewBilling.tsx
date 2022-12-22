@@ -87,8 +87,6 @@ const data: DataType[] = [
     name: 'Tom McBride',
     expiryDate: '12/24',
     imgAlt: 'Mastercard',
-    badgeColor: 'primary',
-    cardStatus: 'Primary',
     cardNumber: '5577 0000 5577 9865',
     imgSrc: '/images/logos/mastercard.png'
   },
@@ -96,6 +94,8 @@ const data: DataType[] = [
     cardCvc: '681',
     imgAlt: 'Visa card',
     expiryDate: '02/24',
+    badgeColor: 'primary',
+    cardStatus: 'Primary',
     name: 'Mildred Wagner',
     cardNumber: '4532 3616 2070 5678',
     imgSrc: '/images/logos/visa.png'
@@ -103,8 +103,6 @@ const data: DataType[] = [
   {
     cardCvc: '3845',
     expiryDate: '08/20',
-    badgeColor: 'error',
-    cardStatus: 'Expired',
     name: 'Lester Jennings',
     imgAlt: 'American Express card',
     cardNumber: '3700 000000 00002',
@@ -180,30 +178,20 @@ const UserViewBilling = () => {
         <Card>
           <CardHeader title='Current plan' />
           <CardContent>
-            <Grid container spacing={6}>
+            <Grid container spacing={4}>
               <Grid item xs={12} md={6}>
-                <Box sx={{ mb: 4 }}>
-                  <Typography sx={{ fontWeight: 500, mb: 1, fontSize: '0.875rem' }}>
-                    Your Current Plan is <strong>Basic</strong>
-                  </Typography>
+                <Box sx={{ mb: 3 }}>
+                  <Typography sx={{ fontWeight: 500 }}>Your Current Plan is Basic</Typography>
                   <Typography variant='body2'>A simple start for everyone</Typography>
                 </Box>
-                <Box sx={{ mb: 4 }}>
-                  <Typography sx={{ fontWeight: 500, mb: 1, fontSize: '0.875rem' }}>
-                    Active until Dec 09, 2021
-                  </Typography>
+                <Box sx={{ mb: 3 }}>
+                  <Typography sx={{ fontWeight: 500 }}>Active until Dec 09, 2023</Typography>
                   <Typography variant='body2'>We will send you a notification upon Subscription expiration</Typography>
                 </Box>
                 <div>
-                  <Box sx={{ display: 'flex', mb: 1, alignItems: 'center' }}>
-                    <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>$99 Per Month</Typography>
-                    <CustomChip
-                      skin='light'
-                      size='small'
-                      label='Popular'
-                      color='primary'
-                      sx={{ height: 20, fontSize: '0.75rem', fontWeight: 600, borderRadius: '5px' }}
-                    />
+                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Typography sx={{ mr: 2, fontWeight: 500 }}>$199 Per Month</Typography>
+                    <CustomChip rounded skin='light' size='small' label='Popular' color='primary' />
                   </Box>
                   <Typography variant='body2'>Standard plan for small to medium businesses</Typography>
                 </div>
@@ -211,23 +199,23 @@ const UserViewBilling = () => {
 
               <Grid item xs={12} md={6} sx={{ mt: [4, 4, 0] }}>
                 <Alert icon={false} severity='warning' sx={{ mb: 4 }}>
-                  <AlertTitle sx={{ fontWeight: 600, mb: theme => `${theme.spacing(1)} !important` }}>
+                  <AlertTitle
+                    sx={{ fontWeight: 500, fontSize: '1.25rem', mb: theme => `${theme.spacing(2.5)} !important` }}
+                  >
                     We need your attention!
                   </AlertTitle>
                   Your plan requires updates
                 </Alert>
-                <Box sx={{ display: 'flex', mb: 2, justifyContent: 'space-between' }}>
-                  <Typography sx={{ fontWeight: 600, fontSize: '0.875rem' }}>Days</Typography>
-                  <Typography sx={{ fontWeight: 600, fontSize: '0.875rem' }}>26 of 30 Days</Typography>
+                <Box sx={{ display: 'flex', mb: 1.5, justifyContent: 'space-between' }}>
+                  <Typography sx={{ fontWeight: 500 }}>Days</Typography>
+                  <Typography sx={{ fontWeight: 500 }}>24 of 30 Days</Typography>
                 </Box>
-                <LinearProgress value={86.6666666} variant='determinate' sx={{ height: 10, borderRadius: '5px' }} />
-                <Typography variant='body2' sx={{ mt: 2, mb: 4 }}>
-                  Your plan requires update
-                </Typography>
+                <LinearProgress value={80} variant='determinate' sx={{ mb: 1.5, height: 10 }} />
+                <Typography sx={{ color: 'text.secondary' }}>6 days remaining</Typography>
               </Grid>
 
-              <Grid item xs={12} sx={{ mt: 4, display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start' }}>
-                <Button variant='contained' onClick={handleUpgradePlansClickOpen} sx={{ mr: 3, mb: [3, 0] }}>
+              <Grid item xs={12} sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start' }}>
+                <Button variant='contained' onClick={handleUpgradePlansClickOpen} sx={{ mr: 4, mb: [2, 0] }}>
                   Upgrade Plan
                 </Button>
                 <Button variant='outlined' color='error' onClick={() => setSubscriptionDialogOpen(true)}>
@@ -339,7 +327,7 @@ const UserViewBilling = () => {
               <Box
                 key={index}
                 sx={{
-                  p: 5,
+                  p: 4,
                   display: 'flex',
                   borderRadius: 1,
                   flexDirection: ['column', 'row'],
@@ -350,32 +338,26 @@ const UserViewBilling = () => {
                 }}
               >
                 <div>
-                  <img height='25' alt={item.imgAlt} src={item.imgSrc} />
-                  <Box sx={{ mt: 0.5, display: 'flex', alignItems: 'center' }}>
-                    <Typography sx={{ fontWeight: 500 }}>{item.name}</Typography>
+                  <img height='26' alt={item.imgAlt} src={item.imgSrc} />
+                  <Box sx={{ mt: 3.5, mb: 2.5, display: 'flex', alignItems: 'center' }}>
+                    <Typography sx={{ mr: 2, color: 'text.secondary' }}>{item.name}</Typography>
                     {item.cardStatus ? (
-                      <CustomChip
-                        skin='light'
-                        size='small'
-                        label={item.cardStatus}
-                        color={item.badgeColor}
-                        sx={{ height: 20, ml: 2, fontSize: '0.75rem', fontWeight: 600, borderRadius: '5px' }}
-                      />
+                      <CustomChip rounded skin='light' size='small' label={item.cardStatus} color={item.badgeColor} />
                     ) : null}
                   </Box>
-                  <Typography variant='body2'>
+                  <Typography sx={{ color: 'text.secondary' }}>
                     **** **** **** {item.cardNumber.substring(item.cardNumber.length - 4)}
                   </Typography>
                 </div>
 
                 <Box sx={{ mt: [3, 0], textAlign: ['start', 'end'] }}>
-                  <Button variant='outlined' sx={{ mr: 3 }} onClick={() => handleEditCardClickOpen(index)}>
+                  <Button variant='outlined' sx={{ mr: 2.5 }} onClick={() => handleEditCardClickOpen(index)}>
                     Edit
                   </Button>
                   <Button variant='outlined' color='secondary'>
                     Delete
                   </Button>
-                  <Typography variant='body2' sx={{ mt: 5 }}>
+                  <Typography sx={{ mt: [6, 10], color: 'text.secondary' }}>
                     Card expires at {item.expiryDate}
                   </Typography>
                 </Box>
@@ -524,91 +506,54 @@ const UserViewBilling = () => {
                           pb: 2,
                           pl: '0 !important',
                           pr: '0 !important',
+                          verticalAlign: 'unset',
                           '&:first-of-type': {
-                            width: 148
+                            width: 150
                           }
                         }
                       }}
                     >
                       <TableRow>
                         <TableCell>
-                          <Typography
-                            sx={{
-                              fontWeight: 500,
-                              fontSize: '0.875rem',
-                              whiteSpace: 'nowrap',
-                              lineHeight: '22px',
-                              letterSpacing: '0.1px'
-                            }}
-                          >
-                            Company Name:
-                          </Typography>
+                          <Typography sx={{ fontWeight: 500 }}>Company Name:</Typography>
                         </TableCell>
-                        <TableCell>ThemeSelection</TableCell>
+                        <TableCell>
+                          <Typography sx={{ color: 'text.secondary' }}>ThemeSelection</Typography>
+                        </TableCell>
                       </TableRow>
                       <TableRow>
                         <TableCell>
-                          <Typography
-                            sx={{
-                              fontWeight: 500,
-                              fontSize: '0.875rem',
-                              whiteSpace: 'nowrap',
-                              lineHeight: '22px',
-                              letterSpacing: '0.1px'
-                            }}
-                          >
-                            Billing Email:
-                          </Typography>
+                          <Typography sx={{ fontWeight: 500 }}>Billing Email:</Typography>
                         </TableCell>
-                        <TableCell>gertrude@gmail.com</TableCell>
+                        <TableCell>
+                          <Typography sx={{ color: 'text.secondary' }}>gertrude@gmail.com</Typography>
+                        </TableCell>
                       </TableRow>
                       <TableRow>
                         <TableCell>
-                          <Typography
-                            sx={{
-                              fontWeight: 500,
-                              fontSize: '0.875rem',
-                              whiteSpace: 'nowrap',
-                              lineHeight: '22px',
-                              letterSpacing: '0.1px'
-                            }}
-                          >
-                            Tax ID:
-                          </Typography>
+                          <Typography sx={{ fontWeight: 500 }}>Tax ID:</Typography>
                         </TableCell>
-                        <TableCell>TAX-875623</TableCell>
+                        <TableCell>
+                          <Typography sx={{ color: 'text.secondary' }}>TAX-875623</Typography>
+                        </TableCell>
                       </TableRow>
                       <TableRow>
                         <TableCell>
-                          <Typography
-                            sx={{
-                              fontWeight: 500,
-                              fontSize: '0.875rem',
-                              whiteSpace: 'nowrap',
-                              lineHeight: '22px',
-                              letterSpacing: '0.1px'
-                            }}
-                          >
-                            VAT Number:
-                          </Typography>
+                          <Typography sx={{ fontWeight: 500 }}>VAT Number:</Typography>
                         </TableCell>
-                        <TableCell>SDF754K77</TableCell>
+                        <TableCell>
+                          <Typography sx={{ color: 'text.secondary' }}>SDF754K77</Typography>
+                        </TableCell>
                       </TableRow>
                       <TableRow>
                         <TableCell>
-                          <Typography
-                            sx={{
-                              fontWeight: 500,
-                              fontSize: '0.875rem',
-                              whiteSpace: 'nowrap',
-                              lineHeight: '22px',
-                              letterSpacing: '0.1px'
-                            }}
-                          >
-                            Billing Address:
+                          <Typography sx={{ fontWeight: 500 }}>Billing Address:</Typography>
+                        </TableCell>
+                        <TableCell>
+                          <Typography sx={{ color: 'text.secondary' }}>
+                            100 Water Plant Avenue, Building 1303 Wake Island
                           </Typography>
                         </TableCell>
-                        <TableCell>100 Water Plant Avenue, Building 1303 Wake Island</TableCell>
                       </TableRow>
                     </TableBody>
                   </Table>
@@ -626,75 +571,44 @@ const UserViewBilling = () => {
                           pb: 2,
                           pl: '0 !important',
                           pr: '0 !important',
+                          verticalAlign: 'unset',
                           '&:first-of-type': {
-                            width: 148
+                            width: 150
                           }
                         }
                       }}
                     >
                       <TableRow>
                         <TableCell>
-                          <Typography
-                            sx={{
-                              fontWeight: 500,
-                              fontSize: '0.875rem',
-                              whiteSpace: 'nowrap',
-                              lineHeight: '22px',
-                              letterSpacing: '0.1px'
-                            }}
-                          >
-                            Contact:
-                          </Typography>
+                          <Typography sx={{ fontWeight: 500 }}>Contact:</Typography>
                         </TableCell>
-                        <TableCell>+1(609) 933-44-22</TableCell>
+                        <TableCell>
+                          <Typography sx={{ color: 'text.secondary' }}>+1(609) 933-44-22</Typography>
+                        </TableCell>
                       </TableRow>
                       <TableRow>
                         <TableCell>
-                          <Typography
-                            sx={{
-                              fontWeight: 500,
-                              fontSize: '0.875rem',
-                              whiteSpace: 'nowrap',
-                              lineHeight: '22px',
-                              letterSpacing: '0.1px'
-                            }}
-                          >
-                            Country:
-                          </Typography>
+                          <Typography sx={{ fontWeight: 500 }}>Country:</Typography>
                         </TableCell>
-                        <TableCell>Australia</TableCell>
+                        <TableCell>
+                          <Typography sx={{ color: 'text.secondary' }}>Australia</Typography>
+                        </TableCell>
                       </TableRow>
                       <TableRow>
                         <TableCell>
-                          <Typography
-                            sx={{
-                              fontWeight: 500,
-                              fontSize: '0.875rem',
-                              whiteSpace: 'nowrap',
-                              lineHeight: '22px',
-                              letterSpacing: '0.1px'
-                            }}
-                          >
-                            State:
-                          </Typography>
+                          <Typography sx={{ fontWeight: 500 }}>State:</Typography>
                         </TableCell>
-                        <TableCell>Queensland</TableCell>
+                        <TableCell>
+                          <Typography sx={{ color: 'text.secondary' }}>Queensland</Typography>
+                        </TableCell>
                       </TableRow>
                       <TableRow>
                         <TableCell>
-                          <Typography
-                            sx={{
-                              fontWeight: 500,
-                              fontSize: '0.875rem',
-                              whiteSpace: 'nowrap',
-                              lineHeight: '22px',
-                              letterSpacing: '0.1px'
-                            }}
-                          >
-                            Zip Code:
-                          </Typography>
+                          <Typography sx={{ fontWeight: 500 }}>Zip Code:</Typography>
                         </TableCell>
-                        <TableCell>403114</TableCell>
+                        <TableCell>
+                          <Typography sx={{ color: 'text.secondary' }}>403114</Typography>
+                        </TableCell>
                       </TableRow>
                     </TableBody>
                   </Table>

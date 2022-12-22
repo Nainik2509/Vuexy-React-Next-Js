@@ -97,9 +97,9 @@ const UserViewConnection = () => {
       {/* Connected Accounts Cards */}
       <Grid item xs={12}>
         <Card>
-          <CardHeader title='Connected Accounts' />
+          <CardHeader title='Connected Accounts' sx={{ pb: 1.5 }} />
           <CardContent>
-            <Typography sx={{ mb: 4, color: 'text.secondary' }}>
+            <Typography sx={{ mb: 6, color: 'text.secondary' }}>
               Display content from your connected accounts on your site
             </Typography>
 
@@ -117,7 +117,7 @@ const UserViewConnection = () => {
                 >
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
                     <Box sx={{ mr: 4, display: 'flex', justifyContent: 'center' }}>
-                      <img src={account.logo} alt={account.title} height='30' width='30' />
+                      <img src={account.logo} alt={account.title} height='38' width='38' />
                     </Box>
                     <div>
                       <Typography sx={{ fontWeight: 500 }}>{account.title}</Typography>
@@ -136,9 +136,9 @@ const UserViewConnection = () => {
       {/* Social Accounts Cards */}
       <Grid item xs={12}>
         <Card>
-          <CardHeader title='Social Accounts' />
+          <CardHeader title='Social Accounts' sx={{ pb: 1.5 }} />
           <CardContent>
-            <Typography sx={{ mb: 4, color: 'text.secondary' }}>
+            <Typography sx={{ mb: 6, color: 'text.secondary' }}>
               Display content from social accounts on your site
             </Typography>
 
@@ -155,8 +155,8 @@ const UserViewConnection = () => {
                   }}
                 >
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Box sx={{ mr: 4, minWidth: 45, display: 'flex', justifyContent: 'center' }}>
-                      <img src={account.logo} alt={account.title} height='30' />
+                    <Box sx={{ mr: 4, minWidth: 57, display: 'flex', justifyContent: 'center' }}>
+                      <img src={account.logo} alt={account.title} height='38' />
                     </Box>
                     <div>
                       <Typography sx={{ fontWeight: 500 }}>{account.title}</Typography>

@@ -14,12 +14,18 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator'
 import TimelineConnector from '@mui/lab/TimelineConnector'
 import MuiTimeline, { TimelineProps } from '@mui/lab/Timeline'
 
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
+
 // ** Types
 import { InvoiceType } from 'src/types/apps/invoiceTypes'
 
 // ** Demo Component Imports
 import UsersInvoiceListTable from 'src/views/apps/user/view/UsersInvoiceListTable'
 import UsersProjectListTable from 'src/views/apps/user/view/UsersProjectListTable'
+
+// ** Custom Components Imports
+import OptionsMenu from 'src/@core/components/option-menu'
 
 interface Props {
   invoiceData: InvoiceType[]
@@ -40,7 +46,7 @@ const Timeline = styled(MuiTimeline)<TimelineProps>(({ theme }) => ({
   }
 }))
 
-const UserViewOverview = ({ invoiceData }: Props) => {
+const UserViewAccount = ({ invoiceData }: Props) => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12}>
@@ -48,121 +54,119 @@ const UserViewOverview = ({ invoiceData }: Props) => {
       </Grid>
       <Grid item xs={12}>
         <Card>
-          <CardHeader title='User Activity Timeline' />
+          <CardHeader
+            title='User Activity Timeline'
+            action={
+              <OptionsMenu
+                options={['Share timeline', 'Suggest edits', 'Report bug']}
+                iconButtonProps={{ size: 'small', sx: { color: 'text.disabled' } }}
+              />
+            }
+          />
           <CardContent>
             <Timeline>
               <TimelineItem>
                 <TimelineSeparator>
-                  <TimelineDot color='error' />
+                  <TimelineDot color='warning' />
                   <TimelineConnector />
                 </TimelineSeparator>
-                <TimelineContent>
+                <TimelineContent sx={{ mb: theme => `${theme.spacing(3)} !important` }}>
                   <Box
                     sx={{
-                      mb: 2,
                       display: 'flex',
                       flexWrap: 'wrap',
                       alignItems: 'center',
                       justifyContent: 'space-between'
                     }}
                   >
-                    <Typography variant='body2' sx={{ mr: 2, fontWeight: 600, color: 'text.primary' }}>
-                      User login
+                    <Typography sx={{ mr: 2, fontWeight: 500 }}>Client Meeting</Typography>
+                    <Typography variant='body2' sx={{ color: 'text.disabled' }}>
+                      Today
                     </Typography>
-                    <Typography variant='caption'>12 min ago</Typography>
                   </Box>
-                  <Typography variant='body2'>User login at 2:12pm</Typography>
+                  <Typography sx={{ mb: 3, color: 'text.secondary' }}>Project meeting with john @10:15am</Typography>
+                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Avatar alt='Avatar' src='/images/avatars/3.png' sx={{ width: 38, height: 38, mr: 3 }} />
+                    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                      <Typography sx={{ fontWeight: 500 }}>Leona Watkins (Client)</Typography>
+                      <Typography sx={{ color: 'text.secondary' }}>CEO of Infibeam</Typography>
+                    </Box>
+                  </Box>
                 </TimelineContent>
               </TimelineItem>
-
               <TimelineItem>
                 <TimelineSeparator>
                   <TimelineDot color='primary' />
                   <TimelineConnector />
                 </TimelineSeparator>
-                <TimelineContent>
+                <TimelineContent sx={{ mb: theme => `${theme.spacing(3)} !important` }}>
                   <Box
                     sx={{
-                      mb: 2,
                       display: 'flex',
                       flexWrap: 'wrap',
                       alignItems: 'center',
                       justifyContent: 'space-between'
                     }}
                   >
-                    <Typography variant='body2' sx={{ mr: 2, fontWeight: 600, color: 'text.primary' }}>
-                      Meeting with John
+                    <Typography sx={{ mr: 2, fontWeight: 500 }}>Create a new project for client</Typography>
+                    <Typography variant='body2' sx={{ color: 'text.disabled' }}>
+                      2 Days Ago
                     </Typography>
-                    <Typography variant='caption'>45 min ago</Typography>
                   </Box>
-                  <Typography variant='body2' sx={{ mb: 2 }}>
-                    React Project meeting with John @10:15am
-                  </Typography>
-                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Avatar alt='Avatar' src='/images/avatars/2.png' sx={{ width: 40, height: 40, mr: 2 }} />
-                    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                      <Typography variant='body2' sx={{ fontWeight: 600, color: 'text.primary' }}>
-                        Leona Watkins (Client)
-                      </Typography>
-                      <Typography variant='body2'>CEO of Watkins Group</Typography>
-                    </Box>
-                  </Box>
+                  <Typography sx={{ color: 'text.secondary' }}>Add files to new design folder</Typography>
                 </TimelineContent>
               </TimelineItem>
-
               <TimelineItem>
                 <TimelineSeparator>
                   <TimelineDot color='info' />
                   <TimelineConnector />
                 </TimelineSeparator>
-                <TimelineContent>
+                <TimelineContent sx={{ mb: theme => `${theme.spacing(3)} !important` }}>
                   <Box
                     sx={{
-                      mb: 2,
                       display: 'flex',
                       flexWrap: 'wrap',
                       alignItems: 'center',
                       justifyContent: 'space-between'
                     }}
                   >
-                    <Typography variant='body2' sx={{ mr: 2, fontWeight: 600, color: 'text.primary' }}>
-                      Create a new react project for client
+                    <Typography sx={{ mr: 2, fontWeight: 500 }}>Shared 2 New Project Files</Typography>
+                    <Typography variant='body2' sx={{ color: 'text.disabled' }}>
+                      6 Days Ago
                     </Typography>
-                    <Typography variant='caption'>2 day ago</Typography>
                   </Box>
-                  <Typography variant='body2'>Add files to new design folder</Typography>
+                  <Typography sx={{ mb: 3, color: 'text.secondary' }}>Sent by Mollie Dixon</Typography>
+                  <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
+                    <Box sx={{ mr: 3, display: 'flex', alignItems: 'center', color: 'warning.main' }}>
+                      <Icon fontSize='1.25rem' icon='tabler:file-text' />
+                      <Typography sx={{ fontWeight: 500 }}>App Guidelines</Typography>
+                    </Box>
+                    <Box sx={{ display: 'flex', alignItems: 'center', color: 'success.main' }}>
+                      <Icon fontSize='1.25rem' icon='tabler:table' />
+                      <Typography sx={{ fontWeight: 500 }}>Testing Results</Typography>
+                    </Box>
+                  </Box>
                 </TimelineContent>
               </TimelineItem>
-
               <TimelineItem>
                 <TimelineSeparator>
-                  <TimelineDot color='success' />
-                  <TimelineConnector />
+                  <TimelineDot color='secondary' />
                 </TimelineSeparator>
                 <TimelineContent>
                   <Box
                     sx={{
-                      mb: 2,
                       display: 'flex',
                       flexWrap: 'wrap',
                       alignItems: 'center',
                       justifyContent: 'space-between'
                     }}
                   >
-                    <Typography variant='body2' sx={{ mr: 2, fontWeight: 600, color: 'text.primary' }}>
-                      Create invoices for client
-                    </Typography>
-                    <Typography variant='caption'>12 min ago</Typography>
-                  </Box>
-                  <Typography variant='body2'>Create new invoices and send to Leona Watkins</Typography>
-                  <Box sx={{ mt: 2, display: 'flex', alignItems: 'center' }}>
-                    <Box sx={{ width: 28, height: 'auto' }}>
-                      <img width={28} height={28} alt='invoice.pdf' src='/images/icons/file-icons/pdf.png' />
-                    </Box>
-                    <Typography variant='subtitle2' sx={{ ml: 2, fontWeight: 600 }}>
-                      invoice.pdf
+                    <Typography sx={{ mr: 2, fontWeight: 500 }}>Project status updated</Typography>
+                    <Typography variant='body2' sx={{ color: 'text.disabled' }}>
+                      10 Days Ago
                     </Typography>
                   </Box>
+                  <Typography sx={{ color: 'text.secondary' }}>WooCommerce iOS App Completed</Typography>
                 </TimelineContent>
               </TimelineItem>
             </Timeline>
@@ -177,4 +181,4 @@ const UserViewOverview = ({ invoiceData }: Props) => {
   )
 }
 
-export default UserViewOverview
+export default UserViewAccount

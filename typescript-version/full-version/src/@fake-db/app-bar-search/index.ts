@@ -84,9 +84,9 @@ const searchData: AppBarSearchType[] = [
   },
   {
     id: 12,
-    url: '/apps/user/view/overview',
+    url: '/apps/user/view/account',
     icon: 'mdi:eye-outline',
-    title: 'User View - Overview',
+    title: 'User View - Account',
     category: 'appsPages'
   },
   {

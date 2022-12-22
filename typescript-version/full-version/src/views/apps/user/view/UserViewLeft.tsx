@@ -54,11 +54,12 @@ const data: UsersType = {
   avatarColor: 'primary',
   country: 'El Salvador',
   company: 'Yotz PVT LTD',
+  billing: 'Manual - Cash',
   contact: '(479) 232-9151',
   currentPlan: 'enterprise',
   fullName: 'Daisy Patterson',
   email: 'gslixby0@abc.net.au',
-  avatar: '/images/avatars/4.png'
+  avatar: '/images/avatars/14.png'
 }
 
 const roleColors: ColorsType = {
@@ -77,18 +78,19 @@ const statusColors: ColorsType = {
 
 // ** Styled <sup> component
 const Sup = styled('sup')(({ theme }) => ({
-  top: '0.2rem',
-  left: '-0.6rem',
+  top: 0,
+  left: -10,
+  fontSize: '1rem',
   position: 'absolute',
   color: theme.palette.primary.main
 }))
 
 // ** Styled <sub> component
-const Sub = styled('sub')({
-  fontWeight: 300,
+const Sub = styled('sub')(({ theme }) => ({
   fontSize: '1rem',
-  alignSelf: 'flex-end'
-})
+  alignSelf: 'flex-end',
+  color: theme.palette.text.secondary
+}))
 
 const UserViewLeft = () => {
   // ** States
@@ -110,125 +112,113 @@ const UserViewLeft = () => {
       <Grid container spacing={6}>
         <Grid item xs={12}>
           <Card>
-            <CardContent sx={{ pt: 15, display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-              {data.avatar.length ? (
+            <CardContent sx={{ pt: 13.5, display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+              {data.avatar ? (
                 <CustomAvatar
                   src={data.avatar}
                   variant='rounded'
                   alt={data.fullName}
-                  sx={{ width: 120, height: 120, fontWeight: 600, mb: 4, fontSize: '3rem' }}
+                  sx={{ width: 100, height: 100, mb: 4 }}
                 />
               ) : (
                 <CustomAvatar
                   skin='light'
                   variant='rounded'
                   color={data.avatarColor as ThemeColor}
-                  sx={{ width: 120, height: 120, fontWeight: 600, mb: 4, fontSize: '3rem' }}
+                  sx={{ width: 100, height: 100, mb: 4, fontSize: '3rem' }}
                 >
                   {getInitials(data.fullName)}
                 </CustomAvatar>
               )}
-              <Typography variant='h6' sx={{ mb: 2 }}>
+              <Typography variant='h5' sx={{ mb: 3 }}>
                 {data.fullName}
               </Typography>
               <CustomChip
+                rounded
                 skin='light'
                 size='small'
                 label={data.role}
                 color={roleColors[data.role]}
-                sx={{
-                  height: 20,
-                  fontWeight: 600,
-                  borderRadius: '5px',
-                  fontSize: '0.875rem',
-                  textTransform: 'capitalize',
-                  '& .MuiChip-label': { mt: -0.25 }
-                }}
+                sx={{ textTransform: 'capitalize' }}
               />
             </CardContent>
 
-            <CardContent sx={{ mt: 2 }}>
+            <CardContent sx={{ pt: theme => `${theme.spacing(2)} !important` }}>
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Box sx={{ mr: 8, display: 'flex', alignItems: 'center' }}>
-                  <CustomAvatar skin='light' variant='rounded' sx={{ mr: 3 }}>
-                    <Icon icon='mdi:check' />
+                  <CustomAvatar skin='light' variant='rounded' sx={{ mr: 2.5, width: 38, height: 38 }}>
+                    <Icon fontSize='1.75rem' icon='tabler:checkbox' />
                   </CustomAvatar>
                   <div>
-                    <Typography variant='h6' sx={{ lineHeight: 1.3 }}>
-                      1.23k
-                    </Typography>
+                    <Typography sx={{ fontWeight: 500, color: 'text.secondary' }}>1.23k</Typography>
                     <Typography variant='body2'>Task Done</Typography>
                   </div>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                  <CustomAvatar skin='light' variant='rounded' sx={{ mr: 3 }}>
-                    <Icon icon='mdi:briefcase-variant-outline' />
+                  <CustomAvatar skin='light' variant='rounded' sx={{ mr: 2.5, width: 38, height: 38 }}>
+                    <Icon fontSize='1.75rem' icon='tabler:briefcase' />
                   </CustomAvatar>
                   <div>
-                    <Typography variant='h6' sx={{ lineHeight: 1.3 }}>
-                      568
-                    </Typography>
+                    <Typography sx={{ fontWeight: 500, color: 'text.secondary' }}>568</Typography>
                     <Typography variant='body2'>Project Done</Typography>
                   </div>
                 </Box>
               </Box>
             </CardContent>
 
-            <CardContent>
-              <Typography variant='h6'>Details</Typography>
-              <Divider />
-              <Box sx={{ pt: 2, pb: 2 }}>
-                <Box sx={{ display: 'flex', mb: 2.7 }}>
-                  <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Username:</Typography>
-                  <Typography variant='body2'>@{data.username}</Typography>
+            <Divider sx={{ my: '0 !important', mx: 6 }} />
+
+            <CardContent sx={{ pb: 4 }}>
+              <Typography variant='body2' sx={{ color: 'text.disabled', textTransform: 'uppercase' }}>
+                Details
+              </Typography>
+              <Box sx={{ pt: 4 }}>
+                <Box sx={{ display: 'flex', mb: 3 }}>
+                  <Typography sx={{ mr: 2, fontWeight: 500 }}>Username:</Typography>
+                  <Typography sx={{ color: 'text.secondary' }}>@{data.username}</Typography>
                 </Box>
-                <Box sx={{ display: 'flex', mb: 2.7 }}>
-                  <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Billing Email:</Typography>
-                  <Typography variant='body2'>{data.email}</Typography>
+                <Box sx={{ display: 'flex', mb: 3 }}>
+                  <Typography sx={{ mr: 2, fontWeight: 500 }}>Email:</Typography>
+                  <Typography sx={{ color: 'text.secondary' }}>{data.email}</Typography>
                 </Box>
-                <Box sx={{ display: 'flex', mb: 2.7 }}>
-                  <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Status:</Typography>
+                <Box sx={{ display: 'flex', mb: 3 }}>
+                  <Typography sx={{ mr: 2, fontWeight: 500 }}>Status:</Typography>
                   <CustomChip
+                    rounded
                     skin='light'
                     size='small'
                     label={data.status}
                     color={statusColors[data.status]}
                     sx={{
-                      height: 20,
-                      fontWeight: 500,
-                      fontSize: '0.75rem',
-                      borderRadius: '5px',
                       textTransform: 'capitalize'
                     }}
                   />
                 </Box>
-                <Box sx={{ display: 'flex', mb: 2.7 }}>
-                  <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Role:</Typography>
-                  <Typography variant='body2' sx={{ textTransform: 'capitalize' }}>
-                    {data.role}
-                  </Typography>
+                <Box sx={{ display: 'flex', mb: 3 }}>
+                  <Typography sx={{ mr: 2, fontWeight: 500 }}>Role:</Typography>
+                  <Typography sx={{ color: 'text.secondary', textTransform: 'capitalize' }}>{data.role}</Typography>
                 </Box>
-                <Box sx={{ display: 'flex', mb: 2.7 }}>
-                  <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Tax ID:</Typography>
-                  <Typography variant='body2'>Tax-8894</Typography>
+                <Box sx={{ display: 'flex', mb: 3 }}>
+                  <Typography sx={{ mr: 2, fontWeight: 500 }}>Tax ID:</Typography>
+                  <Typography sx={{ color: 'text.secondary' }}>Tax-8894</Typography>
                 </Box>
-                <Box sx={{ display: 'flex', mb: 2.7 }}>
-                  <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Contact:</Typography>
-                  <Typography variant='body2'>+1 {data.contact}</Typography>
+                <Box sx={{ display: 'flex', mb: 3 }}>
+                  <Typography sx={{ mr: 2, fontWeight: 500 }}>Contact:</Typography>
+                  <Typography sx={{ color: 'text.secondary' }}>+1 {data.contact}</Typography>
                 </Box>
-                <Box sx={{ display: 'flex', mb: 2.7 }}>
-                  <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Language:</Typography>
-                  <Typography variant='body2'>English</Typography>
+                <Box sx={{ display: 'flex', mb: 3 }}>
+                  <Typography sx={{ mr: 2, fontWeight: 500 }}>Language:</Typography>
+                  <Typography sx={{ color: 'text.secondary' }}>English</Typography>
                 </Box>
                 <Box sx={{ display: 'flex' }}>
-                  <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Country:</Typography>
-                  <Typography variant='body2'>{data.country}</Typography>
+                  <Typography sx={{ mr: 2, fontWeight: 500 }}>Country:</Typography>
+                  <Typography sx={{ color: 'text.secondary' }}>{data.country}</Typography>
                 </Box>
               </Box>
             </CardContent>
 
             <CardActions sx={{ display: 'flex', justifyContent: 'center' }}>
-              <Button variant='contained' sx={{ mr: 3 }} onClick={handleEditClickOpen}>
+              <Button variant='contained' sx={{ mr: 2 }} onClick={handleEditClickOpen}>
                 Edit
               </Button>
               <Button color='error' variant='outlined' onClick={() => setSuspendDialogOpen(true)}>
@@ -349,28 +339,14 @@ const UserViewLeft = () => {
         </Grid>
 
         <Grid item xs={12}>
-          <Card sx={{ boxShadow: 'none', border: theme => `2px solid ${theme.palette.primary.main}` }}>
-            <CardContent
-              sx={{ display: 'flex', flexWrap: 'wrap', pb: '0 !important', justifyContent: 'space-between' }}
-            >
-              <CustomChip
-                skin='light'
-                size='small'
-                color='primary'
-                label='Standard'
-                sx={{ height: 20, fontSize: '0.75rem', fontWeight: 600, borderRadius: '5px' }}
-              />
+          <Card>
+            <CardContent sx={{ pb: 1, display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+              <CustomChip rounded skin='light' size='small' color='primary' label='Popular' />
               <Box sx={{ display: 'flex', position: 'relative' }}>
                 <Sup>$</Sup>
                 <Typography
-                  variant='h3'
-                  sx={{
-                    mb: -1.2,
-                    lineHeight: 1,
-                    fontWeight: 600,
-                    color: 'primary.main',
-                    fontSize: '3rem !important'
-                  }}
+                  variant='h4'
+                  sx={{ mt: -1, mb: -1.2, color: 'primary.main', fontSize: '2.375rem !important' }}
                 >
                   99
                 </Typography>
@@ -379,53 +355,27 @@ const UserViewLeft = () => {
             </CardContent>
 
             <CardContent>
-              <Box sx={{ mt: 4, mb: 5 }}>
-                <Box
-                  sx={{ display: 'flex', mb: 2.5, alignItems: 'center', '& svg': { mr: 2, color: 'text.secondary' } }}
-                >
-                  <Icon icon='mdi:circle' fontSize='0.625rem' />
-                  <Typography component='span' sx={{ fontSize: '0.875rem' }}>
-                    10 Users
-                  </Typography>
+              <Box sx={{ mt: 2.5, mb: 4 }}>
+                <Box sx={{ display: 'flex', mb: 2, alignItems: 'center', '& svg': { mr: 2, color: 'text.secondary' } }}>
+                  <Icon icon='tabler:point' fontSize='1.125rem' />
+                  <Typography sx={{ color: 'text.secondary' }}>10 Users</Typography>
                 </Box>
-                <Box
-                  sx={{
-                    mt: 2.5,
-                    display: 'flex',
-                    mb: 2.5,
-                    alignItems: 'center',
-                    '& svg': { mr: 2, color: 'text.secondary' }
-                  }}
-                >
-                  <Icon icon='mdi:circle' fontSize='0.625rem' />
-                  <Typography component='span' sx={{ fontSize: '0.875rem' }}>
-                    Up to 10GB storage
-                  </Typography>
+                <Box sx={{ mb: 2, display: 'flex', alignItems: 'center', '& svg': { mr: 2, color: 'text.secondary' } }}>
+                  <Icon icon='tabler:point' fontSize='1.125rem' />
+                  <Typography sx={{ color: 'text.secondary' }}>Up to 10GB storage</Typography>
                 </Box>
-                <Box
-                  sx={{
-                    mt: 2.5,
-                    display: 'flex',
-                    mb: 2.5,
-                    alignItems: 'center',
-                    '& svg': { mr: 2, color: 'text.secondary' }
-                  }}
-                >
-                  <Icon icon='mdi:circle' fontSize='0.625rem' />
-                  <Typography component='span' sx={{ fontSize: '0.875rem' }}>
-                    Basic Support
-                  </Typography>
+                <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 2, color: 'text.secondary' } }}>
+                  <Icon icon='tabler:point' fontSize='1.125rem' />
+                  <Typography sx={{ color: 'text.secondary' }}>Basic Support</Typography>
                 </Box>
               </Box>
-              <Box sx={{ display: 'flex', mb: 2, justifyContent: 'space-between' }}>
-                <Typography sx={{ fontWeight: 600, fontSize: '0.875rem' }}>Days</Typography>
-                <Typography sx={{ fontWeight: 600, fontSize: '0.875rem' }}>26 of 30 Days</Typography>
+              <Box sx={{ display: 'flex', mb: 1.5, justifyContent: 'space-between' }}>
+                <Typography sx={{ fontWeight: 500 }}>Days</Typography>
+                <Typography sx={{ fontWeight: 500 }}>75% Completed</Typography>
               </Box>
-              <LinearProgress value={86.66} variant='determinate' sx={{ height: 8, borderRadius: '5px' }} />
-              <Typography variant='body2' sx={{ mt: 2, mb: 4 }}>
-                4 days remaining
-              </Typography>
-              <Button variant='contained' sx={{ width: '100%' }} onClick={handlePlansClickOpen}>
+              <LinearProgress value={75} variant='determinate' sx={{ height: 10 }} />
+              <Typography sx={{ mt: 1.5, mb: 6, color: 'text.secondary' }}>4 days remaining</Typography>
+              <Button fullWidth variant='contained' onClick={handlePlansClickOpen}>
                 Upgrade Plan
               </Button>
             </CardContent>

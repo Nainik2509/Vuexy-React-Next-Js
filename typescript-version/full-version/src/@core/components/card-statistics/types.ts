@@ -48,3 +48,16 @@ export type CardStatsVerticalProps = {
   iconSize?: number | string
   chipColor?: ChipProps['color']
 }
+
+export type CardStatsHorizontalWithDetailsProps = {
+  icon: string
+  stats: string
+  title: string
+  subtitle: string
+  trendDiff: string
+  sx?: SxProps<Theme>
+  avatarSize?: number
+  avatarColor?: ThemeColor
+  iconSize?: number | string
+  trend?: 'positive' | 'negative'
+}

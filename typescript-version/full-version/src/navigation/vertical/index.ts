@@ -75,8 +75,8 @@ const navigation = (): VerticalNavItemsType => {
           title: 'View',
           children: [
             {
-              title: 'Overview',
-              path: '/apps/user/view/overview'
+              title: 'Account',
+              path: '/apps/user/view/account'
             },
             {
               title: 'Security',

@@ -25,21 +25,21 @@ const Img = styled('img')(({ theme }) => ({
   width: 32,
   height: 32,
   borderRadius: '50%',
-  marginRight: theme.spacing(3)
+  marginRight: theme.spacing(2.5)
 }))
 
 const columns = [
   {
-    flex: 0.3,
-    minWidth: 230,
+    flex: 0.35,
+    minWidth: 250,
     field: 'projectTitle',
     headerName: 'Project',
     renderCell: ({ row }: CellType) => (
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <Img src={row.img} alt={`project-${row.projectTitle}`} />
         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-          <Typography sx={{ fontWeight: 500, fontSize: '0.875rem' }}>{row.projectTitle}</Typography>
-          <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+          <Typography sx={{ fontWeight: 500, color: 'text.secondary' }}>{row.projectTitle}</Typography>
+          <Typography variant='body2' sx={{ color: 'text.disabled' }}>
             {row.projectType}
           </Typography>
         </Box>
@@ -47,35 +47,30 @@ const columns = [
     )
   },
   {
-    flex: 0.15,
-    minWidth: 100,
+    flex: 0.2,
+    minWidth: 126,
     field: 'totalTask',
     headerName: 'Total Tasks',
-    renderCell: ({ row }: CellType) => <Typography variant='body2'>{row.totalTask}</Typography>
+    renderCell: ({ row }: CellType) => <Typography sx={{ color: 'text.secondary' }}>{row.totalTask}</Typography>
   },
   {
-    flex: 0.15,
-    minWidth: 200,
+    flex: 0.25,
+    minWidth: 180,
     headerName: 'Progress',
     field: 'progressValue',
     renderCell: ({ row }: CellType) => (
       <Box sx={{ width: '100%' }}>
-        <Typography variant='body2'>{row.progressValue}%</Typography>
-        <LinearProgress
-          variant='determinate'
-          value={row.progressValue}
-          color={row.progressColor}
-          sx={{ height: 6, mt: 1, borderRadius: '5px' }}
-        />
+        <Typography sx={{ mb: 1.5, color: 'text.secondary' }}>{`${row.progressValue}%`}</Typography>
+        <LinearProgress sx={{ height: 8 }} variant='determinate' value={row.progressValue} color={row.progressColor} />
       </Box>
     )
   },
   {
-    flex: 0.15,
-    minWidth: 100,
+    flex: 0.2,
+    minWidth: 110,
     field: 'hours',
     headerName: 'Hours',
-    renderCell: ({ row }: CellType) => <Typography variant='body2'>{row.hours}</Typography>
+    renderCell: ({ row }: CellType) => <Typography sx={{ color: 'text.secondary' }}>{`${row.hours}h`}</Typography>
   }
 ]
 
@@ -109,6 +104,7 @@ const InvoiceListTable = () => {
       <DataGrid
         autoHeight
         rows={data}
+        rowHeight={60}
         columns={columns}
         pageSize={pageSize}
         disableSelectionOnClick

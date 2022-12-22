@@ -4,7 +4,8 @@ import {
   CardStatsSquareProps,
   CardStatsVerticalProps,
   CardStatsHorizontalProps,
-  CardStatsWithAreaChartProps
+  CardStatsWithAreaChartProps,
+  CardStatsHorizontalWithDetailsProps
 } from 'src/@core/components/card-statistics/types'
 
 // Template Search
@@ -45,6 +46,7 @@ export type CardStatsType = {
   statsVertical: CardStatsVerticalProps[]
   statsHorizontal: CardStatsHorizontalProps[]
   statsWithAreaChart: CardStatsWithAreaChartProps[]
+  statsHorizontalWithDetails: CardStatsHorizontalWithDetailsProps[]
 }
 
 // User Profile pages
