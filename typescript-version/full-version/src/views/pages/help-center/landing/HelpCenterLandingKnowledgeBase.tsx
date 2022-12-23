@@ -27,7 +27,7 @@ const HelpCenterLandingKnowledgeBase = ({ categories }: { categories: HelpCenter
           <Grid item xs={12} sm={6} md={4} key={category.slug}>
             <Box
               sx={{
-                p: 5,
+                p: 6,
                 boxShadow: 6,
                 height: '100%',
                 display: 'flex',
@@ -44,13 +44,13 @@ const HelpCenterLandingKnowledgeBase = ({ categories }: { categories: HelpCenter
                   color={category.avatarColor}
                   sx={{ mr: 3, height: 34, width: 34 }}
                 >
-                  <Icon icon={category.icon} />
+                  <Icon fontSize='1.5rem' icon={category.icon} />
                 </CustomAvatar>
                 <Typography
                   variant='h6'
                   component={Link}
+                  sx={{ textDecoration: 'none', '&:hover': { color: 'primary.main' } }}
                   href={`/pages/help-center/${category.slug}/${category.subCategories[0].slug}`}
-                  sx={{ fontWeight: 600, textDecoration: 'none', '&:hover': { color: 'primary.main' } }}
                 >
                   {category.title}
                 </Typography>
@@ -79,7 +79,7 @@ const HelpCenterLandingKnowledgeBase = ({ categories }: { categories: HelpCenter
               <Typography
                 component={Link}
                 href={`/pages/help-center/${category.slug}/${category.subCategories[0].slug}`}
-                sx={{ mt: 'auto', textDecoration: 'none', '&:hover': { color: 'primary.main' } }}
+                sx={{ mt: 'auto', fontWeight: 500, textDecoration: 'none', '&:hover': { color: 'primary.main' } }}
               >
                 {`${totalArticles} Articles`}
               </Typography>

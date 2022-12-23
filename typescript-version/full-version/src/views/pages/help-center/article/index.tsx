@@ -10,6 +10,7 @@ import Box from '@mui/material/Box'
 import Tab from '@mui/material/Tab'
 import Card from '@mui/material/Card'
 import TabPanel from '@mui/lab/TabPanel'
+import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
 import TabContext from '@mui/lab/TabContext'
@@ -21,9 +22,6 @@ import CircularProgress from '@mui/material/CircularProgress'
 
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
-
-// ** Custom Components Import
-import CustomAvatar from 'src/@core/components/mui/avatar'
 
 // ** Types
 import { HelpCenterSubcategoriesType, HelpCenterSubcategoryArticlesType } from 'src/@fake-db/types'
@@ -37,10 +35,6 @@ interface Props {
 const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
   border: 0,
   marginRight: 0,
-  overflow: 'visible',
-  '& .MuiTabs-flexContainer': {
-    flexDirection: 'column'
-  },
   '& .MuiTabs-indicator': {
     display: 'none'
   },
@@ -49,16 +43,15 @@ const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
     color: `${theme.palette.common.white} !important`
   },
   '& .MuiTab-root': {
-    minHeight: 40,
+    minHeight: 38,
     minWidth: 300,
     maxWidth: 300,
+    lineHeight: 1.3,
     textAlign: 'start',
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
     borderRadius: theme.shape.borderRadius,
-    '& svg': {
-      marginBottom: 0,
-      marginRight: theme.spacing(1)
+    '&:not(:last-child)': {
+      marginBottom: theme.spacing(1.5)
     },
     [theme.breakpoints.down('md')]: {
       minWidth: '100%',
@@ -101,21 +94,21 @@ const HelpCenterArticle = ({ articles, activeArticle, activeSubcategory }: Props
   const renderContent = () => (
     <TabPanel value={tabValue} sx={{ p: 0, width: '100%' }}>
       <Card>
-        <CardContent>
+        <CardContent sx={{ pb: 2 }}>
           <Button
             component={Link}
             variant='outlined'
-            startIcon={<Icon icon='mdi:chevron-left' />}
+            startIcon={<Icon icon='tabler:chevron-left' />}
             href={`/pages/help-center/${router.query.category}/${router.query.subcategory}`}
           >
             Back to Categories
           </Button>
 
-          <Box sx={{ mt: 6, mb: 6.5, display: 'flex', alignItems: 'center' }}>
-            <CustomAvatar skin='light' variant='rounded' color='secondary' sx={{ mr: 3 }}>
-              <Icon icon={activeSubcategory.icon} />
-            </CustomAvatar>
-            <Typography variant='h6'>{activeArticle.title}</Typography>
+          <Box sx={{ my: 6, display: 'flex', alignItems: 'center' }}>
+            <Avatar variant='rounded' sx={{ mr: 3, width: 42, height: 42 }}>
+              <Icon fontSize='1.875rem' icon={activeSubcategory.icon} />
+            </Avatar>
+            <Typography variant='h5'>{activeArticle.title}</Typography>
           </Box>
 
           <Box
@@ -134,26 +127,29 @@ const HelpCenterArticle = ({ articles, activeArticle, activeSubcategory }: Props
           }}
         >
           <div>
-            <Typography variant='h6' sx={{ fontWeight: 600 }}>
+            <Typography variant='h6' sx={{ mb: 1.5 }}>
               {activeArticle.title}
             </Typography>
             <Typography sx={{ mb: 4, color: 'text.secondary' }}>55 People found this helpful</Typography>
             <div>
-              <Button variant='outlined' sx={{ mr: 2.5, p: 1.5, minWidth: 32 }}>
-                <Icon fontSize={18} icon='mdi:thumbs-up-outline' />
+              <Button variant='outlined' sx={{ mr: 2.5, p: 1.25, minWidth: 28 }}>
+                <Icon fontSize='1.125rem' icon='tabler:thumb-up' />
               </Button>
-              <Button variant='outlined' sx={{ p: 1.5, minWidth: 32 }}>
-                <Icon fontSize={18} icon='mdi:thumbs-down-outline' />
+              <Button variant='outlined' sx={{ p: 1.25, minWidth: 28 }}>
+                <Icon fontSize='1.125rem' icon='tabler:thumb-down' />
               </Button>
             </div>
           </div>
           <Box sx={{ display: 'flex' }}>
-            <Typography sx={{ mr: 1, fontWeight: 600 }}>Still need help?</Typography>
+            <Typography variant='h6' sx={{ mr: 1 }}>
+              Still need help?
+            </Typography>
             <Typography
               href='/'
+              variant='h6'
               component={Link}
               onClick={e => e.preventDefault()}
-              sx={{ fontWeight: 600, color: 'primary.main', textDecoration: 'none' }}
+              sx={{ color: 'primary.main', textDecoration: 'none' }}
             >
               Contact us?
             </Typography>
@@ -166,8 +162,8 @@ const HelpCenterArticle = ({ articles, activeArticle, activeSubcategory }: Props
   return (
     <TabContext value={tabValue}>
       <Box sx={{ display: 'flex', flexDirection: ['column', 'column', 'row'] }}>
-        <Box sx={{ mr: [0, 0, 5], mb: [5, 5, 0], display: 'flex', flexDirection: 'column' }}>
-          <Typography variant='h6' sx={{ mb: 4, fontWeight: 600 }}>
+        <Box sx={{ mr: [0, 0, 6], mb: [6, 6, 0], display: 'flex', flexDirection: 'column' }}>
+          <Typography variant='h6' sx={{ mb: 4 }}>
             {activeSubcategory.title}
           </Typography>
           <TabList orientation='vertical' onChange={handleChange} aria-label='vertical tabs example'>

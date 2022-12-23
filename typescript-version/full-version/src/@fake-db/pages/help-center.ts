@@ -43,12 +43,12 @@ const data: Data = {
       avatarColor: 'success',
       slug: 'getting-started',
       title: 'Getting Started',
-      icon: 'mdi:rocket-launch-outline',
+      icon: 'tabler:shopping-cart',
       subCategories: [
         {
           slug: 'account',
           title: 'Account',
-          icon: 'mdi:cube-outline',
+          icon: 'tabler:box',
           articles: [
             {
               slug: 'changing-your-username',
@@ -83,9 +83,9 @@ const data: Data = {
           ]
         },
         {
+          icon: 'tabler:lock',
           slug: 'authentication',
           title: 'Authentication',
-          icon: 'mdi:lock-outline',
           articles: [
             {
               slug: 'how-to-create-a-strong-password',
@@ -116,7 +116,7 @@ const data: Data = {
         {
           slug: 'billing',
           title: 'Billing',
-          icon: 'mdi:currency-usd',
+          icon: 'tabler:currency-dollar',
           articles: [
             {
               slug: 'how-to-update-payment-method',
@@ -156,12 +156,12 @@ const data: Data = {
       slug: 'orders',
       title: 'Orders',
       avatarColor: 'info',
-      icon: 'mdi:archive-outline',
+      icon: 'tabler:device-laptop',
       subCategories: [
         {
+          icon: 'tabler:archive',
           slug: 'processing-orders',
           title: 'Processing orders',
-          icon: 'mdi:archive-outline',
           articles: [
             {
               slug: 'what-happens-when-you-receive-an-online-order',
@@ -198,7 +198,7 @@ const data: Data = {
         {
           slug: 'payments',
           title: 'Payments',
-          icon: 'mdi:currency-usd',
+          icon: 'tabler:currency-dollar',
           articles: [
             {
               slug: 'how-do-i-get-paid',
@@ -233,7 +233,7 @@ const data: Data = {
           ]
         },
         {
-          icon: 'mdi:reload',
+          icon: 'tabler:reload',
           slug: 'returns-refunds-replacements',
           title: 'Returns, Refunds and Replacements',
           articles: [
@@ -260,15 +260,15 @@ const data: Data = {
       ]
     },
     {
-      slug: 'safety-security',
+      icon: 'tabler:users',
       avatarColor: 'primary',
+      slug: 'safety-security',
       title: 'Safety and security',
-      icon: 'mdi:account-multiple-outline',
       subCategories: [
         {
           slug: 'hacked-accounts',
+          icon: 'tabler:shield-checkered',
           title: 'Security and hacked accounts',
-          icon: 'mdi:security',
           articles: [
             {
               slug: 'has-my-account-been-compromised',
@@ -293,7 +293,7 @@ const data: Data = {
         {
           slug: 'privacy',
           title: 'Privacy',
-          icon: 'mdi:lock-outline',
+          icon: 'tabler:lock',
           articles: [
             {
               slug: 'what-is-visible-on-my-profile',
@@ -316,9 +316,9 @@ const data: Data = {
           ]
         },
         {
+          icon: 'tabler:mail',
           slug: 'spam-fake-accounts',
           title: 'Spam and fake accounts',
-          icon: 'mdi:email-outline',
           articles: [
             {
               slug: 'how-to-detect-fake-email',
@@ -342,15 +342,15 @@ const data: Data = {
       ]
     },
     {
+      icon: 'tabler:world',
+      avatarColor: 'error',
       slug: 'rules-policies',
       title: 'Rules and policies',
-      avatarColor: 'error',
-      icon: 'mdi:clipboard-text-outline',
       subCategories: [
         {
           slug: 'general',
           title: 'General',
-          icon: 'mdi:web',
+          icon: 'tabler:world',
           articles: [
             {
               slug: 'our-rules',
@@ -373,9 +373,9 @@ const data: Data = {
           ]
         },
         {
+          icon: 'tabler:registered',
           slug: 'intellectual-property',
           title: 'Intellectual property',
-          icon: 'mdi:registered-trademark',
           articles: [
             {
               slug: 'what-is-your-trademark-policy',
@@ -398,9 +398,9 @@ const data: Data = {
           ]
         },
         {
+          icon: 'tabler:clipboard-text',
           slug: 'guidelines-for-law-enforcement',
           title: 'Guidelines for law enforcement',
-          icon: 'mdi:clipboard-text-outline',
           articles: [
             {
               slug: 'does-we-have-access-to-user-generated-photos-or-videos',
@@ -427,12 +427,12 @@ const data: Data = {
       slug: 'chats',
       title: 'Chats',
       avatarColor: 'warning',
-      icon: 'mdi:message-outline',
+      icon: 'tabler:device-mobile',
       subCategories: [
         {
           slug: 'general',
           title: 'General',
-          icon: 'mdi:web',
+          icon: 'tabler:world',
           articles: [
             {
               slug: 'what-is-forwarding-limits',
@@ -457,7 +457,7 @@ const data: Data = {
         {
           slug: 'features',
           title: 'Features',
-          icon: 'mdi:star-circle-outline',
+          icon: 'tabler:star',
           articles: [
             {
               slug: 'how-to-send-disappearing-messages',
@@ -481,8 +481,8 @@ const data: Data = {
         },
         {
           slug: 'encryption',
+          icon: 'tabler:lock',
           title: 'Encryption',
-          icon: 'mdi:lock-outline',
           articles: [
             {
               slug: 'what-is-end-to-end-encrypted-backup',
@@ -507,15 +507,15 @@ const data: Data = {
       ]
     },
     {
+      icon: 'tabler:mail',
       slug: 'connections',
       title: 'Connections',
       avatarColor: 'secondary',
-      icon: 'mdi:link-variant',
       subCategories: [
         {
           slug: 'conversations',
+          icon: 'tabler:message',
           title: 'Conversations',
-          icon: 'mdi:message-outline',
           articles: [
             {
               slug: 'how-to-send-messages-to-connections',
@@ -540,7 +540,7 @@ const data: Data = {
         {
           slug: 'jobs',
           title: 'Jobs',
-          icon: 'mdi:briefcase-outline',
+          icon: 'tabler:briefcase',
           articles: [
             {
               slug: 'find-relevant-jobs-through-social-hiring-and-meeting-the-team',
@@ -565,7 +565,7 @@ const data: Data = {
         {
           slug: 'people',
           title: 'People',
-          icon: 'mdi:account-group-outline',
+          icon: 'tabler:users',
           articles: [
             {
               slug: 'how-to-import-and-invite-your-email-contacts',

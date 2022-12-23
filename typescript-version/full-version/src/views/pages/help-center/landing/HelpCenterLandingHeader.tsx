@@ -90,11 +90,11 @@ const HelpCenterLandingHeader = ({ data, allArticles }: Props) => {
         alignItems: 'center',
         flexDirection: 'column',
         backgroundSize: 'cover',
-        py: theme => `${theme.spacing(25)} !important`,
-        backgroundImage: 'url(/images/pages/help-center-bg.png)'
+        py: theme => `${theme.spacing(24)} !important`,
+        backgroundImage: 'url(/images/pages/header-bg.png)'
       }}
     >
-      <Typography variant='h5' sx={{ fontWeight: 600, fontSize: '1.5rem !important' }}>
+      <Typography sx={{ mb: 4, fontWeight: 500, fontSize: '1.625rem', lineHeight: 1.385 }}>
         Hello, how can we help?
       </Typography>
 
@@ -104,7 +104,7 @@ const HelpCenterLandingHeader = ({ data, allArticles }: Props) => {
         inputValue={value}
         options={allArticles}
         onClose={() => setOpen(false)}
-        sx={{ my: 4, '& + .MuiAutocomplete-popper .MuiAutocomplete-listbox': { maxHeight: 250 } }}
+        sx={{ mb: 4, '& + .MuiAutocomplete-popper .MuiAutocomplete-listbox': { maxHeight: 250 } }}
         getOptionLabel={(option: HelpCenterSubcategoryArticlesType | unknown) =>
           (option as HelpCenterSubcategoryArticlesType).title
         }
@@ -128,7 +128,7 @@ const HelpCenterLandingHeader = ({ data, allArticles }: Props) => {
               ...params.InputProps,
               startAdornment: (
                 <InputAdornment position='start' sx={{ color: 'text.secondary' }}>
-                  <Icon icon='mdi:magnify' />
+                  <Icon fontSize='1.25rem' icon='tabler:search' />
                 </InputAdornment>
               )
             }}
@@ -148,7 +148,9 @@ const HelpCenterLandingHeader = ({ data, allArticles }: Props) => {
         }}
       />
 
-      <Typography variant='body2'>Common troubleshooting topics: eCommerce, Blogging to payment</Typography>
+      <Typography sx={{ color: 'text.secondary' }}>
+        Common troubleshooting topics: eCommerce, Blogging to payment
+      </Typography>
     </CardContent>
   )
 }

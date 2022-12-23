@@ -22,7 +22,7 @@ const HelpCenterLandingArticlesOverview = (props: Props) => {
           <Grid item xs={12} sm={6} md={4} key={article.slug}>
             <Box
               sx={{
-                p: 5,
+                p: 6,
                 height: '100%',
                 display: 'flex',
                 borderRadius: 1,
@@ -32,11 +32,11 @@ const HelpCenterLandingArticlesOverview = (props: Props) => {
                 border: theme => `1px solid ${theme.palette.divider}`
               }}
             >
-              <Box sx={{ minHeight: 58, display: 'flex' }}>
+              <Box sx={{ mb: 1.5, minHeight: 58, display: 'flex' }}>
                 <img height='58' src={article.img} alt={article.title} />
               </Box>
 
-              <Typography variant='h6' sx={{ mb: 1.5, fontWeight: 600 }}>
+              <Typography variant='h6' sx={{ mb: 1.5 }}>
                 {article.title}
               </Typography>
               <Typography

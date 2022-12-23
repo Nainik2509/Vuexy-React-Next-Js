@@ -41,19 +41,19 @@ const HelpCenter = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>)
         <>
           <HelpCenterLandingHeader data={apiData.categories} allArticles={apiData.allArticles} />
           <StyledCardContent>
-            <Typography variant='h5' sx={{ mb: 6, fontWeight: 600, textAlign: 'center' }}>
+            <Typography sx={{ mb: 6, fontWeight: 500, textAlign: 'center', fontSize: '1.625rem', lineHeight: 1.385 }}>
               Popular Articles
             </Typography>
             <HelpCenterLandingArticlesOverview articles={apiData.popularArticles} />
           </StyledCardContent>
           <StyledCardContent sx={{ backgroundColor: 'action.hover' }}>
-            <Typography variant='h5' sx={{ mb: 6, fontWeight: 600, textAlign: 'center' }}>
+            <Typography sx={{ mb: 6, fontWeight: 500, textAlign: 'center', fontSize: '1.625rem', lineHeight: 1.385 }}>
               Knowledge Base
             </Typography>
             <HelpCenterLandingKnowledgeBase categories={apiData.categories} />
           </StyledCardContent>
           <StyledCardContent>
-            <Typography variant='h5' sx={{ mb: 6, fontWeight: 600, textAlign: 'center' }}>
+            <Typography sx={{ mb: 6, fontWeight: 500, textAlign: 'center', fontSize: '1.625rem', lineHeight: 1.385 }}>
               Keep Learning
             </Typography>
             <HelpCenterLandingArticlesOverview articles={apiData.keepLearning} />

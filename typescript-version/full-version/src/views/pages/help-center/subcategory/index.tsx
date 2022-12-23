@@ -10,6 +10,7 @@ import Box from '@mui/material/Box'
 import Tab from '@mui/material/Tab'
 import Card from '@mui/material/Card'
 import TabPanel from '@mui/lab/TabPanel'
+import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import TabContext from '@mui/lab/TabContext'
 import { styled } from '@mui/material/styles'
@@ -20,9 +21,6 @@ import CircularProgress from '@mui/material/CircularProgress'
 
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
-
-// ** Custom Components Import
-import CustomAvatar from 'src/@core/components/mui/avatar'
 
 // ** Types
 import {
@@ -39,10 +37,6 @@ interface Props {
 const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
   border: 0,
   marginRight: 0,
-  overflow: 'visible',
-  '& .MuiTabs-flexContainer': {
-    flexDirection: 'column'
-  },
   '& .MuiTabs-indicator': {
     display: 'none'
   },
@@ -51,16 +45,15 @@ const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
     color: `${theme.palette.common.white} !important`
   },
   '& .MuiTab-root': {
-    minHeight: 40,
+    minHeight: 38,
     minWidth: 300,
     maxWidth: 300,
+    lineHeight: 1.3,
     textAlign: 'start',
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
     borderRadius: theme.shape.borderRadius,
-    '& svg': {
-      marginBottom: 0,
-      marginRight: theme.spacing(1)
+    '&:not(:last-child)': {
+      marginBottom: theme.spacing(1.5)
     },
     [theme.breakpoints.down('md')]: {
       minWidth: '100%',
@@ -105,13 +98,11 @@ const HelpCenterSubcategory = ({ data, activeTab }: Props) => {
       <TabPanel value={tabValue} sx={{ p: 0, width: '100%' }}>
         <Card>
           <CardContent>
-            <Box sx={{ mb: 7, display: 'flex', alignItems: 'center' }}>
-              <CustomAvatar skin='light' variant='rounded' sx={{ mr: 3 }}>
-                <Icon icon={dataToRender.icon} />
-              </CustomAvatar>
-              <Typography variant='h5' sx={{ fontWeight: 600 }}>
-                {dataToRender.title}
-              </Typography>
+            <Box sx={{ mb: 6, display: 'flex', alignItems: 'center' }}>
+              <Avatar variant='rounded' sx={{ mr: 3, width: 42, height: 42 }}>
+                <Icon fontSize='1.875rem' icon={dataToRender.icon} />
+              </Avatar>
+              <Typography variant='h5'>{dataToRender.title}</Typography>
             </Box>
 
             <Box sx={{ mb: 6 }}>
@@ -123,13 +114,13 @@ const HelpCenterSubcategory = ({ data, activeTab }: Props) => {
                       display: 'flex',
                       alignItems: 'center',
                       '&:not(:last-of-type)': { mb: 4 },
-                      '& svg': { color: 'text.disabled' }
+                      '& svg': { mr: 1.5, color: 'text.disabled' }
                     }}
                   >
-                    <Icon icon='mdi:chevron-right' />
+                    <Icon fontSize='1.125rem' icon='tabler:chevron-right' />
                     <Typography
                       component={Link}
-                      sx={{ ml: 1.5, color: 'primary.main', textDecoration: 'none' }}
+                      sx={{ color: 'primary.main', textDecoration: 'none' }}
                       href={`/pages/help-center/${data.slug}/${activeTab}/${article.slug}`}
                     >
                       {article.title}
@@ -143,7 +134,7 @@ const HelpCenterSubcategory = ({ data, activeTab }: Props) => {
               component={Link}
               variant='outlined'
               href='/pages/help-center'
-              startIcon={<Icon icon='mdi:chevron-left' />}
+              startIcon={<Icon icon='tabler:chevron-left' />}
             >
               Back to help center
             </Button>
@@ -156,8 +147,8 @@ const HelpCenterSubcategory = ({ data, activeTab }: Props) => {
   return (
     <TabContext value={tabValue}>
       <Box sx={{ display: 'flex', flexDirection: ['column', 'column', 'row'] }}>
-        <Box sx={{ mr: [0, 0, 5], mb: [5, 5, 0], display: 'flex', flexDirection: 'column' }}>
-          <Typography variant='h6' sx={{ mb: 4, fontWeight: 600 }}>
+        <Box sx={{ mr: [0, 0, 6], mb: [6, 6, 0], display: 'flex', flexDirection: 'column' }}>
+          <Typography variant='h6' sx={{ mb: 4 }}>
             {data.title}
           </Typography>
           <TabList orientation='vertical' onChange={handleChange} aria-label='vertical tabs example'>
