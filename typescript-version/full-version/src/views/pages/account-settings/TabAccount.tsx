@@ -61,9 +61,9 @@ const initialData: Data = {
 }
 
 const ImgStyled = styled('img')(({ theme }) => ({
-  width: 120,
-  height: 120,
-  marginRight: theme.spacing(6.25),
+  width: 100,
+  height: 100,
+  marginRight: theme.spacing(6),
   borderRadius: theme.shape.borderRadius
 }))
 
@@ -75,12 +75,12 @@ const ButtonStyled = styled(Button)<ButtonProps & { component?: ElementType; htm
 }))
 
 const ResetButtonStyled = styled(Button)<ButtonProps>(({ theme }) => ({
-  marginLeft: theme.spacing(4.5),
+  marginLeft: theme.spacing(4),
   [theme.breakpoints.down('sm')]: {
     width: '100%',
     marginLeft: 0,
     textAlign: 'center',
-    marginTop: theme.spacing(4)
+    marginTop: theme.spacing(2)
   }
 }))
 
@@ -90,7 +90,7 @@ const TabAccount = () => {
   const [inputValue, setInputValue] = useState<string>('')
   const [userInput, setUserInput] = useState<string>('yes')
   const [formData, setFormData] = useState<Data>(initialData)
-  const [imgSrc, setImgSrc] = useState<string>('/images/avatars/1.png')
+  const [imgSrc, setImgSrc] = useState<string>('/images/avatars/15.png')
   const [secondDialogOpen, setSecondDialogOpen] = useState<boolean>(false)
 
   // ** Hooks
@@ -126,7 +126,7 @@ const TabAccount = () => {
   }
   const handleInputImageReset = () => {
     setInputValue('')
-    setImgSrc('/images/avatars/1.png')
+    setImgSrc('/images/avatars/15.png')
   }
 
   const handleFormChange = (field: keyof Data, value: Data[keyof Data]) => {
@@ -138,7 +138,7 @@ const TabAccount = () => {
       {/* Account Details Card */}
       <Grid item xs={12}>
         <Card>
-          <CardHeader title='Account Details' />
+          <CardHeader title='Profile Details' />
           <form>
             <CardContent sx={{ pt: 0 }}>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -158,13 +158,13 @@ const TabAccount = () => {
                   <ResetButtonStyled color='secondary' variant='outlined' onClick={handleInputImageReset}>
                     Reset
                   </ResetButtonStyled>
-                  <Typography sx={{ mt: 5, color: 'text.disabled' }}>Allowed PNG or JPEG. Max size of 800K.</Typography>
+                  <Typography sx={{ mt: 4, color: 'text.disabled' }}>Allowed PNG or JPEG. Max size of 800K.</Typography>
                 </div>
               </Box>
             </CardContent>
             <Divider />
             <CardContent>
-              <Grid container spacing={6}>
+              <Grid container spacing={5}>
                 <Grid item xs={12} sm={6}>
                   <TextField
                     fullWidth
@@ -317,8 +317,8 @@ const TabAccount = () => {
                   </FormControl>
                 </Grid>
 
-                <Grid item xs={12}>
-                  <Button variant='contained' sx={{ mr: 3 }}>
+                <Grid item xs={12} sx={{ pt: theme => `${theme.spacing(6.5)} !important` }}>
+                  <Button variant='contained' sx={{ mr: 4 }}>
                     Save Changes
                   </Button>
                   <Button type='reset' variant='outlined' color='secondary' onClick={() => setFormData(initialData)}>
@@ -378,7 +378,7 @@ const TabAccount = () => {
         <DialogContent>
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <Box sx={{ maxWidth: '85%', textAlign: 'center', '& svg': { mb: 4, color: 'warning.main' } }}>
-              <Icon icon='mdi:alert-circle-outline' fontSize='5.5rem' />
+              <Icon icon='tabler:alert-circle' fontSize='5.5rem' />
               <Typography>Are you sure you would like to deactivate your account?</Typography>
             </Box>
           </Box>
@@ -405,10 +405,7 @@ const TabAccount = () => {
               }
             }}
           >
-            <Icon
-              fontSize='5.5rem'
-              icon={userInput === 'yes' ? 'mdi:check-circle-outline' : 'mdi:close-circle-outline'}
-            />
+            <Icon fontSize='5.5rem' icon={userInput === 'yes' ? 'tabler:circle-check' : 'tabler:circle-x'} />
             <Typography variant='h4' sx={{ mb: 8 }}>
               {userInput === 'yes' ? 'Deleted!' : 'Cancelled'}
             </Typography>

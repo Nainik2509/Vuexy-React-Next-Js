@@ -54,10 +54,8 @@ const TwoFactorAuthenticationCard = () => {
       <Card>
         <CardHeader title='Two-steps verification' />
         <CardContent>
-          <Typography sx={{ mb: 4, fontWeight: 600, color: 'text.secondary' }}>
-            Two factor authentication is not enabled yet.
-          </Typography>
-          <Typography sx={{ mb: 6, width: '75%', color: 'text.secondary' }}>
+          <Typography sx={{ mb: 4, fontWeight: 500 }}>Two factor authentication is not enabled yet.</Typography>
+          <Typography sx={{ mb: 6, width: ['100%', '100%', '75%'], color: 'text.secondary' }}>
             Two-factor authentication adds an additional layer of security to your account by requiring more than just a
             password to log in.{' '}
             <Box
@@ -84,7 +82,7 @@ const TwoFactorAuthenticationCard = () => {
           </Box>
 
           <IconButton size='small' onClick={close2FADialog} sx={{ position: 'absolute', right: '1rem', top: '1rem' }}>
-            <Icon icon='mdi:close' />
+            <Icon icon='tabler:x' />
           </IconButton>
 
           <Typography sx={{ color: 'text.secondary', fontWeight: 500 }}>Verify Your Mobile Number for SMS</Typography>

@@ -91,7 +91,7 @@ const ChangePasswordCard = () => {
       <CardHeader title='Change Password' />
       <CardContent>
         <form onSubmit={handleSubmit(onPasswordFormSubmit)}>
-          <Grid container spacing={6}>
+          <Grid container spacing={5}>
             <Grid item xs={12} sm={6}>
               <FormControl fullWidth>
                 <InputLabel htmlFor='input-current-password' error={Boolean(errors.currentPassword)}>
@@ -116,7 +116,7 @@ const ChangePasswordCard = () => {
                             onMouseDown={e => e.preventDefault()}
                             onClick={handleClickShowCurrentPassword}
                           >
-                            <Icon icon={values.showCurrentPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
+                            <Icon icon={values.showCurrentPassword ? 'tabler:eye' : 'tabler:eye-off'} />
                           </IconButton>
                         </InputAdornment>
                       }
@@ -129,7 +129,7 @@ const ChangePasswordCard = () => {
               </FormControl>
             </Grid>
           </Grid>
-          <Grid container spacing={6} sx={{ mt: 0 }}>
+          <Grid container spacing={5} sx={{ mt: 0 }}>
             <Grid item xs={12} sm={6}>
               <FormControl fullWidth>
                 <InputLabel htmlFor='input-new-password' error={Boolean(errors.newPassword)}>
@@ -154,7 +154,7 @@ const ChangePasswordCard = () => {
                             onClick={handleClickShowNewPassword}
                             onMouseDown={e => e.preventDefault()}
                           >
-                            <Icon icon={values.showNewPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
+                            <Icon icon={values.showNewPassword ? 'tabler:eye' : 'tabler:eye-off'} />
                           </IconButton>
                         </InputAdornment>
                       }
@@ -190,7 +190,7 @@ const ChangePasswordCard = () => {
                             onMouseDown={e => e.preventDefault()}
                             onClick={handleClickShowConfirmNewPassword}
                           >
-                            <Icon icon={values.showConfirmNewPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
+                            <Icon icon={values.showConfirmNewPassword ? 'tabler:eye' : 'tabler:eye-off'} />
                           </IconButton>
                         </InputAdornment>
                       }
@@ -203,15 +203,15 @@ const ChangePasswordCard = () => {
               </FormControl>
             </Grid>
             <Grid item xs={12}>
-              <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>Password Requirements:</Typography>
-              <Box component='ul' sx={{ pl: 4, mb: 0, '& li': { mb: 1, color: 'text.secondary' } }}>
+              <Typography sx={{ fontWeight: 500 }}>Password Requirements:</Typography>
+              <Box component='ul' sx={{ pl: 6, mb: 0, '& li': { mb: 1.5, color: 'text.secondary' } }}>
                 <li>Minimum 8 characters long - the more, the better</li>
                 <li>At least one lowercase & one uppercase character</li>
                 <li>At least one number, symbol, or whitespace character</li>
               </Box>
             </Grid>
             <Grid item xs={12}>
-              <Button variant='contained' type='submit' sx={{ mr: 3 }}>
+              <Button variant='contained' type='submit' sx={{ mr: 4 }}>
                 Save Changes
               </Button>
               <Button type='reset' variant='outlined' color='secondary' onClick={() => reset()}>

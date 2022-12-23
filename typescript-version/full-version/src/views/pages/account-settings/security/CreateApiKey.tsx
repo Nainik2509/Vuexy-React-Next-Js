@@ -4,6 +4,7 @@ import Card from '@mui/material/Card'
 import Button from '@mui/material/Button'
 import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
+import { styled } from '@mui/material/styles'
 import TextField from '@mui/material/TextField'
 import InputLabel from '@mui/material/InputLabel'
 import CardHeader from '@mui/material/CardHeader'
@@ -13,6 +14,16 @@ import FormHelperText from '@mui/material/FormHelperText'
 
 // ** Third Party Imports
 import { useForm, Controller } from 'react-hook-form'
+
+const Img = styled('img')(({ theme }) => ({
+  [theme.breakpoints.down('md')]: {
+    marginBottom: theme.spacing(-6)
+  },
+  [theme.breakpoints.up('md')]: {
+    bottom: 0,
+    position: 'absolute'
+  }
+}))
 
 const CreateApiKeyCard = () => {
   // ** Hooks
@@ -27,10 +38,10 @@ const CreateApiKeyCard = () => {
   }
 
   return (
-    <Card>
+    <Card sx={{ position: 'relative' }}>
       <CardHeader title='Create an API key' />
-      <CardContent sx={{ pb: '0 !important' }}>
-        <Grid container spacing={5}>
+      <CardContent>
+        <Grid container spacing={6}>
           <Grid item xs={12} md={6}>
             <form onSubmit={handleSubmit(onSubmit)}>
               <FormControl fullWidth sx={{ mb: 5 }}>
@@ -69,7 +80,7 @@ const CreateApiKeyCard = () => {
           </Grid>
 
           <Grid item md={6} xs={12} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <img width={183} alt='avatar' height={256} src='/images/pages/pose-m-1.png' />
+            <Img alt='avatar' height={250} src='/images/pages/account-settings-security-illustration.png' />
           </Grid>
         </Grid>
       </CardContent>

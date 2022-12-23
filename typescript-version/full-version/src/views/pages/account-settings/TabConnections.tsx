@@ -97,12 +97,16 @@ const TabConnections = () => {
       {/* Connected Accounts Cards */}
       <Grid item xs={12} md={6}>
         <Card>
-          <CardHeader title='Connected Accounts' />
+          <CardHeader
+            title='Connected Accounts'
+            titleTypographyProps={{ sx: { mb: 1 } }}
+            subheader={
+              <Typography sx={{ color: 'text.secondary' }}>
+                Display content from your connected accounts on your site
+              </Typography>
+            }
+          />
           <CardContent>
-            <Typography sx={{ mb: 4, color: 'text.secondary' }}>
-              Display content from your connected accounts on your site
-            </Typography>
-
             {connectedAccountsArr.map(account => {
               return (
                 <Box
@@ -136,12 +140,16 @@ const TabConnections = () => {
       {/* Social Accounts Cards */}
       <Grid item xs={12} md={6}>
         <Card>
-          <CardHeader title='Social Accounts' />
+          <CardHeader
+            title='Social Accounts'
+            titleTypographyProps={{ sx: { mb: 1 } }}
+            subheader={
+              <Typography sx={{ color: 'text.secondary' }}>
+                Display content from social accounts on your site
+              </Typography>
+            }
+          />
           <CardContent>
-            <Typography sx={{ mb: 4, color: 'text.secondary' }}>
-              Display content from social accounts on your site
-            </Typography>
-
             {socialAccountsArr.map(account => {
               return (
                 <Box
@@ -181,7 +189,7 @@ const TabConnections = () => {
                     sx={{ p: 1.5, minWidth: 38 }}
                     color={account.isConnected ? 'error' : 'secondary'}
                   >
-                    <Icon icon={account.isConnected ? 'mdi:delete-outline' : 'mdi:link-variant'} />
+                    <Icon icon={account.isConnected ? 'tabler:trash' : 'tabler:link'} />
                   </Button>
                 </Box>
               )

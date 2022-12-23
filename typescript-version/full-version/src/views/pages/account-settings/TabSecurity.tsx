@@ -69,8 +69,8 @@ const recentDeviceData: RecentDeviceDataType[] = [
     date: '10, July 2021 20:07',
     browserName: 'Chrome on Windows',
     browserIcon: (
-      <Box component='span' sx={{ mr: 4, '& svg': { color: 'info.main' } }}>
-        <Icon icon='mdi:microsoft-windows' fontSize={20} />
+      <Box component='span' sx={{ mr: 2.5, display: 'flex', '& svg': { color: 'info.main' } }}>
+        <Icon icon='tabler:brand-windows' />
       </Box>
     )
   },
@@ -80,8 +80,8 @@ const recentDeviceData: RecentDeviceDataType[] = [
     date: '13, July 2021 10:10',
     browserName: 'Chrome on iPhone',
     browserIcon: (
-      <Box component='span' sx={{ mr: 4, '& svg': { color: 'error.main' } }}>
-        <Icon icon='mdi:cellphone' fontSize={20} />
+      <Box component='span' sx={{ mr: 2.5, display: 'flex', '& svg': { color: 'error.main' } }}>
+        <Icon icon='tabler:device-mobile' />
       </Box>
     )
   },
@@ -91,8 +91,8 @@ const recentDeviceData: RecentDeviceDataType[] = [
     date: '14, July 2021 15:15',
     browserName: 'Chrome on Android',
     browserIcon: (
-      <Box component='span' sx={{ mr: 4, '& svg': { color: 'success.main' } }}>
-        <Icon icon='mdi:android' fontSize={20} />
+      <Box component='span' sx={{ mr: 2.5, display: 'flex', '& svg': { color: 'success.main' } }}>
+        <Icon icon='tabler:brand-android' />
       </Box>
     )
   },
@@ -102,8 +102,8 @@ const recentDeviceData: RecentDeviceDataType[] = [
     date: '16, July 2021 16:17',
     browserName: 'Chrome on MacOS',
     browserIcon: (
-      <Box component='span' sx={{ mr: 4, '& svg': { color: 'secondary.main' } }}>
-        <Icon icon='mdi:apple' fontSize={20} />
+      <Box component='span' sx={{ mr: 2.5, display: 'flex', '& svg': { color: 'secondary.main' } }}>
+        <Icon icon='tabler:brand-apple' />
       </Box>
     )
   },
@@ -113,8 +113,8 @@ const recentDeviceData: RecentDeviceDataType[] = [
     date: '20, July 2021 21:01',
     browserName: 'Chrome on Windows',
     browserIcon: (
-      <Box component='span' sx={{ mr: 4, '& svg': { color: 'info.main' } }}>
-        <Icon icon='mdi:microsoft-windows' fontSize={20} />
+      <Box component='span' sx={{ mr: 2.5, display: 'flex', '& svg': { color: 'info.main' } }}>
+        <Icon icon='tabler:brand-windows' />
       </Box>
     )
   },
@@ -124,8 +124,8 @@ const recentDeviceData: RecentDeviceDataType[] = [
     date: '21, July 2021 12:22',
     browserName: 'Chrome on Android',
     browserIcon: (
-      <Box component='span' sx={{ mr: 4, '& svg': { color: 'success.main' } }}>
-        <Icon icon='mdi:android' fontSize={20} />
+      <Box component='span' sx={{ mr: 2.5, display: 'flex', '& svg': { color: 'success.main' } }}>
+        <Icon icon='tabler:brand-android' />
       </Box>
     )
   }
@@ -160,26 +160,26 @@ const TabSecurity = () => {
                   key={item.key}
                   sx={{ p: 4, borderRadius: 1, backgroundColor: 'action.hover', '&:not(:last-child)': { mb: 4 } }}
                 >
-                  <Box sx={{ mb: 3, display: 'flex', alignItems: 'center' }}>
-                    <Typography variant='h6' sx={{ mr: 4 }}>
+                  <Box sx={{ mb: 4, display: 'flex', alignItems: 'center' }}>
+                    <Typography variant='h5' sx={{ mr: 4 }}>
                       {item.title}
                     </Typography>
                     <CustomChip
+                      rounded
                       size='small'
                       skin='light'
-                      rounded={true}
                       color='primary'
                       label={item.access}
                       sx={{ textTransform: 'uppercase' }}
                     />
                   </Box>
-                  <Box sx={{ mb: 2, display: 'flex', alignItems: 'center' }}>
-                    <Typography sx={{ mr: 3, color: 'text.secondary', fontWeight: 600 }}>{item.key}</Typography>
-                    <Box component='span' sx={{ display: 'flex', cursor: 'pointer', color: 'text.secondary' }}>
-                      <Icon icon='mdi:content-copy' fontSize='1rem' />
+                  <Box sx={{ mb: 4, display: 'flex', alignItems: 'center' }}>
+                    <Typography sx={{ mr: 2.5, color: 'text.secondary', fontWeight: 500 }}>{item.key}</Typography>
+                    <Box component='span' sx={{ display: 'flex', cursor: 'pointer', color: 'text.disabled' }}>
+                      <Icon icon='tabler:copy' />
                     </Box>
                   </Box>
-                  <Typography sx={{ color: 'text.secondary' }}>Created on {item.date}</Typography>
+                  <Typography sx={{ color: 'text.disabled' }}>Created on {item.date}</Typography>
                 </Box>
               )
             })}
@@ -201,13 +201,13 @@ const TabSecurity = () => {
                   <TableCell sx={{ whiteSpace: 'nowrap' }}>Recent Activities</TableCell>
                 </TableRow>
               </TableHead>
-              <TableBody>
+              <TableBody sx={{ '& .MuiTableCell-root': { py: theme => `${theme.spacing(2.5)} !important` } }}>
                 {recentDeviceData.map((row, index) => (
                   <TableRow key={index}>
                     <TableCell>
                       <Box sx={{ display: 'flex', alignItems: 'center' }}>
                         {row.browserIcon}
-                        <Typography sx={{ fontWeight: 600, whiteSpace: 'nowrap', color: 'text.secondary' }}>
+                        <Typography sx={{ whiteSpace: 'nowrap', color: 'text.secondary' }}>
                           {row.browserName}
                         </Typography>
                       </Box>

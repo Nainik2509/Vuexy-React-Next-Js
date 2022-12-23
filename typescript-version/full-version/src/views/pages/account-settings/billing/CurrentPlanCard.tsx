@@ -64,47 +64,43 @@ const CurrentPlanCard = ({ data }: { data: PricingPlanType[] }) => {
         <CardContent>
           <Grid container spacing={6}>
             <Grid item xs={12} md={6}>
-              <Box sx={{ mb: 6 }}>
-                <Typography sx={{ mb: 2, fontWeight: 500 }}>Your Current Plan is Basic</Typography>
+              <Box sx={{ mb: 4 }}>
+                <Typography sx={{ mb: 1.5, fontWeight: 500 }}>Your Current Plan is Basic</Typography>
                 <Typography sx={{ color: 'text.secondary' }}>A simple start for everyone</Typography>
               </Box>
-              <Box sx={{ mb: 6 }}>
-                <Typography sx={{ mb: 2, fontWeight: 500 }}>Active until Dec 09, 2021</Typography>
+              <Box sx={{ mb: 4 }}>
+                <Typography sx={{ mb: 1.5, fontWeight: 500 }}>Active until Dec 09, 2023</Typography>
                 <Typography sx={{ color: 'text.secondary' }}>
                   We will send you a notification upon Subscription expiration
                 </Typography>
               </Box>
               <div>
-                <Box sx={{ mb: 2, display: 'flex', alignItems: 'center' }}>
-                  <Typography sx={{ mr: 2, fontWeight: 500 }}>$199 Per Month</Typography>
-                  <CustomChip label='Popular' size='small' color='primary' skin='light' rounded={true} />
+                <Box sx={{ mb: 1.5, display: 'flex', alignItems: 'center' }}>
+                  <Typography sx={{ mr: 2.5, fontWeight: 500 }}>$199 Per Month</Typography>
+                  <CustomChip rounded label='Popular' size='small' color='primary' skin='light' />
                 </Box>
                 <Typography sx={{ color: 'text.secondary' }}>Standard plan for small to medium businesses</Typography>
               </div>
             </Grid>
             <Grid item xs={12} md={6}>
-              <Alert severity='warning' icon={false} sx={{ mb: 6 }}>
-                <AlertTitle sx={{ fontWeight: 700 }}>We need your attention!</AlertTitle>
+              <Alert severity='warning' icon={false} sx={{ mb: 4 }}>
+                <AlertTitle sx={{ fontWeight: 500 }}>We need your attention!</AlertTitle>
                 Your plan requires update
               </Alert>
 
               <div>
                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>Days</Typography>
-                  <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>24 of 30 Days</Typography>
+                  <Typography sx={{ fontWeight: 500 }}>Days</Typography>
+                  <Typography sx={{ fontWeight: 500 }}>24 of 30 Days</Typography>
                 </Box>
-                <LinearProgress
-                  value={75}
-                  variant='determinate'
-                  sx={{ my: 1, height: 12, borderRadius: 6, '& .MuiLinearProgress-bar': { borderRadius: 6 } }}
-                />
+                <LinearProgress value={75} variant='determinate' sx={{ my: 1.5, height: 10 }} />
                 <Typography sx={{ color: 'text.secondary' }}>
                   6 days remaining until your plan requires update
                 </Typography>
               </div>
             </Grid>
             <Grid item xs={12}>
-              <Box sx={{ mt: 3, gap: 3, display: 'flex', flexWrap: 'wrap' }}>
+              <Box sx={{ gap: 4, display: 'flex', flexWrap: 'wrap' }}>
                 <Button variant='contained' onClick={() => setOpenPricingDialog(true)}>
                   Upgrade Plan
                 </Button>
@@ -121,7 +117,7 @@ const CurrentPlanCard = ({ data }: { data: PricingPlanType[] }) => {
         <DialogContent>
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <Box sx={{ maxWidth: '85%', textAlign: 'center', '& svg': { mb: 4, color: 'warning.main' } }}>
-              <Icon icon='mdi:alert-circle-outline' fontSize='5.5rem' />
+              <Icon icon='tabler:alert-circle' fontSize='5.5rem' />
               <Typography>Are you sure you would like to cancel your subscription?</Typography>
             </Box>
           </Box>
@@ -148,10 +144,7 @@ const CurrentPlanCard = ({ data }: { data: PricingPlanType[] }) => {
               }
             }}
           >
-            <Icon
-              fontSize='5.5rem'
-              icon={userInput === 'yes' ? 'mdi:check-circle-outline' : 'mdi:close-circle-outline'}
-            />
+            <Icon fontSize='5.5rem' icon={userInput === 'yes' ? 'tabler:circle-check' : 'tabler:circle-x'} />
             <Typography variant='h4' sx={{ mb: 8 }}>
               {userInput === 'yes' ? 'Unsubscribed!' : 'Cancelled'}
             </Typography>
@@ -180,7 +173,7 @@ const CurrentPlanCard = ({ data }: { data: PricingPlanType[] }) => {
             onClick={() => setOpenPricingDialog(false)}
             sx={{ position: 'absolute', right: '1rem', top: '1rem' }}
           >
-            <Icon icon='mdi:close' />
+            <Icon icon='tabler:x' />
           </IconButton>
           <Box sx={{ mb: 4, textAlign: 'center' }}>
             <Typography variant='h5' sx={{ mb: 3 }}>

@@ -40,7 +40,7 @@ const BillingAddressCard = () => {
       <CardHeader title='Billing Address' />
       <CardContent>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <Grid container spacing={6}>
+          <Grid container spacing={5}>
             <Grid item xs={12} sm={6}>
               <FormControl fullWidth>
                 <Controller
@@ -120,8 +120,8 @@ const BillingAddressCard = () => {
             <Grid item xs={12} sm={6}>
               <TextField fullWidth type='number' label='Zip Code' placeholder='231465' />
             </Grid>
-            <Grid item xs={12}>
-              <Button type='submit' variant='contained' sx={{ mr: 3 }}>
+            <Grid item xs={12} sx={{ pt: theme => `${theme.spacing(6)} !important` }}>
+              <Button type='submit' variant='contained' sx={{ mr: 4 }}>
                 Save Changes
               </Button>
               <Button variant='outlined' color='secondary'>

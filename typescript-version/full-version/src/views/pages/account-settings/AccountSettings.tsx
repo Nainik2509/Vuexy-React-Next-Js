@@ -30,6 +30,7 @@ import TabConnections from 'src/views/pages/account-settings/TabConnections'
 import TabNotifications from 'src/views/pages/account-settings/TabNotifications'
 
 const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
+  border: '0 !important',
   '& .MuiTabs-indicator': {
     display: 'none'
   },
@@ -40,6 +41,7 @@ const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
   '& .MuiTab-root': {
     minWidth: 65,
     minHeight: 38,
+    lineHeight: 1,
     borderRadius: theme.shape.borderRadius,
     [theme.breakpoints.up('md')]: {
       minWidth: 130
@@ -92,7 +94,7 @@ const AccountSettings = ({ tab, apiPricingPlanData }: { tab: string; apiPricingP
                   value='account'
                   label={
                     <Box sx={{ display: 'flex', alignItems: 'center', ...(!hideText && { '& svg': { mr: 2 } }) }}>
-                      <Icon icon='mdi:account-outline' />
+                      <Icon fontSize='1.25rem' icon='tabler:users' />
                       {!hideText && 'Account'}
                     </Box>
                   }
@@ -101,7 +103,7 @@ const AccountSettings = ({ tab, apiPricingPlanData }: { tab: string; apiPricingP
                   value='security'
                   label={
                     <Box sx={{ display: 'flex', alignItems: 'center', ...(!hideText && { '& svg': { mr: 2 } }) }}>
-                      <Icon icon='mdi:lock-open-outline' />
+                      <Icon fontSize='1.25rem' icon='tabler:lock' />
                       {!hideText && 'Security'}
                     </Box>
                   }
@@ -110,7 +112,7 @@ const AccountSettings = ({ tab, apiPricingPlanData }: { tab: string; apiPricingP
                   value='billing'
                   label={
                     <Box sx={{ display: 'flex', alignItems: 'center', ...(!hideText && { '& svg': { mr: 2 } }) }}>
-                      <Icon icon='mdi:bookmark-outline' />
+                      <Icon fontSize='1.25rem' icon='tabler:file-text' />
                       {!hideText && 'Billing'}
                     </Box>
                   }
@@ -119,7 +121,7 @@ const AccountSettings = ({ tab, apiPricingPlanData }: { tab: string; apiPricingP
                   value='notifications'
                   label={
                     <Box sx={{ display: 'flex', alignItems: 'center', ...(!hideText && { '& svg': { mr: 2 } }) }}>
-                      <Icon icon='mdi:bell-outline' />
+                      <Icon fontSize='1.25rem' icon='tabler:bell' />
                       {!hideText && 'Notifications'}
                     </Box>
                   }
@@ -128,7 +130,7 @@ const AccountSettings = ({ tab, apiPricingPlanData }: { tab: string; apiPricingP
                   value='connections'
                   label={
                     <Box sx={{ display: 'flex', alignItems: 'center', ...(!hideText && { '& svg': { mr: 2 } }) }}>
-                      <Icon icon='mdi:link-variant' />
+                      <Icon fontSize='1.25rem' icon='tabler:link' />
                       {!hideText && 'Connections'}
                     </Box>
                   }

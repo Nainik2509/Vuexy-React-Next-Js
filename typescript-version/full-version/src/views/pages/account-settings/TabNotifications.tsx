@@ -52,46 +52,59 @@ const data: TableDataType[] = [
 const TabNotifications = () => {
   return (
     <Card>
-      <CardHeader title='Recent Devices' />
+      <CardHeader
+        title='Recent Devices'
+        titleTypographyProps={{ sx: { mb: 1 } }}
+        subheader={
+          <Typography sx={{ color: 'text.secondary' }}>
+            We need permission from your browser to show notifications.{' '}
+            <Typography component='span' sx={{ fontWeight: 500 }}>
+              Request Permission
+            </Typography>
+          </Typography>
+        }
+      />
       <CardContent>
-        <Typography sx={{ color: 'text.secondary' }}>
-          We need permission from your browser to show notifications. <strong>Request Permission</strong>
-        </Typography>
+        <TableContainer sx={{ borderRadius: '6px !important', border: theme => `1px solid ${theme.palette.divider}` }}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Type</TableCell>
+                <TableCell align='center'>Email</TableCell>
+                <TableCell align='center'>Browser</TableCell>
+                <TableCell align='center'>App</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody
+              sx={{
+                '& .MuiTableRow-root:last-child .MuiTableCell-root': { borderBottom: 0 },
+                '& .MuiTableRow-root:nth-of-type(odd)': { backgroundColor: 'action.hover' }
+              }}
+            >
+              {data.map(row => (
+                <TableRow key={row.type}>
+                  <TableCell sx={{ py: '0 !important' }}>
+                    <Typography sx={{ whiteSpace: 'nowrap', color: 'text.secondary' }}>{row.type}</Typography>
+                  </TableCell>
+                  <TableCell align='center' sx={{ py: '0 !important' }}>
+                    <Checkbox defaultChecked={row.email} />
+                  </TableCell>
+                  <TableCell align='center' sx={{ py: '0 !important' }}>
+                    <Checkbox defaultChecked={row.browser} />
+                  </TableCell>
+                  <TableCell align='center' sx={{ py: '0 !important' }}>
+                    <Checkbox defaultChecked={row.app} />
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
       </CardContent>
 
-      <TableContainer>
-        <Table size='small'>
-          <TableHead>
-            <TableRow>
-              <TableCell>Type</TableCell>
-              <TableCell sx={{ whiteSpace: 'nowrap' }}>✉️ Email</TableCell>
-              <TableCell sx={{ whiteSpace: 'nowrap' }}>🖥 Browser</TableCell>
-              <TableCell sx={{ whiteSpace: 'nowrap' }}>👩🏻‍💻 App</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {data.map(row => (
-              <TableRow key={row.type}>
-                <TableCell>
-                  <Typography sx={{ whiteSpace: 'nowrap', color: 'text.secondary' }}>{row.type}</Typography>
-                </TableCell>
-                <TableCell>
-                  <Checkbox defaultChecked={row.email} />
-                </TableCell>
-                <TableCell>
-                  <Checkbox defaultChecked={row.browser} />
-                </TableCell>
-                <TableCell>
-                  <Checkbox defaultChecked={row.app} />
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
       <CardContent>
-        <Typography sx={{ mb: 4, fontWeight: 500 }}>When should we send you notifications?</Typography>
-        <Grid container spacing={6}>
+        <Typography sx={{ mb: 4, color: 'text.secondary' }}>When should we send you notifications?</Typography>
+        <Grid container spacing={4}>
           <Grid item xs={12} sm={6} md={4}>
             <Select fullWidth size='small' defaultValue='online'>
               <MenuItem value='online'>Only when I'm online</MenuItem>

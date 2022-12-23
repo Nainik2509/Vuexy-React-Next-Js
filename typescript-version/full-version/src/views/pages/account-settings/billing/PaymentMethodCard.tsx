@@ -175,7 +175,7 @@ const PaymentMethodCard = () => {
         <CardContent>
           <Grid container spacing={6}>
             <Grid item xs={12} md={6}>
-              <Grid container spacing={6}>
+              <Grid container spacing={5}>
                 <Grid item xs={12}>
                   <FormControl>
                     <RadioGroup
@@ -281,7 +281,7 @@ const PaymentMethodCard = () => {
                 <Box
                   key={index}
                   sx={{
-                    p: 5,
+                    p: 4,
                     display: 'flex',
                     borderRadius: 1,
                     flexDirection: ['column', 'row'],
@@ -293,15 +293,16 @@ const PaymentMethodCard = () => {
                 >
                   <div>
                     <img height='25' alt={item.imgAlt} src={item.imgSrc} />
-                    <Box sx={{ mt: 3, display: 'flex', alignItems: 'center' }}>
-                      <Typography sx={{ fontWeight: 500 }}>{item.name}</Typography>
+                    <Box sx={{ mt: 4, mb: 2.5, display: 'flex', alignItems: 'center' }}>
+                      <Typography sx={{ color: 'text.secondary' }}>{item.name}</Typography>
                       {item.cardStatus ? (
                         <CustomChip
+                          rounded
                           skin='light'
                           size='small'
+                          sx={{ ml: 2.5 }}
                           label={item.cardStatus}
                           color={item.badgeColor}
-                          sx={{ height: 20, ml: 2, fontSize: '0.75rem', fontWeight: 600, borderRadius: '5px' }}
                         />
                       ) : null}
                     </Box>
@@ -310,15 +311,15 @@ const PaymentMethodCard = () => {
                     </Typography>
                   </div>
 
-                  <Box sx={{ mt: [3, 0], textAlign: ['start', 'end'] }}>
-                    <Button variant='outlined' sx={{ mr: 3 }} onClick={() => handleEditCardClickOpen(index)}>
+                  <Box sx={{ mt: [4, 0], textAlign: ['start', 'end'] }}>
+                    <Button variant='outlined' sx={{ mr: 2.5 }} onClick={() => handleEditCardClickOpen(index)}>
                       Edit
                     </Button>
                     <Button variant='outlined' color='secondary'>
                       Delete
                     </Button>
-                    <Typography variant='caption' sx={{ mt: 8, display: 'block', color: 'text.secondary' }}>
-                      Card expires at {item.expiryDate}
+                    <Typography variant='body2' sx={{ mt: [6, 11] }}>
+                      {`Card expires at ${item.expiryDate}`}
                     </Typography>
                   </Box>
                 </Box>
@@ -326,7 +327,7 @@ const PaymentMethodCard = () => {
             </Grid>
 
             <Grid item xs={12}>
-              <Button type='submit' variant='contained' sx={{ mr: 5 }}>
+              <Button type='submit' variant='contained' sx={{ mr: 4 }}>
                 Save Changes
               </Button>
               <Button type='reset' variant='outlined' color='secondary' onClick={handleResetForm}>
