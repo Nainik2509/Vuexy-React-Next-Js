@@ -18,11 +18,12 @@ interface Props {
 }
 
 // Styled Card component
-const Card = styled(MuiCard)<CardProps>(({ theme }) => ({
+const Card = styled(MuiCard)<CardProps>(() => ({
   border: 0,
   boxShadow: 'none',
   backgroundSize: 'cover',
-  backgroundImage: `url(/images/pages/tree-cone-cube-bg-${theme.palette.mode}.png)`
+  backgroundColor: 'transparent',
+  backgroundImage: 'url(/images/pages/header-bg.png)'
 }))
 
 // Styled TextField component
@@ -46,8 +47,8 @@ const FaqHeader = (props: Props) => {
 
   return (
     <Card>
-      <CardContent sx={{ pt: 23, textAlign: 'center', pb: theme => `${theme.spacing(23)} !important` }}>
-        <Typography variant='h5' sx={{ mb: 8 }}>
+      <CardContent sx={{ pt: 24, textAlign: 'center', pb: theme => `${theme.spacing(24)} !important` }}>
+        <Typography sx={{ mb: 4, fontWeight: 500, fontSize: '1.625rem', lineHeight: 1.385 }}>
           Hello, how can we help?
         </Typography>
 
@@ -58,7 +59,7 @@ const FaqHeader = (props: Props) => {
           InputProps={{
             startAdornment: (
               <InputAdornment position='start'>
-                <Icon icon='mdi:magnify' />
+                <Icon fontSize='1.25rem' icon='tabler:search' />
               </InputAdornment>
             )
           }}

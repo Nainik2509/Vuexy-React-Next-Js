@@ -51,8 +51,8 @@ const FAQ = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
   const renderNoResult = (
     <Box sx={{ mt: 8, display: 'flex', justifyContent: 'center', alignItems: 'center', '& svg': { mr: 2 } }}>
-      <Icon icon='mdi:alert-circle-outline' />
-      <Typography variant='h6'>No Results Found!!</Typography>
+      <Icon fontSize='1.5rem' icon='tabler:alert-circle' />
+      <Typography variant='h5'>No Results Found!!</Typography>
     </Box>
   )
 
