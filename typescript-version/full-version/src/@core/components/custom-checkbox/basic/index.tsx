@@ -19,7 +19,7 @@ const CustomCheckbox = (props: CustomCheckboxBasicProps) => {
         <Box sx={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column' }}>
           <Box
             sx={{
-              mb: 1,
+              mb: 2,
               width: '100%',
               display: 'flex',
               alignItems: 'flex-start',
@@ -27,7 +27,7 @@ const CustomCheckbox = (props: CustomCheckboxBasicProps) => {
             }}
           >
             {typeof title === 'string' ? <Typography sx={{ mr: 2, fontWeight: 500 }}>{title}</Typography> : title}
-            {typeof meta === 'string' ? <Typography sx={{ color: 'text.secondary' }}>{meta}</Typography> : meta}
+            {typeof meta === 'string' ? <Typography sx={{ color: 'text.disabled' }}>{meta}</Typography> : meta}
           </Box>
           {typeof content === 'string' ? <Typography variant='body2'>{content}</Typography> : content}
         </Box>
@@ -36,7 +36,7 @@ const CustomCheckbox = (props: CustomCheckboxBasicProps) => {
       return (
         <Box sx={{ width: '100%', display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
           {typeof title === 'string' ? <Typography sx={{ mr: 2, fontWeight: 500 }}>{title}</Typography> : title}
-          {typeof meta === 'string' ? <Typography sx={{ color: 'text.secondary' }}>{meta}</Typography> : meta}
+          {typeof meta === 'string' ? <Typography sx={{ color: 'text.disabled' }}>{meta}</Typography> : meta}
         </Box>
       )
     } else if (!meta && title && content) {
@@ -79,8 +79,8 @@ const CustomCheckbox = (props: CustomCheckboxBasicProps) => {
             color={color}
             name={`${name}-${value}`}
             checked={selected.includes(value)}
+            sx={{ mb: -2, mt: -2.5, ml: -2.75 }}
             onChange={() => handleChange(value)}
-            sx={{ mb: -2, mt: -1.75, ml: -1.75 }}
           />
           {renderData()}
         </Box>

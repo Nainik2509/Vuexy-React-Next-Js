@@ -50,7 +50,7 @@ const CustomCheckboxImg = (props: CustomCheckboxImgProps) => {
             name={`${name}-${value}`}
             checked={selected.includes(value)}
             onChange={() => handleChange(value)}
-            sx={{ top: 0, right: 0, position: 'absolute' }}
+            sx={{ top: 4, right: 4, position: 'absolute' }}
           />
         </Box>
       </Grid>

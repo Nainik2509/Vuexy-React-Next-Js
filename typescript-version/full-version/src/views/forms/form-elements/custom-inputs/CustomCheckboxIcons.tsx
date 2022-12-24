@@ -35,9 +35,9 @@ const data: CustomCheckboxIconsData[] = [
 ]
 
 const icons: IconType[] = [
-  { icon: 'mdi:server', iconProps: { fontSize: '2rem', style: { marginBottom: 8 } } },
-  { icon: 'mdi:shield-outline', iconProps: { fontSize: '2rem', style: { marginBottom: 8 } } },
-  { icon: 'mdi:lock-outline', iconProps: { fontSize: '2rem', style: { marginBottom: 8 } } }
+  { icon: 'tabler:folder', iconProps: { fontSize: '1.75rem', style: { marginBottom: 8 } } },
+  { icon: 'tabler:ban', iconProps: { fontSize: '1.75rem', style: { marginBottom: 8 } } },
+  { icon: 'tabler:lock', iconProps: { fontSize: '1.75rem', style: { marginBottom: 8 } } }
 ]
 
 const CustomCheckboxWithIcons = () => {

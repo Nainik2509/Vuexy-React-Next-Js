@@ -12,17 +12,17 @@ import CustomRadioImg from 'src/@core/components/custom-radio/image'
 
 const data: CustomRadioImgData[] = [
   {
-    value: 'clock',
+    value: 'speaker',
     isSelected: true,
-    img: '/images/pages/background-3.jpg'
+    img: '/images/pages/custom-radio-img-1.png'
   },
   {
-    value: 'donuts',
-    img: '/images/pages/background-8.jpg'
+    value: 'ear-buds',
+    img: '/images/pages/custom-radio-img-2.png'
   },
   {
-    value: 'flowers',
-    img: '/images/pages/background-5.jpg'
+    value: 'headphone',
+    img: '/images/pages/custom-radio-img-3.png'
   }
 ]
 

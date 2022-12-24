@@ -12,17 +12,17 @@ import CustomCheckboxImg from 'src/@core/components/custom-checkbox/image'
 
 const data: CustomCheckboxImgData[] = [
   {
-    value: 'clock',
+    value: 'watch',
     isSelected: true,
-    img: '/images/pages/background-3.jpg'
+    img: '/images/pages/custom-checkbox-img-1.png'
   },
   {
-    value: 'donuts',
-    img: '/images/pages/background-8.jpg'
+    value: 'phone',
+    img: '/images/pages/custom-checkbox-img-2.png'
   },
   {
-    value: 'flowers',
-    img: '/images/pages/background-5.jpg'
+    value: 'laptop',
+    img: '/images/pages/custom-checkbox-img-3.png'
   }
 ]
 
