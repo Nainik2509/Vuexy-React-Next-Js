@@ -35,7 +35,7 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
             title='Connections'
             action={
               <OptionsMenu
-                iconButtonProps={{ size: 'small' }}
+                iconButtonProps={{ size: 'small', sx: { color: 'text.disabled' } }}
                 options={['Share connections', 'Suggest edits', { divider: true }, 'Report bug']}
               />
             }
@@ -54,10 +54,10 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
                     }}
                   >
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      <Avatar src={connection.avatar} sx={{ mr: 4, width: 38, height: 38 }} />
+                      <Avatar src={connection.avatar} sx={{ mr: 3, width: 38, height: 38 }} />
                       <div>
-                        <Typography sx={{ lineHeight: 1.1, fontWeight: 500 }}>{connection.name}</Typography>
-                        <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+                        <Typography sx={{ fontWeight: 500, color: 'text.secondary' }}>{connection.name}</Typography>
+                        <Typography variant='body2' sx={{ color: 'text.disabled' }}>
                           {connection.connections} Connections
                         </Typography>
                       </div>
@@ -66,9 +66,9 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
                       size='small'
                       color='primary'
                       variant={connection.isFriend ? 'contained' : 'outlined'}
-                      sx={{ minWidth: 38, p: theme => `${theme.spacing(1.5)} !important` }}
+                      sx={{ minWidth: 30, minHeight: 30, p: theme => `${theme.spacing(1.25)} !important` }}
                     >
-                      <Icon icon='mdi:account-outline' />
+                      <Icon fontSize='1.125rem' icon={connection.isFriend ? 'tabler:user-x' : 'tabler:user-check'} />
                     </Button>
                   </Box>
                 )
@@ -92,7 +92,7 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
             title='Teams'
             action={
               <OptionsMenu
-                iconButtonProps={{ size: 'small' }}
+                iconButtonProps={{ size: 'small', sx: { color: 'text.disabled' } }}
                 options={['Share teams', 'Suggest edits', { divider: true }, 'Report bug']}
               />
             }
@@ -110,10 +110,10 @@ const ConnectionsTeams = ({ connections, teams }: Props) => {
                     }}
                   >
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      <Avatar src={team.avatar} sx={{ mr: 4, width: 38, height: 38 }} />
+                      <Avatar src={team.avatar} sx={{ mr: 3, width: 38, height: 38 }} />
                       <div>
-                        <Typography sx={{ lineHeight: 1.1, fontWeight: 500 }}>{team.title}</Typography>
-                        <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+                        <Typography sx={{ fontWeight: 500, color: 'text.secondary' }}>{team.title}</Typography>
+                        <Typography variant='body2' sx={{ color: 'text.disabled' }}>
                           {team.members} Members
                         </Typography>
                       </div>

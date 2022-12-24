@@ -32,12 +32,12 @@ interface CellType {
 // ** renders name column
 const renderName = (row: ProjectTableRowType) => {
   if (row.avatar) {
-    return <CustomAvatar src={row.avatar} sx={{ mr: 2, width: 35, height: 35 }} />
+    return <CustomAvatar src={row.avatar} sx={{ mr: 2.5, width: 38, height: 38 }} />
   } else {
     return (
       <CustomAvatar
         skin='light'
-        sx={{ mr: 2, width: 35, height: 35, fontSize: '0.875rem' }}
+        sx={{ mr: 2.5, width: 38, height: 38, fontSize: '1rem' }}
         color={(row.avatarColor as ThemeColor) || ('primary' as ThemeColor)}
       >
         {getInitials(row.name || 'John Doe')}
@@ -59,7 +59,7 @@ const columns = [
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           {renderName(row)}
           <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-            <Typography noWrap sx={{ color: 'text.secondary', fontWeight: 700 }}>
+            <Typography noWrap sx={{ color: 'text.secondary', fontWeight: 500 }}>
               {name}
             </Typography>
             <Typography noWrap variant='body2' sx={{ color: 'text.disabled', textTransform: 'capitalize' }}>
@@ -80,7 +80,7 @@ const columns = [
   {
     flex: 0.1,
     field: 'team',
-    minWidth: 120,
+    minWidth: 130,
     headerName: 'Team',
     renderCell: ({ row }: CellType) => (
       <AvatarGroup className='pull-up'>
@@ -101,16 +101,7 @@ const columns = [
           color='primary'
           value={row.status}
           variant='determinate'
-          sx={{
-            mr: 4,
-            height: 6,
-            width: '100%',
-            borderRadius: 8,
-            backgroundColor: 'background.default',
-            '& .MuiLinearProgress-bar': {
-              borderRadius: 8
-            }
-          }}
+          sx={{ mr: 3, height: 8, width: '100%' }}
         />
         <Typography sx={{ color: 'text.secondary' }}>{`${row.status}%`}</Typography>
       </>
@@ -124,7 +115,7 @@ const columns = [
     headerName: 'Actions',
     renderCell: () => (
       <OptionsMenu
-        iconButtonProps={{ size: 'small' }}
+        iconButtonProps={{ size: 'small', sx: { color: 'text.secondary' } }}
         options={[
           'Details',
           'Archive',
@@ -157,18 +148,19 @@ const ProfileTable = () => {
       <CardHeader
         title='Projects'
         action={
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Typography variant='body2' sx={{ mr: 2 }}>
-              Search:
-            </Typography>
-            <TextField size='small' value={value} onChange={e => handleFilter(e.target.value)} />
-          </Box>
+          <TextField
+            size='small'
+            value={value}
+            placeholder='Search Project'
+            onChange={e => handleFilter(e.target.value)}
+          />
         }
       />
       <DataGrid
         autoHeight
         pagination
         rows={data}
+        rowHeight={60}
         columns={columns}
         checkboxSelection
         pageSize={pageSize}

@@ -112,7 +112,7 @@ export type ProjectsTabType = {
   budget: string
   client: string
   avatar: string
-  members: string
+  members: number
   daysLeft: number
   comments: number
   deadline: string

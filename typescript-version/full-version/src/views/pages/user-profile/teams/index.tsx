@@ -34,22 +34,20 @@ const Teams = ({ data }: { data: TeamsTabType[] }) => {
                 <CardContent>
                   <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      <Avatar src={item.avatar} sx={{ mr: 2, height: 32, width: 32 }} />
-                      <Typography variant='h6' sx={{ fontSize: '1.125rem', color: 'text.secondary' }}>
-                        {item.title}
-                      </Typography>
+                      <Avatar src={item.avatar} sx={{ mr: 2.5, height: 38, width: 38 }} />
+                      <Typography variant='h6'>{item.title}</Typography>
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      <IconButton size='small' sx={{ color: 'text.secondary' }}>
-                        <Icon icon='mdi:star-outline' />
+                      <IconButton size='small' sx={{ color: 'text.disabled' }}>
+                        <Icon fontSize='1.25rem' icon='tabler:star' />
                       </IconButton>
                       <OptionsMenu
-                        iconButtonProps={{ size: 'small' }}
+                        iconButtonProps={{ size: 'small', sx: { color: 'text.disabled' } }}
                         options={[
                           'Rename Team',
                           'View Details',
                           'Add to Favorites',
-                          { divider: true },
+                          { divider: true, dividerProps: { sx: { my: theme => `${theme.spacing(2)} !important` } } },
                           { text: 'Delete Team', menuItemProps: { sx: { color: 'error.main' } } }
                         ]}
                       />
@@ -66,9 +64,9 @@ const Teams = ({ data }: { data: TeamsTabType[] }) => {
                             </Tooltip>
                           )
                         })}
-                        <Typography variant='body2' sx={{ ml: 0.5, color: 'text.disabled' }}>
+                        <Avatar color='secondary' sx={{ height: 32, width: 32, fontWeight: 500, fontSize: '0.75rem' }}>
                           +{item.extraMembers}
-                        </Typography>
+                        </Avatar>
                       </AvatarGroup>
                     </Box>
                     <Box sx={{ ml: 'auto', display: 'flex', alignItems: 'center' }}>
@@ -81,7 +79,7 @@ const Teams = ({ data }: { data: TeamsTabType[] }) => {
                             onClick={e => e.preventDefault()}
                             sx={{
                               textDecoration: 'none',
-                              '&:not(:last-of-type)': { mr: 3 },
+                              '&:not(:last-of-type)': { mr: 2.5 },
                               '& .MuiChip-root': { cursor: 'pointer' }
                             }}
                           >

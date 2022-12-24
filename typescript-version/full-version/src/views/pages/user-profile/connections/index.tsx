@@ -30,7 +30,10 @@ const Connections = ({ data }: { data: ConnectionsTabType[] }) => {
             <Grid key={index} item xs={12} sm={6} md={4}>
               <Card sx={{ position: 'relative' }}>
                 <OptionsMenu
-                  iconButtonProps={{ size: 'small', sx: { top: 12, right: 12, position: 'absolute' } }}
+                  iconButtonProps={{
+                    size: 'small',
+                    sx: { top: 12, right: 12, position: 'absolute', color: 'text.disabled' }
+                  }}
                   options={[
                     'Share Connection',
                     'Block Connection',
@@ -38,14 +41,12 @@ const Connections = ({ data }: { data: ConnectionsTabType[] }) => {
                     { text: 'Delete', menuItemProps: { sx: { color: 'error.main' } } }
                   ]}
                 />
-                <CardContent>
+                <CardContent sx={{ pt: 9.5 }}>
                   <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                    <Avatar src={item.avatar} sx={{ mb: 4, width: 100, height: 100 }} />
-                    <Typography variant='h6' sx={{ fontWeight: 500 }}>
-                      {item.name}
-                    </Typography>
-                    <Typography sx={{ mb: 4, color: 'text.secondary' }}>{item.designation}</Typography>
-                    <Box sx={{ mb: 8, display: 'flex', alignItems: 'center' }}>
+                    <Avatar src={item.avatar} sx={{ mb: 5, width: 100, height: 100 }} />
+                    <Typography variant='h5'>{item.name}</Typography>
+                    <Typography sx={{ mb: 5, color: 'text.secondary' }}>{item.designation}</Typography>
+                    <Box sx={{ mb: 5, display: 'flex', alignItems: 'center' }}>
                       {item.chips &&
                         item.chips.map((chip, index) => (
                           <Box
@@ -55,7 +56,7 @@ const Connections = ({ data }: { data: ConnectionsTabType[] }) => {
                             onClick={e => e.preventDefault()}
                             sx={{
                               textDecoration: 'none',
-                              '&:not(:last-of-type)': { mr: 3 },
+                              '&:not(:last-of-type)': { mr: 2.5 },
                               '& .MuiChip-root': { cursor: 'pointer' }
                             }}
                           >
@@ -65,7 +66,7 @@ const Connections = ({ data }: { data: ConnectionsTabType[] }) => {
                     </Box>
                     <Box
                       sx={{
-                        mb: 8,
+                        mb: 5,
                         gap: 2,
                         width: '100%',
                         display: 'flex',
@@ -88,20 +89,12 @@ const Connections = ({ data }: { data: ConnectionsTabType[] }) => {
                       </Box>
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      <Button
-                        sx={{ mr: 4 }}
-                        variant={item.isConnected ? 'contained' : 'outlined'}
-                        startIcon={
-                          <Icon
-                            fontSize={20}
-                            icon={item.isConnected ? 'mdi:account-check-outline' : 'mdi:account-plus-outline'}
-                          />
-                        }
-                      >
+                      <Button sx={{ mr: 4, '& svg': { mr: 2 } }} variant={item.isConnected ? 'contained' : 'outlined'}>
+                        <Icon fontSize='1.125rem' icon={item.isConnected ? 'tabler:user-check' : 'tabler:user-plus'} />
                         {item.isConnected ? 'Connected' : 'Connect'}
                       </Button>
                       <Button variant='outlined' color='secondary' sx={{ p: 1.5, minWidth: 38 }}>
-                        <Icon icon='mdi:email-outline' />
+                        <Icon icon='tabler:mail' />
                       </Button>
                     </Box>
                   </Box>

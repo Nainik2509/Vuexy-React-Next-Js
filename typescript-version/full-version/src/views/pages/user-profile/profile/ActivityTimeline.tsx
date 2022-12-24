@@ -36,12 +36,12 @@ const ActivityTimeline = () => {
     <Card>
       <CardHeader
         title='Activity Timeline'
-        sx={{ '& .MuiCardHeader-avatar': { mr: 2.5 } }}
-        avatar={<Icon icon='mdi:format-list-bulleted' />}
+        sx={{ '& .MuiCardHeader-avatar': { mr: 3 } }}
         titleTypographyProps={{ sx: { color: 'text.primary' } }}
+        avatar={<Icon fontSize='1.25rem' icon='tabler:list-details' />}
         action={
           <OptionsMenu
-            iconButtonProps={{ size: 'small' }}
+            iconButtonProps={{ size: 'small', sx: { color: 'text.disabled' } }}
             options={['Share timeline', 'Suggest edits', { divider: true }, 'Report bug']}
           />
         }
@@ -67,9 +67,9 @@ const ActivityTimeline = () => {
                   Today
                 </Typography>
               </Box>
-              <Typography sx={{ mb: 2, color: 'text.secondary' }}>Project meeting with john @10:15am</Typography>
+              <Typography sx={{ mb: 3, color: 'text.secondary' }}>Project meeting with john @10:15am</Typography>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <Avatar src='/images/avatars/2.png' sx={{ mr: 4, width: 38, height: 38 }} />
+                <Avatar src='/images/avatars/3.png' sx={{ mr: 3, width: 38, height: 38 }} />
                 <div>
                   <Typography sx={{ fontWeight: 500 }}>Lester McCarthy (Client)</Typography>
                   <Typography sx={{ color: 'text.secondary' }}>CEO of Infibeam</Typography>
@@ -80,7 +80,7 @@ const ActivityTimeline = () => {
 
           <TimelineItem>
             <TimelineSeparator>
-              <TimelineDot color='info' />
+              <TimelineDot color='primary' />
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent sx={{ mt: 0 }}>
@@ -103,7 +103,7 @@ const ActivityTimeline = () => {
 
           <TimelineItem>
             <TimelineSeparator>
-              <TimelineDot color='primary' />
+              <TimelineDot color='info' />
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent sx={{ mt: 0, mb: theme => `${theme.spacing(2)} !important` }}>
@@ -120,18 +120,15 @@ const ActivityTimeline = () => {
                   6 Days Ago
                 </Typography>
               </Box>
-              <Box sx={{ mb: 2.5, display: 'flex', alignItems: 'center' }}>
-                <Typography sx={{ color: 'text.secondary' }}>Sent by Mollie Dixon</Typography>
-                <Avatar src='/images/avatars/3.png' sx={{ ml: 5, width: 20, height: 20 }} />
-              </Box>
+              <Typography sx={{ mb: 3, color: 'text.secondary' }}>Sent by Mollie Dixon</Typography>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <Box sx={{ mr: 6, display: 'flex', alignItems: 'center' }}>
-                  <img width={20} height={20} alt='app-guidelines' src='/images/icons/file-icons/pdf.png' />
-                  <Typography sx={{ ml: 3, fontWeight: 500 }}>App Guidelines</Typography>
+                <Box sx={{ mr: 3, display: 'flex', alignItems: 'center', '& svg': { color: 'warning.main' } }}>
+                  <Icon fontSize='1.25rem' icon='tabler:file-text' />
+                  <Typography sx={{ ml: 2, fontWeight: 500 }}>App Guidelines</Typography>
                 </Box>
-                <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                  <img width={20} height={20} alt='testing-results' src='/images/icons/file-icons/doc.png' />
-                  <Typography sx={{ ml: 3, fontWeight: 500 }}>Testing Results</Typography>
+                <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { color: 'success.main' } }}>
+                  <Icon fontSize='1.25rem' icon='tabler:table' />
+                  <Typography sx={{ ml: 2, fontWeight: 500 }}>Testing Results</Typography>
                 </Box>
               </Box>
             </TimelineContent>
@@ -139,7 +136,7 @@ const ActivityTimeline = () => {
 
           <TimelineItem>
             <TimelineSeparator>
-              <TimelineDot color='success' />
+              <TimelineDot color='secondary' />
             </TimelineSeparator>
             <TimelineContent sx={{ mt: 0 }}>
               <Box

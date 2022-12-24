@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
+import Avatar from '@mui/material/Avatar'
 import Divider from '@mui/material/Divider'
 import Tooltip from '@mui/material/Tooltip'
 import CardHeader from '@mui/material/CardHeader'
@@ -52,20 +53,28 @@ const Projects = ({ data }: { data: ProjectsTabType[] }) => {
               <Card>
                 <CardHeader
                   avatar={<ProjectAvatar project={item} />}
-                  sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    justifyContent: 'space-between',
+                    '& .MuiCardHeader-avatar': { mr: 3 }
+                  }}
                   subheader={
                     <Typography sx={{ color: 'text.secondary' }}>
-                      <strong>Client:</strong> {item.client}
+                      <Typography component='span' sx={{ fontWeight: 500 }}>
+                        Client:
+                      </Typography>{' '}
+                      {item.client}
                     </Typography>
                   }
                   action={
                     <OptionsMenu
-                      iconButtonProps={{ size: 'small' }}
+                      iconButtonProps={{ size: 'small', sx: { color: 'text.disabled' } }}
                       options={[
                         'Rename Project',
                         'View Details',
                         'Add to Favorites',
-                        { divider: true },
+                        { divider: true, dividerProps: { sx: { my: theme => `${theme.spacing(2)} !important` } } },
                         { text: 'Leave Project', menuItemProps: { sx: { color: 'error.main' } } }
                       ]}
                     />
@@ -140,7 +149,7 @@ const Projects = ({ data }: { data: ProjectsTabType[] }) => {
                       label={`${item.daysLeft} days left`}
                     />
                   </Box>
-                  <Box sx={{ mb: 1, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <Box sx={{ mb: 3, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <Typography variant='body2'>{`Tasks: ${item.completedTask}/${item.totalTask}`}</Typography>
                     <Typography variant='body2'>
                       {`${Math.round((item.completedTask / item.totalTask) * 100)}% Completed`}
@@ -149,13 +158,8 @@ const Projects = ({ data }: { data: ProjectsTabType[] }) => {
                   <LinearProgress
                     color='primary'
                     variant='determinate'
+                    sx={{ mb: 3, height: 10 }}
                     value={Math.round((item.completedTask / item.totalTask) * 100)}
-                    sx={{
-                      mb: 4,
-                      height: 8,
-                      borderRadius: 2,
-                      '& .MuiLinearProgress-bar': { borderRadius: 2 }
-                    }}
                   />
                   <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -168,10 +172,10 @@ const Projects = ({ data }: { data: ProjectsTabType[] }) => {
                               </Tooltip>
                             )
                           })}
+                        <Avatar sx={{ height: 32, width: 32, fontWeight: 500, fontSize: '0.75rem' }}>
+                          +{item.members}
+                        </Avatar>
                       </AvatarGroup>
-                      <Typography variant='body2' sx={{ color: 'text.disabled' }}>
-                        {item.members}
-                      </Typography>
                     </Box>
                     <Box
                       href='/'
@@ -181,10 +185,10 @@ const Projects = ({ data }: { data: ProjectsTabType[] }) => {
                         display: 'flex',
                         alignItems: 'center',
                         textDecoration: 'none',
-                        '& svg': { mr: 1, color: 'text.secondary' }
+                        '& svg': { mr: 1.5, color: 'text.secondary' }
                       }}
                     >
-                      <Icon icon='mdi:message-outline' />
+                      <Icon fontSize='1.5rem' icon='tabler:message-dots' />
                       <Typography sx={{ color: 'text.secondary' }}>{item.comments}</Typography>
                     </Box>
                   </Box>

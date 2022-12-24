@@ -36,6 +36,7 @@ import Connections from 'src/views/pages/user-profile/connections'
 import UserProfileHeader from 'src/views/pages/user-profile/UserProfileHeader'
 
 const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
+  borderBottom: '0 !important',
   '& .MuiTabs-indicator': {
     display: 'none'
   },
@@ -46,6 +47,7 @@ const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
   '& .MuiTab-root': {
     minWidth: 65,
     minHeight: 38,
+    lineHeight: 1,
     borderRadius: theme.shape.borderRadius,
     [theme.breakpoints.up('sm')]: {
       minWidth: 130
@@ -113,7 +115,7 @@ const UserProfile = ({ tab, data }: { tab: string; data: UserProfileActiveTab })
                     value='profile'
                     label={
                       <Box sx={{ display: 'flex', alignItems: 'center', ...(!hideText && { '& svg': { mr: 2 } }) }}>
-                        <Icon icon='mdi:account-outline' />
+                        <Icon fontSize='1.125rem' icon='tabler:user-check' />
                         {!hideText && 'Profile'}
                       </Box>
                     }
@@ -122,7 +124,7 @@ const UserProfile = ({ tab, data }: { tab: string; data: UserProfileActiveTab })
                     value='teams'
                     label={
                       <Box sx={{ display: 'flex', alignItems: 'center', ...(!hideText && { '& svg': { mr: 2 } }) }}>
-                        <Icon icon='mdi:account-multiple-outline' />
+                        <Icon fontSize='1.125rem' icon='tabler:users' />
                         {!hideText && 'Teams'}
                       </Box>
                     }
@@ -131,7 +133,7 @@ const UserProfile = ({ tab, data }: { tab: string; data: UserProfileActiveTab })
                     value='projects'
                     label={
                       <Box sx={{ display: 'flex', alignItems: 'center', ...(!hideText && { '& svg': { mr: 2 } }) }}>
-                        <Icon icon='mdi:view-grid-outline' />
+                        <Icon fontSize='1.125rem' icon='tabler:layout-grid' />
                         {!hideText && 'Projects'}
                       </Box>
                     }
@@ -140,7 +142,7 @@ const UserProfile = ({ tab, data }: { tab: string; data: UserProfileActiveTab })
                     value='connections'
                     label={
                       <Box sx={{ display: 'flex', alignItems: 'center', ...(!hideText && { '& svg': { mr: 2 } }) }}>
-                        <Icon icon='mdi:link-variant' />
+                        <Icon fontSize='1.125rem' icon='tabler:link' />
                         {!hideText && 'Connections'}
                       </Box>
                     }

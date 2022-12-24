@@ -20,10 +20,10 @@ import Icon from 'src/@core/components/icon'
 import { ProfileHeaderType } from 'src/@fake-db/types'
 
 const ProfilePicture = styled('img')(({ theme }) => ({
-  width: 120,
-  height: 120,
+  width: 108,
+  height: 108,
   borderRadius: theme.shape.borderRadius,
-  border: `5px solid ${theme.palette.common.white}`,
+  border: `4px solid ${theme.palette.common.white}`,
   [theme.breakpoints.down('md')]: {
     marginBottom: theme.spacing(4)
   }
@@ -39,7 +39,7 @@ const UserProfileHeader = () => {
     })
   }, [])
 
-  const designationIcon = data?.designationIcon || 'mdi:briefcase-outline'
+  const designationIcon = data?.designationIcon || 'tabler:briefcase'
 
   return data !== null ? (
     <Card>
@@ -73,7 +73,7 @@ const UserProfileHeader = () => {
           }}
         >
           <Box sx={{ mb: [6, 0], display: 'flex', flexDirection: 'column', alignItems: ['center', 'flex-start'] }}>
-            <Typography variant='h5' sx={{ mb: 4, fontSize: '1.375rem' }}>
+            <Typography variant='h6' sx={{ mb: 2.5 }}>
               {data.fullName}
             </Typography>
             <Box
@@ -83,21 +83,22 @@ const UserProfileHeader = () => {
                 justifyContent: ['center', 'flex-start']
               }}
             >
-              <Box sx={{ mr: 4, display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'text.secondary' } }}>
-                <Icon icon={designationIcon} />
-                <Typography sx={{ color: 'text.secondary', fontWeight: 600 }}>{data.designation}</Typography>
+              <Box sx={{ mr: 4, display: 'flex', alignItems: 'center', '& svg': { mr: 1.5, color: 'text.secondary' } }}>
+                <Icon fontSize='1.25rem' icon={designationIcon} />
+                <Typography sx={{ color: 'text.secondary' }}>{data.designation}</Typography>
               </Box>
-              <Box sx={{ mr: 4, display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'text.secondary' } }}>
-                <Icon icon='mdi:map-marker-outline' />
-                <Typography sx={{ color: 'text.secondary', fontWeight: 600 }}>{data.location}</Typography>
+              <Box sx={{ mr: 4, display: 'flex', alignItems: 'center', '& svg': { mr: 1.5, color: 'text.secondary' } }}>
+                <Icon fontSize='1.25rem' icon='tabler:map-pin' />
+                <Typography sx={{ color: 'text.secondary' }}>{data.location}</Typography>
               </Box>
-              <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'text.secondary' } }}>
-                <Icon icon='mdi:calendar-blank-outline' />
-                <Typography sx={{ color: 'text.secondary', fontWeight: 600 }}>Joined {data.joiningDate}</Typography>
+              <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 1.5, color: 'text.secondary' } }}>
+                <Icon fontSize='1.25rem' icon='tabler:calendar' />
+                <Typography sx={{ color: 'text.secondary' }}>Joined {data.joiningDate}</Typography>
               </Box>
             </Box>
           </Box>
-          <Button variant='contained' startIcon={<Icon icon='mdi:account-check-outline' fontSize={20} />}>
+          <Button variant='contained' sx={{ '& svg': { mr: 2 } }}>
+            <Icon icon='tabler:check' fontSize='1.125rem' />
             Connected
           </Button>
         </Box>
