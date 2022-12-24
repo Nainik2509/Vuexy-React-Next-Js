@@ -24,23 +24,21 @@ const BoxWrapper = styled(Box)<BoxProps>(({ theme }) => ({
 }))
 
 const Img = styled('img')(({ theme }) => ({
-  marginTop: theme.spacing(9.75),
-  marginBottom: theme.spacing(9.75),
   [theme.breakpoints.down('lg')]: {
-    height: 450
+    height: 450,
+    marginTop: theme.spacing(10)
   },
   [theme.breakpoints.down('md')]: {
     height: 400
-  }
-}))
-
-const TreeIllustration = styled('img')(({ theme }) => ({
-  left: '0.375rem',
-  bottom: '5.5rem',
-  position: 'absolute',
-  [theme.breakpoints.down('lg')]: {
-    left: 0,
-    bottom: 0
+  },
+  [theme.breakpoints.down('sm')]: {
+    width: '100%',
+    maxWidth: 497,
+    height: 'auto',
+    maxHeight: 400
+  },
+  [theme.breakpoints.up('lg')]: {
+    marginTop: theme.spacing(20)
   }
 }))
 
@@ -49,19 +47,19 @@ const UnderMaintenance = () => {
     <Box className='content-center'>
       <Box sx={{ p: 5, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
         <BoxWrapper>
-          <Typography variant='h5' sx={{ mb: 1, fontSize: '1.5rem !important' }}>
-            Under Maintenance! 🚧
+          <Typography variant='h4' sx={{ mb: 1.5 }}>
+            Under Maintenance!
           </Typography>
-          <Typography variant='body2'>
-            Sorry for the inconvenience but we&prime;re performing some maintenance at the moment
+          <Typography sx={{ mb: 6, color: 'text.secondary' }}>
+            Sorry for the inconvenience but we're performing some maintenance at the moment
           </Typography>
+          <Button href='/' component={Link} variant='contained'>
+            Back to Home
+          </Button>
         </BoxWrapper>
-        <Img height='487' alt='under-maintenance-illustration' src='/images/pages/misc-under-maintenance.png' />
-        <Button href='/' component={Link} variant='contained' sx={{ px: 5.5 }}>
-          Back to Home
-        </Button>
+        <Img height='500' alt='under-maintenance-illustration' src='/images/pages/misc-under-maintenance.png' />
       </Box>
-      <FooterIllustrations image={<TreeIllustration alt='tree' src='/images/pages/tree-3.png' />} />
+      <FooterIllustrations />
     </Box>
   )
 }

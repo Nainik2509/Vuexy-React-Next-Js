@@ -24,7 +24,6 @@ const BoxWrapper = styled(Box)<BoxProps>(({ theme }) => ({
 }))
 
 const Img = styled('img')(({ theme }) => ({
-  marginBottom: theme.spacing(10),
   [theme.breakpoints.down('lg')]: {
     height: 450,
     marginTop: theme.spacing(10)
@@ -33,7 +32,7 @@ const Img = styled('img')(({ theme }) => ({
     height: 400
   },
   [theme.breakpoints.up('lg')]: {
-    marginTop: theme.spacing(13)
+    marginTop: theme.spacing(20)
   }
 }))
 
@@ -42,16 +41,18 @@ const Error401 = () => {
     <Box className='content-center'>
       <Box sx={{ p: 5, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
         <BoxWrapper>
-          <Typography variant='h1'>401</Typography>
-          <Typography variant='h5' sx={{ mb: 1, fontSize: '1.5rem !important' }}>
-            You are not authorized! 🔐
+          <Typography variant='h4' sx={{ mb: 1.5 }}>
+            You are not authorized!
           </Typography>
-          <Typography variant='body2'>You don&prime;t have permission to access this page. Go Home!</Typography>
+          <Typography sx={{ color: 'text.secondary' }}>
+            You do not have permission to view this page using the credentials that you have provided while login.
+          </Typography>
+          <Typography sx={{ mb: 6, color: 'text.secondary' }}>Please contact your site administrator.</Typography>
+          <Button href='/' component={Link} variant='contained'>
+            Back to Home
+          </Button>
         </BoxWrapper>
-        <Img height='487' alt='error-illustration' src='/images/pages/401.png' />
-        <Button href='/' component={Link} variant='contained' sx={{ px: 5.5 }}>
-          Back to Home
-        </Button>
+        <Img height='500' alt='error-illustration' src='/images/pages/401.png' />
       </Box>
       <FooterIllustrations />
     </Box>

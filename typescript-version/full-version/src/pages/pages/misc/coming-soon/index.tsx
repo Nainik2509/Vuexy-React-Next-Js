@@ -30,7 +30,7 @@ const Img = styled('img')(({ theme }) => ({
     height: 400
   },
   [theme.breakpoints.up('lg')]: {
-    marginTop: theme.spacing(16)
+    marginTop: theme.spacing(20)
   }
 }))
 
@@ -39,24 +39,41 @@ const ComingSoon = () => {
     <Box className='content-center'>
       <Box sx={{ p: 5, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <BoxWrapper>
-          <Box sx={{ mb: 5.75, textAlign: 'center' }}>
-            <Typography variant='h5' sx={{ mb: 1, fontSize: '1.5rem !important' }}>
-              We are launching soon 🚀
+          <Box sx={{ mb: 6, textAlign: 'center' }}>
+            <Typography variant='h4' sx={{ mb: 1.5 }}>
+              We are launching soon
             </Typography>
-            <Typography variant='body2'>
-              Our website is opening soon. Please register to get notified when it&prime;s ready!
+            <Typography sx={{ color: 'text.secondary' }}>
+              We're creating something awesome. Please subscribe to get notified when it's ready!
             </Typography>
           </Box>
-          <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()}>
-            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <TextField autoFocus size='small' type='email' placeholder='Enter your email' />
-              <Button type='submit' variant='contained' sx={{ ml: 2.5, pl: 5.5, pr: 5.5 }}>
-                Notify
-              </Button>
-            </Box>
-          </form>
+          <Box
+            noValidate
+            component='form'
+            autoComplete='off'
+            onSubmit={e => e.preventDefault()}
+            sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          >
+            <TextField
+              autoFocus
+              size='small'
+              type='email'
+              placeholder='Enter your email'
+              sx={{
+                '& .MuiInputBase-input': { py: 1.875 },
+                '& .MuiInputBase-root': {
+                  borderTopRightRadius: 0,
+                  borderBottomRightRadius: 0,
+                  backgroundColor: 'background.paper'
+                }
+              }}
+            />
+            <Button type='submit' variant='contained' sx={{ borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}>
+              Notify
+            </Button>
+          </Box>
         </BoxWrapper>
-        <Img height='487' alt='coming-soon-illustration' src='/images/pages/misc-coming-soon.png' />
+        <Img height='500' alt='coming-soon-illustration' src='/images/pages/misc-coming-soon.png' />
       </Box>
       <FooterIllustrations />
     </Box>
