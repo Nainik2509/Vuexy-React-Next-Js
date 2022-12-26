@@ -124,7 +124,7 @@ const CalendarWrapper = styled(Box)<BoxProps>(({ theme }) => {
           marginRight: theme.spacing(4),
           fontSize: theme.typography.h6.fontSize
         },
-        '.fc-button:empty, & .fc-toolbar-chunk:empty': {
+        '.fc-button:empty:not(.fc-sidebarToggle-button), & .fc-toolbar-chunk:empty': {
           display: 'none'
         }
       },
