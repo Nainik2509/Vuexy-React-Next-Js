@@ -2,18 +2,26 @@
 import { useState } from 'react'
 
 // ** MUI Imports
-import Step from '@mui/material/Step'
+import Avatar from '@mui/material/Avatar'
 import Stepper from '@mui/material/Stepper'
+import { styled } from '@mui/material/styles'
 import StepLabel from '@mui/material/StepLabel'
 import Typography from '@mui/material/Typography'
+import MuiStep, { StepProps } from '@mui/material/Step'
+
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
+
+// ** Custom Components Imports
+import CustomAvatar from 'src/@core/components/mui/avatar'
 
 // ** Step Components
 import StepPersonalInfo from 'src/views/pages/auth/register-multi-steps/StepPersonalInfo'
 import StepAccountDetails from 'src/views/pages/auth/register-multi-steps/StepAccountDetails'
 import StepBillingDetails from 'src/views/pages/auth/register-multi-steps/StepBillingDetails'
 
-// ** Custom Component Import
-import StepperCustomDot from 'src/views/forms/form-wizard/StepperCustomDot'
+// ** Util Import
+import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 
 // ** Styled Components
 import StepperWrapper from 'src/@core/styles/mui/stepper'
@@ -21,17 +29,57 @@ import StepperWrapper from 'src/@core/styles/mui/stepper'
 const steps = [
   {
     title: 'Account',
+    icon: 'tabler:smart-home',
     subtitle: 'Account Details'
   },
   {
     title: 'Personal',
+    icon: 'tabler:users',
     subtitle: 'Enter Information'
   },
   {
     title: 'Billing',
+    icon: 'tabler:file-text',
     subtitle: 'Payment Details'
   }
 ]
+
+const Step = styled(MuiStep)<StepProps>(({ theme }) => ({
+  padding: 0,
+  '& .MuiStepLabel-iconContainer': {
+    display: 'none'
+  },
+  '& .step-subtitle': {
+    color: `${theme.palette.text.disabled} !important`
+  },
+  '& + svg': {
+    color: theme.palette.text.disabled
+  },
+  '&.Mui-completed .step-title': {
+    color: theme.palette.text.disabled
+  },
+  '& .MuiStepLabel-root': {
+    cursor: 'pointer'
+  },
+  [theme.breakpoints.down('md')]: {
+    '&:not(:last-child)': {
+      marginBottom: theme.spacing(6)
+    },
+    '& + svg': {
+      display: 'none'
+    }
+  },
+  [theme.breakpoints.up('md')]: {
+    marginLeft: theme.spacing(4),
+    marginRight: theme.spacing(4),
+    '&:first-of-type': {
+      marginLeft: 0
+    },
+    '&:last-of-type': {
+      marginRight: 0
+    }
+  }
+}))
 
 const RegisterMultiSteps = () => {
   // ** States
@@ -67,14 +115,36 @@ const RegisterMultiSteps = () => {
 
   return (
     <>
-      <StepperWrapper sx={{ mb: 10 }}>
-        <Stepper activeStep={activeStep}>
+      <StepperWrapper sx={{ mb: 11.5 }}>
+        <Stepper
+          activeStep={activeStep}
+          sx={{ justifyContent: 'space-between' }}
+          connector={<Icon fontSize='1.5rem' icon='tabler:chevron-right' />}
+        >
           {steps.map((step, index) => {
+            const RenderAvatar = activeStep >= index ? CustomAvatar : Avatar
+
             return (
-              <Step key={index}>
-                <StepLabel StepIconComponent={StepperCustomDot}>
+              <Step
+                key={index}
+                onClick={() => setActiveStep(index)}
+                sx={{ '&.Mui-completed + svg': { color: 'primary.main' } }}
+              >
+                <StepLabel>
                   <div className='step-label'>
-                    <Typography className='step-number'>{`0${index + 1}`}</Typography>
+                    <RenderAvatar
+                      variant='rounded'
+                      {...(activeStep >= index && { skin: 'light' })}
+                      {...(activeStep === index && { skin: 'filled' })}
+                      {...(activeStep >= index && { color: 'primary' })}
+                      sx={{
+                        mr: 4,
+                        ...(activeStep === index && { boxShadow: theme => theme.shadows[3] }),
+                        ...(activeStep > index && { color: theme => hexToRGBA(theme.palette.primary.main, 0.4) })
+                      }}
+                    >
+                      <Icon fontSize='1.5rem' icon={step.icon} />
+                    </RenderAvatar>
                     <div>
                       <Typography className='step-title'>{step.title}</Typography>
                       <Typography className='step-subtitle'>{step.subtitle}</Typography>

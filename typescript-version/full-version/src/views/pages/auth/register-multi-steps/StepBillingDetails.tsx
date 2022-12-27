@@ -131,8 +131,10 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
 
   return (
     <>
-      <Box sx={{ mb: 4 }}>
-        <Typography variant='h5'>Select Plan</Typography>
+      <Box sx={{ mb: 6 }}>
+        <Typography variant='h5' sx={{ mb: 1.5 }}>
+          Select Plan
+        </Typography>
         <Typography sx={{ color: 'text.secondary' }}>Select plan as per your requirement</Typography>
       </Box>
 
@@ -148,11 +150,13 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
           />
         ))}
 
-        <Grid item xs={12} sx={{ pt: theme => `${theme.spacing(11.5)} !important` }}>
-          <Typography variant='h5'>Payment Information</Typography>
+        <Grid item xs={12} sx={{ pt: theme => `${theme.spacing(6)} !important` }}>
+          <Typography variant='h5' sx={{ mb: 1.5 }}>
+            Payment Information
+          </Typography>
           <Typography sx={{ color: 'text.secondary' }}>Enter your card information</Typography>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} sx={{ pt: theme => `${theme.spacing(6)} !important` }}>
           <FormControl fullWidth>
             <TextField
               fullWidth
@@ -208,14 +212,10 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
             }}
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} sx={{ pt: theme => `${theme.spacing(6)} !important` }}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Button
-              color='secondary'
-              variant='contained'
-              onClick={handlePrev}
-              startIcon={<Icon icon='mdi:chevron-left' fontSize={20} />}
-            >
+            <Button color='secondary' variant='contained' onClick={handlePrev} sx={{ '& svg': { mr: 2 } }}>
+              <Icon fontSize='1.125rem' icon='tabler:arrow-left' />
               Previous
             </Button>
             <Button color='success' variant='contained' onClick={() => alert('Submitted..!!')}>

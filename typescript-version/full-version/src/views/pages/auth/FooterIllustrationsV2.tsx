@@ -6,30 +6,25 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import { styled, useTheme } from '@mui/material/styles'
 
 interface FooterIllustrationsV2Prop {
+  height?: number
   image?: ReactNode
+  className?: string
 }
 
 // Styled Components
-const MaskImg = styled('img')(() => ({
+const MaskImg = styled('img')(({ theme }) => ({
   bottom: 0,
-  zIndex: -1,
+  height: 300,
   width: '100%',
-  position: 'absolute'
-}))
-
-const TreeImg = styled('img')(({ theme }) => ({
-  left: '2.125rem',
-  bottom: '2.688rem',
   position: 'absolute',
-  [theme.breakpoints.down('lg')]: {
-    left: 0,
-    bottom: 0
+  [theme.breakpoints.down(1540)]: {
+    height: 250
   }
 }))
 
 const FooterIllustrationsV2 = (props: FooterIllustrationsV2Prop) => {
   // ** Props
-  const { image } = props
+  const { image, height, className } = props
 
   // ** Hook
   const theme = useTheme()
@@ -40,8 +35,18 @@ const FooterIllustrationsV2 = (props: FooterIllustrationsV2Prop) => {
   if (!hidden) {
     return (
       <>
-        {image || <TreeImg alt='tree' src='/images/pages/tree.png' />}
-        <MaskImg alt='mask' src={`/images/pages/auth-v2-mask-${theme.palette.mode}.png`} />
+        {!image ? (
+          <MaskImg
+            alt='mask'
+            className={className}
+            {...(height && { height })}
+            src={`/images/pages/auth-v2-mask-${theme.palette.mode}.png`}
+          />
+        ) : typeof image === 'string' ? (
+          <MaskImg alt='mask' src={image} className={className} {...(height && { height })} />
+        ) : (
+          image
+        )}
       </>
     )
   } else {

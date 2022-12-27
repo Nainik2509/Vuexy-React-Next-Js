@@ -38,8 +38,10 @@ const StepAccountDetails = ({ handleNext }: { handleNext: () => void }) => {
 
   return (
     <>
-      <Box sx={{ mb: 4 }}>
-        <Typography variant='h5'>Account Information</Typography>
+      <Box sx={{ mb: 6 }}>
+        <Typography variant='h5' sx={{ mb: 1.5 }}>
+          Account Information
+        </Typography>
         <Typography sx={{ color: 'text.secondary' }}>Enter Your Account Details</Typography>
       </Box>
 
@@ -91,13 +93,15 @@ const StepAccountDetails = ({ handleNext }: { handleNext: () => void }) => {
         <Grid item xs={12}>
           <TextField fullWidth label='Profile Link' placeholder='johndoe/profile' />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} sx={{ pt: theme => `${theme.spacing(6)} !important` }}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Button disabled variant='contained' startIcon={<Icon icon='mdi:chevron-left' fontSize={20} />}>
+            <Button disabled variant='contained' sx={{ '& svg': { mr: 2 } }}>
+              <Icon fontSize='1.125rem' icon='tabler:arrow-left' />
               Previous
             </Button>
-            <Button variant='contained' onClick={handleNext} endIcon={<Icon icon='mdi:chevron-right' fontSize={20} />}>
+            <Button variant='contained' onClick={handleNext} sx={{ '& svg': { ml: 2 } }}>
               Next
+              <Icon fontSize='1.125rem' icon='tabler:arrow-right' />
             </Button>
           </Box>
         </Grid>

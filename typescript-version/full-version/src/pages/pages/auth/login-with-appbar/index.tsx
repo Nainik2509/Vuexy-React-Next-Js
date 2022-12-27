@@ -9,6 +9,7 @@ import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
 import Checkbox from '@mui/material/Checkbox'
 import TextField from '@mui/material/TextField'
+import Typography from '@mui/material/Typography'
 import InputLabel from '@mui/material/InputLabel'
 import IconButton from '@mui/material/IconButton'
 import Box, { BoxProps } from '@mui/material/Box'
@@ -17,7 +18,6 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import OutlinedInput from '@mui/material/OutlinedInput'
 import { styled, useTheme } from '@mui/material/styles'
 import InputAdornment from '@mui/material/InputAdornment'
-import Typography, { TypographyProps } from '@mui/material/Typography'
 import MuiFormControlLabel, { FormControlLabelProps } from '@mui/material/FormControlLabel'
 
 // ** Icon Imports
@@ -41,18 +41,16 @@ interface State {
 }
 
 // ** Styled Components
-const LoginIllustrationWrapper = styled(Box)<BoxProps>(({ theme }) => ({
-  padding: theme.spacing(20),
-  paddingRight: '0 !important',
-  [theme.breakpoints.down('lg')]: {
-    padding: theme.spacing(10)
-  }
-}))
-
 const LoginIllustration = styled('img')(({ theme }) => ({
-  maxWidth: '48rem',
+  zIndex: 2,
+  maxHeight: 680,
+  marginTop: theme.spacing(12),
+  marginBottom: theme.spacing(12),
+  [theme.breakpoints.down(1540)]: {
+    maxHeight: 550
+  },
   [theme.breakpoints.down('lg')]: {
-    maxWidth: '35rem'
+    maxHeight: 500
   }
 }))
 
@@ -60,22 +58,13 @@ const RightWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   width: '100%',
   [theme.breakpoints.up('md')]: {
     maxWidth: 450
-  }
-}))
-
-const BoxWrapper = styled(Box)<BoxProps>(({ theme }) => ({
-  [theme.breakpoints.down('xl')]: {
-    width: '100%'
   },
-  [theme.breakpoints.down('md')]: {
-    maxWidth: 400
+  [theme.breakpoints.up('lg')]: {
+    maxWidth: 600
+  },
+  [theme.breakpoints.up('xl')]: {
+    maxWidth: 750
   }
-}))
-
-const TypographyStyled = styled(Typography)<TypographyProps>(({ theme }) => ({
-  fontWeight: 600,
-  marginBottom: theme.spacing(1.5),
-  [theme.breakpoints.down('md')]: { marginTop: theme.spacing(8) }
 }))
 
 const LinkStyled = styled(Link)(({ theme }) => ({
@@ -103,6 +92,7 @@ const LoginWithAppBar = () => {
   const { settings } = useSettings()
 
   // ** Vars
+  const { skin } = settings
   const hidden = useMediaQuery(theme.breakpoints.down('md'))
 
   const handleChange = (prop: keyof State) => (event: ChangeEvent<HTMLInputElement>) => {
@@ -112,40 +102,49 @@ const LoginWithAppBar = () => {
     setValues({ ...values, showPassword: !values.showPassword })
   }
 
+  const imageSource = skin === 'bordered' ? 'auth-v2-login-illustration-bordered' : 'auth-v2-login-illustration'
+
   return (
-    <Box className='content-right'>
+    <Box className='content-right' sx={{ backgroundColor: 'background.paper' }}>
       {!hidden ? (
-        <Box sx={{ flex: 1, display: 'flex', position: 'relative', alignItems: 'center', justifyContent: 'center' }}>
-          <LoginIllustrationWrapper>
-            <LoginIllustration
-              alt='login-illustration'
-              src={`/images/pages/auth-v2-login-illustration-${theme.palette.mode}.png`}
-            />
-          </LoginIllustrationWrapper>
+        <Box
+          sx={{
+            flex: 1,
+            display: 'flex',
+            position: 'relative',
+            alignItems: 'center',
+            borderRadius: '20px',
+            justifyContent: 'center',
+            backgroundColor: 'customColors.bodyBg',
+            margin: theme => theme.spacing(8, 0, 8, 8)
+          }}
+        >
+          <LoginIllustration alt='login-illustration' src={`/images/pages/${imageSource}-${theme.palette.mode}.png`} />
           <FooterIllustrationsV2 />
         </Box>
       ) : null}
-      <RightWrapper
-        sx={settings.skin === 'bordered' && !hidden ? { borderLeft: `1px solid ${theme.palette.divider}` } : {}}
-      >
+      <RightWrapper>
         <Box
           sx={{
-            p: 12,
+            p: [6, 12],
             height: '100%',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: 'background.paper'
+            justifyContent: 'center'
           }}
         >
-          <BoxWrapper>
+          <Box sx={{ width: '100%', maxWidth: 400 }}>
             <Box sx={{ mb: 6 }}>
-              <TypographyStyled variant='h5'>Welcome to {themeConfig.templateName}! 👋🏻</TypographyStyled>
-              <Typography variant='body2'>Please sign-in to your account and start the adventure</Typography>
+              <Typography sx={{ mb: 1.5, fontWeight: 500, fontSize: '1.625rem', lineHeight: 1.385 }}>
+                {`Welcome to ${themeConfig.templateName}! 👋🏻`}
+              </Typography>
+              <Typography sx={{ color: 'text.secondary' }}>
+                Please sign-in to your account and start the adventure
+              </Typography>
             </Box>
             <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()}>
               <TextField autoFocus id='email' label='Email' sx={{ display: 'flex', mb: 4 }} />
-              <FormControl fullWidth>
+              <FormControl fullWidth sx={{ mb: 1.5 }}>
                 <InputLabel htmlFor='auth-login-v2-password'>Password</InputLabel>
                 <OutlinedInput
                   label='Password'
@@ -161,30 +160,45 @@ const LoginWithAppBar = () => {
                         onMouseDown={e => e.preventDefault()}
                         aria-label='toggle password visibility'
                       >
-                        <Icon icon={values.showPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} fontSize={20} />
+                        <Icon icon={values.showPassword ? 'tabler:eye' : 'tabler:eye-off'} fontSize={20} />
                       </IconButton>
                     </InputAdornment>
                   }
                 />
               </FormControl>
               <Box
-                sx={{ mb: 4, display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'space-between' }}
+                sx={{
+                  mb: 1.75,
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  alignItems: 'center',
+                  justifyContent: 'space-between'
+                }}
               >
                 <FormControlLabel control={<Checkbox />} label='Remember Me' />
                 <LinkStyled href='/pages/auth/forgot-password-v2'>Forgot Password?</LinkStyled>
               </Box>
-              <Button fullWidth size='large' type='submit' variant='contained' sx={{ mb: 7 }}>
+              <Button fullWidth size='large' type='submit' variant='contained' sx={{ mb: 4 }}>
                 Login
               </Button>
               <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' }}>
-                <Typography variant='body2' sx={{ mr: 2 }}>
-                  New on our platform?
-                </Typography>
-                <Typography variant='body2'>
-                  <LinkStyled href='/pages/auth/register-v2'>Create an account</LinkStyled>
+                <Typography sx={{ color: 'text.secondary', mr: 2 }}>New on our platform?</Typography>
+                <Typography>
+                  <LinkStyled href='/pages/auth/register-v2' sx={{ fontSize: '1rem' }}>
+                    Create an account
+                  </LinkStyled>
                 </Typography>
               </Box>
-              <Divider sx={{ my: theme => `${theme.spacing(5)} !important` }}>or</Divider>
+              <Divider
+                sx={{
+                  fontSize: '0.875rem',
+                  color: 'text.disabled',
+                  '& .MuiDivider-wrapper': { px: 6 },
+                  my: theme => `${theme.spacing(6)} !important`
+                }}
+              >
+                or
+              </Divider>
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <IconButton href='/' component={Link} sx={{ color: '#497ce2' }} onClick={e => e.preventDefault()}>
                   <Icon icon='mdi:facebook' />
@@ -205,7 +219,7 @@ const LoginWithAppBar = () => {
                 </IconButton>
               </Box>
             </form>
-          </BoxWrapper>
+          </Box>
         </Box>
       </RightWrapper>
     </Box>

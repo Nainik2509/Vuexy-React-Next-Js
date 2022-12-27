@@ -16,8 +16,10 @@ import Icon from 'src/@core/components/icon'
 const StepPersonalDetails = ({ handleNext, handlePrev }: { [key: string]: () => void }) => {
   return (
     <>
-      <Box sx={{ mb: 4 }}>
-        <Typography variant='h5'>Personal Information</Typography>
+      <Box sx={{ mb: 6 }}>
+        <Typography variant='h5' sx={{ mb: 1.5 }}>
+          Personal Information
+        </Typography>
         <Typography sx={{ color: 'text.secondary' }}>Enter Your Personal Information</Typography>
       </Box>
 
@@ -65,18 +67,15 @@ const StepPersonalDetails = ({ handleNext, handlePrev }: { [key: string]: () => 
             </Select>
           </FormControl>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} sx={{ pt: theme => `${theme.spacing(6)} !important` }}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Button
-              color='secondary'
-              variant='contained'
-              onClick={handlePrev}
-              startIcon={<Icon icon='mdi:chevron-left' fontSize={20} />}
-            >
+            <Button color='secondary' variant='contained' onClick={handlePrev} sx={{ '& svg': { mr: 2 } }}>
+              <Icon fontSize='1.125rem' icon='tabler:arrow-left' />
               Previous
             </Button>
-            <Button variant='contained' onClick={handleNext} endIcon={<Icon icon='mdi:chevron-right' fontSize={20} />}>
+            <Button variant='contained' onClick={handleNext} sx={{ '& svg': { ml: 2 } }}>
               Next
+              <Icon fontSize='1.125rem' icon='tabler:arrow-right' />
             </Button>
           </Box>
         </Grid>
