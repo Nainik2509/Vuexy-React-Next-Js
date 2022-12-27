@@ -98,10 +98,11 @@ const Switch = (theme: Theme) => {
             height: 10
           },
           '& .MuiSwitch-switchBase': {
-            top: 7,
-            left: 7,
+            top: 4,
+            left: 5,
+            padding: `${theme.spacing(1.5)} !important`,
             '&.Mui-checked': {
-              left: -1
+              left: -4
             }
           }
         }
