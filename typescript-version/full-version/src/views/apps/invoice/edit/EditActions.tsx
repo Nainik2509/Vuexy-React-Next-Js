@@ -35,35 +35,26 @@ const EditActions = ({ id, toggleSendInvoiceDrawer, toggleAddPaymentDrawer }: Pr
       <Grid item xs={12}>
         <Card>
           <CardContent>
-            <Button
-              fullWidth
-              sx={{ mb: 3.5 }}
-              variant='contained'
-              onClick={toggleSendInvoiceDrawer}
-              startIcon={<Icon icon='mdi:send-outline' />}
-            >
+            <Button fullWidth variant='contained' onClick={toggleSendInvoiceDrawer} sx={{ mb: 2, '& svg': { mr: 2 } }}>
+              <Icon fontSize='1.125rem' icon='tabler:send' />
               Send Invoice
             </Button>
-            <Button
-              fullWidth
-              sx={{ mb: 3.5 }}
-              component={Link}
-              color='secondary'
-              variant='outlined'
-              href={`/apps/invoice/preview/${id}`}
-            >
-              Preview
-            </Button>
-            <Button fullWidth color='secondary' variant='outlined' sx={{ mb: 3.5 }}>
-              Save
-            </Button>
-            <Button
-              fullWidth
-              color='success'
-              variant='contained'
-              onClick={toggleAddPaymentDrawer}
-              startIcon={<Icon icon='mdi:currency-usd' />}
-            >
+            <Box sx={{ mb: 2, gap: 4, display: 'flex', alignItems: 'center' }}>
+              <Button
+                fullWidth
+                component={Link}
+                color='secondary'
+                variant='outlined'
+                href={`/apps/invoice/preview/${id}`}
+              >
+                Preview
+              </Button>
+              <Button fullWidth color='secondary' variant='outlined'>
+                Save
+              </Button>
+            </Box>
+            <Button fullWidth variant='contained' sx={{ '& svg': { mr: 2 } }} onClick={toggleAddPaymentDrawer}>
+              <Icon fontSize='1.125rem' icon='tabler:currency-dollar' />
               Add Payment
             </Button>
           </CardContent>
@@ -71,15 +62,9 @@ const EditActions = ({ id, toggleSendInvoiceDrawer, toggleAddPaymentDrawer }: Pr
       </Grid>
 
       <Grid item xs={12}>
-        <FormControl fullWidth>
+        <FormControl fullWidth sx={{ mb: 4 }}>
           <InputLabel id='payment-select'>Accept payments via</InputLabel>
-          <Select
-            fullWidth
-            defaultValue='Internet Banking'
-            label='Accept payments via'
-            labelId='payment-select'
-            sx={{ mb: 4 }}
-          >
+          <Select fullWidth labelId='payment-select' label='Accept payments via' defaultValue='Internet Banking'>
             <MenuItem value='Internet Banking'>Internet Banking</MenuItem>
             <MenuItem value='Debit Card'>Debit Card</MenuItem>
             <MenuItem value='Credit Card'>Credit Card</MenuItem>
@@ -87,29 +72,20 @@ const EditActions = ({ id, toggleSendInvoiceDrawer, toggleAddPaymentDrawer }: Pr
             <MenuItem value='UPI Transfer'>UPI Transfer</MenuItem>
           </Select>
         </FormControl>
-        <OptionsWrapper sx={{ mb: 1 }}>
-          <InputLabel
-            htmlFor='invoice-edit-payment-terms'
-            sx={{ cursor: 'pointer', fontSize: '0.875rem', color: 'text.secondary' }}
-          >
+        <OptionsWrapper>
+          <InputLabel sx={{ cursor: 'pointer' }} htmlFor='invoice-edit-payment-terms'>
             Payment Terms
           </InputLabel>
           <Switch defaultChecked id='invoice-edit-payment-terms' />
         </OptionsWrapper>
-        <OptionsWrapper sx={{ mb: 1 }}>
-          <InputLabel
-            htmlFor='invoice-edit-client-notes'
-            sx={{ cursor: 'pointer', fontSize: '0.875rem', color: 'text.secondary' }}
-          >
+        <OptionsWrapper>
+          <InputLabel sx={{ cursor: 'pointer' }} htmlFor='invoice-edit-client-notes'>
             Client Notes
           </InputLabel>
           <Switch id='invoice-edit-client-notes' />
         </OptionsWrapper>
         <OptionsWrapper>
-          <InputLabel
-            htmlFor='invoice-edit-payment-stub'
-            sx={{ cursor: 'pointer', fontSize: '0.875rem', color: 'text.secondary' }}
-          >
+          <InputLabel sx={{ cursor: 'pointer' }} htmlFor='invoice-edit-payment-stub'>
             Payment Stub
           </InputLabel>
           <Switch id='invoice-edit-payment-stub' />

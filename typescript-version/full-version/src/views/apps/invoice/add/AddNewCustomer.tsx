@@ -43,9 +43,8 @@ interface FormData {
 const Header = styled(Box)<BoxProps>(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
-  padding: theme.spacing(3, 4),
-  justifyContent: 'space-between',
-  backgroundColor: theme.palette.background.default
+  padding: theme.spacing(6),
+  justifyContent: 'space-between'
 }))
 
 const schema = yup.object().shape({
@@ -103,11 +102,11 @@ const AddNewCustomer = ({ open, toggle, setSelectedClient, clients, setClients }
       <Header>
         <Typography variant='h6'>Add New Customer</Typography>
         <IconButton size='small' onClick={toggle} sx={{ color: 'text.primary' }}>
-          <Icon icon='mdi:close' fontSize={20} />
+          <Icon icon='tabler:x' fontSize='1.25rem' />
         </IconButton>
       </Header>
-      <Box component='form' sx={{ p: 5 }} onSubmit={handleSubmit(onSubmit)}>
-        <FormControl fullWidth sx={{ mb: 6 }}>
+      <Box component='form' sx={{ p: theme => theme.spacing(0, 6, 6) }} onSubmit={handleSubmit(onSubmit)}>
+        <FormControl fullWidth sx={{ mb: 5 }}>
           <Controller
             name='name'
             control={control}
@@ -128,7 +127,7 @@ const AddNewCustomer = ({ open, toggle, setSelectedClient, clients, setClients }
             </FormHelperText>
           )}
         </FormControl>
-        <FormControl fullWidth sx={{ mb: 6 }}>
+        <FormControl fullWidth sx={{ mb: 5 }}>
           <Controller
             name='company'
             control={control}
@@ -149,7 +148,7 @@ const AddNewCustomer = ({ open, toggle, setSelectedClient, clients, setClients }
             </FormHelperText>
           )}
         </FormControl>
-        <FormControl fullWidth sx={{ mb: 6 }}>
+        <FormControl fullWidth sx={{ mb: 5 }}>
           <Controller
             name='email'
             control={control}
@@ -171,7 +170,7 @@ const AddNewCustomer = ({ open, toggle, setSelectedClient, clients, setClients }
             </FormHelperText>
           )}
         </FormControl>
-        <FormControl fullWidth sx={{ mb: 6 }}>
+        <FormControl fullWidth sx={{ mb: 5 }}>
           <Controller
             name='address'
             control={control}
@@ -195,7 +194,7 @@ const AddNewCustomer = ({ open, toggle, setSelectedClient, clients, setClients }
             </FormHelperText>
           )}
         </FormControl>
-        <FormControl fullWidth sx={{ mb: 6 }}>
+        <FormControl fullWidth sx={{ mb: 5 }}>
           <InputLabel id='invoice-country'>Country</InputLabel>
 
           <Controller
@@ -248,10 +247,10 @@ const AddNewCustomer = ({ open, toggle, setSelectedClient, clients, setClients }
           )}
         </FormControl>
         <div>
-          <Button size='large' type='submit' variant='contained' sx={{ mr: 4 }}>
+          <Button type='submit' variant='contained' sx={{ mr: 4 }}>
             Add
           </Button>
-          <Button size='large' variant='outlined' color='secondary' onClick={handleDrawerClose}>
+          <Button variant='outlined' color='secondary' onClick={handleDrawerClose}>
             Cancel
           </Button>
         </div>

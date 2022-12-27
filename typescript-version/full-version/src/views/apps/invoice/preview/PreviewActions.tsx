@@ -19,22 +19,17 @@ const PreviewActions = ({ id, toggleSendInvoiceDrawer, toggleAddPaymentDrawer }:
   return (
     <Card>
       <CardContent>
-        <Button
-          fullWidth
-          sx={{ mb: 3.5 }}
-          variant='contained'
-          onClick={toggleSendInvoiceDrawer}
-          startIcon={<Icon icon='mdi:send-outline' />}
-        >
+        <Button fullWidth variant='contained' onClick={toggleSendInvoiceDrawer} sx={{ mb: 2, '& svg': { mr: 2 } }}>
+          <Icon fontSize='1.125rem' icon='tabler:send' />
           Send Invoice
         </Button>
-        <Button fullWidth sx={{ mb: 3.5 }} color='secondary' variant='outlined'>
+        <Button fullWidth sx={{ mb: 2 }} color='secondary' variant='outlined'>
           Download
         </Button>
         <Button
           fullWidth
+          sx={{ mb: 2 }}
           target='_blank'
-          sx={{ mb: 3.5 }}
           component={Link}
           color='secondary'
           variant='outlined'
@@ -44,7 +39,7 @@ const PreviewActions = ({ id, toggleSendInvoiceDrawer, toggleAddPaymentDrawer }:
         </Button>
         <Button
           fullWidth
-          sx={{ mb: 3.5 }}
+          sx={{ mb: 2 }}
           component={Link}
           color='secondary'
           variant='outlined'
@@ -52,13 +47,8 @@ const PreviewActions = ({ id, toggleSendInvoiceDrawer, toggleAddPaymentDrawer }:
         >
           Edit Invoice
         </Button>
-        <Button
-          fullWidth
-          color='success'
-          variant='contained'
-          onClick={toggleAddPaymentDrawer}
-          startIcon={<Icon icon='mdi:currency-usd' />}
-        >
+        <Button fullWidth variant='contained' sx={{ '& svg': { mr: 2 } }} onClick={toggleAddPaymentDrawer}>
+          <Icon fontSize='1.125rem' icon='tabler:currency-dollar' />
           Add Payment
         </Button>
       </CardContent>

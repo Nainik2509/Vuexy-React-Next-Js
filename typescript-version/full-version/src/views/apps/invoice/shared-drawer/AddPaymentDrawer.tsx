@@ -39,9 +39,8 @@ const CustomInput = forwardRef(({ ...props }, ref: ForwardedRef<HTMLElement>) =>
 const Header = styled(Box)<BoxProps>(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
-  padding: theme.spacing(3, 4),
-  justifyContent: 'space-between',
-  backgroundColor: theme.palette.background.default
+  padding: theme.spacing(6),
+  justifyContent: 'space-between'
 }))
 
 const EditInvoiceDrawer = ({ open, toggle }: Props) => {
@@ -59,12 +58,12 @@ const EditInvoiceDrawer = ({ open, toggle }: Props) => {
     >
       <Header>
         <Typography variant='h6'>Add Payment</Typography>
-        <IconButton size='small' onClick={toggle} sx={{ color: 'text.primary' }}>
-          <Icon icon='mdi:close' fontSize={20} />
+        <IconButton size='small' onClick={toggle}>
+          <Icon icon='tabler:x' fontSize='1.25rem' />
         </IconButton>
       </Header>
-      <Box sx={{ p: 5 }}>
-        <Box sx={{ mb: 6 }}>
+      <Box sx={{ p: theme => theme.spacing(0, 6, 6) }}>
+        <Box sx={{ mb: 5 }}>
           <TextField
             fullWidth
             id='invoice-balance'
@@ -73,7 +72,7 @@ const EditInvoiceDrawer = ({ open, toggle }: Props) => {
             defaultValue='5000.00'
           />
         </Box>
-        <Box sx={{ mb: 6 }}>
+        <Box sx={{ mb: 5 }}>
           <TextField
             fullWidth
             type='number'
@@ -83,7 +82,7 @@ const EditInvoiceDrawer = ({ open, toggle }: Props) => {
             }}
           />
         </Box>
-        <Box sx={{ mb: 6 }}>
+        <Box sx={{ mb: 5 }}>
           <DatePickerWrapper sx={{ '& .MuiFormControl-root': { width: '100%' } }}>
             <DatePicker
               selected={date}
@@ -93,7 +92,7 @@ const EditInvoiceDrawer = ({ open, toggle }: Props) => {
             />
           </DatePickerWrapper>
         </Box>
-        <Box sx={{ mb: 6 }}>
+        <Box sx={{ mb: 5 }}>
           <FormControl fullWidth>
             <InputLabel htmlFor='payment-method'>Payment Method</InputLabel>
             <Select
@@ -118,10 +117,10 @@ const EditInvoiceDrawer = ({ open, toggle }: Props) => {
         </Box>
 
         <div>
-          <Button size='large' variant='contained' onClick={toggle} sx={{ mr: 4 }}>
+          <Button variant='contained' onClick={toggle} sx={{ mr: 4 }}>
             Send
           </Button>
-          <Button size='large' variant='outlined' color='secondary' onClick={toggle}>
+          <Button variant='outlined' color='secondary' onClick={toggle}>
             Cancel
           </Button>
         </div>

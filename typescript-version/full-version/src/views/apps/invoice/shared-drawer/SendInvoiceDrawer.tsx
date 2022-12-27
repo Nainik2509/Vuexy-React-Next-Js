@@ -22,9 +22,8 @@ interface Props {
 const Header = styled(Box)<BoxProps>(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
-  padding: theme.spacing(3, 4),
-  justifyContent: 'space-between',
-  backgroundColor: theme.palette.background.default
+  padding: theme.spacing(6),
+  justifyContent: 'space-between'
 }))
 
 const SendInvoiceDrawer = ({ open, toggle }: Props) => {
@@ -39,21 +38,21 @@ const SendInvoiceDrawer = ({ open, toggle }: Props) => {
     >
       <Header>
         <Typography variant='h6'>Send Invoice</Typography>
-        <IconButton size='small' onClick={toggle} sx={{ color: 'text.primary' }}>
-          <Icon icon='mdi:close' fontSize={20} />
+        <IconButton size='small' onClick={toggle}>
+          <Icon icon='tabler:x' fontSize='1.25rem' />
         </IconButton>
       </Header>
-      <Box sx={{ p: 5 }}>
-        <FormControl fullWidth sx={{ mb: 6 }}>
+      <Box sx={{ p: theme => theme.spacing(0, 6, 6) }}>
+        <FormControl fullWidth sx={{ mb: 5 }}>
           <TextField type='email' label='From' variant='outlined' defaultValue='shelbyComapny@email.com' />
         </FormControl>
-        <FormControl fullWidth sx={{ mb: 6 }}>
+        <FormControl fullWidth sx={{ mb: 5 }}>
           <TextField type='email' label='To' variant='outlined' defaultValue='qConsolidated@email.com' />
         </FormControl>
-        <FormControl fullWidth sx={{ mb: 6 }}>
+        <FormControl fullWidth sx={{ mb: 5 }}>
           <TextField label='Subject' variant='outlined' defaultValue='Invoice of purchased Admin Templates' />
         </FormControl>
-        <FormControl fullWidth sx={{ mb: 6 }}>
+        <FormControl fullWidth sx={{ mb: 5 }}>
           <TextField
             rows={10}
             multiline
@@ -71,19 +70,19 @@ We would appreciate payment of this invoice by 05/11/2019`}
         </FormControl>
         <Box sx={{ mb: 6 }}>
           <CustomChip
+            rounded
             size='small'
             skin='light'
             color='primary'
             label='Invoice Attached'
-            sx={{ borderRadius: '5px' }}
-            icon={<Icon icon='mdi:attachment' fontSize={20} />}
+            icon={<Icon icon='tabler:link' fontSize='1.25rem' />}
           />
         </Box>
         <div>
-          <Button size='large' variant='contained' onClick={toggle} sx={{ mr: 4 }}>
+          <Button variant='contained' onClick={toggle} sx={{ mr: 4 }}>
             Send
           </Button>
-          <Button size='large' variant='outlined' color='secondary' onClick={toggle}>
+          <Button variant='outlined' color='secondary' onClick={toggle}>
             Cancel
           </Button>
         </div>
