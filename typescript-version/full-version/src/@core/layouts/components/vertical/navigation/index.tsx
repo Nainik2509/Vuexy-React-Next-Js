@@ -1,7 +1,7 @@
 // ** React Import
 import { useRef, useState } from 'react'
 
-// ** MUI Import
+// ** MUI Imports
 import List from '@mui/material/List'
 import Box, { BoxProps } from '@mui/material/Box'
 import { styled, useTheme } from '@mui/material/styles'

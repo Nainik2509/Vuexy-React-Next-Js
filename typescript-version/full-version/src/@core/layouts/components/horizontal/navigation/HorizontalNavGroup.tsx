@@ -203,6 +203,7 @@ const HorizontalNavGroup = (props: Props) => {
             >
               <Box
                 sx={{
+                  gap: 2,
                   width: '100%',
                   display: 'flex',
                   flexDirection: 'row',
@@ -226,13 +227,13 @@ const HorizontalNavGroup = (props: Props) => {
                     <Translations text={item.title} />
                   </Typography>
                 </Box>
-                <Box sx={{ ml: 1.6, display: 'flex', alignItems: 'center', color: 'text.secondary' }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', color: 'text.secondary' }}>
                   {item.badgeContent ? (
                     <Chip
                       label={item.badgeContent}
                       color={item.badgeColor || 'primary'}
                       sx={{
-                        mr: 1.6,
+                        mr: 1.5,
                         height: 20,
                         fontWeight: 500,
                         '& .MuiChip-label': { px: 1.5, textTransform: 'capitalize' }

@@ -60,6 +60,7 @@ export type LayoutProps = {
 
 You can override the following layout components:
 
+<!-- no toc -->
 - [App Logo](#_1-app-logo)
 - [Menu collapse icons](#_2-menu-collapse-icons)
 - [Menu content](#_3-menu-content)
@@ -68,6 +69,7 @@ You can override the following layout components:
 - [Hide menu based on screen size](#_6-hide-menu-based-on-screen-size)
 - [Navbar (or AppBar) Content](#_7-navbar-or-appbar-content)
 - [Footer content](#_8-footer-content)
+- [How to add custom styles](#_9-how-to-add-custom-styles)
 
 ### 1. App Logo
 
@@ -852,6 +854,99 @@ Result:
 
 <img alt='override-footer' class='medium-zoom' :src="$withBase('/images/layouts/user-override-vertical-footer.png')" />
 
+### 9. How to add custom styles
+
+You can add your custom styles for the whole layout with the help of `footerProps` and `verticalLayoutProps` props with the `Layout` component. The type for the same is:
+
+```ts
+footerProps?: {
+  sx?: SxProps<Theme>
+}
+verticalLayoutProps: {
+  appBar?: {
+    componentProps?: AppBarProps
+  }
+  navMenu: {
+    componentProps?: Omit<SwipeableDrawerProps, 'open' | 'onOpen' | 'onClose'>
+  }
+}
+```
+
+Refer to the following example for adding your custom styles:
+
+<code-group>
+<code-block title="TSX" active>
+```tsx{12-26}
+import { ReactNode } from 'react'
+import Layout from 'src/@core/layouts/Layout'
+
+interface Props {
+  children: ReactNode
+}
+
+const UserLayout = ({ children }: Props) => {
+  return (
+    <Layout
+      {...} // other props
+      footerProps={{
+        sx: { p: 5, backgroundColor: theme => theme.palette.background.paper }
+      }},
+      verticalLayoutProps={{
+        navMenu: {
+          componentProps: {
+            sx: { '& .nav-header': { borderBottom: theme => `1px solid ${theme.palette.divider}` } }
+          },
+          appBar: {
+            componentProps: {
+              sx: { boxShadow: theme => theme.shadows[9] }
+            }
+          }
+        }
+      }}
+    >
+      {children}
+    </Layout>
+  )
+}
+
+export default UserLayout
+```
+</code-block>
+
+<code-block title="JSX">
+```jsx{7-21}
+import Layout from 'src/@core/layouts/Layout'
+
+const UserLayout = ({ children }) => {
+  return (
+    <Layout
+      {...} // other props
+      footerProps={{
+        sx: { p: 5, backgroundColor: theme => theme.palette.background.paper }
+      }},
+      verticalLayoutProps={{
+        navMenu: {
+          componentProps: {
+            sx: { '& .nav-header': { borderBottom: theme => `1px solid ${theme.palette.divider}` } }
+          },
+          appBar: {
+            componentProps: {
+              sx: { boxShadow: theme => theme.shadows[9] }
+            }
+          }
+        }
+      }}
+    >
+      {children}
+    </Layout>
+  )
+}
+
+export default UserLayout
+```
+</code-block>
+</code-group>
+
 ## Horizontal Layout
 
 ::: danger Important!
@@ -860,11 +955,13 @@ As mentioned [here](/guide/layout/navigation-menu-structure.html#horizontal-navi
 
 You can override the following layout components:
 
+<!-- no toc -->
 - [App Logo](#_1-app-logo-2)
 - [Menu content](#_2-menu-content)
 - [Hide menu based on screen size](#_3-hide-menu-based-on-screen-size)
 - [AppBar Content](#_4-appbar-content)
 - [Footer content](#_5-footer-content)
+- [How to add custom styles](#_6-how-to-add-custom-styles)
 
 ### 1. App Logo
 
@@ -1387,6 +1484,139 @@ export default UserLayout
 Result:
 
 <img alt='override-footer' class='medium-zoom' :src="$withBase('/images/layouts/user-override-horizontal-footer.png')" />
+
+### 6. How to add custom styles
+
+You can add your custom styles for the whole layout with the help of `footerProps`, `verticalLayoutProps` and `horizontalLayoutProps` props with the `Layout` component. The type for the same is:
+
+```ts
+footerProps?: {
+  sx?: SxProps<Theme>
+}
+verticalLayoutProps: {
+  appBar?: {
+    componentProps?: AppBarProps
+  }
+  navMenu: {
+    componentProps?: Omit<SwipeableDrawerProps, 'open' | 'onOpen' | 'onClose'>
+  }
+}
+horizontalLayoutProps?: {
+  appBar?: {
+    componentProps?: AppBarProps
+  }
+  navMenu?: {
+    sx?: SxProps<Theme>
+  }
+}
+```
+
+Refer to the following example for adding your custom styles:
+
+<code-group>
+<code-block title="TSX" active>
+```tsx{12-42}
+import { ReactNode } from 'react'
+import Layout from 'src/@core/layouts/Layout'
+
+interface Props {
+  children: ReactNode
+}
+
+const UserLayout = ({ children }: Props) => {
+  return (
+    <Layout
+      {...} // other props
+      footerProps={{
+        sx: { p: 5, backgroundColor: theme => theme.palette.background.paper }
+      }},
+      verticalLayoutProps={{
+        navMenu: {
+          componentProps: {
+            sx: { '& .nav-header': { borderBottom: theme => `1px solid ${theme.palette.divider}` } }
+          },
+          appBar: {
+            componentProps: {
+              sx: { boxShadow: theme => theme.shadows[9] }
+            }
+          }
+        }
+      }}
+      {...(settings.layout === 'horizontal' && {
+        horizontalLayoutProps: {
+          appBar: {
+            componentProps: {
+              sx: { boxShadow: theme => theme.shadows[9] }
+            }
+          },
+          navMenu: {
+            sx: {
+              '& .menu-content > *:not(:last-child)': {
+                pr: 2,
+                borderRight: theme => `1px solid ${theme.palette.divider}`
+              }
+            }
+        }
+      })}
+    >
+      {children}
+    </Layout>
+  )
+}
+
+export default UserLayout
+```
+</code-block>
+
+<code-block title="JSX">
+```jsx{7-37}
+import Layout from 'src/@core/layouts/Layout'
+
+const UserLayout = ({ children }) => {
+  return (
+    <Layout
+      {...} // other props
+      footerProps={{
+        sx: { p: 5, backgroundColor: theme => theme.palette.background.paper }
+      }},
+      verticalLayoutProps={{
+        navMenu: {
+          componentProps: {
+            sx: { '& .nav-header': { borderBottom: theme => `1px solid ${theme.palette.divider}` } }
+          },
+          appBar: {
+            componentProps: {
+              sx: { boxShadow: theme => theme.shadows[9] }
+            }
+          }
+        }
+      }}
+      {...(settings.layout === 'horizontal' && {
+        horizontalLayoutProps: {
+          appBar: {
+            componentProps: {
+              sx: { boxShadow: theme => theme.shadows[9] }
+            }
+          },
+          navMenu: {
+            sx: {
+              '& .menu-content > *:not(:last-child)': {
+                pr: 2,
+                borderRight: theme => `1px solid ${theme.palette.divider}`
+              }
+            }
+        }
+      })}
+    >
+      {children}
+    </Layout>
+  )
+}
+
+export default UserLayout
+```
+</code-block>
+</code-group>
 
 ## Blank Layout
 

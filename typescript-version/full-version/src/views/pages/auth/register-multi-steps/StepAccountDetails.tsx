@@ -73,9 +73,9 @@ const StepAccountDetails = ({ handleNext }: { handleNext: () => void }) => {
         </Grid>
         <Grid item xs={12} sm={6}>
           <FormControl fullWidth>
-            <InputLabel htmlFor='input-confirm-password'>Password</InputLabel>
+            <InputLabel htmlFor='input-confirm-password'>Confirm Password</InputLabel>
             <OutlinedInput
-              label='Password'
+              label='Confirm Password'
               id='input-confirm-password'
               type={values.showConfirmPassword ? 'text' : 'password'}
               endAdornment={

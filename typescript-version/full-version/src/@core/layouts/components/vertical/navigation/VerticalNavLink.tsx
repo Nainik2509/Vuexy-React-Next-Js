@@ -61,14 +61,15 @@ const MenuNavLink = styled(ListItemButton)<
   }
 }))
 
-const MenuItemTextMetaWrapper = styled(Box)<BoxProps>({
+const MenuItemTextMetaWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   width: '100%',
   display: 'flex',
   alignItems: 'center',
+  gap: theme.spacing(2),
   justifyContent: 'space-between',
   transition: 'opacity .25s ease-in-out',
   ...(themeConfig.menuTextTruncate && { overflow: 'hidden' })
-})
+}))
 
 const VerticalNavLink = ({
   item,
@@ -176,7 +177,6 @@ const VerticalNavLink = ({
                 label={item.badgeContent}
                 color={item.badgeColor || 'primary'}
                 sx={{
-                  ml: 1.25,
                   height: 20,
                   fontWeight: 500,
                   '& .MuiChip-label': { px: 1.5, textTransform: 'capitalize' }

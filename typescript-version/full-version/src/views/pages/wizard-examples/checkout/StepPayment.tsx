@@ -94,7 +94,7 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
                   <Grid item xs={6} sm={3}>
                     <TextField
                       fullWidth
-                      label='CVV'
+                      label='CVC'
                       placeholder='654'
                       InputProps={{
                         endAdornment: (

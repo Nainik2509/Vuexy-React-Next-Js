@@ -111,12 +111,12 @@ const UserViewLeft = () => {
         <Grid item xs={12}>
           <Card>
             <CardContent sx={{ pt: 15, display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-              {data.avatar.length ? (
+              {data.avatar ? (
                 <CustomAvatar
                   src={data.avatar}
                   variant='rounded'
                   alt={data.fullName}
-                  sx={{ width: 120, height: 120, fontWeight: 600, mb: 4, fontSize: '3rem' }}
+                  sx={{ width: 120, height: 120, fontWeight: 600, mb: 4 }}
                 />
               ) : (
                 <CustomAvatar
