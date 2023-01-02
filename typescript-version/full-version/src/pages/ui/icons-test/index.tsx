@@ -38,11 +38,11 @@ const AnalyticsDashboard = () => {
         <Icon icon='bx:x' />
       </Typography>
       <Typography variant='h5' sx={{ my: 4 }}>
-        FakeDB MDI icons but offline
+        FakeDB Tabler icons but offline
       </Typography>
-      <Typography sx={{ mb: 4 }}>MDI icons coming from our API and SVGs are from the Iconify Bundle</Typography>
+      <Typography sx={{ mb: 4 }}>Tabler icons coming from our API and SVGs are from the Iconify Bundle</Typography>
       {iconData.map((icon: IconsDataType, index: number) => (
-        <Icon key={index} fontSize='2.1875rem' icon={`mdi:${icon.icon}`} />
+        <Icon key={index} fontSize='2.1875rem' icon={`tabler:${icon.icon}`} />
       ))}
       <Typography variant='h4' sx={{ my: 4 }}>
         Offline Icons
@@ -63,125 +63,124 @@ const AnalyticsDashboard = () => {
       <Icon icon='line-md:document-list' height='35' />
       <Icon icon='line-md:document-code' height='35' />
       <Icon icon='line-md:image-twotone' height='35' />
-      <Typography sx={{ mt: 4, fontWeight: 600 }}>MDI Icons</Typography>
+      <Typography sx={{ mt: 4, fontWeight: 600 }}>Tabler Icons</Typography>
       <Typography>
-        Simple MDI Icon
-        <Icon icon='mdi:airplane-alert' />
+        Simple Tabler Icon
+        <Icon icon='tabler:bike' />
       </Typography>
       <Typography sx={{ display: 'flex', alignItems: 'center' }}>
-        MDI Icon wrapped with <code>Box</code> component
+        Tabler Icon wrapped with <code>Box</code> component
         <Box component='span' sx={{ ml: 5, display: 'inline-flex', color: 'success.main' }}>
-          <Icon icon='mdi:airplane-alert' />
+          <Icon icon='tabler:bike' />
         </Box>
       </Typography>
       <Typography>
-        MDI Icon with font-size
-        <Icon icon='mdi:airplane-alert' fontSize={50} />
+        Tabler Icon with font-size
+        <Icon icon='tabler:bike' fontSize={50} />
       </Typography>
       <Typography>
-        MDI Icon with color and passed color-name
-        <Icon icon='mdi:airplane-alert' color='red' />
+        Tabler Icon with color and passed color-name
+        <Icon icon='tabler:bike' color='red' />
       </Typography>
       <Typography>
-        MDI Icon with horizontal flip
-        <Icon icon='mdi:airplane-alert' hFlip />
+        Tabler Icon with horizontal flip
+        <Icon icon='tabler:bike' hFlip />
       </Typography>
       <Typography>
-        MDI Icon with vertical flip
-        <Icon icon='mdi:airplane-alert' vFlip />
+        Tabler Icon with vertical flip
+        <Icon icon='tabler:bike' vFlip />
       </Typography>
       <Typography>
-        MDI Icon with vertical & horizontal flips
-        <Icon icon='mdi:airplane-alert' hFlip vFlip />
+        Tabler Icon with vertical & horizontal flips
+        <Icon icon='tabler:bike' hFlip vFlip />
       </Typography>
       <Typography>
-        MDI Icon with color and passed hex code
-        <Icon icon='mdi:airplane-alert' color='#09a6eb' />
+        Tabler Icon with color and passed hex code
+        <Icon icon='tabler:bike' color='#09a6eb' />
       </Typography>
       <Typography>
-        MDI Icon with rotate 90 degree
-        <Icon icon='mdi:airplane-alert' rotate={1} />
+        Tabler Icon with rotate 90 degree
+        <Icon icon='tabler:bike' rotate={1} />
       </Typography>
       <Typography>
-        MDI Icon with rotate 270 degree
-        <Icon icon='mdi:airplane-alert' rotate={3} />
+        Tabler Icon with rotate 270 degree
+        <Icon icon='tabler:bike' rotate={3} />
       </Typography>
       <Typography>
-        Inline MDI Icon
-        <Icon icon='mdi:airplane-alert' inline={true} />
+        Inline Tabler Icon
+        <Icon icon='tabler:bike' inline={true} />
       </Typography>
       <Typography>
-        MDI Icon with width
-        <Icon icon='mdi:airplane-alert' width='100' />
+        Tabler Icon with width
+        <Icon icon='tabler:bike' width='100' />
       </Typography>
       <Typography>
-        MDI Icon with height
-        <Icon icon='mdi:airplane-alert' height='75' />
+        Tabler Icon with height
+        <Icon icon='tabler:bike' height='75' />
       </Typography>
       <Typography>
-        MDI Icon with cursor pointer
-        <Icon icon='mdi:airplane-alert' cursor='pointer' />
+        Tabler Icon with cursor pointer
+        <Icon icon='tabler:bike' cursor='pointer' />
       </Typography>
       <Typography>
-        MDI Icon with display flex
-        <Icon icon='mdi:airplane-alert' display='flex' />
+        Tabler Icon with display flex
+        <Icon icon='tabler:bike' display='flex' />
       </Typography>
       <Typography>
-        MDI Icon with fill-opacity using string
-        <Icon icon='mdi:airplane-alert' fillOpacity='0.5' />
-        MDI Icon with fill-opacity using number
-        <Icon icon='mdi:airplane-alert' fillOpacity={0.25} />
+        Tabler Icon with fill-opacity using string
+        <Icon icon='tabler:bike' fillOpacity='0.5' />
+        Tabler Icon with fill-opacity using number
+        <Icon icon='tabler:bike' fillOpacity={0.25} />
       </Typography>
       <Typography>
-        MDI Icon with onClick. It has all props for <code>on</code>
-        <Icon icon='mdi:airplane-alert' onClick={() => alert('Clicked on the icon')} />
+        Tabler Icon with onClick. It has all props for <code>on</code>
+        <Icon icon='tabler:bike' onClick={() => alert('Clicked on the icon')} />
       </Typography>
       <Typography>
-        MDI Icon with opacity using string
-        <Icon icon='mdi:airplane-alert' opacity='0.6' />
-        MDI Icon with opacity using number
-        <Icon icon='mdi:airplane-alert' opacity={0.3} />
+        Tabler Icon with opacity using string
+        <Icon icon='tabler:bike' opacity='0.6' />
+        Tabler Icon with opacity using number
+        <Icon icon='tabler:bike' opacity={0.3} />
       </Typography>
       <Typography>
-        MDI Icon with stroke
-        <Icon icon='mdi:airplane-alert' stroke='#f00' />
+        Tabler Icon with stroke
+        <Icon icon='tabler:bike' stroke='#f00' />
       </Typography>
       <Typography>
-        MDI Icon with stroke and stroke-dasharray using string
-        <Icon icon='mdi:airplane-alert' stroke='#f00' strokeDasharray='3' />
-        MDI Icon with stroke and stroke-dasharray using number
-        <Icon icon='mdi:airplane-alert' stroke='#f00' strokeDasharray={5} />
+        Tabler Icon with stroke and stroke-dasharray using string
+        <Icon icon='tabler:bike' stroke='#f00' strokeDasharray='3' />
+        Tabler Icon with stroke and stroke-dasharray using number
+        <Icon icon='tabler:bike' stroke='#f00' strokeDasharray={5} />
       </Typography>
       <Typography>
-        MDI Icon with stroke and stroke-opacity using string
-        <Icon icon='mdi:airplane-alert' stroke='#f00' strokeOpacity='0.5' />
-        MDI Icon with stroke and stroke-opacity using number
-        <Icon icon='mdi:airplane-alert' stroke='#f00' strokeOpacity={0.25} />
+        Tabler Icon with stroke and stroke-opacity using string
+        <Icon icon='tabler:bike' stroke='#f00' strokeOpacity='0.5' />
+        Tabler Icon with stroke and stroke-opacity using number
+        <Icon icon='tabler:bike' stroke='#f00' strokeOpacity={0.25} />
       </Typography>
       <Typography>
-        MDI Icon with stroke and stroke-width using string
-        <Icon icon='mdi:airplane-alert' stroke='#f00' strokeWidth='2' />
-        MDI Icon with stroke and stroke-width using number
-        <Icon icon='mdi:airplane-alert' stroke='#f00' strokeWidth={2} />
+        Tabler Icon with stroke and stroke-width using string
+        <Icon icon='tabler:bike' stroke='#f00' strokeWidth='2' />
+        Tabler Icon with stroke and stroke-width using number
+        <Icon icon='tabler:bike' stroke='#f00' strokeWidth={2} />
       </Typography>
       <Typography>
-        MDI Icon with style
-        <Icon icon='mdi:airplane-alert' style={{ color: '#00f' }} />
+        Tabler Icon with style
+        <Icon icon='tabler:bike' style={{ color: '#00f' }} />
       </Typography>
       <Typography>
-        MDI Icon with transform scale
-        <Icon icon='mdi:airplane-alert' transform='scale(2)' />
+        Tabler Icon with transform scale
+        <Icon icon='tabler:bike' transform='scale(2)' />
       </Typography>
       <Typography>
-        MDI Icon with visibility hidden
-        <Icon icon='mdi:airplane-alert' visibility='hidden' />
+        Tabler Icon with visibility hidden
+        <Icon icon='tabler:bike' visibility='hidden' />
       </Typography>
       <Typography variant='h5' sx={{ mt: 4 }}>
         Icons from different icon libraries
       </Typography>
       <Icon icon='bx:basket' />
       <Icon icon='bi:airplane-engines' />
-      <Icon icon='tabler:anchor' />
       <Icon icon='uit:adobe-alt' />
       <Icon icon='fa6-regular:comment' />
       <Icon icon='twemoji:auto-rickshaw' />

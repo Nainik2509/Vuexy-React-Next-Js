@@ -32,7 +32,7 @@ const sources = {
     },
     {
       filename: require.resolve('@iconify/json/json/mdi.json'),
-      icons: ['github', 'google', 'twitter', 'facebook']
+      icons: ['star', 'heart', 'circle', 'github', 'google', 'twitter', 'facebook', 'star-outline', 'heart-outline']
     }
 
     // Custom JSON file

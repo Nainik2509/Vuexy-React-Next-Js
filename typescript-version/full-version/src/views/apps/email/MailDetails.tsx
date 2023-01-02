@@ -321,11 +321,7 @@ const MailDetails = (props: MailDetailsType) => {
                 </IconButton>
                 {mail.replies.length ? (
                   <IconButton size='small' onClick={() => (showReplies ? setShowReplies(false) : setShowReplies(true))}>
-                    {showReplies ? (
-                      <Icon icon='mdi:arrow-collapse-vertical' />
-                    ) : (
-                      <Icon icon='mdi:arrow-expand-vertical' />
-                    )}
+                    {showReplies ? <Icon icon='tabler:fold' /> : <Icon icon='tabler:arrows-vertical' />}
                   </IconButton>
                 ) : null}
                 <IconButton size='small'>

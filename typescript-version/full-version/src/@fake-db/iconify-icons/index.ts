@@ -6,11 +6,11 @@ export type IconsDataType = {
 }
 
 const icons: IconsDataType[] = [
-  { icon: 'airplane' },
-  { icon: 'ab-testing' },
-  { icon: 'widgets-outline' },
-  { icon: 'whatsapp' },
-  { icon: 'water-well-outline' }
+  { icon: 'alien' },
+  { icon: 'armchair' },
+  { icon: 'badge-wc' },
+  { icon: 'ghost-2' },
+  { icon: 'whirl' }
 ]
 
 mock.onGet('/api/icons/data').reply(() => {
