@@ -17,6 +17,7 @@ import { CalendarType } from 'src/types/apps/calendarTypes'
 const blankEvent = {
   title: '',
   start: '',
+
   end: '',
   allDay: false,
   url: '',
@@ -49,7 +50,7 @@ const Calendar = (props: CalendarType) => {
   useEffect(() => {
     if (calendarApi === null) {
       // @ts-ignore
-      setCalendarApi(calendarRef.current.getApi())
+      setCalendarApi(calendarRef.current?.getApi())
     }
   }, [calendarApi, setCalendarApi])
 
@@ -82,21 +83,21 @@ const Calendar = (props: CalendarType) => {
       eventResizableFromStart: true,
 
       /*
-      Automatically scroll the scroll-containers during event drag-and-drop and date selecting
-      ? Docs: https://fullcalendar.io/docs/dragScroll
-    */
+        Automatically scroll the scroll-containers during event drag-and-drop and date selecting
+        ? Docs: https://fullcalendar.io/docs/dragScroll
+      */
       dragScroll: true,
 
       /*
-      Max number of events within a given day
-      ? Docs: https://fullcalendar.io/docs/dayMaxEvents
-    */
+        Max number of events within a given day
+        ? Docs: https://fullcalendar.io/docs/dayMaxEvents
+      */
       dayMaxEvents: 2,
 
       /*
-      Determines if day names and week names are clickable
-      ? Docs: https://fullcalendar.io/docs/navLinks
-    */
+        Determines if day names and week names are clickable
+        ? Docs: https://fullcalendar.io/docs/navLinks
+      */
       navLinks: true,
 
       eventClassNames({ event: calendarEvent }: any) {
@@ -141,18 +142,18 @@ const Calendar = (props: CalendarType) => {
       },
 
       /*
-      Handle event drop (Also include dragged event)
-      ? Docs: https://fullcalendar.io/docs/eventDrop
-      ? We can use `eventDragStop` but it doesn't return updated event so we have to use `eventDrop` which returns updated event
-    */
+        Handle event drop (Also include dragged event)
+        ? Docs: https://fullcalendar.io/docs/eventDrop
+        ? We can use `eventDragStop` but it doesn't return updated event so we have to use `eventDrop` which returns updated event
+      */
       eventDrop({ event: droppedEvent }: any) {
         dispatch(updateEvent(droppedEvent))
       },
 
       /*
-      Handle event resize
-      ? Docs: https://fullcalendar.io/docs/eventResize
-    */
+        Handle event resize
+        ? Docs: https://fullcalendar.io/docs/eventResize
+      */
       eventResize({ event: resizedEvent }: any) {
         dispatch(updateEvent(resizedEvent))
       },

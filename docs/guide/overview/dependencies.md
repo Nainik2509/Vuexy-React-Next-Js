@@ -44,7 +44,6 @@ The following dependencies are common and required to run the template. Do not t
 ```json
 "jsonwebtoken"
 "@types/jsonwebtoken" // Typescript version only
-"firebase" // Firebase
 ```
 
 ## Calendar
