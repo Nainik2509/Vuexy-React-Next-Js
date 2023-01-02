@@ -55,25 +55,17 @@ const HelpCenterLandingKnowledgeBase = ({ categories }: { categories: HelpCenter
                   {category.title}
                 </Typography>
               </Box>
-              <Box sx={{ mb: 5, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+              <Box component='ul' sx={{ mt: 0, mb: 5, pl: 6.75, '& li': { mb: 2, color: 'primary.main' } }}>
                 {category.subCategories.map(subcategory => (
-                  <Box
-                    component={Link}
-                    key={subcategory.title}
-                    href={`/pages/help-center/${category.slug}/${subcategory.slug}`}
-                    sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      textDecoration: 'none',
-                      '&:not(:last-of-type)': { mb: 2 },
-                      '& svg': { color: 'primary.main' }
-                    }}
-                  >
-                    <Box sx={{ display: 'flex' }}>
-                      <Icon icon='mdi:circle-small' />
-                    </Box>
-                    <Typography sx={{ color: 'primary.main' }}>{subcategory.title}</Typography>
-                  </Box>
+                  <li key={subcategory.title}>
+                    <Typography
+                      component={Link}
+                      sx={{ color: 'inherit', textDecoration: 'none' }}
+                      href={`/pages/help-center/${category.slug}/${subcategory.slug}`}
+                    >
+                      {subcategory.title}
+                    </Typography>
+                  </li>
                 ))}
               </Box>
               <Typography

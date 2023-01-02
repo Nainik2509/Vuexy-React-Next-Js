@@ -49,7 +49,7 @@ const PricingFooter = (props: Props) => {
     <>
       <Box sx={{ mb: 8, textAlign: 'center' }}>
         <Typography variant='h4' sx={{ mb: 2.5 }}>
-          FAQ’s
+          FAQs
         </Typography>
         <Typography sx={{ color: 'text.secondary' }}>Let us help answer the most common questions.</Typography>
       </Box>

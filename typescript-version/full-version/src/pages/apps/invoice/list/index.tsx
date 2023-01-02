@@ -328,8 +328,9 @@ const InvoiceList = () => {
                       <MenuItem value='downloaded'>Downloaded</MenuItem>
                       <MenuItem value='draft'>Draft</MenuItem>
                       <MenuItem value='paid'>Paid</MenuItem>
-                      <MenuItem value='past due'>Past Due</MenuItem>
                       <MenuItem value='partial payment'>Partial Payment</MenuItem>
+                      <MenuItem value='past due'>Past Due</MenuItem>
+                      <MenuItem value='sent'>Sent</MenuItem>
                     </Select>
                   </FormControl>
                 </Grid>

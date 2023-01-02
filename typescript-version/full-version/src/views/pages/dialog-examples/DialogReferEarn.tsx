@@ -22,6 +22,9 @@ import IconButton, { IconButtonProps } from '@mui/material/IconButton'
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
 
+// ** Config Import
+import themeConfig from 'src/configs/themeConfig'
+
 // ** Custom Components Imports
 import CustomAvatar from 'src/@core/components/mui/avatar'
 
@@ -149,7 +152,7 @@ const DialogReferEarn = () => {
               Invite your friends
             </Typography>
             <InputLabel htmlFor='refer-email' sx={{ mb: 2, display: 'inline-flex', whiteSpace: 'break-spaces' }}>
-              Enter your friend’s email address and invite them to join Master 😍
+              {`Enter your friend’s email address and invite them to join ${themeConfig.templateName} 😍`}
             </InputLabel>
             <Box sx={{ display: 'flex', alignItems: 'center', width: '100%', flexWrap: { xs: 'wrap', sm: 'nowrap' } }}>
               <TextField

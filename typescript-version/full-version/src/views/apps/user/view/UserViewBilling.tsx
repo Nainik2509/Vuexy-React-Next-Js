@@ -634,32 +634,31 @@ const UserViewBilling = () => {
               <form>
                 <Grid container spacing={6}>
                   <Grid item xs={12} sm={6}>
-                    <TextField size='small' defaultValue='ThemeSelection' label='Company Name' />
+                    <TextField fullWidth defaultValue='ThemeSelection' label='Company Name' />
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                    <TextField type='email' size='small' defaultValue='gertrude@gmail.com' label='Email' />
+                    <TextField fullWidth type='email' defaultValue='gertrude@gmail.com' label='Email' />
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                    <TextField size='small' defaultValue='TAX-875623' label='Tax ID' />
+                    <TextField fullWidth defaultValue='TAX-875623' label='Tax ID' />
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                    <TextField size='small' defaultValue='SDF754K77' label='VAT Number' />
+                    <TextField fullWidth defaultValue='SDF754K77' label='VAT Number' />
                   </Grid>
                   <Grid item xs={12}>
                     <TextField
                       fullWidth
                       multiline
                       minRows={2}
-                      size='small'
                       label='Billing Address'
                       defaultValue='100 Water Plant Avenue, Building 1303 Wake Island'
                     />
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                    <TextField size='small' defaultValue='+1(609) 933-44-22' label='Contact' />
+                    <TextField fullWidth defaultValue='+1(609) 933-44-22' label='Contact' />
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                    <FormControl size='small' fullWidth>
+                    <FormControl fullWidth>
                       <InputLabel id='country-select'>Country</InputLabel>
                       <Select labelId='country-select' defaultValue='usa' label='Country'>
                         <MenuItem value='usa'>USA</MenuItem>
@@ -671,10 +670,10 @@ const UserViewBilling = () => {
                     </FormControl>
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                    <TextField size='small' defaultValue='Capholim' label='State' />
+                    <TextField fullWidth defaultValue='Capholim' label='State' />
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                    <TextField type='number' size='small' defaultValue='403114' label='Zip Code' />
+                    <TextField fullWidth type='number' defaultValue='403114' label='Zip Code' />
                   </Grid>
                 </Grid>
               </form>

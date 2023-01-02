@@ -5,7 +5,8 @@
 We're using [react-i18next](https://react.i18next.com/) for Internationalization. You can find its configurations in `src/configs/i18n.ts` file and the locales in `public/locales` folder in the full version.
 
 ## Usage
-Refer to [this article](/articles/how-to-use-i18n-in-a-page) to implement the internationalization.
+
+Refer to [this article](/articles/how-to-use-i18n-in-a-page.html) to implement the internationalization.
 
 ## Add i18n
 

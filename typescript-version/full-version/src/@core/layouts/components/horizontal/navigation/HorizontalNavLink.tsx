@@ -132,7 +132,7 @@ const HorizontalNavLink = (props: Props) => {
                 })
           }}
         >
-          <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <Box sx={{ gap: 2, width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <Box
               sx={{
                 display: 'flex',
@@ -152,7 +152,6 @@ const HorizontalNavLink = (props: Props) => {
                 label={item.badgeContent}
                 color={item.badgeColor || 'primary'}
                 sx={{
-                  ml: 1.6,
                   height: 20,
                   fontWeight: 500,
                   '& .MuiChip-label': { px: 1.5, textTransform: 'capitalize' }

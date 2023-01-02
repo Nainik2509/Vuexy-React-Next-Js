@@ -51,9 +51,11 @@ interface Props {
   setCurrentActiveGroup: (items: string[]) => void
 }
 
-const MenuItemTextWrapper = styled(Box)<BoxProps>(() => ({
+const MenuItemTextWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   width: '100%',
   display: 'flex',
+  alignItems: 'center',
+  gap: theme.spacing(2),
   justifyContent: 'space-between',
   transition: 'opacity .25s ease-in-out',
   ...(themeConfig.menuTextTruncate && { overflow: 'hidden' })
@@ -274,7 +276,6 @@ const VerticalNavGroup = (props: Props) => {
               <Box
                 className='menu-item-meta'
                 sx={{
-                  ml: 0.8,
                   display: 'flex',
                   alignItems: 'center',
                   '& svg': {
@@ -291,7 +292,7 @@ const VerticalNavGroup = (props: Props) => {
                     label={item.badgeContent}
                     color={item.badgeColor || 'primary'}
                     sx={{
-                      mr: 0.8,
+                      mr: 1.5,
                       height: 20,
                       fontWeight: 500,
                       '& .MuiChip-label': { px: 1.5, textTransform: 'capitalize' }

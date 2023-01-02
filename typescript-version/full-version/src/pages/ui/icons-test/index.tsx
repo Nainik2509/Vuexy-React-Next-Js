@@ -1,7 +1,7 @@
 // ** React Imports
 import { useEffect, useState } from 'react'
 
-// ** MUI Import
+// ** MUI Imports
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 
