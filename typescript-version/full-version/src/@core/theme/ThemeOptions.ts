@@ -49,7 +49,7 @@ const themeOptions = (settings: Settings): ThemeOptions => {
             '"Segoe UI Symbol"'
           ].join(',')
       },
-      shadows: shadows(mode),
+      shadows: shadows(mode === 'semi-dark' ? 'light' : mode),
       ...spacing,
       breakpoints: breakpoints(),
       shape: {
