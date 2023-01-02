@@ -25,7 +25,7 @@
     "@fullcalendar/react": "^6.0.1",
     "@fullcalendar/timegrid": "^6.0.1",
     "@hookform/resolvers": "^2.9.10",
-    "@iconify/react": "^4.0.0",
+    "@iconify/react": "^4.0.1",
     "@mui/lab": "^5.0.0-alpha.105",
     "@mui/material": "^5.10.11",
     "@mui/x-data-grid": "^5.17.17",
@@ -70,11 +70,11 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "@iconify/iconify": "^3.0.0",
-    "@iconify/json": "^2.1.156",
+    "@iconify/iconify": "^3.0.1",
+    "@iconify/json": "^2.2.0",
     "@iconify/tools": "2.1.2",
     "@iconify/types": "^2.0.0",
-    "@iconify/utils": "^2.0.5",
+    "@iconify/utils": "^2.0.9",
     "@types/cleave.js": "^1.4.7",
     "@types/draft-js": "^0.11.9",
     "@types/jsonwebtoken": "^8.5.9",
