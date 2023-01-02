@@ -4,7 +4,7 @@ import { HorizontalNavItemsType } from 'src/@core/layouts/types'
 const navigation = (): HorizontalNavItemsType => {
   return [
     {
-      icon: 'mdi:home-outline',
+      icon: 'tabler:smart-home',
       title: 'Dashboards',
       children: [
         {
@@ -25,27 +25,27 @@ const navigation = (): HorizontalNavItemsType => {
       ]
     },
     {
-      icon: 'mdi:apps',
+      icon: 'tabler:layout-grid-add',
       title: 'Apps',
       children: [
         {
           title: 'Email',
-          icon: 'mdi:email-outline',
+          icon: 'tabler:mail',
           path: '/apps/email'
         },
         {
           title: 'Chat',
-          icon: 'mdi:message-outline',
+          icon: 'tabler:messages',
           path: '/apps/chat'
         },
         {
           title: 'Calendar',
-          icon: 'mdi:calendar-blank-outline',
+          icon: 'tabler:calendar',
           path: '/apps/calendar'
         },
         {
           title: 'Invoice',
-          icon: 'mdi:file-document-outline',
+          icon: 'tabler:file-dollar',
           children: [
             {
               title: 'List',
@@ -67,7 +67,7 @@ const navigation = (): HorizontalNavItemsType => {
         },
         {
           title: 'User',
-          icon: 'mdi:account-outline',
+          icon: 'tabler:user',
           children: [
             {
               title: 'List',
@@ -102,7 +102,7 @@ const navigation = (): HorizontalNavItemsType => {
         },
         {
           title: 'Roles & Permissions',
-          icon: 'mdi:shield-outline',
+          icon: 'tabler:settings',
           children: [
             {
               title: 'Roles',
@@ -117,27 +117,27 @@ const navigation = (): HorizontalNavItemsType => {
       ]
     },
     {
-      icon: 'mdi:palette-swatch-outline',
+      icon: 'tabler:color-swatch',
       title: 'UI',
       children: [
         {
           title: 'Typography',
-          icon: 'mdi:format-letter-case',
+          icon: 'tabler:typography',
           path: '/ui/typography'
         },
         {
           title: 'Icons',
           path: '/ui/icons',
-          icon: 'mdi:google-circles-extended'
+          icon: 'tabler:brand-tabler'
         },
         {
           title: 'Icons Test',
           path: '/ui/icons-test',
-          icon: 'mdi:google-circles-extended'
+          icon: 'tabler:brand-tabler'
         },
         {
           title: 'Cards',
-          icon: 'mdi:credit-card-outline',
+          icon: 'tabler:id',
           children: [
             {
               title: 'Basic',
@@ -163,7 +163,7 @@ const navigation = (): HorizontalNavItemsType => {
         },
         {
           title: 'Components',
-          icon: 'mdi:archive-outline',
+          icon: 'tabler:archive',
           children: [
             {
               title: 'Accordion',
@@ -250,12 +250,12 @@ const navigation = (): HorizontalNavItemsType => {
       ]
     },
     {
-      icon: 'mdi:file-document-outline',
+      icon: 'tabler:file',
       title: 'Pages',
       children: [
         {
           title: 'User Profile',
-          icon: 'mdi:card-account-details-outline',
+          icon: 'tabler:user-circle',
           children: [
             {
               title: 'Profile',
@@ -276,7 +276,7 @@ const navigation = (): HorizontalNavItemsType => {
           ]
         },
         {
-          icon: 'mdi:account-cog-outline',
+          icon: 'tabler:settings',
           title: 'Account Settings',
           children: [
             {
@@ -305,21 +305,21 @@ const navigation = (): HorizontalNavItemsType => {
         {
           title: 'FAQ',
           path: '/pages/faq',
-          icon: 'mdi:help-circle-outline'
+          icon: 'tabler:help'
         },
         {
           title: 'Help Center',
-          icon: 'mdi:help-circle-outline',
+          icon: 'tabler:help',
           path: '/pages/help-center'
         },
         {
           title: 'Pricing',
-          icon: 'mdi:currency-usd',
+          icon: 'tabler:currency-dollar',
           path: '/pages/pricing'
         },
         {
           title: 'Miscellaneous',
-          icon: 'mdi:file-outline',
+          icon: 'tabler:3d-cube-sphere',
           children: [
             {
               openInNewTab: true,
@@ -350,7 +350,7 @@ const navigation = (): HorizontalNavItemsType => {
         },
         {
           title: 'Auth Pages',
-          icon: 'mdi:lock-outline',
+          icon: 'tabler:lock',
           children: [
             {
               title: 'Login',
@@ -456,7 +456,7 @@ const navigation = (): HorizontalNavItemsType => {
         },
         {
           title: 'Wizard Examples',
-          icon: 'mdi:transit-connection-horizontal',
+          icon: 'tabler:forms',
           children: [
             {
               title: 'Checkout',
@@ -473,7 +473,7 @@ const navigation = (): HorizontalNavItemsType => {
           ]
         },
         {
-          icon: 'mdi:vector-arrange-below',
+          icon: 'tabler:square',
           title: 'Dialog Examples',
           path: '/pages/dialog-examples'
         }
@@ -481,11 +481,11 @@ const navigation = (): HorizontalNavItemsType => {
     },
     {
       title: 'Forms & Tables',
-      icon: 'mdi:checkbox-marked-outline',
+      icon: 'tabler:checkbox',
       children: [
         {
           title: 'Form Elements',
-          icon: 'mdi:form-select',
+          icon: 'tabler:toggle-left',
           children: [
             {
               title: 'Text Field',
@@ -546,67 +546,67 @@ const navigation = (): HorizontalNavItemsType => {
           ]
         },
         {
-          icon: 'mdi:cube-outline',
+          icon: 'tabler:layout-navbar',
           title: 'Form Layouts',
           path: '/forms/form-layouts'
         },
         {
           title: 'Form Validation',
           path: '/forms/form-validation',
-          icon: 'mdi:checkbox-marked-circle-outline'
+          icon: 'tabler:checkbox'
         },
         {
           title: 'Form Wizard',
           path: '/forms/form-wizard',
-          icon: 'mdi:transit-connection-horizontal'
+          icon: 'tabler:text-wrap-disabled'
         },
         {
           title: 'Table',
-          icon: 'mdi:grid-large',
+          icon: 'tabler:table',
           path: '/tables/mui'
         },
         {
           title: 'Mui DataGrid',
-          icon: 'mdi:grid',
+          icon: 'tabler:layout-grid',
           path: '/tables/data-grid'
         }
       ]
     },
     {
       title: 'Charts',
-      icon: 'mdi:chart-donut',
+      icon: 'tabler:chart-pie',
       children: [
         {
           title: 'Apex',
-          icon: 'mdi:chart-line',
+          icon: 'tabler:chart-sankey',
           path: '/charts/apex-charts'
         },
         {
           title: 'Recharts',
-          icon: 'mdi:chart-bell-curve-cumulative',
+          icon: 'tabler:chart-ppf',
           path: '/charts/recharts'
         },
         {
           title: 'ChartJS',
           path: '/charts/chartjs',
-          icon: 'mdi:chart-bell-curve'
+          icon: 'tabler:chart-line'
         }
       ]
     },
     {
       title: 'Others',
-      icon: 'mdi:dots-horizontal',
+      icon: 'tabler:dots',
       children: [
         {
           path: '/acl',
           action: 'read',
           subject: 'acl-page',
-          icon: 'mdi:shield-outline',
+          icon: 'tabler:shield',
           title: 'Access Control'
         },
         {
           title: 'Menu Levels',
-          icon: 'mdi:menu',
+          icon: 'tabler:menu-2',
           children: [
             {
               title: 'Menu Level 2.1'
@@ -626,22 +626,22 @@ const navigation = (): HorizontalNavItemsType => {
         },
         {
           title: 'Disabled Menu',
-          icon: 'mdi:eye-off-outline',
+          icon: 'tabler:eye-off',
           disabled: true
         },
         {
           title: 'Raise Support',
-          icon: 'mdi:lifebuoy',
+          icon: 'tabler:lifebuoy',
           externalLink: true,
           openInNewTab: true,
-          path: 'https://themeselection.com/support'
+          path: 'https://pixinvent.ticksy.com/'
         },
         {
           title: 'Documentation',
-          icon: 'mdi:file-document-outline',
+          icon: 'tabler:file-text',
           externalLink: true,
           openInNewTab: true,
-          path: 'https://themeselection.com/docs/'
+          path: 'https://pixinvent.com/demo/vuexy-react-admin-dashboard-template/documentation/'
         }
       ]
     }

@@ -74,49 +74,49 @@ const shortcuts: ShortcutsType[] = [
   {
     title: 'Calendar',
     url: '/apps/calendar',
-    subtitle: 'Appointments',
-    icon: 'mdi:calendar-month-outline'
+    icon: 'tabler:calendar',
+    subtitle: 'Appointments'
   },
   {
     title: 'Invoice App',
     url: '/apps/invoice/list',
-    subtitle: 'Manage Accounts',
-    icon: 'mdi:receipt-text-outline'
+    icon: 'tabler:file-invoice',
+    subtitle: 'Manage Accounts'
   },
   {
-    title: 'Users',
+    title: 'User App',
+    icon: 'tabler:users',
     url: '/apps/user/list',
-    subtitle: 'Manage Users',
-    icon: 'mdi:account-outline'
+    subtitle: 'Manage Users'
   },
   {
     url: '/apps/roles',
-    title: 'Role Management',
+    icon: 'tabler:lock',
     subtitle: 'Permissions',
-    icon: 'mdi:shield-check-outline'
+    title: 'Role Management'
   },
   {
-    url: '/',
+    subtitle: 'CRM',
     title: 'Dashboard',
-    icon: 'mdi:chart-pie',
-    subtitle: 'User Dashboard'
+    url: '/dashboards/crm',
+    icon: 'tabler:device-analytics'
   },
   {
     title: 'Settings',
-    icon: 'mdi:cog-outline',
+    icon: 'tabler:settings',
     subtitle: 'Account Settings',
     url: '/pages/account-settings/account'
   },
   {
+    icon: 'tabler:help',
     title: 'Help Center',
-    subtitle: 'FAQs & Articles',
-    icon: 'mdi:help-circle-outline',
-    url: '/pages/help-center'
+    url: '/pages/help-center',
+    subtitle: 'FAQs & Articles'
   },
   {
     title: 'Dialogs',
-    subtitle: 'Useful Dialogs',
-    icon: 'mdi:window-maximize',
+    icon: 'tabler:square',
+    subtitle: 'Useful Popups',
     url: '/pages/dialog-examples'
   }
 ]
@@ -130,7 +130,7 @@ const AppBarContent = (props: Props) => {
       <Box className='actions-left' sx={{ mr: 2, display: 'flex', alignItems: 'center' }}>
         {hidden && !settings.navHidden ? (
           <IconButton color='inherit' sx={{ ml: -2.75 }} onClick={toggleNavVisibility}>
-            <Icon icon='mdi:menu' />
+            <Icon fontSize='1.5rem' icon='tabler:menu-2' />
           </IconButton>
         ) : null}
         <Autocomplete hidden={hidden} settings={settings} />

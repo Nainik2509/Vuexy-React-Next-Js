@@ -26,7 +26,8 @@ import UserIcon from 'src/layouts/components/UserIcon'
 import Translations from 'src/layouts/components/Translations'
 import CanViewNavLink from 'src/layouts/components/acl/CanViewNavLink'
 
-// ** Util Import
+// ** Util Imports
+import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 import { handleURLQueries } from 'src/@core/layouts/utils'
 
 interface Props {
@@ -46,16 +47,25 @@ const MenuNavLink = styled(ListItemButton)<
   ListItemButtonProps & { component?: ElementType; href: string; target?: '_blank' | undefined }
 >(({ theme }) => ({
   width: '100%',
-  color: theme.palette.text.primary,
-  transition: 'padding-left .25s ease-in-out',
+  marginLeft: theme.spacing(3.5),
+  marginRight: theme.spacing(3.5),
+  borderRadius: theme.shape.borderRadius,
+  transition: 'padding-left .25s ease-in-out, padding-right .25s ease-in-out',
   '&.active': {
     '&, &:hover': {
-      backgroundColor: theme.palette.primary.light,
+      boxShadow: `0px 2px 6px ${hexToRGBA(theme.palette.primary.main, 0.48)}`,
+      background: `linear-gradient(72.47deg, ${theme.palette.primary.main} 22.16%, ${hexToRGBA(
+        theme.palette.primary.main,
+        0.7
+      )} 76.47%)`,
       '&.Mui-focusVisible': {
-        backgroundColor: theme.palette.primary.main
+        background: `linear-gradient(72.47deg, ${theme.palette.primary.dark} 22.16%, ${hexToRGBA(
+          theme.palette.primary.dark,
+          0.7
+        )} 76.47%)`
       }
     },
-    '& .MuiTypography-root, & .MuiListItemIcon-root': {
+    '& .MuiTypography-root, & svg': {
       color: `${theme.palette.common.white} !important`
     }
   }
@@ -93,12 +103,19 @@ const VerticalNavLink = ({
   const conditionalColors = () => {
     if (mode === 'semi-dark') {
       return {
-        color: `rgba(${theme.palette.customColors.dark}, 0.87)`,
         '&:hover': {
           backgroundColor: `rgba(${theme.palette.customColors.dark}, 0.04)`
+        },
+        '& .MuiTypography-root, & svg': {
+          color: `rgba(${theme.palette.customColors.dark}, 0.6)`
         }
       }
-    } else return {}
+    } else
+      return {
+        '& .MuiTypography-root, & svg': {
+          color: 'text.secondary'
+        }
+      }
   }
 
   const isNavLinkActive = () => {
@@ -133,34 +150,30 @@ const VerticalNavLink = ({
             }
           }}
           sx={{
-            py: 2.5,
+            py: 2,
             ...conditionalColors(),
             ...(item.disabled ? { pointerEvents: 'none' } : { cursor: 'pointer' }),
-            pr: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 4.5,
-            pl: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24) / 8 : 5.5
+            px: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 22 - 28) / 8 : 4
           }}
         >
-          {isSubToSub ? null : (
-            <ListItemIcon
-              sx={{
-                color: 'text.primary',
-                transition: 'margin .25s ease-in-out',
-                ...(navCollapsed && !navHover ? { mr: 0 } : { mr: 3.25 }),
-                ...(parent ? { ml: 1.25, mr: 4.75 } : {}), // This line should be after (navCollapsed && !navHover) condition for proper styling
-                '& svg': {
-                  fontSize: '0.75rem',
-                  ...(!parent ? { fontSize: '1.5rem' } : {}),
-                  ...(parent && item.icon ? { fontSize: '0.875rem' } : {})
-                }
-              }}
-            >
-              <UserIcon icon={icon as string} />
-            </ListItemIcon>
-          )}
+          <ListItemIcon
+            sx={{
+              transition: 'margin .25s ease-in-out',
+              ...(navCollapsed && !navHover ? { mr: 0 } : { mr: 2 }),
+              ...(parent ? { ml: 1.5, mr: 3.5 } : {}), // This line should be after (navCollapsed && !navHover) condition for proper styling
+              '& svg': {
+                fontSize: '0.625rem',
+                ...(!parent ? { fontSize: '1.375rem' } : {}),
+                ...(parent && item.icon ? { fontSize: '0.875rem' } : {})
+              }
+            }}
+          >
+            <UserIcon icon={icon as string} />
+          </ListItemIcon>
 
           <MenuItemTextMetaWrapper
             sx={{
-              ...(isSubToSub ? { ml: 9 } : {}),
+              ...(isSubToSub ? { ml: 2 } : {}),
               ...(navCollapsed && !navHover ? { opacity: 0 } : { opacity: 1 })
             }}
           >

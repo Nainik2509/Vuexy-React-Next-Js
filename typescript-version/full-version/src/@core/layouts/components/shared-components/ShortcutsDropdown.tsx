@@ -7,6 +7,7 @@ import Link from 'next/link'
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
+import Avatar from '@mui/material/Avatar'
 import Divider from '@mui/material/Divider'
 import Tooltip from '@mui/material/Tooltip'
 import IconButton from '@mui/material/IconButton'
@@ -25,9 +26,6 @@ import PerfectScrollbarComponent from 'react-perfect-scrollbar'
 // ** Type Imports
 import { Settings } from 'src/@core/context/settingsContext'
 
-// ** Custom Components Imports
-import CustomAvatar from 'src/@core/components/mui/avatar'
-
 export type ShortcutsType = {
   url: string
   icon: string
@@ -45,7 +43,7 @@ const Menu = styled(MuiMenu)<MenuProps>(({ theme }) => ({
   '& .MuiMenu-paper': {
     width: 350,
     overflow: 'hidden',
-    marginTop: theme.spacing(4),
+    marginTop: theme.spacing(4.5),
     [theme.breakpoints.down('sm')]: {
       width: '100%'
     }
@@ -101,7 +99,7 @@ const ShortcutsDropdown = (props: Props) => {
   return (
     <Fragment>
       <IconButton color='inherit' aria-haspopup='true' onClick={handleDropdownOpen} aria-controls='customized-menu'>
-        <Icon icon='mdi:view-grid-outline' />
+        <Icon fontSize='1.5rem' icon='tabler:layout-grid-add' />
       </IconButton>
       <Menu
         anchorEl={anchorEl}
@@ -113,13 +111,27 @@ const ShortcutsDropdown = (props: Props) => {
         <MenuItem
           disableRipple
           disableTouchRipple
-          sx={{ cursor: 'default', userSelect: 'auto', backgroundColor: 'transparent !important' }}
+          sx={{
+            m: 0,
+            cursor: 'default',
+            userSelect: 'auto',
+            p: theme => theme.spacing(4, 6),
+            backgroundColor: 'transparent !important'
+          }}
         >
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
-            <Typography sx={{ fontSize: '1.125rem', color: 'text.secondary', fontWeight: 600 }}>Shortcuts</Typography>
+          <Box
+            sx={{
+              width: '100%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              '& svg': { color: 'text.secondary' }
+            }}
+          >
+            <Typography variant='h6'>Shortcuts</Typography>
             <Tooltip title='Add Shortcut' placement='top'>
-              <IconButton disableRipple>
-                <Icon icon='mdi:plus-circle-outline' />
+              <IconButton size='small'>
+                <Icon fontSize='1.5rem' icon='tabler:apps' />
               </IconButton>
             </Tooltip>
           </Box>
@@ -157,10 +169,10 @@ const ShortcutsDropdown = (props: Props) => {
                     justifyContent: 'center'
                   }}
                 >
-                  <CustomAvatar skin='light' color='secondary' sx={{ mb: 2, width: 50, height: 50 }}>
-                    <Icon icon={shortcut.icon} />
-                  </CustomAvatar>
-                  <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>{shortcut.title}</Typography>
+                  <Avatar sx={{ mb: 2, width: 48, height: 48 }}>
+                    <Icon fontSize='1.5rem' icon={shortcut.icon} />
+                  </Avatar>
+                  <Typography sx={{ fontWeight: 500, color: 'text.secondary' }}>{shortcut.title}</Typography>
                   <Typography variant='body2' sx={{ color: 'text.disabled' }}>
                     {shortcut.subtitle}
                   </Typography>

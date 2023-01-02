@@ -25,6 +25,7 @@ type ThemeConfig = {
   appBar: AppBar
   footer: Footer
   navHidden: boolean
+  appBarBlur: boolean
   direction: Direction
   templateName: string
   navCollapsed: boolean
@@ -48,7 +49,7 @@ type ThemeConfig = {
 
 const themeConfig: ThemeConfig = {
   // ** Layout Configs
-  templateName: 'Master' /* App Name */,
+  templateName: 'Vuexy' /* App Name */,
   layout: 'vertical' /* vertical | horizontal */,
   mode: 'light' as Mode /* light | dark | semi-dark /*! Note: semi-dark value will only work for Vertical Layout */,
   direction: 'ltr' /* ltr | rtl */,
@@ -62,11 +63,11 @@ const themeConfig: ThemeConfig = {
   // ** Navigation (Menu) Configs
   navHidden: false /* true | false */,
   menuTextTruncate: true /* true | false */,
-  navSubItemIcon: 'mdi:circle-outline' /* Icon */,
+  navSubItemIcon: 'tabler:circle' /* Icon */,
   verticalNavToggleType: 'accordion' /* accordion | collapse /*! Note: This is for Vertical navigation menu only */,
   navCollapsed: false /* true | false /*! Note: This is for Vertical navigation menu only */,
   navigationSize: 260 /* Number in px(Pixels) /*! Note: This is for Vertical navigation menu only */,
-  collapsedNavigationSize: 69 /* Number in px(Pixels) /*! Note: This is for Vertical navigation menu only */,
+  collapsedNavigationSize: 82 /* Number in px(Pixels) /*! Note: This is for Vertical navigation menu only */,
   afterVerticalNavMenuContentPosition: 'fixed' /* fixed | static */,
   beforeVerticalNavMenuContentPosition: 'fixed' /* fixed | static */,
   horizontalMenuToggle: 'hover' /* click | hover /*! Note: This is for Horizontal navigation menu only */,
@@ -74,6 +75,7 @@ const themeConfig: ThemeConfig = {
 
   // ** AppBar Configs
   appBar: 'fixed' /* fixed | static | hidden /*! Note: hidden value will only work for Vertical Layout */,
+  appBarBlur: true /* true | false */,
 
   // ** Other Configs
   responsiveFontSizes: true /* true | false */,

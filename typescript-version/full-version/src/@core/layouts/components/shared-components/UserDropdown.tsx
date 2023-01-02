@@ -10,9 +10,9 @@ import Menu from '@mui/material/Menu'
 import Badge from '@mui/material/Badge'
 import Avatar from '@mui/material/Avatar'
 import Divider from '@mui/material/Divider'
-import MenuItem from '@mui/material/MenuItem'
 import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
+import MenuItem, { MenuItemProps } from '@mui/material/MenuItem'
 
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
@@ -34,6 +34,12 @@ const BadgeContentSpan = styled('span')(({ theme }) => ({
   borderRadius: '50%',
   backgroundColor: theme.palette.success.main,
   boxShadow: `0 0 0 2px ${theme.palette.background.paper}`
+}))
+
+const MenuItemStyled = styled(MenuItem)<MenuItemProps>(({ theme }) => ({
+  '&:hover .MuiBox-root, &:hover .MuiBox-root svg': {
+    color: theme.palette.primary.main
+  }
 }))
 
 const UserDropdown = (props: Props) => {
@@ -62,16 +68,15 @@ const UserDropdown = (props: Props) => {
   }
 
   const styles = {
-    py: 2,
     px: 4,
+    py: 1.75,
     width: '100%',
     display: 'flex',
     alignItems: 'center',
     color: 'text.primary',
     textDecoration: 'none',
     '& svg': {
-      mr: 2,
-      fontSize: '1.375rem',
+      mr: 2.5,
       color: 'text.primary'
     }
   }
@@ -104,11 +109,11 @@ const UserDropdown = (props: Props) => {
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
         onClose={() => handleDropdownClose()}
-        sx={{ '& .MuiMenu-paper': { width: 230, mt: 4 } }}
+        sx={{ '& .MuiMenu-paper': { width: 230, mt: 4.5 } }}
         anchorOrigin={{ vertical: 'bottom', horizontal: direction === 'ltr' ? 'right' : 'left' }}
         transformOrigin={{ vertical: 'top', horizontal: direction === 'ltr' ? 'right' : 'left' }}
       >
-        <Box sx={{ pt: 2, pb: 3, px: 4 }}>
+        <Box sx={{ py: 1.75, px: 6 }}>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <Badge
               overlap='circular'
@@ -120,60 +125,55 @@ const UserDropdown = (props: Props) => {
             >
               <Avatar alt='John Doe' src='/images/avatars/1.png' sx={{ width: '2.5rem', height: '2.5rem' }} />
             </Badge>
-            <Box sx={{ display: 'flex', ml: 3, alignItems: 'flex-start', flexDirection: 'column' }}>
-              <Typography sx={{ fontWeight: 600 }}>John Doe</Typography>
-              <Typography variant='body2' sx={{ fontSize: '0.8rem', color: 'text.disabled' }}>
-                Admin
-              </Typography>
+            <Box sx={{ display: 'flex', ml: 2.5, alignItems: 'flex-start', flexDirection: 'column' }}>
+              <Typography sx={{ fontWeight: 500 }}>John Doe</Typography>
+              <Typography variant='body2'>Admin</Typography>
             </Box>
           </Box>
         </Box>
-        <Divider sx={{ mt: '0 !important' }} />
-        <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose('/pages/user-profile/profile')}>
+        <Divider sx={{ my: theme => `${theme.spacing(2)} !important` }} />
+        <MenuItemStyled sx={{ p: 0 }} onClick={() => handleDropdownClose('/pages/user-profile/profile')}>
           <Box sx={styles}>
-            <Icon icon='mdi:account-outline' />
-            Profile
+            <Icon icon='tabler:user-check' />
+            My Profile
           </Box>
-        </MenuItem>
-        <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose('/apps/email')}>
+        </MenuItemStyled>
+        <MenuItemStyled sx={{ p: 0 }} onClick={() => handleDropdownClose('/apps/email')}>
           <Box sx={styles}>
-            <Icon icon='mdi:email-outline' />
+            <Icon icon='tabler:mail' />
             Inbox
           </Box>
-        </MenuItem>
-        <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose('/apps/chat')}>
+        </MenuItemStyled>
+        <MenuItemStyled sx={{ p: 0 }} onClick={() => handleDropdownClose('/apps/chat')}>
           <Box sx={styles}>
-            <Icon icon='mdi:message-outline' />
+            <Icon icon='tabler:message-2' />
             Chat
           </Box>
-        </MenuItem>
-        <Divider />
-        <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose('/pages/account-settings/account')}>
+        </MenuItemStyled>
+        <Divider sx={{ my: theme => `${theme.spacing(2)} !important` }} />
+        <MenuItemStyled sx={{ p: 0 }} onClick={() => handleDropdownClose('/pages/account-settings/account')}>
           <Box sx={styles}>
-            <Icon icon='mdi:cog-outline' />
+            <Icon icon='tabler:settings' />
             Settings
           </Box>
-        </MenuItem>
-        <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose('/pages/pricing')}>
+        </MenuItemStyled>
+        <MenuItemStyled sx={{ p: 0 }} onClick={() => handleDropdownClose('/pages/pricing')}>
           <Box sx={styles}>
-            <Icon icon='mdi:currency-usd' />
+            <Icon icon='tabler:currency-dollar' />
             Pricing
           </Box>
-        </MenuItem>
-        <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose('/pages/faq')}>
+        </MenuItemStyled>
+        <MenuItemStyled sx={{ p: 0 }} onClick={() => handleDropdownClose('/pages/faq')}>
           <Box sx={styles}>
-            <Icon icon='mdi:help-circle-outline' />
+            <Icon icon='tabler:help' />
             FAQ
           </Box>
-        </MenuItem>
-        <Divider />
-        <MenuItem
-          onClick={handleLogout}
-          sx={{ py: 2, '& svg': { mr: 2, fontSize: '1.375rem', color: 'text.primary' } }}
-        >
-          <Icon icon='mdi:logout-variant' />
+        </MenuItemStyled>
+        <Divider sx={{ my: theme => `${theme.spacing(2)} !important` }} />
+        <MenuItemStyled onClick={handleLogout} sx={{ py: 2, '& svg': { mr: 2, fontSize: '1.375rem' } }}>
+          <Icon icon='tabler:logout' />
           Logout
-        </MenuItem>
+        </MenuItemStyled>
       </Menu>
     </Fragment>
   )

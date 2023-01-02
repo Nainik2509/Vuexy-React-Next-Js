@@ -11,6 +11,7 @@ interface Props {
   navVisible: boolean
   collapsedNavWidth: number
   hidden: LayoutProps['hidden']
+  navigationBorderWidth: number
   settings: LayoutProps['settings']
   children: LayoutProps['children']
   setNavHover: (values: boolean) => void
@@ -48,28 +49,26 @@ const Drawer = (props: Props) => {
     setNavHover,
     navMenuProps,
     setNavVisible,
-    collapsedNavWidth
+    collapsedNavWidth,
+    navigationBorderWidth
   } = props
 
   // ** Hook
   const theme = useTheme()
 
   // ** Vars
-  const { mode, navCollapsed } = settings
+  const { mode, skin, navCollapsed } = settings
 
   let flag = true
 
   const drawerColors = () => {
     if (mode === 'semi-dark') {
       return {
-        backgroundColor: 'customColors.darkBg',
-        '& .MuiTypography-root, & svg': {
-          color: `rgba(${theme.palette.customColors.dark}, 0.87)`
-        }
+        backgroundColor: 'customColors.darkPaperBg'
       }
     } else
       return {
-        backgroundColor: 'background.default'
+        backgroundColor: 'background.paper'
       }
   }
 
@@ -122,7 +121,9 @@ const Drawer = (props: Props) => {
       PaperProps={{
         sx: {
           ...drawerColors(),
+          ...(!hidden && skin !== 'bordered' && { boxShadow: 6 }),
           width: navCollapsed && !navHover ? collapsedNavWidth : navWidth,
+          borderRight: navigationBorderWidth === 0 ? 0 : `${navigationBorderWidth}px solid ${theme.palette.divider}`,
           ...userNavMenuPaperStyle
         },
         ...navMenuProps?.PaperProps

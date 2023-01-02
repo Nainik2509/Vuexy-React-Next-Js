@@ -22,7 +22,7 @@ const TabDatabase = () => {
 
   return (
     <div>
-      <TextField fullWidth sx={{ mb: 4 }} label='Database Name' placeholder='master_database' />
+      <TextField fullWidth sx={{ mb: 4 }} label='Database Name' placeholder='vuexy_database' />
       <Typography variant='h6' sx={{ mb: 4 }}>
         Select Database Engine
       </Typography>

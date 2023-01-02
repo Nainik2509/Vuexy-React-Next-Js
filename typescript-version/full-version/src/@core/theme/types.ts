@@ -5,10 +5,10 @@ declare module '@mui/material/styles' {
       main: string
       light: string
       bodyBg: string
-      darkBg: string
-      lightBg: string
       trackBg: string
       avatarBg: string
+      darkPaperBg: string
+      lightPaperBg: string
       tableHeaderBg: string
     }
   }
@@ -18,10 +18,10 @@ declare module '@mui/material/styles' {
       main?: string
       light?: string
       bodyBg?: string
-      darkBg?: string
-      lightBg?: string
       trackBg?: string
       avatarBg?: string
+      darkPaperBg?: string
+      lightPaperBg?: string
       tableHeaderBg?: string
     }
   }

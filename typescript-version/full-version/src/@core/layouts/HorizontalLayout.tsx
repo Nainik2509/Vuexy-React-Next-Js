@@ -21,6 +21,9 @@ import Navigation from './components/horizontal/navigation'
 import ScrollToTop from 'src/@core/components/scroll-to-top'
 import AppBarContent from './components/horizontal/app-bar-content'
 
+// ** Util Import
+import { hexToRGBA } from '../utils/hex-to-rgba'
+
 const HorizontalLayoutWrapper = styled('div')({
   height: '100%',
   display: 'flex',
@@ -73,7 +76,7 @@ const HorizontalLayout = (props: LayoutProps) => {
   } = props
 
   // ** Vars
-  const { skin, appBar, navHidden, contentWidth } = settings
+  const { skin, appBar, navHidden, appBarBlur, contentWidth } = settings
   const appBarProps = horizontalLayoutProps?.appBar?.componentProps
   const userNavMenuContent = horizontalLayoutProps?.navMenu?.content
 
@@ -90,16 +93,17 @@ const HorizontalLayout = (props: LayoutProps) => {
         {/* Navbar (or AppBar) and Navigation Menu Wrapper */}
         <AppBar
           color='default'
-          elevation={skin === 'bordered' ? 0 : 3}
+          elevation={skin === 'bordered' ? 0 : 4}
           className='layout-navbar-and-nav-container'
           position={appBar === 'fixed' ? 'sticky' : 'static'}
           sx={{
             alignItems: 'center',
             color: 'text.primary',
             justifyContent: 'center',
-            backgroundColor: 'background.paper',
             ...(appBar === 'static' && { zIndex: 13 }),
             transition: 'border-bottom 0.2s ease-in-out',
+            ...(appBarBlur && { backdropFilter: 'blur(6px)' }),
+            backgroundColor: theme => hexToRGBA(theme.palette.background.paper, appBarBlur ? 0.95 : 1),
             ...(skin === 'bordered' && { borderBottom: theme => `1px solid ${theme.palette.divider}` }),
             ...userAppBarStyle
           }}
@@ -140,7 +144,7 @@ const HorizontalLayout = (props: LayoutProps) => {
                   mx: 'auto',
                   ...(contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } }),
                   minHeight: theme =>
-                    `${(theme.mixins.toolbar.minHeight as number) - (skin === 'bordered' ? 1 : 0)}px !important`
+                    `${(theme.mixins.toolbar.minHeight as number) - 4 - (skin === 'bordered' ? 1 : 0)}px !important`
                 }}
               >
                 {(userNavMenuContent && userNavMenuContent(props)) || (
@@ -179,7 +183,7 @@ const HorizontalLayout = (props: LayoutProps) => {
         ) : (
           <ScrollToTop className='mui-fixed'>
             <Fab color='primary' size='small' aria-label='scroll back to top'>
-              <Icon icon='mdi:arrow-up' />
+              <Icon icon='tabler:arrow-up' />
             </Fab>
           </ScrollToTop>
         )}

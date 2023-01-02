@@ -61,13 +61,21 @@ const Menu = styled(MuiMenu)<MenuProps>(({ theme }) => ({
   '& .MuiMenu-paper': {
     width: 380,
     overflow: 'hidden',
-    marginTop: theme.spacing(4),
+    marginTop: theme.spacing(4.5),
     [theme.breakpoints.down('sm')]: {
       width: '100%'
     }
   },
   '& .MuiMenu-list': {
-    padding: 0
+    padding: 0,
+    '& .MuiMenuItem-root': {
+      margin: 0,
+      borderRadius: 0,
+      padding: theme.spacing(4, 6),
+      '&:hover': {
+        backgroundColor: theme.palette.action.hover
+      }
+    }
   }
 }))
 
@@ -94,10 +102,9 @@ const Avatar = styled(CustomAvatar)<CustomAvatarProps>({
 
 // ** Styled component for the title in MenuItems
 const MenuItemTitle = styled(Typography)<TypographyProps>(({ theme }) => ({
-  fontWeight: 600,
+  fontWeight: 500,
   flex: '1 1 100%',
   overflow: 'hidden',
-  fontSize: '0.875rem',
   whiteSpace: 'nowrap',
   textOverflow: 'ellipsis',
   marginBottom: theme.spacing(0.75)
@@ -171,7 +178,7 @@ const NotificationDropdown = (props: Props) => {
             '& .MuiBadge-badge': { top: 4, right: 4, boxShadow: theme => `0 0 0 2px ${theme.palette.background.paper}` }
           }}
         >
-          <Icon icon='mdi:bell-outline' />
+          <Icon fontSize='1.5rem' icon='tabler:bell' />
         </Badge>
       </IconButton>
       <Menu
@@ -199,14 +206,14 @@ const NotificationDropdown = (props: Props) => {
         </MenuItem>
         <ScrollWrapper hidden={hidden}>
           {notifications.map((notification: NotificationsType, index: number) => (
-            <MenuItem key={index} onClick={handleDropdownClose}>
+            <MenuItem key={index} disableRipple disableTouchRipple onClick={handleDropdownClose}>
               <Box sx={{ width: '100%', display: 'flex', alignItems: 'center' }}>
                 <RenderAvatar notification={notification} />
-                <Box sx={{ mx: 4, flex: '1 1', display: 'flex', overflow: 'hidden', flexDirection: 'column' }}>
+                <Box sx={{ mr: 4, ml: 2.5, flex: '1 1', display: 'flex', overflow: 'hidden', flexDirection: 'column' }}>
                   <MenuItemTitle>{notification.title}</MenuItemTitle>
                   <MenuItemSubtitle variant='body2'>{notification.subtitle}</MenuItemSubtitle>
                 </Box>
-                <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+                <Typography variant='body2' sx={{ color: 'text.disabled' }}>
                   {notification.meta}
                 </Typography>
               </Box>
@@ -217,7 +224,6 @@ const NotificationDropdown = (props: Props) => {
           disableRipple
           disableTouchRipple
           sx={{
-            py: 3.5,
             borderBottom: 0,
             cursor: 'default',
             userSelect: 'auto',

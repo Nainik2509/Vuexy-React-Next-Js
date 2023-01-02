@@ -16,6 +16,7 @@ export type Settings = {
   appBar?: AppBar
   footer?: Footer
   navHidden?: boolean // navigation menu
+  appBarBlur: boolean
   direction: Direction
   navCollapsed: boolean
   themeColor: ThemeColor
@@ -32,6 +33,7 @@ export type PageSpecificSettings = {
   appBar?: AppBar
   footer?: Footer
   navHidden?: boolean // navigation menu
+  appBarBlur?: boolean
   direction?: Direction
   navCollapsed?: boolean
   themeColor?: ThemeColor
@@ -60,6 +62,7 @@ const initialSettings: Settings = {
   lastLayout: themeConfig.layout,
   direction: themeConfig.direction,
   navHidden: themeConfig.navHidden,
+  appBarBlur: themeConfig.appBarBlur,
   navCollapsed: themeConfig.navCollapsed,
   contentWidth: themeConfig.contentWidth,
   toastPosition: themeConfig.toastPosition,

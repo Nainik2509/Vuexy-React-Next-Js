@@ -86,6 +86,7 @@ const Customizer = () => {
     layout,
     navHidden,
     direction,
+    appBarBlur,
     themeColor,
     navCollapsed,
     contentWidth,
@@ -271,7 +272,7 @@ const Customizer = () => {
             </Box>
 
             {/* Footer */}
-            <div>
+            <Box sx={{ mb: 5 }}>
               <Typography>Footer Type</Typography>
               <RadioGroup
                 row
@@ -283,7 +284,17 @@ const Customizer = () => {
                 <FormControlLabel value='static' label='Static' control={<Radio />} />
                 <FormControlLabel value='hidden' label='Hidden' control={<Radio />} />
               </RadioGroup>
-            </div>
+            </Box>
+
+            {/* AppBar Blur */}
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <Typography>AppBar Blur</Typography>
+              <Switch
+                name='appBarBlur'
+                checked={appBarBlur}
+                onChange={e => handleChange('appBarBlur', e.target.checked)}
+              />
+            </Box>
           </CustomizerSpacing>
 
           <Divider sx={{ m: '0 !important' }} />

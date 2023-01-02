@@ -51,8 +51,8 @@ const VerticalLayout = (props: LayoutProps) => {
   const { hidden, settings, children, scrollToTop, footerProps, contentHeightFixed, verticalLayoutProps } = props
 
   // ** Vars
-  const navigationBorderWidth = 1
-  const { navHidden, contentWidth } = settings
+  const { skin, navHidden, contentWidth } = settings
+  const navigationBorderWidth = skin === 'bordered' ? 1 : 0
   const { navigationSize, disableCustomizer, collapsedNavigationSize } = themeConfig
   const navWidth = navigationSize
   const collapsedNavWidth = collapsedNavigationSize
@@ -130,7 +130,7 @@ const VerticalLayout = (props: LayoutProps) => {
       ) : (
         <ScrollToTop className='mui-fixed'>
           <Fab color='primary' size='small' aria-label='scroll back to top'>
-            <Icon icon='mdi:arrow-up' />
+            <Icon icon='tabler:arrow-up' />
           </Fab>
         </ScrollToTop>
       )}

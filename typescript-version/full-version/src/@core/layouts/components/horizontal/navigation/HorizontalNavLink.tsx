@@ -43,7 +43,7 @@ const ListItem = styled(MuiListItem)<
   ListItemProps & { component?: ElementType; href: string; target?: '_blank' | undefined }
 >(({ theme }) => ({
   width: 'auto',
-  color: theme.palette.text.primary,
+  borderRadius: theme.shape.borderRadius,
   '&:hover': {
     backgroundColor: theme.palette.action.hover
   },
@@ -52,6 +52,9 @@ const ListItem = styled(MuiListItem)<
   },
   '&.active .MuiTypography-root, &.active .MuiListItemIcon-root': {
     color: theme.palette.primary.main
+  },
+  '&.active .MuiTypography-root': {
+    fontWeight: 500
   },
   '&:focus-visible': {
     outline: 0,
@@ -81,7 +84,7 @@ const HorizontalNavLink = (props: Props) => {
 
   return (
     <CanViewNavLink navLink={item}>
-      <Wrapper {...(!hasParent ? { component: 'div', sx: { py: settings.skin === 'bordered' ? 2.875 : 3 } } : {})}>
+      <Wrapper {...(!hasParent ? { component: 'div', sx: { py: settings.skin === 'bordered' ? 2.375 : 2.5 } } : {})}>
         <ListItem
           component={Link}
           disabled={item.disabled}
@@ -99,16 +102,28 @@ const HorizontalNavLink = (props: Props) => {
             ...(item.disabled ? { pointerEvents: 'none' } : { cursor: 'pointer' }),
             ...(!hasParent
               ? {
-                  borderRadius: 1,
                   '&.active, &.active:hover': {
-                    backgroundColor: theme => theme.palette.primary.main,
-                    '&:focus-visible': { backgroundColor: 'primary.dark' },
+                    boxShadow: theme => `0px 2px 6px ${hexToRGBA(theme.palette.primary.main, 0.48)}`,
+                    background: theme =>
+                      `linear-gradient(72.47deg, ${theme.palette.primary.main} 22.16%, ${hexToRGBA(
+                        theme.palette.primary.main,
+                        0.7
+                      )} 76.47%)`,
+                    '&:focus-visible': {
+                      background: theme =>
+                        `linear-gradient(72.47deg, ${theme.palette.primary.dark} 22.16%, ${hexToRGBA(
+                          theme.palette.primary.dark,
+                          0.7
+                        )} 76.47%)`
+                    },
                     '& .MuiTypography-root, & .MuiListItemIcon-root': {
                       color: 'common.white'
                     }
                   }
                 }
               : {
+                  mx: 2,
+                  width: theme => `calc(100% - ${theme.spacing(2 * 2)})`,
                   '&.active, &.active:hover': {
                     '&:focus-visible': {
                       backgroundColor: theme => hexToRGBA(theme.palette.primary.main, 0.24)
@@ -125,10 +140,10 @@ const HorizontalNavLink = (props: Props) => {
                 ...(menuTextTruncate && { overflow: 'hidden' })
               }}
             >
-              <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
-                <UserIcon icon={icon} fontSize={icon === navSubItemIcon ? '1rem' : '1.125rem'} />
+              <ListItemIcon sx={{ mr: 2, color: 'text.secondary' }}>
+                <UserIcon icon={icon} fontSize={icon === navSubItemIcon ? '0.625rem' : '1.375rem'} />
               </ListItemIcon>
-              <Typography {...(menuTextTruncate && { noWrap: true })}>
+              <Typography {...(menuTextTruncate && { noWrap: true })} sx={{ color: 'text.secondary' }}>
                 <Translations text={item.title} />
               </Typography>
             </Box>

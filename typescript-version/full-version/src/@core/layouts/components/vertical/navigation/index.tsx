@@ -60,7 +60,14 @@ const StyledBoxForShadow = styled(Box)<BoxProps>(({ theme }) => ({
 
 const Navigation = (props: Props) => {
   // ** Props
-  const { hidden, settings, afterNavMenuContent, beforeNavMenuContent, navMenuContent: userNavMenuContent } = props
+  const {
+    hidden,
+    settings,
+    afterNavMenuContent,
+    beforeNavMenuContent,
+    navigationBorderWidth,
+    navMenuContent: userNavMenuContent
+  } = props
 
   // ** States
   const [navHover, setNavHover] = useState<boolean>(false)
@@ -110,20 +117,20 @@ const Navigation = (props: Props) => {
   }
 
   const shadowBgColor = () => {
-    if (mode === 'light') {
-      return `linear-gradient(${theme.palette.customColors.lightBg} 5%,${hexToRGBA(
-        theme.palette.customColors.lightBg,
+    if (mode === 'semi-dark') {
+      return `linear-gradient(${theme.palette.customColors.darkPaperBg} 5%,${hexToRGBA(
+        theme.palette.customColors.darkPaperBg,
         0.85
-      )} 30%,${hexToRGBA(theme.palette.customColors.lightBg, 0.5)} 65%,${hexToRGBA(
-        theme.palette.customColors.lightBg,
+      )} 30%,${hexToRGBA(theme.palette.customColors.darkPaperBg, 0.5)} 65%,${hexToRGBA(
+        theme.palette.customColors.darkPaperBg,
         0.3
       )} 75%,transparent)`
     } else {
-      return `linear-gradient(${theme.palette.customColors.darkBg} 5%,${hexToRGBA(
-        theme.palette.customColors.darkBg,
+      return `linear-gradient(${theme.palette.background.paper} 5%,${hexToRGBA(
+        theme.palette.background.paper,
         0.85
-      )} 30%,${hexToRGBA(theme.palette.customColors.darkBg, 0.5)} 65%,${hexToRGBA(
-        theme.palette.customColors.darkBg,
+      )} 30%,${hexToRGBA(theme.palette.background.paper, 0.5)} 65%,${hexToRGBA(
+        theme.palette.background.paper,
         0.3
       )} 75%,transparent)`
     }
@@ -132,7 +139,7 @@ const Navigation = (props: Props) => {
   const ScrollWrapper = hidden ? Box : PerfectScrollbar
 
   return (
-    <Drawer {...props} navHover={navHover} setNavHover={setNavHover}>
+    <Drawer {...props} navHover={navHover} setNavHover={setNavHover} navigationBorderWidth={navigationBorderWidth}>
       <VerticalNavHeader {...props} navHover={navHover} />
       {beforeNavMenuContent && beforeVerticalNavMenuContentPosition === 'fixed' ? beforeNavMenuContent(props) : null}
       {(beforeVerticalNavMenuContentPosition === 'static' || !beforeNavMenuContent) && (

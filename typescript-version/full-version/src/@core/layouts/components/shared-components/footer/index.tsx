@@ -19,7 +19,7 @@ const Footer = (props: Props) => {
   const { settings, footerStyles, footerContent: userFooterContent } = props
 
   // ** Vars
-  const { skin, footer, contentWidth } = settings
+  const { skin, layout, footer, contentWidth } = settings
 
   if (footer === 'hidden') {
     return null
@@ -31,17 +31,20 @@ const Footer = (props: Props) => {
       className='layout-footer'
       sx={{
         zIndex: 10,
-        py: theme => theme.spacing(footer === 'fixed' && skin === 'bordered' ? 3.875 : 4),
-        ...(footer === 'static' && {
-          boxShadow: 'none',
-          backgroundColor: 'transparent'
-        }),
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         ...(footer === 'fixed' && {
           bottom: 0,
           position: 'sticky',
-          backgroundColor: 'background.paper',
-          boxShadow: skin === 'bordered' ? 0 : 4,
-          ...(skin === 'bordered' && { borderTop: theme => `1px solid ${theme.palette.divider}` })
+          ...(layout === 'vertical'
+            ? { px: [4, 6] }
+            : {
+                backgroundColor: theme => theme.palette.background.paper,
+                ...(skin === 'bordered'
+                  ? { borderTop: theme => `1px solid ${theme.palette.divider}` }
+                  : { boxShadow: 16 })
+              })
         }),
         ...footerStyles
       }}
@@ -51,7 +54,24 @@ const Footer = (props: Props) => {
         sx={{
           px: 6,
           width: '100%',
-          ...(contentWidth === 'boxed' && { mx: 'auto', '@media (min-width:1440px)': { maxWidth: 1440 } })
+          py: theme => theme.spacing(footer === 'fixed' && skin === 'bordered' ? 2.875 : 3),
+          ...(contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } }),
+          ...(layout === 'vertical' && {
+            borderTopLeftRadius: theme => theme.shape.borderRadius,
+            borderTopRightRadius: theme => theme.shape.borderRadius,
+            ...(footer === 'fixed' && { backgroundColor: theme => theme.palette.background.paper })
+          }),
+          ...(footer === 'fixed' && {
+            ...(contentWidth === 'boxed' &&
+              layout === 'vertical' && {
+                '@media (min-width:1440px)': { maxWidth: theme => `calc(1440px - ${theme.spacing(6)} * 2)` }
+              }),
+            ...(layout === 'vertical' && {
+              ...(skin === 'bordered'
+                ? { border: theme => `1px solid ${theme.palette.divider}`, borderBottomWidth: 0 }
+                : { boxShadow: 16 })
+            })
+          })
         }}
       >
         {userFooterContent ? userFooterContent(props) : <FooterContent />}

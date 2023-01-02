@@ -7,13 +7,14 @@ const DefaultPalette = (mode: PaletteMode, skin: Skin) => {
   const whiteColor = '#FFF'
   const lightColor = '51, 48, 60'
   const darkColor = '228, 230, 244'
+  const darkPaperBgColor = '#2F3349'
   const mainColor = mode === 'light' ? lightColor : darkColor
 
   const defaultBgColor = () => {
     if (skin === 'bordered' && mode === 'light') {
       return whiteColor
     } else if (skin === 'bordered' && mode === 'dark') {
-      return '#2F3349'
+      return darkPaperBgColor
     } else if (mode === 'light') {
       return '#F8F7FA'
     } else return '#25293C'
@@ -24,11 +25,11 @@ const DefaultPalette = (mode: PaletteMode, skin: Skin) => {
       dark: darkColor,
       main: mainColor,
       light: lightColor,
+      lightPaperBg: whiteColor,
+      darkPaperBg: darkPaperBgColor,
       bodyBg: mode === 'light' ? '#F8F7FA' : '#25293C', // Same as palette.background.default but doesn't consider bordered skin
       trackBg: mode === 'light' ? '#F1F0F2' : '#3B405B',
       avatarBg: mode === 'light' ? '#F6F6F7' : '#4A5072',
-      darkBg: skin === 'bordered' ? '#2F3349' : '#25293C',
-      lightBg: skin === 'bordered' ? whiteColor : '#F8F7FA',
       tableHeaderBg: mode === 'light' ? '#F6F6F7' : '#4A5072'
     },
     mode: mode,
@@ -95,7 +96,7 @@ const DefaultPalette = (mode: PaletteMode, skin: Skin) => {
     },
     divider: `rgba(${mainColor}, 0.12)`,
     background: {
-      paper: mode === 'light' ? whiteColor : '#2F3349',
+      paper: mode === 'light' ? whiteColor : darkPaperBgColor,
       default: defaultBgColor()
     },
     action: {

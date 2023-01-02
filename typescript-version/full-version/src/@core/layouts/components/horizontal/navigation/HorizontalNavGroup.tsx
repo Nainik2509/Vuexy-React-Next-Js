@@ -49,6 +49,7 @@ interface Props {
 // ** Styled Components
 const ListItem = styled(MuiListItem)<ListItemProps>(({ theme }) => ({
   cursor: 'pointer',
+  borderRadius: theme.shape.borderRadius,
   '&:hover': {
     background: theme.palette.action.hover
   }
@@ -60,6 +61,9 @@ const NavigationMenu = styled(Paper)(({ theme }) => ({
   maxHeight: 'calc(100vh - 13rem)',
   backgroundColor: theme.palette.background.paper,
   ...(themeConfig.menuTextTruncate ? { width: 250 } : { minWidth: 250 }),
+  '& > :not(:last-child)': {
+    marginBottom: theme.spacing(1)
+  },
 
   '&::-webkit-scrollbar': {
     width: 6
@@ -77,7 +81,6 @@ const NavigationMenu = styled(Paper)(({ theme }) => ({
     paddingBottom: 0
   },
   '& .menu-group.Mui-selected': {
-    borderRadius: 0,
     backgroundColor: theme.palette.action.hover
   }
 }))
@@ -110,7 +113,7 @@ const HorizontalNavGroup = (props: Props) => {
         enabled: true,
         name: 'offset',
         options: {
-          offset: hasParent ? [-8, 15] : [popperOffsetHorizontal, 5]
+          offset: hasParent ? [-8, 19] : [popperOffsetHorizontal, -2]
         }
       },
       {
@@ -148,7 +151,7 @@ const HorizontalNavGroup = (props: Props) => {
   }, [router.asPath])
 
   const icon = item.icon ? item.icon : navSubItemIcon
-  const toggleIcon = direction === 'rtl' ? 'mdi:chevron-left' : 'mdi:chevron-right'
+  const toggleIcon = direction === 'rtl' ? 'tabler:chevron-left' : 'tabler:chevron-right'
 
   const WrapperCondition = horizontalMenuToggle === 'click'
   const MainWrapper = WrapperCondition ? ClickAwayListener : 'div'
@@ -180,7 +183,7 @@ const HorizontalNavGroup = (props: Props) => {
       {/* @ts-ignore */}
       <MainWrapper {...(WrapperCondition ? { onClickAway: handleGroupClose } : { onMouseLeave: handleGroupClose })}>
         <ChildWrapper>
-          <List component='div' sx={{ py: skin === 'bordered' ? 2.875 : 3 }}>
+          <List component='div' sx={{ py: skin === 'bordered' ? 2.375 : 2.5 }}>
             <ListItem
               aria-haspopup='true'
               {...(WrapperCondition ? {} : { onMouseEnter: handleGroupOpen })}
@@ -190,15 +193,18 @@ const HorizontalNavGroup = (props: Props) => {
                 ...(menuOpen ? { backgroundColor: 'action.hover' } : {}),
                 ...(!hasParent
                   ? {
-                      borderRadius: 1,
                       '&.Mui-selected': {
-                        backgroundColor: 'primary.main',
+                        boxShadow: `0px 2px 6px ${hexToRGBA(theme.palette.primary.main, 0.48)}`,
+                        background: `linear-gradient(72.47deg, ${theme.palette.primary.main} 22.16%, ${hexToRGBA(
+                          theme.palette.primary.main,
+                          0.7
+                        )} 76.47%)`,
                         '& .MuiTypography-root, & .MuiListItemIcon-root, & svg': {
                           color: 'common.white'
                         }
                       }
                     }
-                  : {})
+                  : { mx: 2, width: `calc(100% - ${theme.spacing(2 * 2)})` })
               }}
             >
               <Box
@@ -219,14 +225,24 @@ const HorizontalNavGroup = (props: Props) => {
                     ...(menuTextTruncate && { overflow: 'hidden' })
                   }}
                 >
-                  <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
-                    <UserIcon icon={icon} fontSize={icon === navSubItemIcon ? '1rem' : '1.125rem'} />
+                  <ListItemIcon sx={{ mr: 2, color: menuOpen ? 'text.primary' : 'text.secondary' }}>
+                    <UserIcon icon={icon} fontSize={icon === navSubItemIcon ? '0.625rem' : '1.375rem'} />
                   </ListItemIcon>
-                  <Typography {...(menuTextTruncate && { noWrap: true })}>
+                  <Typography
+                    {...(menuTextTruncate && { noWrap: true })}
+                    sx={{ color: menuOpen ? 'text.primary' : 'text.secondary' }}
+                  >
                     <Translations text={item.title} />
                   </Typography>
                 </Box>
-                <Box sx={{ ml: 1.6, display: 'flex', alignItems: 'center', color: 'text.secondary' }}>
+                <Box
+                  sx={{
+                    ml: 1.6,
+                    display: 'flex',
+                    alignItems: 'center',
+                    color: menuOpen ? 'text.secondary' : 'text.disabled'
+                  }}
+                >
                   {item.badgeContent ? (
                     <Chip
                       label={item.badgeContent}
@@ -239,7 +255,7 @@ const HorizontalNavGroup = (props: Props) => {
                       }}
                     />
                   ) : null}
-                  <Icon icon={hasParent ? toggleIcon : 'mdi:chevron-down'} fontSize='1.125rem' />
+                  <Icon icon={hasParent ? toggleIcon : 'tabler:chevron-down'} fontSize='1.125rem' />
                 </Box>
               </Box>
             </ListItem>

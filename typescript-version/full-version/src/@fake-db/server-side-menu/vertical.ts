@@ -7,7 +7,7 @@ import { VerticalNavItemsType } from 'src/@core/layouts/types'
 const navigation: VerticalNavItemsType = [
   {
     title: 'Dashboards',
-    icon: 'mdi:home-outline',
+    icon: 'tabler:smart-home',
     badgeContent: 'new',
     badgeColor: 'error',
     children: [
@@ -30,22 +30,22 @@ const navigation: VerticalNavItemsType = [
   },
   {
     title: 'Email',
-    icon: 'mdi:email-outline',
+    icon: 'tabler:mail',
     path: '/apps/email'
   },
   {
     title: 'Chat',
-    icon: 'mdi:message-outline',
+    icon: 'tabler:messages',
     path: '/apps/chat'
   },
   {
     title: 'Calendar',
-    icon: 'mdi:calendar-blank-outline',
+    icon: 'tabler:calendar',
     path: '/apps/calendar'
   },
   {
     title: 'Invoice',
-    icon: 'mdi:file-document-outline',
+    icon: 'tabler:file-dollar',
     children: [
       {
         title: 'List',
@@ -67,7 +67,7 @@ const navigation: VerticalNavItemsType = [
   },
   {
     title: 'User',
-    icon: 'mdi:account-outline',
+    icon: 'tabler:user',
     children: [
       {
         title: 'List',
@@ -102,7 +102,7 @@ const navigation: VerticalNavItemsType = [
   },
   {
     title: 'Roles & Permissions',
-    icon: 'mdi:shield-outline',
+    icon: 'tabler:settings',
     children: [
       {
         title: 'Roles',
@@ -116,7 +116,7 @@ const navigation: VerticalNavItemsType = [
   },
   {
     title: 'Pages',
-    icon: 'mdi:file-document-outline',
+    icon: 'tabler:file',
     children: [
       {
         title: 'User Profile',
@@ -211,7 +211,7 @@ const navigation: VerticalNavItemsType = [
   },
   {
     title: 'Auth Pages',
-    icon: 'mdi:lock-outline',
+    icon: 'tabler:lock',
     children: [
       {
         title: 'Login',
@@ -317,7 +317,7 @@ const navigation: VerticalNavItemsType = [
   },
   {
     title: 'Wizard Examples',
-    icon: 'mdi:transit-connection-horizontal',
+    icon: 'tabler:forms',
     children: [
       {
         title: 'Checkout',
@@ -334,7 +334,7 @@ const navigation: VerticalNavItemsType = [
     ]
   },
   {
-    icon: 'mdi:vector-arrange-below',
+    icon: 'tabler:square',
     title: 'Dialog Examples',
     path: '/pages/dialog-examples'
   },
@@ -343,22 +343,22 @@ const navigation: VerticalNavItemsType = [
   },
   {
     title: 'Typography',
-    icon: 'mdi:format-letter-case',
+    icon: 'tabler:typography',
     path: '/ui/typography'
   },
   {
     title: 'Icons',
     path: '/ui/icons',
-    icon: 'mdi:google-circles-extended'
+    icon: 'tabler:brand-tabler'
   },
   {
     title: 'Icons Test',
     path: '/ui/icons-test',
-    icon: 'mdi:google-circles-extended'
+    icon: 'tabler:brand-tabler'
   },
   {
     title: 'Cards',
-    icon: 'mdi:credit-card-outline',
+    icon: 'tabler:id',
     children: [
       {
         title: 'Basic',
@@ -385,7 +385,7 @@ const navigation: VerticalNavItemsType = [
   {
     badgeContent: '18',
     title: 'Components',
-    icon: 'mdi:archive-outline',
+    icon: 'tabler:archive',
     badgeColor: 'primary',
     children: [
       {
@@ -475,7 +475,7 @@ const navigation: VerticalNavItemsType = [
   },
   {
     title: 'Form Elements',
-    icon: 'mdi:form-select',
+    icon: 'tabler:toggle-left',
     children: [
       {
         title: 'Text Field',
@@ -536,28 +536,28 @@ const navigation: VerticalNavItemsType = [
     ]
   },
   {
-    icon: 'mdi:cube-outline',
+    icon: 'tabler:layout-navbar',
     title: 'Form Layouts',
     path: '/forms/form-layouts'
   },
   {
     title: 'Form Validation',
     path: '/forms/form-validation',
-    icon: 'mdi:checkbox-marked-circle-outline'
+    icon: 'tabler:checkbox'
   },
   {
     title: 'Form Wizard',
     path: '/forms/form-wizard',
-    icon: 'mdi:transit-connection-horizontal'
+    icon: 'tabler:text-wrap-disabled'
   },
   {
     title: 'Table',
-    icon: 'mdi:grid-large',
+    icon: 'tabler:table',
     path: '/tables/mui'
   },
   {
     title: 'Mui DataGrid',
-    icon: 'mdi:grid',
+    icon: 'tabler:layout-grid',
     path: '/tables/data-grid'
   },
   {
@@ -565,7 +565,7 @@ const navigation: VerticalNavItemsType = [
   },
   {
     title: 'Charts',
-    icon: 'mdi:chart-donut',
+    icon: 'tabler:chart-pie',
     children: [
       {
         title: 'Apex',
@@ -585,12 +585,12 @@ const navigation: VerticalNavItemsType = [
     path: '/acl',
     action: 'read',
     subject: 'acl-page',
-    icon: 'mdi:shield-outline',
+    icon: 'tabler:shield',
     title: 'Access Control'
   },
   {
     title: 'Others',
-    icon: 'mdi:dots-horizontal',
+    icon: 'tabler:dots',
     children: [
       {
         title: 'Menu Levels',
@@ -619,13 +619,13 @@ const navigation: VerticalNavItemsType = [
         title: 'Raise Support',
         externalLink: true,
         openInNewTab: true,
-        path: 'https://themeselection.com/support'
+        path: 'https://pixinvent.ticksy.com/'
       },
       {
         title: 'Documentation',
         externalLink: true,
         openInNewTab: true,
-        path: 'https://themeselection.com/docs/'
+        path: 'https://pixinvent.com/demo/vuexy-react-admin-dashboard-template/documentation/'
       }
     ]
   }

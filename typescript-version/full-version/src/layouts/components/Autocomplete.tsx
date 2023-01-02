@@ -61,24 +61,24 @@ const defaultSuggestionsData: DefaultSuggestionsType[] = [
     category: 'Popular Searches',
     suggestions: [
       {
-        icon: 'mdi:poll',
+        icon: 'tabler:chart-pie-2',
         suggestion: 'Analytics',
         link: '/dashboards/analytics'
       },
       {
-        icon: 'mdi:chart-bubble',
+        icon: 'tabler:device-analytics',
+        suggestion: 'CRM',
+        link: '/dashboards/crm'
+      },
+      {
+        icon: 'tabler:shopping-cart',
         suggestion: 'eCommerce',
         link: '/dashboards/ecommerce'
       },
       {
-        icon: 'mdi:account-group',
+        icon: 'tabler:users',
         suggestion: 'User List',
         link: '/apps/user/list'
-      },
-      {
-        icon: 'mdi:message-outline',
-        suggestion: 'Chat',
-        link: '/apps/chat'
       }
     ]
   },
@@ -86,22 +86,22 @@ const defaultSuggestionsData: DefaultSuggestionsType[] = [
     category: 'Apps & Pages',
     suggestions: [
       {
-        icon: 'mdi:calendar-blank',
+        icon: 'tabler:calendar',
         suggestion: 'Calendar',
         link: '/apps/calendar'
       },
       {
-        icon: 'mdi:format-list-numbered',
+        icon: 'tabler:list-numbers',
         suggestion: 'Invoice List',
         link: '/apps/invoice/list'
       },
       {
-        icon: 'mdi:currency-usd',
+        icon: 'tabler:currency-dollar',
         suggestion: 'Pricing',
         link: '/pages/pricing'
       },
       {
-        icon: 'mdi:account-cog-outline',
+        icon: 'tabler:settings',
         suggestion: 'Account Settings',
         link: '/pages/account-settings/account'
       }
@@ -111,22 +111,22 @@ const defaultSuggestionsData: DefaultSuggestionsType[] = [
     category: 'User Interface',
     suggestions: [
       {
-        icon: 'mdi:format-text-variant-outline',
+        icon: 'tabler:typography',
         suggestion: 'Typography',
         link: '/ui/typography'
       },
       {
-        icon: 'mdi:tab',
+        icon: 'tabler:browser',
         suggestion: 'Tabs',
         link: '/components/tabs'
       },
       {
-        icon: 'mdi:gesture-tap-button',
+        icon: 'tabler:hand-click',
         suggestion: 'Buttons',
         link: '/components/buttons'
       },
       {
-        icon: 'mdi:card-bulleted-settings-outline',
+        icon: 'tabler:id',
         suggestion: 'Advanced Cards',
         link: '/ui/cards/advanced'
       }
@@ -136,22 +136,22 @@ const defaultSuggestionsData: DefaultSuggestionsType[] = [
     category: 'Forms & Tables',
     suggestions: [
       {
-        icon: 'mdi:format-list-checkbox',
+        icon: 'tabler:list-check',
         suggestion: 'Select',
         link: '/forms/form-elements/select'
       },
       {
-        icon: 'mdi:lastpass',
+        icon: 'tabler:space',
         suggestion: 'Autocomplete',
         link: '/forms/form-elements/autocomplete'
       },
       {
-        icon: 'mdi:view-grid-outline',
+        icon: 'tabler:layout-grid',
         suggestion: 'Table',
         link: '/tables/mui'
       },
       {
-        icon: 'mdi:calendar-range',
+        icon: 'tabler:calendar-event',
         suggestion: 'Date Pickers',
         link: '/forms/form-elements/pickers'
       }
@@ -248,7 +248,7 @@ const NoResult = ({ value, setOpenDialog }: NoResultProps) => {
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'center' }}>
       <Box sx={{ mb: 2.5, color: 'text.primary' }}>
-        <Icon icon='mdi:file-remove-outline' fontSize='5rem' />
+        <Icon icon='tabler:file-off' fontSize='5rem' />
       </Box>
       <Typography variant='h6' sx={{ mb: 11.5, wordWrap: 'break-word' }}>
         No results for{' '}
@@ -273,7 +273,7 @@ const NoResult = ({ value, setOpenDialog }: NoResultProps) => {
             }}
           >
             <Box sx={{ mr: 2.5, display: 'flex', color: 'text.primary' }}>
-              <Icon icon='mdi:cart-outline' fontSize={20} />
+              <Icon icon='tabler:shopping-cart' fontSize='1.25rem' />
             </Box>
             <Typography variant='body2' sx={{ color: 'text.primary' }}>
               eCommerce Dashboard
@@ -292,7 +292,7 @@ const NoResult = ({ value, setOpenDialog }: NoResultProps) => {
             }}
           >
             <Box sx={{ mr: 2.5, display: 'flex', color: 'text.primary' }}>
-              <Icon icon='mdi:account-outline' fontSize={20} />
+              <Icon icon='tabler:user' fontSize='1.25rem' />
             </Box>
             <Typography variant='body2' sx={{ color: 'text.primary' }}>
               User Profile
@@ -311,7 +311,7 @@ const NoResult = ({ value, setOpenDialog }: NoResultProps) => {
             }}
           >
             <Box sx={{ mr: 2.5, display: 'flex', color: 'text.primary' }}>
-              <Icon icon='mdi:account-cog-outline' fontSize={20} />
+              <Icon icon='tabler:settings' fontSize='1.25rem' />
             </Box>
             <Typography variant='body2' sx={{ color: 'text.primary' }}>
               Account Settings
@@ -347,7 +347,7 @@ const DefaultSuggestions = ({ setOpenDialog }: DefaultSuggestionsProps) => {
                     '&:hover > *': { color: 'primary.main' }
                   }}
                 >
-                  <Icon icon={suggestionItem.icon} fontSize={20} />
+                  <Icon icon={suggestionItem.icon} fontSize='1.25rem' />
                   <Typography variant='body2' sx={{ color: 'text.primary' }}>
                     {suggestionItem.suggestion}
                   </Typography>
@@ -452,8 +452,8 @@ const AutocompleteComponent = ({ hidden, settings }: Props) => {
         onClick={() => !openDialog && setOpenDialog(true)}
         sx={{ display: 'flex', cursor: 'pointer', alignItems: 'center' }}
       >
-        <IconButton color='inherit' sx={!hidden && layout === 'vertical' ? { mr: 1, ml: -2.75 } : {}}>
-          <Icon icon='mdi:magnify' />
+        <IconButton color='inherit' sx={!hidden && layout === 'vertical' ? { mr: 0.5, ml: -2.75 } : {}}>
+          <Icon fontSize='1.5rem' icon='tabler:search' />
         </IconButton>
         {!hidden && layout === 'vertical' ? (
           <Typography sx={{ userSelect: 'none', color: 'text.disabled' }}>Search (Ctrl+/)</Typography>
@@ -506,10 +506,10 @@ const AutocompleteComponent = ({ hidden, settings }: Props) => {
                       }}
                       InputProps={{
                         ...params.InputProps,
-                        sx: { p: `${theme.spacing(3.75, 6)} !important` },
+                        sx: { p: `${theme.spacing(3.75, 6)} !important`, '&.Mui-focused': { boxShadow: 0 } },
                         startAdornment: (
                           <InputAdornment position='start' sx={{ color: 'text.primary' }}>
-                            <Icon icon='mdi:magnify' />
+                            <Icon fontSize='1.5rem' icon='tabler:search' />
                           </InputAdornment>
                         ),
                         endAdornment: (
@@ -520,7 +520,7 @@ const AutocompleteComponent = ({ hidden, settings }: Props) => {
                           >
                             {!hidden ? <Typography sx={{ mr: 2.5, color: 'text.disabled' }}>[esc]</Typography> : null}
                             <IconButton size='small' sx={{ p: 1 }}>
-                              <Icon icon='mdi:close' fontSize={20} />
+                              <Icon icon='tabler:x' fontSize='1.25rem' />
                             </IconButton>
                           </InputAdornment>
                         )
@@ -535,7 +535,7 @@ const AutocompleteComponent = ({ hidden, settings }: Props) => {
                       key={(option as AppBarSearchType).title}
                       className={`suggestion ${props.className}`}
                       onClick={() => handleOptionClick(option as AppBarSearchType)}
-                      secondaryAction={<Icon icon='mdi:subdirectory-arrow-left' fontSize={20} />}
+                      secondaryAction={<Icon icon='tabler:corner-down-left' fontSize='1.25rem' />}
                       sx={{
                         '& .MuiListItemSecondaryAction-root': {
                           '& svg': {
@@ -552,7 +552,10 @@ const AutocompleteComponent = ({ hidden, settings }: Props) => {
                           '& svg': { mr: 2.5, color: 'text.primary' }
                         }}
                       >
-                        <Icon fontSize={20} icon={(option as AppBarSearchType).icon || themeConfig.navSubItemIcon} />
+                        <Icon
+                          fontSize='1.25rem'
+                          icon={(option as AppBarSearchType).icon || themeConfig.navSubItemIcon}
+                        />
                         <Typography variant='body2' sx={{ color: 'text.primary' }}>
                           {(option as AppBarSearchType).title}
                         </Typography>

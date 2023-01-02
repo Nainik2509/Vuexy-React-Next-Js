@@ -28,44 +28,43 @@ const ListSubheader = styled((props: ListSubheaderProps) => <MuiListSubheader co
     lineHeight: 1,
     display: 'flex',
     position: 'static',
-    padding: theme.spacing(4),
-    marginTop: theme.spacing(3),
-    paddingTop: theme.spacing(4.5),
+    marginTop: theme.spacing(3.5),
+    paddingTop: theme.spacing(1.5),
     backgroundColor: 'transparent',
-    color: theme.palette.text.disabled,
+    paddingBottom: theme.spacing(1.5),
     transition: 'padding-left .25s ease-in-out'
   })
 )
 
-const TypographyHeaderText = styled(Typography)<TypographyProps>(({ theme }) => ({
+const TypographyHeaderText = styled(Typography)<TypographyProps>({
   fontSize: '0.75rem',
   lineHeight: 'normal',
   letterSpacing: '0.21px',
-  textTransform: 'uppercase',
-  color: theme.palette.text.disabled,
-  fontWeight: theme.typography.fontWeightMedium
-}))
+  textTransform: 'uppercase'
+})
 
 const VerticalNavSectionTitle = (props: Props) => {
   // ** Props
   const { item, navHover, settings, collapsedNavWidth, navigationBorderWidth } = props
 
   // ** Vars
-  const { navCollapsed } = settings
+  const { mode, navCollapsed } = settings
 
   return (
     <CanViewNavSectionTitle navTitle={item}>
       <ListSubheader
         className='nav-section-title'
         sx={{
-          color: 'text.disabled',
           ...(navCollapsed && !navHover
-            ? { pt: 3.375, pb: 2.875, pl: (collapsedNavWidth - navigationBorderWidth - 24) / 8 }
-            : { pl: 6 })
+            ? { py: 0.5, px: (collapsedNavWidth - navigationBorderWidth - 22) / 8 }
+            : { px: 7.5 }),
+          '& .MuiTypography-root, & svg': {
+            color: theme => (mode === 'semi-dark' ? `rgba(${theme.palette.customColors.dark}, 0.38)` : 'text.disabled')
+          }
         }}
       >
         {navCollapsed && !navHover ? (
-          <Icon icon='mdi:dots-horizontal' />
+          <Icon icon='tabler:separator' />
         ) : (
           <TypographyHeaderText noWrap>
             <Translations text={item.sectionTitle} />

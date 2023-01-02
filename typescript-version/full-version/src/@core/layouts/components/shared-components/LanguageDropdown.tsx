@@ -19,18 +19,15 @@ const LanguageDropdown = ({ settings, saveSettings }: Props) => {
   // ** Hook
   const { i18n } = useTranslation()
 
-  // ** Vars
-  const { layout } = settings
-
   const handleLangItemClick = (lang: 'en' | 'fr' | 'ar') => {
     i18n.changeLanguage(lang)
   }
 
   return (
     <OptionsMenu
-      icon={<Icon icon='mdi:translate' />}
-      menuProps={{ sx: { '& .MuiMenu-paper': { mt: 4, minWidth: 130 } } }}
-      iconButtonProps={{ color: 'inherit', sx: { ...(layout === 'vertical' ? { mr: 0.75 } : { mx: 0.75 }) } }}
+      iconButtonProps={{ color: 'inherit' }}
+      icon={<Icon fontSize='1.5rem' icon='tabler:language' />}
+      menuProps={{ sx: { '& .MuiMenu-paper': { mt: 4.5, minWidth: 130 } } }}
       options={[
         {
           text: 'English',
