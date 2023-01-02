@@ -61,11 +61,11 @@ const StepPropertyDetails = () => {
 
   const icons: IconType[] = [
     {
-      icon: 'mdi:home-outline',
+      icon: 'tabler:home',
       iconProps: { fontSize: '2rem', style: { marginBottom: 4 }, color: theme.palette.text.secondary }
     },
     {
-      icon: 'mdi:wallet-outline',
+      icon: 'tabler:wallet',
       iconProps: { fontSize: '2rem', style: { marginBottom: 4 }, color: theme.palette.text.secondary }
     }
   ]

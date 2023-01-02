@@ -56,15 +56,15 @@ const StepPersonalDetails = () => {
 
   const icons: IconType[] = [
     {
-      icon: 'mdi:office-building-outline',
+      icon: 'tabler:building',
       iconProps: { fontSize: '2rem', style: { marginBottom: 4 }, color: theme.palette.text.secondary }
     },
     {
-      icon: 'mdi:crown-outline',
+      icon: 'tabler:diamond',
       iconProps: { fontSize: '2rem', style: { marginBottom: 4 }, color: theme.palette.text.secondary }
     },
     {
-      icon: 'mdi:briefcase-outline',
+      icon: 'tabler:briefcase',
       iconProps: { fontSize: '2rem', style: { marginBottom: 4 }, color: theme.palette.text.secondary }
     }
   ]
@@ -122,7 +122,7 @@ const StepPersonalDetails = () => {
                   onMouseDown={e => e.preventDefault()}
                   aria-label='toggle password visibility'
                 >
-                  <Icon icon={showValues ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
+                  <Icon icon={showValues ? 'tabler:eye' : 'tabler:eye-off'} />
                 </IconButton>
               </InputAdornment>
             )

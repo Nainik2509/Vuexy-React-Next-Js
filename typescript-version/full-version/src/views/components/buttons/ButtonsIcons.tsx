@@ -8,16 +8,16 @@ const ButtonsIcons = () => {
   return (
     <div className='demo-space-x'>
       <IconButton aria-label='capture screenshot'>
-        <Icon icon='mdi:camera-iris' />
+        <Icon icon='tabler:aperture' />
       </IconButton>
       <IconButton aria-label='capture screenshot' color='primary'>
-        <Icon icon='mdi:camera-iris' />
+        <Icon icon='tabler:aperture' />
       </IconButton>
       <IconButton aria-label='capture screenshot' color='secondary'>
-        <Icon icon='mdi:camera-iris' />
+        <Icon icon='tabler:aperture' />
       </IconButton>
       <IconButton aria-label='capture screenshot' disabled>
-        <Icon icon='mdi:camera-iris' />
+        <Icon icon='tabler:aperture' />
       </IconButton>
     </div>
   )

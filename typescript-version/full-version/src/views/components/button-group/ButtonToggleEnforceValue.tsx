@@ -33,16 +33,16 @@ const ButtonToggleEnforceValue = () => {
         <Typography sx={{ fontWeight: 500, mb: 2 }}>Exclusive Selection</Typography>
         <ToggleButtonGroup exclusive value={alignment} onChange={handleAlignment} aria-label='text alignment'>
           <ToggleButton value='left' aria-label='left aligned'>
-            <Icon icon='mdi:format-align-left' />
+            <Icon icon='tabler:align-left' />
           </ToggleButton>
           <ToggleButton value='center' aria-label='center aligned'>
-            <Icon icon='mdi:format-align-center' />
+            <Icon icon='tabler:align-center' />
           </ToggleButton>
           <ToggleButton value='right' aria-label='right aligned'>
-            <Icon icon='mdi:format-align-right' />
+            <Icon icon='tabler:align-right' />
           </ToggleButton>
           <ToggleButton value='justify' aria-label='justified' disabled>
-            <Icon icon='mdi:format-align-justify' />
+            <Icon icon='tabler:align-justified' />
           </ToggleButton>
         </ToggleButtonGroup>
       </Grid>
@@ -50,13 +50,13 @@ const ButtonToggleEnforceValue = () => {
         <Typography sx={{ fontWeight: 500, mb: 2 }}>Multiple Selection</Typography>
         <ToggleButtonGroup value={formats} onChange={handleFormat} aria-label='device'>
           <ToggleButton value='laptop' aria-label='laptop'>
-            <Icon icon='mdi:laptop' />
+            <Icon icon='tabler:device-laptop' />
           </ToggleButton>
           <ToggleButton value='desktop' aria-label='desktop'>
-            <Icon icon='mdi:monitor' />
+            <Icon icon='tabler:device-desktop' />
           </ToggleButton>
           <ToggleButton value='phone' aria-label='phone'>
-            <Icon icon='mdi:cellphone' />
+            <Icon icon='tabler:device-mobile' />
           </ToggleButton>
         </ToggleButtonGroup>
       </Grid>

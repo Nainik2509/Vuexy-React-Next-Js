@@ -20,7 +20,7 @@ const ToastMultiLine = () => {
     <Box
       sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column', '& svg': { mb: 2 } }}
     >
-      <Icon icon='mdi:text-box-outline' fontSize='2rem' />
+      <Icon icon='tabler:article' fontSize='2rem' />
       <Typography sx={{ mb: 4, fontWeight: 600 }}>Multi Line</Typography>
       <Typography sx={{ mb: 3 }}>The most basic variant with longer texts</Typography>
       <Button sx={{ mb: 8 }} variant='contained' onClick={handleClick}>

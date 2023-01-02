@@ -90,7 +90,7 @@ const FormLayoutsBasic = () => {
                         onMouseDown={e => e.preventDefault()}
                         aria-label='toggle password visibility'
                       >
-                        <Icon icon={values.showPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
+                        <Icon icon={values.showPassword ? 'tabler:eye' : 'tabler:eye-off'} />
                       </IconButton>
                     </InputAdornment>
                   }
@@ -118,7 +118,7 @@ const FormLayoutsBasic = () => {
                         onMouseDown={e => e.preventDefault()}
                         aria-label='toggle password visibility'
                       >
-                        <Icon icon={confirmPassValues.showPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
+                        <Icon icon={confirmPassValues.showPassword ? 'tabler:eye' : 'tabler:eye-off'} />
                       </IconButton>
                     </InputAdornment>
                   }

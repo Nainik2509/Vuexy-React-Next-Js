@@ -55,7 +55,7 @@ const TimelineCenter = () => {
       <TimelineItem>
         <TimelineSeparator>
           <CustomTimelineDot skin='light' color='error'>
-            <Icon icon='mdi:airplane' fontSize={20} />
+            <Icon icon='tabler:plane-tilt' fontSize={20} />
           </CustomTimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
@@ -67,7 +67,7 @@ const TimelineCenter = () => {
             <Typography variant='caption'>Wednesday</Typography>
           </Box>
           <Typography variant='body2' sx={{ color: 'text.primary' }}>
-            <span>Charles de Gaulle Airport, Paris</span> <Icon icon='mdi:arrow-right' fontSize={20} />{' '}
+            <span>Charles de Gaulle Airport, Paris</span> <Icon icon='tabler:arrow-right' fontSize={20} />{' '}
             <span>Heathrow Airport, London</span>
           </Typography>
           <Typography variant='caption'>6:30 AM</Typography>
@@ -83,7 +83,7 @@ const TimelineCenter = () => {
       <TimelineItem>
         <TimelineSeparator>
           <CustomTimelineDot skin='light' color='primary'>
-            <Icon icon='mdi:clock-outline' fontSize={20} />
+            <Icon icon='tabler:clock' fontSize={20} />
           </CustomTimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
@@ -110,10 +110,10 @@ const TimelineCenter = () => {
             </Box>
             <div>
               <IconButton sx={{ color: 'text.secondary' }}>
-                <Icon icon='mdi:message-outline' fontSize={20} />
+                <Icon icon='tabler:message' fontSize={20} />
               </IconButton>
               <IconButton sx={{ color: 'text.secondary' }}>
-                <Icon icon='mdi:phone-dial-outline' fontSize={20} />
+                <Icon icon='tabler:phone-call' fontSize={20} />
               </IconButton>
             </div>
           </Box>
@@ -123,7 +123,7 @@ const TimelineCenter = () => {
       <TimelineItem>
         <TimelineSeparator>
           <CustomTimelineDot skin='light' color='warning'>
-            <Icon icon='mdi:cart-outline' fontSize={20} />
+            <Icon icon='tabler:shopping-cart' fontSize={20} />
           </CustomTimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
@@ -176,7 +176,7 @@ const TimelineCenter = () => {
       <TimelineItem>
         <TimelineSeparator>
           <CustomTimelineDot skin='light' color='success'>
-            <Icon icon='mdi:file-edit-outline' fontSize={20} />
+            <Icon icon='tabler:file-pencil' fontSize={20} />
           </CustomTimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
@@ -202,7 +202,7 @@ const TimelineCenter = () => {
       <TimelineItem>
         <TimelineSeparator>
           <CustomTimelineDot skin='light' color='error'>
-            <Icon icon='mdi:server' fontSize={20} />
+            <Icon icon='tabler:server' fontSize={20} />
           </CustomTimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
@@ -216,21 +216,21 @@ const TimelineCenter = () => {
           <List dense>
             <ListItem>
               <ListItemIcon>
-                <Icon icon='mdi:web' />
+                <Icon icon='tabler:globe' />
               </ListItemIcon>
               <ListItemText primary='IP Address' />
               <span>192.654.8.566</span>
             </ListItem>
             <ListItem>
               <ListItemIcon>
-                <Icon icon='mdi:cpu-64-bit' />
+                <Icon icon='tabler:cpu' />
               </ListItemIcon>
               <ListItemText primary='CPU' />
               <span>4 Cores</span>
             </ListItem>
             <ListItem>
               <ListItemIcon>
-                <Icon icon='mdi:memory' />
+                <Icon icon='tabler:keyframes' />
               </ListItemIcon>
               <ListItemText primary='Memory' />
               <span>2 GB</span>
@@ -240,10 +240,10 @@ const TimelineCenter = () => {
           <Box sx={{ ml: 4, display: 'flex', justifyContent: 'space-between' }}>
             <div>
               <IconButton sx={{ color: 'text.primary' }}>
-                <Icon icon='mdi:share-variant-outline' fontSize={20} />
+                <Icon icon='tabler:share' fontSize={20} />
               </IconButton>
               <IconButton sx={{ color: 'text.primary' }}>
-                <Icon icon='mdi:refresh' fontSize={20} />
+                <Icon icon='tabler:refresh' fontSize={20} />
               </IconButton>
             </div>
             <Switch sx={{ mr: 2 }} />
@@ -254,7 +254,7 @@ const TimelineCenter = () => {
       <TimelineItem>
         <TimelineSeparator>
           <CustomTimelineDot skin='light' color='success'>
-            <Icon icon='mdi:map-marker-outline' fontSize={20} />
+            <Icon icon='tabler:map-pin' fontSize={20} />
           </CustomTimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
@@ -265,7 +265,7 @@ const TimelineCenter = () => {
               sx={{ mr: 2, fontWeight: 600, color: 'text.primary', display: 'flex', alignItems: 'center' }}
             >
               <Box component='span' sx={{ display: 'inline-flex', '& svg': { verticalAlign: 'bottom', mr: 2 } }}>
-                <Icon icon='mdi:map-marker' fontSize={20} />
+                <Icon icon='tabler:map-pin' fontSize={20} />
               </Box>
               <span>Location</span>
             </Typography>
@@ -281,13 +281,13 @@ const TimelineCenter = () => {
           <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start', justifyContent: 'space-between' }}>
             <Box sx={{ mr: 2, display: 'flex', alignItems: 'center' }}>
               <IconButton sx={{ color: 'text.primary' }}>
-                <Icon icon='mdi:link-variant' fontSize={20} />
+                <Icon icon='tabler:link' fontSize={20} />
               </IconButton>
               <IconButton sx={{ color: 'text.primary' }}>
-                <Icon icon='mdi:message-outline' fontSize={20} />
+                <Icon icon='tabler:message' fontSize={20} />
               </IconButton>
               <IconButton sx={{ color: 'text.primary' }}>
-                <Icon icon='mdi:account-outline' fontSize={20} />
+                <Icon icon='tabler:user' fontSize={20} />
               </IconButton>
             </Box>
             <Typography variant='subtitle2' sx={{ fontWeight: 600 }}>

@@ -27,10 +27,10 @@ const ListNested = () => {
         <ListItem disablePadding>
           <ListItemButton onClick={handleClick}>
             <ListItemIcon>
-              <Icon icon='mdi:email-outline' fontSize={20} />
+              <Icon icon='tabler:mail' fontSize={20} />
             </ListItemIcon>
             <ListItemText primary='Inbox' />
-            <Icon icon={open ? 'mdi:chevron-up' : 'mdi:chevron-down'} />
+            <Icon icon={open ? 'tabler:chevron-up' : 'tabler:chevron-down'} />
           </ListItemButton>
         </ListItem>
         <Collapse in={open} timeout='auto' unmountOnExit>
@@ -38,7 +38,7 @@ const ListNested = () => {
             <ListItem disablePadding>
               <ListItemButton sx={{ pl: 8 }}>
                 <ListItemIcon sx={{ mr: 4 }}>
-                  <Icon icon='mdi:send-clock' fontSize={20} />
+                  <Icon icon='tabler:clock-play' fontSize={20} />
                 </ListItemIcon>
                 <ListItemText primary='Scheduled' />
               </ListItemButton>
@@ -48,7 +48,7 @@ const ListNested = () => {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Icon icon='mdi:content-copy' fontSize={20} />
+              <Icon icon='tabler:copy' fontSize={20} />
             </ListItemIcon>
             <ListItemText primary='Draft' />
           </ListItemButton>
@@ -59,7 +59,7 @@ const ListNested = () => {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Icon icon='mdi:clock-outline' fontSize={20} />
+              <Icon icon='tabler:copy' fontSize={20} />
             </ListItemIcon>
             <ListItemText primary='Snoozed' />
           </ListItemButton>
@@ -67,7 +67,7 @@ const ListNested = () => {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Icon icon='mdi:alert-circle-outline' fontSize={20} />
+              <Icon icon='tabler:alert-circle' fontSize={20} />
             </ListItemIcon>
             <ListItemText primary='Spam' />
           </ListItemButton>

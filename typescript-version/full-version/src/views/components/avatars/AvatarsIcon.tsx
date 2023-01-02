@@ -12,13 +12,13 @@ const AvatarsIcon = () => {
   return (
     <Box className='demo-space-x' sx={{ display: 'flex' }}>
       <Avatar>
-        <Icon icon='mdi:folder-outline' />
+        <Icon icon='tabler:folder' />
       </Avatar>
       <CustomAvatar color='success'>
-        <Icon icon='mdi:cached' />
+        <Icon icon='tabler:refresh' />
       </CustomAvatar>
       <CustomAvatar skin='light' color='info'>
-        <Icon icon='mdi:checkbox-marked-circle-outline' />
+        <Icon icon='tabler:circle-check' />
       </CustomAvatar>
     </Box>
   )

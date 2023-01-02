@@ -12,62 +12,62 @@ const ButtonsFab = () => {
       <Typography sx={{ fontWeight: 500 }}>Circular Variant</Typography>
       <Box sx={{ mb: 6 }} className='demo-space-x'>
         <Fab aria-label='edit'>
-          <Icon icon='mdi:pencil' />
+          <Icon icon='tabler:pencil' />
         </Fab>
         <Fab color='primary' aria-label='edit'>
-          <Icon icon='mdi:pencil' />
+          <Icon icon='tabler:pencil' />
         </Fab>
         <Fab color='secondary' aria-label='edit'>
-          <Icon icon='mdi:pencil' />
+          <Icon icon='tabler:pencil' />
         </Fab>
         <Fab color='success' aria-label='edit'>
-          <Icon icon='mdi:pencil' />
+          <Icon icon='tabler:pencil' />
         </Fab>
         <Fab color='error' aria-label='edit'>
-          <Icon icon='mdi:pencil' />
+          <Icon icon='tabler:pencil' />
         </Fab>
         <Fab color='warning' aria-label='edit'>
-          <Icon icon='mdi:pencil' />
+          <Icon icon='tabler:pencil' />
         </Fab>
         <Fab color='info' aria-label='edit'>
-          <Icon icon='mdi:pencil' />
+          <Icon icon='tabler:pencil' />
         </Fab>
         <Fab disabled aria-label='edit'>
-          <Icon icon='mdi:pencil' />
+          <Icon icon='tabler:pencil' />
         </Fab>
       </Box>
       <Typography sx={{ fontWeight: 500 }}>Extended Variant</Typography>
       <div className='demo-space-x'>
         <Fab variant='extended' sx={{ '& svg': { mr: 1 } }}>
-          <Icon icon='mdi:plus' />
+          <Icon icon='tabler:plus' />
           Add
         </Fab>
         <Fab color='primary' variant='extended' sx={{ '& svg': { mr: 1 } }}>
-          <Icon icon='mdi:plus' />
+          <Icon icon='tabler:plus' />
           Add
         </Fab>
         <Fab color='secondary' variant='extended' sx={{ '& svg': { mr: 1 } }}>
-          <Icon icon='mdi:plus' />
+          <Icon icon='tabler:plus' />
           Add
         </Fab>
         <Fab color='success' variant='extended' sx={{ '& svg': { mr: 1 } }}>
-          <Icon icon='mdi:plus' />
+          <Icon icon='tabler:plus' />
           Add
         </Fab>
         <Fab color='error' variant='extended' sx={{ '& svg': { mr: 1 } }}>
-          <Icon icon='mdi:plus' />
+          <Icon icon='tabler:plus' />
           Add
         </Fab>
         <Fab color='warning' variant='extended' sx={{ '& svg': { mr: 1 } }}>
-          <Icon icon='mdi:plus' />
+          <Icon icon='tabler:plus' />
           Add
         </Fab>
         <Fab color='info' variant='extended' sx={{ '& svg': { mr: 1 } }}>
-          <Icon icon='mdi:plus' />
+          <Icon icon='tabler:plus' />
           Add
         </Fab>
         <Fab disabled variant='extended' sx={{ '& svg': { mr: 1 } }}>
-          <Icon icon='mdi:plus' />
+          <Icon icon='tabler:plus' />
           Add
         </Fab>
       </div>

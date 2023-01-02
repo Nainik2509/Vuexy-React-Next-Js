@@ -23,25 +23,22 @@ const utils_1 = require('@iconify/utils')
 const sources = {
   json: [
     // Iconify JSON file (@iconify/json is a package name, /json/ is directory where files are, then filename)
-    require.resolve('@iconify/json/json/mdi.json'),
+    require.resolve('@iconify/json/json/tabler.json'),
 
     // Custom file with only few icons
     {
       filename: require.resolve('@iconify/json/json/line-md.json'),
       icons: ['home-twotone-alt', 'github', 'document-list', 'document-code', 'image-twotone']
+    },
+    {
+      filename: require.resolve('@iconify/json/json/mdi.json'),
+      icons: ['github', 'google', 'twitter', 'facebook']
     }
 
     // Custom JSON file
     // 'json/gg.json'
   ],
-  icons: [
-    'bx:basket',
-    'bi:airplane-engines',
-    'tabler:anchor',
-    'uit:adobe-alt',
-    'fa6-regular:comment',
-    'twemoji:auto-rickshaw'
-  ],
+  icons: ['bx:basket', 'bi:airplane-engines', 'uit:adobe-alt', 'fa6-regular:comment', 'twemoji:auto-rickshaw'],
   svg: [
     {
       dir: 'src/iconify-bundle/svg',
@@ -118,8 +115,19 @@ const target = 'src/iconify-bundle/icons-bundle-react.js'
         content = filteredContent
       }
 
-      // Remove metadata and add to bundle
+      // Remove metadata
       removeMetaData(content)
+
+      // Change Tabler icons' stroke-width to 1.5px
+      for (const key in content) {
+        if (key === 'prefix' && content.prefix === 'tabler') {
+          for (const key in content.icons) {
+            content.icons[key].body = content.icons[key].body.replace(/stroke-width="2"/g, 'stroke-width="1.5"')
+          }
+        }
+      }
+
+      // Minify data and add to bundle
       ;(0, utils_1.minifyIconSet)(content)
       bundle += 'addCollection(' + JSON.stringify(content) + ');\n'
       console.log(`Bundled icons from ${filename}`)

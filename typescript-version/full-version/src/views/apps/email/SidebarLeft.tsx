@@ -136,7 +136,7 @@ const SidebarLeft = (props: MailSidebarType) => {
               sx={{ borderLeftColor: activeInboxCondition ? 'primary.main' : 'transparent' }}
             >
               <ListItemIcon sx={{ color: activeInboxCondition ? 'primary.main' : 'text.secondary' }}>
-                <Icon icon='mdi:email-outline' />
+                <Icon icon='tabler:mail' />
               </ListItemIcon>
               <ListItemText
                 primary='Inbox'
@@ -160,7 +160,7 @@ const SidebarLeft = (props: MailSidebarType) => {
                   color: handleActiveItem('folder', 'sent') ? 'primary.main' : 'text.secondary'
                 }}
               >
-                <Icon icon='mdi:send-outline' />
+                <Icon icon='tabler:send' />
               </ListItemIcon>
               <ListItemText
                 primary='Sent'
@@ -183,7 +183,7 @@ const SidebarLeft = (props: MailSidebarType) => {
                   color: handleActiveItem('folder', 'draft') ? 'primary.main' : 'text.secondary'
                 }}
               >
-                <Icon icon='mdi:pencil-outline' />
+                <Icon icon='tabler:file' />
               </ListItemIcon>
               <ListItemText
                 primary='Draft'
@@ -207,7 +207,7 @@ const SidebarLeft = (props: MailSidebarType) => {
                   color: handleActiveItem('folder', 'starred') ? 'primary.main' : 'text.secondary'
                 }}
               >
-                <Icon icon='mdi:star-outline' />
+                <Icon icon='tabler:star' />
               </ListItemIcon>
               <ListItemText
                 primary='Starred'
@@ -230,7 +230,7 @@ const SidebarLeft = (props: MailSidebarType) => {
                   color: handleActiveItem('folder', 'spam') ? 'primary.main' : 'text.secondary'
                 }}
               >
-                <Icon icon='mdi:alert-octagon-outline' />
+                <Icon icon='tabler:info-circle' />
               </ListItemIcon>
               <ListItemText
                 primary='Spam'
@@ -254,7 +254,7 @@ const SidebarLeft = (props: MailSidebarType) => {
                   color: handleActiveItem('folder', 'trash') ? 'primary.main' : 'text.secondary'
                 }}
               >
-                <Icon icon='mdi:delete-outline' />
+                <Icon icon='tabler:trash' />
               </ListItemIcon>
               <ListItemText
                 primary='Trash'

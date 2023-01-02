@@ -27,7 +27,7 @@ const StepPriceDetails = () => {
           InputProps={{
             endAdornment: (
               <InputAdornment position='end'>
-                <Icon icon='mdi:currency-usd' />
+                <Icon icon='tabler:currency-dollar' />
               </InputAdornment>
             )
           }}
@@ -42,7 +42,7 @@ const StepPriceDetails = () => {
           InputProps={{
             endAdornment: (
               <InputAdornment position='end'>
-                <Icon icon='mdi:currency-usd' />
+                <Icon icon='tabler:currency-dollar' />
               </InputAdornment>
             )
           }}
@@ -57,7 +57,7 @@ const StepPriceDetails = () => {
           InputProps={{
             endAdornment: (
               <InputAdornment position='end'>
-                <Icon icon='mdi:currency-usd' />
+                <Icon icon='tabler:currency-dollar' />
               </InputAdornment>
             )
           }}
@@ -85,7 +85,7 @@ const StepPriceDetails = () => {
           InputProps={{
             endAdornment: (
               <InputAdornment position='end'>
-                <Icon icon='mdi:currency-usd' />
+                <Icon icon='tabler:currency-dollar' />
               </InputAdornment>
             )
           }}
@@ -100,7 +100,7 @@ const StepPriceDetails = () => {
           InputProps={{
             endAdornment: (
               <InputAdornment position='end'>
-                <Icon icon='mdi:currency-usd' />
+                <Icon icon='tabler:currency-dollar' />
               </InputAdornment>
             )
           }}

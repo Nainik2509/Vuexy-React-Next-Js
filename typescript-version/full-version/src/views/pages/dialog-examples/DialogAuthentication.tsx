@@ -60,12 +60,12 @@ const DialogAuthentication = () => {
     }
   }
 
-  const arrowIcon = direction === 'ltr' ? 'mdi:chevron-right' : 'mdi:chevron-left'
+  const arrowIcon = direction === 'ltr' ? 'tabler:chevron-right' : 'tabler:chevron-left'
 
   return (
     <Card>
       <CardContent sx={{ textAlign: 'center', '& svg': { mb: 2 } }}>
-        <Icon icon='mdi:lock-outline' fontSize='2rem' />
+        <Icon icon='tabler:lock' fontSize='2rem' />
         <Typography variant='h6' sx={{ mb: 4 }}>
           Two Factor Auth
         </Typography>
@@ -85,7 +85,7 @@ const DialogAuthentication = () => {
       >
         <DialogContent sx={{ px: { xs: 8, sm: 15 }, py: { xs: 8, sm: 12.5 }, position: 'relative' }}>
           <IconButton size='small' onClick={handleClose} sx={{ position: 'absolute', right: '1rem', top: '1rem' }}>
-            <Icon icon='mdi:close' />
+            <Icon icon='tabler:x' />
           </IconButton>
 
           <Grid container spacing={6}>
@@ -113,7 +113,7 @@ const DialogAuthentication = () => {
                 }}
               >
                 <Box sx={{ mb: 2, display: 'flex', alignItems: 'center', '& svg': { mr: 3 } }}>
-                  <Icon icon='mdi:cog-outline' fontSize={35} />
+                  <Icon icon='tabler:settings' fontSize={35} />
                   <div>
                     <Typography
                       variant='h6'
@@ -142,7 +142,7 @@ const DialogAuthentication = () => {
                 }}
               >
                 <Box sx={{ mb: 2, display: 'flex', alignItems: 'center', '& svg': { mr: 3 } }}>
-                  <Icon icon='mdi:message-outline' fontSize={35} />
+                  <Icon icon='tabler:message' fontSize={35} />
                   <div>
                     <Typography
                       variant='h6'
@@ -192,7 +192,7 @@ const DialogAuthentication = () => {
             onClick={handleAuthDialogClose}
             sx={{ position: 'absolute', right: '1rem', top: '1rem' }}
           >
-            <Icon icon='mdi:close' />
+            <Icon icon='tabler:x' />
           </IconButton>
 
           <Grid container spacing={6}>

@@ -204,7 +204,7 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
                 <InputAdornment position='start' sx={{ '& svg': { cursor: 'pointer' } }}>
                   <Tooltip title='Card Verification Value'>
                     <Box sx={{ display: 'flex' }}>
-                      <Icon icon='mdi:help-circle-outline' fontSize={20} />
+                      <Icon icon='tabler:question-circle' fontSize={20} />
                     </Box>
                   </Tooltip>
                 </InputAdornment>

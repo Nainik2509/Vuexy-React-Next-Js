@@ -54,7 +54,7 @@ const DialogCustomized = () => {
             Modal title
           </Typography>
           <CustomCloseButton aria-label='close' onClick={handleClose}>
-            <Icon icon='mdi:close' fontSize='1.25rem' />
+            <Icon icon='tabler:x' fontSize='1.25rem' />
           </CustomCloseButton>
         </DialogTitle>
         <DialogContent dividers sx={{ p: theme => `${theme.spacing(4)} !important` }}>

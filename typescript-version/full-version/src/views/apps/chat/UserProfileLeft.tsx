@@ -78,7 +78,7 @@ const UserProfileLeft = (props: UserProfileLeftType) => {
             onClick={handleUserProfileLeftSidebarToggle}
             sx={{ top: '0.5rem', right: '0.5rem', position: 'absolute', color: 'text.disabled' }}
           >
-            <Icon icon='mdi:close' />
+            <Icon icon='tabler:x' />
           </IconButton>
 
           <Box sx={{ display: 'flex', flexDirection: 'column', p: theme => theme.spacing(11.25, 6, 4.5) }}>
@@ -161,7 +161,7 @@ const UserProfileLeft = (props: UserProfileLeftType) => {
                   <ListItem disablePadding secondaryAction={<Switch />}>
                     <ListItemButton sx={{ px: 2 }}>
                       <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
-                        <Icon icon='mdi:check-circle-outline' fontSize='1.375rem' />
+                        <Icon icon='tabler:message-dots' />
                       </ListItemIcon>
                       <ListItemText primary='Two-step Verification' primaryTypographyProps={{ variant: 'body1' }} />
                     </ListItemButton>
@@ -169,7 +169,7 @@ const UserProfileLeft = (props: UserProfileLeftType) => {
                   <ListItem disablePadding secondaryAction={<Switch defaultChecked />}>
                     <ListItemButton sx={{ px: 2 }}>
                       <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
-                        <Icon icon='mdi:bell-outline' fontSize='1.375rem' />
+                        <Icon icon='tabler:bell' />
                       </ListItemIcon>
                       <ListItemText primary='Notification' primaryTypographyProps={{ variant: 'body1' }} />
                     </ListItemButton>
@@ -177,7 +177,7 @@ const UserProfileLeft = (props: UserProfileLeftType) => {
                   <ListItem disablePadding>
                     <ListItemButton sx={{ px: 2 }}>
                       <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
-                        <Icon icon='mdi:account-outline' fontSize='1.375rem' />
+                        <Icon icon='tabler:user-plus' />
                       </ListItemIcon>
                       <ListItemText primary='Invite Friends' primaryTypographyProps={{ variant: 'body1' }} />
                     </ListItemButton>
@@ -185,7 +185,7 @@ const UserProfileLeft = (props: UserProfileLeftType) => {
                   <ListItem disablePadding>
                     <ListItemButton sx={{ px: 2 }}>
                       <ListItemIcon sx={{ mr: 2, color: 'text.primary' }}>
-                        <Icon icon='mdi:delete-outline' fontSize='1.375rem' />
+                        <Icon icon='tabler:trash' />
                       </ListItemIcon>
                       <ListItemText primary='Delete Account' primaryTypographyProps={{ variant: 'body1' }} />
                     </ListItemButton>

@@ -27,9 +27,9 @@ const StepperCustomDot = (props: StepIconProps) => {
   const bgColors: UseBgColorType = useBgColor()
 
   if (error) {
-    return <Icon icon='mdi:alert' fontSize={20} color={theme.palette.error.main} transform='scale(1.2)' />
+    return <Icon icon='tabler:alert-triangle' fontSize={20} color={theme.palette.error.main} transform='scale(1.2)' />
   } else if (completed) {
-    return <Icon icon='mdi:check-circle' fontSize={20} color={theme.palette.primary.main} transform='scale(1.2)' />
+    return <Icon icon='tabler:circle-check' fontSize={20} color={theme.palette.primary.main} transform='scale(1.2)' />
   } else {
     return (
       <Box

@@ -41,7 +41,7 @@ const CardActions = () => {
                       Collapse
                     </TableCell>
                     <TableCell align='center'>
-                      <Icon icon='mdi:chevron-up' />
+                      <Icon icon='tabler:chevron-up' />
                     </TableCell>
                     <TableCell>Collapse card content using collapse action.</TableCell>
                   </TableRow>
@@ -50,7 +50,7 @@ const CardActions = () => {
                       Refresh Content
                     </TableCell>
                     <TableCell align='center'>
-                      <Icon icon='mdi:refresh' />
+                      <Icon icon='tabler:reload' />
                     </TableCell>
                     <TableCell>Refresh your card content using refresh action.</TableCell>
                   </TableRow>
@@ -59,7 +59,7 @@ const CardActions = () => {
                       Remove Card
                     </TableCell>
                     <TableCell align='center'>
-                      <Icon icon='mdi:close' />
+                      <Icon icon='tabler:x' />
                     </TableCell>
                     <TableCell>Remove card from page using remove card action</TableCell>
                   </TableRow>

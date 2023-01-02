@@ -70,7 +70,7 @@ const columns = [
     flex: 0.15,
     minWidth: 80,
     field: 'invoiceStatus',
-    renderHeader: () => <Icon icon='mdi:trending-up' fontSize={20} />,
+    renderHeader: () => <Icon icon='tabler:trending-up' fontSize='1.125rem' />,
     renderCell: ({ row }: CellType) => {
       const { dueDate, balance, invoiceStatus } = row
 
@@ -127,7 +127,7 @@ const columns = [
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <Tooltip title='Delete Invoice'>
           <IconButton size='small' sx={{ color: 'text.secondary' }}>
-            <Icon icon='mdi:delete-outline' fontSize={20} />
+            <Icon icon='tabler:trash' />
           </IconButton>
         </Tooltip>
         <Tooltip title='View'>
@@ -137,26 +137,25 @@ const columns = [
             sx={{ color: 'text.secondary' }}
             href={`/apps/invoice/preview/${row.id}`}
           >
-            <Icon icon='mdi:eye-outline' fontSize={20} />
+            <Icon icon='tabler:eye' />
           </IconButton>
         </Tooltip>
         <OptionsMenu
-          iconProps={{ fontSize: 20 }}
           iconButtonProps={{ size: 'small' }}
           menuProps={{ sx: { '& .MuiMenuItem-root svg': { mr: 2 } } }}
           options={[
             {
               text: 'Download',
-              icon: <Icon icon='mdi:download' fontSize={20} />
+              icon: <Icon icon='tabler:download' />
             },
             {
               text: 'Edit',
               href: `/apps/invoice/edit/${row.id}`,
-              icon: <Icon icon='mdi:pencil-outline' fontSize={20} />
+              icon: <Icon icon='tabler:pencil' />
             },
             {
               text: 'Duplicate',
-              icon: <Icon icon='mdi:content-copy' fontSize={20} />
+              icon: <Icon icon='tabler:copy' />
             }
           ]}
         />
@@ -193,7 +192,7 @@ const InvoiceListTable = ({ invoiceData }: Props) => {
               aria-haspopup='true'
               onClick={handleClick}
               aria-expanded={open ? 'true' : undefined}
-              endIcon={<Icon icon='mdi:chevron-down' />}
+              endIcon={<Icon icon='tabler:chevron-down' />}
               aria-controls={open ? 'user-view-overview-export' : undefined}
             >
               Export

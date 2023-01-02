@@ -37,7 +37,7 @@ const CardActionRefresh = () => {
             sx={{ color: 'text.secondary' }}
             onClick={() => handleBackDrop()}
           >
-            <Icon icon='mdi:refresh' fontSize={20} />
+            <Icon icon='tabler:reload' fontSize={20} />
           </IconButton>
         }
       />
@@ -45,7 +45,7 @@ const CardActionRefresh = () => {
         <Typography variant='body2'>
           You can specifically add refresh action using <code>actionRefresh</code> prop Click on{' '}
           <Box component='span' sx={{ verticalAlign: 'top' }}>
-            <Icon icon='mdi:refresh' fontSize={20} />
+            <Icon icon='tabler:refresh' fontSize={20} />
           </Box>{' '}
           icon to see it in action
         </Typography>

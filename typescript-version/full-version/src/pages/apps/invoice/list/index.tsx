@@ -115,7 +115,7 @@ const defaultColumns = [
     flex: 0.1,
     minWidth: 80,
     field: 'invoiceStatus',
-    renderHeader: () => <Icon icon='mdi:trending-up' fontSize={20} />,
+    renderHeader: () => <Icon icon='tabler:trending-up' />,
     renderCell: ({ row }: CellType) => {
       const { dueDate, balance, invoiceStatus } = row
 

@@ -27,32 +27,32 @@ const ButtonToggleSizes = () => {
           aria-label='text alignment'
         >
           <ToggleButton value='left' aria-label='left aligned'>
-            <Icon icon='mdi:format-align-left' />
+            <Icon icon='tabler:align-left' />
           </ToggleButton>
           <ToggleButton value='center' aria-label='center aligned'>
-            <Icon icon='mdi:format-align-center' />
+            <Icon icon='tabler:align-center' />
           </ToggleButton>
           <ToggleButton value='right' aria-label='right aligned'>
-            <Icon icon='mdi:format-align-right' />
+            <Icon icon='tabler:align-right' />
           </ToggleButton>
           <ToggleButton value='justify' aria-label='justified' disabled>
-            <Icon icon='mdi:format-align-justify' />
+            <Icon icon='tabler:align-justified' />
           </ToggleButton>
         </ToggleButtonGroup>
       </div>
       <div>
         <ToggleButtonGroup exclusive value={alignment} onChange={handleAlignment} aria-label='text alignment'>
           <ToggleButton value='left' aria-label='left aligned'>
-            <Icon icon='mdi:format-align-left' />
+            <Icon icon='tabler:align-left' />
           </ToggleButton>
           <ToggleButton value='center' aria-label='center aligned'>
-            <Icon icon='mdi:format-align-center' />
+            <Icon icon='tabler:align-center' />
           </ToggleButton>
           <ToggleButton value='right' aria-label='right aligned'>
-            <Icon icon='mdi:format-align-right' />
+            <Icon icon='tabler:align-right' />
           </ToggleButton>
           <ToggleButton value='justify' aria-label='justified' disabled>
-            <Icon icon='mdi:format-align-justify' />
+            <Icon icon='tabler:align-justified' />
           </ToggleButton>
         </ToggleButtonGroup>
       </div>
@@ -65,16 +65,16 @@ const ButtonToggleSizes = () => {
           aria-label='text alignment'
         >
           <ToggleButton value='left' aria-label='left aligned'>
-            <Icon icon='mdi:format-align-left' />
+            <Icon icon='tabler:align-left' />
           </ToggleButton>
           <ToggleButton value='center' aria-label='center aligned'>
-            <Icon icon='mdi:format-align-center' />
+            <Icon icon='tabler:align-center' />
           </ToggleButton>
           <ToggleButton value='right' aria-label='right aligned'>
-            <Icon icon='mdi:format-align-right' />
+            <Icon icon='tabler:align-right' />
           </ToggleButton>
           <ToggleButton value='justify' aria-label='justified' disabled>
-            <Icon icon='mdi:format-align-justify' />
+            <Icon icon='tabler:align-justified' />
           </ToggleButton>
         </ToggleButtonGroup>
       </div>

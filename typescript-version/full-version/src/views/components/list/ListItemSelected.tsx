@@ -32,7 +32,7 @@ const ListItemSelected = () => {
           <ListItemText primary='Caroline Black' />
           <ListItemSecondaryAction>
             <IconButton edge='end'>
-              <Icon icon='mdi:message-text-outline' fontSize={20} />
+              <Icon icon='tabler:message' fontSize={20} />
             </IconButton>
           </ListItemSecondaryAction>
         </ListItemButton>
@@ -45,7 +45,7 @@ const ListItemSelected = () => {
           <ListItemText primary='Alfred Copeland' />
           <ListItemSecondaryAction>
             <IconButton edge='end'>
-              <Icon icon='mdi:message-text-outline' fontSize={20} />
+              <Icon icon='tabler:message' fontSize={20} />
             </IconButton>
           </ListItemSecondaryAction>
         </ListItemButton>
@@ -58,7 +58,7 @@ const ListItemSelected = () => {
           <ListItemText primary='Celia Schneider' />
           <ListItemSecondaryAction>
             <IconButton edge='end'>
-              <Icon icon='mdi:message-text-outline' fontSize={20} />
+              <Icon icon='tabler:message' fontSize={20} />
             </IconButton>
           </ListItemSecondaryAction>
         </ListItemButton>

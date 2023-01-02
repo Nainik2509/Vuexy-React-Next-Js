@@ -16,7 +16,7 @@ const CardLinkedIn = () => {
           variant='h6'
           sx={{ display: 'flex', mb: 2.75, alignItems: 'center', color: 'common.white', '& svg': { mr: 2.5 } }}
         >
-          <Icon icon='mdi:linkedin' />
+          <Icon icon='tabler:brand-linkedin' />
           LinkedIn Card
         </Typography>
         <Typography variant='body2' sx={{ mb: 3, color: 'common.white' }}>
@@ -32,13 +32,13 @@ const CardLinkedIn = () => {
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <Box sx={{ display: 'flex', alignItems: 'center', mr: 3.5, '& svg': { mr: 1.25 } }}>
-              <Icon icon='mdi:heart' />
+              <Icon icon='tabler:heart' />
               <Typography variant='body2' sx={{ color: 'common.white' }}>
                 1.1k
               </Typography>
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 1.25 } }}>
-              <Icon icon='mdi:share-variant' />
+              <Icon icon='tabler:share' />
               <Typography variant='body2' sx={{ color: 'common.white' }}>
                 67
               </Typography>

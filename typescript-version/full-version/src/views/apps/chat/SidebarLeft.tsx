@@ -429,14 +429,14 @@ const SidebarLeft = (props: ChatSidebarLeftType) => {
             InputProps={{
               startAdornment: (
                 <InputAdornment position='start' sx={{ color: 'text.secondary' }}>
-                  <Icon icon='mdi:magnify' fontSize={20} />
+                  <Icon icon='tabler:search' fontSize={20} />
                 </InputAdornment>
               )
             }}
           />
           {!mdAbove ? (
             <IconButton sx={{ p: 1, ml: 1 }} onClick={handleLeftSidebarToggle}>
-              <Icon icon='mdi:close' fontSize='1.375rem' />
+              <Icon icon='tabler:x' />
             </IconButton>
           ) : null}
         </Box>

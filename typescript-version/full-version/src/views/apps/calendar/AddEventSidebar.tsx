@@ -225,11 +225,11 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
               onClick={handleDeleteEvent}
               sx={{ color: 'text.primary', mr: store.selectedEvent !== null ? 1 : 0 }}
             >
-              <Icon icon='mdi:delete-outline' fontSize={20} />
+              <Icon icon='tabler:trash' fontSize='1.25rem' />
             </IconButton>
           ) : null}
           <IconButton size='small' onClick={handleSidebarClose} sx={{ color: 'text.primary' }}>
-            <Icon icon='mdi:close' fontSize={20} />
+            <Icon icon='tabler:x' fontSize='1.25rem' />
           </IconButton>
         </Box>
       </Box>

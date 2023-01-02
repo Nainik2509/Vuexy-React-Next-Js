@@ -75,7 +75,7 @@ const RechartsLineChart = ({ direction }: Props) => {
               sx={{ fontWeight: 500, borderRadius: 1, fontSize: '0.875rem' }}
               label={
                 <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 1 } }}>
-                  <Icon icon='mdi:arrow-up' fontSize='1rem' />
+                  <Icon icon='tabler:arrow-up' fontSize='1rem' />
                   <span>22%</span>
                 </Box>
               }

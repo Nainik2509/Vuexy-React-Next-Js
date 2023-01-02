@@ -29,7 +29,7 @@ const TableHeader = (props: TableHeaderProps) => {
         justifyContent: 'space-between'
       }}
     >
-      <Button color='secondary' variant='outlined' startIcon={<Icon icon='mdi:export-variant' fontSize={20} />}>
+      <Button color='secondary' variant='outlined' startIcon={<Icon icon='tabler:upload' />}>
         Export
       </Button>
       <Box sx={{ rowGap: 2, display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>

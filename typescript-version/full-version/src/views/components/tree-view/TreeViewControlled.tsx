@@ -25,7 +25,7 @@ const TreeViewControlled = ({ direction }: Props) => {
     setSelected(nodeIds)
   }
 
-  const ExpandIcon = direction === 'rtl' ? 'mdi:chevron-left' : 'mdi:chevron-right'
+  const ExpandIcon = direction === 'rtl' ? 'tabler:chevron-left' : 'tabler:chevron-right'
 
   return (
     <TreeView
@@ -35,7 +35,7 @@ const TreeViewControlled = ({ direction }: Props) => {
       onNodeToggle={handleToggle}
       onNodeSelect={handleSelect}
       defaultExpandIcon={<Icon icon={ExpandIcon} />}
-      defaultCollapseIcon={<Icon icon='mdi:chevron-down' />}
+      defaultCollapseIcon={<Icon icon='tabler:chevron-down' />}
     >
       <TreeItem nodeId='1' label='Applications'>
         <TreeItem nodeId='2' label='Calendar' />

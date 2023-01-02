@@ -146,7 +146,7 @@ const SidebarAddUser = (props: SidebarAddUserType) => {
           onClick={handleClose}
           sx={{ borderRadius: 1, color: 'text.primary', backgroundColor: 'action.selected' }}
         >
-          <Icon icon='mdi:close' fontSize={20} />
+          <Icon icon='tabler:x' fontSize='1.125rem' />
         </IconButton>
       </Header>
       <Box sx={{ p: theme => theme.spacing(0, 6, 6) }}>

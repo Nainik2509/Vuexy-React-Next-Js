@@ -45,7 +45,7 @@ const FileUploaderMultiple = () => {
     if (file.type.startsWith('image')) {
       return <img width={38} height={38} alt={file.name} src={URL.createObjectURL(file as any)} />
     } else {
-      return <Icon icon='mdi:file-document-outline' />
+      return <Icon icon='tabler:file-description' />
     }
   }
 
@@ -69,7 +69,7 @@ const FileUploaderMultiple = () => {
         </div>
       </div>
       <IconButton onClick={() => handleRemoveFile(file)}>
-        <Icon icon='mdi:close' fontSize={20} />
+        <Icon icon='tabler:x' fontSize={20} />
       </IconButton>
     </ListItem>
   ))

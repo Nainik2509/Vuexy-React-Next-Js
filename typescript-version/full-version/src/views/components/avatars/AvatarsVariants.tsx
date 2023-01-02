@@ -11,16 +11,16 @@ const AvatarsVariants = () => {
   return (
     <Box className='demo-space-x' sx={{ display: 'flex' }}>
       <CustomAvatar variant='square'>
-        <Icon icon='mdi:bell-outline' />
+        <Icon icon='tabler:bell' />
       </CustomAvatar>
       <CustomAvatar color='success' variant='rounded'>
-        <Icon icon='mdi:content-save-outline' />
+        <Icon icon='tabler:device-floppy' />
       </CustomAvatar>
       <CustomAvatar skin='light' variant='square'>
-        <Icon icon='mdi:bell-outline' />
+        <Icon icon='tabler:bell' />
       </CustomAvatar>
       <CustomAvatar skin='light' color='success' variant='rounded'>
-        <Icon icon='mdi:content-save-outline' />
+        <Icon icon='tabler:device-floppy' />
       </CustomAvatar>
     </Box>
   )

@@ -34,29 +34,29 @@ import StepperWrapper from 'src/@core/styles/mui/stepper'
 
 const steps = [
   {
+    icon: 'tabler:users',
     title: 'Personal Details',
-    subtitle: 'Name/Email/Contact',
-    icon: 'bx:user'
+    subtitle: 'Name/Email/Contact'
   },
   {
-    icon: 'bx:home',
+    icon: 'tabler:home',
     subtitle: 'Property Type',
     title: 'Property Details'
   },
   {
-    icon: 'bx:star',
+    icon: 'tabler:bookmarks',
     title: 'Property Features',
     subtitle: 'Bedrooms/Floor No'
   },
   {
-    icon: 'bx:map',
+    icon: 'tabler:map-pin',
     title: 'Property Area',
     subtitle: 'Covered Area'
   },
   {
     title: 'Price Details',
-    icon: 'bx:dollar',
-    subtitle: 'Expected Price'
+    subtitle: 'Expected Price',
+    icon: 'tabler:currency-dollar'
   }
 ]
 
@@ -140,14 +140,14 @@ const PropertyListingWizard = () => {
           variant='outlined'
           onClick={handlePrev}
           disabled={activeStep === 0}
-          startIcon={<Icon icon='bx:chevron-left' />}
+          startIcon={<Icon icon='tabler:chevron-left' />}
         >
           Previous
         </Button>
         <Button
           variant='contained'
           color={stepCondition ? 'success' : 'primary'}
-          {...(!stepCondition ? { endIcon: <Icon icon='bx:chevron-right' /> } : {})}
+          {...(!stepCondition ? { endIcon: <Icon icon='tabler:chevron-right' /> } : {})}
           onClick={() => (stepCondition ? alert('Submitted..!!') : handleNext())}
         >
           {stepCondition ? 'Submit' : 'Next'}

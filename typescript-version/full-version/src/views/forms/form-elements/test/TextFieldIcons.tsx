@@ -27,7 +27,7 @@ const TextFieldIcons = () => {
               label='With a start adornment'
               startAdornment={
                 <InputAdornment position='start'>
-                  <Icon icon='mdi:account-circle-outline' />
+                  <Icon icon='tabler:user-circle' />
                 </InputAdornment>
               }
             />
@@ -37,7 +37,7 @@ const TextFieldIcons = () => {
             InputProps={{
               startAdornment: (
                 <InputAdornment position='start'>
-                  <Icon icon='mdi:account-circle-outline' />
+                  <Icon icon='tabler:user-circle' />
                 </InputAdornment>
               )
             }}
@@ -46,7 +46,7 @@ const TextFieldIcons = () => {
             <Grid container alignItems='center'>
               <Grid item sx={{ mr: 2, '& svg': { color: 'action.active' } }}>
                 <Box sx={{ display: 'flex' }}>
-                  <Icon icon='mdi:account-circle-outline' />
+                  <Icon icon='tabler:user-circle' />
                 </Box>
               </Grid>
               <Grid item>
@@ -62,7 +62,7 @@ const TextFieldIcons = () => {
             <FilledInput
               startAdornment={
                 <InputAdornment position='start'>
-                  <Icon icon='mdi:account-circle-outline' />
+                  <Icon icon='tabler:user-circle' />
                 </InputAdornment>
               }
             />
@@ -73,7 +73,7 @@ const TextFieldIcons = () => {
             InputProps={{
               startAdornment: (
                 <InputAdornment position='start'>
-                  <Icon icon='mdi:account-circle-outline' />
+                  <Icon icon='tabler:user-circle' />
                 </InputAdornment>
               )
             }}
@@ -82,7 +82,7 @@ const TextFieldIcons = () => {
             <Grid container alignItems='center'>
               <Grid item sx={{ mr: 2, '& svg': { color: 'action.active' } }}>
                 <Box sx={{ display: 'flex' }}>
-                  <Icon icon='mdi:account-circle-outline' />
+                  <Icon icon='tabler:user-circle' />
                 </Box>
               </Grid>
               <Grid item>
@@ -98,7 +98,7 @@ const TextFieldIcons = () => {
             <Input
               startAdornment={
                 <InputAdornment position='start'>
-                  <Icon icon='mdi:account-circle-outline' />
+                  <Icon icon='tabler:user-circle' />
                 </InputAdornment>
               }
             />
@@ -109,7 +109,7 @@ const TextFieldIcons = () => {
             InputProps={{
               startAdornment: (
                 <InputAdornment position='start'>
-                  <Icon icon='mdi:account-circle-outline' />
+                  <Icon icon='tabler:user-circle' />
                 </InputAdornment>
               )
             }}
@@ -118,7 +118,7 @@ const TextFieldIcons = () => {
             <Grid container alignItems='center'>
               <Grid item sx={{ mr: 2, '& svg': { mt: 3, color: 'action.active' } }}>
                 <Box sx={{ display: 'flex' }}>
-                  <Icon icon='mdi:account-circle-outline' />
+                  <Icon icon='tabler:user-circle' />
                 </Box>
               </Grid>
               <Grid item>

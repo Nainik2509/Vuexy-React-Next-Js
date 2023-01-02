@@ -13,19 +13,19 @@ interface CustomIcons {
 const customIcons: CustomIcons = {
   1: {
     label: 'Very Dissatisfied',
-    icon: 'mdi:emoticon-sad-outline'
+    icon: 'tabler:mood-sad'
   },
   2: {
     label: 'Neutral',
-    icon: 'mdi:emoticon-neutral-outline'
+    icon: 'tabler:mood-empty'
   },
   3: {
     label: 'Satisfied',
-    icon: 'mdi:emoticon-happy-outline'
+    icon: 'tabler:mood-smile'
   },
   4: {
     label: 'Very Satisfied',
-    icon: 'mdi:emoticon-outline'
+    icon: 'tabler:mood-happy'
   }
 }
 
@@ -44,7 +44,12 @@ const RatingsCustomized = () => {
     <div>
       <Box sx={{ mb: 3 }}>
         <Typography sx={{ fontWeight: 500 }}>Custom empty icon</Typography>
-        <Rating name='customized-empty' defaultValue={2} precision={0.5} emptyIcon={<Icon icon='mdi:star' />} />
+        <Rating
+          precision={0.5}
+          defaultValue={2}
+          name='customized-empty'
+          emptyIcon={<Icon icon='mdi:star' fontSize='1.5rem' />}
+        />
       </Box>
       <Box sx={{ mb: 3 }}>
         <Typography sx={{ fontWeight: 500 }}>Custom icon and color</Typography>

@@ -77,7 +77,7 @@ const TextFieldInputAdornment = () => {
                     onMouseDown={e => e.preventDefault()}
                     aria-label='toggle password visibility'
                   >
-                    <Icon fontSize={20} icon={values.showPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
+                    <Icon fontSize={20} icon={values.showPassword ? 'tabler:eye' : 'tabler:eye-off'} />
                   </IconButton>
                 </InputAdornment>
               }
@@ -118,7 +118,7 @@ const TextFieldInputAdornment = () => {
                     onMouseDown={e => e.preventDefault()}
                     aria-label='toggle password visibility'
                   >
-                    <Icon fontSize={20} icon={values.showPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
+                    <Icon fontSize={20} icon={values.showPassword ? 'tabler:eye' : 'tabler:eye-off'} />
                   </IconButton>
                 </InputAdornment>
               }
@@ -159,7 +159,7 @@ const TextFieldInputAdornment = () => {
                     onMouseDown={e => e.preventDefault()}
                     aria-label='toggle password visibility'
                   >
-                    <Icon fontSize={20} icon={values.showPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
+                    <Icon fontSize={20} icon={values.showPassword ? 'tabler:eye' : 'tabler:eye-off'} />
                   </IconButton>
                 </InputAdornment>
               }

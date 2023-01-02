@@ -43,7 +43,7 @@ const CardActionAll = () => {
                 sx={{ mr: 2, color: 'text.secondary' }}
                 onClick={() => setCollapsed(!collapsed)}
               >
-                <Icon fontSize={20} icon={!collapsed ? 'mdi:chevron-down' : 'mdi:chevron-up'} />
+                <Icon fontSize={20} icon={!collapsed ? 'tabler:chevron-down' : 'tabler:chevron-up'} />
               </IconButton>
               <IconButton
                 size='small'
@@ -51,7 +51,7 @@ const CardActionAll = () => {
                 onClick={() => handleBackDrop()}
                 sx={{ mr: 2, color: 'text.secondary' }}
               >
-                <Icon icon='mdi:refresh' fontSize={20} />
+                <Icon icon='tabler:reload' fontSize={20} />
               </IconButton>
               <IconButton
                 size='small'
@@ -59,7 +59,7 @@ const CardActionAll = () => {
                 sx={{ color: 'text.secondary' }}
                 onClick={() => setVisibility(false)}
               >
-                <Icon icon='mdi:close' fontSize={20} />
+                <Icon icon='tabler:x' fontSize={20} />
               </IconButton>
             </Box>
           }
@@ -69,7 +69,7 @@ const CardActionAll = () => {
             <Typography variant='body2'>
               You can specifically add remove action using <code>actionRemove</code> prop Click on{' '}
               <Box component='span' sx={{ verticalAlign: 'top' }}>
-                <Icon icon='mdi:close' fontSize={20} />{' '}
+                <Icon icon='tabler:x' fontSize={20} />{' '}
               </Box>
               icon to see it in action
             </Typography>

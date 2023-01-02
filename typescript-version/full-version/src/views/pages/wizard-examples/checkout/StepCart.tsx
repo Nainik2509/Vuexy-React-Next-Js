@@ -67,7 +67,7 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12} lg={8}>
-        <Alert severity='success' icon={<Icon icon='mdi:bookmark-multiple-outline' />} sx={{ mb: 4 }}>
+        <Alert severity='success' icon={<Icon icon='tabler:bookmarks' />} sx={{ mb: 4 }}>
           <AlertTitle>Available Offers</AlertTitle>
           <div>
             <Typography sx={{ color: 'success.main' }}>
@@ -87,7 +87,7 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
               <img width={140} src='/images/products/google-home.png' alt='Google Home' />
             </ListItemAvatar>
             <IconButton size='small' className='remove-item' sx={{ color: 'text.primary' }}>
-              <Icon icon='mdi:close' fontSize={20} />
+              <Icon icon='tabler:x' fontSize={20} />
             </IconButton>
             <Grid container>
               <Grid item xs={12} md={8}>
@@ -134,7 +134,7 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
               <img width={140} src='/images/products/iphone-11.png' alt='iphone 11' />
             </ListItemAvatar>
             <IconButton size='small' className='remove-item' sx={{ color: 'text.primary' }}>
-              <Icon icon='mdi:close' fontSize={20} />
+              <Icon icon='tabler:x' fontSize={20} />
             </IconButton>
             <Grid container>
               <Grid item xs={12} md={8}>
@@ -197,7 +197,7 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
           >
             Add more products from wishlist
           </Typography>
-          <Icon icon='mdi:chevron-right' />
+          <Icon icon='tabler:chevron-right' />
         </Box>
       </Grid>
       <Grid item xs={12} lg={4}>

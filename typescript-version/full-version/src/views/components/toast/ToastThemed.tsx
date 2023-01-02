@@ -32,7 +32,7 @@ const ToastThemed = () => {
     <Box
       sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column', '& svg': { mb: 2 } }}
     >
-      <Icon icon='mdi:palette-outline' fontSize='2rem' />
+      <Icon icon='tabler:palette' fontSize='2rem' />
       <Typography sx={{ mb: 4, fontWeight: 600 }}>Themed</Typography>
       <Typography sx={{ mb: 3 }}>Customize the default styles the way you want.</Typography>
       <Button sx={{ mb: 8 }} variant='contained' onClick={handleClick}>

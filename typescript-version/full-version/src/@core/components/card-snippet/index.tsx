@@ -83,7 +83,7 @@ const CardSnippet = (props: CardSnippetProps) => {
           : {
               action: (
                 <IconButton onClick={() => setShowCode(!showCode)}>
-                  <Icon icon='mdi:code-tags' fontSize={20} />
+                  <Icon icon='tabler:code' fontSize={20} />
                 </IconButton>
               )
             })}
@@ -104,12 +104,12 @@ const CardSnippet = (props: CardSnippetProps) => {
               >
                 {code.tsx !== null ? (
                   <ToggleButton value='tsx'>
-                    <Icon icon='mdi:language-typescript' fontSize={20} />
+                    <Icon icon='tabler:brand-typescript' fontSize={20} />
                   </ToggleButton>
                 ) : null}
                 {code.jsx !== null ? (
                   <ToggleButton value='jsx'>
-                    <Icon icon='mdi:language-javascript' fontSize={20} />
+                    <Icon icon='tabler:brand-javascript' fontSize={20} />
                   </ToggleButton>
                 ) : null}
               </ToggleButtonGroup>
@@ -124,7 +124,7 @@ const CardSnippet = (props: CardSnippetProps) => {
                   position: 'absolute'
                 }}
               >
-                <Icon icon='mdi:content-copy' fontSize={20} />
+                <Icon icon='tabler:copy' fontSize={20} />
               </IconButton>
             </Tooltip>
             <div>{renderCode()}</div>

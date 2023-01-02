@@ -53,7 +53,7 @@ const ButtonGroupSplit = () => {
           aria-expanded={open ? 'true' : undefined}
           aria-controls={open ? 'split-button-menu' : undefined}
         >
-          <Icon icon='mdi:menu-down' />
+          <Icon icon='tabler:chevron-down' />
         </Button>
       </ButtonGroup>
       <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>

@@ -45,7 +45,7 @@ const DialogAddAddress = () => {
   return (
     <Card>
       <CardContent sx={{ textAlign: 'center', '& svg': { mb: 2 } }}>
-        <Icon icon='mdi:home-outline' fontSize='2rem' />
+        <Icon icon='tabler:home' fontSize='2rem' />
         <Typography variant='h6' sx={{ mb: 4 }}>
           Add New Address
         </Typography>
@@ -71,7 +71,7 @@ const DialogAddAddress = () => {
             onClick={() => setShow(false)}
             sx={{ position: 'absolute', right: '1rem', top: '1rem' }}
           >
-            <Icon icon='mdi:close' />
+            <Icon icon='tabler:x' />
           </IconButton>
           <Box sx={{ mb: 8, textAlign: 'center' }}>
             <Typography variant='h5' sx={{ mb: 3 }}>
@@ -94,7 +94,7 @@ const DialogAddAddress = () => {
                 }}
               >
                 <Box sx={{ mb: 1, display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
-                  <Icon icon='mdi:home-outline' />
+                  <Icon icon='tabler:home' />
                   <Typography variant='h6' sx={{ ...(addressType === 'home' ? { color: 'primary.main' } : {}) }}>
                     Home
                   </Typography>
@@ -118,7 +118,7 @@ const DialogAddAddress = () => {
                 }}
               >
                 <Box sx={{ mb: 1, display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
-                  <Icon icon='mdi:briefcase-outline' />
+                  <Icon icon='tabler:briefcase' />
                   <Typography variant='h6' sx={{ ...(addressType === 'office' ? { color: 'primary.main' } : {}) }}>
                     Office
                   </Typography>

@@ -155,7 +155,7 @@ const CheckoutWizard = () => {
     <Card>
       <CardContent sx={{ py: 11.5 }}>
         <StepperWrapper>
-          <Stepper activeStep={activeStep} connector={<Icon icon='mdi:chevron-right' />}>
+          <Stepper activeStep={activeStep} connector={<Icon icon='tabler:chevron-right' />}>
             {steps.map((step, index) => {
               return (
                 <Step key={index} onClick={() => setActiveStep(index)} sx={{}}>

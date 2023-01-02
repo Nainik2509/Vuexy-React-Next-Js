@@ -46,7 +46,7 @@ const CardWithCollapse = () => {
         >
           <Button onClick={handleClick}>Details</Button>
           <IconButton size='small' onClick={handleClick}>
-            <Icon fontSize='1.875rem' icon={collapse ? 'mdi:chevron-up' : 'mdi:chevron-down'} />
+            <Icon fontSize='1.875rem' icon={collapse ? 'tabler:chevron-up' : 'tabler:chevron-down'} />
           </IconButton>
         </Box>
       </CardActions>

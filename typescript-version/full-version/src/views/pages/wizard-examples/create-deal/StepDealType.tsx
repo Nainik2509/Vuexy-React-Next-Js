@@ -79,15 +79,15 @@ const StepDealType = () => {
 
   const icons: IconType[] = [
     {
-      icon: 'mdi:tag-outline',
+      icon: 'tabler:discount-check',
       iconProps: { fontSize: '2rem', style: { marginBottom: 4 }, color: theme.palette.text.secondary }
     },
     {
-      icon: 'mdi:currency-usd',
+      icon: 'tabler:credit-card',
       iconProps: { fontSize: '2rem', style: { marginBottom: 4 }, color: theme.palette.text.secondary }
     },
     {
-      icon: 'mdi:account-outline',
+      icon: 'tabler:diamond',
       iconProps: { fontSize: '2rem', style: { marginBottom: 4 }, color: theme.palette.text.secondary }
     }
   ]

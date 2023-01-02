@@ -14,7 +14,7 @@ const ToastSuccess = () => {
     <Box
       sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column', '& svg': { mb: 2 } }}
     >
-      <Icon icon='mdi:check-circle-outline' fontSize='2rem' />
+      <Icon icon='tabler:circle-check' fontSize='2rem' />
       <Typography sx={{ mb: 4, fontWeight: 600 }}>Success</Typography>
       <Typography sx={{ mb: 3 }}>Creates a notification with an animated checkmark.</Typography>
       <Button sx={{ mb: 8 }} color='success' variant='contained' onClick={() => toast.success('Successfully toasted!')}>

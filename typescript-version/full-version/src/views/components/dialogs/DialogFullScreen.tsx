@@ -36,7 +36,7 @@ const DialogFullScreen = () => {
             onClick={handleClose}
             sx={{ top: 8, right: 10, position: 'absolute', color: 'grey.500' }}
           >
-            <Icon icon='mdi:close' />
+            <Icon icon='tabler:x' />
           </IconButton>
         </DialogTitle>
         <DialogContent>

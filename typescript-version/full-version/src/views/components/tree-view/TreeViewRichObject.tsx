@@ -43,14 +43,14 @@ const TreeViewRichObject = ({ direction }: Props) => {
     </TreeItem>
   )
 
-  const ExpandIcon = direction === 'rtl' ? 'mdi:chevron-left' : 'mdi:chevron-right'
+  const ExpandIcon = direction === 'rtl' ? 'tabler:chevron-left' : 'tabler:chevron-right'
 
   return (
     <TreeView
       sx={{ minHeight: 240 }}
       defaultExpanded={['root']}
       defaultExpandIcon={<Icon icon={ExpandIcon} />}
-      defaultCollapseIcon={<Icon icon='mdi:chevron-down' />}
+      defaultCollapseIcon={<Icon icon='tabler:chevron-down' />}
     >
       {renderTree(data)}
     </TreeView>

@@ -76,7 +76,7 @@ const DialogAddCard = () => {
   return (
     <Card>
       <CardContent sx={{ textAlign: 'center', '& svg': { mb: 2 } }}>
-        <Icon icon='mdi:credit-card-outline' fontSize='2rem' />
+        <Icon icon='tabler:credit-card' fontSize='2rem' />
         <Typography variant='h6' sx={{ mb: 4 }}>
           Add New Card
         </Typography>
@@ -98,7 +98,7 @@ const DialogAddCard = () => {
       >
         <DialogContent sx={{ pb: 8, px: { xs: 8, sm: 15 }, pt: { xs: 8, sm: 12.5 }, position: 'relative' }}>
           <IconButton size='small' onClick={handleClose} sx={{ position: 'absolute', right: '1rem', top: '1rem' }}>
-            <Icon icon='mdi:close' />
+            <Icon icon='tabler:x' />
           </IconButton>
           <Box sx={{ mb: 4, textAlign: 'center' }}>
             <Typography variant='h5' sx={{ mb: 3 }}>

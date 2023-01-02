@@ -47,11 +47,11 @@ const CardMembership = () => {
                       '& svg': { color: 'primary.main', mr: 2.75 }
                     }}
                   >
-                    <Icon icon='mdi:lock-open-outline' fontSize={20} />
+                    <Icon icon='tabler:lock-open' fontSize={20} />
                     <Typography variant='body2'>Full Access</Typography>
                   </Box>
                   <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { color: 'primary.main', mr: 2.75 } }}>
-                    <Icon icon='mdi:account-outline' fontSize={20} />
+                    <Icon icon='tabler:user' fontSize={20} />
                     <Typography variant='body2'>15 Members</Typography>
                   </Box>
                 </StyledBox>
@@ -60,11 +60,11 @@ const CardMembership = () => {
                 <Box
                   sx={{ mb: 6.75, display: 'flex', alignItems: 'center', '& svg': { color: 'primary.main', mr: 2.75 } }}
                 >
-                  <Icon icon='mdi:star-outline' fontSize={20} />
+                  <Icon icon='tabler:star' fontSize={20} />
                   <Typography variant='body2'>Access all Features</Typography>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { color: 'primary.main', mr: 2.75 } }}>
-                  <Icon icon='mdi:trending-up' fontSize={20} />
+                  <Icon icon='tabler:trending-up' fontSize={20} />
                   <Typography variant='body2'>Lifetime Free Update</Typography>
                 </Box>
               </Grid>

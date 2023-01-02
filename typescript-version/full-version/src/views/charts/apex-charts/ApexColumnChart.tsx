@@ -140,12 +140,12 @@ const ApexColumnChart = () => {
         InputProps={{
           startAdornment: (
             <InputAdornment position='start'>
-              <Icon icon='mdi:bell-outline' />
+              <Icon icon='tabler:calendar-event' />
             </InputAdornment>
           ),
           endAdornment: (
             <InputAdornment position='end'>
-              <Icon icon='mdi:chevron-down' />
+              <Icon icon='tabler:chevron-down' />
             </InputAdornment>
           )
         }}

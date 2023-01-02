@@ -41,7 +41,7 @@ const UserSuspendDialog = (props: Props) => {
         <DialogContent>
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
             <Box sx={{ mb: 4, maxWidth: '85%', textAlign: 'center', '& svg': { mb: 12.25, color: 'warning.main' } }}>
-              <Icon icon='mdi:alert-circle-outline' fontSize='5.5rem' />
+              <Icon icon='tabler:alert-circle' fontSize='5.5rem' />
               <Typography variant='h4' sx={{ color: 'text.secondary' }}>
                 Are you sure?
               </Typography>
@@ -76,10 +76,7 @@ const UserSuspendDialog = (props: Props) => {
               }
             }}
           >
-            <Icon
-              fontSize='5.5rem'
-              icon={userInput === 'yes' ? 'mdi:check-circle-outline' : 'mdi:close-circle-outline'}
-            />
+            <Icon fontSize='5.5rem' icon={userInput === 'yes' ? 'tabler:circle-check' : 'tabler:circle-x'} />
             <Typography variant='h4' sx={{ mb: 8 }}>
               {userInput === 'yes' ? 'Suspended!' : 'Cancelled'}
             </Typography>

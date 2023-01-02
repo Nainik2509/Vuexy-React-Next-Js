@@ -123,7 +123,7 @@ const Calendar = (props: CalendarType) => {
 
       customButtons: {
         sidebarToggle: {
-          text: <Icon icon='mdi:menu' />,
+          text: <Icon icon='tabler:menu-2' />,
           click() {
             handleLeftSidebarToggle()
           }

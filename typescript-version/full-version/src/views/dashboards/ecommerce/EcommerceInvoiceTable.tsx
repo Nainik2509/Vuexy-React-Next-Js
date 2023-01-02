@@ -54,12 +54,12 @@ const LinkStyled = styled(Link)(({ theme }) => ({
 
 // ** Vars
 const invoiceStatusObj: InvoiceStatusObj = {
-  Sent: { color: 'secondary', icon: 'mdi:send' },
-  Paid: { color: 'success', icon: 'mdi:check' },
-  Draft: { color: 'primary', icon: 'mdi:content-save-outline' },
-  'Partial Payment': { color: 'warning', icon: 'mdi:chart-pie' },
-  'Past Due': { color: 'error', icon: 'mdi:information-outline' },
-  Downloaded: { color: 'info', icon: 'mdi:arrow-down' }
+  Sent: { color: 'secondary', icon: 'tabler:circle-check' },
+  Paid: { color: 'success', icon: 'tabler:circle-half-2' },
+  Draft: { color: 'primary', icon: 'tabler:device-floppy' },
+  'Partial Payment': { color: 'warning', icon: 'tabler:chart-pie' },
+  'Past Due': { color: 'error', icon: 'tabler:alert-circle' },
+  Downloaded: { color: 'info', icon: 'tabler:arrow-down-circle' }
 }
 
 const defaultColumns = [
@@ -74,7 +74,7 @@ const defaultColumns = [
     flex: 0.15,
     minWidth: 80,
     field: 'invoiceStatus',
-    renderHeader: () => <Icon icon='mdi:trending-up' fontSize={20} />,
+    renderHeader: () => <Icon icon='tabler:trending-up' fontSize={20} />,
     renderCell: ({ row }: CellType) => {
       const { dueDate, balance, invoiceStatus } = row
 
@@ -154,12 +154,12 @@ const EcommerceInvoiceTable = () => {
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Tooltip title='Delete Invoice'>
             <IconButton size='small' onClick={() => dispatch(deleteInvoice(row.id))}>
-              <Icon icon='mdi:delete-outline' fontSize={20} />
+              <Icon icon='tabler:trash' fontSize={20} />
             </IconButton>
           </Tooltip>
           <Tooltip title='View'>
             <IconButton size='small' component={Link} href={`/apps/invoice/preview/${row.id}`}>
-              <Icon icon='mdi:eye-outline' fontSize={20} />
+              <Icon icon='tabler:eye' fontSize={20} />
             </IconButton>
           </Tooltip>
           <OptionsMenu
@@ -169,16 +169,16 @@ const EcommerceInvoiceTable = () => {
             options={[
               {
                 text: 'Download',
-                icon: <Icon icon='mdi:download' fontSize={20} />
+                icon: <Icon icon='tabler:download' fontSize={20} />
               },
               {
                 text: 'Edit',
                 href: `/apps/invoice/edit/${row.id}`,
-                icon: <Icon icon='mdi:pencil-outline' fontSize={20} />
+                icon: <Icon icon='tabler:pencil' fontSize={20} />
               },
               {
                 text: 'Duplicate',
-                icon: <Icon icon='mdi:content-copy' fontSize={20} />
+                icon: <Icon icon='tabler:copy' fontSize={20} />
               }
             ]}
           />
@@ -192,7 +192,7 @@ const EcommerceInvoiceTable = () => {
       <CardContent
         sx={{ gap: 4, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}
       >
-        <Button component={Link} variant='contained' href='/apps/invoice/add' startIcon={<Icon icon='mdi:plus' />}>
+        <Button component={Link} variant='contained' href='/apps/invoice/add' startIcon={<Icon icon='tabler:plus' />}>
           Create Invoice
         </Button>
         <Box sx={{ gap: 4, display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>

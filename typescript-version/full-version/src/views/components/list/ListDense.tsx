@@ -19,7 +19,7 @@ const ListDense = () => {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Icon icon='mdi:email-outline' fontSize={20} />
+              <Icon icon='tabler:mail' fontSize={20} />
             </ListItemIcon>
             <ListItemText primary='Inbox' />
           </ListItemButton>
@@ -27,7 +27,7 @@ const ListDense = () => {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Icon icon='mdi:content-copy' fontSize={20} />
+              <Icon icon='tabler:copy' fontSize={20} />
             </ListItemIcon>
             <ListItemText primary='Draft' />
           </ListItemButton>
@@ -38,7 +38,7 @@ const ListDense = () => {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Icon icon='mdi:clock-outline' fontSize={20} />
+              <Icon icon='tabler:clock' fontSize={20} />
             </ListItemIcon>
             <ListItemText primary='Snoozed' />
           </ListItemButton>
@@ -46,7 +46,7 @@ const ListDense = () => {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Icon icon='mdi:alert-circle-outline' fontSize={20} />
+              <Icon icon='tabler:alert-circle' fontSize={20} />
             </ListItemIcon>
             <ListItemText primary='Spam' />
           </ListItemButton>

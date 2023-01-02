@@ -33,7 +33,7 @@ const TabDatabase = () => {
         >
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <CustomAvatar skin='light' color='error' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
-              <Icon icon='mdi:firebase' />
+              <Icon icon='tabler:brand-firebase' />
             </CustomAvatar>
             <div>
               <Typography>Firebase</Typography>
@@ -48,7 +48,7 @@ const TabDatabase = () => {
         >
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <CustomAvatar skin='light' color='warning' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
-              <Icon icon='mdi:aws' />
+              <Icon icon='tabler:brand-amazon' />
             </CustomAvatar>
             <div>
               <Typography>AWS</Typography>
@@ -63,7 +63,7 @@ const TabDatabase = () => {
         >
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <CustomAvatar skin='light' color='info' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
-              <Icon icon='mdi:database-outline' />
+              <Icon icon='tabler:database' />
             </CustomAvatar>
             <div>
               <Typography>MySQL</Typography>

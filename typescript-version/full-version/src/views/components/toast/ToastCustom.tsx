@@ -24,7 +24,7 @@ const ToastCustom = () => {
             </div>
           </Box>
           <IconButton onClick={() => toast.dismiss(t.id)}>
-            <Icon icon='mdi:close' fontSize={20} />
+            <Icon icon='tabler:x' fontSize={20} />
           </IconButton>
         </Box>
       ),
@@ -40,7 +40,7 @@ const ToastCustom = () => {
     <Box
       sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column', '& svg': { mb: 2 } }}
     >
-      <Icon icon='mdi:pencil-outline' fontSize='2rem' />
+      <Icon icon='tabler:pencil' fontSize='2rem' />
       <Typography sx={{ mb: 4, fontWeight: 600 }}>Custom</Typography>
       <Typography sx={{ mb: 3 }}>Make a toast using any custom content</Typography>
       <Button sx={{ mb: 8 }} variant='contained' onClick={handleClick}>

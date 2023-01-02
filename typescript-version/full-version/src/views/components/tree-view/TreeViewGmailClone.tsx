@@ -67,24 +67,24 @@ const StyledTreeItem = (props: StyledTreeItemProps) => {
 }
 
 const TreeViewGmailClone = ({ direction }: Props) => {
-  const ExpandIcon = <Icon icon={direction === 'rtl' ? 'mdi:chevron-left' : 'mdi:chevron-right'} />
+  const ExpandIcon = <Icon icon={direction === 'rtl' ? 'tabler:chevron-left' : 'tabler:chevron-right'} />
 
   return (
     <TreeView
       sx={{ minHeight: 240 }}
       defaultExpanded={['3']}
       defaultExpandIcon={ExpandIcon}
-      defaultCollapseIcon={<Icon icon='mdi:chevron-down' />}
+      defaultCollapseIcon={<Icon icon='tabler:chevron-down' />}
     >
-      <StyledTreeItem nodeId='1' labelText='All Mail' labelIcon='mdi:email-outline' />
-      <StyledTreeItem nodeId='2' labelText='Trash' labelIcon='mdi:delete-outline' />
-      <StyledTreeItem nodeId='3' labelText='Categories' labelIcon='mdi:label-outline'>
-        <StyledTreeItem nodeId='5' labelInfo='90' labelText='Social' labelIcon='mdi:account-supervisor-outline' />
-        <StyledTreeItem nodeId='6' labelInfo='2,294' labelText='Updates' labelIcon='mdi:information-outline' />
-        <StyledTreeItem nodeId='7' labelInfo='3,566' labelText='Forums' labelIcon='mdi:forum-outline' />
-        <StyledTreeItem nodeId='8' labelInfo='733' labelText='Promotions' labelIcon='mdi:tag-outline' />
+      <StyledTreeItem nodeId='1' labelText='All Mail' labelIcon='tabler:mail' />
+      <StyledTreeItem nodeId='2' labelText='Trash' labelIcon='tabler:trash' />
+      <StyledTreeItem nodeId='3' labelText='Categories' labelIcon='tabler:badge'>
+        <StyledTreeItem nodeId='5' labelInfo='90' labelText='Social' labelIcon='tabler:users' />
+        <StyledTreeItem nodeId='6' labelInfo='2,294' labelText='Updates' labelIcon='tabler:info-circle' />
+        <StyledTreeItem nodeId='7' labelInfo='3,566' labelText='Forums' labelIcon='tabler:messages' />
+        <StyledTreeItem nodeId='8' labelInfo='733' labelText='Promotions' labelIcon='tabler:tag' />
       </StyledTreeItem>
-      <StyledTreeItem nodeId='4' labelText='History' labelIcon='mdi:label-outline' />
+      <StyledTreeItem nodeId='4' labelText='History' labelIcon='tabler:badge' />
     </TreeView>
   )
 }

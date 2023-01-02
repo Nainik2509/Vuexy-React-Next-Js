@@ -99,7 +99,7 @@ const ChatLog = (props: ChatLogType) => {
       if (feedback.isSent && !feedback.isDelivered) {
         return (
           <Box component='span' sx={{ display: 'flex', '& svg': { mr: 1.5, color: 'text.secondary' } }}>
-            <Icon icon='mdi:check' fontSize='1.125rem' />
+            <Icon icon='tabler:check' fontSize='1.125rem' />
           </Box>
         )
       } else if (feedback.isSent && feedback.isDelivered) {
@@ -111,7 +111,7 @@ const ChatLog = (props: ChatLogType) => {
               '& svg': { mr: 1.5, color: feedback.isSeen ? 'success.main' : 'text.secondary' }
             }}
           >
-            <Icon icon='mdi:check-all' fontSize='1.125rem' />
+            <Icon icon='tabler:checks' fontSize='1.125rem' />
           </Box>
         )
       } else {

@@ -19,16 +19,16 @@ const ButtonToggleMultiple = () => {
   return (
     <ToggleButtonGroup value={formats} onChange={handleFormat} aria-label='text alignment'>
       <ToggleButton value='bold' aria-label='bold'>
-        <Icon icon='mdi:format-bold' />
+        <Icon icon='tabler:bold' />
       </ToggleButton>
       <ToggleButton value='italic' aria-label='italic'>
-        <Icon icon='mdi:format-italic' />
+        <Icon icon='tabler:italic' />
       </ToggleButton>
       <ToggleButton value='underlined' aria-label='underlined'>
-        <Icon icon='mdi:format-underline' />
+        <Icon icon='tabler:underline' />
       </ToggleButton>
       <ToggleButton value='color' aria-label='color' disabled>
-        <Icon icon='mdi:format-color-fill' />
+        <Icon icon='tabler:color-swatch' />
       </ToggleButton>
     </ToggleButtonGroup>
   )

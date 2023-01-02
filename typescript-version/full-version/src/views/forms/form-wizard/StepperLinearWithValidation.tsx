@@ -254,7 +254,7 @@ const StepperLinearWithValidation = () => {
                               onMouseDown={e => e.preventDefault()}
                               aria-label='toggle password visibility'
                             >
-                              <Icon icon={state.showPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
+                              <Icon icon={state.showPassword ? 'tabler:eye' : 'tabler:eye-off'} />
                             </IconButton>
                           </InputAdornment>
                         }
@@ -296,7 +296,7 @@ const StepperLinearWithValidation = () => {
                               aria-label='toggle password visibility'
                               onClick={handleClickShowConfirmPassword}
                             >
-                              <Icon icon={state.showPassword2 ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
+                              <Icon icon={state.showPassword2 ? 'tabler:eye' : 'tabler:eye-off'} />
                             </IconButton>
                           </InputAdornment>
                         }

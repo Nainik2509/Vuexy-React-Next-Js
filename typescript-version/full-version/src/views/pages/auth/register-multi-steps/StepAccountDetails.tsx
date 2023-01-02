@@ -66,7 +66,7 @@ const StepAccountDetails = ({ handleNext }: { handleNext: () => void }) => {
               endAdornment={
                 <InputAdornment position='end'>
                   <IconButton edge='end' onClick={handleClickShowPassword} onMouseDown={e => e.preventDefault()}>
-                    <Icon icon={values.showPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
+                    <Icon icon={values.showPassword ? 'tabler:eye' : 'tabler:eye-off'} />
                   </IconButton>
                 </InputAdornment>
               }
@@ -83,7 +83,7 @@ const StepAccountDetails = ({ handleNext }: { handleNext: () => void }) => {
               endAdornment={
                 <InputAdornment position='end'>
                   <IconButton edge='end' onMouseDown={e => e.preventDefault()} onClick={handleClickShowConfirmPassword}>
-                    <Icon icon={values.showConfirmPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
+                    <Icon icon={values.showConfirmPassword ? 'tabler:eye' : 'tabler:eye-off'} />
                   </IconButton>
                 </InputAdornment>
               }

@@ -77,7 +77,7 @@ const CardMobile = () => {
           <CardActions className='card-action-dense'>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
               <Button sx={{ '& svg': { mr: 2 } }}>
-                <Icon icon='mdi:cart-plus' fontSize={20} />
+                <Icon icon='tabler:shopping-cart-plus' fontSize={20} />
                 Add to Card
               </Button>
               <IconButton
@@ -88,7 +88,7 @@ const CardMobile = () => {
                 aria-controls='long-menu'
                 aria-expanded={open ? 'true' : undefined}
               >
-                <Icon icon='mdi:share-variant' fontSize={20} />
+                <Icon icon='tabler:share' fontSize={20} />
               </IconButton>
               <Menu
                 open={open}
@@ -100,16 +100,16 @@ const CardMobile = () => {
                 }}
               >
                 <MenuItem onClick={handleClose}>
-                  <Icon icon='mdi:facebook' />
+                  <Icon icon='tabler:brand-facebook' />
                 </MenuItem>
                 <MenuItem onClick={handleClose}>
-                  <Icon icon='mdi:twitter' />
+                  <Icon icon='tabler:brand-twitter' />
                 </MenuItem>
                 <MenuItem onClick={handleClose}>
-                  <Icon icon='mdi:linkedin' />
+                  <Icon icon='tabler:brand-linkedin' />
                 </MenuItem>
                 <MenuItem onClick={handleClose}>
-                  <Icon icon='mdi:google-plus' />
+                  <Icon icon='tabler:brand-google-drive' />
                 </MenuItem>
               </Menu>
             </Box>

@@ -29,7 +29,7 @@ const CardActionClose = () => {
               sx={{ color: 'text.secondary' }}
               onClick={() => setVisibility(false)}
             >
-              <Icon icon='mdi:close' fontSize={20} />
+              <Icon icon='tabler:x' fontSize={20} />
             </IconButton>
           }
         />
@@ -37,7 +37,7 @@ const CardActionClose = () => {
           <Typography variant='body2'>
             You can specifically add remove action using <code>actionRemove</code> prop Click on{' '}
             <Box component='span' sx={{ verticalAlign: 'top' }}>
-              <Icon icon='mdi:close' fontSize={20} />
+              <Icon icon='tabler:x' fontSize={20} />
             </Box>{' '}
             icon to see it in action
           </Typography>

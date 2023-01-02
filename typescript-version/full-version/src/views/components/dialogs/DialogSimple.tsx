@@ -51,7 +51,7 @@ const DialogSimple = () => {
               <ListItemButton>
                 <ListItemAvatar>
                   <CustomAvatar skin='light'>
-                    <Icon icon='mdi:account-outline' />
+                    <Icon icon='tabler:user' />
                   </CustomAvatar>
                 </ListItemAvatar>
                 <ListItemText primary={email} />
@@ -62,7 +62,7 @@ const DialogSimple = () => {
             <ListItemButton>
               <ListItemAvatar>
                 <MuiAvatar>
-                  <Icon icon='mdi:plus' />
+                  <Icon icon='tabler:plus' />
                 </MuiAvatar>
               </ListItemAvatar>
               <ListItemText primary='Add account' />

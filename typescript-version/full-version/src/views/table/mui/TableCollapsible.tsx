@@ -52,7 +52,7 @@ const Row = (props: { row: ReturnType<typeof createData> }) => {
       <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
         <TableCell>
           <IconButton aria-label='expand row' size='small' onClick={() => setOpen(!open)}>
-            <Icon icon={open ? 'mdi:chevron-up' : 'mdi:chevron-down'} />
+            <Icon icon={open ? 'tabler:chevron-up' : 'tabler:chevron-down'} />
           </IconButton>
         </TableCell>
         <TableCell component='th' scope='row'>

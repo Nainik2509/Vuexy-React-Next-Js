@@ -17,7 +17,7 @@ const CardAppBar = () => {
         <AppBar position='static'>
           <Toolbar>
             <IconButton size='large' sx={{ mr: 2.5 }} color='inherit' aria-label='menu'>
-              <Icon icon='mdi:menu' />
+              <Icon icon='tabler:menu-2' />
             </IconButton>
             <Typography variant='h6' sx={{ flexGrow: 1, color: 'common.white' }}>
               News

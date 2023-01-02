@@ -181,7 +181,7 @@ const UserViewConnection = () => {
                     sx={{ p: 1.5, minWidth: 38 }}
                     color={account.isConnected ? 'error' : 'secondary'}
                   >
-                    <Icon icon={account.isConnected ? 'mdi:delete-outline' : 'mdi:link-variant'} />
+                    <Icon icon={account.isConnected ? 'tabler:trash' : 'tabler:link'} />
                   </Button>
                 </Box>
               )

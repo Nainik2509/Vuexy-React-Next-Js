@@ -31,7 +31,7 @@ const TabFramework = () => {
         >
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <CustomAvatar skin='light' color='info' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
-              <Icon icon='mdi:react' />
+              <Icon icon='tabler:brand-react' />
             </CustomAvatar>
             <div>
               <Typography>React Native</Typography>
@@ -47,7 +47,7 @@ const TabFramework = () => {
         >
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <CustomAvatar skin='light' color='error' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
-              <Icon icon='mdi:angular' />
+              <Icon icon='tabler:brand-angular' />
             </CustomAvatar>
             <div>
               <Typography>Angular</Typography>
@@ -62,7 +62,7 @@ const TabFramework = () => {
         >
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <CustomAvatar skin='light' color='success' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
-              <Icon icon='mdi:vuejs' />
+              <Icon icon='tabler:brand-vue' />
             </CustomAvatar>
             <div>
               <Typography>Vue</Typography>
@@ -77,7 +77,7 @@ const TabFramework = () => {
         >
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <CustomAvatar skin='light' color='warning' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
-              <Icon icon='mdi:laravel' />
+              <Icon icon='tabler:brand-laravel' />
             </CustomAvatar>
             <div>
               <Typography>Laravel</Typography>

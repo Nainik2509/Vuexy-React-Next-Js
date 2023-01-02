@@ -48,17 +48,17 @@ interface State {
 
 const steps = [
   {
-    icon: 'mdi:home-outline',
+    icon: 'tabler:home',
     title: 'Account Details',
     subtitle: 'Enter your Account Details'
   },
   {
+    icon: 'tabler:user',
     title: 'Personal Info',
-    icon: 'mdi:user-outline',
     subtitle: 'Setup Information'
   },
   {
-    icon: 'mdi:link',
+    icon: 'tabler:link',
     title: 'Social Links',
     subtitle: 'Add Social Links'
   }
@@ -203,7 +203,7 @@ const StepperCustomVertical = () => {
                         onMouseDown={e => e.preventDefault()}
                         aria-label='toggle password visibility'
                       >
-                        <Icon icon={state.showPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
+                        <Icon icon={state.showPassword ? 'tabler:eye' : 'tabler:eye-off'} />
                       </IconButton>
                     </InputAdornment>
                   }
@@ -227,7 +227,7 @@ const StepperCustomVertical = () => {
                         aria-label='toggle password visibility'
                         onClick={handleClickShowConfirmPassword}
                       >
-                        <Icon icon={state.showPassword2 ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
+                        <Icon icon={state.showPassword2 ? 'tabler:eye' : 'tabler:eye-off'} />
                       </IconButton>
                     </InputAdornment>
                   }

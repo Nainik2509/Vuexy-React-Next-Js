@@ -113,7 +113,7 @@ const StepConfirmation = () => {
             there.
           </Typography>
           <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { color: 'text.secondary' } }}>
-            <Icon icon='mdi:clock-time-five-outline' fontSize={20} />
+            <Icon icon='tabler:clock' fontSize={20} />
             <Typography sx={{ ml: 1.5, color: 'text.secondary' }}>
               <Typography component='span' sx={{ fontWeight: 500, color: 'text.secondary' }}>
                 Time placed:
@@ -128,7 +128,7 @@ const StepConfirmation = () => {
           <ListItem sx={{ flexDirection: 'column', alignItems: 'flex-start' }}>
             <Box sx={{ mb: 4, display: 'flex', alignItems: 'center' }}>
               <Box sx={{ mr: 1.5, display: 'flex' }}>
-                <Icon icon='mdi:map-marker-outline' fontSize={20} />
+                <Icon icon='tabler:map-pin' fontSize={20} />
               </Box>
               <Typography sx={{ fontWeight: 500 }}>Shipping</Typography>
             </Box>
@@ -141,7 +141,7 @@ const StepConfirmation = () => {
           <ListItem sx={{ flexDirection: 'column', alignItems: 'flex-start' }}>
             <Box sx={{ mb: 4, display: 'flex', alignItems: 'center' }}>
               <Box sx={{ mr: 1.5, display: 'flex' }}>
-                <Icon icon='mdi:credit-card-outline' fontSize={20} />
+                <Icon icon='tabler:credit-card' fontSize={20} />
               </Box>
               <Typography sx={{ fontWeight: 500 }}>Billing Address</Typography>
             </Box>
@@ -154,7 +154,7 @@ const StepConfirmation = () => {
           <ListItem sx={{ flexDirection: 'column', alignItems: 'flex-start' }}>
             <Box sx={{ mb: 4, display: 'flex', alignItems: 'center' }}>
               <Box sx={{ mr: 1.5, display: 'flex' }}>
-                <Icon icon='mdi:archive-outline' fontSize={20} />
+                <Icon icon='tabler:ship' fontSize={20} />
               </Box>
               <Typography sx={{ fontWeight: 500 }}>Shipping Method</Typography>
             </Box>

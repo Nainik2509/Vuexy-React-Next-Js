@@ -39,10 +39,10 @@ const BadgesVisibility = () => {
         </Badge>
         <ButtonGroup size='small'>
           <Button aria-label='reduce' onClick={() => setCount(Math.max(count - 1, 0))}>
-            <Icon icon='mdi:minus' fontSize={20} />
+            <Icon icon='tabler:minus' fontSize={20} />
           </Button>
           <Button aria-label='increase' onClick={() => setCount(count + 1)}>
-            <Icon icon='mdi:plus' fontSize={20} />
+            <Icon icon='tabler:plus' fontSize={20} />
           </Button>
         </ButtonGroup>
       </Wrapper>

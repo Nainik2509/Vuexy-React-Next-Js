@@ -94,12 +94,8 @@ const SidebarLeft = (props: SidebarLeftType) => {
         }}
       >
         <Box sx={{ p: 6, width: '100%' }}>
-          <Button
-            fullWidth
-            variant='contained'
-            startIcon={<Icon icon='mdi:plus' />}
-            onClick={handleSidebarToggleSidebar}
-          >
+          <Button fullWidth variant='contained' sx={{ '& svg': { mr: 2 } }} onClick={handleSidebarToggleSidebar}>
+            <Icon icon='tabler:plus' fontSize='1.125rem' />
             Add Event
           </Button>
         </Box>

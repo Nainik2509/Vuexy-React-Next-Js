@@ -104,12 +104,12 @@ const ChartjsBarChart = (props: BarProp) => {
         InputProps={{
           startAdornment: (
             <InputAdornment position='start'>
-              <Icon icon='mdi:calendar-outline' />
+              <Icon icon='tabler:calendar-event' />
             </InputAdornment>
           ),
           endAdornment: (
             <InputAdornment position='end'>
-              <Icon icon='mdi:chevron-down' />
+              <Icon icon='tabler:chevron-down' />
             </InputAdornment>
           )
         }}

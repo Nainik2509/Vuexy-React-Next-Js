@@ -189,16 +189,16 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
 
   const icons: IconType[] = [
     {
-      icon: 'mdi:account-outline',
-      iconProps: { fontSize: '2rem', style: { marginBottom: 4 }, color: theme.palette.text.secondary }
+      icon: 'tabler:users',
+      iconProps: { fontSize: '2.125rem', style: { marginBottom: 4 }, color: theme.palette.text.secondary }
     },
     {
-      icon: 'mdi:crown-outline',
-      iconProps: { fontSize: '2rem', style: { marginBottom: 4 }, color: theme.palette.text.secondary }
+      icon: 'tabler:crown',
+      iconProps: { fontSize: '2.125rem', style: { marginBottom: 4 }, color: theme.palette.text.secondary }
     },
     {
-      icon: 'mdi:rocket-launch-outline',
-      iconProps: { fontSize: '2rem', style: { marginBottom: 4 }, color: theme.palette.text.secondary }
+      icon: 'tabler:brand-telegram',
+      iconProps: { fontSize: '2.125rem', style: { marginBottom: 4 }, color: theme.palette.text.secondary }
     }
   ]
 

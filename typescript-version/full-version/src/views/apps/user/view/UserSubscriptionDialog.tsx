@@ -41,7 +41,7 @@ const UserSuspendDialog = (props: Props) => {
         <DialogContent>
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
             <Box sx={{ maxWidth: '85%', textAlign: 'center', '& svg': { mb: 1, color: 'warning.main' } }}>
-              <Icon icon='mdi:alert-circle-outline' fontSize='5.5rem' />
+              <Icon icon='tabler:alert-circle' fontSize='5.5rem' />
               <Typography>Are you sure you would like to cancel your subscription?</Typography>
             </Box>
           </Box>
@@ -73,10 +73,7 @@ const UserSuspendDialog = (props: Props) => {
               }
             }}
           >
-            <Icon
-              fontSize='5.5rem'
-              icon={userInput === 'yes' ? 'mdi:check-circle-outline' : 'mdi:close-circle-outline'}
-            />
+            <Icon fontSize='5.5rem' icon={userInput === 'yes' ? 'tabler:circle-check' : 'tabler:circle-x'} />
             <Typography variant='h4' sx={{ mb: 8 }}>
               {userInput === 'yes' ? 'Unsubscribed!' : 'Cancelled'}
             </Typography>

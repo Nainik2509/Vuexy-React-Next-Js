@@ -43,7 +43,7 @@ const MenuMaxHeight = () => {
   return (
     <div>
       <IconButton aria-label='more' aria-controls='long-menu' aria-haspopup='true' onClick={handleClick}>
-        <Icon icon='mdi:dots-vertical' />
+        <Icon icon='tabler:dots-vertical' />
       </IconButton>
       <Menu
         keepMounted

@@ -52,7 +52,7 @@ const SwiperControls = ({ direction }: { direction: Direction }) => {
         {loaded && instanceRef.current && (
           <>
             <Icon
-              icon='mdi:chevron-left'
+              icon='tabler:chevron-left'
               className={clsx('arrow arrow-left', {
                 'arrow-disabled': currentSlide === 0
               })}
@@ -60,7 +60,7 @@ const SwiperControls = ({ direction }: { direction: Direction }) => {
             />
 
             <Icon
-              icon='mdi:chevron-right'
+              icon='tabler:chevron-right'
               className={clsx('arrow arrow-right', {
                 'arrow-disabled': currentSlide === instanceRef.current.track.details.slides.length - 1
               })}

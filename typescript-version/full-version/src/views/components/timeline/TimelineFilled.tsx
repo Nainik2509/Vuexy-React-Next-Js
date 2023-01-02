@@ -48,7 +48,7 @@ const TimelineLeft = () => {
             <Typography variant='caption'>Wednesday</Typography>
           </Box>
           <Typography variant='body2' sx={{ color: 'text.primary' }}>
-            <span>Charles de Gaulle Airport, Paris</span> <Icon icon='mdi:arrow-right' fontSize={20} />{' '}
+            <span>Charles de Gaulle Airport, Paris</span> <Icon icon='tabler:arrow-right' fontSize={20} />{' '}
             <span>Heathrow Airport, London</span>
           </Typography>
           <Typography variant='caption'>6:30 AM</Typography>
@@ -89,10 +89,10 @@ const TimelineLeft = () => {
             </Box>
             <div>
               <IconButton sx={{ color: 'text.secondary' }}>
-                <Icon icon='mdi:message-outline' fontSize={20} />
+                <Icon icon='tabler:message' fontSize={20} />
               </IconButton>
               <IconButton sx={{ color: 'text.secondary' }}>
-                <Icon icon='mdi:phone-dial-outline' fontSize={20} />
+                <Icon icon='tabler:phone-call' fontSize={20} />
               </IconButton>
             </div>
           </Box>

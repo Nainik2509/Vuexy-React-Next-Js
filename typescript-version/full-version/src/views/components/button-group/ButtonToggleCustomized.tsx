@@ -41,31 +41,31 @@ const ButtonToggleCustomized = () => {
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
       <ToggleButtonGroup exclusive value={alignment} onChange={handleAlignment} aria-label='text alignment'>
         <ToggleButton value='left' aria-label='left aligned'>
-          <Icon icon='mdi:format-align-left' />
+          <Icon icon='tabler:align-left' />
         </ToggleButton>
         <ToggleButton value='center' aria-label='center aligned'>
-          <Icon icon='mdi:format-align-center' />
+          <Icon icon='tabler:align-center' />
         </ToggleButton>
         <ToggleButton value='right' aria-label='right aligned'>
-          <Icon icon='mdi:format-align-right' />
+          <Icon icon='tabler:align-right' />
         </ToggleButton>
         <ToggleButton value='justify' aria-label='justified' disabled>
-          <Icon icon='mdi:format-align-justify' />
+          <Icon icon='tabler:align-justified' />
         </ToggleButton>
       </ToggleButtonGroup>
       <Divider flexItem orientation='vertical' sx={{ m: 1 }} />
       <ToggleButtonGroup value={formats} onChange={handleFormat} aria-label='text alignment'>
         <ToggleButton value='bold' aria-label='bold'>
-          <Icon icon='mdi:format-bold' />
+          <Icon icon='tabler:bold' />
         </ToggleButton>
         <ToggleButton value='italic' aria-label='italic'>
-          <Icon icon='mdi:format-italic' />
+          <Icon icon='tabler:italic' />
         </ToggleButton>
         <ToggleButton value='underlined' aria-label='underlined'>
-          <Icon icon='mdi:format-underline' />
+          <Icon icon='tabler:underline' />
         </ToggleButton>
         <ToggleButton value='color' aria-label='color' disabled>
-          <Icon icon='mdi:format-color-fill' />
+          <Icon icon='tabler:color-swatch' />
         </ToggleButton>
       </ToggleButtonGroup>
     </Box>

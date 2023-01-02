@@ -137,7 +137,7 @@ const ComposePopup = (props: MailComposeType) => {
         key={item.value}
         label={item.name}
         {...(getTagProps({ index }) as {})}
-        deleteIcon={<Icon icon='mdi:close' />}
+        deleteIcon={<Icon icon='tabler:x' />}
         onDelete={() => handleMailDelete(item.value, state, setState)}
       />
     ))
@@ -220,10 +220,10 @@ const ComposePopup = (props: MailComposeType) => {
         </Typography>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <IconButton sx={{ p: 1, mr: 2 }} onClick={handleMinimize}>
-            <Icon icon='mdi:minus' fontSize={20} />
+            <Icon icon='tabler:minus' fontSize={20} />
           </IconButton>
           <IconButton sx={{ p: 1 }} onClick={handlePopupClose}>
-            <Icon icon='mdi:close' fontSize={20} />
+            <Icon icon='tabler:x' fontSize={20} />
           </IconButton>
         </Box>
       </Box>
@@ -397,17 +397,18 @@ const ComposePopup = (props: MailComposeType) => {
         }}
       >
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Button variant='contained' onClick={handlePopupClose} startIcon={<Icon icon='mdi:send-outline' />}>
+          <Button variant='contained' onClick={handlePopupClose} sx={{ '& svg': { mr: 2 } }}>
+            <Icon icon='tabler:send' fontSize='1.125rem' />
             Send
           </Button>
           <IconButton size='small' sx={{ ml: 3, color: 'text.secondary' }}>
-            <Icon icon='mdi:attachment' fontSize='1.375rem' />
+            <Icon icon='tabler:paperclip' fontSize='1.25rem' />
           </IconButton>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <OptionsMenu
             iconButtonProps={{ size: 'small' }}
-            iconProps={{ fontSize: '1.375rem' }}
+            iconProps={{ fontSize: '1.25rem' }}
             options={['Print', 'Check spelling', 'Plain text mode']}
             menuProps={{
               anchorOrigin: { vertical: 'top', horizontal: 'right' },
@@ -415,7 +416,7 @@ const ComposePopup = (props: MailComposeType) => {
             }}
           />
           <IconButton size='small' onClick={handlePopupClose}>
-            <Icon icon='mdi:delete-outline' fontSize='1.375rem' />
+            <Icon icon='tabler:trash' fontSize='1.25rem' />
           </IconButton>
         </Box>
       </Box>

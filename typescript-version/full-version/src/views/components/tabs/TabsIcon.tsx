@@ -22,9 +22,9 @@ const TabsIcon = () => {
   return (
     <TabContext value={value}>
       <TabList onChange={handleChange} aria-label='icon tabs example'>
-        <Tab value='1' label='Recent' icon={<Icon icon='mdi:phone' />} />
-        <Tab value='2' label='Favorites' icon={<Icon icon='mdi:heart-outline' />} />
-        <Tab value='3' label='Contacts' icon={<Icon icon='mdi:account-outline' />} />
+        <Tab value='1' label='Recent' icon={<Icon icon='tabler:phone' />} />
+        <Tab value='2' label='Favorites' icon={<Icon icon='tabler:heart' />} />
+        <Tab value='3' label='Contacts' icon={<Icon icon='tabler:user' />} />
       </TabList>
       <TabPanel value='1'>
         <Typography>

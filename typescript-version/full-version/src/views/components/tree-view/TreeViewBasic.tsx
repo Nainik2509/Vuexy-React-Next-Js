@@ -10,13 +10,13 @@ interface Props {
 }
 
 const TreeViewBasic = ({ direction }: Props) => {
-  const ExpandIcon = direction === 'rtl' ? 'mdi:chevron-left' : 'mdi:chevron-right'
+  const ExpandIcon = direction === 'rtl' ? 'tabler:chevron-left' : 'tabler:chevron-right'
 
   return (
     <TreeView
       sx={{ minHeight: 240 }}
       defaultExpandIcon={<Icon icon={ExpandIcon} />}
-      defaultCollapseIcon={<Icon icon='mdi:chevron-down' />}
+      defaultCollapseIcon={<Icon icon='tabler:chevron-down' />}
     >
       <TreeItem nodeId='1' label='Applications'>
         <TreeItem nodeId='2' label='Calendar' />

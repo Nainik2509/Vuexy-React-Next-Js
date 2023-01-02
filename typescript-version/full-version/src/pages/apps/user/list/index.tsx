@@ -66,11 +66,11 @@ interface CellType {
 
 // ** renders client column
 const userRoleObj: UserRoleType = {
-  admin: { icon: 'mdi:laptop', color: 'error' },
-  author: { icon: 'mdi:cog-outline', color: 'warning' },
-  editor: { icon: 'mdi:pencil-outline', color: 'info' },
-  maintainer: { icon: 'mdi:chart-donut', color: 'success' },
-  subscriber: { icon: 'mdi:account-outline', color: 'primary' }
+  admin: { icon: 'tabler:device-laptop', color: 'secondary' },
+  author: { icon: 'tabler:circle-check', color: 'success' },
+  editor: { icon: 'tabler:edit', color: 'info' },
+  maintainer: { icon: 'tabler:chart-pie-2', color: 'primary' },
+  subscriber: { icon: 'tabler:user', color: 'warning' }
 }
 
 const userStatusObj: UserStatusType = {
@@ -120,7 +120,7 @@ const RowOptions = ({ id }: { id: number | string }) => {
   return (
     <>
       <IconButton size='small' onClick={handleRowOptionsClick}>
-        <Icon icon='mdi:dots-vertical' />
+        <Icon icon='tabler:dots-vertical' />
       </IconButton>
       <Menu
         keepMounted
@@ -143,15 +143,15 @@ const RowOptions = ({ id }: { id: number | string }) => {
           href='/apps/user/view/account'
           onClick={handleRowOptionsClose}
         >
-          <Icon icon='mdi:eye-outline' fontSize={20} />
+          <Icon icon='tabler:eye' fontSize={20} />
           View
         </MenuItem>
         <MenuItem onClick={handleRowOptionsClose} sx={{ '& svg': { mr: 2 } }}>
-          <Icon icon='mdi:pencil-outline' fontSize={20} />
+          <Icon icon='tabler:edit' fontSize={20} />
           Edit
         </MenuItem>
         <MenuItem onClick={handleDelete} sx={{ '& svg': { mr: 2 } }}>
-          <Icon icon='mdi:delete-outline' fontSize={20} />
+          <Icon icon='tabler:trash' fontSize={20} />
           Delete
         </MenuItem>
       </Menu>

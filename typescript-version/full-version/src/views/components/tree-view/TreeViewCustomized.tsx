@@ -23,9 +23,9 @@ const TreeViewCustomized = () => {
   return (
     <TreeView
       defaultExpanded={['1']}
-      defaultExpandIcon={<Icon icon='mdi:plus-box-outline' />}
-      defaultCollapseIcon={<Icon icon='mdi:minus-box-outline' />}
-      defaultEndIcon={<Icon icon='mdi:close-box-outline' className='close' />}
+      defaultExpandIcon={<Icon icon='tabler:square-plus' />}
+      defaultCollapseIcon={<Icon icon='tabler:square-minus' />}
+      defaultEndIcon={<Icon icon='tabler:square-x' className='close' />}
     >
       <TreeItem nodeId='1' label='Main'>
         <TreeItem nodeId='2' label='Hello' />

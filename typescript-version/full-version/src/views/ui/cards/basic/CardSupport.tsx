@@ -23,7 +23,7 @@ const CardSupport = () => {
         }}
       >
         <CustomAvatar skin='light' sx={{ width: 50, height: 50, mb: 2.25 }}>
-          <Icon icon='mdi:help-circle-outline' fontSize='2rem' />
+          <Icon icon='tabler:help' fontSize='2rem' />
         </CustomAvatar>
         <Typography variant='h6' sx={{ mb: 2.75 }}>
           Support

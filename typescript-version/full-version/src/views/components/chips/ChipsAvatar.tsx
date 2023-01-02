@@ -15,7 +15,7 @@ const ChipsAvatar = () => {
         label='Archived'
         avatar={
           <Avatar>
-            <Icon icon='mdi:archive-outline' fontSize={20} />
+            <Icon icon='tabler:archive' fontSize={20} />
           </Avatar>
         }
       />

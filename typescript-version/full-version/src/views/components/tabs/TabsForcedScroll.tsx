@@ -22,11 +22,11 @@ const TabsForcedScroll = () => {
   return (
     <TabContext value={value}>
       <TabList scrollButtons variant='scrollable' onChange={handleChange} aria-label='forced scroll tabs example'>
-        <Tab value='1' label='Tab 1' icon={<Icon icon='mdi:phone' />} />
-        <Tab value='2' label='Tab 2' icon={<Icon icon='mdi:heart-outline' />} />
-        <Tab value='3' label='Tab 3' icon={<Icon icon='mdi:thumb-up-outline' />} />
-        <Tab value='4' label='Tab 4' icon={<Icon icon='mdi:account-circle-outline' />} />
-        <Tab value='5' label='Tab 5' icon={<Icon icon='mdi:thumb-down-outline' />} />
+        <Tab value='1' label='Tab 1' icon={<Icon icon='tabler:phone' />} />
+        <Tab value='2' label='Tab 2' icon={<Icon icon='tabler:heart' />} />
+        <Tab value='3' label='Tab 3' icon={<Icon icon='tabler:thumb-up' />} />
+        <Tab value='4' label='Tab 4' icon={<Icon icon='tabler:user' />} />
+        <Tab value='5' label='Tab 5' icon={<Icon icon='tabler:thumb-down' />} />
       </TabList>
       <TabPanel value='1'>
         <Typography>

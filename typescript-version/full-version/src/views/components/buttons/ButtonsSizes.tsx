@@ -46,16 +46,16 @@ const ButtonsSizes = () => {
       </div>
       <div className='demo-space-x'>
         <IconButton aria-label='capture screenshot' color='secondary' size='small'>
-          <Icon icon='mdi:camera-iris' fontSize='inherit' />
+          <Icon icon='tabler:aperture' fontSize='inherit' />
         </IconButton>
         <IconButton aria-label='capture screenshot' color='secondary'>
-          <Icon icon='mdi:camera-iris' fontSize={20} />
+          <Icon icon='tabler:aperture' fontSize={20} />
         </IconButton>
         <IconButton aria-label='capture screenshot' color='secondary'>
-          <Icon icon='mdi:camera-iris' />
+          <Icon icon='tabler:aperture' />
         </IconButton>
         <IconButton aria-label='capture screenshot' color='secondary' size='large'>
-          <Icon icon='mdi:camera-iris' fontSize={35} />
+          <Icon icon='tabler:aperture' fontSize={35} />
         </IconButton>
       </div>
     </Fragment>

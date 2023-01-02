@@ -67,7 +67,7 @@ const OptionsMenu = (props: OptionsMenuType) => {
   return (
     <>
       <IconButton aria-haspopup='true' onClick={handleClick} {...iconButtonProps}>
-        {icon ? icon : <Icon icon='mdi:dots-vertical' {...iconProps} />}
+        {icon ? icon : <Icon icon='tabler:dots-vertical' {...iconProps} />}
       </IconButton>
       <Menu
         keepMounted

@@ -153,7 +153,7 @@ const DialogShareProject = () => {
   return (
     <Card>
       <CardContent sx={{ textAlign: 'center', '& svg': { mb: 2 } }}>
-        <Icon icon='mdi:file-document-outline' fontSize='2rem' />
+        <Icon icon='tabler:file-description' fontSize='2rem' />
         <Typography variant='h6' sx={{ mb: 4 }}>
           Share Project
         </Typography>
@@ -179,7 +179,7 @@ const DialogShareProject = () => {
             onClick={() => setShow(false)}
             sx={{ position: 'absolute', right: '1rem', top: '1rem' }}
           >
-            <Icon icon='mdi:close' />
+            <Icon icon='tabler:x' />
           </IconButton>
           <Box sx={{ mb: 4, textAlign: 'center' }}>
             <Typography variant='h5' sx={{ mb: 3 }}>
@@ -227,7 +227,7 @@ const DialogShareProject = () => {
                         onClick={handleClick}
                         aria-controls='modal-share-examples'
                       >
-                        <Icon icon='mdi:chevron-down' fontSize={20} />
+                        <Icon icon='tabler:chevron-down' fontSize={20} />
                       </IconButton>
                     ) : (
                       <Fragment>
@@ -237,7 +237,7 @@ const DialogShareProject = () => {
                           onClick={handleClick}
                           sx={{ textTransform: 'capitalize' }}
                           aria-controls='modal-share-examples'
-                          endIcon={<Icon icon='mdi:chevron-down' fontSize={20} />}
+                          endIcon={<Icon icon='tabler:chevron-down' fontSize={20} />}
                         >
                           {member.value}
                         </Button>
@@ -250,13 +250,13 @@ const DialogShareProject = () => {
           </List>
           <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
             <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
-              <Icon icon='mdi:account-multiple-outline' />
+              <Icon icon='tabler:users' />
               <Typography sx={{ fontWeight: 600, fontSize: '0.875rem' }}>
                 {`Public to ${themeConfig.templateName} - ThemeSelection`}
               </Typography>
             </Box>
             <Button sx={{ '& svg': { mr: 2 } }}>
-              <Icon icon='mdi:link-variant' fontSize={20} />
+              <Icon icon='tabler:link' fontSize={20} />
               Copy Project Link
             </Button>
           </Box>

@@ -28,7 +28,7 @@ const CardActionCollapse = () => {
             sx={{ color: 'text.secondary' }}
             onClick={() => setCollapsed(!collapsed)}
           >
-            <Icon fontSize={20} icon={!collapsed ? 'mdi:chevron-down' : 'mdi:chevron-up'} />
+            <Icon fontSize={20} icon={!collapsed ? 'tabler:chevron-down' : 'tabler:chevron-up'} />
           </IconButton>
         }
       />
@@ -37,7 +37,7 @@ const CardActionCollapse = () => {
           <Typography variant='body2'>
             You can specifically add collapsible action using <code>actionCollapse</code> prop Click on{' '}
             <Box component='span' sx={{ verticalAlign: 'top' }}>
-              <Icon icon='mdi:chevron-up' fontSize={20} />
+              <Icon icon='tabler:chevron-up' fontSize={20} />
             </Box>{' '}
             icon to see it in action
           </Typography>

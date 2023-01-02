@@ -71,7 +71,7 @@ const UserProfileRight = (props: UserProfileRightType) => {
               onClick={handleUserProfileRightSidebarToggle}
               sx={{ top: '0.5rem', right: '0.5rem', position: 'absolute', color: 'text.disabled' }}
             >
-              <Icon icon='mdi:close' />
+              <Icon icon='tabler:x' />
             </IconButton>
             <Box sx={{ display: 'flex', flexDirection: 'column', p: theme => theme.spacing(11.25, 6, 4.5) }}>
               <Box sx={{ mb: 3.5, display: 'flex', justifyContent: 'center' }}>
@@ -138,7 +138,7 @@ const UserProfileRight = (props: UserProfileRightType) => {
                   <List dense sx={{ p: 0 }}>
                     <ListItem sx={{ px: 2 }}>
                       <ListItemIcon sx={{ mr: 2 }}>
-                        <Icon icon='mdi:email-outline' fontSize='1.5rem' />
+                        <Icon icon='tabler:mail' fontSize='1.5rem' />
                       </ListItemIcon>
                       <ListItemText
                         sx={{ textTransform: 'lowercase' }}
@@ -148,13 +148,13 @@ const UserProfileRight = (props: UserProfileRightType) => {
                     </ListItem>
                     <ListItem sx={{ px: 2 }}>
                       <ListItemIcon sx={{ mr: 2 }}>
-                        <Icon icon='mdi:phone-outline' fontSize='1.5rem' />
+                        <Icon icon='tabler:phone-call' fontSize='1.5rem' />
                       </ListItemIcon>
                       <ListItemText primaryTypographyProps={{ variant: 'body1' }} primary='+1(123) 456 - 7890' />
                     </ListItem>
                     <ListItem sx={{ px: 2 }}>
                       <ListItemIcon sx={{ mr: 2 }}>
-                        <Icon icon='mdi:clock-time-five-outline' fontSize='1.5rem' />
+                        <Icon icon='tabler:clock' fontSize='1.5rem' />
                       </ListItemIcon>
                       <ListItemText primaryTypographyProps={{ variant: 'body1' }} primary='Mon - Fri 10AM - 8PM' />
                     </ListItem>
@@ -169,7 +169,7 @@ const UserProfileRight = (props: UserProfileRightType) => {
                     <ListItem disablePadding>
                       <ListItemButton sx={{ px: 2 }}>
                         <ListItemIcon sx={{ mr: 2 }}>
-                          <Icon icon='mdi:bookmark-outline' fontSize='1.5rem' />
+                          <Icon icon='tabler:badge' fontSize='1.5rem' />
                         </ListItemIcon>
                         <ListItemText primary='Add Tag' primaryTypographyProps={{ variant: 'body1' }} />
                       </ListItemButton>
@@ -177,7 +177,7 @@ const UserProfileRight = (props: UserProfileRightType) => {
                     <ListItem disablePadding>
                       <ListItemButton sx={{ px: 2 }}>
                         <ListItemIcon sx={{ mr: 2 }}>
-                          <Icon icon='mdi:star-outline' fontSize='1.5rem' />
+                          <Icon icon='tabler:star' fontSize='1.5rem' />
                         </ListItemIcon>
                         <ListItemText primary='Important Contact' primaryTypographyProps={{ variant: 'body1' }} />
                       </ListItemButton>
@@ -185,7 +185,7 @@ const UserProfileRight = (props: UserProfileRightType) => {
                     <ListItem disablePadding>
                       <ListItemButton sx={{ px: 2 }}>
                         <ListItemIcon sx={{ mr: 2 }}>
-                          <Icon icon='mdi:image-outline' fontSize='1.5rem' />
+                          <Icon icon='tabler:photo' fontSize='1.5rem' />
                         </ListItemIcon>
                         <ListItemText primary='Shared Media' primaryTypographyProps={{ variant: 'body1' }} />
                       </ListItemButton>
@@ -193,7 +193,7 @@ const UserProfileRight = (props: UserProfileRightType) => {
                     <ListItem disablePadding>
                       <ListItemButton sx={{ px: 2 }}>
                         <ListItemIcon sx={{ mr: 2 }}>
-                          <Icon icon='mdi:delete-outline' fontSize='1.5rem' />
+                          <Icon icon='tabler:trash' fontSize='1.5rem' />
                         </ListItemIcon>
                         <ListItemText primary='Delete Contact' primaryTypographyProps={{ variant: 'body1' }} />
                       </ListItemButton>
@@ -201,7 +201,7 @@ const UserProfileRight = (props: UserProfileRightType) => {
                     <ListItem disablePadding>
                       <ListItemButton sx={{ px: 2 }}>
                         <ListItemIcon sx={{ mr: 2 }}>
-                          <Icon icon='mdi:block-helper' fontSize='1.5rem' />
+                          <Icon icon='tabler:ban' fontSize='1.5rem' />
                         </ListItemIcon>
                         <ListItemText primary='Block Contact' primaryTypographyProps={{ variant: 'body1' }} />
                       </ListItemButton>

@@ -90,7 +90,7 @@ const AccordionCustomized = () => {
           expandIcon={expandIcon('panel1')}
           aria-controls='customized-panel-content-1'
         >
-          <Icon fontSize='1.25rem' icon='mdi:account-outline' />
+          <Icon fontSize='1.25rem' icon='tabler:user' />
           <Typography sx={{ ml: 2 }}>Accordion 1</Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -107,7 +107,7 @@ const AccordionCustomized = () => {
           expandIcon={expandIcon('panel2')}
           aria-controls='customized-panel-content-2'
         >
-          <Icon fontSize='1.25rem' icon='mdi:briefcase-variant-outline' />
+          <Icon fontSize='1.25rem' icon='tabler:briefcase' />
           <Typography sx={{ ml: 2 }}>Accordion 2</Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -124,7 +124,7 @@ const AccordionCustomized = () => {
           expandIcon={expandIcon('panel3')}
           aria-controls='customized-panel-content-3'
         >
-          <Icon fontSize='1.25rem' icon='mdi:gift-outline' />
+          <Icon fontSize='1.25rem' icon='tabler:gift' />
           <Typography sx={{ ml: 2 }}>Accordion 3</Typography>
         </AccordionSummary>
         <AccordionDetails>

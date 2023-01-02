@@ -42,7 +42,7 @@ const ListProgress = () => {
       <ListItem>
         <ListItemAvatar>
           <CustomAvatar skin='light' variant='rounded' color='info' sx={{ height: 36, width: 36 }}>
-            <Icon icon='mdi:react' />
+            <Icon icon='tabler:brand-react' />
           </CustomAvatar>
         </ListItemAvatar>
         <Box sx={{ width: '100%' }}>
@@ -53,7 +53,7 @@ const ListProgress = () => {
       <ListItem>
         <ListItemAvatar>
           <CustomAvatar skin='light' variant='rounded' sx={{ height: 36, width: 36 }}>
-            <Icon icon='mdi:bootstrap' />
+            <Icon icon='tabler:brand-bootstrap' />
           </CustomAvatar>
         </ListItemAvatar>
         <Box sx={{ width: '100%' }}>
@@ -64,7 +64,7 @@ const ListProgress = () => {
       <ListItem>
         <ListItemAvatar>
           <CustomAvatar skin='light' variant='rounded' color='success' sx={{ height: 36, width: 36 }}>
-            <Icon icon='mdi:vuejs' />
+            <Icon icon='tabler:brand-vue' />
           </CustomAvatar>
         </ListItemAvatar>
         <Box sx={{ width: '100%' }}>
@@ -75,7 +75,7 @@ const ListProgress = () => {
       <ListItem>
         <ListItemAvatar>
           <CustomAvatar skin='light' variant='rounded' color='error' sx={{ height: 36, width: 36 }}>
-            <Icon icon='mdi:angular' />
+            <Icon icon='tabler:brand-angular' />
           </CustomAvatar>
         </ListItemAvatar>
         <Box sx={{ width: '100%' }}>
@@ -86,7 +86,7 @@ const ListProgress = () => {
       <ListItem>
         <ListItemAvatar>
           <CustomAvatar skin='light' variant='rounded' color='warning' sx={{ height: 36, width: 36 }}>
-            <Icon icon='mdi:language-javascript' />
+            <Icon icon='tabler:brand-javascript' />
           </CustomAvatar>
         </ListItemAvatar>
         <Box sx={{ width: '100%' }}>

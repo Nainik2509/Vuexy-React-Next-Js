@@ -36,7 +36,7 @@ const TabDetails = () => {
         >
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <CustomAvatar skin='light' color='info' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
-              <Icon icon='mdi:briefcase-outline' />
+              <Icon icon='tabler:briefcase' />
             </CustomAvatar>
             <div>
               <Typography>CRM Application</Typography>
@@ -51,7 +51,7 @@ const TabDetails = () => {
         >
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <CustomAvatar skin='light' color='success' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
-              <Icon icon='mdi:cart-outline' />
+              <Icon icon='tabler:shopping-cart' />
             </CustomAvatar>
             <div>
               <Typography>Ecommerce Platforms</Typography>
@@ -66,7 +66,7 @@ const TabDetails = () => {
         >
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <CustomAvatar skin='light' color='error' variant='rounded' sx={{ mr: 3, width: 48, height: 48 }}>
-              <Icon icon='mdi:license' />
+              <Icon icon='tabler:award' />
             </CustomAvatar>
             <div>
               <Typography>Online Learning platform</Typography>

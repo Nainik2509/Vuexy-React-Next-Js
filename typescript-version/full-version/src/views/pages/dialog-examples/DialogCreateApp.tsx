@@ -89,8 +89,8 @@ const DialogCreateApp = () => {
     setActiveTab('detailsTab')
   }
 
-  const nextArrow = direction === 'ltr' ? 'mdi:arrow-right' : 'mdi:arrow-left'
-  const previousArrow = direction === 'ltr' ? 'mdi:arrow-left' : 'mdi:arrow-right'
+  const nextArrow = direction === 'ltr' ? 'tabler:arrow-right' : 'tabler:arrow-left'
+  const previousArrow = direction === 'ltr' ? 'tabler:arrow-left' : 'tabler:arrow-right'
 
   const renderTabFooter = () => {
     const prevTab = tabsArr[tabsArr.indexOf(activeTab) - 1]
@@ -110,7 +110,7 @@ const DialogCreateApp = () => {
         <Button
           variant='contained'
           color={activeTab === 'submitTab' ? 'success' : 'primary'}
-          endIcon={<Icon icon={activeTab === 'submitTab' ? 'mdi:check' : nextArrow} />}
+          endIcon={<Icon icon={activeTab === 'submitTab' ? 'tabler:check' : nextArrow} />}
           onClick={() => {
             if (activeTab !== 'submitTab') {
               setActiveTab(nextTab)
@@ -128,7 +128,7 @@ const DialogCreateApp = () => {
   return (
     <Card>
       <CardContent sx={{ textAlign: 'center', '& svg': { mb: 2 } }}>
-        <Icon icon='mdi:cube-outline' fontSize='2rem' />
+        <Icon icon='tabler:3d-cube-sphere' fontSize='2rem' />
         <Typography variant='h6' sx={{ mb: 4 }}>
           Create App
         </Typography>
@@ -158,7 +158,7 @@ const DialogCreateApp = () => {
           }}
         >
           <IconButton size='small' onClick={handleClose} sx={{ position: 'absolute', right: '1rem', top: '1rem' }}>
-            <Icon icon='mdi:close' />
+            <Icon icon='tabler:x' />
           </IconButton>
           <Box sx={{ mb: 8, textAlign: 'center' }}>
             <Typography variant='h5' sx={{ mb: 3 }}>
@@ -192,7 +192,7 @@ const DialogCreateApp = () => {
                       title='Details'
                       subtitle='Enter Details'
                       active={activeTab === 'detailsTab'}
-                      icon={<Icon icon='mdi:file-document-outline' />}
+                      icon={<Icon icon='tabler:file-description' />}
                     />
                   }
                 />
@@ -202,7 +202,7 @@ const DialogCreateApp = () => {
                   label={
                     <TabLabel
                       title='Frameworks'
-                      icon={<Icon icon='mdi:cube-outline' />}
+                      icon={<Icon icon='tabler:3d-cube-sphere' />}
                       subtitle='Select Framework'
                       active={activeTab === 'frameworkTab'}
                     />
@@ -216,7 +216,7 @@ const DialogCreateApp = () => {
                       title='Database'
                       active={activeTab === 'DatabaseTab'}
                       subtitle='Select Database'
-                      icon={<Icon icon='mdi:database-outline' />}
+                      icon={<Icon icon='tabler:database' />}
                     />
                   }
                 />
@@ -228,7 +228,7 @@ const DialogCreateApp = () => {
                       title='Billing'
                       active={activeTab === 'paymentTab'}
                       subtitle='Payment details'
-                      icon={<Icon icon='mdi:credit-card-outline' />}
+                      icon={<Icon icon='tabler:credit-card' />}
                     />
                   }
                 />
@@ -239,7 +239,7 @@ const DialogCreateApp = () => {
                     <TabLabel
                       title='Submit'
                       subtitle='Submit'
-                      icon={<Icon icon='mdi:check' />}
+                      icon={<Icon icon='tabler:check' />}
                       active={activeTab === 'submitTab'}
                     />
                   }

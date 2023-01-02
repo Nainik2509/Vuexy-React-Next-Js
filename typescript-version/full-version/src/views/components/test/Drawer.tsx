@@ -41,7 +41,7 @@ const DrawerComponent = () => {
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <Icon icon='mdi:inbox-arrow-down' />
+                  <Icon icon='tabler:inbox' />
                 </ListItemIcon>
                 <ListItemText primary='Index' />
               </ListItemButton>
@@ -49,7 +49,7 @@ const DrawerComponent = () => {
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <Icon icon='mdi:star-outline' />
+                  <Icon icon='tabler:star' />
                 </ListItemIcon>
                 <ListItemText primary='Starred' />
               </ListItemButton>
@@ -60,7 +60,7 @@ const DrawerComponent = () => {
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <Icon icon='mdi:delete-outline' />
+                  <Icon icon='tabler:trash' />
                 </ListItemIcon>
                 <ListItemText primary='Trash' />
               </ListItemButton>
@@ -68,7 +68,7 @@ const DrawerComponent = () => {
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <Icon icon='mdi:information-outline' />
+                  <Icon icon='tabler:info-circle' />
                 </ListItemIcon>
                 <ListItemText primary='Spam' />
               </ListItemButton>

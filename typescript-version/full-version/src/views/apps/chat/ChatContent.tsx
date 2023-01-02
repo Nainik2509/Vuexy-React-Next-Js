@@ -78,7 +78,7 @@ const ChatContent = (props: ChatContentType) => {
                 backgroundColor: 'background.paper'
               }}
             >
-              <Icon icon='mdi:message-outline' fontSize='3.125rem' />
+              <Icon icon='tabler:message' fontSize='3.125rem' />
             </MuiAvatar>
             <Box
               onClick={handleStartConversation}
@@ -121,7 +121,7 @@ const ChatContent = (props: ChatContentType) => {
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 {mdAbove ? null : (
                   <IconButton onClick={handleLeftSidebarToggle} sx={{ mr: 2 }}>
-                    <Icon icon='mdi:menu' />
+                    <Icon icon='tabler:menu-2' />
                   </IconButton>
                 )}
                 <Box
@@ -176,20 +176,20 @@ const ChatContent = (props: ChatContentType) => {
                 {mdAbove ? (
                   <Fragment>
                     <IconButton size='small' sx={{ color: 'text.secondary' }}>
-                      <Icon icon='mdi:phone-outline' />
+                      <Icon icon='tabler:phone-call' />
                     </IconButton>
                     <IconButton size='small' sx={{ color: 'text.secondary' }}>
-                      <Icon icon='mdi:video-outline' />
+                      <Icon icon='tabler:video' />
                     </IconButton>
                     <IconButton size='small' sx={{ color: 'text.secondary' }}>
-                      <Icon icon='mdi:magnify' />
+                      <Icon icon='tabler:search' />
                     </IconButton>
                   </Fragment>
                 ) : null}
 
                 <OptionsMenu
                   menuProps={{ sx: { mt: 2 } }}
-                  icon={<Icon icon='mdi:dots-vertical' />}
+                  icon={<Icon icon='tabler:dots-vertical' />}
                   iconButtonProps={{ size: 'small', sx: { color: 'text.secondary' } }}
                   options={['View Contact', 'Mute Notifications', 'Block Contact', 'Clear Chat', 'Report']}
                 />

@@ -106,7 +106,7 @@ const FormLayoutsSeparator = () => {
                         onMouseDown={e => e.preventDefault()}
                         aria-label='toggle password visibility'
                       >
-                        <Icon icon={values.showPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
+                        <Icon icon={values.showPassword ? 'tabler:eye' : 'tabler:eye-off'} />
                       </IconButton>
                     </InputAdornment>
                   }
@@ -130,7 +130,7 @@ const FormLayoutsSeparator = () => {
                         aria-label='toggle password visibility'
                         onClick={handleClickShowConfirmPassword}
                       >
-                        <Icon icon={values.showPassword2 ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
+                        <Icon icon={values.showPassword2 ? 'tabler:eye' : 'tabler:eye-off'} />
                       </IconButton>
                     </InputAdornment>
                   }

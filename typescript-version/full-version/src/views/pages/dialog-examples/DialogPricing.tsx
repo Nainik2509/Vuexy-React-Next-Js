@@ -50,7 +50,7 @@ const DialogPricing = ({ data }: Props) => {
   return (
     <Card>
       <CardContent sx={{ textAlign: 'center', '& svg': { mb: 2 } }}>
-        <Icon icon='mdi:currency-usd' fontSize='2rem' />
+        <Icon icon='tabler:currency-dollar' fontSize='2rem' />
         <Typography variant='h6' sx={{ mb: 4 }}>
           Pricing
         </Typography>
@@ -74,7 +74,7 @@ const DialogPricing = ({ data }: Props) => {
             onClick={() => setShow(false)}
             sx={{ position: 'absolute', right: '1rem', top: '1rem' }}
           >
-            <Icon icon='mdi:close' />
+            <Icon icon='tabler:x' />
           </IconButton>
           <Box sx={{ mb: 4, textAlign: 'center' }}>
             <Typography variant='h5' sx={{ mb: 3 }}>

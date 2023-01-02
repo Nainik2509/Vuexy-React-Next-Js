@@ -19,13 +19,13 @@ const ButtonToggleVertical = () => {
   return (
     <ToggleButtonGroup exclusive value={view} orientation='vertical' onChange={handleView} aria-label='text alignment'>
       <ToggleButton value='left' aria-label='left aligned'>
-        <Icon icon='mdi:view-list' />
+        <Icon icon='tabler:list' />
       </ToggleButton>
       <ToggleButton value='center' aria-label='center aligned'>
-        <Icon icon='mdi:view-module' />
+        <Icon icon='tabler:list-numbers' />
       </ToggleButton>
       <ToggleButton value='right' aria-label='right aligned'>
-        <Icon icon='mdi:view-quilt' />
+        <Icon icon='tabler:list-check' />
       </ToggleButton>
     </ToggleButtonGroup>
   )

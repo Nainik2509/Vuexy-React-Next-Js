@@ -56,7 +56,7 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12} lg={8}>
-        <Alert severity='success' icon={<Icon icon='mdi:bookmark-multiple-outline' />} sx={{ mb: 6 }}>
+        <Alert severity='success' icon={<Icon icon='tabler:bookmarks' />} sx={{ mb: 6 }}>
           <AlertTitle>Available Offers</AlertTitle>
           <div>
             <Typography sx={{ color: 'success.main' }}>
@@ -99,7 +99,7 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
                           <InputAdornment position='start'>
                             <Tooltip title='Card Verification Value'>
                               <Box component='span' sx={{ display: 'inline-flex', '& svg': { cursor: 'pointer' } }}>
-                                <Icon icon='mdi:help-circle-outline' fontSize={20} />
+                                <Icon icon='tabler:help' fontSize={20} />
                               </Box>
                             </Tooltip>
                           </InputAdornment>

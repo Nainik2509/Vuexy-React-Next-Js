@@ -20,7 +20,7 @@ const ListSecondary = () => {
         <ListItemText primary='Caroline Black' secondary='Sweet dessert brownie.' />
         <ListItemSecondaryAction>
           <IconButton edge='end'>
-            <Icon icon='mdi:plus' />
+            <Icon icon='tabler:plus' />
           </IconButton>
         </ListItemSecondaryAction>
       </ListItem>
@@ -31,7 +31,7 @@ const ListSecondary = () => {
         <ListItemText primary='Alfred Copeland' secondary='Pudding pie tiramisu.' />
         <ListItemSecondaryAction>
           <IconButton edge='end'>
-            <Icon icon='mdi:plus' />
+            <Icon icon='tabler:plus' />
           </IconButton>
         </ListItemSecondaryAction>
       </ListItem>
@@ -42,7 +42,7 @@ const ListSecondary = () => {
         <ListItemText primary='Celia Schneider' secondary='Muffin pie chupa chups.' />
         <ListItemSecondaryAction>
           <IconButton edge='end'>
-            <Icon icon='mdi:plus' />
+            <Icon icon='tabler:plus' />
           </IconButton>
         </ListItemSecondaryAction>
       </ListItem>

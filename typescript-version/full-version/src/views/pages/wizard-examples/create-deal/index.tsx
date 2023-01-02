@@ -34,23 +34,23 @@ import StepperWrapper from 'src/@core/styles/mui/stepper'
 const steps = [
   {
     title: 'Deal Type',
-    icon: 'bx:purchase-tag',
+    icon: 'tabler:users',
     subtitle: 'Choose type of deal'
   },
   {
+    icon: 'tabler:id',
     title: 'Deal Details',
-    subtitle: 'Provide deal details',
-    icon: 'bx:detail'
+    subtitle: 'Provide deal details'
   },
   {
     title: 'Deal Usage',
-    icon: 'bx:credit-card',
+    icon: 'tabler:credit-card',
     subtitle: 'Limitations & Offers'
   },
   {
+    icon: 'tabler:checkbox',
     subtitle: 'Launch a deal',
-    title: 'Review & Complete',
-    icon: 'bx:rocket'
+    title: 'Review & Complete'
   }
 ]
 
@@ -143,14 +143,14 @@ const CreateDealWizard = () => {
           variant='outlined'
           onClick={handlePrev}
           disabled={activeStep === 0}
-          startIcon={<Icon icon='bx:chevron-left' />}
+          startIcon={<Icon icon='tabler:chevron-left' />}
         >
           Previous
         </Button>
         <Button
           variant='contained'
           color={stepCondition ? 'success' : 'primary'}
-          {...(!stepCondition ? { endIcon: <Icon icon='bx:chevron-right' /> } : {})}
+          {...(!stepCondition ? { endIcon: <Icon icon='tabler:chevron-right' /> } : {})}
           onClick={() => (stepCondition ? alert('Submitted..!!') : handleNext())}
         >
           {stepCondition ? 'Submit' : 'Next'}

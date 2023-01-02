@@ -100,7 +100,7 @@ const Customizer = () => {
   return (
     <div className='customizer'>
       <Toggler className='customizer-toggler' onClick={() => setOpen(true)}>
-        <Icon icon='mdi:cog-outline' fontSize={20} />
+        <Icon icon='tabler:settings' />
       </Toggler>
       <Drawer open={open} hideBackdrop anchor='right' variant='persistent'>
         <Box
@@ -125,7 +125,7 @@ const Customizer = () => {
               transform: 'translateY(-50%)'
             }}
           >
-            <Icon icon='mdi:close' fontSize={20} />
+            <Icon icon='tabler:x' fontSize={20} />
           </IconButton>
         </Box>
         <PerfectScrollbar options={{ wheelPropagation: false }}>

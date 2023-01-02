@@ -317,7 +317,7 @@ const UserViewBilling = () => {
             title='Payment Methods'
             action={
               <Button variant='contained' onClick={handleAddCardClickOpen} sx={{ '& svg': { mr: 1 } }}>
-                <Icon icon='mdi:plus' fontSize='1.125rem' />
+                <Icon icon='tabler:plus' fontSize='1rem' />
                 Add Card
               </Button>
             }
