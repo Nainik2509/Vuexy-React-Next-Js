@@ -45,7 +45,7 @@ Let's say you opened ticket for installation issue and want to ask about some co
 
 Mentioning which version of our template you are using will help us to answer more accurately and will mitigate one question from our side.
 
-Mentioning template version includes if you are using TypeScript or JavaScript, Full-Version or Starter-Kit. Also, if you are using some other technology with our template then mention it will also help us in resolving issue quickly. [e.g. ]
+Mentioning template version includes if you are using TypeScript or JavaScript, Full-Version or Starter-Kit. Also, if you are using some other technology with our template then mentioning it will also help us in resolving issue quickly.
 
 Good examples can be: 💯
 
