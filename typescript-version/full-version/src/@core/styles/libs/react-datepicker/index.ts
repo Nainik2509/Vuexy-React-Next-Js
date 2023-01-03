@@ -54,9 +54,11 @@ const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
       },
       '& > .react-datepicker__navigation': {
         top: 18,
+        borderRadius: '50%',
+        backgroundColor: theme.palette.action.selected,
         '&.react-datepicker__navigation--previous': {
-          width: 24,
-          height: 24,
+          width: 26,
+          height: 26,
           border: 'none',
           ...(theme.direction === 'ltr' ? { left: 15 } : { right: 15 }),
           backgroundImage: `${"url('data:image/svg+xml,%3Csvg xmlns=\\'http://www.w3.org/2000/svg\\' style=\\'width:24px;height:24px\\' viewBox=\\'0 0 24 24\\'%3E%3Cpath fill=\\'currentColor\\' d=\\'M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z\\' /%3E%3C/svg%3E')"
@@ -67,8 +69,8 @@ const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
           }
         },
         '&.react-datepicker__navigation--next': {
-          width: 24,
-          height: 24,
+          width: 26,
+          height: 26,
           border: 'none',
           ...(theme.direction === 'ltr' ? { right: 15 } : { left: 15 }),
           backgroundImage: `${"url('data:image/svg+xml,%3Csvg xmlns=\\'http://www.w3.org/2000/svg\\' style=\\'width:24px;height:24px\\' viewBox=\\'0 0 24 24\\'%3E%3Cpath fill=\\'currentColor\\' d=\\'M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z\\' /%3E%3C/svg%3E')"
@@ -84,14 +86,17 @@ const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
         }
       },
       '& .react-datepicker__month-container': {
-        paddingTop: theme.spacing(3.2)
+        paddingTop: theme.spacing(3.2),
+        '& + .react-datepicker__month-container': {
+          borderLeft: `1px solid ${theme.palette.divider}`
+        }
       },
       '& .react-datepicker__current-month, & .react-datepicker-year-header': {
-        lineHeight: 2.1,
+        lineHeight: 2.4,
         fontSize: '1rem',
         fontWeight: 'normal',
         letterSpacing: '0.15px',
-        marginBottom: theme.spacing(2),
+        marginBottom: theme.spacing(3),
         color: theme.palette.text.primary
       },
       '& .react-datepicker__day-name': {
@@ -116,6 +121,7 @@ const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
             backgroundColor: `${theme.palette.primary.main} !important`
           },
         '&.react-datepicker__day--range-end.react-datepicker__day--in-range': {
+          boxShadow: theme.shadows[2],
           borderTopRightRadius: '50%',
           borderBottomRightRadius: '50%',
           color: `${theme.palette.common.white} !important`,
@@ -225,6 +231,7 @@ const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
       },
       '& .react-datepicker__day--selected, & .react-datepicker__month--selected, & .react-datepicker__year-text--selected, & .react-datepicker__quarter--selected':
         {
+          boxShadow: theme.shadows[2],
           color: `${theme.palette.common.white} !important`,
           backgroundColor: `${theme.palette.primary.main} !important`,
           '&:hover': {
@@ -260,8 +267,11 @@ const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
           boxShadow: theme.palette.mode === 'light' ? theme.shadows[8] : theme.shadows[9]
         },
         '& .react-datepicker__month-option, & .react-datepicker__year-option': {
-          paddingTop: theme.spacing(1),
-          paddingBottom: theme.spacing(1),
+          width: 'auto',
+          margin: theme.spacing(0, 3.5),
+          paddingTop: theme.spacing(1.25),
+          paddingBottom: theme.spacing(1.25),
+          borderRadius: `${theme.shape.borderRadius}px !important`,
           '&:first-of-type, &:last-of-type': {
             borderRadius: 0
           },
@@ -270,18 +280,20 @@ const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
           }
         },
         '& .react-datepicker__month-option.react-datepicker__month-option--selected_month': {
-          backgroundColor: hexToRGBA(theme.palette.primary.main, 0.08),
+          color: theme.palette.common.white,
+          backgroundColor: theme.palette.primary.main,
           '&:hover': {
-            backgroundColor: bgColors.primaryLight.backgroundColor
+            backgroundColor: theme.palette.primary.dark
           },
           '& .react-datepicker__month-option--selected': {
             display: 'none'
           }
         },
         '& .react-datepicker__year-option.react-datepicker__year-option--selected_year': {
-          backgroundColor: hexToRGBA(theme.palette.primary.main, 0.08),
+          color: theme.palette.common.white,
+          backgroundColor: theme.palette.primary.main,
           '&:hover': {
-            backgroundColor: bgColors.primaryLight.backgroundColor
+            backgroundColor: theme.palette.primary.dark
           },
           '& .react-datepicker__year-option--selected': {
             display: 'none'
@@ -416,6 +428,7 @@ const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
             backgroundColor: `${theme.palette.action.hover} !important`
           },
           '&.react-datepicker__time-list-item--selected:not(.react-datepicker__time-list-item--disabled)': {
+            boxShadow: theme.shadows[2],
             fontWeight: '600 !important',
             color: `${theme.palette.common.white} !important`,
             backgroundColor: `${theme.palette.primary.main} !important`
