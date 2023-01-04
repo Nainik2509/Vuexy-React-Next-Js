@@ -73,7 +73,7 @@ const Step = styled(MuiStep)<StepProps>(({ theme }) => ({
     paddingTop: 0
   },
   '&:not(:last-of-type) .MuiStepLabel-root': {
-    paddingBottom: theme.spacing(6)
+    paddingBottom: theme.spacing(5)
   },
   '&:last-of-type .MuiStepLabel-root': {
     paddingBottom: 0

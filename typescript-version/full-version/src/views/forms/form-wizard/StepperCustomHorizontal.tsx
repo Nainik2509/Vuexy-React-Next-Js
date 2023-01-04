@@ -84,6 +84,9 @@ const Step = styled(MuiStep)<StepProps>(({ theme }) => ({
   },
   '&.Mui-completed .step-title': {
     color: theme.palette.text.disabled
+  },
+  '&.Mui-completed + svg': {
+    color: theme.palette.primary.main
   }
 }))
 

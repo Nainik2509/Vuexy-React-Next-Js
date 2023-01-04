@@ -58,6 +58,9 @@ const Step = styled(MuiStep)<StepProps>(({ theme }) => ({
   '&.Mui-completed .step-title': {
     color: theme.palette.text.disabled
   },
+  '&.Mui-completed + svg': {
+    color: theme.palette.primary.main
+  },
   '& .MuiStepLabel-root': {
     cursor: 'pointer'
   },
@@ -125,11 +128,7 @@ const RegisterMultiSteps = () => {
             const RenderAvatar = activeStep >= index ? CustomAvatar : Avatar
 
             return (
-              <Step
-                key={index}
-                onClick={() => setActiveStep(index)}
-                sx={{ '&.Mui-completed + svg': { color: 'primary.main' } }}
-              >
+              <Step key={index} onClick={() => setActiveStep(index)}>
                 <StepLabel>
                   <div className='step-label'>
                     <RenderAvatar
