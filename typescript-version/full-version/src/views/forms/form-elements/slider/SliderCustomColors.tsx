@@ -10,15 +10,15 @@ import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 const SliderSuccess = styled(MuiSlider)<SliderProps>(({ theme }) => ({
   color: theme.palette.success.main,
   '& .MuiSlider-thumb:hover, & .MuiSlider-thumb.Mui-focusVisible': {
-    boxShadow: `0 0 0 8px ${hexToRGBA(theme.palette.success.main, 0.16)}`
+    boxShadow: `0 0 0 8px ${hexToRGBA(theme.palette.success.main, 0.16)} !important`
   },
   '@media(hover:none)': {
     '& .MuiSlider-thumb:hover, & .MuiSlider-thumb.Mui-focusVisible': {
       boxShadow: 'none'
     }
   },
-  '& .MuiSlider-thumb.Mui-focusVisible.Mui-active': {
-    boxShadow: `0 0 0 14px ${hexToRGBA(theme.palette.success.main, 0.16)}`
+  '& .MuiSlider-thumb.Mui-active, & .MuiSlider-thumb.Mui-focusVisible.Mui-active': {
+    boxShadow: `0 0 0 10px ${hexToRGBA(theme.palette.success.main, 0.16)} !important`
   }
 }))
 
@@ -26,15 +26,15 @@ const SliderSuccess = styled(MuiSlider)<SliderProps>(({ theme }) => ({
 const SliderError = styled(MuiSlider)<SliderProps>(({ theme }) => ({
   color: theme.palette.error.main,
   '& .MuiSlider-thumb:hover, & .MuiSlider-thumb.Mui-focusVisible': {
-    boxShadow: `0 0 0 8px ${hexToRGBA(theme.palette.error.main, 0.16)}`
+    boxShadow: `0 0 0 8px ${hexToRGBA(theme.palette.error.main, 0.16)} !important`
   },
   '@media(hover:none)': {
     '& .MuiSlider-thumb:hover, & .MuiSlider-thumb.Mui-focusVisible': {
       boxShadow: 'none'
     }
   },
-  '& .MuiSlider-thumb.Mui-focusVisible.Mui-active': {
-    boxShadow: `0 0 0 14px ${hexToRGBA(theme.palette.error.main, 0.16)}`
+  '& .MuiSlider-thumb.Mui-active, & .MuiSlider-thumb.Mui-focusVisible.Mui-active': {
+    boxShadow: `0 0 0 10px ${hexToRGBA(theme.palette.error.main, 0.16)} !important`
   }
 }))
 
@@ -42,15 +42,15 @@ const SliderError = styled(MuiSlider)<SliderProps>(({ theme }) => ({
 const SliderWarning = styled(MuiSlider)<SliderProps>(({ theme }) => ({
   color: theme.palette.warning.main,
   '& .MuiSlider-thumb:hover, & .MuiSlider-thumb.Mui-focusVisible': {
-    boxShadow: `0 0 0 8px ${hexToRGBA(theme.palette.warning.main, 0.16)}`
+    boxShadow: `0 0 0 8px ${hexToRGBA(theme.palette.warning.main, 0.16)} !important`
   },
   '@media(hover:none)': {
     '& .MuiSlider-thumb:hover, & .MuiSlider-thumb.Mui-focusVisible': {
       boxShadow: 'none'
     }
   },
-  '& .MuiSlider-thumb.Mui-focusVisible.Mui-active': {
-    boxShadow: `0 0 0 14px ${hexToRGBA(theme.palette.warning.main, 0.16)}`
+  '& .MuiSlider-thumb.Mui-active, & .MuiSlider-thumb.Mui-focusVisible.Mui-active': {
+    boxShadow: `0 0 0 10px ${hexToRGBA(theme.palette.warning.main, 0.16)} !important`
   }
 }))
 
@@ -58,15 +58,15 @@ const SliderWarning = styled(MuiSlider)<SliderProps>(({ theme }) => ({
 const SliderInfo = styled(MuiSlider)<SliderProps>(({ theme }) => ({
   color: theme.palette.info.main,
   '& .MuiSlider-thumb:hover, & .MuiSlider-thumb.Mui-focusVisible': {
-    boxShadow: `0 0 0 8px ${hexToRGBA(theme.palette.info.main, 0.16)}`
+    boxShadow: `0 0 0 8px ${hexToRGBA(theme.palette.info.main, 0.16)} !important`
   },
   '@media(hover:none)': {
     '& .MuiSlider-thumb:hover, & .MuiSlider-thumb.Mui-focusVisible': {
       boxShadow: 'none'
     }
   },
-  '& .MuiSlider-thumb.Mui-focusVisible.Mui-active': {
-    boxShadow: `0 0 0 14px ${hexToRGBA(theme.palette.info.main, 0.16)}`
+  '& .MuiSlider-thumb.Mui-active, & .MuiSlider-thumb.Mui-focusVisible.Mui-active': {
+    boxShadow: `0 0 0 10px ${hexToRGBA(theme.palette.info.main, 0.16)} !important`
   }
 }))
 

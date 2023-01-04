@@ -19,8 +19,8 @@ const marks = [
 
 // Styled Slider component
 const Slider = styled(MuiSlider)<SliderProps>(({ theme }) => ({
-  height: 2,
   padding: '15px 0',
+  height: '2px !important',
   color: theme.palette.primary.main,
   '& .MuiSlider-rail': {
     opacity: 0.5,
@@ -42,13 +42,20 @@ const Slider = styled(MuiSlider)<SliderProps>(({ theme }) => ({
     width: 28,
     height: 28,
     backgroundColor: theme.palette.common.white,
-    boxShadow: '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.13),0 0 0 1px rgba(0,0,0,0.02)',
+    boxShadow: '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.13),0 0 0 1px rgba(0,0,0,0.02) !important',
+    '&:before': {
+      border: 0
+    },
+    '&:after': {
+      width: 42,
+      height: 42
+    },
     '&:focus, &:hover, &.Mui-active': {
-      boxShadow: '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.3),0 0 0 1px rgba(0,0,0,0.02)',
+      boxShadow: '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.3),0 0 0 1px rgba(0,0,0,0.02) !important',
 
       // Reset on touch devices, it doesn't add specificity
       '@media (hover: none)': {
-        boxShadow: '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.13),0 0 0 1px rgba(0,0,0,0.02)'
+        boxShadow: '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.13),0 0 0 1px rgba(0,0,0,0.02) !important'
       }
     }
   },

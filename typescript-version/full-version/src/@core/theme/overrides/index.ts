@@ -20,6 +20,7 @@ import MuiButton from './button'
 import MuiDialog from './dialog'
 import MuiRating from './rating'
 import MuiSelect from './select'
+import MuiSlider from './slider'
 import MuiAvatar from './avatars'
 import MuiDivider from './divider'
 import MuiPopover from './popover'
@@ -50,6 +51,7 @@ const Overrides = (theme: Theme, settings: Settings) => {
   const tables = MuiTable(theme)
   const alerts = MuiAlerts(theme)
   const rating = MuiRating(theme)
+  const slider = MuiSlider(theme)
   const avatars = MuiAvatar(theme)
   const divider = MuiDivider(theme)
   const menu = MuiMenu(theme, skin)
@@ -81,6 +83,7 @@ const Overrides = (theme: Theme, settings: Settings) => {
     button,
     dialog,
     rating,
+    slider,
     tables,
     avatars,
     divider,
