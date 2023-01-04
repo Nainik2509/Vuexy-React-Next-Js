@@ -16,11 +16,18 @@ const CleaveWrapper = styled(Box)<BoxProps>(({ theme }) => ({
     fontFamily: theme.typography.body1.fontFamily,
     borderColor: `rgba(${theme.palette.customColors.main}, 0.22)`,
     transition: theme.transitions.create(['border-color', 'box-shadow']),
+    '&::placeholder': {
+      transition: theme.transitions.create(['transform'])
+    },
     '&:focus, &:focus-visible': {
       outline: 0,
       borderWidth: 2,
       padding: '15.5px 13px',
-      borderColor: `${theme.palette.primary.main} !important`
+      borderColor: `${theme.palette.primary.main} !important`,
+      boxShadow: `0 2px 3px 0 rgba(${theme.palette.customColors.main}, 0.1)`,
+      '&::placeholder': {
+        transform: 'translateX(4px)'
+      }
     },
     '&::-webkit-input-placeholder': {
       color: theme.palette.text.secondary
