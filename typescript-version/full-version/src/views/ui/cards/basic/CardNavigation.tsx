@@ -22,7 +22,7 @@ const CardNavigation = () => {
   return (
     <Card>
       <TabContext value={value}>
-        <TabList onChange={handleChange} aria-label='card navigation example'>
+        <TabList onChange={handleChange} aria-label='card navigation example' sx={{ '& .MuiTab-root': { py: 3.5 } }}>
           <Tab value='1' label='Item One' />
           <Tab value='2' label='Item Two' />
           <Tab value='3' label='Item Three' />

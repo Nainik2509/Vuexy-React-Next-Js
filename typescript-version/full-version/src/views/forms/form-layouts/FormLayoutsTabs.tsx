@@ -85,7 +85,7 @@ const FormLayoutsTabs = () => {
           variant='scrollable'
           scrollButtons={false}
           onChange={handleTabsChange}
-          sx={{ borderBottom: theme => `1px solid ${theme.palette.divider}` }}
+          sx={{ borderBottom: theme => `1px solid ${theme.palette.divider}`, '& .MuiTab-root': { py: 3.5 } }}
         >
           <Tab value='personal-info' label='Personal Info' />
           <Tab value='account-details' label='Account Details' />
@@ -93,7 +93,7 @@ const FormLayoutsTabs = () => {
         </TabList>
         <form onSubmit={e => e.preventDefault()}>
           <CardContent>
-            <TabPanel value='personal-info'>
+            <TabPanel sx={{ p: 0 }} value='personal-info'>
               <Grid container spacing={5}>
                 <Grid item xs={12} sm={6}>
                   <TextField fullWidth label='First Name' placeholder='Leonard' />
@@ -155,7 +155,7 @@ const FormLayoutsTabs = () => {
               </Grid>
             </TabPanel>
 
-            <TabPanel value='account-details'>
+            <TabPanel sx={{ p: 0 }} value='account-details'>
               <Grid container spacing={5}>
                 <Grid item xs={12} sm={6}>
                   <TextField fullWidth label='Username' placeholder='carterLeonard' />
@@ -214,7 +214,7 @@ const FormLayoutsTabs = () => {
               </Grid>
             </TabPanel>
 
-            <TabPanel value='social-links'>
+            <TabPanel sx={{ p: 0 }} value='social-links'>
               <Grid container spacing={5}>
                 <Grid item xs={12} sm={6}>
                   <TextField fullWidth label='Twitter' placeholder='https://twitter.com/carterLeonard' />
