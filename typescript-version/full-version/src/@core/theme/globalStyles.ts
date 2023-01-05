@@ -1,22 +1,7 @@
 // ** MUI Imports
 import { Theme } from '@mui/material/styles'
 
-// ** Hook Import
-import { useSettings } from 'src/@core/hooks/useSettings'
-
 const GlobalStyles = (theme: Theme) => {
-  // ** Hook & Var
-  const { settings } = useSettings()
-  const { mode } = settings
-
-  const perfectScrollbarThumbBgColor = () => {
-    if (mode === 'light') {
-      return '#C2C4D1 !important'
-    } else {
-      return '#504B6D !important'
-    }
-  }
-
   return {
     '.demo-space-x > *': {
       marginTop: '1rem !important',
@@ -37,17 +22,17 @@ const GlobalStyles = (theme: Theme) => {
       right: '0 !important',
       left: 'auto !important',
       '&:hover, &:focus, &.ps--clicking': {
-        backgroundColor: theme.palette.mode === 'light' ? '#E4E5EB !important' : '#423D5D !important'
+        backgroundColor: theme.palette.mode === 'light' ? '#F1F0F5 !important' : '#393D55 !important'
       },
       '& .ps__thumb-y': {
         right: '3px !important',
         left: 'auto !important',
-        backgroundColor: theme.palette.mode === 'light' ? '#C2C4D1 !important' : '#504B6D !important'
+        backgroundColor:
+          theme.palette.mode === 'light' ? 'rgba(93, 89, 108, 0.2) !important' : 'rgba(207, 211, 236, 0.3) !important'
       },
       '.layout-vertical-nav &': {
         '& .ps__thumb-y': {
-          width: 4,
-          backgroundColor: perfectScrollbarThumbBgColor()
+          width: 4
         },
         '&:hover, &:focus, &.ps--clicking': {
           backgroundColor: 'transparent !important',
