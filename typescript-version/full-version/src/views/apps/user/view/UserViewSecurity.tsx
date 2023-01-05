@@ -267,17 +267,27 @@ const UserViewSecurity = () => {
             open={openEditMobileNumber}
             onClose={handleCancelClick}
             aria-labelledby='user-view-security-edit-mobile-number'
-            sx={{ '& .MuiPaper-root': { width: '100%', maxWidth: 650, p: [2, 10] } }}
+            sx={{ '& .MuiPaper-root': { width: '100%', maxWidth: 650 } }}
             aria-describedby='user-view-security-edit-mobile-number-description'
           >
             <DialogTitle
               id='user-view-security-edit-mobile-number'
-              sx={{ textAlign: 'center', fontSize: '1.5rem !important' }}
+              sx={{
+                textAlign: 'center',
+                fontSize: '1.5rem !important',
+                px: theme => [`${theme.spacing(5)} !important`, `${theme.spacing(15)} !important`],
+                pt: theme => [`${theme.spacing(8)} !important`, `${theme.spacing(12.5)} !important`]
+              }}
             >
               Enable One Time Password
             </DialogTitle>
 
-            <DialogContent>
+            <DialogContent
+              sx={{
+                px: theme => [`${theme.spacing(5)} !important`, `${theme.spacing(15)} !important`],
+                pb: theme => [`${theme.spacing(8)} !important`, `${theme.spacing(12.5)} !important`]
+              }}
+            >
               <Typography variant='h6'>Verify Your Mobile Number for SMS</Typography>
               <Typography variant='body2' sx={{ mt: 2, mb: 5 }}>
                 Enter your mobile phone number with country code and we will send you a verification code.

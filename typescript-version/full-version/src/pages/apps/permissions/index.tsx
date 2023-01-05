@@ -181,13 +181,24 @@ const PermissionsTable = () => {
         </Grid>
       </Grid>
       <Dialog maxWidth='sm' fullWidth onClose={handleDialogToggle} open={editDialogOpen}>
-        <DialogTitle sx={{ mx: 'auto', textAlign: 'center' }}>
+        <DialogTitle
+          sx={{
+            textAlign: 'center',
+            px: theme => [`${theme.spacing(5)} !important`, `${theme.spacing(15)} !important`],
+            pt: theme => [`${theme.spacing(8)} !important`, `${theme.spacing(12.5)} !important`]
+          }}
+        >
           <Typography variant='h5' component='span' sx={{ mb: 2 }}>
             Edit Permission
           </Typography>
           <Typography variant='body2'>Edit permission as per your requirements.</Typography>
         </DialogTitle>
-        <DialogContent sx={{ mx: 'auto' }}>
+        <DialogContent
+          sx={{
+            px: theme => [`${theme.spacing(5)} !important`, `${theme.spacing(15)} !important`],
+            pb: theme => [`${theme.spacing(8)} !important`, `${theme.spacing(12.5)} !important`]
+          }}
+        >
           <Alert severity='warning' sx={{ maxWidth: '500px' }}>
             <AlertTitle>Warning!</AlertTitle>
             By editing the permission name, you might break the system permissions functionality. Please ensure you're
