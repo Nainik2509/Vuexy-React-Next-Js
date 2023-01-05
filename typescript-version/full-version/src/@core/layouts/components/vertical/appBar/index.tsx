@@ -52,6 +52,7 @@ const LayoutAppBar = (props: Props) => {
   const appBarBlurEffect = appBarBlur && {
     '&:after': {
       top: 0,
+      left: 0,
       zIndex: -1,
       width: '100%',
       content: '""',

@@ -97,7 +97,7 @@ const EcommerceRevenueReport = () => {
         height: 12,
         radius: 10,
         offsetY: 1,
-        offsetX: -4
+        offsetX: theme.direction === 'ltr' ? -4 : 5
       }
     },
     states: {
@@ -154,7 +154,10 @@ const EcommerceRevenueReport = () => {
       {
         breakpoint: theme.breakpoints.values.xl,
         options: {
-          chart: { height: 341 }
+          chart: { height: 341 },
+          plotOptions: {
+            bar: { columnWidth: '45%' }
+          }
         }
       },
       {
@@ -180,7 +183,10 @@ const EcommerceRevenueReport = () => {
       {
         breakpoint: theme.breakpoints.values.lg,
         options: {
-          chart: { height: 321 }
+          chart: { height: 321 },
+          plotOptions: {
+            bar: { columnWidth: '40%' }
+          }
         }
       },
       {

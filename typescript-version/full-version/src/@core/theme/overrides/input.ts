@@ -10,18 +10,6 @@ const input = (theme: Theme) => {
         }
       }
     },
-    MuiInputBase: {
-      styleOverrides: {
-        root: {
-          '& .MuiInputBase-input::placeholder': {
-            transition: 'transform 0.25s ease-in-out'
-          },
-          '&.Mui-focused .MuiInputBase-input::placeholder': {
-            transform: 'translateX(4px)'
-          }
-        }
-      }
-    },
     MuiInput: {
       styleOverrides: {
         root: {

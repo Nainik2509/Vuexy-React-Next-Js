@@ -61,7 +61,7 @@ const Step = styled(MuiStep)<StepProps>(({ theme }) => ({
   '&.Mui-completed + svg': {
     color: theme.palette.primary.main
   },
-  '& .MuiStepLabel-root': {
+  '& .MuiStepLabel-label': {
     cursor: 'pointer'
   },
   [theme.breakpoints.down('md')]: {

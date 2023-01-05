@@ -60,7 +60,7 @@ const PricingCTA = () => {
           <Button variant='contained'>Start 14-day FREE trial</Button>
         </Grid>
         <GridStyled item xs={12} md={4}>
-          <Img alt='pricing-cta-avatar' src='/images/pages/pricing-cta.png' />
+          <Img alt='pricing-cta-avatar' src='/images/pages/girl-with-laptop.png' />
         </GridStyled>
       </Grid>
     </BoxWrapper>

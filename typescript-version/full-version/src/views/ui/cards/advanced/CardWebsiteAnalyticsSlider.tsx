@@ -39,7 +39,7 @@ const data: SwiperData[] = [
     img: '/images/cards/graphic-illustration-2.png',
     details: {
       Spend: '12h',
-      'Order Size': '18',
+      Orders: '18',
       Order: '127',
       Items: '2.3k'
     }

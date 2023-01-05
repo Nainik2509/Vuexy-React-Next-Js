@@ -97,7 +97,7 @@ const CardWidgetsRevenueReport = () => {
         height: 12,
         radius: 10,
         offsetY: 1,
-        offsetX: -4
+        offsetX: theme.direction === 'ltr' ? -4 : 5
       }
     },
     states: {
@@ -151,6 +151,14 @@ const CardWidgetsRevenueReport = () => {
       }
     },
     responsive: [
+      {
+        breakpoint: theme.breakpoints.values.xl,
+        options: {
+          plotOptions: {
+            bar: { columnWidth: '45%' }
+          }
+        }
+      },
       {
         breakpoint: 1380,
         options: {

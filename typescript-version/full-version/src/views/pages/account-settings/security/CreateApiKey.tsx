@@ -80,7 +80,7 @@ const CreateApiKeyCard = () => {
           </Grid>
 
           <Grid item md={6} xs={12} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Img alt='avatar' height={250} src='/images/pages/account-settings-security-illustration.png' />
+            <Img alt='avatar' height={250} src='/images/pages/girl-with-laptop.png' />
           </Grid>
         </Grid>
       </CardContent>

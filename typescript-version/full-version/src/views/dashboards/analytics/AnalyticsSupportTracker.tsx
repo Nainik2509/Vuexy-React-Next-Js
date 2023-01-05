@@ -109,7 +109,29 @@ const AnalyticsSupportTracker = () => {
         top: -30,
         bottom: 12
       }
-    }
+    },
+    responsive: [
+      {
+        breakpoint: 1300,
+        options: {
+          grid: {
+            padding: {
+              left: 22
+            }
+          }
+        }
+      },
+      {
+        breakpoint: theme.breakpoints.values.md,
+        options: {
+          grid: {
+            padding: {
+              left: 0
+            }
+          }
+        }
+      }
+    ]
   }
 
   return (

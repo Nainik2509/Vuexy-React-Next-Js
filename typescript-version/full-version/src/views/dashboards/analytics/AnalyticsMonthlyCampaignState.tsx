@@ -93,7 +93,7 @@ const AnalyticsMonthlyCampaignState = () => {
               sx={{
                 display: 'flex',
                 alignItems: 'center',
-                mb: index !== data.length - 1 ? 7 : undefined
+                mb: index !== data.length - 1 ? [7, 7, 6.25, 7] : undefined
               }}
             >
               <CustomAvatar

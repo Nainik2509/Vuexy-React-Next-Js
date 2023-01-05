@@ -50,7 +50,7 @@ const CardStatisticsAvgDailyTraffic = () => {
       show: false,
       padding: {
         top: -20,
-        left: -10,
+        left: -5,
         right: -8,
         bottom: -12
       }

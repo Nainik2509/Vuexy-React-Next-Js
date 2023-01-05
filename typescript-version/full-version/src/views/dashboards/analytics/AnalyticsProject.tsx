@@ -82,6 +82,7 @@ const columns = [
     flex: 0.1,
     field: 'team',
     minWidth: 120,
+    sortable: false,
     headerName: 'Team',
     renderCell: ({ row }: CellType) => (
       <AvatarGroup className='pull-up'>

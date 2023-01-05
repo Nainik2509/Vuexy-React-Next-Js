@@ -270,7 +270,7 @@ const DialogCreateApp = () => {
                     Submit to kickstart your project.
                   </Typography>
 
-                  <img width={250} height={152} alt='submit-img' src='/images/cards/illustration-john.png' />
+                  <img width={200} alt='submit-img' src='/images/pages/girl-with-laptop.png' />
                 </Box>
                 {renderTabFooter()}
               </TabPanel>

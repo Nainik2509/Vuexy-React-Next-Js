@@ -54,7 +54,7 @@ const CardWidgetsSales = () => {
         height: 12,
         radius: 10,
         offsetY: 1,
-        offsetX: -4
+        offsetX: theme.direction === 'ltr' ? -4 : 5
       }
     },
     grid: {

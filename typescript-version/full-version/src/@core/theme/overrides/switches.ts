@@ -27,10 +27,6 @@ const Switch = (theme: Theme) => {
           '&:hover': {
             backgroundColor: 'transparent !important'
           },
-          '& .MuiSwitch-input': {
-            left: '-50%',
-            width: '250%'
-          },
           '&.Mui-disabled': {
             opacity: 0.4,
             color: theme.palette.text.disabled,
@@ -46,11 +42,8 @@ const Switch = (theme: Theme) => {
             }
           },
           '&.Mui-checked': {
-            left: -3,
+            transform: 'translateX(11px)',
             color: `${theme.palette.common.white} !important`,
-            '& .MuiSwitch-input': {
-              left: '-100%'
-            },
             '& + .MuiSwitch-track': {
               opacity: 1,
               borderColor: theme.palette.primary.main,
@@ -102,7 +95,7 @@ const Switch = (theme: Theme) => {
             left: 5,
             padding: `${theme.spacing(1.5)} !important`,
             '&.Mui-checked': {
-              left: -4
+              transform: 'translateX(7px)'
             }
           }
         }
