@@ -6,18 +6,18 @@ import FullCalendar from '@fullcalendar/react'
 import listPlugin from '@fullcalendar/list'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
+import bootstrap5Plugin from '@fullcalendar/bootstrap5'
 import interactionPlugin from '@fullcalendar/interaction'
-
-// ** Icon Imports
-import Icon from 'src/@core/components/icon'
 
 // ** Types
 import { CalendarType } from 'src/types/apps/calendarTypes'
 
+// ** Third Party Style Import
+import 'bootstrap-icons/font/bootstrap-icons.css'
+
 const blankEvent = {
   title: '',
   start: '',
-
   end: '',
   allDay: false,
   url: '',
@@ -58,7 +58,7 @@ const Calendar = (props: CalendarType) => {
     // ** calendarOptions(Props)
     const calendarOptions = {
       events: store.events.length ? store.events : [],
-      plugins: [interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin],
+      plugins: [interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin, bootstrap5Plugin],
       initialView: 'dayGridMonth',
       headerToolbar: {
         start: 'sidebarToggle, prev, next, title',
@@ -123,7 +123,7 @@ const Calendar = (props: CalendarType) => {
 
       customButtons: {
         sidebarToggle: {
-          text: <Icon icon='tabler:menu-2' />,
+          icon: 'bi bi-list',
           click() {
             handleLeftSidebarToggle()
           }
