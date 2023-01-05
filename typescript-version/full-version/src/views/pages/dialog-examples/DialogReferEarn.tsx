@@ -87,7 +87,14 @@ const DialogReferEarn = () => {
         TransitionComponent={Transition}
         onBackdropClick={() => setShow(false)}
       >
-        <DialogContent sx={{ px: [8, 15], pt: [8, 12.5], position: 'relative' }}>
+        <DialogContent
+          sx={{
+            position: 'relative',
+            pb: theme => `${theme.spacing(8)} !important`,
+            px: theme => [`${theme.spacing(5)} !important`, `${theme.spacing(15)} !important`],
+            pt: theme => [`${theme.spacing(8)} !important`, `${theme.spacing(12.5)} !important`]
+          }}
+        >
           <IconButton
             size='small'
             onClick={() => setShow(false)}
@@ -145,8 +152,15 @@ const DialogReferEarn = () => {
             </Grid>
           </Grid>
         </DialogContent>
-        <Divider sx={{ my: theme => `${theme.spacing(4)} !important` }} />
-        <DialogContent sx={{ px: { xs: 8, sm: 15 }, pb: { xs: 8, sm: 12.5 }, position: 'relative' }}>
+        <Divider sx={{ my: '0 !important' }} />
+        <DialogContent
+          sx={{
+            position: 'relative',
+            pt: theme => `${theme.spacing(8)} !important`,
+            px: theme => [`${theme.spacing(5)} !important`, `${theme.spacing(15)} !important`],
+            pb: theme => [`${theme.spacing(8)} !important`, `${theme.spacing(12.5)} !important`]
+          }}
+        >
           <Box sx={{ mb: 8 }}>
             <Typography variant='h6' sx={{ mb: 4 }}>
               Invite your friends

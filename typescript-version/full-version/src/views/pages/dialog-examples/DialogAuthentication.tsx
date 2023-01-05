@@ -83,7 +83,13 @@ const DialogAuthentication = () => {
         onBackdropClick={handleClose}
         TransitionComponent={Transition}
       >
-        <DialogContent sx={{ px: { xs: 8, sm: 15 }, py: { xs: 8, sm: 12.5 }, position: 'relative' }}>
+        <DialogContent
+          sx={{
+            position: 'relative',
+            px: theme => [`${theme.spacing(5)} !important`, `${theme.spacing(15)} !important`],
+            py: theme => [`${theme.spacing(8)} !important`, `${theme.spacing(12.5)} !important`]
+          }}
+        >
           <IconButton size='small' onClick={handleClose} sx={{ position: 'absolute', right: '1rem', top: '1rem' }}>
             <Icon icon='mdi:close' />
           </IconButton>
@@ -186,7 +192,13 @@ const DialogAuthentication = () => {
         TransitionComponent={Transition}
         onBackdropClick={handleAuthDialogClose}
       >
-        <DialogContent sx={{ px: { xs: 8, sm: 15 }, py: { xs: 8, sm: 12.5 }, position: 'relative' }}>
+        <DialogContent
+          sx={{
+            position: 'relative',
+            px: theme => [`${theme.spacing(5)} !important`, `${theme.spacing(15)} !important`],
+            py: theme => [`${theme.spacing(8)} !important`, `${theme.spacing(12.5)} !important`]
+          }}
+        >
           <IconButton
             size='small'
             onClick={handleAuthDialogClose}

@@ -183,13 +183,24 @@ const RolesCards = () => {
         </Card>
       </Grid>
       <Dialog fullWidth maxWidth='md' scroll='body' onClose={handleClose} open={open}>
-        <DialogTitle sx={{ textAlign: 'center' }}>
+        <DialogTitle
+          sx={{
+            textAlign: 'center',
+            px: theme => [`${theme.spacing(5)} !important`, `${theme.spacing(15)} !important`],
+            pt: theme => [`${theme.spacing(8)} !important`, `${theme.spacing(12.5)} !important`]
+          }}
+        >
           <Typography variant='h5' component='span'>
             {`${dialogTitle} Role`}
           </Typography>
           <Typography variant='body2'>Set Role Permissions</Typography>
         </DialogTitle>
-        <DialogContent sx={{ p: { xs: 6, sm: 12 } }}>
+        <DialogContent
+          sx={{
+            pb: theme => `${theme.spacing(5)} !important`,
+            px: theme => [`${theme.spacing(5)} !important`, `${theme.spacing(15)} !important`]
+          }}
+        >
           <Box sx={{ my: 4 }}>
             <FormControl fullWidth>
               <TextField label='Role Name' placeholder='Enter Role Name' />
@@ -296,7 +307,14 @@ const RolesCards = () => {
             </Table>
           </TableContainer>
         </DialogContent>
-        <DialogActions sx={{ pt: 0, display: 'flex', justifyContent: 'center' }}>
+        <DialogActions
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            px: theme => [`${theme.spacing(5)} !important`, `${theme.spacing(15)} !important`],
+            pb: theme => [`${theme.spacing(8)} !important`, `${theme.spacing(12.5)} !important`]
+          }}
+        >
           <Box className='demo-space-x'>
             <Button size='large' type='submit' variant='contained' onClick={handleClose}>
               Submit
