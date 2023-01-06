@@ -551,7 +551,7 @@ const UserViewBilling = () => {
                           <Typography sx={{ fontWeight: 500 }}>Company Name:</Typography>
                         </TableCell>
                         <TableCell>
-                          <Typography sx={{ color: 'text.secondary' }}>ThemeSelection</Typography>
+                          <Typography sx={{ color: 'text.secondary' }}>Pixinvent</Typography>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -680,7 +680,7 @@ const UserViewBilling = () => {
               <form>
                 <Grid container spacing={6}>
                   <Grid item xs={12} sm={6}>
-                    <TextField fullWidth defaultValue='ThemeSelection' label='Company Name' />
+                    <TextField fullWidth defaultValue='Pixinvent' label='Company Name' />
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <TextField fullWidth type='email' defaultValue='gertrude@gmail.com' label='Email' />

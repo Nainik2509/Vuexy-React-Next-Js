@@ -17,22 +17,22 @@ const FooterContent = () => {
           ❤️
         </Box>
         {` by `}
-        <MuiLink target='_blank' href='https://themeselection.com/'>
-          ThemeSelection
+        <MuiLink target='_blank' href='https://pixinvent.com'>
+          Pixinvent
         </MuiLink>
       </Typography>
       {hidden ? null : (
         <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', '& :not(:last-child)': { mr: 4 } }}>
-          <MuiLink target='_blank' href='https://themeselection.com/license/'>
+          <MuiLink target='_blank' href='https://themeforest.net/licenses/standard'>
             License
           </MuiLink>
-          <MuiLink target='_blank' href='https://themeselection.com/'>
+          <MuiLink target='_blank' href='https://1.envato.market/pixinvent_portfolio'>
             More Themes
           </MuiLink>
-          <MuiLink target='_blank' href='https://themeselection.com/docs/'>
+          <MuiLink target='_blank' href='https://pixinvent.com/demo/vuexy-react-admin-dashboard-template/documentation'>
             Documentation
           </MuiLink>
-          <MuiLink target='_blank' href='https://themeselection.com/support/'>
+          <MuiLink target='_blank' href='https://pixinvent.ticksy.com'>
             Support
           </MuiLink>
         </Box>

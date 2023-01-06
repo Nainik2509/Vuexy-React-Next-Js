@@ -239,7 +239,7 @@ const DialogAuthentication = () => {
                   </Typography>
 
                   <Box sx={{ my: 12, display: 'flex', justifyContent: 'center' }}>
-                    <img width={122} height={122} alt='qr-code' src='/images/pages/themeselection-qr.png' />
+                    <img width={122} height={122} alt='qr-code' src='/images/pages/pixinvent-qr.png' />
                   </Box>
 
                   <Alert severity='warning' icon={false} sx={{ mb: 4, '& .MuiAlert-message': { overflow: 'hidden' } }}>

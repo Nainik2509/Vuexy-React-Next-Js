@@ -5,7 +5,7 @@ heroText: Master  - MUI React Next.Js Admin Template
 tagline: Best selling, Production Ready, Carefully Crafted, Extensive Admin Template
 actionText: Get Started →
 actionLink: /guide/
-footer: COPYRIGHT © 2022 ThemeSelection, All rights Reserved
+footer: COPYRIGHT © 2023 Pixinvent, All rights Reserved
 ---
 
 <div class="features">

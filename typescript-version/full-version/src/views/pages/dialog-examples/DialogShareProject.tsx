@@ -258,7 +258,7 @@ const DialogShareProject = () => {
             <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
               <Icon icon='tabler:users' />
               <Typography sx={{ fontWeight: 600, fontSize: '0.875rem' }}>
-                {`Public to ${themeConfig.templateName} - ThemeSelection`}
+                {`Public to ${themeConfig.templateName} - Pixinvent`}
               </Typography>
             </Box>
             <Button sx={{ '& svg': { mr: 2 } }}>

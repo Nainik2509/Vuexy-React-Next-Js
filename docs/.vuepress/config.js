@@ -12,9 +12,9 @@ module.exports = {
       { text: 'Guide', link: '/guide/' },
       { text: 'FAQ', link: '/faq/' },
       { text: 'Articles', link: '/articles/' },
-      { text: 'Demo', link: 'https://themeselection.com/' },
-      { text: 'Changelog', link: 'https://themeselection.com/' },
-      { text: 'Purchase', link: 'https://themeselection.com/' }
+      { text: 'Demo', link: 'https://pixinvent.com/demo/vuexy-react-admin-dashboard-template/demo-1' },
+      { text: 'Changelog', link: 'https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/vuexy-changelog.html' },
+      { text: 'Purchase', link: 'https://1.envato.market/vuexy_admin' }
     ],
     sidebar: {
       '/guide/': [

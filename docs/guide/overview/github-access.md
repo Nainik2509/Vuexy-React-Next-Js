@@ -4,4 +4,4 @@ GitHub access will give you a direct access to our template's repository on GitH
 
 Please fill form in the below link to get GitHub Access:
 
-[Form Link](https://tools.themeselection.com/github/github-access)
+[Form Link](https://pixinvent.com/tools/github/github-access)

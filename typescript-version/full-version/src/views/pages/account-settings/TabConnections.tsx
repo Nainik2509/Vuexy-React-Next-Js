@@ -70,13 +70,13 @@ const socialAccountsArr: SocialAccountsType[] = [
   {
     title: 'Twitter',
     isConnected: true,
-    username: '@ThemeSelection',
+    username: '@Pixinvent',
     logo: '/images/logos/twitter.png'
   },
   {
     title: 'Instagram',
     isConnected: true,
-    username: '@ThemeSelection',
+    username: '@Pixinvent',
     logo: '/images/logos/instagram.png'
   },
   {

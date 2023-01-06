@@ -12,6 +12,7 @@ Make your changes in `src/layouts/UserThemeOptions.ts` file in order to override
 Consider reading [MUI theming docs](https://mui.com/material-ui/customization/theming/) to understand how it works and how to access and override theme.
 :::
 
+<!-- no toc -->
 - [How to override Color Palette](#how-to-override-color-palette)
 - [How to customize MUI component appearance](#how-to-customize-mui-component-appearance)
 - [How to override Typography](#how-to-override-typography)
@@ -119,7 +120,7 @@ typography: {
 ```
 
 ::: tip Reference:
-[https://demos.themeselection.com/master-react-mui-nextjs/demo-1/ui/typography/](https://demos.themeselection.com/master-react-mui-nextjs/demo-1/ui/typography/)
+[https://pixinvent.com/demo/vuexy-react-admin-dashboard-template/demo-1/ui/typography](https://pixinvent.com/demo/vuexy-react-admin-dashboard-template/demo-1/ui/typography)
 
 MUI: [https://mui.com/material-ui/customization/typography/](https://mui.com/material-ui/customization/typography/)
 :::
