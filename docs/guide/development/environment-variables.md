@@ -1,6 +1,6 @@
 # Environment Variables
 
-Master comes with support for environment variables, which allows you to use `.env` to load the environment variables.
+Vuexy comes with support for environment variables, which allows you to use `.env` to load the environment variables.
 
 :::warning Tip
 We recommend you to read the [official guide](https://nextjs.org/docs/basic-features/environment-variables) given by Next.js for using environment variables.

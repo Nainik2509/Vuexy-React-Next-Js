@@ -20,6 +20,7 @@ Following are the properties and their values that are stored in the Settings Co
 | verticalNavToggleType | `accordion`, `collapse`            | Set behavior of menu group in the vertical navigation menu            |
 | contentWidth          | `full`, `boxed`                    | Full or container width of AppBar, Content and Footer                 |
 | appBar                | `fixed`, `static`, `hidden`        | Change appBar position                                                |
+| appBarBlur            | `true`, `false`                    | If `true`, background of appBar will have opacity                     |
 | footer                | `fixed`, `static`, `hidden`        | Change footer position                                                |
 | themeColor            | `primary`, `secondary`, `success`, `error`, `warning`, `info` | Change primary color in the template       |
 | toastPosition         | `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right` | Default toast position of `react-hot-toast` |
@@ -36,6 +37,7 @@ Following are the properties and their values that are stored in `localStorage` 
 | navCollapsed          | `true`, `false`                                               | If `true`, the vertical navigation menu is collapsed       |
 | verticalNavToggleType | `accordion`, `collapse`                                       | Set behavior of menu group in the vertical navigation menu |
 | contentWidth          | `full`, `boxed`                                               | Full or container width of AppBar, Content and Footer      |
+| appBarBlur            | `true`, `false`                                               | If `true`, background of appBar will have opacity          |
 | themeColor            | `primary`, `secondary`, `success`, `error`, `warning`, `info` | Change primary color in the template                       |
 
 ## Provider and Consumer

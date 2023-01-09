@@ -99,7 +99,7 @@ import Grid from '@mui/material/Grid'
 import UserLayout from 'src/layouts/UserLayout'
 
 const SidebarComponent = () => (
-  <Box sx={{ px: 4, py: 2, height: 'calc(100vh - 12rem)', backgroundColor: 'background.paper' }}>
+  <Box sx={{ px: 4, py: 2, height: 'calc(100vh - 11rem)', backgroundColor: 'background.paper' }}>
     <h1>Sidebar</h1>
   </Box>
 )
@@ -132,7 +132,7 @@ import Grid from '@mui/material/Grid'
 import UserLayout from 'src/layouts/UserLayout'
 
 const SidebarComponent = () => (
-  <Box sx={{ px: 4, py: 2, height: 'calc(100vh - 12rem)', backgroundColor: 'background.paper' }}>
+  <Box sx={{ px: 4, py: 2, height: 'calc(100vh - 11rem)', backgroundColor: 'background.paper' }}>
     <h1>Sidebar</h1>
   </Box>
 )

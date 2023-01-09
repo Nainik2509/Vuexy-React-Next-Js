@@ -1,5 +1,5 @@
 {
-  "name": "master-react-mui-nextjs-docs",
+  "name": "vuexy-react-admin-template-docs",
   "private": true,
   "scripts": {
     "dev": "set NODE_OPTIONS=--openssl-legacy-provider && vuepress dev",

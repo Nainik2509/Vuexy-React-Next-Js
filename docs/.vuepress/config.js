@@ -1,8 +1,8 @@
 module.exports = {
   theme: 'book',
-  title: 'Master',
+  title: 'Vuexy',
   base: process.env.BASE || '/',
-  description: 'Master React Admin Dashboard Template',
+  description: 'Vuexy React Admin Dashboard Template',
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   themeConfig: {
     searchPlaceholder: 'Search...',
@@ -114,7 +114,6 @@ module.exports = {
             '/guide/components/styled-components'
           ]
         },
-        ['/guide/migration', 'Migration Guide'],
         {
           title: 'Others',
           collapsable: false,
@@ -131,6 +130,7 @@ module.exports = {
             ['installation-warnings', 'Installation warnings'],
             ['first-child-console-error', ':first-child console error'],
             ['remove-nextjs', 'Can I remove Next.js'],
+            ['how-to-migrate-to-new-design', 'How to Migrate to New Design'],
             ['how-to-change-branding', 'How to change Logo / Branding'],
             ['how-to-change-colors', 'How to change colors'],
             ['how-to-change-direction', 'How to change Direction'],

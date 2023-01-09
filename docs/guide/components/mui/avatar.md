@@ -23,22 +23,22 @@ import Icon from 'src/@core/components/icon'
 import CustomAvatar from 'src/@core/components/mui/avatar'
 
 <CustomAvatar color='primary'>
-  <Icon icon='mdi:bell-outline' />
+  <Icon icon='tabler:bell' />
 </CustomAvatar>
 <CustomAvatar color='secondary'>
-  <Icon icon='mdi:bell-outline' />
+  <Icon icon='tabler:bell' />
 </CustomAvatar>
 <CustomAvatar color='success'>
-  <Icon icon='mdi:bell-outline' />
+  <Icon icon='tabler:bell' />
 </CustomAvatar>
 <CustomAvatar color='error'>
-  <Icon icon='mdi:bell-outline' />
+  <Icon icon='tabler:bell' />
 </CustomAvatar>
 <CustomAvatar color='warning'>
-  <Icon icon='mdi:bell-outline' />
+  <Icon icon='tabler:bell' />
 </CustomAvatar>
 <CustomAvatar color='info'>
-  <Icon icon='mdi:bell-outline' />
+  <Icon icon='tabler:bell' />
 </CustomAvatar>
 ```
 

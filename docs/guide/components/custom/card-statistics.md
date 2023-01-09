@@ -12,11 +12,9 @@ import CardStatisticsHorizontal from 'src/@core/components/card-statistics/card-
 
 const Component = () => (
   <CardStatisticsHorizontal
-    stats='2,856'
-    trend='negative'
-    trendNumber='10.2%'
-    title='New Customers'
-    icon={<Icon icon='mdi:account-outline' />}
+    stats='26%'
+    icon='tabler:cpu'
+    title='CPU Usage'
   />
 )
 
@@ -31,12 +29,87 @@ Result:
 
 | Prop        | Type                                                          | Required | Description                                         |
 | :---------- | :------------------------------------------------------------ |:-------- | :-------------------------------------------------- |
-| title       | `string`                                                      | Yes      | Title of the card                                   |
-| color       | `primary`, `secondary`, `success`, `error`, `warning`, `info` | No       | Color of the icon inside the avatar                 |
 | icon        | `ReactNode`                                                   | Yes      | Icon inside the avatar                              |
 | stats       | `string`                                                      | Yes      | The statistic number on the card                    |
+| title       | `string`                                                      | Yes      | Title of the card                                   |
+| sx          | `SxProps<Theme>`                                              | No       | Add custom style using this prop                    |
+| iconSize    | `number`, `string`                                            | No       | Size of the icon                                    |
+| avatarSize  | `number`                                                      | No       | Size of the avatar                                  |
+| avatarColor | `primary`, `secondary`, `success`, `error`, `warning`, `info` | No       | Color of the avatar                                 |
+
+## Card Statistics Horizontal With Details
+
+```jsx
+import Icon from 'src/@core/components/icon'
+import CardStatsHorizontalWithDetails from 'src/@core/components/card-statistics/card-stats-horizontal-with-details'
+
+const Component = () => (
+  <CardStatsHorizontalWithDetails
+    stats='19,860'
+    trendDiff='-14'
+    trend='negative'
+    title='Active Users'
+    avatarColor='success'
+    icon='tabler:user-check'
+    subtitle='Last week analytics'
+  />
+)
+
+export default Component
+```
+
+Result:
+
+<img alt='card-stats-horizontal-with-details' class='medium-zoom' :src="$withBase('/images/components/card-stats-horizontal-with-details.png')" />
+
+### Props
+
+| Prop        | Type                                                          | Required | Description                                         |
+| :---------- | :------------------------------------------------------------ |:-------- | :-------------------------------------------------- |
+| icon        | `ReactNode`                                                   | Yes      | Icon inside the avatar                              |
+| stats       | `string`                                                      | Yes      | The statistic number on the card                    |
+| title       | `string`                                                      | Yes      | Title of the card                                   |
+| subtitle    | `string`                                                      | Yes      | Subtitle of the card                                |
+| trendDiff   | `string`                                                      | Yes      | To show the difference in numbers                   |
+| sx          | `SxProps<Theme>`                                              | No       | Add custom style using this prop                    |
 | trend       | `positive`, `negative`                                        | No       | To show the change in numbers than previous numbers |
-| trendNumber | `string`                                                      | Yes      | To show the difference in numbers                   |
+| iconSize    | `number`, `string`                                            | No       | Size of the icon                                    |
+| avatarSize  | `number`                                                      | No       | Size of the avatar                                  |
+| avatarColor | `primary`, `secondary`, `success`, `error`, `warning`, `info` | No       | Color of the avatar                                 |
+
+## Card Statistics Square
+
+```jsx
+import Icon from 'src/@core/components/icon'
+import CardStatsSquare from 'src/@core/components/card-statistics/card-stats-square'
+
+const Component = () => (
+  <CardStatsSquare
+    stats='97.8k'
+    title='Orders'
+    avatarColor='error'
+    icon='tabler:briefcase'
+  />
+)
+
+export default Component
+```
+
+Result:
+
+<img alt='card-stats-square' class='medium-zoom' :src="$withBase('/images/components/card-stats-square.png')" />
+
+### Props
+
+| Prop        | Type                                                          | Required | Description                                         |
+| :---------- | :------------------------------------------------------------ |:-------- | :-------------------------------------------------- |
+| icon        | `ReactNode`                                                   | Yes      | Icon inside the avatar                              |
+| stats       | `string`                                                      | Yes      | The statistic number on the card                    |
+| title       | `string`                                                      | Yes      | Title of the card                                   |
+| sx          | `SxProps<Theme>`                                              | No       | Add custom style using this prop                    |
+| iconSize    | `number`, `string`                                            | No       | Size of the icon                                    |
+| avatarSize  | `number`                                                      | No       | Size of the avatar                                  |
+| avatarColor | `primary`, `secondary`, `success`, `error`, `warning`, `info` | No       | Color of the avatar                                 |
 
 ## Card Statistics Vertical
 
@@ -46,13 +119,13 @@ import CardStatisticsVertical from 'src/@core/components/card-statistics/card-st
 
 const Component = () => (
   <CardStatisticsVertical
-    stats='862'
-    trend='negative'
-    trendNumber='-18%'
-    title='New Project'
-    subtitle='Yearly Project'
-    icon={<Icon icon='mdi:briefcase-variant-outline' />}
-    optionsMenuProps={{ options: ['Refresh', 'Share', 'Update'] }}
+    stats='24.67k'
+    chipText='+25.7%'
+    title='Total Sales'
+    chipColor='success'
+    subtitle='Last week'
+    avatarColor='success'
+    avatarIcon='tabler:credit-card'
   />
 )
 
@@ -62,33 +135,36 @@ export default Component
 Result:
 
 <img alt='card-stats-vertical' class='medium-zoom' :src="$withBase('/images/components/card-stats-vertical.png')" />
-<img alt='card-stats-vertical' class='medium-zoom' :src="$withBase('/images/components/card-stats-vertical-2.png')" />
 
 ### Props
 
-| Prop             | Type                                                                 | Required | Description                                         |
-| :--------------- | :------------------------------------------------------------------- |:-------- | :-------------------------------------------------- |
-| title            | `string`                                                             | Yes      | Title of the card                                   |
-| subtitle         | `string`                                                             | Yes      | Subtitle of the card                                |
-| color            | `primary`, `secondary`, `success`, `error`, `warning`, `info`        | No       | Color of the avatar                                 |
-| icon             | `ReactNode`                                                          | Yes      | Icon inside the avatar                              |
-| stats            | `string`                                                             | Yes      | The statistic number on the card                    |
-| trend            | `positive`, `negative`                                               | No       | To show the change in numbers than previous numbers |
-| trendNumber      | `string`                                                             | Yes      | To show the difference in numbers                   |
-| optionsMenuProps | [`OptionsMenuType`](/guide/components/custom/option-menu.html#props) | No       | Options to render in the more options menu          |
+| Prop        | Type                                                                     | Required | Description                                         |
+| :---------- | :----------------------------------------------------------------------- |:-------- | :-------------------------------------------------- |
+| stats       | `string`                                                                 | Yes      | The statistic number on the card                    |
+| title       | `string`                                                                 | Yes      | Title of the card                                   |
+| chipText    | `string`                                                                 | Yes      | Text inside the badge/chip                          |
+| subtitle    | `string`                                                                 | Yes      | Subtitle of the card                                |
+| avatarIcon  | `ReactNode`                                                              | Yes      | Icon inside the avatar                              |
+| sx          | `SxProps<Theme>`                                                         | No       | Add custom style using this prop                    |
+| avatarSize  | `number`                                                                 | No       | Size of the avatar                                  |
+| avatarColor | `primary`, `secondary`, `success`, `error`, `warning`, `info`            | No       | Color of the avatar                                 |
+| iconSize    | `number`, `string`                                                       | No       | Size of the icon                                    |
+| chipColor   | `default`, `primary`, `secondary`, `success`, `error`, `warning`, `info` | No       | Color of the badge/chip                             |
 
-## Card Statistics Image
+## Card Statistics With Area Chart
 
 ```jsx
-import CardStatisticsImg from 'src/@core/components/card-statistics/card-stats-with-image'
+import Icon from 'src/@core/components/icon'
+import CardStatisticsWithAreaChart from 'src/@core/components/card-statistics/card-stats-with-area-chart'
 
 const Component = () => (
-  <CardStatisticsImg
-    src='...'
-    stats='13.7k'
-    title='Ratings'
-    trendNumber='+38%'
-    chipText={`Year of ${new Date().getFullYear()}`}
+  <CardStatisticsWithAreaChart
+    stats='97.5k'
+    chartColor='warning'
+    avatarColor='warning'
+    title='Orders Received'
+    avatarIcon='tabler:package'
+    chartSeries=[{ data: [30, 84, 11, 76, 0, 49, 9] }]
   />
 )
 
@@ -97,16 +173,18 @@ export default Component
 
 Result:
 
-<img alt='card-stats-img' class='medium-zoom' :src="$withBase('/images/components/card-stats-img.png')" />
+<img alt='card-stats-with-area-chart' class='medium-zoom' :src="$withBase('/images/components/card-stats-with-area-chart.png')" />
 
 ### Props
 
-| Prop        | Type                                                          | Required | Description                                         |
-| :---------- | :------------------------------------------------------------ |:-------- | :-------------------------------------------------- |
-| title       | `string`                                                      | Yes      | Title of the card                                   |
-| chipText    | `string`                                                      | Yes      | Label of the chip                                   |
-| chipColor   | `primary`, `secondary`, `success`, `error`, `warning`, `info` | No       | Color of the chip                                   |
-| src         | `string`                                                      | Yes      | Path of the image                                   |
-| stats       | `string`                                                      | Yes      | The statistic number on the card                    |
-| trend       | `positive`, `negative`                                        | No       | To show the change in numbers than previous numbers |
-| trendNumber | `string`                                                      | Yes      | To show the difference in numbers                   |
+| Prop           | Type                                                          | Required | Description                                      |
+| :------------- | :------------------------------------------------------------ |:-------- | :----------------------------------------------- |
+| stats          | `string`                                                      | Yes      | The statistic number on the card                 |
+| title          | `string`                                                      | Yes      | Title of the card                                |
+| avatarIcon     | `ReactNode`                                                   | Yes      | Icon inside the avatar                           |
+| chartSeries    | `ApexOptions['series']`                                       | Yes      | Series for the chart                             |
+| sx             | `SxProps<Theme>`                                              | No       | Add custom style using this prop                 |
+| avatarSize     | `number`                                                      | No       | Size of the avatar                               |
+| chartColor     | `primary`, `secondary`, `success`, `error`, `warning`, `info` | No       | Color of the chart                               |
+| avatarColor    | `primary`, `secondary`, `success`, `error`, `warning`, `info` | No       | Color of the avatar                              |
+| avatarIconSize | `number`, `string`                                            | No       | Size of the icon                                 |

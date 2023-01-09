@@ -21,16 +21,16 @@ import Icon from 'src/@core/components/icon'
 import CustomTimelineDot from 'src/@core/components/mui/timeline-dot'
 
 <CustomTimelineDot skin='light' color='error'>
-  <Icon icon='mdi:airplane' fontSize={20} />
+  <Icon icon='tabler:plane-tilt' fontSize={20} />
 </CustomTimelineDot>
 <CustomTimelineDot skin='light' color='primary'>
-  <Icon icon='mdi:clock-outline' fontSize={20} />
+  <Icon icon='tabler:clock-hour-4' fontSize={20} />
 </CustomTimelineDot>
 <CustomTimelineDot skin='light' color='warning'>
-  <Icon icon='mdi:cart-outline' fontSize={20} />
+  <Icon icon='tabler:shopping-cart' fontSize={20} />
 </CustomTimelineDot>
 <CustomTimelineDot skin='light' color='success'>
-  <Icon icon='mdi:file-edit-outline' fontSize={20} />
+  <Icon icon='tabler:edit' fontSize={20} />
 </CustomTimelineDot>
 ```
 

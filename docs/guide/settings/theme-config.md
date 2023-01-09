@@ -18,9 +18,9 @@ Following are the properties with their values that we have used in the theme:
 <code-block title="TS" active>
 ```ts
 const themeConfig: ThemeConfig = {
-  templateName: 'Master',
+  templateName: 'Vuexy',
   layout: 'vertical',
-  mode: 'light',
+  mode: 'light' as Mode,
   direction: 'ltr',
   skin: 'default',
   contentWidth: 'boxed',
@@ -28,16 +28,17 @@ const themeConfig: ThemeConfig = {
   routingLoader: true,
   navHidden: false,
   menuTextTruncate: true,
-  navSubItemIcon: 'mdi:circle-outline',
+  navSubItemIcon: 'tabler:circle',
   verticalNavToggleType: 'accordion',
   navCollapsed: false,
   navigationSize: 260,
-  collapsedNavigationSize: 69,
+  collapsedNavigationSize: 82,
   afterVerticalNavMenuContentPosition: 'fixed',
   beforeVerticalNavMenuContentPosition: 'fixed',
   horizontalMenuToggle: 'hover',
   horizontalMenuAnimation: true,
   appBar: 'fixed',
+  appBarBlur: true,
   responsiveFontSizes: true,
   disableRipple: false,
   disableCustomizer: false,
@@ -49,7 +50,7 @@ const themeConfig: ThemeConfig = {
 <code-block title="JS">
 ```js
 const themeConfig = {
-  templateName: 'Master',
+  templateName: 'Vuexy',
   layout: 'vertical',
   mode: 'light',
   direction: 'ltr',
@@ -59,16 +60,17 @@ const themeConfig = {
   routingLoader: true,
   navHidden: false,
   menuTextTruncate: true,
-  navSubItemIcon: 'mdi:circle-outline',
+  navSubItemIcon: 'tabler:circle',
   verticalNavToggleType: 'accordion',
   navCollapsed: false,
   navigationSize: 260,
-  collapsedNavigationSize: 69,
+  collapsedNavigationSize: 82,
   afterVerticalNavMenuContentPosition: 'fixed',
   beforeVerticalNavMenuContentPosition: 'fixed',
   horizontalMenuToggle: 'hover',
   horizontalMenuAnimation: true,
   appBar: 'fixed',
+  appBarBlur: true,
   responsiveFontSizes: true,
   disableRipple: false,
   disableCustomizer: false,
@@ -132,6 +134,7 @@ Following is the table of all the properties and their possible values that are 
 | horizontalMenuToggle                 | `click`, `hover`                   | Set behavior of menu group in the horizontal navigation menu                |
 | horizontalMenuAnimation              | `true`, `false`                    | If `true`, animation is enabled for the horizontal navigation menu          |
 | appBar                               | `fixed`, `static`, `hidden`        | Change appBar position                                                      |
+| appBarBlur                           | `true`, `false`                    | If `true`, background of appBar will have opacity                           |
 | responsiveFontSizes                  | `true`, `false`                    | If `true`, responsive font sizes are enabled                                |
 | disableRipple                        | `true`, `false`                    | If `true`, the Ripple effect is disabled                                    |
 | disableCustomizer                    | `true`, `false`                    | If `true`, customizer is disabled as right sidebar to configure in live app |

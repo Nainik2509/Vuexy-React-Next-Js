@@ -147,7 +147,7 @@ const UserLanguageDropdown = ({ settings }: Props) => {
         onClick={handleLangDropdownOpen}
         sx={layout === 'vertical' ? { mr: 0.75 } : { mx: 0.75 }}
       >
-        <Icon icon='mdi:translate' />
+        <Icon icon='tabler:language' />
       </IconButton>
       <Menu
         anchorEl={anchorEl}
@@ -216,7 +216,7 @@ const UserLanguageDropdown = ({ settings }) => {
         onClick={handleLangDropdownOpen}
         sx={layout === 'vertical' ? { mr: 0.75 } : { mx: 0.75 }}
       >
-        <Icon icon='mdi:translate' />
+        <Icon icon='tabler:language' />
       </IconButton>
       <Menu
         anchorEl={anchorEl}

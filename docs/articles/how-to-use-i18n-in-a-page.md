@@ -1,6 +1,6 @@
 # How to use i18n in a page
 
-Master admin provides i18n for navigation only. There might be a time when you might want to translate any text in a page. Here's how you can achieve that:
+Vuexy admin provides i18n for navigation only. There might be a time when you might want to translate any text in a page. Here's how you can achieve that:
 
 1. Make sure your have `i18next`, `react-i18next`, `i18next-http-backend` and `i18next-browser-languagedetector` packages installed
 2. Copy the `src/configs/i18n.ts` file from the full version and paste it under the same directory in your project

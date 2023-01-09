@@ -1,6 +1,6 @@
 # How to remove Fake DB and use Real API
 
-Master uses [axios-mock-adapter](https://github.com/ctimmerm/axios-mock-adapter) for mocking API calls. This makes our template **API ready** 😍 and more easier for you to communicate with your backend.
+Vuexy uses [axios-mock-adapter](https://github.com/ctimmerm/axios-mock-adapter) for mocking API calls. This makes our template **API ready** 😍 and more easier for you to communicate with your backend.
 
 However, you won't need fake-db if you are using real APIs. In this case please follow below steps to remove fake-db from template.
 

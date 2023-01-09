@@ -16,8 +16,8 @@ Let's check how you can view each and every change in our template's latest rele
 
 - [VS Code](https://code.visualstudio.com/download)
 - VS Code Extension: [Compare Folders](https://marketplace.visualstudio.com/items?itemName=moshfeu.compare-folders)
-- Master Package you started your project with (Older version of Master package which you used)
-- Master Latest Package
+- Vuexy Package you started your project with (Older version of Vuexy package which you used)
+- Vuexy Latest Package
 
 ## Step 1
 
@@ -25,7 +25,7 @@ Install VS Code and install "Compare Folders" extension using above link.
 
 ## Step 2
 
-unzip/extract/decompress Master Latest Package and Master old package in your desired folder
+unzip/extract/decompress Vuexy Latest Package and Vuexy old package in your desired folder
 
 ## Step 3
 

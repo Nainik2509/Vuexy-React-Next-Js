@@ -185,9 +185,9 @@ const data: CustomRadioIconsData[] = [
 ]
 
 const icons: IconType[] = [
-  { icon: 'mdi:rocket-launch-outline', iconProps: { fontSize: '2rem', style: { marginBottom: 8 } } },
-  { icon: 'mdi:account-outline', iconProps: { fontSize: '2rem', style: { marginBottom: 8 } } },
-  { icon: 'mdi:crown-outline', iconProps: { fontSize: '2rem', style: { marginBottom: 8 } } }
+  { icon: 'tabler:rocket', iconProps: { fontSize: '1.75rem', style: { marginBottom: 8 } } },
+  { icon: 'tabler:star', iconProps: { fontSize: '1.75rem', style: { marginBottom: 8 } } },
+  { icon: 'tabler:briefcase', iconProps: { fontSize: '1.75rem', style: { marginBottom: 8 } } }
 ]
 
 const Component = () => {
@@ -251,9 +251,9 @@ const data = [
 ]
 
 const icons = [
-  { icon: 'mdi:rocket-launch-outline', iconProps: { fontSize: '2rem', style: { marginBottom: 8 } } },
-  { icon: 'mdi:account-outline', iconProps: { fontSize: '2rem', style: { marginBottom: 8 } } },
-  { icon: 'mdi:crown-outline', iconProps: { fontSize: '2rem', style: { marginBottom: 8 } } }
+  { icon: 'tabler:rocket', iconProps: { fontSize: '1.75rem', style: { marginBottom: 8 } } },
+  { icon: 'tabler:star', iconProps: { fontSize: '1.75rem', style: { marginBottom: 8 } } },
+  { icon: 'tabler:briefcase', iconProps: { fontSize: '1.75rem', style: { marginBottom: 8 } } }
 ]
 
 const Component = () => {
@@ -330,16 +330,16 @@ import CustomRadioImg from 'src/@core/components/custom-radio/image'
 
 const data: CustomRadioImgData[] = [
   {
-    value: 'clock',
+    value: 'speaker',
     isSelected: true,
     img: '...'
   },
   {
-    value: 'donuts',
+    value: 'ear-buds',
     img: '...'
   },
   {
-    value: 'flowers',
+    value: 'headphone',
     img: '...'
   }
 ]
@@ -385,16 +385,16 @@ import CustomRadioImg from 'src/@core/components/custom-radio/image'
 
 const data = [
   {
-    value: 'clock',
+    value: 'speaker',
     isSelected: true,
     img: '...'
   },
   {
-    value: 'donuts',
+    value: 'ear-buds',
     img: '...'
   },
   {
-    value: 'flowers',
+    value: 'headphone',
     img: '...'
   }
 ]

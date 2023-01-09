@@ -1,6 +1,6 @@
 # How to add Calendar App in starter-kit
 
-Master uses [fullcalendar](https://fullcalendar.io/docs#toc) for Calendar App. Follow these steps to integrate Calendar in starter-kit:
+Vuexy uses [fullcalendar](https://fullcalendar.io/docs#toc) for Calendar App. Follow these steps to integrate Calendar in starter-kit:
 
 1. Create a `store/apps` folder in `src/`
 2. Copy Calendar folder from `full-version/src/store/apps/` to `starter-kit/src/store/apps/`
@@ -73,7 +73,7 @@ const navigation = () => {
     {
       title: 'Calendar',
       path: '/apps/calendar',
-      icon: 'mdi:calendar-blank-outline'
+      icon: 'tabler:calendar'
     },
     ...
   ]

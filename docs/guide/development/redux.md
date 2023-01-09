@@ -1,10 +1,10 @@
 # Redux
 
-Master uses [redux-toolkit](https://redux-toolkit.js.org/introduction/getting-started) for state-management.
+Vuexy uses [redux-toolkit](https://redux-toolkit.js.org/introduction/getting-started) for state-management.
 
 ## Overview
 
-Master uses `redux-toolkit` with hooks to manage the state for the applications.
+Vuexy uses `redux-toolkit` with hooks to manage the state for the applications.
 
 ## Usage
 

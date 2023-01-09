@@ -2,7 +2,7 @@
 
 ## Overview
 
-Master uses the [CASL](https://casl.js.org/v5/en/) package to provide access control. CASL is future-oriented and is more detailed on Access Control.
+Vuexy uses the [CASL](https://casl.js.org/v5/en/) package to provide access control. CASL is future-oriented and is more detailed on Access Control.
 
 We suggest you read the [CASL](https://casl.js.org/v5/en/) documentation to learn how it works.
 
@@ -60,7 +60,7 @@ Refer to the example below:
   path: '/acl',
   action: 'read',
   subject: 'acl-page',
-  icon: 'mdi:shield-outline',
+  icon: 'tabler:shield',
   title: 'Access Control'
 }
 ```
@@ -154,7 +154,7 @@ It is quite easy to remove access control from the template.
       path: '/acl',
       action: 'read',
       subject: 'acl-page',
-      icon: 'mdi:shield-outline',
+      icon: 'tabler:shield',
       title: 'Access Control'
     }
     ```
@@ -164,7 +164,7 @@ It is quite easy to remove access control from the template.
     ```ts
     {
       path: '/acl',
-      icon: 'mdi:shield-outline',
+      icon: 'tabler:shield',
       title: 'Access Control'
     }
     ```

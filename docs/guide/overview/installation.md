@@ -1,6 +1,6 @@
 # Installation
 
-Master is built using [Create Next App](https://nextjs.org/docs/getting-started). Create Next App sets up everything automatically for you.
+Vuexy is built using [Create Next App](https://nextjs.org/docs/getting-started). Create Next App sets up everything automatically for you.
 
 ## Guide
 

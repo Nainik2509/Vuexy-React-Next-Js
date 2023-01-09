@@ -46,7 +46,6 @@ sidebarDepth: 0
 | prismjs                          | [https://github.com/PrismJS/prism](https://github.com/PrismJS/prism)                                                               | MIT        |
 | react                            | [https://github.com/facebook/react](https://github.com/facebook/react)                                                             | MIT        |
 | react-apexcharts                 | [https://github.com/apexcharts/react-apexcharts](https://github.com/apexcharts/react-apexcharts)                                   | MIT        |
-| react-beautiful-dnd              | [https://github.com/atlassian/react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd)                               | Apache-2.0 |
 | react-chartjs-2                  | [https://github.com/reactchartjs/react-chartjs-2](https://github.com/reactchartjs/react-chartjs-2)                                 | MIT        |
 | react-credit-cards               | [https://github.com/amaroteam/react-credit-cards](https://github.com/amaroteam/react-credit-cards)                                 | MIT        |
 | react-datepicker                 | [https://github.com/Hacker0x01/react-datepicker](https://github.com/Hacker0x01/react-datepicker)                                   | MIT        |

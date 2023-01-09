@@ -12,6 +12,12 @@ We are using the offline icons with the help of Iconify bundle and we suggest yo
 The `src/iconify-bundle/tsconfig.json` file is different from the `tsconfig.json` file and thus do not delete the `src/iconify-bundle/tsconfig.json` file from your project; otherwise, you will not be able to generate icon bundle from the `yarn build:icons` command.
 :::
 
+::: danger Heads Up!
+While using the Tabler icons, `fill` and `stroke` related props (like `fill`, `fillOpacity`, `stroke`, `strokeWidth`, `strokeOpacity`, etc.) will not work with the `Icon` component as the `<svg>` tag doesn't have those attributes.
+
+If anyone wants to add such styling, then they may add them using the `style` prop or use MUI's `Box` component and use the `sx` props with it.
+:::
+
 ## Iconify Bundle
 
 When Iconify icon component renders an icon, if icon data is not available, the component attempts to load data for an icon from Iconify API.
@@ -45,7 +51,7 @@ To add all the icons from an icon library provided by Iconify, you just need to 
 const sources: BundleScriptConfig = {
   json: [
     // Add the icon libraries (from which you need all the icons) provided by Iconify
-    require.resolve('@iconify/json/json/mdi.json'), // Material Design Icons
+    require.resolve('@iconify/json/json/tabler.json'), // Tabler Icons
     require.resolve('@iconify/json/json/bi.json') // Bootstrap Icons
   ]
 }
@@ -59,7 +65,7 @@ const sources: BundleScriptConfig = {
 const sources = {
   json: [
     // Add the icon libraries (from which you need all the icons) provided by Iconify
-    require.resolve('@iconify/json/json/mdi.json'), // Material Design Icons
+    require.resolve('@iconify/json/json/tabler.json'), // Tabler Icons
     require.resolve('@iconify/json/json/bi.json') // Bootstrap Icons
   ]
 }
@@ -120,7 +126,6 @@ const sources: BundleScriptConfig = {
   icons: [
     'bx:basket', // BoxIcons
     'bi:airplane-engines', // Bootstrap Icons
-    'tabler:anchor', // Tabler Icons
     'uit:adobe-alt', // Unicons Thin Line
     'fa6-regular:comment', // Font Awesome Regular
     'twemoji:auto-rickshaw' // Twitter Emoji
@@ -349,13 +354,13 @@ Here is an example:
 import Icon from 'src/@core/components/icon'
 
 const Component = () => {
-  return <Icon icon='mdi:material-ui' />
+  return <Icon icon='tabler:home' />
 }
 
 export default Component
 ```
 
-In the example given above, `mdi` is Material Design Icons (icon library provided by Iconify) and `material-ui` is an icon which is in the `mdi` icon library.
+In the example given above, `tabler` is Tabler Icons (icon library provided by Iconify) and `home` is an icon which is in the `tabler` icon library.
 
 #### Use some different icon library
 
@@ -384,7 +389,7 @@ import Icon from 'src/@core/components/icon'
 const Component = () => {
   return (
     <Box sx={{ display: 'flex', color: theme => theme.palette.primary.main }}>
-      <Icon icon='mdi:material-ui' />
+      <Icon icon='tabler:home' />
     </Box>
   )
 }

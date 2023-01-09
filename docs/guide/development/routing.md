@@ -1,6 +1,6 @@
 # Routing
 
-Master uses Next.js's file-system based router built on the concept of pages.
+Vuexy uses Next.js's file-system based router built on the concept of pages.
 
 When a file is added to the `src/pages` directory, it's automatically available as a route.
 

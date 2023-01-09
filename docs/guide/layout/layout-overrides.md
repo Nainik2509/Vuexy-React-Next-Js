@@ -204,8 +204,8 @@ const UserLayout = ({ children }: Props) => {
       {...} // other props
       verticalLayoutProps={{
         navMenu: {
-          lockedIcon: <Icon icon='mdi:arrow-left-bold-circle-outline' />
-          unlockedIcon: <Icon icon='mdi:arrow-right-bold-circle-outline' />
+          lockedIcon: <Icon icon='tabler:arrow-big-right' />,
+          unlockedIcon: <Icon icon='tabler:arrow-big-left' />
         }
       }}
     >
@@ -229,8 +229,8 @@ const UserLayout = ({ children }) => {
       {...} // other props
       verticalLayoutProps={{
         navMenu: {
-          lockedIcon: <Icon icon='mdi:arrow-left-bold-circle-outline' />
-          unlockedIcon: <Icon icon='mdi:arrow-right-bold-circle-outline' />
+          lockedIcon: <Icon icon='tabler:arrow-big-right' />,
+          unlockedIcon: <Icon icon='tabler:arrow-big-left' />
         }
       }}
     >
@@ -386,7 +386,7 @@ const User = () => {
   }))
 
   return (
-    <Box sx={{ mb: 2, pb: 3, px: 4, borderBottom: theme => `1px solid ${theme.palette.divider}` }}>
+    <Box sx={{ mb: 2, pt: 1, pb: 3, px: 4, borderBottom: theme => `1px solid ${theme.palette.divider}` }}>
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <Badge
           overlap='circular'
@@ -447,7 +447,7 @@ const User = () => {
   }))
 
   return (
-    <Box sx={{ mb: 2, pb: 3, px: 4, borderBottom: theme => `1px solid ${theme.palette.divider}` }}>
+    <Box sx={{ mb: 2, pt: 1, pb: 3, px: 4, borderBottom: theme => `1px solid ${theme.palette.divider}` }}>
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <Badge
           overlap='circular'
@@ -654,7 +654,7 @@ const AppBarContent = (props: Props) => {
       <Box className='actions-left' sx={{ mr: 2, display: 'flex', alignItems: 'center' }}>
         {hidden ? (
           <IconButton color='inherit' sx={{ ml: -2.75 }} onClick={toggleNavVisibility}>
-            <Icon icon='mdi:menu' />
+            <Icon icon='tabler:menu-2' />
           </IconButton>
         ) : null}
         <ModeToggler settings={settings} saveSettings={saveSettings} />
@@ -686,7 +686,7 @@ const AppBarContent = props => {
       <Box className='actions-left' sx={{ mr: 2, display: 'flex', alignItems: 'center' }}>
         {hidden ? (
           <IconButton color='inherit' sx={{ ml: -2.75 }} onClick={toggleNavVisibility}>
-            <Icon icon='mdi:menu' />
+            <Icon icon='tabler:menu-2' />
           </IconButton>
         ) : null}
         <ModeToggler settings={settings} saveSettings={saveSettings} />

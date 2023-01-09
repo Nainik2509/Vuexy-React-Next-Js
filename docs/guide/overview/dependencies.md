@@ -196,13 +196,6 @@ The following dependencies are common and required to run the template. Do not t
 "keen-slider"
 ```
 
-## Kanban
-
-```json
-"react-beautiful-dnd"
-"@types/react-beautiful-dnd" // Typescript version only
-```
-
 ## Eslint
 
 ```json

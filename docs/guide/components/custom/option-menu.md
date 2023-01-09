@@ -14,16 +14,29 @@ import OptionsMenu from 'src/@core/components/option-menu'
 const SomeComponent = () => {
   return (
     <OptionsMenu
-      icon={<Icon icon='mdi:chevron-down' />}
+      icon={<Icon icon='tabler:chevron-down' />}
       iconButtonProps={{ size: 'small', sx: { color: 'text.secondary' } }}
       options={[
         {
-          icon: <Icon icon='mdi:send' />,
+          icon: <Icon icon='tabler:send' />,
           text: <Typography>Send</Typography>,
-          menuItemProps: { sx: { '& svg': { mr: 2, color: 'text.secondary' } } }
+          menuItemProps: {
+            sx: {
+              '&:hover > *': { color: 'primary.main' },
+              '& svg': { mr: 2, color: 'text.secondary' }
+            }
+          }
         },
         { text: 'Styled Item', menuItemProps: { sx: { color: 'error.main' } } },
-        { divider: true, dividerProps: { sx: { m: '0 !important' } } },
+        {
+          divider: true,
+          dividerProps: {
+            sx: {
+              mt: theme => `${theme.spacing(2)} !important`,
+              mb: theme => `${theme.spacing(2)} !important`
+            }
+          }
+        },
         { text: 'Item with Object' },
         { text: 'Selected Menu', menuItemProps: { selected: true } },
         'Item with String',

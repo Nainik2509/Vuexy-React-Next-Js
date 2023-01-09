@@ -1,6 +1,6 @@
 <h1>Welcome</h1>
 
-<h2>Rapidly build stunning React Web Apps based on MUI with Master template</h2>
+<h2>Rapidly build stunning React Web Apps based on MUI with Vuexy template</h2>
 
 We present you with a Developer friendly, Highly customizable & Carefully crafted React Admin Dashboard Template based on Next.js.
 

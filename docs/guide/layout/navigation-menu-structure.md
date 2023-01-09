@@ -12,6 +12,7 @@ While creating the navigation menu, you need to know the structure of it. On thi
 
 Following are the items that you can create for your vertical navigation:
 
+<!-- no toc -->
 - [Navigation Section Header](#_1-navigation-section-header)
 - [Navigation Group](#_2-navigation-group)
 - [Navigation Link](#_3-navigation-link)
@@ -80,7 +81,7 @@ const navigation = (): VerticalNavItemsType => {
     {
       badgeContent: '3',
       title: 'Components',
-      icon: 'mdi:archive-outline',
+      icon: 'tabler:archive',
       badgeColor: 'success',
       children: [
         {
@@ -120,7 +121,7 @@ const navigation = () => {
     {
       badgeContent: '3',
       title: 'Components',
-      icon: 'mdi:archive-outline',
+      icon: 'tabler:archive',
       badgeColor: 'success',
       children: [
         {
@@ -206,11 +207,11 @@ const navigation = (): VerticalNavItemsType => {
       badgeContent: 'New',
       title: 'Form Validation',
       path: '/forms/form-validation',
-      icon: 'mdi:checkbox-marked-circle-outline'
+      icon: 'tabler:checkbox'
     },
     {
       disabled: true,
-      icon: 'mdi:eye-off-outline',
+      icon: 'tabler:eye-off',
       title: 'Disabled Menu'
     },
     {
@@ -236,11 +237,11 @@ const navigation = () => {
       badgeContent: 'New',
       title: 'Form Validation',
       path: '/forms/form-validation',
-      icon: 'mdi:checkbox-marked-circle-outline'
+      icon: 'tabler:checkbox'
     },
     {
       disabled: true,
-      icon: 'mdi:eye-off-outline',
+      icon: 'tabler:eye-off',
       title: 'Disabled Menu'
     },
     {
@@ -316,16 +317,16 @@ const navigation = (): HorizontalNavItemsType => {
       title: 'UI',
       badgeContent: '3',
       badgeColor: 'warning',
-      icon: 'mdi:palette-swatch-outline',
+      icon: 'tabler:color-swatch',
       children: [
         {
           title: 'Typography',
-          icon: 'mdi:format-letter-case',
+          icon: 'tabler:typography',
           path: '/ui/typography'
         },
         {
           title: 'Components',
-          icon: 'mdi:archive-outline',
+          icon: 'tabler:archive',
           children: [
             {
               title: 'Accordion',
@@ -340,7 +341,7 @@ const navigation = (): HorizontalNavItemsType => {
         {
           title: 'Icons',
           path: '/ui/icons',
-          icon: 'mdi:google-circles-extended'
+          icon: 'tabler:brand-tabler'
         }
       ]
     }
@@ -359,16 +360,16 @@ const navigation = () => {
       title: 'UI',
       badgeContent: '3',
       badgeColor: 'warning',
-      icon: 'mdi:palette-swatch-outline',
+      icon: 'tabler:color-swatch',
       children: [
         {
           title: 'Typography',
-          icon: 'mdi:format-letter-case',
+          icon: 'tabler:typography',
           path: '/ui/typography'
         },
         {
           title: 'Components',
-          icon: 'mdi:archive-outline',
+          icon: 'tabler:archive',
           children: [
             {
               title: 'Accordion',
@@ -383,7 +384,7 @@ const navigation = () => {
         {
           title: 'Icons',
           path: '/ui/icons',
-          icon: 'mdi:google-circles-extended'
+          icon: 'tabler:brand-tabler'
         }
       ]
     }
@@ -447,11 +448,11 @@ const navigation = (): HorizontalNavItemsType => {
       badgeContent: 'New',
       title: 'Form Validation',
       path: '/forms/form-validation',
-      icon: 'mdi:checkbox-marked-circle-outline'
+      icon: 'tabler:checkbox'
     },
     {
       disabled: true,
-      icon: 'mdi:eye-off-outline',
+      icon: 'tabler:eye-off',
       title: 'Disabled Menu'
     },
     {
@@ -477,11 +478,11 @@ const navigation = () => {
       badgeContent: 'New',
       title: 'Form Validation',
       path: '/forms/form-validation',
-      icon: 'mdi:checkbox-marked-circle-outline'
+      icon: 'tabler:checkbox'
     },
     {
       disabled: true,
-      icon: 'mdi:eye-off-outline',
+      icon: 'tabler:eye-off',
       title: 'Disabled Menu'
     },
     {
