@@ -12,6 +12,7 @@ sidebarDepth: 0
 | @emotion/react                   | [https://github.com/emotion-js/emotion/tree/main/packages/react](https://github.com/emotion-js/emotion/tree/main/packages/react)   | MIT        |
 | @emotion/server                  | [https://github.com/emotion-js/emotion/tree/main/packages/server](https://github.com/emotion-js/emotion/tree/main/packages/server) | MIT        |
 | @emotion/styled                  | [https://github.com/emotion-js/emotion/tree/main/packages/styled](https://github.com/emotion-js/emotion/tree/main/packages/styled) | MIT        |
+| @fullcalendar/bootstrap5         | [https://github.com/fullcalendar/fullcalendar](https://github.com/fullcalendar/fullcalendar)                                       | MIT        |
 | @fullcalendar/common             | [https://github.com/fullcalendar/fullcalendar](https://github.com/fullcalendar/fullcalendar)                                       | MIT        |
 | @fullcalendar/core               | [https://github.com/fullcalendar/fullcalendar](https://github.com/fullcalendar/fullcalendar)                                       | MIT        |
 | @fullcalendar/daygrid            | [https://github.com/fullcalendar/fullcalendar](https://github.com/fullcalendar/fullcalendar)                                       | MIT        |
@@ -19,7 +20,6 @@ sidebarDepth: 0
 | @fullcalendar/list               | [https://github.com/fullcalendar/fullcalendar](https://github.com/fullcalendar/fullcalendar)                                       | MIT        |
 | @fullcalendar/react              | [https://github.com/fullcalendar/fullcalendar](https://github.com/fullcalendar/fullcalendar)                                       | MIT        |
 | @fullcalendar/timegrid           | [https://github.com/fullcalendar/fullcalendar](https://github.com/fullcalendar/fullcalendar)                                       | MIT        |
-| @fullcalendar/timeline           | [https://github.com/fullcalendar/fullcalendar](https://github.com/fullcalendar/fullcalendar)                                       | MIT        |
 | @hookform/resolvers              | [https://github.com/react-hook-form/resolvers](https://github.com/react-hook-form/resolvers)                                       | MIT        |
 | @iconify/react                   | [https://github.com/iconify/iconify](https://github.com/iconify/iconify)                                                           | MIT        |
 | @mui/lab                         | [https://github.com/mui-org/material-ui](https://github.com/mui-org/material-ui)                                                   | MIT        |
@@ -29,6 +29,7 @@ sidebarDepth: 0
 | apexcharts                       | [https://github.com/apexcharts/apexcharts.js](https://github.com/apexcharts/apexcharts.js)                                         | MIT        |
 | axios                            | [https://github.com/axios/axios](https://github.com/axios/axios)                                                                   | MIT        |
 | axios-mock-adapter               | [https://github.com/ctimmerm/axios-mock-adapter](https://github.com/ctimmerm/axios-mock-adapter)                                   | MIT        |
+| bootstrap-icons                  | [https://github.com/twbs/icons](https://github.com/twbs/icons)                                                                     | MIT        |
 | chart.js                         | [https://github.com/chartjs/Chart.js](https://github.com/chartjs/Chart.js)                                                         | MIT        |
 | cleave.js                        | [https://github.com/nosir/cleave.js](https://github.com/nosir/cleave.js)                                                           | MIT        |
 | clipboard-copy                   | [https://github.com/feross/clipboard-copy](https://github.com/feross/clipboard-copy)                                               | MIT        |

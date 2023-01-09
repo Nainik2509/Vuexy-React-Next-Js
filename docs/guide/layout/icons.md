@@ -28,9 +28,9 @@ This also allows rendering icons when internet access is not available and you a
 
 The following files are necessary to generate Iconify bundle:
 
-- `src/iconify-bundle/bundle-icons-react.d.ts`
+- `src/iconify-bundle/bundle-icons-react.d.ts` (typescript version only)
 - `src/iconify-bundle/bundle-icons-react.js`
-- `src/iconify-bundle/bundle-icons-react.ts`
+- `src/iconify-bundle/bundle-icons-react.ts` (typescript version only)
 - `src/iconify-bundle/icons-bundle-react.js`
 - `src/iconify-bundle/tsconfig.json`
 - `package.json`
