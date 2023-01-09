@@ -29,7 +29,6 @@ The following dependencies are common and required to run the template. Do not t
 "react-popper"
 "clsx"
 "next"
-"next-transpile-modules"
 "react"
 "@types/react" // Typescript version only
 "react-dom"
@@ -49,6 +48,7 @@ The following dependencies are common and required to run the template. Do not t
 ## Calendar
 
 ```json
+"@fullcalendar/bootstrap5"
 "@fullcalendar/common"
 "@fullcalendar/core"
 "@fullcalendar/daygrid"
@@ -56,6 +56,7 @@ The following dependencies are common and required to run the template. Do not t
 "@fullcalendar/list"
 "@fullcalendar/react"
 "@fullcalendar/timegrid"
+"bootstrap-icons"
 ```
 
 ## Form Validation

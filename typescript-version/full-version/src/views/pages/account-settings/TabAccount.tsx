@@ -435,7 +435,7 @@ const TabAccount = () => {
               icon={userInput === 'yes' ? 'mdi:check-circle-outline' : 'mdi:close-circle-outline'}
             />
             <Typography variant='h4' sx={{ mb: 5 }}>
-              {userInput === 'yes' ? 'Unsubscribed!' : 'Cancelled'}
+              {userInput === 'yes' ? 'Deleted!' : 'Cancelled'}
             </Typography>
             <Typography>
               {userInput === 'yes' ? 'Your subscription cancelled successfully.' : 'Unsubscription Cancelled!!'}
