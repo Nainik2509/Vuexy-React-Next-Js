@@ -203,7 +203,7 @@ const MailDetails = (props: MailDetailsType) => {
           <Box
             sx={{
               px: 4,
-              py: 3.5,
+              py: 3.75,
               backgroundColor: 'background.paper',
               borderBottom: theme => `1px solid ${theme.palette.divider}`
             }}
@@ -281,8 +281,8 @@ const MailDetails = (props: MailDetailsType) => {
           </Box>
           <Box
             sx={{
-              py: 3,
               px: 4,
+              py: 3.25,
               backgroundColor: 'background.paper',
               borderBottom: theme => `1px solid ${theme.palette.divider}`
             }}
