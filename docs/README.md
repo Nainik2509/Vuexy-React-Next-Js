@@ -24,17 +24,17 @@ footer: COPYRIGHT © 2023 Pixinvent, All rights Reserved
 </div>
 
 ::: warning 📣 Heads up
-You are viewing **Next.js + Material UI** documentation of Vuexy admin template. For **Vite + Reactstrap** documentation, please visit [this](old-vuexy-docs) page.
+You are viewing **Next.js + Material UI** documentation of Vuexy admin template. For **Vite + Reactstrap** documentation, please visit [this](https://pixinvent.com/demo/vuexy-react-admin-dashboard-template-old/documentation/) page.
 :::
 
 ::: details 📣 Please follow below steps if you have cloned/forked the repository
 
 We have **renamed the branches** in our vuexy repo. So please make sure to update your local clone/fork by following below steps:
 
-- First of all, let’s rename `main` branch to `vite` by `git branch -m main vite`
+- First of all, let’s rename `main` branch to `cra` by `git branch -m main cra`
 - Now, Rename `nextjs` to `main` by `git branch -m nextjs main`
 - Run `git fetch origin`
 - Set main branch upstream via `git branch -u origin/main main`
-- Set vite branch upstream via `git branch -u origin/vite vite`
-- Finally, run `git remote set-head origin -a`
+- Set cra branch upstream via `git branch -u origin/cra cra`
+- Finally, run `git remote set-head origin -a && git fetch --prune`
 :::
