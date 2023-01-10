@@ -385,84 +385,115 @@ export default SnackbarTransition
   </pre>
 )
 
-export const SnackbarConsecutiveTSXCode = (
+export const SnackbarAlertTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { Fragment, SyntheticEvent, useEffect, useState } from 'react'
+import { Fragment, SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
 import Alert from '@mui/material/Alert'
 import Button from '@mui/material/Button'
 import Snackbar from '@mui/material/Snackbar'
 
-export interface SnackbarMessage {
-  key: number
-  message: string
-}
-
-const SnackbarConsecutive = () => {
-  // ** States
+const SnackbarAlert = () => {
+  // ** State
   const [open, setOpen] = useState<boolean>(false)
-  const [snackPack, setSnackPack] = useState<SnackbarMessage[]>([])
-  const [messageInfo, setMessageInfo] = useState<SnackbarMessage | undefined>(undefined)
 
-  useEffect(() => {
-    if (snackPack.length && !messageInfo) {
-      setOpen(true)
-      setSnackPack(prev => prev.slice(1))
-      setMessageInfo({ ...snackPack[0] })
-    } else if (snackPack.length && messageInfo && open) {
-      setOpen(false)
-    }
-  }, [snackPack, messageInfo, open])
-
-  const handleClick = (message: string) => () => {
-    setSnackPack(prev => [...prev, { message, key: new Date().getTime() }])
+  const handleClick = () => {
+    setOpen(true)
   }
 
-  const handleClose = (event: Event | SyntheticEvent, reason?: string) => {
+  const handleClose = (event?: Event | SyntheticEvent, reason?: string) => {
     if (reason === 'clickaway') {
       return
     }
     setOpen(false)
   }
 
-  const handleExited = () => {
-    setMessageInfo(undefined)
-  }
-
   return (
     <Fragment>
-      <div className='demo-space-x'>
-        <Button variant='outlined' onClick={handleClick('success')}>
-          Success Alert
-        </Button>
-        <Button variant='outlined' onClick={handleClick('error')}>
-          Error Alert
-        </Button>
-      </div>
-      <Snackbar
-        open={open}
-        onClose={handleClose}
-        autoHideDuration={3000}
-        TransitionProps={{ onExited: handleExited }}
-        key={messageInfo ? messageInfo.key : undefined}
-        message={messageInfo ? messageInfo.message : undefined}
-      >
-        <Alert
-          elevation={3}
-          variant='filled'
-          onClose={handleClose}
-          severity={messageInfo?.message === 'success' ? 'success' : 'error'}
-        >
-          This is {messageInfo?.message === 'success' ? 'a success' : 'an error'} message!
+      <Button variant='outlined' onClick={handleClick}>
+        Open alert snackbar
+      </Button>
+      <Snackbar open={open} onClose={handleClose} autoHideDuration={3000}>
+        <Alert variant='filled' elevation={3} onClose={handleClose} severity='success'>
+          This is a success message!
         </Alert>
       </Snackbar>
     </Fragment>
   )
 }
 
-export default SnackbarConsecutive
+export default SnackbarAlert
+`}</code>
+  </pre>
+)
+
+export const SnackbarPositionedTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** React Imports
+import { Fragment, useState } from 'react'
+
+// ** MUI Imports
+import Button from '@mui/material/Button'
+import Snackbar, { SnackbarOrigin } from '@mui/material/Snackbar'
+
+interface State extends SnackbarOrigin {
+  open: boolean
+}
+
+const SnackbarPositioned = () => {
+  // ** States
+  const [state, setState] = useState<State>({
+    open: false,
+    vertical: 'top',
+    horizontal: 'center'
+  })
+  const { vertical, horizontal, open } = state
+
+  const handleClick = (newState: SnackbarOrigin) => () => {
+    setState({ open: true, ...newState })
+  }
+
+  const handleClose = () => {
+    setState({ ...state, open: false })
+  }
+
+  return (
+    <Fragment>
+      <div className='demo-space-x'>
+        <Button variant='outlined' onClick={handleClick({ vertical: 'top', horizontal: 'center' })}>
+          Top Center
+        </Button>
+        <Button variant='outlined' onClick={handleClick({ vertical: 'top', horizontal: 'right' })}>
+          Top Right
+        </Button>
+        <Button variant='outlined' onClick={handleClick({ vertical: 'bottom', horizontal: 'right' })}>
+          Bottom Right
+        </Button>
+        <Button variant='outlined' onClick={handleClick({ vertical: 'bottom', horizontal: 'center' })}>
+          Bottom Center
+        </Button>
+        <Button variant='outlined' onClick={handleClick({ vertical: 'bottom', horizontal: 'left' })}>
+          Bottom Left
+        </Button>
+        <Button variant='outlined' onClick={handleClick({ vertical: 'top', horizontal: 'left' })}>
+          Top Left
+        </Button>
+      </div>
+      <Snackbar
+        open={open}
+        onClose={handleClose}
+        message='I love snacks'
+        autoHideDuration={3000}
+        key={vertical + horizontal}
+        anchorOrigin={{ vertical, horizontal }}
+      />
+    </Fragment>
+  )
+}
+
+export default SnackbarPositioned
 `}</code>
   </pre>
 )
@@ -538,50 +569,6 @@ const SnackbarControlSlideDirection = () => {
 }
 
 export default SnackbarControlSlideDirection
-`}</code>
-  </pre>
-)
-
-export const SnackbarAlertTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { Fragment, SyntheticEvent, useState } from 'react'
-
-// ** MUI Imports
-import Alert from '@mui/material/Alert'
-import Button from '@mui/material/Button'
-import Snackbar from '@mui/material/Snackbar'
-
-const SnackbarAlert = () => {
-  // ** State
-  const [open, setOpen] = useState<boolean>(false)
-
-  const handleClick = () => {
-    setOpen(true)
-  }
-
-  const handleClose = (event?: Event | SyntheticEvent, reason?: string) => {
-    if (reason === 'clickaway') {
-      return
-    }
-    setOpen(false)
-  }
-
-  return (
-    <Fragment>
-      <Button variant='outlined' onClick={handleClick}>
-        Open alert snackbar
-      </Button>
-      <Snackbar open={open} onClose={handleClose} autoHideDuration={3000}>
-        <Alert variant='filled' elevation={3} onClose={handleClose} severity='success'>
-          This is a success message!
-        </Alert>
-      </Snackbar>
-    </Fragment>
-  )
-}
-
-export default SnackbarAlert
 `}</code>
   </pre>
 )
@@ -730,71 +717,84 @@ export default SnackbarTransition
   </pre>
 )
 
-export const SnackbarPositionedTSXCode = (
+export const SnackbarConsecutiveTSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
-import { Fragment, useState } from 'react'
+import { Fragment, SyntheticEvent, useEffect, useState } from 'react'
 
 // ** MUI Imports
+import Alert from '@mui/material/Alert'
 import Button from '@mui/material/Button'
-import Snackbar, { SnackbarOrigin } from '@mui/material/Snackbar'
+import Snackbar from '@mui/material/Snackbar'
 
-interface State extends SnackbarOrigin {
-  open: boolean
+export interface SnackbarMessage {
+  key: number
+  message: string
 }
 
-const SnackbarPositioned = () => {
+const SnackbarConsecutive = () => {
   // ** States
-  const [state, setState] = useState<State>({
-    open: false,
-    vertical: 'top',
-    horizontal: 'center'
-  })
-  const { vertical, horizontal, open } = state
+  const [open, setOpen] = useState<boolean>(false)
+  const [snackPack, setSnackPack] = useState<SnackbarMessage[]>([])
+  const [messageInfo, setMessageInfo] = useState<SnackbarMessage | undefined>(undefined)
 
-  const handleClick = (newState: SnackbarOrigin) => () => {
-    setState({ open: true, ...newState })
+  useEffect(() => {
+    if (snackPack.length && !messageInfo) {
+      setOpen(true)
+      setSnackPack(prev => prev.slice(1))
+      setMessageInfo({ ...snackPack[0] })
+    } else if (snackPack.length && messageInfo && open) {
+      setOpen(false)
+    }
+  }, [snackPack, messageInfo, open])
+
+  const handleClick = (message: string) => () => {
+    setSnackPack(prev => [...prev, { message, key: new Date().getTime() }])
   }
 
-  const handleClose = () => {
-    setState({ ...state, open: false })
+  const handleClose = (event: Event | SyntheticEvent, reason?: string) => {
+    if (reason === 'clickaway') {
+      return
+    }
+    setOpen(false)
+  }
+
+  const handleExited = () => {
+    setMessageInfo(undefined)
   }
 
   return (
     <Fragment>
       <div className='demo-space-x'>
-        <Button variant='outlined' onClick={handleClick({ vertical: 'top', horizontal: 'center' })}>
-          Top Center
+        <Button variant='outlined' onClick={handleClick('success')}>
+          Success Alert
         </Button>
-        <Button variant='outlined' onClick={handleClick({ vertical: 'top', horizontal: 'right' })}>
-          Top Right
-        </Button>
-        <Button variant='outlined' onClick={handleClick({ vertical: 'bottom', horizontal: 'right' })}>
-          Bottom Right
-        </Button>
-        <Button variant='outlined' onClick={handleClick({ vertical: 'bottom', horizontal: 'center' })}>
-          Bottom Center
-        </Button>
-        <Button variant='outlined' onClick={handleClick({ vertical: 'bottom', horizontal: 'left' })}>
-          Bottom Left
-        </Button>
-        <Button variant='outlined' onClick={handleClick({ vertical: 'top', horizontal: 'left' })}>
-          Top Left
+        <Button variant='outlined' onClick={handleClick('error')}>
+          Error Alert
         </Button>
       </div>
       <Snackbar
         open={open}
         onClose={handleClose}
-        message='I love snacks'
         autoHideDuration={3000}
-        key={vertical + horizontal}
-        anchorOrigin={{ vertical, horizontal }}
-      />
+        TransitionProps={{ onExited: handleExited }}
+        key={messageInfo ? messageInfo.key : undefined}
+        message={messageInfo ? messageInfo.message : undefined}
+      >
+        <Alert
+          elevation={3}
+          variant='filled'
+          onClose={handleClose}
+          severity={messageInfo?.message === 'success' ? 'success' : 'error'}
+        >
+          This is {messageInfo?.message === 'success' ? 'a success' : 'an error'} message!
+        </Alert>
+      </Snackbar>
     </Fragment>
   )
 }
 
-export default SnackbarPositioned
+export default SnackbarConsecutive
 `}</code>
   </pre>
 )

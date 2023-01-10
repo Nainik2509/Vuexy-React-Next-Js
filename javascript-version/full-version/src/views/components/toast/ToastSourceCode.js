@@ -1,32 +1,3 @@
-export const ToastBlankJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
-import Typography from '@mui/material/Typography'
-
-// ** Icon Imports
-import Icon from 'src/@core/components/icon'
-
-// ** Third Party Components
-import toast from 'react-hot-toast'
-
-const ToastSimple = () => {
-  return (
-    <Box
-      sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column', '& svg': { mb: 2 } }}
-    >
-      <Icon icon='tabler:square' fontSize='2rem' />
-      <Typography sx={{ mb: 4, fontWeight: 600 }}>Blank</Typography>
-      <Typography sx={{ mb: 3 }}>The most basic variant does not have an icon.</Typography>
-      <Button sx={{ mb: 8 }} variant='contained' onClick={() => toast('Blank Toast')}>
-        Blank
-      </Button>
-    </Box>
-  )
-}
-
-export default ToastSimple
-`}</code></pre>) 
-
 export const ToastCustomPositionJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
@@ -62,7 +33,7 @@ const ToastCustomPosition = () => {
 export default ToastCustomPosition
 `}</code></pre>) 
 
-export const ToastErrorJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+export const ToastPromiseJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
@@ -73,51 +44,40 @@ import Icon from 'src/@core/components/icon'
 // ** Third Party Components
 import toast from 'react-hot-toast'
 
-const ToastError = () => {
+const ToastPromise = () => {
+  const handleClick = () => {
+    const myPromise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (Math.random() < 0.5) {
+          resolve('foo')
+        } else {
+          reject('fox')
+        }
+      }, 1000)
+    })
+
+    return toast.promise(myPromise, {
+      loading: 'Loading',
+      success: 'Got the data',
+      error: 'Error when fetching'
+    })
+  }
+
   return (
     <Box
       sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column', '& svg': { mb: 2 } }}
     >
-      <Icon icon='tabler:x' fontSize='2rem' />
-      <Typography sx={{ mb: 4, fontWeight: 600 }}>Error</Typography>
-      <Typography sx={{ mb: 3 }}>Creates a notification with an animated error icon.</Typography>
-      <Button sx={{ mb: 8 }} color='error' variant='contained' onClick={() => toast.error("This didn't work.")}>
-        Error
+      <Icon icon='tabler:hourglass-low' fontSize='2rem' />
+      <Typography sx={{ mb: 4, fontWeight: 600 }}>Promise</Typography>
+      <Typography sx={{ mb: 3 }}>Update automatically when promise resolves / fails.</Typography>
+      <Button sx={{ mb: 8 }} variant='contained' onClick={handleClick}>
+        Promise
       </Button>
     </Box>
   )
 }
 
-export default ToastError
-`}</code></pre>) 
-
-export const ToastSuccessJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
-import Typography from '@mui/material/Typography'
-
-// ** Icon Imports
-import Icon from 'src/@core/components/icon'
-
-// ** Third Party Components
-import toast from 'react-hot-toast'
-
-const ToastSuccess = () => {
-  return (
-    <Box
-      sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column', '& svg': { mb: 2 } }}
-    >
-      <Icon icon='tabler:circle-check' fontSize='2rem' />
-      <Typography sx={{ mb: 4, fontWeight: 600 }}>Success</Typography>
-      <Typography sx={{ mb: 3 }}>Creates a notification with an animated checkmark.</Typography>
-      <Button sx={{ mb: 8 }} color='success' variant='contained' onClick={() => toast.success('Successfully toasted!')}>
-        Success
-      </Button>
-    </Box>
-  )
-}
-
-export default ToastSuccess
+export default ToastPromise
 `}</code></pre>) 
 
 export const ToastEmojiJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
@@ -149,7 +109,7 @@ const ToastEmoji = () => {
 export default ToastEmoji
 `}</code></pre>) 
 
-export const ToastMultiLineJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+export const ToastSuccessJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
@@ -160,28 +120,22 @@ import Icon from 'src/@core/components/icon'
 // ** Third Party Components
 import toast from 'react-hot-toast'
 
-const ToastMultiLine = () => {
-  const handleClick = () => {
-    return toast(
-      "This toast is super big. I don't think anyone could eat it in one bite. It's larger than you expected. You eat it but it does not seem to get smaller."
-    )
-  }
-
+const ToastSuccess = () => {
   return (
     <Box
       sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column', '& svg': { mb: 2 } }}
     >
-      <Icon icon='tabler:article' fontSize='2rem' />
-      <Typography sx={{ mb: 4, fontWeight: 600 }}>Multi Line</Typography>
-      <Typography sx={{ mb: 3 }}>The most basic variant with longer texts</Typography>
-      <Button sx={{ mb: 8 }} variant='contained' onClick={handleClick}>
-        Multi Line
+      <Icon icon='tabler:circle-check' fontSize='2rem' />
+      <Typography sx={{ mb: 4, fontWeight: 600 }}>Success</Typography>
+      <Typography sx={{ mb: 3 }}>Creates a notification with an animated checkmark.</Typography>
+      <Button sx={{ mb: 8 }} color='success' variant='contained' onClick={() => toast.success('Successfully toasted!')}>
+        Success
       </Button>
     </Box>
   )
 }
 
-export default ToastMultiLine
+export default ToastSuccess
 `}</code></pre>) 
 
 export const ToastCustomJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
@@ -239,7 +193,7 @@ const ToastCustom = () => {
 export default ToastCustom
 `}</code></pre>) 
 
-export const ToastPromiseJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+export const ToastMultiLineJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
@@ -250,40 +204,28 @@ import Icon from 'src/@core/components/icon'
 // ** Third Party Components
 import toast from 'react-hot-toast'
 
-const ToastPromise = () => {
+const ToastMultiLine = () => {
   const handleClick = () => {
-    const myPromise = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (Math.random() < 0.5) {
-          resolve('foo')
-        } else {
-          reject('fox')
-        }
-      }, 1000)
-    })
-
-    return toast.promise(myPromise, {
-      loading: 'Loading',
-      success: 'Got the data',
-      error: 'Error when fetching'
-    })
+    return toast(
+      "This toast is super big. I don't think anyone could eat it in one bite. It's larger than you expected. You eat it but it does not seem to get smaller."
+    )
   }
 
   return (
     <Box
       sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column', '& svg': { mb: 2 } }}
     >
-      <Icon icon='tabler:hourglass-low' fontSize='2rem' />
-      <Typography sx={{ mb: 4, fontWeight: 600 }}>Promise</Typography>
-      <Typography sx={{ mb: 3 }}>Update automatically when promise resolves / fails.</Typography>
+      <Icon icon='tabler:article' fontSize='2rem' />
+      <Typography sx={{ mb: 4, fontWeight: 600 }}>Multi Line</Typography>
+      <Typography sx={{ mb: 3 }}>The most basic variant with longer texts</Typography>
       <Button sx={{ mb: 8 }} variant='contained' onClick={handleClick}>
-        Promise
+        Multi Line
       </Button>
     </Box>
   )
 }
 
-export default ToastPromise
+export default ToastMultiLine
 `}</code></pre>) 
 
 export const ToastThemedJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
@@ -331,5 +273,63 @@ const ToastThemed = () => {
 }
 
 export default ToastThemed
+`}</code></pre>) 
+
+export const ToastErrorJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
+
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
+
+// ** Third Party Components
+import toast from 'react-hot-toast'
+
+const ToastError = () => {
+  return (
+    <Box
+      sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column', '& svg': { mb: 2 } }}
+    >
+      <Icon icon='tabler:x' fontSize='2rem' />
+      <Typography sx={{ mb: 4, fontWeight: 600 }}>Error</Typography>
+      <Typography sx={{ mb: 3 }}>Creates a notification with an animated error icon.</Typography>
+      <Button sx={{ mb: 8 }} color='error' variant='contained' onClick={() => toast.error("This didn't work.")}>
+        Error
+      </Button>
+    </Box>
+  )
+}
+
+export default ToastError
+`}</code></pre>) 
+
+export const ToastBlankJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
+
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
+
+// ** Third Party Components
+import toast from 'react-hot-toast'
+
+const ToastSimple = () => {
+  return (
+    <Box
+      sx={{ display: 'flex', textAlign: 'center', alignItems: 'center', flexDirection: 'column', '& svg': { mb: 2 } }}
+    >
+      <Icon icon='tabler:square' fontSize='2rem' />
+      <Typography sx={{ mb: 4, fontWeight: 600 }}>Blank</Typography>
+      <Typography sx={{ mb: 3 }}>The most basic variant does not have an icon.</Typography>
+      <Button sx={{ mb: 8 }} variant='contained' onClick={() => toast('Blank Toast')}>
+        Blank
+      </Button>
+    </Box>
+  )
+}
+
+export default ToastSimple
 `}</code></pre>) 
 

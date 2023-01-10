@@ -1,266 +1,3 @@
-export const SwiperAutoSwitchJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Box from '@mui/material/Box'
-
-// ** Third Party Components
-import { useKeenSlider } from 'keen-slider/react'
-
-const SwiperAutoSwitch = ({ direction }) => {
-  // ** Hook
-  const [ref] = useKeenSlider(
-    {
-      loop: true,
-      rtl: direction === 'rtl'
-    },
-    [
-      slider => {
-        let mouseOver = false
-        let timeout
-
-        const clearNextTimeout = () => {
-          clearTimeout(timeout)
-        }
-
-        const nextTimeout = () => {
-          clearTimeout(timeout)
-          if (mouseOver) return
-          timeout = setTimeout(() => {
-            slider.next()
-          }, 2000)
-        }
-        slider.on('created', () => {
-          slider.container.addEventListener('mouseover', () => {
-            mouseOver = true
-            clearNextTimeout()
-          })
-          slider.container.addEventListener('mouseout', () => {
-            mouseOver = false
-            nextTimeout()
-          })
-          nextTimeout()
-        })
-        slider.on('dragStarted', clearNextTimeout)
-        slider.on('animationEnded', nextTimeout)
-        slider.on('updated', nextTimeout)
-      }
-    ]
-  )
-
-  return (
-    <Box ref={ref} className='keen-slider'>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-1.jpg' alt='swiper 1' />
-      </Box>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-2.jpg' alt='swiper 2' />
-      </Box>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-3.jpg' alt='swiper 3' />
-      </Box>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-4.jpg' alt='swiper 4' />
-      </Box>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-5.jpg' alt='swiper 5' />
-      </Box>
-    </Box>
-  )
-}
-
-export default SwiperAutoSwitch
-`}</code></pre>) 
-
-export const SwiperMultipleSlidesJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Box from '@mui/material/Box'
-
-// ** Third Party Components
-import { useKeenSlider } from 'keen-slider/react'
-
-const SwiperMultipleSlides = ({ direction }) => {
-  // ** Hook
-  const [ref] = useKeenSlider({
-    rtl: direction === 'rtl',
-    slides: {
-      perView: 2
-    }
-  })
-
-  return (
-    <Box ref={ref} className='keen-slider'>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-11.jpg' alt='swiper 11' />
-      </Box>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-12.jpg' alt='swiper 12' />
-      </Box>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-13.jpg' alt='swiper 13' />
-      </Box>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-14.jpg' alt='swiper 14' />
-      </Box>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-15.jpg' alt='swiper 15' />
-      </Box>
-    </Box>
-  )
-}
-
-export default SwiperMultipleSlides
-`}</code></pre>) 
-
-export const SwiperFreeModeJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Box from '@mui/material/Box'
-
-// ** Third Party Components
-import { useKeenSlider } from 'keen-slider/react'
-
-const SwiperFreeMode = ({ direction }) => {
-  // ** Hook
-  const [ref] = useKeenSlider({
-    loop: true,
-    mode: 'free',
-    rtl: direction === 'rtl',
-    slides: {
-      perView: 2,
-      spacing: 16
-    }
-  })
-
-  return (
-    <Box ref={ref} className='keen-slider'>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-21.jpg' alt='swiper 21' />
-      </Box>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-22.jpg' alt='swiper 22' />
-      </Box>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-23.jpg' alt='swiper 23' />
-      </Box>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-24.jpg' alt='swiper 24' />
-      </Box>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-25.jpg' alt='swiper 25' />
-      </Box>
-    </Box>
-  )
-}
-
-export default SwiperFreeMode
-`}</code></pre>) 
-
-export const SwiperDefaultJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Box from '@mui/material/Box'
-
-// ** Third Party Components
-import { useKeenSlider } from 'keen-slider/react'
-
-const SwiperDefault = ({ direction }) => {
-  // ** Hook
-  const [ref] = useKeenSlider({
-    rtl: direction === 'rtl'
-  })
-
-  return (
-    <Box ref={ref} className='keen-slider'>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-1.jpg' alt='swiper 1' />
-      </Box>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-2.jpg' alt='swiper 2' />
-      </Box>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-3.jpg' alt='swiper 3' />
-      </Box>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-4.jpg' alt='swiper 4' />
-      </Box>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-5.jpg' alt='swiper 5' />
-      </Box>
-    </Box>
-  )
-}
-
-export default SwiperDefault
-`}</code></pre>) 
-
-export const SwiperLoopJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Box from '@mui/material/Box'
-
-// ** Third Party Components
-import { useKeenSlider } from 'keen-slider/react'
-
-const SwiperLoop = ({ direction }) => {
-  // ** Hook
-  const [ref] = useKeenSlider({
-    loop: true,
-    rtl: direction === 'rtl'
-  })
-
-  return (
-    <Box ref={ref} className='keen-slider'>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-7.jpg' alt='swiper 7' />
-      </Box>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-8.jpg' alt='swiper 8' />
-      </Box>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-9.jpg' alt='swiper 9' />
-      </Box>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-10.jpg' alt='swiper 10' />
-      </Box>
-    </Box>
-  )
-}
-
-export default SwiperLoop
-`}</code></pre>) 
-
-export const SwiperCenteredJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Box from '@mui/material/Box'
-
-// ** Third Party Components
-import { useKeenSlider } from 'keen-slider/react'
-
-const SwiperCentered = ({ direction }) => {
-  // ** Hook
-  const [ref] = useKeenSlider({
-    rtl: direction === 'rtl',
-    slides: {
-      perView: 2,
-      spacing: 16,
-      origin: 'center'
-    }
-  })
-
-  return (
-    <Box ref={ref} className='keen-slider'>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-26.jpg' alt='swiper 26' />
-      </Box>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-27.jpg' alt='swiper 27' />
-      </Box>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-28.jpg' alt='swiper 28' />
-      </Box>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-29.jpg' alt='swiper 29' />
-      </Box>
-      <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-30.jpg' alt='swiper 30' />
-      </Box>
-    </Box>
-  )
-}
-
-export default SwiperCentered
-`}</code></pre>) 
-
 export const SwiperControlsJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
@@ -355,6 +92,170 @@ const SwiperControls = ({ direction }) => {
 }
 
 export default SwiperControls
+`}</code></pre>) 
+
+export const SwiperFaderJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import Box from '@mui/material/Box'
+
+// ** Third Party Components
+import { useKeenSlider } from 'keen-slider/react'
+
+const images = [
+  '/images/banners/banner-9.jpg',
+  '/images/banners/banner-7.jpg',
+  '/images/banners/banner-6.jpg',
+  '/images/banners/banner-10.jpg',
+  '/images/banners/banner-8.jpg'
+]
+
+const SwiperFader = ({ direction }) => {
+  const [opacities, setOpacities] = useState([])
+
+  // ** Hook
+  const [sliderRef] = useKeenSlider({
+    slides: images.length,
+    rtl: direction === 'rtl',
+    detailsChanged(s) {
+      const new_opacities = s.track.details.slides.map(slide => slide.portion)
+      setOpacities(new_opacities)
+    }
+  })
+
+  return (
+    <Box ref={sliderRef} className='fader' sx={{ height: [200, 250, 395] }}>
+      {images.map((src, idx) => (
+        <Box key={idx} className='fader__slide' sx={{ opacity: opacities[idx] }}>
+          <img src={src} alt={slider {idx}} />
+        </Box>
+      ))}
+    </Box>
+  )
+}
+
+export default SwiperFader
+`}</code></pre>) 
+
+export const SwiperCenteredJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
+
+// ** Third Party Components
+import { useKeenSlider } from 'keen-slider/react'
+
+const SwiperCentered = ({ direction }) => {
+  // ** Hook
+  const [ref] = useKeenSlider({
+    rtl: direction === 'rtl',
+    slides: {
+      perView: 2,
+      spacing: 16,
+      origin: 'center'
+    }
+  })
+
+  return (
+    <Box ref={ref} className='keen-slider'>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-26.jpg' alt='swiper 26' />
+      </Box>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-27.jpg' alt='swiper 27' />
+      </Box>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-28.jpg' alt='swiper 28' />
+      </Box>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-29.jpg' alt='swiper 29' />
+      </Box>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-30.jpg' alt='swiper 30' />
+      </Box>
+    </Box>
+  )
+}
+
+export default SwiperCentered
+`}</code></pre>) 
+
+export const SwiperMultipleSlidesJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
+
+// ** Third Party Components
+import { useKeenSlider } from 'keen-slider/react'
+
+const SwiperMultipleSlides = ({ direction }) => {
+  // ** Hook
+  const [ref] = useKeenSlider({
+    rtl: direction === 'rtl',
+    slides: {
+      perView: 2
+    }
+  })
+
+  return (
+    <Box ref={ref} className='keen-slider'>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-11.jpg' alt='swiper 11' />
+      </Box>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-12.jpg' alt='swiper 12' />
+      </Box>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-13.jpg' alt='swiper 13' />
+      </Box>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-14.jpg' alt='swiper 14' />
+      </Box>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-15.jpg' alt='swiper 15' />
+      </Box>
+    </Box>
+  )
+}
+
+export default SwiperMultipleSlides
+`}</code></pre>) 
+
+export const SwiperSpacingJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
+
+// ** Third Party Components
+import { useKeenSlider } from 'keen-slider/react'
+
+const SwiperSpacing = ({ direction }) => {
+  // ** Hook
+  const [ref] = useKeenSlider({
+    rtl: direction === 'rtl',
+    slides: {
+      perView: 2,
+      spacing: 16
+    }
+  })
+
+  return (
+    <Box ref={ref} className='keen-slider'>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-16.jpg' alt='swiper 16' />
+      </Box>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-17.jpg' alt='swiper 17' />
+      </Box>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-18.jpg' alt='swiper 18' />
+      </Box>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-19.jpg' alt='swiper 19' />
+      </Box>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-20.jpg' alt='swiper 20' />
+      </Box>
+    </Box>
+  )
+}
+
+export default SwiperSpacing
 `}</code></pre>) 
 
 export const SwiperThumbnailsJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
@@ -496,6 +397,77 @@ const SwiperVertical = () => {
 export default SwiperVertical
 `}</code></pre>) 
 
+export const SwiperAutoSwitchJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
+
+// ** Third Party Components
+import { useKeenSlider } from 'keen-slider/react'
+
+const SwiperAutoSwitch = ({ direction }) => {
+  // ** Hook
+  const [ref] = useKeenSlider(
+    {
+      loop: true,
+      rtl: direction === 'rtl'
+    },
+    [
+      slider => {
+        let mouseOver = false
+        let timeout
+
+        const clearNextTimeout = () => {
+          clearTimeout(timeout)
+        }
+
+        const nextTimeout = () => {
+          clearTimeout(timeout)
+          if (mouseOver) return
+          timeout = setTimeout(() => {
+            slider.next()
+          }, 2000)
+        }
+        slider.on('created', () => {
+          slider.container.addEventListener('mouseover', () => {
+            mouseOver = true
+            clearNextTimeout()
+          })
+          slider.container.addEventListener('mouseout', () => {
+            mouseOver = false
+            nextTimeout()
+          })
+          nextTimeout()
+        })
+        slider.on('dragStarted', clearNextTimeout)
+        slider.on('animationEnded', nextTimeout)
+        slider.on('updated', nextTimeout)
+      }
+    ]
+  )
+
+  return (
+    <Box ref={ref} className='keen-slider'>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-1.jpg' alt='swiper 1' />
+      </Box>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-2.jpg' alt='swiper 2' />
+      </Box>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-3.jpg' alt='swiper 3' />
+      </Box>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-4.jpg' alt='swiper 4' />
+      </Box>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-5.jpg' alt='swiper 5' />
+      </Box>
+    </Box>
+  )
+}
+
+export default SwiperAutoSwitch
+`}</code></pre>) 
+
 export const SwiperMutationObserverJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
@@ -572,50 +544,6 @@ const SwiperMutationObserver = ({ direction }) => {
 export default SwiperMutationObserver
 `}</code></pre>) 
 
-export const SwiperFaderJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import Box from '@mui/material/Box'
-
-// ** Third Party Components
-import { useKeenSlider } from 'keen-slider/react'
-
-const images = [
-  '/images/banners/banner-9.jpg',
-  '/images/banners/banner-7.jpg',
-  '/images/banners/banner-6.jpg',
-  '/images/banners/banner-10.jpg',
-  '/images/banners/banner-8.jpg'
-]
-
-const SwiperFader = ({ direction }) => {
-  const [opacities, setOpacities] = useState([])
-
-  // ** Hook
-  const [sliderRef] = useKeenSlider({
-    slides: images.length,
-    rtl: direction === 'rtl',
-    detailsChanged(s) {
-      const new_opacities = s.track.details.slides.map(slide => slide.portion)
-      setOpacities(new_opacities)
-    }
-  })
-
-  return (
-    <Box ref={sliderRef} className='fader' sx={{ height: [200, 250, 395] }}>
-      {images.map((src, idx) => (
-        <Box key={idx} className='fader__slide' sx={{ opacity: opacities[idx] }}>
-          <img src={src} alt={slider {idx}} />
-        </Box>
-      ))}
-    </Box>
-  )
-}
-
-export default SwiperFader
-`}</code></pre>) 
-
 export const SwiperZoomJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
@@ -674,15 +602,87 @@ const SwiperZoom = ({ direction }) => {
 export default SwiperZoom
 `}</code></pre>) 
 
-export const SwiperSpacingJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+export const SwiperLoopJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
 
 // ** Third Party Components
 import { useKeenSlider } from 'keen-slider/react'
 
-const SwiperSpacing = ({ direction }) => {
+const SwiperLoop = ({ direction }) => {
   // ** Hook
   const [ref] = useKeenSlider({
+    loop: true,
+    rtl: direction === 'rtl'
+  })
+
+  return (
+    <Box ref={ref} className='keen-slider'>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-7.jpg' alt='swiper 7' />
+      </Box>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-8.jpg' alt='swiper 8' />
+      </Box>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-9.jpg' alt='swiper 9' />
+      </Box>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-10.jpg' alt='swiper 10' />
+      </Box>
+    </Box>
+  )
+}
+
+export default SwiperLoop
+`}</code></pre>) 
+
+export const SwiperDefaultJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
+
+// ** Third Party Components
+import { useKeenSlider } from 'keen-slider/react'
+
+const SwiperDefault = ({ direction }) => {
+  // ** Hook
+  const [ref] = useKeenSlider({
+    rtl: direction === 'rtl'
+  })
+
+  return (
+    <Box ref={ref} className='keen-slider'>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-1.jpg' alt='swiper 1' />
+      </Box>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-2.jpg' alt='swiper 2' />
+      </Box>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-3.jpg' alt='swiper 3' />
+      </Box>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-4.jpg' alt='swiper 4' />
+      </Box>
+      <Box className='keen-slider__slide'>
+        <img src='/images/banners/banner-5.jpg' alt='swiper 5' />
+      </Box>
+    </Box>
+  )
+}
+
+export default SwiperDefault
+`}</code></pre>) 
+
+export const SwiperFreeModeJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
+
+// ** Third Party Components
+import { useKeenSlider } from 'keen-slider/react'
+
+const SwiperFreeMode = ({ direction }) => {
+  // ** Hook
+  const [ref] = useKeenSlider({
+    loop: true,
+    mode: 'free',
     rtl: direction === 'rtl',
     slides: {
       perView: 2,
@@ -693,24 +693,24 @@ const SwiperSpacing = ({ direction }) => {
   return (
     <Box ref={ref} className='keen-slider'>
       <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-16.jpg' alt='swiper 16' />
+        <img src='/images/banners/banner-21.jpg' alt='swiper 21' />
       </Box>
       <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-17.jpg' alt='swiper 17' />
+        <img src='/images/banners/banner-22.jpg' alt='swiper 22' />
       </Box>
       <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-18.jpg' alt='swiper 18' />
+        <img src='/images/banners/banner-23.jpg' alt='swiper 23' />
       </Box>
       <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-19.jpg' alt='swiper 19' />
+        <img src='/images/banners/banner-24.jpg' alt='swiper 24' />
       </Box>
       <Box className='keen-slider__slide'>
-        <img src='/images/banners/banner-20.jpg' alt='swiper 20' />
+        <img src='/images/banners/banner-25.jpg' alt='swiper 25' />
       </Box>
     </Box>
   )
 }
 
-export default SwiperSpacing
+export default SwiperFreeMode
 `}</code></pre>) 
 

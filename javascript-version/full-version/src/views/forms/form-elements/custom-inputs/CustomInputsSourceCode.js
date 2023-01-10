@@ -1,73 +1,3 @@
-export const CustomCheckboxIconsJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import Grid from '@mui/material/Grid'
-
-// ** Demo Components Imports
-import CustomCheckboxIcons from 'src/@core/components/custom-checkbox/icons'
-
-const data = [
-  {
-    value: 'backup',
-    title: 'Backup',
-    isSelected: true,
-    content: 'Backup every file from your project.'
-  },
-  {
-    value: 'encrypt',
-    title: 'Encrypt',
-    content: 'Translate your data to encrypted text.'
-  },
-  {
-    value: 'site-lock',
-    title: 'Site Lock',
-    content: 'Security tool to protect your website.'
-  }
-]
-
-const icons = [
-  { icon: 'tabler:folder', iconProps: { fontSize: '1.75rem', style: { marginBottom: 8 } } },
-  { icon: 'tabler:ban', iconProps: { fontSize: '1.75rem', style: { marginBottom: 8 } } },
-  { icon: 'tabler:lock', iconProps: { fontSize: '1.75rem', style: { marginBottom: 8 } } }
-]
-
-const CustomCheckboxWithIcons = () => {
-  const initialSelected = data.filter(item => item.isSelected).map(item => item.value)
-
-  // ** State
-  const [selected, setSelected] = useState(initialSelected)
-
-  const handleChange = value => {
-    if (selected.includes(value)) {
-      const updatedArr = selected.filter(item => item !== value)
-      setSelected(updatedArr)
-    } else {
-      setSelected([...selected, value])
-    }
-  }
-
-  return (
-    <Grid container spacing={4}>
-      {data.map((item, index) => (
-        <CustomCheckboxIcons
-          key={index}
-          data={data[index]}
-          selected={selected}
-          icon={icons[index].icon}
-          handleChange={handleChange}
-          name='custom-checkbox-icons'
-          gridProps={{ sm: 4, xs: 12 }}
-          iconProps={icons[index].iconProps}
-        />
-      ))}
-    </Grid>
-  )
-}
-
-export default CustomCheckboxWithIcons
-`}</code></pre>) 
-
 export const CustomCheckboxBasicJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
@@ -186,6 +116,134 @@ const CustomCheckboxWithImages = () => {
 export default CustomCheckboxWithImages
 `}</code></pre>) 
 
+export const CustomRadioBasicJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import Grid from '@mui/material/Grid'
+
+// ** Demo Components Imports
+import CustomRadioBasic from 'src/@core/components/custom-radio/basic'
+
+const data = [
+  {
+    meta: 'Free',
+    title: 'Basic',
+    value: 'basic',
+    isSelected: true,
+    content: 'Get 1 project with 1 team member.'
+  },
+  {
+    meta: '5.00',
+    title: 'Premium',
+    value: 'premium',
+    content: 'Get 5 projects with 5 team members.'
+  }
+]
+
+const BasicCustomRadio = () => {
+  const initialSelected = data.filter(item => item.isSelected)[data.filter(item => item.isSelected).length - 1].value
+
+  // ** State
+  const [selected, setSelected] = useState(initialSelected)
+
+  const handleChange = prop => {
+    if (typeof prop === 'string') {
+      setSelected(prop)
+    } else {
+      setSelected(prop.target.value)
+    }
+  }
+
+  return (
+    <Grid container spacing={4}>
+      {data.map((item, index) => (
+        <CustomRadioBasic
+          key={index}
+          data={data[index]}
+          selected={selected}
+          name='custom-radios-basic'
+          handleChange={handleChange}
+          gridProps={{ sm: 6, xs: 12 }}
+        />
+      ))}
+    </Grid>
+  )
+}
+
+export default BasicCustomRadio
+`}</code></pre>) 
+
+export const CustomCheckboxIconsJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import Grid from '@mui/material/Grid'
+
+// ** Demo Components Imports
+import CustomCheckboxIcons from 'src/@core/components/custom-checkbox/icons'
+
+const data = [
+  {
+    value: 'backup',
+    title: 'Backup',
+    isSelected: true,
+    content: 'Backup every file from your project.'
+  },
+  {
+    value: 'encrypt',
+    title: 'Encrypt',
+    content: 'Translate your data to encrypted text.'
+  },
+  {
+    value: 'site-lock',
+    title: 'Site Lock',
+    content: 'Security tool to protect your website.'
+  }
+]
+
+const icons = [
+  { icon: 'tabler:folder', iconProps: { fontSize: '1.75rem', style: { marginBottom: 8 } } },
+  { icon: 'tabler:ban', iconProps: { fontSize: '1.75rem', style: { marginBottom: 8 } } },
+  { icon: 'tabler:lock', iconProps: { fontSize: '1.75rem', style: { marginBottom: 8 } } }
+]
+
+const CustomCheckboxWithIcons = () => {
+  const initialSelected = data.filter(item => item.isSelected).map(item => item.value)
+
+  // ** State
+  const [selected, setSelected] = useState(initialSelected)
+
+  const handleChange = value => {
+    if (selected.includes(value)) {
+      const updatedArr = selected.filter(item => item !== value)
+      setSelected(updatedArr)
+    } else {
+      setSelected([...selected, value])
+    }
+  }
+
+  return (
+    <Grid container spacing={4}>
+      {data.map((item, index) => (
+        <CustomCheckboxIcons
+          key={index}
+          data={data[index]}
+          selected={selected}
+          icon={icons[index].icon}
+          handleChange={handleChange}
+          name='custom-checkbox-icons'
+          gridProps={{ sm: 4, xs: 12 }}
+          iconProps={icons[index].iconProps}
+        />
+      ))}
+    </Grid>
+  )
+}
+
+export default CustomCheckboxWithIcons
+`}</code></pre>) 
+
 export const CustomRadioIconsJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
@@ -253,64 +311,6 @@ const CustomRadioWithIcons = () => {
 }
 
 export default CustomRadioWithIcons
-`}</code></pre>) 
-
-export const CustomRadioBasicJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import Grid from '@mui/material/Grid'
-
-// ** Demo Components Imports
-import CustomRadioBasic from 'src/@core/components/custom-radio/basic'
-
-const data = [
-  {
-    meta: 'Free',
-    title: 'Basic',
-    value: 'basic',
-    isSelected: true,
-    content: 'Get 1 project with 1 team member.'
-  },
-  {
-    meta: '5.00',
-    title: 'Premium',
-    value: 'premium',
-    content: 'Get 5 projects with 5 team members.'
-  }
-]
-
-const BasicCustomRadio = () => {
-  const initialSelected = data.filter(item => item.isSelected)[data.filter(item => item.isSelected).length - 1].value
-
-  // ** State
-  const [selected, setSelected] = useState(initialSelected)
-
-  const handleChange = prop => {
-    if (typeof prop === 'string') {
-      setSelected(prop)
-    } else {
-      setSelected(prop.target.value)
-    }
-  }
-
-  return (
-    <Grid container spacing={4}>
-      {data.map((item, index) => (
-        <CustomRadioBasic
-          key={index}
-          data={data[index]}
-          selected={selected}
-          name='custom-radios-basic'
-          handleChange={handleChange}
-          gridProps={{ sm: 6, xs: 12 }}
-        />
-      ))}
-    </Grid>
-  )
-}
-
-export default BasicCustomRadio
 `}</code></pre>) 
 
 export const CustomRadioImgJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports

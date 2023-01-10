@@ -1,3 +1,38 @@
+export const ChipsColorsJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { Fragment } from 'react'
+
+// ** MUI Imports
+import Chip from '@mui/material/Chip'
+import Typography from '@mui/material/Typography'
+
+const ChipsColors = () => {
+  return (
+    <Fragment>
+      <Typography sx={{ fontWeight: 500 }}>Filled Chips</Typography>
+      <div className='demo-space-x'>
+        <Chip label='Primary' color='primary' />
+        <Chip label='Secondary' color='secondary' />
+        <Chip label='Success' color='success' />
+        <Chip label='Error' color='error' />
+        <Chip label='Warning' color='warning' />
+        <Chip label='Info' color='info' />
+      </div>
+      <Typography sx={{ mt: 4, fontWeight: 500 }}>Outlined Chips</Typography>
+      <div className='demo-space-x'>
+        <Chip label='Primary' color='primary' variant='outlined' />
+        <Chip label='Secondary' color='secondary' variant='outlined' />
+        <Chip label='Success' color='success' variant='outlined' />
+        <Chip label='Error' color='error' variant='outlined' />
+        <Chip label='Warning' color='warning' variant='outlined' />
+        <Chip label='Info' color='info' variant='outlined' />
+      </div>
+    </Fragment>
+  )
+}
+
+export default ChipsColors
+`}</code></pre>) 
+
 export const ChipsArrayJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
@@ -64,23 +99,38 @@ const ChipsAvatar = () => {
 export default ChipsAvatar
 `}</code></pre>) 
 
-export const ChipsClickableJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Chip from '@mui/material/Chip'
+export const ChipsLightJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** Custom Components Imports
+import CustomChip from 'src/@core/components/mui/chip'
 
-const ChipsClickable = () => {
-  const handleClick = () => {
-    console.info('You clicked the Chip.')
-  }
-
+const ChipsCustomized = () => {
   return (
     <div className='demo-space-x'>
-      <Chip label='Clickable' onClick={handleClick} />
-      <Chip label='Clickable Link' component='a' href='https://pixinvent.com/' target='_blank' clickable />
+      <CustomChip label='Primary' skin='light' color='primary' />
+      <CustomChip label='Secondary' skin='light' color='secondary' />
+      <CustomChip label='Success' skin='light' color='success' />
+      <CustomChip label='Error' skin='light' color='error' />
+      <CustomChip label='Warning' skin='light' color='warning' />
+      <CustomChip label='Info' skin='light' color='info' />
     </div>
   )
 }
 
-export default ChipsClickable
+export default ChipsCustomized
+`}</code></pre>) 
+
+export const ChipsDisabledJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Chip from '@mui/material/Chip'
+
+const ChipsDisabled = () => {
+  return (
+    <div className='demo-space-x'>
+      <Chip label='Basic' disabled />
+      <Chip label='Outlined' variant='outlined' disabled />
+    </div>
+  )
+}
+
+export default ChipsDisabled
 `}</code></pre>) 
 
 export const ChipsIconJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
@@ -106,6 +156,40 @@ const ChipsIcon = () => {
 export default ChipsIcon
 `}</code></pre>) 
 
+export const ChipsClickableJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Chip from '@mui/material/Chip'
+
+const ChipsClickable = () => {
+  const handleClick = () => {
+    console.info('You clicked the Chip.')
+  }
+
+  return (
+    <div className='demo-space-x'>
+      <Chip label='Clickable' onClick={handleClick} />
+      <Chip label='Clickable Link' component='a' href='https://pixinvent.com/' target='_blank' clickable />
+    </div>
+  )
+}
+
+export default ChipsClickable
+`}</code></pre>) 
+
+export const ChipsSizesJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Chip from '@mui/material/Chip'
+
+const ChipsSizes = () => {
+  return (
+    <div className='demo-space-x'>
+      <Chip label='Default' />
+      <Chip label='Small' size='small' />
+    </div>
+  )
+}
+
+export default ChipsSizes
+`}</code></pre>) 
+
 export const ChipsRoundedJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
 
@@ -125,36 +209,6 @@ const ChipsRounded = () => {
 export default ChipsRounded
 `}</code></pre>) 
 
-export const ChipsDisabledJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Chip from '@mui/material/Chip'
-
-const ChipsDisabled = () => {
-  return (
-    <div className='demo-space-x'>
-      <Chip label='Basic' disabled />
-      <Chip label='Outlined' variant='outlined' disabled />
-    </div>
-  )
-}
-
-export default ChipsDisabled
-`}</code></pre>) 
-
-export const ChipsSizesJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Chip from '@mui/material/Chip'
-
-const ChipsSizes = () => {
-  return (
-    <div className='demo-space-x'>
-      <Chip label='Default' />
-      <Chip label='Small' size='small' />
-    </div>
-  )
-}
-
-export default ChipsSizes
-`}</code></pre>) 
-
 export const ChipsVariantsJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Chip from '@mui/material/Chip'
 
@@ -168,25 +222,6 @@ const ChipsVariants = () => {
 }
 
 export default ChipsVariants
-`}</code></pre>) 
-
-export const ChipsLightJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** Custom Components Imports
-import CustomChip from 'src/@core/components/mui/chip'
-
-const ChipsCustomized = () => {
-  return (
-    <div className='demo-space-x'>
-      <CustomChip label='Primary' skin='light' color='primary' />
-      <CustomChip label='Secondary' skin='light' color='secondary' />
-      <CustomChip label='Success' skin='light' color='success' />
-      <CustomChip label='Error' skin='light' color='error' />
-      <CustomChip label='Warning' skin='light' color='warning' />
-      <CustomChip label='Info' skin='light' color='info' />
-    </div>
-  )
-}
-
-export default ChipsCustomized
 `}</code></pre>) 
 
 export const ChipsOnDeleteJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
@@ -223,40 +258,5 @@ const ChipsOnDelete = () => {
 }
 
 export default ChipsOnDelete
-`}</code></pre>) 
-
-export const ChipsColorsJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { Fragment } from 'react'
-
-// ** MUI Imports
-import Chip from '@mui/material/Chip'
-import Typography from '@mui/material/Typography'
-
-const ChipsColors = () => {
-  return (
-    <Fragment>
-      <Typography sx={{ fontWeight: 500 }}>Filled Chips</Typography>
-      <div className='demo-space-x'>
-        <Chip label='Primary' color='primary' />
-        <Chip label='Secondary' color='secondary' />
-        <Chip label='Success' color='success' />
-        <Chip label='Error' color='error' />
-        <Chip label='Warning' color='warning' />
-        <Chip label='Info' color='info' />
-      </div>
-      <Typography sx={{ mt: 4, fontWeight: 500 }}>Outlined Chips</Typography>
-      <div className='demo-space-x'>
-        <Chip label='Primary' color='primary' variant='outlined' />
-        <Chip label='Secondary' color='secondary' variant='outlined' />
-        <Chip label='Success' color='success' variant='outlined' />
-        <Chip label='Error' color='error' variant='outlined' />
-        <Chip label='Warning' color='warning' variant='outlined' />
-        <Chip label='Info' color='info' variant='outlined' />
-      </div>
-    </Fragment>
-  )
-}
-
-export default ChipsColors
 `}</code></pre>) 
 

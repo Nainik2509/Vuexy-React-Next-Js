@@ -231,7 +231,7 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
-"@casl/ability@^6.3.2":
+"@casl/ability@^6.3.3":
   version "6.3.3"
   resolved "https://registry.yarnpkg.com/@casl/ability/-/ability-6.3.3.tgz#219e958f191cd2163482abb6a5196593d319fc2a"
   integrity sha512-UzbqsE9etu6QzZrRmqIyVun2kztAzJ46Tz7lC/2P2buCE6B6Ll7Vptz7JTQtGwapLbeKo2jS7dL966TVOQ7x4g==
@@ -388,34 +388,34 @@
   dependencies:
     tslib "^2.1.0"
 
-"@fullcalendar/core@^6.0.1":
+"@fullcalendar/core@^6.0.2":
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/@fullcalendar/core/-/core-6.0.2.tgz#adbf7917905a74807ba067506c0b3d17f712727b"
   integrity sha512-mpJ+8l2t6b98umrRG2FfDnMqEr0Z+wNT2SjY7H49V3wcj4oe3gwuty8GBYHG/vgxS+DXR/NcEvW1CsMQh4Cr/A==
   dependencies:
     preact "^10.0.5"
 
-"@fullcalendar/daygrid@^6.0.1", "@fullcalendar/daygrid@~6.0.2":
+"@fullcalendar/daygrid@^6.0.2", "@fullcalendar/daygrid@~6.0.2":
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/@fullcalendar/daygrid/-/daygrid-6.0.2.tgz#c67b90335d31ba145ff611fbfdba31edc1e9a925"
   integrity sha512-OoHo+HbKmunq2hy5K6T2390DmSwXIENxHBeKFPlUXHK48xD/zXQI3N1zRlZRd83+Yrq+vDF6l8ObO9PMu2leJw==
 
-"@fullcalendar/interaction@^6.0.1":
+"@fullcalendar/interaction@^6.0.2":
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/@fullcalendar/interaction/-/interaction-6.0.2.tgz#f346b00f703fad2e676bf1df869cce63aee016c8"
   integrity sha512-RPWWCp6wdzVCc3XdcBUZuduFGX/mB8OrV2xBF5wrGFbGAZE3OYuEPcVnLF1SsC+pJVntG6z1fL5aQ/OM8nul9Q==
 
-"@fullcalendar/list@^6.0.1":
+"@fullcalendar/list@^6.0.2":
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/@fullcalendar/list/-/list-6.0.2.tgz#bdc40c4ba8c05c7c17edde63a6876e62a70d43c9"
   integrity sha512-xeTNqGgQvW6u2isX8P3IV8w19Jzn/4Fs6nNc5tiEs0WJ6zd1bYEfruzDL0WPMMmcydgpkv0YHTLMwlnlFeq9+g==
 
-"@fullcalendar/react@^6.0.1":
+"@fullcalendar/react@^6.0.2":
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/@fullcalendar/react/-/react-6.0.2.tgz#0a38979ff7fa36e0fe36d6c49140f7718126fb5d"
   integrity sha512-/rL21DcgD3CGwrB/0zpqJxcWoK2rb/AF7rcuvwgjsmUCd7Xv9/syY7yuHbhIw3/WnFE3Qz7KL3u8vEjILwlwiA==
 
-"@fullcalendar/timegrid@^6.0.1":
+"@fullcalendar/timegrid@^6.0.2":
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/@fullcalendar/timegrid/-/timegrid-6.0.2.tgz#73c04a1de4622575bad0369270de0d5912b4249b"
   integrity sha512-wl6AWL7ZJhSEV/0SSg8ePeLdeNQD/ZuogncOzfpdYRBv3M4G7hKrGA5Gc9Exz7MrbC/0T9xnWVJvq8i2lK2U5g==
@@ -453,7 +453,7 @@
   dependencies:
     "@iconify/types" "^2.0.0"
 
-"@iconify/json@^2.2.3":
+"@iconify/json@^2.2.4":
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.4.tgz#c24bfb83684e244065457b7b2c7d4673f75799f7"
   integrity sha512-QjJJD7tsggk0hWWDr8z5mBND52kI63NLNhubYAPZzGLMjDQ5rJ1HOBHoJ1P2O6450CYuYp7tfc4W0zJ9/QfUiA==
@@ -491,7 +491,7 @@
   resolved "https://registry.yarnpkg.com/@iconify/types/-/types-2.0.0.tgz#ab0e9ea681d6c8a1214f30cd741fe3a20cc57f57"
   integrity sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==
 
-"@iconify/utils@^2.0.10", "@iconify/utils@^2.0.9":
+"@iconify/utils@^2.0.11", "@iconify/utils@^2.0.9":
   version "2.0.11"
   resolved "https://registry.yarnpkg.com/@iconify/utils/-/utils-2.0.11.tgz#d1c97d490545935c6bb32b14354366e01c62ea8f"
   integrity sha512-oEBZkHpkgySHcMZi80ycoJ+ZdLoJhmbN0+gUK8qNPY79ndus8fBHKPyjjwz5kIvr5U9yiym+xBTTnZOB3m5/Pw==
@@ -567,7 +567,7 @@
   resolved "https://registry.yarnpkg.com/@mui/core-downloads-tracker/-/core-downloads-tracker-5.11.4.tgz#def5937e21443b197fd1998fd66721bd9c49a1bb"
   integrity sha512-jWVwGM3vG4O0sXcW0VcIl+njCWbGCBF5vvjRpuKJajrz51AD7D6+fP1SkInZXVk5pRHf6Bnk/Yj9Of9gXxb/hA==
 
-"@mui/lab@^5.0.0-alpha.105":
+"@mui/lab@^5.0.0-alpha.115":
   version "5.0.0-alpha.115"
   resolved "https://registry.yarnpkg.com/@mui/lab/-/lab-5.0.0-alpha.115.tgz#6e58b21a2ea3d413ff769c3486c7e81d9e556c17"
   integrity sha512-3u9gRiTboC1tj1Vf8Fse1EaIaJaBwE5M/9NTr4Yp/7seFpIFgL5t/2auM+r9mohqzHT6wP6HWvPAB+OZ9q0/yg==
@@ -581,7 +581,7 @@
     prop-types "^15.8.1"
     react-is "^18.2.0"
 
-"@mui/material@^5.10.11":
+"@mui/material@^5.11.4":
   version "5.11.4"
   resolved "https://registry.yarnpkg.com/@mui/material/-/material-5.11.4.tgz#4dda0f993c9aa9678e1b9bce16adfe11e984dbd4"
   integrity sha512-ZL/czK9ynrQJ6uyDwQgK+j7m1iKA1XKPON+rEPupwAu/bJ1XJxD+H/H2bkMM8UpOkzaucx/WuMbJJGQ60l7gBg==
@@ -781,7 +781,7 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.6.tgz#cee20bd55e68a1720bdab363ecf0c821ded4cd45"
   integrity sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==
 
-"@reduxjs/toolkit@^1.8.6":
+"@reduxjs/toolkit@^1.9.1":
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/@reduxjs/toolkit/-/toolkit-1.9.1.tgz#4c34dc4ddcec161535288c60da5c19c3ef15180e"
   integrity sha512-HikrdY+IDgRfRYlCTGUQaiCxxDDgM1mQrRbZ6S1HFZX5ZYuJ4o8EstNmhTwHdPl2rTmLxzwSu0b3AyeyTlR+RA==
@@ -1160,7 +1160,7 @@ axios-mock-adapter@^1.21.2:
     fast-deep-equal "^3.1.3"
     is-buffer "^2.0.5"
 
-axios@^1.1.3:
+axios@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/axios/-/axios-1.2.2.tgz#72681724c6e6a43a9fea860fc558127dbe32f9f1"
   integrity sha512-bz/J4gS2S3I7mpN/YZfGFTqhXTYzRho8Ay38w2otuuDR322KzFIWm/4W2K6gIwvWaws5n+mnb7D1lN9uD+QH6Q==
@@ -1867,7 +1867,7 @@ eslint-config-next@^13.1.1:
     eslint-plugin-react "^7.31.7"
     eslint-plugin-react-hooks "^4.5.0"
 
-eslint-config-prettier@^8.5.0:
+eslint-config-prettier@^8.6.0:
   version "8.6.0"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.6.0.tgz#dec1d29ab728f4fa63061774e1672ac4e363d207"
   integrity sha512-bAF0eLpLVqP5oEVUFKpMA+NnRFICwn9X8B5jrR9FcqnYBuPbqWEjTEspPWMj5ye6czoSLDweCzSo3Ko7gGrZaA==
@@ -2010,7 +2010,7 @@ eslint-visitor-keys@^3.3.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.3.0.tgz#f6480fa6b1f30efe2d1968aa8ac745b862469826"
   integrity sha512-mQ+suqKJVyeuwGYHAdjMFqjCyfl8+Ldnxuyp3ldiMBFKkvytrXUZWaiPCEav8qDHKty44bD+qV1IP4T+w+xXRA==
 
-eslint@^8.26.0:
+eslint@^8.31.0:
   version "8.31.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.31.0.tgz#75028e77cbcff102a9feae1d718135931532d524"
   integrity sha512-0tQQEVdmPZ1UtUKXjX7EMm9BlgJ08G90IhWh0PKDCb3ZLsgAOHI8fYSIzYVZej92zsgq+ft0FGsxhJ3xo2tbuA==
@@ -2539,21 +2539,21 @@ human-signals@^2.1.0:
   resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-2.1.0.tgz#dc91fcba42e4d06e4abaed33b3e7a3c02f514ea0"
   integrity sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==
 
-i18next-browser-languagedetector@^7.0.0:
+i18next-browser-languagedetector@^7.0.1:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/i18next-browser-languagedetector/-/i18next-browser-languagedetector-7.0.1.tgz#ead34592edc96c6c3a618a51cb57ad027c5b5d87"
   integrity sha512-Pa5kFwaczXJAeHE56CHG2aWzFBMJNUNghf0Pm4SwSrEMps/PTKqW90EYWlIvhuYStf3Sn1K0vw+gH3+TLdkH1g==
   dependencies:
     "@babel/runtime" "^7.19.4"
 
-i18next-http-backend@^2.0.0:
+i18next-http-backend@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/i18next-http-backend/-/i18next-http-backend-2.1.1.tgz#72a21d61c2e96eea9ad45ba1b9dd0090e119709a"
   integrity sha512-jByfUCDVgQ8+/Wens7queQhYYvMcGTW/lR4IJJNEDDXnmqjLrwi8ubXKpmp76/JIWEZHffNdWqnxFJcTVGeaOw==
   dependencies:
     cross-fetch "3.1.5"
 
-i18next@^22.0.4:
+i18next@^22.4.9:
   version "22.4.9"
   resolved "https://registry.yarnpkg.com/i18next/-/i18next-22.4.9.tgz#98c8384c6bd41ff937da98b1e809ba03d3b41053"
   integrity sha512-8gWMmUz460KJDQp/ob3MNUX84cVuDRY9PLFPnV8d+Qezz/6dkjxwOaH70xjrCNDO+JrUL25iXfAIN9wUkInNZw==
@@ -2912,7 +2912,7 @@ jws@^3.2.2:
     jwa "^1.4.1"
     safe-buffer "^5.0.1"
 
-keen-slider@^6.8.3:
+keen-slider@^6.8.5:
   version "6.8.5"
   resolved "https://registry.yarnpkg.com/keen-slider/-/keen-slider-6.8.5.tgz#1d96ff3ab77f195fc6cacd2e5aecc35d8ceb9702"
   integrity sha512-9yoosfffgTCrkmbX8kCUMWsn9KDgPSkxBof5/0yXde001D1xao7i9ppfxQCCK0MLnoCa+Rdssby0jFbTTUM4rw==
@@ -3444,7 +3444,7 @@ prelude-ls@^1.2.1:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
 
-prettier@^2.7.1:
+prettier@^2.8.2:
   version "2.8.2"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.2.tgz#c4ea1b5b454d7c4b59966db2e06ed7eec5dfd160"
   integrity sha512-BtRV9BcncDyI2tsuS19zzhzoxD8Dh8LiCx7j7tHzrkz8GFXAexeWFdi22mjE1d16dftH2qNaytVxqiRTGlMfpw==
@@ -3572,7 +3572,7 @@ react-fast-compare@^3.0.1:
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.0.tgz#641a9da81b6a6320f270e89724fb45a0b39e43bb"
   integrity sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
 
-react-hook-form@^7.41.1:
+react-hook-form@^7.41.5:
   version "7.41.5"
   resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.41.5.tgz#dcd0e7438c15044eadc99df6deb889da5858a03b"
   integrity sha512-DAKjSJ7X9f16oQrP3TW2/eD9N6HOgrmIahP4LOdFphEWVfGZ2LulFd6f6AQ/YS/0cx/5oc4j8a1PXxuaurWp/Q==
@@ -3584,7 +3584,7 @@ react-hot-toast@^2.4.0:
   dependencies:
     goober "^2.1.10"
 
-react-i18next@^12.0.0:
+react-i18next@^12.1.4:
   version "12.1.4"
   resolved "https://registry.yarnpkg.com/react-i18next/-/react-i18next-12.1.4.tgz#be0a60d3a45acc4321909f8a4b8cde16518a2926"
   integrity sha512-XQND7jYtgM7ht5PH3yIZljCRpAMTlH/zmngM9ZjToqa+0BR6xuu8c7QF0WIIOEjcMTB2S3iOfpN/xG/ZrAnO6g==
@@ -3628,7 +3628,7 @@ react-popper@^2.2.5, react-popper@^2.3.0:
     react-fast-compare "^3.0.1"
     warning "^4.0.2"
 
-react-redux@^8.0.4:
+react-redux@^8.0.5:
   version "8.0.5"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-8.0.5.tgz#e5fb8331993a019b8aaf2e167a93d10af469c7bd"
   integrity sha512-Q2f6fCKxPFpkXt1qNRZdEDLlScsDWyrgSj0mliK59qU6W5gvBiKkdMEG2lJzhd1rCctf0hb6EtePPLZ2e0m1uw==
@@ -3712,7 +3712,7 @@ recharts-scale@^0.4.4:
   dependencies:
     decimal.js-light "^2.4.1"
 
-recharts@^2.1.16:
+recharts@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/recharts/-/recharts-2.2.0.tgz#1b8ba0799ff0feb96c87f009cd2ddd8cf5108817"
   integrity sha512-/uRJ0oaESGyz//PgAzvrwXEhrKaNha1ELLysEMRklbnsddiVQsSNicP7DWiz8qFcyYXy3BrDqrUjiLiVRTSMtA==

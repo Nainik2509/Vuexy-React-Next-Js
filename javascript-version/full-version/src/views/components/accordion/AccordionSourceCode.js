@@ -94,10 +94,7 @@ const AccordionActions = () => {
 export default AccordionActions
 `}</code></pre>) 
 
-export const AccordionControlledJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
+export const AccordionSimpleJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Accordion from '@mui/material/Accordion'
 import Typography from '@mui/material/Typography'
 import AccordionSummary from '@mui/material/AccordionSummary'
@@ -106,20 +103,13 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
 
-const AccordionControlled = () => {
-  // ** State
-  const [expanded, setExpanded] = useState(false)
-
-  const handleChange = panel => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false)
-  }
-
+const AccordionSimple = () => {
   return (
     <div>
-      <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+      <Accordion>
         <AccordionSummary
-          id='controlled-panel-header-1'
-          aria-controls='controlled-panel-content-1'
+          id='panel-header-1'
+          aria-controls='panel-content-1'
           expandIcon={<Icon fontSize='1.25rem' icon='tabler:chevron-down' />}
         >
           <Typography>Accordion 1</Typography>
@@ -132,10 +122,10 @@ const AccordionControlled = () => {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+      <Accordion>
         <AccordionSummary
-          id='controlled-panel-header-2'
-          aria-controls='controlled-panel-content-2'
+          id='panel-header-2'
+          aria-controls='panel-content-2'
           expandIcon={<Icon fontSize='1.25rem' icon='tabler:chevron-down' />}
         >
           <Typography>Accordion 2</Typography>
@@ -148,10 +138,10 @@ const AccordionControlled = () => {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+      <Accordion>
         <AccordionSummary
-          id='controlled-panel-header-3'
-          aria-controls='controlled-panel-content-3'
+          id='panel-header-3'
+          aria-controls='panel-content-3'
           expandIcon={<Icon fontSize='1.25rem' icon='tabler:chevron-down' />}
         >
           <Typography>Accordion 3</Typography>
@@ -167,7 +157,7 @@ const AccordionControlled = () => {
   )
 }
 
-export default AccordionControlled
+export default AccordionSimple
 `}</code></pre>) 
 
 export const AccordionCustomizedJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
@@ -312,7 +302,10 @@ const AccordionCustomized = () => {
 export default AccordionCustomized
 `}</code></pre>) 
 
-export const AccordionSimpleJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+export const AccordionControlledJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
 import Accordion from '@mui/material/Accordion'
 import Typography from '@mui/material/Typography'
 import AccordionSummary from '@mui/material/AccordionSummary'
@@ -321,13 +314,20 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
 
-const AccordionSimple = () => {
+const AccordionControlled = () => {
+  // ** State
+  const [expanded, setExpanded] = useState(false)
+
+  const handleChange = panel => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false)
+  }
+
   return (
     <div>
-      <Accordion>
+      <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary
-          id='panel-header-1'
-          aria-controls='panel-content-1'
+          id='controlled-panel-header-1'
+          aria-controls='controlled-panel-content-1'
           expandIcon={<Icon fontSize='1.25rem' icon='tabler:chevron-down' />}
         >
           <Typography>Accordion 1</Typography>
@@ -340,10 +340,10 @@ const AccordionSimple = () => {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion>
+      <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
         <AccordionSummary
-          id='panel-header-2'
-          aria-controls='panel-content-2'
+          id='controlled-panel-header-2'
+          aria-controls='controlled-panel-content-2'
           expandIcon={<Icon fontSize='1.25rem' icon='tabler:chevron-down' />}
         >
           <Typography>Accordion 2</Typography>
@@ -356,10 +356,10 @@ const AccordionSimple = () => {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion>
+      <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
         <AccordionSummary
-          id='panel-header-3'
-          aria-controls='panel-content-3'
+          id='controlled-panel-header-3'
+          aria-controls='controlled-panel-content-3'
           expandIcon={<Icon fontSize='1.25rem' icon='tabler:chevron-down' />}
         >
           <Typography>Accordion 3</Typography>
@@ -375,6 +375,6 @@ const AccordionSimple = () => {
   )
 }
 
-export default AccordionSimple
+export default AccordionControlled
 `}</code></pre>) 
 

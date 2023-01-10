@@ -1,50 +1,3 @@
-export const CheckboxesLabelPlacementJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Checkbox from '@mui/material/Checkbox'
-import FormGroup from '@mui/material/FormGroup'
-import FormControlLabel from '@mui/material/FormControlLabel'
-
-const CheckboxesLabelPlacement = () => {
-  return (
-    <div>
-      <FormGroup row>
-        <FormControlLabel value='top' label='Top' labelPlacement='top' control={<Checkbox />} sx={{ mr: 9.2 }} />
-        <FormControlLabel value='bottom' label='Bottom' labelPlacement='bottom' control={<Checkbox />} />
-      </FormGroup>
-      <FormGroup row sx={{ mt: 4 }}>
-        <FormControlLabel value='start' label='Start' control={<Checkbox />} labelPlacement='start' sx={{ mr: 4 }} />
-        <FormControlLabel value='end' control={<Checkbox />} label='End' labelPlacement='end' />
-      </FormGroup>
-    </div>
-  )
-}
-
-export default CheckboxesLabelPlacement
-`}</code></pre>) 
-
-export const CheckboxesColorsJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Checkbox from '@mui/material/Checkbox'
-import FormGroup from '@mui/material/FormGroup'
-import FormControlLabel from '@mui/material/FormControlLabel'
-
-const CheckboxesColors = () => {
-  return (
-    <FormGroup row>
-      <FormControlLabel label='Primary' control={<Checkbox defaultChecked name='color-primary' />} />
-      <FormControlLabel
-        label='Secondary'
-        control={<Checkbox defaultChecked name='color-secondary' color='secondary' />}
-      />
-      <FormControlLabel label='Success' control={<Checkbox defaultChecked name='color-success' color='success' />} />
-      <FormControlLabel label='Error' control={<Checkbox defaultChecked name='color-error' color='error' />} />
-      <FormControlLabel label='Warning' control={<Checkbox defaultChecked name='color-warning' color='warning' />} />
-      <FormControlLabel label='Info' control={<Checkbox defaultChecked name='color-info' color='info' />} />
-    </FormGroup>
-  )
-}
-
-export default CheckboxesColors
-`}</code></pre>) 
-
 export const CheckboxesCustomIconsJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Checkbox from '@mui/material/Checkbox'
 import FormGroup from '@mui/material/FormGroup'
@@ -85,6 +38,29 @@ const CheckboxesCustomIcons = () => {
 export default CheckboxesCustomIcons
 `}</code></pre>) 
 
+export const CheckboxesLabelPlacementJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Checkbox from '@mui/material/Checkbox'
+import FormGroup from '@mui/material/FormGroup'
+import FormControlLabel from '@mui/material/FormControlLabel'
+
+const CheckboxesLabelPlacement = () => {
+  return (
+    <div>
+      <FormGroup row>
+        <FormControlLabel value='top' label='Top' labelPlacement='top' control={<Checkbox />} sx={{ mr: 9.2 }} />
+        <FormControlLabel value='bottom' label='Bottom' labelPlacement='bottom' control={<Checkbox />} />
+      </FormGroup>
+      <FormGroup row sx={{ mt: 4 }}>
+        <FormControlLabel value='start' label='Start' control={<Checkbox />} labelPlacement='start' sx={{ mr: 4 }} />
+        <FormControlLabel value='end' control={<Checkbox />} label='End' labelPlacement='end' />
+      </FormGroup>
+    </div>
+  )
+}
+
+export default CheckboxesLabelPlacement
+`}</code></pre>) 
+
 export const CheckboxesSizesJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Checkbox from '@mui/material/Checkbox'
 import FormGroup from '@mui/material/FormGroup'
@@ -104,6 +80,109 @@ const CheckboxesSizes = () => {
 }
 
 export default CheckboxesSizes
+`}</code></pre>) 
+
+export const CheckboxesControlledUncontrolledJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import Checkbox from '@mui/material/Checkbox'
+import FormGroup from '@mui/material/FormGroup'
+import FormControlLabel from '@mui/material/FormControlLabel'
+
+const CheckboxesControlledUncontrolled = () => {
+  // ** State
+  const [checked, setChecked] = useState(true)
+
+  const handleChange = event => {
+    setChecked(event.target.checked)
+  }
+
+  return (
+    <FormGroup row>
+      <FormControlLabel
+        label='Controlled'
+        control={<Checkbox checked={checked} onChange={handleChange} name='controlled' />}
+      />
+      <FormControlLabel label='Uncontrolled' control={<Checkbox defaultChecked name='uncontrolled' />} />
+    </FormGroup>
+  )
+}
+
+export default CheckboxesControlledUncontrolled
+`}</code></pre>) 
+
+export const CheckboxesShowErrorJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import Box from '@mui/material/Box'
+import Checkbox from '@mui/material/Checkbox'
+import FormGroup from '@mui/material/FormGroup'
+import FormLabel from '@mui/material/FormLabel'
+import FormControl from '@mui/material/FormControl'
+import FormHelperText from '@mui/material/FormHelperText'
+import FormControlLabel from '@mui/material/FormControlLabel'
+
+const CheckboxesShowError = () => {
+  // ** State
+  const [state, setState] = useState({
+    gilad: true,
+    jason: false,
+    antoine: false
+  })
+
+  // ** Vars
+  const { gilad, jason, antoine } = state
+  const error = [gilad, jason, antoine].filter(v => v).length !== 2
+
+  const handleChange = event => {
+    setState({ ...state, [event.target.name]: event.target.checked })
+  }
+
+  return (
+    <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
+      <FormControl sx={{ mt: 4, mr: 4 }}>
+        <FormLabel>Assign responsibility</FormLabel>
+        <FormGroup>
+          <FormControlLabel
+            label='Gilad Gray'
+            control={<Checkbox checked={gilad} onChange={handleChange} name='gilad' />}
+          />
+          <FormControlLabel
+            label='Jason Killian'
+            control={<Checkbox checked={jason} onChange={handleChange} name='jason' />}
+          />
+          <FormControlLabel
+            label='Antoine Llorca'
+            control={<Checkbox checked={antoine} onChange={handleChange} name='antoine' />}
+          />
+        </FormGroup>
+        <FormHelperText>Be careful</FormHelperText>
+      </FormControl>
+      <FormControl required error={error} sx={{ mt: 4 }}>
+        <FormLabel>Pick two</FormLabel>
+        <FormGroup>
+          <FormControlLabel
+            label='Gilad Gray'
+            control={<Checkbox checked={gilad} onChange={handleChange} name='gilad' />}
+          />
+          <FormControlLabel
+            label='Jason Killian'
+            control={<Checkbox checked={jason} onChange={handleChange} name='jason' />}
+          />
+          <FormControlLabel
+            label='Antoine Llorca'
+            control={<Checkbox checked={antoine} onChange={handleChange} name='antoine' />}
+          />
+        </FormGroup>
+        <FormHelperText>You can display an error</FormHelperText>
+      </FormControl>
+    </Box>
+  )
+}
+
+export default CheckboxesShowError
 `}</code></pre>) 
 
 export const CheckboxesCustomizedJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
@@ -182,77 +261,28 @@ const CheckboxesCustomized = () => {
 export default CheckboxesCustomized
 `}</code></pre>) 
 
-export const CheckboxesShowErrorJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import Box from '@mui/material/Box'
+export const CheckboxesColorsJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Checkbox from '@mui/material/Checkbox'
 import FormGroup from '@mui/material/FormGroup'
-import FormLabel from '@mui/material/FormLabel'
-import FormControl from '@mui/material/FormControl'
-import FormHelperText from '@mui/material/FormHelperText'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
-const CheckboxesShowError = () => {
-  // ** State
-  const [state, setState] = useState({
-    gilad: true,
-    jason: false,
-    antoine: false
-  })
-
-  // ** Vars
-  const { gilad, jason, antoine } = state
-  const error = [gilad, jason, antoine].filter(v => v).length !== 2
-
-  const handleChange = event => {
-    setState({ ...state, [event.target.name]: event.target.checked })
-  }
-
+const CheckboxesColors = () => {
   return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
-      <FormControl sx={{ mt: 4, mr: 4 }}>
-        <FormLabel>Assign responsibility</FormLabel>
-        <FormGroup>
-          <FormControlLabel
-            label='Gilad Gray'
-            control={<Checkbox checked={gilad} onChange={handleChange} name='gilad' />}
-          />
-          <FormControlLabel
-            label='Jason Killian'
-            control={<Checkbox checked={jason} onChange={handleChange} name='jason' />}
-          />
-          <FormControlLabel
-            label='Antoine Llorca'
-            control={<Checkbox checked={antoine} onChange={handleChange} name='antoine' />}
-          />
-        </FormGroup>
-        <FormHelperText>Be careful</FormHelperText>
-      </FormControl>
-      <FormControl required error={error} sx={{ mt: 4 }}>
-        <FormLabel>Pick two</FormLabel>
-        <FormGroup>
-          <FormControlLabel
-            label='Gilad Gray'
-            control={<Checkbox checked={gilad} onChange={handleChange} name='gilad' />}
-          />
-          <FormControlLabel
-            label='Jason Killian'
-            control={<Checkbox checked={jason} onChange={handleChange} name='jason' />}
-          />
-          <FormControlLabel
-            label='Antoine Llorca'
-            control={<Checkbox checked={antoine} onChange={handleChange} name='antoine' />}
-          />
-        </FormGroup>
-        <FormHelperText>You can display an error</FormHelperText>
-      </FormControl>
-    </Box>
+    <FormGroup row>
+      <FormControlLabel label='Primary' control={<Checkbox defaultChecked name='color-primary' />} />
+      <FormControlLabel
+        label='Secondary'
+        control={<Checkbox defaultChecked name='color-secondary' color='secondary' />}
+      />
+      <FormControlLabel label='Success' control={<Checkbox defaultChecked name='color-success' color='success' />} />
+      <FormControlLabel label='Error' control={<Checkbox defaultChecked name='color-error' color='error' />} />
+      <FormControlLabel label='Warning' control={<Checkbox defaultChecked name='color-warning' color='warning' />} />
+      <FormControlLabel label='Info' control={<Checkbox defaultChecked name='color-info' color='info' />} />
+    </FormGroup>
   )
 }
 
-export default CheckboxesShowError
+export default CheckboxesColors
 `}</code></pre>) 
 
 export const CheckboxesBasicJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
@@ -276,35 +306,5 @@ const CheckboxesBasic = () => {
 }
 
 export default CheckboxesBasic
-`}</code></pre>) 
-
-export const CheckboxesControlledUncontrolledJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import Checkbox from '@mui/material/Checkbox'
-import FormGroup from '@mui/material/FormGroup'
-import FormControlLabel from '@mui/material/FormControlLabel'
-
-const CheckboxesControlledUncontrolled = () => {
-  // ** State
-  const [checked, setChecked] = useState(true)
-
-  const handleChange = event => {
-    setChecked(event.target.checked)
-  }
-
-  return (
-    <FormGroup row>
-      <FormControlLabel
-        label='Controlled'
-        control={<Checkbox checked={checked} onChange={handleChange} name='controlled' />}
-      />
-      <FormControlLabel label='Uncontrolled' control={<Checkbox defaultChecked name='uncontrolled' />} />
-    </FormGroup>
-  )
-}
-
-export default CheckboxesControlledUncontrolled
 `}</code></pre>) 
 

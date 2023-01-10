@@ -1,40 +1,3 @@
-export const RadioStandaloneJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import Radio from '@mui/material/Radio'
-
-const RadioStandalone = () => {
-  // ** State
-  const [selectedValue, setSelectedValue] = useState('a')
-
-  const handleChange = event => {
-    setSelectedValue(event.target.value)
-  }
-
-  return (
-    <div>
-      <Radio
-        value='a'
-        onChange={handleChange}
-        name='radio-button-demo'
-        checked={selectedValue === 'a'}
-        inputProps={{ 'aria-label': 'A' }}
-      />
-      <Radio
-        value='b'
-        onChange={handleChange}
-        name='radio-button-demo'
-        checked={selectedValue === 'b'}
-        inputProps={{ 'aria-label': 'B' }}
-      />
-    </div>
-  )
-}
-
-export default RadioStandalone
-`}</code></pre>) 
-
 export const RadioCustomizedJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import FormLabel from '@mui/material/FormLabel'
 import RadioGroup from '@mui/material/RadioGroup'
@@ -82,39 +45,25 @@ const RadioCustomized = () => {
 export default RadioCustomized
 `}</code></pre>) 
 
-export const RadioGroupJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
+export const RadioSizesJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
-import FormControl from '@mui/material/FormControl'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
-const RadioGroupComponent = () => {
-  // ** State
-  const [value, setValue] = useState('checked')
-
-  const handleChange = event => {
-    setValue(event.target.value)
-  }
-
+const RadioSizes = () => {
   return (
-    <FormControl sx={{ flexWrap: 'wrap', flexDirection: 'row' }}>
-      <RadioGroup row value={value} name='simple-radio' onChange={handleChange} aria-label='simple-radio'>
-        <FormControlLabel value='checked' control={<Radio />} label='Checked' />
-        <FormControlLabel value='unchecked' control={<Radio />} label='Unchecked' />
-      </RadioGroup>
-
-      <RadioGroup row value='disabled-checked' name='simple-disabled-radio' aria-label='simple-disabled-radio'>
-        <FormControlLabel disabled value='disabled-checked' label='Disabled Checked' control={<Radio />} />
-        <FormControlLabel disabled value='disabled-unchecked' label='Disabled Unchecked' control={<Radio />} />
-      </RadioGroup>
-    </FormControl>
+    <RadioGroup row aria-label='sizes' name='sizes' defaultValue='small'>
+      <FormControlLabel
+        value='small'
+        label='Small'
+        control={<Radio size='small' sx={{ '& svg': { height: 16, width: 16 } }} />}
+      />
+      <FormControlLabel value='default' control={<Radio />} label='Default' />
+    </RadioGroup>
   )
 }
 
-export default RadioGroupComponent
+export default RadioSizes
 `}</code></pre>) 
 
 export const RadioLabelPlacementJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
@@ -139,47 +88,6 @@ const RadioLabelPlacement = () => {
 }
 
 export default RadioLabelPlacement
-`}</code></pre>) 
-
-export const RadioControlledUncontrolledJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import Grid from '@mui/material/Grid'
-import Radio from '@mui/material/Radio'
-import Typography from '@mui/material/Typography'
-import RadioGroup from '@mui/material/RadioGroup'
-import FormControlLabel from '@mui/material/FormControlLabel'
-
-const RadioControlledUncontrolled = () => {
-  // ** State
-  const [value, setValue] = useState('controlled-checked')
-
-  const handleChange = event => {
-    setValue(event.target.value)
-  }
-
-  return (
-    <Grid container spacing={6}>
-      <Grid item xs={12} sm={6}>
-        <Typography>Controlled</Typography>
-        <RadioGroup row aria-label='controlled' name='controlled' value={value} onChange={handleChange}>
-          <FormControlLabel value='controlled-checked' control={<Radio />} label='Checked' />
-          <FormControlLabel value='controlled-unchecked' control={<Radio />} label='Unchecked' />
-        </RadioGroup>
-      </Grid>
-      <Grid item xs={12} sm={6}>
-        <Typography>Uncontrolled</Typography>
-        <RadioGroup row aria-label='uncontrolled' name='uncontrolled' defaultValue='uncontrolled-checked'>
-          <FormControlLabel value='uncontrolled-checked' control={<Radio />} label='Checked' />
-          <FormControlLabel value='uncontrolled-unchecked' control={<Radio />} label='Unchecked' />
-        </RadioGroup>
-      </Grid>
-    </Grid>
-  )
-}
-
-export default RadioControlledUncontrolled
 `}</code></pre>) 
 
 export const RadioShowErrorJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
@@ -240,25 +148,117 @@ const RadioShowError = () => {
 export default RadioShowError
 `}</code></pre>) 
 
-export const RadioSizesJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+export const RadioGroupJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
 import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
+import FormControl from '@mui/material/FormControl'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
-const RadioSizes = () => {
+const RadioGroupComponent = () => {
+  // ** State
+  const [value, setValue] = useState('checked')
+
+  const handleChange = event => {
+    setValue(event.target.value)
+  }
+
   return (
-    <RadioGroup row aria-label='sizes' name='sizes' defaultValue='small'>
-      <FormControlLabel
-        value='small'
-        label='Small'
-        control={<Radio size='small' sx={{ '& svg': { height: 16, width: 16 } }} />}
-      />
-      <FormControlLabel value='default' control={<Radio />} label='Default' />
-    </RadioGroup>
+    <FormControl sx={{ flexWrap: 'wrap', flexDirection: 'row' }}>
+      <RadioGroup row value={value} name='simple-radio' onChange={handleChange} aria-label='simple-radio'>
+        <FormControlLabel value='checked' control={<Radio />} label='Checked' />
+        <FormControlLabel value='unchecked' control={<Radio />} label='Unchecked' />
+      </RadioGroup>
+
+      <RadioGroup row value='disabled-checked' name='simple-disabled-radio' aria-label='simple-disabled-radio'>
+        <FormControlLabel disabled value='disabled-checked' label='Disabled Checked' control={<Radio />} />
+        <FormControlLabel disabled value='disabled-unchecked' label='Disabled Unchecked' control={<Radio />} />
+      </RadioGroup>
+    </FormControl>
   )
 }
 
-export default RadioSizes
+export default RadioGroupComponent
+`}</code></pre>) 
+
+export const RadioControlledUncontrolledJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import Grid from '@mui/material/Grid'
+import Radio from '@mui/material/Radio'
+import Typography from '@mui/material/Typography'
+import RadioGroup from '@mui/material/RadioGroup'
+import FormControlLabel from '@mui/material/FormControlLabel'
+
+const RadioControlledUncontrolled = () => {
+  // ** State
+  const [value, setValue] = useState('controlled-checked')
+
+  const handleChange = event => {
+    setValue(event.target.value)
+  }
+
+  return (
+    <Grid container spacing={6}>
+      <Grid item xs={12} sm={6}>
+        <Typography>Controlled</Typography>
+        <RadioGroup row aria-label='controlled' name='controlled' value={value} onChange={handleChange}>
+          <FormControlLabel value='controlled-checked' control={<Radio />} label='Checked' />
+          <FormControlLabel value='controlled-unchecked' control={<Radio />} label='Unchecked' />
+        </RadioGroup>
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <Typography>Uncontrolled</Typography>
+        <RadioGroup row aria-label='uncontrolled' name='uncontrolled' defaultValue='uncontrolled-checked'>
+          <FormControlLabel value='uncontrolled-checked' control={<Radio />} label='Checked' />
+          <FormControlLabel value='uncontrolled-unchecked' control={<Radio />} label='Unchecked' />
+        </RadioGroup>
+      </Grid>
+    </Grid>
+  )
+}
+
+export default RadioControlledUncontrolled
+`}</code></pre>) 
+
+export const RadioStandaloneJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import Radio from '@mui/material/Radio'
+
+const RadioStandalone = () => {
+  // ** State
+  const [selectedValue, setSelectedValue] = useState('a')
+
+  const handleChange = event => {
+    setSelectedValue(event.target.value)
+  }
+
+  return (
+    <div>
+      <Radio
+        value='a'
+        onChange={handleChange}
+        name='radio-button-demo'
+        checked={selectedValue === 'a'}
+        inputProps={{ 'aria-label': 'A' }}
+      />
+      <Radio
+        value='b'
+        onChange={handleChange}
+        name='radio-button-demo'
+        checked={selectedValue === 'b'}
+        inputProps={{ 'aria-label': 'B' }}
+      />
+    </div>
+  )
+}
+
+export default RadioStandalone
 `}</code></pre>) 
 
 export const RadioColorJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports

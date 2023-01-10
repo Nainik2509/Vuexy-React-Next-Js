@@ -1,3 +1,45 @@
+export const TreeViewMultiSelectionJSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import TreeView from '@mui/lab/TreeView'
+import TreeItem from '@mui/lab/TreeItem'
+
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
+
+const TreeViewMultiSelection = ({ direction }) => {
+  const ExpandIcon = direction === 'rtl' ? 'tabler:chevron-left' : 'tabler:chevron-right'
+
+  return (
+    <TreeView
+      multiSelect
+      sx={{ minHeight: 240 }}
+      defaultExpandIcon={<Icon icon={ExpandIcon} />}
+      defaultCollapseIcon={<Icon icon='tabler:chevron-down' />}
+    >
+      <TreeItem nodeId='1' label='Applications'>
+        <TreeItem nodeId='2' label='Calendar' />
+        <TreeItem nodeId='3' label='Chrome' />
+        <TreeItem nodeId='4' label='Webstorm' />
+      </TreeItem>
+      <TreeItem nodeId='5' label='Documents'>
+        <TreeItem nodeId='10' label='OSS' />
+        <TreeItem nodeId='6' label='MUI'>
+          <TreeItem nodeId='7' label='src'>
+            <TreeItem nodeId='8' label='index.js' />
+            <TreeItem nodeId='9' label='tree-view.js' />
+          </TreeItem>
+        </TreeItem>
+      </TreeItem>
+    </TreeView>
+  )
+}
+
+export default TreeViewMultiSelection
+`}</code>
+  </pre>
+)
+
 export const TreeViewControlledJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** React Imports
@@ -186,48 +228,6 @@ export default TreeViewGmailClone
   </pre>
 )
 
-export const TreeViewMultiSelectionJSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import TreeView from '@mui/lab/TreeView'
-import TreeItem from '@mui/lab/TreeItem'
-
-// ** Icon Imports
-import Icon from 'src/@core/components/icon'
-
-const TreeViewMultiSelection = ({ direction }) => {
-  const ExpandIcon = direction === 'rtl' ? 'tabler:chevron-left' : 'tabler:chevron-right'
-
-  return (
-    <TreeView
-      multiSelect
-      sx={{ minHeight: 240 }}
-      defaultExpandIcon={<Icon icon={ExpandIcon} />}
-      defaultCollapseIcon={<Icon icon='tabler:chevron-down' />}
-    >
-      <TreeItem nodeId='1' label='Applications'>
-        <TreeItem nodeId='2' label='Calendar' />
-        <TreeItem nodeId='3' label='Chrome' />
-        <TreeItem nodeId='4' label='Webstorm' />
-      </TreeItem>
-      <TreeItem nodeId='5' label='Documents'>
-        <TreeItem nodeId='10' label='OSS' />
-        <TreeItem nodeId='6' label='MUI'>
-          <TreeItem nodeId='7' label='src'>
-            <TreeItem nodeId='8' label='index.js' />
-            <TreeItem nodeId='9' label='tree-view.js' />
-          </TreeItem>
-        </TreeItem>
-      </TreeItem>
-    </TreeView>
-  )
-}
-
-export default TreeViewMultiSelection
-`}</code>
-  </pre>
-)
-
 export const TreeViewRichObjectJSXCode = (
   <pre className='language-jsx'>
     <code className='language-jsx'>{`// ** MUI Imports
@@ -337,9 +337,12 @@ export default TreeViewCustomized
   </pre>
 )
 
-export const TreeViewBasicTSXCode = (
+export const TreeViewControlledTSXCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
+    <code className='language-jsx'>{`// ** React Imports
+import { SyntheticEvent, useState } from 'react'
+
+// ** MUI Imports
 import TreeView from '@mui/lab/TreeView'
 import TreeItem from '@mui/lab/TreeItem'
 
@@ -350,134 +353,50 @@ interface Props {
   direction: 'ltr' | 'rtl'
 }
 
-const TreeViewBasic = ({ direction }: Props) => {
-  const ExpandIcon = direction === 'rtl' ? 'tabler:chevron-left' : 'tabler:chevron-right'
+const TreeViewControlled = ({ direction }: Props) => {
+  // ** States
+  const [expanded, setExpanded] = useState<string[]>([])
+  const [selected, setSelected] = useState<string[]>([])
 
-  return (
-    <TreeView
-      sx={{ minHeight: 240 }}
-      defaultExpandIcon={<Icon icon={ExpandIcon} />}
-      defaultCollapseIcon={<Icon icon='tabler:chevron-down' />}
-    >
-      <TreeItem nodeId='1' label='Applications'>
-        <TreeItem nodeId='2' label='Calendar' />
-        <TreeItem nodeId='3' label='Chrome' />
-        <TreeItem nodeId='4' label='Webstorm' />
-      </TreeItem>
-      <TreeItem nodeId='5' label='Documents'>
-        <TreeItem nodeId='10' label='OSS' />
-        <TreeItem nodeId='6' label='MUI'>
-          <TreeItem nodeId='7' label='src'>
-            <TreeItem nodeId='8' label='index.js' />
-            <TreeItem nodeId='9' label='tree-view.js' />
-          </TreeItem>
-        </TreeItem>
-      </TreeItem>
-    </TreeView>
-  )
-}
-
-export default TreeViewBasic
-`}</code>
-  </pre>
-)
-
-export const TreeViewMultiSelectionTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import TreeView from '@mui/lab/TreeView'
-import TreeItem from '@mui/lab/TreeItem'
-
-// ** Icon Imports
-import Icon from 'src/@core/components/icon'
-
-interface Props {
-  direction: 'ltr' | 'rtl'
-}
-
-const TreeViewMultiSelection = ({ direction }: Props) => {
-  const ExpandIcon = direction === 'rtl' ? 'tabler:chevron-left' : 'tabler:chevron-right'
-
-  return (
-    <TreeView
-      multiSelect
-      sx={{ minHeight: 240 }}
-      defaultExpandIcon={<Icon icon={ExpandIcon} />}
-      defaultCollapseIcon={<Icon icon='tabler:chevron-down' />}
-    >
-      <TreeItem nodeId='1' label='Applications'>
-        <TreeItem nodeId='2' label='Calendar' />
-        <TreeItem nodeId='3' label='Chrome' />
-        <TreeItem nodeId='4' label='Webstorm' />
-      </TreeItem>
-      <TreeItem nodeId='5' label='Documents'>
-        <TreeItem nodeId='10' label='OSS' />
-        <TreeItem nodeId='6' label='MUI'>
-          <TreeItem nodeId='7' label='src'>
-            <TreeItem nodeId='8' label='index.js' />
-            <TreeItem nodeId='9' label='tree-view.js' />
-          </TreeItem>
-        </TreeItem>
-      </TreeItem>
-    </TreeView>
-  )
-}
-
-export default TreeViewMultiSelection
-`}</code>
-  </pre>
-)
-
-export const TreeViewCustomizedTSXCode = (
-  <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** MUI Imports
-import TreeItem from '@mui/lab/TreeItem'
-import { alpha, styled } from '@mui/material/styles'
-import MuiTreeView, { TreeViewProps } from '@mui/lab/TreeView'
-
-// ** Icon Imports
-import Icon from 'src/@core/components/icon'
-
-// Styled TreeView component
-const TreeView = styled(MuiTreeView)<TreeViewProps>(({ theme }) => ({
-  minHeight: 264,
-  '& .MuiTreeItem-iconContainer .close': {
-    opacity: 0.3
-  },
-  '& .MuiTreeItem-group': {
-    marginLeft: 15,
-    paddingLeft: 18,
-    borderLeft: 1px dashed {alpha(theme.palette.text.primary, 0.4)}
+  const handleToggle = (event: SyntheticEvent, nodeIds: string[]) => {
+    setExpanded(nodeIds)
   }
-}))
 
-const TreeViewCustomized = () => {
+  const handleSelect = (event: SyntheticEvent, nodeIds: string[]) => {
+    setSelected(nodeIds)
+  }
+
+  const ExpandIcon = direction === 'rtl' ? 'tabler:chevron-left' : 'tabler:chevron-right'
+
   return (
     <TreeView
-      defaultExpanded={['1']}
-      defaultExpandIcon={<Icon icon='tabler:square-plus' />}
-      defaultCollapseIcon={<Icon icon='tabler:square-minus' />}
-      defaultEndIcon={<Icon icon='tabler:square-x' className='close' />}
+      expanded={expanded}
+      selected={selected}
+      sx={{ minHeight: 240 }}
+      onNodeToggle={handleToggle}
+      onNodeSelect={handleSelect}
+      defaultExpandIcon={<Icon icon={ExpandIcon} />}
+      defaultCollapseIcon={<Icon icon='tabler:chevron-down' />}
     >
-      <TreeItem nodeId='1' label='Main'>
-        <TreeItem nodeId='2' label='Hello' />
-        <TreeItem nodeId='3' label='Subtree with children'>
-          <TreeItem nodeId='6' label='Hello' />
-          <TreeItem nodeId='7' label='Sub-subtree with children'>
-            <TreeItem nodeId='9' label='Child 1' />
-            <TreeItem nodeId='10' label='Child 2' />
-            <TreeItem nodeId='11' label='Child 3' />
+      <TreeItem nodeId='1' label='Applications'>
+        <TreeItem nodeId='2' label='Calendar' />
+        <TreeItem nodeId='3' label='Chrome' />
+        <TreeItem nodeId='4' label='Webstorm' />
+      </TreeItem>
+      <TreeItem nodeId='5' label='Documents'>
+        <TreeItem nodeId='10' label='OSS' />
+        <TreeItem nodeId='6' label='MUI'>
+          <TreeItem nodeId='7' label='src'>
+            <TreeItem nodeId='8' label='index.js' />
+            <TreeItem nodeId='9' label='tree-view.js' />
           </TreeItem>
-          <TreeItem nodeId='8' label='Hello' />
         </TreeItem>
-        <TreeItem nodeId='4' label='World' />
-        <TreeItem nodeId='5' label='Something something' />
       </TreeItem>
     </TreeView>
   )
 }
 
-export default TreeViewCustomized
+export default TreeViewControlled
 `}</code>
   </pre>
 )
@@ -646,12 +565,63 @@ export default TreeViewRichObject
   </pre>
 )
 
-export const TreeViewControlledTSXCode = (
+export const TreeViewCustomizedTSXCode = (
   <pre className='language-jsx'>
-    <code className='language-jsx'>{`// ** React Imports
-import { SyntheticEvent, useState } from 'react'
+    <code className='language-jsx'>{`// ** MUI Imports
+import TreeItem from '@mui/lab/TreeItem'
+import { alpha, styled } from '@mui/material/styles'
+import MuiTreeView, { TreeViewProps } from '@mui/lab/TreeView'
 
-// ** MUI Imports
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
+
+// Styled TreeView component
+const TreeView = styled(MuiTreeView)<TreeViewProps>(({ theme }) => ({
+  minHeight: 264,
+  '& .MuiTreeItem-iconContainer .close': {
+    opacity: 0.3
+  },
+  '& .MuiTreeItem-group': {
+    marginLeft: 15,
+    paddingLeft: 18,
+    borderLeft: 1px dashed {alpha(theme.palette.text.primary, 0.4)}
+  }
+}))
+
+const TreeViewCustomized = () => {
+  return (
+    <TreeView
+      defaultExpanded={['1']}
+      defaultExpandIcon={<Icon icon='tabler:square-plus' />}
+      defaultCollapseIcon={<Icon icon='tabler:square-minus' />}
+      defaultEndIcon={<Icon icon='tabler:square-x' className='close' />}
+    >
+      <TreeItem nodeId='1' label='Main'>
+        <TreeItem nodeId='2' label='Hello' />
+        <TreeItem nodeId='3' label='Subtree with children'>
+          <TreeItem nodeId='6' label='Hello' />
+          <TreeItem nodeId='7' label='Sub-subtree with children'>
+            <TreeItem nodeId='9' label='Child 1' />
+            <TreeItem nodeId='10' label='Child 2' />
+            <TreeItem nodeId='11' label='Child 3' />
+          </TreeItem>
+          <TreeItem nodeId='8' label='Hello' />
+        </TreeItem>
+        <TreeItem nodeId='4' label='World' />
+        <TreeItem nodeId='5' label='Something something' />
+      </TreeItem>
+    </TreeView>
+  )
+}
+
+export default TreeViewCustomized
+`}</code>
+  </pre>
+)
+
+export const TreeViewMultiSelectionTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
 import TreeView from '@mui/lab/TreeView'
 import TreeItem from '@mui/lab/TreeItem'
 
@@ -662,28 +632,13 @@ interface Props {
   direction: 'ltr' | 'rtl'
 }
 
-const TreeViewControlled = ({ direction }: Props) => {
-  // ** States
-  const [expanded, setExpanded] = useState<string[]>([])
-  const [selected, setSelected] = useState<string[]>([])
-
-  const handleToggle = (event: SyntheticEvent, nodeIds: string[]) => {
-    setExpanded(nodeIds)
-  }
-
-  const handleSelect = (event: SyntheticEvent, nodeIds: string[]) => {
-    setSelected(nodeIds)
-  }
-
+const TreeViewMultiSelection = ({ direction }: Props) => {
   const ExpandIcon = direction === 'rtl' ? 'tabler:chevron-left' : 'tabler:chevron-right'
 
   return (
     <TreeView
-      expanded={expanded}
-      selected={selected}
+      multiSelect
       sx={{ minHeight: 240 }}
-      onNodeToggle={handleToggle}
-      onNodeSelect={handleSelect}
       defaultExpandIcon={<Icon icon={ExpandIcon} />}
       defaultCollapseIcon={<Icon icon='tabler:chevron-down' />}
     >
@@ -705,7 +660,52 @@ const TreeViewControlled = ({ direction }: Props) => {
   )
 }
 
-export default TreeViewControlled
+export default TreeViewMultiSelection
+`}</code>
+  </pre>
+)
+
+export const TreeViewBasicTSXCode = (
+  <pre className='language-jsx'>
+    <code className='language-jsx'>{`// ** MUI Imports
+import TreeView from '@mui/lab/TreeView'
+import TreeItem from '@mui/lab/TreeItem'
+
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
+
+interface Props {
+  direction: 'ltr' | 'rtl'
+}
+
+const TreeViewBasic = ({ direction }: Props) => {
+  const ExpandIcon = direction === 'rtl' ? 'tabler:chevron-left' : 'tabler:chevron-right'
+
+  return (
+    <TreeView
+      sx={{ minHeight: 240 }}
+      defaultExpandIcon={<Icon icon={ExpandIcon} />}
+      defaultCollapseIcon={<Icon icon='tabler:chevron-down' />}
+    >
+      <TreeItem nodeId='1' label='Applications'>
+        <TreeItem nodeId='2' label='Calendar' />
+        <TreeItem nodeId='3' label='Chrome' />
+        <TreeItem nodeId='4' label='Webstorm' />
+      </TreeItem>
+      <TreeItem nodeId='5' label='Documents'>
+        <TreeItem nodeId='10' label='OSS' />
+        <TreeItem nodeId='6' label='MUI'>
+          <TreeItem nodeId='7' label='src'>
+            <TreeItem nodeId='8' label='index.js' />
+            <TreeItem nodeId='9' label='tree-view.js' />
+          </TreeItem>
+        </TreeItem>
+      </TreeItem>
+    </TreeView>
+  )
+}
+
+export default TreeViewBasic
 `}</code>
   </pre>
 )

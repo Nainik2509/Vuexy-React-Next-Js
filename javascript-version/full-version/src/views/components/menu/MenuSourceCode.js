@@ -1,46 +1,12 @@
-export const MenuCustomizedJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+export const MenuBasicJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
 // ** MUI Imports
+import Menu from '@mui/material/Menu'
 import Button from '@mui/material/Button'
-import { styled } from '@mui/material/styles'
-import ListItemIcon from '@mui/material/ListItemIcon'
-import ListItemText from '@mui/material/ListItemText'
-import MuiMenu from '@mui/material/Menu'
-import MuiMenuItem from '@mui/material/MenuItem'
+import MenuItem from '@mui/material/MenuItem'
 
-// ** Icon Imports
-import Icon from 'src/@core/components/icon'
-
-// ** Util Import
-import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
-
-// Styled Menu component
-const Menu = styled(MuiMenu)(({ theme }) => ({
-  '& .MuiMenu-paper': {
-    border: 1px solid {theme.palette.divider}
-  }
-}))
-
-// Styled MenuItem component
-const MenuItem = styled(MuiMenuItem)(({ theme }) => ({
-  margin: 0,
-  borderRadius: 0,
-  '&:not(.Mui-focusVisible):hover': {
-    backgroundColor: theme.palette.action.hover
-  },
-  '&.Mui-selected': {
-    backgroundColor: hexToRGBA(theme.palette.primary.main, 0.08)
-  },
-  '&.Mui-focusVisible': {
-    backgroundColor: theme.palette.primary.main,
-    '& .MuiListItemIcon-root, & .MuiTypography-root': {
-      color: theme.palette.common.white
-    }
-  }
-}))
-
-const MenuCustomized = () => {
+const MenuBasic = () => {
   // ** State
   const [anchorEl, setAnchorEl] = useState(null)
 
@@ -54,49 +20,79 @@ const MenuCustomized = () => {
 
   return (
     <div>
-      <Button variant='outlined' aria-haspopup='true' onClick={handleClick} aria-controls='customized-menu'>
+      <Button variant='outlined' aria-controls='simple-menu' aria-haspopup='true' onClick={handleClick}>
         Open Menu
       </Button>
-      <Menu
-        keepMounted
-        elevation={0}
-        anchorEl={anchorEl}
-        id='customized-menu'
-        onClose={handleClose}
-        open={Boolean(anchorEl)}
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'center'
-        }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'center'
-        }}
-      >
-        <MenuItem>
-          <ListItemIcon>
-            <Icon icon='tabler:send' fontSize={20} />
-          </ListItemIcon>
-          <ListItemText primary='Sent mail' />
-        </MenuItem>
-        <MenuItem>
-          <ListItemIcon>
-            <Icon icon='tabler:mail-opened' fontSize={20} />
-          </ListItemIcon>
-          <ListItemText primary='Drafts' />
-        </MenuItem>
-        <MenuItem>
-          <ListItemIcon>
-            <Icon icon='tabler:inbox' fontSize={20} />
-          </ListItemIcon>
-          <ListItemText primary='Inbox' />
-        </MenuItem>
+      <Menu keepMounted id='simple-menu' anchorEl={anchorEl} onClose={handleClose} open={Boolean(anchorEl)}>
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem onClick={handleClose}>Logout</MenuItem>
       </Menu>
     </div>
   )
 }
 
-export default MenuCustomized
+export default MenuBasic
+`}</code></pre>) 
+
+export const MenuContextJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import Box from '@mui/material/Box'
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
+import Typography from '@mui/material/Typography'
+
+const initialState = {
+  mouseX: null,
+  mouseY: null
+}
+
+const MenuContext = () => {
+  // ** State
+  const [state, setState] = useState(initialState)
+
+  const handleClick = event => {
+    event.preventDefault()
+    setState({
+      mouseX: event.clientX - 2,
+      mouseY: event.clientY - 4
+    })
+  }
+
+  const handleClose = () => {
+    setState(initialState)
+  }
+
+  return (
+    <Box onContextMenu={handleClick} sx={{ cursor: 'context-menu' }}>
+      <Typography>
+        Apple pie bonbon sweet brownie cake lemon drops carrot cake danish carrot cake. Marzipan jujubes cupcake cake
+        bear claw jujubes. Macaroon candy canes jelly-o sugar plum biscuit. Cupcake cupcake oat cake cookie donut candy
+        canes chupa chups. Jelly beans carrot cake soufflé gummies sweet cake halvah carrot cake. Candy marshmallow
+        apple pie donut toffee pudding jelly croissant jelly. Dragée cake liquorice cake gummi bears. Gummi bears
+        caramels tootsie roll caramels lemon drops caramels chocolate cake jelly oat cake. Oat cake tart biscuit cake.
+      </Typography>
+      <Menu
+        keepMounted
+        onClose={handleClose}
+        open={state.mouseY !== null}
+        anchorReference='anchorPosition'
+        anchorPosition={
+          state.mouseY !== null && state.mouseX !== null ? { top: state.mouseY, left: state.mouseX } : undefined
+        }
+      >
+        <MenuItem onClick={handleClose}>Copy</MenuItem>
+        <MenuItem onClick={handleClose}>Print</MenuItem>
+        <MenuItem onClick={handleClose}>Email</MenuItem>
+        <MenuItem onClick={handleClose}>Highlight</MenuItem>
+      </Menu>
+    </Box>
+  )
+}
+
+export default MenuContext
 `}</code></pre>) 
 
 export const MenuMaxHeightJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
@@ -170,78 +166,6 @@ const MenuMaxHeight = () => {
 export default MenuMaxHeight
 `}</code></pre>) 
 
-export const MenuSelectedJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import List from '@mui/material/List'
-import Menu from '@mui/material/Menu'
-import ListItem from '@mui/material/ListItem'
-import MenuItem from '@mui/material/MenuItem'
-import ListItemText from '@mui/material/ListItemText'
-import ListItemButton from '@mui/material/ListItemButton'
-
-const options = [
-  'Show some love to MUI',
-  'Show all notification content',
-  'Hide sensitive notification content',
-  'Hide all notification content'
-]
-
-const MenuSelected = () => {
-  // ** State
-  const [selectedIndex, setSelectedIndex] = useState(1)
-
-  // ** Ref
-  const [anchorEl, setAnchorEl] = useState(null)
-
-  const handleClickListItem = event => {
-    setAnchorEl(event.currentTarget)
-  }
-
-  const handleMenuItemClick = (event, index) => {
-    setAnchorEl(null)
-    setSelectedIndex(index)
-  }
-
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
-
-  return (
-    <div>
-      <List component='nav' sx={{ p: 0 }} aria-label='Device settings'>
-        <ListItem
-          disablePadding
-          aria-haspopup='true'
-          aria-controls='lock-menu'
-          onClick={handleClickListItem}
-          aria-label='when device is locked'
-        >
-          <ListItemButton>
-            <ListItemText primary='When device is locked' secondary={options[selectedIndex]} />
-          </ListItemButton>
-        </ListItem>
-      </List>
-      <Menu id='lock-menu' anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
-        {options.map((option, index) => (
-          <MenuItem
-            key={option}
-            disabled={index === 0}
-            selected={index === selectedIndex}
-            onClick={event => handleMenuItemClick(event, index)}
-          >
-            {option}
-          </MenuItem>
-        ))}
-      </Menu>
-    </div>
-  )
-}
-
-export default MenuSelected
-`}</code></pre>) 
-
 export const MenuTransitionJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
 import { useState } from 'react'
 
@@ -285,103 +209,6 @@ const MenuTransition = () => {
 }
 
 export default MenuTransition
-`}</code></pre>) 
-
-export const MenuContextJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import Box from '@mui/material/Box'
-import Menu from '@mui/material/Menu'
-import MenuItem from '@mui/material/MenuItem'
-import Typography from '@mui/material/Typography'
-
-const initialState = {
-  mouseX: null,
-  mouseY: null
-}
-
-const MenuContext = () => {
-  // ** State
-  const [state, setState] = useState(initialState)
-
-  const handleClick = event => {
-    event.preventDefault()
-    setState({
-      mouseX: event.clientX - 2,
-      mouseY: event.clientY - 4
-    })
-  }
-
-  const handleClose = () => {
-    setState(initialState)
-  }
-
-  return (
-    <Box onContextMenu={handleClick} sx={{ cursor: 'context-menu' }}>
-      <Typography>
-        Apple pie bonbon sweet brownie cake lemon drops carrot cake danish carrot cake. Marzipan jujubes cupcake cake
-        bear claw jujubes. Macaroon candy canes jelly-o sugar plum biscuit. Cupcake cupcake oat cake cookie donut candy
-        canes chupa chups. Jelly beans carrot cake soufflé gummies sweet cake halvah carrot cake. Candy marshmallow
-        apple pie donut toffee pudding jelly croissant jelly. Dragée cake liquorice cake gummi bears. Gummi bears
-        caramels tootsie roll caramels lemon drops caramels chocolate cake jelly oat cake. Oat cake tart biscuit cake.
-      </Typography>
-      <Menu
-        keepMounted
-        onClose={handleClose}
-        open={state.mouseY !== null}
-        anchorReference='anchorPosition'
-        anchorPosition={
-          state.mouseY !== null && state.mouseX !== null ? { top: state.mouseY, left: state.mouseX } : undefined
-        }
-      >
-        <MenuItem onClick={handleClose}>Copy</MenuItem>
-        <MenuItem onClick={handleClose}>Print</MenuItem>
-        <MenuItem onClick={handleClose}>Email</MenuItem>
-        <MenuItem onClick={handleClose}>Highlight</MenuItem>
-      </Menu>
-    </Box>
-  )
-}
-
-export default MenuContext
-`}</code></pre>) 
-
-export const MenuBasicJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
-import { useState } from 'react'
-
-// ** MUI Imports
-import Menu from '@mui/material/Menu'
-import Button from '@mui/material/Button'
-import MenuItem from '@mui/material/MenuItem'
-
-const MenuBasic = () => {
-  // ** State
-  const [anchorEl, setAnchorEl] = useState(null)
-
-  const handleClick = event => {
-    setAnchorEl(event.currentTarget)
-  }
-
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
-
-  return (
-    <div>
-      <Button variant='outlined' aria-controls='simple-menu' aria-haspopup='true' onClick={handleClick}>
-        Open Menu
-      </Button>
-      <Menu keepMounted id='simple-menu' anchorEl={anchorEl} onClose={handleClose} open={Boolean(anchorEl)}>
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
-      </Menu>
-    </div>
-  )
-}
-
-export default MenuBasic
 `}</code></pre>) 
 
 export const MenuCompositionJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
@@ -497,5 +324,178 @@ const MenuComposition = () => {
 }
 
 export default MenuComposition
+`}</code></pre>) 
+
+export const MenuSelectedJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import List from '@mui/material/List'
+import Menu from '@mui/material/Menu'
+import ListItem from '@mui/material/ListItem'
+import MenuItem from '@mui/material/MenuItem'
+import ListItemText from '@mui/material/ListItemText'
+import ListItemButton from '@mui/material/ListItemButton'
+
+const options = [
+  'Show some love to MUI',
+  'Show all notification content',
+  'Hide sensitive notification content',
+  'Hide all notification content'
+]
+
+const MenuSelected = () => {
+  // ** State
+  const [selectedIndex, setSelectedIndex] = useState(1)
+
+  // ** Ref
+  const [anchorEl, setAnchorEl] = useState(null)
+
+  const handleClickListItem = event => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const handleMenuItemClick = (event, index) => {
+    setAnchorEl(null)
+    setSelectedIndex(index)
+  }
+
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
+
+  return (
+    <div>
+      <List component='nav' sx={{ p: 0 }} aria-label='Device settings'>
+        <ListItem
+          disablePadding
+          aria-haspopup='true'
+          aria-controls='lock-menu'
+          onClick={handleClickListItem}
+          aria-label='when device is locked'
+        >
+          <ListItemButton>
+            <ListItemText primary='When device is locked' secondary={options[selectedIndex]} />
+          </ListItemButton>
+        </ListItem>
+      </List>
+      <Menu id='lock-menu' anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
+        {options.map((option, index) => (
+          <MenuItem
+            key={option}
+            disabled={index === 0}
+            selected={index === selectedIndex}
+            onClick={event => handleMenuItemClick(event, index)}
+          >
+            {option}
+          </MenuItem>
+        ))}
+      </Menu>
+    </div>
+  )
+}
+
+export default MenuSelected
+`}</code></pre>) 
+
+export const MenuCustomizedJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** React Imports
+import { useState } from 'react'
+
+// ** MUI Imports
+import Button from '@mui/material/Button'
+import { styled } from '@mui/material/styles'
+import ListItemIcon from '@mui/material/ListItemIcon'
+import ListItemText from '@mui/material/ListItemText'
+import MuiMenu from '@mui/material/Menu'
+import MuiMenuItem from '@mui/material/MenuItem'
+
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
+
+// ** Util Import
+import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
+
+// Styled Menu component
+const Menu = styled(MuiMenu)(({ theme }) => ({
+  '& .MuiMenu-paper': {
+    border: 1px solid {theme.palette.divider}
+  }
+}))
+
+// Styled MenuItem component
+const MenuItem = styled(MuiMenuItem)(({ theme }) => ({
+  margin: 0,
+  borderRadius: 0,
+  '&:not(.Mui-focusVisible):hover': {
+    backgroundColor: theme.palette.action.hover
+  },
+  '&.Mui-selected': {
+    backgroundColor: hexToRGBA(theme.palette.primary.main, 0.08)
+  },
+  '&.Mui-focusVisible': {
+    backgroundColor: theme.palette.primary.main,
+    '& .MuiListItemIcon-root, & .MuiTypography-root': {
+      color: theme.palette.common.white
+    }
+  }
+}))
+
+const MenuCustomized = () => {
+  // ** State
+  const [anchorEl, setAnchorEl] = useState(null)
+
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
+
+  return (
+    <div>
+      <Button variant='outlined' aria-haspopup='true' onClick={handleClick} aria-controls='customized-menu'>
+        Open Menu
+      </Button>
+      <Menu
+        keepMounted
+        elevation={0}
+        anchorEl={anchorEl}
+        id='customized-menu'
+        onClose={handleClose}
+        open={Boolean(anchorEl)}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'center'
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'center'
+        }}
+      >
+        <MenuItem>
+          <ListItemIcon>
+            <Icon icon='tabler:send' fontSize={20} />
+          </ListItemIcon>
+          <ListItemText primary='Sent mail' />
+        </MenuItem>
+        <MenuItem>
+          <ListItemIcon>
+            <Icon icon='tabler:mail-opened' fontSize={20} />
+          </ListItemIcon>
+          <ListItemText primary='Drafts' />
+        </MenuItem>
+        <MenuItem>
+          <ListItemIcon>
+            <Icon icon='tabler:inbox' fontSize={20} />
+          </ListItemIcon>
+          <ListItemText primary='Inbox' />
+        </MenuItem>
+      </Menu>
+    </div>
+  )
+}
+
+export default MenuCustomized
 `}</code></pre>) 
 

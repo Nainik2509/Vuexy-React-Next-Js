@@ -1,36 +1,64 @@
-export const AvatarsGroupedJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+export const AvatarsImageJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
 import Avatar from '@mui/material/Avatar'
-import AvatarGroup from '@mui/material/AvatarGroup'
 
-const AvatarsGrouped = () => {
+const AvatarsImage = () => {
   return (
-    <div className='demo-space-y'>
-      <AvatarGroup max={4}>
-        <Avatar src='/images/avatars/4.png' alt='Olivia Sparks' />
-        <Avatar src='/images/avatars/5.png' alt='Howard Lloyd' />
-        <Avatar src='/images/avatars/6.png' alt='Hallie Richards' />
-        <Avatar src='/images/avatars/8.png' alt='Alice Cobb' />
-        <Avatar src='/images/avatars/7.png' alt='Jeffery Warner' />
-      </AvatarGroup>
-      <AvatarGroup max={4} sx={{ justifyContent: 'center' }}>
-        <Avatar src='/images/avatars/4.png' alt='Olivia Sparks' />
-        <Avatar src='/images/avatars/5.png' alt='Howard Lloyd' />
-        <Avatar src='/images/avatars/6.png' alt='Hallie Richards' />
-        <Avatar src='/images/avatars/8.png' alt='Alice Cobb' />
-        <Avatar src='/images/avatars/7.png' alt='Jeffery Warner' />
-      </AvatarGroup>
-      <AvatarGroup max={4} sx={{ justifyContent: 'flex-start' }}>
-        <Avatar src='/images/avatars/4.png' alt='Olivia Sparks' />
-        <Avatar src='/images/avatars/5.png' alt='Howard Lloyd' />
-        <Avatar src='/images/avatars/6.png' alt='Hallie Richards' />
-        <Avatar src='/images/avatars/8.png' alt='Alice Cobb' />
-        <Avatar src='/images/avatars/7.png' alt='Jeffery Warner' />
-      </AvatarGroup>
-    </div>
+    <Box className='demo-space-x' sx={{ display: 'flex' }}>
+      <Avatar src='/images/avatars/1.png' alt='Victor Anderson' />
+      <Avatar src='/images/avatars/8.png' alt='Alice Cobb' />
+      <Avatar src='/images/avatars/7.png' alt='Jeffery Warner' />
+    </Box>
   )
 }
 
-export default AvatarsGrouped
+export default AvatarsImage
+`}</code></pre>) 
+
+export const AvatarsIconJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
+import Avatar from '@mui/material/Avatar'
+
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
+
+// ** Custom Components Imports
+import CustomAvatar from 'src/@core/components/mui/avatar'
+
+const AvatarsIcon = () => {
+  return (
+    <Box className='demo-space-x' sx={{ display: 'flex' }}>
+      <Avatar>
+        <Icon icon='tabler:folder' />
+      </Avatar>
+      <CustomAvatar color='success'>
+        <Icon icon='tabler:refresh' />
+      </CustomAvatar>
+      <CustomAvatar skin='light' color='info'>
+        <Icon icon='tabler:circle-check' />
+      </CustomAvatar>
+    </Box>
+  )
+}
+
+export default AvatarsIcon
+`}</code></pre>) 
+
+export const AvatarsSizesJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Box from '@mui/material/Box'
+import Avatar from '@mui/material/Avatar'
+
+const AvatarsSizes = () => {
+  return (
+    <Box className='demo-space-x' sx={{ display: 'flex', alignItems: 'center' }}>
+      <Avatar alt='Victor Anderson' sx={{ width: 25, height: 25 }} src='/images/avatars/3.png' />
+      <Avatar alt='Victor Anderson' src='/images/avatars/3.png' />
+      <Avatar alt='Victor Anderson' sx={{ width: 56, height: 56 }} src='/images/avatars/3.png' />
+    </Box>
+  )
+}
+
+export default AvatarsSizes
 `}</code></pre>) 
 
 export const AvatarsLetterJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
@@ -88,23 +116,6 @@ const AvatarsGroupedPullUpWithTooltip = () => {
 export default AvatarsGroupedPullUpWithTooltip
 `}</code></pre>) 
 
-export const AvatarsSizesJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Box from '@mui/material/Box'
-import Avatar from '@mui/material/Avatar'
-
-const AvatarsSizes = () => {
-  return (
-    <Box className='demo-space-x' sx={{ display: 'flex', alignItems: 'center' }}>
-      <Avatar alt='Victor Anderson' sx={{ width: 25, height: 25 }} src='/images/avatars/3.png' />
-      <Avatar alt='Victor Anderson' src='/images/avatars/3.png' />
-      <Avatar alt='Victor Anderson' sx={{ width: 56, height: 56 }} src='/images/avatars/3.png' />
-    </Box>
-  )
-}
-
-export default AvatarsSizes
-`}</code></pre>) 
-
 export const AvatarsGroupedPullUpJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Avatar from '@mui/material/Avatar'
 import AvatarGroup from '@mui/material/AvatarGroup'
@@ -124,9 +135,8 @@ const AvatarsGroupedPullUp = () => {
 export default AvatarsGroupedPullUp
 `}</code></pre>) 
 
-export const AvatarsIconJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+export const AvatarsVariantsJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
 import Box from '@mui/material/Box'
-import Avatar from '@mui/material/Avatar'
 
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
@@ -134,23 +144,61 @@ import Icon from 'src/@core/components/icon'
 // ** Custom Components Imports
 import CustomAvatar from 'src/@core/components/mui/avatar'
 
-const AvatarsIcon = () => {
+const AvatarsVariants = () => {
   return (
     <Box className='demo-space-x' sx={{ display: 'flex' }}>
-      <Avatar>
-        <Icon icon='tabler:folder' />
-      </Avatar>
-      <CustomAvatar color='success'>
-        <Icon icon='tabler:refresh' />
+      <CustomAvatar variant='square'>
+        <Icon icon='tabler:bell' />
       </CustomAvatar>
-      <CustomAvatar skin='light' color='info'>
-        <Icon icon='tabler:circle-check' />
+      <CustomAvatar color='success' variant='rounded'>
+        <Icon icon='tabler:device-floppy' />
+      </CustomAvatar>
+      <CustomAvatar skin='light' variant='square'>
+        <Icon icon='tabler:bell' />
+      </CustomAvatar>
+      <CustomAvatar skin='light' color='success' variant='rounded'>
+        <Icon icon='tabler:device-floppy' />
       </CustomAvatar>
     </Box>
   )
 }
 
-export default AvatarsIcon
+export default AvatarsVariants
+`}</code></pre>) 
+
+export const AvatarsGroupedJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
+import Avatar from '@mui/material/Avatar'
+import AvatarGroup from '@mui/material/AvatarGroup'
+
+const AvatarsGrouped = () => {
+  return (
+    <div className='demo-space-y'>
+      <AvatarGroup max={4}>
+        <Avatar src='/images/avatars/4.png' alt='Olivia Sparks' />
+        <Avatar src='/images/avatars/5.png' alt='Howard Lloyd' />
+        <Avatar src='/images/avatars/6.png' alt='Hallie Richards' />
+        <Avatar src='/images/avatars/8.png' alt='Alice Cobb' />
+        <Avatar src='/images/avatars/7.png' alt='Jeffery Warner' />
+      </AvatarGroup>
+      <AvatarGroup max={4} sx={{ justifyContent: 'center' }}>
+        <Avatar src='/images/avatars/4.png' alt='Olivia Sparks' />
+        <Avatar src='/images/avatars/5.png' alt='Howard Lloyd' />
+        <Avatar src='/images/avatars/6.png' alt='Hallie Richards' />
+        <Avatar src='/images/avatars/8.png' alt='Alice Cobb' />
+        <Avatar src='/images/avatars/7.png' alt='Jeffery Warner' />
+      </AvatarGroup>
+      <AvatarGroup max={4} sx={{ justifyContent: 'flex-start' }}>
+        <Avatar src='/images/avatars/4.png' alt='Olivia Sparks' />
+        <Avatar src='/images/avatars/5.png' alt='Howard Lloyd' />
+        <Avatar src='/images/avatars/6.png' alt='Hallie Richards' />
+        <Avatar src='/images/avatars/8.png' alt='Alice Cobb' />
+        <Avatar src='/images/avatars/7.png' alt='Jeffery Warner' />
+      </AvatarGroup>
+    </div>
+  )
+}
+
+export default AvatarsGrouped
 `}</code></pre>) 
 
 export const AvatarsWithBadgeJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
@@ -202,53 +250,5 @@ const AvatarsWithBadge = () => {
 }
 
 export default AvatarsWithBadge
-`}</code></pre>) 
-
-export const AvatarsVariantsJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Box from '@mui/material/Box'
-
-// ** Icon Imports
-import Icon from 'src/@core/components/icon'
-
-// ** Custom Components Imports
-import CustomAvatar from 'src/@core/components/mui/avatar'
-
-const AvatarsVariants = () => {
-  return (
-    <Box className='demo-space-x' sx={{ display: 'flex' }}>
-      <CustomAvatar variant='square'>
-        <Icon icon='tabler:bell' />
-      </CustomAvatar>
-      <CustomAvatar color='success' variant='rounded'>
-        <Icon icon='tabler:device-floppy' />
-      </CustomAvatar>
-      <CustomAvatar skin='light' variant='square'>
-        <Icon icon='tabler:bell' />
-      </CustomAvatar>
-      <CustomAvatar skin='light' color='success' variant='rounded'>
-        <Icon icon='tabler:device-floppy' />
-      </CustomAvatar>
-    </Box>
-  )
-}
-
-export default AvatarsVariants
-`}</code></pre>) 
-
-export const AvatarsImageJSXCode = (<pre className='language-jsx'><code className='language-jsx'>{`// ** MUI Imports
-import Box from '@mui/material/Box'
-import Avatar from '@mui/material/Avatar'
-
-const AvatarsImage = () => {
-  return (
-    <Box className='demo-space-x' sx={{ display: 'flex' }}>
-      <Avatar src='/images/avatars/1.png' alt='Victor Anderson' />
-      <Avatar src='/images/avatars/8.png' alt='Alice Cobb' />
-      <Avatar src='/images/avatars/7.png' alt='Jeffery Warner' />
-    </Box>
-  )
-}
-
-export default AvatarsImage
 `}</code></pre>) 
 
