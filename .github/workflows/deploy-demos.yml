@@ -1,0 +1,94 @@
+name: 'Deploy - Demos'
+
+on:
+  workflow_dispatch:
+    inputs:
+      envType:
+        description: 'staging / production'
+        default: 'staging'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+      # Checkout themeselection/automation-scripts
+      - name: Checkout automation-scripts repo
+        uses: actions/checkout@v2
+        with:
+          repository: themeselection/automation-scripts
+          token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
+          path: automation-scripts
+      # Checkout current repo
+      - name: Checkout current repo
+        uses: actions/checkout@v2
+        with:
+          path: vuexy-react-admin-dashboard-template
+
+      - run: sh generate.sh vuexy-react-admin-dashboard-template
+        working-directory: automation-scripts/react/replace-project-name
+      - run: yarn
+        working-directory: vuexy-react-admin-dashboard-template/typescript-version/full-version
+
+      # If envType is staging
+      - name: (staging) Generate all the demos
+        if: ${{ github.event.inputs.envType == 'staging' }}
+        run: sh generate.sh pixinvent staging
+        working-directory: automation-scripts/react/pro/demo-generation
+      - name: (staging) Delete old demos
+        if: ${{ github.event.inputs.envType == 'staging' }}
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.SSHKEY }}
+          script: rm -rf ${{ secrets.STAG_DIR }}/demo-*
+      - name: (staging) Upload new demos
+        if: ${{ github.event.inputs.envType == 'staging' }}
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.SSHKEY }}
+          source: vuexy-react-admin-dashboard-template/demo-1/*,vuexy-react-admin-dashboard-template/demo-2/*,vuexy-react-admin-dashboard-template/demo-3/*,vuexy-react-admin-dashboard-template/demo-4/*,vuexy-react-admin-dashboard-template/demo-5/*,vuexy-react-admin-dashboard-template/demo-6/*
+          strip_components: 1
+          target: ${{ secrets.STAG_DIR }}
+
+      # If envType is production
+      - name: (production) Generate all the demos
+        if: ${{ github.event.inputs.envType == 'production' }}
+        run: sh generate.sh pixinvent
+        working-directory: automation-scripts/react/pro/demo-generation
+      - name: (production) Zip old demos
+        if: ${{ github.event.inputs.envType == 'production' }}
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.SSHKEY }}
+          script: |
+            cd ${{ secrets.PROD_DIR }}
+            rm -rf old-demos-backup-*.zip
+            mkdir old-demos && mv demo-* old-demos
+            DEMO_ZIP_NAME="old-demos-backup-$(date +"%Y-%m-%d-%H-%M-%S").zip"
+            zip -r $DEMO_ZIP_NAME old-demos
+            rm -rf old-demos
+      - name: (production) Upload new demos
+        if: ${{ github.event.inputs.envType == 'production' }}
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.SSHKEY }}
+          source: vuexy-react-admin-dashboard-template/demo-1/*,vuexy-react-admin-dashboard-template/demo-2/*,vuexy-react-admin-dashboard-template/demo-3/*,vuexy-react-admin-dashboard-template/demo-4/*,vuexy-react-admin-dashboard-template/demo-5/*,vuexy-react-admin-dashboard-template/demo-6/*
+          strip_components: 1
+          target: ${{ secrets.PROD_DIR }}

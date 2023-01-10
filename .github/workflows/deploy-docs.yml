@@ -1,0 +1,93 @@
+name: 'Deploy - Documentation'
+
+on:
+  workflow_dispatch:
+    inputs:
+      envType:
+        description: 'staging / production'
+        default: 'staging'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+      # Checkout themeselection/automation-scripts
+      - name: Checkout automation-scripts repo
+        uses: actions/checkout@v2
+        with:
+          repository: themeselection/automation-scripts
+          token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
+          path: automation-scripts
+      # Checkout current repo
+      - name: Checkout current repo
+        uses: actions/checkout@v2
+        with:
+          path: vuexy-react-admin-dashboard-template
+
+      - run: sh generate.sh vuexy-react-admin-dashboard-template
+        working-directory: automation-scripts/react/replace-project-name
+      - run: yarn
+        working-directory: vuexy-react-admin-dashboard-template/docs
+
+      # If envType is staging
+      - name: (staging) Generate documentation
+        if: ${{ github.event.inputs.envType == 'staging' }}
+        run: sh generate.sh pixinvent staging
+        working-directory: automation-scripts/react/pro/docs-generation
+      - name: (staging) Delete old documentation
+        if: ${{ github.event.inputs.envType == 'staging' }}
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.SSHKEY }}
+          script: rm -rf ${{ secrets.STAG_DIR }}/documentation
+      - name: (staging) Upload new documentation
+        if: ${{ github.event.inputs.envType == 'staging' }}
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.SSHKEY }}
+          source: vuexy-react-admin-dashboard-template/documentation/*
+          strip_components: 1
+          target: ${{ secrets.STAG_DIR }}
+
+      # If envType is production
+      - name: (production) Generate documentation
+        if: ${{ github.event.inputs.envType == 'production' }}
+        run: sh generate.sh pixinvent
+        working-directory: automation-scripts/react/pro/docs-generation
+      - name: (production) Zip old documentation
+        if: ${{ github.event.inputs.envType == 'production' }}
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.SSHKEY }}
+          script: |
+            cd ${{ secrets.PROD_DIR }}
+            rm -rf documentation-backup-*.zip
+            DOC_ZIP_NAME="documentation-backup-$(date +"%Y-%m-%d-%H-%M-%S").zip"
+            zip -r $DOC_ZIP_NAME documentation
+            rm -rf documentation
+      - name: (production) Upload new documentation
+        if: ${{ github.event.inputs.envType == 'production' }}
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.SSHKEY }}
+          source: vuexy-react-admin-dashboard-template/documentation/*
+          strip_components: 1
+          target: ${{ secrets.PROD_DIR }}
