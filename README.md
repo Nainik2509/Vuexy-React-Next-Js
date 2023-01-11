@@ -2,7 +2,7 @@
 
 <p align="center">
    <a href="https://1.envato.market/vuexy_admin" target="_blank">
-      <img src="https://user-images.githubusercontent.com/64475785/210938349-cf65dfb8-3749-4180-b490-e020def4934e.png" alt="vuexy-react-admin-template-logo" width="40px" height="auto">
+      <img src="https://user-images.githubusercontent.com/64475785/210938349-cf65dfb8-3749-4180-b490-e020def4934e.png" alt="vuexy-react-admin-dashboard-template-logo" width="40px" height="auto">
    </a>
 </p>
 
@@ -53,11 +53,11 @@ Hence, as precautions we disabled forking our repo.
 However, you can still keep your repo even after your support expires by setting our repo as upstream:
 
 1. Create a new **private repo** in your GitHub. Make sure it's a private repo. You can't share our code publicly as per license.
-2. Clone our repo: `git clone https://github.com/pixinvent/vuexy-react-admin-template`
+2. Clone our repo: `git clone https://github.com/pixinvent/vuexy-react-admin-dashboard-template`
 3. Navigate to cloned directory
 4. Remove our repo as origin by running command: `git remote remove origin`
 5. Add your newly created repo as origin by running command: `git remote add origin YOUR_NEWLY_CREATE_REPO_GIT_URL`
-6. Add our repo as upstream by running command: `git remote add upstream https://github.com/pixinvent/vuexy-react-admin-template`
+6. Add our repo as upstream by running command: `git remote add upstream https://github.com/pixinvent/vuexy-react-admin-dashboard-template`
 7. Push the code to GitHub by running command: `git push -u origin main`
 
 Now, whenever you want to pull the latest changes from our repo just pull the changes by running command: `git pull upstream main`
